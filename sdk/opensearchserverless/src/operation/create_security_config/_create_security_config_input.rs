@@ -9,9 +9,9 @@ pub struct CreateSecurityConfigInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub saml_options: ::std::option::Option<crate::types::SamlConfigOptions>,
-    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify <code>iamidentitycenter</code> for the <code>type</code> parameter.</p>
     pub iam_identity_center_options: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>,
     /// <p>Describes IAM federation options in the form of a key-value map. This field is required if you specify <code>iamFederation</code> for the <code>type</code> parameter.</p>
     pub iam_federation_options: ::std::option::Option<crate::types::IamFederationConfigOptions>,
@@ -31,11 +31,11 @@ impl CreateSecurityConfigInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
-    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify <code>iamidentitycenter</code> for the <code>type</code> parameter.</p>
     pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::CreateIamIdentityCenterConfigOptions> {
         self.iam_identity_center_options.as_ref()
     }
@@ -112,31 +112,31 @@ impl CreateSecurityConfigInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
         self.saml_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
         self.saml_options = input;
         self
     }
-    /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
+    /// <p>Describes SAML options in the form of a key-value map. This field is required if you specify <code>SAML</code> for the <code>type</code> parameter.</p>
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
         &self.saml_options
     }
-    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify <code>iamidentitycenter</code> for the <code>type</code> parameter.</p>
     pub fn iam_identity_center_options(mut self, input: crate::types::CreateIamIdentityCenterConfigOptions) -> Self {
         self.iam_identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify <code>iamidentitycenter</code> for the <code>type</code> parameter.</p>
     pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions>) -> Self {
         self.iam_identity_center_options = input;
         self
     }
-    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify iamidentitycenter for the type parameter.</p>
+    /// <p>Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify <code>iamidentitycenter</code> for the <code>type</code> parameter.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::CreateIamIdentityCenterConfigOptions> {
         &self.iam_identity_center_options
     }

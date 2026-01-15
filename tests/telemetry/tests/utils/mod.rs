@@ -43,6 +43,7 @@ pub(crate) fn init_metrics() -> (Arc<OtelMeterProvider>, InMemoryMetricsExporter
     (sdk_ref, exporter)
 }
 
+#[allow(dead_code)]
 pub(crate) fn new_replay_client(num_requests: usize, with_retry: bool) -> StaticReplayClient {
     let mut events = Vec::with_capacity(num_requests);
     let mut start = 0;
@@ -95,6 +96,7 @@ pub(crate) fn extract_metric_attributes<'a>(
         .collect()
 }
 
+#[allow(dead_code)]
 pub(crate) async fn make_s3_call(config: &SdkConfig) {
     let s3_client = aws_sdk_s3::Client::new(config);
     let _ = s3_client
@@ -105,6 +107,7 @@ pub(crate) async fn make_s3_call(config: &SdkConfig) {
         .await;
 }
 
+#[allow(dead_code)]
 pub(crate) async fn make_ddb_call(config: &SdkConfig) {
     let ddb_client = aws_sdk_dynamodb::Client::new(&config);
     let _ = ddb_client
@@ -115,6 +118,7 @@ pub(crate) async fn make_ddb_call(config: &SdkConfig) {
         .await;
 }
 
+#[allow(dead_code)]
 pub(crate) fn make_config(with_retry: bool) -> SdkConfig {
     SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))

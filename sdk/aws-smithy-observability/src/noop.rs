@@ -24,6 +24,10 @@ impl ProvideMeter for NoopMeterProvider {
     fn get_meter(&self, _scope: &'static str, _attributes: Option<&Attributes>) -> Meter {
         Meter::new(Arc::new(NoopMeter))
     }
+
+    fn provider_name(&self) -> &'static str {
+        "noop"
+    }
 }
 
 #[derive(Debug)]

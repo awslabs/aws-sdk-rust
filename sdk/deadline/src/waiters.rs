@@ -3,8 +3,14 @@
 /// Supporting types for the `fleet_active` waiter.
 pub mod fleet_active;
 
+/// Supporting types for the `job_complete` waiter.
+pub mod job_complete;
+
 /// Supporting types for the `job_create_complete` waiter.
 pub mod job_create_complete;
+
+/// Supporting types for the `job_succeeded` waiter.
+pub mod job_succeeded;
 
 /// Supporting types for the `license_endpoint_deleted` waiter.
 pub mod license_endpoint_deleted;

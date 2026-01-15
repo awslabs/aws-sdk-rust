@@ -30,6 +30,9 @@ pub fn ser_instance_launch_template(
         crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.fips_enabled {
+        object.key("fipsEnabled").boolean(*var_9);
+    }
     Ok(())
 }
 
@@ -90,6 +93,9 @@ where
                             builder = builder.set_instance_requirements(
                                 crate::protocol_serde::shape_instance_requirements_request::de_instance_requirements_request(tokens)?,
                             );
+                        }
+                        "fipsEnabled" => {
+                            builder = builder.set_fips_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

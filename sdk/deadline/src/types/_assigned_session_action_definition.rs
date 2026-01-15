@@ -8,7 +8,7 @@ pub enum AssignedSessionActionDefinition {
     EnvEnter(crate::types::AssignedEnvironmentEnterSessionActionDefinition),
     /// <p>The environment a session exits from.</p>
     EnvExit(crate::types::AssignedEnvironmentExitSessionActionDefinition),
-    /// <p>The job attachment to sync with an assigned session action.</p>
+    /// <p>The job attachments to sync for the assigned session action.</p>
     SyncInputJobAttachments(crate::types::AssignedSyncInputJobAttachmentsSessionActionDefinition),
     /// <p>The task run.</p>
     TaskRun(crate::types::AssignedTaskRunSessionActionDefinition),

@@ -11,6 +11,8 @@ pub struct UpdateResourceInput {
     pub with_federation: ::std::option::Option<bool>,
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub hybrid_access_enabled: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
@@ -29,6 +31,10 @@ impl UpdateResourceInput {
     pub fn hybrid_access_enabled(&self) -> ::std::option::Option<bool> {
         self.hybrid_access_enabled
     }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(&self) -> ::std::option::Option<&str> {
+        self.expected_resource_owner_account.as_deref()
+    }
 }
 impl UpdateResourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
@@ -45,6 +51,7 @@ pub struct UpdateResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) with_federation: ::std::option::Option<bool>,
     pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
+    pub(crate) expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourceInputBuilder {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
@@ -105,6 +112,20 @@ impl UpdateResourceInputBuilder {
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.hybrid_access_enabled
     }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn set_expected_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = input;
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn get_expected_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_resource_owner_account
+    }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl UpdateResourceInputBuilder {
             resource_arn: self.resource_arn,
             with_federation: self.with_federation,
             hybrid_access_enabled: self.hybrid_access_enabled,
+            expected_resource_owner_account: self.expected_resource_owner_account,
         })
     }
 }

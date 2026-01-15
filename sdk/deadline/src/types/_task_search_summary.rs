@@ -28,6 +28,8 @@ pub struct TaskSearchSummary {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user or system that updated this resource.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
+    /// <p>The latest session action ID for the task.</p>
+    pub latest_session_action_id: ::std::option::Option<::std::string::String>,
 }
 impl TaskSearchSummary {
     /// <p>The task ID.</p>
@@ -78,6 +80,10 @@ impl TaskSearchSummary {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
+    /// <p>The latest session action ID for the task.</p>
+    pub fn latest_session_action_id(&self) -> ::std::option::Option<&str> {
+        self.latest_session_action_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for TaskSearchSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -94,6 +100,7 @@ impl ::std::fmt::Debug for TaskSearchSummary {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("latest_session_action_id", &self.latest_session_action_id);
         formatter.finish()
     }
 }
@@ -120,6 +127,7 @@ pub struct TaskSearchSummaryBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_session_action_id: ::std::option::Option<::std::string::String>,
 }
 impl TaskSearchSummaryBuilder {
     /// <p>The task ID.</p>
@@ -299,6 +307,20 @@ impl TaskSearchSummaryBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
+    /// <p>The latest session action ID for the task.</p>
+    pub fn latest_session_action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latest_session_action_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The latest session action ID for the task.</p>
+    pub fn set_latest_session_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_session_action_id = input;
+        self
+    }
+    /// <p>The latest session action ID for the task.</p>
+    pub fn get_latest_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_session_action_id
+    }
     /// Consumes the builder and constructs a [`TaskSearchSummary`](crate::types::TaskSearchSummary).
     pub fn build(self) -> crate::types::TaskSearchSummary {
         crate::types::TaskSearchSummary {
@@ -314,6 +336,7 @@ impl TaskSearchSummaryBuilder {
             ended_at: self.ended_at,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
+            latest_session_action_id: self.latest_session_action_id,
         }
     }
 }
@@ -332,6 +355,7 @@ impl ::std::fmt::Debug for TaskSearchSummaryBuilder {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
+        formatter.field("latest_session_action_id", &self.latest_session_action_id);
         formatter.finish()
     }
 }

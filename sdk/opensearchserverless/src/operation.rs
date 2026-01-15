@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchGetCollection` operation.
 pub mod batch_get_collection;
 
+/// Types for the `BatchGetCollectionGroup` operation.
+pub mod batch_get_collection_group;
+
 /// Types for the `BatchGetEffectiveLifecyclePolicy` operation.
 pub mod batch_get_effective_lifecycle_policy;
 
@@ -18,6 +21,9 @@ pub mod create_access_policy;
 
 /// Types for the `CreateCollection` operation.
 pub mod create_collection;
+
+/// Types for the `CreateCollectionGroup` operation.
+pub mod create_collection_group;
 
 /// Types for the `CreateIndex` operation.
 pub mod create_index;
@@ -39,6 +45,9 @@ pub mod delete_access_policy;
 
 /// Types for the `DeleteCollection` operation.
 pub mod delete_collection;
+
+/// Types for the `DeleteCollectionGroup` operation.
+pub mod delete_collection_group;
 
 /// Types for the `DeleteIndex` operation.
 pub mod delete_index;
@@ -76,6 +85,9 @@ pub mod get_security_policy;
 /// Types for the `ListAccessPolicies` operation.
 pub mod list_access_policies;
 
+/// Types for the `ListCollectionGroups` operation.
+pub mod list_collection_groups;
+
 /// Types for the `ListCollections` operation.
 pub mod list_collections;
 
@@ -108,6 +120,9 @@ pub mod update_account_settings;
 
 /// Types for the `UpdateCollection` operation.
 pub mod update_collection;
+
+/// Types for the `UpdateCollectionGroup` operation.
+pub mod update_collection_group;
 
 /// Types for the `UpdateIndex` operation.
 pub mod update_index;

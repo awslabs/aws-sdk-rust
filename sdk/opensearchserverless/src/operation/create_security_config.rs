@@ -275,7 +275,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSecurit
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateSecurityConfigError {
-    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created. When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.</p>
+    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when an error internal to the service occurs while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),

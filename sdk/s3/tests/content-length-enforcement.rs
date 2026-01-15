@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_s3::{config::Region, error::DisplayErrorContext, Client, Config};
+use aws_sdk_s3::{
+    config::retry::RetryConfig, config::Region, error::DisplayErrorContext, Client, Config,
+};
 use aws_smithy_http_client::test_util::dvr::ReplayingClient;
 
 #[tokio::test]
@@ -15,6 +17,7 @@ async fn test_content_length_enforcement_is_not_applied_to_head_request() {
         .with_test_defaults()
         .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
+        .retry_config(RetryConfig::disabled()) // Disable retries for replay test
         .build();
     let client = Client::from_conf(config);
     let _resp = client
@@ -40,6 +43,7 @@ async fn test_content_length_enforcement_get_request_short() {
         .with_test_defaults()
         .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
+        .retry_config(RetryConfig::disabled()) // Disable retries for replay test
         .build();
     let client = Client::from_conf(config);
     // The file we're fetching is exactly 10,000 bytes long, but we've set the
@@ -77,6 +81,7 @@ async fn test_content_length_enforcement_get_request_long() {
         .with_test_defaults()
         .http_client(http_client.clone())
         .region(Region::new("us-east-1"))
+        .retry_config(RetryConfig::disabled()) // Disable retries for replay test
         .build();
     let client = Client::from_conf(config);
     // The file we're fetching is exactly 10,000 bytes long, but we've set the

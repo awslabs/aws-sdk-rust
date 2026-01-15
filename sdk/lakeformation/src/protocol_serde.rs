@@ -87,6 +87,8 @@ pub(crate) mod shape_get_resource_lf_tags;
 
 pub(crate) mod shape_get_table_objects;
 
+pub(crate) mod shape_get_temporary_data_location_credentials;
+
 pub(crate) mod shape_get_temporary_glue_partition_credentials;
 
 pub(crate) mod shape_get_temporary_glue_table_credentials;
@@ -169,6 +171,8 @@ pub(crate) mod shape_commit_transaction_input;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_data_cells_filter_input;
 
 pub(crate) mod shape_create_lake_formation_identity_center_configuration_input;
@@ -222,6 +226,8 @@ pub(crate) mod shape_get_query_statistics_input;
 pub(crate) mod shape_get_resource_lf_tags_input;
 
 pub(crate) mod shape_get_table_objects_input;
+
+pub(crate) mod shape_get_temporary_data_location_credentials_input;
 
 pub(crate) mod shape_get_temporary_glue_partition_credentials_input;
 
@@ -380,6 +386,8 @@ pub(crate) mod shape_table_lf_tags_list;
 pub(crate) mod shape_table_resource;
 
 pub(crate) mod shape_tag_value_list;
+
+pub(crate) mod shape_temporary_credentials;
 
 pub(crate) mod shape_transaction_description;
 

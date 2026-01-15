@@ -6,6 +6,16 @@ pub fn ser_protected_job_parameters(
     {
         object.key("analysisTemplateArn").string(input.analysis_template_arn.as_str());
     }
+    if let Some(var_1) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("parameters").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                object_2.key(key_3.as_str()).string(value_4.as_str());
+            }
+        }
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +40,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_job_parameter_map::de_job_parameter_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

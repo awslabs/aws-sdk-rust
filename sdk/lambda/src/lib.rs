@@ -58,7 +58,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lambda = "1.112.0"
+//! aws-sdk-lambda = "1.113.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -231,6 +231,8 @@ pub(crate) mod client_idempotency_token;
 mod event_receiver;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

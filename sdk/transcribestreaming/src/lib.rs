@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-transcribestreaming = "1.95.0"
+//! aws-sdk-transcribestreaming = "1.96.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -194,6 +194,8 @@ pub mod types;
 mod event_receiver;
 
 mod event_stream_serde;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

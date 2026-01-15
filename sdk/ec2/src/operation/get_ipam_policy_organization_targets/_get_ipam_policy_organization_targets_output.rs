@@ -3,14 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIpamPolicyOrganizationTargetsOutput {
-    /// <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+    /// <p>The IDs of the Amazon Web Services Organizations targets.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub organization_targets: ::std::option::Option<::std::vec::Vec<crate::types::IpamPolicyOrganizationTarget>>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetIpamPolicyOrganizationTargetsOutput {
-    /// <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+    /// <p>The IDs of the Amazon Web Services Organizations targets.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_targets.is_none()`.
     pub fn organization_targets(&self) -> &[crate::types::IpamPolicyOrganizationTarget] {
@@ -46,19 +48,22 @@ impl GetIpamPolicyOrganizationTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_organization_targets`](Self::set_organization_targets).
     ///
-    /// <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+    /// <p>The IDs of the Amazon Web Services Organizations targets.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn organization_targets(mut self, input: crate::types::IpamPolicyOrganizationTarget) -> Self {
         let mut v = self.organization_targets.unwrap_or_default();
         v.push(input);
         self.organization_targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+    /// <p>The IDs of the Amazon Web Services Organizations targets.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn set_organization_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPolicyOrganizationTarget>>) -> Self {
         self.organization_targets = input;
         self
     }
-    /// <p>The Amazon Web Services Organizations targets for an IPAM policy.</p>
+    /// <p>The IDs of the Amazon Web Services Organizations targets.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn get_organization_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPolicyOrganizationTarget>> {
         &self.organization_targets
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AnalysisParameter {
-    /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// <p>The name of the parameter. The name must use only alphanumeric or underscore (_) characters.</p>
     pub name: ::std::string::String,
     /// <p>The type of parameter.</p>
     pub r#type: crate::types::ParameterType,
@@ -12,7 +12,7 @@ pub struct AnalysisParameter {
     pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisParameter {
-    /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// <p>The name of the parameter. The name must use only alphanumeric or underscore (_) characters.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -51,18 +51,18 @@ pub struct AnalysisParameterBuilder {
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisParameterBuilder {
-    /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// <p>The name of the parameter. The name must use only alphanumeric or underscore (_) characters.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// <p>The name of the parameter. The name must use only alphanumeric or underscore (_) characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the parameter. The name must use only alphanumeric, underscore (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
+    /// <p>The name of the parameter. The name must use only alphanumeric or underscore (_) characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

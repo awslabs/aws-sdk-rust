@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-s3 = "1.119.0"
+//! aws-sdk-s3 = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -210,6 +210,8 @@ pub(crate) mod http_request_checksum;
 pub(crate) mod http_response_checksum;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub mod presigning;
 

@@ -4,11 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamPolicyOrganizationTarget {
-    /// <p>The ID of a Amazon Web Services Organizations target for an IPAM policy.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub organization_target_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamPolicyOrganizationTarget {
-    /// <p>The ID of a Amazon Web Services Organizations target for an IPAM policy.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn organization_target_id(&self) -> ::std::option::Option<&str> {
         self.organization_target_id.as_deref()
     }
@@ -27,17 +29,20 @@ pub struct IpamPolicyOrganizationTargetBuilder {
     pub(crate) organization_target_id: ::std::option::Option<::std::string::String>,
 }
 impl IpamPolicyOrganizationTargetBuilder {
-    /// <p>The ID of a Amazon Web Services Organizations target for an IPAM policy.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn organization_target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organization_target_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a Amazon Web Services Organizations target for an IPAM policy.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn set_organization_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organization_target_id = input;
         self
     }
-    /// <p>The ID of a Amazon Web Services Organizations target for an IPAM policy.</p>
+    /// <p>The ID of the Amazon Web Services Organizations target.</p>
+    /// <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>
     pub fn get_organization_target_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_target_id
     }

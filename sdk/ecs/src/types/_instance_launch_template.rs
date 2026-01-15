@@ -33,6 +33,9 @@ pub struct InstanceLaunchTemplate {
     /// </ul>
     /// <p>Amazon ECS automatically selects the instances that match the specified criteria.</p>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    pub fips_enabled: ::std::option::Option<bool>,
 }
 impl InstanceLaunchTemplate {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -77,6 +80,11 @@ impl InstanceLaunchTemplate {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
+    /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
+        self.fips_enabled
+    }
 }
 impl InstanceLaunchTemplate {
     /// Creates a new builder-style object to manufacture [`InstanceLaunchTemplate`](crate::types::InstanceLaunchTemplate).
@@ -95,6 +103,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) fips_enabled: ::std::option::Option<bool>,
 }
 impl InstanceLaunchTemplateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -234,6 +243,23 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
         &self.instance_requirements
     }
+    /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    pub fn fips_enabled(mut self, input: bool) -> Self {
+        self.fips_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.fips_enabled = input;
+        self
+    }
+    /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
+        &self.fips_enabled
+    }
     /// Consumes the builder and constructs a [`InstanceLaunchTemplate`](crate::types::InstanceLaunchTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2_instance_profile_arn`](crate::types::builders::InstanceLaunchTemplateBuilder::ec2_instance_profile_arn)
@@ -250,6 +276,7 @@ impl InstanceLaunchTemplateBuilder {
             monitoring: self.monitoring,
             capacity_option_type: self.capacity_option_type,
             instance_requirements: self.instance_requirements,
+            fips_enabled: self.fips_enabled,
         })
     }
 }

@@ -311,9 +311,6 @@ pub(crate) fn get_farm_output_output_correct_errors(
     if builder.display_name.is_none() {
         builder.display_name = Some(Default::default())
     }
-    if builder.kms_key_arn.is_none() {
-        builder.kms_key_arn = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
@@ -2186,6 +2183,18 @@ pub(crate) fn memory_mib_range_correct_errors(
 ) -> crate::types::builders::MemoryMiBRangeBuilder {
     if builder.min.is_none() {
         builder.min = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn step_parameter_chunks_correct_errors(
+    mut builder: crate::types::builders::StepParameterChunksBuilder,
+) -> crate::types::builders::StepParameterChunksBuilder {
+    if builder.default_task_count.is_none() {
+        builder.default_task_count = Some(Default::default())
+    }
+    if builder.range_constraint.is_none() {
+        builder.range_constraint = "no value was set".parse::<crate::types::RangeConstraint>().ok()
     }
     builder
 }

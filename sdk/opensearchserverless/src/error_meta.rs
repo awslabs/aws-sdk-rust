@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created. When deleting a resource, thrown when the resource is not in the ACTIVE or FAILED state.</p>
+    /// <p>When creating a resource, thrown when a resource with the same name already exists or is being created.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when an error internal to the service occurs while processing a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -84,6 +84,36 @@ impl From<crate::operation::batch_get_collection::BatchGetCollectionError> for E
             crate::operation::batch_get_collection::BatchGetCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::batch_get_collection::BatchGetCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_collection::BatchGetCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_collection_group::BatchGetCollectionGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_collection_group::BatchGetCollectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_collection_group::BatchGetCollectionGroupError> for Error {
+    fn from(err: crate::operation::batch_get_collection_group::BatchGetCollectionGroupError) -> Self {
+        match err {
+            crate::operation::batch_get_collection_group::BatchGetCollectionGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_get_collection_group::BatchGetCollectionGroupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_get_collection_group::BatchGetCollectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -234,6 +264,37 @@ impl From<crate::operation::create_collection::CreateCollectionError> for Error 
             }
             crate::operation::create_collection::CreateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_collection::CreateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_collection_group::CreateCollectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_collection_group::CreateCollectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_collection_group::CreateCollectionGroupError> for Error {
+    fn from(err: crate::operation::create_collection_group::CreateCollectionGroupError) -> Self {
+        match err {
+            crate::operation::create_collection_group::CreateCollectionGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_collection_group::CreateCollectionGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_collection_group::CreateCollectionGroupError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_collection_group::CreateCollectionGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_collection_group::CreateCollectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -427,6 +488,37 @@ impl From<crate::operation::delete_collection::DeleteCollectionError> for Error 
             crate::operation::delete_collection::DeleteCollectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_collection::DeleteCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_collection::DeleteCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_collection_group::DeleteCollectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_collection_group::DeleteCollectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_collection_group::DeleteCollectionGroupError> for Error {
+    fn from(err: crate::operation::delete_collection_group::DeleteCollectionGroupError) -> Self {
+        match err {
+            crate::operation::delete_collection_group::DeleteCollectionGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_collection_group::DeleteCollectionGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_collection_group::DeleteCollectionGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_collection_group::DeleteCollectionGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_collection_group::DeleteCollectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -738,6 +830,31 @@ impl From<crate::operation::list_access_policies::ListAccessPoliciesError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_collection_groups::ListCollectionGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_collection_groups::ListCollectionGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collection_groups::ListCollectionGroupsError> for Error {
+    fn from(err: crate::operation::list_collection_groups::ListCollectionGroupsError) -> Self {
+        match err {
+            crate::operation::list_collection_groups::ListCollectionGroupsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_collection_groups::ListCollectionGroupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collection_groups::ListCollectionGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_collections::ListCollectionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1018,6 +1135,37 @@ impl From<crate::operation::update_collection::UpdateCollectionError> for Error 
             crate::operation::update_collection::UpdateCollectionError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_collection::UpdateCollectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_collection::UpdateCollectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_collection_group::UpdateCollectionGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_collection_group::UpdateCollectionGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_collection_group::UpdateCollectionGroupError> for Error {
+    fn from(err: crate::operation::update_collection_group::UpdateCollectionGroupError) -> Self {
+        match err {
+            crate::operation::update_collection_group::UpdateCollectionGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_collection_group::UpdateCollectionGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_collection_group::UpdateCollectionGroupError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_collection_group::UpdateCollectionGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_collection_group::UpdateCollectionGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

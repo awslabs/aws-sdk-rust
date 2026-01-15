@@ -3,23 +3,26 @@ pub fn ser_register_resource_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_resource::RegisterResourceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.hybrid_access_enabled {
-        object.key("HybridAccessEnabled").boolean(*var_1);
+    if let Some(var_1) = &input.expected_resource_owner_account {
+        object.key("ExpectedResourceOwnerAccount").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.resource_arn {
-        object.key("ResourceArn").string(var_2.as_str());
+    if let Some(var_2) = &input.hybrid_access_enabled {
+        object.key("HybridAccessEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("RoleArn").string(var_3.as_str());
+    if let Some(var_3) = &input.resource_arn {
+        object.key("ResourceArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.use_service_linked_role {
-        object.key("UseServiceLinkedRole").boolean(*var_4);
+    if let Some(var_4) = &input.role_arn {
+        object.key("RoleArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.with_federation {
-        object.key("WithFederation").boolean(*var_5);
+    if let Some(var_5) = &input.use_service_linked_role {
+        object.key("UseServiceLinkedRole").boolean(*var_5);
     }
-    if let Some(var_6) = &input.with_privileged_access {
-        object.key("WithPrivilegedAccess").boolean(*var_6);
+    if let Some(var_6) = &input.with_federation {
+        object.key("WithFederation").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.with_privileged_access {
+        object.key("WithPrivilegedAccess").boolean(*var_7);
     }
     Ok(())
 }

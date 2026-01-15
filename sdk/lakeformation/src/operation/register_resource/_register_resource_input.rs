@@ -16,6 +16,8 @@ pub struct RegisterResourceInput {
     pub hybrid_access_enabled: ::std::option::Option<bool>,
     /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
     pub with_privileged_access: ::std::option::Option<bool>,
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -43,6 +45,10 @@ impl RegisterResourceInput {
     pub fn with_privileged_access(&self) -> ::std::option::Option<bool> {
         self.with_privileged_access
     }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(&self) -> ::std::option::Option<&str> {
+        self.expected_resource_owner_account.as_deref()
+    }
 }
 impl RegisterResourceInput {
     /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
@@ -61,6 +67,7 @@ pub struct RegisterResourceInputBuilder {
     pub(crate) with_federation: ::std::option::Option<bool>,
     pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
     pub(crate) with_privileged_access: ::std::option::Option<bool>,
+    pub(crate) expected_resource_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl RegisterResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -151,6 +158,20 @@ impl RegisterResourceInputBuilder {
     pub fn get_with_privileged_access(&self) -> &::std::option::Option<bool> {
         &self.with_privileged_access
     }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn expected_resource_owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn set_expected_resource_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.expected_resource_owner_account = input;
+        self
+    }
+    /// <p>The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.</p>
+    pub fn get_expected_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_resource_owner_account
+    }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(
         self,
@@ -162,6 +183,7 @@ impl RegisterResourceInputBuilder {
             with_federation: self.with_federation,
             hybrid_access_enabled: self.hybrid_access_enabled,
             with_privileged_access: self.with_privileged_access,
+            expected_resource_owner_account: self.expected_resource_owner_account,
         })
     }
 }

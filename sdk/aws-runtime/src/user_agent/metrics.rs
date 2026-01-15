@@ -210,6 +210,7 @@ impl ProvideBusinessMetric for SmithySdkFeature {
             FlexibleChecksumsResWhenRequired => {
                 Some(BusinessMetric::FlexibleChecksumsResWhenRequired)
             }
+            ObservabilityOtelMetrics => Some(BusinessMetric::ObservabilityOtelMetrics),
             otherwise => {
                 // This may occur if a customer upgrades only the `aws-smithy-runtime-api` crate
                 // while continuing to use an outdated version of an SDK crate or the `aws-runtime`

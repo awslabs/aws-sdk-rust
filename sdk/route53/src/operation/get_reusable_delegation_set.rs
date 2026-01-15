@@ -271,7 +271,12 @@ mod get_reusable_delegation_set_test {
     #[::tracing_test::traced_test]
     async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
         let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
+        let config_builder = crate::config::Config::builder()
+            .with_test_defaults()
+            // TODO(https://github.com/smithy-lang/smithy-rs/issues/4177):
+            //  Until the incorrect separation is addressed, we need to rely on this workaround.
+            .allow_no_auth()
+            .endpoint_url("https://example.com");
         let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
         let mut config_builder = config_builder;
         config_builder.set_region(Some(crate::config::Region::new("us-east-1")));

@@ -24,7 +24,9 @@ impl crate::operation::create_environment::builders::CreateEnvironmentInputBuild
 ///
 /// <p>Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX Manager, and vCenter Server.</p>
 /// <p>During environment creation, Amazon EVS performs validations on DNS settings, provisions VLAN subnets and hosts, and deploys the supplied version of VCF.</p>
-/// <p>It can take several hours to create an environment. After the deployment completes, you can configure VCF in the vSphere user interface according to your needs.</p><note>
+/// <p>It can take several hours to create an environment. After the deployment completes, you can configure VCF in the vSphere user interface according to your needs.</p><important>
+/// <p>When creating a new environment, the default ESX version for the selected VCF version will be used, you cannot choose a specific ESX version in <code>CreateEnvironment</code> action. When a host has been added with a specific ESX version, it can only be upgraded using vCenter Lifecycle Manager.</p>
+/// </important> <note>
 /// <p>You cannot use the <code>dedicatedHostId</code> and <code>placementGroupId</code> parameters together in the same <code>CreateEnvironment</code> action. This results in a <code>ValidationException</code> response.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -230,7 +232,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -240,7 +242,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
@@ -250,7 +252,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_id()
@@ -269,17 +271,17 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_service_access_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_access_subnet_id()
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn vcf_version(mut self, input: crate::types::VcfVersion) -> Self {
         self.inner = self.inner.vcf_version(input);
         self
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn set_vcf_version(mut self, input: ::std::option::Option<crate::types::VcfVersion>) -> Self {
         self.inner = self.inner.set_vcf_version(input);
         self
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn get_vcf_version(&self) -> &::std::option::Option<crate::types::VcfVersion> {
         self.inner.get_vcf_version()
     }
@@ -347,19 +349,19 @@ impl CreateEnvironmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn hosts(mut self, input: crate::types::HostInfoForCreate) -> Self {
         self.inner = self.inner.hosts(input);
         self
     }
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>) -> Self {
         self.inner = self.inner.set_hosts(input);
         self
     }
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>> {
         self.inner.get_hosts()

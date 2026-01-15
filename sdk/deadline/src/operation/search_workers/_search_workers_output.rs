@@ -5,7 +5,7 @@
 pub struct SearchWorkersOutput {
     /// <p>The workers for the search.</p>
     pub workers: ::std::vec::Vec<crate::types::WorkerSearchSummary>,
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub next_item_offset: ::std::option::Option<i32>,
     /// <p>The total number of results in the search.</p>
     pub total_results: i32,
@@ -17,7 +17,7 @@ impl SearchWorkersOutput {
         use std::ops::Deref;
         self.workers.deref()
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn next_item_offset(&self) -> ::std::option::Option<i32> {
         self.next_item_offset
     }
@@ -68,17 +68,17 @@ impl SearchWorkersOutputBuilder {
     pub fn get_workers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkerSearchSummary>> {
         &self.workers
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn next_item_offset(mut self, input: i32) -> Self {
         self.next_item_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn set_next_item_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.next_item_offset = input;
         self
     }
-    /// <p>The next incremental starting point after the defined <code>itemOffset</code>.</p>
+    /// <p>The next item offset for the search results.</p>
     pub fn get_next_item_offset(&self) -> &::std::option::Option<i32> {
         &self.next_item_offset
     }

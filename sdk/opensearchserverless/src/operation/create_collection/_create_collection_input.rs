@@ -15,6 +15,10 @@ pub struct CreateCollectionInput {
     pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub collection_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>Encryption settings for the collection.</p>
+    pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -45,6 +49,14 @@ impl CreateCollectionInput {
     pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
         self.vector_options.as_ref()
     }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn collection_group_name(&self) -> ::std::option::Option<&str> {
+        self.collection_group_name.as_deref()
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+        self.encryption_config.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -67,6 +79,8 @@ pub struct CreateCollectionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    pub(crate) collection_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateCollectionInputBuilder {
@@ -161,6 +175,34 @@ impl CreateCollectionInputBuilder {
     pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
         &self.vector_options
     }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collection_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_group_name = input;
+        self
+    }
+    /// <p>The name of the collection group to associate with the collection.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_group_name
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
+        self.encryption_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.encryption_config = input;
+        self
+    }
+    /// <p>Encryption settings for the collection.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -186,6 +228,8 @@ impl CreateCollectionInputBuilder {
             tags: self.tags,
             standby_replicas: self.standby_replicas,
             vector_options: self.vector_options,
+            collection_group_name: self.collection_group_name,
+            encryption_config: self.encryption_config,
             client_token: self.client_token,
         })
     }

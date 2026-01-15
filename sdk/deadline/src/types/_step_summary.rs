@@ -40,7 +40,7 @@ pub struct StepSummary {
     pub task_run_status_counts: ::std::collections::HashMap<crate::types::TaskRunStatus, i32>,
     /// <p>The total number of times tasks from the step failed and were retried.</p>
     pub task_failure_retry_count: ::std::option::Option<i32>,
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
     /// <p>The date and time the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -110,7 +110,7 @@ impl StepSummary {
     pub fn task_failure_retry_count(&self) -> ::std::option::Option<i32> {
         self.task_failure_retry_count
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::StepTargetTaskRunStatus> {
         self.target_task_run_status.as_ref()
     }
@@ -346,17 +346,17 @@ impl StepSummaryBuilder {
     pub fn get_task_failure_retry_count(&self) -> &::std::option::Option<i32> {
         &self.task_failure_retry_count
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
         self.target_task_run_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::StepTargetTaskRunStatus>) -> Self {
         self.target_task_run_status = input;
         self
     }
-    /// <p>The task status to start with on the job.</p>
+    /// <p>The task status to update the job's tasks to.</p>
     pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::StepTargetTaskRunStatus> {
         &self.target_task_run_status
     }

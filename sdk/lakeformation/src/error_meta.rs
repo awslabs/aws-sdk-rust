@@ -9,6 +9,8 @@ pub enum Error {
     AlreadyExistsException(crate::types::error::AlreadyExistsException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>Multiple resources exist with the same Amazon S3 location</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>A specified entity does not exist.</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>Contains details about an error where the query request expired.</p>
@@ -54,6 +56,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AlreadyExistsException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::EntityNotFoundException(inner) => inner.fmt(f),
             Error::ExpiredException(inner) => inner.fmt(f),
             Error::GlueEncryptionException(inner) => inner.fmt(f),
@@ -93,6 +96,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::AlreadyExistsException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::EntityNotFoundException(inner) => inner.meta(),
             Self::ExpiredException(inner) => inner.meta(),
             Self::GlueEncryptionException(inner) => inner.meta(),
@@ -1200,6 +1204,61 @@ impl From<crate::operation::get_table_objects::GetTableObjectsError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError> for Error {
+    fn from(err: crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError) -> Self {
+        match err {
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::GlueEncryptionException(inner) => {
+                Error::GlueEncryptionException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_temporary_data_location_credentials::GetTemporaryDataLocationCredentialsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
             R,
         >,
@@ -2123,6 +2182,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::AlreadyExistsException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::EntityNotFoundException(inner) => inner.source(),
             Error::ExpiredException(inner) => inner.source(),
             Error::GlueEncryptionException(inner) => inner.source(),
@@ -2148,6 +2208,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::AlreadyExistsException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::EntityNotFoundException(e) => e.request_id(),
             Self::ExpiredException(e) => e.request_id(),
             Self::GlueEncryptionException(e) => e.request_id(),

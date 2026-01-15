@@ -35,6 +35,27 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_versions_output_output_correct_errors(
+    mut builder: crate::operation::get_versions::builders::GetVersionsOutputBuilder,
+) -> crate::operation::get_versions::builders::GetVersionsOutputBuilder {
+    if builder.vcf_versions.is_none() {
+        builder.vcf_versions = Some(Default::default())
+    }
+    if builder.instance_type_esx_versions.is_none() {
+        builder.instance_type_esx_versions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -67,6 +88,18 @@ pub(crate) fn connectivity_info_correct_errors(
 ) -> crate::types::builders::ConnectivityInfoBuilder {
     if builder.private_route_server_peerings.is_none() {
         builder.private_route_server_peerings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_type_esx_versions_info_correct_errors(
+    mut builder: crate::types::builders::InstanceTypeEsxVersionsInfoBuilder,
+) -> crate::types::builders::InstanceTypeEsxVersionsInfoBuilder {
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::InstanceType>().ok()
+    }
+    if builder.esx_versions.is_none() {
+        builder.esx_versions = Some(Default::default())
     }
     builder
 }
@@ -110,6 +143,24 @@ pub(crate) fn vcf_hostnames_correct_errors(mut builder: crate::types::builders::
     }
     if builder.cloud_builder.is_none() {
         builder.cloud_builder = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vcf_version_info_correct_errors(
+    mut builder: crate::types::builders::VcfVersionInfoBuilder,
+) -> crate::types::builders::VcfVersionInfoBuilder {
+    if builder.vcf_version.is_none() {
+        builder.vcf_version = "no value was set".parse::<crate::types::VcfVersion>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.default_esx_version.is_none() {
+        builder.default_esx_version = Some(Default::default())
+    }
+    if builder.instance_types.is_none() {
+        builder.instance_types = Some(Default::default())
     }
     builder
 }

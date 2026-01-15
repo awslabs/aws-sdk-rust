@@ -8,7 +8,7 @@ use aws_smithy_http_client::test_util::infallible_client_fn;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
 use aws_smithy_runtime_api::client::interceptors::context::{
-    BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut, Error,
+    BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Error,
     FinalizerInterceptorContextMut, Input, Output,
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
@@ -16,8 +16,9 @@ use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, OrchestratorErr
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
-use std::collections::VecDeque;
+use std::collections::{HashMap, VecDeque};
 use std::fmt;
+use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 
 // Store active rule in config bag
@@ -28,12 +29,24 @@ impl Storable for ActiveRule {
     type Storer = StoreReplace<ActiveRule>;
 }
 
+// Store the response ID in the config bag so that we can find the proper response
+#[derive(Debug, Clone)]
+struct ResponseId(usize);
+
+impl Storable for ResponseId {
+    type Storer = StoreReplace<ResponseId>;
+}
+
 /// Interceptor which produces mock responses based on a list of rules
 pub struct MockResponseInterceptor {
     rules: Arc<Mutex<VecDeque<Rule>>>,
     rule_mode: RuleMode,
     must_match: bool,
-    active_response: Arc<Mutex<Option<MockResponse<Output, Error>>>>,
+    active_responses: Arc<Mutex<HashMap<usize, MockResponse<Output, Error>>>>,
+    /// Monotonically increasing identifier that identifies a given response
+    /// so that we can store it on the request path and correctly load it back
+    /// on the response path.
+    current_response_id: Arc<AtomicUsize>,
 }
 
 impl fmt::Debug for MockResponseInterceptor {
@@ -57,7 +70,8 @@ impl MockResponseInterceptor {
             rules: Default::default(),
             rule_mode: RuleMode::MatchAny,
             must_match: true,
-            active_response: Default::default(),
+            active_responses: Default::default(),
+            current_response_id: Default::default(),
         }
     }
     /// Add a rule to the Interceptor
@@ -91,9 +105,9 @@ impl Intercept for MockResponseInterceptor {
         "MockResponseInterceptor"
     }
 
-    fn modify_before_serialization(
+    fn read_before_serialization(
         &self,
-        context: &mut BeforeSerializationInterceptorContextMut<'_>,
+        context: &BeforeSerializationInterceptorContextRef<'_>,
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
@@ -165,10 +179,17 @@ impl Intercept for MockResponseInterceptor {
             (Some(rule), Some(response)) => {
                 // Store the rule in the config bag
                 cfg.interceptor_state().store_put(ActiveRule(rule));
-                // store the response on the interceptor (because going
-                // through interceptor context requires the type to impl Clone)
-                let mut active_resp = self.active_response.lock().unwrap();
-                let _ = (*active_resp).replace(response);
+
+                // we have to store the response on the interceptor, because going
+                // through interceptor context requires the type to impl Clone.  to
+                // find the right response for this request we generate a new monotonically
+                // increasing identifier, store that on request context, and then map from
+                // the response identifier to the response payload on the global interceptor
+                // state.
+                let response_id = self.current_response_id.fetch_add(1, Ordering::SeqCst);
+                cfg.interceptor_state().store_put(ResponseId(response_id));
+                let mut active_responses = self.active_responses.lock().unwrap();
+                active_responses.insert(response_id, response);
             }
             _ => {
                 // No matching rule or no response
@@ -189,30 +210,32 @@ impl Intercept for MockResponseInterceptor {
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let mut state = self.active_response.lock().unwrap();
-        let mut active_response = (*state).take();
-        if active_response.is_none() {
-            // in the case of retries we try to get the next response if it has been consumed
-            if let Some(active_rule) = cfg.load::<ActiveRule>() {
-                // During retries, input is not available in modify_before_transmit.
-                // For HTTP status responses that don't use the input, we can use a dummy input.
-                let dummy_input = Input::doesnt_matter();
-                let next_resp = active_rule.0.next_response(&dummy_input);
-                active_response = next_resp;
-            }
-        }
-
-        if let Some(resp) = active_response {
-            match resp {
-                // place the http response into the extensions and let the HTTP client return it
-                MockResponse::Http(http_resp) => {
-                    context
-                        .request_mut()
-                        .add_extension(MockHttpResponse(Arc::new(http_resp)));
+        if let Some(response_id) = cfg.load::<ResponseId>() {
+            let mut state = self.active_responses.lock().unwrap();
+            let mut active_response = state.remove(&response_id.0);
+            if active_response.is_none() {
+                // in the case of retries we try to get the next response if it has been consumed
+                if let Some(active_rule) = cfg.load::<ActiveRule>() {
+                    // During retries, input is not available in modify_before_transmit.
+                    // For HTTP status responses that don't use the input, we can use a dummy input.
+                    let dummy_input = Input::doesnt_matter();
+                    let next_resp = active_rule.0.next_response(&dummy_input);
+                    active_response = next_resp;
                 }
-                _ => {
-                    // put it back for modeled output/errors
-                    let _ = (*state).replace(resp);
+            }
+
+            if let Some(resp) = active_response {
+                match resp {
+                    // place the http response into the extensions and let the HTTP client return it
+                    MockResponse::Http(http_resp) => {
+                        context
+                            .request_mut()
+                            .add_extension(MockHttpResponse(Arc::new(http_resp)));
+                    }
+                    _ => {
+                        // put it back for modeled output/errors
+                        state.insert(response_id.0, resp);
+                    }
                 }
             }
         }
@@ -224,23 +247,25 @@ impl Intercept for MockResponseInterceptor {
         &self,
         context: &mut FinalizerInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
-        _cfg: &mut ConfigBag,
+        cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         // Handle modeled responses
-        let mut state = self.active_response.lock().unwrap();
-        let active_response = (*state).take();
-        if let Some(resp) = active_response {
-            match resp {
-                MockResponse::Output(output) => {
-                    context.inner_mut().set_output_or_error(Ok(output));
-                }
-                MockResponse::Error(error) => {
-                    context
-                        .inner_mut()
-                        .set_output_or_error(Err(OrchestratorError::operation(error)));
-                }
-                MockResponse::Http(_) => {
-                    // HTTP responses are handled by the mock HTTP client
+        if let Some(response_id) = cfg.load::<ResponseId>() {
+            let mut state = self.active_responses.lock().unwrap();
+            let active_response = state.remove(&response_id.0);
+            if let Some(resp) = active_response {
+                match resp {
+                    MockResponse::Output(output) => {
+                        context.inner_mut().set_output_or_error(Ok(output));
+                    }
+                    MockResponse::Error(error) => {
+                        context
+                            .inner_mut()
+                            .set_output_or_error(Err(OrchestratorError::operation(error)));
+                    }
+                    MockResponse::Http(_) => {
+                        // HTTP responses are handled by the mock HTTP client
+                    }
                 }
             }
         }

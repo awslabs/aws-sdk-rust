@@ -29,6 +29,16 @@ pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetailBuilder;
 
 pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummaryBuilder;
 
+pub use crate::types::_update_collection_group_detail::UpdateCollectionGroupDetailBuilder;
+
+pub use crate::types::_collection_group_capacity_limits::CollectionGroupCapacityLimitsBuilder;
+
+pub use crate::types::_create_collection_group_detail::CreateCollectionGroupDetailBuilder;
+
+pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_collection_group_summary::CollectionGroupSummaryBuilder;
+
 pub use crate::types::_delete_collection_detail::DeleteCollectionDetailBuilder;
 
 pub use crate::types::_update_collection_detail::UpdateCollectionDetailBuilder;
@@ -37,7 +47,7 @@ pub use crate::types::_create_collection_detail::CreateCollectionDetailBuilder;
 
 pub use crate::types::_vector_options::VectorOptionsBuilder;
 
-pub use crate::types::_tag::TagBuilder;
+pub use crate::types::_encryption_config::EncryptionConfigBuilder;
 
 pub use crate::types::_collection_summary::CollectionSummaryBuilder;
 
@@ -74,6 +84,10 @@ pub use crate::types::_effective_lifecycle_policy_error_detail::EffectiveLifecyc
 pub use crate::types::_effective_lifecycle_policy_detail::EffectiveLifecyclePolicyDetailBuilder;
 
 pub use crate::types::_lifecycle_policy_resource_identifier::LifecyclePolicyResourceIdentifierBuilder;
+
+pub use crate::types::_collection_group_error_detail::CollectionGroupErrorDetailBuilder;
+
+pub use crate::types::_collection_group_detail::CollectionGroupDetailBuilder;
 
 pub use crate::types::_collection_error_detail::CollectionErrorDetailBuilder;
 

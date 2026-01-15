@@ -8,7 +8,7 @@ pub enum SessionActionDefinitionSummary {
     EnvEnter(crate::types::EnvironmentEnterSessionActionDefinitionSummary),
     /// <p>The environment to exit from.</p>
     EnvExit(crate::types::EnvironmentExitSessionActionDefinitionSummary),
-    /// <p>The job attachments to sync with the session action definition.</p>
+    /// <p>The session action definition summary for syncing input job attachments.</p>
     SyncInputJobAttachments(crate::types::SyncInputJobAttachmentsSessionActionDefinitionSummary),
     /// <p>The task run.</p>
     TaskRun(crate::types::TaskRunSessionActionDefinitionSummary),

@@ -87,6 +87,8 @@ pub use crate::types::_audit_context::AuditContextBuilder;
 
 pub use crate::types::_partition_value_list::PartitionValueListBuilder;
 
+pub use crate::types::_temporary_credentials::TemporaryCredentialsBuilder;
+
 pub use crate::types::_partition_objects::PartitionObjectsBuilder;
 
 pub use crate::types::_table_object::TableObjectBuilder;

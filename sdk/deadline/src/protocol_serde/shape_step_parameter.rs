@@ -28,6 +28,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "chunks" => {
+                            builder = builder.set_chunks(crate::protocol_serde::shape_step_parameter_chunks::de_step_parameter_chunks(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

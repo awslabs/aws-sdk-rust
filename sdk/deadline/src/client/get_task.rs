@@ -20,7 +20,7 @@ impl super::Client {
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_task::GetTaskOutput::ended_at): <p>The date and time the resource ended running.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_task::GetTaskOutput::updated_at): <p>The date and time the resource was updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_task::GetTaskOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`latest_session_action_id(Option<String>)`](crate::operation::get_task::GetTaskOutput::latest_session_action_id): <p>The latest session ID for the task.</p>
+    ///   - [`latest_session_action_id(Option<String>)`](crate::operation::get_task::GetTaskOutput::latest_session_action_id): <p>The latest session action ID for the task.</p>
     /// - On failure, responds with [`SdkError<GetTaskError>`](crate::operation::get_task::GetTaskError)
     pub fn get_task(&self) -> crate::operation::get_task::builders::GetTaskFluentBuilder {
         crate::operation::get_task::builders::GetTaskFluentBuilder::new(self.handle.clone())

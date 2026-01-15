@@ -33,4 +33,6 @@ pub use crate::types::error::_expired_exception::ExpiredExceptionBuilder;
 
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_statistics_not_ready_yet_exception::StatisticsNotReadyYetExceptionBuilder;

@@ -142,8 +142,12 @@ impl Client {
 pub trait Waiters {
     /// Wait until a Fleet is activated. Use this after invoking CreateFleet or UpdateFleet.
     fn wait_until_fleet_active(&self) -> crate::waiters::fleet_active::FleetActiveFluentBuilder;
-    /// Wait until a Job is created. Use this after invoking CreateJob.
+    /// Wait until a job is created. Use this after invoking CreateJob.
     fn wait_until_job_create_complete(&self) -> crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder;
+    /// Wait until a job reaches any terminal status. Waits up to 1 hour by default.
+    fn wait_until_job_complete(&self) -> crate::waiters::job_complete::JobCompleteFluentBuilder;
+    /// Wait until a job has succeeded. Fails if the job reaches a non-successful terminal status. Waits up to 1 hour by default.
+    fn wait_until_job_succeeded(&self) -> crate::waiters::job_succeeded::JobSucceededFluentBuilder;
     /// Wait until a LicenseEndpoint is Ready. Use this after invoking CreateLicenseEndpoint.
     fn wait_until_license_endpoint_valid(&self) -> crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder;
     /// Wait until a LicenseEndpoint is Deleted. Use this after invoking DeleteLicenseEndpoint.
@@ -167,6 +171,12 @@ impl Waiters for Client {
     }
     fn wait_until_job_create_complete(&self) -> crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder {
         crate::waiters::job_create_complete::JobCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_job_complete(&self) -> crate::waiters::job_complete::JobCompleteFluentBuilder {
+        crate::waiters::job_complete::JobCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_job_succeeded(&self) -> crate::waiters::job_succeeded::JobSucceededFluentBuilder {
+        crate::waiters::job_succeeded::JobSucceededFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_license_endpoint_valid(&self) -> crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder {
         crate::waiters::license_endpoint_valid::LicenseEndpointValidFluentBuilder::new(self.handle.clone())

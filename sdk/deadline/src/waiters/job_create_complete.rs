@@ -28,7 +28,7 @@ impl JobCreateCompleteFluentBuilder {
     pub fn as_input(&self) -> &crate::operation::get_job::builders::GetJobInputBuilder {
         &self.inner
     }
-    /// Wait until a Job is created. Use this after invoking CreateJob.
+    /// Wait until a job is created. Use this after invoking CreateJob.
     pub async fn wait(
         self,
         max_wait: ::std::time::Duration,

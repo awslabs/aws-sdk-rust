@@ -8,6 +8,8 @@ pub struct CollectionFilters {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
     pub status: ::std::option::Option<crate::types::CollectionStatus>,
+    /// <p>The name of the collection group to filter by.</p>
+    pub collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionFilters {
     /// <p>The name of the collection.</p>
@@ -17,6 +19,10 @@ impl CollectionFilters {
     /// <p>The current status of the collection.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
+    }
+    /// <p>The name of the collection group to filter by.</p>
+    pub fn collection_group_name(&self) -> ::std::option::Option<&str> {
+        self.collection_group_name.as_deref()
     }
 }
 impl CollectionFilters {
@@ -32,6 +38,7 @@ impl CollectionFilters {
 pub struct CollectionFiltersBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
+    pub(crate) collection_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CollectionFiltersBuilder {
     /// <p>The name of the collection.</p>
@@ -62,11 +69,26 @@ impl CollectionFiltersBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CollectionStatus> {
         &self.status
     }
+    /// <p>The name of the collection group to filter by.</p>
+    pub fn collection_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.collection_group_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the collection group to filter by.</p>
+    pub fn set_collection_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.collection_group_name = input;
+        self
+    }
+    /// <p>The name of the collection group to filter by.</p>
+    pub fn get_collection_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_group_name
+    }
     /// Consumes the builder and constructs a [`CollectionFilters`](crate::types::CollectionFilters).
     pub fn build(self) -> crate::types::CollectionFilters {
         crate::types::CollectionFilters {
             name: self.name,
             status: self.status,
+            collection_group_name: self.collection_group_name,
         }
     }
 }

@@ -41,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chatbot = "1.81.0"
+//! aws-sdk-chatbot = "1.82.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -198,6 +198,8 @@ pub mod types;
 pub(crate) mod client_idempotency_token;
 
 mod idempotency_token;
+
+mod observability_feature;
 
 pub(crate) mod protocol_serde;
 

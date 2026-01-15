@@ -97,6 +97,9 @@ pub mod get_resource_lf_tags;
 /// Types for the `GetTableObjects` operation.
 pub mod get_table_objects;
 
+/// Types for the `GetTemporaryDataLocationCredentials` operation.
+pub mod get_temporary_data_location_credentials;
+
 /// Types for the `GetTemporaryGluePartitionCredentials` operation.
 pub mod get_temporary_glue_partition_credentials;
 

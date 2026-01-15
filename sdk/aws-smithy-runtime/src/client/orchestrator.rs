@@ -485,7 +485,7 @@ async fn finally_op(
 
 #[cfg(all(test, any(feature = "test-util", feature = "legacy-test-util")))]
 mod tests {
-    use crate::client::auth::no_auth::{NoAuthRuntimePlugin, NO_AUTH_SCHEME_ID};
+    use crate::client::auth::no_auth::{NoAuthRuntimePluginV2, NO_AUTH_SCHEME_ID};
     use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
     use crate::client::orchestrator::{invoke, invoke_with_stop_point, StopPoint};
     use crate::client::retries::strategy::NeverRetryStrategy;
@@ -697,7 +697,7 @@ mod tests {
             let runtime_plugins = RuntimePlugins::new()
                 .with_client_plugin(FailingInterceptorsClientRuntimePlugin::new())
                 .with_operation_plugin(TestOperationRuntimePlugin::new())
-                .with_operation_plugin(NoAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePluginV2::new())
                 .with_operation_plugin(FailingInterceptorsOperationRuntimePlugin::new());
             let actual = invoke("test", "test", input, &runtime_plugins)
                 .await
@@ -984,7 +984,7 @@ mod tests {
             let input = Input::doesnt_matter();
             let runtime_plugins = RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin::new())
-                .with_operation_plugin(NoAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePluginV2::new())
                 .with_operation_plugin(InterceptorsTestOperationRuntimePlugin::new());
             let actual = invoke("test", "test", input, &runtime_plugins)
                 .await
@@ -1230,7 +1230,7 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin::new())
-                .with_operation_plugin(NoAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePluginV2::new())
         };
 
         // StopPoint::None should result in a response getting set since orchestration doesn't stop
@@ -1333,7 +1333,7 @@ mod tests {
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin::new())
-                .with_operation_plugin(NoAuthRuntimePlugin::new())
+                .with_operation_plugin(NoAuthRuntimePluginV2::new())
                 .with_operation_plugin(TestInterceptorRuntimePlugin {
                     builder: RuntimeComponentsBuilder::new("test")
                         .with_interceptor(SharedInterceptor::new(interceptor.clone()))

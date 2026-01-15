@@ -148,7 +148,6 @@ mod test {
 mod test_serde {
     use crate::Blob;
     use serde::{Deserialize, Serialize};
-    use std::collections::HashMap;
 
     #[derive(Deserialize, Serialize, Debug, PartialEq)]
     struct ForTest {
@@ -169,6 +168,7 @@ mod test_serde {
 
     #[test]
     fn not_human_readable_blob() {
+        use std::collections::HashMap;
         use std::ffi::CString;
 
         let for_test = ForTest {

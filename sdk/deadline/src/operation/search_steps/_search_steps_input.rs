@@ -9,13 +9,13 @@ pub struct SearchStepsInput {
     pub queue_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The job ID to use in the step search.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub filter_expressions: ::std::option::Option<crate::types::SearchGroupedFilterExpressions>,
     /// <p>The search terms for a resource.</p>
     pub sort_expressions: ::std::option::Option<::std::vec::Vec<crate::types::SearchSortExpression>>,
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub item_offset: ::std::option::Option<i32>,
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub page_size: ::std::option::Option<i32>,
 }
 impl SearchStepsInput {
@@ -33,7 +33,7 @@ impl SearchStepsInput {
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(&self) -> ::std::option::Option<&crate::types::SearchGroupedFilterExpressions> {
         self.filter_expressions.as_ref()
     }
@@ -43,11 +43,11 @@ impl SearchStepsInput {
     pub fn sort_expressions(&self) -> &[crate::types::SearchSortExpression] {
         self.sort_expressions.as_deref().unwrap_or_default()
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn item_offset(&self) -> ::std::option::Option<i32> {
         self.item_offset
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
@@ -121,17 +121,17 @@ impl SearchStepsInputBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.filter_expressions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn set_filter_expressions(mut self, input: ::std::option::Option<crate::types::SearchGroupedFilterExpressions>) -> Self {
         self.filter_expressions = input;
         self
     }
-    /// <p>The filter expression, <code>AND</code> or <code>OR</code>, to use when searching among a group of search strings in a resource. You can use two groupings per search each within parenthesis <code>()</code>.</p>
+    /// <p>The search terms for a resource.</p>
     pub fn get_filter_expressions(&self) -> &::std::option::Option<crate::types::SearchGroupedFilterExpressions> {
         &self.filter_expressions
     }
@@ -155,32 +155,32 @@ impl SearchStepsInputBuilder {
     pub fn get_sort_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchSortExpression>> {
         &self.sort_expressions
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     /// This field is required.
     pub fn item_offset(mut self, input: i32) -> Self {
         self.item_offset = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn set_item_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.item_offset = input;
         self
     }
-    /// <p>Defines how far into the scrollable list to start the return of results.</p>
+    /// <p>The offset for the search results.</p>
     pub fn get_item_offset(&self) -> &::std::option::Option<i32> {
         &self.item_offset
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
     }
-    /// <p>Specifies the number of items per page for the resource.</p>
+    /// <p>Specifies the number of results to return.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }

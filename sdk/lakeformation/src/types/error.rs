@@ -33,6 +33,8 @@ pub use crate::types::error::_expired_exception::ExpiredException;
 
 pub use crate::types::error::_permission_type_mismatch_exception::PermissionTypeMismatchException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_statistics_not_ready_yet_exception::StatisticsNotReadyYetException;
 
 mod _access_denied_exception;
@@ -40,6 +42,8 @@ mod _access_denied_exception;
 mod _already_exists_exception;
 
 mod _concurrent_modification_exception;
+
+mod _conflict_exception;
 
 mod _entity_not_found_exception;
 

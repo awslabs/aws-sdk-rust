@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`license_endpoint_id(String)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::license_endpoint_id): <p>The license endpoint ID.</p>
     ///   - [`status(LicenseEndpointStatus)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::status): <p>The status of the license endpoint.</p>
     ///   - [`status_message(String)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::status_message): <p>The status message of the license endpoint.</p>
-    ///   - [`vpc_id(Option<String>)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::vpc_id): <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::vpc_id): <p>The VPC (virtual private cloud) ID associated with the license endpoint.</p>
     ///   - [`dns_name(Option<String>)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::dns_name): <p>The DNS name.</p>
     ///   - [`subnet_ids(Option<Vec::<String>>)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::subnet_ids): <p>The subnet IDs.</p>
     ///   - [`security_group_ids(Option<Vec::<String>>)`](crate::operation::get_license_endpoint::GetLicenseEndpointOutput::security_group_ids): <p>The security group IDs for the license endpoint.</p>

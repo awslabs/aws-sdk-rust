@@ -30,12 +30,12 @@ pub struct CreateEnvironmentInput {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnet that is used to establish connectivity between the Amazon EVS control plane and VPC. Amazon EVS uses this subnet to validate mandatory DNS records for your VCF appliances and hosts and create the environment.</p>
     pub service_access_subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub vcf_version: ::std::option::Option<crate::types::VcfVersion>,
     /// <p>Customer confirmation that the customer has purchased and will continue to maintain the required number of VCF software licenses to cover all physical processor cores in the Amazon EVS environment. Information about your VCF software in Amazon EVS will be shared with Broadcom to verify license compliance. Amazon EVS does not validate license keys. To validate license keys, visit the Broadcom support portal.</p>
     pub terms_accepted: ::std::option::Option<bool>,
@@ -47,7 +47,7 @@ pub struct CreateEnvironmentInput {
     /// <p>For each Amazon EVS VLAN subnet, you must specify a non-overlapping CIDR block. Amazon EVS VLAN subnets have a minimum CIDR block size of /28 and a maximum size of /24.</p>
     /// </note>
     pub initial_vlans: ::std::option::Option<crate::types::InitialVlans>,
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub hosts: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>,
     /// <p>The connectivity configuration for the environment. Amazon EVS requires that you specify two route server peer IDs. During environment creation, the route server endpoints peer with the NSX edges over the NSX uplink subnet, providing BGP-based dynamic routing for overlay networks.</p>
@@ -95,7 +95,7 @@ impl CreateEnvironmentInput {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
@@ -104,7 +104,7 @@ impl CreateEnvironmentInput {
     pub fn service_access_subnet_id(&self) -> ::std::option::Option<&str> {
         self.service_access_subnet_id.as_deref()
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn vcf_version(&self) -> ::std::option::Option<&crate::types::VcfVersion> {
         self.vcf_version.as_ref()
     }
@@ -126,7 +126,7 @@ impl CreateEnvironmentInput {
     pub fn initial_vlans(&self) -> ::std::option::Option<&crate::types::InitialVlans> {
         self.initial_vlans.as_ref()
     }
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hosts.is_none()`.
@@ -293,7 +293,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -304,7 +304,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
@@ -314,7 +314,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>Amazon EVS requires that all VPC subnets exist in a single Availability Zone in a Region where the service is available.</p>
     /// <p>The VPC that you specify must have a valid DHCP option set with domain name, at least two DNS servers, and an NTP server. These settings are used to configure your VCF appliances and hosts. The VPC cannot be used with any other deployed Amazon EVS environment. Amazon EVS does not provide multi-VPC support for environments at this time.</p>
     /// <p>Amazon EVS does not support the following Amazon Web Services networking options for NSX overlay connectivity: cross-Region VPC peering, Amazon S3 gateway endpoints, or Amazon Web Services Direct Connect virtual private gateway associations.</p><note>
-    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the {evws} subnets.</p>
+    /// <p>Ensure that you specify a VPC that is adequately sized to accommodate the Amazon EVS subnets.</p>
     /// </note>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
@@ -334,18 +334,18 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_service_access_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_access_subnet_id
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     /// This field is required.
     pub fn vcf_version(mut self, input: crate::types::VcfVersion) -> Self {
         self.vcf_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn set_vcf_version(mut self, input: ::std::option::Option<crate::types::VcfVersion>) -> Self {
         self.vcf_version = input;
         self
     }
-    /// <p>The VCF version to use for the environment. Amazon EVS only supports VCF version 5.2.1 at this time.</p>
+    /// <p>The VCF version to use for the environment.</p>
     pub fn get_vcf_version(&self) -> &::std::option::Option<crate::types::VcfVersion> {
         &self.vcf_version
     }
@@ -415,7 +415,7 @@ impl CreateEnvironmentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_hosts`](Self::set_hosts).
     ///
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn hosts(mut self, input: crate::types::HostInfoForCreate) -> Self {
         let mut v = self.hosts.unwrap_or_default();
@@ -423,13 +423,13 @@ impl CreateEnvironmentInputBuilder {
         self.hosts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn set_hosts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>>) -> Self {
         self.hosts = input;
         self
     }
-    /// <p>The ESXi hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
+    /// <p>The ESX hosts to add to the environment. Amazon EVS requires that you provide details for a minimum of 4 hosts during environment creation.</p>
     /// <p>For each host, you must provide the desired hostname, EC2 SSH keypair name, and EC2 instance type. Optionally, you can also provide a partition or cluster placement group to use, or use Amazon EC2 Dedicated Hosts.</p>
     pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HostInfoForCreate>> {
         &self.hosts
