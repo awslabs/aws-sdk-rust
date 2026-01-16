@@ -76,6 +76,11 @@ where
                                 )?,
                             );
                         }
+                        "ReviewConfiguration" => {
+                            builder = builder.set_review_configuration(
+                                crate::protocol_serde::shape_evaluation_review_configuration::de_evaluation_review_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

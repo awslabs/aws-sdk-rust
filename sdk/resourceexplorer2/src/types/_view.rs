@@ -6,6 +6,8 @@
 pub struct View {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
     pub view_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the view.</p>
+    pub view_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns this view.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this view was last modified.</p>
@@ -22,6 +24,10 @@ impl View {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
     pub fn view_arn(&self) -> ::std::option::Option<&str> {
         self.view_arn.as_deref()
+    }
+    /// <p>The name of the view.</p>
+    pub fn view_name(&self) -> ::std::option::Option<&str> {
+        self.view_name.as_deref()
     }
     /// <p>The Amazon Web Services account that owns this view.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for View {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("View");
         formatter.field("view_arn", &self.view_arn);
+        formatter.field("view_name", &self.view_name);
         formatter.field("owner", &self.owner);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("scope", &self.scope);
@@ -71,6 +78,7 @@ impl View {
 #[non_exhaustive]
 pub struct ViewBuilder {
     pub(crate) view_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) view_name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
@@ -91,6 +99,20 @@ impl ViewBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view.</p>
     pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_arn
+    }
+    /// <p>The name of the view.</p>
+    pub fn view_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.view_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the view.</p>
+    pub fn set_view_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.view_name = input;
+        self
+    }
+    /// <p>The name of the view.</p>
+    pub fn get_view_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_name
     }
     /// <p>The Amazon Web Services account that owns this view.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +197,7 @@ impl ViewBuilder {
     pub fn build(self) -> crate::types::View {
         crate::types::View {
             view_arn: self.view_arn,
+            view_name: self.view_name,
             owner: self.owner,
             last_updated_at: self.last_updated_at,
             scope: self.scope,
@@ -187,6 +210,7 @@ impl ::std::fmt::Debug for ViewBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ViewBuilder");
         formatter.field("view_arn", &self.view_arn);
+        formatter.field("view_name", &self.view_name);
         formatter.field("owner", &self.owner);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("scope", &self.scope);

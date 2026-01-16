@@ -24,6 +24,8 @@ pub struct EvaluationFormContent {
     pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     /// <p>Configuration for language settings of this evaluation form content.</p>
     pub language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
+    /// <p>Configuration for evaluation review settings of this evaluation form content.</p>
+    pub review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
 }
 impl EvaluationFormContent {
     /// <p>A version of the evaluation form.</p>
@@ -70,6 +72,10 @@ impl EvaluationFormContent {
     pub fn language_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormLanguageConfiguration> {
         self.language_configuration.as_ref()
     }
+    /// <p>Configuration for evaluation review settings of this evaluation form content.</p>
+    pub fn review_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationReviewConfiguration> {
+        self.review_configuration.as_ref()
+    }
 }
 impl EvaluationFormContent {
     /// Creates a new builder-style object to manufacture [`EvaluationFormContent`](crate::types::EvaluationFormContent).
@@ -92,6 +98,7 @@ pub struct EvaluationFormContentBuilder {
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
+    pub(crate) review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
 }
 impl EvaluationFormContentBuilder {
     /// <p>A version of the evaluation form.</p>
@@ -247,6 +254,20 @@ impl EvaluationFormContentBuilder {
     pub fn get_language_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormLanguageConfiguration> {
         &self.language_configuration
     }
+    /// <p>Configuration for evaluation review settings of this evaluation form content.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.review_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for evaluation review settings of this evaluation form content.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.review_configuration = input;
+        self
+    }
+    /// <p>Configuration for evaluation review settings of this evaluation form content.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        &self.review_configuration
+    }
     /// Consumes the builder and constructs a [`EvaluationFormContent`](crate::types::EvaluationFormContent).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_form_id`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_id)
@@ -285,6 +306,7 @@ impl EvaluationFormContentBuilder {
             auto_evaluation_configuration: self.auto_evaluation_configuration,
             target_configuration: self.target_configuration,
             language_configuration: self.language_configuration,
+            review_configuration: self.review_configuration,
         })
     }
 }

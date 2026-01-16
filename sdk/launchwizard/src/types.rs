@@ -15,11 +15,17 @@ pub use crate::types::_workload_deployment_pattern_status::WorkloadDeploymentPat
 
 pub use crate::types::_workload_deployment_pattern_data_summary::WorkloadDeploymentPatternDataSummary;
 
+pub use crate::types::_deployment_pattern_version_data_summary::DeploymentPatternVersionDataSummary;
+
+pub use crate::types::_deployment_pattern_version_filter::DeploymentPatternVersionFilter;
+
+pub use crate::types::_deployment_pattern_version_filter_key::DeploymentPatternVersionFilterKey;
+
 pub use crate::types::_deployment_status::DeploymentStatus;
 
-pub use crate::types::_deployment_data::DeploymentData;
-
 pub use crate::types::_deployment_data_summary::DeploymentDataSummary;
+
+pub use crate::types::_deployment_data::DeploymentData;
 
 pub use crate::types::_deployment_filter::DeploymentFilter;
 
@@ -40,6 +46,12 @@ mod _deployment_event_data_summary;
 mod _deployment_filter;
 
 mod _deployment_filter_key;
+
+mod _deployment_pattern_version_data_summary;
+
+mod _deployment_pattern_version_filter;
+
+mod _deployment_pattern_version_filter_key;
 
 mod _deployment_specifications_field;
 

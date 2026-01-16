@@ -10,6 +10,9 @@ pub mod delete_deployment;
 /// Types for the `GetDeployment` operation.
 pub mod get_deployment;
 
+/// Types for the `GetDeploymentPatternVersion` operation.
+pub mod get_deployment_pattern_version;
+
 /// Types for the `GetWorkload` operation.
 pub mod get_workload;
 
@@ -18,6 +21,9 @@ pub mod get_workload_deployment_pattern;
 
 /// Types for the `ListDeploymentEvents` operation.
 pub mod list_deployment_events;
+
+/// Types for the `ListDeploymentPatternVersions` operation.
+pub mod list_deployment_pattern_versions;
 
 /// Types for the `ListDeployments` operation.
 pub mod list_deployments;
@@ -36,3 +42,6 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateDeployment` operation.
+pub mod update_deployment;

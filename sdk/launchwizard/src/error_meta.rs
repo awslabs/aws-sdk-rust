@@ -130,6 +130,40 @@ impl From<crate::operation::get_deployment::GetDeploymentError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError> for Error {
+    fn from(err: crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError) -> Self {
+        match err {
+            crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_deployment_pattern_version::GetDeploymentPatternVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workload::GetWorkloadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -216,6 +250,44 @@ impl From<crate::operation::list_deployment_events::ListDeploymentEventsError> f
             }
             crate::operation::list_deployment_events::ListDeploymentEventsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_deployment_events::ListDeploymentEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError> for Error {
+    fn from(err: crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError) -> Self {
+        match err {
+            crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -379,6 +451,31 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_deployment::UpdateDeploymentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_deployment::UpdateDeploymentError> for Error {
+    fn from(err: crate::operation::update_deployment::UpdateDeploymentError) -> Self {
+        match err {
+            crate::operation::update_deployment::UpdateDeploymentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_deployment::UpdateDeploymentError::ResourceLimitException(inner) => Error::ResourceLimitException(inner),
+            crate::operation::update_deployment::UpdateDeploymentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_deployment::UpdateDeploymentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_deployment::UpdateDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

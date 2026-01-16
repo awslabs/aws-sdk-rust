@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ServiceViewName" => {
+                            builder = builder.set_service_view_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Filters" => {
                             builder = builder.set_filters(crate::protocol_serde::shape_search_filter::de_search_filter(tokens)?);
                         }

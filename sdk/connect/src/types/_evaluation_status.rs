@@ -13,7 +13,9 @@
 /// # let evaluationstatus = unimplemented!();
 /// match evaluationstatus {
 ///     EvaluationStatus::Draft => { /* ... */ },
+///     EvaluationStatus::ReviewRequested => { /* ... */ },
 ///     EvaluationStatus::Submitted => { /* ... */ },
+///     EvaluationStatus::UnderReview => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,7 +47,11 @@ pub enum EvaluationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Draft,
     #[allow(missing_docs)] // documentation missing in model
+    ReviewRequested,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
+    UnderReview,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +60,9 @@ impl ::std::convert::From<&str> for EvaluationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DRAFT" => EvaluationStatus::Draft,
+            "REVIEW_REQUESTED" => EvaluationStatus::ReviewRequested,
             "SUBMITTED" => EvaluationStatus::Submitted,
+            "UNDER_REVIEW" => EvaluationStatus::UnderReview,
             other => EvaluationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +79,15 @@ impl EvaluationStatus {
     pub fn as_str(&self) -> &str {
         match self {
             EvaluationStatus::Draft => "DRAFT",
+            EvaluationStatus::ReviewRequested => "REVIEW_REQUESTED",
             EvaluationStatus::Submitted => "SUBMITTED",
+            EvaluationStatus::UnderReview => "UNDER_REVIEW",
             EvaluationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DRAFT", "SUBMITTED"]
+        &["DRAFT", "REVIEW_REQUESTED", "SUBMITTED", "UNDER_REVIEW"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationStatus {
@@ -101,7 +111,9 @@ impl ::std::fmt::Display for EvaluationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EvaluationStatus::Draft => write!(f, "DRAFT"),
+            EvaluationStatus::ReviewRequested => write!(f, "REVIEW_REQUESTED"),
             EvaluationStatus::Submitted => write!(f, "SUBMITTED"),
+            EvaluationStatus::UnderReview => write!(f, "UNDER_REVIEW"),
             EvaluationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

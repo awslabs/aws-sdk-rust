@@ -247,6 +247,20 @@ impl CreateEvaluationFormFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.inner = self.inner.review_configuration(input);
+        self
+    }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.inner = self.inner.set_review_configuration(input);
+        self
+    }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        self.inner.get_review_configuration()
+    }
     /// <p>Configuration that specifies the target for the evaluation form.</p>
     pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
         self.inner = self.inner.target_configuration(input);

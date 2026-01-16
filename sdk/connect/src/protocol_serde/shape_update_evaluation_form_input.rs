@@ -48,20 +48,26 @@ pub fn ser_update_evaluation_form_input_input(
         crate::protocol_serde::shape_evaluation_form_language_configuration::ser_evaluation_form_language_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.scoring_strategy {
+    if let Some(var_14) = &input.review_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("ScoringStrategy").start_object();
-        crate::protocol_serde::shape_evaluation_form_scoring_strategy::ser_evaluation_form_scoring_strategy(&mut object_15, var_14)?;
+        let mut object_15 = object.key("ReviewConfiguration").start_object();
+        crate::protocol_serde::shape_evaluation_review_configuration::ser_evaluation_review_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.target_configuration {
+    if let Some(var_16) = &input.scoring_strategy {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("TargetConfiguration").start_object();
-        crate::protocol_serde::shape_evaluation_form_target_configuration::ser_evaluation_form_target_configuration(&mut object_17, var_16)?;
+        let mut object_17 = object.key("ScoringStrategy").start_object();
+        crate::protocol_serde::shape_evaluation_form_scoring_strategy::ser_evaluation_form_scoring_strategy(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.title {
-        object.key("Title").string(var_18.as_str());
+    if let Some(var_18) = &input.target_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("TargetConfiguration").start_object();
+        crate::protocol_serde::shape_evaluation_form_target_configuration::ser_evaluation_form_target_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.title {
+        object.key("Title").string(var_20.as_str());
     }
     Ok(())
 }

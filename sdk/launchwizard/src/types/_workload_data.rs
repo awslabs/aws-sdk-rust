@@ -8,14 +8,15 @@ pub struct WorkloadData {
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of a workload.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The status of a workload.</p>
+    /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
+    pub status: ::std::option::Option<crate::types::WorkloadStatus>,
     /// <p>The description of a workload.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of a workload document.</p>
     pub documentation_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of a workload icon.</p>
     pub icon_url: ::std::option::Option<::std::string::String>,
-    /// <p>The status of a workload.</p>
-    pub status: ::std::option::Option<crate::types::WorkloadStatus>,
     /// <p>The message about a workload's status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
@@ -28,6 +29,11 @@ impl WorkloadData {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
+    /// <p>The status of a workload.</p>
+    /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
+        self.status.as_ref()
+    }
     /// <p>The description of a workload.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -39,10 +45,6 @@ impl WorkloadData {
     /// <p>The URL of a workload icon.</p>
     pub fn icon_url(&self) -> ::std::option::Option<&str> {
         self.icon_url.as_deref()
-    }
-    /// <p>The status of a workload.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
-        self.status.as_ref()
     }
     /// <p>The message about a workload's status.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -62,10 +64,10 @@ impl WorkloadData {
 pub struct WorkloadDataBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkloadStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_url: ::std::option::Option<::std::string::String>,
     pub(crate) icon_url: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<crate::types::WorkloadStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkloadDataBuilder {
@@ -96,6 +98,23 @@ impl WorkloadDataBuilder {
     /// <p>The display name of a workload.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
+    }
+    /// <p>The status of a workload.</p>
+    /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
+    pub fn status(mut self, input: crate::types::WorkloadStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of a workload.</p>
+    /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkloadStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of a workload.</p>
+    /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
+        &self.status
     }
     /// <p>The description of a workload.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,20 +158,6 @@ impl WorkloadDataBuilder {
     pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.icon_url
     }
-    /// <p>The status of a workload.</p>
-    pub fn status(mut self, input: crate::types::WorkloadStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The status of a workload.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkloadStatus>) -> Self {
-        self.status = input;
-        self
-    }
-    /// <p>The status of a workload.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
-        &self.status
-    }
     /// <p>The message about a workload's status.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
@@ -172,10 +177,10 @@ impl WorkloadDataBuilder {
         crate::types::WorkloadData {
             workload_name: self.workload_name,
             display_name: self.display_name,
+            status: self.status,
             description: self.description,
             documentation_url: self.documentation_url,
             icon_url: self.icon_url,
-            status: self.status,
             status_message: self.status_message,
         }
     }

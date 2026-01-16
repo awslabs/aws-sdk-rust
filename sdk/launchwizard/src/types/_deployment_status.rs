@@ -20,6 +20,11 @@
 ///     DeploymentStatus::DeleteInProgress => { /* ... */ },
 ///     DeploymentStatus::Failed => { /* ... */ },
 ///     DeploymentStatus::InProgress => { /* ... */ },
+///     DeploymentStatus::UpdateCompleted => { /* ... */ },
+///     DeploymentStatus::UpdateFailed => { /* ... */ },
+///     DeploymentStatus::UpdateInProgress => { /* ... */ },
+///     DeploymentStatus::UpdateRollbackCompleted => { /* ... */ },
+///     DeploymentStatus::UpdateRollbackFailed => { /* ... */ },
 ///     DeploymentStatus::Validating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -66,6 +71,16 @@ pub enum DeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateRollbackCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateRollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Validating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -82,6 +97,11 @@ impl ::std::convert::From<&str> for DeploymentStatus {
             "DELETE_IN_PROGRESS" => DeploymentStatus::DeleteInProgress,
             "FAILED" => DeploymentStatus::Failed,
             "IN_PROGRESS" => DeploymentStatus::InProgress,
+            "UPDATE_COMPLETED" => DeploymentStatus::UpdateCompleted,
+            "UPDATE_FAILED" => DeploymentStatus::UpdateFailed,
+            "UPDATE_IN_PROGRESS" => DeploymentStatus::UpdateInProgress,
+            "UPDATE_ROLLBACK_COMPLETED" => DeploymentStatus::UpdateRollbackCompleted,
+            "UPDATE_ROLLBACK_FAILED" => DeploymentStatus::UpdateRollbackFailed,
             "VALIDATING" => DeploymentStatus::Validating,
             other => DeploymentStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -106,6 +126,11 @@ impl DeploymentStatus {
             DeploymentStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
             DeploymentStatus::Failed => "FAILED",
             DeploymentStatus::InProgress => "IN_PROGRESS",
+            DeploymentStatus::UpdateCompleted => "UPDATE_COMPLETED",
+            DeploymentStatus::UpdateFailed => "UPDATE_FAILED",
+            DeploymentStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+            DeploymentStatus::UpdateRollbackCompleted => "UPDATE_ROLLBACK_COMPLETED",
+            DeploymentStatus::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
             DeploymentStatus::Validating => "VALIDATING",
             DeploymentStatus::Unknown(value) => value.as_str(),
         }
@@ -121,6 +146,11 @@ impl DeploymentStatus {
             "DELETE_IN_PROGRESS",
             "FAILED",
             "IN_PROGRESS",
+            "UPDATE_COMPLETED",
+            "UPDATE_FAILED",
+            "UPDATE_IN_PROGRESS",
+            "UPDATE_ROLLBACK_COMPLETED",
+            "UPDATE_ROLLBACK_FAILED",
             "VALIDATING",
         ]
     }
@@ -153,6 +183,11 @@ impl ::std::fmt::Display for DeploymentStatus {
             DeploymentStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             DeploymentStatus::Failed => write!(f, "FAILED"),
             DeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
+            DeploymentStatus::UpdateCompleted => write!(f, "UPDATE_COMPLETED"),
+            DeploymentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            DeploymentStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            DeploymentStatus::UpdateRollbackCompleted => write!(f, "UPDATE_ROLLBACK_COMPLETED"),
+            DeploymentStatus::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
             DeploymentStatus::Validating => write!(f, "VALIDATING"),
             DeploymentStatus::Unknown(value) => write!(f, "{value}"),
         }

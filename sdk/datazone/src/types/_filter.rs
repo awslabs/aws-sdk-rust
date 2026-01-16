@@ -6,8 +6,12 @@
 pub struct Filter {
     /// <p>A search filter attribute in Amazon DataZone.</p>
     pub attribute: ::std::string::String,
-    /// <p>A search filter value in Amazon DataZone.</p>
+    /// <p>A search filter string value in Amazon DataZone.</p>
     pub value: ::std::string::String,
+    /// <p>A search filter integer value in Amazon DataZone.</p>
+    pub int_value: ::std::option::Option<i64>,
+    /// <p>Specifies the search filter operator.</p>
+    pub operator: crate::types::FilterOperator,
 }
 impl Filter {
     /// <p>A search filter attribute in Amazon DataZone.</p>
@@ -15,10 +19,18 @@ impl Filter {
         use std::ops::Deref;
         self.attribute.deref()
     }
-    /// <p>A search filter value in Amazon DataZone.</p>
+    /// <p>A search filter string value in Amazon DataZone.</p>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
         self.value.deref()
+    }
+    /// <p>A search filter integer value in Amazon DataZone.</p>
+    pub fn int_value(&self) -> ::std::option::Option<i64> {
+        self.int_value
+    }
+    /// <p>Specifies the search filter operator.</p>
+    pub fn operator(&self) -> &crate::types::FilterOperator {
+        &self.operator
     }
 }
 impl Filter {
@@ -34,6 +46,8 @@ impl Filter {
 pub struct FilterBuilder {
     pub(crate) attribute: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) int_value: ::std::option::Option<i64>,
+    pub(crate) operator: ::std::option::Option<crate::types::FilterOperator>,
 }
 impl FilterBuilder {
     /// <p>A search filter attribute in Amazon DataZone.</p>
@@ -51,25 +65,51 @@ impl FilterBuilder {
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute
     }
-    /// <p>A search filter value in Amazon DataZone.</p>
-    /// This field is required.
+    /// <p>A search filter string value in Amazon DataZone.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A search filter value in Amazon DataZone.</p>
+    /// <p>A search filter string value in Amazon DataZone.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>A search filter value in Amazon DataZone.</p>
+    /// <p>A search filter string value in Amazon DataZone.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
+    }
+    /// <p>A search filter integer value in Amazon DataZone.</p>
+    pub fn int_value(mut self, input: i64) -> Self {
+        self.int_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A search filter integer value in Amazon DataZone.</p>
+    pub fn set_int_value(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.int_value = input;
+        self
+    }
+    /// <p>A search filter integer value in Amazon DataZone.</p>
+    pub fn get_int_value(&self) -> &::std::option::Option<i64> {
+        &self.int_value
+    }
+    /// <p>Specifies the search filter operator.</p>
+    pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the search filter operator.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>Specifies the search filter operator.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::FilterBuilder::attribute)
-    /// - [`value`](crate::types::builders::FilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             attribute: self.attribute.ok_or_else(|| {
@@ -78,12 +118,11 @@ impl FilterBuilder {
                     "attribute was not specified but it is required when building Filter",
                 )
             })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Filter",
-                )
-            })?,
+            value: self.value.unwrap_or_default(),
+            int_value: self.int_value,
+            operator: self
+                .operator
+                .unwrap_or("EQ".parse::<crate::types::FilterOperator>().expect("static value validated to member")),
         })
     }
 }

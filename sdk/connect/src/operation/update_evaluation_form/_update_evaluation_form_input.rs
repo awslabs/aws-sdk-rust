@@ -21,6 +21,8 @@ pub struct UpdateEvaluationFormInput {
     pub scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     /// <p>Whether automated evaluations are enabled.</p>
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
     pub as_draft: ::std::option::Option<bool>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -69,6 +71,10 @@ impl UpdateEvaluationFormInput {
     pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.auto_evaluation_configuration.as_ref()
     }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn review_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationReviewConfiguration> {
+        self.review_configuration.as_ref()
+    }
     /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
     pub fn as_draft(&self) -> ::std::option::Option<bool> {
         self.as_draft
@@ -106,6 +112,7 @@ pub struct UpdateEvaluationFormInputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>>,
     pub(crate) scoring_strategy: ::std::option::Option<crate::types::EvaluationFormScoringStrategy>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    pub(crate) review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     pub(crate) as_draft: ::std::option::Option<bool>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
@@ -251,6 +258,20 @@ impl UpdateEvaluationFormInputBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         &self.auto_evaluation_configuration
     }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.review_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.review_configuration = input;
+        self
+    }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        &self.review_configuration
+    }
     /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
     pub fn as_draft(mut self, input: bool) -> Self {
         self.as_draft = ::std::option::Option::Some(input);
@@ -322,6 +343,7 @@ impl UpdateEvaluationFormInputBuilder {
             items: self.items,
             scoring_strategy: self.scoring_strategy,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
+            review_configuration: self.review_configuration,
             as_draft: self.as_draft,
             client_token: self.client_token,
             target_configuration: self.target_configuration,

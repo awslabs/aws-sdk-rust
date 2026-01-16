@@ -275,7 +275,7 @@ pub enum SetDataRetrievalPolicyError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Returned if a required header or parameter is missing from the request.</p>
     MissingParameterValueException(crate::types::error::MissingParameterValueException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Returned if the request was made by a customer with no Amazon Glacier storage. The request is denied as the API is no longer supported for new customers. Please use Amazon S3 Glacier storage classes instead.</p>
     NoLongerSupportedException(crate::types::error::NoLongerSupportedException),
     /// <p>Returned if the service cannot complete the request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),

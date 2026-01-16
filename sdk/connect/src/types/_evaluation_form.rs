@@ -32,6 +32,8 @@ pub struct EvaluationForm {
     pub last_modified_by: ::std::string::String,
     /// <p>The automatic evaluation configuration of an evaluation form.</p>
     pub auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    /// <p>Configuration for evaluation review settings of this evaluation form.</p>
+    pub review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration that specifies the target for this evaluation form.</p>
@@ -102,6 +104,10 @@ impl EvaluationForm {
     pub fn auto_evaluation_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.auto_evaluation_configuration.as_ref()
     }
+    /// <p>Configuration for evaluation review settings of this evaluation form.</p>
+    pub fn review_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationReviewConfiguration> {
+        self.review_configuration.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -140,6 +146,7 @@ pub struct EvaluationFormBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) auto_evaluation_configuration: ::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration>,
+    pub(crate) review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
@@ -360,6 +367,20 @@ impl EvaluationFormBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         &self.auto_evaluation_configuration
     }
+    /// <p>Configuration for evaluation review settings of this evaluation form.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.review_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for evaluation review settings of this evaluation form.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.review_configuration = input;
+        self
+    }
+    /// <p>Configuration for evaluation review settings of this evaluation form.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        &self.review_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -480,6 +501,7 @@ impl EvaluationFormBuilder {
                 )
             })?,
             auto_evaluation_configuration: self.auto_evaluation_configuration,
+            review_configuration: self.review_configuration,
             tags: self.tags,
             target_configuration: self.target_configuration,
             language_configuration: self.language_configuration,

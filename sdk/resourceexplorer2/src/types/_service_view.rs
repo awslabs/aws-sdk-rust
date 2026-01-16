@@ -6,6 +6,8 @@
 pub struct ServiceView {
     /// <p>The Amazon Resource Name (ARN) of the service view.</p>
     pub service_view_arn: ::std::string::String,
+    /// <p>The name of the service view.</p>
+    pub service_view_name: ::std::option::Option<::std::string::String>,
     /// <p>A search filter defines which resources can be part of a search query result set.</p>
     pub filters: ::std::option::Option<crate::types::SearchFilter>,
     /// <p>A list of additional resource properties that are included in this view for search and filtering purposes.</p>
@@ -20,6 +22,10 @@ impl ServiceView {
     pub fn service_view_arn(&self) -> &str {
         use std::ops::Deref;
         self.service_view_arn.deref()
+    }
+    /// <p>The name of the service view.</p>
+    pub fn service_view_name(&self) -> ::std::option::Option<&str> {
+        self.service_view_name.as_deref()
     }
     /// <p>A search filter defines which resources can be part of a search query result set.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::SearchFilter> {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for ServiceView {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceView");
         formatter.field("service_view_arn", &self.service_view_arn);
+        formatter.field("service_view_name", &self.service_view_name);
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
         formatter.field("included_properties", &self.included_properties);
         formatter.field("streaming_access_for_service", &self.streaming_access_for_service);
@@ -63,6 +70,7 @@ impl ServiceView {
 #[non_exhaustive]
 pub struct ServiceViewBuilder {
     pub(crate) service_view_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_view_name: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<crate::types::SearchFilter>,
     pub(crate) included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
     pub(crate) streaming_access_for_service: ::std::option::Option<::std::string::String>,
@@ -83,6 +91,20 @@ impl ServiceViewBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service view.</p>
     pub fn get_service_view_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_view_arn
+    }
+    /// <p>The name of the service view.</p>
+    pub fn service_view_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_view_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the service view.</p>
+    pub fn set_service_view_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_view_name = input;
+        self
+    }
+    /// <p>The name of the service view.</p>
+    pub fn get_service_view_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_view_name
     }
     /// <p>A search filter defines which resources can be part of a search query result set.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
@@ -157,6 +179,7 @@ impl ServiceViewBuilder {
                     "service_view_arn was not specified but it is required when building ServiceView",
                 )
             })?,
+            service_view_name: self.service_view_name,
             filters: self.filters,
             included_properties: self.included_properties,
             streaming_access_for_service: self.streaming_access_for_service,
@@ -168,6 +191,7 @@ impl ::std::fmt::Debug for ServiceViewBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceViewBuilder");
         formatter.field("service_view_arn", &self.service_view_arn);
+        formatter.field("service_view_name", &self.service_view_name);
         formatter.field("filters", &"*** Sensitive Data Redacted ***");
         formatter.field("included_properties", &self.included_properties);
         formatter.field("streaming_access_for_service", &self.streaming_access_for_service);

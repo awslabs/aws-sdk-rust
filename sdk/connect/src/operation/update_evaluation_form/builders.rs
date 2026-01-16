@@ -243,6 +243,20 @@ impl UpdateEvaluationFormFluentBuilder {
     pub fn get_auto_evaluation_configuration(&self) -> &::std::option::Option<crate::types::EvaluationFormAutoEvaluationConfiguration> {
         self.inner.get_auto_evaluation_configuration()
     }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.inner = self.inner.review_configuration(input);
+        self
+    }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.inner = self.inner.set_review_configuration(input);
+        self
+    }
+    /// <p>Configuration for evaluation review settings of the evaluation form.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        self.inner.get_review_configuration()
+    }
     /// <p>A boolean flag indicating whether to update evaluation form to draft state.</p>
     pub fn as_draft(mut self, input: bool) -> Self {
         self.inner = self.inner.as_draft(input);

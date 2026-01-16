@@ -1186,6 +1186,15 @@ pub(crate) fn evaluation_form_version_summary_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_review_configuration_correct_errors(
+    mut builder: crate::types::builders::EvaluationReviewConfigurationBuilder,
+) -> crate::types::builders::EvaluationReviewConfigurationBuilder {
+    if builder.review_notification_recipients.is_none() {
+        builder.review_notification_recipients = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_search_summary_correct_errors(
     mut builder: crate::types::builders::EvaluationSearchSummaryBuilder,
 ) -> crate::types::builders::EvaluationSearchSummaryBuilder {
@@ -1532,6 +1541,21 @@ pub(crate) fn evaluation_acknowledgement_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_review_metadata_correct_errors(
+    mut builder: crate::types::builders::EvaluationReviewMetadataBuilder,
+) -> crate::types::builders::EvaluationReviewMetadataBuilder {
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.review_request_comments.is_none() {
+        builder.review_request_comments = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_search_metadata_correct_errors(
     mut builder: crate::types::builders::EvaluationSearchMetadataBuilder,
 ) -> crate::types::builders::EvaluationSearchMetadataBuilder {
@@ -1801,6 +1825,21 @@ pub(crate) fn evaluation_form_section_correct_errors(
     }
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_review_notification_recipient_correct_errors(
+    mut builder: crate::types::builders::EvaluationReviewNotificationRecipientBuilder,
+) -> crate::types::builders::EvaluationReviewNotificationRecipientBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EvaluationReviewNotificationRecipientType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = {
+            let builder = crate::types::builders::EvaluationReviewNotificationRecipientValueBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

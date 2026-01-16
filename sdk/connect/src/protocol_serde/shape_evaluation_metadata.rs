@@ -54,6 +54,11 @@ where
                                 crate::protocol_serde::shape_evaluation_acknowledgement::de_evaluation_acknowledgement(tokens)?,
                             );
                         }
+                        "Review" => {
+                            builder = builder.set_review(crate::protocol_serde::shape_evaluation_review_metadata::de_evaluation_review_metadata(
+                                tokens,
+                            )?);
+                        }
                         "ContactParticipant" => {
                             builder = builder.set_contact_participant(
                                 crate::protocol_serde::shape_evaluation_contact_participant::de_evaluation_contact_participant(tokens)?,

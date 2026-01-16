@@ -21,6 +21,8 @@ pub struct CreateEvaluationFormInput {
     pub as_draft: ::std::option::Option<bool>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     /// <p>Configuration that specifies the target for the evaluation form.</p>
     pub target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     /// <p>Configuration for language settings of the evaluation form.</p>
@@ -65,6 +67,10 @@ impl CreateEvaluationFormInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn review_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationReviewConfiguration> {
+        self.review_configuration.as_ref()
+    }
     /// <p>Configuration that specifies the target for the evaluation form.</p>
     pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::EvaluationFormTargetConfiguration> {
         self.target_configuration.as_ref()
@@ -94,6 +100,7 @@ pub struct CreateEvaluationFormInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) as_draft: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) review_configuration: ::std::option::Option<crate::types::EvaluationReviewConfiguration>,
     pub(crate) target_configuration: ::std::option::Option<crate::types::EvaluationFormTargetConfiguration>,
     pub(crate) language_configuration: ::std::option::Option<crate::types::EvaluationFormLanguageConfiguration>,
 }
@@ -241,6 +248,20 @@ impl CreateEvaluationFormInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn review_configuration(mut self, input: crate::types::EvaluationReviewConfiguration) -> Self {
+        self.review_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn set_review_configuration(mut self, input: ::std::option::Option<crate::types::EvaluationReviewConfiguration>) -> Self {
+        self.review_configuration = input;
+        self
+    }
+    /// <p>Configuration information about evaluation reviews.</p>
+    pub fn get_review_configuration(&self) -> &::std::option::Option<crate::types::EvaluationReviewConfiguration> {
+        &self.review_configuration
+    }
     /// <p>Configuration that specifies the target for the evaluation form.</p>
     pub fn target_configuration(mut self, input: crate::types::EvaluationFormTargetConfiguration) -> Self {
         self.target_configuration = ::std::option::Option::Some(input);
@@ -284,6 +305,7 @@ impl CreateEvaluationFormInputBuilder {
             client_token: self.client_token,
             as_draft: self.as_draft,
             tags: self.tags,
+            review_configuration: self.review_configuration,
             target_configuration: self.target_configuration,
             language_configuration: self.language_configuration,
         })

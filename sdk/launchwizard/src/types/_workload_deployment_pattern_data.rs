@@ -10,6 +10,8 @@ pub struct WorkloadDeploymentPatternData {
     pub deployment_pattern_name: ::std::option::Option<::std::string::String>,
     /// <p>The workload version name of the deployment pattern.</p>
     pub workload_version_name: ::std::option::Option<::std::string::String>,
+    /// <p>The version name of the deployment pattern.</p>
+    pub deployment_pattern_version_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the deployment pattern.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the deployment pattern.</p>
@@ -33,6 +35,10 @@ impl WorkloadDeploymentPatternData {
     /// <p>The workload version name of the deployment pattern.</p>
     pub fn workload_version_name(&self) -> ::std::option::Option<&str> {
         self.workload_version_name.as_deref()
+    }
+    /// <p>The version name of the deployment pattern.</p>
+    pub fn deployment_pattern_version_name(&self) -> ::std::option::Option<&str> {
+        self.deployment_pattern_version_name.as_deref()
     }
     /// <p>The display name of the deployment pattern.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,7 @@ pub struct WorkloadDeploymentPatternDataBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_pattern_name: ::std::option::Option<::std::string::String>,
     pub(crate) workload_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_pattern_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkloadDeploymentPatternStatus>,
@@ -119,6 +126,20 @@ impl WorkloadDeploymentPatternDataBuilder {
     /// <p>The workload version name of the deployment pattern.</p>
     pub fn get_workload_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_version_name
+    }
+    /// <p>The version name of the deployment pattern.</p>
+    pub fn deployment_pattern_version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deployment_pattern_version_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version name of the deployment pattern.</p>
+    pub fn set_deployment_pattern_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_pattern_version_name = input;
+        self
+    }
+    /// <p>The version name of the deployment pattern.</p>
+    pub fn get_deployment_pattern_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_pattern_version_name
     }
     /// <p>The display name of the deployment pattern.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,6 +223,7 @@ impl WorkloadDeploymentPatternDataBuilder {
             workload_name: self.workload_name,
             deployment_pattern_name: self.deployment_pattern_name,
             workload_version_name: self.workload_version_name,
+            deployment_pattern_version_name: self.deployment_pattern_version_name,
             display_name: self.display_name,
             description: self.description,
             status: self.status,

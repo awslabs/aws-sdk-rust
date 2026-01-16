@@ -100,6 +100,11 @@ where
                                     crate::protocol_serde::shape_evaluation_form_auto_evaluation_configuration::de_evaluation_form_auto_evaluation_configuration(tokens)?
                                 );
                         }
+                        "ReviewConfiguration" => {
+                            builder = builder.set_review_configuration(
+                                crate::protocol_serde::shape_evaluation_review_configuration::de_evaluation_review_configuration(tokens)?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

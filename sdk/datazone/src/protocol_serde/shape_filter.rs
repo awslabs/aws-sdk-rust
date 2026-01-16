@@ -9,5 +9,14 @@ pub fn ser_filter(
     {
         object.key("value").string(input.value.as_str());
     }
+    if let Some(var_1) = &input.int_value {
+        object.key("intValue").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
+    {
+        object.key("operator").string(input.operator.as_str());
+    }
     Ok(())
 }

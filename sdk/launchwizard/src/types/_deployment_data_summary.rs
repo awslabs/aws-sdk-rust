@@ -16,6 +16,8 @@ pub struct DeploymentDataSummary {
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The time the deployment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time the deployment was last modified.</p>
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentDataSummary {
     /// <p>The name of the deployment</p>
@@ -42,6 +44,10 @@ impl DeploymentDataSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
+    }
 }
 impl DeploymentDataSummary {
     /// Creates a new builder-style object to manufacture [`DeploymentDataSummary`](crate::types::DeploymentDataSummary).
@@ -60,6 +66,7 @@ pub struct DeploymentDataSummaryBuilder {
     pub(crate) pattern_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentDataSummaryBuilder {
     /// <p>The name of the deployment</p>
@@ -146,6 +153,20 @@ impl DeploymentDataSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input;
+        self
+    }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     /// Consumes the builder and constructs a [`DeploymentDataSummary`](crate::types::DeploymentDataSummary).
     pub fn build(self) -> crate::types::DeploymentDataSummary {
         crate::types::DeploymentDataSummary {
@@ -155,6 +176,7 @@ impl DeploymentDataSummaryBuilder {
             pattern_name: self.pattern_name,
             status: self.status,
             created_at: self.created_at,
+            modified_at: self.modified_at,
         }
     }
 }

@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "deploymentPatternVersionName" => {
+                            builder = builder.set_deployment_pattern_version_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "displayName" => {
                             builder = builder.set_display_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

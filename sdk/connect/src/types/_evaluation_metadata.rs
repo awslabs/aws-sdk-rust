@@ -18,6 +18,8 @@ pub struct EvaluationMetadata {
     pub auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
     /// <p>Information related to evaluation acknowledgement.</p>
     pub acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
+    /// <p>Information about reviews of this evaluation.</p>
+    pub review: ::std::option::Option<crate::types::EvaluationReviewMetadata>,
     /// <p>Information about a contact participant in this evaluation.</p>
     pub contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
     /// <p>Identifier of the sampling job.</p>
@@ -54,6 +56,10 @@ impl EvaluationMetadata {
     pub fn acknowledgement(&self) -> ::std::option::Option<&crate::types::EvaluationAcknowledgement> {
         self.acknowledgement.as_ref()
     }
+    /// <p>Information about reviews of this evaluation.</p>
+    pub fn review(&self) -> ::std::option::Option<&crate::types::EvaluationReviewMetadata> {
+        self.review.as_ref()
+    }
     /// <p>Information about a contact participant in this evaluation.</p>
     pub fn contact_participant(&self) -> ::std::option::Option<&crate::types::EvaluationContactParticipant> {
         self.contact_participant.as_ref()
@@ -81,6 +87,7 @@ pub struct EvaluationMetadataBuilder {
     pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
     pub(crate) auto_evaluation: ::std::option::Option<crate::types::AutoEvaluationDetails>,
     pub(crate) acknowledgement: ::std::option::Option<crate::types::EvaluationAcknowledgement>,
+    pub(crate) review: ::std::option::Option<crate::types::EvaluationReviewMetadata>,
     pub(crate) contact_participant: ::std::option::Option<crate::types::EvaluationContactParticipant>,
     pub(crate) sampling_job_id: ::std::option::Option<::std::string::String>,
 }
@@ -185,6 +192,20 @@ impl EvaluationMetadataBuilder {
     pub fn get_acknowledgement(&self) -> &::std::option::Option<crate::types::EvaluationAcknowledgement> {
         &self.acknowledgement
     }
+    /// <p>Information about reviews of this evaluation.</p>
+    pub fn review(mut self, input: crate::types::EvaluationReviewMetadata) -> Self {
+        self.review = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about reviews of this evaluation.</p>
+    pub fn set_review(mut self, input: ::std::option::Option<crate::types::EvaluationReviewMetadata>) -> Self {
+        self.review = input;
+        self
+    }
+    /// <p>Information about reviews of this evaluation.</p>
+    pub fn get_review(&self) -> &::std::option::Option<crate::types::EvaluationReviewMetadata> {
+        &self.review
+    }
     /// <p>Information about a contact participant in this evaluation.</p>
     pub fn contact_participant(mut self, input: crate::types::EvaluationContactParticipant) -> Self {
         self.contact_participant = ::std::option::Option::Some(input);
@@ -236,6 +257,7 @@ impl EvaluationMetadataBuilder {
             score: self.score,
             auto_evaluation: self.auto_evaluation,
             acknowledgement: self.acknowledgement,
+            review: self.review,
             contact_participant: self.contact_participant,
             sampling_job_id: self.sampling_job_id,
         })

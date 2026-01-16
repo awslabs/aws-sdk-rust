@@ -169,11 +169,15 @@ mod delete_deployment;
 
 mod get_deployment;
 
+mod get_deployment_pattern_version;
+
 mod get_workload;
 
 mod get_workload_deployment_pattern;
 
 mod list_deployment_events;
+
+mod list_deployment_pattern_versions;
 
 mod list_deployments;
 
@@ -186,3 +190,5 @@ mod list_workloads;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_deployment;

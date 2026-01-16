@@ -1393,6 +1393,8 @@ pub(crate) mod shape_evaluation_form_version_summary_list;
 
 pub(crate) mod shape_evaluation_note;
 
+pub(crate) mod shape_evaluation_review_configuration;
+
 pub(crate) mod shape_evaluation_search_criteria;
 
 pub(crate) mod shape_evaluation_search_filter;
@@ -1907,6 +1909,8 @@ pub(crate) mod shape_evaluation_metadata;
 
 pub(crate) mod shape_evaluation_notes_map;
 
+pub(crate) mod shape_evaluation_review_notification_recipient;
+
 pub(crate) mod shape_evaluation_scores_map;
 
 pub(crate) mod shape_evaluation_search_summary;
@@ -2239,6 +2243,12 @@ pub(crate) mod shape_evaluation_form_item_enablement_configuration;
 
 pub(crate) mod shape_evaluation_form_question_type_properties;
 
+pub(crate) mod shape_evaluation_review_metadata;
+
+pub(crate) mod shape_evaluation_review_notification_recipient_list;
+
+pub(crate) mod shape_evaluation_review_notification_recipient_value;
+
 pub(crate) mod shape_evaluation_score;
 
 pub(crate) mod shape_evaluation_search_metadata;
@@ -2369,6 +2379,8 @@ pub(crate) mod shape_evaluation_form_single_select_question_properties;
 
 pub(crate) mod shape_evaluation_form_text_question_properties;
 
+pub(crate) mod shape_evaluation_review_request_comment_list;
+
 pub(crate) mod shape_evaluation_suggested_answers_list;
 
 pub(crate) mod shape_field_value_union;
@@ -2460,6 +2472,8 @@ pub(crate) mod shape_evaluation_form_single_select_question_automation;
 pub(crate) mod shape_evaluation_form_single_select_question_option;
 
 pub(crate) mod shape_evaluation_form_text_question_automation;
+
+pub(crate) mod shape_evaluation_review_request_comment;
 
 pub(crate) mod shape_evaluation_suggested_answer;
 

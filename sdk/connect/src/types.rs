@@ -255,6 +255,14 @@ pub use crate::types::_evaluation_form_target_configuration::EvaluationFormTarge
 
 pub use crate::types::_contact_interaction_type::ContactInteractionType;
 
+pub use crate::types::_evaluation_review_configuration::EvaluationReviewConfiguration;
+
+pub use crate::types::_evaluation_review_notification_recipient::EvaluationReviewNotificationRecipient;
+
+pub use crate::types::_evaluation_review_notification_recipient_value::EvaluationReviewNotificationRecipientValue;
+
+pub use crate::types::_evaluation_review_notification_recipient_type::EvaluationReviewNotificationRecipientType;
+
 pub use crate::types::_evaluation_form_auto_evaluation_configuration::EvaluationFormAutoEvaluationConfiguration;
 
 pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategy;
@@ -1181,6 +1189,10 @@ pub use crate::types::_evaluation_suggested_answer_status::EvaluationSuggestedAn
 
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
+pub use crate::types::_evaluation_review_metadata::EvaluationReviewMetadata;
+
+pub use crate::types::_evaluation_review_request_comment::EvaluationReviewRequestComment;
+
 pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgement;
 
 pub use crate::types::_auto_evaluation_details::AutoEvaluationDetails;
@@ -1816,6 +1828,18 @@ mod _evaluation_question_answer_analysis_details;
 mod _evaluation_question_answer_analysis_type;
 
 mod _evaluation_question_input_details;
+
+mod _evaluation_review_configuration;
+
+mod _evaluation_review_metadata;
+
+mod _evaluation_review_notification_recipient;
+
+mod _evaluation_review_notification_recipient_type;
+
+mod _evaluation_review_notification_recipient_value;
+
+mod _evaluation_review_request_comment;
 
 mod _evaluation_score;
 

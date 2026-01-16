@@ -11,9 +11,13 @@ pub use crate::types::_deployment_conditional_field::DeploymentConditionalFieldB
 
 pub use crate::types::_workload_deployment_pattern_data_summary::WorkloadDeploymentPatternDataSummaryBuilder;
 
-pub use crate::types::_deployment_data::DeploymentDataBuilder;
+pub use crate::types::_deployment_pattern_version_data_summary::DeploymentPatternVersionDataSummaryBuilder;
+
+pub use crate::types::_deployment_pattern_version_filter::DeploymentPatternVersionFilterBuilder;
 
 pub use crate::types::_deployment_data_summary::DeploymentDataSummaryBuilder;
+
+pub use crate::types::_deployment_data::DeploymentDataBuilder;
 
 pub use crate::types::_deployment_filter::DeploymentFilterBuilder;
 

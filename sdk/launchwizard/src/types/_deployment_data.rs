@@ -16,6 +16,8 @@ pub struct DeploymentData {
     pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The time the deployment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time the deployment was last modified.</p>
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The resource group of the deployment.</p>
@@ -52,6 +54,10 @@ impl DeploymentData {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.modified_at.as_ref()
+    }
     /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub fn specifications(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.specifications.as_ref()
@@ -82,6 +88,7 @@ impl ::std::fmt::Debug for DeploymentData {
         formatter.field("pattern_name", &self.pattern_name);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
         formatter.field("specifications", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_group", &self.resource_group);
         formatter.field("deleted_at", &self.deleted_at);
@@ -107,6 +114,7 @@ pub struct DeploymentDataBuilder {
     pub(crate) pattern_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) resource_group: ::std::option::Option<::std::string::String>,
     pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -197,6 +205,20 @@ impl DeploymentDataBuilder {
     /// <p>The time the deployment was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
+    }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input;
+        self
+    }
+    /// <p>The time the deployment was last modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Adds a key-value pair to `specifications`.
     ///
@@ -296,6 +318,7 @@ impl DeploymentDataBuilder {
             pattern_name: self.pattern_name,
             status: self.status,
             created_at: self.created_at,
+            modified_at: self.modified_at,
             specifications: self.specifications,
             resource_group: self.resource_group,
             deleted_at: self.deleted_at,
@@ -313,6 +336,7 @@ impl ::std::fmt::Debug for DeploymentDataBuilder {
         formatter.field("pattern_name", &self.pattern_name);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
+        formatter.field("modified_at", &self.modified_at);
         formatter.field("specifications", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_group", &self.resource_group);
         formatter.field("deleted_at", &self.deleted_at);

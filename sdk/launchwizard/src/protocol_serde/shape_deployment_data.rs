@@ -55,6 +55,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "modifiedAt" => {
+                            builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "specifications" => {
                             builder = builder.set_specifications(
                                 crate::protocol_serde::shape_deployment_specifications::de_deployment_specifications(tokens)?,

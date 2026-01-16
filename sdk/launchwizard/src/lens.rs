@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_deployment_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_deployment_pattern_versions_output_output_next_token(
+    input: &crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_deployments_output_output_next_token(
     input: &crate::operation::list_deployments::ListDeploymentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -43,6 +53,13 @@ pub(crate) fn lens_list_deployment_events_output_output_deployment_events(
     input: crate::operation::list_deployment_events::ListDeploymentEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentEventDataSummary>> {
     let input = input.deployment_events?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_deployment_pattern_versions_output_output_deployment_pattern_versions(
+    input: crate::operation::list_deployment_pattern_versions::ListDeploymentPatternVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DeploymentPatternVersionDataSummary>> {
+    let input = input.deployment_pattern_versions?;
     ::std::option::Option::Some(input)
 }
 

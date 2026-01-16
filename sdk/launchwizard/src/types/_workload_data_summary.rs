@@ -8,6 +8,8 @@ pub struct WorkloadDataSummary {
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the workload data.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the workload.</p>
+    pub status: ::std::option::Option<crate::types::WorkloadStatus>,
 }
 impl WorkloadDataSummary {
     /// <p>The name of the workload.</p>
@@ -17,6 +19,10 @@ impl WorkloadDataSummary {
     /// <p>The display name of the workload data.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
+    }
+    /// <p>The status of the workload.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
+        self.status.as_ref()
     }
 }
 impl WorkloadDataSummary {
@@ -32,6 +38,7 @@ impl WorkloadDataSummary {
 pub struct WorkloadDataSummaryBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkloadStatus>,
 }
 impl WorkloadDataSummaryBuilder {
     /// <p>The name of the workload.</p>
@@ -62,11 +69,26 @@ impl WorkloadDataSummaryBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
+    /// <p>The status of the workload.</p>
+    pub fn status(mut self, input: crate::types::WorkloadStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the workload.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkloadStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the workload.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`WorkloadDataSummary`](crate::types::WorkloadDataSummary).
     pub fn build(self) -> crate::types::WorkloadDataSummary {
         crate::types::WorkloadDataSummary {
             workload_name: self.workload_name,
             display_name: self.display_name,
+            status: self.status,
         }
     }
 }

@@ -463,6 +463,8 @@ pub use crate::types::_filter_clause::FilterClause;
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_filter_operator::FilterOperator;
+
 pub use crate::types::_search_in_item::SearchInItem;
 
 pub use crate::types::_types_search_scope::TypesSearchScope;
@@ -1068,6 +1070,8 @@ mod _filter_clause;
 mod _filter_expression;
 
 mod _filter_expression_type;
+
+mod _filter_operator;
 
 mod _filter_status;
 

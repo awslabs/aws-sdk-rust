@@ -165,6 +165,12 @@ pub use crate::types::_evaluation_form_language_configuration::EvaluationFormLan
 
 pub use crate::types::_evaluation_form_target_configuration::EvaluationFormTargetConfigurationBuilder;
 
+pub use crate::types::_evaluation_review_configuration::EvaluationReviewConfigurationBuilder;
+
+pub use crate::types::_evaluation_review_notification_recipient::EvaluationReviewNotificationRecipientBuilder;
+
+pub use crate::types::_evaluation_review_notification_recipient_value::EvaluationReviewNotificationRecipientValueBuilder;
+
 pub use crate::types::_evaluation_form_auto_evaluation_configuration::EvaluationFormAutoEvaluationConfigurationBuilder;
 
 pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategyBuilder;
@@ -844,6 +850,10 @@ pub use crate::types::_evaluation_gen_ai_answer_analysis_details::EvaluationGenA
 pub use crate::types::_evaluation_question_input_details::EvaluationQuestionInputDetailsBuilder;
 
 pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
+
+pub use crate::types::_evaluation_review_metadata::EvaluationReviewMetadataBuilder;
+
+pub use crate::types::_evaluation_review_request_comment::EvaluationReviewRequestCommentBuilder;
 
 pub use crate::types::_evaluation_acknowledgement::EvaluationAcknowledgementBuilder;
 
