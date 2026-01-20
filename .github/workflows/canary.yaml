@@ -71,14 +71,11 @@ jobs:
           targets: x86_64-unknown-linux-musl
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y musl-dev musl-tools
-      - name: Install cargo component for wasm canary
-        env:
-          # Must be in sync with that specified in `smithy-rs`
-          CARGO_COMPONENT_VERSION: 0.20.0
+      - name: Add wasm32-wasip2 target for wasm canary
         run: |
           rustup toolchain install ${{ env.rust_nightly_version }}
           rustup component add rustfmt
-          cargo +${{ env.rust_nightly_version }} install cargo-component --locked --version ${CARGO_COMPONENT_VERSION}
+          rustup target add wasm32-wasip2
       - name: Compile the canary runner
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
