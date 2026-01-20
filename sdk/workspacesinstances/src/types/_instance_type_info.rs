@@ -6,11 +6,19 @@
 pub struct InstanceTypeInfo {
     /// <p>Unique identifier for the WorkSpace Instance type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
+    /// <p>Lists all valid combinations of tenancy, platform type, and billing mode supported for the specific WorkSpace Instance type. Contains the complete set of configuration options available for this instance type.</p>
+    pub supported_instance_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceConfiguration>>,
 }
 impl InstanceTypeInfo {
     /// <p>Unique identifier for the WorkSpace Instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
+    }
+    /// <p>Lists all valid combinations of tenancy, platform type, and billing mode supported for the specific WorkSpace Instance type. Contains the complete set of configuration options available for this instance type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_configurations.is_none()`.
+    pub fn supported_instance_configurations(&self) -> &[crate::types::SupportedInstanceConfiguration] {
+        self.supported_instance_configurations.as_deref().unwrap_or_default()
     }
 }
 impl InstanceTypeInfo {
@@ -25,6 +33,7 @@ impl InstanceTypeInfo {
 #[non_exhaustive]
 pub struct InstanceTypeInfoBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_instance_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceConfiguration>>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>Unique identifier for the WorkSpace Instance type.</p>
@@ -41,10 +50,34 @@ impl InstanceTypeInfoBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
+    /// Appends an item to `supported_instance_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_supported_instance_configurations`](Self::set_supported_instance_configurations).
+    ///
+    /// <p>Lists all valid combinations of tenancy, platform type, and billing mode supported for the specific WorkSpace Instance type. Contains the complete set of configuration options available for this instance type.</p>
+    pub fn supported_instance_configurations(mut self, input: crate::types::SupportedInstanceConfiguration) -> Self {
+        let mut v = self.supported_instance_configurations.unwrap_or_default();
+        v.push(input);
+        self.supported_instance_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists all valid combinations of tenancy, platform type, and billing mode supported for the specific WorkSpace Instance type. Contains the complete set of configuration options available for this instance type.</p>
+    pub fn set_supported_instance_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceConfiguration>>,
+    ) -> Self {
+        self.supported_instance_configurations = input;
+        self
+    }
+    /// <p>Lists all valid combinations of tenancy, platform type, and billing mode supported for the specific WorkSpace Instance type. Contains the complete set of configuration options available for this instance type.</p>
+    pub fn get_supported_instance_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedInstanceConfiguration>> {
+        &self.supported_instance_configurations
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
             instance_type: self.instance_type,
+            supported_instance_configurations: self.supported_instance_configurations,
         }
     }
 }

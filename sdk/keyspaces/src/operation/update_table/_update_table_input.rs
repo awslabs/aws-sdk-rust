@@ -73,6 +73,8 @@ pub struct UpdateTableInput {
     pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
     /// <p>The CDC stream settings of the table.</p>
     pub cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecification>,
 }
 impl UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -173,6 +175,10 @@ impl UpdateTableInput {
     pub fn cdc_specification(&self) -> ::std::option::Option<&crate::types::CdcSpecification> {
         self.cdc_specification.as_ref()
     }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn warm_throughput_specification(&self) -> ::std::option::Option<&crate::types::WarmThroughputSpecification> {
+        self.warm_throughput_specification.as_ref()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -197,6 +203,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
     pub(crate) cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
+    pub(crate) warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecification>,
 }
 impl UpdateTableInputBuilder {
     /// <p>The name of the keyspace the specified table is stored in.</p>
@@ -519,6 +526,20 @@ impl UpdateTableInputBuilder {
     pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecification> {
         &self.cdc_specification
     }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn warm_throughput_specification(mut self, input: crate::types::WarmThroughputSpecification) -> Self {
+        self.warm_throughput_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn set_warm_throughput_specification(mut self, input: ::std::option::Option<crate::types::WarmThroughputSpecification>) -> Self {
+        self.warm_throughput_specification = input;
+        self
+    }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn get_warm_throughput_specification(&self) -> &::std::option::Option<crate::types::WarmThroughputSpecification> {
+        &self.warm_throughput_specification
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -534,6 +555,7 @@ impl UpdateTableInputBuilder {
             auto_scaling_specification: self.auto_scaling_specification,
             replica_specifications: self.replica_specifications,
             cdc_specification: self.cdc_specification,
+            warm_throughput_specification: self.warm_throughput_specification,
         })
     }
 }

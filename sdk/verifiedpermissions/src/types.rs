@@ -59,6 +59,16 @@ pub use crate::types::_validation_mode::ValidationMode;
 
 pub use crate::types::_cedar_version::CedarVersion;
 
+pub use crate::types::_encryption_state::EncryptionState;
+
+pub use crate::types::_unit::Unit;
+
+pub use crate::types::_kms_encryption_state::KmsEncryptionState;
+
+pub use crate::types::_encryption_settings::EncryptionSettings;
+
+pub use crate::types::_kms_encryption_settings::KmsEncryptionSettings;
+
 pub use crate::types::_policy_store_item::PolicyStoreItem;
 
 pub use crate::types::_policy_template_item::PolicyTemplateItem;
@@ -211,6 +221,10 @@ mod _deletion_protection;
 
 mod _determining_policy_item;
 
+mod _encryption_settings;
+
+mod _encryption_state;
+
 mod _entities_definition;
 
 mod _entity_identifier;
@@ -228,6 +242,10 @@ mod _identity_source_filter;
 mod _identity_source_item;
 
 mod _identity_source_item_details;
+
+mod _kms_encryption_settings;
+
+mod _kms_encryption_state;
 
 mod _open_id_connect_access_token_configuration;
 
@@ -296,6 +314,8 @@ mod _template_linked_policy_definition;
 mod _template_linked_policy_definition_detail;
 
 mod _template_linked_policy_definition_item;
+
+mod _unit;
 
 mod _update_cognito_group_configuration;
 

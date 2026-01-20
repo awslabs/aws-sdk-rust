@@ -17,6 +17,8 @@ pub use crate::types::_tool::Tool;
 
 pub use crate::types::_cache_point_block::CachePointBlock;
 
+pub use crate::types::_cache_ttl::CacheTtl;
+
 pub use crate::types::_cache_point_type::CachePointType;
 
 pub use crate::types::_system_tool::SystemTool;
@@ -253,6 +255,8 @@ pub use crate::types::_converse_stream_metrics::ConverseStreamMetrics;
 
 pub use crate::types::_token_usage::TokenUsage;
 
+pub use crate::types::_cache_detail::CacheDetail;
+
 pub use crate::types::_message_stop_event::MessageStopEvent;
 
 pub use crate::types::_stop_reason::StopReason;
@@ -363,9 +367,13 @@ mod _bidirectional_input_payload_part;
 
 mod _bidirectional_output_payload_part;
 
+mod _cache_detail;
+
 mod _cache_point_block;
 
 mod _cache_point_type;
+
+mod _cache_ttl;
 
 mod _citation;
 

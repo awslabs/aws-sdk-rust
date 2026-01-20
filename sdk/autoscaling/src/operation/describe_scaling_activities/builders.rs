@@ -121,34 +121,40 @@ impl DescribeScalingActivitiesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_activity_ids`](Self::set_activity_ids).
     ///
-    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
+    /// <p>The activity IDs of the desired scaling activities. If unknown activity IDs are requested, they are ignored with no error. Only activities started within the last six weeks can be returned regardless of the activity IDs specified. If other filters are specified with the request, only results matching all filter criteria can be returned.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
     pub fn activity_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.activity_ids(input.into());
         self
     }
-    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
+    /// <p>The activity IDs of the desired scaling activities. If unknown activity IDs are requested, they are ignored with no error. Only activities started within the last six weeks can be returned regardless of the activity IDs specified. If other filters are specified with the request, only results matching all filter criteria can be returned.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
     pub fn set_activity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_activity_ids(input);
         self
     }
-    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
+    /// <p>The activity IDs of the desired scaling activities. If unknown activity IDs are requested, they are ignored with no error. Only activities started within the last six weeks can be returned regardless of the activity IDs specified. If other filters are specified with the request, only results matching all filter criteria can be returned.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
     pub fn get_activity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_activity_ids()
     }
-    /// <p>The name of the Auto Scaling group.</p>
+    /// <p>The name of the Auto Scaling group.</p><important>
+    /// <p>Omitting this property performs an account-wide operation, which can result in slower or timed-out requests.</p>
+    /// </important>
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
-    /// <p>The name of the Auto Scaling group.</p>
+    /// <p>The name of the Auto Scaling group.</p><important>
+    /// <p>Omitting this property performs an account-wide operation, which can result in slower or timed-out requests.</p>
+    /// </important>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
-    /// <p>The name of the Auto Scaling group.</p>
+    /// <p>The name of the Auto Scaling group.</p><important>
+    /// <p>Omitting this property performs an account-wide operation, which can result in slower or timed-out requests.</p>
+    /// </important>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_group_name()
     }
@@ -193,5 +199,48 @@ impl DescribeScalingActivitiesFluentBuilder {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    ///
+    /// Appends an item to `Filters`.
+    ///
+    /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+    ///
+    /// <p>One or more filters to limit the results based on specific criteria. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    pub fn filters(mut self, input: crate::types::Filter) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>One or more filters to limit the results based on specific criteria. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>One or more filters to limit the results based on specific criteria. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

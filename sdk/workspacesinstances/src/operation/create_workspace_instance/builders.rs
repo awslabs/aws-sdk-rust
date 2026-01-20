@@ -155,4 +155,18 @@ impl CreateWorkspaceInstanceFluentBuilder {
     pub fn get_managed_instance(&self) -> &::std::option::Option<crate::types::ManagedInstanceRequest> {
         self.inner.get_managed_instance()
     }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn billing_configuration(mut self, input: crate::types::BillingConfiguration) -> Self {
+        self.inner = self.inner.billing_configuration(input);
+        self
+    }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn set_billing_configuration(mut self, input: ::std::option::Option<crate::types::BillingConfiguration>) -> Self {
+        self.inner = self.inner.set_billing_configuration(input);
+        self
+    }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn get_billing_configuration(&self) -> &::std::option::Option<crate::types::BillingConfiguration> {
+        self.inner.get_billing_configuration()
+    }
 }

@@ -6,11 +6,17 @@
 pub struct CachePointBlock {
     /// <p>Specifies the type of cache point within the CachePointBlock.</p>
     pub r#type: crate::types::CachePointType,
+    /// <p>Optional TTL duration for cache entries. When specified, enables extended TTL caching with the specified duration. When omitted, uses <code>type</code> value for caching behavior.</p>
+    pub ttl: ::std::option::Option<crate::types::CacheTtl>,
 }
 impl CachePointBlock {
     /// <p>Specifies the type of cache point within the CachePointBlock.</p>
     pub fn r#type(&self) -> &crate::types::CachePointType {
         &self.r#type
+    }
+    /// <p>Optional TTL duration for cache entries. When specified, enables extended TTL caching with the specified duration. When omitted, uses <code>type</code> value for caching behavior.</p>
+    pub fn ttl(&self) -> ::std::option::Option<&crate::types::CacheTtl> {
+        self.ttl.as_ref()
     }
 }
 impl CachePointBlock {
@@ -25,6 +31,7 @@ impl CachePointBlock {
 #[non_exhaustive]
 pub struct CachePointBlockBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CachePointType>,
+    pub(crate) ttl: ::std::option::Option<crate::types::CacheTtl>,
 }
 impl CachePointBlockBuilder {
     /// <p>Specifies the type of cache point within the CachePointBlock.</p>
@@ -42,6 +49,20 @@ impl CachePointBlockBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CachePointType> {
         &self.r#type
     }
+    /// <p>Optional TTL duration for cache entries. When specified, enables extended TTL caching with the specified duration. When omitted, uses <code>type</code> value for caching behavior.</p>
+    pub fn ttl(mut self, input: crate::types::CacheTtl) -> Self {
+        self.ttl = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional TTL duration for cache entries. When specified, enables extended TTL caching with the specified duration. When omitted, uses <code>type</code> value for caching behavior.</p>
+    pub fn set_ttl(mut self, input: ::std::option::Option<crate::types::CacheTtl>) -> Self {
+        self.ttl = input;
+        self
+    }
+    /// <p>Optional TTL duration for cache entries. When specified, enables extended TTL caching with the specified duration. When omitted, uses <code>type</code> value for caching behavior.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<crate::types::CacheTtl> {
+        &self.ttl
+    }
     /// Consumes the builder and constructs a [`CachePointBlock`](crate::types::CachePointBlock).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::CachePointBlockBuilder::type)
@@ -53,6 +74,7 @@ impl CachePointBlockBuilder {
                     "r#type was not specified but it is required when building CachePointBlock",
                 )
             })?,
+            ttl: self.ttl,
         })
     }
 }

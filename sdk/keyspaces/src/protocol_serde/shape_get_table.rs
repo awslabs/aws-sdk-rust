@@ -224,6 +224,11 @@ pub(crate) fn de_get_table(
                         tokens,
                     )?);
                 }
+                "warmThroughputSpecification" => {
+                    builder = builder.set_warm_throughput_specification(
+                        crate::protocol_serde::shape_warm_throughput_specification_summary::de_warm_throughput_specification_summary(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

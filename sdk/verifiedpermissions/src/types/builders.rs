@@ -33,6 +33,12 @@ pub use crate::types::_batch_is_authorized_input_item::BatchIsAuthorizedInputIte
 
 pub use crate::types::_validation_settings::ValidationSettingsBuilder;
 
+pub use crate::types::_unit::UnitBuilder;
+
+pub use crate::types::_kms_encryption_state::KmsEncryptionStateBuilder;
+
+pub use crate::types::_kms_encryption_settings::KmsEncryptionSettingsBuilder;
+
 pub use crate::types::_policy_store_item::PolicyStoreItemBuilder;
 
 pub use crate::types::_policy_template_item::PolicyTemplateItemBuilder;

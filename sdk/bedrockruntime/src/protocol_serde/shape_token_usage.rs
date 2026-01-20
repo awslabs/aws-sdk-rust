@@ -49,6 +49,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "cacheDetails" => {
+                            builder = builder.set_cache_details(crate::protocol_serde::shape_cache_details_list::de_cache_details_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -39,6 +39,17 @@ pub fn ser_describe_scaling_activities_input_input_input(
     if let Some(var_13) = &input.next_token {
         scope_12.string(var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("Filters");
+    if let Some(var_15) = &input.filters {
+        let mut list_17 = scope_14.start_list(false, None);
+        for item_16 in var_15 {
+            #[allow(unused_mut)]
+            let mut entry_18 = list_17.entry();
+            crate::protocol_serde::shape_filter::ser_filter(entry_18, item_16)?;
+        }
+        list_17.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

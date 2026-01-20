@@ -155,6 +155,8 @@ pub(crate) mod shape_async_invoke_summary;
 
 pub(crate) mod shape_bidirectional_output_payload_part;
 
+pub(crate) mod shape_cache_details_list;
+
 pub(crate) mod shape_cache_point_block;
 
 pub(crate) mod shape_content_block;
@@ -206,6 +208,8 @@ pub(crate) mod shape_applied_guardrail_details;
 pub(crate) mod shape_audio_block;
 
 pub(crate) mod shape_auto_tool_choice;
+
+pub(crate) mod shape_cache_detail;
 
 pub(crate) mod shape_citations_content_block;
 

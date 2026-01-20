@@ -18,6 +18,8 @@ pub struct GetPolicyStoreOutput {
     /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
     /// <p>The default state is <code>DISABLED</code>.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    /// <p>A structure that contains the encryption configuration for the policy store.</p>
+    pub encryption_state: ::std::option::Option<crate::types::EncryptionState>,
     /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
     pub cedar_version: ::std::option::Option<crate::types::CedarVersion>,
     /// <p>The list of tags associated with the policy store.</p>
@@ -56,6 +58,10 @@ impl GetPolicyStoreOutput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
     }
+    /// <p>A structure that contains the encryption configuration for the policy store.</p>
+    pub fn encryption_state(&self) -> ::std::option::Option<&crate::types::EncryptionState> {
+        self.encryption_state.as_ref()
+    }
     /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
     pub fn cedar_version(&self) -> ::std::option::Option<&crate::types::CedarVersion> {
         self.cedar_version.as_ref()
@@ -75,6 +81,7 @@ impl ::std::fmt::Debug for GetPolicyStoreOutput {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_state", &self.encryption_state);
         formatter.field("cedar_version", &self.cedar_version);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
@@ -104,6 +111,7 @@ pub struct GetPolicyStoreOutputBuilder {
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    pub(crate) encryption_state: ::std::option::Option<crate::types::EncryptionState>,
     pub(crate) cedar_version: ::std::option::Option<crate::types::CedarVersion>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -215,6 +223,20 @@ impl GetPolicyStoreOutputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }
+    /// <p>A structure that contains the encryption configuration for the policy store.</p>
+    pub fn encryption_state(mut self, input: crate::types::EncryptionState) -> Self {
+        self.encryption_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the encryption configuration for the policy store.</p>
+    pub fn set_encryption_state(mut self, input: ::std::option::Option<crate::types::EncryptionState>) -> Self {
+        self.encryption_state = input;
+        self
+    }
+    /// <p>A structure that contains the encryption configuration for the policy store.</p>
+    pub fn get_encryption_state(&self) -> &::std::option::Option<crate::types::EncryptionState> {
+        &self.encryption_state
+    }
     /// <p>The version of the Cedar language used with policies, policy templates, and schemas in this policy store. For more information, see <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/cedar4-faq.html">Amazon Verified Permissions upgrade to Cedar v4 FAQ</a>.</p>
     pub fn cedar_version(mut self, input: crate::types::CedarVersion) -> Self {
         self.cedar_version = ::std::option::Option::Some(input);
@@ -295,6 +317,7 @@ impl GetPolicyStoreOutputBuilder {
             })?,
             description: self.description,
             deletion_protection: self.deletion_protection,
+            encryption_state: self.encryption_state,
             cedar_version: self.cedar_version,
             tags: self.tags,
             _request_id: self._request_id,
@@ -311,6 +334,7 @@ impl ::std::fmt::Debug for GetPolicyStoreOutputBuilder {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_state", &self.encryption_state);
         formatter.field("cedar_version", &self.cedar_version);
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);

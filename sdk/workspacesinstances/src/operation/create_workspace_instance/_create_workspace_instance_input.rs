@@ -10,6 +10,8 @@ pub struct CreateWorkspaceInstanceInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Comprehensive configuration settings for the WorkSpaces Instance, including network, compute, and storage parameters.</p>
     pub managed_instance: ::std::option::Option<crate::types::ManagedInstanceRequest>,
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub billing_configuration: ::std::option::Option<crate::types::BillingConfiguration>,
 }
 impl CreateWorkspaceInstanceInput {
     /// <p>Unique token to ensure idempotent instance creation, preventing duplicate workspace launches.</p>
@@ -26,6 +28,10 @@ impl CreateWorkspaceInstanceInput {
     pub fn managed_instance(&self) -> ::std::option::Option<&crate::types::ManagedInstanceRequest> {
         self.managed_instance.as_ref()
     }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn billing_configuration(&self) -> ::std::option::Option<&crate::types::BillingConfiguration> {
+        self.billing_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateWorkspaceInstanceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -33,6 +39,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInstanceInput {
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("managed_instance", &self.managed_instance);
+        formatter.field("billing_configuration", &self.billing_configuration);
         formatter.finish()
     }
 }
@@ -50,6 +57,7 @@ pub struct CreateWorkspaceInstanceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) managed_instance: ::std::option::Option<crate::types::ManagedInstanceRequest>,
+    pub(crate) billing_configuration: ::std::option::Option<crate::types::BillingConfiguration>,
 }
 impl CreateWorkspaceInstanceInputBuilder {
     /// <p>Unique token to ensure idempotent instance creation, preventing duplicate workspace launches.</p>
@@ -101,6 +109,20 @@ impl CreateWorkspaceInstanceInputBuilder {
     pub fn get_managed_instance(&self) -> &::std::option::Option<crate::types::ManagedInstanceRequest> {
         &self.managed_instance
     }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn billing_configuration(mut self, input: crate::types::BillingConfiguration) -> Self {
+        self.billing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn set_billing_configuration(mut self, input: ::std::option::Option<crate::types::BillingConfiguration>) -> Self {
+        self.billing_configuration = input;
+        self
+    }
+    /// <p>Optional billing configuration for the WorkSpace Instance. Allows customers to specify their preferred billing mode when creating a new instance. Defaults to hourly billing if not specified.</p>
+    pub fn get_billing_configuration(&self) -> &::std::option::Option<crate::types::BillingConfiguration> {
+        &self.billing_configuration
+    }
     /// Consumes the builder and constructs a [`CreateWorkspaceInstanceInput`](crate::operation::create_workspace_instance::CreateWorkspaceInstanceInput).
     pub fn build(
         self,
@@ -112,6 +134,7 @@ impl CreateWorkspaceInstanceInputBuilder {
             client_token: self.client_token,
             tags: self.tags,
             managed_instance: self.managed_instance,
+            billing_configuration: self.billing_configuration,
         })
     }
 }
@@ -121,6 +144,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInstanceInputBuilder {
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("managed_instance", &self.managed_instance);
+        formatter.field("billing_configuration", &self.billing_configuration);
         formatter.finish()
     }
 }

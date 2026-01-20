@@ -176,6 +176,9 @@ pub(crate) fn de_get_policy_store(
                             .transpose()?,
                     );
                 }
+                "encryptionState" => {
+                    builder = builder.set_encryption_state(crate::protocol_serde::shape_encryption_state::de_encryption_state(tokens)?);
+                }
                 "cedarVersion" => {
                     builder = builder.set_cedar_version(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

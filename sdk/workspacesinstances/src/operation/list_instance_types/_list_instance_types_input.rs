@@ -8,6 +8,8 @@ pub struct ListInstanceTypesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token for retrieving subsequent pages of instance type results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub instance_configuration_filter: ::std::option::Option<crate::types::InstanceConfigurationFilter>,
 }
 impl ListInstanceTypesInput {
     /// <p>Maximum number of instance types to return in a single API call. Enables pagination of instance type results.</p>
@@ -18,12 +20,17 @@ impl ListInstanceTypesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn instance_configuration_filter(&self) -> ::std::option::Option<&crate::types::InstanceConfigurationFilter> {
+        self.instance_configuration_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ListInstanceTypesInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListInstanceTypesInput");
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("instance_configuration_filter", &self.instance_configuration_filter);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl ListInstanceTypesInput {
 pub struct ListInstanceTypesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_configuration_filter: ::std::option::Option<crate::types::InstanceConfigurationFilter>,
 }
 impl ListInstanceTypesInputBuilder {
     /// <p>Maximum number of instance types to return in a single API call. Enables pagination of instance type results.</p>
@@ -70,6 +78,20 @@ impl ListInstanceTypesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn instance_configuration_filter(mut self, input: crate::types::InstanceConfigurationFilter) -> Self {
+        self.instance_configuration_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn set_instance_configuration_filter(mut self, input: ::std::option::Option<crate::types::InstanceConfigurationFilter>) -> Self {
+        self.instance_configuration_filter = input;
+        self
+    }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn get_instance_configuration_filter(&self) -> &::std::option::Option<crate::types::InstanceConfigurationFilter> {
+        &self.instance_configuration_filter
+    }
     /// Consumes the builder and constructs a [`ListInstanceTypesInput`](crate::operation::list_instance_types::ListInstanceTypesInput).
     pub fn build(
         self,
@@ -77,6 +99,7 @@ impl ListInstanceTypesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_instance_types::ListInstanceTypesInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            instance_configuration_filter: self.instance_configuration_filter,
         })
     }
 }
@@ -85,6 +108,7 @@ impl ::std::fmt::Debug for ListInstanceTypesInputBuilder {
         let mut formatter = f.debug_struct("ListInstanceTypesInputBuilder");
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("instance_configuration_filter", &self.instance_configuration_filter);
         formatter.finish()
     }
 }

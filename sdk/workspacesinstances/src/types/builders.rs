@@ -11,6 +11,12 @@ pub use crate::types::_region::RegionBuilder;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfoBuilder;
 
+pub use crate::types::_supported_instance_configuration::SupportedInstanceConfigurationBuilder;
+
+pub use crate::types::_instance_configuration_filter::InstanceConfigurationFilterBuilder;
+
+pub use crate::types::_billing_configuration::BillingConfigurationBuilder;
+
 pub use crate::types::_ec2_instance_error::Ec2InstanceErrorBuilder;
 
 pub use crate::types::_workspace_instance_error::WorkspaceInstanceErrorBuilder;

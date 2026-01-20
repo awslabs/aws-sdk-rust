@@ -15,6 +15,18 @@ pub use crate::types::_region::Region;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfo;
 
+pub use crate::types::_supported_instance_configuration::SupportedInstanceConfiguration;
+
+pub use crate::types::_instance_configuration_tenancy_enum::InstanceConfigurationTenancyEnum;
+
+pub use crate::types::_platform_type_enum::PlatformTypeEnum;
+
+pub use crate::types::_billing_mode::BillingMode;
+
+pub use crate::types::_instance_configuration_filter::InstanceConfigurationFilter;
+
+pub use crate::types::_billing_configuration::BillingConfiguration;
+
 pub use crate::types::_ec2_instance_error::Ec2InstanceError;
 
 pub use crate::types::_workspace_instance_error::WorkspaceInstanceError;
@@ -117,6 +129,10 @@ mod _auto_recovery_enum;
 
 mod _bandwidth_weighting_enum;
 
+mod _billing_configuration;
+
+mod _billing_mode;
+
 mod _block_device_mapping_request;
 
 mod _capacity_reservation_preference_enum;
@@ -159,6 +175,10 @@ mod _http_tokens_enum;
 
 mod _iam_instance_profile_specification;
 
+mod _instance_configuration_filter;
+
+mod _instance_configuration_tenancy_enum;
+
 mod _instance_interruption_behavior_enum;
 
 mod _instance_ipv6_address;
@@ -191,6 +211,8 @@ mod _market_type_enum;
 
 mod _placement;
 
+mod _platform_type_enum;
+
 mod _private_dns_name_options_request;
 
 mod _private_ip_address_specification;
@@ -206,6 +228,8 @@ mod _run_instances_monitoring_enabled;
 mod _spot_instance_type_enum;
 
 mod _spot_market_options;
+
+mod _supported_instance_configuration;
 
 mod _tag;
 

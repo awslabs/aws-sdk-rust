@@ -106,6 +106,8 @@ pub struct CloudAutonomousVmCluster {
     pub time_zone: ::std::option::Option<::std::string::String>,
     /// <p>The total number of Autonomous Container Databases that can be created with the allocated local storage.</p>
     pub total_container_databases: ::std::option::Option<i32>,
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.</p>
+    pub iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>,
 }
 impl CloudAutonomousVmCluster {
     /// <p>The unique identifier of the Autonomous VM cluster.</p>
@@ -315,6 +317,12 @@ impl CloudAutonomousVmCluster {
     pub fn total_container_databases(&self) -> ::std::option::Option<i32> {
         self.total_container_databases
     }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iam_roles.is_none()`.
+    pub fn iam_roles(&self) -> &[crate::types::IamRole] {
+        self.iam_roles.as_deref().unwrap_or_default()
+    }
 }
 impl CloudAutonomousVmCluster {
     /// Creates a new builder-style object to manufacture [`CloudAutonomousVmCluster`](crate::types::CloudAutonomousVmCluster).
@@ -378,6 +386,7 @@ pub struct CloudAutonomousVmClusterBuilder {
     pub(crate) time_ords_certificate_expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_zone: ::std::option::Option<::std::string::String>,
     pub(crate) total_container_databases: ::std::option::Option<i32>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>,
 }
 impl CloudAutonomousVmClusterBuilder {
     /// <p>The unique identifier of the Autonomous VM cluster.</p>
@@ -1101,6 +1110,26 @@ impl CloudAutonomousVmClusterBuilder {
     pub fn get_total_container_databases(&self) -> &::std::option::Option<i32> {
         &self.total_container_databases
     }
+    /// Appends an item to `iam_roles`.
+    ///
+    /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
+    ///
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.</p>
+    pub fn iam_roles(mut self, input: crate::types::IamRole) -> Self {
+        let mut v = self.iam_roles.unwrap_or_default();
+        v.push(input);
+        self.iam_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.</p>
+    pub fn set_iam_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IamRole>>) -> Self {
+        self.iam_roles = input;
+        self
+    }
+    /// <p>The Amazon Web Services Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IamRole>> {
+        &self.iam_roles
+    }
     /// Consumes the builder and constructs a [`CloudAutonomousVmCluster`](crate::types::CloudAutonomousVmCluster).
     /// This method will fail if any of the following fields are not set:
     /// - [`cloud_autonomous_vm_cluster_id`](crate::types::builders::CloudAutonomousVmClusterBuilder::cloud_autonomous_vm_cluster_id)
@@ -1162,6 +1191,7 @@ impl CloudAutonomousVmClusterBuilder {
             time_ords_certificate_expires: self.time_ords_certificate_expires,
             time_zone: self.time_zone,
             total_container_databases: self.total_container_databases,
+            iam_roles: self.iam_roles,
         })
     }
 }

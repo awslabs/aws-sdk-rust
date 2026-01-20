@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionTriggers {
     /// <p>Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).</p>
-    /// <p>Set to <code>Retain</code> to move instances to a <code>Retained</code> state. Set to <code>Terminate</code> for default termination behavior.</p>
+    /// <p>Set to <code>retain</code> to move instances to a retained state. Set to <code>terminate</code> for default termination behavior.</p>
     /// <p>Retained instances don't count toward desired capacity and remain until you call <code>TerminateInstanceInAutoScalingGroup</code>.</p>
     pub terminate_hook_abandon: ::std::option::Option<crate::types::RetentionAction>,
 }
 impl RetentionTriggers {
     /// <p>Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).</p>
-    /// <p>Set to <code>Retain</code> to move instances to a <code>Retained</code> state. Set to <code>Terminate</code> for default termination behavior.</p>
+    /// <p>Set to <code>retain</code> to move instances to a retained state. Set to <code>terminate</code> for default termination behavior.</p>
     /// <p>Retained instances don't count toward desired capacity and remain until you call <code>TerminateInstanceInAutoScalingGroup</code>.</p>
     pub fn terminate_hook_abandon(&self) -> ::std::option::Option<&crate::types::RetentionAction> {
         self.terminate_hook_abandon.as_ref()
@@ -32,21 +32,21 @@ pub struct RetentionTriggersBuilder {
 }
 impl RetentionTriggersBuilder {
     /// <p>Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).</p>
-    /// <p>Set to <code>Retain</code> to move instances to a <code>Retained</code> state. Set to <code>Terminate</code> for default termination behavior.</p>
+    /// <p>Set to <code>retain</code> to move instances to a retained state. Set to <code>terminate</code> for default termination behavior.</p>
     /// <p>Retained instances don't count toward desired capacity and remain until you call <code>TerminateInstanceInAutoScalingGroup</code>.</p>
     pub fn terminate_hook_abandon(mut self, input: crate::types::RetentionAction) -> Self {
         self.terminate_hook_abandon = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).</p>
-    /// <p>Set to <code>Retain</code> to move instances to a <code>Retained</code> state. Set to <code>Terminate</code> for default termination behavior.</p>
+    /// <p>Set to <code>retain</code> to move instances to a retained state. Set to <code>terminate</code> for default termination behavior.</p>
     /// <p>Retained instances don't count toward desired capacity and remain until you call <code>TerminateInstanceInAutoScalingGroup</code>.</p>
     pub fn set_terminate_hook_abandon(mut self, input: ::std::option::Option<crate::types::RetentionAction>) -> Self {
         self.terminate_hook_abandon = input;
         self
     }
     /// <p>Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction).</p>
-    /// <p>Set to <code>Retain</code> to move instances to a <code>Retained</code> state. Set to <code>Terminate</code> for default termination behavior.</p>
+    /// <p>Set to <code>retain</code> to move instances to a retained state. Set to <code>terminate</code> for default termination behavior.</p>
     /// <p>Retained instances don't count toward desired capacity and remain until you call <code>TerminateInstanceInAutoScalingGroup</code>.</p>
     pub fn get_terminate_hook_abandon(&self) -> &::std::option::Option<crate::types::RetentionAction> {
         &self.terminate_hook_abandon

@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
-    /// <p>Description of the error.</p>
+    /// <p>The specified resource was not found. Verify the resource identifier and ensure the resource exists and is in an ACTIVE state.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn’t be found.</p>
+    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn't be found.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
-    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn’t be found.</p>
+    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn't be found.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -61,31 +61,31 @@ pub struct ResourceNotFoundExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
-    /// <p>Description of the error.</p>
+    /// <p>The specified resource was not found. Verify the resource identifier and ensure the resource exists and is in an ACTIVE state.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Description of the error.</p>
+    /// <p>The specified resource was not found. Verify the resource identifier and ensure the resource exists and is in an ACTIVE state.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Description of the error.</p>
+    /// <p>The specified resource was not found. Verify the resource identifier and ensure the resource exists and is in an ACTIVE state.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn’t be found.</p>
+    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn't be found.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn’t be found.</p>
+    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn't be found.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn’t be found.</p>
+    /// <p>The unique identifier in the format of Amazon Resource Name (ARN) for the resource couldn't be found.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

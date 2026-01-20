@@ -14,6 +14,8 @@ pub struct TokenUsage {
     pub cache_read_input_tokens: ::std::option::Option<i32>,
     /// <p>The number of input tokens written to the cache for the request.</p>
     pub cache_write_input_tokens: ::std::option::Option<i32>,
+    /// <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted by TTL duration (1h before 5m).</p>
+    pub cache_details: ::std::option::Option<::std::vec::Vec<crate::types::CacheDetail>>,
 }
 impl TokenUsage {
     /// <p>The number of tokens sent in the request to the model.</p>
@@ -36,6 +38,12 @@ impl TokenUsage {
     pub fn cache_write_input_tokens(&self) -> ::std::option::Option<i32> {
         self.cache_write_input_tokens
     }
+    /// <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted by TTL duration (1h before 5m).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_details.is_none()`.
+    pub fn cache_details(&self) -> &[crate::types::CacheDetail] {
+        self.cache_details.as_deref().unwrap_or_default()
+    }
 }
 impl TokenUsage {
     /// Creates a new builder-style object to manufacture [`TokenUsage`](crate::types::TokenUsage).
@@ -53,6 +61,7 @@ pub struct TokenUsageBuilder {
     pub(crate) total_tokens: ::std::option::Option<i32>,
     pub(crate) cache_read_input_tokens: ::std::option::Option<i32>,
     pub(crate) cache_write_input_tokens: ::std::option::Option<i32>,
+    pub(crate) cache_details: ::std::option::Option<::std::vec::Vec<crate::types::CacheDetail>>,
 }
 impl TokenUsageBuilder {
     /// <p>The number of tokens sent in the request to the model.</p>
@@ -128,6 +137,26 @@ impl TokenUsageBuilder {
     pub fn get_cache_write_input_tokens(&self) -> &::std::option::Option<i32> {
         &self.cache_write_input_tokens
     }
+    /// Appends an item to `cache_details`.
+    ///
+    /// To override the contents of this collection use [`set_cache_details`](Self::set_cache_details).
+    ///
+    /// <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted by TTL duration (1h before 5m).</p>
+    pub fn cache_details(mut self, input: crate::types::CacheDetail) -> Self {
+        let mut v = self.cache_details.unwrap_or_default();
+        v.push(input);
+        self.cache_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted by TTL duration (1h before 5m).</p>
+    pub fn set_cache_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheDetail>>) -> Self {
+        self.cache_details = input;
+        self
+    }
+    /// <p>Detailed breakdown of cache writes by TTL. Empty if no cache creation occurred. Sorted by TTL duration (1h before 5m).</p>
+    pub fn get_cache_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheDetail>> {
+        &self.cache_details
+    }
     /// Consumes the builder and constructs a [`TokenUsage`](crate::types::TokenUsage).
     /// This method will fail if any of the following fields are not set:
     /// - [`input_tokens`](crate::types::builders::TokenUsageBuilder::input_tokens)
@@ -155,6 +184,7 @@ impl TokenUsageBuilder {
             })?,
             cache_read_input_tokens: self.cache_read_input_tokens,
             cache_write_input_tokens: self.cache_write_input_tokens,
+            cache_details: self.cache_details,
         })
     }
 }

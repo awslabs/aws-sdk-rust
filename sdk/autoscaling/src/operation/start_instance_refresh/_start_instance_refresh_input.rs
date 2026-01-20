@@ -5,7 +5,7 @@
 pub struct StartInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub strategy: ::std::option::Option<crate::types::RefreshStrategy>,
     /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
     /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration.</p><note>
@@ -32,7 +32,7 @@ impl StartInstanceRefreshInput {
     pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn strategy(&self) -> ::std::option::Option<&crate::types::RefreshStrategy> {
         self.strategy.as_ref()
     }
@@ -92,17 +92,17 @@ impl StartInstanceRefreshInputBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn strategy(mut self, input: crate::types::RefreshStrategy) -> Self {
         self.strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::RefreshStrategy>) -> Self {
         self.strategy = input;
         self
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::RefreshStrategy> {
         &self.strategy
     }

@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`provision_state(Option<ProvisionStateEnum>)`](crate::operation::get_workspace_instance::GetWorkspaceInstanceOutput::provision_state): <p>Current provisioning state of the WorkSpaces Instance.</p>
     ///   - [`workspace_instance_id(Option<String>)`](crate::operation::get_workspace_instance::GetWorkspaceInstanceOutput::workspace_instance_id): <p>Unique identifier of the retrieved WorkSpaces Instance.</p>
     ///   - [`ec2_managed_instance(Option<Ec2ManagedInstance>)`](crate::operation::get_workspace_instance::GetWorkspaceInstanceOutput::ec2_managed_instance): <p>Details of the associated EC2 managed instance.</p>
+    ///   - [`billing_configuration(Option<BillingConfiguration>)`](crate::operation::get_workspace_instance::GetWorkspaceInstanceOutput::billing_configuration): <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
     /// - On failure, responds with [`SdkError<GetWorkspaceInstanceError>`](crate::operation::get_workspace_instance::GetWorkspaceInstanceError)
     pub fn get_workspace_instance(&self) -> crate::operation::get_workspace_instance::builders::GetWorkspaceInstanceFluentBuilder {
         crate::operation::get_workspace_instance::builders::GetWorkspaceInstanceFluentBuilder::new(self.handle.clone())

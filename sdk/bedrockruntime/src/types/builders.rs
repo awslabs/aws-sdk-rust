@@ -151,6 +151,8 @@ pub use crate::types::_converse_stream_metrics::ConverseStreamMetricsBuilder;
 
 pub use crate::types::_token_usage::TokenUsageBuilder;
 
+pub use crate::types::_cache_detail::CacheDetailBuilder;
+
 pub use crate::types::_message_stop_event::MessageStopEventBuilder;
 
 pub use crate::types::_content_block_stop_event::ContentBlockStopEventBuilder;

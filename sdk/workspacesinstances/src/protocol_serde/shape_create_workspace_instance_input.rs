@@ -24,5 +24,11 @@ pub fn ser_create_workspace_instance_input_input(
         crate::protocol_serde::shape_managed_instance_request::ser_managed_instance_request(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.billing_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("BillingConfiguration").start_object();
+        crate::protocol_serde::shape_billing_configuration::ser_billing_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

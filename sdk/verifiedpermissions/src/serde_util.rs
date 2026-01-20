@@ -626,6 +626,18 @@ pub(crate) fn identity_source_item_correct_errors(
     builder
 }
 
+pub(crate) fn kms_encryption_state_correct_errors(
+    mut builder: crate::types::builders::KmsEncryptionStateBuilder,
+) -> crate::types::builders::KmsEncryptionStateBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.encryption_context.is_none() {
+        builder.encryption_context = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn open_id_connect_configuration_detail_correct_errors(
     mut builder: crate::types::builders::OpenIdConnectConfigurationDetailBuilder,
 ) -> crate::types::builders::OpenIdConnectConfigurationDetailBuilder {

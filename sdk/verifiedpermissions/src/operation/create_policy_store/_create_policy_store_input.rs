@@ -18,6 +18,9 @@ pub struct CreatePolicyStoreInput {
     /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
     /// <p>The default state is <code>DISABLED</code>.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub encryption_settings: ::std::option::Option<crate::types::EncryptionSettings>,
     /// <p>The list of key-value pairs to associate with the policy store.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -45,6 +48,11 @@ impl CreatePolicyStoreInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
     }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn encryption_settings(&self) -> ::std::option::Option<&crate::types::EncryptionSettings> {
+        self.encryption_settings.as_ref()
+    }
     /// <p>The list of key-value pairs to associate with the policy store.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -57,6 +65,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInput {
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_settings", &self.encryption_settings);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -76,6 +85,7 @@ pub struct CreatePolicyStoreInputBuilder {
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    pub(crate) encryption_settings: ::std::option::Option<crate::types::EncryptionSettings>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreatePolicyStoreInputBuilder {
@@ -157,6 +167,23 @@ impl CreatePolicyStoreInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn encryption_settings(mut self, input: crate::types::EncryptionSettings) -> Self {
+        self.encryption_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn set_encryption_settings(mut self, input: ::std::option::Option<crate::types::EncryptionSettings>) -> Self {
+        self.encryption_settings = input;
+        self
+    }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn get_encryption_settings(&self) -> &::std::option::Option<crate::types::EncryptionSettings> {
+        &self.encryption_settings
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -186,6 +213,7 @@ impl CreatePolicyStoreInputBuilder {
             validation_settings: self.validation_settings,
             description: self.description,
             deletion_protection: self.deletion_protection,
+            encryption_settings: self.encryption_settings,
             tags: self.tags,
         })
     }
@@ -197,6 +225,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInputBuilder {
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("encryption_settings", &self.encryption_settings);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

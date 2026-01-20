@@ -142,4 +142,18 @@ impl ListInstanceTypesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn instance_configuration_filter(mut self, input: crate::types::InstanceConfigurationFilter) -> Self {
+        self.inner = self.inner.instance_configuration_filter(input);
+        self
+    }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn set_instance_configuration_filter(mut self, input: ::std::option::Option<crate::types::InstanceConfigurationFilter>) -> Self {
+        self.inner = self.inner.set_instance_configuration_filter(input);
+        self
+    }
+    /// <p>Optional filter to narrow instance type results based on configuration requirements. Only returns instance types that support the specified combination of tenancy, platform type, and billing mode.</p>
+    pub fn get_instance_configuration_filter(&self) -> &::std::option::Option<crate::types::InstanceConfigurationFilter> {
+        self.inner.get_instance_configuration_filter()
+    }
 }

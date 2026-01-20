@@ -334,6 +334,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "iamRoles" => {
+                            builder = builder.set_iam_roles(crate::protocol_serde::shape_iam_role_list::de_iam_role_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

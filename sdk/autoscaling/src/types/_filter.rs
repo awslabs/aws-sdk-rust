@@ -7,8 +7,8 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
-    /// <p><b>DescribeAutoScalingGroups</b></p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter.</p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct Filter {
     /// <li>
     /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
-    /// <p><b>DescribeTags</b></p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -30,15 +30,27 @@ pub struct Filter {
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
     /// </ul>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> </b></p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
-    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// <p><b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p><b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and "Successful,Failed" for the filter values to find scaling activities with a status of either "Successful" or "Failed".</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
-    /// <p><b>DescribeAutoScalingGroups</b></p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter.</p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -48,7 +60,7 @@ impl Filter {
     /// <li>
     /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
-    /// <p><b>DescribeTags</b></p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -59,12 +71,24 @@ impl Filter {
     /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// </ul>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> </b></p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
-    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// <p><b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p><b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and "Successful,Failed" for the filter values to find scaling activities with a status of either "Successful" or "Failed".</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
@@ -87,8 +111,8 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
-    /// <p><b>DescribeAutoScalingGroups</b></p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter.</p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -98,7 +122,7 @@ impl FilterBuilder {
     /// <li>
     /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
-    /// <p><b>DescribeTags</b></p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -109,14 +133,24 @@ impl FilterBuilder {
     /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// </ul>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> </b></p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
-    /// <p><b>DescribeAutoScalingGroups</b></p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter.</p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -126,7 +160,7 @@ impl FilterBuilder {
     /// <li>
     /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
-    /// <p><b>DescribeTags</b></p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -137,14 +171,24 @@ impl FilterBuilder {
     /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// </ul>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> </b></p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the filter.</p>
-    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
-    /// <p><b>DescribeAutoScalingGroups</b></p>
+    /// <p>The valid values for <code>Name</code> depend on which API operation you're using with the filter.</p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -154,7 +198,7 @@ impl FilterBuilder {
     /// <li>
     /// <p><code>tag:<key></key></code> - Accepts the key/value combination of the tag. Use the tag key in the filter name and the tag value as the filter value. The results only include information about the Auto Scaling groups associated with the specified key/value combination.</p></li>
     /// </ul>
-    /// <p><b>DescribeTags</b></p>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a> </b></p>
     /// <p>Valid values for <code>Name</code> include the following:</p>
     /// <ul>
     /// <li>
@@ -165,6 +209,16 @@ impl FilterBuilder {
     /// <p><code>value</code> - Accepts tag values. The results only include information about the tags associated with these tag values.</p></li>
     /// <li>
     /// <p><code>propagate-at-launch</code> - Accepts a Boolean value, which specifies whether tags propagate to instances at launch. The results only include information about the tags associated with the specified Boolean value.</p></li>
+    /// </ul>
+    /// <p><b> <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> </b></p>
+    /// <p>Valid values for <code>Name</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>StartTimeLowerBound</code> - The earliest scaling activities to return based on the activity start time. Scaling activities with a start time earlier than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
+    /// <li>
+    /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
@@ -174,7 +228,9 @@ impl FilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
-    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// <p><b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p><b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and "Successful,Failed" for the filter values to find scaling activities with a status of either "Successful" or "Failed".</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
@@ -182,13 +238,17 @@ impl FilterBuilder {
         self
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
-    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// <p><b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p><b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and "Successful,Failed" for the filter values to find scaling activities with a status of either "Successful" or "Failed".</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
-    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values. For example, specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// <p><b>DescribeAutoScalingGroups example:</b> Specify "tag:environment" for the filter name and "production,development" for the filter values to find Auto Scaling groups with the tag "environment=production" or "environment=development".</p>
+    /// <p><b>DescribeScalingActivities example:</b> Specify "Status" for the filter name and "Successful,Failed" for the filter values to find scaling activities with a status of either "Successful" or "Failed".</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }

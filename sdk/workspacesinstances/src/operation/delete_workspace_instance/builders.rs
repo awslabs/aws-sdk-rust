@@ -22,7 +22,9 @@ impl crate::operation::delete_workspace_instance::builders::DeleteWorkspaceInsta
 }
 /// Fluent builder constructing a request to `DeleteWorkspaceInstance`.
 ///
-/// <p>Deletes the specified WorkSpace</p>
+/// <p>Deletes the specified WorkSpace</p><important>
+/// <p>Usage of this API will result in deletion of the resource in question.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

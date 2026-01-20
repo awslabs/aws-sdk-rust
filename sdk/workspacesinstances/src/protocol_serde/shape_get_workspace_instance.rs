@@ -162,6 +162,10 @@ pub(crate) fn de_get_workspace_instance(
                 "EC2ManagedInstance" => {
                     builder = builder.set_ec2_managed_instance(crate::protocol_serde::shape_ec2_managed_instance::de_ec2_managed_instance(tokens)?);
                 }
+                "BillingConfiguration" => {
+                    builder =
+                        builder.set_billing_configuration(crate::protocol_serde::shape_billing_configuration::de_billing_configuration(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -18,6 +18,8 @@ pub struct ReplicaSpecificationSummary {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
+    /// <p>The warm throughput settings for this replica, including the current status and configured read and write capacity units.</p>
+    pub warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>,
 }
 impl ReplicaSpecificationSummary {
     /// <p>The Amazon Web Services Region.</p>
@@ -39,6 +41,10 @@ impl ReplicaSpecificationSummary {
     pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecificationSummary> {
         self.capacity_specification.as_ref()
     }
+    /// <p>The warm throughput settings for this replica, including the current status and configured read and write capacity units.</p>
+    pub fn warm_throughput_specification(&self) -> ::std::option::Option<&crate::types::WarmThroughputSpecificationSummary> {
+        self.warm_throughput_specification.as_ref()
+    }
 }
 impl ReplicaSpecificationSummary {
     /// Creates a new builder-style object to manufacture [`ReplicaSpecificationSummary`](crate::types::ReplicaSpecificationSummary).
@@ -54,6 +60,7 @@ pub struct ReplicaSpecificationSummaryBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TableStatus>,
     pub(crate) capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
+    pub(crate) warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>,
 }
 impl ReplicaSpecificationSummaryBuilder {
     /// <p>The Amazon Web Services Region.</p>
@@ -119,12 +126,27 @@ impl ReplicaSpecificationSummaryBuilder {
     pub fn get_capacity_specification(&self) -> &::std::option::Option<crate::types::CapacitySpecificationSummary> {
         &self.capacity_specification
     }
+    /// <p>The warm throughput settings for this replica, including the current status and configured read and write capacity units.</p>
+    pub fn warm_throughput_specification(mut self, input: crate::types::WarmThroughputSpecificationSummary) -> Self {
+        self.warm_throughput_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm throughput settings for this replica, including the current status and configured read and write capacity units.</p>
+    pub fn set_warm_throughput_specification(mut self, input: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>) -> Self {
+        self.warm_throughput_specification = input;
+        self
+    }
+    /// <p>The warm throughput settings for this replica, including the current status and configured read and write capacity units.</p>
+    pub fn get_warm_throughput_specification(&self) -> &::std::option::Option<crate::types::WarmThroughputSpecificationSummary> {
+        &self.warm_throughput_specification
+    }
     /// Consumes the builder and constructs a [`ReplicaSpecificationSummary`](crate::types::ReplicaSpecificationSummary).
     pub fn build(self) -> crate::types::ReplicaSpecificationSummary {
         crate::types::ReplicaSpecificationSummary {
             region: self.region,
             status: self.status,
             capacity_specification: self.capacity_specification,
+            warm_throughput_specification: self.warm_throughput_specification,
         }
     }
 }

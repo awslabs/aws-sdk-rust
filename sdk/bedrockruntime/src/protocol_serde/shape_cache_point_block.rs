@@ -6,6 +6,9 @@ pub fn ser_cache_point_block(
     {
         object.key("type").string(input.r#type.as_str());
     }
+    if let Some(var_1) = &input.ttl {
+        object.key("ttl").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CachePointType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ttl" => {
+                            builder = builder.set_ttl(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CacheTtl::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

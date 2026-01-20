@@ -217,6 +217,21 @@ pub(crate) fn time_to_live_correct_errors(mut builder: crate::types::builders::T
     builder
 }
 
+pub(crate) fn warm_throughput_specification_summary_correct_errors(
+    mut builder: crate::types::builders::WarmThroughputSpecificationSummaryBuilder,
+) -> crate::types::builders::WarmThroughputSpecificationSummaryBuilder {
+    if builder.read_units_per_second.is_none() {
+        builder.read_units_per_second = Some(Default::default())
+    }
+    if builder.write_units_per_second.is_none() {
+        builder.write_units_per_second = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WarmThroughputStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn field_definition_correct_errors(
     mut builder: crate::types::builders::FieldDefinitionBuilder,
 ) -> crate::types::builders::FieldDefinitionBuilder {

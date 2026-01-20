@@ -97,9 +97,13 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_billing_configuration;
+
 pub(crate) mod shape_ec2_instance_errors;
 
 pub(crate) mod shape_ec2_managed_instance;
+
+pub(crate) mod shape_instance_configuration_filter;
 
 pub(crate) mod shape_instance_types;
 
@@ -181,4 +185,8 @@ pub(crate) mod shape_private_ip_address_specification;
 
 pub(crate) mod shape_spot_market_options;
 
+pub(crate) mod shape_supported_instance_configurations;
+
 pub(crate) mod shape_ena_srd_udp_specification_request;
+
+pub(crate) mod shape_supported_instance_configuration;

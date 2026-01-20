@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SupportedInstanceConfigurations" => {
+                            builder = builder.set_supported_instance_configurations(
+                                crate::protocol_serde::shape_supported_instance_configurations::de_supported_instance_configurations(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -14,6 +14,8 @@ pub struct GetWorkspaceInstanceOutput {
     pub workspace_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Details of the associated EC2 managed instance.</p>
     pub ec2_managed_instance: ::std::option::Option<crate::types::Ec2ManagedInstance>,
+    /// <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
+    pub billing_configuration: ::std::option::Option<crate::types::BillingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetWorkspaceInstanceOutput {
@@ -41,6 +43,10 @@ impl GetWorkspaceInstanceOutput {
     pub fn ec2_managed_instance(&self) -> ::std::option::Option<&crate::types::Ec2ManagedInstance> {
         self.ec2_managed_instance.as_ref()
     }
+    /// <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
+    pub fn billing_configuration(&self) -> ::std::option::Option<&crate::types::BillingConfiguration> {
+        self.billing_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWorkspaceInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -63,6 +69,7 @@ pub struct GetWorkspaceInstanceOutputBuilder {
     pub(crate) provision_state: ::std::option::Option<crate::types::ProvisionStateEnum>,
     pub(crate) workspace_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_managed_instance: ::std::option::Option<crate::types::Ec2ManagedInstance>,
+    pub(crate) billing_configuration: ::std::option::Option<crate::types::BillingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetWorkspaceInstanceOutputBuilder {
@@ -148,6 +155,20 @@ impl GetWorkspaceInstanceOutputBuilder {
     pub fn get_ec2_managed_instance(&self) -> &::std::option::Option<crate::types::Ec2ManagedInstance> {
         &self.ec2_managed_instance
     }
+    /// <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
+    pub fn billing_configuration(mut self, input: crate::types::BillingConfiguration) -> Self {
+        self.billing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
+    pub fn set_billing_configuration(mut self, input: ::std::option::Option<crate::types::BillingConfiguration>) -> Self {
+        self.billing_configuration = input;
+        self
+    }
+    /// <p>Returns the current billing configuration for the WorkSpace Instance, indicating the active billing mode.</p>
+    pub fn get_billing_configuration(&self) -> &::std::option::Option<crate::types::BillingConfiguration> {
+        &self.billing_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -165,6 +186,7 @@ impl GetWorkspaceInstanceOutputBuilder {
             provision_state: self.provision_state,
             workspace_instance_id: self.workspace_instance_id,
             ec2_managed_instance: self.ec2_managed_instance,
+            billing_configuration: self.billing_configuration,
             _request_id: self._request_id,
         }
     }

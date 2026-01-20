@@ -126,17 +126,17 @@ impl StartInstanceRefreshFluentBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_scaling_group_name()
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn strategy(mut self, input: crate::types::RefreshStrategy) -> Self {
         self.inner = self.inner.strategy(input);
         self
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::RefreshStrategy>) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
     }
-    /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+    /// <p>The strategy to use for the instance refresh. The default value is <code>Rolling</code>.</p>
     pub fn get_strategy(&self) -> &::std::option::Option<crate::types::RefreshStrategy> {
         self.inner.get_strategy()
     }

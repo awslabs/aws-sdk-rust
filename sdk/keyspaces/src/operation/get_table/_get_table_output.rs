@@ -41,6 +41,8 @@ pub struct GetTableOutput {
     pub latest_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CDC stream settings of the table.</p>
     pub cdc_specification: ::std::option::Option<crate::types::CdcSpecificationSummary>,
+    /// <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
+    pub warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -119,6 +121,10 @@ impl GetTableOutput {
     pub fn cdc_specification(&self) -> ::std::option::Option<&crate::types::CdcSpecificationSummary> {
         self.cdc_specification.as_ref()
     }
+    /// <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
+    pub fn warm_throughput_specification(&self) -> ::std::option::Option<&crate::types::WarmThroughputSpecificationSummary> {
+        self.warm_throughput_specification.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
     fn request_id(&self) -> Option<&str> {
@@ -152,6 +158,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>,
     pub(crate) latest_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) cdc_specification: ::std::option::Option<crate::types::CdcSpecificationSummary>,
+    pub(crate) warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -406,6 +413,20 @@ impl GetTableOutputBuilder {
     pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecificationSummary> {
         &self.cdc_specification
     }
+    /// <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
+    pub fn warm_throughput_specification(mut self, input: crate::types::WarmThroughputSpecificationSummary) -> Self {
+        self.warm_throughput_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
+    pub fn set_warm_throughput_specification(mut self, input: ::std::option::Option<crate::types::WarmThroughputSpecificationSummary>) -> Self {
+        self.warm_throughput_specification = input;
+        self
+    }
+    /// <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
+    pub fn get_warm_throughput_specification(&self) -> &::std::option::Option<crate::types::WarmThroughputSpecificationSummary> {
+        &self.warm_throughput_specification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -453,6 +474,7 @@ impl GetTableOutputBuilder {
             replica_specifications: self.replica_specifications,
             latest_stream_arn: self.latest_stream_arn,
             cdc_specification: self.cdc_specification,
+            warm_throughput_specification: self.warm_throughput_specification,
             _request_id: self._request_id,
         })
     }

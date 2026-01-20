@@ -12,5 +12,11 @@ pub fn ser_list_instance_types_input_input(
     if let Some(var_2) = &input.next_token {
         object.key("NextToken").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.instance_configuration_filter {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("InstanceConfigurationFilter").start_object();
+        crate::protocol_serde::shape_instance_configuration_filter::ser_instance_configuration_filter(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

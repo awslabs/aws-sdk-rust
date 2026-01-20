@@ -125,7 +125,6 @@ impl UpdatePolicyInputBuilder {
     /// <li>
     /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
-    /// This field is required.
     pub fn definition(mut self, input: crate::types::UpdatePolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self

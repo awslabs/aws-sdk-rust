@@ -93,5 +93,11 @@ pub fn ser_create_table_input_input(
         crate::protocol_serde::shape_cdc_specification::ser_cdc_specification(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.warm_throughput_specification {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("warmThroughputSpecification").start_object();
+        crate::protocol_serde::shape_warm_throughput_specification::ser_warm_throughput_specification(&mut object_31, var_30)?;
+        object_31.finish();
+    }
     Ok(())
 }

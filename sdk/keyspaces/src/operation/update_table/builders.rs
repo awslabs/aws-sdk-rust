@@ -424,4 +424,18 @@ impl UpdateTableFluentBuilder {
     pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecification> {
         self.inner.get_cdc_specification()
     }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn warm_throughput_specification(mut self, input: crate::types::WarmThroughputSpecification) -> Self {
+        self.inner = self.inner.warm_throughput_specification(input);
+        self
+    }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn set_warm_throughput_specification(mut self, input: ::std::option::Option<crate::types::WarmThroughputSpecification>) -> Self {
+        self.inner = self.inner.set_warm_throughput_specification(input);
+        self
+    }
+    /// <p>Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.</p>
+    pub fn get_warm_throughput_specification(&self) -> &::std::option::Option<crate::types::WarmThroughputSpecification> {
+        self.inner.get_warm_throughput_specification()
+    }
 }

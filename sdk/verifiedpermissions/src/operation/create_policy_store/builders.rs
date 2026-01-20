@@ -189,6 +189,23 @@ impl CreatePolicyStoreFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         self.inner.get_deletion_protection()
     }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn encryption_settings(mut self, input: crate::types::EncryptionSettings) -> Self {
+        self.inner = self.inner.encryption_settings(input);
+        self
+    }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn set_encryption_settings(mut self, input: ::std::option::Option<crate::types::EncryptionSettings>) -> Self {
+        self.inner = self.inner.set_encryption_settings(input);
+        self
+    }
+    /// <p>Specifies the encryption settings used to encrypt the policy store and their child resources. Allows for the ability to use a customer owned KMS key for encryption of data.</p>
+    /// <p>This is an optional field to be used when providing a customer-managed KMS key for encryption.</p>
+    pub fn get_encryption_settings(&self) -> &::std::option::Option<crate::types::EncryptionSettings> {
+        self.inner.get_encryption_settings()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

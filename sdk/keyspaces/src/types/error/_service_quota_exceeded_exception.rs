@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuotaExceededException {
-    /// <p>Description of the error.</p>
+    /// <p>The requested operation would exceed the service quota for this resource. Review the service quotas and adjust your request accordingly.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -52,17 +52,17 @@ pub struct ServiceQuotaExceededExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceQuotaExceededExceptionBuilder {
-    /// <p>Description of the error.</p>
+    /// <p>The requested operation would exceed the service quota for this resource. Review the service quotas and adjust your request accordingly.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Description of the error.</p>
+    /// <p>The requested operation would exceed the service quota for this resource. Review the service quotas and adjust your request accordingly.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>Description of the error.</p>
+    /// <p>The requested operation would exceed the service quota for this resource. Review the service quotas and adjust your request accordingly.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

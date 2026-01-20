@@ -194,6 +194,16 @@ pub(crate) fn message_correct_errors(mut builder: crate::types::builders::Messag
     builder
 }
 
+pub(crate) fn cache_detail_correct_errors(mut builder: crate::types::builders::CacheDetailBuilder) -> crate::types::builders::CacheDetailBuilder {
+    if builder.ttl.is_none() {
+        builder.ttl = "no value was set".parse::<crate::types::CacheTtl>().ok()
+    }
+    if builder.input_tokens.is_none() {
+        builder.input_tokens = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn content_block_delta_event_correct_errors(
     mut builder: crate::types::builders::ContentBlockDeltaEventBuilder,
 ) -> crate::types::builders::ContentBlockDeltaEventBuilder {

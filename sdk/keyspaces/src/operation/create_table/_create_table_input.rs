@@ -106,6 +106,9 @@ pub struct CreateTableInput {
     pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
     /// <p>The CDC stream settings of the table.</p>
     pub cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
+    /// <p>Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.</p>
+    /// <p>For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecification>,
 }
 impl CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
@@ -243,6 +246,11 @@ impl CreateTableInput {
     pub fn cdc_specification(&self) -> ::std::option::Option<&crate::types::CdcSpecification> {
         self.cdc_specification.as_ref()
     }
+    /// <p>Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.</p>
+    /// <p>For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn warm_throughput_specification(&self) -> ::std::option::Option<&crate::types::WarmThroughputSpecification> {
+        self.warm_throughput_specification.as_ref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -269,6 +277,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
     pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
     pub(crate) cdc_specification: ::std::option::Option<crate::types::CdcSpecification>,
+    pub(crate) warm_throughput_specification: ::std::option::Option<crate::types::WarmThroughputSpecification>,
 }
 impl CreateTableInputBuilder {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
@@ -707,6 +716,23 @@ impl CreateTableInputBuilder {
     pub fn get_cdc_specification(&self) -> &::std::option::Option<crate::types::CdcSpecification> {
         &self.cdc_specification
     }
+    /// <p>Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.</p>
+    /// <p>For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn warm_throughput_specification(mut self, input: crate::types::WarmThroughputSpecification) -> Self {
+        self.warm_throughput_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.</p>
+    /// <p>For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn set_warm_throughput_specification(mut self, input: ::std::option::Option<crate::types::WarmThroughputSpecification>) -> Self {
+        self.warm_throughput_specification = input;
+        self
+    }
+    /// <p>Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.</p>
+    /// <p>For more information about pre-warming in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html">Pre-warm a table in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_warm_throughput_specification(&self) -> &::std::option::Option<crate::types::WarmThroughputSpecification> {
+        &self.warm_throughput_specification
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -724,6 +750,7 @@ impl CreateTableInputBuilder {
             auto_scaling_specification: self.auto_scaling_specification,
             replica_specifications: self.replica_specifications,
             cdc_specification: self.cdc_specification,
+            warm_throughput_specification: self.warm_throughput_specification,
         })
     }
 }

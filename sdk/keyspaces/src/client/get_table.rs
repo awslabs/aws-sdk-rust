@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`replica_specifications(Option<Vec::<ReplicaSpecificationSummary>>)`](crate::operation::get_table::GetTableOutput::replica_specifications): <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
     ///   - [`latest_stream_arn(Option<String>)`](crate::operation::get_table::GetTableOutput::latest_stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
     ///   - [`cdc_specification(Option<CdcSpecificationSummary>)`](crate::operation::get_table::GetTableOutput::cdc_specification): <p>The CDC stream settings of the table.</p>
+    ///   - [`warm_throughput_specification(Option<WarmThroughputSpecificationSummary>)`](crate::operation::get_table::GetTableOutput::warm_throughput_specification): <p>The warm throughput settings for the table, including the current status and configured read and write capacity units.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

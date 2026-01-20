@@ -540,17 +540,20 @@ impl UpdateAutoScalingGroupFluentBuilder {
     pub fn get_capacity_reservation_specification(&self) -> &::std::option::Option<crate::types::CapacityReservationSpecification> {
         self.inner.get_capacity_reservation_specification()
     }
-    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state instead of automatic termination.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html"> Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn instance_lifecycle_policy(mut self, input: crate::types::InstanceLifecyclePolicy) -> Self {
         self.inner = self.inner.instance_lifecycle_policy(input);
         self
     }
-    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state instead of automatic termination.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html"> Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_instance_lifecycle_policy(mut self, input: ::std::option::Option<crate::types::InstanceLifecyclePolicy>) -> Self {
         self.inner = self.inner.set_instance_lifecycle_policy(input);
         self
     }
-    /// <p>The instance lifecycle policy for the Auto Scaling group. Use this to add, modify, or remove lifecycle policies that control instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when to preserve instances for manual intervention.</p>
+    /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state instead of automatic termination.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html"> Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
         self.inner.get_instance_lifecycle_policy()
     }

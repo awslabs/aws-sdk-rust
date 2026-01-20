@@ -116,6 +116,15 @@ pub(crate) fn list_workspace_instances_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn billing_configuration_correct_errors(
+    mut builder: crate::types::builders::BillingConfigurationBuilder,
+) -> crate::types::builders::BillingConfigurationBuilder {
+    if builder.billing_mode.is_none() {
+        builder.billing_mode = "no value was set".parse::<crate::types::BillingMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

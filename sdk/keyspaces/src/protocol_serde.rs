@@ -173,6 +173,10 @@ pub(crate) mod shape_time_to_live;
 
 pub(crate) mod shape_type_name_list;
 
+pub(crate) mod shape_warm_throughput_specification;
+
+pub(crate) mod shape_warm_throughput_specification_summary;
+
 pub(crate) mod shape_auto_scaling_settings;
 
 pub(crate) mod shape_clustering_key;

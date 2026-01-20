@@ -195,6 +195,10 @@ pub(crate) mod shape_context_definition;
 
 pub(crate) mod shape_determining_policy_list;
 
+pub(crate) mod shape_encryption_settings;
+
+pub(crate) mod shape_encryption_state;
+
 pub(crate) mod shape_entities_definition;
 
 pub(crate) mod shape_entity_identifier;
@@ -261,6 +265,10 @@ pub(crate) mod shape_evaluation_error_item;
 
 pub(crate) mod shape_identity_source_item;
 
+pub(crate) mod shape_kms_encryption_settings;
+
+pub(crate) mod shape_kms_encryption_state;
+
 pub(crate) mod shape_open_id_connect_configuration;
 
 pub(crate) mod shape_open_id_connect_configuration_detail;
@@ -296,6 +304,8 @@ pub(crate) mod shape_cognito_group_configuration;
 pub(crate) mod shape_cognito_group_configuration_detail;
 
 pub(crate) mod shape_configuration_item;
+
+pub(crate) mod shape_encryption_context;
 
 pub(crate) mod shape_identity_source_item_details;
 
