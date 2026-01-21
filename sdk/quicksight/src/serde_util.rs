@@ -3622,6 +3622,18 @@ pub(crate) fn reference_line_correct_errors(
     builder
 }
 
+pub(crate) fn sheet_layout_group_correct_errors(
+    mut builder: crate::types::builders::SheetLayoutGroupBuilder,
+) -> crate::types::builders::SheetLayoutGroupBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.members.is_none() {
+        builder.members = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn y_axis_options_correct_errors(mut builder: crate::types::builders::YAxisOptionsBuilder) -> crate::types::builders::YAxisOptionsBuilder {
     if builder.y_axis.is_none() {
         builder.y_axis = "no value was set".parse::<crate::types::SingleYAxisOption>().ok()
@@ -4269,6 +4281,18 @@ pub(crate) fn sheet_element_rendering_rule_correct_errors(
             let builder = crate::types::builders::SheetElementConfigurationOverridesBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn sheet_layout_group_member_correct_errors(
+    mut builder: crate::types::builders::SheetLayoutGroupMemberBuilder,
+) -> crate::types::builders::SheetLayoutGroupMemberBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SheetLayoutGroupMemberType>().ok()
     }
     builder
 }

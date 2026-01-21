@@ -1343,6 +1343,8 @@ pub use crate::types::_network_card_info::NetworkCardInfoBuilder;
 
 pub use crate::types::_ebs_info::EbsInfoBuilder;
 
+pub use crate::types::_ebs_card_info::EbsCardInfoBuilder;
+
 pub use crate::types::_ebs_optimized_info::EbsOptimizedInfoBuilder;
 
 pub use crate::types::_instance_storage_info::InstanceStorageInfoBuilder;

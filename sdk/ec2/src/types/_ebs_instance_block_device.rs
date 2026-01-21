@@ -19,6 +19,8 @@ pub struct EbsInstanceBlockDevice {
     pub volume_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The service provider that manages the EBS volume.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub ebs_card_index: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDevice {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -50,6 +52,10 @@ impl EbsInstanceBlockDevice {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(&self) -> ::std::option::Option<i32> {
+        self.ebs_card_index
+    }
 }
 impl EbsInstanceBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
@@ -69,6 +75,7 @@ pub struct EbsInstanceBlockDeviceBuilder {
     pub(crate) associated_resource: ::std::option::Option<::std::string::String>,
     pub(crate) volume_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
+    pub(crate) ebs_card_index: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceBuilder {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -172,6 +179,20 @@ impl EbsInstanceBlockDeviceBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(mut self, input: i32) -> Self {
+        self.ebs_card_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn set_ebs_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_card_index = input;
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn get_ebs_card_index(&self) -> &::std::option::Option<i32> {
+        &self.ebs_card_index
+    }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
     pub fn build(self) -> crate::types::EbsInstanceBlockDevice {
         crate::types::EbsInstanceBlockDevice {
@@ -182,6 +203,7 @@ impl EbsInstanceBlockDeviceBuilder {
             associated_resource: self.associated_resource,
             volume_owner_id: self.volume_owner_id,
             operator: self.operator,
+            ebs_card_index: self.ebs_card_index,
         }
     }
 }

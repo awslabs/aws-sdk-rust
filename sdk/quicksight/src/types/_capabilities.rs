@@ -70,6 +70,350 @@ pub struct Capabilities {
     pub knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform actions in external services through Action connectors. Actions allow users to interact with third-party systems.</p>
     pub action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using REST API connection connectors.</p>
+    pub generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update REST API connection actions.</p>
+    pub create_and_update_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share REST API connection actions.</p>
+    pub share_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use REST API connection actions.</p>
+    pub use_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Asana connectors.</p>
+    pub asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Asana actions.</p>
+    pub create_and_update_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Asana actions.</p>
+    pub share_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Asana actions.</p>
+    pub use_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Slack connectors.</p>
+    pub slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Slack actions.</p>
+    pub create_and_update_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Slack actions.</p>
+    pub share_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Slack actions.</p>
+    pub use_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using ServiceNow connectors.</p>
+    pub service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update ServiceNow actions.</p>
+    pub create_and_update_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share ServiceNow actions.</p>
+    pub share_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use ServiceNow actions.</p>
+    pub use_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Salesforce connectors.</p>
+    pub salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Salesforce actions.</p>
+    pub create_and_update_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Salesforce actions.</p>
+    pub share_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Salesforce actions.</p>
+    pub use_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Microsoft Outlook connectors.</p>
+    pub ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Microsoft Outlook actions.</p>
+    pub create_and_update_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Microsoft Outlook actions.</p>
+    pub share_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Microsoft Outlook actions.</p>
+    pub use_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using PagerDuty Advance connectors.</p>
+    pub pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update PagerDuty Advance actions.</p>
+    pub create_and_update_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share PagerDuty Advance actions.</p>
+    pub share_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use PagerDuty Advance actions.</p>
+    pub use_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Jira connectors.</p>
+    pub jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Jira actions.</p>
+    pub create_and_update_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Jira actions.</p>
+    pub share_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Jira actions.</p>
+    pub use_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Atlassian Confluence Cloud connectors.</p>
+    pub confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Atlassian Confluence Cloud actions.</p>
+    pub create_and_update_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Atlassian Confluence Cloud actions.</p>
+    pub share_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Atlassian Confluence Cloud actions.</p>
+    pub use_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Microsoft OneDrive connectors.</p>
+    pub one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Microsoft OneDrive actions.</p>
+    pub create_and_update_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Microsoft OneDrive actions.</p>
+    pub share_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Microsoft OneDrive actions.</p>
+    pub use_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Microsoft SharePoint Online connectors.</p>
+    pub share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Microsoft SharePoint Online actions.</p>
+    pub create_and_update_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Microsoft SharePoint Online actions.</p>
+    pub share_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Microsoft SharePoint Online actions.</p>
+    pub use_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Microsoft Teams connectors.</p>
+    pub ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Microsoft Teams actions.</p>
+    pub create_and_update_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Microsoft Teams actions.</p>
+    pub share_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Microsoft Teams actions.</p>
+    pub use_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Calendar connectors.</p>
+    pub google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Calendar actions.</p>
+    pub create_and_update_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Calendar actions.</p>
+    pub share_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Calendar actions.</p>
+    pub use_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Zendesk connectors.</p>
+    pub zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Zendesk actions.</p>
+    pub create_and_update_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Zendesk actions.</p>
+    pub share_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Zendesk actions.</p>
+    pub use_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Smartsheet connectors.</p>
+    pub smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Smartsheet actions.</p>
+    pub create_and_update_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Smartsheet actions.</p>
+    pub share_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Smartsheet actions.</p>
+    pub use_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using SAP Business Partner connectors.</p>
+    pub sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update SAP Business Partner actions.</p>
+    pub create_and_update_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP Business Partner actions.</p>
+    pub share_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use SAP Business Partner actions.</p>
+    pub use_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using SAP Product Master connectors.</p>
+    pub sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update SAP Product Master actions.</p>
+    pub create_and_update_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP Product Master actions.</p>
+    pub share_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use SAP Product Master actions.</p>
+    pub use_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using SAP Physical Inventory connectors.</p>
+    pub sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update SAP Physical Inventory actions.</p>
+    pub create_and_update_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP Physical Inventory actions.</p>
+    pub share_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use SAP Physical Inventory actions.</p>
+    pub use_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using SAP Bill of Materials connectors.</p>
+    pub sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update SAP Bill of Materials actions.</p>
+    pub create_and_update_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP Bill of Materials actions.</p>
+    pub share_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use SAP Bill of Materials actions.</p>
+    pub use_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using SAP Material Stock connectors.</p>
+    pub sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update SAP Material Stock actions.</p>
+    pub create_and_update_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP Material Stock actions.</p>
+    pub share_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use SAP Material Stock actions.</p>
+    pub use_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using FactSet connectors.</p>
+    pub fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update FactSet actions.</p>
+    pub create_and_update_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share FactSet actions.</p>
+    pub share_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use FactSet actions.</p>
+    pub use_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Amazon S3 connectors.</p>
+    pub amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Amazon S3 actions.</p>
+    pub create_and_update_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon S3 actions.</p>
+    pub share_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Amazon S3 actions.</p>
+    pub use_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Textract connectors.</p>
+    pub textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Textract actions.</p>
+    pub create_and_update_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Textract actions.</p>
+    pub share_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Textract actions.</p>
+    pub use_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Comprehend connectors.</p>
+    pub comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Comprehend actions.</p>
+    pub create_and_update_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Comprehend actions.</p>
+    pub share_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Comprehend actions.</p>
+    pub use_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Comprehend Medical connectors.</p>
+    pub comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Comprehend Medical actions.</p>
+    pub create_and_update_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Comprehend Medical actions.</p>
+    pub share_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Comprehend Medical actions.</p>
+    pub use_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Bedrock Agent connectors.</p>
+    pub amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Bedrock Agent actions.</p>
+    pub create_and_update_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Bedrock Agent actions.</p>
+    pub share_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Bedrock Agent actions.</p>
+    pub use_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Bedrock Runtime connectors.</p>
+    pub amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Bedrock Runtime actions.</p>
+    pub create_and_update_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Bedrock Runtime actions.</p>
+    pub share_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Bedrock Runtime actions.</p>
+    pub use_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Bedrock Data Automation Runtime connectors.</p>
+    pub amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Bedrock Data Automation Runtime actions.</p>
+    pub create_and_update_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Bedrock Data Automation Runtime actions.</p>
+    pub share_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Bedrock Data Automation Runtime actions.</p>
+    pub use_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Model Context Protocol connectors.</p>
+    pub mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Model Context Protocol actions.</p>
+    pub create_and_update_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Model Context Protocol actions.</p>
+    pub share_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Model Context Protocol actions.</p>
+    pub use_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
+    pub open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update OpenAPI Specification actions.</p>
+    pub create_and_update_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share OpenAPI Specification actions.</p>
+    pub share_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use OpenAPI Specification actions.</p>
+    pub use_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using S&amp;P Global Market Intelligence connectors.</p>
+    pub sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update S&amp;P Global Market Intelligence actions.</p>
+    pub create_and_update_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share S&amp;P Global Market Intelligence actions.</p>
+    pub share_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use S&amp;P Global Market Intelligence actions.</p>
+    pub use_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using S&amp;P Global Energy connectors.</p>
+    pub sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update S&amp;P Global Energy actions.</p>
+    pub create_and_update_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share S&amp;P Global Energy actions.</p>
+    pub share_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use S&amp;P Global Energy actions.</p>
+    pub use_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using BambooHR connectors.</p>
+    pub bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update BambooHR actions.</p>
+    pub create_and_update_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share BambooHR actions.</p>
+    pub share_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use BambooHR actions.</p>
+    pub use_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Box Agent connectors.</p>
+    pub box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Box Agent actions.</p>
+    pub create_and_update_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Box Agent actions.</p>
+    pub share_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Box Agent actions.</p>
+    pub use_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Canva Agent connectors.</p>
+    pub canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Canva Agent actions.</p>
+    pub create_and_update_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Canva Agent actions.</p>
+    pub share_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Canva Agent actions.</p>
+    pub use_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using GitHub connectors.</p>
+    pub github_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update GitHub actions.</p>
+    pub create_and_update_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share GitHub actions.</p>
+    pub share_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use GitHub actions.</p>
+    pub use_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Notion connectors.</p>
+    pub notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Notion actions.</p>
+    pub create_and_update_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Notion actions.</p>
+    pub share_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Notion actions.</p>
+    pub use_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Linear connectors.</p>
+    pub linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Linear actions.</p>
+    pub create_and_update_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Linear actions.</p>
+    pub share_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Linear actions.</p>
+    pub use_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using HuggingFace connectors.</p>
+    pub hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update HuggingFace actions.</p>
+    pub create_and_update_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share HuggingFace actions.</p>
+    pub share_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use HuggingFace actions.</p>
+    pub use_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Monday connectors.</p>
+    pub monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Monday actions.</p>
+    pub create_and_update_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Monday actions.</p>
+    pub share_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Monday actions.</p>
+    pub use_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Hubspot connectors.</p>
+    pub hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Hubspot actions.</p>
+    pub create_and_update_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Hubspot actions.</p>
+    pub share_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Hubspot actions.</p>
+    pub use_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Intercom connectors.</p>
+    pub intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Intercom actions.</p>
+    pub create_and_update_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Intercom actions.</p>
+    pub share_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Intercom actions.</p>
+    pub use_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using New Relic connectors.</p>
+    pub new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update New Relic actions.</p>
+    pub create_and_update_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share New Relic actions.</p>
+    pub share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use New Relic actions.</p>
+    pub use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform space-related actions.</p>
     pub space: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform chat-related actions.</p>
@@ -214,6 +558,694 @@ impl Capabilities {
     pub fn action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.action.as_ref()
     }
+    /// <p>The ability to perform actions using REST API connection connectors.</p>
+    pub fn generic_http_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.generic_http_action.as_ref()
+    }
+    /// <p>The ability to create and update REST API connection actions.</p>
+    pub fn create_and_update_generic_http_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_generic_http_action.as_ref()
+    }
+    /// <p>The ability to share REST API connection actions.</p>
+    pub fn share_generic_http_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_generic_http_action.as_ref()
+    }
+    /// <p>The ability to use REST API connection actions.</p>
+    pub fn use_generic_http_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_generic_http_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Asana connectors.</p>
+    pub fn asana_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.asana_action.as_ref()
+    }
+    /// <p>The ability to create and update Asana actions.</p>
+    pub fn create_and_update_asana_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_asana_action.as_ref()
+    }
+    /// <p>The ability to share Asana actions.</p>
+    pub fn share_asana_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_asana_action.as_ref()
+    }
+    /// <p>The ability to use Asana actions.</p>
+    pub fn use_asana_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_asana_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Slack connectors.</p>
+    pub fn slack_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.slack_action.as_ref()
+    }
+    /// <p>The ability to create and update Slack actions.</p>
+    pub fn create_and_update_slack_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_slack_action.as_ref()
+    }
+    /// <p>The ability to share Slack actions.</p>
+    pub fn share_slack_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_slack_action.as_ref()
+    }
+    /// <p>The ability to use Slack actions.</p>
+    pub fn use_slack_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_slack_action.as_ref()
+    }
+    /// <p>The ability to perform actions using ServiceNow connectors.</p>
+    pub fn service_now_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.service_now_action.as_ref()
+    }
+    /// <p>The ability to create and update ServiceNow actions.</p>
+    pub fn create_and_update_service_now_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_service_now_action.as_ref()
+    }
+    /// <p>The ability to share ServiceNow actions.</p>
+    pub fn share_service_now_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_service_now_action.as_ref()
+    }
+    /// <p>The ability to use ServiceNow actions.</p>
+    pub fn use_service_now_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_service_now_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Salesforce connectors.</p>
+    pub fn salesforce_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.salesforce_action.as_ref()
+    }
+    /// <p>The ability to create and update Salesforce actions.</p>
+    pub fn create_and_update_salesforce_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_salesforce_action.as_ref()
+    }
+    /// <p>The ability to share Salesforce actions.</p>
+    pub fn share_salesforce_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_salesforce_action.as_ref()
+    }
+    /// <p>The ability to use Salesforce actions.</p>
+    pub fn use_salesforce_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_salesforce_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Microsoft Outlook connectors.</p>
+    pub fn ms_exchange_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.ms_exchange_action.as_ref()
+    }
+    /// <p>The ability to create and update Microsoft Outlook actions.</p>
+    pub fn create_and_update_ms_exchange_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_ms_exchange_action.as_ref()
+    }
+    /// <p>The ability to share Microsoft Outlook actions.</p>
+    pub fn share_ms_exchange_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_ms_exchange_action.as_ref()
+    }
+    /// <p>The ability to use Microsoft Outlook actions.</p>
+    pub fn use_ms_exchange_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_ms_exchange_action.as_ref()
+    }
+    /// <p>The ability to perform actions using PagerDuty Advance connectors.</p>
+    pub fn pager_duty_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.pager_duty_action.as_ref()
+    }
+    /// <p>The ability to create and update PagerDuty Advance actions.</p>
+    pub fn create_and_update_pager_duty_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_pager_duty_action.as_ref()
+    }
+    /// <p>The ability to share PagerDuty Advance actions.</p>
+    pub fn share_pager_duty_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_pager_duty_action.as_ref()
+    }
+    /// <p>The ability to use PagerDuty Advance actions.</p>
+    pub fn use_pager_duty_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_pager_duty_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Jira connectors.</p>
+    pub fn jira_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.jira_action.as_ref()
+    }
+    /// <p>The ability to create and update Jira actions.</p>
+    pub fn create_and_update_jira_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_jira_action.as_ref()
+    }
+    /// <p>The ability to share Jira actions.</p>
+    pub fn share_jira_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_jira_action.as_ref()
+    }
+    /// <p>The ability to use Jira actions.</p>
+    pub fn use_jira_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_jira_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Atlassian Confluence Cloud connectors.</p>
+    pub fn confluence_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.confluence_action.as_ref()
+    }
+    /// <p>The ability to create and update Atlassian Confluence Cloud actions.</p>
+    pub fn create_and_update_confluence_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_confluence_action.as_ref()
+    }
+    /// <p>The ability to share Atlassian Confluence Cloud actions.</p>
+    pub fn share_confluence_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_confluence_action.as_ref()
+    }
+    /// <p>The ability to use Atlassian Confluence Cloud actions.</p>
+    pub fn use_confluence_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_confluence_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Microsoft OneDrive connectors.</p>
+    pub fn one_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.one_drive_action.as_ref()
+    }
+    /// <p>The ability to create and update Microsoft OneDrive actions.</p>
+    pub fn create_and_update_one_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_one_drive_action.as_ref()
+    }
+    /// <p>The ability to share Microsoft OneDrive actions.</p>
+    pub fn share_one_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_one_drive_action.as_ref()
+    }
+    /// <p>The ability to use Microsoft OneDrive actions.</p>
+    pub fn use_one_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_one_drive_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Microsoft SharePoint Online connectors.</p>
+    pub fn share_point_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_point_action.as_ref()
+    }
+    /// <p>The ability to create and update Microsoft SharePoint Online actions.</p>
+    pub fn create_and_update_share_point_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_share_point_action.as_ref()
+    }
+    /// <p>The ability to share Microsoft SharePoint Online actions.</p>
+    pub fn share_share_point_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_share_point_action.as_ref()
+    }
+    /// <p>The ability to use Microsoft SharePoint Online actions.</p>
+    pub fn use_share_point_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_share_point_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Microsoft Teams connectors.</p>
+    pub fn ms_teams_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.ms_teams_action.as_ref()
+    }
+    /// <p>The ability to create and update Microsoft Teams actions.</p>
+    pub fn create_and_update_ms_teams_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_ms_teams_action.as_ref()
+    }
+    /// <p>The ability to share Microsoft Teams actions.</p>
+    pub fn share_ms_teams_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_ms_teams_action.as_ref()
+    }
+    /// <p>The ability to use Microsoft Teams actions.</p>
+    pub fn use_ms_teams_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_ms_teams_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Calendar connectors.</p>
+    pub fn google_calendar_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_calendar_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Calendar actions.</p>
+    pub fn create_and_update_google_calendar_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_calendar_action.as_ref()
+    }
+    /// <p>The ability to share Google Calendar actions.</p>
+    pub fn share_google_calendar_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_calendar_action.as_ref()
+    }
+    /// <p>The ability to use Google Calendar actions.</p>
+    pub fn use_google_calendar_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_calendar_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Zendesk connectors.</p>
+    pub fn zendesk_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.zendesk_action.as_ref()
+    }
+    /// <p>The ability to create and update Zendesk actions.</p>
+    pub fn create_and_update_zendesk_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_zendesk_action.as_ref()
+    }
+    /// <p>The ability to share Zendesk actions.</p>
+    pub fn share_zendesk_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_zendesk_action.as_ref()
+    }
+    /// <p>The ability to use Zendesk actions.</p>
+    pub fn use_zendesk_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_zendesk_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Smartsheet connectors.</p>
+    pub fn smartsheet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.smartsheet_action.as_ref()
+    }
+    /// <p>The ability to create and update Smartsheet actions.</p>
+    pub fn create_and_update_smartsheet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_smartsheet_action.as_ref()
+    }
+    /// <p>The ability to share Smartsheet actions.</p>
+    pub fn share_smartsheet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_smartsheet_action.as_ref()
+    }
+    /// <p>The ability to use Smartsheet actions.</p>
+    pub fn use_smartsheet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_smartsheet_action.as_ref()
+    }
+    /// <p>The ability to perform actions using SAP Business Partner connectors.</p>
+    pub fn sap_business_partner_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_business_partner_action.as_ref()
+    }
+    /// <p>The ability to create and update SAP Business Partner actions.</p>
+    pub fn create_and_update_sap_business_partner_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sap_business_partner_action.as_ref()
+    }
+    /// <p>The ability to share SAP Business Partner actions.</p>
+    pub fn share_sap_business_partner_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_business_partner_action.as_ref()
+    }
+    /// <p>The ability to use SAP Business Partner actions.</p>
+    pub fn use_sap_business_partner_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sap_business_partner_action.as_ref()
+    }
+    /// <p>The ability to perform actions using SAP Product Master connectors.</p>
+    pub fn sap_product_master_data_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_product_master_data_action.as_ref()
+    }
+    /// <p>The ability to create and update SAP Product Master actions.</p>
+    pub fn create_and_update_sap_product_master_data_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sap_product_master_data_action.as_ref()
+    }
+    /// <p>The ability to share SAP Product Master actions.</p>
+    pub fn share_sap_product_master_data_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_product_master_data_action.as_ref()
+    }
+    /// <p>The ability to use SAP Product Master actions.</p>
+    pub fn use_sap_product_master_data_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sap_product_master_data_action.as_ref()
+    }
+    /// <p>The ability to perform actions using SAP Physical Inventory connectors.</p>
+    pub fn sap_physical_inventory_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_physical_inventory_action.as_ref()
+    }
+    /// <p>The ability to create and update SAP Physical Inventory actions.</p>
+    pub fn create_and_update_sap_physical_inventory_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sap_physical_inventory_action.as_ref()
+    }
+    /// <p>The ability to share SAP Physical Inventory actions.</p>
+    pub fn share_sap_physical_inventory_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_physical_inventory_action.as_ref()
+    }
+    /// <p>The ability to use SAP Physical Inventory actions.</p>
+    pub fn use_sap_physical_inventory_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sap_physical_inventory_action.as_ref()
+    }
+    /// <p>The ability to perform actions using SAP Bill of Materials connectors.</p>
+    pub fn sap_bill_of_material_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_bill_of_material_action.as_ref()
+    }
+    /// <p>The ability to create and update SAP Bill of Materials actions.</p>
+    pub fn create_and_update_sap_bill_of_material_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sap_bill_of_material_action.as_ref()
+    }
+    /// <p>The ability to share SAP Bill of Materials actions.</p>
+    pub fn share_sap_bill_of_material_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_bill_of_material_action.as_ref()
+    }
+    /// <p>The ability to use SAP Bill of Materials actions.</p>
+    pub fn use_sap_bill_of_material_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sap_bill_of_material_action.as_ref()
+    }
+    /// <p>The ability to perform actions using SAP Material Stock connectors.</p>
+    pub fn sap_material_stock_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_material_stock_action.as_ref()
+    }
+    /// <p>The ability to create and update SAP Material Stock actions.</p>
+    pub fn create_and_update_sap_material_stock_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sap_material_stock_action.as_ref()
+    }
+    /// <p>The ability to share SAP Material Stock actions.</p>
+    pub fn share_sap_material_stock_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_material_stock_action.as_ref()
+    }
+    /// <p>The ability to use SAP Material Stock actions.</p>
+    pub fn use_sap_material_stock_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sap_material_stock_action.as_ref()
+    }
+    /// <p>The ability to perform actions using FactSet connectors.</p>
+    pub fn fact_set_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.fact_set_action.as_ref()
+    }
+    /// <p>The ability to create and update FactSet actions.</p>
+    pub fn create_and_update_fact_set_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_fact_set_action.as_ref()
+    }
+    /// <p>The ability to share FactSet actions.</p>
+    pub fn share_fact_set_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_fact_set_action.as_ref()
+    }
+    /// <p>The ability to use FactSet actions.</p>
+    pub fn use_fact_set_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_fact_set_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Amazon S3 connectors.</p>
+    pub fn amazon_s_three_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.amazon_s_three_action.as_ref()
+    }
+    /// <p>The ability to create and update Amazon S3 actions.</p>
+    pub fn create_and_update_amazon_s_three_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_amazon_s_three_action.as_ref()
+    }
+    /// <p>The ability to share Amazon S3 actions.</p>
+    pub fn share_amazon_s_three_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_amazon_s_three_action.as_ref()
+    }
+    /// <p>The ability to use Amazon S3 actions.</p>
+    pub fn use_amazon_s_three_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_amazon_s_three_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Textract connectors.</p>
+    pub fn textract_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.textract_action.as_ref()
+    }
+    /// <p>The ability to create and update Textract actions.</p>
+    pub fn create_and_update_textract_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_textract_action.as_ref()
+    }
+    /// <p>The ability to share Textract actions.</p>
+    pub fn share_textract_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_textract_action.as_ref()
+    }
+    /// <p>The ability to use Textract actions.</p>
+    pub fn use_textract_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_textract_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Comprehend connectors.</p>
+    pub fn comprehend_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.comprehend_action.as_ref()
+    }
+    /// <p>The ability to create and update Comprehend actions.</p>
+    pub fn create_and_update_comprehend_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_comprehend_action.as_ref()
+    }
+    /// <p>The ability to share Comprehend actions.</p>
+    pub fn share_comprehend_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_comprehend_action.as_ref()
+    }
+    /// <p>The ability to use Comprehend actions.</p>
+    pub fn use_comprehend_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_comprehend_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Comprehend Medical connectors.</p>
+    pub fn comprehend_medical_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.comprehend_medical_action.as_ref()
+    }
+    /// <p>The ability to create and update Comprehend Medical actions.</p>
+    pub fn create_and_update_comprehend_medical_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_comprehend_medical_action.as_ref()
+    }
+    /// <p>The ability to share Comprehend Medical actions.</p>
+    pub fn share_comprehend_medical_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_comprehend_medical_action.as_ref()
+    }
+    /// <p>The ability to use Comprehend Medical actions.</p>
+    pub fn use_comprehend_medical_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_comprehend_medical_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Bedrock Agent connectors.</p>
+    pub fn amazon_bedrock_ars_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.amazon_bedrock_ars_action.as_ref()
+    }
+    /// <p>The ability to create and update Bedrock Agent actions.</p>
+    pub fn create_and_update_amazon_bedrock_ars_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_amazon_bedrock_ars_action.as_ref()
+    }
+    /// <p>The ability to share Bedrock Agent actions.</p>
+    pub fn share_amazon_bedrock_ars_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_amazon_bedrock_ars_action.as_ref()
+    }
+    /// <p>The ability to use Bedrock Agent actions.</p>
+    pub fn use_amazon_bedrock_ars_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_amazon_bedrock_ars_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Bedrock Runtime connectors.</p>
+    pub fn amazon_bedrock_fs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.amazon_bedrock_fs_action.as_ref()
+    }
+    /// <p>The ability to create and update Bedrock Runtime actions.</p>
+    pub fn create_and_update_amazon_bedrock_fs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_amazon_bedrock_fs_action.as_ref()
+    }
+    /// <p>The ability to share Bedrock Runtime actions.</p>
+    pub fn share_amazon_bedrock_fs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_amazon_bedrock_fs_action.as_ref()
+    }
+    /// <p>The ability to use Bedrock Runtime actions.</p>
+    pub fn use_amazon_bedrock_fs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_amazon_bedrock_fs_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Bedrock Data Automation Runtime connectors.</p>
+    pub fn amazon_bedrock_krs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.amazon_bedrock_krs_action.as_ref()
+    }
+    /// <p>The ability to create and update Bedrock Data Automation Runtime actions.</p>
+    pub fn create_and_update_amazon_bedrock_krs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_amazon_bedrock_krs_action.as_ref()
+    }
+    /// <p>The ability to share Bedrock Data Automation Runtime actions.</p>
+    pub fn share_amazon_bedrock_krs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_amazon_bedrock_krs_action.as_ref()
+    }
+    /// <p>The ability to use Bedrock Data Automation Runtime actions.</p>
+    pub fn use_amazon_bedrock_krs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_amazon_bedrock_krs_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Model Context Protocol connectors.</p>
+    pub fn mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.mcp_action.as_ref()
+    }
+    /// <p>The ability to create and update Model Context Protocol actions.</p>
+    pub fn create_and_update_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_mcp_action.as_ref()
+    }
+    /// <p>The ability to share Model Context Protocol actions.</p>
+    pub fn share_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_mcp_action.as_ref()
+    }
+    /// <p>The ability to use Model Context Protocol actions.</p>
+    pub fn use_mcp_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_mcp_action.as_ref()
+    }
+    /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
+    pub fn open_api_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.open_api_action.as_ref()
+    }
+    /// <p>The ability to create and update OpenAPI Specification actions.</p>
+    pub fn create_and_update_open_api_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_open_api_action.as_ref()
+    }
+    /// <p>The ability to share OpenAPI Specification actions.</p>
+    pub fn share_open_api_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_open_api_action.as_ref()
+    }
+    /// <p>The ability to use OpenAPI Specification actions.</p>
+    pub fn use_open_api_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_open_api_action.as_ref()
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Market Intelligence connectors.</p>
+    pub fn sand_pgmi_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sand_pgmi_action.as_ref()
+    }
+    /// <p>The ability to create and update S&amp;P Global Market Intelligence actions.</p>
+    pub fn create_and_update_sand_pgmi_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sand_pgmi_action.as_ref()
+    }
+    /// <p>The ability to share S&amp;P Global Market Intelligence actions.</p>
+    pub fn share_sand_pgmi_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sand_pgmi_action.as_ref()
+    }
+    /// <p>The ability to use S&amp;P Global Market Intelligence actions.</p>
+    pub fn use_sand_pgmi_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sand_pgmi_action.as_ref()
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Energy connectors.</p>
+    pub fn sand_p_global_energy_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sand_p_global_energy_action.as_ref()
+    }
+    /// <p>The ability to create and update S&amp;P Global Energy actions.</p>
+    pub fn create_and_update_sand_p_global_energy_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_sand_p_global_energy_action.as_ref()
+    }
+    /// <p>The ability to share S&amp;P Global Energy actions.</p>
+    pub fn share_sand_p_global_energy_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sand_p_global_energy_action.as_ref()
+    }
+    /// <p>The ability to use S&amp;P Global Energy actions.</p>
+    pub fn use_sand_p_global_energy_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_sand_p_global_energy_action.as_ref()
+    }
+    /// <p>The ability to perform actions using BambooHR connectors.</p>
+    pub fn bamboo_hr_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.bamboo_hr_action.as_ref()
+    }
+    /// <p>The ability to create and update BambooHR actions.</p>
+    pub fn create_and_update_bamboo_hr_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_bamboo_hr_action.as_ref()
+    }
+    /// <p>The ability to share BambooHR actions.</p>
+    pub fn share_bamboo_hr_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_bamboo_hr_action.as_ref()
+    }
+    /// <p>The ability to use BambooHR actions.</p>
+    pub fn use_bamboo_hr_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_bamboo_hr_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Box Agent connectors.</p>
+    pub fn box_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.box_agent_action.as_ref()
+    }
+    /// <p>The ability to create and update Box Agent actions.</p>
+    pub fn create_and_update_box_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_box_agent_action.as_ref()
+    }
+    /// <p>The ability to share Box Agent actions.</p>
+    pub fn share_box_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_box_agent_action.as_ref()
+    }
+    /// <p>The ability to use Box Agent actions.</p>
+    pub fn use_box_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_box_agent_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Canva Agent connectors.</p>
+    pub fn canva_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.canva_agent_action.as_ref()
+    }
+    /// <p>The ability to create and update Canva Agent actions.</p>
+    pub fn create_and_update_canva_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_canva_agent_action.as_ref()
+    }
+    /// <p>The ability to share Canva Agent actions.</p>
+    pub fn share_canva_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_canva_agent_action.as_ref()
+    }
+    /// <p>The ability to use Canva Agent actions.</p>
+    pub fn use_canva_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_canva_agent_action.as_ref()
+    }
+    /// <p>The ability to perform actions using GitHub connectors.</p>
+    pub fn github_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.github_action.as_ref()
+    }
+    /// <p>The ability to create and update GitHub actions.</p>
+    pub fn create_and_update_github_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_github_action.as_ref()
+    }
+    /// <p>The ability to share GitHub actions.</p>
+    pub fn share_github_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_github_action.as_ref()
+    }
+    /// <p>The ability to use GitHub actions.</p>
+    pub fn use_github_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_github_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Notion connectors.</p>
+    pub fn notion_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.notion_action.as_ref()
+    }
+    /// <p>The ability to create and update Notion actions.</p>
+    pub fn create_and_update_notion_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_notion_action.as_ref()
+    }
+    /// <p>The ability to share Notion actions.</p>
+    pub fn share_notion_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_notion_action.as_ref()
+    }
+    /// <p>The ability to use Notion actions.</p>
+    pub fn use_notion_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_notion_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Linear connectors.</p>
+    pub fn linear_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.linear_action.as_ref()
+    }
+    /// <p>The ability to create and update Linear actions.</p>
+    pub fn create_and_update_linear_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_linear_action.as_ref()
+    }
+    /// <p>The ability to share Linear actions.</p>
+    pub fn share_linear_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_linear_action.as_ref()
+    }
+    /// <p>The ability to use Linear actions.</p>
+    pub fn use_linear_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_linear_action.as_ref()
+    }
+    /// <p>The ability to perform actions using HuggingFace connectors.</p>
+    pub fn hugging_face_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.hugging_face_action.as_ref()
+    }
+    /// <p>The ability to create and update HuggingFace actions.</p>
+    pub fn create_and_update_hugging_face_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_hugging_face_action.as_ref()
+    }
+    /// <p>The ability to share HuggingFace actions.</p>
+    pub fn share_hugging_face_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_hugging_face_action.as_ref()
+    }
+    /// <p>The ability to use HuggingFace actions.</p>
+    pub fn use_hugging_face_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_hugging_face_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Monday connectors.</p>
+    pub fn monday_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.monday_action.as_ref()
+    }
+    /// <p>The ability to create and update Monday actions.</p>
+    pub fn create_and_update_monday_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_monday_action.as_ref()
+    }
+    /// <p>The ability to share Monday actions.</p>
+    pub fn share_monday_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_monday_action.as_ref()
+    }
+    /// <p>The ability to use Monday actions.</p>
+    pub fn use_monday_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_monday_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Hubspot connectors.</p>
+    pub fn hubspot_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.hubspot_action.as_ref()
+    }
+    /// <p>The ability to create and update Hubspot actions.</p>
+    pub fn create_and_update_hubspot_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_hubspot_action.as_ref()
+    }
+    /// <p>The ability to share Hubspot actions.</p>
+    pub fn share_hubspot_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_hubspot_action.as_ref()
+    }
+    /// <p>The ability to use Hubspot actions.</p>
+    pub fn use_hubspot_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_hubspot_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Intercom connectors.</p>
+    pub fn intercom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.intercom_action.as_ref()
+    }
+    /// <p>The ability to create and update Intercom actions.</p>
+    pub fn create_and_update_intercom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_intercom_action.as_ref()
+    }
+    /// <p>The ability to share Intercom actions.</p>
+    pub fn share_intercom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_intercom_action.as_ref()
+    }
+    /// <p>The ability to use Intercom actions.</p>
+    pub fn use_intercom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_intercom_action.as_ref()
+    }
+    /// <p>The ability to perform actions using New Relic connectors.</p>
+    pub fn new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.new_relic_action.as_ref()
+    }
+    /// <p>The ability to create and update New Relic actions.</p>
+    pub fn create_and_update_new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_new_relic_action.as_ref()
+    }
+    /// <p>The ability to share New Relic actions.</p>
+    pub fn share_new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_new_relic_action.as_ref()
+    }
+    /// <p>The ability to use New Relic actions.</p>
+    pub fn use_new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_new_relic_action.as_ref()
+    }
     /// <p>The ability to perform space-related actions.</p>
     pub fn space(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.space.as_ref()
@@ -279,6 +1311,178 @@ pub struct CapabilitiesBuilder {
     pub(crate) use_agent_web_search: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_asana_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_slack_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_service_now_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_salesforce_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_ms_exchange_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_pager_duty_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_jira_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_confluence_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_one_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_share_point_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_ms_teams_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_calendar_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_zendesk_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_smartsheet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sap_business_partner_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sap_product_master_data_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sap_physical_inventory_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sap_bill_of_material_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sap_material_stock_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_fact_set_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_amazon_s_three_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_textract_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_comprehend_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_comprehend_medical_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_amazon_bedrock_ars_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_amazon_bedrock_fs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_amazon_bedrock_krs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_mcp_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_open_api_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sand_pgmi_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_sand_p_global_energy_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_bamboo_hr_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_box_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_canva_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) github_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_github_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_notion_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_linear_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_hugging_face_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_monday_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_hubspot_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_intercom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) space: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) chat_agent: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
@@ -748,6 +1952,2414 @@ impl CapabilitiesBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.action
     }
+    /// <p>The ability to perform actions using REST API connection connectors.</p>
+    pub fn generic_http_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.generic_http_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using REST API connection connectors.</p>
+    pub fn set_generic_http_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.generic_http_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using REST API connection connectors.</p>
+    pub fn get_generic_http_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.generic_http_action
+    }
+    /// <p>The ability to create and update REST API connection actions.</p>
+    pub fn create_and_update_generic_http_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_generic_http_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update REST API connection actions.</p>
+    pub fn set_create_and_update_generic_http_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_generic_http_action = input;
+        self
+    }
+    /// <p>The ability to create and update REST API connection actions.</p>
+    pub fn get_create_and_update_generic_http_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_generic_http_action
+    }
+    /// <p>The ability to share REST API connection actions.</p>
+    pub fn share_generic_http_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_generic_http_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share REST API connection actions.</p>
+    pub fn set_share_generic_http_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_generic_http_action = input;
+        self
+    }
+    /// <p>The ability to share REST API connection actions.</p>
+    pub fn get_share_generic_http_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_generic_http_action
+    }
+    /// <p>The ability to use REST API connection actions.</p>
+    pub fn use_generic_http_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_generic_http_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use REST API connection actions.</p>
+    pub fn set_use_generic_http_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_generic_http_action = input;
+        self
+    }
+    /// <p>The ability to use REST API connection actions.</p>
+    pub fn get_use_generic_http_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_generic_http_action
+    }
+    /// <p>The ability to perform actions using Asana connectors.</p>
+    pub fn asana_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.asana_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Asana connectors.</p>
+    pub fn set_asana_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.asana_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Asana connectors.</p>
+    pub fn get_asana_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.asana_action
+    }
+    /// <p>The ability to create and update Asana actions.</p>
+    pub fn create_and_update_asana_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_asana_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Asana actions.</p>
+    pub fn set_create_and_update_asana_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_asana_action = input;
+        self
+    }
+    /// <p>The ability to create and update Asana actions.</p>
+    pub fn get_create_and_update_asana_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_asana_action
+    }
+    /// <p>The ability to share Asana actions.</p>
+    pub fn share_asana_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_asana_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Asana actions.</p>
+    pub fn set_share_asana_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_asana_action = input;
+        self
+    }
+    /// <p>The ability to share Asana actions.</p>
+    pub fn get_share_asana_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_asana_action
+    }
+    /// <p>The ability to use Asana actions.</p>
+    pub fn use_asana_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_asana_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Asana actions.</p>
+    pub fn set_use_asana_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_asana_action = input;
+        self
+    }
+    /// <p>The ability to use Asana actions.</p>
+    pub fn get_use_asana_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_asana_action
+    }
+    /// <p>The ability to perform actions using Slack connectors.</p>
+    pub fn slack_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.slack_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Slack connectors.</p>
+    pub fn set_slack_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.slack_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Slack connectors.</p>
+    pub fn get_slack_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.slack_action
+    }
+    /// <p>The ability to create and update Slack actions.</p>
+    pub fn create_and_update_slack_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_slack_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Slack actions.</p>
+    pub fn set_create_and_update_slack_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_slack_action = input;
+        self
+    }
+    /// <p>The ability to create and update Slack actions.</p>
+    pub fn get_create_and_update_slack_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_slack_action
+    }
+    /// <p>The ability to share Slack actions.</p>
+    pub fn share_slack_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_slack_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Slack actions.</p>
+    pub fn set_share_slack_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_slack_action = input;
+        self
+    }
+    /// <p>The ability to share Slack actions.</p>
+    pub fn get_share_slack_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_slack_action
+    }
+    /// <p>The ability to use Slack actions.</p>
+    pub fn use_slack_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_slack_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Slack actions.</p>
+    pub fn set_use_slack_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_slack_action = input;
+        self
+    }
+    /// <p>The ability to use Slack actions.</p>
+    pub fn get_use_slack_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_slack_action
+    }
+    /// <p>The ability to perform actions using ServiceNow connectors.</p>
+    pub fn service_now_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.service_now_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using ServiceNow connectors.</p>
+    pub fn set_service_now_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.service_now_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using ServiceNow connectors.</p>
+    pub fn get_service_now_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.service_now_action
+    }
+    /// <p>The ability to create and update ServiceNow actions.</p>
+    pub fn create_and_update_service_now_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_service_now_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update ServiceNow actions.</p>
+    pub fn set_create_and_update_service_now_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_service_now_action = input;
+        self
+    }
+    /// <p>The ability to create and update ServiceNow actions.</p>
+    pub fn get_create_and_update_service_now_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_service_now_action
+    }
+    /// <p>The ability to share ServiceNow actions.</p>
+    pub fn share_service_now_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_service_now_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share ServiceNow actions.</p>
+    pub fn set_share_service_now_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_service_now_action = input;
+        self
+    }
+    /// <p>The ability to share ServiceNow actions.</p>
+    pub fn get_share_service_now_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_service_now_action
+    }
+    /// <p>The ability to use ServiceNow actions.</p>
+    pub fn use_service_now_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_service_now_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use ServiceNow actions.</p>
+    pub fn set_use_service_now_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_service_now_action = input;
+        self
+    }
+    /// <p>The ability to use ServiceNow actions.</p>
+    pub fn get_use_service_now_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_service_now_action
+    }
+    /// <p>The ability to perform actions using Salesforce connectors.</p>
+    pub fn salesforce_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.salesforce_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Salesforce connectors.</p>
+    pub fn set_salesforce_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.salesforce_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Salesforce connectors.</p>
+    pub fn get_salesforce_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.salesforce_action
+    }
+    /// <p>The ability to create and update Salesforce actions.</p>
+    pub fn create_and_update_salesforce_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_salesforce_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Salesforce actions.</p>
+    pub fn set_create_and_update_salesforce_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_salesforce_action = input;
+        self
+    }
+    /// <p>The ability to create and update Salesforce actions.</p>
+    pub fn get_create_and_update_salesforce_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_salesforce_action
+    }
+    /// <p>The ability to share Salesforce actions.</p>
+    pub fn share_salesforce_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_salesforce_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Salesforce actions.</p>
+    pub fn set_share_salesforce_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_salesforce_action = input;
+        self
+    }
+    /// <p>The ability to share Salesforce actions.</p>
+    pub fn get_share_salesforce_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_salesforce_action
+    }
+    /// <p>The ability to use Salesforce actions.</p>
+    pub fn use_salesforce_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_salesforce_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Salesforce actions.</p>
+    pub fn set_use_salesforce_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_salesforce_action = input;
+        self
+    }
+    /// <p>The ability to use Salesforce actions.</p>
+    pub fn get_use_salesforce_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_salesforce_action
+    }
+    /// <p>The ability to perform actions using Microsoft Outlook connectors.</p>
+    pub fn ms_exchange_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.ms_exchange_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft Outlook connectors.</p>
+    pub fn set_ms_exchange_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.ms_exchange_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft Outlook connectors.</p>
+    pub fn get_ms_exchange_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.ms_exchange_action
+    }
+    /// <p>The ability to create and update Microsoft Outlook actions.</p>
+    pub fn create_and_update_ms_exchange_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_ms_exchange_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Microsoft Outlook actions.</p>
+    pub fn set_create_and_update_ms_exchange_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_ms_exchange_action = input;
+        self
+    }
+    /// <p>The ability to create and update Microsoft Outlook actions.</p>
+    pub fn get_create_and_update_ms_exchange_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_ms_exchange_action
+    }
+    /// <p>The ability to share Microsoft Outlook actions.</p>
+    pub fn share_ms_exchange_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_ms_exchange_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Microsoft Outlook actions.</p>
+    pub fn set_share_ms_exchange_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_ms_exchange_action = input;
+        self
+    }
+    /// <p>The ability to share Microsoft Outlook actions.</p>
+    pub fn get_share_ms_exchange_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_ms_exchange_action
+    }
+    /// <p>The ability to use Microsoft Outlook actions.</p>
+    pub fn use_ms_exchange_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_ms_exchange_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Microsoft Outlook actions.</p>
+    pub fn set_use_ms_exchange_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_ms_exchange_action = input;
+        self
+    }
+    /// <p>The ability to use Microsoft Outlook actions.</p>
+    pub fn get_use_ms_exchange_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_ms_exchange_action
+    }
+    /// <p>The ability to perform actions using PagerDuty Advance connectors.</p>
+    pub fn pager_duty_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.pager_duty_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using PagerDuty Advance connectors.</p>
+    pub fn set_pager_duty_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.pager_duty_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using PagerDuty Advance connectors.</p>
+    pub fn get_pager_duty_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.pager_duty_action
+    }
+    /// <p>The ability to create and update PagerDuty Advance actions.</p>
+    pub fn create_and_update_pager_duty_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_pager_duty_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update PagerDuty Advance actions.</p>
+    pub fn set_create_and_update_pager_duty_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_pager_duty_action = input;
+        self
+    }
+    /// <p>The ability to create and update PagerDuty Advance actions.</p>
+    pub fn get_create_and_update_pager_duty_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_pager_duty_action
+    }
+    /// <p>The ability to share PagerDuty Advance actions.</p>
+    pub fn share_pager_duty_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_pager_duty_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share PagerDuty Advance actions.</p>
+    pub fn set_share_pager_duty_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_pager_duty_action = input;
+        self
+    }
+    /// <p>The ability to share PagerDuty Advance actions.</p>
+    pub fn get_share_pager_duty_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_pager_duty_action
+    }
+    /// <p>The ability to use PagerDuty Advance actions.</p>
+    pub fn use_pager_duty_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_pager_duty_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use PagerDuty Advance actions.</p>
+    pub fn set_use_pager_duty_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_pager_duty_action = input;
+        self
+    }
+    /// <p>The ability to use PagerDuty Advance actions.</p>
+    pub fn get_use_pager_duty_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_pager_duty_action
+    }
+    /// <p>The ability to perform actions using Jira connectors.</p>
+    pub fn jira_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.jira_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Jira connectors.</p>
+    pub fn set_jira_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.jira_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Jira connectors.</p>
+    pub fn get_jira_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.jira_action
+    }
+    /// <p>The ability to create and update Jira actions.</p>
+    pub fn create_and_update_jira_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_jira_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Jira actions.</p>
+    pub fn set_create_and_update_jira_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_jira_action = input;
+        self
+    }
+    /// <p>The ability to create and update Jira actions.</p>
+    pub fn get_create_and_update_jira_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_jira_action
+    }
+    /// <p>The ability to share Jira actions.</p>
+    pub fn share_jira_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_jira_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Jira actions.</p>
+    pub fn set_share_jira_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_jira_action = input;
+        self
+    }
+    /// <p>The ability to share Jira actions.</p>
+    pub fn get_share_jira_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_jira_action
+    }
+    /// <p>The ability to use Jira actions.</p>
+    pub fn use_jira_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_jira_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Jira actions.</p>
+    pub fn set_use_jira_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_jira_action = input;
+        self
+    }
+    /// <p>The ability to use Jira actions.</p>
+    pub fn get_use_jira_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_jira_action
+    }
+    /// <p>The ability to perform actions using Atlassian Confluence Cloud connectors.</p>
+    pub fn confluence_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.confluence_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Atlassian Confluence Cloud connectors.</p>
+    pub fn set_confluence_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.confluence_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Atlassian Confluence Cloud connectors.</p>
+    pub fn get_confluence_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.confluence_action
+    }
+    /// <p>The ability to create and update Atlassian Confluence Cloud actions.</p>
+    pub fn create_and_update_confluence_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_confluence_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Atlassian Confluence Cloud actions.</p>
+    pub fn set_create_and_update_confluence_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_confluence_action = input;
+        self
+    }
+    /// <p>The ability to create and update Atlassian Confluence Cloud actions.</p>
+    pub fn get_create_and_update_confluence_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_confluence_action
+    }
+    /// <p>The ability to share Atlassian Confluence Cloud actions.</p>
+    pub fn share_confluence_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_confluence_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Atlassian Confluence Cloud actions.</p>
+    pub fn set_share_confluence_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_confluence_action = input;
+        self
+    }
+    /// <p>The ability to share Atlassian Confluence Cloud actions.</p>
+    pub fn get_share_confluence_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_confluence_action
+    }
+    /// <p>The ability to use Atlassian Confluence Cloud actions.</p>
+    pub fn use_confluence_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_confluence_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Atlassian Confluence Cloud actions.</p>
+    pub fn set_use_confluence_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_confluence_action = input;
+        self
+    }
+    /// <p>The ability to use Atlassian Confluence Cloud actions.</p>
+    pub fn get_use_confluence_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_confluence_action
+    }
+    /// <p>The ability to perform actions using Microsoft OneDrive connectors.</p>
+    pub fn one_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.one_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft OneDrive connectors.</p>
+    pub fn set_one_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.one_drive_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft OneDrive connectors.</p>
+    pub fn get_one_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.one_drive_action
+    }
+    /// <p>The ability to create and update Microsoft OneDrive actions.</p>
+    pub fn create_and_update_one_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_one_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Microsoft OneDrive actions.</p>
+    pub fn set_create_and_update_one_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_one_drive_action = input;
+        self
+    }
+    /// <p>The ability to create and update Microsoft OneDrive actions.</p>
+    pub fn get_create_and_update_one_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_one_drive_action
+    }
+    /// <p>The ability to share Microsoft OneDrive actions.</p>
+    pub fn share_one_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_one_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Microsoft OneDrive actions.</p>
+    pub fn set_share_one_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_one_drive_action = input;
+        self
+    }
+    /// <p>The ability to share Microsoft OneDrive actions.</p>
+    pub fn get_share_one_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_one_drive_action
+    }
+    /// <p>The ability to use Microsoft OneDrive actions.</p>
+    pub fn use_one_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_one_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Microsoft OneDrive actions.</p>
+    pub fn set_use_one_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_one_drive_action = input;
+        self
+    }
+    /// <p>The ability to use Microsoft OneDrive actions.</p>
+    pub fn get_use_one_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_one_drive_action
+    }
+    /// <p>The ability to perform actions using Microsoft SharePoint Online connectors.</p>
+    pub fn share_point_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_point_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft SharePoint Online connectors.</p>
+    pub fn set_share_point_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_point_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft SharePoint Online connectors.</p>
+    pub fn get_share_point_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_point_action
+    }
+    /// <p>The ability to create and update Microsoft SharePoint Online actions.</p>
+    pub fn create_and_update_share_point_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_share_point_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Microsoft SharePoint Online actions.</p>
+    pub fn set_create_and_update_share_point_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_share_point_action = input;
+        self
+    }
+    /// <p>The ability to create and update Microsoft SharePoint Online actions.</p>
+    pub fn get_create_and_update_share_point_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_share_point_action
+    }
+    /// <p>The ability to share Microsoft SharePoint Online actions.</p>
+    pub fn share_share_point_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_share_point_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Microsoft SharePoint Online actions.</p>
+    pub fn set_share_share_point_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_share_point_action = input;
+        self
+    }
+    /// <p>The ability to share Microsoft SharePoint Online actions.</p>
+    pub fn get_share_share_point_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_share_point_action
+    }
+    /// <p>The ability to use Microsoft SharePoint Online actions.</p>
+    pub fn use_share_point_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_share_point_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Microsoft SharePoint Online actions.</p>
+    pub fn set_use_share_point_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_share_point_action = input;
+        self
+    }
+    /// <p>The ability to use Microsoft SharePoint Online actions.</p>
+    pub fn get_use_share_point_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_share_point_action
+    }
+    /// <p>The ability to perform actions using Microsoft Teams connectors.</p>
+    pub fn ms_teams_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.ms_teams_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft Teams connectors.</p>
+    pub fn set_ms_teams_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.ms_teams_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft Teams connectors.</p>
+    pub fn get_ms_teams_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.ms_teams_action
+    }
+    /// <p>The ability to create and update Microsoft Teams actions.</p>
+    pub fn create_and_update_ms_teams_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_ms_teams_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Microsoft Teams actions.</p>
+    pub fn set_create_and_update_ms_teams_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_ms_teams_action = input;
+        self
+    }
+    /// <p>The ability to create and update Microsoft Teams actions.</p>
+    pub fn get_create_and_update_ms_teams_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_ms_teams_action
+    }
+    /// <p>The ability to share Microsoft Teams actions.</p>
+    pub fn share_ms_teams_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_ms_teams_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Microsoft Teams actions.</p>
+    pub fn set_share_ms_teams_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_ms_teams_action = input;
+        self
+    }
+    /// <p>The ability to share Microsoft Teams actions.</p>
+    pub fn get_share_ms_teams_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_ms_teams_action
+    }
+    /// <p>The ability to use Microsoft Teams actions.</p>
+    pub fn use_ms_teams_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_ms_teams_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Microsoft Teams actions.</p>
+    pub fn set_use_ms_teams_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_ms_teams_action = input;
+        self
+    }
+    /// <p>The ability to use Microsoft Teams actions.</p>
+    pub fn get_use_ms_teams_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_ms_teams_action
+    }
+    /// <p>The ability to perform actions using Google Calendar connectors.</p>
+    pub fn google_calendar_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_calendar_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Calendar connectors.</p>
+    pub fn set_google_calendar_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_calendar_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Calendar connectors.</p>
+    pub fn get_google_calendar_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_calendar_action
+    }
+    /// <p>The ability to create and update Google Calendar actions.</p>
+    pub fn create_and_update_google_calendar_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_calendar_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Calendar actions.</p>
+    pub fn set_create_and_update_google_calendar_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_calendar_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Calendar actions.</p>
+    pub fn get_create_and_update_google_calendar_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_calendar_action
+    }
+    /// <p>The ability to share Google Calendar actions.</p>
+    pub fn share_google_calendar_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_calendar_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Calendar actions.</p>
+    pub fn set_share_google_calendar_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_calendar_action = input;
+        self
+    }
+    /// <p>The ability to share Google Calendar actions.</p>
+    pub fn get_share_google_calendar_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_calendar_action
+    }
+    /// <p>The ability to use Google Calendar actions.</p>
+    pub fn use_google_calendar_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_calendar_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Calendar actions.</p>
+    pub fn set_use_google_calendar_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_calendar_action = input;
+        self
+    }
+    /// <p>The ability to use Google Calendar actions.</p>
+    pub fn get_use_google_calendar_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_calendar_action
+    }
+    /// <p>The ability to perform actions using Zendesk connectors.</p>
+    pub fn zendesk_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.zendesk_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Zendesk connectors.</p>
+    pub fn set_zendesk_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.zendesk_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Zendesk connectors.</p>
+    pub fn get_zendesk_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.zendesk_action
+    }
+    /// <p>The ability to create and update Zendesk actions.</p>
+    pub fn create_and_update_zendesk_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_zendesk_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Zendesk actions.</p>
+    pub fn set_create_and_update_zendesk_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_zendesk_action = input;
+        self
+    }
+    /// <p>The ability to create and update Zendesk actions.</p>
+    pub fn get_create_and_update_zendesk_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_zendesk_action
+    }
+    /// <p>The ability to share Zendesk actions.</p>
+    pub fn share_zendesk_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_zendesk_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Zendesk actions.</p>
+    pub fn set_share_zendesk_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_zendesk_action = input;
+        self
+    }
+    /// <p>The ability to share Zendesk actions.</p>
+    pub fn get_share_zendesk_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_zendesk_action
+    }
+    /// <p>The ability to use Zendesk actions.</p>
+    pub fn use_zendesk_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_zendesk_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Zendesk actions.</p>
+    pub fn set_use_zendesk_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_zendesk_action = input;
+        self
+    }
+    /// <p>The ability to use Zendesk actions.</p>
+    pub fn get_use_zendesk_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_zendesk_action
+    }
+    /// <p>The ability to perform actions using Smartsheet connectors.</p>
+    pub fn smartsheet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.smartsheet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Smartsheet connectors.</p>
+    pub fn set_smartsheet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.smartsheet_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Smartsheet connectors.</p>
+    pub fn get_smartsheet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.smartsheet_action
+    }
+    /// <p>The ability to create and update Smartsheet actions.</p>
+    pub fn create_and_update_smartsheet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_smartsheet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Smartsheet actions.</p>
+    pub fn set_create_and_update_smartsheet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_smartsheet_action = input;
+        self
+    }
+    /// <p>The ability to create and update Smartsheet actions.</p>
+    pub fn get_create_and_update_smartsheet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_smartsheet_action
+    }
+    /// <p>The ability to share Smartsheet actions.</p>
+    pub fn share_smartsheet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_smartsheet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Smartsheet actions.</p>
+    pub fn set_share_smartsheet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_smartsheet_action = input;
+        self
+    }
+    /// <p>The ability to share Smartsheet actions.</p>
+    pub fn get_share_smartsheet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_smartsheet_action
+    }
+    /// <p>The ability to use Smartsheet actions.</p>
+    pub fn use_smartsheet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_smartsheet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Smartsheet actions.</p>
+    pub fn set_use_smartsheet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_smartsheet_action = input;
+        self
+    }
+    /// <p>The ability to use Smartsheet actions.</p>
+    pub fn get_use_smartsheet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_smartsheet_action
+    }
+    /// <p>The ability to perform actions using SAP Business Partner connectors.</p>
+    pub fn sap_business_partner_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_business_partner_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using SAP Business Partner connectors.</p>
+    pub fn set_sap_business_partner_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_business_partner_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using SAP Business Partner connectors.</p>
+    pub fn get_sap_business_partner_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_business_partner_action
+    }
+    /// <p>The ability to create and update SAP Business Partner actions.</p>
+    pub fn create_and_update_sap_business_partner_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sap_business_partner_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update SAP Business Partner actions.</p>
+    pub fn set_create_and_update_sap_business_partner_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sap_business_partner_action = input;
+        self
+    }
+    /// <p>The ability to create and update SAP Business Partner actions.</p>
+    pub fn get_create_and_update_sap_business_partner_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sap_business_partner_action
+    }
+    /// <p>The ability to share SAP Business Partner actions.</p>
+    pub fn share_sap_business_partner_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_business_partner_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP Business Partner actions.</p>
+    pub fn set_share_sap_business_partner_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_business_partner_action = input;
+        self
+    }
+    /// <p>The ability to share SAP Business Partner actions.</p>
+    pub fn get_share_sap_business_partner_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_business_partner_action
+    }
+    /// <p>The ability to use SAP Business Partner actions.</p>
+    pub fn use_sap_business_partner_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sap_business_partner_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use SAP Business Partner actions.</p>
+    pub fn set_use_sap_business_partner_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sap_business_partner_action = input;
+        self
+    }
+    /// <p>The ability to use SAP Business Partner actions.</p>
+    pub fn get_use_sap_business_partner_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sap_business_partner_action
+    }
+    /// <p>The ability to perform actions using SAP Product Master connectors.</p>
+    pub fn sap_product_master_data_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_product_master_data_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using SAP Product Master connectors.</p>
+    pub fn set_sap_product_master_data_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_product_master_data_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using SAP Product Master connectors.</p>
+    pub fn get_sap_product_master_data_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_product_master_data_action
+    }
+    /// <p>The ability to create and update SAP Product Master actions.</p>
+    pub fn create_and_update_sap_product_master_data_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sap_product_master_data_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update SAP Product Master actions.</p>
+    pub fn set_create_and_update_sap_product_master_data_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sap_product_master_data_action = input;
+        self
+    }
+    /// <p>The ability to create and update SAP Product Master actions.</p>
+    pub fn get_create_and_update_sap_product_master_data_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sap_product_master_data_action
+    }
+    /// <p>The ability to share SAP Product Master actions.</p>
+    pub fn share_sap_product_master_data_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_product_master_data_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP Product Master actions.</p>
+    pub fn set_share_sap_product_master_data_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_product_master_data_action = input;
+        self
+    }
+    /// <p>The ability to share SAP Product Master actions.</p>
+    pub fn get_share_sap_product_master_data_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_product_master_data_action
+    }
+    /// <p>The ability to use SAP Product Master actions.</p>
+    pub fn use_sap_product_master_data_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sap_product_master_data_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use SAP Product Master actions.</p>
+    pub fn set_use_sap_product_master_data_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sap_product_master_data_action = input;
+        self
+    }
+    /// <p>The ability to use SAP Product Master actions.</p>
+    pub fn get_use_sap_product_master_data_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sap_product_master_data_action
+    }
+    /// <p>The ability to perform actions using SAP Physical Inventory connectors.</p>
+    pub fn sap_physical_inventory_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_physical_inventory_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using SAP Physical Inventory connectors.</p>
+    pub fn set_sap_physical_inventory_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_physical_inventory_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using SAP Physical Inventory connectors.</p>
+    pub fn get_sap_physical_inventory_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_physical_inventory_action
+    }
+    /// <p>The ability to create and update SAP Physical Inventory actions.</p>
+    pub fn create_and_update_sap_physical_inventory_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sap_physical_inventory_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update SAP Physical Inventory actions.</p>
+    pub fn set_create_and_update_sap_physical_inventory_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sap_physical_inventory_action = input;
+        self
+    }
+    /// <p>The ability to create and update SAP Physical Inventory actions.</p>
+    pub fn get_create_and_update_sap_physical_inventory_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sap_physical_inventory_action
+    }
+    /// <p>The ability to share SAP Physical Inventory actions.</p>
+    pub fn share_sap_physical_inventory_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_physical_inventory_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP Physical Inventory actions.</p>
+    pub fn set_share_sap_physical_inventory_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_physical_inventory_action = input;
+        self
+    }
+    /// <p>The ability to share SAP Physical Inventory actions.</p>
+    pub fn get_share_sap_physical_inventory_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_physical_inventory_action
+    }
+    /// <p>The ability to use SAP Physical Inventory actions.</p>
+    pub fn use_sap_physical_inventory_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sap_physical_inventory_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use SAP Physical Inventory actions.</p>
+    pub fn set_use_sap_physical_inventory_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sap_physical_inventory_action = input;
+        self
+    }
+    /// <p>The ability to use SAP Physical Inventory actions.</p>
+    pub fn get_use_sap_physical_inventory_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sap_physical_inventory_action
+    }
+    /// <p>The ability to perform actions using SAP Bill of Materials connectors.</p>
+    pub fn sap_bill_of_material_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_bill_of_material_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using SAP Bill of Materials connectors.</p>
+    pub fn set_sap_bill_of_material_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_bill_of_material_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using SAP Bill of Materials connectors.</p>
+    pub fn get_sap_bill_of_material_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_bill_of_material_action
+    }
+    /// <p>The ability to create and update SAP Bill of Materials actions.</p>
+    pub fn create_and_update_sap_bill_of_material_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sap_bill_of_material_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update SAP Bill of Materials actions.</p>
+    pub fn set_create_and_update_sap_bill_of_material_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sap_bill_of_material_action = input;
+        self
+    }
+    /// <p>The ability to create and update SAP Bill of Materials actions.</p>
+    pub fn get_create_and_update_sap_bill_of_material_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sap_bill_of_material_action
+    }
+    /// <p>The ability to share SAP Bill of Materials actions.</p>
+    pub fn share_sap_bill_of_material_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_bill_of_material_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP Bill of Materials actions.</p>
+    pub fn set_share_sap_bill_of_material_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_bill_of_material_action = input;
+        self
+    }
+    /// <p>The ability to share SAP Bill of Materials actions.</p>
+    pub fn get_share_sap_bill_of_material_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_bill_of_material_action
+    }
+    /// <p>The ability to use SAP Bill of Materials actions.</p>
+    pub fn use_sap_bill_of_material_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sap_bill_of_material_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use SAP Bill of Materials actions.</p>
+    pub fn set_use_sap_bill_of_material_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sap_bill_of_material_action = input;
+        self
+    }
+    /// <p>The ability to use SAP Bill of Materials actions.</p>
+    pub fn get_use_sap_bill_of_material_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sap_bill_of_material_action
+    }
+    /// <p>The ability to perform actions using SAP Material Stock connectors.</p>
+    pub fn sap_material_stock_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_material_stock_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using SAP Material Stock connectors.</p>
+    pub fn set_sap_material_stock_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_material_stock_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using SAP Material Stock connectors.</p>
+    pub fn get_sap_material_stock_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_material_stock_action
+    }
+    /// <p>The ability to create and update SAP Material Stock actions.</p>
+    pub fn create_and_update_sap_material_stock_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sap_material_stock_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update SAP Material Stock actions.</p>
+    pub fn set_create_and_update_sap_material_stock_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sap_material_stock_action = input;
+        self
+    }
+    /// <p>The ability to create and update SAP Material Stock actions.</p>
+    pub fn get_create_and_update_sap_material_stock_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sap_material_stock_action
+    }
+    /// <p>The ability to share SAP Material Stock actions.</p>
+    pub fn share_sap_material_stock_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_material_stock_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP Material Stock actions.</p>
+    pub fn set_share_sap_material_stock_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_material_stock_action = input;
+        self
+    }
+    /// <p>The ability to share SAP Material Stock actions.</p>
+    pub fn get_share_sap_material_stock_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_material_stock_action
+    }
+    /// <p>The ability to use SAP Material Stock actions.</p>
+    pub fn use_sap_material_stock_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sap_material_stock_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use SAP Material Stock actions.</p>
+    pub fn set_use_sap_material_stock_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sap_material_stock_action = input;
+        self
+    }
+    /// <p>The ability to use SAP Material Stock actions.</p>
+    pub fn get_use_sap_material_stock_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sap_material_stock_action
+    }
+    /// <p>The ability to perform actions using FactSet connectors.</p>
+    pub fn fact_set_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.fact_set_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using FactSet connectors.</p>
+    pub fn set_fact_set_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.fact_set_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using FactSet connectors.</p>
+    pub fn get_fact_set_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.fact_set_action
+    }
+    /// <p>The ability to create and update FactSet actions.</p>
+    pub fn create_and_update_fact_set_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_fact_set_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update FactSet actions.</p>
+    pub fn set_create_and_update_fact_set_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_fact_set_action = input;
+        self
+    }
+    /// <p>The ability to create and update FactSet actions.</p>
+    pub fn get_create_and_update_fact_set_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_fact_set_action
+    }
+    /// <p>The ability to share FactSet actions.</p>
+    pub fn share_fact_set_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_fact_set_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share FactSet actions.</p>
+    pub fn set_share_fact_set_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_fact_set_action = input;
+        self
+    }
+    /// <p>The ability to share FactSet actions.</p>
+    pub fn get_share_fact_set_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_fact_set_action
+    }
+    /// <p>The ability to use FactSet actions.</p>
+    pub fn use_fact_set_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_fact_set_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use FactSet actions.</p>
+    pub fn set_use_fact_set_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_fact_set_action = input;
+        self
+    }
+    /// <p>The ability to use FactSet actions.</p>
+    pub fn get_use_fact_set_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_fact_set_action
+    }
+    /// <p>The ability to perform actions using Amazon S3 connectors.</p>
+    pub fn amazon_s_three_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.amazon_s_three_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Amazon S3 connectors.</p>
+    pub fn set_amazon_s_three_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.amazon_s_three_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Amazon S3 connectors.</p>
+    pub fn get_amazon_s_three_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.amazon_s_three_action
+    }
+    /// <p>The ability to create and update Amazon S3 actions.</p>
+    pub fn create_and_update_amazon_s_three_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_amazon_s_three_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Amazon S3 actions.</p>
+    pub fn set_create_and_update_amazon_s_three_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_amazon_s_three_action = input;
+        self
+    }
+    /// <p>The ability to create and update Amazon S3 actions.</p>
+    pub fn get_create_and_update_amazon_s_three_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_amazon_s_three_action
+    }
+    /// <p>The ability to share Amazon S3 actions.</p>
+    pub fn share_amazon_s_three_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_amazon_s_three_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon S3 actions.</p>
+    pub fn set_share_amazon_s_three_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_amazon_s_three_action = input;
+        self
+    }
+    /// <p>The ability to share Amazon S3 actions.</p>
+    pub fn get_share_amazon_s_three_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_amazon_s_three_action
+    }
+    /// <p>The ability to use Amazon S3 actions.</p>
+    pub fn use_amazon_s_three_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_amazon_s_three_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Amazon S3 actions.</p>
+    pub fn set_use_amazon_s_three_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_amazon_s_three_action = input;
+        self
+    }
+    /// <p>The ability to use Amazon S3 actions.</p>
+    pub fn get_use_amazon_s_three_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_amazon_s_three_action
+    }
+    /// <p>The ability to perform actions using Textract connectors.</p>
+    pub fn textract_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.textract_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Textract connectors.</p>
+    pub fn set_textract_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.textract_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Textract connectors.</p>
+    pub fn get_textract_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.textract_action
+    }
+    /// <p>The ability to create and update Textract actions.</p>
+    pub fn create_and_update_textract_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_textract_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Textract actions.</p>
+    pub fn set_create_and_update_textract_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_textract_action = input;
+        self
+    }
+    /// <p>The ability to create and update Textract actions.</p>
+    pub fn get_create_and_update_textract_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_textract_action
+    }
+    /// <p>The ability to share Textract actions.</p>
+    pub fn share_textract_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_textract_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Textract actions.</p>
+    pub fn set_share_textract_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_textract_action = input;
+        self
+    }
+    /// <p>The ability to share Textract actions.</p>
+    pub fn get_share_textract_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_textract_action
+    }
+    /// <p>The ability to use Textract actions.</p>
+    pub fn use_textract_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_textract_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Textract actions.</p>
+    pub fn set_use_textract_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_textract_action = input;
+        self
+    }
+    /// <p>The ability to use Textract actions.</p>
+    pub fn get_use_textract_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_textract_action
+    }
+    /// <p>The ability to perform actions using Comprehend connectors.</p>
+    pub fn comprehend_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.comprehend_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Comprehend connectors.</p>
+    pub fn set_comprehend_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.comprehend_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Comprehend connectors.</p>
+    pub fn get_comprehend_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.comprehend_action
+    }
+    /// <p>The ability to create and update Comprehend actions.</p>
+    pub fn create_and_update_comprehend_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_comprehend_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Comprehend actions.</p>
+    pub fn set_create_and_update_comprehend_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_comprehend_action = input;
+        self
+    }
+    /// <p>The ability to create and update Comprehend actions.</p>
+    pub fn get_create_and_update_comprehend_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_comprehend_action
+    }
+    /// <p>The ability to share Comprehend actions.</p>
+    pub fn share_comprehend_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_comprehend_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Comprehend actions.</p>
+    pub fn set_share_comprehend_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_comprehend_action = input;
+        self
+    }
+    /// <p>The ability to share Comprehend actions.</p>
+    pub fn get_share_comprehend_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_comprehend_action
+    }
+    /// <p>The ability to use Comprehend actions.</p>
+    pub fn use_comprehend_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_comprehend_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Comprehend actions.</p>
+    pub fn set_use_comprehend_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_comprehend_action = input;
+        self
+    }
+    /// <p>The ability to use Comprehend actions.</p>
+    pub fn get_use_comprehend_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_comprehend_action
+    }
+    /// <p>The ability to perform actions using Comprehend Medical connectors.</p>
+    pub fn comprehend_medical_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.comprehend_medical_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Comprehend Medical connectors.</p>
+    pub fn set_comprehend_medical_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.comprehend_medical_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Comprehend Medical connectors.</p>
+    pub fn get_comprehend_medical_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.comprehend_medical_action
+    }
+    /// <p>The ability to create and update Comprehend Medical actions.</p>
+    pub fn create_and_update_comprehend_medical_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_comprehend_medical_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Comprehend Medical actions.</p>
+    pub fn set_create_and_update_comprehend_medical_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_comprehend_medical_action = input;
+        self
+    }
+    /// <p>The ability to create and update Comprehend Medical actions.</p>
+    pub fn get_create_and_update_comprehend_medical_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_comprehend_medical_action
+    }
+    /// <p>The ability to share Comprehend Medical actions.</p>
+    pub fn share_comprehend_medical_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_comprehend_medical_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Comprehend Medical actions.</p>
+    pub fn set_share_comprehend_medical_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_comprehend_medical_action = input;
+        self
+    }
+    /// <p>The ability to share Comprehend Medical actions.</p>
+    pub fn get_share_comprehend_medical_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_comprehend_medical_action
+    }
+    /// <p>The ability to use Comprehend Medical actions.</p>
+    pub fn use_comprehend_medical_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_comprehend_medical_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Comprehend Medical actions.</p>
+    pub fn set_use_comprehend_medical_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_comprehend_medical_action = input;
+        self
+    }
+    /// <p>The ability to use Comprehend Medical actions.</p>
+    pub fn get_use_comprehend_medical_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_comprehend_medical_action
+    }
+    /// <p>The ability to perform actions using Bedrock Agent connectors.</p>
+    pub fn amazon_bedrock_ars_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.amazon_bedrock_ars_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Agent connectors.</p>
+    pub fn set_amazon_bedrock_ars_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.amazon_bedrock_ars_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Agent connectors.</p>
+    pub fn get_amazon_bedrock_ars_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.amazon_bedrock_ars_action
+    }
+    /// <p>The ability to create and update Bedrock Agent actions.</p>
+    pub fn create_and_update_amazon_bedrock_ars_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_amazon_bedrock_ars_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Bedrock Agent actions.</p>
+    pub fn set_create_and_update_amazon_bedrock_ars_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_amazon_bedrock_ars_action = input;
+        self
+    }
+    /// <p>The ability to create and update Bedrock Agent actions.</p>
+    pub fn get_create_and_update_amazon_bedrock_ars_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_amazon_bedrock_ars_action
+    }
+    /// <p>The ability to share Bedrock Agent actions.</p>
+    pub fn share_amazon_bedrock_ars_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_amazon_bedrock_ars_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Bedrock Agent actions.</p>
+    pub fn set_share_amazon_bedrock_ars_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_amazon_bedrock_ars_action = input;
+        self
+    }
+    /// <p>The ability to share Bedrock Agent actions.</p>
+    pub fn get_share_amazon_bedrock_ars_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_amazon_bedrock_ars_action
+    }
+    /// <p>The ability to use Bedrock Agent actions.</p>
+    pub fn use_amazon_bedrock_ars_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_amazon_bedrock_ars_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Bedrock Agent actions.</p>
+    pub fn set_use_amazon_bedrock_ars_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_amazon_bedrock_ars_action = input;
+        self
+    }
+    /// <p>The ability to use Bedrock Agent actions.</p>
+    pub fn get_use_amazon_bedrock_ars_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_amazon_bedrock_ars_action
+    }
+    /// <p>The ability to perform actions using Bedrock Runtime connectors.</p>
+    pub fn amazon_bedrock_fs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.amazon_bedrock_fs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Runtime connectors.</p>
+    pub fn set_amazon_bedrock_fs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.amazon_bedrock_fs_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Runtime connectors.</p>
+    pub fn get_amazon_bedrock_fs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.amazon_bedrock_fs_action
+    }
+    /// <p>The ability to create and update Bedrock Runtime actions.</p>
+    pub fn create_and_update_amazon_bedrock_fs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_amazon_bedrock_fs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Bedrock Runtime actions.</p>
+    pub fn set_create_and_update_amazon_bedrock_fs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_amazon_bedrock_fs_action = input;
+        self
+    }
+    /// <p>The ability to create and update Bedrock Runtime actions.</p>
+    pub fn get_create_and_update_amazon_bedrock_fs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_amazon_bedrock_fs_action
+    }
+    /// <p>The ability to share Bedrock Runtime actions.</p>
+    pub fn share_amazon_bedrock_fs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_amazon_bedrock_fs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Bedrock Runtime actions.</p>
+    pub fn set_share_amazon_bedrock_fs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_amazon_bedrock_fs_action = input;
+        self
+    }
+    /// <p>The ability to share Bedrock Runtime actions.</p>
+    pub fn get_share_amazon_bedrock_fs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_amazon_bedrock_fs_action
+    }
+    /// <p>The ability to use Bedrock Runtime actions.</p>
+    pub fn use_amazon_bedrock_fs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_amazon_bedrock_fs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Bedrock Runtime actions.</p>
+    pub fn set_use_amazon_bedrock_fs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_amazon_bedrock_fs_action = input;
+        self
+    }
+    /// <p>The ability to use Bedrock Runtime actions.</p>
+    pub fn get_use_amazon_bedrock_fs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_amazon_bedrock_fs_action
+    }
+    /// <p>The ability to perform actions using Bedrock Data Automation Runtime connectors.</p>
+    pub fn amazon_bedrock_krs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.amazon_bedrock_krs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Data Automation Runtime connectors.</p>
+    pub fn set_amazon_bedrock_krs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.amazon_bedrock_krs_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Bedrock Data Automation Runtime connectors.</p>
+    pub fn get_amazon_bedrock_krs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.amazon_bedrock_krs_action
+    }
+    /// <p>The ability to create and update Bedrock Data Automation Runtime actions.</p>
+    pub fn create_and_update_amazon_bedrock_krs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_amazon_bedrock_krs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Bedrock Data Automation Runtime actions.</p>
+    pub fn set_create_and_update_amazon_bedrock_krs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_amazon_bedrock_krs_action = input;
+        self
+    }
+    /// <p>The ability to create and update Bedrock Data Automation Runtime actions.</p>
+    pub fn get_create_and_update_amazon_bedrock_krs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_amazon_bedrock_krs_action
+    }
+    /// <p>The ability to share Bedrock Data Automation Runtime actions.</p>
+    pub fn share_amazon_bedrock_krs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_amazon_bedrock_krs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Bedrock Data Automation Runtime actions.</p>
+    pub fn set_share_amazon_bedrock_krs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_amazon_bedrock_krs_action = input;
+        self
+    }
+    /// <p>The ability to share Bedrock Data Automation Runtime actions.</p>
+    pub fn get_share_amazon_bedrock_krs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_amazon_bedrock_krs_action
+    }
+    /// <p>The ability to use Bedrock Data Automation Runtime actions.</p>
+    pub fn use_amazon_bedrock_krs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_amazon_bedrock_krs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Bedrock Data Automation Runtime actions.</p>
+    pub fn set_use_amazon_bedrock_krs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_amazon_bedrock_krs_action = input;
+        self
+    }
+    /// <p>The ability to use Bedrock Data Automation Runtime actions.</p>
+    pub fn get_use_amazon_bedrock_krs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_amazon_bedrock_krs_action
+    }
+    /// <p>The ability to perform actions using Model Context Protocol connectors.</p>
+    pub fn mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Model Context Protocol connectors.</p>
+    pub fn set_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.mcp_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Model Context Protocol connectors.</p>
+    pub fn get_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.mcp_action
+    }
+    /// <p>The ability to create and update Model Context Protocol actions.</p>
+    pub fn create_and_update_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Model Context Protocol actions.</p>
+    pub fn set_create_and_update_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_mcp_action = input;
+        self
+    }
+    /// <p>The ability to create and update Model Context Protocol actions.</p>
+    pub fn get_create_and_update_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_mcp_action
+    }
+    /// <p>The ability to share Model Context Protocol actions.</p>
+    pub fn share_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Model Context Protocol actions.</p>
+    pub fn set_share_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_mcp_action = input;
+        self
+    }
+    /// <p>The ability to share Model Context Protocol actions.</p>
+    pub fn get_share_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_mcp_action
+    }
+    /// <p>The ability to use Model Context Protocol actions.</p>
+    pub fn use_mcp_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_mcp_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Model Context Protocol actions.</p>
+    pub fn set_use_mcp_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_mcp_action = input;
+        self
+    }
+    /// <p>The ability to use Model Context Protocol actions.</p>
+    pub fn get_use_mcp_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_mcp_action
+    }
+    /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
+    pub fn open_api_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.open_api_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
+    pub fn set_open_api_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.open_api_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using OpenAPI Specification connectors.</p>
+    pub fn get_open_api_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.open_api_action
+    }
+    /// <p>The ability to create and update OpenAPI Specification actions.</p>
+    pub fn create_and_update_open_api_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_open_api_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update OpenAPI Specification actions.</p>
+    pub fn set_create_and_update_open_api_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_open_api_action = input;
+        self
+    }
+    /// <p>The ability to create and update OpenAPI Specification actions.</p>
+    pub fn get_create_and_update_open_api_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_open_api_action
+    }
+    /// <p>The ability to share OpenAPI Specification actions.</p>
+    pub fn share_open_api_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_open_api_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share OpenAPI Specification actions.</p>
+    pub fn set_share_open_api_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_open_api_action = input;
+        self
+    }
+    /// <p>The ability to share OpenAPI Specification actions.</p>
+    pub fn get_share_open_api_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_open_api_action
+    }
+    /// <p>The ability to use OpenAPI Specification actions.</p>
+    pub fn use_open_api_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_open_api_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use OpenAPI Specification actions.</p>
+    pub fn set_use_open_api_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_open_api_action = input;
+        self
+    }
+    /// <p>The ability to use OpenAPI Specification actions.</p>
+    pub fn get_use_open_api_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_open_api_action
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Market Intelligence connectors.</p>
+    pub fn sand_pgmi_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sand_pgmi_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Market Intelligence connectors.</p>
+    pub fn set_sand_pgmi_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sand_pgmi_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Market Intelligence connectors.</p>
+    pub fn get_sand_pgmi_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sand_pgmi_action
+    }
+    /// <p>The ability to create and update S&amp;P Global Market Intelligence actions.</p>
+    pub fn create_and_update_sand_pgmi_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sand_pgmi_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update S&amp;P Global Market Intelligence actions.</p>
+    pub fn set_create_and_update_sand_pgmi_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sand_pgmi_action = input;
+        self
+    }
+    /// <p>The ability to create and update S&amp;P Global Market Intelligence actions.</p>
+    pub fn get_create_and_update_sand_pgmi_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sand_pgmi_action
+    }
+    /// <p>The ability to share S&amp;P Global Market Intelligence actions.</p>
+    pub fn share_sand_pgmi_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sand_pgmi_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share S&amp;P Global Market Intelligence actions.</p>
+    pub fn set_share_sand_pgmi_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sand_pgmi_action = input;
+        self
+    }
+    /// <p>The ability to share S&amp;P Global Market Intelligence actions.</p>
+    pub fn get_share_sand_pgmi_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sand_pgmi_action
+    }
+    /// <p>The ability to use S&amp;P Global Market Intelligence actions.</p>
+    pub fn use_sand_pgmi_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sand_pgmi_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use S&amp;P Global Market Intelligence actions.</p>
+    pub fn set_use_sand_pgmi_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sand_pgmi_action = input;
+        self
+    }
+    /// <p>The ability to use S&amp;P Global Market Intelligence actions.</p>
+    pub fn get_use_sand_pgmi_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sand_pgmi_action
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Energy connectors.</p>
+    pub fn sand_p_global_energy_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sand_p_global_energy_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Energy connectors.</p>
+    pub fn set_sand_p_global_energy_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sand_p_global_energy_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using S&amp;P Global Energy connectors.</p>
+    pub fn get_sand_p_global_energy_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sand_p_global_energy_action
+    }
+    /// <p>The ability to create and update S&amp;P Global Energy actions.</p>
+    pub fn create_and_update_sand_p_global_energy_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_sand_p_global_energy_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update S&amp;P Global Energy actions.</p>
+    pub fn set_create_and_update_sand_p_global_energy_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_sand_p_global_energy_action = input;
+        self
+    }
+    /// <p>The ability to create and update S&amp;P Global Energy actions.</p>
+    pub fn get_create_and_update_sand_p_global_energy_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_sand_p_global_energy_action
+    }
+    /// <p>The ability to share S&amp;P Global Energy actions.</p>
+    pub fn share_sand_p_global_energy_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sand_p_global_energy_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share S&amp;P Global Energy actions.</p>
+    pub fn set_share_sand_p_global_energy_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sand_p_global_energy_action = input;
+        self
+    }
+    /// <p>The ability to share S&amp;P Global Energy actions.</p>
+    pub fn get_share_sand_p_global_energy_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sand_p_global_energy_action
+    }
+    /// <p>The ability to use S&amp;P Global Energy actions.</p>
+    pub fn use_sand_p_global_energy_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_sand_p_global_energy_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use S&amp;P Global Energy actions.</p>
+    pub fn set_use_sand_p_global_energy_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_sand_p_global_energy_action = input;
+        self
+    }
+    /// <p>The ability to use S&amp;P Global Energy actions.</p>
+    pub fn get_use_sand_p_global_energy_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_sand_p_global_energy_action
+    }
+    /// <p>The ability to perform actions using BambooHR connectors.</p>
+    pub fn bamboo_hr_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.bamboo_hr_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using BambooHR connectors.</p>
+    pub fn set_bamboo_hr_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.bamboo_hr_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using BambooHR connectors.</p>
+    pub fn get_bamboo_hr_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.bamboo_hr_action
+    }
+    /// <p>The ability to create and update BambooHR actions.</p>
+    pub fn create_and_update_bamboo_hr_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_bamboo_hr_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update BambooHR actions.</p>
+    pub fn set_create_and_update_bamboo_hr_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_bamboo_hr_action = input;
+        self
+    }
+    /// <p>The ability to create and update BambooHR actions.</p>
+    pub fn get_create_and_update_bamboo_hr_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_bamboo_hr_action
+    }
+    /// <p>The ability to share BambooHR actions.</p>
+    pub fn share_bamboo_hr_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_bamboo_hr_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share BambooHR actions.</p>
+    pub fn set_share_bamboo_hr_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_bamboo_hr_action = input;
+        self
+    }
+    /// <p>The ability to share BambooHR actions.</p>
+    pub fn get_share_bamboo_hr_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_bamboo_hr_action
+    }
+    /// <p>The ability to use BambooHR actions.</p>
+    pub fn use_bamboo_hr_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_bamboo_hr_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use BambooHR actions.</p>
+    pub fn set_use_bamboo_hr_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_bamboo_hr_action = input;
+        self
+    }
+    /// <p>The ability to use BambooHR actions.</p>
+    pub fn get_use_bamboo_hr_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_bamboo_hr_action
+    }
+    /// <p>The ability to perform actions using Box Agent connectors.</p>
+    pub fn box_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.box_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Box Agent connectors.</p>
+    pub fn set_box_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.box_agent_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Box Agent connectors.</p>
+    pub fn get_box_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.box_agent_action
+    }
+    /// <p>The ability to create and update Box Agent actions.</p>
+    pub fn create_and_update_box_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_box_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Box Agent actions.</p>
+    pub fn set_create_and_update_box_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_box_agent_action = input;
+        self
+    }
+    /// <p>The ability to create and update Box Agent actions.</p>
+    pub fn get_create_and_update_box_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_box_agent_action
+    }
+    /// <p>The ability to share Box Agent actions.</p>
+    pub fn share_box_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_box_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Box Agent actions.</p>
+    pub fn set_share_box_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_box_agent_action = input;
+        self
+    }
+    /// <p>The ability to share Box Agent actions.</p>
+    pub fn get_share_box_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_box_agent_action
+    }
+    /// <p>The ability to use Box Agent actions.</p>
+    pub fn use_box_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_box_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Box Agent actions.</p>
+    pub fn set_use_box_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_box_agent_action = input;
+        self
+    }
+    /// <p>The ability to use Box Agent actions.</p>
+    pub fn get_use_box_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_box_agent_action
+    }
+    /// <p>The ability to perform actions using Canva Agent connectors.</p>
+    pub fn canva_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.canva_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Canva Agent connectors.</p>
+    pub fn set_canva_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.canva_agent_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Canva Agent connectors.</p>
+    pub fn get_canva_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.canva_agent_action
+    }
+    /// <p>The ability to create and update Canva Agent actions.</p>
+    pub fn create_and_update_canva_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_canva_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Canva Agent actions.</p>
+    pub fn set_create_and_update_canva_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_canva_agent_action = input;
+        self
+    }
+    /// <p>The ability to create and update Canva Agent actions.</p>
+    pub fn get_create_and_update_canva_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_canva_agent_action
+    }
+    /// <p>The ability to share Canva Agent actions.</p>
+    pub fn share_canva_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_canva_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Canva Agent actions.</p>
+    pub fn set_share_canva_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_canva_agent_action = input;
+        self
+    }
+    /// <p>The ability to share Canva Agent actions.</p>
+    pub fn get_share_canva_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_canva_agent_action
+    }
+    /// <p>The ability to use Canva Agent actions.</p>
+    pub fn use_canva_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_canva_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Canva Agent actions.</p>
+    pub fn set_use_canva_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_canva_agent_action = input;
+        self
+    }
+    /// <p>The ability to use Canva Agent actions.</p>
+    pub fn get_use_canva_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_canva_agent_action
+    }
+    /// <p>The ability to perform actions using GitHub connectors.</p>
+    pub fn github_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.github_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using GitHub connectors.</p>
+    pub fn set_github_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.github_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using GitHub connectors.</p>
+    pub fn get_github_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.github_action
+    }
+    /// <p>The ability to create and update GitHub actions.</p>
+    pub fn create_and_update_github_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_github_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update GitHub actions.</p>
+    pub fn set_create_and_update_github_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_github_action = input;
+        self
+    }
+    /// <p>The ability to create and update GitHub actions.</p>
+    pub fn get_create_and_update_github_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_github_action
+    }
+    /// <p>The ability to share GitHub actions.</p>
+    pub fn share_github_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_github_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share GitHub actions.</p>
+    pub fn set_share_github_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_github_action = input;
+        self
+    }
+    /// <p>The ability to share GitHub actions.</p>
+    pub fn get_share_github_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_github_action
+    }
+    /// <p>The ability to use GitHub actions.</p>
+    pub fn use_github_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_github_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use GitHub actions.</p>
+    pub fn set_use_github_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_github_action = input;
+        self
+    }
+    /// <p>The ability to use GitHub actions.</p>
+    pub fn get_use_github_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_github_action
+    }
+    /// <p>The ability to perform actions using Notion connectors.</p>
+    pub fn notion_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.notion_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Notion connectors.</p>
+    pub fn set_notion_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.notion_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Notion connectors.</p>
+    pub fn get_notion_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.notion_action
+    }
+    /// <p>The ability to create and update Notion actions.</p>
+    pub fn create_and_update_notion_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_notion_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Notion actions.</p>
+    pub fn set_create_and_update_notion_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_notion_action = input;
+        self
+    }
+    /// <p>The ability to create and update Notion actions.</p>
+    pub fn get_create_and_update_notion_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_notion_action
+    }
+    /// <p>The ability to share Notion actions.</p>
+    pub fn share_notion_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_notion_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Notion actions.</p>
+    pub fn set_share_notion_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_notion_action = input;
+        self
+    }
+    /// <p>The ability to share Notion actions.</p>
+    pub fn get_share_notion_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_notion_action
+    }
+    /// <p>The ability to use Notion actions.</p>
+    pub fn use_notion_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_notion_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Notion actions.</p>
+    pub fn set_use_notion_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_notion_action = input;
+        self
+    }
+    /// <p>The ability to use Notion actions.</p>
+    pub fn get_use_notion_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_notion_action
+    }
+    /// <p>The ability to perform actions using Linear connectors.</p>
+    pub fn linear_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.linear_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Linear connectors.</p>
+    pub fn set_linear_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.linear_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Linear connectors.</p>
+    pub fn get_linear_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.linear_action
+    }
+    /// <p>The ability to create and update Linear actions.</p>
+    pub fn create_and_update_linear_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_linear_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Linear actions.</p>
+    pub fn set_create_and_update_linear_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_linear_action = input;
+        self
+    }
+    /// <p>The ability to create and update Linear actions.</p>
+    pub fn get_create_and_update_linear_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_linear_action
+    }
+    /// <p>The ability to share Linear actions.</p>
+    pub fn share_linear_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_linear_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Linear actions.</p>
+    pub fn set_share_linear_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_linear_action = input;
+        self
+    }
+    /// <p>The ability to share Linear actions.</p>
+    pub fn get_share_linear_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_linear_action
+    }
+    /// <p>The ability to use Linear actions.</p>
+    pub fn use_linear_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_linear_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Linear actions.</p>
+    pub fn set_use_linear_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_linear_action = input;
+        self
+    }
+    /// <p>The ability to use Linear actions.</p>
+    pub fn get_use_linear_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_linear_action
+    }
+    /// <p>The ability to perform actions using HuggingFace connectors.</p>
+    pub fn hugging_face_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.hugging_face_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using HuggingFace connectors.</p>
+    pub fn set_hugging_face_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.hugging_face_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using HuggingFace connectors.</p>
+    pub fn get_hugging_face_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.hugging_face_action
+    }
+    /// <p>The ability to create and update HuggingFace actions.</p>
+    pub fn create_and_update_hugging_face_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_hugging_face_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update HuggingFace actions.</p>
+    pub fn set_create_and_update_hugging_face_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_hugging_face_action = input;
+        self
+    }
+    /// <p>The ability to create and update HuggingFace actions.</p>
+    pub fn get_create_and_update_hugging_face_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_hugging_face_action
+    }
+    /// <p>The ability to share HuggingFace actions.</p>
+    pub fn share_hugging_face_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_hugging_face_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share HuggingFace actions.</p>
+    pub fn set_share_hugging_face_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_hugging_face_action = input;
+        self
+    }
+    /// <p>The ability to share HuggingFace actions.</p>
+    pub fn get_share_hugging_face_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_hugging_face_action
+    }
+    /// <p>The ability to use HuggingFace actions.</p>
+    pub fn use_hugging_face_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_hugging_face_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use HuggingFace actions.</p>
+    pub fn set_use_hugging_face_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_hugging_face_action = input;
+        self
+    }
+    /// <p>The ability to use HuggingFace actions.</p>
+    pub fn get_use_hugging_face_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_hugging_face_action
+    }
+    /// <p>The ability to perform actions using Monday connectors.</p>
+    pub fn monday_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.monday_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Monday connectors.</p>
+    pub fn set_monday_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.monday_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Monday connectors.</p>
+    pub fn get_monday_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.monday_action
+    }
+    /// <p>The ability to create and update Monday actions.</p>
+    pub fn create_and_update_monday_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_monday_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Monday actions.</p>
+    pub fn set_create_and_update_monday_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_monday_action = input;
+        self
+    }
+    /// <p>The ability to create and update Monday actions.</p>
+    pub fn get_create_and_update_monday_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_monday_action
+    }
+    /// <p>The ability to share Monday actions.</p>
+    pub fn share_monday_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_monday_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Monday actions.</p>
+    pub fn set_share_monday_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_monday_action = input;
+        self
+    }
+    /// <p>The ability to share Monday actions.</p>
+    pub fn get_share_monday_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_monday_action
+    }
+    /// <p>The ability to use Monday actions.</p>
+    pub fn use_monday_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_monday_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Monday actions.</p>
+    pub fn set_use_monday_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_monday_action = input;
+        self
+    }
+    /// <p>The ability to use Monday actions.</p>
+    pub fn get_use_monday_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_monday_action
+    }
+    /// <p>The ability to perform actions using Hubspot connectors.</p>
+    pub fn hubspot_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.hubspot_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Hubspot connectors.</p>
+    pub fn set_hubspot_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.hubspot_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Hubspot connectors.</p>
+    pub fn get_hubspot_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.hubspot_action
+    }
+    /// <p>The ability to create and update Hubspot actions.</p>
+    pub fn create_and_update_hubspot_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_hubspot_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Hubspot actions.</p>
+    pub fn set_create_and_update_hubspot_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_hubspot_action = input;
+        self
+    }
+    /// <p>The ability to create and update Hubspot actions.</p>
+    pub fn get_create_and_update_hubspot_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_hubspot_action
+    }
+    /// <p>The ability to share Hubspot actions.</p>
+    pub fn share_hubspot_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_hubspot_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Hubspot actions.</p>
+    pub fn set_share_hubspot_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_hubspot_action = input;
+        self
+    }
+    /// <p>The ability to share Hubspot actions.</p>
+    pub fn get_share_hubspot_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_hubspot_action
+    }
+    /// <p>The ability to use Hubspot actions.</p>
+    pub fn use_hubspot_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_hubspot_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Hubspot actions.</p>
+    pub fn set_use_hubspot_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_hubspot_action = input;
+        self
+    }
+    /// <p>The ability to use Hubspot actions.</p>
+    pub fn get_use_hubspot_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_hubspot_action
+    }
+    /// <p>The ability to perform actions using Intercom connectors.</p>
+    pub fn intercom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.intercom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Intercom connectors.</p>
+    pub fn set_intercom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.intercom_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Intercom connectors.</p>
+    pub fn get_intercom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.intercom_action
+    }
+    /// <p>The ability to create and update Intercom actions.</p>
+    pub fn create_and_update_intercom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_intercom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Intercom actions.</p>
+    pub fn set_create_and_update_intercom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_intercom_action = input;
+        self
+    }
+    /// <p>The ability to create and update Intercom actions.</p>
+    pub fn get_create_and_update_intercom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_intercom_action
+    }
+    /// <p>The ability to share Intercom actions.</p>
+    pub fn share_intercom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_intercom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Intercom actions.</p>
+    pub fn set_share_intercom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_intercom_action = input;
+        self
+    }
+    /// <p>The ability to share Intercom actions.</p>
+    pub fn get_share_intercom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_intercom_action
+    }
+    /// <p>The ability to use Intercom actions.</p>
+    pub fn use_intercom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_intercom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Intercom actions.</p>
+    pub fn set_use_intercom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_intercom_action = input;
+        self
+    }
+    /// <p>The ability to use Intercom actions.</p>
+    pub fn get_use_intercom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_intercom_action
+    }
+    /// <p>The ability to perform actions using New Relic connectors.</p>
+    pub fn new_relic_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.new_relic_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using New Relic connectors.</p>
+    pub fn set_new_relic_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.new_relic_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using New Relic connectors.</p>
+    pub fn get_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.new_relic_action
+    }
+    /// <p>The ability to create and update New Relic actions.</p>
+    pub fn create_and_update_new_relic_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_new_relic_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update New Relic actions.</p>
+    pub fn set_create_and_update_new_relic_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_new_relic_action = input;
+        self
+    }
+    /// <p>The ability to create and update New Relic actions.</p>
+    pub fn get_create_and_update_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_new_relic_action
+    }
+    /// <p>The ability to share New Relic actions.</p>
+    pub fn share_new_relic_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_new_relic_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share New Relic actions.</p>
+    pub fn set_share_new_relic_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_new_relic_action = input;
+        self
+    }
+    /// <p>The ability to share New Relic actions.</p>
+    pub fn get_share_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_new_relic_action
+    }
+    /// <p>The ability to use New Relic actions.</p>
+    pub fn use_new_relic_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_new_relic_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use New Relic actions.</p>
+    pub fn set_use_new_relic_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_new_relic_action = input;
+        self
+    }
+    /// <p>The ability to use New Relic actions.</p>
+    pub fn get_use_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_new_relic_action
+    }
     /// <p>The ability to perform space-related actions.</p>
     pub fn space(mut self, input: crate::types::CapabilityState) -> Self {
         self.space = ::std::option::Option::Some(input);
@@ -854,6 +4466,178 @@ impl CapabilitiesBuilder {
             use_agent_web_search: self.use_agent_web_search,
             knowledge_base: self.knowledge_base,
             action: self.action,
+            generic_http_action: self.generic_http_action,
+            create_and_update_generic_http_action: self.create_and_update_generic_http_action,
+            share_generic_http_action: self.share_generic_http_action,
+            use_generic_http_action: self.use_generic_http_action,
+            asana_action: self.asana_action,
+            create_and_update_asana_action: self.create_and_update_asana_action,
+            share_asana_action: self.share_asana_action,
+            use_asana_action: self.use_asana_action,
+            slack_action: self.slack_action,
+            create_and_update_slack_action: self.create_and_update_slack_action,
+            share_slack_action: self.share_slack_action,
+            use_slack_action: self.use_slack_action,
+            service_now_action: self.service_now_action,
+            create_and_update_service_now_action: self.create_and_update_service_now_action,
+            share_service_now_action: self.share_service_now_action,
+            use_service_now_action: self.use_service_now_action,
+            salesforce_action: self.salesforce_action,
+            create_and_update_salesforce_action: self.create_and_update_salesforce_action,
+            share_salesforce_action: self.share_salesforce_action,
+            use_salesforce_action: self.use_salesforce_action,
+            ms_exchange_action: self.ms_exchange_action,
+            create_and_update_ms_exchange_action: self.create_and_update_ms_exchange_action,
+            share_ms_exchange_action: self.share_ms_exchange_action,
+            use_ms_exchange_action: self.use_ms_exchange_action,
+            pager_duty_action: self.pager_duty_action,
+            create_and_update_pager_duty_action: self.create_and_update_pager_duty_action,
+            share_pager_duty_action: self.share_pager_duty_action,
+            use_pager_duty_action: self.use_pager_duty_action,
+            jira_action: self.jira_action,
+            create_and_update_jira_action: self.create_and_update_jira_action,
+            share_jira_action: self.share_jira_action,
+            use_jira_action: self.use_jira_action,
+            confluence_action: self.confluence_action,
+            create_and_update_confluence_action: self.create_and_update_confluence_action,
+            share_confluence_action: self.share_confluence_action,
+            use_confluence_action: self.use_confluence_action,
+            one_drive_action: self.one_drive_action,
+            create_and_update_one_drive_action: self.create_and_update_one_drive_action,
+            share_one_drive_action: self.share_one_drive_action,
+            use_one_drive_action: self.use_one_drive_action,
+            share_point_action: self.share_point_action,
+            create_and_update_share_point_action: self.create_and_update_share_point_action,
+            share_share_point_action: self.share_share_point_action,
+            use_share_point_action: self.use_share_point_action,
+            ms_teams_action: self.ms_teams_action,
+            create_and_update_ms_teams_action: self.create_and_update_ms_teams_action,
+            share_ms_teams_action: self.share_ms_teams_action,
+            use_ms_teams_action: self.use_ms_teams_action,
+            google_calendar_action: self.google_calendar_action,
+            create_and_update_google_calendar_action: self.create_and_update_google_calendar_action,
+            share_google_calendar_action: self.share_google_calendar_action,
+            use_google_calendar_action: self.use_google_calendar_action,
+            zendesk_action: self.zendesk_action,
+            create_and_update_zendesk_action: self.create_and_update_zendesk_action,
+            share_zendesk_action: self.share_zendesk_action,
+            use_zendesk_action: self.use_zendesk_action,
+            smartsheet_action: self.smartsheet_action,
+            create_and_update_smartsheet_action: self.create_and_update_smartsheet_action,
+            share_smartsheet_action: self.share_smartsheet_action,
+            use_smartsheet_action: self.use_smartsheet_action,
+            sap_business_partner_action: self.sap_business_partner_action,
+            create_and_update_sap_business_partner_action: self.create_and_update_sap_business_partner_action,
+            share_sap_business_partner_action: self.share_sap_business_partner_action,
+            use_sap_business_partner_action: self.use_sap_business_partner_action,
+            sap_product_master_data_action: self.sap_product_master_data_action,
+            create_and_update_sap_product_master_data_action: self.create_and_update_sap_product_master_data_action,
+            share_sap_product_master_data_action: self.share_sap_product_master_data_action,
+            use_sap_product_master_data_action: self.use_sap_product_master_data_action,
+            sap_physical_inventory_action: self.sap_physical_inventory_action,
+            create_and_update_sap_physical_inventory_action: self.create_and_update_sap_physical_inventory_action,
+            share_sap_physical_inventory_action: self.share_sap_physical_inventory_action,
+            use_sap_physical_inventory_action: self.use_sap_physical_inventory_action,
+            sap_bill_of_material_action: self.sap_bill_of_material_action,
+            create_and_update_sap_bill_of_material_action: self.create_and_update_sap_bill_of_material_action,
+            share_sap_bill_of_material_action: self.share_sap_bill_of_material_action,
+            use_sap_bill_of_material_action: self.use_sap_bill_of_material_action,
+            sap_material_stock_action: self.sap_material_stock_action,
+            create_and_update_sap_material_stock_action: self.create_and_update_sap_material_stock_action,
+            share_sap_material_stock_action: self.share_sap_material_stock_action,
+            use_sap_material_stock_action: self.use_sap_material_stock_action,
+            fact_set_action: self.fact_set_action,
+            create_and_update_fact_set_action: self.create_and_update_fact_set_action,
+            share_fact_set_action: self.share_fact_set_action,
+            use_fact_set_action: self.use_fact_set_action,
+            amazon_s_three_action: self.amazon_s_three_action,
+            create_and_update_amazon_s_three_action: self.create_and_update_amazon_s_three_action,
+            share_amazon_s_three_action: self.share_amazon_s_three_action,
+            use_amazon_s_three_action: self.use_amazon_s_three_action,
+            textract_action: self.textract_action,
+            create_and_update_textract_action: self.create_and_update_textract_action,
+            share_textract_action: self.share_textract_action,
+            use_textract_action: self.use_textract_action,
+            comprehend_action: self.comprehend_action,
+            create_and_update_comprehend_action: self.create_and_update_comprehend_action,
+            share_comprehend_action: self.share_comprehend_action,
+            use_comprehend_action: self.use_comprehend_action,
+            comprehend_medical_action: self.comprehend_medical_action,
+            create_and_update_comprehend_medical_action: self.create_and_update_comprehend_medical_action,
+            share_comprehend_medical_action: self.share_comprehend_medical_action,
+            use_comprehend_medical_action: self.use_comprehend_medical_action,
+            amazon_bedrock_ars_action: self.amazon_bedrock_ars_action,
+            create_and_update_amazon_bedrock_ars_action: self.create_and_update_amazon_bedrock_ars_action,
+            share_amazon_bedrock_ars_action: self.share_amazon_bedrock_ars_action,
+            use_amazon_bedrock_ars_action: self.use_amazon_bedrock_ars_action,
+            amazon_bedrock_fs_action: self.amazon_bedrock_fs_action,
+            create_and_update_amazon_bedrock_fs_action: self.create_and_update_amazon_bedrock_fs_action,
+            share_amazon_bedrock_fs_action: self.share_amazon_bedrock_fs_action,
+            use_amazon_bedrock_fs_action: self.use_amazon_bedrock_fs_action,
+            amazon_bedrock_krs_action: self.amazon_bedrock_krs_action,
+            create_and_update_amazon_bedrock_krs_action: self.create_and_update_amazon_bedrock_krs_action,
+            share_amazon_bedrock_krs_action: self.share_amazon_bedrock_krs_action,
+            use_amazon_bedrock_krs_action: self.use_amazon_bedrock_krs_action,
+            mcp_action: self.mcp_action,
+            create_and_update_mcp_action: self.create_and_update_mcp_action,
+            share_mcp_action: self.share_mcp_action,
+            use_mcp_action: self.use_mcp_action,
+            open_api_action: self.open_api_action,
+            create_and_update_open_api_action: self.create_and_update_open_api_action,
+            share_open_api_action: self.share_open_api_action,
+            use_open_api_action: self.use_open_api_action,
+            sand_pgmi_action: self.sand_pgmi_action,
+            create_and_update_sand_pgmi_action: self.create_and_update_sand_pgmi_action,
+            share_sand_pgmi_action: self.share_sand_pgmi_action,
+            use_sand_pgmi_action: self.use_sand_pgmi_action,
+            sand_p_global_energy_action: self.sand_p_global_energy_action,
+            create_and_update_sand_p_global_energy_action: self.create_and_update_sand_p_global_energy_action,
+            share_sand_p_global_energy_action: self.share_sand_p_global_energy_action,
+            use_sand_p_global_energy_action: self.use_sand_p_global_energy_action,
+            bamboo_hr_action: self.bamboo_hr_action,
+            create_and_update_bamboo_hr_action: self.create_and_update_bamboo_hr_action,
+            share_bamboo_hr_action: self.share_bamboo_hr_action,
+            use_bamboo_hr_action: self.use_bamboo_hr_action,
+            box_agent_action: self.box_agent_action,
+            create_and_update_box_agent_action: self.create_and_update_box_agent_action,
+            share_box_agent_action: self.share_box_agent_action,
+            use_box_agent_action: self.use_box_agent_action,
+            canva_agent_action: self.canva_agent_action,
+            create_and_update_canva_agent_action: self.create_and_update_canva_agent_action,
+            share_canva_agent_action: self.share_canva_agent_action,
+            use_canva_agent_action: self.use_canva_agent_action,
+            github_action: self.github_action,
+            create_and_update_github_action: self.create_and_update_github_action,
+            share_github_action: self.share_github_action,
+            use_github_action: self.use_github_action,
+            notion_action: self.notion_action,
+            create_and_update_notion_action: self.create_and_update_notion_action,
+            share_notion_action: self.share_notion_action,
+            use_notion_action: self.use_notion_action,
+            linear_action: self.linear_action,
+            create_and_update_linear_action: self.create_and_update_linear_action,
+            share_linear_action: self.share_linear_action,
+            use_linear_action: self.use_linear_action,
+            hugging_face_action: self.hugging_face_action,
+            create_and_update_hugging_face_action: self.create_and_update_hugging_face_action,
+            share_hugging_face_action: self.share_hugging_face_action,
+            use_hugging_face_action: self.use_hugging_face_action,
+            monday_action: self.monday_action,
+            create_and_update_monday_action: self.create_and_update_monday_action,
+            share_monday_action: self.share_monday_action,
+            use_monday_action: self.use_monday_action,
+            hubspot_action: self.hubspot_action,
+            create_and_update_hubspot_action: self.create_and_update_hubspot_action,
+            share_hubspot_action: self.share_hubspot_action,
+            use_hubspot_action: self.use_hubspot_action,
+            intercom_action: self.intercom_action,
+            create_and_update_intercom_action: self.create_and_update_intercom_action,
+            share_intercom_action: self.share_intercom_action,
+            use_intercom_action: self.use_intercom_action,
+            new_relic_action: self.new_relic_action,
+            create_and_update_new_relic_action: self.create_and_update_new_relic_action,
+            share_new_relic_action: self.share_new_relic_action,
+            use_new_relic_action: self.use_new_relic_action,
             space: self.space,
             chat_agent: self.chat_agent,
             create_chat_agents: self.create_chat_agents,

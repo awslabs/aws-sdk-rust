@@ -16,6 +16,10 @@ pub struct EbsInfo {
     pub maximum_ebs_attachments: ::std::option::Option<i32>,
     /// <p>Indicates whether the instance type features a shared or dedicated Amazon EBS volume attachment limit. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/volume_limits.html">Amazon EBS volume limits for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub attachment_limit_type: ::std::option::Option<crate::types::AttachmentLimitType>,
+    /// <p>Indicates the number of EBS cards supported by the instance type.</p>
+    pub maximum_ebs_cards: ::std::option::Option<i32>,
+    /// <p>Describes the EBS cards available for the instance type.</p>
+    pub ebs_cards: ::std::option::Option<::std::vec::Vec<crate::types::EbsCardInfo>>,
 }
 impl EbsInfo {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
@@ -42,6 +46,16 @@ impl EbsInfo {
     pub fn attachment_limit_type(&self) -> ::std::option::Option<&crate::types::AttachmentLimitType> {
         self.attachment_limit_type.as_ref()
     }
+    /// <p>Indicates the number of EBS cards supported by the instance type.</p>
+    pub fn maximum_ebs_cards(&self) -> ::std::option::Option<i32> {
+        self.maximum_ebs_cards
+    }
+    /// <p>Describes the EBS cards available for the instance type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ebs_cards.is_none()`.
+    pub fn ebs_cards(&self) -> &[crate::types::EbsCardInfo] {
+        self.ebs_cards.as_deref().unwrap_or_default()
+    }
 }
 impl EbsInfo {
     /// Creates a new builder-style object to manufacture [`EbsInfo`](crate::types::EbsInfo).
@@ -60,6 +74,8 @@ pub struct EbsInfoBuilder {
     pub(crate) nvme_support: ::std::option::Option<crate::types::EbsNvmeSupport>,
     pub(crate) maximum_ebs_attachments: ::std::option::Option<i32>,
     pub(crate) attachment_limit_type: ::std::option::Option<crate::types::AttachmentLimitType>,
+    pub(crate) maximum_ebs_cards: ::std::option::Option<i32>,
+    pub(crate) ebs_cards: ::std::option::Option<::std::vec::Vec<crate::types::EbsCardInfo>>,
 }
 impl EbsInfoBuilder {
     /// <p>Indicates whether the instance type is Amazon EBS-optimized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
@@ -146,6 +162,40 @@ impl EbsInfoBuilder {
     pub fn get_attachment_limit_type(&self) -> &::std::option::Option<crate::types::AttachmentLimitType> {
         &self.attachment_limit_type
     }
+    /// <p>Indicates the number of EBS cards supported by the instance type.</p>
+    pub fn maximum_ebs_cards(mut self, input: i32) -> Self {
+        self.maximum_ebs_cards = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the number of EBS cards supported by the instance type.</p>
+    pub fn set_maximum_ebs_cards(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_ebs_cards = input;
+        self
+    }
+    /// <p>Indicates the number of EBS cards supported by the instance type.</p>
+    pub fn get_maximum_ebs_cards(&self) -> &::std::option::Option<i32> {
+        &self.maximum_ebs_cards
+    }
+    /// Appends an item to `ebs_cards`.
+    ///
+    /// To override the contents of this collection use [`set_ebs_cards`](Self::set_ebs_cards).
+    ///
+    /// <p>Describes the EBS cards available for the instance type.</p>
+    pub fn ebs_cards(mut self, input: crate::types::EbsCardInfo) -> Self {
+        let mut v = self.ebs_cards.unwrap_or_default();
+        v.push(input);
+        self.ebs_cards = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Describes the EBS cards available for the instance type.</p>
+    pub fn set_ebs_cards(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EbsCardInfo>>) -> Self {
+        self.ebs_cards = input;
+        self
+    }
+    /// <p>Describes the EBS cards available for the instance type.</p>
+    pub fn get_ebs_cards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsCardInfo>> {
+        &self.ebs_cards
+    }
     /// Consumes the builder and constructs a [`EbsInfo`](crate::types::EbsInfo).
     pub fn build(self) -> crate::types::EbsInfo {
         crate::types::EbsInfo {
@@ -155,6 +205,8 @@ impl EbsInfoBuilder {
             nvme_support: self.nvme_support,
             maximum_ebs_attachments: self.maximum_ebs_attachments,
             attachment_limit_type: self.attachment_limit_type,
+            maximum_ebs_cards: self.maximum_ebs_cards,
+            ebs_cards: self.ebs_cards,
         }
     }
 }

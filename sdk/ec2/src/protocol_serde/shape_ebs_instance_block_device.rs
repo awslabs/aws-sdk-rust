@@ -99,6 +99,21 @@ pub fn de_ebs_instance_block_device(
                 builder = builder.set_operator(var_7);
             }
             ,
+            s if s.matches("ebsCardIndex") /* EbsCardIndex com.amazonaws.ec2#EbsInstanceBlockDevice$EbsCardIndex */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ebs_card_index(var_8);
+            }
+            ,
             _ => {}
         }
     }

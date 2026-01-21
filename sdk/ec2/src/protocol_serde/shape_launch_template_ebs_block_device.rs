@@ -137,6 +137,21 @@ pub fn de_launch_template_ebs_block_device(
                 builder = builder.set_volume_initialization_rate(var_9);
             }
             ,
+            s if s.matches("ebsCardIndex") /* EbsCardIndex com.amazonaws.ec2#LaunchTemplateEbsBlockDevice$EbsCardIndex */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ebs_card_index(var_10);
+            }
+            ,
             _ => {}
         }
     }

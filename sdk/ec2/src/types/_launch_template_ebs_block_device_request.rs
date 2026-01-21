@@ -59,6 +59,8 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html"> Initialize Amazon EBS volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Valid range: 100 - 300 MiB/s</p>
     pub volume_initialization_rate: ::std::option::Option<i32>,
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub ebs_card_index: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDeviceRequest {
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
@@ -134,6 +136,10 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     pub fn volume_initialization_rate(&self) -> ::std::option::Option<i32> {
         self.volume_initialization_rate
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(&self) -> ::std::option::Option<i32> {
+        self.ebs_card_index
+    }
 }
 impl LaunchTemplateEbsBlockDeviceRequest {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateEbsBlockDeviceRequest`](crate::types::LaunchTemplateEbsBlockDeviceRequest).
@@ -155,6 +161,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
     pub(crate) throughput: ::std::option::Option<i32>,
     pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
+    pub(crate) ebs_card_index: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value.</p>
@@ -394,6 +401,20 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     pub fn get_volume_initialization_rate(&self) -> &::std::option::Option<i32> {
         &self.volume_initialization_rate
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(mut self, input: i32) -> Self {
+        self.ebs_card_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn set_ebs_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_card_index = input;
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn get_ebs_card_index(&self) -> &::std::option::Option<i32> {
+        &self.ebs_card_index
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateEbsBlockDeviceRequest`](crate::types::LaunchTemplateEbsBlockDeviceRequest).
     pub fn build(self) -> crate::types::LaunchTemplateEbsBlockDeviceRequest {
         crate::types::LaunchTemplateEbsBlockDeviceRequest {
@@ -406,6 +427,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
             volume_type: self.volume_type,
             throughput: self.throughput,
             volume_initialization_rate: self.volume_initialization_rate,
+            ebs_card_index: self.ebs_card_index,
         }
     }
 }

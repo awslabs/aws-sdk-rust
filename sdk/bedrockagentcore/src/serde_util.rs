@@ -74,6 +74,15 @@ pub(crate) fn invalid_input_exception_correct_errors(
     builder
 }
 
+pub(crate) fn retryable_conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::RetryableConflictExceptionBuilder,
+) -> crate::types::error::builders::RetryableConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_event_output_output_correct_errors(
     mut builder: crate::operation::create_event::builders::CreateEventOutputBuilder,
 ) -> crate::operation::create_event::builders::CreateEventOutputBuilder {
@@ -472,6 +481,15 @@ pub(crate) fn branch_correct_errors(mut builder: crate::types::builders::BranchB
     builder
 }
 
+pub(crate) fn browser_extension_correct_errors(
+    mut builder: crate::types::builders::BrowserExtensionBuilder,
+) -> crate::types::builders::BrowserExtensionBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::ResourceLocation::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn browser_session_summary_correct_errors(
     mut builder: crate::types::builders::BrowserSessionSummaryBuilder,
 ) -> crate::types::builders::BrowserSessionSummaryBuilder {
@@ -615,6 +633,16 @@ pub(crate) fn conversational_correct_errors(
     }
     if builder.role.is_none() {
         builder.role = "no value was set".parse::<crate::types::Role>().ok()
+    }
+    builder
+}
+
+pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.prefix.is_none() {
+        builder.prefix = Some(Default::default())
     }
     builder
 }

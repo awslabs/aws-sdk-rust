@@ -13,6 +13,8 @@ pub struct GetBrowserSessionOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The configuration that defines the dimensions of a browser viewport in a browser session. The viewport determines the visible area of web content and affects how web pages are rendered and displayed. Proper viewport configuration ensures that web content is displayed correctly for the agent's browsing tasks.</p>
     pub view_port: ::std::option::Option<crate::types::ViewPort>,
+    /// <p>The list of browser extensions that are configured in the browser session.</p>
+    pub extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
     /// <p>The timeout period for the browser session in seconds.</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The current status of the browser session. Possible values include ACTIVE, STOPPING, and STOPPED.</p>
@@ -47,6 +49,12 @@ impl GetBrowserSessionOutput {
     /// <p>The configuration that defines the dimensions of a browser viewport in a browser session. The viewport determines the visible area of web content and affects how web pages are rendered and displayed. Proper viewport configuration ensures that web content is displayed correctly for the agent's browsing tasks.</p>
     pub fn view_port(&self) -> ::std::option::Option<&crate::types::ViewPort> {
         self.view_port.as_ref()
+    }
+    /// <p>The list of browser extensions that are configured in the browser session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extensions.is_none()`.
+    pub fn extensions(&self) -> &[crate::types::BrowserExtension] {
+        self.extensions.as_deref().unwrap_or_default()
     }
     /// <p>The timeout period for the browser session in seconds.</p>
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
@@ -90,6 +98,7 @@ pub struct GetBrowserSessionOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) view_port: ::std::option::Option<crate::types::ViewPort>,
+    pub(crate) extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserSessionStatus>,
     pub(crate) streams: ::std::option::Option<crate::types::BrowserSessionStream>,
@@ -170,6 +179,26 @@ impl GetBrowserSessionOutputBuilder {
     /// <p>The configuration that defines the dimensions of a browser viewport in a browser session. The viewport determines the visible area of web content and affects how web pages are rendered and displayed. Proper viewport configuration ensures that web content is displayed correctly for the agent's browsing tasks.</p>
     pub fn get_view_port(&self) -> &::std::option::Option<crate::types::ViewPort> {
         &self.view_port
+    }
+    /// Appends an item to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>The list of browser extensions that are configured in the browser session.</p>
+    pub fn extensions(mut self, input: crate::types::BrowserExtension) -> Self {
+        let mut v = self.extensions.unwrap_or_default();
+        v.push(input);
+        self.extensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of browser extensions that are configured in the browser session.</p>
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>The list of browser extensions that are configured in the browser session.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
+        &self.extensions
     }
     /// <p>The timeout period for the browser session in seconds.</p>
     pub fn session_timeout_seconds(mut self, input: i32) -> Self {
@@ -279,6 +308,7 @@ impl GetBrowserSessionOutputBuilder {
                 )
             })?,
             view_port: self.view_port,
+            extensions: self.extensions,
             session_timeout_seconds: self.session_timeout_seconds,
             status: self.status,
             streams: self.streams,

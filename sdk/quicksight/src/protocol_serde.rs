@@ -2655,6 +2655,8 @@ pub(crate) mod shape_series_item;
 
 pub(crate) mod shape_sheet_control_info_icon_label_options;
 
+pub(crate) mod shape_sheet_layout_group;
+
 pub(crate) mod shape_sheet_visual_scoping_configurations;
 
 pub(crate) mod shape_short_format_text;
@@ -2975,6 +2977,8 @@ pub(crate) mod shape_set_parameter_value_configuration;
 
 pub(crate) mod shape_sheet_element_rendering_rule;
 
+pub(crate) mod shape_sheet_layout_group_member;
+
 pub(crate) mod shape_small_multiples_axis_properties;
 
 pub(crate) mod shape_snapshot_job_s3_result;
@@ -3185,6 +3189,8 @@ pub(crate) mod shape_shape_conditional_format;
 
 pub(crate) mod shape_sheet_element_configuration_overrides;
 
+pub(crate) mod shape_sheet_layout_group_list;
+
 pub(crate) mod shape_snapshot_file_sheet_selection_visual_id_list;
 
 pub(crate) mod shape_snapshot_job_result_error_info_list;
@@ -3374,6 +3380,8 @@ pub(crate) mod shape_radar_chart_values_field_list;
 pub(crate) mod shape_row_alternate_color_list;
 
 pub(crate) mod shape_sheet_element_rendering_rule_list;
+
+pub(crate) mod shape_sheet_layout_group_member_list;
 
 pub(crate) mod shape_small_multiples_dimension_field_list;
 

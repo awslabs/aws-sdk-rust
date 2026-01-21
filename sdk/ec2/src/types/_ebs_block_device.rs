@@ -87,6 +87,8 @@ pub struct EbsBlockDevice {
     /// <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> can be specified, but not both. If neither is specified, Amazon EC2 automatically selects an Availability Zone within the Region.</p>
     /// <p>This parameter is not supported when using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html">CreateFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub ebs_card_index: ::std::option::Option<i32>,
 }
 impl EbsBlockDevice {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -196,6 +198,10 @@ impl EbsBlockDevice {
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(&self) -> ::std::option::Option<i32> {
+        self.ebs_card_index
+    }
 }
 impl EbsBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::types::EbsBlockDevice).
@@ -220,6 +226,7 @@ pub struct EbsBlockDeviceBuilder {
     pub(crate) encrypted: ::std::option::Option<bool>,
     pub(crate) volume_initialization_rate: ::std::option::Option<i32>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_card_index: ::std::option::Option<i32>,
 }
 impl EbsBlockDeviceBuilder {
     /// <p>Indicates whether the EBS volume is deleted on instance termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -567,6 +574,20 @@ impl EbsBlockDeviceBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(mut self, input: i32) -> Self {
+        self.ebs_card_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn set_ebs_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_card_index = input;
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn get_ebs_card_index(&self) -> &::std::option::Option<i32> {
+        &self.ebs_card_index
+    }
     /// Consumes the builder and constructs a [`EbsBlockDevice`](crate::types::EbsBlockDevice).
     pub fn build(self) -> crate::types::EbsBlockDevice {
         crate::types::EbsBlockDevice {
@@ -582,6 +603,7 @@ impl EbsBlockDeviceBuilder {
             encrypted: self.encrypted,
             volume_initialization_rate: self.volume_initialization_rate,
             availability_zone_id: self.availability_zone_id,
+            ebs_card_index: self.ebs_card_index,
         }
     }
 }

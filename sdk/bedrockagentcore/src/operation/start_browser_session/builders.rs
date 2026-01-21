@@ -202,6 +202,25 @@ impl StartBrowserSessionFluentBuilder {
     pub fn get_view_port(&self) -> &::std::option::Option<crate::types::ViewPort> {
         self.inner.get_view_port()
     }
+    ///
+    /// Appends an item to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>A list of browser extensions to load into the browser session.</p>
+    pub fn extensions(mut self, input: crate::types::BrowserExtension) -> Self {
+        self.inner = self.inner.extensions(input);
+        self
+    }
+    /// <p>A list of browser extensions to load into the browser session.</p>
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>) -> Self {
+        self.inner = self.inner.set_extensions(input);
+        self
+    }
+    /// <p>A list of browser extensions to load into the browser session.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
+        self.inner.get_extensions()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

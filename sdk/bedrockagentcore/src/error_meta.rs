@@ -15,6 +15,8 @@ pub enum Error {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The exception that occurs when the specified resource does not exist. This can happen when using an invalid identifier or when trying to access a resource that has been deleted.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The exception that occurs when there is a retryable conflict performing an operation. This is a temporary condition that may resolve itself with retries. We recommend implementing exponential backoff retry logic in your application.</p>
+    RetryableConflictException(crate::types::error::RetryableConflictException),
     /// <p>The exception that occurs when there is an error in the runtime client. This can happen due to network issues, invalid configuration, or other client-side problems. Check the error message for specific details about the error.</p>
     RuntimeClientError(crate::types::error::RuntimeClientError),
     /// <p>The service encountered an internal error. Try your request again later.</p>
@@ -47,6 +49,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::RetryableConflictException(inner) => inner.fmt(f),
             Error::RuntimeClientError(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -81,6 +84,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RetryableConflictException(inner) => inner.meta(),
             Self::RuntimeClientError(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
@@ -274,6 +278,7 @@ impl From<crate::operation::create_event::CreateEventError> for Error {
             crate::operation::create_event::CreateEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_event::CreateEventError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_event::CreateEventError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_event::CreateEventError::RetryableConflictException(inner) => Error::RetryableConflictException(inner),
             crate::operation::create_event::CreateEventError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::create_event::CreateEventError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_event::CreateEventError::ThrottledException(inner) => Error::ThrottledException(inner),
@@ -1373,6 +1378,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RetryableConflictException(inner) => inner.source(),
             Error::RuntimeClientError(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
@@ -1393,6 +1399,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::RetryableConflictException(e) => e.request_id(),
             Self::RuntimeClientError(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),

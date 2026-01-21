@@ -57,6 +57,10 @@ pub use crate::types::_automation_stream::AutomationStreamBuilder;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;
 
+pub use crate::types::_browser_extension::BrowserExtensionBuilder;
+
+pub use crate::types::_s3_location::S3LocationBuilder;
+
 pub use crate::types::_view_port::ViewPortBuilder;
 
 pub use crate::types::_browser_session_summary::BrowserSessionSummaryBuilder;

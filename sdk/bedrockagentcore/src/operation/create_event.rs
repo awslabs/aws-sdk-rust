@@ -280,6 +280,8 @@ pub enum CreateEventError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The exception that occurs when the specified resource does not exist. This can happen when using an invalid identifier or when trying to access a resource that has been deleted.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The exception that occurs when there is a retryable conflict performing an operation. This is a temporary condition that may resolve itself with retries. We recommend implementing exponential backoff retry logic in your application.</p>
+    RetryableConflictException(crate::types::error::RetryableConflictException),
     /// <p>The service encountered an internal error. Try your request again later.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The exception that occurs when the request would cause a service quota to be exceeded. Review your service quotas and either reduce your request rate or request a quota increase.</p>
@@ -324,6 +326,7 @@ impl CreateEventError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RetryableConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -342,6 +345,10 @@ impl CreateEventError {
     /// Returns `true` if the error kind is `CreateEventError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `CreateEventError::RetryableConflictException`.
+    pub fn is_retryable_conflict_exception(&self) -> bool {
+        matches!(self, Self::RetryableConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateEventError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
@@ -366,6 +373,7 @@ impl ::std::error::Error for CreateEventError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RetryableConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottledException(_inner) => ::std::option::Option::Some(_inner),
@@ -380,6 +388,7 @@ impl ::std::fmt::Display for CreateEventError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::RetryableConflictException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottledException(_inner) => _inner.fmt(f),
@@ -399,7 +408,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateEventError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::RetryableConflictException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateEventError {
@@ -408,6 +420,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateEventEr
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RetryableConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

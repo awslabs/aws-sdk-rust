@@ -25,6 +25,8 @@ pub struct PutConformancePackInput {
     pub conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     /// <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
     pub template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
+    /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConformancePackInput {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
@@ -65,6 +67,12 @@ impl PutConformancePackInput {
     pub fn template_ssm_document_details(&self) -> ::std::option::Option<&crate::types::TemplateSsmDocumentDetails> {
         self.template_ssm_document_details.as_ref()
     }
+    /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl PutConformancePackInput {
     /// Creates a new builder-style object to manufacture [`PutConformancePackInput`](crate::operation::put_conformance_pack::PutConformancePackInput).
@@ -84,6 +92,7 @@ pub struct PutConformancePackInputBuilder {
     pub(crate) delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) conformance_pack_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     pub(crate) template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutConformancePackInputBuilder {
     /// <p>The unique name of the conformance pack you want to deploy.</p>
@@ -218,6 +227,26 @@ impl PutConformancePackInputBuilder {
     pub fn get_template_ssm_document_details(&self) -> &::std::option::Option<crate::types::TemplateSsmDocumentDetails> {
         &self.template_ssm_document_details
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutConformancePackInput`](crate::operation::put_conformance_pack::PutConformancePackInput).
     pub fn build(
         self,
@@ -231,6 +260,7 @@ impl PutConformancePackInputBuilder {
             delivery_s3_key_prefix: self.delivery_s3_key_prefix,
             conformance_pack_input_parameters: self.conformance_pack_input_parameters,
             template_ssm_document_details: self.template_ssm_document_details,
+            tags: self.tags,
         })
     }
 }

@@ -9,6 +9,8 @@ pub struct AttachVolumeInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub ebs_card_index: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -24,6 +26,10 @@ impl AttachVolumeInput {
     /// <p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(&self) -> ::std::option::Option<i32> {
+        self.ebs_card_index
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -44,6 +50,7 @@ pub struct AttachVolumeInputBuilder {
     pub(crate) device: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_card_index: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AttachVolumeInputBuilder {
@@ -92,6 +99,20 @@ impl AttachVolumeInputBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(mut self, input: i32) -> Self {
+        self.ebs_card_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn set_ebs_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_card_index = input;
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn get_ebs_card_index(&self) -> &::std::option::Option<i32> {
+        &self.ebs_card_index
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -114,6 +135,7 @@ impl AttachVolumeInputBuilder {
             device: self.device,
             instance_id: self.instance_id,
             volume_id: self.volume_id,
+            ebs_card_index: self.ebs_card_index,
             dry_run: self.dry_run,
         })
     }

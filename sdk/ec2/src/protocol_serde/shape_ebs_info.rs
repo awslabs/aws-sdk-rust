@@ -88,6 +88,31 @@ pub fn de_ebs_info(
                 builder = builder.set_attachment_limit_type(var_6);
             }
             ,
+            s if s.matches("maximumEbsCards") /* MaximumEbsCards com.amazonaws.ec2#EbsInfo$MaximumEbsCards */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#MaximumEbsCards`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum_ebs_cards(var_7);
+            }
+            ,
+            s if s.matches("ebsCardSet") /* EbsCards com.amazonaws.ec2#EbsInfo$EbsCards */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_ebs_card_info_list::de_ebs_card_info_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ebs_cards(var_8);
+            }
+            ,
             _ => {}
         }
     }

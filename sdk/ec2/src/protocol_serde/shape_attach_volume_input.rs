@@ -21,9 +21,17 @@ pub fn ser_attach_volume_input_input_input(
         scope_5.string(var_6);
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("DryRun");
-    if let Some(var_8) = &input.dry_run {
-        scope_7.boolean(*var_8);
+    let mut scope_7 = writer.prefix("EbsCardIndex");
+    if let Some(var_8) = &input.ebs_card_index {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("DryRun");
+    if let Some(var_10) = &input.dry_run {
+        scope_9.boolean(*var_10);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

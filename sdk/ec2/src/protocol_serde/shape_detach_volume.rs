@@ -88,20 +88,22 @@ pub fn de_detach_volume(
                 builder = builder.set_instance_owning_service(var_3);
             }
             ,
-            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2.synthetic#DetachVolumeOutput$VolumeId */ =>  {
+            s if s.matches("ebsCardIndex") /* EbsCardIndex com.amazonaws.ec2.synthetic#DetachVolumeOutput$EbsCardIndex */ =>  {
                 let var_4 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
                         ?
                     )
                 ;
-                builder = builder.set_volume_id(var_4);
+                builder = builder.set_ebs_card_index(var_4);
             }
             ,
-            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2.synthetic#DetachVolumeOutput$InstanceId */ =>  {
+            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2.synthetic#DetachVolumeOutput$VolumeId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -111,10 +113,10 @@ pub fn de_detach_volume(
                         ?
                     )
                 ;
-                builder = builder.set_instance_id(var_5);
+                builder = builder.set_volume_id(var_5);
             }
             ,
-            s if s.matches("device") /* Device com.amazonaws.ec2.synthetic#DetachVolumeOutput$Device */ =>  {
+            s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2.synthetic#DetachVolumeOutput$InstanceId */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -124,11 +126,24 @@ pub fn de_detach_volume(
                         ?
                     )
                 ;
-                builder = builder.set_device(var_6);
+                builder = builder.set_instance_id(var_6);
+            }
+            ,
+            s if s.matches("device") /* Device com.amazonaws.ec2.synthetic#DetachVolumeOutput$Device */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_device(var_7);
             }
             ,
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#DetachVolumeOutput$State */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         Result::<crate::types::VolumeAttachmentState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::VolumeAttachmentState::from(
@@ -138,11 +153,11 @@ pub fn de_detach_volume(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_7);
+                builder = builder.set_state(var_8);
             }
             ,
             s if s.matches("attachTime") /* AttachTime com.amazonaws.ec2.synthetic#DetachVolumeOutput$AttachTime */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -152,7 +167,7 @@ pub fn de_detach_volume(
                         ?
                     )
                 ;
-                builder = builder.set_attach_time(var_8);
+                builder = builder.set_attach_time(var_9);
             }
             ,
             _ => {}

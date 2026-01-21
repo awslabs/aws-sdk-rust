@@ -61,5 +61,13 @@ pub fn ser_launch_template_ebs_block_device_request(
             ::aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("EbsCardIndex");
+    if let Some(var_20) = &input.ebs_card_index {
+        scope_19.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
     Ok(())
 }

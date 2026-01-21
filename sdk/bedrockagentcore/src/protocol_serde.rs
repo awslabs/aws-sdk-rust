@@ -161,6 +161,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retrieve_memory_records_input;
 
+pub(crate) mod shape_retryable_conflict_exception;
+
 pub(crate) mod shape_runtime_client_error;
 
 pub(crate) mod shape_service_exception;
@@ -202,6 +204,10 @@ pub(crate) mod shape_actor_summary_list;
 pub(crate) mod shape_agent_card;
 
 pub(crate) mod shape_branch;
+
+pub(crate) mod shape_browser_extension;
+
+pub(crate) mod shape_browser_extensions;
 
 pub(crate) mod shape_browser_session_stream;
 
@@ -297,6 +303,8 @@ pub(crate) mod shape_namespaces_list;
 
 pub(crate) mod shape_payload_type_list;
 
+pub(crate) mod shape_resource_location;
+
 pub(crate) mod shape_session_summary;
 
 pub(crate) mod shape_validation_exception_field;
@@ -310,6 +318,8 @@ pub(crate) mod shape_extraction_job_messages;
 pub(crate) mod shape_left_expression;
 
 pub(crate) mod shape_right_expression;
+
+pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_token_usage;
 

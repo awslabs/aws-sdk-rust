@@ -8,6 +8,8 @@ pub struct FreeFormLayoutConfiguration {
     pub elements: ::std::vec::Vec<crate::types::FreeFormLayoutElement>,
     /// <p>Configuration options for the canvas of a free-form layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
+    /// <p>The groups that are included in a free-form layout.</p>
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SheetLayoutGroup>>,
 }
 impl FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
@@ -18,6 +20,12 @@ impl FreeFormLayoutConfiguration {
     /// <p>Configuration options for the canvas of a free-form layout.</p>
     pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::FreeFormLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
+    }
+    /// <p>The groups that are included in a free-form layout.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
+    pub fn groups(&self) -> &[crate::types::SheetLayoutGroup] {
+        self.groups.as_deref().unwrap_or_default()
     }
 }
 impl FreeFormLayoutConfiguration {
@@ -33,6 +41,7 @@ impl FreeFormLayoutConfiguration {
 pub struct FreeFormLayoutConfigurationBuilder {
     pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::FreeFormLayoutElement>>,
     pub(crate) canvas_size_options: ::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::SheetLayoutGroup>>,
 }
 impl FreeFormLayoutConfigurationBuilder {
     /// Appends an item to `elements`.
@@ -69,6 +78,26 @@ impl FreeFormLayoutConfigurationBuilder {
     pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions> {
         &self.canvas_size_options
     }
+    /// Appends an item to `groups`.
+    ///
+    /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+    ///
+    /// <p>The groups that are included in a free-form layout.</p>
+    pub fn groups(mut self, input: crate::types::SheetLayoutGroup) -> Self {
+        let mut v = self.groups.unwrap_or_default();
+        v.push(input);
+        self.groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The groups that are included in a free-form layout.</p>
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SheetLayoutGroup>>) -> Self {
+        self.groups = input;
+        self
+    }
+    /// <p>The groups that are included in a free-form layout.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetLayoutGroup>> {
+        &self.groups
+    }
     /// Consumes the builder and constructs a [`FreeFormLayoutConfiguration`](crate::types::FreeFormLayoutConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`elements`](crate::types::builders::FreeFormLayoutConfigurationBuilder::elements)
@@ -81,6 +110,7 @@ impl FreeFormLayoutConfigurationBuilder {
                 )
             })?,
             canvas_size_options: self.canvas_size_options,
+            groups: self.groups,
         })
     }
 }

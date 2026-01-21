@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
@@ -199,6 +201,8 @@ mod _internal_server_exception;
 mod _invalid_input_exception;
 
 mod _resource_not_found_exception;
+
+mod _retryable_conflict_exception;
 
 mod _runtime_client_error;
 

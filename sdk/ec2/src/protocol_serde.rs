@@ -5407,6 +5407,8 @@ pub(crate) mod shape_disable_fast_snapshot_restore_state_error_item;
 
 pub(crate) mod shape_disk_info_list;
 
+pub(crate) mod shape_ebs_card_info_list;
+
 pub(crate) mod shape_ebs_optimized_info;
 
 pub(crate) mod shape_ebs_status_details_list;
@@ -5564,6 +5566,8 @@ pub(crate) mod shape_directory_service_authentication;
 pub(crate) mod shape_disable_fast_snapshot_restore_state_error;
 
 pub(crate) mod shape_disk_info;
+
+pub(crate) mod shape_ebs_card_info;
 
 pub(crate) mod shape_ebs_status_details;
 

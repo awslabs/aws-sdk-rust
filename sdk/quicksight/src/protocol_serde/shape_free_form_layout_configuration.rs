@@ -21,6 +21,18 @@ pub fn ser_free_form_layout_configuration(
         crate::protocol_serde::shape_free_form_layout_canvas_size_options::ser_free_form_layout_canvas_size_options(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.groups {
+        let mut array_7 = object.key("Groups").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_sheet_layout_group::ser_sheet_layout_group(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +59,9 @@ where
                             builder = builder.set_canvas_size_options(
                                 crate::protocol_serde::shape_free_form_layout_canvas_size_options::de_free_form_layout_canvas_size_options(tokens)?,
                             );
+                        }
+                        "Groups" => {
+                            builder = builder.set_groups(crate::protocol_serde::shape_sheet_layout_group_list::de_sheet_layout_group_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

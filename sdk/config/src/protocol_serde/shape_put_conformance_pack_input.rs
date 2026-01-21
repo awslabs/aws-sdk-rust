@@ -36,5 +36,17 @@ pub fn ser_put_conformance_pack_input_input(
         crate::protocol_serde::shape_template_ssm_document_details::ser_template_ssm_document_details(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }

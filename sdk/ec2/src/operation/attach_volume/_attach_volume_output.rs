@@ -11,6 +11,8 @@ pub struct AttachVolumeOutput {
     /// <p>The service principal of the Amazon Web Services service that owns the underlying resource to which the volume is attached.</p>
     /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub instance_owning_service: ::std::option::Option<::std::string::String>,
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub ebs_card_index: ::std::option::Option<i32>,
     /// <p>The ID of the volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
@@ -38,6 +40,10 @@ impl AttachVolumeOutput {
     /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn instance_owning_service(&self) -> ::std::option::Option<&str> {
         self.instance_owning_service.as_deref()
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(&self) -> ::std::option::Option<i32> {
+        self.ebs_card_index
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
@@ -81,6 +87,7 @@ pub struct AttachVolumeOutputBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) associated_resource: ::std::option::Option<::std::string::String>,
     pub(crate) instance_owning_service: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_card_index: ::std::option::Option<i32>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) device: ::std::option::Option<::std::string::String>,
@@ -133,6 +140,20 @@ impl AttachVolumeOutputBuilder {
     /// <p>This parameter is returned only for volumes that are attached to Amazon Web Services-managed resources.</p>
     pub fn get_instance_owning_service(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_owning_service
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn ebs_card_index(mut self, input: i32) -> Self {
+        self.ebs_card_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn set_ebs_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ebs_card_index = input;
+        self
+    }
+    /// <p>The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.</p>
+    pub fn get_ebs_card_index(&self) -> &::std::option::Option<i32> {
+        &self.ebs_card_index
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -225,6 +246,7 @@ impl AttachVolumeOutputBuilder {
             delete_on_termination: self.delete_on_termination,
             associated_resource: self.associated_resource,
             instance_owning_service: self.instance_owning_service,
+            ebs_card_index: self.ebs_card_index,
             volume_id: self.volume_id,
             instance_id: self.instance_id,
             device: self.device,

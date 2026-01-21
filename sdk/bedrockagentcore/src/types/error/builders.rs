@@ -13,6 +13,8 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictExceptionBuilder;
+
 pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;

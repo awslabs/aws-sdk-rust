@@ -389,6 +389,10 @@ pub use crate::types::_body_section_content::BodySectionContentBuilder;
 
 pub use crate::types::_free_form_layout_configuration::FreeFormLayoutConfigurationBuilder;
 
+pub use crate::types::_sheet_layout_group::SheetLayoutGroupBuilder;
+
+pub use crate::types::_sheet_layout_group_member::SheetLayoutGroupMemberBuilder;
+
 pub use crate::types::_sheet_image::SheetImageBuilder;
 
 pub use crate::types::_image_custom_action::ImageCustomActionBuilder;

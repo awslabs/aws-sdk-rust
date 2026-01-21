@@ -2051,6 +2051,8 @@ pub use crate::types::_network_card_info::NetworkCardInfo;
 
 pub use crate::types::_ebs_info::EbsInfo;
 
+pub use crate::types::_ebs_card_info::EbsCardInfo;
+
 pub use crate::types::_attachment_limit_type::AttachmentLimitType;
 
 pub use crate::types::_ebs_nvme_support::EbsNvmeSupport;
@@ -3198,6 +3200,8 @@ mod _dynamic_routing_value;
 mod _ebs_block_device;
 
 mod _ebs_block_device_response;
+
+mod _ebs_card_info;
 
 mod _ebs_encryption_support;
 

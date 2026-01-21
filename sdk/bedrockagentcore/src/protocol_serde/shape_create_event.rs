@@ -61,6 +61,20 @@ pub fn de_create_event_http_error(
             }
             tmp
         }),
+        "RetryableConflictException" => crate::operation::create_event::CreateEventError::RetryableConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RetryableConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_retryable_conflict_exception::de_retryable_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_event::CreateEventError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::retryable_conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_event::CreateEventError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceException" => crate::operation::create_event::CreateEventError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

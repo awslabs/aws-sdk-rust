@@ -539,6 +539,12 @@ pub use crate::types::_body_section_content::BodySectionContent;
 
 pub use crate::types::_free_form_layout_configuration::FreeFormLayoutConfiguration;
 
+pub use crate::types::_sheet_layout_group::SheetLayoutGroup;
+
+pub use crate::types::_sheet_layout_group_member::SheetLayoutGroupMember;
+
+pub use crate::types::_sheet_layout_group_member_type::SheetLayoutGroupMemberType;
+
 pub use crate::types::_sheet_image::SheetImage;
 
 pub use crate::types::_image_custom_action::ImageCustomAction;
@@ -4708,6 +4714,12 @@ mod _sheet_image_tooltip_configuration;
 mod _sheet_image_tooltip_text;
 
 mod _sheet_layout_element_maximization_option;
+
+mod _sheet_layout_group;
+
+mod _sheet_layout_group_member;
+
+mod _sheet_layout_group_member_type;
 
 mod _sheet_style;
 

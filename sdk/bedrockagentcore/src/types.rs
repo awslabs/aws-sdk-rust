@@ -93,6 +93,12 @@ pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
+pub use crate::types::_browser_extension::BrowserExtension;
+
+pub use crate::types::_resource_location::ResourceLocation;
+
+pub use crate::types::_s3_location::S3Location;
+
 pub use crate::types::_view_port::ViewPort;
 
 pub use crate::types::_browser_session_summary::BrowserSessionSummary;
@@ -140,6 +146,8 @@ mod _automation_stream_update;
 mod _branch;
 
 mod _branch_filter;
+
+mod _browser_extension;
 
 mod _browser_session_status;
 
@@ -227,9 +235,13 @@ mod _resource_content;
 
 mod _resource_content_type;
 
+mod _resource_location;
+
 mod _right_expression;
 
 mod _role;
+
+mod _s3_location;
 
 mod _search_criteria;
 
