@@ -6,13 +6,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameProperty {
-    /// <p>The game property identifier.</p>
+    /// <p>The game property identifier.</p><note>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// </note>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The game property value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl GameProperty {
-    /// <p>The game property identifier.</p>
+    /// <p>The game property identifier.</p><note>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// </note>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -36,18 +40,24 @@ pub struct GamePropertyBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl GamePropertyBuilder {
-    /// <p>The game property identifier.</p>
+    /// <p>The game property identifier.</p><note>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// </note>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The game property identifier.</p>
+    /// <p>The game property identifier.</p><note>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The game property identifier.</p>
+    /// <p>The game property identifier.</p><note>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// </note>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

@@ -73,6 +73,10 @@ pub struct UpdateAutoScalingGroupInput {
     /// <p>The instance lifecycle policy for the Auto Scaling group. This policy controls instance behavior when an instance transitions through its lifecycle states. Configure retention triggers to specify when instances should move to a <code>Retained</code> state instead of automatic termination.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-lifecycle-policy.html"> Control instance retention with instance lifecycle policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -203,6 +207,12 @@ impl UpdateAutoScalingGroupInput {
     pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
         self.instance_lifecycle_policy.as_ref()
     }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
 }
 impl UpdateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
@@ -242,6 +252,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
     pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl UpdateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -683,6 +694,26 @@ impl UpdateAutoScalingGroupInputBuilder {
     pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
         &self.instance_lifecycle_policy
     }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -718,6 +749,7 @@ impl UpdateAutoScalingGroupInputBuilder {
             skip_zonal_shift_validation: self.skip_zonal_shift_validation,
             capacity_reservation_specification: self.capacity_reservation_specification,
             instance_lifecycle_policy: self.instance_lifecycle_policy,
+            deletion_protection: self.deletion_protection,
         })
     }
 }

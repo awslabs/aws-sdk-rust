@@ -75,6 +75,8 @@ pub struct AutoScalingGroup {
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
     /// <p>An instance maintenance policy.</p>
     pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
+    /// <p>The deletion protection setting for the Auto Scaling group.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>The EC2 instance capacity distribution across Availability Zones for the Auto Scaling group.</p>
     pub availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     /// <p>The Availability Zone impairment policy for the Auto Scaling group.</p>
@@ -244,6 +246,10 @@ impl AutoScalingGroup {
     pub fn instance_maintenance_policy(&self) -> ::std::option::Option<&crate::types::InstanceMaintenancePolicy> {
         self.instance_maintenance_policy.as_ref()
     }
+    /// <p>The deletion protection setting for the Auto Scaling group.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
     /// <p>The EC2 instance capacity distribution across Availability Zones for the Auto Scaling group.</p>
     pub fn availability_zone_distribution(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneDistribution> {
         self.availability_zone_distribution.as_ref()
@@ -307,6 +313,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) default_instance_warmup: ::std::option::Option<i32>,
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
     pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     pub(crate) availability_zone_distribution: ::std::option::Option<crate::types::AvailabilityZoneDistribution>,
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
@@ -867,6 +874,20 @@ impl AutoScalingGroupBuilder {
     pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
         &self.instance_maintenance_policy
     }
+    /// <p>The deletion protection setting for the Auto Scaling group.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// <p>The EC2 instance capacity distribution across Availability Zones for the Auto Scaling group.</p>
     pub fn availability_zone_distribution(mut self, input: crate::types::AvailabilityZoneDistribution) -> Self {
         self.availability_zone_distribution = ::std::option::Option::Some(input);
@@ -961,6 +982,7 @@ impl AutoScalingGroupBuilder {
             default_instance_warmup: self.default_instance_warmup,
             traffic_sources: self.traffic_sources,
             instance_maintenance_policy: self.instance_maintenance_policy,
+            deletion_protection: self.deletion_protection,
             availability_zone_distribution: self.availability_zone_distribution,
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             capacity_reservation_specification: self.capacity_reservation_specification,

@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EncryptionSettings {
-    /// Use AWS owned encryption keys for encrypting policy store data.
+    /// <p>This is the default encryption setting. The policy store uses an Amazon Web Services owned key for encrypting data.</p>
     Default,
     /// <p>The KMS encryption settings for this policy store to encrypt data with. It will contain the customer-managed KMS key, and a user-defined encryption context.</p>
     KmsEncryptionSettings(crate::types::KmsEncryptionSettings),

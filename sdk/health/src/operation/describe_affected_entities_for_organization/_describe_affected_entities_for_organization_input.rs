@@ -10,7 +10,7 @@ pub struct DescribeAffectedEntitiesForOrganizationInput {
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of <code>statusCodes</code>.</p>
     pub organization_entity_account_filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityAccountFilter>>,
@@ -31,7 +31,7 @@ impl DescribeAffectedEntitiesForOrganizationInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -111,17 +111,17 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

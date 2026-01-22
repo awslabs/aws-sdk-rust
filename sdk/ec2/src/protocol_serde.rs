@@ -5715,6 +5715,8 @@ pub(crate) mod shape_spot_fleet_tag_specification_list;
 
 pub(crate) mod shape_target_groups;
 
+pub(crate) mod shape_workloads_list;
+
 pub(crate) mod shape_ebs_block_device_response;
 
 pub(crate) mod shape_image_usage_resource_type_option_values_list;

@@ -140,12 +140,36 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait for `contributor_insights_enabled`
+    fn wait_until_contributor_insights_enabled(&self) -> crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder;
+    /// Wait for `export_completed`
+    fn wait_until_export_completed(&self) -> crate::waiters::export_completed::ExportCompletedFluentBuilder;
+    /// Wait for `import_completed`
+    fn wait_until_import_completed(&self) -> crate::waiters::import_completed::ImportCompletedFluentBuilder;
+    /// Wait for `kinesis_streaming_destination_active`
+    fn wait_until_kinesis_streaming_destination_active(
+        &self,
+    ) -> crate::waiters::kinesis_streaming_destination_active::KinesisStreamingDestinationActiveFluentBuilder;
     /// Wait for `table_exists`
     fn wait_until_table_exists(&self) -> crate::waiters::table_exists::TableExistsFluentBuilder;
     /// Wait for `table_not_exists`
     fn wait_until_table_not_exists(&self) -> crate::waiters::table_not_exists::TableNotExistsFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_contributor_insights_enabled(&self) -> crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder {
+        crate::waiters::contributor_insights_enabled::ContributorInsightsEnabledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_export_completed(&self) -> crate::waiters::export_completed::ExportCompletedFluentBuilder {
+        crate::waiters::export_completed::ExportCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_import_completed(&self) -> crate::waiters::import_completed::ImportCompletedFluentBuilder {
+        crate::waiters::import_completed::ImportCompletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_kinesis_streaming_destination_active(
+        &self,
+    ) -> crate::waiters::kinesis_streaming_destination_active::KinesisStreamingDestinationActiveFluentBuilder {
+        crate::waiters::kinesis_streaming_destination_active::KinesisStreamingDestinationActiveFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_table_exists(&self) -> crate::waiters::table_exists::TableExistsFluentBuilder {
         crate::waiters::table_exists::TableExistsFluentBuilder::new(self.handle.clone())
     }

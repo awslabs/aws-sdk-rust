@@ -13,6 +13,7 @@
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
 ///     ScanStatusReason::AccessDenied => { /* ... */ },
+///     ScanStatusReason::AllFilesSkippedOrFailed => { /* ... */ },
 ///     ScanStatusReason::AmiSnapshotLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::BaseCreatedAfterTarget => { /* ... */ },
 ///     ScanStatusReason::BaseResourceNotScanned => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    AllFilesSkippedOrFailed,
+    #[allow(missing_docs)] // documentation missing in model
     AmiSnapshotLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
     BaseCreatedAfterTarget,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+            "ALL_FILES_SKIPPED_OR_FAILED" => ScanStatusReason::AllFilesSkippedOrFailed,
             "AMI_SNAPSHOT_LIMIT_EXCEEDED" => ScanStatusReason::AmiSnapshotLimitExceeded,
             "BASE_CREATED_AFTER_TARGET" => ScanStatusReason::BaseCreatedAfterTarget,
             "BASE_RESOURCE_NOT_SCANNED" => ScanStatusReason::BaseResourceNotScanned,
@@ -127,6 +131,7 @@ impl ScanStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+            ScanStatusReason::AllFilesSkippedOrFailed => "ALL_FILES_SKIPPED_OR_FAILED",
             ScanStatusReason::AmiSnapshotLimitExceeded => "AMI_SNAPSHOT_LIMIT_EXCEEDED",
             ScanStatusReason::BaseCreatedAfterTarget => "BASE_CREATED_AFTER_TARGET",
             ScanStatusReason::BaseResourceNotScanned => "BASE_RESOURCE_NOT_SCANNED",
@@ -149,6 +154,7 @@ impl ScanStatusReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
+            "ALL_FILES_SKIPPED_OR_FAILED",
             "AMI_SNAPSHOT_LIMIT_EXCEEDED",
             "BASE_CREATED_AFTER_TARGET",
             "BASE_RESOURCE_NOT_SCANNED",
@@ -188,6 +194,7 @@ impl ::std::fmt::Display for ScanStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ScanStatusReason::AllFilesSkippedOrFailed => write!(f, "ALL_FILES_SKIPPED_OR_FAILED"),
             ScanStatusReason::AmiSnapshotLimitExceeded => write!(f, "AMI_SNAPSHOT_LIMIT_EXCEEDED"),
             ScanStatusReason::BaseCreatedAfterTarget => write!(f, "BASE_CREATED_AFTER_TARGET"),
             ScanStatusReason::BaseResourceNotScanned => write!(f, "BASE_RESOURCE_NOT_SCANNED"),

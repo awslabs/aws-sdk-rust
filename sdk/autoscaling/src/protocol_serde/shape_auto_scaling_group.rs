@@ -446,44 +446,58 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_instance_maintenance_policy(var_35);
             }
             ,
-            s if s.matches("AvailabilityZoneDistribution") /* AvailabilityZoneDistribution com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneDistribution */ =>  {
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.autoscaling#AutoScalingGroup$DeletionProtection */ =>  {
                 let var_36 =
+                    Some(
+                        Result::<crate::types::DeletionProtection, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeletionProtection::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_deletion_protection(var_36);
+            }
+            ,
+            s if s.matches("AvailabilityZoneDistribution") /* AvailabilityZoneDistribution com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneDistribution */ =>  {
+                let var_37 =
                     Some(
                         crate::protocol_serde::shape_availability_zone_distribution::de_availability_zone_distribution(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_distribution(var_36);
+                builder = builder.set_availability_zone_distribution(var_37);
             }
             ,
             s if s.matches("AvailabilityZoneImpairmentPolicy") /* AvailabilityZoneImpairmentPolicy com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneImpairmentPolicy */ =>  {
-                let var_37 =
+                let var_38 =
                     Some(
                         crate::protocol_serde::shape_availability_zone_impairment_policy::de_availability_zone_impairment_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_impairment_policy(var_37);
+                builder = builder.set_availability_zone_impairment_policy(var_38);
             }
             ,
             s if s.matches("CapacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.autoscaling#AutoScalingGroup$CapacityReservationSpecification */ =>  {
-                let var_38 =
+                let var_39 =
                     Some(
                         crate::protocol_serde::shape_capacity_reservation_specification::de_capacity_reservation_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_capacity_reservation_specification(var_38);
+                builder = builder.set_capacity_reservation_specification(var_39);
             }
             ,
             s if s.matches("InstanceLifecyclePolicy") /* InstanceLifecyclePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceLifecyclePolicy */ =>  {
-                let var_39 =
+                let var_40 =
                     Some(
                         crate::protocol_serde::shape_instance_lifecycle_policy::de_instance_lifecycle_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_lifecycle_policy(var_39);
+                builder = builder.set_instance_lifecycle_policy(var_40);
             }
             ,
             _ => {}

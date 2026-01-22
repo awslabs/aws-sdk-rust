@@ -173,6 +173,11 @@ pub fn ser_update_auto_scaling_group_input_input_input(
     if let Some(var_60) = &input.instance_lifecycle_policy {
         crate::protocol_serde::shape_instance_lifecycle_policy::ser_instance_lifecycle_policy(scope_59, var_60)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_61 = writer.prefix("DeletionProtection");
+    if let Some(var_62) = &input.deletion_protection {
+        scope_61.string(var_62.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

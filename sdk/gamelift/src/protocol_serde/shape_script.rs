@@ -58,6 +58,13 @@ where
                         "StorageLocation" => {
                             builder = builder.set_storage_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
                         }
+                        "NodeJsVersion" => {
+                            builder = builder.set_node_js_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

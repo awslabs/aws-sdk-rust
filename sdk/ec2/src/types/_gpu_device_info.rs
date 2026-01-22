@@ -10,6 +10,12 @@ pub struct GpuDeviceInfo {
     pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The number of GPUs for the instance type.</p>
     pub count: ::std::option::Option<i32>,
+    /// <p>Total number of GPU devices of this type.</p>
+    pub logical_gpu_count: ::std::option::Option<i32>,
+    /// <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).</p>
+    pub gpu_partition_size: ::std::option::Option<f64>,
+    /// <p>A list of workload types this GPU supports.</p>
+    pub workloads: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub memory_info: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
 }
@@ -25,6 +31,20 @@ impl GpuDeviceInfo {
     /// <p>The number of GPUs for the instance type.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
+    }
+    /// <p>Total number of GPU devices of this type.</p>
+    pub fn logical_gpu_count(&self) -> ::std::option::Option<i32> {
+        self.logical_gpu_count
+    }
+    /// <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).</p>
+    pub fn gpu_partition_size(&self) -> ::std::option::Option<f64> {
+        self.gpu_partition_size
+    }
+    /// <p>A list of workload types this GPU supports.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workloads.is_none()`.
+    pub fn workloads(&self) -> &[::std::string::String] {
+        self.workloads.as_deref().unwrap_or_default()
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub fn memory_info(&self) -> ::std::option::Option<&crate::types::GpuDeviceMemoryInfo> {
@@ -45,6 +65,9 @@ pub struct GpuDeviceInfoBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
     pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) logical_gpu_count: ::std::option::Option<i32>,
+    pub(crate) gpu_partition_size: ::std::option::Option<f64>,
+    pub(crate) workloads: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) memory_info: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
 }
 impl GpuDeviceInfoBuilder {
@@ -90,6 +113,54 @@ impl GpuDeviceInfoBuilder {
     pub fn get_count(&self) -> &::std::option::Option<i32> {
         &self.count
     }
+    /// <p>Total number of GPU devices of this type.</p>
+    pub fn logical_gpu_count(mut self, input: i32) -> Self {
+        self.logical_gpu_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Total number of GPU devices of this type.</p>
+    pub fn set_logical_gpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.logical_gpu_count = input;
+        self
+    }
+    /// <p>Total number of GPU devices of this type.</p>
+    pub fn get_logical_gpu_count(&self) -> &::std::option::Option<i32> {
+        &self.logical_gpu_count
+    }
+    /// <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).</p>
+    pub fn gpu_partition_size(mut self, input: f64) -> Self {
+        self.gpu_partition_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).</p>
+    pub fn set_gpu_partition_size(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.gpu_partition_size = input;
+        self
+    }
+    /// <p>The size of each GPU as a fraction of a full GPU, between 0 (excluded) and 1 (included).</p>
+    pub fn get_gpu_partition_size(&self) -> &::std::option::Option<f64> {
+        &self.gpu_partition_size
+    }
+    /// Appends an item to `workloads`.
+    ///
+    /// To override the contents of this collection use [`set_workloads`](Self::set_workloads).
+    ///
+    /// <p>A list of workload types this GPU supports.</p>
+    pub fn workloads(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.workloads.unwrap_or_default();
+        v.push(input.into());
+        self.workloads = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of workload types this GPU supports.</p>
+    pub fn set_workloads(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.workloads = input;
+        self
+    }
+    /// <p>A list of workload types this GPU supports.</p>
+    pub fn get_workloads(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.workloads
+    }
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub fn memory_info(mut self, input: crate::types::GpuDeviceMemoryInfo) -> Self {
         self.memory_info = ::std::option::Option::Some(input);
@@ -110,6 +181,9 @@ impl GpuDeviceInfoBuilder {
             name: self.name,
             manufacturer: self.manufacturer,
             count: self.count,
+            logical_gpu_count: self.logical_gpu_count,
+            gpu_partition_size: self.gpu_partition_size,
+            workloads: self.workloads,
             memory_info: self.memory_info,
         }
     }

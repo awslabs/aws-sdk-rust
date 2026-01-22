@@ -60,6 +60,10 @@ pub struct CreateAutoScalingGroupInput {
     pub capacity_rebalance: ::std::option::Option<bool>,
     /// <p>One or more lifecycle hooks to add to the Auto Scaling group before instances are launched.</p>
     pub lifecycle_hook_specification_list: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHookSpecification>>,
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services service on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -204,6 +208,12 @@ impl CreateAutoScalingGroupInput {
     pub fn lifecycle_hook_specification_list(&self) -> &[crate::types::LifecycleHookSpecification] {
         self.lifecycle_hook_specification_list.as_deref().unwrap_or_default()
     }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
     /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -301,6 +311,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) new_instances_protected_from_scale_in: ::std::option::Option<bool>,
     pub(crate) capacity_rebalance: ::std::option::Option<bool>,
     pub(crate) lifecycle_hook_specification_list: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleHookSpecification>>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) service_linked_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) max_instance_lifetime: ::std::option::Option<i32>,
@@ -683,6 +694,26 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_lifecycle_hook_specification_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHookSpecification>> {
         &self.lifecycle_hook_specification_list
     }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -932,6 +963,7 @@ impl CreateAutoScalingGroupInputBuilder {
             new_instances_protected_from_scale_in: self.new_instances_protected_from_scale_in,
             capacity_rebalance: self.capacity_rebalance,
             lifecycle_hook_specification_list: self.lifecycle_hook_specification_list,
+            deletion_protection: self.deletion_protection,
             tags: self.tags,
             service_linked_role_arn: self.service_linked_role_arn,
             max_instance_lifetime: self.max_instance_lifetime,

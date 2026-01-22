@@ -14,6 +14,8 @@ pub struct CreateScriptInput {
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateScriptInput {
     /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change this value later.</p>
@@ -39,6 +41,10 @@ impl CreateScriptInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn node_js_version(&self) -> ::std::option::Option<&str> {
+        self.node_js_version.as_deref()
+    }
 }
 impl CreateScriptInput {
     /// Creates a new builder-style object to manufacture [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
@@ -56,6 +62,7 @@ pub struct CreateScriptInputBuilder {
     pub(crate) storage_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateScriptInputBuilder {
     /// <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change this value later.</p>
@@ -137,6 +144,20 @@ impl CreateScriptInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn node_js_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_js_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn set_node_js_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_js_version = input;
+        self
+    }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn get_node_js_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_js_version
+    }
     /// Consumes the builder and constructs a [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
     pub fn build(
         self,
@@ -147,6 +168,7 @@ impl CreateScriptInputBuilder {
             storage_location: self.storage_location,
             zip_file: self.zip_file,
             tags: self.tags,
+            node_js_version: self.node_js_version,
         })
     }
 }

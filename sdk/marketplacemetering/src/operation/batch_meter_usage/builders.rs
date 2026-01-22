@@ -23,8 +23,7 @@ impl crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder 
 /// Fluent builder constructing a request to `BatchMeterUsage`.
 ///
 /// <important>
-/// <p>The <code>CustomerIdentifier</code> parameter is scheduled for deprecation on March 31, 2026. Use <code>CustomerAWSAccountID</code> instead.</p>
-/// <p>These parameters are mutually exclusive. You can't specify both <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> in the same request.</p>
+/// <p>The <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive parameters. You must use one or the other, but not both in the same API request. For new implementations, we recommend using the <code>CustomerAWSAccountID</code>. Your current integration will continue to work. When updating your implementation, consider migrating to <code>CustomerAWSAccountID</code> for improved integration.</p>
 /// </important>
 /// <p>To post metering records for customers, SaaS applications call <code>BatchMeterUsage</code>, which is used for metering SaaS flexible consumption pricing (FCP). Identical requests are idempotent and can be retried with the same records or a subset of records. Each <code>BatchMeterUsage</code> request is for only one product. If you want to meter usage for multiple products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
 /// <p>Usage records should be submitted in quick succession following a recorded event. Usage records aren't accepted 6 hours or more after an event.</p>

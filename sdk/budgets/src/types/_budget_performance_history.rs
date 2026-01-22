@@ -19,6 +19,10 @@ pub struct BudgetPerformanceHistory {
     pub billing_view_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of amounts of cost or usage that you created budgets for, which are compared to your actual costs or usage.</p>
     pub budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub filter_expression: ::std::option::Option<crate::types::Expression>,
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
 }
 impl BudgetPerformanceHistory {
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
@@ -52,6 +56,16 @@ impl BudgetPerformanceHistory {
     pub fn budgeted_and_actual_amounts_list(&self) -> &[crate::types::BudgetedAndActualAmounts] {
         self.budgeted_and_actual_amounts_list.as_deref().unwrap_or_default()
     }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn filter_expression(&self) -> ::std::option::Option<&crate::types::Expression> {
+        self.filter_expression.as_ref()
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
+    pub fn metrics(&self) -> &[crate::types::Metric] {
+        self.metrics.as_deref().unwrap_or_default()
+    }
 }
 impl BudgetPerformanceHistory {
     /// Creates a new builder-style object to manufacture [`BudgetPerformanceHistory`](crate::types::BudgetPerformanceHistory).
@@ -71,6 +85,8 @@ pub struct BudgetPerformanceHistoryBuilder {
     pub(crate) time_unit: ::std::option::Option<crate::types::TimeUnit>,
     pub(crate) billing_view_arn: ::std::option::Option<::std::string::String>,
     pub(crate) budgeted_and_actual_amounts_list: ::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>>,
+    pub(crate) filter_expression: ::std::option::Option<crate::types::Expression>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
 }
 impl BudgetPerformanceHistoryBuilder {
     /// <p>A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.</p>
@@ -194,6 +210,40 @@ impl BudgetPerformanceHistoryBuilder {
     pub fn get_budgeted_and_actual_amounts_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetedAndActualAmounts>> {
         &self.budgeted_and_actual_amounts_list
     }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn filter_expression(mut self, input: crate::types::Expression) -> Self {
+        self.filter_expression = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn set_filter_expression(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
+        self.filter_expression = input;
+        self
+    }
+    /// <p>The filtering dimensions for the budget and their corresponding values.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter_expression
+    }
+    /// Appends an item to `metrics`.
+    ///
+    /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+    ///
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn metrics(mut self, input: crate::types::Metric) -> Self {
+        let mut v = self.metrics.unwrap_or_default();
+        v.push(input);
+        self.metrics = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
+        self.metrics = input;
+        self
+    }
+    /// <p>The definition for how the budget data is aggregated.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metrics
+    }
     /// Consumes the builder and constructs a [`BudgetPerformanceHistory`](crate::types::BudgetPerformanceHistory).
     pub fn build(self) -> crate::types::BudgetPerformanceHistory {
         crate::types::BudgetPerformanceHistory {
@@ -204,6 +254,8 @@ impl BudgetPerformanceHistoryBuilder {
             time_unit: self.time_unit,
             billing_view_arn: self.billing_view_arn,
             budgeted_and_actual_amounts_list: self.budgeted_and_actual_amounts_list,
+            filter_expression: self.filter_expression,
+            metrics: self.metrics,
         }
     }
 }

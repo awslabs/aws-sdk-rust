@@ -471,6 +471,26 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_lifecycle_hook_specification_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHookSpecification>> {
         self.inner.get_lifecycle_hook_specification_list()
     }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
+    /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
+    /// <p>Default: <code>none</code></p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        self.inner.get_deletion_protection()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

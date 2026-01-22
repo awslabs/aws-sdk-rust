@@ -150,17 +150,17 @@ impl DescribeEventsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 1 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

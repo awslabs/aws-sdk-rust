@@ -20,6 +20,8 @@ pub struct Script {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift Servers to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift Servers uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.</p>
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl Script {
     /// <p>A unique identifier for the Realtime script</p>
@@ -50,6 +52,10 @@ impl Script {
     pub fn storage_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.storage_location.as_ref()
     }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn node_js_version(&self) -> ::std::option::Option<&str> {
+        self.node_js_version.as_deref()
+    }
 }
 impl Script {
     /// Creates a new builder-style object to manufacture [`Script`](crate::types::Script).
@@ -69,6 +75,7 @@ pub struct ScriptBuilder {
     pub(crate) size_on_disk: ::std::option::Option<i64>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl ScriptBuilder {
     /// <p>A unique identifier for the Realtime script</p>
@@ -169,6 +176,20 @@ impl ScriptBuilder {
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.storage_location
     }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn node_js_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_js_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn set_node_js_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.node_js_version = input;
+        self
+    }
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    pub fn get_node_js_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_js_version
+    }
     /// Consumes the builder and constructs a [`Script`](crate::types::Script).
     pub fn build(self) -> crate::types::Script {
         crate::types::Script {
@@ -179,6 +200,7 @@ impl ScriptBuilder {
             size_on_disk: self.size_on_disk,
             creation_time: self.creation_time,
             storage_location: self.storage_location,
+            node_js_version: self.node_js_version,
         }
     }
 }

@@ -48,14 +48,54 @@ pub fn de_gpu_device_info(
                 builder = builder.set_count(var_3);
             }
             ,
-            s if s.matches("memoryInfo") /* MemoryInfo com.amazonaws.ec2#GpuDeviceInfo$MemoryInfo */ =>  {
+            s if s.matches("logicalGpuCount") /* LogicalGpuCount com.amazonaws.ec2#GpuDeviceInfo$LogicalGpuCount */ =>  {
                 let var_4 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#LogicalGpuCount`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_logical_gpu_count(var_4);
+            }
+            ,
+            s if s.matches("gpuPartitionSize") /* GpuPartitionSize com.amazonaws.ec2#GpuDeviceInfo$GpuPartitionSize */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#GpuPartitionSize`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_gpu_partition_size(var_5);
+            }
+            ,
+            s if s.matches("workloadSet") /* Workloads com.amazonaws.ec2#GpuDeviceInfo$Workloads */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_workloads_list::de_workloads_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_workloads(var_6);
+            }
+            ,
+            s if s.matches("memoryInfo") /* MemoryInfo com.amazonaws.ec2#GpuDeviceInfo$MemoryInfo */ =>  {
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_gpu_device_memory_info::de_gpu_device_memory_info(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_info(var_4);
+                builder = builder.set_memory_info(var_7);
             }
             ,
             _ => {}

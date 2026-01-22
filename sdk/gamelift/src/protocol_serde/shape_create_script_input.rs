@@ -30,5 +30,8 @@ pub fn ser_create_script_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.node_js_version {
+        object.key("NodeJsVersion").string(var_10.as_str());
+    }
     Ok(())
 }
