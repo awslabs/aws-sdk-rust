@@ -23,7 +23,17 @@ impl crate::operation::put_data_export_configuration::builders::PutDataExportCon
 /// Fluent builder constructing a request to `PutDataExportConfiguration`.
 ///
 /// <p>Creates data export configuration details.</p>
-/// <p>In the current release, you can enable exporting asset metadata only for one domain per Amazon Web Services account per region. If you disable exporting asset metadata feature for a domain where it's already enabled, you cannot enable this feature for another domain in the same Amazon Web Services account and region.</p>
+/// <p>If you want to temporarily disable export and later re-enable it for the same domain, use the <code>--no-enable-export</code> flag to disable and the <code>--enable-export</code> flag to re-enable. This preserves the configuration and allows you to re-enable export without deleting S3 table.</p><note>
+/// <p>You can enable asset metadata export for only one domain per account per Region. To enable export for a different domain, complete the following steps:</p>
+/// <ol>
+/// <li>
+/// <p>Delete the export configuration for the currently enabled domain using the DeleteDataExportConfiguration operation.</p></li>
+/// <li>
+/// <p>Delete the asset S3 table under the aws-sagemaker-catalog S3 table bucket. We recommend backing up the S3 table before deletion.</p></li>
+/// <li>
+/// <p>Call the PutDataExportConfiguration API to enable export for the new domain.</p></li>
+/// </ol>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDataExportConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +119,17 @@ impl PutDataExportConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The domain ID where you want to create data export configuration details.</p>
+    /// <p>The domain ID for which you want to create data export configuration details.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
         self
     }
-    /// <p>The domain ID where you want to create data export configuration details.</p>
+    /// <p>The domain ID for which you want to create data export configuration details.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_identifier(input);
         self
     }
-    /// <p>The domain ID where you want to create data export configuration details.</p>
+    /// <p>The domain ID for which you want to create data export configuration details.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_identifier()
     }

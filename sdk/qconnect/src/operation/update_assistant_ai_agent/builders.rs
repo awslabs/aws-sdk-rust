@@ -150,26 +150,18 @@ impl UpdateAssistantAIAgentFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AiAgentConfigurationData> {
         self.inner.get_configuration()
     }
-    ///
-    /// Appends an item to `orchestratorConfigurationList`.
-    ///
-    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
-    ///
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
-        self.inner = self.inner.orchestrator_configuration_list(input);
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.orchestrator_use_case(input.into());
         self
     }
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn set_orchestrator_configuration_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
-    ) -> Self {
-        self.inner = self.inner.set_orchestrator_configuration_list(input);
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_orchestrator_use_case(input);
         self
     }
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
-        self.inner.get_orchestrator_configuration_list()
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_orchestrator_use_case()
     }
 }

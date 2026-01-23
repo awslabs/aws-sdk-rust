@@ -31,6 +31,8 @@ pub enum Error {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>The test is not valid.</p>
+    InvalidTestCaseException(crate::types::error::InvalidTestCaseException),
     /// <p>The allowed limit for the resource has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Maximum number (1000) of tags have been returned with current request. Consider changing request parameters to get more tags.</p>
@@ -83,6 +85,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidContactFlowModuleException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
+            Error::InvalidTestCaseException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MaximumResultReturnedException(inner) => inner.fmt(f),
             Error::OutboundContactNotPermittedException(inner) => inner.fmt(f),
@@ -131,6 +134,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidContactFlowModuleException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidTestCaseException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MaximumResultReturnedException(inner) => inner.meta(),
             Self::OutboundContactNotPermittedException(inner) => inner.meta(),
@@ -2482,6 +2486,40 @@ impl From<crate::operation::create_task_template::CreateTaskTemplateError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_test_case::CreateTestCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_test_case::CreateTestCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_test_case::CreateTestCaseError> for Error {
+    fn from(err: crate::operation::create_test_case::CreateTestCaseError) -> Self {
+        match err {
+            crate::operation::create_test_case::CreateTestCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::IdempotencyException(inner) => Error::IdempotencyException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::InvalidTestCaseException(inner) => Error::InvalidTestCaseException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_test_case::CreateTestCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_test_case::CreateTestCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3730,6 +3768,33 @@ impl From<crate::operation::delete_task_template::DeleteTaskTemplateError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test_case::DeleteTestCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test_case::DeleteTestCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_test_case::DeleteTestCaseError> for Error {
+    fn from(err: crate::operation::delete_test_case::DeleteTestCaseError) -> Self {
+        match err {
+            crate::operation::delete_test_case::DeleteTestCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_test_case::DeleteTestCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -4915,6 +4980,33 @@ impl From<crate::operation::describe_security_profile::DescribeSecurityProfileEr
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_security_profile::DescribeSecurityProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_test_case::DescribeTestCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_test_case::DescribeTestCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_test_case::DescribeTestCaseError> for Error {
+    fn from(err: crate::operation::describe_test_case::DescribeTestCaseError) -> Self {
+        match err {
+            crate::operation::describe_test_case::DescribeTestCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_test_case::DescribeTestCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6305,6 +6397,52 @@ impl From<crate::operation::get_task_template::GetTaskTemplateError> for Error {
             crate::operation::get_task_template::GetTaskTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_task_template::GetTaskTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_task_template::GetTaskTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError> for Error {
+    fn from(err: crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError) -> Self {
+        match err {
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_test_case_execution_summary::GetTestCaseExecutionSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8246,6 +8384,119 @@ impl From<crate::operation::list_task_templates::ListTaskTemplatesError> for Err
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError> for Error {
+    fn from(err: crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError) -> Self {
+        match err {
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_test_case_execution_records::ListTestCaseExecutionRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_case_executions::ListTestCaseExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_case_executions::ListTestCaseExecutionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_case_executions::ListTestCaseExecutionsError> for Error {
+    fn from(err: crate::operation::list_test_case_executions::ListTestCaseExecutionsError) -> Self {
+        match err {
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_test_case_executions::ListTestCaseExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_cases::ListTestCasesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_cases::ListTestCasesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_cases::ListTestCasesError> for Error {
+    fn from(err: crate::operation::list_test_cases::ListTestCasesError) -> Self {
+        match err {
+            crate::operation::list_test_cases::ListTestCasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_test_cases::ListTestCasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError, R>,
     > for Error
@@ -9447,6 +9698,33 @@ impl From<crate::operation::search_security_profiles::SearchSecurityProfilesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_test_cases::SearchTestCasesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_test_cases::SearchTestCasesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_test_cases::SearchTestCasesError> for Error {
+    fn from(err: crate::operation::search_test_cases::SearchTestCasesError) -> Self {
+        match err {
+            crate::operation::search_test_cases::SearchTestCasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_test_cases::SearchTestCasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_user_hierarchy_groups::SearchUserHierarchyGroupsError, R>>
     for Error
 where
@@ -10163,6 +10441,49 @@ impl From<crate::operation::start_task_contact::StartTaskContactError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_test_case_execution::StartTestCaseExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_test_case_execution::StartTestCaseExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_test_case_execution::StartTestCaseExecutionError> for Error {
+    fn from(err: crate::operation::start_test_case_execution::StartTestCaseExecutionError) -> Self {
+        match err {
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_test_case_execution::StartTestCaseExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_web_rtc_contact::StartWebRTCContactError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10327,6 +10648,45 @@ impl From<crate::operation::stop_contact_streaming::StopContactStreamingError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::stop_contact_streaming::StopContactStreamingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_test_case_execution::StopTestCaseExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_test_case_execution::StopTestCaseExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_test_case_execution::StopTestCaseExecutionError> for Error {
+    fn from(err: crate::operation::stop_test_case_execution::StopTestCaseExecutionError) -> Self {
+        match err {
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_test_case_execution::StopTestCaseExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -12340,6 +12700,35 @@ impl From<crate::operation::update_task_template::UpdateTaskTemplateError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_test_case::UpdateTestCaseError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_test_case::UpdateTestCaseError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_test_case::UpdateTestCaseError> for Error {
+    fn from(err: crate::operation::update_test_case::UpdateTestCaseError) -> Self {
+        match err {
+            crate::operation::update_test_case::UpdateTestCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::InvalidTestCaseException(inner) => Error::InvalidTestCaseException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_test_case::UpdateTestCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_traffic_distribution::UpdateTrafficDistributionError, R>>
     for Error
 where
@@ -12949,6 +13338,7 @@ impl ::std::error::Error for Error {
             Error::InvalidContactFlowModuleException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidTestCaseException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MaximumResultReturnedException(inner) => inner.source(),
             Error::OutboundContactNotPermittedException(inner) => inner.source(),
@@ -12983,6 +13373,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidContactFlowModuleException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
+            Self::InvalidTestCaseException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MaximumResultReturnedException(e) => e.request_id(),
             Self::OutboundContactNotPermittedException(e) => e.request_id(),

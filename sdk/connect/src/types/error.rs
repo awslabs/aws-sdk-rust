@@ -19,6 +19,8 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
+pub use crate::types::error::_invalid_test_case_exception::InvalidTestCaseException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_property_validation_exception::PropertyValidationException;
@@ -80,6 +82,8 @@ mod _invalid_contact_flow_module_exception;
 mod _invalid_parameter_exception;
 
 mod _invalid_request_exception;
+
+mod _invalid_test_case_exception;
 
 mod _limit_exceeded_exception;
 

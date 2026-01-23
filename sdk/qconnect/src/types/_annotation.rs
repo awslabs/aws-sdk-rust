@@ -2,7 +2,7 @@
 
 /// <p>An annotation that provides additional context or metadata.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Annotation {
     /// <p>The title of the annotation.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl Annotation {
         self.destructive_hint
     }
 }
+impl ::std::fmt::Debug for Annotation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Annotation");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("destructive_hint", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Annotation {
     /// Creates a new builder-style object to manufacture [`Annotation`](crate::types::Annotation).
     pub fn builder() -> crate::types::builders::AnnotationBuilder {
@@ -27,7 +35,7 @@ impl Annotation {
 }
 
 /// A builder for [`Annotation`](crate::types::Annotation).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AnnotationBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl AnnotationBuilder {
             title: self.title,
             destructive_hint: self.destructive_hint,
         }
+    }
+}
+impl ::std::fmt::Debug for AnnotationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AnnotationBuilder");
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("destructive_hint", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

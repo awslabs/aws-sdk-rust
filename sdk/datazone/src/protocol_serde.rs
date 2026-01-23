@@ -109,6 +109,8 @@ pub(crate) mod shape_delete_asset_type;
 
 pub(crate) mod shape_delete_connection;
 
+pub(crate) mod shape_delete_data_export_configuration;
+
 pub(crate) mod shape_delete_data_product;
 
 pub(crate) mod shape_delete_data_source;

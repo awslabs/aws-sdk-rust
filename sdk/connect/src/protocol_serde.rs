@@ -137,6 +137,8 @@ pub(crate) mod shape_create_security_profile;
 
 pub(crate) mod shape_create_task_template;
 
+pub(crate) mod shape_create_test_case;
+
 pub(crate) mod shape_create_traffic_distribution_group;
 
 pub(crate) mod shape_create_use_case;
@@ -205,6 +207,8 @@ pub(crate) mod shape_delete_security_profile;
 
 pub(crate) mod shape_delete_task_template;
 
+pub(crate) mod shape_delete_test_case;
+
 pub(crate) mod shape_delete_traffic_distribution_group;
 
 pub(crate) mod shape_delete_use_case;
@@ -272,6 +276,8 @@ pub(crate) mod shape_describe_routing_profile;
 pub(crate) mod shape_describe_rule;
 
 pub(crate) mod shape_describe_security_profile;
+
+pub(crate) mod shape_describe_test_case;
 
 pub(crate) mod shape_describe_traffic_distribution_group;
 
@@ -348,6 +354,8 @@ pub(crate) mod shape_get_metric_data_v2;
 pub(crate) mod shape_get_prompt_file;
 
 pub(crate) mod shape_get_task_template;
+
+pub(crate) mod shape_get_test_case_execution_summary;
 
 pub(crate) mod shape_get_traffic_distribution;
 
@@ -457,6 +465,12 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_task_templates;
 
+pub(crate) mod shape_list_test_case_execution_records;
+
+pub(crate) mod shape_list_test_case_executions;
+
+pub(crate) mod shape_list_test_cases;
+
 pub(crate) mod shape_list_traffic_distribution_group_users;
 
 pub(crate) mod shape_list_traffic_distribution_groups;
@@ -529,6 +543,8 @@ pub(crate) mod shape_search_routing_profiles;
 
 pub(crate) mod shape_search_security_profiles;
 
+pub(crate) mod shape_search_test_cases;
+
 pub(crate) mod shape_search_user_hierarchy_groups;
 
 pub(crate) mod shape_search_users;
@@ -569,6 +585,8 @@ pub(crate) mod shape_start_screen_sharing;
 
 pub(crate) mod shape_start_task_contact;
 
+pub(crate) mod shape_start_test_case_execution;
+
 pub(crate) mod shape_start_web_rtc_contact;
 
 pub(crate) mod shape_stop_contact;
@@ -578,6 +596,8 @@ pub(crate) mod shape_stop_contact_media_processing;
 pub(crate) mod shape_stop_contact_recording;
 
 pub(crate) mod shape_stop_contact_streaming;
+
+pub(crate) mod shape_stop_test_case_execution;
 
 pub(crate) mod shape_submit_contact_evaluation;
 
@@ -680,6 +700,8 @@ pub(crate) mod shape_update_rule;
 pub(crate) mod shape_update_security_profile;
 
 pub(crate) mod shape_update_task_template;
+
+pub(crate) mod shape_update_test_case;
 
 pub(crate) mod shape_update_traffic_distribution;
 
@@ -841,6 +863,8 @@ pub(crate) mod shape_create_security_profile_input;
 
 pub(crate) mod shape_create_task_template_input;
 
+pub(crate) mod shape_create_test_case_input;
+
 pub(crate) mod shape_create_traffic_distribution_group_input;
 
 pub(crate) mod shape_create_use_case_input;
@@ -914,6 +938,8 @@ pub(crate) mod shape_invalid_contact_flow_module_exception;
 pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_request_exception;
+
+pub(crate) mod shape_invalid_test_case_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
@@ -995,6 +1021,8 @@ pub(crate) mod shape_search_routing_profiles_input;
 
 pub(crate) mod shape_search_security_profiles_input;
 
+pub(crate) mod shape_search_test_cases_input;
+
 pub(crate) mod shape_search_user_hierarchy_groups_input;
 
 pub(crate) mod shape_search_users_input;
@@ -1037,6 +1065,8 @@ pub(crate) mod shape_start_screen_sharing_input;
 
 pub(crate) mod shape_start_task_contact_input;
 
+pub(crate) mod shape_start_test_case_execution_input;
+
 pub(crate) mod shape_start_web_rtc_contact_input;
 
 pub(crate) mod shape_stop_contact_input;
@@ -1046,6 +1076,8 @@ pub(crate) mod shape_stop_contact_media_processing_input;
 pub(crate) mod shape_stop_contact_recording_input;
 
 pub(crate) mod shape_stop_contact_streaming_input;
+
+pub(crate) mod shape_stop_test_case_execution_input;
 
 pub(crate) mod shape_submit_contact_evaluation_input;
 
@@ -1148,6 +1180,8 @@ pub(crate) mod shape_update_rule_input;
 pub(crate) mod shape_update_security_profile_input;
 
 pub(crate) mod shape_update_task_template_input;
+
+pub(crate) mod shape_update_test_case_input;
 
 pub(crate) mod shape_update_traffic_distribution_input;
 
@@ -1405,6 +1439,8 @@ pub(crate) mod shape_evaluation_summary_list;
 
 pub(crate) mod shape_evaluator_user_union;
 
+pub(crate) mod shape_execution_record_list;
+
 pub(crate) mod shape_external_invocation_configuration;
 
 pub(crate) mod shape_failed_batch_association_summary_list;
@@ -1494,6 +1530,8 @@ pub(crate) mod shape_metric_results_v2;
 pub(crate) mod shape_metric_v2;
 
 pub(crate) mod shape_new_session_details;
+
+pub(crate) mod shape_observation_summary;
 
 pub(crate) mod shape_origins_list;
 
@@ -1670,6 +1708,20 @@ pub(crate) mod shape_task_template_list;
 pub(crate) mod shape_telephony_config;
 
 pub(crate) mod shape_templated_message_config;
+
+pub(crate) mod shape_test_case;
+
+pub(crate) mod shape_test_case_entry_point;
+
+pub(crate) mod shape_test_case_execution_list;
+
+pub(crate) mod shape_test_case_search_criteria;
+
+pub(crate) mod shape_test_case_search_filter;
+
+pub(crate) mod shape_test_case_search_summary_list;
+
+pub(crate) mod shape_test_case_summary_list;
 
 pub(crate) mod shape_traffic_distribution_group;
 
@@ -1919,6 +1971,8 @@ pub(crate) mod shape_evaluation_summary;
 
 pub(crate) mod shape_event_bridge_action_definition;
 
+pub(crate) mod shape_execution_record;
+
 pub(crate) mod shape_failed_batch_association_summary;
 
 pub(crate) mod shape_failed_request;
@@ -2123,6 +2177,10 @@ pub(crate) mod shape_task_template_metadata;
 
 pub(crate) mod shape_template_attributes;
 
+pub(crate) mod shape_test_case_execution;
+
+pub(crate) mod shape_test_case_summary;
+
 pub(crate) mod shape_threshold;
 
 pub(crate) mod shape_threshold_v2;
@@ -2154,6 +2212,8 @@ pub(crate) mod shape_view_summary;
 pub(crate) mod shape_view_version_summary;
 
 pub(crate) mod shape_vocabulary_summary;
+
+pub(crate) mod shape_voice_call_entry_point_parameters;
 
 pub(crate) mod shape_wisdom_info;
 

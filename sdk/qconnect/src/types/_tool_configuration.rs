@@ -2,7 +2,7 @@
 
 /// <p>Configuration settings for a tool used by AI Agents.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ToolConfiguration {
     /// <p>The name of the tool.</p>
     pub tool_name: ::std::string::String,
@@ -84,6 +84,24 @@ impl ToolConfiguration {
         self.user_interaction_configuration.as_ref()
     }
 }
+impl ::std::fmt::Debug for ToolConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolConfiguration");
+        formatter.field("tool_name", &self.tool_name);
+        formatter.field("tool_type", &self.tool_type);
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("tool_id", &self.tool_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("override_input_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_filters", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("annotations", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_interaction_configuration", &self.user_interaction_configuration);
+        formatter.finish()
+    }
+}
 impl ToolConfiguration {
     /// Creates a new builder-style object to manufacture [`ToolConfiguration`](crate::types::ToolConfiguration).
     pub fn builder() -> crate::types::builders::ToolConfigurationBuilder {
@@ -92,7 +110,7 @@ impl ToolConfiguration {
 }
 
 /// A builder for [`ToolConfiguration`](crate::types::ToolConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ToolConfigurationBuilder {
     pub(crate) tool_name: ::std::option::Option<::std::string::String>,
@@ -320,5 +338,23 @@ impl ToolConfigurationBuilder {
             annotations: self.annotations,
             user_interaction_configuration: self.user_interaction_configuration,
         })
+    }
+}
+impl ::std::fmt::Debug for ToolConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolConfigurationBuilder");
+        formatter.field("tool_name", &self.tool_name);
+        formatter.field("tool_type", &self.tool_type);
+        formatter.field("title", &"*** Sensitive Data Redacted ***");
+        formatter.field("tool_id", &self.tool_id);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("override_input_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_filters", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schema", &"*** Sensitive Data Redacted ***");
+        formatter.field("annotations", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_interaction_configuration", &self.user_interaction_configuration);
+        formatter.finish()
     }
 }

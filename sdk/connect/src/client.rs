@@ -250,6 +250,8 @@ mod create_security_profile;
 
 mod create_task_template;
 
+mod create_test_case;
+
 mod create_traffic_distribution_group;
 
 mod create_use_case;
@@ -345,6 +347,8 @@ mod delete_security_profile;
 
 mod delete_task_template;
 
+mod delete_test_case;
+
 mod delete_traffic_distribution_group;
 
 mod delete_use_case;
@@ -412,6 +416,8 @@ mod describe_routing_profile;
 mod describe_rule;
 
 mod describe_security_profile;
+
+mod describe_test_case;
 
 mod describe_traffic_distribution_group;
 
@@ -488,6 +494,8 @@ mod get_metric_data_v2;
 mod get_prompt_file;
 
 mod get_task_template;
+
+mod get_test_case_execution_summary;
 
 mod get_traffic_distribution;
 
@@ -597,6 +605,12 @@ mod list_tags_for_resource;
 
 mod list_task_templates;
 
+mod list_test_case_execution_records;
+
+mod list_test_case_executions;
+
+mod list_test_cases;
+
 mod list_traffic_distribution_group_users;
 
 mod list_traffic_distribution_groups;
@@ -669,6 +683,8 @@ mod search_routing_profiles;
 
 mod search_security_profiles;
 
+mod search_test_cases;
+
 mod search_user_hierarchy_groups;
 
 mod search_users;
@@ -709,6 +725,8 @@ mod start_screen_sharing;
 
 mod start_task_contact;
 
+mod start_test_case_execution;
+
 mod start_web_rtc_contact;
 
 mod stop_contact;
@@ -718,6 +736,8 @@ mod stop_contact_media_processing;
 mod stop_contact_recording;
 
 mod stop_contact_streaming;
+
+mod stop_test_case_execution;
 
 mod submit_contact_evaluation;
 
@@ -820,6 +840,8 @@ mod update_rule;
 mod update_security_profile;
 
 mod update_task_template;
+
+mod update_test_case;
 
 mod update_traffic_distribution;
 

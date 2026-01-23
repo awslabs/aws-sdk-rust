@@ -2,7 +2,7 @@
 
 /// <p>An attribute used for filtering.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterAttribute {
     /// <p>The key of the filter attribute.</p>
     pub key: ::std::string::String,
@@ -20,6 +20,14 @@ impl FilterAttribute {
         &self.value
     }
 }
+impl ::std::fmt::Debug for FilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterAttribute");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl FilterAttribute {
     /// Creates a new builder-style object to manufacture [`FilterAttribute`](crate::types::FilterAttribute).
     pub fn builder() -> crate::types::builders::FilterAttributeBuilder {
@@ -28,7 +36,7 @@ impl FilterAttribute {
 }
 
 /// A builder for [`FilterAttribute`](crate::types::FilterAttribute).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct FilterAttributeBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -84,5 +92,13 @@ impl FilterAttributeBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for FilterAttributeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterAttributeBuilder");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

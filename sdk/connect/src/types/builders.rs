@@ -47,6 +47,12 @@ pub use crate::types::_sign_in_distribution::SignInDistributionBuilder;
 
 pub use crate::types::_telephony_config::TelephonyConfigBuilder;
 
+pub use crate::types::_problem_detail::ProblemDetailBuilder;
+
+pub use crate::types::_test_case_entry_point::TestCaseEntryPointBuilder;
+
+pub use crate::types::_voice_call_entry_point_parameters::VoiceCallEntryPointParametersBuilder;
+
 pub use crate::types::_property_validation_exception_property::PropertyValidationExceptionPropertyBuilder;
 
 pub use crate::types::_task_template_field::TaskTemplateFieldBuilder;
@@ -243,8 +249,6 @@ pub use crate::types::_range::RangeBuilder;
 
 pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputStepExpiryBuilder;
 
-pub use crate::types::_problem_detail::ProblemDetailBuilder;
-
 pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
 
 pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
@@ -386,6 +390,12 @@ pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummaryBuilder;
 pub use crate::types::_user_hierarchy_group_search_criteria::UserHierarchyGroupSearchCriteriaBuilder;
 
 pub use crate::types::_user_hierarchy_group_search_filter::UserHierarchyGroupSearchFilterBuilder;
+
+pub use crate::types::_test_case::TestCaseBuilder;
+
+pub use crate::types::_test_case_search_criteria::TestCaseSearchCriteriaBuilder;
+
+pub use crate::types::_test_case_search_filter::TestCaseSearchFilterBuilder;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummaryBuilder;
 
@@ -575,6 +585,12 @@ pub use crate::types::_traffic_distribution_group_user_summary::TrafficDistribut
 
 pub use crate::types::_traffic_distribution_group_summary::TrafficDistributionGroupSummaryBuilder;
 
+pub use crate::types::_test_case_summary::TestCaseSummaryBuilder;
+
+pub use crate::types::_test_case_execution::TestCaseExecutionBuilder;
+
+pub use crate::types::_execution_record::ExecutionRecordBuilder;
+
 pub use crate::types::_task_template_metadata::TaskTemplateMetadataBuilder;
 
 pub use crate::types::_security_profile_summary::SecurityProfileSummaryBuilder;
@@ -708,6 +724,8 @@ pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResultBuilde
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResultBuilder;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;
+
+pub use crate::types::_observation_summary::ObservationSummaryBuilder;
 
 pub use crate::types::_metric_result_v2::MetricResultV2Builder;
 

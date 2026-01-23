@@ -249,6 +249,8 @@ mod delete_asset_type;
 
 mod delete_connection;
 
+mod delete_data_export_configuration;
+
 mod delete_data_product;
 
 mod delete_data_source;

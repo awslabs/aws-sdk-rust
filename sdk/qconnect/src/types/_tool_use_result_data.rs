@@ -2,7 +2,7 @@
 
 /// <p>Data about the result of tool usage.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ToolUseResultData {
     /// <p>The identifier of the tool use instance.</p>
     pub tool_use_id: ::std::string::String,
@@ -33,6 +33,16 @@ impl ToolUseResultData {
         self.input_schema.as_ref()
     }
 }
+impl ::std::fmt::Debug for ToolUseResultData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolUseResultData");
+        formatter.field("tool_use_id", &self.tool_use_id);
+        formatter.field("tool_name", &self.tool_name);
+        formatter.field("tool_result", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ToolUseResultData {
     /// Creates a new builder-style object to manufacture [`ToolUseResultData`](crate::types::ToolUseResultData).
     pub fn builder() -> crate::types::builders::ToolUseResultDataBuilder {
@@ -41,7 +51,7 @@ impl ToolUseResultData {
 }
 
 /// A builder for [`ToolUseResultData`](crate::types::ToolUseResultData).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ToolUseResultDataBuilder {
     pub(crate) tool_use_id: ::std::option::Option<::std::string::String>,
@@ -136,5 +146,15 @@ impl ToolUseResultDataBuilder {
             })?,
             input_schema: self.input_schema,
         })
+    }
+}
+impl ::std::fmt::Debug for ToolUseResultDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolUseResultDataBuilder");
+        formatter.field("tool_use_id", &self.tool_use_id);
+        formatter.field("tool_name", &self.tool_name);
+        formatter.field("tool_result", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_schema", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

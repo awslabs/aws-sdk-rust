@@ -12,6 +12,7 @@
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
+///     TargetType::Message => { /* ... */ },
 ///     TargetType::Recommendation => { /* ... */ },
 ///     TargetType::Result => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
+    Message,
+    #[allow(missing_docs)] // documentation missing in model
     Recommendation,
     #[allow(missing_docs)] // documentation missing in model
     Result,
@@ -53,6 +56,7 @@ pub enum TargetType {
 impl ::std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
+            "MESSAGE" => TargetType::Message,
             "RECOMMENDATION" => TargetType::Recommendation,
             "RESULT" => TargetType::Result,
             other => TargetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TargetType::Message => "MESSAGE",
             TargetType::Recommendation => "RECOMMENDATION",
             TargetType::Result => "RESULT",
             TargetType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl TargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RECOMMENDATION", "RESULT"]
+        &["MESSAGE", "RECOMMENDATION", "RESULT"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetType {
@@ -100,6 +105,7 @@ impl TargetType {
 impl ::std::fmt::Display for TargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TargetType::Message => write!(f, "MESSAGE"),
             TargetType::Recommendation => write!(f, "RECOMMENDATION"),
             TargetType::Result => write!(f, "RESULT"),
             TargetType::Unknown(value) => write!(f, "{value}"),

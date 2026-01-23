@@ -172,6 +172,9 @@ pub mod create_security_profile;
 /// Types for the `CreateTaskTemplate` operation.
 pub mod create_task_template;
 
+/// Types for the `CreateTestCase` operation.
+pub mod create_test_case;
+
 /// Types for the `CreateTrafficDistributionGroup` operation.
 pub mod create_traffic_distribution_group;
 
@@ -274,6 +277,9 @@ pub mod delete_security_profile;
 /// Types for the `DeleteTaskTemplate` operation.
 pub mod delete_task_template;
 
+/// Types for the `DeleteTestCase` operation.
+pub mod delete_test_case;
+
 /// Types for the `DeleteTrafficDistributionGroup` operation.
 pub mod delete_traffic_distribution_group;
 
@@ -375,6 +381,9 @@ pub mod describe_rule;
 
 /// Types for the `DescribeSecurityProfile` operation.
 pub mod describe_security_profile;
+
+/// Types for the `DescribeTestCase` operation.
+pub mod describe_test_case;
 
 /// Types for the `DescribeTrafficDistributionGroup` operation.
 pub mod describe_traffic_distribution_group;
@@ -489,6 +498,9 @@ pub mod get_prompt_file;
 
 /// Types for the `GetTaskTemplate` operation.
 pub mod get_task_template;
+
+/// Types for the `GetTestCaseExecutionSummary` operation.
+pub mod get_test_case_execution_summary;
 
 /// Types for the `GetTrafficDistribution` operation.
 pub mod get_traffic_distribution;
@@ -652,6 +664,15 @@ pub mod list_tags_for_resource;
 /// Types for the `ListTaskTemplates` operation.
 pub mod list_task_templates;
 
+/// Types for the `ListTestCaseExecutionRecords` operation.
+pub mod list_test_case_execution_records;
+
+/// Types for the `ListTestCaseExecutions` operation.
+pub mod list_test_case_executions;
+
+/// Types for the `ListTestCases` operation.
+pub mod list_test_cases;
+
 /// Types for the `ListTrafficDistributionGroupUsers` operation.
 pub mod list_traffic_distribution_group_users;
 
@@ -760,6 +781,9 @@ pub mod search_routing_profiles;
 /// Types for the `SearchSecurityProfiles` operation.
 pub mod search_security_profiles;
 
+/// Types for the `SearchTestCases` operation.
+pub mod search_test_cases;
+
 /// Types for the `SearchUserHierarchyGroups` operation.
 pub mod search_user_hierarchy_groups;
 
@@ -820,6 +844,9 @@ pub mod start_screen_sharing;
 /// Types for the `StartTaskContact` operation.
 pub mod start_task_contact;
 
+/// Types for the `StartTestCaseExecution` operation.
+pub mod start_test_case_execution;
+
 /// Types for the `StartWebRTCContact` operation.
 pub mod start_web_rtc_contact;
 
@@ -834,6 +861,9 @@ pub mod stop_contact_recording;
 
 /// Types for the `StopContactStreaming` operation.
 pub mod stop_contact_streaming;
+
+/// Types for the `StopTestCaseExecution` operation.
+pub mod stop_test_case_execution;
 
 /// Types for the `SubmitContactEvaluation` operation.
 pub mod submit_contact_evaluation;
@@ -987,6 +1017,9 @@ pub mod update_security_profile;
 
 /// Types for the `UpdateTaskTemplate` operation.
 pub mod update_task_template;
+
+/// Types for the `UpdateTestCase` operation.
+pub mod update_test_case;
 
 /// Types for the `UpdateTrafficDistribution` operation.
 pub mod update_traffic_distribution;

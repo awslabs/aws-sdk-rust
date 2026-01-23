@@ -130,6 +130,9 @@ pub mod delete_asset_type;
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
 
+/// Types for the `DeleteDataExportConfiguration` operation.
+pub mod delete_data_export_configuration;
+
 /// Types for the `DeleteDataProduct` operation.
 pub mod delete_data_product;
 

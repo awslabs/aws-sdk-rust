@@ -2,7 +2,7 @@
 
 /// <p>Details about case summarization chunk data.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CaseSummarizationChunkDataDetails {
     /// <p>A chunk of the case summarization completion.</p>
     pub completion: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl CaseSummarizationChunkDataDetails {
         self.next_chunk_token.as_deref()
     }
 }
+impl ::std::fmt::Debug for CaseSummarizationChunkDataDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CaseSummarizationChunkDataDetails");
+        formatter.field("completion", &"*** Sensitive Data Redacted ***");
+        formatter.field("next_chunk_token", &self.next_chunk_token);
+        formatter.finish()
+    }
+}
 impl CaseSummarizationChunkDataDetails {
     /// Creates a new builder-style object to manufacture [`CaseSummarizationChunkDataDetails`](crate::types::CaseSummarizationChunkDataDetails).
     pub fn builder() -> crate::types::builders::CaseSummarizationChunkDataDetailsBuilder {
@@ -27,7 +35,7 @@ impl CaseSummarizationChunkDataDetails {
 }
 
 /// A builder for [`CaseSummarizationChunkDataDetails`](crate::types::CaseSummarizationChunkDataDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CaseSummarizationChunkDataDetailsBuilder {
     pub(crate) completion: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl CaseSummarizationChunkDataDetailsBuilder {
             completion: self.completion,
             next_chunk_token: self.next_chunk_token,
         }
+    }
+}
+impl ::std::fmt::Debug for CaseSummarizationChunkDataDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CaseSummarizationChunkDataDetailsBuilder");
+        formatter.field("completion", &"*** Sensitive Data Redacted ***");
+        formatter.field("next_chunk_token", &self.next_chunk_token);
+        formatter.finish()
     }
 }

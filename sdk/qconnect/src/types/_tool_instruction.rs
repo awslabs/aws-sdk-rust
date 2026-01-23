@@ -2,7 +2,7 @@
 
 /// <p>Instructions for using a tool.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ToolInstruction {
     /// <p>The instruction text for the tool.</p>
     pub instruction: ::std::option::Option<::std::string::String>,
@@ -21,6 +21,14 @@ impl ToolInstruction {
         self.examples.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ToolInstruction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolInstruction");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ToolInstruction {
     /// Creates a new builder-style object to manufacture [`ToolInstruction`](crate::types::ToolInstruction).
     pub fn builder() -> crate::types::builders::ToolInstructionBuilder {
@@ -29,7 +37,7 @@ impl ToolInstruction {
 }
 
 /// A builder for [`ToolInstruction`](crate::types::ToolInstruction).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ToolInstructionBuilder {
     pub(crate) instruction: ::std::option::Option<::std::string::String>,
@@ -76,5 +84,13 @@ impl ToolInstructionBuilder {
             instruction: self.instruction,
             examples: self.examples,
         }
+    }
+}
+impl ::std::fmt::Debug for ToolInstructionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ToolInstructionBuilder");
+        formatter.field("instruction", &"*** Sensitive Data Redacted ***");
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

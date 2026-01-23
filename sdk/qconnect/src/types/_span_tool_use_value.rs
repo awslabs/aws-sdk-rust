@@ -2,7 +2,7 @@
 
 /// <p>Tool invocation message content</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SpanToolUseValue {
     /// <p>Unique ID for this tool invocation</p>
     pub tool_use_id: ::std::string::String,
@@ -27,6 +27,15 @@ impl SpanToolUseValue {
         &self.arguments
     }
 }
+impl ::std::fmt::Debug for SpanToolUseValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SpanToolUseValue");
+        formatter.field("tool_use_id", &self.tool_use_id);
+        formatter.field("name", &self.name);
+        formatter.field("arguments", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SpanToolUseValue {
     /// Creates a new builder-style object to manufacture [`SpanToolUseValue`](crate::types::SpanToolUseValue).
     pub fn builder() -> crate::types::builders::SpanToolUseValueBuilder {
@@ -35,7 +44,7 @@ impl SpanToolUseValue {
 }
 
 /// A builder for [`SpanToolUseValue`](crate::types::SpanToolUseValue).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SpanToolUseValueBuilder {
     pub(crate) tool_use_id: ::std::option::Option<::std::string::String>,
@@ -114,5 +123,14 @@ impl SpanToolUseValueBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for SpanToolUseValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SpanToolUseValueBuilder");
+        formatter.field("tool_use_id", &self.tool_use_id);
+        formatter.field("name", &self.name);
+        formatter.field("arguments", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

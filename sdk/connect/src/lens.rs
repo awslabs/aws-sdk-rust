@@ -519,6 +519,16 @@ pub(crate) fn reflens_list_task_templates_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_test_cases_output_output_next_token(
+    input: &crate::operation::list_test_cases::ListTestCasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_traffic_distribution_group_users_output_output_next_token(
     input: &crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -761,6 +771,16 @@ pub(crate) fn reflens_search_routing_profiles_output_output_next_token(
 
 pub(crate) fn reflens_search_security_profiles_output_output_next_token(
     input: &crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_test_cases_output_output_next_token(
+    input: &crate::operation::search_test_cases::SearchTestCasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -1151,6 +1171,13 @@ pub(crate) fn lens_list_task_templates_output_output_task_templates(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_test_cases_output_output_test_case_summary_list(
+    input: crate::operation::list_test_cases::ListTestCasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestCaseSummary>> {
+    let input = input.test_case_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_traffic_distribution_group_users_output_output_traffic_distribution_group_user_summary_list(
     input: crate::operation::list_traffic_distribution_group_users::ListTrafficDistributionGroupUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupUserSummary>> {
@@ -1323,6 +1350,13 @@ pub(crate) fn lens_search_security_profiles_output_output_security_profiles(
     input: crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchSummary>> {
     let input = input.security_profiles?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_test_cases_output_output_test_cases(
+    input: crate::operation::search_test_cases::SearchTestCasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestCase>> {
+    let input = input.test_cases?;
     ::std::option::Option::Some(input)
 }
 

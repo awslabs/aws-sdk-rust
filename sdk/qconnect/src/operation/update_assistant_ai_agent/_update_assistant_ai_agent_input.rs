@@ -9,8 +9,8 @@ pub struct UpdateAssistantAiAgentInput {
     pub ai_agent_type: ::std::option::Option<crate::types::AiAgentType>,
     /// <p>The configuration of the AI Agent being updated for use by default on the Amazon Q in Connect Assistant.</p>
     pub configuration: ::std::option::Option<crate::types::AiAgentConfigurationData>,
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub orchestrator_use_case: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssistantAiAgentInput {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -25,11 +25,9 @@ impl UpdateAssistantAiAgentInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AiAgentConfigurationData> {
         self.configuration.as_ref()
     }
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.orchestrator_configuration_list.is_none()`.
-    pub fn orchestrator_configuration_list(&self) -> &[crate::types::OrchestratorConfigurationEntry] {
-        self.orchestrator_configuration_list.as_deref().unwrap_or_default()
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn orchestrator_use_case(&self) -> ::std::option::Option<&str> {
+        self.orchestrator_use_case.as_deref()
     }
 }
 impl UpdateAssistantAiAgentInput {
@@ -46,7 +44,7 @@ pub struct UpdateAssistantAiAgentInputBuilder {
     pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
     pub(crate) ai_agent_type: ::std::option::Option<crate::types::AiAgentType>,
     pub(crate) configuration: ::std::option::Option<crate::types::AiAgentConfigurationData>,
-    pub(crate) orchestrator_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
+    pub(crate) orchestrator_use_case: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssistantAiAgentInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -94,28 +92,19 @@ impl UpdateAssistantAiAgentInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AiAgentConfigurationData> {
         &self.configuration
     }
-    /// Appends an item to `orchestrator_configuration_list`.
-    ///
-    /// To override the contents of this collection use [`set_orchestrator_configuration_list`](Self::set_orchestrator_configuration_list).
-    ///
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn orchestrator_configuration_list(mut self, input: crate::types::OrchestratorConfigurationEntry) -> Self {
-        let mut v = self.orchestrator_configuration_list.unwrap_or_default();
-        v.push(input);
-        self.orchestrator_configuration_list = ::std::option::Option::Some(v);
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn orchestrator_use_case(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.orchestrator_use_case = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn set_orchestrator_configuration_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>>,
-    ) -> Self {
-        self.orchestrator_configuration_list = input;
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn set_orchestrator_use_case(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.orchestrator_use_case = input;
         self
     }
-    /// <p>The updated list of orchestrator configurations for the assistant AI Agent.</p>
-    pub fn get_orchestrator_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrchestratorConfigurationEntry>> {
-        &self.orchestrator_configuration_list
+    /// <p>The orchestrator use case for the AI Agent being added.</p>
+    pub fn get_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
+        &self.orchestrator_use_case
     }
     /// Consumes the builder and constructs a [`UpdateAssistantAiAgentInput`](crate::operation::update_assistant_ai_agent::UpdateAssistantAiAgentInput).
     pub fn build(
@@ -128,7 +117,7 @@ impl UpdateAssistantAiAgentInputBuilder {
             assistant_id: self.assistant_id,
             ai_agent_type: self.ai_agent_type,
             configuration: self.configuration,
-            orchestrator_configuration_list: self.orchestrator_configuration_list,
+            orchestrator_use_case: self.orchestrator_use_case,
         })
     }
 }

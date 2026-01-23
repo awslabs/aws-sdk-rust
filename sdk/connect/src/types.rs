@@ -63,6 +63,16 @@ pub use crate::types::_sign_in_distribution::SignInDistribution;
 
 pub use crate::types::_telephony_config::TelephonyConfig;
 
+pub use crate::types::_problem_detail::ProblemDetail;
+
+pub use crate::types::_test_case_status::TestCaseStatus;
+
+pub use crate::types::_test_case_entry_point::TestCaseEntryPoint;
+
+pub use crate::types::_voice_call_entry_point_parameters::VoiceCallEntryPointParameters;
+
+pub use crate::types::_test_case_entry_point_type::TestCaseEntryPointType;
+
 pub use crate::types::_service_quota_exceeded_exception_reason::ServiceQuotaExceededExceptionReason;
 
 pub use crate::types::_attached_file_service_quota_exceeded_exception_reason::AttachedFileServiceQuotaExceededExceptionReason;
@@ -381,8 +391,6 @@ pub use crate::types::_routing_criteria_input_step_expiry::RoutingCriteriaInputS
 
 pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
 
-pub use crate::types::_problem_detail::ProblemDetail;
-
 pub use crate::types::_contact_flow_state::ContactFlowState;
 
 pub use crate::types::_evaluator_user_union::EvaluatorUserUnion;
@@ -432,6 +440,8 @@ pub use crate::types::_participant_capabilities::ParticipantCapabilities;
 pub use crate::types::_screen_share_capability::ScreenShareCapability;
 
 pub use crate::types::_video_capability::VideoCapability;
+
+pub use crate::types::_test_case_execution_status::TestCaseExecutionStatus;
 
 pub use crate::types::_outbound_strategy::OutboundStrategy;
 
@@ -586,6 +596,12 @@ pub use crate::types::_hierarchy_group_summary::HierarchyGroupSummary;
 pub use crate::types::_user_hierarchy_group_search_criteria::UserHierarchyGroupSearchCriteria;
 
 pub use crate::types::_user_hierarchy_group_search_filter::UserHierarchyGroupSearchFilter;
+
+pub use crate::types::_test_case::TestCase;
+
+pub use crate::types::_test_case_search_criteria::TestCaseSearchCriteria;
+
+pub use crate::types::_test_case_search_filter::TestCaseSearchFilter;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummary;
 
@@ -833,6 +849,14 @@ pub use crate::types::_traffic_distribution_group_summary::TrafficDistributionGr
 
 pub use crate::types::_traffic_distribution_group_status::TrafficDistributionGroupStatus;
 
+pub use crate::types::_test_case_summary::TestCaseSummary;
+
+pub use crate::types::_test_case_execution::TestCaseExecution;
+
+pub use crate::types::_execution_record::ExecutionRecord;
+
+pub use crate::types::_execution_record_status::ExecutionRecordStatus;
+
 pub use crate::types::_task_template_metadata::TaskTemplateMetadata;
 
 pub use crate::types::_security_profile_summary::SecurityProfileSummary;
@@ -1006,6 +1030,8 @@ pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResult;
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResult;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummary;
+
+pub use crate::types::_observation_summary::ObservationSummary;
 
 pub use crate::types::_metric_result_v2::MetricResultV2;
 
@@ -1873,6 +1899,10 @@ mod _event_bridge_action_definition;
 
 mod _event_source_name;
 
+mod _execution_record;
+
+mod _execution_record_status;
+
 mod _expiry;
 
 mod _expression;
@@ -2096,6 +2126,8 @@ mod _number_reference;
 mod _numeric_question_property_automation_label;
 
 mod _numeric_question_property_value_automation;
+
+mod _observation_summary;
 
 mod _operational_hour;
 
@@ -2513,6 +2545,24 @@ mod _template_attributes;
 
 mod _templated_message_config;
 
+mod _test_case;
+
+mod _test_case_entry_point;
+
+mod _test_case_entry_point_type;
+
+mod _test_case_execution;
+
+mod _test_case_execution_status;
+
+mod _test_case_search_criteria;
+
+mod _test_case_search_filter;
+
+mod _test_case_status;
+
+mod _test_case_summary;
+
 mod _threshold;
 
 mod _threshold_v2;
@@ -2614,6 +2664,8 @@ mod _vocabulary_language_code;
 mod _vocabulary_state;
 
 mod _vocabulary_summary;
+
+mod _voice_call_entry_point_parameters;
 
 mod _voice_recording_configuration;
 
