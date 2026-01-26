@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput) with field(s):
     ///   - [`r#match(bool)`](crate::operation::test_segment_pattern::TestSegmentPatternOutput::match): <p>Returns <code>true</code> if the pattern matches the payload.</p>
     /// - On failure, responds with [`SdkError<TestSegmentPatternError>`](crate::operation::test_segment_pattern::TestSegmentPatternError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn test_segment_pattern(&self) -> crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder {
         crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::new(self.handle.clone())
     }

@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`segment(impl Into<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::segment) / [`set_segment(Option<String>)`](crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::set_segment):<br>required: **true**<br><p>Specifies the segment to delete.</p><br>
     /// - On success, responds with [`DeleteSegmentOutput`](crate::operation::delete_segment::DeleteSegmentOutput)
     /// - On failure, responds with [`SdkError<DeleteSegmentError>`](crate::operation::delete_segment::DeleteSegmentError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn delete_segment(&self) -> crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder {
         crate::operation::delete_segment::builders::DeleteSegmentFluentBuilder::new(self.handle.clone())
     }

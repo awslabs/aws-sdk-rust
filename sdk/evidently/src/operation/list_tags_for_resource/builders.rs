@@ -23,6 +23,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Displays the tags associated with an Evidently resource.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -623,6 +623,18 @@ pub(crate) fn search_related_items_response_item_correct_errors(
     builder
 }
 
+pub(crate) fn tag_propagation_configuration_correct_errors(
+    mut builder: crate::types::builders::TagPropagationConfigurationBuilder,
+) -> crate::types::builders::TagPropagationConfigurationBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::TagPropagationResourceType>().ok()
+    }
+    if builder.tag_map.is_none() {
+        builder.tag_map = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn template_rule_correct_errors(mut builder: crate::types::builders::TemplateRuleBuilder) -> crate::types::builders::TemplateRuleBuilder {
     if builder.case_rule_id.is_none() {
         builder.case_rule_id = Some(Default::default())

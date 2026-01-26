@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`feature(impl Into<String>)`](crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::feature) / [`set_feature(Option<String>)`](crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::set_feature):<br>required: **true**<br><p>The name of the feature to delete.</p><br>
     /// - On success, responds with [`DeleteFeatureOutput`](crate::operation::delete_feature::DeleteFeatureOutput)
     /// - On failure, responds with [`SdkError<DeleteFeatureError>`](crate::operation::delete_feature::DeleteFeatureError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn delete_feature(&self) -> crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder {
         crate::operation::delete_feature::builders::DeleteFeatureFluentBuilder::new(self.handle.clone())
     }

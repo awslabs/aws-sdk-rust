@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateProjectDataDeliveryOutput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput::project): <p>A structure containing details about the project that you updated.</p>
     /// - On failure, responds with [`SdkError<UpdateProjectDataDeliveryError>`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn update_project_data_delivery(&self) -> crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryFluentBuilder {
         crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryFluentBuilder::new(self.handle.clone())
     }

@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::created_time): <p>Timestamp at which the resource was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::last_modified_time): <p>Timestamp at which the resource was created or last modified.</p>
     ///   - [`rules(Option<Vec::<TemplateRule>>)`](crate::operation::get_template::GetTemplateOutput::rules): <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    ///   - [`tag_propagation_configurations(Option<Vec::<TagPropagationConfiguration>>)`](crate::operation::get_template::GetTemplateOutput::tag_propagation_configurations): <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
     pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())

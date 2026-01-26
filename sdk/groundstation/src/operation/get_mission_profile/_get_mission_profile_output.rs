@@ -18,10 +18,12 @@ pub struct GetMissionProfileOutput {
     pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub tracking_config_arn: ::std::option::Option<::std::string::String>,
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub telemetry_sink_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>KMS key to use for encrypting streams.</p>
@@ -59,7 +61,7 @@ impl GetMissionProfileOutput {
     pub fn minimum_viable_contact_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.minimum_viable_contact_duration_seconds
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataflow_edges.is_none()`.
     pub fn dataflow_edges(&self) -> &[::std::vec::Vec<::std::string::String>] {
@@ -68,6 +70,10 @@ impl GetMissionProfileOutput {
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {
         self.tracking_config_arn.as_deref()
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn telemetry_sink_config_arn(&self) -> ::std::option::Option<&str> {
+        self.telemetry_sink_config_arn.as_deref()
     }
     /// <p>Tags assigned to a mission profile.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -107,6 +113,7 @@ pub struct GetMissionProfileOutputBuilder {
     pub(crate) minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     pub(crate) dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     pub(crate) tracking_config_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) telemetry_sink_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
     pub(crate) streams_kms_role: ::std::option::Option<::std::string::String>,
@@ -215,19 +222,19 @@ impl GetMissionProfileOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
     ///
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn dataflow_edges(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.dataflow_edges.unwrap_or_default();
         v.push(input);
         self.dataflow_edges = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn set_dataflow_edges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.dataflow_edges = input;
         self
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn get_dataflow_edges(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         &self.dataflow_edges
     }
@@ -244,6 +251,20 @@ impl GetMissionProfileOutputBuilder {
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn get_tracking_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.tracking_config_arn
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn telemetry_sink_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.telemetry_sink_config_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn set_telemetry_sink_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.telemetry_sink_config_arn = input;
+        self
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn get_telemetry_sink_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.telemetry_sink_config_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -314,6 +335,7 @@ impl GetMissionProfileOutputBuilder {
             minimum_viable_contact_duration_seconds: self.minimum_viable_contact_duration_seconds,
             dataflow_edges: self.dataflow_edges,
             tracking_config_arn: self.tracking_config_arn,
+            telemetry_sink_config_arn: self.telemetry_sink_config_arn,
             tags: self.tags,
             streams_kms_key: self.streams_kms_key,
             streams_kms_role: self.streams_kms_role,

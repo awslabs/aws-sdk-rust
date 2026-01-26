@@ -23,6 +23,7 @@ impl crate::operation::delete_segment::builders::DeleteSegmentInputBuilder {
 /// Fluent builder constructing a request to `DeleteSegment`.
 ///
 /// <p>Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch or experiment is not currently running.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSegmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

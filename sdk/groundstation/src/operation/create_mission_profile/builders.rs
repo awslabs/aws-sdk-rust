@@ -170,17 +170,17 @@ impl CreateMissionProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
     ///
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn dataflow_edges(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.dataflow_edges(input);
         self
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn set_dataflow_edges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
         self.inner = self.inner.set_dataflow_edges(input);
         self
     }
-    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code> Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn get_dataflow_edges(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
         self.inner.get_dataflow_edges()
     }
@@ -197,6 +197,20 @@ impl CreateMissionProfileFluentBuilder {
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn get_tracking_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tracking_config_arn()
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn telemetry_sink_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.telemetry_sink_config_arn(input.into());
+        self
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn set_telemetry_sink_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_telemetry_sink_config_arn(input);
+        self
+    }
+    /// <p>ARN of a telemetry sink <code>Config</code>.</p>
+    pub fn get_telemetry_sink_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_telemetry_sink_config_arn()
     }
     ///
     /// Adds a key-value pair to `tags`.

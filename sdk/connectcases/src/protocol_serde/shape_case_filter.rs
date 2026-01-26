@@ -16,29 +16,35 @@ pub fn ser_case_filter(
             crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::CaseFilter::Tag(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_6.key("tag").start_object();
+            crate::protocol_serde::shape_tag_filter::ser_tag_filter(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CaseFilter::AndAll(inner) => {
-            let mut array_3 = object_6.key("andAll").start_array();
-            for item_4 in inner {
+            let mut array_4 = object_6.key("andAll").start_array();
+            for item_5 in inner {
                 {
                     #[allow(unused_mut)]
-                    let mut object_5 = array_3.value().start_object();
-                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_5, item_4)?;
-                    object_5.finish();
+                    let mut object_6 = array_4.value().start_object();
+                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_6, item_5)?;
+                    object_6.finish();
                 }
             }
-            array_3.finish();
+            array_4.finish();
         }
         crate::types::CaseFilter::OrAll(inner) => {
-            let mut array_6 = object_6.key("orAll").start_array();
-            for item_7 in inner {
+            let mut array_7 = object_6.key("orAll").start_array();
+            for item_8 in inner {
                 {
                     #[allow(unused_mut)]
-                    let mut object_8 = array_6.value().start_object();
-                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_8, item_7)?;
-                    object_8.finish();
+                    let mut object_9 = array_7.value().start_object();
+                    crate::protocol_serde::shape_case_filter::ser_case_filter(&mut object_9, item_8)?;
+                    object_9.finish();
                 }
             }
-            array_6.finish();
+            array_7.finish();
         }
         crate::types::CaseFilter::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("CaseFilter")),
     }

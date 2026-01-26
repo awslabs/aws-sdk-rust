@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`launch(impl Into<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::launch) / [`set_launch(Option<String>)`](crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::set_launch):<br>required: **true**<br><p>The name of the launch to delete.</p><br>
     /// - On success, responds with [`DeleteLaunchOutput`](crate::operation::delete_launch::DeleteLaunchOutput)
     /// - On failure, responds with [`SdkError<DeleteLaunchError>`](crate::operation::delete_launch::DeleteLaunchError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn delete_launch(&self) -> crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder {
         crate::operation::delete_launch::builders::DeleteLaunchFluentBuilder::new(self.handle.clone())
     }

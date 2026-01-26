@@ -23,6 +23,7 @@ impl crate::operation::stop_launch::builders::StopLaunchInputBuilder {
 /// Fluent builder constructing a request to `StopLaunch`.
 ///
 /// <p>Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

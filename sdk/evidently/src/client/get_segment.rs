@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetSegmentOutput`](crate::operation::get_segment::GetSegmentOutput) with field(s):
     ///   - [`segment(Option<Segment>)`](crate::operation::get_segment::GetSegmentOutput::segment): <p>A structure that contains the complete information about the segment.</p>
     /// - On failure, responds with [`SdkError<GetSegmentError>`](crate::operation::get_segment::GetSegmentError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn get_segment(&self) -> crate::operation::get_segment::builders::GetSegmentFluentBuilder {
         crate::operation::get_segment::builders::GetSegmentFluentBuilder::new(self.handle.clone())
     }

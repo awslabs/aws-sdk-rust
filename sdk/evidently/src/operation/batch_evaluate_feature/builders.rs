@@ -27,6 +27,7 @@ impl crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInp
 /// <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p>
 /// <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment.</p>
 /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -46,6 +46,12 @@ pub fn ser_config_type_data(
             crate::protocol_serde::shape_s3_recording_config::ser_s3_recording_config(&mut object_7, inner)?;
             object_7.finish();
         }
+        crate::types::ConfigTypeData::TelemetrySinkConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_2.key("telemetrySinkConfig").start_object();
+            crate::protocol_serde::shape_telemetry_sink_config::ser_telemetry_sink_config(&mut object_8, inner)?;
+            object_8.finish();
+        }
         crate::types::ConfigTypeData::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConfigTypeData",
@@ -121,6 +127,11 @@ where
                         "s3RecordingConfig" => Some(crate::types::ConfigTypeData::S3RecordingConfig(
                             crate::protocol_serde::shape_s3_recording_config::de_s3_recording_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3RecordingConfig' cannot be null")
+                            })?,
+                        )),
+                        "telemetrySinkConfig" => Some(crate::types::ConfigTypeData::TelemetrySinkConfig(
+                            crate::protocol_serde::shape_telemetry_sink_config::de_telemetry_sink_config(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'telemetrySinkConfig' cannot be null")
                             })?,
                         )),
                         _ => {

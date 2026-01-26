@@ -23,6 +23,7 @@ impl crate::operation::stop_experiment::builders::StopExperimentInputBuilder {
 /// Fluent builder constructing a request to `StopExperiment`.
 ///
 /// <p>Stops an experiment that is currently running. If you stop an experiment, you can't resume it or restart it.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

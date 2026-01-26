@@ -165,6 +165,18 @@ pub(crate) fn s3_recording_config_correct_errors(
     builder
 }
 
+pub(crate) fn telemetry_sink_config_correct_errors(
+    mut builder: crate::types::builders::TelemetrySinkConfigBuilder,
+) -> crate::types::builders::TelemetrySinkConfigBuilder {
+    if builder.telemetry_sink_type.is_none() {
+        builder.telemetry_sink_type = "no value was set".parse::<crate::types::TelemetrySinkType>().ok()
+    }
+    if builder.telemetry_sink_data.is_none() {
+        builder.telemetry_sink_data = Some(crate::types::TelemetrySinkData::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn tracking_config_correct_errors(
     mut builder: crate::types::builders::TrackingConfigBuilder,
 ) -> crate::types::builders::TrackingConfigBuilder {
@@ -341,6 +353,18 @@ pub(crate) fn frequency_bandwidth_correct_errors(
     }
     if builder.units.is_none() {
         builder.units = "no value was set".parse::<crate::types::BandwidthUnits>().ok()
+    }
+    builder
+}
+
+pub(crate) fn kinesis_data_stream_data_correct_errors(
+    mut builder: crate::types::builders::KinesisDataStreamDataBuilder,
+) -> crate::types::builders::KinesisDataStreamDataBuilder {
+    if builder.kinesis_role_arn.is_none() {
+        builder.kinesis_role_arn = Some(Default::default())
+    }
+    if builder.kinesis_data_stream_arn.is_none() {
+        builder.kinesis_data_stream_arn = Some(Default::default())
     }
     builder
 }

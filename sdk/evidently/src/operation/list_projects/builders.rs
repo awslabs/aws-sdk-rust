@@ -23,6 +23,7 @@ impl crate::operation::list_projects::builders::ListProjectsInputBuilder {
 /// Fluent builder constructing a request to `ListProjects`.
 ///
 /// <p>Returns configuration details about all the projects in the current Region in your account.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListProjectsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -14,6 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateLaunchOutput`](crate::operation::create_launch::CreateLaunchOutput) with field(s):
     ///   - [`launch(Option<Launch>)`](crate::operation::create_launch::CreateLaunchOutput::launch): <p>A structure that contains the configuration of the launch that was created.</p>
     /// - On failure, responds with [`SdkError<CreateLaunchError>`](crate::operation::create_launch::CreateLaunchError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn create_launch(&self) -> crate::operation::create_launch::builders::CreateLaunchFluentBuilder {
         crate::operation::create_launch::builders::CreateLaunchFluentBuilder::new(self.handle.clone())
     }

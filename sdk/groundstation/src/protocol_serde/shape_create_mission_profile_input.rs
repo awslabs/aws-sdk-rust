@@ -58,8 +58,11 @@ pub fn ser_create_mission_profile_input_input(
         }
         object_14.finish();
     }
-    if let Some(var_17) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_17.as_str());
+    if let Some(var_17) = &input.telemetry_sink_config_arn {
+        object.key("telemetrySinkConfigArn").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.tracking_config_arn {
+        object.key("trackingConfigArn").string(var_18.as_str());
     }
     Ok(())
 }

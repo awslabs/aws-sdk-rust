@@ -24,6 +24,7 @@ impl crate::operation::delete_launch::builders::DeleteLaunchInputBuilder {
 ///
 /// <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p>
 /// <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

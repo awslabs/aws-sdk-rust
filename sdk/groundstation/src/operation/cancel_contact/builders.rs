@@ -22,7 +22,14 @@ impl crate::operation::cancel_contact::builders::CancelContactInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelContact`.
 ///
-/// <p>Cancels a contact with a specified contact ID.</p>
+/// <p>Cancels or stops a contact with a specified contact ID based on its position in the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/contacts.lifecycle.html">contact lifecycle</a>.</p>
+/// <p>For contacts that:</p>
+/// <ul>
+/// <li>
+/// <p>Have yet to start, the contact will be cancelled.</p></li>
+/// <li>
+/// <p>Have started but have yet to finish, the contact will be stopped.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

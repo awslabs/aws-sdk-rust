@@ -23,6 +23,7 @@ impl crate::operation::get_project::builders::GetProjectInputBuilder {
 /// Fluent builder constructing a request to `GetProject`.
 ///
 /// <p>Returns the details about one launch. You must already know the project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetProjectFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

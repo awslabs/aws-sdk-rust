@@ -23,6 +23,7 @@ impl crate::operation::start_experiment::builders::StartExperimentInputBuilder {
 /// Fluent builder constructing a request to `StartExperiment`.
 ///
 /// <p>Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

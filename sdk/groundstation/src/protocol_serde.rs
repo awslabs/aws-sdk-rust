@@ -251,6 +251,8 @@ pub(crate) mod shape_satellite_list_item;
 
 pub(crate) mod shape_security_details;
 
+pub(crate) mod shape_telemetry_sink_config;
+
 pub(crate) mod shape_tle_ephemeris;
 
 pub(crate) mod shape_tracking_config;
@@ -289,6 +291,8 @@ pub(crate) mod shape_source;
 
 pub(crate) mod shape_spectrum_config;
 
+pub(crate) mod shape_telemetry_sink_data;
+
 pub(crate) mod shape_tle_data;
 
 pub(crate) mod shape_uplink_dataflow_details;
@@ -304,6 +308,8 @@ pub(crate) mod shape_downlink_connection_details;
 pub(crate) mod shape_frequency;
 
 pub(crate) mod shape_frequency_bandwidth;
+
+pub(crate) mod shape_kinesis_data_stream_data;
 
 pub(crate) mod shape_ranged_socket_address;
 

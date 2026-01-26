@@ -14,6 +14,7 @@ impl super::Client {
     /// - On success, responds with [`CreateFeatureOutput`](crate::operation::create_feature::CreateFeatureOutput) with field(s):
     ///   - [`feature(Option<Feature>)`](crate::operation::create_feature::CreateFeatureOutput::feature): <p>A structure that contains information about the new feature.</p>
     /// - On failure, responds with [`SdkError<CreateFeatureError>`](crate::operation::create_feature::CreateFeatureError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn create_feature(&self) -> crate::operation::create_feature::builders::CreateFeatureFluentBuilder {
         crate::operation::create_feature::builders::CreateFeatureFluentBuilder::new(self.handle.clone())
     }

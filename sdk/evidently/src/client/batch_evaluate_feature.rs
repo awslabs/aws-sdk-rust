@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`BatchEvaluateFeatureOutput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput) with field(s):
     ///   - [`results(Option<Vec::<EvaluationResult>>)`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput::results): <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
     /// - On failure, responds with [`SdkError<BatchEvaluateFeatureError>`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn batch_evaluate_feature(&self) -> crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureFluentBuilder {
         crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureFluentBuilder::new(self.handle.clone())
     }

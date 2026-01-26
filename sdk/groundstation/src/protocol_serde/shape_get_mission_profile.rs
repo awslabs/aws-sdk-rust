@@ -163,6 +163,13 @@ pub(crate) fn de_get_mission_profile(
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
                 }
+                "telemetrySinkConfigArn" => {
+                    builder = builder.set_telemetry_sink_config_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "trackingConfigArn" => {
                     builder = builder.set_tracking_config_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

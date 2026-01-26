@@ -30,6 +30,7 @@ impl crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder {
 /// <p>If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match the segment rule are used in the experiment.</p>
 /// <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment.</p>
 /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EvaluateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,6 +23,7 @@ impl crate::operation::put_project_events::builders::PutProjectEventsInputBuilde
 /// Fluent builder constructing a request to `PutProjectEvents`.
 ///
 /// <p>Sends performance events to Evidently. These events can be used to evaluate a launch or an experiment.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProjectEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

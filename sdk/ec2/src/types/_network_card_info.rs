@@ -10,6 +10,8 @@ pub struct NetworkCardInfo {
     pub network_performance: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub maximum_network_interfaces: ::std::option::Option<i32>,
+    /// <p>The number of additional network interfaces that can be attached to an instance when using flexible Elastic Network Adapter (ENA) queues. This number is in addition to the base number specified by <code>maximumNetworkInterfaces</code>.</p>
+    pub additional_flexible_network_interfaces: ::std::option::Option<i32>,
     /// <p>The baseline network performance of the network card, in Gbps.</p>
     pub baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
     /// <p>The peak (burst) network performance of the network card, in Gbps.</p>
@@ -33,6 +35,10 @@ impl NetworkCardInfo {
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn maximum_network_interfaces(&self) -> ::std::option::Option<i32> {
         self.maximum_network_interfaces
+    }
+    /// <p>The number of additional network interfaces that can be attached to an instance when using flexible Elastic Network Adapter (ENA) queues. This number is in addition to the base number specified by <code>maximumNetworkInterfaces</code>.</p>
+    pub fn additional_flexible_network_interfaces(&self) -> ::std::option::Option<i32> {
+        self.additional_flexible_network_interfaces
     }
     /// <p>The baseline network performance of the network card, in Gbps.</p>
     pub fn baseline_bandwidth_in_gbps(&self) -> ::std::option::Option<f64> {
@@ -69,6 +75,7 @@ pub struct NetworkCardInfoBuilder {
     pub(crate) network_card_index: ::std::option::Option<i32>,
     pub(crate) network_performance: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,
+    pub(crate) additional_flexible_network_interfaces: ::std::option::Option<i32>,
     pub(crate) baseline_bandwidth_in_gbps: ::std::option::Option<f64>,
     pub(crate) peak_bandwidth_in_gbps: ::std::option::Option<f64>,
     pub(crate) default_ena_queue_count_per_interface: ::std::option::Option<i32>,
@@ -117,6 +124,20 @@ impl NetworkCardInfoBuilder {
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn get_maximum_network_interfaces(&self) -> &::std::option::Option<i32> {
         &self.maximum_network_interfaces
+    }
+    /// <p>The number of additional network interfaces that can be attached to an instance when using flexible Elastic Network Adapter (ENA) queues. This number is in addition to the base number specified by <code>maximumNetworkInterfaces</code>.</p>
+    pub fn additional_flexible_network_interfaces(mut self, input: i32) -> Self {
+        self.additional_flexible_network_interfaces = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of additional network interfaces that can be attached to an instance when using flexible Elastic Network Adapter (ENA) queues. This number is in addition to the base number specified by <code>maximumNetworkInterfaces</code>.</p>
+    pub fn set_additional_flexible_network_interfaces(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.additional_flexible_network_interfaces = input;
+        self
+    }
+    /// <p>The number of additional network interfaces that can be attached to an instance when using flexible Elastic Network Adapter (ENA) queues. This number is in addition to the base number specified by <code>maximumNetworkInterfaces</code>.</p>
+    pub fn get_additional_flexible_network_interfaces(&self) -> &::std::option::Option<i32> {
+        &self.additional_flexible_network_interfaces
     }
     /// <p>The baseline network performance of the network card, in Gbps.</p>
     pub fn baseline_bandwidth_in_gbps(mut self, input: f64) -> Self {
@@ -194,6 +215,7 @@ impl NetworkCardInfoBuilder {
             network_card_index: self.network_card_index,
             network_performance: self.network_performance,
             maximum_network_interfaces: self.maximum_network_interfaces,
+            additional_flexible_network_interfaces: self.additional_flexible_network_interfaces,
             baseline_bandwidth_in_gbps: self.baseline_bandwidth_in_gbps,
             peak_bandwidth_in_gbps: self.peak_bandwidth_in_gbps,
             default_ena_queue_count_per_interface: self.default_ena_queue_count_per_interface,

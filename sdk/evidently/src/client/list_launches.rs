@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`launches(Option<Vec::<Launch>>)`](crate::operation::list_launches::ListLaunchesOutput::launches): <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launches::ListLaunchesOutput::next_token): <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListLaunchesError>`](crate::operation::list_launches::ListLaunchesError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn list_launches(&self) -> crate::operation::list_launches::builders::ListLaunchesFluentBuilder {
         crate::operation::list_launches::builders::ListLaunchesFluentBuilder::new(self.handle.clone())
     }

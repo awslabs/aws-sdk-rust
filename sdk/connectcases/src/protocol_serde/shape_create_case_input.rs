@@ -24,8 +24,18 @@ pub fn ser_create_case_input_input(
         crate::protocol_serde::shape_user_union::ser_user_union(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.template_id {
-        object.key("templateId").string(var_8.as_str());
+    if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
+    }
+    if let Some(var_12) = &input.template_id {
+        object.key("templateId").string(var_12.as_str());
     }
     Ok(())
 }

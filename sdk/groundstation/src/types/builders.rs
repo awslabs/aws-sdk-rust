@@ -87,6 +87,10 @@ pub use crate::types::_contact_data::ContactDataBuilder;
 
 pub use crate::types::_az_el_ephemeris_filter::AzElEphemerisFilterBuilder;
 
+pub use crate::types::_telemetry_sink_config::TelemetrySinkConfigBuilder;
+
+pub use crate::types::_kinesis_data_stream_data::KinesisDataStreamDataBuilder;
+
 pub use crate::types::_s3_recording_config::S3RecordingConfigBuilder;
 
 pub use crate::types::_uplink_echo_config::UplinkEchoConfigBuilder;

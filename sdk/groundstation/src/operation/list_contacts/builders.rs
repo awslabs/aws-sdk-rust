@@ -23,7 +23,7 @@ impl crate::operation::list_contacts::builders::ListContactsInputBuilder {
 /// Fluent builder constructing a request to `ListContacts`.
 ///
 /// <p>Returns a list of contacts.</p>
-/// <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>.</p>
+/// <p>If <code>statusList</code> contains AVAILABLE, the request must include <code> groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

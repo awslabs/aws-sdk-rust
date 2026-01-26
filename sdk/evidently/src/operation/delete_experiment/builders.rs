@@ -24,6 +24,7 @@ impl crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder
 ///
 /// <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p>
 /// <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

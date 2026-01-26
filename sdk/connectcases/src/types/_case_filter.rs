@@ -12,6 +12,8 @@ pub enum CaseFilter {
     Not(::std::boxed::Box<crate::types::CaseFilter>),
     /// <p>Provides "or all" filtering.</p>
     OrAll(::std::vec::Vec<crate::types::CaseFilter>),
+    /// <p>A list of tags to filter on.</p>
+    Tag(crate::types::TagFilter),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -74,6 +76,19 @@ impl CaseFilter {
     /// Returns true if this is a [`OrAll`](crate::types::CaseFilter::OrAll).
     pub fn is_or_all(&self) -> bool {
         self.as_or_all().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Tag`](crate::types::CaseFilter::Tag), extracting the inner [`TagFilter`](crate::types::TagFilter).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::TagFilter, &Self> {
+        if let CaseFilter::Tag(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Tag`](crate::types::CaseFilter::Tag).
+    pub fn is_tag(&self) -> bool {
+        self.as_tag().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

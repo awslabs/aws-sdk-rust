@@ -23,6 +23,7 @@ impl crate::operation::get_feature::builders::GetFeatureInputBuilder {
 /// Fluent builder constructing a request to `GetFeature`.
 ///
 /// <p>Returns the details about one feature. You must already know the feature name. To retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

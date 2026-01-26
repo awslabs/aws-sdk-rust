@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`StopLaunchOutput`](crate::operation::stop_launch::StopLaunchOutput) with field(s):
     ///   - [`ended_time(Option<DateTime>)`](crate::operation::stop_launch::StopLaunchOutput::ended_time): <p>The date and time that the launch stopped.</p>
     /// - On failure, responds with [`SdkError<StopLaunchError>`](crate::operation::stop_launch::StopLaunchError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn stop_launch(&self) -> crate::operation::stop_launch::builders::StopLaunchFluentBuilder {
         crate::operation::stop_launch::builders::StopLaunchFluentBuilder::new(self.handle.clone())
     }

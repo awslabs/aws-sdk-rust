@@ -42,6 +42,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "tagPropagationConfigurations" => {
+                            builder = builder.set_tag_propagation_configurations(
+                                crate::protocol_serde::shape_tag_propagation_configuration_list::de_tag_propagation_configuration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

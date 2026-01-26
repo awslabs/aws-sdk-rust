@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`reason(Option<String>)`](crate::operation::evaluate_feature::EvaluateFeatureOutput::reason): <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     ///   - [`details(Option<String>)`](crate::operation::evaluate_feature::EvaluateFeatureOutput::details): <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     /// - On failure, responds with [`SdkError<EvaluateFeatureError>`](crate::operation::evaluate_feature::EvaluateFeatureError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn evaluate_feature(&self) -> crate::operation::evaluate_feature::builders::EvaluateFeatureFluentBuilder {
         crate::operation::evaluate_feature::builders::EvaluateFeatureFluentBuilder::new(self.handle.clone())
     }

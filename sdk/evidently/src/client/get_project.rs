@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput) with field(s):
     ///   - [`project(Option<Project>)`](crate::operation::get_project::GetProjectOutput::project): <p>A structure containing the configuration details of the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn get_project(&self) -> crate::operation::get_project::builders::GetProjectFluentBuilder {
         crate::operation::get_project::builders::GetProjectFluentBuilder::new(self.handle.clone())
     }

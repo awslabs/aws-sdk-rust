@@ -12,6 +12,8 @@ pub struct TemplateSummary {
     pub name: ::std::string::String,
     /// <p>The status of the template.</p>
     pub status: crate::types::TemplateStatus,
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub tag_propagation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
 }
 impl TemplateSummary {
     /// <p>The unique identifier for the template.</p>
@@ -33,6 +35,12 @@ impl TemplateSummary {
     pub fn status(&self) -> &crate::types::TemplateStatus {
         &self.status
     }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_propagation_configurations.is_none()`.
+    pub fn tag_propagation_configurations(&self) -> &[crate::types::TagPropagationConfiguration] {
+        self.tag_propagation_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::types::TemplateSummary).
@@ -49,6 +57,7 @@ pub struct TemplateSummaryBuilder {
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
+    pub(crate) tag_propagation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
 }
 impl TemplateSummaryBuilder {
     /// <p>The unique identifier for the template.</p>
@@ -111,6 +120,29 @@ impl TemplateSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
         &self.status
     }
+    /// Appends an item to `tag_propagation_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_tag_propagation_configurations`](Self::set_tag_propagation_configurations).
+    ///
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn tag_propagation_configurations(mut self, input: crate::types::TagPropagationConfiguration) -> Self {
+        let mut v = self.tag_propagation_configurations.unwrap_or_default();
+        v.push(input);
+        self.tag_propagation_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn set_tag_propagation_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
+    ) -> Self {
+        self.tag_propagation_configurations = input;
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn get_tag_propagation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>> {
+        &self.tag_propagation_configurations
+    }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_id`](crate::types::builders::TemplateSummaryBuilder::template_id)
@@ -143,6 +175,7 @@ impl TemplateSummaryBuilder {
                     "status was not specified but it is required when building TemplateSummary",
                 )
             })?,
+            tag_propagation_configurations: self.tag_propagation_configurations,
         })
     }
 }

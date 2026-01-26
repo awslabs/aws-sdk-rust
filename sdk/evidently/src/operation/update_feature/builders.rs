@@ -24,6 +24,7 @@ impl crate::operation::update_feature::builders::UpdateFeatureInputBuilder {
 ///
 /// <p>Updates an existing feature.</p>
 /// <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFeatureFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

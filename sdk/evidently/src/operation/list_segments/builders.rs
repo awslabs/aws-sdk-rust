@@ -23,6 +23,7 @@ impl crate::operation::list_segments::builders::ListSegmentsInputBuilder {
 /// Fluent builder constructing a request to `ListSegments`.
 ///
 /// <p>Returns a list of audience segments that you have created in your account in this Region.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSegmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

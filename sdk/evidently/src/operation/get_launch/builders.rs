@@ -23,6 +23,7 @@ impl crate::operation::get_launch::builders::GetLaunchInputBuilder {
 /// Fluent builder constructing a request to `GetLaunch`.
 ///
 /// <p>Returns the details about one launch. You must already know the launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

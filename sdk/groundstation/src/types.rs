@@ -135,6 +135,14 @@ pub use crate::types::_az_el_ephemeris_filter::AzElEphemerisFilter;
 
 pub use crate::types::_config_type_data::ConfigTypeData;
 
+pub use crate::types::_telemetry_sink_config::TelemetrySinkConfig;
+
+pub use crate::types::_telemetry_sink_data::TelemetrySinkData;
+
+pub use crate::types::_kinesis_data_stream_data::KinesisDataStreamData;
+
+pub use crate::types::_telemetry_sink_type::TelemetrySinkType;
+
 pub use crate::types::_s3_recording_config::S3RecordingConfig;
 
 pub use crate::types::_uplink_echo_config::UplinkEchoConfig;
@@ -317,6 +325,8 @@ mod _integer_range;
 
 mod _iso8601_time_range;
 
+mod _kinesis_data_stream_data;
+
 mod _kms_key;
 
 mod _mission_profile_list_item;
@@ -346,6 +356,12 @@ mod _socket_address;
 mod _source;
 
 mod _spectrum_config;
+
+mod _telemetry_sink_config;
+
+mod _telemetry_sink_data;
+
+mod _telemetry_sink_type;
 
 mod _time_az_el;
 

@@ -23,6 +23,7 @@ impl crate::operation::list_features::builders::ListFeaturesInputBuilder {
 /// Fluent builder constructing a request to `ListFeatures`.
 ///
 /// <p>Returns configuration details about all the features in the specified project.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFeaturesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

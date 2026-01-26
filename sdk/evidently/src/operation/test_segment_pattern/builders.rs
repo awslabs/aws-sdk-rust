@@ -23,6 +23,7 @@ impl crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBu
 /// Fluent builder constructing a request to `TestSegmentPattern`.
 ///
 /// <p>Use this operation to test a rules pattern that you plan to use to create an audience segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestSegmentPatternFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

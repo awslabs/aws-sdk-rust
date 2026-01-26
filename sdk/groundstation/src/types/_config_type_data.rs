@@ -15,10 +15,12 @@ pub enum ConfigTypeData {
     DataflowEndpointConfig(crate::types::DataflowEndpointConfig),
     /// <p>Information about an S3 recording <code>Config</code>.</p>
     S3RecordingConfig(crate::types::S3RecordingConfig),
+    /// <p>Information about a telemetry sink <code>Config</code>.</p>
+    TelemetrySinkConfig(crate::types::TelemetrySinkConfig),
     /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
     TrackingConfig(crate::types::TrackingConfig),
     /// <p>Information about an uplink echo <code>Config</code>.</p>
-    /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+    /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code> AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
     UplinkEchoConfig(crate::types::UplinkEchoConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -95,6 +97,19 @@ impl ConfigTypeData {
     /// Returns true if this is a [`S3RecordingConfig`](crate::types::ConfigTypeData::S3RecordingConfig).
     pub fn is_s3_recording_config(&self) -> bool {
         self.as_s3_recording_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`TelemetrySinkConfig`](crate::types::ConfigTypeData::TelemetrySinkConfig), extracting the inner [`TelemetrySinkConfig`](crate::types::TelemetrySinkConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_telemetry_sink_config(&self) -> ::std::result::Result<&crate::types::TelemetrySinkConfig, &Self> {
+        if let ConfigTypeData::TelemetrySinkConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`TelemetrySinkConfig`](crate::types::ConfigTypeData::TelemetrySinkConfig).
+    pub fn is_telemetry_sink_config(&self) -> bool {
+        self.as_telemetry_sink_config().is_ok()
     }
     /// Tries to convert the enum instance into [`TrackingConfig`](crate::types::ConfigTypeData::TrackingConfig), extracting the inner [`TrackingConfig`](crate::types::TrackingConfig).
     /// Returns `Err(&Self)` if it can't be converted.

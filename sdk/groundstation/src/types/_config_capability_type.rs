@@ -17,6 +17,7 @@
 ///     ConfigCapabilityType::AntennaUplink => { /* ... */ },
 ///     ConfigCapabilityType::DataflowEndpoint => { /* ... */ },
 ///     ConfigCapabilityType::S3Recording => { /* ... */ },
+///     ConfigCapabilityType::TelemetrySink => { /* ... */ },
 ///     ConfigCapabilityType::Tracking => { /* ... */ },
 ///     ConfigCapabilityType::UplinkEcho => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +59,8 @@ pub enum ConfigCapabilityType {
     #[allow(missing_docs)] // documentation missing in model
     S3Recording,
     #[allow(missing_docs)] // documentation missing in model
+    TelemetrySink,
+    #[allow(missing_docs)] // documentation missing in model
     Tracking,
     #[allow(missing_docs)] // documentation missing in model
     UplinkEcho,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for ConfigCapabilityType {
             "antenna-uplink" => ConfigCapabilityType::AntennaUplink,
             "dataflow-endpoint" => ConfigCapabilityType::DataflowEndpoint,
             "s3-recording" => ConfigCapabilityType::S3Recording,
+            "telemetry-sink" => ConfigCapabilityType::TelemetrySink,
             "tracking" => ConfigCapabilityType::Tracking,
             "uplink-echo" => ConfigCapabilityType::UplinkEcho,
             other => ConfigCapabilityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +99,7 @@ impl ConfigCapabilityType {
             ConfigCapabilityType::AntennaUplink => "antenna-uplink",
             ConfigCapabilityType::DataflowEndpoint => "dataflow-endpoint",
             ConfigCapabilityType::S3Recording => "s3-recording",
+            ConfigCapabilityType::TelemetrySink => "telemetry-sink",
             ConfigCapabilityType::Tracking => "tracking",
             ConfigCapabilityType::UplinkEcho => "uplink-echo",
             ConfigCapabilityType::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl ConfigCapabilityType {
             "antenna-uplink",
             "dataflow-endpoint",
             "s3-recording",
+            "telemetry-sink",
             "tracking",
             "uplink-echo",
         ]
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for ConfigCapabilityType {
             ConfigCapabilityType::AntennaUplink => write!(f, "antenna-uplink"),
             ConfigCapabilityType::DataflowEndpoint => write!(f, "dataflow-endpoint"),
             ConfigCapabilityType::S3Recording => write!(f, "s3-recording"),
+            ConfigCapabilityType::TelemetrySink => write!(f, "telemetry-sink"),
             ConfigCapabilityType::Tracking => write!(f, "tracking"),
             ConfigCapabilityType::UplinkEcho => write!(f, "uplink-echo"),
             ConfigCapabilityType::Unknown(value) => write!(f, "{value}"),

@@ -24,6 +24,7 @@ impl crate::operation::update_project_data_delivery::builders::UpdateProjectData
 ///
 /// <p>Updates the data storage options for this project. If you store evaluation events, you an keep them and analyze them on your own. If you choose not to store evaluation events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>
 /// <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -13,6 +13,8 @@ pub struct CreateCaseInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents the entity that performed the action.</p>
     pub performed_by: ::std::option::Option<crate::types::UserUnion>,
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCaseInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -37,6 +39,10 @@ impl CreateCaseInput {
     pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
         self.performed_by.as_ref()
     }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl CreateCaseInput {
     /// Creates a new builder-style object to manufacture [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
@@ -54,6 +60,7 @@ pub struct CreateCaseInputBuilder {
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -134,6 +141,26 @@ impl CreateCaseInputBuilder {
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
         &self.performed_by
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
@@ -142,6 +169,7 @@ impl CreateCaseInputBuilder {
             fields: self.fields,
             client_token: self.client_token,
             performed_by: self.performed_by,
+            tags: self.tags,
         })
     }
 }

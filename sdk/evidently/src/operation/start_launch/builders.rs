@@ -23,6 +23,7 @@ impl crate::operation::start_launch::builders::StartLaunchInputBuilder {
 /// Fluent builder constructing a request to `StartLaunch`.
 ///
 /// <p>Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

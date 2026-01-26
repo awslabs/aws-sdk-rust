@@ -24,6 +24,7 @@ impl crate::operation::update_launch::builders::UpdateLaunchInputBuilder {
 ///
 /// <p>Updates a launch of a given feature.</p>
 /// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

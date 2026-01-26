@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`project(impl Into<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::delete_project::builders::DeleteProjectFluentBuilder::set_project):<br>required: **true**<br><p>The name or ARN of the project to delete.</p><br>
     /// - On success, responds with [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput)
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::operation::delete_project::DeleteProjectError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn delete_project(&self) -> crate::operation::delete_project::builders::DeleteProjectFluentBuilder {
         crate::operation::delete_project::builders::DeleteProjectFluentBuilder::new(self.handle.clone())
     }

@@ -16,6 +16,7 @@ impl super::Client {
     /// - On success, responds with [`CreateExperimentOutput`](crate::operation::create_experiment::CreateExperimentOutput) with field(s):
     ///   - [`experiment(Option<Experiment>)`](crate::operation::create_experiment::CreateExperimentOutput::experiment): <p>A structure containing the configuration details of the experiment that you created.</p>
     /// - On failure, responds with [`SdkError<CreateExperimentError>`](crate::operation::create_experiment::CreateExperimentError)
+    #[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
     pub fn create_experiment(&self) -> crate::operation::create_experiment::builders::CreateExperimentFluentBuilder {
         crate::operation::create_experiment::builders::CreateExperimentFluentBuilder::new(self.handle.clone())
     }

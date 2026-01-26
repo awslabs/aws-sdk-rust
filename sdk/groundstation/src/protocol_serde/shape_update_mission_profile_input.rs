@@ -48,8 +48,11 @@ pub fn ser_update_mission_profile_input_input(
     if let Some(var_12) = &input.streams_kms_role {
         object.key("streamsKmsRole").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.tracking_config_arn {
-        object.key("trackingConfigArn").string(var_13.as_str());
+    if let Some(var_13) = &input.telemetry_sink_config_arn {
+        object.key("telemetrySinkConfigArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tracking_config_arn {
+        object.key("trackingConfigArn").string(var_14.as_str());
     }
     Ok(())
 }

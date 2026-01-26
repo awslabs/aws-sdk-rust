@@ -171,6 +171,11 @@ pub(crate) fn de_get_template(
                             .transpose()?,
                     );
                 }
+                "tagPropagationConfigurations" => {
+                    builder = builder.set_tag_propagation_configurations(
+                        crate::protocol_serde::shape_tag_propagation_configuration_list::de_tag_propagation_configuration_list(tokens)?,
+                    );
+                }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                 }

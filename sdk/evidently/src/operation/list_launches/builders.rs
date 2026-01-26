@@ -23,6 +23,7 @@ impl crate::operation::list_launches::builders::ListLaunchesInputBuilder {
 /// Fluent builder constructing a request to `ListLaunches`.
 ///
 /// <p>Returns configuration details about all the launches in the specified project.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLaunchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

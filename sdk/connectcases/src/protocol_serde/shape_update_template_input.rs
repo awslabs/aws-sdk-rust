@@ -42,5 +42,17 @@ pub fn ser_update_template_input_input(
     if let Some(var_13) = &input.status {
         object.key("status").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.tag_propagation_configurations {
+        let mut array_15 = object.key("tagPropagationConfigurations").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag_propagation_configuration::ser_tag_propagation_configuration(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }

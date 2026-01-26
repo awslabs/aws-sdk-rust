@@ -27,6 +27,8 @@ pub struct GetTemplateOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub tag_propagation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
@@ -85,6 +87,12 @@ impl GetTemplateOutput {
     pub fn rules(&self) -> &[crate::types::TemplateRule] {
         self.rules.as_deref().unwrap_or_default()
     }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_propagation_configurations.is_none()`.
+    pub fn tag_propagation_configurations(&self) -> &[crate::types::TagPropagationConfiguration] {
+        self.tag_propagation_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -114,6 +122,7 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
+    pub(crate) tag_propagation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
@@ -312,6 +321,29 @@ impl GetTemplateOutputBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>> {
         &self.rules
     }
+    /// Appends an item to `tag_propagation_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_tag_propagation_configurations`](Self::set_tag_propagation_configurations).
+    ///
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn tag_propagation_configurations(mut self, input: crate::types::TagPropagationConfiguration) -> Self {
+        let mut v = self.tag_propagation_configurations.unwrap_or_default();
+        v.push(input);
+        self.tag_propagation_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn set_tag_propagation_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
+    ) -> Self {
+        self.tag_propagation_configurations = input;
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn get_tag_propagation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>> {
+        &self.tag_propagation_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -361,6 +393,7 @@ impl GetTemplateOutputBuilder {
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
             rules: self.rules,
+            tag_propagation_configurations: self.tag_propagation_configurations,
             _request_id: self._request_id,
         })
     }

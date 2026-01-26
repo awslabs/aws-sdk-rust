@@ -241,4 +241,26 @@ impl UpdateTemplateFluentBuilder {
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>> {
         self.inner.get_rules()
     }
+    ///
+    /// Appends an item to `tagPropagationConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_tag_propagation_configurations`](Self::set_tag_propagation_configurations).
+    ///
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn tag_propagation_configurations(mut self, input: crate::types::TagPropagationConfiguration) -> Self {
+        self.inner = self.inner.tag_propagation_configurations(input);
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn set_tag_propagation_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_tag_propagation_configurations(input);
+        self
+    }
+    /// <p>Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.</p>
+    pub fn get_tag_propagation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagPropagationConfiguration>> {
+        self.inner.get_tag_propagation_configurations()
+    }
 }

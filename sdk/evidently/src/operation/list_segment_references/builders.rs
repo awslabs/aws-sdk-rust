@@ -23,6 +23,7 @@ impl crate::operation::list_segment_references::builders::ListSegmentReferencesI
 /// Fluent builder constructing a request to `ListSegmentReferences`.
 ///
 /// <p>Use this operation to find which experiments or launches are using a specified segment.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

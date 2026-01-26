@@ -23,6 +23,7 @@ impl crate::operation::get_experiment::builders::GetExperimentInputBuilder {
 /// Fluent builder constructing a request to `GetExperiment`.
 ///
 /// <p>Returns the details about one experiment. You must already know the experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.</p>
+#[deprecated(note = "AWS CloudWatch Evidently has been deprecated since 11/17/2025.", since = "11/17/2025")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExperimentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
