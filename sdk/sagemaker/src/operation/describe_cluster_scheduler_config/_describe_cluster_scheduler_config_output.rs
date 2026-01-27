@@ -15,6 +15,9 @@ pub struct DescribeClusterSchedulerConfigOutput {
     pub status: ::std::option::Option<crate::types::SchedulerResourceStatus>,
     /// <p>Failure reason of the cluster policy.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>
+    pub status_details:
+        ::std::option::Option<::std::collections::HashMap<crate::types::SchedulerConfigComponent, crate::types::SchedulerResourceStatus>>,
     /// <p>ARN of the cluster where the cluster policy is applied.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Cluster policy configuration. This policy is used for task prioritization and fair-share allocation. This helps prioritize critical workloads and distributes idle compute across entities.</p>
@@ -55,6 +58,12 @@ impl DescribeClusterSchedulerConfigOutput {
     /// <p>Failure reason of the cluster policy.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
+    }
+    /// <p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>
+    pub fn status_details(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::SchedulerConfigComponent, crate::types::SchedulerResourceStatus>> {
+        self.status_details.as_ref()
     }
     /// <p>ARN of the cluster where the cluster policy is applied.</p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
@@ -107,6 +116,8 @@ pub struct DescribeClusterSchedulerConfigOutputBuilder {
     pub(crate) cluster_scheduler_config_version: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::SchedulerResourceStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) status_details:
+        ::std::option::Option<::std::collections::HashMap<crate::types::SchedulerConfigComponent, crate::types::SchedulerResourceStatus>>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scheduler_config: ::std::option::Option<crate::types::SchedulerConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -205,6 +216,31 @@ impl DescribeClusterSchedulerConfigOutputBuilder {
     /// <p>Failure reason of the cluster policy.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
+    }
+    /// Adds a key-value pair to `status_details`.
+    ///
+    /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
+    ///
+    /// <p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>
+    pub fn status_details(mut self, k: crate::types::SchedulerConfigComponent, v: crate::types::SchedulerResourceStatus) -> Self {
+        let mut hash_map = self.status_details.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.status_details = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>
+    pub fn set_status_details(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::SchedulerConfigComponent, crate::types::SchedulerResourceStatus>>,
+    ) -> Self {
+        self.status_details = input;
+        self
+    }
+    /// <p>Additional details about the status of the cluster policy. This field provides context when the policy is in a non-active state, such as during creation, updates, or if failures occur.</p>
+    pub fn get_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::SchedulerConfigComponent, crate::types::SchedulerResourceStatus>> {
+        &self.status_details
     }
     /// <p>ARN of the cluster where the cluster policy is applied.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -323,6 +359,7 @@ impl DescribeClusterSchedulerConfigOutputBuilder {
             cluster_scheduler_config_version: self.cluster_scheduler_config_version,
             status: self.status,
             failure_reason: self.failure_reason,
+            status_details: self.status_details,
             cluster_arn: self.cluster_arn,
             scheduler_config: self.scheduler_config,
             description: self.description,

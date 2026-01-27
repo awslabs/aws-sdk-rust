@@ -357,4 +357,23 @@ impl StartTaskContactFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.inner.get_segment_attributes()
     }
+    ///
+    /// Appends an item to `Attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn attachments(mut self, input: crate::types::TaskAttachment) -> Self {
+        self.inner = self.inner.attachments(input);
+        self
+    }
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>>) -> Self {
+        self.inner = self.inner.set_attachments(input);
+        self
+    }
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>> {
+        self.inner.get_attachments()
+    }
 }

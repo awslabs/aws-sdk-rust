@@ -312,4 +312,32 @@ impl CreateJobFluentBuilder {
     pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_job_id()
     }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn name_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name_override(input.into());
+        self
+    }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn set_name_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name_override(input);
+        self
+    }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn get_name_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_override()
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn description_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description_override(input.into());
+        self
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn set_description_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description_override(input);
+        self
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn get_description_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description_override()
+    }
 }

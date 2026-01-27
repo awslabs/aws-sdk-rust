@@ -3,73 +3,85 @@ pub fn ser_start_task_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_task_contact::StartTaskContactInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.attributes {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("Attributes").start_object();
-        for (key_3, value_4) in var_1 {
-            {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
-            }
-        }
-        object_2.finish();
-    }
-    if let Some(var_5) = &input.client_token {
-        object.key("ClientToken").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.contact_flow_id {
-        object.key("ContactFlowId").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.description {
-        object.key("Description").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.instance_id {
-        object.key("InstanceId").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.name {
-        object.key("Name").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.previous_contact_id {
-        object.key("PreviousContactId").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.quick_connect_id {
-        object.key("QuickConnectId").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.references {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("References").start_object();
-        for (key_14, value_15) in var_12 {
+    if let Some(var_1) = &input.attachments {
+        let mut array_2 = object.key("Attachments").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_reference::ser_reference(&mut object_16, value_15)?;
-                object_16.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_task_attachment::ser_task_attachment(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        object_13.finish();
+        array_2.finish();
     }
-    if let Some(var_17) = &input.related_contact_id {
-        object.key("RelatedContactId").string(var_17.as_str());
+    if let Some(var_5) = &input.attributes {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Attributes").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
     }
-    if let Some(var_18) = &input.scheduled_time {
+    if let Some(var_9) = &input.client_token {
+        object.key("ClientToken").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.contact_flow_id {
+        object.key("ContactFlowId").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.description {
+        object.key("Description").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.instance_id {
+        object.key("InstanceId").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.name {
+        object.key("Name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.previous_contact_id {
+        object.key("PreviousContactId").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.quick_connect_id {
+        object.key("QuickConnectId").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.references {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("References").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = object_17.key(key_18.as_str()).start_object();
+                crate::protocol_serde::shape_reference::ser_reference(&mut object_20, value_19)?;
+                object_20.finish();
+            }
+        }
+        object_17.finish();
+    }
+    if let Some(var_21) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.scheduled_time {
         object
             .key("ScheduledTime")
-            .date_time(var_18, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_22, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_19) = &input.segment_attributes {
+    if let Some(var_23) = &input.segment_attributes {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("SegmentAttributes").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_24 = object.key("SegmentAttributes").start_object();
+        for (key_25, value_26) in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = object_20.key(key_21.as_str()).start_object();
-                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_23, value_22)?;
-                object_23.finish();
+                let mut object_27 = object_24.key(key_25.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_27, value_26)?;
+                object_27.finish();
             }
         }
-        object_20.finish();
+        object_24.finish();
     }
-    if let Some(var_24) = &input.task_template_id {
-        object.key("TaskTemplateId").string(var_24.as_str());
+    if let Some(var_28) = &input.task_template_id {
+        object.key("TaskTemplateId").string(var_28.as_str());
     }
     Ok(())
 }

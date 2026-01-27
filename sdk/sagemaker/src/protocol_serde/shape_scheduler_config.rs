@@ -18,6 +18,9 @@ pub fn ser_scheduler_config(
     if let Some(var_5) = &input.fair_share {
         object.key("FairShare").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.idle_resource_sharing {
+        object.key("IdleResourceSharing").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                             builder = builder.set_fair_share(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FairShare::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "IdleResourceSharing" => {
+                            builder = builder.set_idle_resource_sharing(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IdleResourceSharing::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

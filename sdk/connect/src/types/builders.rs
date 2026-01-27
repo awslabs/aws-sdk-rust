@@ -281,6 +281,8 @@ pub use crate::types::_allowed_capabilities::AllowedCapabilitiesBuilder;
 
 pub use crate::types::_participant_capabilities::ParticipantCapabilitiesBuilder;
 
+pub use crate::types::_task_attachment::TaskAttachmentBuilder;
+
 pub use crate::types::_outbound_strategy::OutboundStrategyBuilder;
 
 pub use crate::types::_outbound_strategy_config::OutboundStrategyConfigBuilder;

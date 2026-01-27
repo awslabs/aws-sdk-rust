@@ -409,6 +409,8 @@ pub use crate::types::_global_configuration::GlobalConfigurationBuilder;
 
 pub use crate::types::_output_locking_settings::OutputLockingSettingsBuilder;
 
+pub use crate::types::_disabled_locking_settings::DisabledLockingSettingsBuilder;
+
 pub use crate::types::_pipeline_locking_settings::PipelineLockingSettingsBuilder;
 
 pub use crate::types::_epoch_locking_settings::EpochLockingSettingsBuilder;

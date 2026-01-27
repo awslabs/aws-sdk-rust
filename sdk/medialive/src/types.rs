@@ -399,6 +399,8 @@ pub use crate::types::_video_codec_settings::VideoCodecSettings;
 
 pub use crate::types::_av1_settings::Av1Settings;
 
+pub use crate::types::_av1_timecode_insertion_behavior::Av1TimecodeInsertionBehavior;
+
 pub use crate::types::_av1_temporal_aq::Av1TemporalAq;
 
 pub use crate::types::_av1_spatial_aq::Av1SpatialAq;
@@ -880,6 +882,8 @@ pub use crate::types::_motion_graphics_insertion::MotionGraphicsInsertion;
 pub use crate::types::_global_configuration::GlobalConfiguration;
 
 pub use crate::types::_output_locking_settings::OutputLockingSettings;
+
+pub use crate::types::_disabled_locking_settings::DisabledLockingSettings;
 
 pub use crate::types::_pipeline_locking_settings::PipelineLockingSettings;
 
@@ -1473,6 +1477,8 @@ mod _av1_spatial_aq;
 
 mod _av1_temporal_aq;
 
+mod _av1_timecode_insertion_behavior;
+
 mod _avail_blanking;
 
 mod _avail_blanking_state;
@@ -1636,6 +1642,8 @@ mod _describe_primary_channel_settings;
 mod _device_settings_sync_state;
 
 mod _device_update_status;
+
+mod _disabled_locking_settings;
 
 mod _dolby_e_program_selection;
 

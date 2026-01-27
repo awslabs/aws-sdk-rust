@@ -12,6 +12,18 @@ pub fn ser_resource_sharing_config(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.absolute_borrow_limits {
+        let mut array_4 = object.key("AbsoluteBorrowLimits").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_compute_quota_resource_config::ser_compute_quota_resource_config(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +54,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "AbsoluteBorrowLimits" => {
+                            builder = builder.set_absolute_borrow_limits(
+                                crate::protocol_serde::shape_absolute_borrow_limit_resource_list::de_absolute_borrow_limit_resource_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

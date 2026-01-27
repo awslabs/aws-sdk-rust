@@ -8,6 +8,8 @@ pub struct OutputLockingSettings {
     pub epoch_locking_settings: ::std::option::Option<crate::types::EpochLockingSettings>,
     /// Pipeline Locking Settings
     pub pipeline_locking_settings: ::std::option::Option<crate::types::PipelineLockingSettings>,
+    /// Disabled Locking Settings
+    pub disabled_locking_settings: ::std::option::Option<crate::types::DisabledLockingSettings>,
 }
 impl OutputLockingSettings {
     /// Epoch Locking Settings
@@ -17,6 +19,10 @@ impl OutputLockingSettings {
     /// Pipeline Locking Settings
     pub fn pipeline_locking_settings(&self) -> ::std::option::Option<&crate::types::PipelineLockingSettings> {
         self.pipeline_locking_settings.as_ref()
+    }
+    /// Disabled Locking Settings
+    pub fn disabled_locking_settings(&self) -> ::std::option::Option<&crate::types::DisabledLockingSettings> {
+        self.disabled_locking_settings.as_ref()
     }
 }
 impl OutputLockingSettings {
@@ -32,6 +38,7 @@ impl OutputLockingSettings {
 pub struct OutputLockingSettingsBuilder {
     pub(crate) epoch_locking_settings: ::std::option::Option<crate::types::EpochLockingSettings>,
     pub(crate) pipeline_locking_settings: ::std::option::Option<crate::types::PipelineLockingSettings>,
+    pub(crate) disabled_locking_settings: ::std::option::Option<crate::types::DisabledLockingSettings>,
 }
 impl OutputLockingSettingsBuilder {
     /// Epoch Locking Settings
@@ -62,11 +69,26 @@ impl OutputLockingSettingsBuilder {
     pub fn get_pipeline_locking_settings(&self) -> &::std::option::Option<crate::types::PipelineLockingSettings> {
         &self.pipeline_locking_settings
     }
+    /// Disabled Locking Settings
+    pub fn disabled_locking_settings(mut self, input: crate::types::DisabledLockingSettings) -> Self {
+        self.disabled_locking_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Disabled Locking Settings
+    pub fn set_disabled_locking_settings(mut self, input: ::std::option::Option<crate::types::DisabledLockingSettings>) -> Self {
+        self.disabled_locking_settings = input;
+        self
+    }
+    /// Disabled Locking Settings
+    pub fn get_disabled_locking_settings(&self) -> &::std::option::Option<crate::types::DisabledLockingSettings> {
+        &self.disabled_locking_settings
+    }
     /// Consumes the builder and constructs a [`OutputLockingSettings`](crate::types::OutputLockingSettings).
     pub fn build(self) -> crate::types::OutputLockingSettings {
         crate::types::OutputLockingSettings {
             epoch_locking_settings: self.epoch_locking_settings,
             pipeline_locking_settings: self.pipeline_locking_settings,
+            disabled_locking_settings: self.disabled_locking_settings,
         }
     }
 }

@@ -108,6 +108,9 @@ pub fn ser_av1_settings(
     if let Some(var_24) = &input.temporal_aq {
         object.key("temporalAq").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.timecode_insertion {
+        object.key("timecodeInsertion").string(var_25.as_str());
+    }
     Ok(())
 }
 
@@ -270,6 +273,13 @@ where
                             builder = builder.set_temporal_aq(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1TemporalAq::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "timecodeInsertion" => {
+                            builder = builder.set_timecode_insertion(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1TimecodeInsertionBehavior::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

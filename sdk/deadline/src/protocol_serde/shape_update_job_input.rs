@@ -3,35 +3,41 @@ pub fn ser_update_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_job::UpdateJobInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.lifecycle_status {
-        object.key("lifecycleStatus").string(var_1.as_str());
+    if let Some(var_1) = &input.description {
+        object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.max_failed_tasks_count {
+    if let Some(var_2) = &input.lifecycle_status {
+        object.key("lifecycleStatus").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.max_failed_tasks_count {
         object.key("maxFailedTasksCount").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.max_retries_per_task {
-        object.key("maxRetriesPerTask").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.max_worker_count {
-        object.key("maxWorkerCount").number(
+    if let Some(var_4) = &input.max_retries_per_task {
+        object.key("maxRetriesPerTask").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.priority {
-        object.key("priority").number(
+    if let Some(var_5) = &input.max_worker_count {
+        object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.target_task_run_status {
-        object.key("targetTaskRunStatus").string(var_6.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.priority {
+        object.key("priority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.target_task_run_status {
+        object.key("targetTaskRunStatus").string(var_8.as_str());
     }
     Ok(())
 }

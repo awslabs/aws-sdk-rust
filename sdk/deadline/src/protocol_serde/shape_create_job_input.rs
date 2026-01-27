@@ -9,57 +9,63 @@ pub fn ser_create_job_input_input(
         crate::protocol_serde::shape_attachments::ser_attachments(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_failed_tasks_count {
-        object.key("maxFailedTasksCount").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
-        );
+    if let Some(var_3) = &input.description_override {
+        object.key("descriptionOverride").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.max_retries_per_task {
-        object.key("maxRetriesPerTask").number(
+    if let Some(var_4) = &input.max_failed_tasks_count {
+        object.key("maxFailedTasksCount").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_5) = &input.max_worker_count {
-        object.key("maxWorkerCount").number(
+    if let Some(var_5) = &input.max_retries_per_task {
+        object.key("maxRetriesPerTask").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.parameters {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("parameters").start_object();
-        for (key_8, value_9) in var_6 {
-            {
-                #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_job_parameter::ser_job_parameter(&mut object_10, value_9)?;
-                object_10.finish();
-            }
-        }
-        object_7.finish();
-    }
-    if let Some(var_11) = &input.priority {
-        object.key("priority").number(
+    if let Some(var_6) = &input.max_worker_count {
+        object.key("maxWorkerCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_12) = &input.source_job_id {
-        object.key("sourceJobId").string(var_12.as_str());
+    if let Some(var_7) = &input.name_override {
+        object.key("nameOverride").string(var_7.as_str());
     }
-    if let Some(var_13) = &input.storage_profile_id {
-        object.key("storageProfileId").string(var_13.as_str());
+    if let Some(var_8) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("parameters").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                crate::protocol_serde::shape_job_parameter::ser_job_parameter(&mut object_12, value_11)?;
+                object_12.finish();
+            }
+        }
+        object_9.finish();
     }
-    if let Some(var_14) = &input.target_task_run_status {
-        object.key("targetTaskRunStatus").string(var_14.as_str());
+    if let Some(var_13) = &input.priority {
+        object.key("priority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
     }
-    if let Some(var_15) = &input.template {
-        object.key("template").string(var_15.as_str());
+    if let Some(var_14) = &input.source_job_id {
+        object.key("sourceJobId").string(var_14.as_str());
     }
-    if let Some(var_16) = &input.template_type {
-        object.key("templateType").string(var_16.as_str());
+    if let Some(var_15) = &input.storage_profile_id {
+        object.key("storageProfileId").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.target_task_run_status {
+        object.key("targetTaskRunStatus").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.template {
+        object.key("template").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.template_type {
+        object.key("templateType").string(var_18.as_str());
     }
     Ok(())
 }

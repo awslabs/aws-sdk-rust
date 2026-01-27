@@ -10,6 +10,8 @@ pub struct SchedulerConfig {
     /// <p>When disabled, entities borrow idle compute based on a first-come first-serve basis.</p>
     /// <p>Default is <code>Enabled</code>.</p>
     pub fair_share: ::std::option::Option<crate::types::FairShare>,
+    /// <p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow.</p>
+    pub idle_resource_sharing: ::std::option::Option<crate::types::IdleResourceSharing>,
 }
 impl SchedulerConfig {
     /// <p>List of the priority classes, <code>PriorityClass</code>, of the cluster policy. When specified, these class configurations define how tasks are queued.</p>
@@ -23,6 +25,10 @@ impl SchedulerConfig {
     /// <p>Default is <code>Enabled</code>.</p>
     pub fn fair_share(&self) -> ::std::option::Option<&crate::types::FairShare> {
         self.fair_share.as_ref()
+    }
+    /// <p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow.</p>
+    pub fn idle_resource_sharing(&self) -> ::std::option::Option<&crate::types::IdleResourceSharing> {
+        self.idle_resource_sharing.as_ref()
     }
 }
 impl SchedulerConfig {
@@ -38,6 +44,7 @@ impl SchedulerConfig {
 pub struct SchedulerConfigBuilder {
     pub(crate) priority_classes: ::std::option::Option<::std::vec::Vec<crate::types::PriorityClass>>,
     pub(crate) fair_share: ::std::option::Option<crate::types::FairShare>,
+    pub(crate) idle_resource_sharing: ::std::option::Option<crate::types::IdleResourceSharing>,
 }
 impl SchedulerConfigBuilder {
     /// Appends an item to `priority_classes`.
@@ -80,11 +87,26 @@ impl SchedulerConfigBuilder {
     pub fn get_fair_share(&self) -> &::std::option::Option<crate::types::FairShare> {
         &self.fair_share
     }
+    /// <p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow.</p>
+    pub fn idle_resource_sharing(mut self, input: crate::types::IdleResourceSharing) -> Self {
+        self.idle_resource_sharing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow.</p>
+    pub fn set_idle_resource_sharing(mut self, input: ::std::option::Option<crate::types::IdleResourceSharing>) -> Self {
+        self.idle_resource_sharing = input;
+        self
+    }
+    /// <p>Configuration for sharing idle compute resources across entities in the cluster. When enabled, unallocated resources are automatically calculated and made available for entities to borrow.</p>
+    pub fn get_idle_resource_sharing(&self) -> &::std::option::Option<crate::types::IdleResourceSharing> {
+        &self.idle_resource_sharing
+    }
     /// Consumes the builder and constructs a [`SchedulerConfig`](crate::types::SchedulerConfig).
     pub fn build(self) -> crate::types::SchedulerConfig {
         crate::types::SchedulerConfig {
             priority_classes: self.priority_classes,
             fair_share: self.fair_share,
+            idle_resource_sharing: self.idle_resource_sharing,
         }
     }
 }

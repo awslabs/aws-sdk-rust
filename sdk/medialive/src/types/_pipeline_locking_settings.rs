@@ -6,11 +6,17 @@
 pub struct PipelineLockingSettings {
     /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
     pub pipeline_locking_method: ::std::option::Option<crate::types::PipelineLockingMethod>,
+    /// Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output Group Only. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+    pub custom_epoch: ::std::option::Option<::std::string::String>,
 }
 impl PipelineLockingSettings {
     /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
     pub fn pipeline_locking_method(&self) -> ::std::option::Option<&crate::types::PipelineLockingMethod> {
         self.pipeline_locking_method.as_ref()
+    }
+    /// Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output Group Only. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+    pub fn custom_epoch(&self) -> ::std::option::Option<&str> {
+        self.custom_epoch.as_deref()
     }
 }
 impl PipelineLockingSettings {
@@ -25,6 +31,7 @@ impl PipelineLockingSettings {
 #[non_exhaustive]
 pub struct PipelineLockingSettingsBuilder {
     pub(crate) pipeline_locking_method: ::std::option::Option<crate::types::PipelineLockingMethod>,
+    pub(crate) custom_epoch: ::std::option::Option<::std::string::String>,
 }
 impl PipelineLockingSettingsBuilder {
     /// The method to use to lock the video frames in the pipelines. sourceTimecode (default): Use the timecode in the source. videoAlignment: Lock frames that the encoder identifies as having matching content. If videoAlignment is selected, existing timecodes will not be used for any locking decisions.
@@ -41,10 +48,25 @@ impl PipelineLockingSettingsBuilder {
     pub fn get_pipeline_locking_method(&self) -> &::std::option::Option<crate::types::PipelineLockingMethod> {
         &self.pipeline_locking_method
     }
+    /// Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output Group Only. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+    pub fn custom_epoch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_epoch = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output Group Only. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+    pub fn set_custom_epoch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_epoch = input;
+        self
+    }
+    /// Optional. Only applies to CMAF Ingest Output Group and MediaPackage V2 Output Group Only. Enter a value here to use a custom epoch, instead of the standard epoch (which started at 1970-01-01T00:00:00 UTC). Specify the start time of the custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
+    pub fn get_custom_epoch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_epoch
+    }
     /// Consumes the builder and constructs a [`PipelineLockingSettings`](crate::types::PipelineLockingSettings).
     pub fn build(self) -> crate::types::PipelineLockingSettings {
         crate::types::PipelineLockingSettings {
             pipeline_locking_method: self.pipeline_locking_method,
+            custom_epoch: self.custom_epoch,
         }
     }
 }

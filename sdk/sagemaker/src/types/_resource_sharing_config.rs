@@ -18,6 +18,8 @@ pub struct ResourceSharingConfig {
     /// <p>The limit on how much idle compute can be borrowed.The values can be 1 - 500 percent of idle compute that the team is allowed to borrow.</p>
     /// <p>Default is <code>50</code>.</p>
     pub borrow_limit: ::std::option::Option<i32>,
+    /// <p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+    pub absolute_borrow_limits: ::std::option::Option<::std::vec::Vec<crate::types::ComputeQuotaResourceConfig>>,
 }
 impl ResourceSharingConfig {
     /// <p>The strategy of how idle compute is shared within the cluster. The following are the options of strategies.</p>
@@ -38,6 +40,12 @@ impl ResourceSharingConfig {
     pub fn borrow_limit(&self) -> ::std::option::Option<i32> {
         self.borrow_limit
     }
+    /// <p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.absolute_borrow_limits.is_none()`.
+    pub fn absolute_borrow_limits(&self) -> &[crate::types::ComputeQuotaResourceConfig] {
+        self.absolute_borrow_limits.as_deref().unwrap_or_default()
+    }
 }
 impl ResourceSharingConfig {
     /// Creates a new builder-style object to manufacture [`ResourceSharingConfig`](crate::types::ResourceSharingConfig).
@@ -52,6 +60,7 @@ impl ResourceSharingConfig {
 pub struct ResourceSharingConfigBuilder {
     pub(crate) strategy: ::std::option::Option<crate::types::ResourceSharingStrategy>,
     pub(crate) borrow_limit: ::std::option::Option<i32>,
+    pub(crate) absolute_borrow_limits: ::std::option::Option<::std::vec::Vec<crate::types::ComputeQuotaResourceConfig>>,
 }
 impl ResourceSharingConfigBuilder {
     /// <p>The strategy of how idle compute is shared within the cluster. The following are the options of strategies.</p>
@@ -113,11 +122,32 @@ impl ResourceSharingConfigBuilder {
     pub fn get_borrow_limit(&self) -> &::std::option::Option<i32> {
         &self.borrow_limit
     }
+    /// Appends an item to `absolute_borrow_limits`.
+    ///
+    /// To override the contents of this collection use [`set_absolute_borrow_limits`](Self::set_absolute_borrow_limits).
+    ///
+    /// <p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+    pub fn absolute_borrow_limits(mut self, input: crate::types::ComputeQuotaResourceConfig) -> Self {
+        let mut v = self.absolute_borrow_limits.unwrap_or_default();
+        v.push(input);
+        self.absolute_borrow_limits = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+    pub fn set_absolute_borrow_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeQuotaResourceConfig>>) -> Self {
+        self.absolute_borrow_limits = input;
+        self
+    }
+    /// <p>The absolute limits on compute resources that can be borrowed from idle compute. When specified, these limits define the maximum amount of specific resource types (such as accelerators, vCPU, or memory) that an entity can borrow, regardless of the percentage-based <code>BorrowLimit</code>.</p>
+    pub fn get_absolute_borrow_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeQuotaResourceConfig>> {
+        &self.absolute_borrow_limits
+    }
     /// Consumes the builder and constructs a [`ResourceSharingConfig`](crate::types::ResourceSharingConfig).
     pub fn build(self) -> crate::types::ResourceSharingConfig {
         crate::types::ResourceSharingConfig {
             strategy: self.strategy,
             borrow_limit: self.borrow_limit,
+            absolute_borrow_limits: self.absolute_borrow_limits,
         }
     }
 }

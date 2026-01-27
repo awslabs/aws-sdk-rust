@@ -893,6 +893,8 @@ pub(crate) mod shape_caption_selector_settings;
 
 pub(crate) mod shape_cmaf_ingest_group_settings;
 
+pub(crate) mod shape_disabled_locking_settings;
+
 pub(crate) mod shape_dvb_sub_destination_settings;
 
 pub(crate) mod shape_eac3_atmos_settings;

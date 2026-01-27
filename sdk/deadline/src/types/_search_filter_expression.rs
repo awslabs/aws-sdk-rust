@@ -14,7 +14,7 @@ pub enum SearchFilterExpression {
     SearchTermFilter(crate::types::SearchTermFilterExpression),
     /// <p>Filters by a string.</p>
     StringFilter(crate::types::StringFilterExpression),
-    /// <p>Filters by a list of string values.</p>
+    /// <p>Filters by a list of strings.</p>
     StringListFilter(crate::types::StringListFilterExpression),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

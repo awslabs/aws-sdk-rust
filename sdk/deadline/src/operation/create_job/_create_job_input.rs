@@ -33,6 +33,10 @@ pub struct CreateJobInput {
     pub max_worker_count: ::std::option::Option<i32>,
     /// <p>The job ID for the source job.</p>
     pub source_job_id: ::std::option::Option<::std::string::String>,
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub name_override: ::std::option::Option<::std::string::String>,
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub description_override: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobInput {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -93,6 +97,14 @@ impl CreateJobInput {
     pub fn source_job_id(&self) -> ::std::option::Option<&str> {
         self.source_job_id.as_deref()
     }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn name_override(&self) -> ::std::option::Option<&str> {
+        self.name_override.as_deref()
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn description_override(&self) -> ::std::option::Option<&str> {
+        self.description_override.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -111,6 +123,8 @@ impl ::std::fmt::Debug for CreateJobInput {
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
+        formatter.field("name_override", &self.name_override);
+        formatter.field("description_override", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -139,6 +153,8 @@ pub struct CreateJobInputBuilder {
     pub(crate) max_retries_per_task: ::std::option::Option<i32>,
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name_override: ::std::option::Option<::std::string::String>,
+    pub(crate) description_override: ::std::option::Option<::std::string::String>,
 }
 impl CreateJobInputBuilder {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -355,6 +371,34 @@ impl CreateJobInputBuilder {
     pub fn get_source_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_job_id
     }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn name_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name_override = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn set_name_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name_override = input;
+        self
+    }
+    /// <p>A custom name to override the job name derived from the job template.</p>
+    pub fn get_name_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_override
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn description_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description_override = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn set_description_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description_override = input;
+        self
+    }
+    /// <p>A custom description to override the job description derived from the job template.</p>
+    pub fn get_description_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description_override
+    }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
@@ -372,6 +416,8 @@ impl CreateJobInputBuilder {
             max_retries_per_task: self.max_retries_per_task,
             max_worker_count: self.max_worker_count,
             source_job_id: self.source_job_id,
+            name_override: self.name_override,
+            description_override: self.description_override,
         })
     }
 }
@@ -392,6 +438,8 @@ impl ::std::fmt::Debug for CreateJobInputBuilder {
         formatter.field("max_retries_per_task", &self.max_retries_per_task);
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("source_job_id", &self.source_job_id);
+        formatter.field("name_override", &self.name_override);
+        formatter.field("description_override", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

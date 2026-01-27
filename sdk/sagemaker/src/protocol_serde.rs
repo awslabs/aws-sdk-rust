@@ -2223,6 +2223,8 @@ pub(crate) mod shape_space_settings;
 
 pub(crate) mod shape_space_sharing_settings;
 
+pub(crate) mod shape_status_details_map;
+
 pub(crate) mod shape_stopping_condition;
 
 pub(crate) mod shape_studio_lifecycle_configs_list;
@@ -3032,6 +3034,8 @@ pub(crate) mod shape_vertex;
 pub(crate) mod shape_vpc_security_group_ids;
 
 pub(crate) mod shape_workforce_vpc_config_response;
+
+pub(crate) mod shape_absolute_borrow_limit_resource_list;
 
 pub(crate) mod shape_accelerator_partition_config;
 

@@ -433,8 +433,6 @@ pub use crate::types::_preempt_team_tasks::PreemptTeamTasks;
 
 pub use crate::types::_resource_sharing_config::ResourceSharingConfig;
 
-pub use crate::types::_resource_sharing_strategy::ResourceSharingStrategy;
-
 pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfig;
 
 pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfig;
@@ -442,6 +440,8 @@ pub use crate::types::_accelerator_partition_config::AcceleratorPartitionConfig;
 pub use crate::types::_mig_profile_type::MigProfileType;
 
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
+
+pub use crate::types::_resource_sharing_strategy::ResourceSharingStrategy;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
 
@@ -458,6 +458,8 @@ pub use crate::types::_node_unavailability_type::NodeUnavailabilityType;
 pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecification;
 
 pub use crate::types::_scheduler_config::SchedulerConfig;
+
+pub use crate::types::_idle_resource_sharing::IdleResourceSharing;
 
 pub use crate::types::_fair_share::FairShare;
 
@@ -1909,6 +1911,8 @@ pub use crate::types::_framework::Framework;
 
 pub use crate::types::_model_digests::ModelDigests;
 
+pub use crate::types::_scheduler_config_component::SchedulerConfigComponent;
+
 pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
 pub use crate::types::_cluster_capacity_type::ClusterCapacityType;
@@ -2975,6 +2979,8 @@ mod _iam_policy_constraints;
 
 mod _identity_provider_o_auth_setting;
 
+mod _idle_resource_sharing;
+
 mod _idle_settings;
 
 mod _image;
@@ -3866,6 +3872,8 @@ mod _schedule_status;
 mod _scheduled_update_config;
 
 mod _scheduler_config;
+
+mod _scheduler_config_component;
 
 mod _scheduler_resource_status;
 

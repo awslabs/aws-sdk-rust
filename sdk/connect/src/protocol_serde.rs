@@ -1695,6 +1695,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_tags_list;
 
+pub(crate) mod shape_task_attachment;
+
 pub(crate) mod shape_task_template_constraints;
 
 pub(crate) mod shape_task_template_defaults;

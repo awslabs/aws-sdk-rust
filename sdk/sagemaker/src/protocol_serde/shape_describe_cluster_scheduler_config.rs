@@ -124,6 +124,9 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                             .transpose()?,
                     );
                 }
+                "StatusDetails" => {
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details_map::de_status_details_map(tokens)?);
+                }
                 "ClusterArn" => {
                     builder = builder.set_cluster_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

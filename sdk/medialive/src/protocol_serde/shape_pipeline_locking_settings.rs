@@ -6,6 +6,9 @@ pub fn ser_pipeline_locking_settings(
     if let Some(var_1) = &input.pipeline_locking_method {
         object.key("pipelineLockingMethod").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.custom_epoch {
+        object.key("customEpoch").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_pipeline_locking_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::PipelineLockingMethod::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "customEpoch" => {
+                            builder = builder.set_custom_epoch(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

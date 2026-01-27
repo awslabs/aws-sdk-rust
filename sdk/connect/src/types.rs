@@ -443,6 +443,8 @@ pub use crate::types::_video_capability::VideoCapability;
 
 pub use crate::types::_test_case_execution_status::TestCaseExecutionStatus;
 
+pub use crate::types::_task_attachment::TaskAttachment;
+
 pub use crate::types::_outbound_strategy::OutboundStrategy;
 
 pub use crate::types::_outbound_strategy_config::OutboundStrategyConfig;
@@ -2520,6 +2522,8 @@ mod _tag_set;
 mod _target_list_type;
 
 mod _task_action_definition;
+
+mod _task_attachment;
 
 mod _task_template_constraints;
 

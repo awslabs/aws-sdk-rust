@@ -36,6 +36,8 @@ pub struct StartTaskContactInput {
     /// <p>To set the created by user, a valid AgentResourceId must be supplied, with <code>SegmentAttributes</code> like { <code>"connect:CreatedByUser" { "ValueString": "arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/agent/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}}}</code>.</p>
     /// </note>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>>,
 }
 impl StartTaskContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -99,6 +101,12 @@ impl StartTaskContactInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::TaskAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for StartTaskContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -116,6 +124,7 @@ impl ::std::fmt::Debug for StartTaskContactInput {
         formatter.field("quick_connect_id", &self.quick_connect_id);
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("attachments", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -143,6 +152,7 @@ pub struct StartTaskContactInputBuilder {
     pub(crate) quick_connect_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>>,
 }
 impl StartTaskContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -376,6 +386,26 @@ impl StartTaskContactInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         &self.segment_attributes
     }
+    /// Appends an item to `attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn attachments(mut self, input: crate::types::TaskAttachment) -> Self {
+        let mut v = self.attachments.unwrap_or_default();
+        v.push(input);
+        self.attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>>) -> Self {
+        self.attachments = input;
+        self
+    }
+    /// <p>List of S3 presigned URLs of task attachments and their file name. You can have a maximum of 5 attachments per task.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskAttachment>> {
+        &self.attachments
+    }
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
@@ -394,6 +424,7 @@ impl StartTaskContactInputBuilder {
             quick_connect_id: self.quick_connect_id,
             related_contact_id: self.related_contact_id,
             segment_attributes: self.segment_attributes,
+            attachments: self.attachments,
         })
     }
 }
@@ -413,6 +444,7 @@ impl ::std::fmt::Debug for StartTaskContactInputBuilder {
         formatter.field("quick_connect_id", &self.quick_connect_id);
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("attachments", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

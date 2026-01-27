@@ -15,6 +15,12 @@ pub fn ser_output_locking_settings(
         crate::protocol_serde::shape_pipeline_locking_settings::ser_pipeline_locking_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.disabled_locking_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("disabledLockingSettings").start_object();
+        crate::protocol_serde::shape_disabled_locking_settings::ser_disabled_locking_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +46,11 @@ where
                         "pipelineLockingSettings" => {
                             builder = builder.set_pipeline_locking_settings(
                                 crate::protocol_serde::shape_pipeline_locking_settings::de_pipeline_locking_settings(tokens)?,
+                            );
+                        }
+                        "disabledLockingSettings" => {
+                            builder = builder.set_disabled_locking_settings(
+                                crate::protocol_serde::shape_disabled_locking_settings::de_disabled_locking_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
