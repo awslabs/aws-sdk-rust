@@ -20,7 +20,7 @@ pub struct RouterNetworkInterface {
     pub associated_output_count: i32,
     /// <p>The number of router inputs associated with the network interface.</p>
     pub associated_input_count: i32,
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub region_name: ::std::string::String,
     /// <p>The timestamp when the router network interface was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -65,7 +65,7 @@ impl RouterNetworkInterface {
     pub fn associated_input_count(&self) -> i32 {
         self.associated_input_count
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn region_name(&self) -> &str {
         use std::ops::Deref;
         self.region_name.deref()
@@ -228,18 +228,18 @@ impl RouterNetworkInterfaceBuilder {
     pub fn get_associated_input_count(&self) -> &::std::option::Option<i32> {
         &self.associated_input_count
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

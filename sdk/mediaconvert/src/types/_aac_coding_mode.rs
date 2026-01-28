@@ -17,6 +17,7 @@
 ///     AacCodingMode::CodingMode11 => { /* ... */ },
 ///     AacCodingMode::CodingMode20 => { /* ... */ },
 ///     AacCodingMode::CodingMode51 => { /* ... */ },
+///     AacCodingMode::CodingModeAuto => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -39,7 +40,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
+/// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE. To follow the number of channels from your input audio, choose CODING_MODE_AUTO, and the service will automatically choose from one of the coding modes above.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -55,6 +56,8 @@ pub enum AacCodingMode {
     CodingMode20,
     #[allow(missing_docs)] // documentation missing in model
     CodingMode51,
+    #[allow(missing_docs)] // documentation missing in model
+    CodingModeAuto,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for AacCodingMode {
             "CODING_MODE_1_1" => AacCodingMode::CodingMode11,
             "CODING_MODE_2_0" => AacCodingMode::CodingMode20,
             "CODING_MODE_5_1" => AacCodingMode::CodingMode51,
+            "CODING_MODE_AUTO" => AacCodingMode::CodingModeAuto,
             other => AacCodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +91,7 @@ impl AacCodingMode {
             AacCodingMode::CodingMode11 => "CODING_MODE_1_1",
             AacCodingMode::CodingMode20 => "CODING_MODE_2_0",
             AacCodingMode::CodingMode51 => "CODING_MODE_5_1",
+            AacCodingMode::CodingModeAuto => "CODING_MODE_AUTO",
             AacCodingMode::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +103,7 @@ impl AacCodingMode {
             "CODING_MODE_1_1",
             "CODING_MODE_2_0",
             "CODING_MODE_5_1",
+            "CODING_MODE_AUTO",
         ]
     }
 }
@@ -126,6 +132,7 @@ impl ::std::fmt::Display for AacCodingMode {
             AacCodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
             AacCodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             AacCodingMode::CodingMode51 => write!(f, "CODING_MODE_5_1"),
+            AacCodingMode::CodingModeAuto => write!(f, "CODING_MODE_AUTO"),
             AacCodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }

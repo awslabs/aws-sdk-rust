@@ -20,7 +20,7 @@ pub struct RouterInput {
     pub routed_outputs: i32,
     /// <p>The maximum number of outputs that can be simultaneously routed to this input.</p>
     pub maximum_routed_outputs: ::std::option::Option<i32>,
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub region_name: ::std::string::String,
     /// <p>The Availability Zone of the router input.</p>
     pub availability_zone: ::std::string::String,
@@ -89,7 +89,7 @@ impl RouterInput {
     pub fn maximum_routed_outputs(&self) -> ::std::option::Option<i32> {
         self.maximum_routed_outputs
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn region_name(&self) -> &str {
         use std::ops::Deref;
         self.region_name.deref()
@@ -313,18 +313,18 @@ impl RouterInputBuilder {
     pub fn get_maximum_routed_outputs(&self) -> &::std::option::Option<i32> {
         &self.maximum_routed_outputs
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

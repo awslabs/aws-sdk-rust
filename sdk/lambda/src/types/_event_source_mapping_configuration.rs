@@ -73,6 +73,8 @@ pub struct EventSourceMappingConfiguration {
     pub event_source_mapping_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event source mapping metrics</a>.</p>
     pub metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
 }
@@ -216,6 +218,10 @@ impl EventSourceMappingConfiguration {
     pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingMetricsConfig> {
         self.metrics_config.as_ref()
     }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn logging_config(&self) -> ::std::option::Option<&crate::types::EventSourceMappingLoggingConfig> {
+        self.logging_config.as_ref()
+    }
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub fn provisioned_poller_config(&self) -> ::std::option::Option<&crate::types::ProvisionedPollerConfig> {
         self.provisioned_poller_config.as_ref()
@@ -263,6 +269,7 @@ pub struct EventSourceMappingConfigurationBuilder {
     pub(crate) filter_criteria_error: ::std::option::Option<crate::types::FilterCriteriaError>,
     pub(crate) event_source_mapping_arn: ::std::option::Option<::std::string::String>,
     pub(crate) metrics_config: ::std::option::Option<crate::types::EventSourceMappingMetricsConfig>,
+    pub(crate) logging_config: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>,
     pub(crate) provisioned_poller_config: ::std::option::Option<crate::types::ProvisionedPollerConfig>,
 }
 impl EventSourceMappingConfigurationBuilder {
@@ -754,6 +761,20 @@ impl EventSourceMappingConfigurationBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingMetricsConfig> {
         &self.metrics_config
     }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn logging_config(mut self, input: crate::types::EventSourceMappingLoggingConfig) -> Self {
+        self.logging_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn set_logging_config(mut self, input: ::std::option::Option<crate::types::EventSourceMappingLoggingConfig>) -> Self {
+        self.logging_config = input;
+        self
+    }
+    /// <p>(Amazon MSK, and self-managed Apache Kafka only) The logging configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/esm-logging.html">Event source mapping logging</a>.</p>
+    pub fn get_logging_config(&self) -> &::std::option::Option<crate::types::EventSourceMappingLoggingConfig> {
+        &self.logging_config
+    }
     /// <p>(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">provisioned mode</a>.</p>
     pub fn provisioned_poller_config(mut self, input: crate::types::ProvisionedPollerConfig) -> Self {
         self.provisioned_poller_config = ::std::option::Option::Some(input);
@@ -802,6 +823,7 @@ impl EventSourceMappingConfigurationBuilder {
             filter_criteria_error: self.filter_criteria_error,
             event_source_mapping_arn: self.event_source_mapping_arn,
             metrics_config: self.metrics_config,
+            logging_config: self.logging_config,
             provisioned_poller_config: self.provisioned_poller_config,
         }
     }

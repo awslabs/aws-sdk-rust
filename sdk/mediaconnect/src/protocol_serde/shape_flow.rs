@@ -95,6 +95,9 @@ where
                         "ndiConfig" => {
                             builder = builder.set_ndi_config(crate::protocol_serde::shape_ndi_config::de_ndi_config(tokens)?);
                         }
+                        "encodingConfig" => {
+                            builder = builder.set_encoding_config(crate::protocol_serde::shape_encoding_config::de_encoding_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

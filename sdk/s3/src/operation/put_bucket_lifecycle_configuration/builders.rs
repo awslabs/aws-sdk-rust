@@ -29,12 +29,6 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// <dt>
 /// Rules
 /// </dt>
-/// <dt>
-/// Permissions
-/// </dt>
-/// <dt>
-/// HTTP Host header syntax
-/// </dt>
 /// <dd>
 /// <p>You specify the lifecycle configuration in your request body. The lifecycle configuration is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules. This limit is not adjustable.</p>
 /// <p>Bucket lifecycle configuration supports specifying a lifecycle rule using an object key name prefix, one or more object tags, object size, or any combination of these. Accordingly, this section describes the latest API. The previous version of the API supported filtering based only on an object key name prefix, which is supported for backward compatibility for general purpose buckets. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p><note>
@@ -51,6 +45,9 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle Configuration Elements</a>.</p>
 /// </dd>
+/// <dt>
+/// Permissions
+/// </dt>
 /// <dd>
 /// <ul>
 /// <li>
@@ -74,6 +71,9 @@ impl crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLi
 /// </note></li>
 /// </ul>
 /// </dd>
+/// <dt>
+/// HTTP Host header syntax
+/// </dt>
 /// <dd>
 /// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p>
 /// <p>The following operations are related to <code>PutBucketLifecycleConfiguration</code>:</p>

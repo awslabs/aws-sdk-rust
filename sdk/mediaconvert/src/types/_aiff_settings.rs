@@ -6,7 +6,7 @@
 pub struct AiffSettings {
     /// Specify Bit depth, in bits per sample, to choose the encoding quality for this audio track.
     pub bit_depth: ::std::option::Option<i32>,
-    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    /// Specify the number of channels in this output audio track. Valid values are 0, 1, and even numbers up to 64. Choose 0 to follow the number of channels from your input audio. Otherwise, manually choose from 1, 2, 4, 6, and so on, up to 64.
     pub channels: ::std::option::Option<i32>,
     /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl AiffSettings {
     pub fn bit_depth(&self) -> ::std::option::Option<i32> {
         self.bit_depth
     }
-    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    /// Specify the number of channels in this output audio track. Valid values are 0, 1, and even numbers up to 64. Choose 0 to follow the number of channels from your input audio. Otherwise, manually choose from 1, 2, 4, 6, and so on, up to 64.
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
@@ -55,17 +55,17 @@ impl AiffSettingsBuilder {
     pub fn get_bit_depth(&self) -> &::std::option::Option<i32> {
         &self.bit_depth
     }
-    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    /// Specify the number of channels in this output audio track. Valid values are 0, 1, and even numbers up to 64. Choose 0 to follow the number of channels from your input audio. Otherwise, manually choose from 1, 2, 4, 6, and so on, up to 64.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    /// Specify the number of channels in this output audio track. Valid values are 0, 1, and even numbers up to 64. Choose 0 to follow the number of channels from your input audio. Otherwise, manually choose from 1, 2, 4, 6, and so on, up to 64.
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
-    /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
+    /// Specify the number of channels in this output audio track. Valid values are 0, 1, and even numbers up to 64. Choose 0 to follow the number of channels from your input audio. Otherwise, manually choose from 1, 2, 4, 6, and so on, up to 64.
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }

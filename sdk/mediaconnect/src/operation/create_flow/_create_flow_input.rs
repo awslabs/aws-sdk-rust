@@ -25,10 +25,12 @@ pub struct CreateFlowInput {
     pub maintenance: ::std::option::Option<crate::types::AddMaintenance>,
     /// <p>The settings for source monitoring.</p>
     pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub flow_size: ::std::option::Option<crate::types::FlowSize>,
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
     /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
     pub flow_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -87,13 +89,17 @@ impl CreateFlowInput {
     pub fn source_monitoring_config(&self) -> ::std::option::Option<&crate::types::MonitoringConfig> {
         self.source_monitoring_config.as_ref()
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn flow_size(&self) -> ::std::option::Option<&crate::types::FlowSize> {
         self.flow_size.as_ref()
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(&self) -> ::std::option::Option<&crate::types::NdiConfig> {
         self.ndi_config.as_ref()
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(&self) -> ::std::option::Option<&crate::types::EncodingConfig> {
+        self.encoding_config.as_ref()
     }
     /// <p>The key-value pairs that can be used to tag and organize the flow.</p>
     pub fn flow_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -124,6 +130,7 @@ pub struct CreateFlowInputBuilder {
     pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     pub(crate) flow_size: ::std::option::Option<crate::types::FlowSize>,
     pub(crate) ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    pub(crate) encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
     pub(crate) flow_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFlowInputBuilder {
@@ -312,33 +319,47 @@ impl CreateFlowInputBuilder {
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         &self.source_monitoring_config
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
         self.flow_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
         self.flow_size = input;
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
         &self.flow_size
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
         self.ndi_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
         self.ndi_config = input;
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         &self.ndi_config
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(mut self, input: crate::types::EncodingConfig) -> Self {
+        self.encoding_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn set_encoding_config(mut self, input: ::std::option::Option<crate::types::EncodingConfig>) -> Self {
+        self.encoding_config = input;
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn get_encoding_config(&self) -> &::std::option::Option<crate::types::EncodingConfig> {
+        &self.encoding_config
     }
     /// Adds a key-value pair to `flow_tags`.
     ///
@@ -376,6 +397,7 @@ impl CreateFlowInputBuilder {
             source_monitoring_config: self.source_monitoring_config,
             flow_size: self.flow_size,
             ndi_config: self.ndi_config,
+            encoding_config: self.encoding_config,
             flow_tags: self.flow_tags,
         })
     }

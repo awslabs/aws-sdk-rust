@@ -67,6 +67,8 @@ pub use crate::types::_dolby_vision_level6_mode::DolbyVisionLevel6Mode;
 
 pub use crate::types::_dolby_vision_level6_metadata::DolbyVisionLevel6Metadata;
 
+pub use crate::types::_dolby_vision_compatibility::DolbyVisionCompatibility;
+
 pub use crate::types::_deinterlacer::Deinterlacer;
 
 pub use crate::types::_deinterlacer_mode::DeinterlacerMode;
@@ -470,6 +472,8 @@ pub use crate::types::_mxf_settings::MxfSettings;
 pub use crate::types::_mxf_xavc_profile_settings::MxfXavcProfileSettings;
 
 pub use crate::types::_mxf_xavc_duration_mode::MxfXavcDurationMode;
+
+pub use crate::types::_mxf_uncompressed_audio_wrapping::MxfUncompressedAudioWrapping;
 
 pub use crate::types::_mxf_profile::MxfProfile;
 
@@ -1683,6 +1687,8 @@ mod _destination_settings;
 
 mod _dolby_vision;
 
+mod _dolby_vision_compatibility;
+
 mod _dolby_vision_level6_metadata;
 
 mod _dolby_vision_level6_mode;
@@ -2282,6 +2288,8 @@ mod _mxf_afd_signaling;
 mod _mxf_profile;
 
 mod _mxf_settings;
+
+mod _mxf_uncompressed_audio_wrapping;
 
 mod _mxf_xavc_duration_mode;
 

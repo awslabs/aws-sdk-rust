@@ -8,6 +8,8 @@ pub struct MxfSettings {
     pub afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
     /// Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
     pub profile: ::std::option::Option<crate::types::MxfProfile>,
+    /// Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors. This setting only takes effect when the MXF profile is OP1a.
+    pub uncompressed_audio_wrapping: ::std::option::Option<crate::types::MxfUncompressedAudioWrapping>,
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
     pub xavc_profile_settings: ::std::option::Option<crate::types::MxfXavcProfileSettings>,
 }
@@ -19,6 +21,10 @@ impl MxfSettings {
     /// Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
     pub fn profile(&self) -> ::std::option::Option<&crate::types::MxfProfile> {
         self.profile.as_ref()
+    }
+    /// Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors. This setting only takes effect when the MXF profile is OP1a.
+    pub fn uncompressed_audio_wrapping(&self) -> ::std::option::Option<&crate::types::MxfUncompressedAudioWrapping> {
+        self.uncompressed_audio_wrapping.as_ref()
     }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
     pub fn xavc_profile_settings(&self) -> ::std::option::Option<&crate::types::MxfXavcProfileSettings> {
@@ -38,6 +44,7 @@ impl MxfSettings {
 pub struct MxfSettingsBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::MxfAfdSignaling>,
     pub(crate) profile: ::std::option::Option<crate::types::MxfProfile>,
+    pub(crate) uncompressed_audio_wrapping: ::std::option::Option<crate::types::MxfUncompressedAudioWrapping>,
     pub(crate) xavc_profile_settings: ::std::option::Option<crate::types::MxfXavcProfileSettings>,
 }
 impl MxfSettingsBuilder {
@@ -69,6 +76,20 @@ impl MxfSettingsBuilder {
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::MxfProfile> {
         &self.profile
     }
+    /// Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors. This setting only takes effect when the MXF profile is OP1a.
+    pub fn uncompressed_audio_wrapping(mut self, input: crate::types::MxfUncompressedAudioWrapping) -> Self {
+        self.uncompressed_audio_wrapping = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors. This setting only takes effect when the MXF profile is OP1a.
+    pub fn set_uncompressed_audio_wrapping(mut self, input: ::std::option::Option<crate::types::MxfUncompressedAudioWrapping>) -> Self {
+        self.uncompressed_audio_wrapping = input;
+        self
+    }
+    /// Choose the audio frame wrapping mode for PCM tracks in MXF outputs. AUTO (default): Uses codec-appropriate defaults - BWF for H.264/AVC, AES3 for MPEG2/XDCAM. AES3: Use AES3 frame wrapping with SMPTE-compliant descriptors. This setting only takes effect when the MXF profile is OP1a.
+    pub fn get_uncompressed_audio_wrapping(&self) -> &::std::option::Option<crate::types::MxfUncompressedAudioWrapping> {
+        &self.uncompressed_audio_wrapping
+    }
     /// Specify the XAVC profile settings for MXF outputs when you set your MXF profile to XAVC.
     pub fn xavc_profile_settings(mut self, input: crate::types::MxfXavcProfileSettings) -> Self {
         self.xavc_profile_settings = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl MxfSettingsBuilder {
         crate::types::MxfSettings {
             afd_signaling: self.afd_signaling,
             profile: self.profile,
+            uncompressed_audio_wrapping: self.uncompressed_audio_wrapping,
             xavc_profile_settings: self.xavc_profile_settings,
         }
     }

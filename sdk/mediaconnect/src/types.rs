@@ -229,6 +229,8 @@ pub use crate::types::_vpc_interface_attachment::VpcInterfaceAttachment;
 
 pub use crate::types::_transport::Transport;
 
+pub use crate::types::_ndi_source_settings::NdiSourceSettings;
+
 pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfiguration;
@@ -303,6 +305,14 @@ pub use crate::types::_grant_entitlement_request::GrantEntitlementRequest;
 
 pub use crate::types::_thumbnail_details::ThumbnailDetails;
 
+pub use crate::types::_ndi_source_metadata_info::NdiSourceMetadataInfo;
+
+pub use crate::types::_ndi_media_info::NdiMediaInfo;
+
+pub use crate::types::_ndi_media_stream_info::NdiMediaStreamInfo;
+
+pub use crate::types::_ndi_source_info::NdiSourceInfo;
+
 pub use crate::types::_vpc_interface::VpcInterface;
 
 pub use crate::types::_network_interface_type::NetworkInterfaceType;
@@ -318,6 +328,10 @@ pub use crate::types::_add_output_request::AddOutputRequest;
 pub use crate::types::_add_media_stream_request::AddMediaStreamRequest;
 
 pub use crate::types::_flow::Flow;
+
+pub use crate::types::_encoding_config::EncodingConfig;
+
+pub use crate::types::_encoding_profile::EncodingProfile;
 
 pub use crate::types::_ndi_config::NdiConfig;
 
@@ -491,11 +505,15 @@ mod _egress_gateway_bridge;
 
 mod _encoder_profile;
 
+mod _encoding_config;
+
 mod _encoding_name;
 
 mod _encoding_parameters;
 
 mod _encoding_parameters_request;
+
+mod _encoding_profile;
 
 mod _encryption;
 
@@ -646,6 +664,16 @@ mod _multicast_source_settings;
 mod _ndi_config;
 
 mod _ndi_discovery_server_config;
+
+mod _ndi_media_info;
+
+mod _ndi_media_stream_info;
+
+mod _ndi_source_info;
+
+mod _ndi_source_metadata_info;
+
+mod _ndi_source_settings;
 
 mod _ndi_state;
 

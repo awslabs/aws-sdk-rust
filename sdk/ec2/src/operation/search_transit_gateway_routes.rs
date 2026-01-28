@@ -356,3 +356,6 @@ mod _search_transit_gateway_routes_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

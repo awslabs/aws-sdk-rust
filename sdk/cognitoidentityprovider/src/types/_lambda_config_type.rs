@@ -33,6 +33,8 @@ pub struct LambdaConfigType {
     pub custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     /// <p>The ARN of an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to custom sender Lambda triggers.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration of an inbound federation Lambda trigger. This trigger can transform federated user attributes during the authentication with external identity providers.</p>
+    pub inbound_federation: ::std::option::Option<crate::types::InboundFederationLambdaType>,
 }
 impl LambdaConfigType {
     /// <p>The configuration of a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a> in a user pool. This trigger evaluates new users and can bypass confirmation, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link a federated user profile</a>, or block sign-up requests.</p>
@@ -92,6 +94,10 @@ impl LambdaConfigType {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The configuration of an inbound federation Lambda trigger. This trigger can transform federated user attributes during the authentication with external identity providers.</p>
+    pub fn inbound_federation(&self) -> ::std::option::Option<&crate::types::InboundFederationLambdaType> {
+        self.inbound_federation.as_ref()
+    }
 }
 impl LambdaConfigType {
     /// Creates a new builder-style object to manufacture [`LambdaConfigType`](crate::types::LambdaConfigType).
@@ -118,6 +124,7 @@ pub struct LambdaConfigTypeBuilder {
     pub(crate) custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     pub(crate) custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) inbound_federation: ::std::option::Option<crate::types::InboundFederationLambdaType>,
 }
 impl LambdaConfigTypeBuilder {
     /// <p>The configuration of a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a> in a user pool. This trigger evaluates new users and can bypass confirmation, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link a federated user profile</a>, or block sign-up requests.</p>
@@ -319,6 +326,20 @@ impl LambdaConfigTypeBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// <p>The configuration of an inbound federation Lambda trigger. This trigger can transform federated user attributes during the authentication with external identity providers.</p>
+    pub fn inbound_federation(mut self, input: crate::types::InboundFederationLambdaType) -> Self {
+        self.inbound_federation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of an inbound federation Lambda trigger. This trigger can transform federated user attributes during the authentication with external identity providers.</p>
+    pub fn set_inbound_federation(mut self, input: ::std::option::Option<crate::types::InboundFederationLambdaType>) -> Self {
+        self.inbound_federation = input;
+        self
+    }
+    /// <p>The configuration of an inbound federation Lambda trigger. This trigger can transform federated user attributes during the authentication with external identity providers.</p>
+    pub fn get_inbound_federation(&self) -> &::std::option::Option<crate::types::InboundFederationLambdaType> {
+        &self.inbound_federation
+    }
     /// Consumes the builder and constructs a [`LambdaConfigType`](crate::types::LambdaConfigType).
     pub fn build(self) -> crate::types::LambdaConfigType {
         crate::types::LambdaConfigType {
@@ -336,6 +357,7 @@ impl LambdaConfigTypeBuilder {
             custom_sms_sender: self.custom_sms_sender,
             custom_email_sender: self.custom_email_sender,
             kms_key_id: self.kms_key_id,
+            inbound_federation: self.inbound_federation,
         }
     }
 }

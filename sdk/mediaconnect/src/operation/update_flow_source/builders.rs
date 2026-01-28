@@ -22,7 +22,27 @@ impl crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateFlowSource`.
 ///
-/// <p>Updates the source of a flow.</p>
+/// <p>Updates the source of a flow.</p><note>
+/// <p>Because <code>UpdateFlowSources</code> and <code>UpdateFlow</code> are separate operations, you can't change both the source type AND the flow size in a single request.</p>
+/// <ul>
+/// <li>
+/// <p>If you have a <code>MEDIUM</code> flow and you want to change the flow source to NDI®:</p>
+/// <ul>
+/// <li>
+/// <p>First, use the <code>UpdateFlow</code> operation to upgrade the flow size to <code>LARGE</code>.</p></li>
+/// <li>
+/// <p>After that, you can then use the <code>UpdateFlowSource</code> operation to configure the NDI source.</p></li>
+/// </ul></li>
+/// <li>
+/// <p>If you're switching from an NDI source to a transport stream (TS) source and want to downgrade the flow size:</p>
+/// <ul>
+/// <li>
+/// <p>First, use the <code>UpdateFlowSource</code> operation to change the flow source type.</p></li>
+/// <li>
+/// <p>After that, you can then use the <code>UpdateFlow</code> operation to downgrade the flow size to <code>MEDIUM</code>.</p></li>
+/// </ul></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -403,6 +423,20 @@ impl UpdateFlowSourceFluentBuilder {
     /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest> {
         self.inner.get_gateway_bridge_source()
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn ndi_source_settings(mut self, input: crate::types::NdiSourceSettings) -> Self {
+        self.inner = self.inner.ndi_source_settings(input);
+        self
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn set_ndi_source_settings(mut self, input: ::std::option::Option<crate::types::NdiSourceSettings>) -> Self {
+        self.inner = self.inner.set_ndi_source_settings(input);
+        self
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn get_ndi_source_settings(&self) -> &::std::option::Option<crate::types::NdiSourceSettings> {
+        self.inner.get_ndi_source_settings()
     }
     /// <p>Indicates whether to enable or disable router integration for this flow source.</p>
     pub fn router_integration_state(mut self, input: crate::types::State) -> Self {

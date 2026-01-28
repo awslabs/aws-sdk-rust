@@ -30,6 +30,14 @@ pub struct SearchCriteria {
     pub searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
     /// <p>The list of active regions for contacts in ACGR instances.</p>
     pub active_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p></li>
+    /// <li>
+    /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
+    /// </ul>
+    pub contact_tags: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }
 impl SearchCriteria {
     /// <p>Name of the contact.</p>
@@ -92,6 +100,16 @@ impl SearchCriteria {
     pub fn active_regions(&self) -> &[::std::string::String] {
         self.active_regions.as_deref().unwrap_or_default()
     }
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p></li>
+    /// <li>
+    /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
+    /// </ul>
+    pub fn contact_tags(&self) -> ::std::option::Option<&crate::types::ControlPlaneTagFilter> {
+        self.contact_tags.as_ref()
+    }
 }
 impl SearchCriteria {
     /// Creates a new builder-style object to manufacture [`SearchCriteria`](crate::types::SearchCriteria).
@@ -116,6 +134,7 @@ pub struct SearchCriteriaBuilder {
     pub(crate) searchable_contact_attributes: ::std::option::Option<crate::types::SearchableContactAttributes>,
     pub(crate) searchable_segment_attributes: ::std::option::Option<crate::types::SearchableSegmentAttributes>,
     pub(crate) active_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) contact_tags: ::std::option::Option<crate::types::ControlPlaneTagFilter>,
 }
 impl SearchCriteriaBuilder {
     /// <p>Name of the contact.</p>
@@ -322,6 +341,38 @@ impl SearchCriteriaBuilder {
     pub fn get_active_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.active_regions
     }
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p></li>
+    /// <li>
+    /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
+    /// </ul>
+    pub fn contact_tags(mut self, input: crate::types::ControlPlaneTagFilter) -> Self {
+        self.contact_tags = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p></li>
+    /// <li>
+    /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
+    /// </ul>
+    pub fn set_contact_tags(mut self, input: ::std::option::Option<crate::types::ControlPlaneTagFilter>) -> Self {
+        self.contact_tags = input;
+        self
+    }
+    /// <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p></li>
+    /// <li>
+    /// <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p></li>
+    /// </ul>
+    pub fn get_contact_tags(&self) -> &::std::option::Option<crate::types::ControlPlaneTagFilter> {
+        &self.contact_tags
+    }
     /// Consumes the builder and constructs a [`SearchCriteria`](crate::types::SearchCriteria).
     pub fn build(self) -> crate::types::SearchCriteria {
         crate::types::SearchCriteria {
@@ -337,6 +388,7 @@ impl SearchCriteriaBuilder {
             searchable_contact_attributes: self.searchable_contact_attributes,
             searchable_segment_attributes: self.searchable_segment_attributes,
             active_regions: self.active_regions,
+            contact_tags: self.contact_tags,
         }
     }
 }

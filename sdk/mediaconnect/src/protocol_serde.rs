@@ -317,6 +317,8 @@ pub(crate) mod shape_bridge_output;
 
 pub(crate) mod shape_bridge_source;
 
+pub(crate) mod shape_encoding_config;
+
 pub(crate) mod shape_entitlement;
 
 pub(crate) mod shape_failover_config;
@@ -390,6 +392,10 @@ pub(crate) mod shape_messages;
 pub(crate) mod shape_monitoring_config;
 
 pub(crate) mod shape_ndi_config;
+
+pub(crate) mod shape_ndi_source_metadata_info;
+
+pub(crate) mod shape_ndi_source_settings;
 
 pub(crate) mod shape_offering;
 
@@ -509,6 +515,8 @@ pub(crate) mod shape_list_of_media_stream_output_configuration;
 
 pub(crate) mod shape_list_of_media_stream_source_configuration;
 
+pub(crate) mod shape_list_of_ndi_source_info;
+
 pub(crate) mod shape_list_of_transport_stream_program;
 
 pub(crate) mod shape_listed_bridge;
@@ -544,6 +552,10 @@ pub(crate) mod shape_message_detail;
 pub(crate) mod shape_multicast_source_settings;
 
 pub(crate) mod shape_ndi_discovery_server_config;
+
+pub(crate) mod shape_ndi_media_info;
+
+pub(crate) mod shape_ndi_source_info;
 
 pub(crate) mod shape_preferred_day_time_maintenance_configuration;
 
@@ -598,6 +610,8 @@ pub(crate) mod shape_interface_request;
 pub(crate) mod shape_list_of_audio_monitoring_setting;
 
 pub(crate) mod shape_list_of_ndi_discovery_server_config;
+
+pub(crate) mod shape_list_of_ndi_media_stream_info;
 
 pub(crate) mod shape_list_of_video_monitoring_setting;
 
@@ -655,6 +669,8 @@ pub(crate) mod shape_merge_router_input_indexed_stream_details;
 
 pub(crate) mod shape_merge_router_input_protocol_configuration_list;
 
+pub(crate) mod shape_ndi_media_stream_info;
+
 pub(crate) mod shape_network_interface_rule_list;
 
 pub(crate) mod shape_rist_router_input_configuration;
@@ -677,6 +693,8 @@ pub(crate) mod shape_srt_listener_router_output_configuration;
 
 pub(crate) mod shape_destination_configuration;
 
+pub(crate) mod shape_frame_resolution;
+
 pub(crate) mod shape_input_configuration;
 
 pub(crate) mod shape_srt_decryption_configuration;
@@ -684,7 +702,5 @@ pub(crate) mod shape_srt_decryption_configuration;
 pub(crate) mod shape_srt_encryption_configuration;
 
 pub(crate) mod shape_transport_stream;
-
-pub(crate) mod shape_frame_resolution;
 
 pub(crate) mod shape_interface;

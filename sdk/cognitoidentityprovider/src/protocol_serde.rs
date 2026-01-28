@@ -793,6 +793,8 @@ pub(crate) mod shape_http_header;
 
 pub(crate) mod shape_idp_identifiers_list_type;
 
+pub(crate) mod shape_inbound_federation_lambda_type;
+
 pub(crate) mod shape_links_type;
 
 pub(crate) mod shape_log_configuration_list_type;

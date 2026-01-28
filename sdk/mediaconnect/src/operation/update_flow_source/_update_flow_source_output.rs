@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowSourceOutput {
-    /// <p>The ARN of the flow that you was updated.</p>
+    /// <p>The ARN of the flow that you updated.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>The details of the sources that are assigned to the flow.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     _request_id: Option<String>,
 }
 impl UpdateFlowSourceOutput {
-    /// <p>The ARN of the flow that you was updated.</p>
+    /// <p>The ARN of the flow that you updated.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct UpdateFlowSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowSourceOutputBuilder {
-    /// <p>The ARN of the flow that you was updated.</p>
+    /// <p>The ARN of the flow that you updated.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the flow that you was updated.</p>
+    /// <p>The ARN of the flow that you updated.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// <p>The ARN of the flow that you was updated.</p>
+    /// <p>The ARN of the flow that you updated.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }

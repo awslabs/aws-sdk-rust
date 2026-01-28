@@ -311,6 +311,14 @@ pub(crate) mod shape_update_bucket_metadata_journal_table_configuration;
 
 pub(crate) mod shape_update_bucket_metadata_journal_table_configuration_input;
 
+pub(crate) mod shape_update_object_encryption;
+
+pub fn rest_xml_unset_union_payload() -> ::std::vec::Vec<u8> {
+    ::std::vec::Vec::new()
+}
+
+pub(crate) mod shape_update_object_encryption_input;
+
 pub(crate) mod shape_upload_part;
 
 pub(crate) mod shape_upload_part_copy;
@@ -322,6 +330,8 @@ pub(crate) mod shape_write_get_object_response;
 pub(crate) mod shape_write_get_object_response_input;
 
 pub(crate) mod shape_abort_multipart_upload_output;
+
+pub(crate) mod shape_access_denied;
 
 pub(crate) mod shape_bucket_already_exists;
 
@@ -447,6 +457,8 @@ pub(crate) mod shape_select_object_content_output;
 
 pub(crate) mod shape_too_many_parts;
 
+pub(crate) mod shape_update_object_encryption_output;
+
 pub(crate) mod shape_upload_part_copy_output;
 
 pub(crate) mod shape_upload_part_output;
@@ -530,6 +542,8 @@ pub(crate) mod shape_multipart_upload;
 pub(crate) mod shape_notification_configuration;
 
 pub(crate) mod shape_object;
+
+pub(crate) mod shape_object_encryption;
 
 pub(crate) mod shape_object_lock_configuration;
 
@@ -666,6 +680,8 @@ pub(crate) mod shape_s3_tables_destination;
 pub(crate) mod shape_select_parameters;
 
 pub(crate) mod shape_server_side_encryption_rule;
+
+pub(crate) mod shape_ssekms_encryption;
 
 pub(crate) mod shape_stats_event;
 

@@ -381,17 +381,17 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
         self.inner.get_output_status()
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn ndi_program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ndi_program_name(input.into());
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn set_ndi_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ndi_program_name(input);
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn get_ndi_program_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ndi_program_name()
     }

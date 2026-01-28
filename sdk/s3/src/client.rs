@@ -413,6 +413,8 @@ mod update_bucket_metadata_inventory_table_configuration;
 
 mod update_bucket_metadata_journal_table_configuration;
 
+mod update_object_encryption;
+
 mod upload_part;
 
 mod upload_part_copy;

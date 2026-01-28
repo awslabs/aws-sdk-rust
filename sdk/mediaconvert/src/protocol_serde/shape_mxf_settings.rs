@@ -9,11 +9,14 @@ pub fn ser_mxf_settings(
     if let Some(var_2) = &input.profile {
         object.key("profile").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.xavc_profile_settings {
+    if let Some(var_3) = &input.uncompressed_audio_wrapping {
+        object.key("uncompressedAudioWrapping").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.xavc_profile_settings {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("xavcProfileSettings").start_object();
-        crate::protocol_serde::shape_mxf_xavc_profile_settings::ser_mxf_xavc_profile_settings(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("xavcProfileSettings").start_object();
+        crate::protocol_serde::shape_mxf_xavc_profile_settings::ser_mxf_xavc_profile_settings(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -44,6 +47,13 @@ where
                             builder = builder.set_profile(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::MxfProfile::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "uncompressedAudioWrapping" => {
+                            builder = builder.set_uncompressed_audio_wrapping(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MxfUncompressedAudioWrapping::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

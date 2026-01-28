@@ -108,6 +108,12 @@ impl SearchTransitGatewayRoutesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_transit_gateway_routes::paginator::SearchTransitGatewayRoutesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::search_transit_gateway_routes::paginator::SearchTransitGatewayRoutesPaginator {
+        crate::operation::search_transit_gateway_routes::paginator::SearchTransitGatewayRoutesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
@@ -234,5 +240,19 @@ impl SearchTransitGatewayRoutesFluentBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

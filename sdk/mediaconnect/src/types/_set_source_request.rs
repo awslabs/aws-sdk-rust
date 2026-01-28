@@ -44,6 +44,8 @@ pub struct SetSourceRequest {
     pub whitelist_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    /// <p>The settings for the NDI® source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
     /// <p>The key-value pairs that can be used to tag and organize the source.</p>
     pub source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Indicates whether to enable or disable router integration when setting a flow source.</p>
@@ -132,6 +134,10 @@ impl SetSourceRequest {
     pub fn gateway_bridge_source(&self) -> ::std::option::Option<&crate::types::SetGatewayBridgeSourceRequest> {
         self.gateway_bridge_source.as_ref()
     }
+    /// <p>The settings for the NDI® source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn ndi_source_settings(&self) -> ::std::option::Option<&crate::types::NdiSourceSettings> {
+        self.ndi_source_settings.as_ref()
+    }
     /// <p>The key-value pairs that can be used to tag and organize the source.</p>
     pub fn source_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.source_tags.as_ref()
@@ -175,6 +181,7 @@ pub struct SetSourceRequestBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) whitelist_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_bridge_source: ::std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    pub(crate) ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
     pub(crate) source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
     pub(crate) router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
@@ -463,6 +470,20 @@ impl SetSourceRequestBuilder {
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::SetGatewayBridgeSourceRequest> {
         &self.gateway_bridge_source
     }
+    /// <p>The settings for the NDI® source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn ndi_source_settings(mut self, input: crate::types::NdiSourceSettings) -> Self {
+        self.ndi_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the NDI® source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn set_ndi_source_settings(mut self, input: ::std::option::Option<crate::types::NdiSourceSettings>) -> Self {
+        self.ndi_source_settings = input;
+        self
+    }
+    /// <p>The settings for the NDI® source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn get_ndi_source_settings(&self) -> &::std::option::Option<crate::types::NdiSourceSettings> {
+        &self.ndi_source_settings
+    }
     /// Adds a key-value pair to `source_tags`.
     ///
     /// To override the contents of this collection use [`set_source_tags`](Self::set_source_tags).
@@ -536,6 +557,7 @@ impl SetSourceRequestBuilder {
             vpc_interface_name: self.vpc_interface_name,
             whitelist_cidr: self.whitelist_cidr,
             gateway_bridge_source: self.gateway_bridge_source,
+            ndi_source_settings: self.ndi_source_settings,
             source_tags: self.source_tags,
             router_integration_state: self.router_integration_state,
             router_integration_transit_decryption: self.router_integration_transit_decryption,

@@ -61,6 +61,10 @@ pub use crate::types::_default_email_option_type::DefaultEmailOptionType;
 
 pub use crate::types::_lambda_config_type::LambdaConfigType;
 
+pub use crate::types::_inbound_federation_lambda_type::InboundFederationLambdaType;
+
+pub use crate::types::_inbound_federation_lambda_version_type::InboundFederationLambdaVersionType;
+
 pub use crate::types::_custom_email_lambda_version_config_type::CustomEmailLambdaVersionConfigType;
 
 pub use crate::types::_custom_email_sender_lambda_version_type::CustomEmailSenderLambdaVersionType;
@@ -392,6 +396,10 @@ mod _http_header;
 mod _identity_provider_type;
 
 mod _identity_provider_type_type;
+
+mod _inbound_federation_lambda_type;
+
+mod _inbound_federation_lambda_version_type;
 
 mod _lambda_config_type;
 

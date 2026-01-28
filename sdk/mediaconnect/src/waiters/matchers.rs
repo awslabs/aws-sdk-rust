@@ -271,6 +271,33 @@ pub(crate) fn match_get_router_input_eb00a4469dfee9c67(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"RouterInput.State","expected":"MIGRATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_input_713f2c3350f32c34f(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_input::GetRouterInputOutput,
+        &crate::operation::get_router_input::GetRouterInputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_input::GetRouterInputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterInputState> {
+        let _fld_1 = _output.router_input.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "MIGRATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"errorType":"InternalServerErrorException"}
 pub(crate) fn match_get_router_input_23a4ee68df28eed70(
     _result: ::std::result::Result<
@@ -505,6 +532,33 @@ pub(crate) fn match_get_router_output_db0cc9dc35c89baf9(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"RouterOutput.State","expected":"MIGRATING","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_2dcb927f5e38e8669(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "MIGRATING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"errorType":"InternalServerErrorException"}
 pub(crate) fn match_get_router_output_23a4ee68df28eed70(
     _result: ::std::result::Result<
@@ -706,6 +760,33 @@ pub(crate) fn match_get_router_output_89ebfca473d93d50c(
         .map(|value| {
             let _tmp_2 = value.as_str();
             let right = "STOPPING";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"RouterOutput.RoutedState","expected":"UNROUTED","comparator":"stringEquals"}}
+pub(crate) fn match_get_router_output_53183a19721add5e1(
+    _result: ::std::result::Result<
+        &crate::operation::get_router_output::GetRouterOutputOutput,
+        &crate::operation::get_router_output::GetRouterOutputError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_router_output::GetRouterOutputOutput,
+    ) -> ::std::option::Option<&'a crate::types::RouterOutputRoutedState> {
+        let _fld_1 = _output.router_output.as_ref()?;
+        let _fld_2 = &_fld_1.routed_state;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "UNROUTED";
             let _cmp_1 = _tmp_2 == right;
             _cmp_1
         })

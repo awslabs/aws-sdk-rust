@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VorbisSettings {
-    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    /// Optional. Specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 0, 1, and 2. The default value is 2.
     pub channels: ::std::option::Option<i32>,
     /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
     pub sample_rate: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct VorbisSettings {
     pub vbr_quality: ::std::option::Option<i32>,
 }
 impl VorbisSettings {
-    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    /// Optional. Specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 0, 1, and 2. The default value is 2.
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
@@ -41,17 +41,17 @@ pub struct VorbisSettingsBuilder {
     pub(crate) vbr_quality: ::std::option::Option<i32>,
 }
 impl VorbisSettingsBuilder {
-    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    /// Optional. Specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 0, 1, and 2. The default value is 2.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
         self
     }
-    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    /// Optional. Specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 0, 1, and 2. The default value is 2.
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
-    /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
+    /// Optional. Specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 0, 1, and 2. The default value is 2.
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }

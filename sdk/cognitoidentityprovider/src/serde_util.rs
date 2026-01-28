@@ -465,6 +465,18 @@ pub(crate) fn event_feedback_type_correct_errors(
     builder
 }
 
+pub(crate) fn inbound_federation_lambda_type_correct_errors(
+    mut builder: crate::types::builders::InboundFederationLambdaTypeBuilder,
+) -> crate::types::builders::InboundFederationLambdaTypeBuilder {
+    if builder.lambda_version.is_none() {
+        builder.lambda_version = "no value was set".parse::<crate::types::InboundFederationLambdaVersionType>().ok()
+    }
+    if builder.lambda_arn.is_none() {
+        builder.lambda_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn log_configuration_type_correct_errors(
     mut builder: crate::types::builders::LogConfigurationTypeBuilder,
 ) -> crate::types::builders::LogConfigurationTypeBuilder {

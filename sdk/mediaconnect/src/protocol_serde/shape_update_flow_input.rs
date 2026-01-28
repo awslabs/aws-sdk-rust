@@ -3,32 +3,38 @@ pub fn ser_update_flow_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_flow::UpdateFlowInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.flow_size {
-        object.key("flowSize").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.maintenance {
+    if let Some(var_1) = &input.encoding_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_update_maintenance::ser_update_maintenance(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("encodingConfig").start_object();
+        crate::protocol_serde::shape_encoding_config::ser_encoding_config(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.ndi_config {
+    if let Some(var_3) = &input.flow_size {
+        object.key("flowSize").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.maintenance {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ndiConfig").start_object();
-        crate::protocol_serde::shape_ndi_config::ser_ndi_config(&mut object_5, var_4)?;
+        let mut object_5 = object.key("maintenance").start_object();
+        crate::protocol_serde::shape_update_maintenance::ser_update_maintenance(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.source_failover_config {
+    if let Some(var_6) = &input.ndi_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("sourceFailoverConfig").start_object();
-        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(&mut object_7, var_6)?;
+        let mut object_7 = object.key("ndiConfig").start_object();
+        crate::protocol_serde::shape_ndi_config::ser_ndi_config(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.source_monitoring_config {
+    if let Some(var_8) = &input.source_failover_config {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("sourceMonitoringConfig").start_object();
-        crate::protocol_serde::shape_monitoring_config::ser_monitoring_config(&mut object_9, var_8)?;
+        let mut object_9 = object.key("sourceFailoverConfig").start_object();
+        crate::protocol_serde::shape_update_failover_config::ser_update_failover_config(&mut object_9, var_8)?;
         object_9.finish();
+    }
+    if let Some(var_10) = &input.source_monitoring_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("sourceMonitoringConfig").start_object();
+        crate::protocol_serde::shape_monitoring_config::ser_monitoring_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

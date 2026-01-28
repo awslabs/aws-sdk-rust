@@ -819,6 +819,24 @@ pub(crate) fn messages_correct_errors(mut builder: crate::types::builders::Messa
     builder
 }
 
+pub(crate) fn ndi_source_metadata_info_correct_errors(
+    mut builder: crate::types::builders::NdiSourceMetadataInfoBuilder,
+) -> crate::types::builders::NdiSourceMetadataInfoBuilder {
+    if builder.discovered_sources.is_none() {
+        builder.discovered_sources = Some(Default::default())
+    }
+    if builder.media_info.is_none() {
+        builder.media_info = {
+            let builder = crate::types::builders::NdiMediaInfoBuilder::default();
+            Some(crate::serde_util::ndi_media_info_correct_errors(builder).build())
+        }
+    }
+    if builder.messages.is_none() {
+        builder.messages = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn offering_correct_errors(mut builder: crate::types::builders::OfferingBuilder) -> crate::types::builders::OfferingBuilder {
     if builder.currency_code.is_none() {
         builder.currency_code = Some(Default::default())
@@ -1342,6 +1360,22 @@ pub(crate) fn message_detail_correct_errors(
     builder
 }
 
+pub(crate) fn ndi_media_info_correct_errors(mut builder: crate::types::builders::NdiMediaInfoBuilder) -> crate::types::builders::NdiMediaInfoBuilder {
+    if builder.streams.is_none() {
+        builder.streams = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ndi_source_info_correct_errors(
+    mut builder: crate::types::builders::NdiSourceInfoBuilder,
+) -> crate::types::builders::NdiSourceInfoBuilder {
+    if builder.source_name.is_none() {
+        builder.source_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_specification_correct_errors(
     mut builder: crate::types::builders::ResourceSpecificationBuilder,
 ) -> crate::types::builders::ResourceSpecificationBuilder {
@@ -1691,6 +1725,21 @@ pub(crate) fn ndi_discovery_server_config_correct_errors(
     builder
 }
 
+pub(crate) fn ndi_media_stream_info_correct_errors(
+    mut builder: crate::types::builders::NdiMediaStreamInfoBuilder,
+) -> crate::types::builders::NdiMediaStreamInfoBuilder {
+    if builder.stream_type.is_none() {
+        builder.stream_type = Some(Default::default())
+    }
+    if builder.codec.is_none() {
+        builder.codec = Some(Default::default())
+    }
+    if builder.stream_id.is_none() {
+        builder.stream_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn secrets_manager_encryption_key_configuration_correct_errors(
     mut builder: crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder,
 ) -> crate::types::builders::SecretsManagerEncryptionKeyConfigurationBuilder {
@@ -1720,6 +1769,18 @@ pub(crate) fn destination_configuration_correct_errors(
     }
     if builder.outbound_ip.is_none() {
         builder.outbound_ip = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn frame_resolution_correct_errors(
+    mut builder: crate::types::builders::FrameResolutionBuilder,
+) -> crate::types::builders::FrameResolutionBuilder {
+    if builder.frame_height.is_none() {
+        builder.frame_height = Some(Default::default())
+    }
+    if builder.frame_width.is_none() {
+        builder.frame_width = Some(Default::default())
     }
     builder
 }
@@ -1858,18 +1919,6 @@ pub(crate) fn transport_stream_correct_errors(
     }
     if builder.stream_type.is_none() {
         builder.stream_type = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn frame_resolution_correct_errors(
-    mut builder: crate::types::builders::FrameResolutionBuilder,
-) -> crate::types::builders::FrameResolutionBuilder {
-    if builder.frame_height.is_none() {
-        builder.frame_height = Some(Default::default())
-    }
-    if builder.frame_width.is_none() {
-        builder.frame_width = Some(Default::default())
     }
     builder
 }

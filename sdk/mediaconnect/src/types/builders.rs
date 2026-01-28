@@ -133,6 +133,8 @@ pub use crate::types::_vpc_interface_attachment::VpcInterfaceAttachmentBuilder;
 
 pub use crate::types::_transport::TransportBuilder;
 
+pub use crate::types::_ndi_source_settings::NdiSourceSettingsBuilder;
+
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfigurationBuilder;
 
 pub use crate::types::_input_configuration::InputConfigurationBuilder;
@@ -181,6 +183,14 @@ pub use crate::types::_grant_entitlement_request::GrantEntitlementRequestBuilder
 
 pub use crate::types::_thumbnail_details::ThumbnailDetailsBuilder;
 
+pub use crate::types::_ndi_source_metadata_info::NdiSourceMetadataInfoBuilder;
+
+pub use crate::types::_ndi_media_info::NdiMediaInfoBuilder;
+
+pub use crate::types::_ndi_media_stream_info::NdiMediaStreamInfoBuilder;
+
+pub use crate::types::_ndi_source_info::NdiSourceInfoBuilder;
+
 pub use crate::types::_vpc_interface::VpcInterfaceBuilder;
 
 pub use crate::types::_vpc_interface_request::VpcInterfaceRequestBuilder;
@@ -194,6 +204,8 @@ pub use crate::types::_add_output_request::AddOutputRequestBuilder;
 pub use crate::types::_add_media_stream_request::AddMediaStreamRequestBuilder;
 
 pub use crate::types::_flow::FlowBuilder;
+
+pub use crate::types::_encoding_config::EncodingConfigBuilder;
 
 pub use crate::types::_ndi_config::NdiConfigBuilder;
 

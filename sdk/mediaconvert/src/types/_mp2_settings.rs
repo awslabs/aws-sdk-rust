@@ -8,7 +8,7 @@ pub struct Mp2Settings {
     pub audio_description_mix: ::std::option::Option<crate::types::Mp2AudioDescriptionMix>,
     /// Specify the average bitrate in bits per second.
     pub bitrate: ::std::option::Option<i32>,
-    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 0, 1, and 2.
     pub channels: ::std::option::Option<i32>,
     /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
@@ -22,7 +22,7 @@ impl Mp2Settings {
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
-    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 0, 1, and 2.
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
@@ -76,17 +76,17 @@ impl Mp2SettingsBuilder {
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
         &self.bitrate
     }
-    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 0, 1, and 2.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
         self
     }
-    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 0, 1, and 2.
     pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
-    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Follow input will use the number of channels found in the audio source; choosing Mono will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 0, 1, and 2.
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }

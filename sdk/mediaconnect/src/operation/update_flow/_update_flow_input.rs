@@ -11,10 +11,12 @@ pub struct UpdateFlowInput {
     pub maintenance: ::std::option::Option<crate::types::UpdateMaintenance>,
     /// <p>The settings for source monitoring.</p>
     pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub ndi_config: ::std::option::Option<crate::types::NdiConfig>,
     /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub flow_size: ::std::option::Option<crate::types::FlowSize>,
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
 }
 impl UpdateFlowInput {
     /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
@@ -33,13 +35,17 @@ impl UpdateFlowInput {
     pub fn source_monitoring_config(&self) -> ::std::option::Option<&crate::types::MonitoringConfig> {
         self.source_monitoring_config.as_ref()
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(&self) -> ::std::option::Option<&crate::types::NdiConfig> {
         self.ndi_config.as_ref()
     }
     /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn flow_size(&self) -> ::std::option::Option<&crate::types::FlowSize> {
         self.flow_size.as_ref()
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(&self) -> ::std::option::Option<&crate::types::EncodingConfig> {
+        self.encoding_config.as_ref()
     }
 }
 impl UpdateFlowInput {
@@ -59,6 +65,7 @@ pub struct UpdateFlowInputBuilder {
     pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     pub(crate) ndi_config: ::std::option::Option<crate::types::NdiConfig>,
     pub(crate) flow_size: ::std::option::Option<crate::types::FlowSize>,
+    pub(crate) encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
 }
 impl UpdateFlowInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
@@ -118,17 +125,17 @@ impl UpdateFlowInputBuilder {
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         &self.source_monitoring_config
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
         self.ndi_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
         self.ndi_config = input;
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         &self.ndi_config
     }
@@ -146,6 +153,20 @@ impl UpdateFlowInputBuilder {
     pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
         &self.flow_size
     }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(mut self, input: crate::types::EncodingConfig) -> Self {
+        self.encoding_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn set_encoding_config(mut self, input: ::std::option::Option<crate::types::EncodingConfig>) -> Self {
+        self.encoding_config = input;
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn get_encoding_config(&self) -> &::std::option::Option<crate::types::EncodingConfig> {
+        &self.encoding_config
+    }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
@@ -155,6 +176,7 @@ impl UpdateFlowInputBuilder {
             source_monitoring_config: self.source_monitoring_config,
             ndi_config: self.ndi_config,
             flow_size: self.flow_size,
+            encoding_config: self.encoding_config,
         })
     }
 }

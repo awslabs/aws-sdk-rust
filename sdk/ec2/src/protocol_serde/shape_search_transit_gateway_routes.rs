@@ -83,6 +83,19 @@ pub fn de_search_transit_gateway_routes(
                 builder = builder.set_additional_routes_available(var_2);
             }
             ,
+            s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#SearchTransitGatewayRoutesOutput$NextToken */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_3);
+            }
+            ,
             _ => {}
         }
     }

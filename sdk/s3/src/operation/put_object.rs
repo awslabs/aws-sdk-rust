@@ -438,15 +438,7 @@ mod put_object_test {
 pub enum PutObjectError {
     /// <p>The existing object was created with a different encryption type. Subsequent write requests must include the appropriate encryption parameters in the request or while creating the session.</p>
     EncryptionTypeMismatch(crate::types::error::EncryptionTypeMismatch),
-    /// <p>You may receive this error in multiple cases. Depending on the reason for the error, you may receive one of the messages below:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot specify both a write offset value and user-defined object metadata for existing objects.</p></li>
-    /// <li>
-    /// <p>Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type: crc32c.</p></li>
-    /// <li>
-    /// <p>Request body cannot be empty when 'write offset' is specified.</p></li>
-    /// </ul>
+    /// <p>A parameter or header in your request isn't valid. For details, see the description of this API operation.</p>
     InvalidRequest(crate::types::error::InvalidRequest),
     /// <p>The write offset value that you specified does not match the current object size.</p>
     InvalidWriteOffset(crate::types::error::InvalidWriteOffset),

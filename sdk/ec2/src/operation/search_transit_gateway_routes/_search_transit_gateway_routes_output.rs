@@ -7,6 +7,8 @@ pub struct SearchTransitGatewayRoutesOutput {
     pub routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
     /// <p>Indicates whether there are additional routes available.</p>
     pub additional_routes_available: ::std::option::Option<bool>,
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchTransitGatewayRoutesOutput {
@@ -19,6 +21,10 @@ impl SearchTransitGatewayRoutesOutput {
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn additional_routes_available(&self) -> ::std::option::Option<bool> {
         self.additional_routes_available
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchTransitGatewayRoutesOutput {
@@ -39,6 +45,7 @@ impl SearchTransitGatewayRoutesOutput {
 pub struct SearchTransitGatewayRoutesOutputBuilder {
     pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
     pub(crate) additional_routes_available: ::std::option::Option<bool>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchTransitGatewayRoutesOutputBuilder {
@@ -76,6 +83,20 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     pub fn get_additional_routes_available(&self) -> &::std::option::Option<bool> {
         &self.additional_routes_available
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +111,7 @@ impl SearchTransitGatewayRoutesOutputBuilder {
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
             routes: self.routes,
             additional_routes_available: self.additional_routes_available,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

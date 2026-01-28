@@ -34,10 +34,12 @@ pub struct Flow {
     pub maintenance: ::std::option::Option<crate::types::Maintenance>,
     /// <p>The settings for source monitoring.</p>
     pub source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub flow_size: ::std::option::Option<crate::types::FlowSize>,
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution.</p>
+    pub encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
 }
 impl Flow {
     /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
@@ -110,13 +112,17 @@ impl Flow {
     pub fn source_monitoring_config(&self) -> ::std::option::Option<&crate::types::MonitoringConfig> {
         self.source_monitoring_config.as_ref()
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn flow_size(&self) -> ::std::option::Option<&crate::types::FlowSize> {
         self.flow_size.as_ref()
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(&self) -> ::std::option::Option<&crate::types::NdiConfig> {
         self.ndi_config.as_ref()
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution.</p>
+    pub fn encoding_config(&self) -> ::std::option::Option<&crate::types::EncodingConfig> {
+        self.encoding_config.as_ref()
     }
 }
 impl Flow {
@@ -147,6 +153,7 @@ pub struct FlowBuilder {
     pub(crate) source_monitoring_config: ::std::option::Option<crate::types::MonitoringConfig>,
     pub(crate) flow_size: ::std::option::Option<crate::types::FlowSize>,
     pub(crate) ndi_config: ::std::option::Option<crate::types::NdiConfig>,
+    pub(crate) encoding_config: ::std::option::Option<crate::types::EncodingConfig>,
 }
 impl FlowBuilder {
     /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
@@ -394,33 +401,47 @@ impl FlowBuilder {
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         &self.source_monitoring_config
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
         self.flow_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
         self.flow_size = input;
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
         &self.flow_size
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
         self.ndi_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
         self.ndi_config = input;
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         &self.ndi_config
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution.</p>
+    pub fn encoding_config(mut self, input: crate::types::EncodingConfig) -> Self {
+        self.encoding_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution.</p>
+    pub fn set_encoding_config(mut self, input: ::std::option::Option<crate::types::EncodingConfig>) -> Self {
+        self.encoding_config = input;
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution.</p>
+    pub fn get_encoding_config(&self) -> &::std::option::Option<crate::types::EncodingConfig> {
+        &self.encoding_config
     }
     /// Consumes the builder and constructs a [`Flow`](crate::types::Flow).
     pub fn build(self) -> crate::types::Flow {
@@ -442,6 +463,7 @@ impl FlowBuilder {
             source_monitoring_config: self.source_monitoring_config,
             flow_size: self.flow_size,
             ndi_config: self.ndi_config,
+            encoding_config: self.encoding_config,
         }
     }
 }

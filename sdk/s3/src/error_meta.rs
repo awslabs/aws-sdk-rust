@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You might receive this error for several reasons. For details, see the description of this API operation.</p>
+    AccessDenied(crate::types::error::AccessDenied),
     /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
     BucketAlreadyExists(crate::types::error::BucketAlreadyExists),
     /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
@@ -17,15 +19,7 @@ pub enum Error {
     /// <p>Object is archived and inaccessible until restored.</p>
     /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
-    /// <p>You may receive this error in multiple cases. Depending on the reason for the error, you may receive one of the messages below:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Cannot specify both a write offset value and user-defined object metadata for existing objects.</p></li>
-    /// <li>
-    /// <p>Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type: crc32c.</p></li>
-    /// <li>
-    /// <p>Request body cannot be empty when 'write offset' is specified.</p></li>
-    /// </ul>
+    /// <p>A parameter or header in your request isn't valid. For details, see the description of this API operation.</p>
     InvalidRequest(crate::types::error::InvalidRequest),
     /// <p>The write offset value that you specified does not match the current object size.</p>
     InvalidWriteOffset(crate::types::error::InvalidWriteOffset),
@@ -55,6 +49,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDenied(inner) => inner.fmt(f),
             Error::BucketAlreadyExists(inner) => inner.fmt(f),
             Error::BucketAlreadyOwnedByYou(inner) => inner.fmt(f),
             Error::EncryptionTypeMismatch(inner) => inner.fmt(f),
@@ -90,6 +85,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDenied(inner) => inner.meta(),
             Self::BucketAlreadyExists(inner) => inner.meta(),
             Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
             Self::EncryptionTypeMismatch(inner) => inner.meta(),
@@ -2698,6 +2694,32 @@ impl From<crate::operation::update_bucket_metadata_journal_table_configuration::
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_object_encryption::UpdateObjectEncryptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_object_encryption::UpdateObjectEncryptionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_object_encryption::UpdateObjectEncryptionError> for Error {
+    fn from(err: crate::operation::update_object_encryption::UpdateObjectEncryptionError) -> Self {
+        match err {
+            crate::operation::update_object_encryption::UpdateObjectEncryptionError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_object_encryption::UpdateObjectEncryptionError::InvalidRequest(inner) => Error::InvalidRequest(inner),
+            crate::operation::update_object_encryption::UpdateObjectEncryptionError::NoSuchKey(inner) => Error::NoSuchKey(inner),
+            crate::operation::update_object_encryption::UpdateObjectEncryptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_part::UploadPartError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2800,6 +2822,7 @@ impl From<crate::types::error::SelectObjectContentEventStreamError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDenied(inner) => inner.source(),
             Error::BucketAlreadyExists(inner) => inner.source(),
             Error::BucketAlreadyOwnedByYou(inner) => inner.source(),
             Error::EncryptionTypeMismatch(inner) => inner.source(),
@@ -2821,6 +2844,7 @@ impl ::std::error::Error for Error {
 impl crate::s3_request_id::RequestIdExt for Error {
     fn extended_request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDenied(e) => e.extended_request_id(),
             Self::BucketAlreadyExists(e) => e.extended_request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.extended_request_id(),
             Self::EncryptionTypeMismatch(e) => e.extended_request_id(),
@@ -2842,6 +2866,7 @@ impl crate::s3_request_id::RequestIdExt for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDenied(e) => e.request_id(),
             Self::BucketAlreadyExists(e) => e.request_id(),
             Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
             Self::EncryptionTypeMismatch(e) => e.request_id(),

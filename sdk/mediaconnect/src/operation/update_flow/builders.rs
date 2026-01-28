@@ -22,7 +22,27 @@ impl crate::operation::update_flow::builders::UpdateFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFlow`.
 ///
-/// <p>Updates an existing flow.</p>
+/// <p>Updates an existing flow.</p><note>
+/// <p>Because <code>UpdateFlowSources</code> and <code>UpdateFlow</code> are separate operations, you can't change both the source type AND the flow size in a single request.</p>
+/// <ul>
+/// <li>
+/// <p>If you have a <code>MEDIUM</code> flow and you want to change the flow source to NDI®:</p>
+/// <ul>
+/// <li>
+/// <p>First, use the <code>UpdateFlow</code> operation to upgrade the flow size to <code>LARGE</code>.</p></li>
+/// <li>
+/// <p>After that, you can then use the <code>UpdateFlowSource</code> operation to configure the NDI source.</p></li>
+/// </ul></li>
+/// <li>
+/// <p>If you're switching from an NDI source to a transport stream (TS) source and want to downgrade the flow size:</p>
+/// <ul>
+/// <li>
+/// <p>First, use the <code>UpdateFlowSource</code> operation to change the flow source type.</p></li>
+/// <li>
+/// <p>After that, you can then use the <code>UpdateFlow</code> operation to downgrade the flow size to <code>MEDIUM</code>.</p></li>
+/// </ul></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -164,17 +184,17 @@ impl UpdateFlowFluentBuilder {
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         self.inner.get_source_monitoring_config()
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
         self.inner = self.inner.ndi_config(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
         self.inner = self.inner.set_ndi_config(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         self.inner.get_ndi_config()
     }
@@ -191,5 +211,19 @@ impl UpdateFlowFluentBuilder {
     /// <p>Determines the processing capacity and feature set of the flow.</p>
     pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
         self.inner.get_flow_size()
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(mut self, input: crate::types::EncodingConfig) -> Self {
+        self.inner = self.inner.encoding_config(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn set_encoding_config(mut self, input: ::std::option::Option<crate::types::EncodingConfig>) -> Self {
+        self.inner = self.inner.set_encoding_config(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn get_encoding_config(&self) -> &::std::option::Option<crate::types::EncodingConfig> {
+        self.inner.get_encoding_config()
     }
 }

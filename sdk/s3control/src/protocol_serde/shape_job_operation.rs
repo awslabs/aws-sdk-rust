@@ -43,6 +43,10 @@ pub fn ser_job_operation(
         let inner_writer = scope.start_el("S3ComputeObjectChecksum");
         crate::protocol_serde::shape_s3_compute_object_checksum_operation::ser_s3_compute_object_checksum_operation(var_10, inner_writer)?
     }
+    if let Some(var_11) = &input.s3_update_object_encryption {
+        let inner_writer = scope.start_el("S3UpdateObjectEncryption");
+        crate::protocol_serde::shape_s3_update_object_encryption_operation::ser_s3_update_object_encryption_operation(var_11, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -56,103 +60,113 @@ pub fn de_job_operation(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LambdaInvoke") /* LambdaInvoke com.amazonaws.s3control#JobOperation$LambdaInvoke */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_lambda_invoke_operation::de_lambda_invoke_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_lambda_invoke(var_11);
+                builder = builder.set_lambda_invoke(var_12);
             }
             ,
             s if s.matches("S3PutObjectCopy") /* S3PutObjectCopy com.amazonaws.s3control#JobOperation$S3PutObjectCopy */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_s3_copy_object_operation::de_s3_copy_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_copy(var_12);
+                builder = builder.set_s3_put_object_copy(var_13);
             }
             ,
             s if s.matches("S3PutObjectAcl") /* S3PutObjectAcl com.amazonaws.s3control#JobOperation$S3PutObjectAcl */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_s3_set_object_acl_operation::de_s3_set_object_acl_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_acl(var_13);
+                builder = builder.set_s3_put_object_acl(var_14);
             }
             ,
             s if s.matches("S3PutObjectTagging") /* S3PutObjectTagging com.amazonaws.s3control#JobOperation$S3PutObjectTagging */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_s3_set_object_tagging_operation::de_s3_set_object_tagging_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_tagging(var_14);
+                builder = builder.set_s3_put_object_tagging(var_15);
             }
             ,
             s if s.matches("S3DeleteObjectTagging") /* S3DeleteObjectTagging com.amazonaws.s3control#JobOperation$S3DeleteObjectTagging */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         crate::protocol_serde::shape_s3_delete_object_tagging_operation::de_s3_delete_object_tagging_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_delete_object_tagging(var_15);
+                builder = builder.set_s3_delete_object_tagging(var_16);
             }
             ,
             s if s.matches("S3InitiateRestoreObject") /* S3InitiateRestoreObject com.amazonaws.s3control#JobOperation$S3InitiateRestoreObject */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_s3_initiate_restore_object_operation::de_s3_initiate_restore_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_initiate_restore_object(var_16);
+                builder = builder.set_s3_initiate_restore_object(var_17);
             }
             ,
             s if s.matches("S3PutObjectLegalHold") /* S3PutObjectLegalHold com.amazonaws.s3control#JobOperation$S3PutObjectLegalHold */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_s3_set_object_legal_hold_operation::de_s3_set_object_legal_hold_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_legal_hold(var_17);
+                builder = builder.set_s3_put_object_legal_hold(var_18);
             }
             ,
             s if s.matches("S3PutObjectRetention") /* S3PutObjectRetention com.amazonaws.s3control#JobOperation$S3PutObjectRetention */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_s3_set_object_retention_operation::de_s3_set_object_retention_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_put_object_retention(var_18);
+                builder = builder.set_s3_put_object_retention(var_19);
             }
             ,
             s if s.matches("S3ReplicateObject") /* S3ReplicateObject com.amazonaws.s3control#JobOperation$S3ReplicateObject */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_s3_replicate_object_operation::de_s3_replicate_object_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_replicate_object(var_19);
+                builder = builder.set_s3_replicate_object(var_20);
             }
             ,
             s if s.matches("S3ComputeObjectChecksum") /* S3ComputeObjectChecksum com.amazonaws.s3control#JobOperation$S3ComputeObjectChecksum */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_s3_compute_object_checksum_operation::de_s3_compute_object_checksum_operation(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_s3_compute_object_checksum(var_20);
+                builder = builder.set_s3_compute_object_checksum(var_21);
+            }
+            ,
+            s if s.matches("S3UpdateObjectEncryption") /* S3UpdateObjectEncryption com.amazonaws.s3control#JobOperation$S3UpdateObjectEncryption */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_s3_update_object_encryption_operation::de_s3_update_object_encryption_operation(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_s3_update_object_encryption(var_22);
             }
             ,
             _ => {}

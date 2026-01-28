@@ -90,5 +90,11 @@ pub fn ser_search_criteria(
         }
         array_28.finish();
     }
+    if let Some(var_30) = &input.contact_tags {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("ContactTags").start_object();
+        crate::protocol_serde::shape_control_plane_tag_filter::ser_control_plane_tag_filter(&mut object_31, var_30)?;
+        object_31.finish();
+    }
     Ok(())
 }

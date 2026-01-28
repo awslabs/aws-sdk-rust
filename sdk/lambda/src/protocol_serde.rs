@@ -429,6 +429,8 @@ pub(crate) mod shape_ephemeral_storage;
 
 pub(crate) mod shape_error_object;
 
+pub(crate) mod shape_event_source_mapping_logging_config;
+
 pub(crate) mod shape_event_source_mapping_metrics_config;
 
 pub(crate) mod shape_event_source_mappings_list;

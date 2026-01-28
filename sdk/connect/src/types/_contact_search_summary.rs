@@ -33,6 +33,8 @@ pub struct ContactSearchSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Latest routing criteria on the contact.</p>
     pub routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Additional routing information for contacts created in ACGR instances.</p>
     pub global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
@@ -95,6 +97,10 @@ impl ContactSearchSummary {
     pub fn routing_criteria(&self) -> ::std::option::Option<&crate::types::RoutingCriteria> {
         self.routing_criteria.as_ref()
     }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
     /// <p>Additional routing information for contacts created in ACGR instances.</p>
     pub fn global_resiliency_metadata(&self) -> ::std::option::Option<&crate::types::GlobalResiliencyMetadata> {
         self.global_resiliency_metadata.as_ref()
@@ -117,6 +123,7 @@ impl ::std::fmt::Debug for ContactSearchSummary {
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("tags", &self.tags);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }
@@ -147,6 +154,7 @@ pub struct ContactSearchSummaryBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContactSearchSummarySegmentAttributeValue>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) routing_criteria: ::std::option::Option<crate::types::RoutingCriteria>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
 }
 impl ContactSearchSummaryBuilder {
@@ -361,6 +369,26 @@ impl ContactSearchSummaryBuilder {
     pub fn get_routing_criteria(&self) -> &::std::option::Option<crate::types::RoutingCriteria> {
         &self.routing_criteria
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// <p>Additional routing information for contacts created in ACGR instances.</p>
     pub fn global_resiliency_metadata(mut self, input: crate::types::GlobalResiliencyMetadata) -> Self {
         self.global_resiliency_metadata = ::std::option::Option::Some(input);
@@ -392,6 +420,7 @@ impl ContactSearchSummaryBuilder {
             segment_attributes: self.segment_attributes,
             name: self.name,
             routing_criteria: self.routing_criteria,
+            tags: self.tags,
             global_resiliency_metadata: self.global_resiliency_metadata,
         }
     }
@@ -413,6 +442,7 @@ impl ::std::fmt::Debug for ContactSearchSummaryBuilder {
         formatter.field("segment_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("routing_criteria", &self.routing_criteria);
+        formatter.field("tags", &self.tags);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.finish()
     }

@@ -30,6 +30,9 @@ pub mod output_routed;
 /// Supporting types for the `output_standby` waiter.
 pub mod output_standby;
 
+/// Supporting types for the `output_unrouted` waiter.
+pub mod output_unrouted;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

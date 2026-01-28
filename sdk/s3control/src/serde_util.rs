@@ -525,6 +525,15 @@ pub(crate) fn s3_access_control_list_correct_errors(
     builder
 }
 
+pub(crate) fn s3_update_object_encryption_ssekms_correct_errors(
+    mut builder: crate::types::builders::S3UpdateObjectEncryptionSsekmsBuilder,
+) -> crate::types::builders::S3UpdateObjectEncryptionSsekmsBuilder {
+    if builder.kms_key_arn.is_none() {
+        builder.kms_key_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sse_kms_encrypted_objects_correct_errors(
     mut builder: crate::types::builders::SseKmsEncryptedObjectsBuilder,
 ) -> crate::types::builders::SseKmsEncryptedObjectsBuilder {

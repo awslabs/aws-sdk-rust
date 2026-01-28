@@ -1629,6 +1629,16 @@ pub(crate) fn reflens_search_transit_gateway_multicast_groups_output_output_next
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_transit_gateway_routes_output_output_next_token(
+    input: &crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_address_transfers_output_output_address_transfers(
     input: crate::operation::describe_address_transfers::DescribeAddressTransfersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>> {
@@ -2767,5 +2777,12 @@ pub(crate) fn lens_search_transit_gateway_multicast_groups_output_output_multica
     input: crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayMulticastGroup>> {
     let input = input.multicast_groups?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_transit_gateway_routes_output_output_routes(
+    input: crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>> {
+    let input = input.routes?;
     ::std::option::Option::Some(input)
 }

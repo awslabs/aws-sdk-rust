@@ -115,6 +115,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ndiSourceSettings" => {
+                            builder =
+                                builder.set_ndi_source_settings(crate::protocol_serde::shape_ndi_source_settings::de_ndi_source_settings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

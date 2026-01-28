@@ -136,17 +136,17 @@ impl CreateRouterNetworkInterfaceFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RouterNetworkInterfaceConfiguration> {
         self.inner.get_configuration()
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_name(input.into());
         self
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region_name(input);
         self
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_region_name()
     }

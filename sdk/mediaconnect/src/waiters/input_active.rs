@@ -67,6 +67,10 @@ impl InputActiveFluentBuilder {
             if crate::waiters::matchers::match_get_router_input_eb00a4469dfee9c67(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
             }
+            // Matches: {"output":{"path":"RouterInput.State","expected":"MIGRATING","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_router_input_713f2c3350f32c34f(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
+            }
             // Matches: {"errorType":"InternalServerErrorException"}
             if crate::waiters::matchers::match_get_router_input_23a4ee68df28eed70(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;

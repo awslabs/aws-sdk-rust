@@ -22,6 +22,7 @@
 ///     OperationName::S3PutObjectRetention => { /* ... */ },
 ///     OperationName::S3PutObjectTagging => { /* ... */ },
 ///     OperationName::S3ReplicateObject => { /* ... */ },
+///     OperationName::S3UpdateObjectEncryption => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -70,6 +71,8 @@ pub enum OperationName {
     S3PutObjectTagging,
     #[allow(missing_docs)] // documentation missing in model
     S3ReplicateObject,
+    #[allow(missing_docs)] // documentation missing in model
+    S3UpdateObjectEncryption,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -87,6 +90,7 @@ impl ::std::convert::From<&str> for OperationName {
             "S3PutObjectRetention" => OperationName::S3PutObjectRetention,
             "S3PutObjectTagging" => OperationName::S3PutObjectTagging,
             "S3ReplicateObject" => OperationName::S3ReplicateObject,
+            "S3UpdateObjectEncryption" => OperationName::S3UpdateObjectEncryption,
             other => OperationName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -112,6 +116,7 @@ impl OperationName {
             OperationName::S3PutObjectRetention => "S3PutObjectRetention",
             OperationName::S3PutObjectTagging => "S3PutObjectTagging",
             OperationName::S3ReplicateObject => "S3ReplicateObject",
+            OperationName::S3UpdateObjectEncryption => "S3UpdateObjectEncryption",
             OperationName::Unknown(value) => value.as_str(),
         }
     }
@@ -128,6 +133,7 @@ impl OperationName {
             "S3PutObjectRetention",
             "S3PutObjectTagging",
             "S3ReplicateObject",
+            "S3UpdateObjectEncryption",
         ]
     }
 }
@@ -161,6 +167,7 @@ impl ::std::fmt::Display for OperationName {
             OperationName::S3PutObjectRetention => write!(f, "S3PutObjectRetention"),
             OperationName::S3PutObjectTagging => write!(f, "S3PutObjectTagging"),
             OperationName::S3ReplicateObject => write!(f, "S3ReplicateObject"),
+            OperationName::S3UpdateObjectEncryption => write!(f, "S3UpdateObjectEncryption"),
             OperationName::Unknown(value) => write!(f, "{value}"),
         }
     }

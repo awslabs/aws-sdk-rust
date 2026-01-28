@@ -16,7 +16,7 @@ pub struct ListedRouterOutput {
     pub state: crate::types::RouterOutputState,
     /// <p>The current state of the association between the router output and its input.</p>
     pub routed_state: crate::types::RouterOutputRoutedState,
-    /// <p>The AWS Region where the router output is located.</p>
+    /// <p>The AAmazon Web Services Region where the router output is located.</p>
     pub region_name: ::std::string::String,
     /// <p>The Availability Zone of the router output.</p>
     pub availability_zone: ::std::string::String,
@@ -67,7 +67,7 @@ impl ListedRouterOutput {
     pub fn routed_state(&self) -> &crate::types::RouterOutputRoutedState {
         &self.routed_state
     }
-    /// <p>The AWS Region where the router output is located.</p>
+    /// <p>The AAmazon Web Services Region where the router output is located.</p>
     pub fn region_name(&self) -> &str {
         use std::ops::Deref;
         self.region_name.deref()
@@ -234,18 +234,18 @@ impl ListedRouterOutputBuilder {
     pub fn get_routed_state(&self) -> &::std::option::Option<crate::types::RouterOutputRoutedState> {
         &self.routed_state
     }
-    /// <p>The AWS Region where the router output is located.</p>
+    /// <p>The AAmazon Web Services Region where the router output is located.</p>
     /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the router output is located.</p>
+    /// <p>The AAmazon Web Services Region where the router output is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region where the router output is located.</p>
+    /// <p>The AAmazon Web Services Region where the router output is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

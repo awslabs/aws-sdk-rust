@@ -231,6 +231,12 @@ pub use crate::types::_job_failure::JobFailureBuilder;
 
 pub use crate::types::_job_operation::JobOperationBuilder;
 
+pub use crate::types::_s3_update_object_encryption_operation::S3UpdateObjectEncryptionOperationBuilder;
+
+pub use crate::types::_object_encryption::ObjectEncryptionBuilder;
+
+pub use crate::types::_s3_update_object_encryption_ssekms::S3UpdateObjectEncryptionSsekmsBuilder;
+
 pub use crate::types::_s3_compute_object_checksum_operation::S3ComputeObjectChecksumOperationBuilder;
 
 pub use crate::types::_s3_replicate_object_operation::S3ReplicateObjectOperationBuilder;

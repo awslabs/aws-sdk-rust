@@ -16,6 +16,7 @@
 ///     Format::Mp4 => { /* ... */ },
 ///     Format::Mxf => { /* ... */ },
 ///     Format::Quicktime => { /* ... */ },
+///     Format::Wave => { /* ... */ },
 ///     Format::Webm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Quicktime,
     #[allow(missing_docs)] // documentation missing in model
+    Wave,
+    #[allow(missing_docs)] // documentation missing in model
     Webm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for Format {
             "mp4" => Format::Mp4,
             "mxf" => Format::Mxf,
             "quicktime" => Format::Quicktime,
+            "wave" => Format::Wave,
             "webm" => Format::Webm,
             other => Format::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,14 @@ impl Format {
             Format::Mp4 => "mp4",
             Format::Mxf => "mxf",
             Format::Quicktime => "quicktime",
+            Format::Wave => "wave",
             Format::Webm => "webm",
             Format::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["matroska", "mp4", "mxf", "quicktime", "webm"]
+        &["matroska", "mp4", "mxf", "quicktime", "wave", "webm"]
     }
 }
 impl ::std::convert::AsRef<str> for Format {
@@ -119,6 +124,7 @@ impl ::std::fmt::Display for Format {
             Format::Mp4 => write!(f, "mp4"),
             Format::Mxf => write!(f, "mxf"),
             Format::Quicktime => write!(f, "quicktime"),
+            Format::Wave => write!(f, "wave"),
             Format::Webm => write!(f, "webm"),
             Format::Unknown(value) => write!(f, "{value}"),
         }

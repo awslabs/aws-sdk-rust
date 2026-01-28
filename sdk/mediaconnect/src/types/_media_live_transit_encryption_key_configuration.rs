@@ -6,7 +6,7 @@
 pub enum MediaLiveTransitEncryptionKeyConfiguration {
     /// <p>Configuration settings for automatic encryption key management, where MediaConnect handles key creation and rotation.</p>
     Automatic(crate::types::AutomaticEncryptionKeyConfiguration),
-    /// <p>The configuration settings for transit encryption using AWS Secrets Manager, including the secret ARN and role ARN.</p>
+    /// <p>The configuration settings for transit encryption using Secrets Manager, including the secret ARN and role ARN.</p>
     SecretsManager(crate::types::SecretsManagerEncryptionKeyConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

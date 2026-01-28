@@ -234,6 +234,11 @@ pub(crate) fn de_create_event_source_mapping(
                             .transpose()?,
                     );
                 }
+                "LoggingConfig" => {
+                    builder = builder.set_logging_config(
+                        crate::protocol_serde::shape_event_source_mapping_logging_config::de_event_source_mapping_logging_config(tokens)?,
+                    );
+                }
                 "MaximumBatchingWindowInSeconds" => {
                     builder = builder.set_maximum_batching_window_in_seconds(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

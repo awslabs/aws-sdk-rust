@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DolbyVision {
+    /// When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream. When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+    pub compatibility: ::std::option::Option<crate::types::DolbyVisionCompatibility>,
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
     pub l6_metadata: ::std::option::Option<crate::types::DolbyVisionLevel6Metadata>,
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
@@ -14,6 +16,10 @@ pub struct DolbyVision {
     pub profile: ::std::option::Option<crate::types::DolbyVisionProfile>,
 }
 impl DolbyVision {
+    /// When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream. When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+    pub fn compatibility(&self) -> ::std::option::Option<&crate::types::DolbyVisionCompatibility> {
+        self.compatibility.as_ref()
+    }
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
     pub fn l6_metadata(&self) -> ::std::option::Option<&crate::types::DolbyVisionLevel6Metadata> {
         self.l6_metadata.as_ref()
@@ -42,12 +48,27 @@ impl DolbyVision {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DolbyVisionBuilder {
+    pub(crate) compatibility: ::std::option::Option<crate::types::DolbyVisionCompatibility>,
     pub(crate) l6_metadata: ::std::option::Option<crate::types::DolbyVisionLevel6Metadata>,
     pub(crate) l6_mode: ::std::option::Option<crate::types::DolbyVisionLevel6Mode>,
     pub(crate) mapping: ::std::option::Option<crate::types::DolbyVisionMapping>,
     pub(crate) profile: ::std::option::Option<crate::types::DolbyVisionProfile>,
 }
 impl DolbyVisionBuilder {
+    /// When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream. When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+    pub fn compatibility(mut self, input: crate::types::DolbyVisionCompatibility) -> Self {
+        self.compatibility = ::std::option::Option::Some(input);
+        self
+    }
+    /// When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream. When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+    pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::DolbyVisionCompatibility>) -> Self {
+        self.compatibility = input;
+        self
+    }
+    /// When you set Compatibility mapping to Duplicate Stream, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause a duplicate stream to be signaled in the manifest as a duplicate stream. When you set Compatibility mapping to Supplemntal Codecs, DolbyVision streams that have a backward compatible base layer (e.g., DolbyVision 8.1) will cause the associate stream in the manifest to include a SUPPLEMENTAL_CODECS property.
+    pub fn get_compatibility(&self) -> &::std::option::Option<crate::types::DolbyVisionCompatibility> {
+        &self.compatibility
+    }
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
     pub fn l6_metadata(mut self, input: crate::types::DolbyVisionLevel6Metadata) -> Self {
         self.l6_metadata = ::std::option::Option::Some(input);
@@ -107,6 +128,7 @@ impl DolbyVisionBuilder {
     /// Consumes the builder and constructs a [`DolbyVision`](crate::types::DolbyVision).
     pub fn build(self) -> crate::types::DolbyVision {
         crate::types::DolbyVision {
+            compatibility: self.compatibility,
             l6_metadata: self.l6_metadata,
             l6_mode: self.l6_mode,
             mapping: self.mapping,

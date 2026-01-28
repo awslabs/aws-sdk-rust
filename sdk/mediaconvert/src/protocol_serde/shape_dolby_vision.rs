@@ -3,20 +3,23 @@ pub fn ser_dolby_vision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DolbyVision,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.l6_metadata {
+    if let Some(var_1) = &input.compatibility {
+        object.key("compatibility").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.l6_metadata {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("l6Metadata").start_object();
-        crate::protocol_serde::shape_dolby_vision_level6_metadata::ser_dolby_vision_level6_metadata(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("l6Metadata").start_object();
+        crate::protocol_serde::shape_dolby_vision_level6_metadata::ser_dolby_vision_level6_metadata(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.l6_mode {
-        object.key("l6Mode").string(var_3.as_str());
+    if let Some(var_4) = &input.l6_mode {
+        object.key("l6Mode").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.mapping {
-        object.key("mapping").string(var_4.as_str());
+    if let Some(var_5) = &input.mapping {
+        object.key("mapping").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.profile {
-        object.key("profile").string(var_5.as_str());
+    if let Some(var_6) = &input.profile {
+        object.key("profile").string(var_6.as_str());
     }
     Ok(())
 }
@@ -36,6 +39,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "compatibility" => {
+                            builder = builder.set_compatibility(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DolbyVisionCompatibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "l6Metadata" => {
                             builder = builder
                                 .set_l6_metadata(crate::protocol_serde::shape_dolby_vision_level6_metadata::de_dolby_vision_level6_metadata(tokens)?);

@@ -36,6 +36,11 @@ pub fn ser_search_transit_gateway_routes_input_input_input(
     if let Some(var_11) = &input.dry_run {
         scope_10.boolean(*var_11);
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("NextToken");
+    if let Some(var_13) = &input.next_token {
+        scope_12.string(var_13);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

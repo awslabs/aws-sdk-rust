@@ -287,33 +287,47 @@ impl CreateFlowFluentBuilder {
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         self.inner.get_source_monitoring_config()
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
         self.inner = self.inner.flow_size(input);
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
         self.inner = self.inner.set_flow_size(input);
         self
     }
-    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI sources or outputs on the flow.</p>
     pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
         self.inner.get_flow_size()
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
         self.inner = self.inner.ndi_config(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
         self.inner = self.inner.set_ndi_config(input);
         self
     }
-    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    /// <p>Specifies the configuration settings for a flow's NDI source or output. Required when the flow includes an NDI source or output.</p>
     pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
         self.inner.get_ndi_config()
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn encoding_config(mut self, input: crate::types::EncodingConfig) -> Self {
+        self.inner = self.inner.encoding_config(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn set_encoding_config(mut self, input: ::std::option::Option<crate::types::EncodingConfig>) -> Self {
+        self.inner = self.inner.set_encoding_config(input);
+        self
+    }
+    /// <p>The encoding configuration to apply to the NDI® source when transcoding it to a transport stream for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.</p>
+    pub fn get_encoding_config(&self) -> &::std::option::Option<crate::types::EncodingConfig> {
+        self.inner.get_encoding_config()
     }
     ///
     /// Adds a key-value pair to `FlowTags`.

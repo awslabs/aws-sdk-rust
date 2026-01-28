@@ -15,6 +15,7 @@
 ///     Eac3CodingMode::CodingMode10 => { /* ... */ },
 ///     Eac3CodingMode::CodingMode20 => { /* ... */ },
 ///     Eac3CodingMode::CodingMode32 => { /* ... */ },
+///     Eac3CodingMode::CodingModeAuto => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum Eac3CodingMode {
     CodingMode20,
     #[allow(missing_docs)] // documentation missing in model
     CodingMode32,
+    #[allow(missing_docs)] // documentation missing in model
+    CodingModeAuto,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for Eac3CodingMode {
             "CODING_MODE_1_0" => Eac3CodingMode::CodingMode10,
             "CODING_MODE_2_0" => Eac3CodingMode::CodingMode20,
             "CODING_MODE_3_2" => Eac3CodingMode::CodingMode32,
+            "CODING_MODE_AUTO" => Eac3CodingMode::CodingModeAuto,
             other => Eac3CodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl Eac3CodingMode {
             Eac3CodingMode::CodingMode10 => "CODING_MODE_1_0",
             Eac3CodingMode::CodingMode20 => "CODING_MODE_2_0",
             Eac3CodingMode::CodingMode32 => "CODING_MODE_3_2",
+            Eac3CodingMode::CodingModeAuto => "CODING_MODE_AUTO",
             Eac3CodingMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_3_2"]
+        &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_3_2", "CODING_MODE_AUTO"]
     }
 }
 impl ::std::convert::AsRef<str> for Eac3CodingMode {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for Eac3CodingMode {
             Eac3CodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
             Eac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             Eac3CodingMode::CodingMode32 => write!(f, "CODING_MODE_3_2"),
+            Eac3CodingMode::CodingModeAuto => write!(f, "CODING_MODE_AUTO"),
             Eac3CodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }

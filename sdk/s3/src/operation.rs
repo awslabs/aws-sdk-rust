@@ -312,6 +312,9 @@ pub mod update_bucket_metadata_inventory_table_configuration;
 /// Types for the `UpdateBucketMetadataJournalTableConfiguration` operation.
 pub mod update_bucket_metadata_journal_table_configuration;
 
+/// Types for the `UpdateObjectEncryption` operation.
+pub mod update_object_encryption;
+
 /// Types for the `UploadPart` operation.
 pub mod upload_part;
 

@@ -34,8 +34,10 @@ pub struct Transport {
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>A quality setting for the NDI Speed HQ encoder.</p>
     pub ndi_speed_hq_quality: ::std::option::Option<i32>,
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub ndi_program_name: ::std::option::Option<::std::string::String>,
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
 }
 impl Transport {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16</p>
@@ -98,9 +100,13 @@ impl Transport {
     pub fn ndi_speed_hq_quality(&self) -> ::std::option::Option<i32> {
         self.ndi_speed_hq_quality
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn ndi_program_name(&self) -> ::std::option::Option<&str> {
         self.ndi_program_name.as_deref()
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn ndi_source_settings(&self) -> ::std::option::Option<&crate::types::NdiSourceSettings> {
+        self.ndi_source_settings.as_ref()
     }
 }
 impl Transport {
@@ -129,6 +135,7 @@ pub struct TransportBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) ndi_speed_hq_quality: ::std::option::Option<i32>,
     pub(crate) ndi_program_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
 }
 impl TransportBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -340,19 +347,33 @@ impl TransportBuilder {
     pub fn get_ndi_speed_hq_quality(&self) -> &::std::option::Option<i32> {
         &self.ndi_speed_hq_quality
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn ndi_program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ndi_program_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn set_ndi_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ndi_program_name = input;
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn get_ndi_program_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ndi_program_name
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn ndi_source_settings(mut self, input: crate::types::NdiSourceSettings) -> Self {
+        self.ndi_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn set_ndi_source_settings(mut self, input: ::std::option::Option<crate::types::NdiSourceSettings>) -> Self {
+        self.ndi_source_settings = input;
+        self
+    }
+    /// <p>The settings for the NDI source. This includes the exact name of the upstream NDI sender that you want to connect to your source.</p>
+    pub fn get_ndi_source_settings(&self) -> &::std::option::Option<crate::types::NdiSourceSettings> {
+        &self.ndi_source_settings
     }
     /// Consumes the builder and constructs a [`Transport`](crate::types::Transport).
     pub fn build(self) -> crate::types::Transport {
@@ -372,6 +393,7 @@ impl TransportBuilder {
             stream_id: self.stream_id,
             ndi_speed_hq_quality: self.ndi_speed_hq_quality,
             ndi_program_name: self.ndi_program_name,
+            ndi_source_settings: self.ndi_source_settings,
         }
     }
 }

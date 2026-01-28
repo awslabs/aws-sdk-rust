@@ -33,6 +33,8 @@ pub use crate::types::_verification_message_template_type::VerificationMessageTe
 
 pub use crate::types::_lambda_config_type::LambdaConfigTypeBuilder;
 
+pub use crate::types::_inbound_federation_lambda_type::InboundFederationLambdaTypeBuilder;
+
 pub use crate::types::_custom_email_lambda_version_config_type::CustomEmailLambdaVersionConfigTypeBuilder;
 
 pub use crate::types::_custom_sms_lambda_version_config_type::CustomSmsLambdaVersionConfigTypeBuilder;

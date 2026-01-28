@@ -16,6 +16,7 @@
 ///     Ac3CodingMode::CodingMode11 => { /* ... */ },
 ///     Ac3CodingMode::CodingMode20 => { /* ... */ },
 ///     Ac3CodingMode::CodingMode32Lfe => { /* ... */ },
+///     Ac3CodingMode::CodingModeAuto => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum Ac3CodingMode {
     CodingMode20,
     #[allow(missing_docs)] // documentation missing in model
     CodingMode32Lfe,
+    #[allow(missing_docs)] // documentation missing in model
+    CodingModeAuto,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for Ac3CodingMode {
             "CODING_MODE_1_1" => Ac3CodingMode::CodingMode11,
             "CODING_MODE_2_0" => Ac3CodingMode::CodingMode20,
             "CODING_MODE_3_2_LFE" => Ac3CodingMode::CodingMode32Lfe,
+            "CODING_MODE_AUTO" => Ac3CodingMode::CodingModeAuto,
             other => Ac3CodingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,19 @@ impl Ac3CodingMode {
             Ac3CodingMode::CodingMode11 => "CODING_MODE_1_1",
             Ac3CodingMode::CodingMode20 => "CODING_MODE_2_0",
             Ac3CodingMode::CodingMode32Lfe => "CODING_MODE_3_2_LFE",
+            Ac3CodingMode::CodingModeAuto => "CODING_MODE_AUTO",
             Ac3CodingMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODING_MODE_1_0", "CODING_MODE_1_1", "CODING_MODE_2_0", "CODING_MODE_3_2_LFE"]
+        &[
+            "CODING_MODE_1_0",
+            "CODING_MODE_1_1",
+            "CODING_MODE_2_0",
+            "CODING_MODE_3_2_LFE",
+            "CODING_MODE_AUTO",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for Ac3CodingMode {
@@ -114,6 +125,7 @@ impl ::std::fmt::Display for Ac3CodingMode {
             Ac3CodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
             Ac3CodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
             Ac3CodingMode::CodingMode32Lfe => write!(f, "CODING_MODE_3_2_LFE"),
+            Ac3CodingMode::CodingModeAuto => write!(f, "CODING_MODE_AUTO"),
             Ac3CodingMode::Unknown(value) => write!(f, "{value}"),
         }
     }

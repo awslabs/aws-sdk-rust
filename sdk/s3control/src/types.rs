@@ -307,6 +307,12 @@ pub use crate::types::_job_failure::JobFailure;
 
 pub use crate::types::_job_operation::JobOperation;
 
+pub use crate::types::_s3_update_object_encryption_operation::S3UpdateObjectEncryptionOperation;
+
+pub use crate::types::_object_encryption::ObjectEncryption;
+
+pub use crate::types::_s3_update_object_encryption_ssekms::S3UpdateObjectEncryptionSsekms;
+
 pub use crate::types::_s3_compute_object_checksum_operation::S3ComputeObjectChecksumOperation;
 
 pub use crate::types::_compute_object_checksum_type::ComputeObjectChecksumType;
@@ -559,6 +565,8 @@ mod _noncurrent_version_transition;
 
 mod _not_sse_filter;
 
+mod _object_encryption;
+
 mod _object_encryption_filter;
 
 mod _object_lambda_access_point;
@@ -698,6 +706,10 @@ mod _s3_sse_algorithm;
 mod _s3_storage_class;
 
 mod _s3_tag;
+
+mod _s3_update_object_encryption_operation;
+
+mod _s3_update_object_encryption_ssekms;
 
 mod _scope;
 

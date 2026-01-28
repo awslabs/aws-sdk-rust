@@ -54,70 +54,76 @@ pub fn ser_update_event_source_mapping_input_input(
     if let Some(var_16) = &input.kms_key_arn {
         object.key("KMSKeyArn").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.maximum_batching_window_in_seconds {
+    if let Some(var_17) = &input.logging_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("LoggingConfig").start_object();
+        crate::protocol_serde::shape_event_source_mapping_logging_config::ser_event_source_mapping_logging_config(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.maximum_batching_window_in_seconds {
         object.key("MaximumBatchingWindowInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
-        );
-    }
-    if let Some(var_18) = &input.maximum_record_age_in_seconds {
-        object.key("MaximumRecordAgeInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
-        );
-    }
-    if let Some(var_19) = &input.maximum_retry_attempts {
-        object.key("MaximumRetryAttempts").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_20) = &input.metrics_config {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("MetricsConfig").start_object();
-        crate::protocol_serde::shape_event_source_mapping_metrics_config::ser_event_source_mapping_metrics_config(&mut object_21, var_20)?;
-        object_21.finish();
-    }
-    if let Some(var_22) = &input.parallelization_factor {
-        object.key("ParallelizationFactor").number(
+    if let Some(var_20) = &input.maximum_record_age_in_seconds {
+        object.key("MaximumRecordAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_23) = &input.provisioned_poller_config {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("ProvisionedPollerConfig").start_object();
-        crate::protocol_serde::shape_provisioned_poller_config::ser_provisioned_poller_config(&mut object_24, var_23)?;
-        object_24.finish();
+    if let Some(var_21) = &input.maximum_retry_attempts {
+        object.key("MaximumRetryAttempts").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
     }
-    if let Some(var_25) = &input.scaling_config {
+    if let Some(var_22) = &input.metrics_config {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("ScalingConfig").start_object();
-        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_26, var_25)?;
+        let mut object_23 = object.key("MetricsConfig").start_object();
+        crate::protocol_serde::shape_event_source_mapping_metrics_config::ser_event_source_mapping_metrics_config(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.parallelization_factor {
+        object.key("ParallelizationFactor").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
+    }
+    if let Some(var_25) = &input.provisioned_poller_config {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("ProvisionedPollerConfig").start_object();
+        crate::protocol_serde::shape_provisioned_poller_config::ser_provisioned_poller_config(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_27) = &input.self_managed_kafka_event_source_config {
+    if let Some(var_27) = &input.scaling_config {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
-        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_28, var_27)?;
+        let mut object_28 = object.key("ScalingConfig").start_object();
+        crate::protocol_serde::shape_scaling_config::ser_scaling_config(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.source_access_configurations {
-        let mut array_30 = object.key("SourceAccessConfigurations").start_array();
-        for item_31 in var_29 {
+    if let Some(var_29) = &input.self_managed_kafka_event_source_config {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("SelfManagedKafkaEventSourceConfig").start_object();
+        crate::protocol_serde::shape_self_managed_kafka_event_source_config::ser_self_managed_kafka_event_source_config(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.source_access_configurations {
+        let mut array_32 = object.key("SourceAccessConfigurations").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_source_access_configuration::ser_source_access_configuration(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_30.finish();
+        array_32.finish();
     }
-    if let Some(var_33) = &input.tumbling_window_in_seconds {
+    if let Some(var_35) = &input.tumbling_window_in_seconds {
         object.key("TumblingWindowInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_33).into()),
+            ::aws_smithy_types::Number::NegInt((*var_35).into()),
         );
     }
     Ok(())

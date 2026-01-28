@@ -40,7 +40,7 @@ pub struct AddOutputRequest {
     pub output_status: ::std::option::Option<crate::types::OutputStatus>,
     /// <p>A quality setting for the NDI Speed HQ encoder.</p>
     pub ndi_speed_hq_quality: ::std::option::Option<i32>,
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub ndi_program_name: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs that can be used to tag and organize the output.</p>
     pub output_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -124,7 +124,7 @@ impl AddOutputRequest {
     pub fn ndi_speed_hq_quality(&self) -> ::std::option::Option<i32> {
         self.ndi_speed_hq_quality
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn ndi_program_name(&self) -> ::std::option::Option<&str> {
         self.ndi_program_name.as_deref()
     }
@@ -436,17 +436,17 @@ impl AddOutputRequestBuilder {
     pub fn get_ndi_speed_hq_quality(&self) -> &::std::option::Option<i32> {
         &self.ndi_speed_hq_quality
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn ndi_program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ndi_program_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn set_ndi_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ndi_program_name = input;
         self
     }
-    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    /// <p>A suffix for the name of the NDI® sender that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
     pub fn get_ndi_program_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ndi_program_name
     }

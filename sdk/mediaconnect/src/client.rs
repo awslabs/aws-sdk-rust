@@ -152,6 +152,8 @@ pub trait Waiters {
     fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder;
     /// Wait until the Input is ACTIVE
     fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder;
+    /// Wait until the Output is UNROUTED
+    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder;
     /// Wait until the Output is deleted
     fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder;
     /// Wait until the Output is ACTIVE
@@ -179,6 +181,9 @@ impl Waiters for Client {
     }
     fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder {
         crate::waiters::input_active::InputActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder {
+        crate::waiters::output_unrouted::OutputUnroutedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder {
         crate::waiters::output_deleted::OutputDeletedFluentBuilder::new(self.handle.clone())

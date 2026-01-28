@@ -33,6 +33,8 @@ pub struct SearchTransitGatewayRoutesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchTransitGatewayRoutesInput {
     /// <p>The ID of the transit gateway route table.</p>
@@ -75,6 +77,10 @@ impl SearchTransitGatewayRoutesInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
 }
 impl SearchTransitGatewayRoutesInput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayRoutesInput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput).
@@ -91,6 +97,7 @@ pub struct SearchTransitGatewayRoutesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchTransitGatewayRoutesInputBuilder {
     /// <p>The ID of the transit gateway route table.</p>
@@ -222,6 +229,20 @@ impl SearchTransitGatewayRoutesInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesInput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesInput).
     pub fn build(
         self,
@@ -234,6 +255,7 @@ impl SearchTransitGatewayRoutesInputBuilder {
             filters: self.filters,
             max_results: self.max_results,
             dry_run: self.dry_run,
+            next_token: self.next_token,
         })
     }
 }

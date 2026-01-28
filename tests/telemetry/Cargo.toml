@@ -33,7 +33,7 @@ version = "1.103.0"
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 features = ["test-util", "behavior-version-latest"]
-version = "1.120.0"
+version = "1.121.0"
 
 [dev-dependencies.aws-smithy-observability]
 path = "../../sdk/aws-smithy-observability"

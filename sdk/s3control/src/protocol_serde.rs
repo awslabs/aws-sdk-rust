@@ -479,6 +479,8 @@ pub(crate) mod shape_s3_set_object_retention_operation;
 
 pub(crate) mod shape_s3_set_object_tagging_operation;
 
+pub(crate) mod shape_s3_update_object_encryption_operation;
+
 pub(crate) mod shape_scope_permission_list;
 
 pub(crate) mod shape_storage_lens_aws_org;
@@ -534,6 +536,8 @@ pub(crate) mod shape_noncurrent_version_expiration;
 pub(crate) mod shape_noncurrent_version_transition;
 
 pub(crate) mod shape_noncurrent_version_transition_list;
+
+pub(crate) mod shape_object_encryption;
 
 pub(crate) mod shape_object_lambda_content_transformation;
 
@@ -620,6 +624,8 @@ pub(crate) mod shape_s3_access_control_list;
 pub(crate) mod shape_s3_grant_list;
 
 pub(crate) mod shape_s3_grantee;
+
+pub(crate) mod shape_s3_update_object_encryption_ssekms;
 
 pub(crate) mod shape_sse_kms_encrypted_objects;
 

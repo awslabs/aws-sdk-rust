@@ -11,6 +11,8 @@ pub struct DescribeFlowSourceMetadataOutput {
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the flow's transport media.</p>
     pub transport_media_info: ::std::option::Option<crate::types::TransportMediaInfo>,
+    /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    pub ndi_info: ::std::option::Option<crate::types::NdiSourceMetadataInfo>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutput {
@@ -31,6 +33,10 @@ impl DescribeFlowSourceMetadataOutput {
     /// <p>Information about the flow's transport media.</p>
     pub fn transport_media_info(&self) -> ::std::option::Option<&crate::types::TransportMediaInfo> {
         self.transport_media_info.as_ref()
+    }
+    /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    pub fn ndi_info(&self) -> ::std::option::Option<&crate::types::NdiSourceMetadataInfo> {
+        self.ndi_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFlowSourceMetadataOutput {
@@ -53,6 +59,7 @@ pub struct DescribeFlowSourceMetadataOutputBuilder {
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) transport_media_info: ::std::option::Option<crate::types::TransportMediaInfo>,
+    pub(crate) ndi_info: ::std::option::Option<crate::types::NdiSourceMetadataInfo>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutputBuilder {
@@ -118,6 +125,20 @@ impl DescribeFlowSourceMetadataOutputBuilder {
     pub fn get_transport_media_info(&self) -> &::std::option::Option<crate::types::TransportMediaInfo> {
         &self.transport_media_info
     }
+    /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    pub fn ndi_info(mut self, input: crate::types::NdiSourceMetadataInfo) -> Self {
+        self.ndi_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    pub fn set_ndi_info(mut self, input: ::std::option::Option<crate::types::NdiSourceMetadataInfo>) -> Self {
+        self.ndi_info = input;
+        self
+    }
+    /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    pub fn get_ndi_info(&self) -> &::std::option::Option<crate::types::NdiSourceMetadataInfo> {
+        &self.ndi_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -134,6 +155,7 @@ impl DescribeFlowSourceMetadataOutputBuilder {
             messages: self.messages,
             timestamp: self.timestamp,
             transport_media_info: self.transport_media_info,
+            ndi_info: self.ndi_info,
             _request_id: self._request_id,
         }
     }

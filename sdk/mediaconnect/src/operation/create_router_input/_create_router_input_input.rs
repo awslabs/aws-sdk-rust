@@ -13,7 +13,7 @@ pub struct CreateRouterInputInput {
     pub routing_scope: ::std::option::Option<crate::types::RoutingScope>,
     /// <p>The tier level for the router input.</p>
     pub tier: ::std::option::Option<crate::types::RouterInputTier>,
-    /// <p>The AWS Region for the router input. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router input. Defaults to the current region if not specified.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where you want to create the router input. This must be a valid Availability Zone for the region specified by <code>regionName</code>, or the current region if no <code>regionName</code> is provided.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -47,7 +47,7 @@ impl CreateRouterInputInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::RouterInputTier> {
         self.tier.as_ref()
     }
-    /// <p>The AWS Region for the router input. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router input. Defaults to the current region if not specified.</p>
     pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
@@ -171,17 +171,17 @@ impl CreateRouterInputInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::RouterInputTier> {
         &self.tier
     }
-    /// <p>The AWS Region for the router input. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router input. Defaults to the current region if not specified.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region for the router input. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router input. Defaults to the current region if not specified.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region for the router input. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router input. Defaults to the current region if not specified.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

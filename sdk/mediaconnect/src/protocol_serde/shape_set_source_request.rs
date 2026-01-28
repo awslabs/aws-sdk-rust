@@ -99,24 +99,30 @@ pub fn ser_set_source_request(
         crate::protocol_serde::shape_set_gateway_bridge_source_request::ser_set_gateway_bridge_source_request(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.source_tags {
+    if let Some(var_25) = &input.ndi_source_settings {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("sourceTags").start_object();
-        for (key_27, value_28) in var_25 {
-            {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
-            }
-        }
+        let mut object_26 = object.key("ndiSourceSettings").start_object();
+        crate::protocol_serde::shape_ndi_source_settings::ser_ndi_source_settings(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_29) = &input.router_integration_state {
-        object.key("routerIntegrationState").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.router_integration_transit_decryption {
+    if let Some(var_27) = &input.source_tags {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("routerIntegrationTransitDecryption").start_object();
-        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_28 = object.key("sourceTags").start_object();
+        for (key_29, value_30) in var_27 {
+            {
+                object_28.key(key_29.as_str()).string(value_30.as_str());
+            }
+        }
+        object_28.finish();
+    }
+    if let Some(var_31) = &input.router_integration_state {
+        object.key("routerIntegrationState").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.router_integration_transit_decryption {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("routerIntegrationTransitDecryption").start_object();
+        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_33, var_32)?;
+        object_33.finish();
     }
     Ok(())
 }

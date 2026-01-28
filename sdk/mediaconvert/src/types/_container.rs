@@ -6,7 +6,7 @@
 pub struct Container {
     /// The total duration of your media file, in seconds.
     pub duration: ::std::option::Option<f64>,
-    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
+    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub format: ::std::option::Option<crate::types::Format>,
     /// Details about each track (video, audio, or data) in the media file.
     pub tracks: ::std::option::Option<::std::vec::Vec<crate::types::Track>>,
@@ -16,7 +16,7 @@ impl Container {
     pub fn duration(&self) -> ::std::option::Option<f64> {
         self.duration
     }
-    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
+    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
@@ -57,17 +57,17 @@ impl ContainerBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<f64> {
         &self.duration
     }
-    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
+    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
+    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
     }
-    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM or MXF. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
+    /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF or Wave. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
     }

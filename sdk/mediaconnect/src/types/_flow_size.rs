@@ -13,6 +13,7 @@
 /// # let flowsize = unimplemented!();
 /// match flowsize {
 ///     FlowSize::Large => { /* ... */ },
+///     FlowSize::Large4X => { /* ... */ },
 ///     FlowSize::Medium => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum FlowSize {
     #[allow(missing_docs)] // documentation missing in model
     Large,
     #[allow(missing_docs)] // documentation missing in model
+    Large4X,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for FlowSize {
     fn from(s: &str) -> Self {
         match s {
             "LARGE" => FlowSize::Large,
+            "LARGE_4X" => FlowSize::Large4X,
             "MEDIUM" => FlowSize::Medium,
             other => FlowSize::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl FlowSize {
     pub fn as_str(&self) -> &str {
         match self {
             FlowSize::Large => "LARGE",
+            FlowSize::Large4X => "LARGE_4X",
             FlowSize::Medium => "MEDIUM",
             FlowSize::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LARGE", "MEDIUM"]
+        &["LARGE", "LARGE_4X", "MEDIUM"]
     }
 }
 impl ::std::convert::AsRef<str> for FlowSize {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for FlowSize {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FlowSize::Large => write!(f, "LARGE"),
+            FlowSize::Large4X => write!(f, "LARGE_4X"),
             FlowSize::Medium => write!(f, "MEDIUM"),
             FlowSize::Unknown(value) => write!(f, "{value}"),
         }

@@ -4,11 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSourceMappingMetricsConfig {
-    /// <p>The metrics you want your event source mapping to produce. Include <code>EventCount</code> to receive event source mapping metrics related to the number of events processed by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
+    /// <p>The metrics you want your event source mapping to produce, including <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EventCount</code> to receive metrics related to the number of events processed by your event source mapping.</p></li>
+    /// <li>
+    /// <p><code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing.</p></li>
+    /// <li>
+    /// <p><code>KafkaMetrics</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping.</p></li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingMetric>>,
 }
 impl EventSourceMappingMetricsConfig {
-    /// <p>The metrics you want your event source mapping to produce. Include <code>EventCount</code> to receive event source mapping metrics related to the number of events processed by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
+    /// <p>The metrics you want your event source mapping to produce, including <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EventCount</code> to receive metrics related to the number of events processed by your event source mapping.</p></li>
+    /// <li>
+    /// <p><code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing.</p></li>
+    /// <li>
+    /// <p><code>KafkaMetrics</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping.</p></li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
     pub fn metrics(&self) -> &[crate::types::EventSourceMappingMetric] {
@@ -33,19 +51,46 @@ impl EventSourceMappingMetricsConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
-    /// <p>The metrics you want your event source mapping to produce. Include <code>EventCount</code> to receive event source mapping metrics related to the number of events processed by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
+    /// <p>The metrics you want your event source mapping to produce, including <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EventCount</code> to receive metrics related to the number of events processed by your event source mapping.</p></li>
+    /// <li>
+    /// <p><code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing.</p></li>
+    /// <li>
+    /// <p><code>KafkaMetrics</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping.</p></li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
     pub fn metrics(mut self, input: crate::types::EventSourceMappingMetric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
         v.push(input);
         self.metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The metrics you want your event source mapping to produce. Include <code>EventCount</code> to receive event source mapping metrics related to the number of events processed by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
+    /// <p>The metrics you want your event source mapping to produce, including <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EventCount</code> to receive metrics related to the number of events processed by your event source mapping.</p></li>
+    /// <li>
+    /// <p><code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing.</p></li>
+    /// <li>
+    /// <p><code>KafkaMetrics</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping.</p></li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingMetric>>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p>The metrics you want your event source mapping to produce. Include <code>EventCount</code> to receive event source mapping metrics related to the number of events processed by your event source mapping. For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
+    /// <p>The metrics you want your event source mapping to produce, including <code>EventCount</code>, <code>ErrorCount</code>, <code>KafkaMetrics</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EventCount</code> to receive metrics related to the number of events processed by your event source mapping.</p></li>
+    /// <li>
+    /// <p><code>ErrorCount</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the number of errors in your event source mapping processing.</p></li>
+    /// <li>
+    /// <p><code>KafkaMetrics</code> (Amazon MSK and self-managed Apache Kafka) to receive metrics related to the Kafka consumers from your event source mapping.</p></li>
+    /// </ul>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics"> Event source mapping metrics</a>.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSourceMappingMetric>> {
         &self.metrics
     }

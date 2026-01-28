@@ -81,6 +81,8 @@ pub use crate::types::_function_code::FunctionCodeBuilder;
 
 pub use crate::types::_provisioned_poller_config::ProvisionedPollerConfigBuilder;
 
+pub use crate::types::_event_source_mapping_logging_config::EventSourceMappingLoggingConfigBuilder;
+
 pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfigBuilder;
 
 pub use crate::types::_filter_criteria_error::FilterCriteriaErrorBuilder;

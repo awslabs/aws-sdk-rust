@@ -66,44 +66,50 @@ pub fn ser_update_flow_source_input_input(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_16) = &input.protocol {
-        object.key("protocol").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.router_integration_state {
-        object.key("routerIntegrationState").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.router_integration_transit_decryption {
+    if let Some(var_16) = &input.ndi_source_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("routerIntegrationTransitDecryption").start_object();
-        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_17 = object.key("ndiSourceSettings").start_object();
+        crate::protocol_serde::shape_ndi_source_settings::ser_ndi_source_settings(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_20) = &input.sender_control_port {
+    if let Some(var_18) = &input.protocol {
+        object.key("protocol").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.router_integration_state {
+        object.key("routerIntegrationState").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.router_integration_transit_decryption {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("routerIntegrationTransitDecryption").start_object();
+        crate::protocol_serde::shape_flow_transit_encryption::ser_flow_transit_encryption(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_21) = &input.sender_ip_address {
-        object.key("senderIpAddress").string(var_21.as_str());
+    if let Some(var_23) = &input.sender_ip_address {
+        object.key("senderIpAddress").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.source_listener_address {
-        object.key("sourceListenerAddress").string(var_22.as_str());
+    if let Some(var_24) = &input.source_listener_address {
+        object.key("sourceListenerAddress").string(var_24.as_str());
     }
-    if let Some(var_23) = &input.source_listener_port {
+    if let Some(var_25) = &input.source_listener_port {
         object.key("sourceListenerPort").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_24) = &input.stream_id {
-        object.key("streamId").string(var_24.as_str());
+    if let Some(var_26) = &input.stream_id {
+        object.key("streamId").string(var_26.as_str());
     }
-    if let Some(var_25) = &input.vpc_interface_name {
-        object.key("vpcInterfaceName").string(var_25.as_str());
+    if let Some(var_27) = &input.vpc_interface_name {
+        object.key("vpcInterfaceName").string(var_27.as_str());
     }
-    if let Some(var_26) = &input.whitelist_cidr {
-        object.key("whitelistCidr").string(var_26.as_str());
+    if let Some(var_28) = &input.whitelist_cidr {
+        object.key("whitelistCidr").string(var_28.as_str());
     }
     Ok(())
 }

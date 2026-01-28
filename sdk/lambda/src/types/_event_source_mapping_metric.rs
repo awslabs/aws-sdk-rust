@@ -12,7 +12,9 @@
 /// ```text
 /// # let eventsourcemappingmetric = unimplemented!();
 /// match eventsourcemappingmetric {
+///     EventSourceMappingMetric::ErrorCount => { /* ... */ },
 ///     EventSourceMappingMetric::EventCount => { /* ... */ },
+///     EventSourceMappingMetric::KafkaMetrics => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +44,11 @@
 )]
 pub enum EventSourceMappingMetric {
     #[allow(missing_docs)] // documentation missing in model
+    ErrorCount,
+    #[allow(missing_docs)] // documentation missing in model
     EventCount,
+    #[allow(missing_docs)] // documentation missing in model
+    KafkaMetrics,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +56,9 @@ pub enum EventSourceMappingMetric {
 impl ::std::convert::From<&str> for EventSourceMappingMetric {
     fn from(s: &str) -> Self {
         match s {
+            "ErrorCount" => EventSourceMappingMetric::ErrorCount,
             "EventCount" => EventSourceMappingMetric::EventCount,
+            "KafkaMetrics" => EventSourceMappingMetric::KafkaMetrics,
             other => EventSourceMappingMetric::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +74,15 @@ impl EventSourceMappingMetric {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventSourceMappingMetric::ErrorCount => "ErrorCount",
             EventSourceMappingMetric::EventCount => "EventCount",
+            EventSourceMappingMetric::KafkaMetrics => "KafkaMetrics",
             EventSourceMappingMetric::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EventCount"]
+        &["ErrorCount", "EventCount", "KafkaMetrics"]
     }
 }
 impl ::std::convert::AsRef<str> for EventSourceMappingMetric {
@@ -95,7 +105,9 @@ impl EventSourceMappingMetric {
 impl ::std::fmt::Display for EventSourceMappingMetric {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventSourceMappingMetric::ErrorCount => write!(f, "ErrorCount"),
             EventSourceMappingMetric::EventCount => write!(f, "EventCount"),
+            EventSourceMappingMetric::KafkaMetrics => write!(f, "KafkaMetrics"),
             EventSourceMappingMetric::Unknown(value) => write!(f, "{value}"),
         }
     }

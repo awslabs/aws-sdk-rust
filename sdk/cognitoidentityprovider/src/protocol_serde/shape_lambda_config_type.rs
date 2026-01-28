@@ -54,6 +54,12 @@ pub fn ser_lambda_config_type(
     if let Some(var_17) = &input.kms_key_id {
         object.key("KMSKeyID").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.inbound_federation {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("InboundFederation").start_object();
+        crate::protocol_serde::shape_inbound_federation_lambda_type::ser_inbound_federation_lambda_type(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }
 
@@ -166,6 +172,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "InboundFederation" => {
+                            builder = builder.set_inbound_federation(
+                                crate::protocol_serde::shape_inbound_federation_lambda_type::de_inbound_federation_lambda_type(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

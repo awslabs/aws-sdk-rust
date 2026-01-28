@@ -18,7 +18,7 @@ pub struct ListedRouterNetworkInterface {
     pub associated_input_count: i32,
     /// <p>The current state of the router network interface.</p>
     pub state: crate::types::RouterNetworkInterfaceState,
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub region_name: ::std::string::String,
     /// <p>The timestamp when the network interface was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -57,7 +57,7 @@ impl ListedRouterNetworkInterface {
     pub fn state(&self) -> &crate::types::RouterNetworkInterfaceState {
         &self.state
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn region_name(&self) -> &str {
         use std::ops::Deref;
         self.region_name.deref()
@@ -199,18 +199,18 @@ impl ListedRouterNetworkInterfaceBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouterNetworkInterfaceState> {
         &self.state
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region where the router network interface is located.</p>
+    /// <p>The Amazon Web Services Region where the router network interface is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

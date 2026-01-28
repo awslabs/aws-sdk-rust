@@ -17,6 +17,10 @@ pub use crate::types::_request_payer::RequestPayer;
 
 pub use crate::types::_checksum_algorithm::ChecksumAlgorithm;
 
+pub use crate::types::_object_encryption::ObjectEncryption;
+
+pub use crate::types::_ssekms_encryption::SsekmsEncryption;
+
 pub use crate::types::_journal_table_configuration_updates::JournalTableConfigurationUpdates;
 
 pub use crate::types::_record_expiration::RecordExpiration;
@@ -723,6 +727,8 @@ mod _object_attributes;
 
 mod _object_canned_acl;
 
+mod _object_encryption;
+
 mod _object_identifier;
 
 mod _object_lock_configuration;
@@ -874,6 +880,8 @@ mod _sse_kms_encrypted_objects;
 mod _sse_kms_encrypted_objects_status;
 
 mod _ssekms;
+
+mod _ssekms_encryption;
 
 mod _sses3;
 

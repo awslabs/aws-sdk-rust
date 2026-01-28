@@ -16,7 +16,7 @@ pub struct ListedRouterInput {
     pub state: crate::types::RouterInputState,
     /// <p>The number of router outputs that are associated with this router input.</p>
     pub routed_outputs: i32,
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub region_name: ::std::string::String,
     /// <p>The Availability Zone of the router input.</p>
     pub availability_zone: ::std::string::String,
@@ -65,7 +65,7 @@ impl ListedRouterInput {
     pub fn routed_outputs(&self) -> i32 {
         self.routed_outputs
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn region_name(&self) -> &str {
         use std::ops::Deref;
         self.region_name.deref()
@@ -227,18 +227,18 @@ impl ListedRouterInputBuilder {
     pub fn get_routed_outputs(&self) -> &::std::option::Option<i32> {
         &self.routed_outputs
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     /// This field is required.
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region where the router input is located.</p>
+    /// <p>The Amazon Web Services Region where the router input is located.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

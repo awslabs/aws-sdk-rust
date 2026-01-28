@@ -92,6 +92,25 @@ impl crate::operation::put_object::builders::PutObjectInputBuilder {
 /// <p><b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</code>.</p>
 /// </dd>
 /// </dl>
+/// <dl>
+/// <dt>
+/// Errors
+/// </dt>
+/// <dd>
+/// <ul>
+/// <li>
+/// <p>You might receive an <code>InvalidRequest</code> error for several reasons. Depending on the reason for the error, you might receive one of the following messages:</p>
+/// <ul>
+/// <li>
+/// <p>Cannot specify both a write offset value and user-defined object metadata for existing objects.</p></li>
+/// <li>
+/// <p>Checksum Type mismatch occurred, expected checksum Type: sha1, actual checksum Type: crc32c.</p></li>
+/// <li>
+/// <p>Request body cannot be empty when 'write offset' is specified.</p></li>
+/// </ul></li>
+/// </ul>
+/// </dd>
+/// </dl>
 /// <p>For more information about related Amazon S3 APIs, see the following:</p>
 /// <ul>
 /// <li>
@@ -1054,21 +1073,21 @@ impl PutObjectFluentBuilder {
     pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_bucket_key_enabled()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.inner = self.inner.request_payer(input);
         self
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for the corresponding charges. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {

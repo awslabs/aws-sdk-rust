@@ -165,6 +165,11 @@ pub(crate) fn de_describe_flow_source_metadata(
                 "messages" => {
                     builder = builder.set_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(tokens)?);
                 }
+                "ndiInfo" => {
+                    builder = builder.set_ndi_info(crate::protocol_serde::shape_ndi_source_metadata_info::de_ndi_source_metadata_info(
+                        tokens,
+                    )?);
+                }
                 "timestamp" => {
                     builder = builder.set_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

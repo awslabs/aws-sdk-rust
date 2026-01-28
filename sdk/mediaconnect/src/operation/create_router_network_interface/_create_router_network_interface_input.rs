@@ -7,7 +7,7 @@ pub struct CreateRouterNetworkInterfaceInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for the router network interface.</p>
     pub configuration: ::std::option::Option<crate::types::RouterNetworkInterfaceConfiguration>,
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to tag and organize this router network interface.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -23,7 +23,7 @@ impl CreateRouterNetworkInterfaceInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RouterNetworkInterfaceConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
@@ -84,17 +84,17 @@ impl CreateRouterNetworkInterfaceInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RouterNetworkInterfaceConfiguration> {
         &self.configuration
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
-    /// <p>The AWS Region for the router network interface. Defaults to the current region if not specified.</p>
+    /// <p>The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }

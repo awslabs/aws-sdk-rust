@@ -133,6 +133,10 @@ pub use crate::types::_function_version::FunctionVersion;
 
 pub use crate::types::_provisioned_poller_config::ProvisionedPollerConfig;
 
+pub use crate::types::_event_source_mapping_logging_config::EventSourceMappingLoggingConfig;
+
+pub use crate::types::_event_source_mapping_system_log_level::EventSourceMappingSystemLogLevel;
+
 pub use crate::types::_event_source_mapping_metrics_config::EventSourceMappingMetricsConfig;
 
 pub use crate::types::_event_source_mapping_metric::EventSourceMappingMetric;
@@ -431,9 +435,13 @@ mod _event_result;
 
 mod _event_source_mapping_configuration;
 
+mod _event_source_mapping_logging_config;
+
 mod _event_source_mapping_metric;
 
 mod _event_source_mapping_metrics_config;
+
+mod _event_source_mapping_system_log_level;
 
 mod _event_source_position;
 

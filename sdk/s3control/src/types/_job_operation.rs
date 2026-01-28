@@ -38,6 +38,8 @@ pub struct JobOperation {
     pub s3_replicate_object: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
     /// <p>Directs the specified job to compute checksum values for every object in the manifest.</p>
     pub s3_compute_object_checksum: ::std::option::Option<crate::types::S3ComputeObjectChecksumOperation>,
+    /// <p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>
+    pub s3_update_object_encryption: ::std::option::Option<crate::types::S3UpdateObjectEncryptionOperation>,
 }
 impl JobOperation {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -94,6 +96,10 @@ impl JobOperation {
     pub fn s3_compute_object_checksum(&self) -> ::std::option::Option<&crate::types::S3ComputeObjectChecksumOperation> {
         self.s3_compute_object_checksum.as_ref()
     }
+    /// <p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>
+    pub fn s3_update_object_encryption(&self) -> ::std::option::Option<&crate::types::S3UpdateObjectEncryptionOperation> {
+        self.s3_update_object_encryption.as_ref()
+    }
 }
 impl JobOperation {
     /// Creates a new builder-style object to manufacture [`JobOperation`](crate::types::JobOperation).
@@ -116,6 +122,7 @@ pub struct JobOperationBuilder {
     pub(crate) s3_put_object_retention: ::std::option::Option<crate::types::S3SetObjectRetentionOperation>,
     pub(crate) s3_replicate_object: ::std::option::Option<crate::types::S3ReplicateObjectOperation>,
     pub(crate) s3_compute_object_checksum: ::std::option::Option<crate::types::S3ComputeObjectChecksumOperation>,
+    pub(crate) s3_update_object_encryption: ::std::option::Option<crate::types::S3UpdateObjectEncryptionOperation>,
 }
 impl JobOperationBuilder {
     /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
@@ -300,6 +307,20 @@ impl JobOperationBuilder {
     pub fn get_s3_compute_object_checksum(&self) -> &::std::option::Option<crate::types::S3ComputeObjectChecksumOperation> {
         &self.s3_compute_object_checksum
     }
+    /// <p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>
+    pub fn s3_update_object_encryption(mut self, input: crate::types::S3UpdateObjectEncryptionOperation) -> Self {
+        self.s3_update_object_encryption = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>
+    pub fn set_s3_update_object_encryption(mut self, input: ::std::option::Option<crate::types::S3UpdateObjectEncryptionOperation>) -> Self {
+        self.s3_update_object_encryption = input;
+        self
+    }
+    /// <p>Updates the server-side encryption type of an existing encrypted object in a general purpose bucket. You can use the <code>UpdateObjectEncryption</code> operation to change encrypted objects from server-side encryption with Amazon S3 managed keys (SSE-S3) to server-side encryption with Key Management Service (KMS) keys (SSE-KMS), or to apply S3 Bucket Keys. You can also use the <code>UpdateObjectEncryption</code> operation to change the customer-managed KMS key used to encrypt your data so that you can comply with custom key-rotation standards.</p>
+    pub fn get_s3_update_object_encryption(&self) -> &::std::option::Option<crate::types::S3UpdateObjectEncryptionOperation> {
+        &self.s3_update_object_encryption
+    }
     /// Consumes the builder and constructs a [`JobOperation`](crate::types::JobOperation).
     pub fn build(self) -> crate::types::JobOperation {
         crate::types::JobOperation {
@@ -313,6 +334,7 @@ impl JobOperationBuilder {
             s3_put_object_retention: self.s3_put_object_retention,
             s3_replicate_object: self.s3_replicate_object,
             s3_compute_object_checksum: self.s3_compute_object_checksum,
+            s3_update_object_encryption: self.s3_update_object_encryption,
         }
     }
 }
