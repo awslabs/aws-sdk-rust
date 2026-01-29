@@ -50,6 +50,11 @@ where
                                 crate::protocol_serde::shape_game_server_container_group_counts::de_game_server_container_group_counts(tokens)?,
                             );
                         }
+                        "ManagedCapacityConfiguration" => {
+                            builder = builder.set_managed_capacity_configuration(
+                                crate::protocol_serde::shape_managed_capacity_configuration::de_managed_capacity_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

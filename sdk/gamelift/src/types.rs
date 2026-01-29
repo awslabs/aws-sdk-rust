@@ -63,6 +63,10 @@ pub use crate::types::_ip_permission::IpPermission;
 
 pub use crate::types::_ip_protocol::IpProtocol;
 
+pub use crate::types::_managed_capacity_configuration::ManagedCapacityConfiguration;
+
+pub use crate::types::_zero_capacity_strategy::ZeroCapacityStrategy;
+
 pub use crate::types::_anywhere_configuration::AnywhereConfiguration;
 
 pub use crate::types::_resource_creation_limit_policy::ResourceCreationLimitPolicy;
@@ -499,6 +503,8 @@ mod _log_configuration;
 
 mod _log_destination;
 
+mod _managed_capacity_configuration;
+
 mod _matched_player_session;
 
 mod _matchmaking_configuration;
@@ -582,6 +588,8 @@ mod _vpc_peering_authorization;
 mod _vpc_peering_connection;
 
 mod _vpc_peering_connection_status;
+
+mod _zero_capacity_strategy;
 
 /// Builders
 pub mod builders;

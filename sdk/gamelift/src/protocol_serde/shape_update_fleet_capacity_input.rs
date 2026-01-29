@@ -27,5 +27,11 @@ pub fn ser_update_fleet_capacity_input_input(
     if let Some(var_5) = &input.location {
         object.key("Location").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.managed_capacity_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ManagedCapacityConfiguration").start_object();
+        crate::protocol_serde::shape_managed_capacity_configuration::ser_managed_capacity_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

@@ -7,12 +7,14 @@ pub struct UpdateFleetCapacityInput {
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be reflected when viewing the fleet's capacity settings.</p>
     pub desired_instances: ::std::option::Option<i32>,
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0. This parameter cannot be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has a value of SCALE_TO_AND_FROM_ZERO.</p>
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
     pub max_size: ::std::option::Option<i32>,
     /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
 }
 impl UpdateFleetCapacityInput {
     /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
@@ -23,7 +25,7 @@ impl UpdateFleetCapacityInput {
     pub fn desired_instances(&self) -> ::std::option::Option<i32> {
         self.desired_instances
     }
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0. This parameter cannot be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has a value of SCALE_TO_AND_FROM_ZERO.</p>
     pub fn min_size(&self) -> ::std::option::Option<i32> {
         self.min_size
     }
@@ -34,6 +36,10 @@ impl UpdateFleetCapacityInput {
     /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn managed_capacity_configuration(&self) -> ::std::option::Option<&crate::types::ManagedCapacityConfiguration> {
+        self.managed_capacity_configuration.as_ref()
     }
 }
 impl UpdateFleetCapacityInput {
@@ -52,6 +58,7 @@ pub struct UpdateFleetCapacityInputBuilder {
     pub(crate) min_size: ::std::option::Option<i32>,
     pub(crate) max_size: ::std::option::Option<i32>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
 }
 impl UpdateFleetCapacityInputBuilder {
     /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
@@ -83,17 +90,17 @@ impl UpdateFleetCapacityInputBuilder {
     pub fn get_desired_instances(&self) -> &::std::option::Option<i32> {
         &self.desired_instances
     }
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0. This parameter cannot be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has a value of SCALE_TO_AND_FROM_ZERO.</p>
     pub fn min_size(mut self, input: i32) -> Self {
         self.min_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0. This parameter cannot be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has a value of SCALE_TO_AND_FROM_ZERO.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_size = input;
         self
     }
-    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0. This parameter cannot be set when using a ManagedCapacityConfiguration where ZeroCapacityStrategy has a value of SCALE_TO_AND_FROM_ZERO.</p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
         &self.min_size
     }
@@ -125,6 +132,20 @@ impl UpdateFleetCapacityInputBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn managed_capacity_configuration(mut self, input: crate::types::ManagedCapacityConfiguration) -> Self {
+        self.managed_capacity_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn set_managed_capacity_configuration(mut self, input: ::std::option::Option<crate::types::ManagedCapacityConfiguration>) -> Self {
+        self.managed_capacity_configuration = input;
+        self
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn get_managed_capacity_configuration(&self) -> &::std::option::Option<crate::types::ManagedCapacityConfiguration> {
+        &self.managed_capacity_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFleetCapacityInput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl UpdateFleetCapacityInputBuilder {
             min_size: self.min_size,
             max_size: self.max_size,
             location: self.location,
+            managed_capacity_configuration: self.managed_capacity_configuration,
         })
     }
 }

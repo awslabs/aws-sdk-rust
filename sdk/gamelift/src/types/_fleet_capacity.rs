@@ -19,6 +19,8 @@ pub struct FleetCapacity {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The number and status of game server container groups deployed in a container fleet.</p>
     pub game_server_container_group_counts: ::std::option::Option<crate::types::GameServerContainerGroupCounts>,
+    /// <p>Configuration settings for managed capacity scaling.</p>
+    pub managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
 }
 impl FleetCapacity {
     /// <p>A unique identifier for the fleet associated with the location.</p>
@@ -47,6 +49,10 @@ impl FleetCapacity {
     pub fn game_server_container_group_counts(&self) -> ::std::option::Option<&crate::types::GameServerContainerGroupCounts> {
         self.game_server_container_group_counts.as_ref()
     }
+    /// <p>Configuration settings for managed capacity scaling.</p>
+    pub fn managed_capacity_configuration(&self) -> ::std::option::Option<&crate::types::ManagedCapacityConfiguration> {
+        self.managed_capacity_configuration.as_ref()
+    }
 }
 impl FleetCapacity {
     /// Creates a new builder-style object to manufacture [`FleetCapacity`](crate::types::FleetCapacity).
@@ -65,6 +71,7 @@ pub struct FleetCapacityBuilder {
     pub(crate) instance_counts: ::std::option::Option<crate::types::Ec2InstanceCounts>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_container_group_counts: ::std::option::Option<crate::types::GameServerContainerGroupCounts>,
+    pub(crate) managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
 }
 impl FleetCapacityBuilder {
     /// <p>A unique identifier for the fleet associated with the location.</p>
@@ -157,6 +164,20 @@ impl FleetCapacityBuilder {
     pub fn get_game_server_container_group_counts(&self) -> &::std::option::Option<crate::types::GameServerContainerGroupCounts> {
         &self.game_server_container_group_counts
     }
+    /// <p>Configuration settings for managed capacity scaling.</p>
+    pub fn managed_capacity_configuration(mut self, input: crate::types::ManagedCapacityConfiguration) -> Self {
+        self.managed_capacity_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for managed capacity scaling.</p>
+    pub fn set_managed_capacity_configuration(mut self, input: ::std::option::Option<crate::types::ManagedCapacityConfiguration>) -> Self {
+        self.managed_capacity_configuration = input;
+        self
+    }
+    /// <p>Configuration settings for managed capacity scaling.</p>
+    pub fn get_managed_capacity_configuration(&self) -> &::std::option::Option<crate::types::ManagedCapacityConfiguration> {
+        &self.managed_capacity_configuration
+    }
     /// Consumes the builder and constructs a [`FleetCapacity`](crate::types::FleetCapacity).
     pub fn build(self) -> crate::types::FleetCapacity {
         crate::types::FleetCapacity {
@@ -166,6 +187,7 @@ impl FleetCapacityBuilder {
             instance_counts: self.instance_counts,
             location: self.location,
             game_server_container_group_counts: self.game_server_container_group_counts,
+            managed_capacity_configuration: self.managed_capacity_configuration,
         }
     }
 }

@@ -31,6 +31,8 @@ pub use crate::types::_game_server::GameServerBuilder;
 
 pub use crate::types::_ip_permission::IpPermissionBuilder;
 
+pub use crate::types::_managed_capacity_configuration::ManagedCapacityConfigurationBuilder;
+
 pub use crate::types::_anywhere_configuration::AnywhereConfigurationBuilder;
 
 pub use crate::types::_resource_creation_limit_policy::ResourceCreationLimitPolicyBuilder;

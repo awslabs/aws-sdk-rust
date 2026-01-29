@@ -816,9 +816,9 @@ model_hash = 'e25803f5b4643f6fd4e7d3c94daa4a33f84e1232e819f0722b14f94f6c4762e2'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.205.0'
-source_hash = 'c12dbe9f359832587617fb231bc5f2d0f06b106dc038a93a0c80642de28de3a4'
-model_hash = '9982a7059d837a86a7d2ba02d2b1f9bd21a0665f25dbe99ea578992c5bf948ff'
+version = '1.206.0'
+source_hash = 'c177aafe00571334ea3c636f35892b8ccdcca3959dedbbc9f01afc47a39ca5d3'
+model_hash = '0121d1a4ee81fb8c4e7537e77a5bab783f2e0eb887161677244c6e26f1cab486'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1002,9 +1002,9 @@ model_hash = 'a70f96a12b9b6f6408814706c2e63458a18116a29d556cc3aea4622bd20afaeb'
 
 [crates.aws-sdk-gamelift]
 category = 'AwsSdk'
-version = '1.100.0'
-source_hash = '4d20ada9b8d185992cd2730171d80f100d48ff995c51fb951eb3ccc1cabc3c45'
-model_hash = '4f59120194ee9b4633f9cb1a2b5ba1a29b606c78a6e7b60d2faa3874eaebd660'
+version = '1.101.0'
+source_hash = '50a67bfb0256bc1350ee6054e97961fa12d24de5d0417beb3a99bd1c4a7b61c2'
+model_hash = '9cf7a58b41c4587747f5fb57d1cdc8986f27f70114ad47ed2056c56a8fdfa268'
 
 [crates.aws-sdk-gameliftstreams]
 category = 'AwsSdk'
@@ -2576,7 +2576,7 @@ source_hash = '3b6ec26ddd73d1f0ec63e8ea4c4d1d6f8c1871284d626950aa0a93c5c1f50023'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = '0ea607ec1cedf2e8135d249c049a634bf5a5764221ced1a9f66f817ac13256d4'
+source_hash = 'a8f73b36423c7549ae8bd9cb426658b7c988020d2eebb7e23bfa1c7a8d647d8b'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2662,16 +2662,6 @@ source_hash = 'bd2d046bc4f61f619066a6a508a9b6f08247e4a732a58f06bbdbfc7776cac914'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2026-01-28'
-
 [release.crates]
-aws-sdk-cognitoidentityprovider = '1.107.0'
-aws-sdk-connect = '1.154.0'
-aws-sdk-ec2 = '1.205.0'
-aws-sdk-lambda = '1.114.0'
-aws-sdk-mediaconnect = '1.100.0'
-aws-sdk-mediaconvert = '1.116.0'
-aws-sdk-s3 = '1.121.0'
-aws-sdk-s3control = '1.108.0'
+aws-sdk-ec2 = '1.206.0'
+aws-sdk-gamelift = '1.101.0'

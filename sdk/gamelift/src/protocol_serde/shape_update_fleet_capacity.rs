@@ -209,6 +209,11 @@ pub(crate) fn de_update_fleet_capacity(
                             .transpose()?,
                     );
                 }
+                "ManagedCapacityConfiguration" => {
+                    builder = builder.set_managed_capacity_configuration(
+                        crate::protocol_serde::shape_managed_capacity_configuration::de_managed_capacity_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -651,6 +651,8 @@ pub(crate) mod shape_locational_deployments;
 
 pub(crate) mod shape_log_configuration;
 
+pub(crate) mod shape_managed_capacity_configuration;
+
 pub(crate) mod shape_matchmaking_configuration;
 
 pub(crate) mod shape_matchmaking_configuration_list;

@@ -11,6 +11,8 @@ pub struct UpdateFleetCapacityOutput {
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateFleetCapacityOutput {
@@ -27,6 +29,10 @@ impl UpdateFleetCapacityOutput {
     /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn managed_capacity_configuration(&self) -> ::std::option::Option<&crate::types::ManagedCapacityConfiguration> {
+        self.managed_capacity_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateFleetCapacityOutput {
@@ -48,6 +54,7 @@ pub struct UpdateFleetCapacityOutputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_capacity_configuration: ::std::option::Option<crate::types::ManagedCapacityConfiguration>,
     _request_id: Option<String>,
 }
 impl UpdateFleetCapacityOutputBuilder {
@@ -99,6 +106,20 @@ impl UpdateFleetCapacityOutputBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn managed_capacity_configuration(mut self, input: crate::types::ManagedCapacityConfiguration) -> Self {
+        self.managed_capacity_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn set_managed_capacity_configuration(mut self, input: ::std::option::Option<crate::types::ManagedCapacityConfiguration>) -> Self {
+        self.managed_capacity_configuration = input;
+        self
+    }
+    /// <p>Configuration for Amazon GameLift Servers-managed capacity scaling options.</p>
+    pub fn get_managed_capacity_configuration(&self) -> &::std::option::Option<crate::types::ManagedCapacityConfiguration> {
+        &self.managed_capacity_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -114,6 +135,7 @@ impl UpdateFleetCapacityOutputBuilder {
             fleet_id: self.fleet_id,
             fleet_arn: self.fleet_arn,
             location: self.location,
+            managed_capacity_configuration: self.managed_capacity_configuration,
             _request_id: self._request_id,
         }
     }
