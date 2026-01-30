@@ -6,10 +6,10 @@
 pub struct RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
     pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
-    /// <p>The shared view settings of an embedded dashboard.</p>
-    pub shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon Quick Sight.</p>
     pub bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     /// <p>The Amazon Q configurations of an embedded Amazon Quick Sight dashboard.</p>
     pub amazon_q_in_quick_sight: ::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations>,
     /// <p>The schedules configuration for an embedded Quick Sight dashboard.</p>
@@ -24,13 +24,13 @@ impl RegisteredUserDashboardFeatureConfigurations {
     pub fn state_persistence(&self) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
-    /// <p>The shared view settings of an embedded dashboard.</p>
-    pub fn shared_view(&self) -> ::std::option::Option<&crate::types::SharedViewConfigurations> {
-        self.shared_view.as_ref()
-    }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon Quick Sight.</p>
     pub fn bookmarks(&self) -> ::std::option::Option<&crate::types::BookmarksConfigurations> {
         self.bookmarks.as_ref()
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn shared_view(&self) -> ::std::option::Option<&crate::types::SharedViewConfigurations> {
+        self.shared_view.as_ref()
     }
     /// <p>The Amazon Q configurations of an embedded Amazon Quick Sight dashboard.</p>
     pub fn amazon_q_in_quick_sight(&self) -> ::std::option::Option<&crate::types::AmazonQInQuickSightDashboardConfigurations> {
@@ -61,8 +61,8 @@ impl RegisteredUserDashboardFeatureConfigurations {
 #[non_exhaustive]
 pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
-    pub(crate) shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     pub(crate) bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
+    pub(crate) shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     pub(crate) amazon_q_in_quick_sight: ::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations>,
     pub(crate) schedules: ::std::option::Option<crate::types::SchedulesConfigurations>,
     pub(crate) recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
@@ -83,20 +83,6 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub fn get_state_persistence(&self) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
         &self.state_persistence
     }
-    /// <p>The shared view settings of an embedded dashboard.</p>
-    pub fn shared_view(mut self, input: crate::types::SharedViewConfigurations) -> Self {
-        self.shared_view = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The shared view settings of an embedded dashboard.</p>
-    pub fn set_shared_view(mut self, input: ::std::option::Option<crate::types::SharedViewConfigurations>) -> Self {
-        self.shared_view = input;
-        self
-    }
-    /// <p>The shared view settings of an embedded dashboard.</p>
-    pub fn get_shared_view(&self) -> &::std::option::Option<crate::types::SharedViewConfigurations> {
-        &self.shared_view
-    }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon Quick Sight.</p>
     pub fn bookmarks(mut self, input: crate::types::BookmarksConfigurations) -> Self {
         self.bookmarks = ::std::option::Option::Some(input);
@@ -110,6 +96,20 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon Quick Sight.</p>
     pub fn get_bookmarks(&self) -> &::std::option::Option<crate::types::BookmarksConfigurations> {
         &self.bookmarks
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn shared_view(mut self, input: crate::types::SharedViewConfigurations) -> Self {
+        self.shared_view = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn set_shared_view(mut self, input: ::std::option::Option<crate::types::SharedViewConfigurations>) -> Self {
+        self.shared_view = input;
+        self
+    }
+    /// <p>The shared view settings of an embedded dashboard.</p>
+    pub fn get_shared_view(&self) -> &::std::option::Option<crate::types::SharedViewConfigurations> {
+        &self.shared_view
     }
     /// <p>The Amazon Q configurations of an embedded Amazon Quick Sight dashboard.</p>
     pub fn amazon_q_in_quick_sight(mut self, input: crate::types::AmazonQInQuickSightDashboardConfigurations) -> Self {
@@ -171,8 +171,8 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {
         crate::types::RegisteredUserDashboardFeatureConfigurations {
             state_persistence: self.state_persistence,
-            shared_view: self.shared_view,
             bookmarks: self.bookmarks,
+            shared_view: self.shared_view,
             amazon_q_in_quick_sight: self.amazon_q_in_quick_sight,
             schedules: self.schedules,
             recent_snapshots: self.recent_snapshots,

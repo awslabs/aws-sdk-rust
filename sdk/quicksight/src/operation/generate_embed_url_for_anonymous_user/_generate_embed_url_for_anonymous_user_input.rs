@@ -9,8 +9,9 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     pub session_lifetime_in_minutes: ::std::option::Option<i64>,
     /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick Suite custom namespace, set this to <code>default</code>.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
+    /// <p>Session tags are user-specified strings that identify a session in your application. You can use these tags to implement row-level security (RLS) controls. Before you use the <code>SessionTags</code> parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>When using session tags, you must call <code>GenerateEmbedUrlForAnonymousUser</code> from a secure, trusted environment. The API call passes session tags that enable server-side data redaction by using the row-level security (RLS) rules configured in your datasets. A secure, trusted environment has access controls that you implement. These controls ensure that only your server or authorized users can add or modify session tags.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub session_tags: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>,
     /// <p>The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized to access during the lifetime of the session.</p>
     /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
@@ -36,8 +37,9 @@ impl GenerateEmbedUrlForAnonymousUserInput {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
+    /// <p>Session tags are user-specified strings that identify a session in your application. You can use these tags to implement row-level security (RLS) controls. Before you use the <code>SessionTags</code> parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>When using session tags, you must call <code>GenerateEmbedUrlForAnonymousUser</code> from a secure, trusted environment. The API call passes session tags that enable server-side data redaction by using the row-level security (RLS) rules configured in your datasets. A secure, trusted environment has access controls that you implement. These controls ensure that only your server or authorized users can add or modify session tags.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_tags.is_none()`.
     pub fn session_tags(&self) -> &[crate::types::SessionTag] {
@@ -132,22 +134,25 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     ///
     /// To override the contents of this collection use [`set_session_tags`](Self::set_session_tags).
     ///
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
+    /// <p>Session tags are user-specified strings that identify a session in your application. You can use these tags to implement row-level security (RLS) controls. Before you use the <code>SessionTags</code> parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>When using session tags, you must call <code>GenerateEmbedUrlForAnonymousUser</code> from a secure, trusted environment. The API call passes session tags that enable server-side data redaction by using the row-level security (RLS) rules configured in your datasets. A secure, trusted environment has access controls that you implement. These controls ensure that only your server or authorized users can add or modify session tags.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn session_tags(mut self, input: crate::types::SessionTag) -> Self {
         let mut v = self.session_tags.unwrap_or_default();
         v.push(input);
         self.session_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
+    /// <p>Session tags are user-specified strings that identify a session in your application. You can use these tags to implement row-level security (RLS) controls. Before you use the <code>SessionTags</code> parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>When using session tags, you must call <code>GenerateEmbedUrlForAnonymousUser</code> from a secure, trusted environment. The API call passes session tags that enable server-side data redaction by using the row-level security (RLS) rules configured in your datasets. A secure, trusted environment has access controls that you implement. These controls ensure that only your server or authorized users can add or modify session tags.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn set_session_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>) -> Self {
         self.session_tags = input;
         self
     }
-    /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
-    /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.</p>
+    /// <p>Session tags are user-specified strings that identify a session in your application. You can use these tags to implement row-level security (RLS) controls. Before you use the <code>SessionTags</code> parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
+    /// <p>When using session tags, you must call <code>GenerateEmbedUrlForAnonymousUser</code> from a secure, trusted environment. The API call passes session tags that enable server-side data redaction by using the row-level security (RLS) rules configured in your datasets. A secure, trusted environment has access controls that you implement. These controls ensure that only your server or authorized users can add or modify session tags.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
     pub fn get_session_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
         &self.session_tags
     }

@@ -22,6 +22,7 @@
 ///     CurrentMetricName::AgentsStaffed => { /* ... */ },
 ///     CurrentMetricName::ContactsInQueue => { /* ... */ },
 ///     CurrentMetricName::ContactsScheduled => { /* ... */ },
+///     CurrentMetricName::EstimatedWaitTime => { /* ... */ },
 ///     CurrentMetricName::OldestContactAge => { /* ... */ },
 ///     CurrentMetricName::SlotsActive => { /* ... */ },
 ///     CurrentMetricName::SlotsAvailable => { /* ... */ },
@@ -74,6 +75,8 @@ pub enum CurrentMetricName {
     #[allow(missing_docs)] // documentation missing in model
     ContactsScheduled,
     #[allow(missing_docs)] // documentation missing in model
+    EstimatedWaitTime,
+    #[allow(missing_docs)] // documentation missing in model
     OldestContactAge,
     #[allow(missing_docs)] // documentation missing in model
     SlotsActive,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for CurrentMetricName {
             "AGENTS_STAFFED" => CurrentMetricName::AgentsStaffed,
             "CONTACTS_IN_QUEUE" => CurrentMetricName::ContactsInQueue,
             "CONTACTS_SCHEDULED" => CurrentMetricName::ContactsScheduled,
+            "ESTIMATED_WAIT_TIME" => CurrentMetricName::EstimatedWaitTime,
             "OLDEST_CONTACT_AGE" => CurrentMetricName::OldestContactAge,
             "SLOTS_ACTIVE" => CurrentMetricName::SlotsActive,
             "SLOTS_AVAILABLE" => CurrentMetricName::SlotsAvailable,
@@ -124,6 +128,7 @@ impl CurrentMetricName {
             CurrentMetricName::AgentsStaffed => "AGENTS_STAFFED",
             CurrentMetricName::ContactsInQueue => "CONTACTS_IN_QUEUE",
             CurrentMetricName::ContactsScheduled => "CONTACTS_SCHEDULED",
+            CurrentMetricName::EstimatedWaitTime => "ESTIMATED_WAIT_TIME",
             CurrentMetricName::OldestContactAge => "OLDEST_CONTACT_AGE",
             CurrentMetricName::SlotsActive => "SLOTS_ACTIVE",
             CurrentMetricName::SlotsAvailable => "SLOTS_AVAILABLE",
@@ -143,6 +148,7 @@ impl CurrentMetricName {
             "AGENTS_STAFFED",
             "CONTACTS_IN_QUEUE",
             "CONTACTS_SCHEDULED",
+            "ESTIMATED_WAIT_TIME",
             "OLDEST_CONTACT_AGE",
             "SLOTS_ACTIVE",
             "SLOTS_AVAILABLE",
@@ -179,6 +185,7 @@ impl ::std::fmt::Display for CurrentMetricName {
             CurrentMetricName::AgentsStaffed => write!(f, "AGENTS_STAFFED"),
             CurrentMetricName::ContactsInQueue => write!(f, "CONTACTS_IN_QUEUE"),
             CurrentMetricName::ContactsScheduled => write!(f, "CONTACTS_SCHEDULED"),
+            CurrentMetricName::EstimatedWaitTime => write!(f, "ESTIMATED_WAIT_TIME"),
             CurrentMetricName::OldestContactAge => write!(f, "OLDEST_CONTACT_AGE"),
             CurrentMetricName::SlotsActive => write!(f, "SLOTS_ACTIVE"),
             CurrentMetricName::SlotsAvailable => write!(f, "SLOTS_AVAILABLE"),

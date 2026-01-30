@@ -9,16 +9,16 @@ pub fn ser_registered_user_dashboard_feature_configurations(
         crate::protocol_serde::shape_state_persistence_configurations::ser_state_persistence_configurations(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.shared_view {
+    if let Some(var_3) = &input.bookmarks {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("SharedView").start_object();
-        crate::protocol_serde::shape_shared_view_configurations::ser_shared_view_configurations(&mut object_4, var_3)?;
+        let mut object_4 = object.key("Bookmarks").start_object();
+        crate::protocol_serde::shape_bookmarks_configurations::ser_bookmarks_configurations(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.bookmarks {
+    if let Some(var_5) = &input.shared_view {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Bookmarks").start_object();
-        crate::protocol_serde::shape_bookmarks_configurations::ser_bookmarks_configurations(&mut object_6, var_5)?;
+        let mut object_6 = object.key("SharedView").start_object();
+        crate::protocol_serde::shape_shared_view_configurations::ser_shared_view_configurations(&mut object_6, var_5)?;
         object_6.finish();
     }
     if let Some(var_7) = &input.amazon_q_in_quick_sight {

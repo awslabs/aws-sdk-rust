@@ -370,6 +370,19 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
+    /// ESTIMATED_WAIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>This metric supports filter and grouping combination only used for core routing purpose. Valid filter and grouping use cases:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Filter by a list of \[Queues\] and a list of \[Channels\], group by \[“QUEUE”, “CHANNEL”\]</p></li>
+    /// <li>
+    /// <p>Filter by a singleton list of \[Queue\], a singleton list of \[Channel\], a list of \[RoutingStepExpression\], group by \[“ROUTING_STEP_EXPRESSION”\].</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
@@ -475,6 +488,19 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
     /// </dd>
     /// <dt>
+    /// ESTIMATED_WAIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>This metric supports filter and grouping combination only used for core routing purpose. Valid filter and grouping use cases:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Filter by a list of \[Queues\] and a list of \[Channels\], group by \[“QUEUE”, “CHANNEL”\]</p></li>
+    /// <li>
+    /// <p>Filter by a singleton list of \[Queue\], a singleton list of \[Channel\], a list of \[RoutingStepExpression\], group by \[“ROUTING_STEP_EXPRESSION”\].</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// OLDEST_CONTACT_AGE
     /// </dt>
     /// <dd>
@@ -578,6 +604,19 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <dd>
     /// <p>Unit: COUNT</p>
     /// <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time">Scheduled</a></p>
+    /// </dd>
+    /// <dt>
+    /// ESTIMATED_WAIT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: SECONDS</p>
+    /// <p>This metric supports filter and grouping combination only used for core routing purpose. Valid filter and grouping use cases:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Filter by a list of \[Queues\] and a list of \[Channels\], group by \[“QUEUE”, “CHANNEL”\]</p></li>
+    /// <li>
+    /// <p>Filter by a singleton list of \[Queue\], a singleton list of \[Channel\], a list of \[RoutingStepExpression\], group by \[“ROUTING_STEP_EXPRESSION”\].</p></li>
+    /// </ul>
     /// </dd>
     /// <dt>
     /// OLDEST_CONTACT_AGE

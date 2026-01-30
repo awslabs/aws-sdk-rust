@@ -12,6 +12,7 @@
 /// ```text
 /// # let contactmetricname = unimplemented!();
 /// match contactmetricname {
+///     ContactMetricName::EstimatedWaitTime => { /* ... */ },
 ///     ContactMetricName::PositionInQueue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum ContactMetricName {
     #[allow(missing_docs)] // documentation missing in model
+    EstimatedWaitTime,
+    #[allow(missing_docs)] // documentation missing in model
     PositionInQueue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum ContactMetricName {
 impl ::std::convert::From<&str> for ContactMetricName {
     fn from(s: &str) -> Self {
         match s {
+            "ESTIMATED_WAIT_TIME" => ContactMetricName::EstimatedWaitTime,
             "POSITION_IN_QUEUE" => ContactMetricName::PositionInQueue,
             other => ContactMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl ContactMetricName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContactMetricName::EstimatedWaitTime => "ESTIMATED_WAIT_TIME",
             ContactMetricName::PositionInQueue => "POSITION_IN_QUEUE",
             ContactMetricName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["POSITION_IN_QUEUE"]
+        &["ESTIMATED_WAIT_TIME", "POSITION_IN_QUEUE"]
     }
 }
 impl ::std::convert::AsRef<str> for ContactMetricName {
@@ -95,6 +100,7 @@ impl ContactMetricName {
 impl ::std::fmt::Display for ContactMetricName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ContactMetricName::EstimatedWaitTime => write!(f, "ESTIMATED_WAIT_TIME"),
             ContactMetricName::PositionInQueue => write!(f, "POSITION_IN_QUEUE"),
             ContactMetricName::Unknown(value) => write!(f, "{value}"),
         }

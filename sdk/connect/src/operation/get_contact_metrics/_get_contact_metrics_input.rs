@@ -7,7 +7,7 @@ pub struct GetContactMetricsInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
-    /// <p>A list of contact-level metrics to retrieve.</p>
+    /// <p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::ContactMetricInfo>>,
 }
 impl GetContactMetricsInput {
@@ -19,7 +19,7 @@ impl GetContactMetricsInput {
     pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>A list of contact-level metrics to retrieve.</p>
+    /// <p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
     pub fn metrics(&self) -> &[crate::types::ContactMetricInfo] {
@@ -76,19 +76,19 @@ impl GetContactMetricsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
-    /// <p>A list of contact-level metrics to retrieve.</p>
+    /// <p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>
     pub fn metrics(mut self, input: crate::types::ContactMetricInfo) -> Self {
         let mut v = self.metrics.unwrap_or_default();
         v.push(input);
         self.metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of contact-level metrics to retrieve.</p>
+    /// <p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactMetricInfo>>) -> Self {
         self.metrics = input;
         self
     }
-    /// <p>A list of contact-level metrics to retrieve.</p>
+    /// <p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactMetricInfo>> {
         &self.metrics
     }
