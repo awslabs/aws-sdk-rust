@@ -294,9 +294,9 @@ model_hash = '80079a5f204f77e75051b2878941c128f97a70b63cc8020a991c6056a8506f39'
 
 [crates.aws-sdk-bedrockagentcorecontrol]
 category = 'AwsSdk'
-version = '1.28.0'
-source_hash = '849ac0df4143ef12cea8a455065ac05277a16490b56f37170739af2f67b33c4c'
-model_hash = '5d87501782ba3b818830421d26ae9bfb3d1d47f40cdfb4310f3104f6cc267fe3'
+version = '1.29.0'
+source_hash = '3afe51d4eca0e1ad069979b09ac91b2cd24d68ae456616c69bd702240464e856'
+model_hash = 'b9678b3d32d43ea7183fd3fffe1fa0a934eec8e9d3bc65d1e6183bcd94cf7748'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
@@ -426,9 +426,9 @@ model_hash = 'e2d6af6eb4e01c262b4bb560103c439b7b56a14428c20fa6b13f07ded26f5e2b'
 
 [crates.aws-sdk-cloudfront]
 category = 'AwsSdk'
-version = '1.108.0'
-source_hash = '275b7ac24e0d5f4cce53dcf5517f1ca0c223c92655c99d524169d8806fdded84'
-model_hash = '78bde02380838dc94015bec84745eda13ba1ae4e48e1286c3dae804b521d986a'
+version = '1.109.0'
+source_hash = '13063600e48b7adf545637e984c69e3e2ae7869997c50495c426270dff466c4a'
+model_hash = '87ec542709a2bc129111e683bb1dede7c27ad2257da6f154ae86f32f6c45d337'
 
 [crates.aws-sdk-cloudfrontkeyvaluestore]
 category = 'AwsSdk'
@@ -1590,9 +1590,9 @@ model_hash = 'eda50179bb34ac444716e51b0a16c69b06c2bf681dfba2a877436e8c963ee9cf'
 
 [crates.aws-sdk-mpa]
 category = 'AwsSdk'
-version = '1.19.0'
-source_hash = '7e25067775a0cf6bba413dfd80e29ef6f61fd35185828d365c1ea140a6860609'
-model_hash = 'c90595b5e6d13d3cfe652b12204136b1bfc3921580818e120c884e25457fb505'
+version = '1.20.0'
+source_hash = '1bb7631fbcbffe36c4648a306c6d43eb5aad8ee44112941c5b9f01cc03b3eaa9'
+model_hash = 'f90a1c91a52ce488e2accb43d2ad0955469810e1efd2fb6ec9c4a3a39c2ee0b7'
 
 [crates.aws-sdk-mq]
 category = 'AwsSdk'
@@ -2662,10 +2662,7 @@ source_hash = 'bd2d046bc4f61f619066a6a508a9b6f08247e4a732a58f06bbdbfc7776cac914'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '0d58dd1d4735add17d8978e6a963bbaeaec2859e73c5aef928dc3b539a45a84b'
-
-[release]
-tag = 'release-2026-01-30'
-
 [release.crates]
-aws-sdk-connect = '1.155.0'
-aws-sdk-quicksight = '1.120.0'
+aws-sdk-bedrockagentcorecontrol = '1.29.0'
+aws-sdk-cloudfront = '1.109.0'
+aws-sdk-mpa = '1.20.0'

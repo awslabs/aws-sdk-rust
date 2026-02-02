@@ -48,6 +48,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "MfaMethods" => {
+                            builder = builder.set_mfa_methods(crate::protocol_serde::shape_mfa_methods::de_mfa_methods(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

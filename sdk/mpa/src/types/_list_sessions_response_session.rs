@@ -38,6 +38,8 @@ pub struct ListSessionsResponseSession {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Strategy for executing the protected operation. <code>AUTO_COMPLETION_UPON_APPROVAL</code> means the operation is executed automatically using the requester's permissions, if approved.</p>
     pub action_completion_strategy: ::std::option::Option<crate::types::ActionCompletionStrategy>,
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub additional_security_requirements: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
 }
 impl ListSessionsResponseSession {
     /// <p>Amazon Resource Name (ARN) for the session.</p>
@@ -108,6 +110,12 @@ impl ListSessionsResponseSession {
     pub fn action_completion_strategy(&self) -> ::std::option::Option<&crate::types::ActionCompletionStrategy> {
         self.action_completion_strategy.as_ref()
     }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_security_requirements.is_none()`.
+    pub fn additional_security_requirements(&self) -> &[crate::types::AdditionalSecurityRequirement] {
+        self.additional_security_requirements.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ListSessionsResponseSession {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -129,6 +137,7 @@ impl ::std::fmt::Debug for ListSessionsResponseSession {
         formatter.field("status_code", &self.status_code);
         formatter.field("status_message", &self.status_message);
         formatter.field("action_completion_strategy", &self.action_completion_strategy);
+        formatter.field("additional_security_requirements", &self.additional_security_requirements);
         formatter.finish()
     }
 }
@@ -160,6 +169,7 @@ pub struct ListSessionsResponseSessionBuilder {
     pub(crate) status_code: ::std::option::Option<crate::types::SessionStatusCode>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) action_completion_strategy: ::std::option::Option<crate::types::ActionCompletionStrategy>,
+    pub(crate) additional_security_requirements: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
 }
 impl ListSessionsResponseSessionBuilder {
     /// <p>Amazon Resource Name (ARN) for the session.</p>
@@ -400,6 +410,29 @@ impl ListSessionsResponseSessionBuilder {
     pub fn get_action_completion_strategy(&self) -> &::std::option::Option<crate::types::ActionCompletionStrategy> {
         &self.action_completion_strategy
     }
+    /// Appends an item to `additional_security_requirements`.
+    ///
+    /// To override the contents of this collection use [`set_additional_security_requirements`](Self::set_additional_security_requirements).
+    ///
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn additional_security_requirements(mut self, input: crate::types::AdditionalSecurityRequirement) -> Self {
+        let mut v = self.additional_security_requirements.unwrap_or_default();
+        v.push(input);
+        self.additional_security_requirements = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn set_additional_security_requirements(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
+    ) -> Self {
+        self.additional_security_requirements = input;
+        self
+    }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn get_additional_security_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>> {
+        &self.additional_security_requirements
+    }
     /// Consumes the builder and constructs a [`ListSessionsResponseSession`](crate::types::ListSessionsResponseSession).
     pub fn build(self) -> crate::types::ListSessionsResponseSession {
         crate::types::ListSessionsResponseSession {
@@ -420,6 +453,7 @@ impl ListSessionsResponseSessionBuilder {
             status_code: self.status_code,
             status_message: self.status_message,
             action_completion_strategy: self.action_completion_strategy,
+            additional_security_requirements: self.additional_security_requirements,
         }
     }
 }
@@ -443,6 +477,7 @@ impl ::std::fmt::Debug for ListSessionsResponseSessionBuilder {
         formatter.field("status_code", &self.status_code);
         formatter.field("status_message", &self.status_message);
         formatter.field("action_completion_strategy", &self.action_completion_strategy);
+        formatter.field("additional_security_requirements", &self.additional_security_requirements);
         formatter.finish()
     }
 }

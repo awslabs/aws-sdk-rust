@@ -23,6 +23,8 @@ pub use crate::types::_pending_update::PendingUpdateBuilder;
 
 pub use crate::types::_get_approval_team_response_approver::GetApprovalTeamResponseApproverBuilder;
 
+pub use crate::types::_mfa_method::MfaMethodBuilder;
+
 pub use crate::types::_policy_reference::PolicyReferenceBuilder;
 
 pub use crate::types::_list_approval_teams_response_approval_team::ListApprovalTeamsResponseApprovalTeamBuilder;

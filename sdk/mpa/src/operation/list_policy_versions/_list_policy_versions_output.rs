@@ -6,7 +6,6 @@ pub struct ListPolicyVersionsOutput {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a next call to the operation to get more output. You can repeat this until the <code>NextToken</code> response element returns <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>PolicyVersionSummary</code> objects. Contains details for the version of the policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersionSummary>>,
     _request_id: Option<String>,
 }
@@ -16,7 +15,6 @@ impl ListPolicyVersionsOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>PolicyVersionSummary</code> objects. Contains details for the version of the policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_versions.is_none()`.
     pub fn policy_versions(&self) -> &[crate::types::PolicyVersionSummary] {
@@ -63,7 +61,6 @@ impl ListPolicyVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_policy_versions`](Self::set_policy_versions).
     ///
     /// <p>An array of <code>PolicyVersionSummary</code> objects. Contains details for the version of the policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn policy_versions(mut self, input: crate::types::PolicyVersionSummary) -> Self {
         let mut v = self.policy_versions.unwrap_or_default();
         v.push(input);
@@ -71,13 +68,11 @@ impl ListPolicyVersionsOutputBuilder {
         self
     }
     /// <p>An array of <code>PolicyVersionSummary</code> objects. Contains details for the version of the policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn set_policy_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersionSummary>>) -> Self {
         self.policy_versions = input;
         self
     }
     /// <p>An array of <code>PolicyVersionSummary</code> objects. Contains details for the version of the policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn get_policy_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersionSummary>> {
         &self.policy_versions
     }

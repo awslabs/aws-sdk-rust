@@ -212,3 +212,13 @@ pub(crate) fn policy_version_summary_correct_errors(
     }
     builder
 }
+
+pub(crate) fn mfa_method_correct_errors(mut builder: crate::types::builders::MfaMethodBuilder) -> crate::types::builders::MfaMethodBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MfaType>().ok()
+    }
+    if builder.sync_status.is_none() {
+        builder.sync_status = "no value was set".parse::<crate::types::MfaSyncStatus>().ok()
+    }
+    builder
+}

@@ -13,6 +13,8 @@ pub struct CreateEvaluatorInput {
     pub evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     /// <p>The evaluation level that determines the scope of evaluation. Valid values are <code>TOOL_CALL</code> for individual tool invocations, <code>TRACE</code> for single request-response interactions, or <code>SESSION</code> for entire conversation sessions.</p>
     pub level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEvaluatorInput {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -35,6 +37,10 @@ impl CreateEvaluatorInput {
     pub fn level(&self) -> ::std::option::Option<&crate::types::EvaluatorLevel> {
         self.level.as_ref()
     }
+    /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateEvaluatorInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for CreateEvaluatorInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct CreateEvaluatorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     pub(crate) level: ::std::option::Option<crate::types::EvaluatorLevel>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEvaluatorInputBuilder {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -138,6 +146,26 @@ impl CreateEvaluatorInputBuilder {
     pub fn get_level(&self) -> &::std::option::Option<crate::types::EvaluatorLevel> {
         &self.level
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateEvaluatorInput`](crate::operation::create_evaluator::CreateEvaluatorInput).
     pub fn build(
         self,
@@ -148,6 +176,7 @@ impl CreateEvaluatorInputBuilder {
             description: self.description,
             evaluator_config: self.evaluator_config,
             level: self.level,
+            tags: self.tags,
         })
     }
 }
@@ -159,6 +188,7 @@ impl ::std::fmt::Debug for CreateEvaluatorInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
         formatter.field("level", &self.level);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

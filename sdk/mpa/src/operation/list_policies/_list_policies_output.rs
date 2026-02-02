@@ -6,7 +6,6 @@ pub struct ListPoliciesOutput {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a next call to the operation to get more output. You can repeat this until the <code>NextToken</code> response element returns <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Policy</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     _request_id: Option<String>,
 }
@@ -16,7 +15,6 @@ impl ListPoliciesOutput {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>Policy</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
     pub fn policies(&self) -> &[crate::types::Policy] {
@@ -63,7 +61,6 @@ impl ListPoliciesOutputBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>An array of <code>Policy</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
@@ -71,13 +68,11 @@ impl ListPoliciesOutputBuilder {
         self
     }
     /// <p>An array of <code>Policy</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>An array of <code>Policy</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
         &self.policies
     }

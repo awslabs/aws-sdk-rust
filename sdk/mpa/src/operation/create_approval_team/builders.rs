@@ -187,19 +187,16 @@ impl CreateApprovalTeamFluentBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn policies(mut self, input: crate::types::PolicyReference) -> Self {
         self.inner = self.inner.policies(input);
         self
     }
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyReference>>) -> Self {
         self.inner = self.inner.set_policies(input);
         self
     }
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyReference>> {
         self.inner.get_policies()
     }

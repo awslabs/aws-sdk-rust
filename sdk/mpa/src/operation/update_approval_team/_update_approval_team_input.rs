@@ -11,6 +11,8 @@ pub struct UpdateApprovalTeamInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) for the team.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>,
 }
 impl UpdateApprovalTeamInput {
     /// <p>An <code>ApprovalStrategy</code> object. Contains details for how the team grants approval.</p>
@@ -31,6 +33,12 @@ impl UpdateApprovalTeamInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_actions.is_none()`.
+    pub fn update_actions(&self) -> &[crate::types::UpdateAction] {
+        self.update_actions.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for UpdateApprovalTeamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -39,6 +47,7 @@ impl ::std::fmt::Debug for UpdateApprovalTeamInput {
         formatter.field("approvers", &self.approvers);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &self.arn);
+        formatter.field("update_actions", &self.update_actions);
         formatter.finish()
     }
 }
@@ -57,6 +66,7 @@ pub struct UpdateApprovalTeamInputBuilder {
     pub(crate) approvers: ::std::option::Option<::std::vec::Vec<crate::types::ApprovalTeamRequestApprover>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) update_actions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>,
 }
 impl UpdateApprovalTeamInputBuilder {
     /// <p>An <code>ApprovalStrategy</code> object. Contains details for how the team grants approval.</p>
@@ -122,6 +132,26 @@ impl UpdateApprovalTeamInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// Appends an item to `update_actions`.
+    ///
+    /// To override the contents of this collection use [`set_update_actions`](Self::set_update_actions).
+    ///
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn update_actions(mut self, input: crate::types::UpdateAction) -> Self {
+        let mut v = self.update_actions.unwrap_or_default();
+        v.push(input);
+        self.update_actions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn set_update_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>) -> Self {
+        self.update_actions = input;
+        self
+    }
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn get_update_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>> {
+        &self.update_actions
+    }
     /// Consumes the builder and constructs a [`UpdateApprovalTeamInput`](crate::operation::update_approval_team::UpdateApprovalTeamInput).
     pub fn build(
         self,
@@ -132,6 +162,7 @@ impl UpdateApprovalTeamInputBuilder {
             approvers: self.approvers,
             description: self.description,
             arn: self.arn,
+            update_actions: self.update_actions,
         })
     }
 }
@@ -142,6 +173,7 @@ impl ::std::fmt::Debug for UpdateApprovalTeamInputBuilder {
         formatter.field("approvers", &self.approvers);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &self.arn);
+        formatter.field("update_actions", &self.update_actions);
         formatter.finish()
     }
 }

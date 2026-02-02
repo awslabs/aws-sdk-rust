@@ -14,6 +14,8 @@ pub struct GetApprovalTeamResponseApprover {
     pub primary_identity_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status for the identity source. For example, if an approver has accepted a team invitation with a user authentication method managed by the identity source.</p>
     pub primary_identity_status: ::std::option::Option<crate::types::IdentityStatus>,
+    /// <p>Multi-factor authentication configuration for the approver</p>
+    pub mfa_methods: ::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>>,
 }
 impl GetApprovalTeamResponseApprover {
     /// <p>ID for the approver.</p>
@@ -36,6 +38,12 @@ impl GetApprovalTeamResponseApprover {
     pub fn primary_identity_status(&self) -> ::std::option::Option<&crate::types::IdentityStatus> {
         self.primary_identity_status.as_ref()
     }
+    /// <p>Multi-factor authentication configuration for the approver</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_methods.is_none()`.
+    pub fn mfa_methods(&self) -> &[crate::types::MfaMethod] {
+        self.mfa_methods.as_deref().unwrap_or_default()
+    }
 }
 impl GetApprovalTeamResponseApprover {
     /// Creates a new builder-style object to manufacture [`GetApprovalTeamResponseApprover`](crate::types::GetApprovalTeamResponseApprover).
@@ -53,6 +61,7 @@ pub struct GetApprovalTeamResponseApproverBuilder {
     pub(crate) primary_identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) primary_identity_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) primary_identity_status: ::std::option::Option<crate::types::IdentityStatus>,
+    pub(crate) mfa_methods: ::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>>,
 }
 impl GetApprovalTeamResponseApproverBuilder {
     /// <p>ID for the approver.</p>
@@ -125,6 +134,26 @@ impl GetApprovalTeamResponseApproverBuilder {
     pub fn get_primary_identity_status(&self) -> &::std::option::Option<crate::types::IdentityStatus> {
         &self.primary_identity_status
     }
+    /// Appends an item to `mfa_methods`.
+    ///
+    /// To override the contents of this collection use [`set_mfa_methods`](Self::set_mfa_methods).
+    ///
+    /// <p>Multi-factor authentication configuration for the approver</p>
+    pub fn mfa_methods(mut self, input: crate::types::MfaMethod) -> Self {
+        let mut v = self.mfa_methods.unwrap_or_default();
+        v.push(input);
+        self.mfa_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Multi-factor authentication configuration for the approver</p>
+    pub fn set_mfa_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>>) -> Self {
+        self.mfa_methods = input;
+        self
+    }
+    /// <p>Multi-factor authentication configuration for the approver</p>
+    pub fn get_mfa_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>> {
+        &self.mfa_methods
+    }
     /// Consumes the builder and constructs a [`GetApprovalTeamResponseApprover`](crate::types::GetApprovalTeamResponseApprover).
     pub fn build(self) -> crate::types::GetApprovalTeamResponseApprover {
         crate::types::GetApprovalTeamResponseApprover {
@@ -133,6 +162,7 @@ impl GetApprovalTeamResponseApproverBuilder {
             primary_identity_id: self.primary_identity_id,
             primary_identity_source_arn: self.primary_identity_source_arn,
             primary_identity_status: self.primary_identity_status,
+            mfa_methods: self.mfa_methods,
         }
     }
 }

@@ -133,6 +133,11 @@ pub(crate) fn de_get_session(
                             .transpose()?,
                     );
                 }
+                "AdditionalSecurityRequirements" => {
+                    builder = builder.set_additional_security_requirements(
+                        crate::protocol_serde::shape_additional_security_requirements::de_additional_security_requirements(tokens)?,
+                    );
+                }
                 "ApprovalStrategy" => {
                     builder = builder.set_approval_strategy(crate::protocol_serde::shape_approval_strategy_response::de_approval_strategy_response(
                         tokens,

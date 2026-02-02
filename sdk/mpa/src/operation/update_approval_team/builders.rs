@@ -172,4 +172,23 @@ impl UpdateApprovalTeamFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
+    ///
+    /// Appends an item to `UpdateActions`.
+    ///
+    /// To override the contents of this collection use [`set_update_actions`](Self::set_update_actions).
+    ///
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn update_actions(mut self, input: crate::types::UpdateAction) -> Self {
+        self.inner = self.inner.update_actions(input);
+        self
+    }
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn set_update_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>>) -> Self {
+        self.inner = self.inner.set_update_actions(input);
+        self
+    }
+    /// <p>A list of <code>UpdateAction</code> to perform when updating the team.</p>
+    pub fn get_update_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAction>> {
+        self.inner.get_update_actions()
+    }
 }
