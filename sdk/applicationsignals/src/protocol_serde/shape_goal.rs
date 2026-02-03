@@ -26,6 +26,7 @@ pub fn ser_goal(
 
 pub(crate) fn de_goal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Goal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Interval" => {
-                            builder = builder.set_interval(crate::protocol_serde::shape_interval::de_interval(tokens)?);
+                            builder = builder.set_interval(crate::protocol_serde::shape_interval::de_interval(tokens, _value)?);
                         }
                         "AttainmentGoal" => {
                             builder = builder.set_attainment_goal(

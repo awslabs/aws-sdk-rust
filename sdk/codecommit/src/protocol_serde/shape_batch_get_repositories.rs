@@ -200,13 +200,13 @@ pub fn ser_batch_get_repositories_input(
 }
 
 pub(crate) fn de_batch_get_repositories(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -215,17 +215,18 @@ pub(crate) fn de_batch_get_repositories(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "repositories" => {
                     builder = builder.set_repositories(crate::protocol_serde::shape_repository_metadata_list::de_repository_metadata_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "repositoriesNotFound" => {
                     builder = builder.set_repositories_not_found(
-                        crate::protocol_serde::shape_repository_not_found_list::de_repository_not_found_list(tokens)?,
+                        crate::protocol_serde::shape_repository_not_found_list::de_repository_not_found_list(tokens, _value)?,
                     );
                 }
                 "errors" => {
-                    builder = builder
-                        .set_errors(crate::protocol_serde::shape_batch_get_repositories_errors_list::de_batch_get_repositories_errors_list(tokens)?);
+                    builder = builder.set_errors(
+                        crate::protocol_serde::shape_batch_get_repositories_errors_list::de_batch_get_repositories_errors_list(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

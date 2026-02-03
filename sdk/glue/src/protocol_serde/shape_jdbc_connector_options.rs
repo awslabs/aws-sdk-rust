@@ -54,6 +54,7 @@ pub fn ser_jdbc_connector_options(
 
 pub(crate) fn de_jdbc_connector_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JdbcConnectorOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,7 +105,7 @@ where
                         }
                         "JobBookmarkKeys" => {
                             builder = builder.set_job_bookmark_keys(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
                             );
                         }
                         "JobBookmarkKeysSortOrder" => {
@@ -115,8 +116,9 @@ where
                             );
                         }
                         "DataTypeMapping" => {
-                            builder = builder
-                                .set_data_type_mapping(crate::protocol_serde::shape_jdbc_data_type_mapping::de_jdbc_data_type_mapping(tokens)?);
+                            builder = builder.set_data_type_mapping(crate::protocol_serde::shape_jdbc_data_type_mapping::de_jdbc_data_type_mapping(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

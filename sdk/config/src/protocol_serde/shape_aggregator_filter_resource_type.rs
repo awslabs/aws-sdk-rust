@@ -20,6 +20,7 @@ pub fn ser_aggregator_filter_resource_type(
 
 pub(crate) fn de_aggregator_filter_resource_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AggregatorFilterResourceType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "Value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_resource_type_value_list::de_resource_type_value_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

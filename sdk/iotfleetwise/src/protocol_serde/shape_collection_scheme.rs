@@ -27,6 +27,7 @@ pub fn ser_collection_scheme(
 
 pub(crate) fn de_collection_scheme<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CollectionScheme>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "timeBasedCollectionScheme" => Some(crate::types::CollectionScheme::TimeBasedCollectionScheme(
-                            crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'timeBasedCollectionScheme' cannot be null",
-                                )
-                            })?,
+                            crate::protocol_serde::shape_time_based_collection_scheme::de_time_based_collection_scheme(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'timeBasedCollectionScheme' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "conditionBasedCollectionScheme" => Some(crate::types::CollectionScheme::ConditionBasedCollectionScheme(
-                            crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(tokens)?
+                            crate::protocol_serde::shape_condition_based_collection_scheme::de_condition_based_collection_scheme(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'conditionBasedCollectionScheme' cannot be null",

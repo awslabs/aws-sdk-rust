@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`portal_options(Option<PortalOptions>)`](crate::operation::describe_application::DescribeApplicationOutput::portal_options): <p>A structure that describes the options for the portal associated with an application.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::description): <p>The description of the .</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::describe_application::DescribeApplicationOutput::created_date): <p>The date the application was created.</p>
+    ///   - [`created_from(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::created_from): <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
     /// - On failure, responds with [`SdkError<DescribeApplicationError>`](crate::operation::describe_application::DescribeApplicationError)
     pub fn describe_application(&self) -> crate::operation::describe_application::builders::DescribeApplicationFluentBuilder {
         crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::new(self.handle.clone())

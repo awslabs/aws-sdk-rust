@@ -37,6 +37,7 @@ pub fn ser_http_parameters(
 
 pub(crate) fn de_http_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,16 +52,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PathParameterValues" => {
-                            builder =
-                                builder.set_path_parameter_values(crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(tokens)?);
+                            builder = builder
+                                .set_path_parameter_values(crate::protocol_serde::shape_path_parameter_list::de_path_parameter_list(tokens, _value)?);
                         }
                         "HeaderParameters" => {
-                            builder =
-                                builder.set_header_parameters(crate::protocol_serde::shape_header_parameters_map::de_header_parameters_map(tokens)?);
+                            builder = builder.set_header_parameters(crate::protocol_serde::shape_header_parameters_map::de_header_parameters_map(
+                                tokens, _value,
+                            )?);
                         }
                         "QueryStringParameters" => {
                             builder = builder.set_query_string_parameters(
-                                crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens)?,
+                                crate::protocol_serde::shape_query_string_parameters_map::de_query_string_parameters_map(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

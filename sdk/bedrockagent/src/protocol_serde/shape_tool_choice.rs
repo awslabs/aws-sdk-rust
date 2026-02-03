@@ -29,6 +29,7 @@ pub fn ser_tool_choice(
 
 pub(crate) fn de_tool_choice<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolChoice>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,15 +59,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "auto" => Some(crate::types::ToolChoice::Auto(
-                            crate::protocol_serde::shape_auto_tool_choice::de_auto_tool_choice(tokens)?
+                            crate::protocol_serde::shape_auto_tool_choice::de_auto_tool_choice(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'auto' cannot be null"))?,
                         )),
                         "any" => Some(crate::types::ToolChoice::Any(
-                            crate::protocol_serde::shape_any_tool_choice::de_any_tool_choice(tokens)?
+                            crate::protocol_serde::shape_any_tool_choice::de_any_tool_choice(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'any' cannot be null"))?,
                         )),
                         "tool" => Some(crate::types::ToolChoice::Tool(
-                            crate::protocol_serde::shape_specific_tool_choice::de_specific_tool_choice(tokens)?
+                            crate::protocol_serde::shape_specific_tool_choice::de_specific_tool_choice(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tool' cannot be null"))?,
                         )),
                         _ => {

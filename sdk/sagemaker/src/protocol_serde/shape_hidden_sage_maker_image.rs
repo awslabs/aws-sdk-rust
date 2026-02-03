@@ -20,6 +20,7 @@ pub fn ser_hidden_sage_maker_image(
 
 pub(crate) fn de_hidden_sage_maker_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HiddenSageMakerImage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "VersionAliases" => {
-                            builder =
-                                builder.set_version_aliases(crate::protocol_serde::shape_version_aliases_list::de_version_aliases_list(tokens)?);
+                            builder = builder.set_version_aliases(crate::protocol_serde::shape_version_aliases_list::de_version_aliases_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,7 @@ pub fn ser_rule_group_reference_statement(
 
 pub(crate) fn de_rule_group_reference_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleGroupReferenceStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,12 @@ where
                             );
                         }
                         "ExcludedRules" => {
-                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(tokens)?);
+                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_excluded_rules::de_excluded_rules(tokens, _value)?);
                         }
                         "RuleActionOverrides" => {
-                            builder = builder
-                                .set_rule_action_overrides(crate::protocol_serde::shape_rule_action_overrides::de_rule_action_overrides(tokens)?);
+                            builder = builder.set_rule_action_overrides(
+                                crate::protocol_serde::shape_rule_action_overrides::de_rule_action_overrides(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -30,6 +30,7 @@ pub fn ser_kms_key_configuration(
 
 pub(crate) fn de_kms_key_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KmsKeyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,11 +45,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "keyPolicies" => {
-                            builder = builder.set_key_policies(crate::protocol_serde::shape_kms_key_policies_map::de_kms_key_policies_map(tokens)?);
+                            builder = builder.set_key_policies(crate::protocol_serde::shape_kms_key_policies_map::de_kms_key_policies_map(
+                                tokens, _value,
+                            )?);
                         }
                         "grants" => {
-                            builder = builder
-                                .set_grants(crate::protocol_serde::shape_kms_grant_configurations_list::de_kms_grant_configurations_list(tokens)?);
+                            builder = builder.set_grants(
+                                crate::protocol_serde::shape_kms_grant_configurations_list::de_kms_grant_configurations_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

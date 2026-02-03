@@ -141,11 +141,11 @@ pub fn ser_list_parents_input(
 }
 
 pub(crate) fn de_list_parents(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_parents::builders::ListParentsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_parents::builders::ListParentsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,7 +153,7 @@ pub(crate) fn de_list_parents(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Parents" => {
-                    builder = builder.set_parents(crate::protocol_serde::shape_parents::de_parents(tokens)?);
+                    builder = builder.set_parents(crate::protocol_serde::shape_parents::de_parents(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

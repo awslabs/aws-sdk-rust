@@ -171,7 +171,7 @@ mod create_vpc_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_opensearchserverless::Error> {
 /// # let client: aws_sdk_opensearchserverless::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_collection()
 ///     .customize()

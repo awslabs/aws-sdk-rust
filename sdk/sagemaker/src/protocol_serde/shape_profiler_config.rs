@@ -30,6 +30,7 @@ pub fn ser_profiler_config(
 
 pub(crate) fn de_profiler_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProfilerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,8 +59,9 @@ where
                             );
                         }
                         "ProfilingParameters" => {
-                            builder =
-                                builder.set_profiling_parameters(crate::protocol_serde::shape_profiling_parameters::de_profiling_parameters(tokens)?);
+                            builder = builder.set_profiling_parameters(crate::protocol_serde::shape_profiling_parameters::de_profiling_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "DisableProfiler" => {
                             builder = builder.set_disable_profiler(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

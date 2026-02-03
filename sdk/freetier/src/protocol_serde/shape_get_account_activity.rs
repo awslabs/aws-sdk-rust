@@ -112,13 +112,13 @@ pub fn ser_get_account_activity_input(
 }
 
 pub(crate) fn de_get_account_activity(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account_activity::builders::GetAccountActivityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_account_activity::builders::GetAccountActivityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,7 @@ pub(crate) fn de_get_account_activity(
                     );
                 }
                 "reward" => {
-                    builder = builder.set_reward(crate::protocol_serde::shape_activity_reward::de_activity_reward(tokens)?);
+                    builder = builder.set_reward(crate::protocol_serde::shape_activity_reward::de_activity_reward(tokens, _value)?);
                 }
                 "estimatedTimeToCompleteInMinutes" => {
                     builder = builder.set_estimated_time_to_complete_in_minutes(

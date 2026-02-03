@@ -217,7 +217,7 @@ mod create_function_url_config;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_lambda::Error> {
 /// # let client: aws_sdk_lambda::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_layer_version_permission()
 ///     .customize()

@@ -44,7 +44,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-geoplaces = "1.47.0"
+//! aws-sdk-geoplaces = "1.48.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

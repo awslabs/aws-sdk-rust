@@ -26,6 +26,7 @@ pub fn ser_sensitive_data_configuration(
 
 pub(crate) fn de_sensitive_data_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SensitiveDataConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,12 +49,12 @@ where
                         }
                         "detectionScope" => {
                             builder = builder.set_detection_scope(
-                                crate::protocol_serde::shape_sensitive_data_detection_scope::de_sensitive_data_detection_scope(tokens)?,
+                                crate::protocol_serde::shape_sensitive_data_detection_scope::de_sensitive_data_detection_scope(tokens, _value)?,
                             );
                         }
                         "piiEntitiesConfiguration" => {
                             builder = builder.set_pii_entities_configuration(
-                                crate::protocol_serde::shape_pii_entities_configuration::de_pii_entities_configuration(tokens)?,
+                                crate::protocol_serde::shape_pii_entities_configuration::de_pii_entities_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

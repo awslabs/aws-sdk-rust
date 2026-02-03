@@ -68,6 +68,7 @@ pub fn ser_topic_filter(
 
 pub(crate) fn de_topic_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -103,7 +104,7 @@ where
                             );
                         }
                         "FilterSynonyms" => {
-                            builder = builder.set_filter_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens)?);
+                            builder = builder.set_filter_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value)?);
                         }
                         "OperandFieldName" => {
                             builder = builder.set_operand_field_name(
@@ -120,30 +121,32 @@ where
                             );
                         }
                         "CategoryFilter" => {
-                            builder =
-                                builder.set_category_filter(crate::protocol_serde::shape_topic_category_filter::de_topic_category_filter(tokens)?);
+                            builder = builder.set_category_filter(crate::protocol_serde::shape_topic_category_filter::de_topic_category_filter(
+                                tokens, _value,
+                            )?);
                         }
                         "NumericEqualityFilter" => {
                             builder = builder.set_numeric_equality_filter(
-                                crate::protocol_serde::shape_topic_numeric_equality_filter::de_topic_numeric_equality_filter(tokens)?,
+                                crate::protocol_serde::shape_topic_numeric_equality_filter::de_topic_numeric_equality_filter(tokens, _value)?,
                             );
                         }
                         "NumericRangeFilter" => {
                             builder = builder.set_numeric_range_filter(
-                                crate::protocol_serde::shape_topic_numeric_range_filter::de_topic_numeric_range_filter(tokens)?,
+                                crate::protocol_serde::shape_topic_numeric_range_filter::de_topic_numeric_range_filter(tokens, _value)?,
                             );
                         }
                         "DateRangeFilter" => {
-                            builder = builder
-                                .set_date_range_filter(crate::protocol_serde::shape_topic_date_range_filter::de_topic_date_range_filter(tokens)?);
+                            builder = builder.set_date_range_filter(
+                                crate::protocol_serde::shape_topic_date_range_filter::de_topic_date_range_filter(tokens, _value)?,
+                            );
                         }
                         "RelativeDateFilter" => {
                             builder = builder.set_relative_date_filter(
-                                crate::protocol_serde::shape_topic_relative_date_filter::de_topic_relative_date_filter(tokens)?,
+                                crate::protocol_serde::shape_topic_relative_date_filter::de_topic_relative_date_filter(tokens, _value)?,
                             );
                         }
                         "NullFilter" => {
-                            builder = builder.set_null_filter(crate::protocol_serde::shape_topic_null_filter::de_topic_null_filter(tokens)?);
+                            builder = builder.set_null_filter(crate::protocol_serde::shape_topic_null_filter::de_topic_null_filter(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

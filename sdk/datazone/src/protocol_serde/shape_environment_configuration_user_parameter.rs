@@ -32,6 +32,7 @@ pub fn ser_environment_configuration_user_parameter(
 
 pub(crate) fn de_environment_configuration_user_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EnvironmentConfigurationUserParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                         }
                         "environmentResolvedAccount" => {
                             builder = builder.set_environment_resolved_account(
-                                crate::protocol_serde::shape_environment_resolved_account::de_environment_resolved_account(tokens)?,
+                                crate::protocol_serde::shape_environment_resolved_account::de_environment_resolved_account(tokens, _value)?,
                             );
                         }
                         "environmentConfigurationName" => {
@@ -66,7 +67,7 @@ where
                         }
                         "environmentParameters" => {
                             builder = builder.set_environment_parameters(
-                                crate::protocol_serde::shape_environment_parameters_list::de_environment_parameters_list(tokens)?,
+                                crate::protocol_serde::shape_environment_parameters_list::de_environment_parameters_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

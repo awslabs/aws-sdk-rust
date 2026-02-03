@@ -17,6 +17,7 @@ pub fn ser_flow_transit_encryption(
 
 pub(crate) fn de_flow_transit_encryption<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowTransitEncryption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                             }
                             "encryptionKeyConfiguration" => {
                                 builder = builder.set_encryption_key_configuration(
-                                    crate::protocol_serde::shape_flow_transit_encryption_key_configuration::de_flow_transit_encryption_key_configuration(tokens)?
+                                    crate::protocol_serde::shape_flow_transit_encryption_key_configuration::de_flow_transit_encryption_key_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

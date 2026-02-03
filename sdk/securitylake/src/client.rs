@@ -159,7 +159,7 @@ mod create_subscriber_notification;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_securitylake::Error> {
 /// # let client: aws_sdk_securitylake::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_aws_log_source()
 ///     .customize()

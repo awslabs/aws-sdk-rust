@@ -31,6 +31,7 @@ pub fn ser_model_output_configuration(
 
 pub(crate) fn de_model_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,12 +54,12 @@ where
                         }
                         "jsonKeyToVariableMap" => {
                             builder = builder.set_json_key_to_variable_map(
-                                crate::protocol_serde::shape_json_key_to_variable_map::de_json_key_to_variable_map(tokens)?,
+                                crate::protocol_serde::shape_json_key_to_variable_map::de_json_key_to_variable_map(tokens, _value)?,
                             );
                         }
                         "csvIndexToVariableMap" => {
                             builder = builder.set_csv_index_to_variable_map(
-                                crate::protocol_serde::shape_csv_index_to_variable_map::de_csv_index_to_variable_map(tokens)?,
+                                crate::protocol_serde::shape_csv_index_to_variable_map::de_csv_index_to_variable_map(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

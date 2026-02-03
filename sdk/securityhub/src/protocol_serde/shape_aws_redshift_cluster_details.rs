@@ -251,6 +251,7 @@ pub fn ser_aws_redshift_cluster_details(
 
 pub(crate) fn de_aws_redshift_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRedshiftClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -304,12 +305,14 @@ where
                         }
                         "ClusterNodes" => {
                             builder = builder.set_cluster_nodes(
-                                crate::protocol_serde::shape_aws_redshift_cluster_cluster_nodes::de_aws_redshift_cluster_cluster_nodes(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_cluster_nodes::de_aws_redshift_cluster_cluster_nodes(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ClusterParameterGroups" => {
                             builder = builder.set_cluster_parameter_groups(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_groups::de_aws_redshift_cluster_cluster_parameter_groups(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_groups::de_aws_redshift_cluster_cluster_parameter_groups(tokens, _value)?
                                 );
                         }
                         "ClusterPublicKey" => {
@@ -328,12 +331,12 @@ where
                         }
                         "ClusterSecurityGroups" => {
                             builder = builder.set_cluster_security_groups(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_security_groups::de_aws_redshift_cluster_cluster_security_groups(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_security_groups::de_aws_redshift_cluster_cluster_security_groups(tokens, _value)?
                                 );
                         }
                         "ClusterSnapshotCopyStatus" => {
                             builder = builder.set_cluster_snapshot_copy_status(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_snapshot_copy_status::de_aws_redshift_cluster_cluster_snapshot_copy_status(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_snapshot_copy_status::de_aws_redshift_cluster_cluster_snapshot_copy_status(tokens, _value)?
                                 );
                         }
                         "ClusterStatus" => {
@@ -366,13 +369,13 @@ where
                         }
                         "DeferredMaintenanceWindows" => {
                             builder = builder.set_deferred_maintenance_windows(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_deferred_maintenance_windows::de_aws_redshift_cluster_deferred_maintenance_windows(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_deferred_maintenance_windows::de_aws_redshift_cluster_deferred_maintenance_windows(tokens, _value)?
                                 );
                         }
                         "ElasticIpStatus" => {
                             builder = builder.set_elastic_ip_status(
                                 crate::protocol_serde::shape_aws_redshift_cluster_elastic_ip_status::de_aws_redshift_cluster_elastic_ip_status(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -387,8 +390,9 @@ where
                             builder = builder.set_encrypted(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Endpoint" => {
-                            builder = builder
-                                .set_endpoint(crate::protocol_serde::shape_aws_redshift_cluster_endpoint::de_aws_redshift_cluster_endpoint(tokens)?);
+                            builder = builder.set_endpoint(
+                                crate::protocol_serde::shape_aws_redshift_cluster_endpoint::de_aws_redshift_cluster_endpoint(tokens, _value)?,
+                            );
                         }
                         "EnhancedVpcRouting" => {
                             builder = builder.set_enhanced_vpc_routing(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -409,12 +413,12 @@ where
                         }
                         "HsmStatus" => {
                             builder = builder.set_hsm_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::de_aws_redshift_cluster_hsm_status(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_hsm_status::de_aws_redshift_cluster_hsm_status(tokens, _value)?,
                             );
                         }
                         "IamRoles" => {
                             builder = builder.set_iam_roles(
-                                crate::protocol_serde::shape_aws_redshift_cluster_iam_roles::de_aws_redshift_cluster_iam_roles(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_iam_roles::de_aws_redshift_cluster_iam_roles(tokens, _value)?,
                             );
                         }
                         "KmsKeyId" => {
@@ -467,11 +471,11 @@ where
                             );
                         }
                         "PendingActions" => {
-                            builder = builder.set_pending_actions(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_pending_actions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "PendingModifiedValues" => {
                             builder = builder.set_pending_modified_values(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_pending_modified_values::de_aws_redshift_cluster_pending_modified_values(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_pending_modified_values::de_aws_redshift_cluster_pending_modified_values(tokens, _value)?
                                 );
                         }
                         "PreferredMaintenanceWindow" => {
@@ -486,12 +490,14 @@ where
                         }
                         "ResizeInfo" => {
                             builder = builder.set_resize_info(
-                                crate::protocol_serde::shape_aws_redshift_cluster_resize_info::de_aws_redshift_cluster_resize_info(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_resize_info::de_aws_redshift_cluster_resize_info(tokens, _value)?,
                             );
                         }
                         "RestoreStatus" => {
                             builder = builder.set_restore_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_restore_status::de_aws_redshift_cluster_restore_status(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_restore_status::de_aws_redshift_cluster_restore_status(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "SnapshotScheduleIdentifier" => {
@@ -518,13 +524,15 @@ where
                         "VpcSecurityGroups" => {
                             builder = builder.set_vpc_security_groups(
                                 crate::protocol_serde::shape_aws_redshift_cluster_vpc_security_groups::de_aws_redshift_cluster_vpc_security_groups(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "LoggingStatus" => {
                             builder = builder.set_logging_status(
-                                crate::protocol_serde::shape_aws_redshift_cluster_logging_status::de_aws_redshift_cluster_logging_status(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_logging_status::de_aws_redshift_cluster_logging_status(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

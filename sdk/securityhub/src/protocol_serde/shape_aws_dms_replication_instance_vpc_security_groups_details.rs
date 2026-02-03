@@ -11,6 +11,7 @@ pub fn ser_aws_dms_replication_instance_vpc_security_groups_details(
 
 pub(crate) fn de_aws_dms_replication_instance_vpc_security_groups_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

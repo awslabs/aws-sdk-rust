@@ -149,7 +149,7 @@ mod create_session;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockagentruntime::Error> {
 /// # let client: aws_sdk_bedrockagentruntime::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_invocation()
 ///     .customize()

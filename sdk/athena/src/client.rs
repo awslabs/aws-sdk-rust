@@ -167,7 +167,7 @@ mod create_work_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_athena::Error> {
 /// # let client: aws_sdk_athena::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_named_query()
 ///     .customize()

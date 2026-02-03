@@ -138,13 +138,13 @@ pub fn ser_get_benefit_application_input(
 }
 
 pub(crate) fn de_get_benefit_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_benefit_application::builders::GetBenefitApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_benefit_application::builders::GetBenefitApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -194,13 +194,13 @@ pub(crate) fn de_get_benefit_application(
                     );
                 }
                 "FulfillmentTypes" => {
-                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens)?);
+                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens, _value)?);
                 }
                 "BenefitApplicationDetails" => {
                     builder = builder.set_benefit_application_details(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
                 "Programs" => {
-                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens)?);
+                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value)?);
                 }
                 "Status" => {
                     builder = builder.set_status(
@@ -231,7 +231,8 @@ pub(crate) fn de_get_benefit_application(
                     );
                 }
                 "StatusReasonCodes" => {
-                    builder = builder.set_status_reason_codes(crate::protocol_serde::shape_status_reason_codes::de_status_reason_codes(tokens)?);
+                    builder =
+                        builder.set_status_reason_codes(crate::protocol_serde::shape_status_reason_codes::de_status_reason_codes(tokens, _value)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -253,13 +254,13 @@ pub(crate) fn de_get_benefit_application(
                     );
                 }
                 "AssociatedResources" => {
-                    builder = builder.set_associated_resources(crate::protocol_serde::shape_arns::de_arns(tokens)?);
+                    builder = builder.set_associated_resources(crate::protocol_serde::shape_arns::de_arns(tokens, _value)?);
                 }
                 "PartnerContacts" => {
-                    builder = builder.set_partner_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens)?);
+                    builder = builder.set_partner_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value)?);
                 }
                 "FileDetails" => {
-                    builder = builder.set_file_details(crate::protocol_serde::shape_file_details::de_file_details(tokens)?);
+                    builder = builder.set_file_details(crate::protocol_serde::shape_file_details::de_file_details(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

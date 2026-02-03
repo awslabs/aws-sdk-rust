@@ -23,6 +23,7 @@ pub fn ser_savings_plans_utilization_query(
 
 pub(crate) fn de_savings_plans_utilization_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SavingsPlansUtilizationQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "timeRange" => {
-                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(tokens)?);
+                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(tokens, _value)?);
                         }
                         "granularity" => {
                             builder = builder.set_granularity(
@@ -47,7 +48,7 @@ where
                             );
                         }
                         "filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

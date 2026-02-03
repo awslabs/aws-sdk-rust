@@ -65,6 +65,7 @@ pub fn ser_forecast_computation(
 
 pub(crate) fn de_forecast_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ForecastComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -93,10 +94,10 @@ where
                             );
                         }
                         "Time" => {
-                            builder = builder.set_time(crate::protocol_serde::shape_dimension_field::de_dimension_field(tokens)?);
+                            builder = builder.set_time(crate::protocol_serde::shape_dimension_field::de_dimension_field(tokens, _value)?);
                         }
                         "Value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_measure_field::de_measure_field(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_measure_field::de_measure_field(tokens, _value)?);
                         }
                         "PeriodsForward" => {
                             builder = builder.set_periods_forward(

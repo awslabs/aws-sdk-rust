@@ -20,6 +20,7 @@ pub fn ser_same_sheet_target_visual_configuration(
 
 pub(crate) fn de_same_sheet_target_visual_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SameSheetTargetVisualConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TargetVisuals" => {
-                            builder = builder.set_target_visuals(crate::protocol_serde::shape_target_visual_list::de_target_visual_list(tokens)?);
+                            builder =
+                                builder.set_target_visuals(crate::protocol_serde::shape_target_visual_list::de_target_visual_list(tokens, _value)?);
                         }
                         "TargetVisualOptions" => {
                             builder = builder.set_target_visual_options(

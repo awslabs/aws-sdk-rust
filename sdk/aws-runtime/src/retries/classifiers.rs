@@ -216,7 +216,7 @@ mod test {
     fn classify_generic() {
         let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
         let err = ErrorMetadata::builder().code("SlowDown").build();
-        let test_response = http_02x::Response::new("OK").map(SdkBody::from);
+        let test_response = http_1x::Response::new("OK").map(SdkBody::from);
 
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.set_response(test_response.try_into().unwrap());
@@ -229,7 +229,7 @@ mod test {
     fn test_retry_after_header() {
         let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
         let err = ErrorMetadata::builder().code("SlowDown").build();
-        let res = http_02x::Response::builder()
+        let res = http_1x::Response::builder()
             .header("x-amz-retry-after", "5000")
             .body("retry later")
             .unwrap()

@@ -153,7 +153,7 @@ mod create_data_automation_project;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockdataautomation::Error> {
 /// # let client: aws_sdk_bedrockdataautomation::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.copy_blueprint_stage()
 ///     .customize()

@@ -47,6 +47,7 @@ pub fn ser_top_bottom_filter(
 
 pub(crate) fn de_top_bottom_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopBottomFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "Limit" => {
                             builder = builder.set_limit(
@@ -79,7 +80,9 @@ where
                         }
                         "AggregationSortConfigurations" => {
                             builder = builder.set_aggregation_sort_configurations(
-                                crate::protocol_serde::shape_aggregation_sort_configuration_list::de_aggregation_sort_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_aggregation_sort_configuration_list::de_aggregation_sort_configuration_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "TimeGranularity" => {
@@ -98,7 +101,9 @@ where
                         }
                         "DefaultFilterControlConfiguration" => {
                             builder = builder.set_default_filter_control_configuration(
-                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

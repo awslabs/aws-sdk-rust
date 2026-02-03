@@ -155,7 +155,7 @@ mod create_slack_channel_configuration;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_chatbot::Error> {
 /// # let client: aws_sdk_chatbot::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_to_configuration()
 ///     .customize()

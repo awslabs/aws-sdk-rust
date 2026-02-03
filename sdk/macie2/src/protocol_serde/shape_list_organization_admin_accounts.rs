@@ -159,13 +159,13 @@ pub fn de_list_organization_admin_accounts_http_response(
 }
 
 pub(crate) fn de_list_organization_admin_accounts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_organization_admin_accounts::builders::ListOrganizationAdminAccountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,7 +173,9 @@ pub(crate) fn de_list_organization_admin_accounts(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "adminAccounts" => {
-                    builder = builder.set_admin_accounts(crate::protocol_serde::shape_list_of_admin_account::de_list_of_admin_account(tokens)?);
+                    builder = builder.set_admin_accounts(crate::protocol_serde::shape_list_of_admin_account::de_list_of_admin_account(
+                        tokens, _value,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

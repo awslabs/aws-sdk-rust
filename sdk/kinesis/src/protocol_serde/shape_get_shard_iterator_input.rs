@@ -23,5 +23,8 @@ pub fn ser_get_shard_iterator_input_input(
     if let Some(var_6) = &input.stream_arn {
         object.key("StreamARN").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.stream_id {
+        object.key("StreamId").string(var_7.as_str());
+    }
     Ok(())
 }

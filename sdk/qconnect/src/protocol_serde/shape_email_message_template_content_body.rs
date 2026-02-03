@@ -20,6 +20,7 @@ pub fn ser_email_message_template_content_body(
 
 pub(crate) fn de_email_message_template_content_body<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EmailMessageTemplateContentBody>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,14 +37,14 @@ where
                         "plainText" => {
                             builder = builder.set_plain_text(
                                 crate::protocol_serde::shape_message_template_body_content_provider::de_message_template_body_content_provider(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "html" => {
                             builder = builder.set_html(
                                 crate::protocol_serde::shape_message_template_body_content_provider::de_message_template_body_content_provider(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

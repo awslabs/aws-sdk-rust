@@ -23,6 +23,7 @@ pub fn ser_tag_criterion_for_job(
 
 pub(crate) fn de_tag_criterion_for_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TagCriterionForJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,9 @@ where
                         }
                         "tagValues" => {
                             builder = builder.set_tag_values(
-                                crate::protocol_serde::shape_list_of_tag_criterion_pair_for_job::de_list_of_tag_criterion_pair_for_job(tokens)?,
+                                crate::protocol_serde::shape_list_of_tag_criterion_pair_for_job::de_list_of_tag_criterion_pair_for_job(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

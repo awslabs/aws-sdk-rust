@@ -151,13 +151,13 @@ pub fn de_batch_delete_rum_metric_definitions_http_response(
 }
 
 pub(crate) fn de_batch_delete_rum_metric_definitions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,13 +167,14 @@ pub(crate) fn de_batch_delete_rum_metric_definitions(
                 "Errors" => {
                     builder = builder.set_errors(
                         crate::protocol_serde::shape_batch_delete_rum_metric_definitions_errors::de_batch_delete_rum_metric_definitions_errors(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
                 "MetricDefinitionIds" => {
-                    builder =
-                        builder.set_metric_definition_ids(crate::protocol_serde::shape_metric_definition_ids::de_metric_definition_ids(tokens)?);
+                    builder = builder.set_metric_definition_ids(crate::protocol_serde::shape_metric_definition_ids::de_metric_definition_ids(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

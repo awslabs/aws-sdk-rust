@@ -26,6 +26,7 @@ pub fn ser_result_configuration(
 
 pub(crate) fn de_result_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResultConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
                             );
                         }
                         "ExpectedBucketOwner" => {
@@ -59,7 +60,8 @@ where
                             );
                         }
                         "AclConfiguration" => {
-                            builder = builder.set_acl_configuration(crate::protocol_serde::shape_acl_configuration::de_acl_configuration(tokens)?);
+                            builder =
+                                builder.set_acl_configuration(crate::protocol_serde::shape_acl_configuration::de_acl_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

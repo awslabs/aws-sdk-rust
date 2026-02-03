@@ -20,6 +20,7 @@ pub fn ser_tcp_route_action(
 
 pub(crate) fn de_tcp_route_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TcpRouteAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "weightedTargets" => {
-                            builder = builder.set_weighted_targets(crate::protocol_serde::shape_weighted_targets::de_weighted_targets(tokens)?);
+                            builder =
+                                builder.set_weighted_targets(crate::protocol_serde::shape_weighted_targets::de_weighted_targets(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

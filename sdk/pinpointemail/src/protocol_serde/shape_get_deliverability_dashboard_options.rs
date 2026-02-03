@@ -96,13 +96,13 @@ pub fn de_get_deliverability_dashboard_options_http_response(
 }
 
 pub(crate) fn de_get_deliverability_dashboard_options(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,9 @@ pub(crate) fn de_get_deliverability_dashboard_options(
                 }
                 "ActiveSubscribedDomains" => {
                     builder = builder.set_active_subscribed_domains(
-                        crate::protocol_serde::shape_domain_deliverability_tracking_options::de_domain_deliverability_tracking_options(tokens)?,
+                        crate::protocol_serde::shape_domain_deliverability_tracking_options::de_domain_deliverability_tracking_options(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "DashboardEnabled" => {
@@ -129,7 +131,9 @@ pub(crate) fn de_get_deliverability_dashboard_options(
                 }
                 "PendingExpirationSubscribedDomains" => {
                     builder = builder.set_pending_expiration_subscribed_domains(
-                        crate::protocol_serde::shape_domain_deliverability_tracking_options::de_domain_deliverability_tracking_options(tokens)?,
+                        crate::protocol_serde::shape_domain_deliverability_tracking_options::de_domain_deliverability_tracking_options(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "SubscriptionExpiryDate" => {

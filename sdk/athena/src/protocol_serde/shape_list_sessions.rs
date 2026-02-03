@@ -93,13 +93,13 @@ pub fn ser_list_sessions_input(
 }
 
 pub(crate) fn de_list_sessions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_sessions::builders::ListSessionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_sessions::builders::ListSessionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_list_sessions(
                     );
                 }
                 "Sessions" => {
-                    builder = builder.set_sessions(crate::protocol_serde::shape_sessions_list::de_sessions_list(tokens)?);
+                    builder = builder.set_sessions(crate::protocol_serde::shape_sessions_list::de_sessions_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

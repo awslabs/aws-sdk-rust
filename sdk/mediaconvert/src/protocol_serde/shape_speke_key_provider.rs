@@ -32,6 +32,7 @@ pub fn ser_speke_key_provider(
 
 pub(crate) fn de_speke_key_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SpekeKeyProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                         }
                         "encryptionContractConfiguration" => {
                             builder = builder.set_encryption_contract_configuration(
-                                crate::protocol_serde::shape_encryption_contract_configuration::de_encryption_contract_configuration(tokens)?,
+                                crate::protocol_serde::shape_encryption_contract_configuration::de_encryption_contract_configuration(tokens, _value)?,
                             );
                         }
                         "resourceId" => {
@@ -66,7 +67,7 @@ where
                         }
                         "systemIds" => {
                             builder = builder.set_system_ids(
-                                    crate::protocol_serde::shape_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12::de_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12(tokens)?
+                                    crate::protocol_serde::shape_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12::de_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12(tokens, _value)?
                                 );
                         }
                         "url" => {

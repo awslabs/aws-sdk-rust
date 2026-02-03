@@ -35,6 +35,7 @@ pub fn ser_control_mapping_source(
 
 pub(crate) fn de_control_mapping_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ControlMappingSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,7 +85,7 @@ where
                             );
                         }
                         "sourceKeyword" => {
-                            builder = builder.set_source_keyword(crate::protocol_serde::shape_source_keyword::de_source_keyword(tokens)?);
+                            builder = builder.set_source_keyword(crate::protocol_serde::shape_source_keyword::de_source_keyword(tokens, _value)?);
                         }
                         "sourceFrequency" => {
                             builder = builder.set_source_frequency(

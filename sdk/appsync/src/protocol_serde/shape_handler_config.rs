@@ -17,6 +17,7 @@ pub fn ser_handler_config(
 
 pub(crate) fn de_handler_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HandlerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "integration" => {
-                            builder = builder.set_integration(crate::protocol_serde::shape_integration::de_integration(tokens)?);
+                            builder = builder.set_integration(crate::protocol_serde::shape_integration::de_integration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

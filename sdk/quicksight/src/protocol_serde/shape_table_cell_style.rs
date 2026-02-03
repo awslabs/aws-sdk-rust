@@ -41,6 +41,7 @@ pub fn ser_table_cell_style(
 
 pub(crate) fn de_table_cell_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableCellStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,7 +63,8 @@ where
                             );
                         }
                         "FontConfiguration" => {
-                            builder = builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder
+                                .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
                         }
                         "TextWrap" => {
                             builder = builder.set_text_wrap(
@@ -101,7 +103,7 @@ where
                         }
                         "Border" => {
                             builder = builder.set_border(crate::protocol_serde::shape_global_table_border_options::de_global_table_border_options(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

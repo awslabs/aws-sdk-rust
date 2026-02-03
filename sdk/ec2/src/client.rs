@@ -702,7 +702,7 @@ mod create_vpn_gateway;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ec2::Error> {
 /// # let client: aws_sdk_ec2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_address_transfer()
 ///     .customize()

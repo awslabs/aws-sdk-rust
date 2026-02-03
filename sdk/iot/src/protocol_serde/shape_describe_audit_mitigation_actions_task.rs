@@ -115,13 +115,13 @@ pub fn de_describe_audit_mitigation_actions_task_http_response(
 }
 
 pub(crate) fn de_describe_audit_mitigation_actions_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,11 +129,13 @@ pub(crate) fn de_describe_audit_mitigation_actions_task(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionsDefinition" => {
-                    builder = builder.set_actions_definition(crate::protocol_serde::shape_mitigation_action_list::de_mitigation_action_list(tokens)?);
+                    builder = builder.set_actions_definition(crate::protocol_serde::shape_mitigation_action_list::de_mitigation_action_list(
+                        tokens, _value,
+                    )?);
                 }
                 "auditCheckToActionsMapping" => {
                     builder = builder.set_audit_check_to_actions_mapping(
-                        crate::protocol_serde::shape_audit_check_to_actions_mapping::de_audit_check_to_actions_mapping(tokens)?,
+                        crate::protocol_serde::shape_audit_check_to_actions_mapping::de_audit_check_to_actions_mapping(tokens, _value)?,
                     );
                 }
                 "endTime" => {
@@ -150,12 +152,14 @@ pub(crate) fn de_describe_audit_mitigation_actions_task(
                 }
                 "target" => {
                     builder = builder.set_target(
-                        crate::protocol_serde::shape_audit_mitigation_actions_task_target::de_audit_mitigation_actions_task_target(tokens)?,
+                        crate::protocol_serde::shape_audit_mitigation_actions_task_target::de_audit_mitigation_actions_task_target(tokens, _value)?,
                     );
                 }
                 "taskStatistics" => {
                     builder = builder.set_task_statistics(
-                        crate::protocol_serde::shape_audit_mitigation_actions_task_statistics::de_audit_mitigation_actions_task_statistics(tokens)?,
+                        crate::protocol_serde::shape_audit_mitigation_actions_task_statistics::de_audit_mitigation_actions_task_statistics(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "taskStatus" => {

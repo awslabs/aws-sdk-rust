@@ -20,6 +20,7 @@ pub fn ser_prompt_flow_node_configuration(
 
 pub(crate) fn de_prompt_flow_node_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PromptFlowNodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sourceConfiguration" => {
                             builder = builder.set_source_configuration(
-                                crate::protocol_serde::shape_prompt_flow_node_source_configuration::de_prompt_flow_node_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_flow_node_source_configuration::de_prompt_flow_node_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "guardrailConfiguration" => {
                             builder = builder.set_guardrail_configuration(
-                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
+                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

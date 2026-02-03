@@ -143,13 +143,13 @@ pub fn ser_create_logging_configuration_input(
 }
 
 pub(crate) fn de_create_logging_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_logging_configuration::builders::CreateLoggingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_create_logging_configuration(
                 }
                 "destinationConfiguration" => {
                     builder = builder.set_destination_configuration(
-                        crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens)?,
+                        crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens, _value)?,
                     );
                 }
                 "id" => {
@@ -196,7 +196,7 @@ pub(crate) fn de_create_logging_configuration(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "updateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

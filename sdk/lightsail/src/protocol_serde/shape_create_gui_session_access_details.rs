@@ -151,13 +151,13 @@ pub fn ser_create_gui_session_access_details_input(
 }
 
 pub(crate) fn de_create_gui_session_access_details(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -193,7 +193,7 @@ pub(crate) fn de_create_gui_session_access_details(
                     );
                 }
                 "sessions" => {
-                    builder = builder.set_sessions(crate::protocol_serde::shape_sessions::de_sessions(tokens)?);
+                    builder = builder.set_sessions(crate::protocol_serde::shape_sessions::de_sessions(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

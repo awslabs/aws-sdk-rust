@@ -155,7 +155,7 @@ mod create_resource_set;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53recoveryreadiness::Error> {
 /// # let client: aws_sdk_route53recoveryreadiness::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_cell()
 ///     .customize()

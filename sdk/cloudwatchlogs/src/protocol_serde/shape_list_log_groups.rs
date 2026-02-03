@@ -79,13 +79,13 @@ pub fn ser_list_log_groups_input(
 }
 
 pub(crate) fn de_list_log_groups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_log_groups::builders::ListLogGroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_log_groups::builders::ListLogGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -93,7 +93,7 @@ pub(crate) fn de_list_log_groups(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "logGroups" => {
-                    builder = builder.set_log_groups(crate::protocol_serde::shape_log_group_summaries::de_log_group_summaries(tokens)?);
+                    builder = builder.set_log_groups(crate::protocol_serde::shape_log_group_summaries::de_log_group_summaries(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

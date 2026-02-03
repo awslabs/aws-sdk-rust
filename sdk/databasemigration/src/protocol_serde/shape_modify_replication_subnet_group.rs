@@ -148,13 +148,13 @@ pub fn ser_modify_replication_subnet_group_input(
 }
 
 pub(crate) fn de_modify_replication_subnet_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_modify_replication_subnet_group(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ReplicationSubnetGroup" => {
                     builder = builder.set_replication_subnet_group(
-                        crate::protocol_serde::shape_replication_subnet_group::de_replication_subnet_group(tokens)?,
+                        crate::protocol_serde::shape_replication_subnet_group::de_replication_subnet_group(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -29,6 +29,7 @@ pub fn ser_preview_config(
 
 pub(crate) fn de_preview_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PreviewConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,10 +49,10 @@ where
                             );
                         }
                         "timeoutConfig" => {
-                            builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens)?);
+                            builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens, _value)?);
                         }
                         "agentActions" => {
-                            builder = builder.set_agent_actions(crate::protocol_serde::shape_agent_actions::de_agent_actions(tokens)?);
+                            builder = builder.set_agent_actions(crate::protocol_serde::shape_agent_actions::de_agent_actions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

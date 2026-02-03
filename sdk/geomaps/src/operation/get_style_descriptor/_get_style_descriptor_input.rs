@@ -49,11 +49,13 @@ pub struct GetStyleDescriptorInput {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub terrain: ::std::option::Option<crate::types::Terrain>,
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub contour_density: ::std::option::Option<crate::types::ContourDensity>,
     /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
     /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
@@ -61,6 +63,14 @@ pub struct GetStyleDescriptorInput {
     /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
     /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
     pub travel_modes: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>,
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub buildings: ::std::option::Option<crate::types::Buildings>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
@@ -117,13 +127,15 @@ impl GetStyleDescriptorInput {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn terrain(&self) -> ::std::option::Option<&crate::types::Terrain> {
         self.terrain.as_ref()
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn contour_density(&self) -> ::std::option::Option<&crate::types::ContourDensity> {
         self.contour_density.as_ref()
     }
@@ -138,6 +150,16 @@ impl GetStyleDescriptorInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.travel_modes.is_none()`.
     pub fn travel_modes(&self) -> &[crate::types::TravelMode] {
         self.travel_modes.as_deref().unwrap_or_default()
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn buildings(&self) -> ::std::option::Option<&crate::types::Buildings> {
+        self.buildings.as_ref()
     }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -154,6 +176,7 @@ impl ::std::fmt::Debug for GetStyleDescriptorInput {
         formatter.field("contour_density", &self.contour_density);
         formatter.field("traffic", &self.traffic);
         formatter.field("travel_modes", &self.travel_modes);
+        formatter.field("buildings", &self.buildings);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -176,6 +199,7 @@ pub struct GetStyleDescriptorInputBuilder {
     pub(crate) contour_density: ::std::option::Option<crate::types::ContourDensity>,
     pub(crate) traffic: ::std::option::Option<crate::types::Traffic>,
     pub(crate) travel_modes: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>,
+    pub(crate) buildings: ::std::option::Option<crate::types::Buildings>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GetStyleDescriptorInputBuilder {
@@ -332,8 +356,10 @@ impl GetStyleDescriptorInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn terrain(mut self, input: crate::types::Terrain) -> Self {
         self.terrain = ::std::option::Option::Some(input);
         self
@@ -343,8 +369,10 @@ impl GetStyleDescriptorInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn set_terrain(mut self, input: ::std::option::Option<crate::types::Terrain>) -> Self {
         self.terrain = input;
         self
@@ -354,25 +382,27 @@ impl GetStyleDescriptorInputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn get_terrain(&self) -> &::std::option::Option<crate::types::Terrain> {
         &self.terrain
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
         self.contour_density = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
         self.contour_density = input;
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
         &self.contour_density
     }
@@ -416,6 +446,38 @@ impl GetStyleDescriptorInputBuilder {
     pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
         &self.travel_modes
     }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn buildings(mut self, input: crate::types::Buildings) -> Self {
+        self.buildings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn set_buildings(mut self, input: ::std::option::Option<crate::types::Buildings>) -> Self {
+        self.buildings = input;
+        self
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn get_buildings(&self) -> &::std::option::Option<crate::types::Buildings> {
+        &self.buildings
+    }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -443,6 +505,7 @@ impl GetStyleDescriptorInputBuilder {
             contour_density: self.contour_density,
             traffic: self.traffic,
             travel_modes: self.travel_modes,
+            buildings: self.buildings,
             key: self.key,
         })
     }
@@ -457,6 +520,7 @@ impl ::std::fmt::Debug for GetStyleDescriptorInputBuilder {
         formatter.field("contour_density", &self.contour_density);
         formatter.field("traffic", &self.traffic);
         formatter.field("travel_modes", &self.travel_modes);
+        formatter.field("buildings", &self.buildings);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

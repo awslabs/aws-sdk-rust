@@ -26,6 +26,7 @@ pub fn ser_aws_network_firewall_firewall_policy_details(
 
 pub(crate) fn de_aws_network_firewall_firewall_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,8 +41,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FirewallPolicy" => {
-                            builder = builder
-                                .set_firewall_policy(crate::protocol_serde::shape_firewall_policy_details::de_firewall_policy_details(tokens)?);
+                            builder = builder.set_firewall_policy(crate::protocol_serde::shape_firewall_policy_details::de_firewall_policy_details(
+                                tokens, _value,
+                            )?);
                         }
                         "FirewallPolicyArn" => {
                             builder = builder.set_firewall_policy_arn(

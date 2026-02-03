@@ -30,6 +30,7 @@ pub fn ser_protected_query_distribute_output_configuration_location(
 
 pub(crate) fn de_protected_query_distribute_output_configuration_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::ProtectedQueryDistributeOutputConfigurationLocation>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -62,12 +63,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::ProtectedQueryDistributeOutputConfigurationLocation::S3(
-                            crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(tokens)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
+                            crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
                         "member" => Some(crate::types::ProtectedQueryDistributeOutputConfigurationLocation::Member(
                             crate::protocol_serde::shape_protected_query_member_output_configuration::de_protected_query_member_output_configuration(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"))?,
                         )),

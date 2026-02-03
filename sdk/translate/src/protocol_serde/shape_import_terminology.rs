@@ -146,13 +146,13 @@ pub fn ser_import_terminology_input(
 }
 
 pub(crate) fn de_import_terminology(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::import_terminology::builders::ImportTerminologyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,12 +160,13 @@ pub(crate) fn de_import_terminology(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TerminologyProperties" => {
-                    builder =
-                        builder.set_terminology_properties(crate::protocol_serde::shape_terminology_properties::de_terminology_properties(tokens)?);
+                    builder = builder.set_terminology_properties(crate::protocol_serde::shape_terminology_properties::de_terminology_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "AuxiliaryDataLocation" => {
                     builder = builder.set_auxiliary_data_location(
-                        crate::protocol_serde::shape_terminology_data_location::de_terminology_data_location(tokens)?,
+                        crate::protocol_serde::shape_terminology_data_location::de_terminology_data_location(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

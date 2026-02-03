@@ -59,6 +59,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_details(
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,7 +81,7 @@ where
                             );
                         }
                         "LoadBalancerNames" => {
-                            builder = builder.set_load_balancer_names(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_load_balancer_names(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "HealthCheckType" => {
                             builder = builder.set_health_check_type(
@@ -105,17 +106,17 @@ where
                         }
                         "MixedInstancesPolicy" => {
                             builder = builder.set_mixed_instances_policy(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(tokens, _value)?
                                 );
                         }
                         "AvailabilityZones" => {
                             builder = builder.set_availability_zones(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list::de_aws_auto_scaling_auto_scaling_group_availability_zones_list(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_availability_zones_list::de_aws_auto_scaling_auto_scaling_group_availability_zones_list(tokens, _value)?
                                 );
                         }
                         "LaunchTemplate" => {
                             builder = builder.set_launch_template(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification(tokens, _value)?
                                 );
                         }
                         "CapacityRebalance" => {

@@ -44,6 +44,7 @@ pub fn ser_analysis_rule_custom(
 
 pub(crate) fn de_analysis_rule_custom<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,12 +59,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedAnalyses" => {
-                            builder =
-                                builder.set_allowed_analyses(crate::protocol_serde::shape_allowed_analyses_list::de_allowed_analyses_list(tokens)?);
+                            builder = builder.set_allowed_analyses(crate::protocol_serde::shape_allowed_analyses_list::de_allowed_analyses_list(
+                                tokens, _value,
+                            )?);
                         }
                         "allowedAnalysisProviders" => {
                             builder = builder.set_allowed_analysis_providers(
-                                crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(tokens)?,
+                                crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(tokens, _value)?,
                             );
                         }
                         "additionalAnalyses" => {
@@ -75,12 +77,14 @@ where
                         }
                         "disallowedOutputColumns" => {
                             builder = builder.set_disallowed_output_columns(
-                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?,
+                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value)?,
                             );
                         }
                         "differentialPrivacy" => {
                             builder = builder.set_differential_privacy(
-                                crate::protocol_serde::shape_differential_privacy_configuration::de_differential_privacy_configuration(tokens)?,
+                                crate::protocol_serde::shape_differential_privacy_configuration::de_differential_privacy_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

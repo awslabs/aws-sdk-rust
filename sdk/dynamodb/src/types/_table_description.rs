@@ -161,6 +161,16 @@ pub struct TableDescription {
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
     /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
     pub global_table_witnesses: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>,
+    /// <p>Indicates one of the settings synchronization modes for the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
     /// <p>Contains details for the restore.</p>
     pub restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     /// <p>The description of the server-side encryption status on the specified table.</p>
@@ -393,6 +403,18 @@ impl TableDescription {
     pub fn global_table_witnesses(&self) -> &[crate::types::GlobalTableWitnessDescription] {
         self.global_table_witnesses.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates one of the settings synchronization modes for the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
+        self.global_table_settings_replication_mode.as_ref()
+    }
     /// <p>Contains details for the restore.</p>
     pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::RestoreSummary> {
         self.restore_summary.as_ref()
@@ -463,6 +485,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) global_table_version: ::std::option::Option<::std::string::String>,
     pub(crate) replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
     pub(crate) global_table_witnesses: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>,
+    pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
     pub(crate) restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     pub(crate) sse_description: ::std::option::Option<crate::types::SseDescription>,
     pub(crate) archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
@@ -1138,6 +1161,47 @@ impl TableDescriptionBuilder {
     pub fn get_global_table_witnesses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>> {
         &self.global_table_witnesses
     }
+    /// <p>Indicates one of the settings synchronization modes for the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.global_table_settings_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates one of the settings synchronization modes for the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.global_table_settings_replication_mode = input;
+        self
+    }
+    /// <p>Indicates one of the settings synchronization modes for the global table:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        &self.global_table_settings_replication_mode
+    }
     /// <p>Contains details for the restore.</p>
     pub fn restore_summary(mut self, input: crate::types::RestoreSummary) -> Self {
         self.restore_summary = ::std::option::Option::Some(input);
@@ -1293,6 +1357,7 @@ impl TableDescriptionBuilder {
             global_table_version: self.global_table_version,
             replicas: self.replicas,
             global_table_witnesses: self.global_table_witnesses,
+            global_table_settings_replication_mode: self.global_table_settings_replication_mode,
             restore_summary: self.restore_summary,
             sse_description: self.sse_description,
             archival_summary: self.archival_summary,

@@ -20,6 +20,7 @@ pub fn ser_file_format(
 
 pub(crate) fn de_file_format<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FileFormat>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "csv" => {
-                            builder = builder.set_csv(crate::protocol_serde::shape_csv::de_csv(tokens)?);
+                            builder = builder.set_csv(crate::protocol_serde::shape_csv::de_csv(tokens, _value)?);
                         }
                         "parquet" => {
-                            builder = builder.set_parquet(crate::protocol_serde::shape_parquet::de_parquet(tokens)?);
+                            builder = builder.set_parquet(crate::protocol_serde::shape_parquet::de_parquet(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

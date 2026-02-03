@@ -193,13 +193,13 @@ pub fn ser_get_relational_database_parameters_input(
 }
 
 pub(crate) fn de_get_relational_database_parameters(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,7 +208,7 @@ pub(crate) fn de_get_relational_database_parameters(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "parameters" => {
                     builder = builder.set_parameters(
-                        crate::protocol_serde::shape_relational_database_parameter_list::de_relational_database_parameter_list(tokens)?,
+                        crate::protocol_serde::shape_relational_database_parameter_list::de_relational_database_parameter_list(tokens, _value)?,
                     );
                 }
                 "nextPageToken" => {

@@ -202,13 +202,13 @@ pub fn ser_create_file_system_from_backup_input(
 }
 
 pub(crate) fn de_create_file_system_from_backup(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_file_system_from_backup::builders::CreateFileSystemFromBackupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -216,7 +216,7 @@ pub(crate) fn de_create_file_system_from_backup(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FileSystem" => {
-                    builder = builder.set_file_system(crate::protocol_serde::shape_file_system::de_file_system(tokens)?);
+                    builder = builder.set_file_system(crate::protocol_serde::shape_file_system::de_file_system(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

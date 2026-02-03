@@ -23,6 +23,7 @@ pub fn ser_worker_compute_configuration(
 
 pub(crate) fn de_worker_compute_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkerComputeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                         "properties" => {
                             builder = builder.set_properties(
                                 crate::protocol_serde::shape_worker_compute_configuration_properties::de_worker_compute_configuration_properties(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

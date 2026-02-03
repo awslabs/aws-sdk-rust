@@ -28,6 +28,7 @@ pub fn ser_request_metadata_base_filters(
 
 pub(crate) fn de_request_metadata_base_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RequestMetadataBaseFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,10 +43,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "equals" => {
-                            builder = builder.set_equals(crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens)?);
+                            builder = builder.set_equals(crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(
+                                tokens, _value,
+                            )?);
                         }
                         "notEquals" => {
-                            builder = builder.set_not_equals(crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens)?);
+                            builder = builder.set_not_equals(crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

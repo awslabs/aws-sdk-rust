@@ -47,6 +47,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,13 +69,13 @@ where
                             );
                         }
                         "Conditions" => {
-                            builder = builder.set_conditions(crate::protocol_serde::shape_rule_conditions::de_rule_conditions(tokens)?);
+                            builder = builder.set_conditions(crate::protocol_serde::shape_rule_conditions::de_rule_conditions(tokens, _value)?);
                         }
                         "Unless" => {
-                            builder = builder.set_unless(crate::protocol_serde::shape_rule_conditions::de_rule_conditions(tokens)?);
+                            builder = builder.set_unless(crate::protocol_serde::shape_rule_conditions::de_rule_conditions(tokens, _value)?);
                         }
                         "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_rule_actions::de_rule_actions(tokens)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_rule_actions::de_rule_actions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -180,13 +180,13 @@ pub fn ser_start_instance_onboarding_job_input(
 }
 
 pub(crate) fn de_start_instance_onboarding_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -195,7 +195,7 @@ pub(crate) fn de_start_instance_onboarding_job(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "connectInstanceOnboardingJobStatus" => {
                     builder = builder.set_connect_instance_onboarding_job_status(
-                        crate::protocol_serde::shape_instance_onboarding_job_status::de_instance_onboarding_job_status(tokens)?,
+                        crate::protocol_serde::shape_instance_onboarding_job_status::de_instance_onboarding_job_status(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -29,6 +29,7 @@ pub fn ser_q_query_card_input(
 
 pub(crate) fn de_q_query_card_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QQueryCardInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,8 @@ where
                             );
                         }
                         "attributeFilter" => {
-                            builder = builder.set_attribute_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens)?);
+                            builder =
+                                builder.set_attribute_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

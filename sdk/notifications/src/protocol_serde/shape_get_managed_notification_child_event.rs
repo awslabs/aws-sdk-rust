@@ -134,13 +134,13 @@ pub fn de_get_managed_notification_child_event_http_response(
 }
 
 pub(crate) fn de_get_managed_notification_child_event(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,8 +155,9 @@ pub(crate) fn de_get_managed_notification_child_event(
                     );
                 }
                 "content" => {
-                    builder = builder
-                        .set_content(crate::protocol_serde::shape_managed_notification_child_event::de_managed_notification_child_event(tokens)?);
+                    builder = builder.set_content(
+                        crate::protocol_serde::shape_managed_notification_child_event::de_managed_notification_child_event(tokens, _value)?,
+                    );
                 }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

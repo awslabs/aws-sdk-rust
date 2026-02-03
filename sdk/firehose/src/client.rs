@@ -147,7 +147,7 @@ mod create_delivery_stream;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_firehose::Error> {
 /// # let client: aws_sdk_firehose::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_delivery_stream()
 ///     .customize()

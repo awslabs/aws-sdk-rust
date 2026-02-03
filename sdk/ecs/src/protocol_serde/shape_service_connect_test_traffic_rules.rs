@@ -14,6 +14,7 @@ pub fn ser_service_connect_test_traffic_rules(
 
 pub(crate) fn de_service_connect_test_traffic_rules<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectTestTrafficRules>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "header" => {
                                 builder = builder.set_header(
-                                    crate::protocol_serde::shape_service_connect_test_traffic_header_rules::de_service_connect_test_traffic_header_rules(tokens)?
+                                    crate::protocol_serde::shape_service_connect_test_traffic_header_rules::de_service_connect_test_traffic_header_rules(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

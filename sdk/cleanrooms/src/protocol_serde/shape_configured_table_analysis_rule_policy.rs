@@ -24,6 +24,7 @@ pub fn ser_configured_table_analysis_rule_policy(
 
 pub(crate) fn de_configured_table_analysis_rule_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfiguredTableAnalysisRulePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                         "v1" => Some(crate::types::ConfiguredTableAnalysisRulePolicy::V1(
                             crate::protocol_serde::shape_configured_table_analysis_rule_policy_v1::de_configured_table_analysis_rule_policy_v1(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?,
                         )),

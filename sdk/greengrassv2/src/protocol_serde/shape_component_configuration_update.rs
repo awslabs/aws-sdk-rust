@@ -20,6 +20,7 @@ pub fn ser_component_configuration_update(
 
 pub(crate) fn de_component_configuration_update<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentConfigurationUpdate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "reset" => {
                             builder = builder.set_reset(
-                                crate::protocol_serde::shape_component_configuration_path_list::de_component_configuration_path_list(tokens)?,
+                                crate::protocol_serde::shape_component_configuration_path_list::de_component_configuration_path_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

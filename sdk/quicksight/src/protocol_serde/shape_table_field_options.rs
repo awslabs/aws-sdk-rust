@@ -47,6 +47,7 @@ pub fn ser_table_field_options(
 
 pub(crate) fn de_table_field_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableFieldOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,20 +63,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedFieldOptions" => {
                             builder = builder.set_selected_field_options(
-                                crate::protocol_serde::shape_table_field_option_list::de_table_field_option_list(tokens)?,
+                                crate::protocol_serde::shape_table_field_option_list::de_table_field_option_list(tokens, _value)?,
                             );
                         }
                         "Order" => {
-                            builder = builder.set_order(crate::protocol_serde::shape_field_order_list::de_field_order_list(tokens)?);
+                            builder = builder.set_order(crate::protocol_serde::shape_field_order_list::de_field_order_list(tokens, _value)?);
                         }
                         "PinnedFieldOptions" => {
                             builder = builder.set_pinned_field_options(
-                                crate::protocol_serde::shape_table_pinned_field_options::de_table_pinned_field_options(tokens)?,
+                                crate::protocol_serde::shape_table_pinned_field_options::de_table_pinned_field_options(tokens, _value)?,
                             );
                         }
                         "TransposedTableOptions" => {
                             builder = builder.set_transposed_table_options(
-                                crate::protocol_serde::shape_transposed_table_option_list::de_transposed_table_option_list(tokens)?,
+                                crate::protocol_serde::shape_transposed_table_option_list::de_transposed_table_option_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

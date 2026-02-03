@@ -159,7 +159,7 @@ mod create_partner_event_source;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudwatchevents::Error> {
 /// # let client: aws_sdk_cloudwatchevents::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.activate_event_source()
 ///     .customize()

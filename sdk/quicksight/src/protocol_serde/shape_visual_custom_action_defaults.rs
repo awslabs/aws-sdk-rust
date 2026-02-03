@@ -14,6 +14,7 @@ pub fn ser_visual_custom_action_defaults(
 
 pub(crate) fn de_visual_custom_action_defaults<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VisualCustomActionDefaults>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "highlightOperation" => {
                             builder = builder.set_highlight_operation(
-                                crate::protocol_serde::shape_visual_highlight_operation::de_visual_highlight_operation(tokens)?,
+                                crate::protocol_serde::shape_visual_highlight_operation::de_visual_highlight_operation(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

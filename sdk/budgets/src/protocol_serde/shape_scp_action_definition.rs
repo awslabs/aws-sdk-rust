@@ -20,6 +20,7 @@ pub fn ser_scp_action_definition(
 
 pub(crate) fn de_scp_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScpActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "TargetIds" => {
-                            builder = builder.set_target_ids(crate::protocol_serde::shape_target_ids::de_target_ids(tokens)?);
+                            builder = builder.set_target_ids(crate::protocol_serde::shape_target_ids::de_target_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

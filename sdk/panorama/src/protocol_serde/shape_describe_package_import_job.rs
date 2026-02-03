@@ -113,13 +113,13 @@ pub fn de_describe_package_import_job_http_response(
 }
 
 pub(crate) fn de_describe_package_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,8 +140,9 @@ pub(crate) fn de_describe_package_import_job(
                     )?);
                 }
                 "InputConfig" => {
-                    builder = builder
-                        .set_input_config(crate::protocol_serde::shape_package_import_job_input_config::de_package_import_job_input_config(tokens)?);
+                    builder = builder.set_input_config(
+                        crate::protocol_serde::shape_package_import_job_input_config::de_package_import_job_input_config(tokens, _value)?,
+                    );
                 }
                 "JobId" => {
                     builder = builder.set_job_id(
@@ -151,7 +152,7 @@ pub(crate) fn de_describe_package_import_job(
                     );
                 }
                 "JobTags" => {
-                    builder = builder.set_job_tags(crate::protocol_serde::shape_job_tags_list::de_job_tags_list(tokens)?);
+                    builder = builder.set_job_tags(crate::protocol_serde::shape_job_tags_list::de_job_tags_list(tokens, _value)?);
                 }
                 "JobType" => {
                     builder = builder.set_job_type(
@@ -168,12 +169,12 @@ pub(crate) fn de_describe_package_import_job(
                 }
                 "Output" => {
                     builder = builder.set_output(crate::protocol_serde::shape_package_import_job_output::de_package_import_job_output(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "OutputConfig" => {
                     builder = builder.set_output_config(
-                        crate::protocol_serde::shape_package_import_job_output_config::de_package_import_job_output_config(tokens)?,
+                        crate::protocol_serde::shape_package_import_job_output_config::de_package_import_job_output_config(tokens, _value)?,
                     );
                 }
                 "Status" => {

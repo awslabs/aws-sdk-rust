@@ -122,13 +122,13 @@ pub fn de_describe_anomaly_http_response(
 }
 
 pub(crate) fn de_describe_anomaly(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_anomaly::builders::DescribeAnomalyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_anomaly::builders::DescribeAnomalyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,10 +136,10 @@ pub(crate) fn de_describe_anomaly(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProactiveAnomaly" => {
-                    builder = builder.set_proactive_anomaly(crate::protocol_serde::shape_proactive_anomaly::de_proactive_anomaly(tokens)?);
+                    builder = builder.set_proactive_anomaly(crate::protocol_serde::shape_proactive_anomaly::de_proactive_anomaly(tokens, _value)?);
                 }
                 "ReactiveAnomaly" => {
-                    builder = builder.set_reactive_anomaly(crate::protocol_serde::shape_reactive_anomaly::de_reactive_anomaly(tokens)?);
+                    builder = builder.set_reactive_anomaly(crate::protocol_serde::shape_reactive_anomaly::de_reactive_anomaly(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

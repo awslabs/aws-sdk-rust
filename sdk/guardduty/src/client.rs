@@ -171,7 +171,7 @@ mod create_trusted_entity_set;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_guardduty::Error> {
 /// # let client: aws_sdk_guardduty::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_administrator_invitation()
 ///     .customize()

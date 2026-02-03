@@ -22,6 +22,7 @@ pub fn ser_auto_tune_maintenance_schedule(
 
 pub(crate) fn de_auto_tune_maintenance_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoTuneMaintenanceSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                             )?);
                         }
                         "Duration" => {
-                            builder = builder.set_duration(crate::protocol_serde::shape_duration::de_duration(tokens)?);
+                            builder = builder.set_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
                         }
                         "CronExpressionForRecurrence" => {
                             builder = builder.set_cron_expression_for_recurrence(

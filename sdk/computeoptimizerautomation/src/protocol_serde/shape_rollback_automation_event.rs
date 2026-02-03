@@ -225,13 +225,13 @@ pub fn ser_rollback_automation_event_input(
 }
 
 pub(crate) fn de_rollback_automation_event(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::rollback_automation_event::builders::RollbackAutomationEventOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::rollback_automation_event::builders::RollbackAutomationEventOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

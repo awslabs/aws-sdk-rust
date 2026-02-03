@@ -23,6 +23,7 @@ pub fn ser_aws_code_build_project_logs_config_details(
 
 pub(crate) fn de_aws_code_build_project_logs_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectLogsConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CloudWatchLogs" => {
                             builder = builder.set_cloud_watch_logs(
-                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_cloud_watch_logs_details::de_aws_code_build_project_logs_config_cloud_watch_logs_details(tokens)?
+                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_cloud_watch_logs_details::de_aws_code_build_project_logs_config_cloud_watch_logs_details(tokens, _value)?
                                 );
                         }
                         "S3Logs" => {
                             builder = builder.set_s3_logs(
-                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_s3_logs_details::de_aws_code_build_project_logs_config_s3_logs_details(tokens)?
+                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_s3_logs_details::de_aws_code_build_project_logs_config_s3_logs_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

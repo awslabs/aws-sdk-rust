@@ -17,6 +17,7 @@ pub fn ser_encryption_configuration(
 
 pub(crate) fn de_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "KMSEncryptionConfig" => {
-                            builder = builder
-                                .set_kms_encryption_config(crate::protocol_serde::shape_kms_encryption_config::de_kms_encryption_config(tokens)?);
+                            builder = builder.set_kms_encryption_config(
+                                crate::protocol_serde::shape_kms_encryption_config::de_kms_encryption_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

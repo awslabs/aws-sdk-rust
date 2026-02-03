@@ -20,6 +20,7 @@ pub fn ser_extensions_v4(
 
 pub(crate) fn de_extensions_v4<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExtensionsV4>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KeyUsage" => {
-                            builder = builder.set_key_usage(crate::protocol_serde::shape_key_usage::de_key_usage(tokens)?);
+                            builder = builder.set_key_usage(crate::protocol_serde::shape_key_usage::de_key_usage(tokens, _value)?);
                         }
                         "ApplicationPolicies" => {
-                            builder =
-                                builder.set_application_policies(crate::protocol_serde::shape_application_policies::de_application_policies(tokens)?);
+                            builder = builder.set_application_policies(crate::protocol_serde::shape_application_policies::de_application_policies(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -38,6 +38,7 @@ pub fn ser_sapo_data_connector_profile_properties(
 
 pub(crate) fn de_sapo_data_connector_profile_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SapoDataConnectorProfileProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,7 +95,8 @@ where
                             );
                         }
                         "oAuthProperties" => {
-                            builder = builder.set_o_auth_properties(crate::protocol_serde::shape_o_auth_properties::de_o_auth_properties(tokens)?);
+                            builder =
+                                builder.set_o_auth_properties(crate::protocol_serde::shape_o_auth_properties::de_o_auth_properties(tokens, _value)?);
                         }
                         "disableSSO" => {
                             builder = builder.set_disable_sso(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -35,6 +35,7 @@ pub fn ser_evaluation_form_numeric_question_option(
 
 pub(crate) fn de_evaluation_form_numeric_question_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormNumericQuestionOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                         }
                         "AutomaticFailConfiguration" => {
                             builder = builder.set_automatic_fail_configuration(
-                                crate::protocol_serde::shape_automatic_fail_configuration::de_automatic_fail_configuration(tokens)?,
+                                crate::protocol_serde::shape_automatic_fail_configuration::de_automatic_fail_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

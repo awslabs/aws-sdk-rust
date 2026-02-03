@@ -38,6 +38,7 @@ pub fn ser_word_cloud_chart_configuration(
 
 pub(crate) fn de_word_cloud_chart_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WordCloudChartConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,25 +53,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder =
-                                builder.set_field_wells(crate::protocol_serde::shape_word_cloud_field_wells::de_word_cloud_field_wells(tokens)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_word_cloud_field_wells::de_word_cloud_field_wells(
+                                tokens, _value,
+                            )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_word_cloud_sort_configuration::de_word_cloud_sort_configuration(tokens)?,
+                                crate::protocol_serde::shape_word_cloud_sort_configuration::de_word_cloud_sort_configuration(tokens, _value)?,
                             );
                         }
                         "CategoryLabelOptions" => {
                             builder = builder.set_category_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "WordCloudOptions" => {
-                            builder = builder.set_word_cloud_options(crate::protocol_serde::shape_word_cloud_options::de_word_cloud_options(tokens)?);
+                            builder = builder
+                                .set_word_cloud_options(crate::protocol_serde::shape_word_cloud_options::de_word_cloud_options(tokens, _value)?);
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

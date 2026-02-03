@@ -26,6 +26,7 @@ pub fn ser_configuration_object(
 
 pub(crate) fn de_configuration_object<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfigurationObject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                         }
                         "AllowedValues" => {
                             builder = builder.set_allowed_values(
-                                crate::protocol_serde::shape_allowed_values_string_list::de_allowed_values_string_list(tokens)?,
+                                crate::protocol_serde::shape_allowed_values_string_list::de_allowed_values_string_list(tokens, _value)?,
                             );
                         }
                         "MinValue" => {

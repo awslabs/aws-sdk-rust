@@ -51,6 +51,7 @@ pub fn ser_resource(
 
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,15 +101,15 @@ where
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "DataClassification" => {
                             builder = builder.set_data_classification(
-                                crate::protocol_serde::shape_data_classification_details::de_data_classification_details(tokens)?,
+                                crate::protocol_serde::shape_data_classification_details::de_data_classification_details(tokens, _value)?,
                             );
                         }
                         "Details" => {
-                            builder = builder.set_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens)?);
+                            builder = builder.set_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens, _value)?);
                         }
                         "ApplicationName" => {
                             builder = builder.set_application_name(

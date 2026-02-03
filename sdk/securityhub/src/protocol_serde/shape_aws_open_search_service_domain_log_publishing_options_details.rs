@@ -35,6 +35,7 @@ pub fn ser_aws_open_search_service_domain_log_publishing_options_details(
 
 pub(crate) fn de_aws_open_search_service_domain_log_publishing_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -53,17 +54,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IndexSlowLogs" => {
                             builder = builder.set_index_slow_logs(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens, _value)?
                                 );
                         }
                         "SearchSlowLogs" => {
                             builder = builder.set_search_slow_logs(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens, _value)?
                                 );
                         }
                         "AuditLogs" => {
                             builder = builder.set_audit_logs(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_option::de_aws_open_search_service_domain_log_publishing_option(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

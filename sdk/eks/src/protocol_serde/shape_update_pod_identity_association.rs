@@ -120,13 +120,13 @@ pub fn ser_update_pod_identity_association_input(
 }
 
 pub(crate) fn de_update_pod_identity_association(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_pod_identity_association::builders::UpdatePodIdentityAssociationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_pod_identity_association::builders::UpdatePodIdentityAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_update_pod_identity_association(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "association" => {
                     builder = builder.set_association(crate::protocol_serde::shape_pod_identity_association::de_pod_identity_association(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

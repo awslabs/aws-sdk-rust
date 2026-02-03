@@ -27,6 +27,7 @@ pub fn ser_service_discovery(
 
 pub(crate) fn de_service_discovery<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceDiscovery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,13 +57,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "dns" => Some(crate::types::ServiceDiscovery::Dns(
-                            crate::protocol_serde::shape_dns_service_discovery::de_dns_service_discovery(tokens)?
+                            crate::protocol_serde::shape_dns_service_discovery::de_dns_service_discovery(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dns' cannot be null"))?,
                         )),
                         "awsCloudMap" => Some(crate::types::ServiceDiscovery::AwsCloudMap(
-                            crate::protocol_serde::shape_aws_cloud_map_service_discovery::de_aws_cloud_map_service_discovery(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsCloudMap' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_aws_cloud_map_service_discovery::de_aws_cloud_map_service_discovery(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsCloudMap' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

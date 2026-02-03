@@ -37,6 +37,7 @@ pub fn ser_docker_volume_configuration(
 
 pub(crate) fn de_docker_volume_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DockerVolumeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,10 +69,10 @@ where
                             );
                         }
                         "driverOpts" => {
-                            builder = builder.set_driver_opts(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                            builder = builder.set_driver_opts(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                         }
                         "labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

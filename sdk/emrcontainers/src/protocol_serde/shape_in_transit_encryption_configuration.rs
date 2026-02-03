@@ -14,6 +14,7 @@ pub fn ser_in_transit_encryption_configuration(
 
 pub(crate) fn de_in_transit_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InTransitEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tlsCertificateConfiguration" => {
                             builder = builder.set_tls_certificate_configuration(
-                                crate::protocol_serde::shape_tls_certificate_configuration::de_tls_certificate_configuration(tokens)?,
+                                crate::protocol_serde::shape_tls_certificate_configuration::de_tls_certificate_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -115,13 +115,13 @@ pub fn de_get_recommender_http_response(
 }
 
 pub(crate) fn de_get_recommender(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_recommender::builders::GetRecommenderOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_recommender::builders::GetRecommenderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,10 +155,11 @@ pub(crate) fn de_get_recommender(
                     )?);
                 }
                 "LatestRecommenderUpdate" => {
-                    builder = builder.set_latest_recommender_update(crate::protocol_serde::shape_recommender_update::de_recommender_update(tokens)?);
+                    builder = builder
+                        .set_latest_recommender_update(crate::protocol_serde::shape_recommender_update::de_recommender_update(tokens, _value)?);
                 }
                 "RecommenderConfig" => {
-                    builder = builder.set_recommender_config(crate::protocol_serde::shape_recommender_config::de_recommender_config(tokens)?);
+                    builder = builder.set_recommender_config(crate::protocol_serde::shape_recommender_config::de_recommender_config(tokens, _value)?);
                 }
                 "RecommenderName" => {
                     builder = builder.set_recommender_name(
@@ -182,10 +183,12 @@ pub(crate) fn de_get_recommender(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "TrainingMetrics" => {
-                    builder = builder.set_training_metrics(crate::protocol_serde::shape_training_metrics_list::de_training_metrics_list(tokens)?);
+                    builder = builder.set_training_metrics(crate::protocol_serde::shape_training_metrics_list::de_training_metrics_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

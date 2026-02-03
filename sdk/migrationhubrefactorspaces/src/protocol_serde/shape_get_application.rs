@@ -115,13 +115,13 @@ pub fn de_get_application_http_response(
 }
 
 pub(crate) fn de_get_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application::builders::GetApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_get_application(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ApiGatewayProxy" => {
                     builder = builder.set_api_gateway_proxy(crate::protocol_serde::shape_api_gateway_proxy_config::de_api_gateway_proxy_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ApplicationId" => {
@@ -168,7 +168,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "Error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_response::de_error_response(tokens, _value)?);
                 }
                 "LastUpdatedTime" => {
                     builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -205,7 +205,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "VpcId" => {
                     builder = builder.set_vpc_id(

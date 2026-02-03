@@ -90,13 +90,13 @@ pub fn ser_describe_notification_rule_input(
 }
 
 pub(crate) fn de_describe_notification_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_notification_rule::builders::DescribeNotificationRuleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_notification_rule::builders::DescribeNotificationRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,7 +131,7 @@ pub(crate) fn de_describe_notification_rule(
                     );
                 }
                 "EventTypes" => {
-                    builder = builder.set_event_types(crate::protocol_serde::shape_event_type_batch::de_event_type_batch(tokens)?);
+                    builder = builder.set_event_types(crate::protocol_serde::shape_event_type_batch::de_event_type_batch(tokens, _value)?);
                 }
                 "LastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -161,10 +161,10 @@ pub(crate) fn de_describe_notification_rule(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "Targets" => {
-                    builder = builder.set_targets(crate::protocol_serde::shape_targets_batch::de_targets_batch(tokens)?);
+                    builder = builder.set_targets(crate::protocol_serde::shape_targets_batch::de_targets_batch(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

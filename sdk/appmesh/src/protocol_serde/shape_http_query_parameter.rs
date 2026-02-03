@@ -17,6 +17,7 @@ pub fn ser_http_query_parameter(
 
 pub(crate) fn de_http_query_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpQueryParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,9 @@ where
                             );
                         }
                         "match" => {
-                            builder = builder.set_match(crate::protocol_serde::shape_query_parameter_match::de_query_parameter_match(tokens)?);
+                            builder = builder.set_match(crate::protocol_serde::shape_query_parameter_match::de_query_parameter_match(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

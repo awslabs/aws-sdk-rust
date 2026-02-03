@@ -23,6 +23,7 @@ pub fn ser_copy_step_details(
 
 pub(crate) fn de_copy_step_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CopyStepDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "DestinationFileLocation" => {
-                            builder = builder
-                                .set_destination_file_location(crate::protocol_serde::shape_input_file_location::de_input_file_location(tokens)?);
+                            builder = builder.set_destination_file_location(
+                                crate::protocol_serde::shape_input_file_location::de_input_file_location(tokens, _value)?,
+                            );
                         }
                         "OverwriteExisting" => {
                             builder = builder.set_overwrite_existing(

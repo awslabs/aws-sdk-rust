@@ -23,6 +23,7 @@ pub fn ser_header_footer_section_configuration(
 
 pub(crate) fn de_header_footer_section_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HeaderFooterSectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,11 +45,12 @@ where
                             );
                         }
                         "Layout" => {
-                            builder = builder
-                                .set_layout(crate::protocol_serde::shape_section_layout_configuration::de_section_layout_configuration(tokens)?);
+                            builder = builder.set_layout(
+                                crate::protocol_serde::shape_section_layout_configuration::de_section_layout_configuration(tokens, _value)?,
+                            );
                         }
                         "Style" => {
-                            builder = builder.set_style(crate::protocol_serde::shape_section_style::de_section_style(tokens)?);
+                            builder = builder.set_style(crate::protocol_serde::shape_section_style::de_section_style(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

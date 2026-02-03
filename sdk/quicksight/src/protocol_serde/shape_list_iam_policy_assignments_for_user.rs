@@ -167,13 +167,13 @@ pub fn de_list_iam_policy_assignments_for_user_http_response(
 }
 
 pub(crate) fn de_list_iam_policy_assignments_for_user(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -182,7 +182,7 @@ pub(crate) fn de_list_iam_policy_assignments_for_user(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ActiveAssignments" => {
                     builder = builder.set_active_assignments(
-                        crate::protocol_serde::shape_active_iam_policy_assignment_list::de_active_iam_policy_assignment_list(tokens)?,
+                        crate::protocol_serde::shape_active_iam_policy_assignment_list::de_active_iam_policy_assignment_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

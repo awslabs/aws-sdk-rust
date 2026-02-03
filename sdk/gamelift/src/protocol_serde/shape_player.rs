@@ -40,6 +40,7 @@ pub fn ser_player(
 
 pub(crate) fn de_player<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Player>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,8 +62,9 @@ where
                             );
                         }
                         "PlayerAttributes" => {
-                            builder =
-                                builder.set_player_attributes(crate::protocol_serde::shape_player_attribute_map::de_player_attribute_map(tokens)?);
+                            builder = builder.set_player_attributes(crate::protocol_serde::shape_player_attribute_map::de_player_attribute_map(
+                                tokens, _value,
+                            )?);
                         }
                         "Team" => {
                             builder = builder.set_team(
@@ -72,7 +74,7 @@ where
                             );
                         }
                         "LatencyInMs" => {
-                            builder = builder.set_latency_in_ms(crate::protocol_serde::shape_latency_map::de_latency_map(tokens)?);
+                            builder = builder.set_latency_in_ms(crate::protocol_serde::shape_latency_map::de_latency_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

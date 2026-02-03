@@ -125,13 +125,13 @@ pub fn ser_get_scheduled_query_input(
 }
 
 pub(crate) fn de_get_scheduled_query(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_scheduled_query::builders::GetScheduledQueryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_scheduled_query::builders::GetScheduledQueryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_get_scheduled_query(
                 }
                 "logGroupIdentifiers" => {
                     builder = builder.set_log_group_identifiers(
-                        crate::protocol_serde::shape_scheduled_query_log_group_identifiers::de_scheduled_query_log_group_identifiers(tokens)?,
+                        crate::protocol_serde::shape_scheduled_query_log_group_identifiers::de_scheduled_query_log_group_identifiers(tokens, _value)?,
                     );
                 }
                 "scheduleExpression" => {
@@ -201,7 +201,7 @@ pub(crate) fn de_get_scheduled_query(
                 }
                 "destinationConfiguration" => {
                     builder = builder.set_destination_configuration(
-                        crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens)?,
+                        crate::protocol_serde::shape_destination_configuration::de_destination_configuration(tokens, _value)?,
                     );
                 }
                 "state" => {

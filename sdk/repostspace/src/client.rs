@@ -201,7 +201,7 @@ mod create_space;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_repostspace::Error> {
 /// # let client: aws_sdk_repostspace::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_add_channel_role_to_accessors()
 ///     .customize()

@@ -29,6 +29,7 @@ pub fn ser_text_message(
 
 pub(crate) fn de_text_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,11 @@ where
                             );
                         }
                         "citations" => {
-                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens)?);
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens, _value)?);
                         }
                         "aiGuardrailAssessment" => {
                             builder = builder.set_ai_guardrail_assessment(
-                                crate::protocol_serde::shape_ai_guardrail_assessment::de_ai_guardrail_assessment(tokens)?,
+                                crate::protocol_serde::shape_ai_guardrail_assessment::de_ai_guardrail_assessment(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

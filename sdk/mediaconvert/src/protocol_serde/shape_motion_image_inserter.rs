@@ -32,6 +32,7 @@ pub fn ser_motion_image_inserter(
 
 pub(crate) fn de_motion_image_inserter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MotionImageInserter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "framerate" => {
                             builder = builder.set_framerate(
-                                crate::protocol_serde::shape_motion_image_insertion_framerate::de_motion_image_insertion_framerate(tokens)?,
+                                crate::protocol_serde::shape_motion_image_insertion_framerate::de_motion_image_insertion_framerate(tokens, _value)?,
                             );
                         }
                         "input" => {
@@ -65,8 +66,9 @@ where
                             );
                         }
                         "offset" => {
-                            builder = builder
-                                .set_offset(crate::protocol_serde::shape_motion_image_insertion_offset::de_motion_image_insertion_offset(tokens)?);
+                            builder = builder.set_offset(
+                                crate::protocol_serde::shape_motion_image_insertion_offset::de_motion_image_insertion_offset(tokens, _value)?,
+                            );
                         }
                         "playback" => {
                             builder = builder.set_playback(

@@ -125,13 +125,13 @@ pub fn ser_disassociate_custom_domain_input(
 }
 
 pub(crate) fn de_disassociate_custom_domain(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,10 +153,10 @@ pub(crate) fn de_disassociate_custom_domain(
                     );
                 }
                 "CustomDomain" => {
-                    builder = builder.set_custom_domain(crate::protocol_serde::shape_custom_domain::de_custom_domain(tokens)?);
+                    builder = builder.set_custom_domain(crate::protocol_serde::shape_custom_domain::de_custom_domain(tokens, _value)?);
                 }
                 "VpcDNSTargets" => {
-                    builder = builder.set_vpc_dns_targets(crate::protocol_serde::shape_vpc_dns_target_list::de_vpc_dns_target_list(tokens)?);
+                    builder = builder.set_vpc_dns_targets(crate::protocol_serde::shape_vpc_dns_target_list::de_vpc_dns_target_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -20,6 +20,7 @@ pub fn ser_series_item(
 
 pub(crate) fn de_series_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SeriesItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldSeriesItem" => {
-                            builder = builder.set_field_series_item(crate::protocol_serde::shape_field_series_item::de_field_series_item(tokens)?);
+                            builder =
+                                builder.set_field_series_item(crate::protocol_serde::shape_field_series_item::de_field_series_item(tokens, _value)?);
                         }
                         "DataFieldSeriesItem" => {
-                            builder = builder
-                                .set_data_field_series_item(crate::protocol_serde::shape_data_field_series_item::de_data_field_series_item(tokens)?);
+                            builder = builder.set_data_field_series_item(
+                                crate::protocol_serde::shape_data_field_series_item::de_data_field_series_item(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

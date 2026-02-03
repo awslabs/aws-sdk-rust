@@ -41,6 +41,7 @@ pub fn ser_caption_description(
 
 pub(crate) fn de_caption_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptionDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,7 +71,7 @@ where
                         }
                         "destinationSettings" => {
                             builder = builder.set_destination_settings(
-                                crate::protocol_serde::shape_caption_destination_settings::de_caption_destination_settings(tokens)?,
+                                crate::protocol_serde::shape_caption_destination_settings::de_caption_destination_settings(tokens, _value)?,
                             );
                         }
                         "languageCode" => {
@@ -96,7 +97,7 @@ where
                         }
                         "captionDashRoles" => {
                             builder = builder.set_caption_dash_roles(
-                                crate::protocol_serde::shape_list_of_dash_role_caption::de_list_of_dash_role_caption(tokens)?,
+                                crate::protocol_serde::shape_list_of_dash_role_caption::de_list_of_dash_role_caption(tokens, _value)?,
                             );
                         }
                         "dvbDashAccessibility" => {

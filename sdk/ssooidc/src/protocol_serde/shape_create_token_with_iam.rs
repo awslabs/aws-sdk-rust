@@ -242,13 +242,13 @@ pub fn ser_create_token_with_iam_input(
 }
 
 pub(crate) fn de_create_token_with_iam(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_token_with_iam::builders::CreateTokenWithIamOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_token_with_iam::builders::CreateTokenWithIamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -263,8 +263,9 @@ pub(crate) fn de_create_token_with_iam(
                     );
                 }
                 "awsAdditionalDetails" => {
-                    builder =
-                        builder.set_aws_additional_details(crate::protocol_serde::shape_aws_additional_details::de_aws_additional_details(tokens)?);
+                    builder = builder.set_aws_additional_details(crate::protocol_serde::shape_aws_additional_details::de_aws_additional_details(
+                        tokens, _value,
+                    )?);
                 }
                 "expiresIn" => {
                     builder = builder.set_expires_in(
@@ -295,7 +296,7 @@ pub(crate) fn de_create_token_with_iam(
                     );
                 }
                 "scope" => {
-                    builder = builder.set_scope(crate::protocol_serde::shape_scopes::de_scopes(tokens)?);
+                    builder = builder.set_scope(crate::protocol_serde::shape_scopes::de_scopes(tokens, _value)?);
                 }
                 "tokenType" => {
                     builder = builder.set_token_type(

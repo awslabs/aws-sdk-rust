@@ -36,6 +36,7 @@ pub fn ser_container_config(
 
 pub(crate) fn de_container_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ContainerArguments" => {
                             builder = builder.set_container_arguments(
-                                crate::protocol_serde::shape_custom_image_container_arguments::de_custom_image_container_arguments(tokens)?,
+                                crate::protocol_serde::shape_custom_image_container_arguments::de_custom_image_container_arguments(tokens, _value)?,
                             );
                         }
                         "ContainerEntrypoint" => {
                             builder = builder.set_container_entrypoint(
-                                crate::protocol_serde::shape_custom_image_container_entrypoint::de_custom_image_container_entrypoint(tokens)?,
+                                crate::protocol_serde::shape_custom_image_container_entrypoint::de_custom_image_container_entrypoint(tokens, _value)?,
                             );
                         }
                         "ContainerEnvironmentVariables" => {
                             builder = builder.set_container_environment_variables(
-                                    crate::protocol_serde::shape_custom_image_container_environment_variables::de_custom_image_container_environment_variables(tokens)?
+                                    crate::protocol_serde::shape_custom_image_container_environment_variables::de_custom_image_container_environment_variables(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

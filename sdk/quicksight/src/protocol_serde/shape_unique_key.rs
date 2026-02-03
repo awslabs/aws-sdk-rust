@@ -17,6 +17,7 @@ pub fn ser_unique_key(
 
 pub(crate) fn de_unique_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UniqueKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ColumnNames" => {
                             builder = builder.set_column_names(
-                                crate::protocol_serde::shape_unique_key_column_name_list::de_unique_key_column_name_list(tokens)?,
+                                crate::protocol_serde::shape_unique_key_column_name_list::de_unique_key_column_name_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

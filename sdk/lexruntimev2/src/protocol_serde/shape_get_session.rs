@@ -108,11 +108,11 @@ pub fn de_get_session_http_response(
 }
 
 pub(crate) fn de_get_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_session::builders::GetSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,10 +120,10 @@ pub(crate) fn de_get_session(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "interpretations" => {
-                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(tokens)?);
+                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(tokens, _value)?);
                 }
                 "messages" => {
-                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens)?);
+                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens, _value)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -133,7 +133,7 @@ pub(crate) fn de_get_session(
                     );
                 }
                 "sessionState" => {
-                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens)?);
+                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

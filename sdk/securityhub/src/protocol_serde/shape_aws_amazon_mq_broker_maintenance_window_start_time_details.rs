@@ -17,6 +17,7 @@ pub fn ser_aws_amazon_mq_broker_maintenance_window_start_time_details(
 
 pub(crate) fn de_aws_amazon_mq_broker_maintenance_window_start_time_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

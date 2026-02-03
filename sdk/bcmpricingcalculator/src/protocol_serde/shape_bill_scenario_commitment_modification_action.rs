@@ -39,6 +39,7 @@ pub fn ser_bill_scenario_commitment_modification_action(
 
 pub(crate) fn de_bill_scenario_commitment_modification_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BillScenarioCommitmentModificationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,30 +69,35 @@ where
                     }
                     variant = match key.as_ref() {
                         "addReservedInstanceAction" => Some(crate::types::BillScenarioCommitmentModificationAction::AddReservedInstanceAction(
-                            crate::protocol_serde::shape_add_reserved_instance_action::de_add_reserved_instance_action(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'addReservedInstanceAction' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "addSavingsPlanAction" => Some(crate::types::BillScenarioCommitmentModificationAction::AddSavingsPlanAction(
-                            crate::protocol_serde::shape_add_savings_plan_action::de_add_savings_plan_action(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addSavingsPlanAction' cannot be null")
-                            })?,
-                        )),
-                        "negateReservedInstanceAction" => Some(crate::types::BillScenarioCommitmentModificationAction::NegateReservedInstanceAction(
-                            crate::protocol_serde::shape_negate_reserved_instance_action::de_negate_reserved_instance_action(tokens)?.ok_or_else(
+                            crate::protocol_serde::shape_add_reserved_instance_action::de_add_reserved_instance_action(tokens, _value)?.ok_or_else(
                                 || {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'negateReservedInstanceAction' cannot be null",
+                                        "value for 'addReservedInstanceAction' cannot be null",
                                     )
                                 },
                             )?,
                         )),
-                        "negateSavingsPlanAction" => Some(crate::types::BillScenarioCommitmentModificationAction::NegateSavingsPlanAction(
-                            crate::protocol_serde::shape_negate_savings_plan_action::de_negate_savings_plan_action(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'negateSavingsPlanAction' cannot be null")
+                        "addSavingsPlanAction" => Some(crate::types::BillScenarioCommitmentModificationAction::AddSavingsPlanAction(
+                            crate::protocol_serde::shape_add_savings_plan_action::de_add_savings_plan_action(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addSavingsPlanAction' cannot be null")
                             })?,
+                        )),
+                        "negateReservedInstanceAction" => Some(crate::types::BillScenarioCommitmentModificationAction::NegateReservedInstanceAction(
+                            crate::protocol_serde::shape_negate_reserved_instance_action::de_negate_reserved_instance_action(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'negateReservedInstanceAction' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        "negateSavingsPlanAction" => Some(crate::types::BillScenarioCommitmentModificationAction::NegateSavingsPlanAction(
+                            crate::protocol_serde::shape_negate_savings_plan_action::de_negate_savings_plan_action(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'negateSavingsPlanAction' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

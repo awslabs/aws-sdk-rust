@@ -159,7 +159,7 @@ mod create_revision;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_dataexchange::Error> {
 /// # let client: aws_sdk_dataexchange::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_data_grant()
 ///     .customize()

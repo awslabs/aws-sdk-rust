@@ -63,13 +63,13 @@ pub fn ser_describe_domain_input(
 }
 
 pub(crate) fn de_describe_domain(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_domain::builders::DescribeDomainOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_domain::builders::DescribeDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,10 +159,10 @@ pub(crate) fn de_describe_domain(
                     );
                 }
                 "DefaultUserSettings" => {
-                    builder = builder.set_default_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens)?);
+                    builder = builder.set_default_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value)?);
                 }
                 "DomainSettings" => {
-                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(tokens)?);
+                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(tokens, _value)?);
                 }
                 "AppNetworkAccessType" => {
                     builder = builder.set_app_network_access_type(
@@ -179,7 +179,7 @@ pub(crate) fn de_describe_domain(
                     );
                 }
                 "SubnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnets::de_subnets(tokens)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnets::de_subnets(tokens, _value)?);
                 }
                 "Url" => {
                     builder = builder.set_url(
@@ -217,8 +217,9 @@ pub(crate) fn de_describe_domain(
                     );
                 }
                 "DefaultSpaceSettings" => {
-                    builder =
-                        builder.set_default_space_settings(crate::protocol_serde::shape_default_space_settings::de_default_space_settings(tokens)?);
+                    builder = builder.set_default_space_settings(crate::protocol_serde::shape_default_space_settings::de_default_space_settings(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

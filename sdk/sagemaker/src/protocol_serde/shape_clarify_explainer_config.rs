@@ -23,6 +23,7 @@ pub fn ser_clarify_explainer_config(
 
 pub(crate) fn de_clarify_explainer_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClarifyExplainerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,11 +46,12 @@ where
                         }
                         "InferenceConfig" => {
                             builder = builder.set_inference_config(
-                                crate::protocol_serde::shape_clarify_inference_config::de_clarify_inference_config(tokens)?,
+                                crate::protocol_serde::shape_clarify_inference_config::de_clarify_inference_config(tokens, _value)?,
                             );
                         }
                         "ShapConfig" => {
-                            builder = builder.set_shap_config(crate::protocol_serde::shape_clarify_shap_config::de_clarify_shap_config(tokens)?);
+                            builder =
+                                builder.set_shap_config(crate::protocol_serde::shape_clarify_shap_config::de_clarify_shap_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

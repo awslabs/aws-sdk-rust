@@ -14,6 +14,7 @@ pub fn ser_sms_message_template_content(
 
 pub(crate) fn de_sms_message_template_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SmsMessageTemplateContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "body" => {
                             builder = builder.set_body(
-                                crate::protocol_serde::shape_sms_message_template_content_body::de_sms_message_template_content_body(tokens)?,
+                                crate::protocol_serde::shape_sms_message_template_content_body::de_sms_message_template_content_body(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

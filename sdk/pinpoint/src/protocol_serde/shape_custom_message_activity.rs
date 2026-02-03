@@ -35,6 +35,7 @@ pub fn ser_custom_message_activity(
 
 pub(crate) fn de_custom_message_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomMessageActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,13 @@ where
                         }
                         "EndpointTypes" => {
                             builder = builder.set_endpoint_types(
-                                crate::protocol_serde::shape_list_of_endpoint_types_element::de_list_of_endpoint_types_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_endpoint_types_element::de_list_of_endpoint_types_element(tokens, _value)?,
                             );
                         }
                         "MessageConfig" => {
-                            builder =
-                                builder.set_message_config(crate::protocol_serde::shape_journey_custom_message::de_journey_custom_message(tokens)?);
+                            builder = builder.set_message_config(crate::protocol_serde::shape_journey_custom_message::de_journey_custom_message(
+                                tokens, _value,
+                            )?);
                         }
                         "NextActivity" => {
                             builder = builder.set_next_activity(

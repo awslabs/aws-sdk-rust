@@ -322,7 +322,7 @@ impl CreateTableFluentBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -352,7 +352,7 @@ impl CreateTableFluentBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -382,7 +382,7 @@ impl CreateTableFluentBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -633,5 +633,36 @@ impl CreateTableFluentBuilder {
     /// <p>Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         self.inner.get_on_demand_throughput()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn global_table_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.global_table_source_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn set_global_table_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_global_table_source_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn get_global_table_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_table_source_arn()
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.inner = self.inner.global_table_settings_replication_mode(input);
+        self
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.inner = self.inner.set_global_table_settings_replication_mode(input);
+        self
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        self.inner.get_global_table_settings_replication_mode()
     }
 }

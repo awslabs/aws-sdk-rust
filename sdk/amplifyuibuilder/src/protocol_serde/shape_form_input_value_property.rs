@@ -32,6 +32,7 @@ pub fn ser_form_input_value_property(
 
 pub(crate) fn de_form_input_value_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormInputValueProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,12 +55,13 @@ where
                         }
                         "bindingProperties" => {
                             builder = builder.set_binding_properties(
-                                    crate::protocol_serde::shape_form_input_value_property_binding_properties::de_form_input_value_property_binding_properties(tokens)?
+                                    crate::protocol_serde::shape_form_input_value_property_binding_properties::de_form_input_value_property_binding_properties(tokens, _value)?
                                 );
                         }
                         "concat" => {
-                            builder = builder
-                                .set_concat(crate::protocol_serde::shape_form_input_value_property_list::de_form_input_value_property_list(tokens)?);
+                            builder = builder.set_concat(
+                                crate::protocol_serde::shape_form_input_value_property_list::de_form_input_value_property_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

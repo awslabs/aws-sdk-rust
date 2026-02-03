@@ -62,6 +62,7 @@ pub fn ser_jupyter_lab_app_settings(
 
 pub(crate) fn de_jupyter_lab_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JupyterLabAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,25 +77,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultResourceSpec" => {
-                            builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                            builder =
+                                builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens, _value)?);
                         }
                         "CustomImages" => {
-                            builder = builder.set_custom_images(crate::protocol_serde::shape_custom_images::de_custom_images(tokens)?);
+                            builder = builder.set_custom_images(crate::protocol_serde::shape_custom_images::de_custom_images(tokens, _value)?);
                         }
                         "LifecycleConfigArns" => {
-                            builder = builder
-                                .set_lifecycle_config_arns(crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens)?);
+                            builder = builder.set_lifecycle_config_arns(
+                                crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens, _value)?,
+                            );
                         }
                         "CodeRepositories" => {
-                            builder = builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens)?);
+                            builder =
+                                builder.set_code_repositories(crate::protocol_serde::shape_code_repositories::de_code_repositories(tokens, _value)?);
                         }
                         "AppLifecycleManagement" => {
                             builder = builder.set_app_lifecycle_management(
-                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens)?,
+                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens, _value)?,
                             );
                         }
                         "EmrSettings" => {
-                            builder = builder.set_emr_settings(crate::protocol_serde::shape_emr_settings::de_emr_settings(tokens)?);
+                            builder = builder.set_emr_settings(crate::protocol_serde::shape_emr_settings::de_emr_settings(tokens, _value)?);
                         }
                         "BuiltInLifecycleConfigArn" => {
                             builder = builder.set_built_in_lifecycle_config_arn(

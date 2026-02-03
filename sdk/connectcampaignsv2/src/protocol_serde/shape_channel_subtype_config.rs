@@ -32,6 +32,7 @@ pub fn ser_channel_subtype_config(
 
 pub(crate) fn de_channel_subtype_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,21 +48,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "telephony" => {
                             builder = builder.set_telephony(
-                                crate::protocol_serde::shape_telephony_channel_subtype_config::de_telephony_channel_subtype_config(tokens)?,
+                                crate::protocol_serde::shape_telephony_channel_subtype_config::de_telephony_channel_subtype_config(tokens, _value)?,
                             );
                         }
                         "sms" => {
                             builder = builder.set_sms(crate::protocol_serde::shape_sms_channel_subtype_config::de_sms_channel_subtype_config(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "email" => {
-                            builder = builder
-                                .set_email(crate::protocol_serde::shape_email_channel_subtype_config::de_email_channel_subtype_config(tokens)?);
+                            builder = builder.set_email(
+                                crate::protocol_serde::shape_email_channel_subtype_config::de_email_channel_subtype_config(tokens, _value)?,
+                            );
                         }
                         "whatsApp" => {
                             builder = builder.set_whats_app(
-                                crate::protocol_serde::shape_whats_app_channel_subtype_config::de_whats_app_channel_subtype_config(tokens)?,
+                                crate::protocol_serde::shape_whats_app_channel_subtype_config::de_whats_app_channel_subtype_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

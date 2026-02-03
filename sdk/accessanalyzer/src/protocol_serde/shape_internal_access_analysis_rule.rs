@@ -23,6 +23,7 @@ pub fn ser_internal_access_analysis_rule(
 
 pub(crate) fn de_internal_access_analysis_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InternalAccessAnalysisRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inclusions" => {
                             builder = builder.set_inclusions(
-                                    crate::protocol_serde::shape_internal_access_analysis_rule_criteria_list::de_internal_access_analysis_rule_criteria_list(tokens)?
+                                    crate::protocol_serde::shape_internal_access_analysis_rule_criteria_list::de_internal_access_analysis_rule_criteria_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

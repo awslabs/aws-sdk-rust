@@ -209,7 +209,7 @@ mod create_relational_database_snapshot;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_lightsail::Error> {
 /// # let client: aws_sdk_lightsail::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.allocate_static_ip()
 ///     .customize()

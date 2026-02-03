@@ -28,6 +28,7 @@ pub fn ser_data_query(
 
 pub(crate) fn de_data_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,8 +50,9 @@ where
                             );
                         }
                         "TableConfigurations" => {
-                            builder =
-                                builder.set_table_configurations(crate::protocol_serde::shape_table_configurations::de_table_configurations(tokens)?);
+                            builder = builder.set_table_configurations(crate::protocol_serde::shape_table_configurations::de_table_configurations(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

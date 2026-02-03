@@ -23,6 +23,7 @@ pub fn ser_schedule_action(
 
 pub(crate) fn de_schedule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScheduleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "scheduleActionSettings" => {
                             builder = builder.set_schedule_action_settings(
-                                crate::protocol_serde::shape_schedule_action_settings::de_schedule_action_settings(tokens)?,
+                                crate::protocol_serde::shape_schedule_action_settings::de_schedule_action_settings(tokens, _value)?,
                             );
                         }
                         "scheduleActionStartSettings" => {
                             builder = builder.set_schedule_action_start_settings(
-                                crate::protocol_serde::shape_schedule_action_start_settings::de_schedule_action_start_settings(tokens)?,
+                                crate::protocol_serde::shape_schedule_action_start_settings::de_schedule_action_start_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

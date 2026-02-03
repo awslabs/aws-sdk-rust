@@ -20,6 +20,7 @@ pub fn ser_default_interactive_layout_configuration(
 
 pub(crate) fn de_default_interactive_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DefaultInteractiveLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,13 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Grid" => {
                             builder = builder.set_grid(
-                                crate::protocol_serde::shape_default_grid_layout_configuration::de_default_grid_layout_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_grid_layout_configuration::de_default_grid_layout_configuration(tokens, _value)?,
                             );
                         }
                         "FreeForm" => {
                             builder = builder.set_free_form(
                                 crate::protocol_serde::shape_default_free_form_layout_configuration::de_default_free_form_layout_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

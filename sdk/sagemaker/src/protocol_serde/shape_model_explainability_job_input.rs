@@ -20,6 +20,7 @@ pub fn ser_model_explainability_job_input(
 
 pub(crate) fn de_model_explainability_job_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelExplainabilityJobInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EndpointInput" => {
-                            builder = builder.set_endpoint_input(crate::protocol_serde::shape_endpoint_input::de_endpoint_input(tokens)?);
+                            builder = builder.set_endpoint_input(crate::protocol_serde::shape_endpoint_input::de_endpoint_input(tokens, _value)?);
                         }
                         "BatchTransformInput" => {
-                            builder = builder
-                                .set_batch_transform_input(crate::protocol_serde::shape_batch_transform_input::de_batch_transform_input(tokens)?);
+                            builder = builder.set_batch_transform_input(
+                                crate::protocol_serde::shape_batch_transform_input::de_batch_transform_input(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

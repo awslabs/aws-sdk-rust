@@ -403,6 +403,47 @@ impl ThroughputLogs {
     }
 }
 
+const ZERO_THROUGHPUT: Throughput = Throughput::new_bytes_per_second(0);
+// Helper trait for interpreting the throughput report.
+pub(crate) trait DownloadReport {
+    fn minimum_throughput_violated(self, minimum_throughput: Throughput) -> (bool, Throughput);
+}
+impl DownloadReport for ThroughputReport {
+    fn minimum_throughput_violated(self, minimum_throughput: Throughput) -> (bool, Throughput) {
+        let throughput = match self {
+            ThroughputReport::Complete => return (false, ZERO_THROUGHPUT),
+            // If the report is incomplete, then we don't have enough data yet to
+            // decide if minimum throughput was violated.
+            ThroughputReport::Incomplete => {
+                tracing::trace!(
+                    "not enough data to decide if minimum throughput has been violated"
+                );
+                return (false, ZERO_THROUGHPUT);
+            }
+            // If no polling is taking place, then the user has stalled.
+            // In this case, we don't want to say minimum throughput was violated.
+            ThroughputReport::NoPolling => {
+                tracing::debug!(
+                    "the user has stalled; this will not become a minimum throughput violation"
+                );
+                return (false, ZERO_THROUGHPUT);
+            }
+            // If we're stuck in Poll::Pending, then the server has stalled. Alternatively,
+            // if we're transferring data, but it's too slow, then we also want to say
+            // that the minimum throughput has been violated.
+            ThroughputReport::Pending => ZERO_THROUGHPUT,
+            ThroughputReport::Transferred(tp) => tp,
+        };
+        let violated = throughput < minimum_throughput;
+        if violated {
+            tracing::debug!(
+                "current throughput: {throughput} is below minimum: {minimum_throughput}"
+            );
+        }
+        (violated, throughput)
+    }
+}
+
 #[cfg(test)]
 mod test {
     use super::*;

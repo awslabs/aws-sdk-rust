@@ -17,6 +17,7 @@ pub fn ser_model_infrastructure_config(
 
 pub(crate) fn de_model_infrastructure_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelInfrastructureConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "RealTimeInferenceConfig" => {
                             builder = builder.set_real_time_inference_config(
-                                crate::protocol_serde::shape_real_time_inference_config::de_real_time_inference_config(tokens)?,
+                                crate::protocol_serde::shape_real_time_inference_config::de_real_time_inference_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

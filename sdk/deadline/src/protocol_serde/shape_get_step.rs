@@ -121,10 +121,10 @@ pub fn de_get_step_http_response(
 }
 
 pub(crate) fn de_get_step(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_step::builders::GetStepOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_step::builders::GetStepOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,7 +145,7 @@ pub(crate) fn de_get_step(
                     );
                 }
                 "dependencyCounts" => {
-                    builder = builder.set_dependency_counts(crate::protocol_serde::shape_dependency_counts::de_dependency_counts(tokens)?);
+                    builder = builder.set_dependency_counts(crate::protocol_serde::shape_dependency_counts::de_dependency_counts(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -182,11 +182,11 @@ pub(crate) fn de_get_step(
                     );
                 }
                 "parameterSpace" => {
-                    builder = builder.set_parameter_space(crate::protocol_serde::shape_parameter_space::de_parameter_space(tokens)?);
+                    builder = builder.set_parameter_space(crate::protocol_serde::shape_parameter_space::de_parameter_space(tokens, _value)?);
                 }
                 "requiredCapabilities" => {
                     builder = builder.set_required_capabilities(
-                        crate::protocol_serde::shape_step_required_capabilities::de_step_required_capabilities(tokens)?,
+                        crate::protocol_serde::shape_step_required_capabilities::de_step_required_capabilities(tokens, _value)?,
                     );
                 }
                 "startedAt" => {
@@ -224,8 +224,9 @@ pub(crate) fn de_get_step(
                     );
                 }
                 "taskRunStatusCounts" => {
-                    builder =
-                        builder.set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(tokens)?);
+                    builder = builder.set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -17,6 +17,7 @@ pub fn ser_node_option(
 
 pub(crate) fn de_node_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NodeOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "NodeConfig" => {
-                            builder = builder.set_node_config(crate::protocol_serde::shape_node_config::de_node_config(tokens)?);
+                            builder = builder.set_node_config(crate::protocol_serde::shape_node_config::de_node_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

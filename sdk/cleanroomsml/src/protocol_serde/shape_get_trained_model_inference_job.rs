@@ -105,13 +105,13 @@ pub fn de_get_trained_model_inference_job_http_response(
 }
 
 pub(crate) fn de_get_trained_model_inference_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_trained_model_inference_job::builders::GetTrainedModelInferenceJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_trained_model_inference_job::builders::GetTrainedModelInferenceJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,9 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "containerExecutionParameters" => {
                     builder = builder.set_container_execution_parameters(
-                        crate::protocol_serde::shape_inference_container_execution_parameters::de_inference_container_execution_parameters(tokens)?,
+                        crate::protocol_serde::shape_inference_container_execution_parameters::de_inference_container_execution_parameters(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "createTime" => {
@@ -138,7 +140,7 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "dataSource" => {
                     builder = builder.set_data_source(crate::protocol_serde::shape_model_inference_data_source::de_model_inference_data_source(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "description" => {
@@ -150,7 +152,7 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_inference_environment_map::de_inference_environment_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "inferenceContainerImageDigest" => {
@@ -211,12 +213,12 @@ pub(crate) fn de_get_trained_model_inference_job(
                 }
                 "outputConfiguration" => {
                     builder = builder.set_output_configuration(
-                        crate::protocol_serde::shape_inference_output_configuration::de_inference_output_configuration(tokens)?,
+                        crate::protocol_serde::shape_inference_output_configuration::de_inference_output_configuration(tokens, _value)?,
                     );
                 }
                 "resourceConfig" => {
                     builder = builder.set_resource_config(crate::protocol_serde::shape_inference_resource_config::de_inference_resource_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "status" => {
@@ -227,10 +229,10 @@ pub(crate) fn de_get_trained_model_inference_job(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "trainedModelArn" => {
                     builder = builder.set_trained_model_arn(

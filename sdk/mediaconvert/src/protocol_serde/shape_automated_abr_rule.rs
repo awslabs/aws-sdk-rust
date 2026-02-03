@@ -47,6 +47,7 @@ pub fn ser_automated_abr_rule(
 
 pub(crate) fn de_automated_abr_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomatedAbrRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,22 +63,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedRenditions" => {
                             builder = builder.set_allowed_renditions(
-                                crate::protocol_serde::shape_list_of_allowed_rendition_size::de_list_of_allowed_rendition_size(tokens)?,
+                                crate::protocol_serde::shape_list_of_allowed_rendition_size::de_list_of_allowed_rendition_size(tokens, _value)?,
                             );
                         }
                         "forceIncludeRenditions" => {
                             builder = builder.set_force_include_renditions(
-                                crate::protocol_serde::shape_list_of_force_include_rendition_size::de_list_of_force_include_rendition_size(tokens)?,
+                                crate::protocol_serde::shape_list_of_force_include_rendition_size::de_list_of_force_include_rendition_size(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "minBottomRenditionSize" => {
                             builder = builder.set_min_bottom_rendition_size(
-                                crate::protocol_serde::shape_min_bottom_rendition_size::de_min_bottom_rendition_size(tokens)?,
+                                crate::protocol_serde::shape_min_bottom_rendition_size::de_min_bottom_rendition_size(tokens, _value)?,
                             );
                         }
                         "minTopRenditionSize" => {
-                            builder = builder
-                                .set_min_top_rendition_size(crate::protocol_serde::shape_min_top_rendition_size::de_min_top_rendition_size(tokens)?);
+                            builder = builder.set_min_top_rendition_size(
+                                crate::protocol_serde::shape_min_top_rendition_size::de_min_top_rendition_size(tokens, _value)?,
+                            );
                         }
                         "type" => {
                             builder = builder.set_type(

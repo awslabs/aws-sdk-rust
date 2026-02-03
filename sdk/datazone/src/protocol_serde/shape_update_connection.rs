@@ -165,13 +165,13 @@ pub fn ser_update_connection_input(
 }
 
 pub(crate) fn de_update_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_connection::builders::UpdateConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_connection::builders::UpdateConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -221,7 +221,7 @@ pub(crate) fn de_update_connection(
                     );
                 }
                 "physicalEndpoints" => {
-                    builder = builder.set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(tokens)?);
+                    builder = builder.set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(tokens, _value)?);
                 }
                 "projectId" => {
                     builder = builder.set_project_id(
@@ -231,7 +231,8 @@ pub(crate) fn de_update_connection(
                     );
                 }
                 "props" => {
-                    builder = builder.set_props(crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(tokens)?);
+                    builder = builder
+                        .set_props(crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(tokens, _value)?);
                 }
                 "scope" => {
                     builder = builder.set_scope(

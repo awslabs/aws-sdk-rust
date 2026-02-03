@@ -17,6 +17,7 @@ pub fn ser_user_pool_add_ons_type(
 
 pub(crate) fn de_user_pool_add_ons_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UserPoolAddOnsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                         "AdvancedSecurityAdditionalFlows" => {
                             builder = builder.set_advanced_security_additional_flows(
                                 crate::protocol_serde::shape_advanced_security_additional_flows_type::de_advanced_security_additional_flows_type(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

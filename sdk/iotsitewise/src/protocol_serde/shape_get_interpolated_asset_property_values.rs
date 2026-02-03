@@ -130,13 +130,13 @@ pub fn de_get_interpolated_asset_property_values_http_response(
 }
 
 pub(crate) fn de_get_interpolated_asset_property_values(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,7 +145,7 @@ pub(crate) fn de_get_interpolated_asset_property_values(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "interpolatedAssetPropertyValues" => {
                     builder = builder.set_interpolated_asset_property_values(
-                        crate::protocol_serde::shape_interpolated_asset_property_values::de_interpolated_asset_property_values(tokens)?,
+                        crate::protocol_serde::shape_interpolated_asset_property_values::de_interpolated_asset_property_values(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

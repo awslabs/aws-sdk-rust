@@ -29,7 +29,7 @@
 /// <li>
 /// <p>There is a user error, such as an invalid data format.</p></li>
 /// </ul><note>
-/// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
+/// <p>DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
 /// </note>
 /// <p>Cancellation reason codes and possible error messages:</p>
 /// <ul>

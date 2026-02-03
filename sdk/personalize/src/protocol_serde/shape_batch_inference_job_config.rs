@@ -31,6 +31,7 @@ pub fn ser_batch_inference_job_config(
 
 pub(crate) fn de_batch_inference_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchInferenceJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,11 +46,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "itemExplorationConfig" => {
-                            builder =
-                                builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                            builder = builder
+                                .set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                         }
                         "rankingInfluence" => {
-                            builder = builder.set_ranking_influence(crate::protocol_serde::shape_ranking_influence::de_ranking_influence(tokens)?);
+                            builder =
+                                builder.set_ranking_influence(crate::protocol_serde::shape_ranking_influence::de_ranking_influence(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

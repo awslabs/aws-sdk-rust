@@ -120,13 +120,13 @@ pub fn de_get_raster_data_collection_http_response(
 }
 
 pub(crate) fn de_get_raster_data_collection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,9 @@ pub(crate) fn de_get_raster_data_collection(
                     );
                 }
                 "ImageSourceBands" => {
-                    builder = builder.set_image_source_bands(crate::protocol_serde::shape_image_source_band_list::de_image_source_band_list(tokens)?);
+                    builder = builder.set_image_source_bands(crate::protocol_serde::shape_image_source_band_list::de_image_source_band_list(
+                        tokens, _value,
+                    )?);
                 }
                 "Name" => {
                     builder = builder.set_name(
@@ -165,10 +167,10 @@ pub(crate) fn de_get_raster_data_collection(
                     );
                 }
                 "SupportedFilters" => {
-                    builder = builder.set_supported_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                    builder = builder.set_supported_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "Type" => {
                     builder = builder.set_type(

@@ -44,6 +44,7 @@ pub fn ser_customized_metric_specification(
 
 pub(crate) fn de_customized_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomizedMetricSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,7 +73,7 @@ where
                             );
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(tokens, _value)?);
                         }
                         "Statistic" => {
                             builder = builder.set_statistic(
@@ -90,7 +91,9 @@ where
                         }
                         "Metrics" => {
                             builder = builder.set_metrics(
-                                crate::protocol_serde::shape_target_tracking_metric_data_queries::de_target_tracking_metric_data_queries(tokens)?,
+                                crate::protocol_serde::shape_target_tracking_metric_data_queries::de_target_tracking_metric_data_queries(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

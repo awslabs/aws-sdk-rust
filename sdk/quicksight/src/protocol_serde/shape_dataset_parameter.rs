@@ -32,6 +32,7 @@ pub fn ser_dataset_parameter(
 
 pub(crate) fn de_dataset_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,22 +48,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StringDatasetParameter" => {
                             builder = builder.set_string_dataset_parameter(
-                                crate::protocol_serde::shape_string_dataset_parameter::de_string_dataset_parameter(tokens)?,
+                                crate::protocol_serde::shape_string_dataset_parameter::de_string_dataset_parameter(tokens, _value)?,
                             );
                         }
                         "DecimalDatasetParameter" => {
                             builder = builder.set_decimal_dataset_parameter(
-                                crate::protocol_serde::shape_decimal_dataset_parameter::de_decimal_dataset_parameter(tokens)?,
+                                crate::protocol_serde::shape_decimal_dataset_parameter::de_decimal_dataset_parameter(tokens, _value)?,
                             );
                         }
                         "IntegerDatasetParameter" => {
                             builder = builder.set_integer_dataset_parameter(
-                                crate::protocol_serde::shape_integer_dataset_parameter::de_integer_dataset_parameter(tokens)?,
+                                crate::protocol_serde::shape_integer_dataset_parameter::de_integer_dataset_parameter(tokens, _value)?,
                             );
                         }
                         "DateTimeDatasetParameter" => {
                             builder = builder.set_date_time_dataset_parameter(
-                                crate::protocol_serde::shape_date_time_dataset_parameter::de_date_time_dataset_parameter(tokens)?,
+                                crate::protocol_serde::shape_date_time_dataset_parameter::de_date_time_dataset_parameter(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

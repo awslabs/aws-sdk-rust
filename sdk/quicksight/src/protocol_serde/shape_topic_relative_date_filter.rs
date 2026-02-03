@@ -20,6 +20,7 @@ pub fn ser_topic_relative_date_filter(
 
 pub(crate) fn de_topic_relative_date_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicRelativeDateFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "Constant" => {
                             builder = builder.set_constant(
-                                crate::protocol_serde::shape_topic_singular_filter_constant::de_topic_singular_filter_constant(tokens)?,
+                                crate::protocol_serde::shape_topic_singular_filter_constant::de_topic_singular_filter_constant(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

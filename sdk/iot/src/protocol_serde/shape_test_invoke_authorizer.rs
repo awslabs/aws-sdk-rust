@@ -160,13 +160,13 @@ pub fn ser_test_invoke_authorizer_input(
 }
 
 pub(crate) fn de_test_invoke_authorizer(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -184,7 +184,7 @@ pub(crate) fn de_test_invoke_authorizer(
                     builder = builder.set_is_authenticated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "policyDocuments" => {
-                    builder = builder.set_policy_documents(crate::protocol_serde::shape_policy_documents::de_policy_documents(tokens)?);
+                    builder = builder.set_policy_documents(crate::protocol_serde::shape_policy_documents::de_policy_documents(tokens, _value)?);
                 }
                 "principalId" => {
                     builder = builder.set_principal_id(

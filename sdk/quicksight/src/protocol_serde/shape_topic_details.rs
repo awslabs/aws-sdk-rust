@@ -35,6 +35,7 @@ pub fn ser_topic_details(
 
 pub(crate) fn de_topic_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,10 +71,12 @@ where
                             );
                         }
                         "DataSets" => {
-                            builder = builder.set_data_sets(crate::protocol_serde::shape_datasets::de_datasets(tokens)?);
+                            builder = builder.set_data_sets(crate::protocol_serde::shape_datasets::de_datasets(tokens, _value)?);
                         }
                         "ConfigOptions" => {
-                            builder = builder.set_config_options(crate::protocol_serde::shape_topic_config_options::de_topic_config_options(tokens)?);
+                            builder = builder.set_config_options(crate::protocol_serde::shape_topic_config_options::de_topic_config_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

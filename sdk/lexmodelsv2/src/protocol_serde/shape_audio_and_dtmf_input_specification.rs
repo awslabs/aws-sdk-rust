@@ -26,6 +26,7 @@ pub fn ser_audio_and_dtmf_input_specification(
 
 pub(crate) fn de_audio_and_dtmf_input_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioAndDtmfInputSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,11 +48,12 @@ where
                             );
                         }
                         "audioSpecification" => {
-                            builder =
-                                builder.set_audio_specification(crate::protocol_serde::shape_audio_specification::de_audio_specification(tokens)?);
+                            builder = builder
+                                .set_audio_specification(crate::protocol_serde::shape_audio_specification::de_audio_specification(tokens, _value)?);
                         }
                         "dtmfSpecification" => {
-                            builder = builder.set_dtmf_specification(crate::protocol_serde::shape_dtmf_specification::de_dtmf_specification(tokens)?);
+                            builder = builder
+                                .set_dtmf_specification(crate::protocol_serde::shape_dtmf_specification::de_dtmf_specification(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

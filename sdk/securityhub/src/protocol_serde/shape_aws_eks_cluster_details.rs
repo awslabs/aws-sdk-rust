@@ -44,6 +44,7 @@ pub fn ser_aws_eks_cluster_details(
 
 pub(crate) fn de_aws_eks_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEksClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,7 +95,7 @@ where
                         }
                         "ResourcesVpcConfig" => {
                             builder = builder.set_resources_vpc_config(
-                                    crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::de_aws_eks_cluster_resources_vpc_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_eks_cluster_resources_vpc_config_details::de_aws_eks_cluster_resources_vpc_config_details(tokens, _value)?
                                 );
                         }
                         "RoleArn" => {
@@ -113,7 +114,7 @@ where
                         }
                         "Logging" => {
                             builder = builder.set_logging(
-                                crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(tokens)?,
+                                crate::protocol_serde::shape_aws_eks_cluster_logging_details::de_aws_eks_cluster_logging_details(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

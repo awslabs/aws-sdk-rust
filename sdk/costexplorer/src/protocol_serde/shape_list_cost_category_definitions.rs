@@ -69,13 +69,13 @@ pub fn ser_list_cost_category_definitions_input(
 }
 
 pub(crate) fn de_list_cost_category_definitions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_cost_category_definitions::builders::ListCostCategoryDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -84,7 +84,7 @@ pub(crate) fn de_list_cost_category_definitions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CostCategoryReferences" => {
                     builder = builder.set_cost_category_references(
-                        crate::protocol_serde::shape_cost_category_references_list::de_cost_category_references_list(tokens)?,
+                        crate::protocol_serde::shape_cost_category_references_list::de_cost_category_references_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

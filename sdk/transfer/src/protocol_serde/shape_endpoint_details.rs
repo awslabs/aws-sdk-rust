@@ -41,6 +41,7 @@ pub fn ser_endpoint_details(
 
 pub(crate) fn de_endpoint_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EndpointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,11 +56,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AddressAllocationIds" => {
-                            builder = builder
-                                .set_address_allocation_ids(crate::protocol_serde::shape_address_allocation_ids::de_address_allocation_ids(tokens)?);
+                            builder = builder.set_address_allocation_ids(
+                                crate::protocol_serde::shape_address_allocation_ids::de_address_allocation_ids(tokens, _value)?,
+                            );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
                         }
                         "VpcEndpointId" => {
                             builder = builder.set_vpc_endpoint_id(
@@ -76,7 +78,8 @@ where
                             );
                         }
                         "SecurityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                            builder = builder
+                                .set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

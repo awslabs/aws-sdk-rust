@@ -124,13 +124,13 @@ pub fn de_get_application_http_response(
 }
 
 pub(crate) fn de_get_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application::builders::GetApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,7 @@ pub(crate) fn de_get_application(
                 }
                 "deployedVersion" => {
                     builder = builder.set_deployed_version(crate::protocol_serde::shape_deployed_version_summary::de_deployed_version_summary(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "description" => {
@@ -198,14 +198,14 @@ pub(crate) fn de_get_application(
                 }
                 "latestVersion" => {
                     builder = builder.set_latest_version(crate::protocol_serde::shape_application_version_summary::de_application_version_summary(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "listenerArns" => {
-                    builder = builder.set_listener_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                    builder = builder.set_listener_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                 }
                 "listenerPorts" => {
-                    builder = builder.set_listener_ports(crate::protocol_serde::shape_port_list::de_port_list(tokens)?);
+                    builder = builder.set_listener_ports(crate::protocol_serde::shape_port_list::de_port_list(tokens, _value)?);
                 }
                 "loadBalancerDnsName" => {
                     builder = builder.set_load_balancer_dns_name(
@@ -215,7 +215,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "logGroups" => {
-                    builder = builder.set_log_groups(crate::protocol_serde::shape_log_group_summaries::de_log_group_summaries(tokens)?);
+                    builder = builder.set_log_groups(crate::protocol_serde::shape_log_group_summaries::de_log_group_summaries(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -246,10 +246,10 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "targetGroupArns" => {
-                    builder = builder.set_target_group_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                    builder = builder.set_target_group_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

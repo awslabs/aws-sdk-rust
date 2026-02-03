@@ -35,6 +35,7 @@ pub fn ser_redshift_configuration(
 
 pub(crate) fn de_redshift_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedshiftConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,17 +51,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "storageConfigurations" => {
                             builder = builder.set_storage_configurations(
-                                    crate::protocol_serde::shape_redshift_query_engine_storage_configurations::de_redshift_query_engine_storage_configurations(tokens)?
+                                    crate::protocol_serde::shape_redshift_query_engine_storage_configurations::de_redshift_query_engine_storage_configurations(tokens, _value)?
                                 );
                         }
                         "queryEngineConfiguration" => {
                             builder = builder.set_query_engine_configuration(
-                                crate::protocol_serde::shape_redshift_query_engine_configuration::de_redshift_query_engine_configuration(tokens)?,
+                                crate::protocol_serde::shape_redshift_query_engine_configuration::de_redshift_query_engine_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "queryGenerationConfiguration" => {
                             builder = builder.set_query_generation_configuration(
-                                crate::protocol_serde::shape_query_generation_configuration::de_query_generation_configuration(tokens)?,
+                                crate::protocol_serde::shape_query_generation_configuration::de_query_generation_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

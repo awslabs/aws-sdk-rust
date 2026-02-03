@@ -17,6 +17,7 @@ pub fn ser_lifecycle_policy_detail_exclusion_rules_amis_last_launched(
 
 pub(crate) fn de_lifecycle_policy_detail_exclusion_rules_amis_last_launched<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

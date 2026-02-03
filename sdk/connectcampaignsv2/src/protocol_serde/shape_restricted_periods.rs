@@ -27,6 +27,7 @@ pub fn ser_restricted_periods(
 
 pub(crate) fn de_restricted_periods<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RestrictedPeriods>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "restrictedPeriodList" => Some(crate::types::RestrictedPeriods::RestrictedPeriodList(
-                            crate::protocol_serde::shape_restricted_period_list::de_restricted_period_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_restricted_period_list::de_restricted_period_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'restrictedPeriodList' cannot be null")
                             })?,
                         )),

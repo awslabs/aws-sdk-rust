@@ -23,6 +23,7 @@ pub fn ser_production_variant_managed_instance_scaling(
 
 pub(crate) fn de_production_variant_managed_instance_scaling<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProductionVariantManagedInstanceScaling>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

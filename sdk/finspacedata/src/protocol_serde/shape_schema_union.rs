@@ -14,6 +14,7 @@ pub fn ser_schema_union(
 
 pub(crate) fn de_schema_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchemaUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tabularSchemaConfig" => {
-                            builder =
-                                builder.set_tabular_schema_config(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens)?);
+                            builder = builder
+                                .set_tabular_schema_config(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

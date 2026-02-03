@@ -27,6 +27,7 @@ pub fn ser_self_managed_kafka_access_configuration_credentials(
 
 pub(crate) fn de_self_managed_kafka_access_configuration_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

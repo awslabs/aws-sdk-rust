@@ -41,6 +41,7 @@ pub fn ser_mapping(
 
 pub(crate) fn de_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Mapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,8 +63,9 @@ where
                             );
                         }
                         "FromPath" => {
-                            builder = builder
-                                .set_from_path(crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?);
+                            builder = builder.set_from_path(
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
+                            );
                         }
                         "FromType" => {
                             builder = builder.set_from_type(
@@ -83,7 +85,7 @@ where
                             builder = builder.set_dropped(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Children" => {
-                            builder = builder.set_children(crate::protocol_serde::shape_mappings::de_mappings(tokens)?);
+                            builder = builder.set_children(crate::protocol_serde::shape_mappings::de_mappings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

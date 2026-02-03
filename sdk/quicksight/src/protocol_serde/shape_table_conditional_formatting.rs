@@ -20,6 +20,7 @@ pub fn ser_table_conditional_formatting(
 
 pub(crate) fn de_table_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ConditionalFormattingOptions" => {
                                 builder = builder.set_conditional_formatting_options(
-                                    crate::protocol_serde::shape_table_conditional_formatting_option_list::de_table_conditional_formatting_option_list(tokens)?
+                                    crate::protocol_serde::shape_table_conditional_formatting_option_list::de_table_conditional_formatting_option_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

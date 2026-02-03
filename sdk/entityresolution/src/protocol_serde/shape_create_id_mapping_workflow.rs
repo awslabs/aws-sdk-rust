@@ -150,13 +150,13 @@ pub fn ser_create_id_mapping_workflow_input(
 }
 
 pub(crate) fn de_create_id_mapping_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_id_mapping_workflow::builders::CreateIdMappingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,22 +171,27 @@ pub(crate) fn de_create_id_mapping_workflow(
                     );
                 }
                 "idMappingTechniques" => {
-                    builder =
-                        builder.set_id_mapping_techniques(crate::protocol_serde::shape_id_mapping_techniques::de_id_mapping_techniques(tokens)?);
+                    builder = builder.set_id_mapping_techniques(crate::protocol_serde::shape_id_mapping_techniques::de_id_mapping_techniques(
+                        tokens, _value,
+                    )?);
                 }
                 "incrementalRunConfig" => {
                     builder = builder.set_incremental_run_config(
-                        crate::protocol_serde::shape_id_mapping_incremental_run_config::de_id_mapping_incremental_run_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_incremental_run_config::de_id_mapping_incremental_run_config(tokens, _value)?,
                     );
                 }
                 "inputSourceConfig" => {
                     builder = builder.set_input_source_config(
-                        crate::protocol_serde::shape_id_mapping_workflow_input_source_config::de_id_mapping_workflow_input_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_workflow_input_source_config::de_id_mapping_workflow_input_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "outputSourceConfig" => {
                     builder = builder.set_output_source_config(
-                        crate::protocol_serde::shape_id_mapping_workflow_output_source_config::de_id_mapping_workflow_output_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_workflow_output_source_config::de_id_mapping_workflow_output_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "roleArn" => {

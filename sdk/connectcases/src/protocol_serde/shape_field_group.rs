@@ -23,6 +23,7 @@ pub fn ser_field_group(
 
 pub(crate) fn de_field_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "fields" => {
-                            builder = builder.set_fields(crate::protocol_serde::shape_field_list::de_field_list(tokens)?);
+                            builder = builder.set_fields(crate::protocol_serde::shape_field_list::de_field_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

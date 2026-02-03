@@ -113,13 +113,13 @@ pub fn de_delete_capability_http_response(
 }
 
 pub(crate) fn de_delete_capability(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_capability::builders::DeleteCapabilityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_capability::builders::DeleteCapabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_delete_capability(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "capability" => {
-                    builder = builder.set_capability(crate::protocol_serde::shape_capability::de_capability(tokens)?);
+                    builder = builder.set_capability(crate::protocol_serde::shape_capability::de_capability(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

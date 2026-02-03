@@ -50,6 +50,7 @@ pub fn ser_aws_sns_topic_details(
 
 pub(crate) fn de_aws_sns_topic_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsSnsTopicDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,7 +73,7 @@ where
                         }
                         "Subscription" => {
                             builder = builder.set_subscription(
-                                crate::protocol_serde::shape_aws_sns_topic_subscription_list::de_aws_sns_topic_subscription_list(tokens)?,
+                                crate::protocol_serde::shape_aws_sns_topic_subscription_list::de_aws_sns_topic_subscription_list(tokens, _value)?,
                             );
                         }
                         "TopicName" => {

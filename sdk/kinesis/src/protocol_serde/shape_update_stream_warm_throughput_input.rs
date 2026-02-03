@@ -9,10 +9,13 @@ pub fn ser_update_stream_warm_throughput_input_input(
     if let Some(var_2) = &input.stream_name {
         object.key("StreamName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.warm_throughput_mibps {
+    if let Some(var_3) = &input.stream_id {
+        object.key("StreamId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.warm_throughput_mibps {
         object.key("WarmThroughputMiBps").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

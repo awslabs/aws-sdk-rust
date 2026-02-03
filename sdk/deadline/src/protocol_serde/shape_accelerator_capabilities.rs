@@ -26,6 +26,7 @@ pub fn ser_accelerator_capabilities(
 
 pub(crate) fn de_accelerator_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AcceleratorCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "selections" => {
-                            builder = builder.set_selections(crate::protocol_serde::shape_accelerator_selections::de_accelerator_selections(tokens)?);
+                            builder = builder.set_selections(crate::protocol_serde::shape_accelerator_selections::de_accelerator_selections(
+                                tokens, _value,
+                            )?);
                         }
                         "count" => {
-                            builder = builder.set_count(crate::protocol_serde::shape_accelerator_count_range::de_accelerator_count_range(tokens)?);
+                            builder = builder.set_count(crate::protocol_serde::shape_accelerator_count_range::de_accelerator_count_range(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

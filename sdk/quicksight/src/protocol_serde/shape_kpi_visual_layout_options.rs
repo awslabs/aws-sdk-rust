@@ -14,6 +14,7 @@ pub fn ser_kpi_visual_layout_options(
 
 pub(crate) fn de_kpi_visual_layout_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiVisualLayoutOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StandardLayout" => {
                             builder = builder.set_standard_layout(
-                                crate::protocol_serde::shape_kpi_visual_standard_layout::de_kpi_visual_standard_layout(tokens)?,
+                                crate::protocol_serde::shape_kpi_visual_standard_layout::de_kpi_visual_standard_layout(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -61,7 +61,7 @@ pub struct CreateTableInput {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -130,6 +130,10 @@ pub struct CreateTableInput {
     pub resource_policy: ::std::option::Option<::std::string::String>,
     /// <p>Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub global_table_source_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
@@ -203,7 +207,7 @@ impl CreateTableInput {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -298,6 +302,14 @@ impl CreateTableInput {
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
         self.on_demand_throughput.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn global_table_source_arn(&self) -> ::std::option::Option<&str> {
+        self.global_table_source_arn.as_deref()
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
+        self.global_table_settings_replication_mode.as_ref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -325,6 +337,8 @@ pub struct CreateTableInputBuilder {
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
+    pub(crate) global_table_source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl CreateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -541,7 +555,7 @@ impl CreateTableInputBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -573,7 +587,7 @@ impl CreateTableInputBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -603,7 +617,7 @@ impl CreateTableInputBuilder {
     /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
     /// <p></p></li>
     /// <li>
-    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.</p></li>
     /// <li>
     /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
@@ -856,6 +870,37 @@ impl CreateTableInputBuilder {
     pub fn get_on_demand_throughput(&self) -> &::std::option::Option<crate::types::OnDemandThroughput> {
         &self.on_demand_throughput
     }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn global_table_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.global_table_source_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn set_global_table_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.global_table_source_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.</p>
+    pub fn get_global_table_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_source_arn
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.global_table_settings_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.global_table_settings_replication_mode = input;
+        self
+    }
+    /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        &self.global_table_settings_replication_mode
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -874,6 +919,8 @@ impl CreateTableInputBuilder {
             warm_throughput: self.warm_throughput,
             resource_policy: self.resource_policy,
             on_demand_throughput: self.on_demand_throughput,
+            global_table_source_arn: self.global_table_source_arn,
+            global_table_settings_replication_mode: self.global_table_settings_replication_mode,
         })
     }
 }

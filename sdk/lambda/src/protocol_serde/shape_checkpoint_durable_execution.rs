@@ -111,13 +111,13 @@ pub fn ser_checkpoint_durable_execution_input(
 }
 
 pub(crate) fn de_checkpoint_durable_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::checkpoint_durable_execution::builders::CheckpointDurableExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::checkpoint_durable_execution::builders::CheckpointDurableExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_checkpoint_durable_execution(
                 }
                 "NewExecutionState" => {
                     builder = builder.set_new_execution_state(
-                        crate::protocol_serde::shape_checkpoint_updated_execution_state::de_checkpoint_updated_execution_state(tokens)?,
+                        crate::protocol_serde::shape_checkpoint_updated_execution_state::de_checkpoint_updated_execution_state(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

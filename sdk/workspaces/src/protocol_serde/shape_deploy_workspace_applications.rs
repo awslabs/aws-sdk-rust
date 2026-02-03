@@ -162,13 +162,13 @@ pub fn ser_deploy_workspace_applications_input(
 }
 
 pub(crate) fn de_deploy_workspace_applications(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::deploy_workspace_applications::builders::DeployWorkspaceApplicationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::deploy_workspace_applications::builders::DeployWorkspaceApplicationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -177,7 +177,7 @@ pub(crate) fn de_deploy_workspace_applications(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Deployment" => {
                     builder = builder.set_deployment(
-                        crate::protocol_serde::shape_work_space_application_deployment::de_work_space_application_deployment(tokens)?,
+                        crate::protocol_serde::shape_work_space_application_deployment::de_work_space_application_deployment(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

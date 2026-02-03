@@ -64,13 +64,13 @@ pub fn de_describe_region_settings_http_response(
 }
 
 pub(crate) fn de_describe_region_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -79,12 +79,12 @@ pub(crate) fn de_describe_region_settings(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ResourceTypeManagementPreference" => {
                     builder = builder.set_resource_type_management_preference(
-                        crate::protocol_serde::shape_resource_type_management_preference::de_resource_type_management_preference(tokens)?,
+                        crate::protocol_serde::shape_resource_type_management_preference::de_resource_type_management_preference(tokens, _value)?,
                     );
                 }
                 "ResourceTypeOptInPreference" => {
                     builder = builder.set_resource_type_opt_in_preference(
-                        crate::protocol_serde::shape_resource_type_opt_in_preference::de_resource_type_opt_in_preference(tokens)?,
+                        crate::protocol_serde::shape_resource_type_opt_in_preference::de_resource_type_opt_in_preference(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -59,6 +59,7 @@ pub fn ser_aws_ec2_subnet_details(
 
 pub(crate) fn de_aws_ec2_subnet_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2SubnetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -147,7 +148,7 @@ where
                         }
                         "Ipv6CidrBlockAssociationSet" => {
                             builder = builder.set_ipv6_cidr_block_association_set(
-                                crate::protocol_serde::shape_ipv6_cidr_block_association_list::de_ipv6_cidr_block_association_list(tokens)?,
+                                crate::protocol_serde::shape_ipv6_cidr_block_association_list::de_ipv6_cidr_block_association_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

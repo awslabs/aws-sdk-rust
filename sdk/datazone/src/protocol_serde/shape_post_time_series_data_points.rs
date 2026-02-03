@@ -175,13 +175,13 @@ pub fn ser_post_time_series_data_points_input(
 }
 
 pub(crate) fn de_post_time_series_data_points(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::post_time_series_data_points::builders::PostTimeSeriesDataPointsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::post_time_series_data_points::builders::PostTimeSeriesDataPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -211,7 +211,9 @@ pub(crate) fn de_post_time_series_data_points(
                 }
                 "forms" => {
                     builder = builder.set_forms(
-                        crate::protocol_serde::shape_time_series_data_point_form_output_list::de_time_series_data_point_form_output_list(tokens)?,
+                        crate::protocol_serde::shape_time_series_data_point_form_output_list::de_time_series_data_point_form_output_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

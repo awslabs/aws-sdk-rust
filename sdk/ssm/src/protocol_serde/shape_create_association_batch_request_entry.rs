@@ -136,6 +136,7 @@ pub fn ser_create_association_batch_request_entry(
 
 pub(crate) fn de_create_association_batch_request_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateAssociationBatchRequestEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -164,7 +165,7 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value)?);
                         }
                         "AutomationTargetParameterName" => {
                             builder = builder.set_automation_target_parameter_name(
@@ -181,7 +182,7 @@ where
                             );
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
                         }
                         "ScheduleExpression" => {
                             builder = builder.set_schedule_expression(
@@ -192,7 +193,9 @@ where
                         }
                         "OutputLocation" => {
                             builder = builder.set_output_location(
-                                crate::protocol_serde::shape_instance_association_output_location::de_instance_association_output_location(tokens)?,
+                                crate::protocol_serde::shape_instance_association_output_location::de_instance_association_output_location(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AssociationName" => {
@@ -236,11 +239,12 @@ where
                         }
                         "CalendarNames" => {
                             builder = builder.set_calendar_names(
-                                crate::protocol_serde::shape_calendar_name_or_arn_list::de_calendar_name_or_arn_list(tokens)?,
+                                crate::protocol_serde::shape_calendar_name_or_arn_list::de_calendar_name_or_arn_list(tokens, _value)?,
                             );
                         }
                         "TargetLocations" => {
-                            builder = builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(tokens)?);
+                            builder =
+                                builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(tokens, _value)?);
                         }
                         "ScheduleOffset" => {
                             builder = builder.set_schedule_offset(
@@ -257,11 +261,11 @@ where
                             );
                         }
                         "TargetMaps" => {
-                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens)?);
+                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value)?);
                         }
                         "AlarmConfiguration" => {
-                            builder =
-                                builder.set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens)?);
+                            builder = builder
+                                .set_alarm_configuration(crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -25,6 +25,7 @@ pub fn ser_worker_compute_configuration_properties(
 
 pub(crate) fn de_worker_compute_configuration_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkerComputeConfigurationProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "spark" => Some(crate::types::WorkerComputeConfigurationProperties::Spark(
-                            crate::protocol_serde::shape_spark_properties::de_spark_properties(tokens)?
+                            crate::protocol_serde::shape_spark_properties::de_spark_properties(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'spark' cannot be null"))?,
                         )),
                         _ => {

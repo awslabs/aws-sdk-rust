@@ -33,6 +33,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_log_configuration_detai
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_log_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -57,11 +58,11 @@ where
                             );
                         }
                         "Options" => {
-                            builder = builder.set_options(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_options(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "SecretOptions" => {
                             builder = builder.set_secret_options(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_list::de_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_list::de_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

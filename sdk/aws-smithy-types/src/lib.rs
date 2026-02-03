@@ -18,6 +18,7 @@
 )]
 
 pub mod base64;
+pub mod big_number;
 pub mod body;
 pub mod byte_stream;
 pub mod checksum_config;
@@ -39,6 +40,7 @@ mod document;
 mod number;
 pub mod str_bytes;
 
+pub use big_number::{BigDecimal, BigInteger};
 pub use blob::Blob;
 pub use date_time::DateTime;
 pub use document::Document;

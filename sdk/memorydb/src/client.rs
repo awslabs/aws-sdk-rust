@@ -163,7 +163,7 @@ mod create_user;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_memorydb::Error> {
 /// # let client: aws_sdk_memorydb::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_update_cluster()
 ///     .customize()

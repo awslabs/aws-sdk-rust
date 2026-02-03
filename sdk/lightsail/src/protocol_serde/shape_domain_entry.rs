@@ -33,6 +33,7 @@ pub fn ser_domain_entry(
 
 pub(crate) fn de_domain_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DomainEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,9 @@ where
                             );
                         }
                         "options" => {
-                            builder = builder.set_options(crate::protocol_serde::shape_domain_entry_options::de_domain_entry_options(tokens)?);
+                            builder = builder.set_options(crate::protocol_serde::shape_domain_entry_options::de_domain_entry_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -149,7 +149,7 @@ mod batch_put_metrics;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_sagemakermetrics::Error> {
 /// # let client: aws_sdk_sagemakermetrics::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_metrics()
 ///     .customize()

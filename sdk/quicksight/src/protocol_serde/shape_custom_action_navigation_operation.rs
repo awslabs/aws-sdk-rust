@@ -14,6 +14,7 @@ pub fn ser_custom_action_navigation_operation(
 
 pub(crate) fn de_custom_action_navigation_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomActionNavigationOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LocalNavigationConfiguration" => {
                             builder = builder.set_local_navigation_configuration(
-                                crate::protocol_serde::shape_local_navigation_configuration::de_local_navigation_configuration(tokens)?,
+                                crate::protocol_serde::shape_local_navigation_configuration::de_local_navigation_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

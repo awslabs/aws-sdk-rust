@@ -101,13 +101,13 @@ pub fn de_get_event_configuration_by_resource_types_http_response(
 }
 
 pub(crate) fn de_get_event_configuration_by_resource_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -116,28 +116,30 @@ pub(crate) fn de_get_event_configuration_by_resource_types(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConnectionStatus" => {
                     builder = builder.set_connection_status(
-                            crate::protocol_serde::shape_connection_status_resource_type_event_configuration::de_connection_status_resource_type_event_configuration(tokens)?
+                            crate::protocol_serde::shape_connection_status_resource_type_event_configuration::de_connection_status_resource_type_event_configuration(tokens, _value)?
                         );
                 }
                 "DeviceRegistrationState" => {
                     builder = builder.set_device_registration_state(
-                            crate::protocol_serde::shape_device_registration_state_resource_type_event_configuration::de_device_registration_state_resource_type_event_configuration(tokens)?
+                            crate::protocol_serde::shape_device_registration_state_resource_type_event_configuration::de_device_registration_state_resource_type_event_configuration(tokens, _value)?
                         );
                 }
                 "Join" => {
                     builder = builder.set_join(
-                        crate::protocol_serde::shape_join_resource_type_event_configuration::de_join_resource_type_event_configuration(tokens)?,
+                        crate::protocol_serde::shape_join_resource_type_event_configuration::de_join_resource_type_event_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "MessageDeliveryStatus" => {
                     builder = builder.set_message_delivery_status(
-                            crate::protocol_serde::shape_message_delivery_status_resource_type_event_configuration::de_message_delivery_status_resource_type_event_configuration(tokens)?
+                            crate::protocol_serde::shape_message_delivery_status_resource_type_event_configuration::de_message_delivery_status_resource_type_event_configuration(tokens, _value)?
                         );
                 }
                 "Proximity" => {
                     builder = builder.set_proximity(
                         crate::protocol_serde::shape_proximity_resource_type_event_configuration::de_proximity_resource_type_event_configuration(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

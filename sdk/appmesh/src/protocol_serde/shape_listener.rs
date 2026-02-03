@@ -44,6 +44,7 @@ pub fn ser_listener(
 
 pub(crate) fn de_listener<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Listener>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,23 +59,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "portMapping" => {
-                            builder = builder.set_port_mapping(crate::protocol_serde::shape_port_mapping::de_port_mapping(tokens)?);
+                            builder = builder.set_port_mapping(crate::protocol_serde::shape_port_mapping::de_port_mapping(tokens, _value)?);
                         }
                         "tls" => {
-                            builder = builder.set_tls(crate::protocol_serde::shape_listener_tls::de_listener_tls(tokens)?);
+                            builder = builder.set_tls(crate::protocol_serde::shape_listener_tls::de_listener_tls(tokens, _value)?);
                         }
                         "healthCheck" => {
-                            builder = builder.set_health_check(crate::protocol_serde::shape_health_check_policy::de_health_check_policy(tokens)?);
+                            builder =
+                                builder.set_health_check(crate::protocol_serde::shape_health_check_policy::de_health_check_policy(tokens, _value)?);
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(crate::protocol_serde::shape_listener_timeout::de_listener_timeout(tokens)?);
+                            builder = builder.set_timeout(crate::protocol_serde::shape_listener_timeout::de_listener_timeout(tokens, _value)?);
                         }
                         "outlierDetection" => {
-                            builder = builder.set_outlier_detection(crate::protocol_serde::shape_outlier_detection::de_outlier_detection(tokens)?);
+                            builder =
+                                builder.set_outlier_detection(crate::protocol_serde::shape_outlier_detection::de_outlier_detection(tokens, _value)?);
                         }
                         "connectionPool" => {
                             builder = builder.set_connection_pool(
-                                crate::protocol_serde::shape_virtual_node_connection_pool::de_virtual_node_connection_pool(tokens)?,
+                                crate::protocol_serde::shape_virtual_node_connection_pool::de_virtual_node_connection_pool(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

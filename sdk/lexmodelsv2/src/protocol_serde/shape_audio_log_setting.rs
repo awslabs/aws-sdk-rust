@@ -20,6 +20,7 @@ pub fn ser_audio_log_setting(
 
 pub(crate) fn de_audio_log_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioLogSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,9 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_audio_log_destination::de_audio_log_destination(tokens)?);
+                            builder = builder.set_destination(crate::protocol_serde::shape_audio_log_destination::de_audio_log_destination(
+                                tokens, _value,
+                            )?);
                         }
                         "selectiveLoggingEnabled" => {
                             builder =

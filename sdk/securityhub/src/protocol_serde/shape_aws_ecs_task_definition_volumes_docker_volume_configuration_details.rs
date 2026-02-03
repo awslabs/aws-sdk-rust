@@ -37,6 +37,7 @@ pub fn ser_aws_ecs_task_definition_volumes_docker_volume_configuration_details(
 
 pub(crate) fn de_aws_ecs_task_definition_volumes_docker_volume_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -64,10 +65,10 @@ where
                             );
                         }
                         "DriverOpts" => {
-                            builder = builder.set_driver_opts(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_driver_opts(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Scope" => {
                             builder = builder.set_scope(

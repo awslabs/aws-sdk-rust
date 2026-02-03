@@ -23,6 +23,7 @@ pub fn ser_mxf_settings(
 
 pub(crate) fn de_mxf_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MxfSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                         }
                         "xavcProfileSettings" => {
                             builder = builder.set_xavc_profile_settings(
-                                crate::protocol_serde::shape_mxf_xavc_profile_settings::de_mxf_xavc_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_mxf_xavc_profile_settings::de_mxf_xavc_profile_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

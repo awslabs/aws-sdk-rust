@@ -46,13 +46,13 @@ pub fn ser_put_auto_scaling_policy_input(
 }
 
 pub(crate) fn de_put_auto_scaling_policy(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -75,7 +75,7 @@ pub(crate) fn de_put_auto_scaling_policy(
                 }
                 "AutoScalingPolicy" => {
                     builder = builder.set_auto_scaling_policy(
-                        crate::protocol_serde::shape_auto_scaling_policy_description::de_auto_scaling_policy_description(tokens)?,
+                        crate::protocol_serde::shape_auto_scaling_policy_description::de_auto_scaling_policy_description(tokens, _value)?,
                     );
                 }
                 "ClusterArn" => {

@@ -146,13 +146,13 @@ pub fn ser_add_application_reference_data_source_input(
 }
 
 pub(crate) fn de_add_application_reference_data_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_add_application_reference_data_source(
                 }
                 "ReferenceDataSourceDescriptions" => {
                     builder = builder.set_reference_data_source_descriptions(
-                        crate::protocol_serde::shape_reference_data_source_descriptions::de_reference_data_source_descriptions(tokens)?,
+                        crate::protocol_serde::shape_reference_data_source_descriptions::de_reference_data_source_descriptions(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

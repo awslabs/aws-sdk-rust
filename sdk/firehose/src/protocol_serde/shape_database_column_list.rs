@@ -26,6 +26,7 @@ pub fn ser_database_column_list(
 
 pub(crate) fn de_database_column_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatabaseColumnList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,14 +43,14 @@ where
                         "Include" => {
                             builder = builder.set_include(
                                 crate::protocol_serde::shape_database_column_include_or_exclude_list::de_database_column_include_or_exclude_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "Exclude" => {
                             builder = builder.set_exclude(
                                 crate::protocol_serde::shape_database_column_include_or_exclude_list::de_database_column_include_or_exclude_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

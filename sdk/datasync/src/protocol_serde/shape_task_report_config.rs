@@ -29,6 +29,7 @@ pub fn ser_task_report_config(
 
 pub(crate) fn de_task_report_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskReportConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,7 +44,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_report_destination::de_report_destination(tokens)?);
+                            builder =
+                                builder.set_destination(crate::protocol_serde::shape_report_destination::de_report_destination(tokens, _value)?);
                         }
                         "OutputType" => {
                             builder = builder.set_output_type(
@@ -67,7 +69,7 @@ where
                             );
                         }
                         "Overrides" => {
-                            builder = builder.set_overrides(crate::protocol_serde::shape_report_overrides::de_report_overrides(tokens)?);
+                            builder = builder.set_overrides(crate::protocol_serde::shape_report_overrides::de_report_overrides(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

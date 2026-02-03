@@ -26,6 +26,7 @@ pub fn ser_ingress_string_expression(
 
 pub(crate) fn de_ingress_string_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IngressStringExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Evaluate" => {
                             builder = builder.set_evaluate(crate::protocol_serde::shape_ingress_string_to_evaluate::de_ingress_string_to_evaluate(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Operator" => {
@@ -52,7 +53,7 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

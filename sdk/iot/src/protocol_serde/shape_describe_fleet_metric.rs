@@ -135,13 +135,13 @@ pub fn de_describe_fleet_metric_http_response(
 }
 
 pub(crate) fn de_describe_fleet_metric(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,7 @@ pub(crate) fn de_describe_fleet_metric(
                     );
                 }
                 "aggregationType" => {
-                    builder = builder.set_aggregation_type(crate::protocol_serde::shape_aggregation_type::de_aggregation_type(tokens)?);
+                    builder = builder.set_aggregation_type(crate::protocol_serde::shape_aggregation_type::de_aggregation_type(tokens, _value)?);
                 }
                 "creationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

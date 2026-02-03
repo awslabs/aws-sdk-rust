@@ -29,6 +29,7 @@ pub fn ser_security_details(
 
 pub(crate) fn de_security_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SecurityDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,11 +44,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "subnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_list::de_subnet_list(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_list::de_subnet_list(tokens, _value)?);
                         }
                         "securityGroupIds" => {
-                            builder = builder
-                                .set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(

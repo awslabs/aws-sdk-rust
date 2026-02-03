@@ -142,13 +142,13 @@ pub fn ser_create_id_namespace_input(
 }
 
 pub(crate) fn de_create_id_namespace(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_id_namespace::builders::CreateIdNamespaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_id_namespace::builders::CreateIdNamespaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,7 +170,7 @@ pub(crate) fn de_create_id_namespace(
                 }
                 "idMappingWorkflowProperties" => {
                     builder = builder.set_id_mapping_workflow_properties(
-                            crate::protocol_serde::shape_id_namespace_id_mapping_workflow_properties_list::de_id_namespace_id_mapping_workflow_properties_list(tokens)?
+                            crate::protocol_serde::shape_id_namespace_id_mapping_workflow_properties_list::de_id_namespace_id_mapping_workflow_properties_list(tokens, _value)?
                         );
                 }
                 "idNamespaceArn" => {
@@ -189,7 +189,7 @@ pub(crate) fn de_create_id_namespace(
                 }
                 "inputSourceConfig" => {
                     builder = builder.set_input_source_config(
-                        crate::protocol_serde::shape_id_namespace_input_source_config::de_id_namespace_input_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_namespace_input_source_config::de_id_namespace_input_source_config(tokens, _value)?,
                     );
                 }
                 "roleArn" => {
@@ -200,7 +200,7 @@ pub(crate) fn de_create_id_namespace(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

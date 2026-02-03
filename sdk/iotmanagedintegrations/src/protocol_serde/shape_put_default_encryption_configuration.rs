@@ -180,13 +180,13 @@ pub fn ser_put_default_encryption_configuration_input(
 }
 
 pub(crate) fn de_put_default_encryption_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -194,7 +194,9 @@ pub(crate) fn de_put_default_encryption_configuration(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "configurationStatus" => {
-                    builder = builder.set_configuration_status(crate::protocol_serde::shape_configuration_status::de_configuration_status(tokens)?);
+                    builder = builder.set_configuration_status(crate::protocol_serde::shape_configuration_status::de_configuration_status(
+                        tokens, _value,
+                    )?);
                 }
                 "encryptionType" => {
                     builder = builder.set_encryption_type(

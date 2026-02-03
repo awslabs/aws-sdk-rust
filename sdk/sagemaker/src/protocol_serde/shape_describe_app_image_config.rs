@@ -73,13 +73,13 @@ pub fn ser_describe_app_image_config_input(
 }
 
 pub(crate) fn de_describe_app_image_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_app_image_config::builders::DescribeAppImageConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_app_image_config::builders::DescribeAppImageConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,17 +114,17 @@ pub(crate) fn de_describe_app_image_config(
                 }
                 "KernelGatewayImageConfig" => {
                     builder = builder.set_kernel_gateway_image_config(
-                        crate::protocol_serde::shape_kernel_gateway_image_config::de_kernel_gateway_image_config(tokens)?,
+                        crate::protocol_serde::shape_kernel_gateway_image_config::de_kernel_gateway_image_config(tokens, _value)?,
                     );
                 }
                 "JupyterLabAppImageConfig" => {
                     builder = builder.set_jupyter_lab_app_image_config(
-                        crate::protocol_serde::shape_jupyter_lab_app_image_config::de_jupyter_lab_app_image_config(tokens)?,
+                        crate::protocol_serde::shape_jupyter_lab_app_image_config::de_jupyter_lab_app_image_config(tokens, _value)?,
                     );
                 }
                 "CodeEditorAppImageConfig" => {
                     builder = builder.set_code_editor_app_image_config(
-                        crate::protocol_serde::shape_code_editor_app_image_config::de_code_editor_app_image_config(tokens)?,
+                        crate::protocol_serde::shape_code_editor_app_image_config::de_code_editor_app_image_config(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

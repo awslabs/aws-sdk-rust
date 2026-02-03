@@ -32,6 +32,7 @@ pub fn ser_line_item_filter(
 
 pub(crate) fn de_line_item_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LineItemFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,12 +61,14 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder
-                                .set_values(crate::protocol_serde::shape_line_item_filter_values_list::de_line_item_filter_values_list(tokens)?);
+                            builder = builder.set_values(
+                                crate::protocol_serde::shape_line_item_filter_values_list::de_line_item_filter_values_list(tokens, _value)?,
+                            );
                         }
                         "AttributeValues" => {
-                            builder =
-                                builder.set_attribute_values(crate::protocol_serde::shape_attribute_value_list::de_attribute_value_list(tokens)?);
+                            builder = builder.set_attribute_values(crate::protocol_serde::shape_attribute_value_list::de_attribute_value_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

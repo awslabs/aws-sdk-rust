@@ -83,6 +83,7 @@ pub fn ser_aws_backup_recovery_point_details(
 
 pub(crate) fn de_aws_backup_recovery_point_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsBackupRecoveryPointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -119,7 +120,7 @@ where
                         }
                         "CalculatedLifecycle" => {
                             builder = builder.set_calculated_lifecycle(
-                                    crate::protocol_serde::shape_aws_backup_recovery_point_calculated_lifecycle_details::de_aws_backup_recovery_point_calculated_lifecycle_details(tokens)?
+                                    crate::protocol_serde::shape_aws_backup_recovery_point_calculated_lifecycle_details::de_aws_backup_recovery_point_calculated_lifecycle_details(tokens, _value)?
                                 );
                         }
                         "CompletionDate" => {
@@ -131,7 +132,7 @@ where
                         }
                         "CreatedBy" => {
                             builder = builder.set_created_by(
-                                    crate::protocol_serde::shape_aws_backup_recovery_point_created_by_details::de_aws_backup_recovery_point_created_by_details(tokens)?
+                                    crate::protocol_serde::shape_aws_backup_recovery_point_created_by_details::de_aws_backup_recovery_point_created_by_details(tokens, _value)?
                                 );
                         }
                         "CreationDate" => {
@@ -167,7 +168,7 @@ where
                         }
                         "Lifecycle" => {
                             builder = builder.set_lifecycle(
-                                    crate::protocol_serde::shape_aws_backup_recovery_point_lifecycle_details::de_aws_backup_recovery_point_lifecycle_details(tokens)?
+                                    crate::protocol_serde::shape_aws_backup_recovery_point_lifecycle_details::de_aws_backup_recovery_point_lifecycle_details(tokens, _value)?
                                 );
                         }
                         "RecoveryPointArn" => {

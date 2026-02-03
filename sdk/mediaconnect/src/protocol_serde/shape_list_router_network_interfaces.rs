@@ -139,13 +139,13 @@ pub fn ser_list_router_network_interfaces_input(
 }
 
 pub(crate) fn de_list_router_network_interfaces(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_router_network_interfaces::builders::ListRouterNetworkInterfacesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_router_network_interfaces::builders::ListRouterNetworkInterfacesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,7 @@ pub(crate) fn de_list_router_network_interfaces(
                 }
                 "routerNetworkInterfaces" => {
                     builder = builder.set_router_network_interfaces(
-                        crate::protocol_serde::shape_listed_router_network_interface_list::de_listed_router_network_interface_list(tokens)?,
+                        crate::protocol_serde::shape_listed_router_network_interface_list::de_listed_router_network_interface_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

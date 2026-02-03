@@ -203,7 +203,7 @@ mod create_global_cluster;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_docdb::Error> {
 /// # let client: aws_sdk_docdb::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_source_identifier_to_subscription()
 ///     .customize()

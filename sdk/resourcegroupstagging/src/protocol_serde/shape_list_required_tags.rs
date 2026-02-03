@@ -111,13 +111,13 @@ pub fn ser_list_required_tags_input(
 }
 
 pub(crate) fn de_list_required_tags(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_required_tags::builders::ListRequiredTagsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_required_tags::builders::ListRequiredTagsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_list_required_tags(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RequiredTags" => {
                     builder = builder.set_required_tags(
-                        crate::protocol_serde::shape_required_tags_for_list_required_tags::de_required_tags_for_list_required_tags(tokens)?,
+                        crate::protocol_serde::shape_required_tags_for_list_required_tags::de_required_tags_for_list_required_tags(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

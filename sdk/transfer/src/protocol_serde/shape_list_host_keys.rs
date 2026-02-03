@@ -122,13 +122,13 @@ pub fn ser_list_host_keys_input(
 }
 
 pub(crate) fn de_list_host_keys(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_list_host_keys(
                     );
                 }
                 "HostKeys" => {
-                    builder = builder.set_host_keys(crate::protocol_serde::shape_listed_host_keys::de_listed_host_keys(tokens)?);
+                    builder = builder.set_host_keys(crate::protocol_serde::shape_listed_host_keys::de_listed_host_keys(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

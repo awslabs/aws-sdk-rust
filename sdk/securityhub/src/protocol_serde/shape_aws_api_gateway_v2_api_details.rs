@@ -41,6 +41,7 @@ pub fn ser_aws_api_gateway_v2_api_details(
 
 pub(crate) fn de_aws_api_gateway_v2_api_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiGatewayV2ApiDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -118,8 +119,9 @@ where
                             );
                         }
                         "CorsConfiguration" => {
-                            builder = builder
-                                .set_cors_configuration(crate::protocol_serde::shape_aws_cors_configuration::de_aws_cors_configuration(tokens)?);
+                            builder = builder.set_cors_configuration(crate::protocol_serde::shape_aws_cors_configuration::de_aws_cors_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

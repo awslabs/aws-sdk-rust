@@ -65,6 +65,7 @@ pub fn ser_firewall_policy_details(
 
 pub(crate) fn de_firewall_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FirewallPolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,26 +81,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatefulRuleGroupReferences" => {
                             builder = builder.set_stateful_rule_group_references(
-                                    crate::protocol_serde::shape_firewall_policy_stateful_rule_group_references_list::de_firewall_policy_stateful_rule_group_references_list(tokens)?
+                                    crate::protocol_serde::shape_firewall_policy_stateful_rule_group_references_list::de_firewall_policy_stateful_rule_group_references_list(tokens, _value)?
                                 );
                         }
                         "StatelessCustomActions" => {
                             builder = builder.set_stateless_custom_actions(
-                                    crate::protocol_serde::shape_firewall_policy_stateless_custom_actions_list::de_firewall_policy_stateless_custom_actions_list(tokens)?
+                                    crate::protocol_serde::shape_firewall_policy_stateless_custom_actions_list::de_firewall_policy_stateless_custom_actions_list(tokens, _value)?
                                 );
                         }
                         "StatelessDefaultActions" => {
-                            builder = builder
-                                .set_stateless_default_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_stateless_default_actions(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "StatelessFragmentDefaultActions" => {
                             builder = builder.set_stateless_fragment_default_actions(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "StatelessRuleGroupReferences" => {
                             builder = builder.set_stateless_rule_group_references(
-                                    crate::protocol_serde::shape_firewall_policy_stateless_rule_group_references_list::de_firewall_policy_stateless_rule_group_references_list(tokens)?
+                                    crate::protocol_serde::shape_firewall_policy_stateless_rule_group_references_list::de_firewall_policy_stateless_rule_group_references_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

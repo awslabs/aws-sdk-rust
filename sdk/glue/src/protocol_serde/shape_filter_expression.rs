@@ -26,6 +26,7 @@ pub fn ser_filter_expression(
 
 pub(crate) fn de_filter_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                             builder = builder.set_negated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_filter_values::de_filter_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_filter_values::de_filter_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

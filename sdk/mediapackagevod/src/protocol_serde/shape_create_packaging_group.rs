@@ -147,13 +147,13 @@ pub fn ser_create_packaging_group_input(
 }
 
 pub(crate) fn de_create_packaging_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_packaging_group::builders::CreatePackagingGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_packaging_group::builders::CreatePackagingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "authorization" => {
-                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens)?);
+                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(
@@ -185,7 +185,7 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "egressAccessLogs" => {
-                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(tokens)?);
+                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -195,7 +195,7 @@ pub(crate) fn de_create_packaging_group(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

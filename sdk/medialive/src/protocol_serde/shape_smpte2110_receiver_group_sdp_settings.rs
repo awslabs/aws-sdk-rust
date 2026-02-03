@@ -38,6 +38,7 @@ pub fn ser_smpte2110_receiver_group_sdp_settings(
 
 pub(crate) fn de_smpte2110_receiver_group_sdp_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Smpte2110ReceiverGroupSdpSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,16 +54,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ancillarySdps" => {
                             builder = builder.set_ancillary_sdps(
-                                crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(tokens, _value)?,
                             );
                         }
                         "audioSdps" => {
                             builder = builder.set_audio_sdps(crate::protocol_serde::shape_list_of_input_sdp_location::de_list_of_input_sdp_location(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "videoSdp" => {
-                            builder = builder.set_video_sdp(crate::protocol_serde::shape_input_sdp_location::de_input_sdp_location(tokens)?);
+                            builder = builder.set_video_sdp(crate::protocol_serde::shape_input_sdp_location::de_input_sdp_location(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

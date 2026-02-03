@@ -32,6 +32,7 @@ pub fn ser_signal_fetch_information(
 
 pub(crate) fn de_signal_fetch_information<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SignalFetchInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,8 +54,8 @@ where
                             );
                         }
                         "signalFetchConfig" => {
-                            builder =
-                                builder.set_signal_fetch_config(crate::protocol_serde::shape_signal_fetch_config::de_signal_fetch_config(tokens)?);
+                            builder = builder
+                                .set_signal_fetch_config(crate::protocol_serde::shape_signal_fetch_config::de_signal_fetch_config(tokens, _value)?);
                         }
                         "conditionLanguageVersion" => {
                             builder = builder.set_condition_language_version(
@@ -64,7 +65,9 @@ where
                             );
                         }
                         "actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_event_expression_list::de_event_expression_list(tokens)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_event_expression_list::de_event_expression_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

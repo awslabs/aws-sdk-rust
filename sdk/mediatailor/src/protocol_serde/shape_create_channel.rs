@@ -40,13 +40,13 @@ pub fn ser_create_channel_input(
 }
 
 pub(crate) fn de_create_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_channel::builders::CreateChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_channel::builders::CreateChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -61,7 +61,7 @@ pub(crate) fn de_create_channel(
                     );
                 }
                 "Audiences" => {
-                    builder = builder.set_audiences(crate::protocol_serde::shape_audiences::de_audiences(tokens)?);
+                    builder = builder.set_audiences(crate::protocol_serde::shape_audiences::de_audiences(tokens, _value)?);
                 }
                 "ChannelName" => {
                     builder = builder.set_channel_name(
@@ -84,7 +84,7 @@ pub(crate) fn de_create_channel(
                     )?);
                 }
                 "FillerSlate" => {
-                    builder = builder.set_filler_slate(crate::protocol_serde::shape_slate_source::de_slate_source(tokens)?);
+                    builder = builder.set_filler_slate(crate::protocol_serde::shape_slate_source::de_slate_source(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -93,7 +93,7 @@ pub(crate) fn de_create_channel(
                     )?);
                 }
                 "Outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape_response_outputs::de_response_outputs(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_response_outputs::de_response_outputs(tokens, _value)?);
                 }
                 "PlaybackMode" => {
                     builder = builder.set_playback_mode(
@@ -103,7 +103,7 @@ pub(crate) fn de_create_channel(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 "Tier" => {
                     builder = builder.set_tier(
@@ -114,7 +114,7 @@ pub(crate) fn de_create_channel(
                 }
                 "TimeShiftConfiguration" => {
                     builder = builder.set_time_shift_configuration(
-                        crate::protocol_serde::shape_time_shift_configuration::de_time_shift_configuration(tokens)?,
+                        crate::protocol_serde::shape_time_shift_configuration::de_time_shift_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

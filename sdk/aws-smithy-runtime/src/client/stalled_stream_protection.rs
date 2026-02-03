@@ -82,7 +82,7 @@ impl Intercept for StalledStreamProtectionInterceptor {
                 let it = mem::replace(context.request_mut().body_mut(), SdkBody::taken());
                 let it = it.map_preserve_contents(move |body| {
                     let time_source = time_source.clone();
-                    SdkBody::from_body_0_4(ThroughputReadingBody::new(
+                    SdkBody::from_body_1_x(ThroughputReadingBody::new(
                         time_source,
                         throughput.clone(),
                         body,
@@ -117,7 +117,7 @@ impl Intercept for StalledStreamProtectionInterceptor {
                         body,
                         sspcfg.into(),
                     );
-                    SdkBody::from_body_0_4(mtb)
+                    SdkBody::from_body_1_x(mtb)
                 });
                 let _ = mem::replace(context.response_mut().body_mut(), it);
             }

@@ -32,6 +32,7 @@ pub fn ser_display_config(
 
 pub(crate) fn de_display_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DisplayConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,11 +62,11 @@ where
                     }
                     variant = match key.as_ref() {
                         "graph" => Some(crate::types::DisplayConfig::Graph(
-                            crate::protocol_serde::shape_graph_display_config_map::de_graph_display_config_map(tokens)?
+                            crate::protocol_serde::shape_graph_display_config_map::de_graph_display_config_map(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'graph' cannot be null"))?,
                         )),
                         "table" => Some(crate::types::DisplayConfig::Table(
-                            crate::protocol_serde::shape_table_display_config_struct::de_table_display_config_struct(tokens)?
+                            crate::protocol_serde::shape_table_display_config_struct::de_table_display_config_struct(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'table' cannot be null"))?,
                         )),
                         _ => {

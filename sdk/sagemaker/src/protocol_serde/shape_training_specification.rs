@@ -80,6 +80,7 @@ pub fn ser_training_specification(
 
 pub(crate) fn de_training_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -109,12 +110,12 @@ where
                         }
                         "SupportedHyperParameters" => {
                             builder = builder.set_supported_hyper_parameters(
-                                crate::protocol_serde::shape_hyper_parameter_specifications::de_hyper_parameter_specifications(tokens)?,
+                                crate::protocol_serde::shape_hyper_parameter_specifications::de_hyper_parameter_specifications(tokens, _value)?,
                             );
                         }
                         "SupportedTrainingInstanceTypes" => {
                             builder = builder.set_supported_training_instance_types(
-                                crate::protocol_serde::shape_training_instance_types::de_training_instance_types(tokens)?,
+                                crate::protocol_serde::shape_training_instance_types::de_training_instance_types(tokens, _value)?,
                             );
                         }
                         "SupportsDistributedTraining" => {
@@ -122,21 +123,25 @@ where
                                 builder.set_supports_distributed_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "MetricDefinitions" => {
-                            builder = builder
-                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                            builder = builder.set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "TrainingChannels" => {
-                            builder = builder
-                                .set_training_channels(crate::protocol_serde::shape_channel_specifications::de_channel_specifications(tokens)?);
+                            builder = builder.set_training_channels(crate::protocol_serde::shape_channel_specifications::de_channel_specifications(
+                                tokens, _value,
+                            )?);
                         }
                         "SupportedTuningJobObjectiveMetrics" => {
                             builder = builder.set_supported_tuning_job_objective_metrics(
-                                crate::protocol_serde::shape_hyper_parameter_tuning_job_objectives::de_hyper_parameter_tuning_job_objectives(tokens)?,
+                                crate::protocol_serde::shape_hyper_parameter_tuning_job_objectives::de_hyper_parameter_tuning_job_objectives(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AdditionalS3DataSource" => {
                             builder = builder.set_additional_s3_data_source(
-                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens)?,
+                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

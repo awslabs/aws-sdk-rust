@@ -114,13 +114,13 @@ pub fn ser_list_preview_rotation_shifts_input(
 }
 
 pub(crate) fn de_list_preview_rotation_shifts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,7 @@ pub(crate) fn de_list_preview_rotation_shifts(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RotationShifts" => {
-                    builder = builder.set_rotation_shifts(crate::protocol_serde::shape_rotation_shifts::de_rotation_shifts(tokens)?);
+                    builder = builder.set_rotation_shifts(crate::protocol_serde::shape_rotation_shifts::de_rotation_shifts(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

@@ -105,6 +105,7 @@ pub fn ser_budget(
 
 pub(crate) fn de_budget<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Budget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -126,17 +127,18 @@ where
                             );
                         }
                         "BudgetLimit" => {
-                            builder = builder.set_budget_limit(crate::protocol_serde::shape_spend::de_spend(tokens)?);
+                            builder = builder.set_budget_limit(crate::protocol_serde::shape_spend::de_spend(tokens, _value)?);
                         }
                         "PlannedBudgetLimits" => {
-                            builder = builder
-                                .set_planned_budget_limits(crate::protocol_serde::shape_planned_budget_limits::de_planned_budget_limits(tokens)?);
+                            builder = builder.set_planned_budget_limits(
+                                crate::protocol_serde::shape_planned_budget_limits::de_planned_budget_limits(tokens, _value)?,
+                            );
                         }
                         "CostFilters" => {
-                            builder = builder.set_cost_filters(crate::protocol_serde::shape_cost_filters::de_cost_filters(tokens)?);
+                            builder = builder.set_cost_filters(crate::protocol_serde::shape_cost_filters::de_cost_filters(tokens, _value)?);
                         }
                         "CostTypes" => {
-                            builder = builder.set_cost_types(crate::protocol_serde::shape_cost_types::de_cost_types(tokens)?);
+                            builder = builder.set_cost_types(crate::protocol_serde::shape_cost_types::de_cost_types(tokens, _value)?);
                         }
                         "TimeUnit" => {
                             builder = builder.set_time_unit(
@@ -146,10 +148,11 @@ where
                             );
                         }
                         "TimePeriod" => {
-                            builder = builder.set_time_period(crate::protocol_serde::shape_time_period::de_time_period(tokens)?);
+                            builder = builder.set_time_period(crate::protocol_serde::shape_time_period::de_time_period(tokens, _value)?);
                         }
                         "CalculatedSpend" => {
-                            builder = builder.set_calculated_spend(crate::protocol_serde::shape_calculated_spend::de_calculated_spend(tokens)?);
+                            builder =
+                                builder.set_calculated_spend(crate::protocol_serde::shape_calculated_spend::de_calculated_spend(tokens, _value)?);
                         }
                         "BudgetType" => {
                             builder = builder.set_budget_type(
@@ -165,13 +168,14 @@ where
                             )?);
                         }
                         "AutoAdjustData" => {
-                            builder = builder.set_auto_adjust_data(crate::protocol_serde::shape_auto_adjust_data::de_auto_adjust_data(tokens)?);
+                            builder =
+                                builder.set_auto_adjust_data(crate::protocol_serde::shape_auto_adjust_data::de_auto_adjust_data(tokens, _value)?);
                         }
                         "FilterExpression" => {
-                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metrics::de_metrics(tokens, _value)?);
                         }
                         "BillingViewArn" => {
                             builder = builder.set_billing_view_arn(
@@ -181,7 +185,7 @@ where
                             );
                         }
                         "HealthStatus" => {
-                            builder = builder.set_health_status(crate::protocol_serde::shape_health_status::de_health_status(tokens)?);
+                            builder = builder.set_health_status(crate::protocol_serde::shape_health_status::de_health_status(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -6,14 +6,17 @@ pub fn ser_subscribe_to_shard_input_input(
     if let Some(var_1) = &input.consumer_arn {
         object.key("ConsumerARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.shard_id {
-        object.key("ShardId").string(var_2.as_str());
+    if let Some(var_2) = &input.stream_id {
+        object.key("StreamId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.starting_position {
+    if let Some(var_3) = &input.shard_id {
+        object.key("ShardId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.starting_position {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("StartingPosition").start_object();
-        crate::protocol_serde::shape_starting_position::ser_starting_position(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("StartingPosition").start_object();
+        crate::protocol_serde::shape_starting_position::ser_starting_position(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

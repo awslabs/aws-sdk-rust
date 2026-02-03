@@ -26,6 +26,7 @@ pub fn ser_reference_line_dynamic_data_configuration(
 
 pub(crate) fn de_reference_line_dynamic_data_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReferenceLineDynamicDataConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,16 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "MeasureAggregationFunction" => {
                             builder = builder.set_measure_aggregation_function(
-                                crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens, _value)?,
                             );
                         }
                         "Calculation" => {
                             builder = builder.set_calculation(
-                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

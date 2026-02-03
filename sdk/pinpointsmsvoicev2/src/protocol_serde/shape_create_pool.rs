@@ -156,11 +156,11 @@ pub fn ser_create_pool_input(
 }
 
 pub(crate) fn de_create_pool(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_pool::builders::CreatePoolOutputBuilder,
 ) -> ::std::result::Result<crate::operation::create_pool::builders::CreatePoolOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -229,7 +229,7 @@ pub(crate) fn de_create_pool(
                     builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

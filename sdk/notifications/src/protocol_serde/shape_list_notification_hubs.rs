@@ -109,13 +109,13 @@ pub fn de_list_notification_hubs_http_response(
 }
 
 pub(crate) fn de_list_notification_hubs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_notification_hubs::builders::ListNotificationHubsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_notification_hubs::builders::ListNotificationHubsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_list_notification_hubs(
                     );
                 }
                 "notificationHubs" => {
-                    builder = builder.set_notification_hubs(crate::protocol_serde::shape_notification_hubs::de_notification_hubs(tokens)?);
+                    builder = builder.set_notification_hubs(crate::protocol_serde::shape_notification_hubs::de_notification_hubs(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

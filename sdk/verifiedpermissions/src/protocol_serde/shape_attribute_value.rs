@@ -70,6 +70,7 @@ pub fn ser_attribute_value(
 
 pub(crate) fn de_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,7 +105,7 @@ where
                             })?,
                         )),
                         "entityIdentifier" => Some(crate::types::AttributeValue::EntityIdentifier(
-                            crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'entityIdentifier' cannot be null")
                             })?,
                         )),
@@ -123,11 +124,11 @@ where
                                 })?,
                         )),
                         "set" => Some(crate::types::AttributeValue::Set(
-                            crate::protocol_serde::shape_set_attribute::de_set_attribute(tokens)?
+                            crate::protocol_serde::shape_set_attribute::de_set_attribute(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'set' cannot be null"))?,
                         )),
                         "record" => Some(crate::types::AttributeValue::Record(
-                            crate::protocol_serde::shape_record_attribute::de_record_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_record_attribute::de_record_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'record' cannot be null")
                             })?,
                         )),

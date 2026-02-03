@@ -149,7 +149,7 @@ mod create_billing_view;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_billing::Error> {
 /// # let client: aws_sdk_billing::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_source_views()
 ///     .customize()

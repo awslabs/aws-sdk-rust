@@ -90,13 +90,13 @@ pub fn ser_describe_provisioning_parameters_input(
 }
 
 pub(crate) fn de_describe_provisioning_parameters(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -105,31 +105,35 @@ pub(crate) fn de_describe_provisioning_parameters(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisioningArtifactParameters" => {
                     builder = builder.set_provisioning_artifact_parameters(
-                        crate::protocol_serde::shape_provisioning_artifact_parameters::de_provisioning_artifact_parameters(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_parameters::de_provisioning_artifact_parameters(tokens, _value)?,
                     );
                 }
                 "ConstraintSummaries" => {
-                    builder = builder.set_constraint_summaries(crate::protocol_serde::shape_constraint_summaries::de_constraint_summaries(tokens)?);
+                    builder = builder.set_constraint_summaries(crate::protocol_serde::shape_constraint_summaries::de_constraint_summaries(
+                        tokens, _value,
+                    )?);
                 }
                 "UsageInstructions" => {
-                    builder = builder.set_usage_instructions(crate::protocol_serde::shape_usage_instructions::de_usage_instructions(tokens)?);
+                    builder = builder.set_usage_instructions(crate::protocol_serde::shape_usage_instructions::de_usage_instructions(tokens, _value)?);
                 }
                 "TagOptions" => {
-                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_summaries::de_tag_option_summaries(tokens)?);
+                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_summaries::de_tag_option_summaries(
+                        tokens, _value,
+                    )?);
                 }
                 "ProvisioningArtifactPreferences" => {
                     builder = builder.set_provisioning_artifact_preferences(
-                        crate::protocol_serde::shape_provisioning_artifact_preferences::de_provisioning_artifact_preferences(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_preferences::de_provisioning_artifact_preferences(tokens, _value)?,
                     );
                 }
                 "ProvisioningArtifactOutputs" => {
                     builder = builder.set_provisioning_artifact_outputs(
-                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value)?,
                     );
                 }
                 "ProvisioningArtifactOutputKeys" => {
                     builder = builder.set_provisioning_artifact_output_keys(
-                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_outputs::de_provisioning_artifact_outputs(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

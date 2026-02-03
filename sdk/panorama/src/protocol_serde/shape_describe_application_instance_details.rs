@@ -131,13 +131,13 @@ pub fn de_describe_application_instance_details_http_response(
 }
 
 pub(crate) fn de_describe_application_instance_details(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_application_instance_details::builders::DescribeApplicationInstanceDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -180,11 +180,11 @@ pub(crate) fn de_describe_application_instance_details(
                 }
                 "ManifestOverridesPayload" => {
                     builder = builder.set_manifest_overrides_payload(
-                        crate::protocol_serde::shape_manifest_overrides_payload::de_manifest_overrides_payload(tokens)?,
+                        crate::protocol_serde::shape_manifest_overrides_payload::de_manifest_overrides_payload(tokens, _value)?,
                     );
                 }
                 "ManifestPayload" => {
-                    builder = builder.set_manifest_payload(crate::protocol_serde::shape_manifest_payload::de_manifest_payload(tokens)?);
+                    builder = builder.set_manifest_payload(crate::protocol_serde::shape_manifest_payload::de_manifest_payload(tokens, _value)?);
                 }
                 "Name" => {
                     builder = builder.set_name(

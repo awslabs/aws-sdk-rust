@@ -44,6 +44,7 @@ pub fn ser_asset_bundle_import_job_vpc_connection_override_parameters(
 
 pub(crate) fn de_asset_bundle_import_job_vpc_connection_override_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -75,14 +76,16 @@ where
                             );
                         }
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value)?);
                         }
                         "SecurityGroupIds" => {
-                            builder = builder
-                                .set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         "DnsResolvers" => {
-                            builder = builder.set_dns_resolvers(crate::protocol_serde::shape_dns_resolver_list::de_dns_resolver_list(tokens)?);
+                            builder =
+                                builder.set_dns_resolvers(crate::protocol_serde::shape_dns_resolver_list::de_dns_resolver_list(tokens, _value)?);
                         }
                         "RoleArn" => {
                             builder = builder.set_role_arn(

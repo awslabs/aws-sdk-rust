@@ -23,6 +23,7 @@ pub fn ser_o_auth_properties(
 
 pub(crate) fn de_o_auth_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OAuthProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,8 @@ where
                             );
                         }
                         "oAuthScopes" => {
-                            builder = builder.set_o_auth_scopes(crate::protocol_serde::shape_o_auth_scope_list::de_o_auth_scope_list(tokens)?);
+                            builder =
+                                builder.set_o_auth_scopes(crate::protocol_serde::shape_o_auth_scope_list::de_o_auth_scope_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

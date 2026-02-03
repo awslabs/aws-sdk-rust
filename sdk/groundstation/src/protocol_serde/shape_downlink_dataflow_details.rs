@@ -21,6 +21,7 @@ pub fn ser_downlink_dataflow_details(
 
 pub(crate) fn de_downlink_dataflow_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DownlinkDataflowDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,13 @@ where
                     }
                     variant = match key.as_ref() {
                         "agentConnectionDetails" => Some(crate::types::DownlinkDataflowDetails::AgentConnectionDetails(
-                            crate::protocol_serde::shape_downlink_connection_details::de_downlink_connection_details(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentConnectionDetails' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_downlink_connection_details::de_downlink_connection_details(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'agentConnectionDetails' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

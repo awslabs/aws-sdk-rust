@@ -179,7 +179,7 @@ mod create_sbom_export;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_inspector2::Error> {
 /// # let client: aws_sdk_inspector2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_member()
 ///     .customize()

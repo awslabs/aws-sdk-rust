@@ -32,6 +32,7 @@ pub fn ser_join_instruction(
 
 pub(crate) fn de_join_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JoinInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,12 +61,14 @@ where
                             );
                         }
                         "LeftJoinKeyProperties" => {
-                            builder = builder
-                                .set_left_join_key_properties(crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens)?);
+                            builder = builder.set_left_join_key_properties(crate::protocol_serde::shape_join_key_properties::de_join_key_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "RightJoinKeyProperties" => {
-                            builder = builder
-                                .set_right_join_key_properties(crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens)?);
+                            builder = builder.set_right_join_key_properties(
+                                crate::protocol_serde::shape_join_key_properties::de_join_key_properties(tokens, _value)?,
+                            );
                         }
                         "Type" => {
                             builder = builder.set_type(

@@ -154,13 +154,13 @@ pub fn ser_get_event_prediction_input(
 }
 
 pub(crate) fn de_get_event_prediction(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_prediction::builders::GetEventPredictionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_prediction::builders::GetEventPredictionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,14 +168,18 @@ pub(crate) fn de_get_event_prediction(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "modelScores" => {
-                    builder = builder.set_model_scores(crate::protocol_serde::shape_list_of_model_scores::de_list_of_model_scores(tokens)?);
+                    builder = builder.set_model_scores(crate::protocol_serde::shape_list_of_model_scores::de_list_of_model_scores(
+                        tokens, _value,
+                    )?);
                 }
                 "ruleResults" => {
-                    builder = builder.set_rule_results(crate::protocol_serde::shape_list_of_rule_results::de_list_of_rule_results(tokens)?);
+                    builder = builder.set_rule_results(crate::protocol_serde::shape_list_of_rule_results::de_list_of_rule_results(
+                        tokens, _value,
+                    )?);
                 }
                 "externalModelOutputs" => {
                     builder = builder.set_external_model_outputs(
-                        crate::protocol_serde::shape_list_of_external_model_outputs::de_list_of_external_model_outputs(tokens)?,
+                        crate::protocol_serde::shape_list_of_external_model_outputs::de_list_of_external_model_outputs(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

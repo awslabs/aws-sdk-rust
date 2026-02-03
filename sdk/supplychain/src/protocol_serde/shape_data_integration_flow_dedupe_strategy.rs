@@ -17,6 +17,7 @@ pub fn ser_data_integration_flow_dedupe_strategy(
 
 pub(crate) fn de_data_integration_flow_dedupe_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataIntegrationFlowDedupeStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "fieldPriority" => {
                             builder = builder.set_field_priority(
-                                    crate::protocol_serde::shape_data_integration_flow_field_priority_dedupe_strategy_configuration::de_data_integration_flow_field_priority_dedupe_strategy_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_integration_flow_field_priority_dedupe_strategy_configuration::de_data_integration_flow_field_priority_dedupe_strategy_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

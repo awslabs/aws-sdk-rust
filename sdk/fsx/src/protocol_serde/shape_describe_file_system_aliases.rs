@@ -103,13 +103,13 @@ pub fn ser_describe_file_system_aliases_input(
 }
 
 pub(crate) fn de_describe_file_system_aliases(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,7 @@ pub(crate) fn de_describe_file_system_aliases(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Aliases" => {
-                    builder = builder.set_aliases(crate::protocol_serde::shape_aliases::de_aliases(tokens)?);
+                    builder = builder.set_aliases(crate::protocol_serde::shape_aliases::de_aliases(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

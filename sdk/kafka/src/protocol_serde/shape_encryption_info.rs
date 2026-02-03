@@ -20,6 +20,7 @@ pub fn ser_encryption_info(
 
 pub(crate) fn de_encryption_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EncryptionInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "encryptionAtRest" => {
-                            builder = builder.set_encryption_at_rest(crate::protocol_serde::shape_encryption_at_rest::de_encryption_at_rest(tokens)?);
+                            builder = builder
+                                .set_encryption_at_rest(crate::protocol_serde::shape_encryption_at_rest::de_encryption_at_rest(tokens, _value)?);
                         }
                         "encryptionInTransit" => {
-                            builder = builder
-                                .set_encryption_in_transit(crate::protocol_serde::shape_encryption_in_transit::de_encryption_in_transit(tokens)?);
+                            builder = builder.set_encryption_in_transit(
+                                crate::protocol_serde::shape_encryption_in_transit::de_encryption_in_transit(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

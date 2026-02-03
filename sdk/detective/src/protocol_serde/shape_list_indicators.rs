@@ -123,13 +123,13 @@ pub fn ser_list_indicators_input(
 }
 
 pub(crate) fn de_list_indicators(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_indicators::builders::ListIndicatorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_indicators::builders::ListIndicatorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_list_indicators(
                     );
                 }
                 "Indicators" => {
-                    builder = builder.set_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens)?);
+                    builder = builder.set_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens, _value)?);
                 }
                 "InvestigationId" => {
                     builder = builder.set_investigation_id(

@@ -104,13 +104,13 @@ pub fn de_describe_billing_group_http_response(
 }
 
 pub(crate) fn de_describe_billing_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,8 +132,9 @@ pub(crate) fn de_describe_billing_group(
                     );
                 }
                 "billingGroupMetadata" => {
-                    builder =
-                        builder.set_billing_group_metadata(crate::protocol_serde::shape_billing_group_metadata::de_billing_group_metadata(tokens)?);
+                    builder = builder.set_billing_group_metadata(crate::protocol_serde::shape_billing_group_metadata::de_billing_group_metadata(
+                        tokens, _value,
+                    )?);
                 }
                 "billingGroupName" => {
                     builder = builder.set_billing_group_name(
@@ -144,7 +145,7 @@ pub(crate) fn de_describe_billing_group(
                 }
                 "billingGroupProperties" => {
                     builder = builder.set_billing_group_properties(
-                        crate::protocol_serde::shape_billing_group_properties::de_billing_group_properties(tokens)?,
+                        crate::protocol_serde::shape_billing_group_properties::de_billing_group_properties(tokens, _value)?,
                     );
                 }
                 "version" => {

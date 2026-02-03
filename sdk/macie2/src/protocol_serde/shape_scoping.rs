@@ -20,6 +20,7 @@ pub fn ser_scoping(
 
 pub(crate) fn de_scoping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Scoping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "excludes" => {
-                            builder = builder.set_excludes(crate::protocol_serde::shape_job_scoping_block::de_job_scoping_block(tokens)?);
+                            builder = builder.set_excludes(crate::protocol_serde::shape_job_scoping_block::de_job_scoping_block(tokens, _value)?);
                         }
                         "includes" => {
-                            builder = builder.set_includes(crate::protocol_serde::shape_job_scoping_block::de_job_scoping_block(tokens)?);
+                            builder = builder.set_includes(crate::protocol_serde::shape_job_scoping_block::de_job_scoping_block(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -109,13 +109,13 @@ pub fn de_list_vpc_endpoints_for_domain_http_response(
 }
 
 pub(crate) fn de_list_vpc_endpoints_for_domain(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,7 +131,7 @@ pub(crate) fn de_list_vpc_endpoints_for_domain(
                 }
                 "VpcEndpointSummaryList" => {
                     builder = builder.set_vpc_endpoint_summary_list(
-                        crate::protocol_serde::shape_vpc_endpoint_summary_list::de_vpc_endpoint_summary_list(tokens)?,
+                        crate::protocol_serde::shape_vpc_endpoint_summary_list::de_vpc_endpoint_summary_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

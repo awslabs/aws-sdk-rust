@@ -29,6 +29,7 @@ pub fn ser_service_catalog_provisioning_details(
 
 pub(crate) fn de_service_catalog_provisioning_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceCatalogProvisioningDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,7 +66,7 @@ where
                         }
                         "ProvisioningParameters" => {
                             builder = builder.set_provisioning_parameters(
-                                crate::protocol_serde::shape_provisioning_parameters::de_provisioning_parameters(tokens)?,
+                                crate::protocol_serde::shape_provisioning_parameters::de_provisioning_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

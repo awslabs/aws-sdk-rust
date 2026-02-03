@@ -17,6 +17,7 @@ pub fn ser_numeric_separator_configuration(
 
 pub(crate) fn de_numeric_separator_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NumericSeparatorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "ThousandsSeparator" => {
                             builder = builder.set_thousands_separator(
-                                crate::protocol_serde::shape_thousand_separator_options::de_thousand_separator_options(tokens)?,
+                                crate::protocol_serde::shape_thousand_separator_options::de_thousand_separator_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

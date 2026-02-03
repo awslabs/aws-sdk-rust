@@ -17,6 +17,7 @@ pub fn ser_message_signal(
 
 pub(crate) fn de_message_signal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageSignal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "structuredMessage" => {
-                            builder = builder.set_structured_message(crate::protocol_serde::shape_structured_message::de_structured_message(tokens)?);
+                            builder = builder
+                                .set_structured_message(crate::protocol_serde::shape_structured_message::de_structured_message(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

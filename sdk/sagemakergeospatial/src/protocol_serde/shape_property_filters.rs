@@ -23,6 +23,7 @@ pub fn ser_property_filters(
 
 pub(crate) fn de_property_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PropertyFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Properties" => {
-                            builder = builder.set_properties(crate::protocol_serde::shape_property_filters_list::de_property_filters_list(tokens)?);
+                            builder = builder.set_properties(crate::protocol_serde::shape_property_filters_list::de_property_filters_list(
+                                tokens, _value,
+                            )?);
                         }
                         "LogicalOperator" => {
                             builder = builder.set_logical_operator(

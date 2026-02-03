@@ -123,13 +123,13 @@ pub fn de_get_trust_store_http_response(
 }
 
 pub(crate) fn de_get_trust_store(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_trust_store::builders::GetTrustStoreOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_trust_store::builders::GetTrustStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_get_trust_store(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "trustStore" => {
-                    builder = builder.set_trust_store(crate::protocol_serde::shape_trust_store::de_trust_store(tokens)?);
+                    builder = builder.set_trust_store(crate::protocol_serde::shape_trust_store::de_trust_store(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

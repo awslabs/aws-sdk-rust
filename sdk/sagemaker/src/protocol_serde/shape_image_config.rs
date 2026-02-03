@@ -17,6 +17,7 @@ pub fn ser_image_config(
 
 pub(crate) fn de_image_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "RepositoryAuthConfig" => {
-                            builder = builder
-                                .set_repository_auth_config(crate::protocol_serde::shape_repository_auth_config::de_repository_auth_config(tokens)?);
+                            builder = builder.set_repository_auth_config(
+                                crate::protocol_serde::shape_repository_auth_config::de_repository_auth_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

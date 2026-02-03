@@ -20,6 +20,7 @@ pub fn ser_account_takeover_risk_configuration_type(
 
 pub(crate) fn de_account_takeover_risk_configuration_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AccountTakeoverRiskConfigurationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NotifyConfiguration" => {
                             builder = builder.set_notify_configuration(
-                                crate::protocol_serde::shape_notify_configuration_type::de_notify_configuration_type(tokens)?,
+                                crate::protocol_serde::shape_notify_configuration_type::de_notify_configuration_type(tokens, _value)?,
                             );
                         }
                         "Actions" => {
-                            builder = builder
-                                .set_actions(crate::protocol_serde::shape_account_takeover_actions_type::de_account_takeover_actions_type(tokens)?);
+                            builder = builder.set_actions(
+                                crate::protocol_serde::shape_account_takeover_actions_type::de_account_takeover_actions_type(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

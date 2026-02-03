@@ -110,6 +110,7 @@ pub fn ser_source_connector_properties(
 
 pub(crate) fn de_source_connector_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceConnectorProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -125,79 +126,91 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Amplitude" => {
                             builder = builder.set_amplitude(
-                                crate::protocol_serde::shape_amplitude_source_properties::de_amplitude_source_properties(tokens)?,
+                                crate::protocol_serde::shape_amplitude_source_properties::de_amplitude_source_properties(tokens, _value)?,
                             );
                         }
                         "Datadog" => {
                             builder = builder.set_datadog(crate::protocol_serde::shape_datadog_source_properties::de_datadog_source_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Dynatrace" => {
                             builder = builder.set_dynatrace(
-                                crate::protocol_serde::shape_dynatrace_source_properties::de_dynatrace_source_properties(tokens)?,
+                                crate::protocol_serde::shape_dynatrace_source_properties::de_dynatrace_source_properties(tokens, _value)?,
                             );
                         }
                         "GoogleAnalytics" => {
                             builder = builder.set_google_analytics(
-                                crate::protocol_serde::shape_google_analytics_source_properties::de_google_analytics_source_properties(tokens)?,
+                                crate::protocol_serde::shape_google_analytics_source_properties::de_google_analytics_source_properties(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "InforNexus" => {
                             builder = builder.set_infor_nexus(
-                                crate::protocol_serde::shape_infor_nexus_source_properties::de_infor_nexus_source_properties(tokens)?,
+                                crate::protocol_serde::shape_infor_nexus_source_properties::de_infor_nexus_source_properties(tokens, _value)?,
                             );
                         }
                         "Marketo" => {
                             builder = builder.set_marketo(crate::protocol_serde::shape_marketo_source_properties::de_marketo_source_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "S3" => {
-                            builder = builder.set_s3(crate::protocol_serde::shape_s3_source_properties::de_s3_source_properties(tokens)?);
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3_source_properties::de_s3_source_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "Salesforce" => {
-                            builder = builder
-                                .set_salesforce(crate::protocol_serde::shape_salesforce_source_properties::de_salesforce_source_properties(tokens)?);
+                            builder = builder.set_salesforce(
+                                crate::protocol_serde::shape_salesforce_source_properties::de_salesforce_source_properties(tokens, _value)?,
+                            );
                         }
                         "ServiceNow" => {
                             builder = builder.set_service_now(
-                                crate::protocol_serde::shape_service_now_source_properties::de_service_now_source_properties(tokens)?,
+                                crate::protocol_serde::shape_service_now_source_properties::de_service_now_source_properties(tokens, _value)?,
                             );
                         }
                         "Singular" => {
                             builder = builder.set_singular(crate::protocol_serde::shape_singular_source_properties::de_singular_source_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Slack" => {
-                            builder = builder.set_slack(crate::protocol_serde::shape_slack_source_properties::de_slack_source_properties(tokens)?);
+                            builder = builder.set_slack(crate::protocol_serde::shape_slack_source_properties::de_slack_source_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "Trendmicro" => {
-                            builder = builder
-                                .set_trendmicro(crate::protocol_serde::shape_trendmicro_source_properties::de_trendmicro_source_properties(tokens)?);
+                            builder = builder.set_trendmicro(
+                                crate::protocol_serde::shape_trendmicro_source_properties::de_trendmicro_source_properties(tokens, _value)?,
+                            );
                         }
                         "Veeva" => {
-                            builder = builder.set_veeva(crate::protocol_serde::shape_veeva_source_properties::de_veeva_source_properties(tokens)?);
+                            builder = builder.set_veeva(crate::protocol_serde::shape_veeva_source_properties::de_veeva_source_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "Zendesk" => {
                             builder = builder.set_zendesk(crate::protocol_serde::shape_zendesk_source_properties::de_zendesk_source_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "SAPOData" => {
                             builder = builder.set_sapo_data(
-                                crate::protocol_serde::shape_sapo_data_source_properties::de_sapo_data_source_properties(tokens)?,
+                                crate::protocol_serde::shape_sapo_data_source_properties::de_sapo_data_source_properties(tokens, _value)?,
                             );
                         }
                         "CustomConnector" => {
                             builder = builder.set_custom_connector(
-                                crate::protocol_serde::shape_custom_connector_source_properties::de_custom_connector_source_properties(tokens)?,
+                                crate::protocol_serde::shape_custom_connector_source_properties::de_custom_connector_source_properties(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Pardot" => {
                             builder = builder.set_pardot(crate::protocol_serde::shape_pardot_source_properties::de_pardot_source_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

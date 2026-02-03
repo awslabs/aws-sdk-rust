@@ -166,13 +166,13 @@ pub fn de_restore_analysis_http_response(
 }
 
 pub(crate) fn de_restore_analysis(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::restore_analysis::builders::RestoreAnalysisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::restore_analysis::builders::RestoreAnalysisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -201,7 +201,8 @@ pub(crate) fn de_restore_analysis(
                     );
                 }
                 "RestorationFailedFolderArns" => {
-                    builder = builder.set_restoration_failed_folder_arns(crate::protocol_serde::shape_folder_arn_list::de_folder_arn_list(tokens)?);
+                    builder =
+                        builder.set_restoration_failed_folder_arns(crate::protocol_serde::shape_folder_arn_list::de_folder_arn_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

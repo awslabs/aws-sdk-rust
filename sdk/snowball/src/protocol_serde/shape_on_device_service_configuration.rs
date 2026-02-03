@@ -32,6 +32,7 @@ pub fn ser_on_device_service_configuration(
 
 pub(crate) fn de_on_device_service_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OnDeviceServiceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,22 +48,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NFSOnDeviceService" => {
                             builder = builder.set_nfs_on_device_service(
-                                crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(tokens)?,
+                                crate::protocol_serde::shape_nfs_on_device_service_configuration::de_nfs_on_device_service_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "TGWOnDeviceService" => {
                             builder = builder.set_tgw_on_device_service(
-                                crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(tokens)?,
+                                crate::protocol_serde::shape_tgw_on_device_service_configuration::de_tgw_on_device_service_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "EKSOnDeviceService" => {
                             builder = builder.set_eks_on_device_service(
-                                crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(tokens)?,
+                                crate::protocol_serde::shape_eks_on_device_service_configuration::de_eks_on_device_service_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "S3OnDeviceService" => {
                             builder = builder.set_s3_on_device_service(
-                                crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_on_device_service_configuration::de_s3_on_device_service_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

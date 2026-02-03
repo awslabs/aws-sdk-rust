@@ -69,13 +69,13 @@ pub fn ser_describe_cluster_scheduler_config_input(
 }
 
 pub(crate) fn de_describe_cluster_scheduler_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_cluster_scheduler_config::builders::DescribeClusterSchedulerConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_cluster_scheduler_config::builders::DescribeClusterSchedulerConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -125,7 +125,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     );
                 }
                 "StatusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details_map::de_status_details_map(tokens)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details_map::de_status_details_map(tokens, _value)?);
                 }
                 "ClusterArn" => {
                     builder = builder.set_cluster_arn(
@@ -135,7 +135,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     );
                 }
                 "SchedulerConfig" => {
-                    builder = builder.set_scheduler_config(crate::protocol_serde::shape_scheduler_config::de_scheduler_config(tokens)?);
+                    builder = builder.set_scheduler_config(crate::protocol_serde::shape_scheduler_config::de_scheduler_config(tokens, _value)?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -151,7 +151,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -160,7 +160,7 @@ pub(crate) fn de_describe_cluster_scheduler_config(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

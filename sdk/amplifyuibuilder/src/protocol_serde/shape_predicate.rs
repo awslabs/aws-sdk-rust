@@ -44,6 +44,7 @@ pub fn ser_predicate(
 
 pub(crate) fn de_predicate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Predicate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,10 +59,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "or" => {
-                            builder = builder.set_or(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens)?);
+                            builder = builder.set_or(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens, _value)?);
                         }
                         "and" => {
-                            builder = builder.set_and(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens)?);
+                            builder = builder.set_and(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens, _value)?);
                         }
                         "field" => {
                             builder = builder.set_field(

@@ -235,13 +235,13 @@ pub fn ser_create_automation_rule_input(
 }
 
 pub(crate) fn de_create_automation_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_automation_rule::builders::CreateAutomationRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -292,7 +292,7 @@ pub(crate) fn de_create_automation_rule(
                 }
                 "organizationConfiguration" => {
                     builder = builder.set_organization_configuration(
-                        crate::protocol_serde::shape_organization_configuration::de_organization_configuration(tokens)?,
+                        crate::protocol_serde::shape_organization_configuration::de_organization_configuration(tokens, _value)?,
                     );
                 }
                 "priority" => {
@@ -304,14 +304,14 @@ pub(crate) fn de_create_automation_rule(
                 }
                 "recommendedActionTypes" => {
                     builder = builder.set_recommended_action_types(
-                        crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(tokens)?,
+                        crate::protocol_serde::shape_recommended_action_type_list::de_recommended_action_type_list(tokens, _value)?,
                     );
                 }
                 "criteria" => {
-                    builder = builder.set_criteria(crate::protocol_serde::shape_criteria::de_criteria(tokens)?);
+                    builder = builder.set_criteria(crate::protocol_serde::shape_criteria::de_criteria(tokens, _value)?);
                 }
                 "schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens)?);
+                    builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -321,7 +321,7 @@ pub(crate) fn de_create_automation_rule(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "createdTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

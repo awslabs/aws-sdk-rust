@@ -20,6 +20,7 @@ pub fn ser_multiplex_output_settings(
 
 pub(crate) fn de_multiplex_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiplexOutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                            builder =
+                                builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens, _value)?);
                         }
                         "containerSettings" => {
                             builder = builder.set_container_settings(
-                                crate::protocol_serde::shape_multiplex_container_settings::de_multiplex_container_settings(tokens)?,
+                                crate::protocol_serde::shape_multiplex_container_settings::de_multiplex_container_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

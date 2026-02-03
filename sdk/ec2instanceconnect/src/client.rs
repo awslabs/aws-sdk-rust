@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ec2instanceconnect::Error> {
 /// # let client: aws_sdk_ec2instanceconnect::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.send_serial_console_ssh_public_key()
 ///     .customize()

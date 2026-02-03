@@ -14,6 +14,7 @@ pub fn ser_grpc_gateway_route_rewrite(
 
 pub(crate) fn de_grpc_gateway_route_rewrite<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GrpcGatewayRouteRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "hostname" => {
                             builder = builder.set_hostname(
-                                crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(tokens)?,
+                                crate::protocol_serde::shape_gateway_route_hostname_rewrite::de_gateway_route_hostname_rewrite(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

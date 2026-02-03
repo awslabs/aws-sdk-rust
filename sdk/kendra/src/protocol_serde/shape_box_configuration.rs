@@ -98,6 +98,7 @@ pub fn ser_box_configuration(
 
 pub(crate) fn de_box_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BoxConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -141,44 +142,44 @@ where
                             "FileFieldMappings" => {
                                 builder = builder.set_file_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "TaskFieldMappings" => {
                                 builder = builder.set_task_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "CommentFieldMappings" => {
                                 builder = builder.set_comment_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "WebLinkFieldMappings" => {
                                 builder = builder.set_web_link_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExclusionPatterns" => {
                                 builder = builder.set_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

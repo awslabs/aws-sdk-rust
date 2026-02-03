@@ -239,13 +239,13 @@ pub fn de_get_ml_model_training_job_http_response(
 }
 
 pub(crate) fn de_get_ml_model_training_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ml_model_training_job::builders::GetMlModelTrainingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_ml_model_training_job::builders::GetMlModelTrainingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -253,7 +253,9 @@ pub(crate) fn de_get_ml_model_training_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "hpoJob" => {
-                    builder = builder.set_hpo_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(tokens)?);
+                    builder = builder.set_hpo_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
+                        tokens, _value,
+                    )?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -263,14 +265,17 @@ pub(crate) fn de_get_ml_model_training_job(
                     );
                 }
                 "mlModels" => {
-                    builder = builder.set_ml_models(crate::protocol_serde::shape_ml_models::de_ml_models(tokens)?);
+                    builder = builder.set_ml_models(crate::protocol_serde::shape_ml_models::de_ml_models(tokens, _value)?);
                 }
                 "modelTransformJob" => {
-                    builder =
-                        builder.set_model_transform_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(tokens)?);
+                    builder = builder.set_model_transform_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
+                        tokens, _value,
+                    )?);
                 }
                 "processingJob" => {
-                    builder = builder.set_processing_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(tokens)?);
+                    builder = builder.set_processing_job(crate::protocol_serde::shape_ml_resource_definition::de_ml_resource_definition(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

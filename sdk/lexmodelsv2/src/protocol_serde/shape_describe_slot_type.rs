@@ -123,13 +123,13 @@ pub fn de_describe_slot_type_http_response(
 }
 
 pub(crate) fn de_describe_slot_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_slot_type::builders::DescribeSlotTypeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_slot_type::builders::DescribeSlotTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,7 +152,7 @@ pub(crate) fn de_describe_slot_type(
                 }
                 "compositeSlotTypeSetting" => {
                     builder = builder.set_composite_slot_type_setting(
-                        crate::protocol_serde::shape_composite_slot_type_setting::de_composite_slot_type_setting(tokens)?,
+                        crate::protocol_serde::shape_composite_slot_type_setting::de_composite_slot_type_setting(tokens, _value)?,
                     );
                 }
                 "creationDateTime" => {
@@ -169,8 +169,9 @@ pub(crate) fn de_describe_slot_type(
                     );
                 }
                 "externalSourceSetting" => {
-                    builder = builder
-                        .set_external_source_setting(crate::protocol_serde::shape_external_source_setting::de_external_source_setting(tokens)?);
+                    builder = builder.set_external_source_setting(crate::protocol_serde::shape_external_source_setting::de_external_source_setting(
+                        tokens, _value,
+                    )?);
                 }
                 "lastUpdatedDateTime" => {
                     builder = builder.set_last_updated_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -207,11 +208,11 @@ pub(crate) fn de_describe_slot_type(
                     );
                 }
                 "slotTypeValues" => {
-                    builder = builder.set_slot_type_values(crate::protocol_serde::shape_slot_type_values::de_slot_type_values(tokens)?);
+                    builder = builder.set_slot_type_values(crate::protocol_serde::shape_slot_type_values::de_slot_type_values(tokens, _value)?);
                 }
                 "valueSelectionSetting" => {
                     builder = builder.set_value_selection_setting(
-                        crate::protocol_serde::shape_slot_value_selection_setting::de_slot_value_selection_setting(tokens)?,
+                        crate::protocol_serde::shape_slot_value_selection_setting::de_slot_value_selection_setting(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

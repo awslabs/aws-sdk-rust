@@ -158,13 +158,13 @@ pub fn ser_create_data_product_revision_input(
 }
 
 pub(crate) fn de_create_data_product_revision(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_data_product_revision::builders::CreateDataProductRevisionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_data_product_revision::builders::CreateDataProductRevisionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -212,10 +212,10 @@ pub(crate) fn de_create_data_product_revision(
                     );
                 }
                 "formsOutput" => {
-                    builder = builder.set_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens)?);
+                    builder = builder.set_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens, _value)?);
                 }
                 "glossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens)?);
+                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -225,7 +225,7 @@ pub(crate) fn de_create_data_product_revision(
                     );
                 }
                 "items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape_data_product_items::de_data_product_items(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_data_product_items::de_data_product_items(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(

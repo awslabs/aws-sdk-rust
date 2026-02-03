@@ -72,6 +72,7 @@ pub fn ser_automation_rules_finding_fields_update(
 
 pub(crate) fn de_automation_rules_finding_fields_update<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomationRulesFindingFieldsUpdate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,10 +87,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Note" => {
-                            builder = builder.set_note(crate::protocol_serde::shape_note_update::de_note_update(tokens)?);
+                            builder = builder.set_note(crate::protocol_serde::shape_note_update::de_note_update(tokens, _value)?);
                         }
                         "Severity" => {
-                            builder = builder.set_severity(crate::protocol_serde::shape_severity_update::de_severity_update(tokens)?);
+                            builder = builder.set_severity(crate::protocol_serde::shape_severity_update::de_severity_update(tokens, _value)?);
                         }
                         "VerificationState" => {
                             builder = builder.set_verification_state(
@@ -113,17 +114,18 @@ where
                             );
                         }
                         "Types" => {
-                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens)?);
+                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value)?);
                         }
                         "UserDefinedFields" => {
-                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Workflow" => {
-                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow_update::de_workflow_update(tokens)?);
+                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow_update::de_workflow_update(tokens, _value)?);
                         }
                         "RelatedFindings" => {
-                            builder =
-                                builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(tokens)?);
+                            builder = builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

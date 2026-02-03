@@ -136,13 +136,13 @@ pub fn de_describe_vpc_connection_http_response(
 }
 
 pub(crate) fn de_describe_vpc_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_vpc_connection::builders::DescribeVpcConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_describe_vpc_connection(
                     )?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -173,10 +173,10 @@ pub(crate) fn de_describe_vpc_connection(
                     );
                 }
                 "subnets" => {
-                    builder = builder.set_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 "targetClusterArn" => {
                     builder = builder.set_target_cluster_arn(

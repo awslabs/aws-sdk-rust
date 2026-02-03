@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_personalizeruntime::Error> {
 /// # let client: aws_sdk_personalizeruntime::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.get_action_recommendations()
 ///     .customize()

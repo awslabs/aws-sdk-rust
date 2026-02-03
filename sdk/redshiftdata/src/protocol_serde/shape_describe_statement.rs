@@ -95,13 +95,13 @@ pub fn ser_describe_statement_input(
 }
 
 pub(crate) fn de_describe_statement(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_statement::builders::DescribeStatementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_statement::builders::DescribeStatementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -215,10 +215,10 @@ pub(crate) fn de_describe_statement(
                     );
                 }
                 "QueryParameters" => {
-                    builder = builder.set_query_parameters(crate::protocol_serde::shape_sql_parameters_list::de_sql_parameters_list(tokens)?);
+                    builder = builder.set_query_parameters(crate::protocol_serde::shape_sql_parameters_list::de_sql_parameters_list(tokens, _value)?);
                 }
                 "SubStatements" => {
-                    builder = builder.set_sub_statements(crate::protocol_serde::shape_sub_statement_list::de_sub_statement_list(tokens)?);
+                    builder = builder.set_sub_statements(crate::protocol_serde::shape_sub_statement_list::de_sub_statement_list(tokens, _value)?);
                 }
                 "WorkgroupName" => {
                     builder = builder.set_workgroup_name(

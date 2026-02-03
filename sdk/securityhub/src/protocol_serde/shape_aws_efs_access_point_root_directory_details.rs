@@ -17,6 +17,7 @@ pub fn ser_aws_efs_access_point_root_directory_details(
 
 pub(crate) fn de_aws_efs_access_point_root_directory_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CreationInfo" => {
                             builder = builder.set_creation_info(
-                                    crate::protocol_serde::shape_aws_efs_access_point_root_directory_creation_info_details::de_aws_efs_access_point_root_directory_creation_info_details(tokens)?
+                                    crate::protocol_serde::shape_aws_efs_access_point_root_directory_creation_info_details::de_aws_efs_access_point_root_directory_creation_info_details(tokens, _value)?
                                 );
                         }
                         "Path" => {

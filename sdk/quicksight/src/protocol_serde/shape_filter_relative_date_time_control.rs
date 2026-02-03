@@ -29,6 +29,7 @@ pub fn ser_filter_relative_date_time_control(
 
 pub(crate) fn de_filter_relative_date_time_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterRelativeDateTimeControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,7 +66,7 @@ where
                         }
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                    crate::protocol_serde::shape_relative_date_time_control_display_options::de_relative_date_time_control_display_options(tokens)?
+                                    crate::protocol_serde::shape_relative_date_time_control_display_options::de_relative_date_time_control_display_options(tokens, _value)?
                                 );
                         }
                         "CommitMode" => {

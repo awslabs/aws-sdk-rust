@@ -29,6 +29,7 @@ pub fn ser_traffic_routing_config(
 
 pub(crate) fn de_traffic_routing_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrafficRoutingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,10 +58,10 @@ where
                             );
                         }
                         "CanarySize" => {
-                            builder = builder.set_canary_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens)?);
+                            builder = builder.set_canary_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens, _value)?);
                         }
                         "LinearStepSize" => {
-                            builder = builder.set_linear_step_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens)?);
+                            builder = builder.set_linear_step_size(crate::protocol_serde::shape_capacity_size::de_capacity_size(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

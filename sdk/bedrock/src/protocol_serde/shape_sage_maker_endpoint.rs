@@ -29,6 +29,7 @@ pub fn ser_sage_maker_endpoint(
 
 pub(crate) fn de_sage_maker_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SageMakerEndpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,7 +72,7 @@ where
                             );
                         }
                         "vpc" => {
-                            builder = builder.set_vpc(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                            builder = builder.set_vpc(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

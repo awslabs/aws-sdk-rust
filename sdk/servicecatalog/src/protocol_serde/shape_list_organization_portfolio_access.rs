@@ -110,13 +110,13 @@ pub fn ser_list_organization_portfolio_access_input(
 }
 
 pub(crate) fn de_list_organization_portfolio_access(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_list_organization_portfolio_access(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "OrganizationNodes" => {
-                    builder = builder.set_organization_nodes(crate::protocol_serde::shape_organization_nodes::de_organization_nodes(tokens)?);
+                    builder = builder.set_organization_nodes(crate::protocol_serde::shape_organization_nodes::de_organization_nodes(tokens, _value)?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

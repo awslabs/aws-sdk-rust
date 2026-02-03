@@ -119,13 +119,13 @@ pub fn ser_list_enabled_baselines_input(
 }
 
 pub(crate) fn de_list_enabled_baselines(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_enabled_baselines::builders::ListEnabledBaselinesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_enabled_baselines::builders::ListEnabledBaselinesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_list_enabled_baselines(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "enabledBaselines" => {
-                    builder = builder.set_enabled_baselines(crate::protocol_serde::shape_enabled_baselines::de_enabled_baselines(tokens)?);
+                    builder = builder.set_enabled_baselines(crate::protocol_serde::shape_enabled_baselines::de_enabled_baselines(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

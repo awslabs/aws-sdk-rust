@@ -138,13 +138,13 @@ pub fn ser_describe_lake_formation_identity_center_configuration_input(
 }
 
 pub(crate) fn de_describe_lake_formation_identity_center_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,7 @@ pub(crate) fn de_describe_lake_formation_identity_center_configuration(
                 }
                 "ExternalFiltering" => {
                     builder = builder.set_external_filtering(
-                        crate::protocol_serde::shape_external_filtering_configuration::de_external_filtering_configuration(tokens)?,
+                        crate::protocol_serde::shape_external_filtering_configuration::de_external_filtering_configuration(tokens, _value)?,
                     );
                 }
                 "InstanceArn" => {
@@ -186,12 +186,12 @@ pub(crate) fn de_describe_lake_formation_identity_center_configuration(
                 }
                 "ServiceIntegrations" => {
                     builder = builder.set_service_integrations(crate::protocol_serde::shape_service_integration_list::de_service_integration_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ShareRecipients" => {
                     builder = builder.set_share_recipients(crate::protocol_serde::shape_data_lake_principal_list::de_data_lake_principal_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

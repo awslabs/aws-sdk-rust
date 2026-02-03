@@ -70,11 +70,11 @@ pub fn de_describe_job_http_response(
 }
 
 pub(crate) fn de_describe_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::describe_job::builders::DescribeJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -96,11 +96,13 @@ pub(crate) fn de_describe_job(
                 }
                 "DataCatalogOutputs" => {
                     builder = builder.set_data_catalog_outputs(crate::protocol_serde::shape_data_catalog_output_list::de_data_catalog_output_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "DatabaseOutputs" => {
-                    builder = builder.set_database_outputs(crate::protocol_serde::shape_database_output_list::de_database_output_list(tokens)?);
+                    builder = builder.set_database_outputs(crate::protocol_serde::shape_database_output_list::de_database_output_list(
+                        tokens, _value,
+                    )?);
                 }
                 "DatasetName" => {
                     builder = builder.set_dataset_name(
@@ -124,7 +126,7 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "JobSample" => {
-                    builder = builder.set_job_sample(crate::protocol_serde::shape_job_sample::de_job_sample(tokens)?);
+                    builder = builder.set_job_sample(crate::protocol_serde::shape_job_sample::de_job_sample(tokens, _value)?);
                 }
                 "LastModifiedBy" => {
                     builder = builder.set_last_modified_by(
@@ -168,11 +170,12 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "Outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape_output_list::de_output_list(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_output_list::de_output_list(tokens, _value)?);
                 }
                 "ProfileConfiguration" => {
-                    builder =
-                        builder.set_profile_configuration(crate::protocol_serde::shape_profile_configuration::de_profile_configuration(tokens)?);
+                    builder = builder.set_profile_configuration(crate::protocol_serde::shape_profile_configuration::de_profile_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "ProjectName" => {
                     builder = builder.set_project_name(
@@ -182,7 +185,7 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "RecipeReference" => {
-                    builder = builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens)?);
+                    builder = builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens, _value)?);
                 }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(
@@ -199,7 +202,7 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "Timeout" => {
                     builder = builder.set_timeout(
@@ -217,7 +220,7 @@ pub(crate) fn de_describe_job(
                 }
                 "ValidationConfigurations" => {
                     builder = builder.set_validation_configurations(
-                        crate::protocol_serde::shape_validation_configuration_list::de_validation_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_validation_configuration_list::de_validation_configuration_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_logging_configuration(
 
 pub(crate) fn de_logging_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoggingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,9 @@ where
                             builder = builder.set_include_execution_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "destinations" => {
-                            builder = builder.set_destinations(crate::protocol_serde::shape_log_destination_list::de_log_destination_list(tokens)?);
+                            builder = builder.set_destinations(crate::protocol_serde::shape_log_destination_list::de_log_destination_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

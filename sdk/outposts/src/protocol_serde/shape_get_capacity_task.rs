@@ -98,13 +98,13 @@ pub fn de_get_capacity_task_http_response(
 }
 
 pub(crate) fn de_get_capacity_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_capacity_task::builders::GetCapacityTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_capacity_task::builders::GetCapacityTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,10 +148,14 @@ pub(crate) fn de_get_capacity_task(
                     builder = builder.set_dry_run(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Failed" => {
-                    builder = builder.set_failed(crate::protocol_serde::shape_capacity_task_failure::de_capacity_task_failure(tokens)?);
+                    builder = builder.set_failed(crate::protocol_serde::shape_capacity_task_failure::de_capacity_task_failure(
+                        tokens, _value,
+                    )?);
                 }
                 "InstancesToExclude" => {
-                    builder = builder.set_instances_to_exclude(crate::protocol_serde::shape_instances_to_exclude::de_instances_to_exclude(tokens)?);
+                    builder = builder.set_instances_to_exclude(crate::protocol_serde::shape_instances_to_exclude::de_instances_to_exclude(
+                        tokens, _value,
+                    )?);
                 }
                 "LastModifiedDate" => {
                     builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -175,7 +179,7 @@ pub(crate) fn de_get_capacity_task(
                 }
                 "RequestedInstancePools" => {
                     builder = builder.set_requested_instance_pools(
-                        crate::protocol_serde::shape_requested_instance_pools::de_requested_instance_pools(tokens)?,
+                        crate::protocol_serde::shape_requested_instance_pools::de_requested_instance_pools(tokens, _value)?,
                     );
                 }
                 "TaskActionOnBlockingInstances" => {

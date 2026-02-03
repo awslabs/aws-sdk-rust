@@ -165,7 +165,7 @@ mod create_control;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_auditmanager::Error> {
 /// # let client: aws_sdk_auditmanager::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_assessment_report_evidence_folder()
 ///     .customize()

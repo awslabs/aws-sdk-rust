@@ -197,14 +197,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadBucketRe
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::head_bucket::HeadBucketInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_head_bucket::ser_head_bucket_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("HEAD").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");
@@ -276,7 +276,7 @@ mod head_bucket_test {
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
-            ::http::response::Builder::new()
+            ::http_1x::response::Builder::new()
                 .header("content-type", "application/xml")
                 .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
                 .header("server", "AmazonS3")

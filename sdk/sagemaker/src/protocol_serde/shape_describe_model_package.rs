@@ -46,13 +46,13 @@ pub fn ser_describe_model_package_input(
 }
 
 pub(crate) fn de_describe_model_package(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,17 +108,20 @@ pub(crate) fn de_describe_model_package(
                     )?);
                 }
                 "InferenceSpecification" => {
-                    builder = builder
-                        .set_inference_specification(crate::protocol_serde::shape_inference_specification::de_inference_specification(tokens)?);
+                    builder = builder.set_inference_specification(crate::protocol_serde::shape_inference_specification::de_inference_specification(
+                        tokens, _value,
+                    )?);
                 }
                 "SourceAlgorithmSpecification" => {
                     builder = builder.set_source_algorithm_specification(
-                        crate::protocol_serde::shape_source_algorithm_specification::de_source_algorithm_specification(tokens)?,
+                        crate::protocol_serde::shape_source_algorithm_specification::de_source_algorithm_specification(tokens, _value)?,
                     );
                 }
                 "ValidationSpecification" => {
                     builder = builder.set_validation_specification(
-                        crate::protocol_serde::shape_model_package_validation_specification::de_model_package_validation_specification(tokens)?,
+                        crate::protocol_serde::shape_model_package_validation_specification::de_model_package_validation_specification(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "ModelPackageStatus" => {
@@ -130,7 +133,7 @@ pub(crate) fn de_describe_model_package(
                 }
                 "ModelPackageStatusDetails" => {
                     builder = builder.set_model_package_status_details(
-                        crate::protocol_serde::shape_model_package_status_details::de_model_package_status_details(tokens)?,
+                        crate::protocol_serde::shape_model_package_status_details::de_model_package_status_details(tokens, _value)?,
                     );
                 }
                 "CertifyForMarketplace" => {
@@ -144,13 +147,14 @@ pub(crate) fn de_describe_model_package(
                     );
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "MetadataProperties" => {
-                    builder = builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens)?);
+                    builder =
+                        builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens, _value)?);
                 }
                 "ModelMetrics" => {
-                    builder = builder.set_model_metrics(crate::protocol_serde::shape_model_metrics::de_model_metrics(tokens)?);
+                    builder = builder.set_model_metrics(crate::protocol_serde::shape_model_metrics::de_model_metrics(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -159,7 +163,7 @@ pub(crate) fn de_describe_model_package(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "ApprovalDescription" => {
                     builder = builder.set_approval_description(
@@ -190,16 +194,18 @@ pub(crate) fn de_describe_model_package(
                     );
                 }
                 "CustomerMetadataProperties" => {
-                    builder = builder
-                        .set_customer_metadata_properties(crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(tokens)?);
+                    builder = builder.set_customer_metadata_properties(crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(
+                        tokens, _value,
+                    )?);
                 }
                 "DriftCheckBaselines" => {
-                    builder =
-                        builder.set_drift_check_baselines(crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens)?);
+                    builder = builder.set_drift_check_baselines(crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(
+                        tokens, _value,
+                    )?);
                 }
                 "AdditionalInferenceSpecifications" => {
                     builder = builder.set_additional_inference_specifications(
-                        crate::protocol_serde::shape_additional_inference_specifications::de_additional_inference_specifications(tokens)?,
+                        crate::protocol_serde::shape_additional_inference_specifications::de_additional_inference_specifications(tokens, _value)?,
                     );
                 }
                 "SkipModelValidation" => {
@@ -217,16 +223,17 @@ pub(crate) fn de_describe_model_package(
                     );
                 }
                 "SecurityConfig" => {
-                    builder = builder
-                        .set_security_config(crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(tokens)?);
+                    builder = builder.set_security_config(
+                        crate::protocol_serde::shape_model_package_security_config::de_model_package_security_config(tokens, _value)?,
+                    );
                 }
                 "ModelCard" => {
                     builder = builder.set_model_card(crate::protocol_serde::shape_model_package_model_card::de_model_package_model_card(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ModelLifeCycle" => {
-                    builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens)?);
+                    builder = builder.set_model_life_cycle(crate::protocol_serde::shape_model_life_cycle::de_model_life_cycle(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

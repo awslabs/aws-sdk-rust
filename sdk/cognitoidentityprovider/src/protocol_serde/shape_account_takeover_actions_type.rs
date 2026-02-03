@@ -26,6 +26,7 @@ pub fn ser_account_takeover_actions_type(
 
 pub(crate) fn de_account_takeover_actions_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AccountTakeoverActionsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,17 +41,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LowAction" => {
-                            builder = builder
-                                .set_low_action(crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens)?);
+                            builder = builder.set_low_action(
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
+                            );
                         }
                         "MediumAction" => {
                             builder = builder.set_medium_action(
-                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens)?,
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
                             );
                         }
                         "HighAction" => {
-                            builder = builder
-                                .set_high_action(crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens)?);
+                            builder = builder.set_high_action(
+                                crate::protocol_serde::shape_account_takeover_action_type::de_account_takeover_action_type(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

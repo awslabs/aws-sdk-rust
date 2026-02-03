@@ -59,6 +59,7 @@ pub fn ser_container_settings(
 
 pub(crate) fn de_container_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,7 +74,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cmfcSettings" => {
-                            builder = builder.set_cmfc_settings(crate::protocol_serde::shape_cmfc_settings::de_cmfc_settings(tokens)?);
+                            builder = builder.set_cmfc_settings(crate::protocol_serde::shape_cmfc_settings::de_cmfc_settings(tokens, _value)?);
                         }
                         "container" => {
                             builder = builder.set_container(
@@ -83,25 +84,25 @@ where
                             );
                         }
                         "f4vSettings" => {
-                            builder = builder.set_f4v_settings(crate::protocol_serde::shape_f4v_settings::de_f4v_settings(tokens)?);
+                            builder = builder.set_f4v_settings(crate::protocol_serde::shape_f4v_settings::de_f4v_settings(tokens, _value)?);
                         }
                         "m2tsSettings" => {
-                            builder = builder.set_m2ts_settings(crate::protocol_serde::shape_m2ts_settings::de_m2ts_settings(tokens)?);
+                            builder = builder.set_m2ts_settings(crate::protocol_serde::shape_m2ts_settings::de_m2ts_settings(tokens, _value)?);
                         }
                         "m3u8Settings" => {
-                            builder = builder.set_m3u8_settings(crate::protocol_serde::shape_m3u8_settings::de_m3u8_settings(tokens)?);
+                            builder = builder.set_m3u8_settings(crate::protocol_serde::shape_m3u8_settings::de_m3u8_settings(tokens, _value)?);
                         }
                         "movSettings" => {
-                            builder = builder.set_mov_settings(crate::protocol_serde::shape_mov_settings::de_mov_settings(tokens)?);
+                            builder = builder.set_mov_settings(crate::protocol_serde::shape_mov_settings::de_mov_settings(tokens, _value)?);
                         }
                         "mp4Settings" => {
-                            builder = builder.set_mp4_settings(crate::protocol_serde::shape_mp4_settings::de_mp4_settings(tokens)?);
+                            builder = builder.set_mp4_settings(crate::protocol_serde::shape_mp4_settings::de_mp4_settings(tokens, _value)?);
                         }
                         "mpdSettings" => {
-                            builder = builder.set_mpd_settings(crate::protocol_serde::shape_mpd_settings::de_mpd_settings(tokens)?);
+                            builder = builder.set_mpd_settings(crate::protocol_serde::shape_mpd_settings::de_mpd_settings(tokens, _value)?);
                         }
                         "mxfSettings" => {
-                            builder = builder.set_mxf_settings(crate::protocol_serde::shape_mxf_settings::de_mxf_settings(tokens)?);
+                            builder = builder.set_mxf_settings(crate::protocol_serde::shape_mxf_settings::de_mxf_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

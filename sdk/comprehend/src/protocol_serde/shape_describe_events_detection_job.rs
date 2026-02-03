@@ -114,13 +114,13 @@ pub fn ser_describe_events_detection_job_input(
 }
 
 pub(crate) fn de_describe_events_detection_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,7 +129,7 @@ pub(crate) fn de_describe_events_detection_job(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EventsDetectionJobProperties" => {
                     builder = builder.set_events_detection_job_properties(
-                        crate::protocol_serde::shape_events_detection_job_properties::de_events_detection_job_properties(tokens)?,
+                        crate::protocol_serde::shape_events_detection_job_properties::de_events_detection_job_properties(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

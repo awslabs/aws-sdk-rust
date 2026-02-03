@@ -102,13 +102,13 @@ pub fn ser_notify_recommendations_received_input(
 }
 
 pub(crate) fn de_notify_recommendations_received(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,12 +118,14 @@ pub(crate) fn de_notify_recommendations_received(
                 "errors" => {
                     builder = builder.set_errors(
                         crate::protocol_serde::shape_notify_recommendations_received_error_list::de_notify_recommendations_received_error_list(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
                 "recommendationIds" => {
-                    builder = builder.set_recommendation_ids(crate::protocol_serde::shape_recommendation_id_list::de_recommendation_id_list(tokens)?);
+                    builder = builder.set_recommendation_ids(crate::protocol_serde::shape_recommendation_id_list::de_recommendation_id_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

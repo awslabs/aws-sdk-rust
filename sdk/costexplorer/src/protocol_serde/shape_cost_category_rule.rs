@@ -26,6 +26,7 @@ pub fn ser_cost_category_rule(
 
 pub(crate) fn de_cost_category_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CostCategoryRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,12 @@ where
                             );
                         }
                         "Rule" => {
-                            builder = builder.set_rule(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_rule(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         "InheritedValue" => {
                             builder = builder.set_inherited_value(
                                 crate::protocol_serde::shape_cost_category_inherited_value_dimension::de_cost_category_inherited_value_dimension(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

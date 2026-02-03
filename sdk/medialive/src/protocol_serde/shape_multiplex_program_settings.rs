@@ -29,6 +29,7 @@ pub fn ser_multiplex_program_settings(
 
 pub(crate) fn de_multiplex_program_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiplexProgramSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,12 +59,14 @@ where
                         }
                         "serviceDescriptor" => {
                             builder = builder.set_service_descriptor(
-                                crate::protocol_serde::shape_multiplex_program_service_descriptor::de_multiplex_program_service_descriptor(tokens)?,
+                                crate::protocol_serde::shape_multiplex_program_service_descriptor::de_multiplex_program_service_descriptor(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "videoSettings" => {
                             builder = builder.set_video_settings(crate::protocol_serde::shape_multiplex_video_settings::de_multiplex_video_settings(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

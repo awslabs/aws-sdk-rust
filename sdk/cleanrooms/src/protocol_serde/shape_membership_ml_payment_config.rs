@@ -29,6 +29,7 @@ pub fn ser_membership_ml_payment_config(
 
 pub(crate) fn de_membership_ml_payment_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MembershipMlPaymentConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,17 +46,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "modelTraining" => {
                                 builder = builder.set_model_training(
-                                    crate::protocol_serde::shape_membership_model_training_payment_config::de_membership_model_training_payment_config(tokens)?
+                                    crate::protocol_serde::shape_membership_model_training_payment_config::de_membership_model_training_payment_config(tokens, _value)?
                                 );
                             }
                             "modelInference" => {
                                 builder = builder.set_model_inference(
-                                    crate::protocol_serde::shape_membership_model_inference_payment_config::de_membership_model_inference_payment_config(tokens)?
+                                    crate::protocol_serde::shape_membership_model_inference_payment_config::de_membership_model_inference_payment_config(tokens, _value)?
                                 );
                             }
                             "syntheticDataGeneration" => {
                                 builder = builder.set_synthetic_data_generation(
-                                    crate::protocol_serde::shape_membership_synthetic_data_generation_payment_config::de_membership_synthetic_data_generation_payment_config(tokens)?
+                                    crate::protocol_serde::shape_membership_synthetic_data_generation_payment_config::de_membership_synthetic_data_generation_payment_config(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

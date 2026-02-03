@@ -179,13 +179,13 @@ pub fn ser_create_regex_pattern_set_input(
 }
 
 pub(crate) fn de_create_regex_pattern_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -194,7 +194,7 @@ pub(crate) fn de_create_regex_pattern_set(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Summary" => {
                     builder = builder.set_summary(crate::protocol_serde::shape_regex_pattern_set_summary::de_regex_pattern_set_summary(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

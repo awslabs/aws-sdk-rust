@@ -121,10 +121,10 @@ pub fn de_get_job_http_response(
 }
 
 pub(crate) fn de_get_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_job::builders::GetJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_job::builders::GetJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,7 +132,7 @@ pub(crate) fn de_get_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attachments" => {
-                    builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens)?);
+                    builder = builder.set_attachments(crate::protocol_serde::shape_attachments::de_attachments(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -210,7 +210,7 @@ pub(crate) fn de_get_job(
                     );
                 }
                 "parameters" => {
-                    builder = builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens)?);
+                    builder = builder.set_parameters(crate::protocol_serde::shape_job_parameters::de_job_parameters(tokens, _value)?);
                 }
                 "priority" => {
                     builder = builder.set_priority(
@@ -261,8 +261,9 @@ pub(crate) fn de_get_job(
                     );
                 }
                 "taskRunStatusCounts" => {
-                    builder =
-                        builder.set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(tokens)?);
+                    builder = builder.set_task_run_status_counts(crate::protocol_serde::shape_task_run_status_counts::de_task_run_status_counts(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

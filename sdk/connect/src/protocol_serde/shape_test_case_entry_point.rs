@@ -17,6 +17,7 @@ pub fn ser_test_case_entry_point(
 
 pub(crate) fn de_test_case_entry_point<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TestCaseEntryPoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "VoiceCallEntryPointParameters" => {
                             builder = builder.set_voice_call_entry_point_parameters(
-                                crate::protocol_serde::shape_voice_call_entry_point_parameters::de_voice_call_entry_point_parameters(tokens)?,
+                                crate::protocol_serde::shape_voice_call_entry_point_parameters::de_voice_call_entry_point_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

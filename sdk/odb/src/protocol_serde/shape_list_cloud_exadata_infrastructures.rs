@@ -116,13 +116,13 @@ pub fn ser_list_cloud_exadata_infrastructures_input(
 }
 
 pub(crate) fn de_list_cloud_exadata_infrastructures(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_cloud_exadata_infrastructures::builders::ListCloudExadataInfrastructuresOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_cloud_exadata_infrastructures::builders::ListCloudExadataInfrastructuresOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,7 +138,7 @@ pub(crate) fn de_list_cloud_exadata_infrastructures(
                 }
                 "cloudExadataInfrastructures" => {
                     builder = builder.set_cloud_exadata_infrastructures(
-                        crate::protocol_serde::shape_cloud_exadata_infrastructure_list::de_cloud_exadata_infrastructure_list(tokens)?,
+                        crate::protocol_serde::shape_cloud_exadata_infrastructure_list::de_cloud_exadata_infrastructure_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -115,10 +115,10 @@ pub fn de_get_flow_http_response(
 }
 
 pub(crate) fn de_get_flow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_flow::builders::GetFlowOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_flow::builders::GetFlowOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,7 +146,7 @@ pub(crate) fn de_get_flow(
                     );
                 }
                 "definition" => {
-                    builder = builder.set_definition(crate::protocol_serde::shape_flow_definition::de_flow_definition(tokens)?);
+                    builder = builder.set_definition(crate::protocol_serde::shape_flow_definition::de_flow_definition(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -190,7 +190,7 @@ pub(crate) fn de_get_flow(
                     )?);
                 }
                 "validations" => {
-                    builder = builder.set_validations(crate::protocol_serde::shape_flow_validations::de_flow_validations(tokens)?);
+                    builder = builder.set_validations(crate::protocol_serde::shape_flow_validations::de_flow_validations(tokens, _value)?);
                 }
                 "version" => {
                     builder = builder.set_version(

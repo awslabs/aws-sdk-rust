@@ -116,13 +116,13 @@ pub fn de_delete_private_graph_endpoint_http_response(
 }
 
 pub(crate) fn de_delete_private_graph_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_private_graph_endpoint::builders::DeletePrivateGraphEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_private_graph_endpoint::builders::DeletePrivateGraphEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_delete_private_graph_endpoint(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
                 }
                 "vpcEndpointId" => {
                     builder = builder.set_vpc_endpoint_id(

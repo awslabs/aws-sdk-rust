@@ -26,6 +26,7 @@ pub fn ser_beaconing(
 
 pub(crate) fn de_beaconing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Beaconing>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,9 @@ where
                             );
                         }
                         "Frequencies" => {
-                            builder = builder.set_frequencies(crate::protocol_serde::shape_beaconing_frequencies::de_beaconing_frequencies(tokens)?);
+                            builder = builder.set_frequencies(crate::protocol_serde::shape_beaconing_frequencies::de_beaconing_frequencies(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

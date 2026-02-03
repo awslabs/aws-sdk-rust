@@ -147,13 +147,13 @@ pub fn de_get_voice_connector_http_response(
 }
 
 pub(crate) fn de_get_voice_connector(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_voice_connector::builders::GetVoiceConnectorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_voice_connector::builders::GetVoiceConnectorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,7 @@ pub(crate) fn de_get_voice_connector(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "VoiceConnector" => {
-                    builder = builder.set_voice_connector(crate::protocol_serde::shape_voice_connector::de_voice_connector(tokens)?);
+                    builder = builder.set_voice_connector(crate::protocol_serde::shape_voice_connector::de_voice_connector(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

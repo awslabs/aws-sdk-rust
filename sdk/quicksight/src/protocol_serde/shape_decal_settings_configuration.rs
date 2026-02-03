@@ -20,6 +20,7 @@ pub fn ser_decal_settings_configuration(
 
 pub(crate) fn de_decal_settings_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DecalSettingsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CustomDecalSettings" => {
-                            builder =
-                                builder.set_custom_decal_settings(crate::protocol_serde::shape_decal_settings_list::de_decal_settings_list(tokens)?);
+                            builder = builder
+                                .set_custom_decal_settings(crate::protocol_serde::shape_decal_settings_list::de_decal_settings_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -41,6 +41,7 @@ pub fn ser_auto_participant_recording_configuration(
 
 pub(crate) fn de_auto_participant_recording_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoParticipantRecordingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,12 +64,16 @@ where
                         }
                         "mediaTypes" => {
                             builder = builder.set_media_types(
-                                crate::protocol_serde::shape_participant_recording_media_type_list::de_participant_recording_media_type_list(tokens)?,
+                                crate::protocol_serde::shape_participant_recording_media_type_list::de_participant_recording_media_type_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "thumbnailConfiguration" => {
                             builder = builder.set_thumbnail_configuration(
-                                crate::protocol_serde::shape_participant_thumbnail_configuration::de_participant_thumbnail_configuration(tokens)?,
+                                crate::protocol_serde::shape_participant_thumbnail_configuration::de_participant_thumbnail_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "recordingReconnectWindowSeconds" => {
@@ -81,7 +86,7 @@ where
                         "hlsConfiguration" => {
                             builder = builder.set_hls_configuration(
                                 crate::protocol_serde::shape_participant_recording_hls_configuration::de_participant_recording_hls_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

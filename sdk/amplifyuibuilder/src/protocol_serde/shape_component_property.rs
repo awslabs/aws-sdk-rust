@@ -81,6 +81,7 @@ pub fn ser_component_property(
 
 pub(crate) fn de_component_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -103,12 +104,16 @@ where
                         }
                         "bindingProperties" => {
                             builder = builder.set_binding_properties(
-                                crate::protocol_serde::shape_component_property_binding_properties::de_component_property_binding_properties(tokens)?,
+                                crate::protocol_serde::shape_component_property_binding_properties::de_component_property_binding_properties(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "collectionBindingProperties" => {
                             builder = builder.set_collection_binding_properties(
-                                crate::protocol_serde::shape_component_property_binding_properties::de_component_property_binding_properties(tokens)?,
+                                crate::protocol_serde::shape_component_property_binding_properties::de_component_property_binding_properties(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "defaultValue" => {
@@ -126,7 +131,7 @@ where
                             );
                         }
                         "bindings" => {
-                            builder = builder.set_bindings(crate::protocol_serde::shape_form_bindings::de_form_bindings(tokens)?);
+                            builder = builder.set_bindings(crate::protocol_serde::shape_form_bindings::de_form_bindings(tokens, _value)?);
                         }
                         "event" => {
                             builder = builder.set_event(
@@ -143,11 +148,14 @@ where
                             );
                         }
                         "concat" => {
-                            builder = builder.set_concat(crate::protocol_serde::shape_component_property_list::de_component_property_list(tokens)?);
+                            builder = builder.set_concat(crate::protocol_serde::shape_component_property_list::de_component_property_list(
+                                tokens, _value,
+                            )?);
                         }
                         "condition" => {
-                            builder = builder
-                                .set_condition(crate::protocol_serde::shape_component_condition_property::de_component_condition_property(tokens)?);
+                            builder = builder.set_condition(
+                                crate::protocol_serde::shape_component_condition_property::de_component_condition_property(tokens, _value)?,
+                            );
                         }
                         "configured" => {
                             builder = builder.set_configured(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -83,13 +83,13 @@ pub fn de_describe_instance_http_response(
 }
 
 pub(crate) fn de_describe_instance(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_instance::builders::DescribeInstanceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_instance::builders::DescribeInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,11 +97,11 @@ pub(crate) fn de_describe_instance(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Instance" => {
-                    builder = builder.set_instance(crate::protocol_serde::shape_instance::de_instance(tokens)?);
+                    builder = builder.set_instance(crate::protocol_serde::shape_instance::de_instance(tokens, _value)?);
                 }
                 "ReplicationConfiguration" => {
                     builder = builder.set_replication_configuration(
-                        crate::protocol_serde::shape_replication_configuration::de_replication_configuration(tokens)?,
+                        crate::protocol_serde::shape_replication_configuration::de_replication_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

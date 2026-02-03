@@ -26,6 +26,7 @@ pub fn ser_form_style(
 
 pub(crate) fn de_form_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "horizontalGap" => {
-                            builder = builder.set_horizontal_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens)?);
+                            builder =
+                                builder.set_horizontal_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
                         }
                         "verticalGap" => {
-                            builder = builder.set_vertical_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens)?);
+                            builder = builder.set_vertical_gap(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
                         }
                         "outerPadding" => {
-                            builder = builder.set_outer_padding(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens)?);
+                            builder =
+                                builder.set_outer_padding(crate::protocol_serde::shape_form_style_config::de_form_style_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

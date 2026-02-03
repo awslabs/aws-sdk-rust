@@ -21,6 +21,7 @@ pub fn ser_automated_evaluation_custom_metric_source(
 
 pub(crate) fn de_automated_evaluation_custom_metric_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomatedEvaluationCustomMetricSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "customMetricDefinition" => Some(crate::types::AutomatedEvaluationCustomMetricSource::CustomMetricDefinition(
-                            crate::protocol_serde::shape_custom_metric_definition::de_custom_metric_definition(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_metric_definition::de_custom_metric_definition(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customMetricDefinition' cannot be null")
                             })?,
                         )),

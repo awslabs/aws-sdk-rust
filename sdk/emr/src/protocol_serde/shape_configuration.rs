@@ -33,6 +33,7 @@ pub fn ser_configuration(
 
 pub(crate) fn de_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Configuration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,10 +55,11 @@ where
                             );
                         }
                         "Configurations" => {
-                            builder = builder.set_configurations(crate::protocol_serde::shape_configuration_list::de_configuration_list(tokens)?);
+                            builder =
+                                builder.set_configurations(crate::protocol_serde::shape_configuration_list::de_configuration_list(tokens, _value)?);
                         }
                         "Properties" => {
-                            builder = builder.set_properties(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                            builder = builder.set_properties(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

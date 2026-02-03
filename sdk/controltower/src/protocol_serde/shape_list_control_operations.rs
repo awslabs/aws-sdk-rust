@@ -119,13 +119,13 @@ pub fn ser_list_control_operations_input(
 }
 
 pub(crate) fn de_list_control_operations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_list_control_operations(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "controlOperations" => {
-                    builder = builder.set_control_operations(crate::protocol_serde::shape_control_operations::de_control_operations(tokens)?);
+                    builder = builder.set_control_operations(crate::protocol_serde::shape_control_operations::de_control_operations(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

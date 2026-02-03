@@ -26,6 +26,7 @@ pub fn ser_workspace_theme_config(
 
 pub(crate) fn de_workspace_theme_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceThemeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,14 +41,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Palette" => {
-                            builder = builder.set_palette(crate::protocol_serde::shape_workspace_theme_palette::de_workspace_theme_palette(tokens)?);
+                            builder = builder.set_palette(crate::protocol_serde::shape_workspace_theme_palette::de_workspace_theme_palette(
+                                tokens, _value,
+                            )?);
                         }
                         "Images" => {
-                            builder = builder.set_images(crate::protocol_serde::shape_workspace_theme_images::de_workspace_theme_images(tokens)?);
+                            builder = builder.set_images(crate::protocol_serde::shape_workspace_theme_images::de_workspace_theme_images(
+                                tokens, _value,
+                            )?);
                         }
                         "Typography" => {
                             builder = builder.set_typography(crate::protocol_serde::shape_workspace_theme_typography::de_workspace_theme_typography(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

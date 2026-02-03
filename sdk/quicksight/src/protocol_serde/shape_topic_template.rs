@@ -23,6 +23,7 @@ pub fn ser_topic_template(
 
 pub(crate) fn de_topic_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "Slots" => {
-                            builder = builder.set_slots(crate::protocol_serde::shape_slots::de_slots(tokens)?);
+                            builder = builder.set_slots(crate::protocol_serde::shape_slots::de_slots(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

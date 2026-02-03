@@ -148,13 +148,13 @@ pub fn de_delete_subscription_grant_http_response(
 }
 
 pub(crate) fn de_delete_subscription_grant(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,7 @@ pub(crate) fn de_delete_subscription_grant(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assets" => {
-                    builder = builder.set_assets(crate::protocol_serde::shape_subscribed_assets::de_subscribed_assets(tokens)?);
+                    builder = builder.set_assets(crate::protocol_serde::shape_subscribed_assets::de_subscribed_assets(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -192,7 +192,7 @@ pub(crate) fn de_delete_subscription_grant(
                     );
                 }
                 "grantedEntity" => {
-                    builder = builder.set_granted_entity(crate::protocol_serde::shape_granted_entity::de_granted_entity(tokens)?);
+                    builder = builder.set_granted_entity(crate::protocol_serde::shape_granted_entity::de_granted_entity(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(

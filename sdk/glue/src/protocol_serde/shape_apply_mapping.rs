@@ -32,6 +32,7 @@ pub fn ser_apply_mapping(
 
 pub(crate) fn de_apply_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApplyMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,10 +54,10 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "Mapping" => {
-                            builder = builder.set_mapping(crate::protocol_serde::shape_mappings::de_mappings(tokens)?);
+                            builder = builder.set_mapping(crate::protocol_serde::shape_mappings::de_mappings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

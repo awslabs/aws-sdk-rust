@@ -20,6 +20,7 @@ pub fn ser_form_input_binding_properties_value(
 
 pub(crate) fn de_form_input_binding_properties_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormInputBindingPropertiesValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "bindingProperties" => {
                             builder = builder.set_binding_properties(
-                                    crate::protocol_serde::shape_form_input_binding_properties_value_properties::de_form_input_binding_properties_value_properties(tokens)?
+                                    crate::protocol_serde::shape_form_input_binding_properties_value_properties::de_form_input_binding_properties_value_properties(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

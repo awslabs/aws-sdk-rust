@@ -96,13 +96,13 @@ pub fn de_get_trained_model_http_response(
 }
 
 pub(crate) fn de_get_trained_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_trained_model::builders::GetTrainedModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_trained_model::builders::GetTrainedModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,8 +130,9 @@ pub(crate) fn de_get_trained_model(
                     )?);
                 }
                 "dataChannels" => {
-                    builder = builder
-                        .set_data_channels(crate::protocol_serde::shape_model_training_data_channels::de_model_training_data_channels(tokens)?);
+                    builder = builder.set_data_channels(
+                        crate::protocol_serde::shape_model_training_data_channels::de_model_training_data_channels(tokens, _value)?,
+                    );
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -141,14 +142,16 @@ pub(crate) fn de_get_trained_model(
                     );
                 }
                 "environment" => {
-                    builder = builder.set_environment(crate::protocol_serde::shape_environment::de_environment(tokens)?);
+                    builder = builder.set_environment(crate::protocol_serde::shape_environment::de_environment(tokens, _value)?);
                 }
                 "hyperparameters" => {
-                    builder = builder.set_hyperparameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                    builder = builder.set_hyperparameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                 }
                 "incrementalTrainingDataChannels" => {
                     builder = builder.set_incremental_training_data_channels(
-                        crate::protocol_serde::shape_incremental_training_data_channels_output::de_incremental_training_data_channels_output(tokens)?,
+                        crate::protocol_serde::shape_incremental_training_data_channels_output::de_incremental_training_data_channels_output(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "kmsKeyArn" => {
@@ -201,7 +204,7 @@ pub(crate) fn de_get_trained_model(
                     );
                 }
                 "resourceConfig" => {
-                    builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
+                    builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -211,13 +214,13 @@ pub(crate) fn de_get_trained_model(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
                 }
                 "stoppingCondition" => {
-                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
+                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "trainedModelArn" => {
                     builder = builder.set_trained_model_arn(

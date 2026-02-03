@@ -29,6 +29,7 @@ pub fn ser_aws_code_build_project_vpc_config(
 
 pub(crate) fn de_aws_code_build_project_vpc_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectVpcConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,14 @@ where
                             );
                         }
                         "Subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SecurityGroupIds" => {
-                            builder =
-                                builder.set_security_group_ids(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -123,13 +123,13 @@ pub fn ser_get_secret_value_input(
 }
 
 pub(crate) fn de_get_secret_value(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_secret_value::builders::GetSecretValueOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_secret_value::builders::GetSecretValueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -169,7 +169,7 @@ pub(crate) fn de_get_secret_value(
                 }
                 "VersionStages" => {
                     builder = builder.set_version_stages(crate::protocol_serde::shape_secret_version_stages_type::de_secret_version_stages_type(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "CreatedDate" => {

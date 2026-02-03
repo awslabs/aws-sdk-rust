@@ -38,6 +38,7 @@ pub fn ser_encryption_configuration(
 
 pub(crate) fn de_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,20 +53,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Encryption" => {
-                            builder = builder.set_s3_encryption(crate::protocol_serde::shape_s3_encryption_list::de_s3_encryption_list(tokens)?);
+                            builder =
+                                builder.set_s3_encryption(crate::protocol_serde::shape_s3_encryption_list::de_s3_encryption_list(tokens, _value)?);
                         }
                         "CloudWatchEncryption" => {
-                            builder = builder
-                                .set_cloud_watch_encryption(crate::protocol_serde::shape_cloud_watch_encryption::de_cloud_watch_encryption(tokens)?);
+                            builder = builder.set_cloud_watch_encryption(
+                                crate::protocol_serde::shape_cloud_watch_encryption::de_cloud_watch_encryption(tokens, _value)?,
+                            );
                         }
                         "JobBookmarksEncryption" => {
                             builder = builder.set_job_bookmarks_encryption(
-                                crate::protocol_serde::shape_job_bookmarks_encryption::de_job_bookmarks_encryption(tokens)?,
+                                crate::protocol_serde::shape_job_bookmarks_encryption::de_job_bookmarks_encryption(tokens, _value)?,
                             );
                         }
                         "DataQualityEncryption" => {
                             builder = builder.set_data_quality_encryption(
-                                crate::protocol_serde::shape_data_quality_encryption::de_data_quality_encryption(tokens)?,
+                                crate::protocol_serde::shape_data_quality_encryption::de_data_quality_encryption(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

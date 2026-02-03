@@ -20,6 +20,7 @@ pub fn ser_container_port_configuration(
 
 pub(crate) fn de_container_port_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerPortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ContainerPortRanges" => {
                             builder = builder.set_container_port_ranges(
-                                crate::protocol_serde::shape_container_port_range_list::de_container_port_range_list(tokens)?,
+                                crate::protocol_serde::shape_container_port_range_list::de_container_port_range_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

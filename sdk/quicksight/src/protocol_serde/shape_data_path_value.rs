@@ -20,6 +20,7 @@ pub fn ser_data_path_value(
 
 pub(crate) fn de_data_path_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPathValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                             );
                         }
                         "DataPathType" => {
-                            builder = builder.set_data_path_type(crate::protocol_serde::shape_data_path_type::de_data_path_type(tokens)?);
+                            builder = builder.set_data_path_type(crate::protocol_serde::shape_data_path_type::de_data_path_type(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -17,6 +17,7 @@ pub fn ser_bot_alias_locale_settings(
 
 pub(crate) fn de_bot_alias_locale_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BotAliasLocaleSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                         }
                         "codeHookSpecification" => {
                             builder = builder.set_code_hook_specification(
-                                crate::protocol_serde::shape_code_hook_specification::de_code_hook_specification(tokens)?,
+                                crate::protocol_serde::shape_code_hook_specification::de_code_hook_specification(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

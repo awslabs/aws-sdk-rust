@@ -20,6 +20,7 @@ pub fn ser_write_request(
 
 pub(crate) fn de_write_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WriteRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PutRequest" => {
-                            builder = builder.set_put_request(crate::protocol_serde::shape_put_request::de_put_request(tokens)?);
+                            builder = builder.set_put_request(crate::protocol_serde::shape_put_request::de_put_request(tokens, _value)?);
                         }
                         "DeleteRequest" => {
-                            builder = builder.set_delete_request(crate::protocol_serde::shape_delete_request::de_delete_request(tokens)?);
+                            builder = builder.set_delete_request(crate::protocol_serde::shape_delete_request::de_delete_request(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

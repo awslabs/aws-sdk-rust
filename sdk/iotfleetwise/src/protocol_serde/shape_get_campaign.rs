@@ -118,11 +118,11 @@ pub fn ser_get_campaign_input(
 }
 
 pub(crate) fn de_get_campaign(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_campaign::builders::GetCampaignOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_campaign::builders::GetCampaignOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -219,15 +219,16 @@ pub(crate) fn de_get_campaign(
                     );
                 }
                 "signalsToCollect" => {
-                    builder =
-                        builder.set_signals_to_collect(crate::protocol_serde::shape_signal_information_list::de_signal_information_list(tokens)?);
+                    builder = builder.set_signals_to_collect(crate::protocol_serde::shape_signal_information_list::de_signal_information_list(
+                        tokens, _value,
+                    )?);
                 }
                 "collectionScheme" => {
-                    builder = builder.set_collection_scheme(crate::protocol_serde::shape_collection_scheme::de_collection_scheme(tokens)?);
+                    builder = builder.set_collection_scheme(crate::protocol_serde::shape_collection_scheme::de_collection_scheme(tokens, _value)?);
                 }
                 "dataExtraDimensions" => {
                     builder = builder.set_data_extra_dimensions(
-                        crate::protocol_serde::shape_data_extra_dimension_node_path_list::de_data_extra_dimension_node_path_list(tokens)?,
+                        crate::protocol_serde::shape_data_extra_dimension_node_path_list::de_data_extra_dimension_node_path_list(tokens, _value)?,
                     );
                 }
                 "creationTime" => {
@@ -244,15 +245,16 @@ pub(crate) fn de_get_campaign(
                 }
                 "dataDestinationConfigs" => {
                     builder = builder.set_data_destination_configs(
-                        crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens)?,
+                        crate::protocol_serde::shape_data_destination_configs::de_data_destination_configs(tokens, _value)?,
                     );
                 }
                 "dataPartitions" => {
-                    builder = builder.set_data_partitions(crate::protocol_serde::shape_data_partitions::de_data_partitions(tokens)?);
+                    builder = builder.set_data_partitions(crate::protocol_serde::shape_data_partitions::de_data_partitions(tokens, _value)?);
                 }
                 "signalsToFetch" => {
-                    builder = builder
-                        .set_signals_to_fetch(crate::protocol_serde::shape_signal_fetch_information_list::de_signal_fetch_information_list(tokens)?);
+                    builder = builder.set_signals_to_fetch(
+                        crate::protocol_serde::shape_signal_fetch_information_list::de_signal_fetch_information_list(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

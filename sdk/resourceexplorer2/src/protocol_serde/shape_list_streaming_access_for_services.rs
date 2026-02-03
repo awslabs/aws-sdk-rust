@@ -104,13 +104,13 @@ pub fn ser_list_streaming_access_for_services_input(
 }
 
 pub(crate) fn de_list_streaming_access_for_services(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_streaming_access_for_services::builders::ListStreamingAccessForServicesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_streaming_access_for_services::builders::ListStreamingAccessForServicesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_list_streaming_access_for_services(
                 }
                 "StreamingAccessForServices" => {
                     builder = builder.set_streaming_access_for_services(
-                        crate::protocol_serde::shape_streaming_access_details_list::de_streaming_access_details_list(tokens)?,
+                        crate::protocol_serde::shape_streaming_access_details_list::de_streaming_access_details_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -44,6 +44,7 @@ pub fn ser_widget(
 
 pub(crate) fn de_widget<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Widget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -93,7 +94,7 @@ where
                             );
                         }
                         "configs" => {
-                            builder = builder.set_configs(crate::protocol_serde::shape_widget_config_list::de_widget_config_list(tokens)?);
+                            builder = builder.set_configs(crate::protocol_serde::shape_widget_config_list::de_widget_config_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

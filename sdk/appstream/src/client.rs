@@ -229,7 +229,7 @@ mod create_user;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_appstream::Error> {
 /// # let client: aws_sdk_appstream::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_app_block_builder_app_block()
 ///     .customize()

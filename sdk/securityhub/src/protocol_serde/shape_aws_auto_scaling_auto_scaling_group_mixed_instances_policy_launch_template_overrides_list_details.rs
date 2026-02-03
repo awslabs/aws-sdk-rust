@@ -14,6 +14,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_tem
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -47,6 +47,7 @@ pub fn ser_aws_network_firewall_firewall_details(
 
 pub(crate) fn de_aws_network_firewall_firewall_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsNetworkFirewallFirewallDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -108,7 +109,7 @@ where
                         }
                         "SubnetMappings" => {
                             builder = builder.set_subnet_mappings(
-                                    crate::protocol_serde::shape_aws_network_firewall_firewall_subnet_mappings_list::de_aws_network_firewall_firewall_subnet_mappings_list(tokens)?
+                                    crate::protocol_serde::shape_aws_network_firewall_firewall_subnet_mappings_list::de_aws_network_firewall_firewall_subnet_mappings_list(tokens, _value)?
                                 );
                         }
                         "VpcId" => {

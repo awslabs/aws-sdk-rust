@@ -71,6 +71,7 @@ pub fn ser_cluster_config(
 
 pub(crate) fn de_cluster_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClusterConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -106,8 +107,9 @@ where
                             builder = builder.set_zone_awareness_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ZoneAwarenessConfig" => {
-                            builder = builder
-                                .set_zone_awareness_config(crate::protocol_serde::shape_zone_awareness_config::de_zone_awareness_config(tokens)?);
+                            builder = builder.set_zone_awareness_config(
+                                crate::protocol_serde::shape_zone_awareness_config::de_zone_awareness_config(tokens, _value)?,
+                            );
                         }
                         "DedicatedMasterType" => {
                             builder = builder.set_dedicated_master_type(
@@ -144,15 +146,16 @@ where
                             );
                         }
                         "ColdStorageOptions" => {
-                            builder =
-                                builder.set_cold_storage_options(crate::protocol_serde::shape_cold_storage_options::de_cold_storage_options(tokens)?);
+                            builder = builder.set_cold_storage_options(crate::protocol_serde::shape_cold_storage_options::de_cold_storage_options(
+                                tokens, _value,
+                            )?);
                         }
                         "MultiAZWithStandbyEnabled" => {
                             builder =
                                 builder.set_multi_az_with_standby_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "NodeOptions" => {
-                            builder = builder.set_node_options(crate::protocol_serde::shape_node_options_list::de_node_options_list(tokens)?);
+                            builder = builder.set_node_options(crate::protocol_serde::shape_node_options_list::de_node_options_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

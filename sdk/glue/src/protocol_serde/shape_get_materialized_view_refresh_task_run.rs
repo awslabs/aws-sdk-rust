@@ -128,13 +128,13 @@ pub fn ser_get_materialized_view_refresh_task_run_input(
 }
 
 pub(crate) fn de_get_materialized_view_refresh_task_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_materialized_view_refresh_task_run::builders::GetMaterializedViewRefreshTaskRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_materialized_view_refresh_task_run::builders::GetMaterializedViewRefreshTaskRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,7 +143,7 @@ pub(crate) fn de_get_materialized_view_refresh_task_run(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MaterializedViewRefreshTaskRun" => {
                     builder = builder.set_materialized_view_refresh_task_run(
-                        crate::protocol_serde::shape_materialized_view_refresh_task_run::de_materialized_view_refresh_task_run(tokens)?,
+                        crate::protocol_serde::shape_materialized_view_refresh_task_run::de_materialized_view_refresh_task_run(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -59,6 +59,7 @@ pub fn ser_storage_configuration(
 
 pub(crate) fn de_storage_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StorageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,55 +72,61 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "type" => {
-                            builder = builder.set_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::KnowledgeBaseStorageType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "type" => {
+                                builder = builder.set_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::KnowledgeBaseStorageType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "opensearchServerlessConfiguration" => {
+                                builder = builder.set_opensearch_serverless_configuration(
+                                    crate::protocol_serde::shape_open_search_serverless_configuration::de_open_search_serverless_configuration(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "opensearchManagedClusterConfiguration" => {
+                                builder = builder.set_opensearch_managed_cluster_configuration(
+                                    crate::protocol_serde::shape_open_search_managed_cluster_configuration::de_open_search_managed_cluster_configuration(tokens, _value)?
+                                );
+                            }
+                            "pineconeConfiguration" => {
+                                builder = builder.set_pinecone_configuration(
+                                    crate::protocol_serde::shape_pinecone_configuration::de_pinecone_configuration(tokens, _value)?,
+                                );
+                            }
+                            "redisEnterpriseCloudConfiguration" => {
+                                builder = builder.set_redis_enterprise_cloud_configuration(
+                                    crate::protocol_serde::shape_redis_enterprise_cloud_configuration::de_redis_enterprise_cloud_configuration(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "rdsConfiguration" => {
+                                builder = builder
+                                    .set_rds_configuration(crate::protocol_serde::shape_rds_configuration::de_rds_configuration(tokens, _value)?);
+                            }
+                            "mongoDbAtlasConfiguration" => {
+                                builder = builder.set_mongo_db_atlas_configuration(
+                                    crate::protocol_serde::shape_mongo_db_atlas_configuration::de_mongo_db_atlas_configuration(tokens, _value)?,
+                                );
+                            }
+                            "neptuneAnalyticsConfiguration" => {
+                                builder = builder.set_neptune_analytics_configuration(
+                                    crate::protocol_serde::shape_neptune_analytics_configuration::de_neptune_analytics_configuration(tokens, _value)?,
+                                );
+                            }
+                            "s3VectorsConfiguration" => {
+                                builder = builder.set_s3_vectors_configuration(
+                                    crate::protocol_serde::shape_s3_vectors_configuration::de_s3_vectors_configuration(tokens, _value)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "opensearchServerlessConfiguration" => {
-                            builder = builder.set_opensearch_serverless_configuration(
-                                crate::protocol_serde::shape_open_search_serverless_configuration::de_open_search_serverless_configuration(tokens)?,
-                            );
-                        }
-                        "opensearchManagedClusterConfiguration" => {
-                            builder = builder.set_opensearch_managed_cluster_configuration(
-                                crate::protocol_serde::shape_open_search_managed_cluster_configuration::de_open_search_managed_cluster_configuration(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "pineconeConfiguration" => {
-                            builder = builder
-                                .set_pinecone_configuration(crate::protocol_serde::shape_pinecone_configuration::de_pinecone_configuration(tokens)?);
-                        }
-                        "redisEnterpriseCloudConfiguration" => {
-                            builder = builder.set_redis_enterprise_cloud_configuration(
-                                crate::protocol_serde::shape_redis_enterprise_cloud_configuration::de_redis_enterprise_cloud_configuration(tokens)?,
-                            );
-                        }
-                        "rdsConfiguration" => {
-                            builder = builder.set_rds_configuration(crate::protocol_serde::shape_rds_configuration::de_rds_configuration(tokens)?);
-                        }
-                        "mongoDbAtlasConfiguration" => {
-                            builder = builder.set_mongo_db_atlas_configuration(
-                                crate::protocol_serde::shape_mongo_db_atlas_configuration::de_mongo_db_atlas_configuration(tokens)?,
-                            );
-                        }
-                        "neptuneAnalyticsConfiguration" => {
-                            builder = builder.set_neptune_analytics_configuration(
-                                crate::protocol_serde::shape_neptune_analytics_configuration::de_neptune_analytics_configuration(tokens)?,
-                            );
-                        }
-                        "s3VectorsConfiguration" => {
-                            builder = builder.set_s3_vectors_configuration(
-                                crate::protocol_serde::shape_s3_vectors_configuration::de_s3_vectors_configuration(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

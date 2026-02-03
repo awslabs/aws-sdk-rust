@@ -124,11 +124,11 @@ pub fn ser_generate_mac_input(
 }
 
 pub(crate) fn de_generate_mac(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::generate_mac::builders::GenerateMacOutputBuilder,
 ) -> ::std::result::Result<crate::operation::generate_mac::builders::GenerateMacOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

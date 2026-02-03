@@ -47,6 +47,7 @@ pub fn ser_node(
 
 pub(crate) fn de_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Node>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,32 +77,32 @@ where
                     }
                     variant = match key.as_ref() {
                         "branch" => Some(crate::types::Node::Branch(
-                            crate::protocol_serde::shape_branch::de_branch(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_branch::de_branch(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'branch' cannot be null")
                             })?,
                         )),
                         "sensor" => Some(crate::types::Node::Sensor(
-                            crate::protocol_serde::shape_sensor::de_sensor(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sensor::de_sensor(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sensor' cannot be null")
                             })?,
                         )),
                         "actuator" => Some(crate::types::Node::Actuator(
-                            crate::protocol_serde::shape_actuator::de_actuator(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_actuator::de_actuator(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'actuator' cannot be null")
                             })?,
                         )),
                         "attribute" => Some(crate::types::Node::Attribute(
-                            crate::protocol_serde::shape_attribute::de_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_attribute::de_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'attribute' cannot be null")
                             })?,
                         )),
                         "struct" => Some(crate::types::Node::Struct(
-                            crate::protocol_serde::shape_custom_struct::de_custom_struct(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_struct::de_custom_struct(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'struct' cannot be null")
                             })?,
                         )),
                         "property" => Some(crate::types::Node::Property(
-                            crate::protocol_serde::shape_custom_property::de_custom_property(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_property::de_custom_property(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'property' cannot be null")
                             })?,
                         )),

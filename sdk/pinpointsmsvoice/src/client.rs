@@ -149,7 +149,7 @@ mod create_configuration_set_event_destination;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_pinpointsmsvoice::Error> {
 /// # let client: aws_sdk_pinpointsmsvoice::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_configuration_set()
 ///     .customize()

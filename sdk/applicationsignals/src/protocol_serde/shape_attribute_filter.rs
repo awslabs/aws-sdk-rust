@@ -20,6 +20,7 @@ pub fn ser_attribute_filter(
 
 pub(crate) fn de_attribute_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AttributeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "AttributeFilterValues" => {
                             builder = builder.set_attribute_filter_values(
-                                crate::protocol_serde::shape_attribute_filter_values::de_attribute_filter_values(tokens)?,
+                                crate::protocol_serde::shape_attribute_filter_values::de_attribute_filter_values(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

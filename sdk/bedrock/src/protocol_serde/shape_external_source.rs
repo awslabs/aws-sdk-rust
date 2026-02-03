@@ -23,6 +23,7 @@ pub fn ser_external_source(
 
 pub(crate) fn de_external_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExternalSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "s3Location" => {
-                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_object_doc::de_s3_object_doc(tokens)?);
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_object_doc::de_s3_object_doc(tokens, _value)?);
                         }
                         "byteContent" => {
-                            builder = builder.set_byte_content(crate::protocol_serde::shape_byte_content_doc::de_byte_content_doc(tokens)?);
+                            builder = builder.set_byte_content(crate::protocol_serde::shape_byte_content_doc::de_byte_content_doc(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

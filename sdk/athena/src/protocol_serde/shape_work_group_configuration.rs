@@ -86,6 +86,7 @@ pub fn ser_work_group_configuration(
 
 pub(crate) fn de_work_group_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkGroupConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,12 +101,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ResultConfiguration" => {
-                            builder =
-                                builder.set_result_configuration(crate::protocol_serde::shape_result_configuration::de_result_configuration(tokens)?);
+                            builder = builder.set_result_configuration(crate::protocol_serde::shape_result_configuration::de_result_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "ManagedQueryResultsConfiguration" => {
                             builder = builder.set_managed_query_results_configuration(
-                                crate::protocol_serde::shape_managed_query_results_configuration::de_managed_query_results_configuration(tokens)?,
+                                crate::protocol_serde::shape_managed_query_results_configuration::de_managed_query_results_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "EnforceWorkGroupConfiguration" => {
@@ -127,7 +131,7 @@ where
                             builder = builder.set_requester_pays_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "EngineVersion" => {
-                            builder = builder.set_engine_version(crate::protocol_serde::shape_engine_version::de_engine_version(tokens)?);
+                            builder = builder.set_engine_version(crate::protocol_serde::shape_engine_version::de_engine_version(tokens, _value)?);
                         }
                         "AdditionalConfiguration" => {
                             builder = builder.set_additional_configuration(
@@ -145,17 +149,18 @@ where
                         }
                         "MonitoringConfiguration" => {
                             builder = builder.set_monitoring_configuration(
-                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value)?,
                             );
                         }
                         "EngineConfiguration" => {
-                            builder =
-                                builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(tokens)?);
+                            builder = builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "CustomerContentEncryptionConfiguration" => {
                             builder = builder.set_customer_content_encryption_configuration(
                                 crate::protocol_serde::shape_customer_content_encryption_configuration::de_customer_content_encryption_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -166,12 +171,12 @@ where
                         }
                         "IdentityCenterConfiguration" => {
                             builder = builder.set_identity_center_configuration(
-                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens, _value)?,
                             );
                         }
                         "QueryResultsS3AccessGrantsConfiguration" => {
                             builder = builder.set_query_results_s3_access_grants_configuration(
-                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens)?
+                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

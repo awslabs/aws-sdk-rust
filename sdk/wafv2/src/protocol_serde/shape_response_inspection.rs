@@ -32,6 +32,7 @@ pub fn ser_response_inspection(
 
 pub(crate) fn de_response_inspection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseInspection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,22 +48,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatusCode" => {
                             builder = builder.set_status_code(
-                                crate::protocol_serde::shape_response_inspection_status_code::de_response_inspection_status_code(tokens)?,
+                                crate::protocol_serde::shape_response_inspection_status_code::de_response_inspection_status_code(tokens, _value)?,
                             );
                         }
                         "Header" => {
                             builder = builder.set_header(crate::protocol_serde::shape_response_inspection_header::de_response_inspection_header(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "BodyContains" => {
                             builder = builder.set_body_contains(
-                                crate::protocol_serde::shape_response_inspection_body_contains::de_response_inspection_body_contains(tokens)?,
+                                crate::protocol_serde::shape_response_inspection_body_contains::de_response_inspection_body_contains(tokens, _value)?,
                             );
                         }
                         "Json" => {
                             builder = builder.set_json(crate::protocol_serde::shape_response_inspection_json::de_response_inspection_json(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

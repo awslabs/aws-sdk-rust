@@ -129,13 +129,13 @@ pub fn de_describe_test_execution_http_response(
 }
 
 pub(crate) fn de_describe_test_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,7 @@ pub(crate) fn de_describe_test_execution(
                     )?);
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "lastUpdatedDateTime" => {
                     builder = builder.set_last_updated_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -165,7 +165,9 @@ pub(crate) fn de_describe_test_execution(
                     )?);
                 }
                 "target" => {
-                    builder = builder.set_target(crate::protocol_serde::shape_test_execution_target::de_test_execution_target(tokens)?);
+                    builder = builder.set_target(crate::protocol_serde::shape_test_execution_target::de_test_execution_target(
+                        tokens, _value,
+                    )?);
                 }
                 "testExecutionId" => {
                     builder = builder.set_test_execution_id(

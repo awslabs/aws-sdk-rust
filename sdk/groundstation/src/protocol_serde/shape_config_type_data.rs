@@ -63,6 +63,7 @@ pub fn ser_config_type_data(
 
 pub(crate) fn de_config_type_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfigTypeData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -92,45 +93,47 @@ where
                     }
                     variant = match key.as_ref() {
                         "antennaDownlinkConfig" => Some(crate::types::ConfigTypeData::AntennaDownlinkConfig(
-                            crate::protocol_serde::shape_antenna_downlink_config::de_antenna_downlink_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_antenna_downlink_config::de_antenna_downlink_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'antennaDownlinkConfig' cannot be null")
                             })?,
                         )),
                         "trackingConfig" => Some(crate::types::ConfigTypeData::TrackingConfig(
-                            crate::protocol_serde::shape_tracking_config::de_tracking_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tracking_config::de_tracking_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'trackingConfig' cannot be null")
                             })?,
                         )),
                         "dataflowEndpointConfig" => Some(crate::types::ConfigTypeData::DataflowEndpointConfig(
-                            crate::protocol_serde::shape_dataflow_endpoint_config::de_dataflow_endpoint_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_dataflow_endpoint_config::de_dataflow_endpoint_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dataflowEndpointConfig' cannot be null")
                             })?,
                         )),
                         "antennaDownlinkDemodDecodeConfig" => Some(crate::types::ConfigTypeData::AntennaDownlinkDemodDecodeConfig(
-                            crate::protocol_serde::shape_antenna_downlink_demod_decode_config::de_antenna_downlink_demod_decode_config(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'antennaDownlinkDemodDecodeConfig' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_antenna_downlink_demod_decode_config::de_antenna_downlink_demod_decode_config(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'antennaDownlinkDemodDecodeConfig' cannot be null",
+                                )
+                            })?,
                         )),
                         "antennaUplinkConfig" => Some(crate::types::ConfigTypeData::AntennaUplinkConfig(
-                            crate::protocol_serde::shape_antenna_uplink_config::de_antenna_uplink_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_antenna_uplink_config::de_antenna_uplink_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'antennaUplinkConfig' cannot be null")
                             })?,
                         )),
                         "uplinkEchoConfig" => Some(crate::types::ConfigTypeData::UplinkEchoConfig(
-                            crate::protocol_serde::shape_uplink_echo_config::de_uplink_echo_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_uplink_echo_config::de_uplink_echo_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'uplinkEchoConfig' cannot be null")
                             })?,
                         )),
                         "s3RecordingConfig" => Some(crate::types::ConfigTypeData::S3RecordingConfig(
-                            crate::protocol_serde::shape_s3_recording_config::de_s3_recording_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_recording_config::de_s3_recording_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3RecordingConfig' cannot be null")
                             })?,
                         )),
                         "telemetrySinkConfig" => Some(crate::types::ConfigTypeData::TelemetrySinkConfig(
-                            crate::protocol_serde::shape_telemetry_sink_config::de_telemetry_sink_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_telemetry_sink_config::de_telemetry_sink_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'telemetrySinkConfig' cannot be null")
                             })?,
                         )),

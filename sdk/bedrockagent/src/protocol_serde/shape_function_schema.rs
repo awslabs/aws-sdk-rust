@@ -27,6 +27,7 @@ pub fn ser_function_schema(
 
 pub(crate) fn de_function_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunctionSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "functions" => Some(crate::types::FunctionSchema::Functions(
-                            crate::protocol_serde::shape_functions::de_functions(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_functions::de_functions(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'functions' cannot be null")
                             })?,
                         )),

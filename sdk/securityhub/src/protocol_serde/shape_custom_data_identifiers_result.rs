@@ -26,6 +26,7 @@ pub fn ser_custom_data_identifiers_result(
 
 pub(crate) fn de_custom_data_identifiers_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomDataIdentifiersResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         "Detections" => {
                             builder = builder.set_detections(
                                 crate::protocol_serde::shape_custom_data_identifiers_detections_list::de_custom_data_identifiers_detections_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

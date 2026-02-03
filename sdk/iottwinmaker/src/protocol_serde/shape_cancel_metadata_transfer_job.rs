@@ -140,13 +140,13 @@ pub fn de_cancel_metadata_transfer_job_http_response(
 }
 
 pub(crate) fn de_cancel_metadata_transfer_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,11 +168,13 @@ pub(crate) fn de_cancel_metadata_transfer_job(
                     );
                 }
                 "progress" => {
-                    builder =
-                        builder.set_progress(crate::protocol_serde::shape_metadata_transfer_job_progress::de_metadata_transfer_job_progress(tokens)?);
+                    builder = builder.set_progress(
+                        crate::protocol_serde::shape_metadata_transfer_job_progress::de_metadata_transfer_job_progress(tokens, _value)?,
+                    );
                 }
                 "status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_metadata_transfer_job_status::de_metadata_transfer_job_status(tokens)?);
+                    builder = builder
+                        .set_status(crate::protocol_serde::shape_metadata_transfer_job_status::de_metadata_transfer_job_status(tokens, _value)?);
                 }
                 "updateDateTime" => {
                     builder = builder.set_update_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

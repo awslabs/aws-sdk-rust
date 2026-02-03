@@ -47,6 +47,7 @@ pub fn ser_topic_replication(
 
 pub(crate) fn de_topic_replication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicReplication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,21 +75,25 @@ where
                         }
                         "startingPosition" => {
                             builder = builder.set_starting_position(
-                                crate::protocol_serde::shape_replication_starting_position::de_replication_starting_position(tokens)?,
+                                crate::protocol_serde::shape_replication_starting_position::de_replication_starting_position(tokens, _value)?,
                             );
                         }
                         "topicNameConfiguration" => {
                             builder = builder.set_topic_name_configuration(
-                                crate::protocol_serde::shape_replication_topic_name_configuration::de_replication_topic_name_configuration(tokens)?,
+                                crate::protocol_serde::shape_replication_topic_name_configuration::de_replication_topic_name_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "topicsToExclude" => {
-                            builder =
-                                builder.set_topics_to_exclude(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
+                            builder = builder.set_topics_to_exclude(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(
+                                tokens, _value,
+                            )?);
                         }
                         "topicsToReplicate" => {
-                            builder = builder
-                                .set_topics_to_replicate(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
+                            builder = builder.set_topics_to_replicate(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

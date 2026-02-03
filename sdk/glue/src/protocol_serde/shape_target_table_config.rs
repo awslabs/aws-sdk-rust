@@ -26,6 +26,7 @@ pub fn ser_target_table_config(
 
 pub(crate) fn de_target_table_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetTableConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                         }
                         "PartitionSpec" => {
                             builder = builder.set_partition_spec(
-                                crate::protocol_serde::shape_integration_partition_spec_list::de_integration_partition_spec_list(tokens)?,
+                                crate::protocol_serde::shape_integration_partition_spec_list::de_integration_partition_spec_list(tokens, _value)?,
                             );
                         }
                         "TargetTableName" => {

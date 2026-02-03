@@ -102,13 +102,13 @@ pub fn ser_get_savings_plans_purchase_recommendation_input(
 }
 
 pub(crate) fn de_get_savings_plans_purchase_recommendation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,12 +117,12 @@ pub(crate) fn de_get_savings_plans_purchase_recommendation(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Metadata" => {
                     builder = builder.set_metadata(
-                            crate::protocol_serde::shape_savings_plans_purchase_recommendation_metadata::de_savings_plans_purchase_recommendation_metadata(tokens)?
+                            crate::protocol_serde::shape_savings_plans_purchase_recommendation_metadata::de_savings_plans_purchase_recommendation_metadata(tokens, _value)?
                         );
                 }
                 "SavingsPlansPurchaseRecommendation" => {
                     builder = builder.set_savings_plans_purchase_recommendation(
-                        crate::protocol_serde::shape_savings_plans_purchase_recommendation::de_savings_plans_purchase_recommendation(tokens)?,
+                        crate::protocol_serde::shape_savings_plans_purchase_recommendation::de_savings_plans_purchase_recommendation(tokens, _value)?,
                     );
                 }
                 "NextPageToken" => {

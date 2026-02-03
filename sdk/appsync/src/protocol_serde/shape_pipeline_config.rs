@@ -17,6 +17,7 @@ pub fn ser_pipeline_config(
 
 pub(crate) fn de_pipeline_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipelineConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "functions" => {
-                            builder = builder.set_functions(crate::protocol_serde::shape_functions_ids::de_functions_ids(tokens)?);
+                            builder = builder.set_functions(crate::protocol_serde::shape_functions_ids::de_functions_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

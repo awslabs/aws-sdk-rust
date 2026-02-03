@@ -20,6 +20,7 @@ pub fn ser_field_folder(
 
 pub(crate) fn de_field_folder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldFolder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_folder_column_list::de_folder_column_list(tokens)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_folder_column_list::de_folder_column_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

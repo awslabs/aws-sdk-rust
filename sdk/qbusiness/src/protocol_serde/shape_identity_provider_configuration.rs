@@ -27,6 +27,7 @@ pub fn ser_identity_provider_configuration(
 
 pub(crate) fn de_identity_provider_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IdentityProviderConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,13 +57,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "samlConfiguration" => Some(crate::types::IdentityProviderConfiguration::SamlConfiguration(
-                            crate::protocol_serde::shape_saml_provider_configuration::de_saml_provider_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'samlConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_saml_provider_configuration::de_saml_provider_configuration(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'samlConfiguration' cannot be null"),
+                            )?,
                         )),
                         "openIDConnectConfiguration" => Some(crate::types::IdentityProviderConfiguration::OpenIdConnectConfiguration(
-                            crate::protocol_serde::shape_open_id_connect_provider_configuration::de_open_id_connect_provider_configuration(tokens)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_open_id_connect_provider_configuration::de_open_id_connect_provider_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'openIDConnectConfiguration' cannot be null",
                                 )

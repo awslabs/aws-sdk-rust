@@ -118,13 +118,13 @@ pub fn ser_batch_get_security_controls_input(
 }
 
 pub(crate) fn de_batch_get_security_controls(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,11 +132,12 @@ pub(crate) fn de_batch_get_security_controls(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SecurityControls" => {
-                    builder = builder.set_security_controls(crate::protocol_serde::shape_security_controls::de_security_controls(tokens)?);
+                    builder = builder.set_security_controls(crate::protocol_serde::shape_security_controls::de_security_controls(tokens, _value)?);
                 }
                 "UnprocessedIds" => {
-                    builder = builder
-                        .set_unprocessed_ids(crate::protocol_serde::shape_unprocessed_security_controls::de_unprocessed_security_controls(tokens)?);
+                    builder = builder.set_unprocessed_ids(
+                        crate::protocol_serde::shape_unprocessed_security_controls::de_unprocessed_security_controls(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

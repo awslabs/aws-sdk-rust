@@ -35,6 +35,7 @@ pub fn ser_export(
 
 pub(crate) fn de_export<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Export>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,15 +71,15 @@ where
                             );
                         }
                         "DataQuery" => {
-                            builder = builder.set_data_query(crate::protocol_serde::shape_data_query::de_data_query(tokens)?);
+                            builder = builder.set_data_query(crate::protocol_serde::shape_data_query::de_data_query(tokens, _value)?);
                         }
                         "DestinationConfigurations" => {
                             builder = builder.set_destination_configurations(
-                                crate::protocol_serde::shape_destination_configurations::de_destination_configurations(tokens)?,
+                                crate::protocol_serde::shape_destination_configurations::de_destination_configurations(tokens, _value)?,
                             );
                         }
                         "RefreshCadence" => {
-                            builder = builder.set_refresh_cadence(crate::protocol_serde::shape_refresh_cadence::de_refresh_cadence(tokens)?);
+                            builder = builder.set_refresh_cadence(crate::protocol_serde::shape_refresh_cadence::de_refresh_cadence(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

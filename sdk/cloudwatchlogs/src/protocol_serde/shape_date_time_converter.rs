@@ -35,6 +35,7 @@ pub fn ser_date_time_converter(
 
 pub(crate) fn de_date_time_converter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DateTimeConverter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,7 +71,7 @@ where
                             );
                         }
                         "matchPatterns" => {
-                            builder = builder.set_match_patterns(crate::protocol_serde::shape_match_patterns::de_match_patterns(tokens)?);
+                            builder = builder.set_match_patterns(crate::protocol_serde::shape_match_patterns::de_match_patterns(tokens, _value)?);
                         }
                         "sourceTimezone" => {
                             builder = builder.set_source_timezone(

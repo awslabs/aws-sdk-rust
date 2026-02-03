@@ -129,13 +129,13 @@ pub fn de_delete_evaluator_http_response(
 }
 
 pub(crate) fn de_delete_evaluator(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_evaluator::builders::DeleteEvaluatorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

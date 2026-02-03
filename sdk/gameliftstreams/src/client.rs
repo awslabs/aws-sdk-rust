@@ -204,7 +204,7 @@ mod create_stream_session_connection;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_gameliftstreams::Error> {
 /// # let client: aws_sdk_gameliftstreams::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_stream_group_locations()
 ///     .customize()

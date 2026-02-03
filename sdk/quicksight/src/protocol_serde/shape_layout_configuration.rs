@@ -26,6 +26,7 @@ pub fn ser_layout_configuration(
 
 pub(crate) fn de_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,17 +42,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "GridLayout" => {
                             builder = builder.set_grid_layout(crate::protocol_serde::shape_grid_layout_configuration::de_grid_layout_configuration(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "FreeFormLayout" => {
                             builder = builder.set_free_form_layout(
-                                crate::protocol_serde::shape_free_form_layout_configuration::de_free_form_layout_configuration(tokens)?,
+                                crate::protocol_serde::shape_free_form_layout_configuration::de_free_form_layout_configuration(tokens, _value)?,
                             );
                         }
                         "SectionBasedLayout" => {
                             builder = builder.set_section_based_layout(
-                                crate::protocol_serde::shape_section_based_layout_configuration::de_section_based_layout_configuration(tokens)?,
+                                crate::protocol_serde::shape_section_based_layout_configuration::de_section_based_layout_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

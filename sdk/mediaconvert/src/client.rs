@@ -159,7 +159,7 @@ mod create_resource_share;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mediaconvert::Error> {
 /// # let client: aws_sdk_mediaconvert::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_certificate()
 ///     .customize()

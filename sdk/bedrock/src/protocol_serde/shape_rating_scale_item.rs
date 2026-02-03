@@ -17,6 +17,7 @@ pub fn ser_rating_scale_item(
 
 pub(crate) fn de_rating_scale_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RatingScaleItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,9 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_rating_scale_item_value::de_rating_scale_item_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_rating_scale_item_value::de_rating_scale_item_value(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

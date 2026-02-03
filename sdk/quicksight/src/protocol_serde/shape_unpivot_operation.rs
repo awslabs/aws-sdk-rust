@@ -41,6 +41,7 @@ pub fn ser_unpivot_operation(
 
 pub(crate) fn de_unpivot_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UnpivotOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,12 +64,13 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "ColumnsToUnpivot" => {
-                            builder = builder
-                                .set_columns_to_unpivot(crate::protocol_serde::shape_column_to_unpivot_list::de_column_to_unpivot_list(tokens)?);
+                            builder = builder.set_columns_to_unpivot(crate::protocol_serde::shape_column_to_unpivot_list::de_column_to_unpivot_list(
+                                tokens, _value,
+                            )?);
                         }
                         "UnpivotedLabelColumnName" => {
                             builder = builder.set_unpivoted_label_column_name(

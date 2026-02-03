@@ -20,6 +20,7 @@ pub fn ser_image_override_configuration(
 
 pub(crate) fn de_image_override_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageOverrideConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "modalityProcessing" => {
                             builder = builder.set_modality_processing(
-                                crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens)?,
+                                crate::protocol_serde::shape_modality_processing_configuration::de_modality_processing_configuration(tokens, _value)?,
                             );
                         }
                         "sensitiveDataConfiguration" => {
                             builder = builder.set_sensitive_data_configuration(
-                                crate::protocol_serde::shape_sensitive_data_configuration::de_sensitive_data_configuration(tokens)?,
+                                crate::protocol_serde::shape_sensitive_data_configuration::de_sensitive_data_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

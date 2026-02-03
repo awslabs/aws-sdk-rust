@@ -5,6 +5,8 @@
 pub struct UpdateMaxRecordSizeInput {
     /// <p>The Amazon Resource Name (ARN) of the stream for the <code>MaxRecordSize</code> update.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum record size of a single record in KiB that you can write to, and read from a stream. Specify a value between 1024 and 10240 KiB (1 to 10 MiB). If you specify a value that is out of this range, <code>UpdateMaxRecordSize</code> sends back an <code>ValidationException</code> message.</p>
     pub max_record_size_in_kib: ::std::option::Option<i32>,
 }
@@ -12,6 +14,10 @@ impl UpdateMaxRecordSizeInput {
     /// <p>The Amazon Resource Name (ARN) of the stream for the <code>MaxRecordSize</code> update.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>The maximum record size of a single record in KiB that you can write to, and read from a stream. Specify a value between 1024 and 10240 KiB (1 to 10 MiB). If you specify a value that is out of this range, <code>UpdateMaxRecordSize</code> sends back an <code>ValidationException</code> message.</p>
     pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
@@ -30,6 +36,7 @@ impl UpdateMaxRecordSizeInput {
 #[non_exhaustive]
 pub struct UpdateMaxRecordSizeInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
 }
 impl UpdateMaxRecordSizeInputBuilder {
@@ -46,6 +53,20 @@ impl UpdateMaxRecordSizeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream for the <code>MaxRecordSize</code> update.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>The maximum record size of a single record in KiB that you can write to, and read from a stream. Specify a value between 1024 and 10240 KiB (1 to 10 MiB). If you specify a value that is out of this range, <code>UpdateMaxRecordSize</code> sends back an <code>ValidationException</code> message.</p>
     /// This field is required.
@@ -69,6 +90,7 @@ impl UpdateMaxRecordSizeInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::update_max_record_size::UpdateMaxRecordSizeInput {
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
             max_record_size_in_kib: self.max_record_size_in_kib,
         })
     }

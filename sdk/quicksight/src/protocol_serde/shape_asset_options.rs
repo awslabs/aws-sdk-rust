@@ -32,6 +32,7 @@ pub fn ser_asset_options(
 
 pub(crate) fn de_asset_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,12 +68,12 @@ where
                             );
                         }
                         "ExcludedDataSetArns" => {
-                            builder =
-                                builder.set_excluded_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(tokens)?);
+                            builder = builder
+                                .set_excluded_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(tokens, _value)?);
                         }
                         "CustomActionDefaults" => {
                             builder = builder.set_custom_action_defaults(
-                                crate::protocol_serde::shape_visual_custom_action_defaults::de_visual_custom_action_defaults(tokens)?,
+                                crate::protocol_serde::shape_visual_custom_action_defaults::de_visual_custom_action_defaults(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

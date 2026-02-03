@@ -26,6 +26,7 @@ pub fn ser_backend_storage_permissions(
 
 pub(crate) fn de_backend_storage_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BackendStoragePermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "authenticated" => {
                             builder = builder.set_authenticated(
-                                crate::protocol_serde::shape_list_of_authenticated_element::de_list_of_authenticated_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_authenticated_element::de_list_of_authenticated_element(tokens, _value)?,
                             );
                         }
                         "unAuthenticated" => {
                             builder = builder.set_un_authenticated(
-                                crate::protocol_serde::shape_list_of_un_authenticated_element::de_list_of_un_authenticated_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_un_authenticated_element::de_list_of_un_authenticated_element(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

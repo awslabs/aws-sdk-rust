@@ -41,6 +41,7 @@ pub fn ser_push_adm_message_template_content(
 
 pub(crate) fn de_push_adm_message_template_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PushAdmMessageTemplateContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,7 +65,7 @@ where
                         "body" => {
                             builder = builder.set_body(
                                 crate::protocol_serde::shape_message_template_body_content_provider::de_message_template_body_content_provider(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -113,7 +114,7 @@ where
                         "rawContent" => {
                             builder = builder.set_raw_content(
                                 crate::protocol_serde::shape_message_template_body_content_provider::de_message_template_body_content_provider(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

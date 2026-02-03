@@ -165,7 +165,7 @@ mod create_workgroup;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_redshiftserverless::Error> {
 /// # let client: aws_sdk_redshiftserverless::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.convert_recovery_point_to_snapshot()
 ///     .customize()

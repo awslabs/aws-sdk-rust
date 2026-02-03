@@ -39,7 +39,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ssoadmin = "1.94.0"
+//! aws-sdk-ssoadmin = "1.95.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -156,13 +156,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::operation::attach_customer_managed_policy_reference_to_permission_set) operation has
-/// a [`Client::attach_customer_managed_policy_reference_to_permission_set`], function which returns a builder for that operation.
+/// For example, the [`AddRegion`](crate::operation::add_region) operation has
+/// a [`Client::add_region`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.attach_customer_managed_policy_reference_to_permission_set()
+/// let result = client.add_region()
 ///     .instance_arn("example")
 ///     .send()
 ///     .await;

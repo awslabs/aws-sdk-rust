@@ -83,13 +83,13 @@ pub fn ser_describe_app_blocks_input(
 }
 
 pub(crate) fn de_describe_app_blocks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,7 +97,7 @@ pub(crate) fn de_describe_app_blocks(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AppBlocks" => {
-                    builder = builder.set_app_blocks(crate::protocol_serde::shape_app_blocks::de_app_blocks(tokens)?);
+                    builder = builder.set_app_blocks(crate::protocol_serde::shape_app_blocks::de_app_blocks(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

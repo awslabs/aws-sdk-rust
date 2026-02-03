@@ -34,6 +34,7 @@ pub fn ser_byte_match_statement(
 
 pub(crate) fn de_byte_match_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ByteMatchStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,11 +52,12 @@ where
                             builder = builder.set_search_string(::aws_smithy_json::deserialize::token::expect_blob_or_null(tokens.next())?);
                         }
                         "FieldToMatch" => {
-                            builder = builder.set_field_to_match(crate::protocol_serde::shape_field_to_match::de_field_to_match(tokens)?);
+                            builder = builder.set_field_to_match(crate::protocol_serde::shape_field_to_match::de_field_to_match(tokens, _value)?);
                         }
                         "TextTransformations" => {
-                            builder =
-                                builder.set_text_transformations(crate::protocol_serde::shape_text_transformations::de_text_transformations(tokens)?);
+                            builder = builder.set_text_transformations(crate::protocol_serde::shape_text_transformations::de_text_transformations(
+                                tokens, _value,
+                            )?);
                         }
                         "PositionalConstraint" => {
                             builder = builder.set_positional_constraint(

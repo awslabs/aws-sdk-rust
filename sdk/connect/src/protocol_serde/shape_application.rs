@@ -23,6 +23,7 @@ pub fn ser_application(
 
 pub(crate) fn de_application<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Application>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ApplicationPermissions" => {
                             builder = builder.set_application_permissions(
-                                crate::protocol_serde::shape_application_permissions::de_application_permissions(tokens)?,
+                                crate::protocol_serde::shape_application_permissions::de_application_permissions(tokens, _value)?,
                             );
                         }
                         "Type" => {

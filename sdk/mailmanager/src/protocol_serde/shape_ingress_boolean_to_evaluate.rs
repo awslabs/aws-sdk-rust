@@ -27,6 +27,7 @@ pub fn ser_ingress_boolean_to_evaluate(
 
 pub(crate) fn de_ingress_boolean_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IngressBooleanToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "Analysis" => Some(crate::types::IngressBooleanToEvaluate::Analysis(
-                            crate::protocol_serde::shape_ingress_analysis::de_ingress_analysis(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ingress_analysis::de_ingress_analysis(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
                             })?,
                         )),
                         "IsInAddressList" => Some(crate::types::IngressBooleanToEvaluate::IsInAddressList(
-                            crate::protocol_serde::shape_ingress_is_in_address_list::de_ingress_is_in_address_list(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IsInAddressList' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ingress_is_in_address_list::de_ingress_is_in_address_list(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IsInAddressList' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -23,6 +23,7 @@ pub fn ser_artifact_source(
 
 pub(crate) fn de_artifact_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArtifactSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,9 @@ where
                             );
                         }
                         "SourceTypes" => {
-                            builder = builder.set_source_types(crate::protocol_serde::shape_artifact_source_types::de_artifact_source_types(tokens)?);
+                            builder = builder.set_source_types(crate::protocol_serde::shape_artifact_source_types::de_artifact_source_types(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

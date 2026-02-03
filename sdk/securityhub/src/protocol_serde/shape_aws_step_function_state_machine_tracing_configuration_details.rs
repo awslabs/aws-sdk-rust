@@ -11,6 +11,7 @@ pub fn ser_aws_step_function_state_machine_tracing_configuration_details(
 
 pub(crate) fn de_aws_step_function_state_machine_tracing_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

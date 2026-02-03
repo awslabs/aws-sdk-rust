@@ -56,6 +56,7 @@ pub fn ser_endpoint_details(
 
 pub(crate) fn de_endpoint_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EndpointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,24 +71,25 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "securityDetails" => {
-                            builder = builder.set_security_details(crate::protocol_serde::shape_security_details::de_security_details(tokens)?);
+                            builder =
+                                builder.set_security_details(crate::protocol_serde::shape_security_details::de_security_details(tokens, _value)?);
                         }
                         "endpoint" => {
-                            builder = builder.set_endpoint(crate::protocol_serde::shape_dataflow_endpoint::de_dataflow_endpoint(tokens)?);
+                            builder = builder.set_endpoint(crate::protocol_serde::shape_dataflow_endpoint::de_dataflow_endpoint(tokens, _value)?);
                         }
                         "awsGroundStationAgentEndpoint" => {
                             builder = builder.set_aws_ground_station_agent_endpoint(
-                                crate::protocol_serde::shape_aws_ground_station_agent_endpoint::de_aws_ground_station_agent_endpoint(tokens)?,
+                                crate::protocol_serde::shape_aws_ground_station_agent_endpoint::de_aws_ground_station_agent_endpoint(tokens, _value)?,
                             );
                         }
                         "uplinkAwsGroundStationAgentEndpoint" => {
                             builder = builder.set_uplink_aws_ground_station_agent_endpoint(
-                                    crate::protocol_serde::shape_uplink_aws_ground_station_agent_endpoint_details::de_uplink_aws_ground_station_agent_endpoint_details(tokens)?
+                                    crate::protocol_serde::shape_uplink_aws_ground_station_agent_endpoint_details::de_uplink_aws_ground_station_agent_endpoint_details(tokens, _value)?
                                 );
                         }
                         "downlinkAwsGroundStationAgentEndpoint" => {
                             builder = builder.set_downlink_aws_ground_station_agent_endpoint(
-                                    crate::protocol_serde::shape_downlink_aws_ground_station_agent_endpoint_details::de_downlink_aws_ground_station_agent_endpoint_details(tokens)?
+                                    crate::protocol_serde::shape_downlink_aws_ground_station_agent_endpoint_details::de_downlink_aws_ground_station_agent_endpoint_details(tokens, _value)?
                                 );
                         }
                         "healthStatus" => {
@@ -99,7 +101,7 @@ where
                         }
                         "healthReasons" => {
                             builder = builder.set_health_reasons(
-                                crate::protocol_serde::shape_capability_health_reason_list::de_capability_health_reason_list(tokens)?,
+                                crate::protocol_serde::shape_capability_health_reason_list::de_capability_health_reason_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

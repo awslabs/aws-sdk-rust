@@ -38,6 +38,7 @@ pub fn ser_multi_polygon_geometry_input(
 
 pub(crate) fn de_multi_polygon_geometry_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiPolygonGeometryInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Coordinates" => {
-                            builder = builder.set_coordinates(crate::protocol_serde::shape_linear_rings_list::de_linear_rings_list(tokens)?);
+                            builder = builder.set_coordinates(crate::protocol_serde::shape_linear_rings_list::de_linear_rings_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

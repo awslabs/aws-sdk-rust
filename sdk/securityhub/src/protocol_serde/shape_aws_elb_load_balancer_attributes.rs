@@ -50,6 +50,7 @@ pub fn ser_aws_elb_load_balancer_attributes(
 
 pub(crate) fn de_aws_elb_load_balancer_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,27 +67,29 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "AccessLog" => {
                                 builder = builder.set_access_log(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_access_log::de_aws_elb_load_balancer_access_log(tokens)?,
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_access_log::de_aws_elb_load_balancer_access_log(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             "ConnectionDraining" => {
                                 builder = builder.set_connection_draining(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_draining::de_aws_elb_load_balancer_connection_draining(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_draining::de_aws_elb_load_balancer_connection_draining(tokens, _value)?
                                 );
                             }
                             "ConnectionSettings" => {
                                 builder = builder.set_connection_settings(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_settings::de_aws_elb_load_balancer_connection_settings(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_connection_settings::de_aws_elb_load_balancer_connection_settings(tokens, _value)?
                                 );
                             }
                             "CrossZoneLoadBalancing" => {
                                 builder = builder.set_cross_zone_load_balancing(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::de_aws_elb_load_balancer_cross_zone_load_balancing(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_cross_zone_load_balancing::de_aws_elb_load_balancer_cross_zone_load_balancing(tokens, _value)?
                                 );
                             }
                             "AdditionalAttributes" => {
                                 builder = builder.set_additional_attributes(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute_list::de_aws_elb_load_balancer_additional_attribute_list(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_additional_attribute_list::de_aws_elb_load_balancer_additional_attribute_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

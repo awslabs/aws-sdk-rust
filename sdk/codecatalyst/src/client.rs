@@ -155,7 +155,7 @@ mod create_source_repository_branch;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codecatalyst::Error> {
 /// # let client: aws_sdk_codecatalyst::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_access_token()
 ///     .customize()

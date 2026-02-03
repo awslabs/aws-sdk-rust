@@ -41,6 +41,7 @@ pub fn ser_streaming_properties(
 
 pub(crate) fn de_streaming_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StreamingProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,14 +66,15 @@ where
                             );
                         }
                         "UserSettings" => {
-                            builder = builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens)?);
+                            builder = builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value)?);
                         }
                         "StorageConnectors" => {
-                            builder = builder.set_storage_connectors(crate::protocol_serde::shape_storage_connectors::de_storage_connectors(tokens)?);
+                            builder = builder
+                                .set_storage_connectors(crate::protocol_serde::shape_storage_connectors::de_storage_connectors(tokens, _value)?);
                         }
                         "GlobalAccelerator" => {
                             builder = builder.set_global_accelerator(
-                                crate::protocol_serde::shape_global_accelerator_for_directory::de_global_accelerator_for_directory(tokens)?,
+                                crate::protocol_serde::shape_global_accelerator_for_directory::de_global_accelerator_for_directory(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

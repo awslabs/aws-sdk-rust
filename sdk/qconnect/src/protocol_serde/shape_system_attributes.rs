@@ -23,6 +23,7 @@ pub fn ser_system_attributes(
 
 pub(crate) fn de_system_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SystemAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "customerEndpoint" => {
                             builder = builder.set_customer_endpoint(
-                                crate::protocol_serde::shape_system_endpoint_attributes::de_system_endpoint_attributes(tokens)?,
+                                crate::protocol_serde::shape_system_endpoint_attributes::de_system_endpoint_attributes(tokens, _value)?,
                             );
                         }
                         "systemEndpoint" => {
                             builder = builder.set_system_endpoint(
-                                crate::protocol_serde::shape_system_endpoint_attributes::de_system_endpoint_attributes(tokens)?,
+                                crate::protocol_serde::shape_system_endpoint_attributes::de_system_endpoint_attributes(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

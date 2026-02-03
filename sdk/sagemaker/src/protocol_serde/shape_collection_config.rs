@@ -21,6 +21,7 @@ pub fn ser_collection_config(
 
 pub(crate) fn de_collection_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CollectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "VectorConfig" => Some(crate::types::CollectionConfig::VectorConfig(
-                            crate::protocol_serde::shape_vector_config::de_vector_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_vector_config::de_vector_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'VectorConfig' cannot be null")
                             })?,
                         )),

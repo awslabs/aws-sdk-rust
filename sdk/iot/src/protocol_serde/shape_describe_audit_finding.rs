@@ -104,13 +104,13 @@ pub fn de_describe_audit_finding_http_response(
 }
 
 pub(crate) fn de_describe_audit_finding(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,7 @@ pub(crate) fn de_describe_audit_finding(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "finding" => {
-                    builder = builder.set_finding(crate::protocol_serde::shape_audit_finding::de_audit_finding(tokens)?);
+                    builder = builder.set_finding(crate::protocol_serde::shape_audit_finding::de_audit_finding(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

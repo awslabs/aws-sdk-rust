@@ -63,13 +63,13 @@ pub fn ser_add_job_flow_steps_input(
 }
 
 pub(crate) fn de_add_job_flow_steps(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -77,7 +77,7 @@ pub(crate) fn de_add_job_flow_steps(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "StepIds" => {
-                    builder = builder.set_step_ids(crate::protocol_serde::shape_step_ids_list::de_step_ids_list(tokens)?);
+                    builder = builder.set_step_ids(crate::protocol_serde::shape_step_ids_list::de_step_ids_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

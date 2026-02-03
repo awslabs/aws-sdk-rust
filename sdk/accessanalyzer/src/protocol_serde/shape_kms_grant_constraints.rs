@@ -28,6 +28,7 @@ pub fn ser_kms_grant_constraints(
 
 pub(crate) fn de_kms_grant_constraints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KmsGrantConstraints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,12 +43,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "encryptionContextEquals" => {
-                            builder = builder
-                                .set_encryption_context_equals(crate::protocol_serde::shape_kms_constraints_map::de_kms_constraints_map(tokens)?);
+                            builder = builder.set_encryption_context_equals(
+                                crate::protocol_serde::shape_kms_constraints_map::de_kms_constraints_map(tokens, _value)?,
+                            );
                         }
                         "encryptionContextSubset" => {
-                            builder = builder
-                                .set_encryption_context_subset(crate::protocol_serde::shape_kms_constraints_map::de_kms_constraints_map(tokens)?);
+                            builder = builder.set_encryption_context_subset(
+                                crate::protocol_serde::shape_kms_constraints_map::de_kms_constraints_map(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

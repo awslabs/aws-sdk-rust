@@ -121,10 +121,10 @@ pub fn de_get_budget_http_response(
 }
 
 pub(crate) fn de_get_budget(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_budget::builders::GetBudgetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_budget::builders::GetBudgetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_budget(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actions" => {
                     builder = builder.set_actions(crate::protocol_serde::shape_response_budget_action_list::de_response_budget_action_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "approximateDollarLimit" => {
@@ -182,7 +182,7 @@ pub(crate) fn de_get_budget(
                     )?);
                 }
                 "schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_budget_schedule::de_budget_schedule(tokens)?);
+                    builder = builder.set_schedule(crate::protocol_serde::shape_budget_schedule::de_budget_schedule(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -205,11 +205,12 @@ pub(crate) fn de_get_budget(
                     );
                 }
                 "usageTrackingResource" => {
-                    builder = builder
-                        .set_usage_tracking_resource(crate::protocol_serde::shape_usage_tracking_resource::de_usage_tracking_resource(tokens)?);
+                    builder = builder.set_usage_tracking_resource(crate::protocol_serde::shape_usage_tracking_resource::de_usage_tracking_resource(
+                        tokens, _value,
+                    )?);
                 }
                 "usages" => {
-                    builder = builder.set_usages(crate::protocol_serde::shape_consumed_usages::de_consumed_usages(tokens)?);
+                    builder = builder.set_usages(crate::protocol_serde::shape_consumed_usages::de_consumed_usages(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

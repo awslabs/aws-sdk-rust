@@ -27,6 +27,7 @@ pub fn ser_service_integration_union(
 
 pub(crate) fn de_service_integration_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceIntegrationUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,9 +57,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "Redshift" => Some(crate::types::ServiceIntegrationUnion::Redshift(
-                            crate::protocol_serde::shape_redshift_service_integrations::de_redshift_service_integrations(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Redshift' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_redshift_service_integrations::de_redshift_service_integrations(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Redshift' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -270,13 +270,13 @@ pub fn ser_update_pull_request_status_input(
 }
 
 pub(crate) fn de_update_pull_request_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -284,7 +284,7 @@ pub(crate) fn de_update_pull_request_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "pullRequest" => {
-                    builder = builder.set_pull_request(crate::protocol_serde::shape_pull_request::de_pull_request(tokens)?);
+                    builder = builder.set_pull_request(crate::protocol_serde::shape_pull_request::de_pull_request(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

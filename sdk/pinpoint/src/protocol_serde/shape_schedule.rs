@@ -35,6 +35,7 @@ pub fn ser_schedule(
 
 pub(crate) fn de_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Schedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,9 @@ where
                             );
                         }
                         "EventFilter" => {
-                            builder = builder.set_event_filter(crate::protocol_serde::shape_campaign_event_filter::de_campaign_event_filter(tokens)?);
+                            builder = builder.set_event_filter(crate::protocol_serde::shape_campaign_event_filter::de_campaign_event_filter(
+                                tokens, _value,
+                            )?);
                         }
                         "Frequency" => {
                             builder = builder.set_frequency(
@@ -69,7 +72,7 @@ where
                             builder = builder.set_is_local_time(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "QuietTime" => {
-                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens)?);
+                            builder = builder.set_quiet_time(crate::protocol_serde::shape_quiet_time::de_quiet_time(tokens, _value)?);
                         }
                         "StartTime" => {
                             builder = builder.set_start_time(

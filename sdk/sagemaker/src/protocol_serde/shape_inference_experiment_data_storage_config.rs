@@ -20,6 +20,7 @@ pub fn ser_inference_experiment_data_storage_config(
 
 pub(crate) fn de_inference_experiment_data_storage_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InferenceExperimentDataStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "ContentType" => {
                             builder = builder.set_content_type(
-                                crate::protocol_serde::shape_capture_content_type_header::de_capture_content_type_header(tokens)?,
+                                crate::protocol_serde::shape_capture_content_type_header::de_capture_content_type_header(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

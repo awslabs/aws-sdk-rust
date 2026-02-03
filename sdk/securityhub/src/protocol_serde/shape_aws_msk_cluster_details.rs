@@ -14,6 +14,7 @@ pub fn ser_aws_msk_cluster_details(
 
 pub(crate) fn de_aws_msk_cluster_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsMskClusterDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClusterInfo" => {
                             builder = builder.set_cluster_info(
-                                crate::protocol_serde::shape_aws_msk_cluster_cluster_info_details::de_aws_msk_cluster_cluster_info_details(tokens)?,
+                                crate::protocol_serde::shape_aws_msk_cluster_cluster_info_details::de_aws_msk_cluster_cluster_info_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

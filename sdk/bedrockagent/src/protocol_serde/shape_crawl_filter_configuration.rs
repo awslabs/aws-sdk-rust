@@ -17,6 +17,7 @@ pub fn ser_crawl_filter_configuration(
 
 pub(crate) fn de_crawl_filter_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CrawlFilterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,9 @@ where
                         }
                         "patternObjectFilter" => {
                             builder = builder.set_pattern_object_filter(
-                                crate::protocol_serde::shape_pattern_object_filter_configuration::de_pattern_object_filter_configuration(tokens)?,
+                                crate::protocol_serde::shape_pattern_object_filter_configuration::de_pattern_object_filter_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

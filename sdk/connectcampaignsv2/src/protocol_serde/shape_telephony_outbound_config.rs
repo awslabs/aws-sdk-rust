@@ -26,6 +26,7 @@ pub fn ser_telephony_outbound_config(
 
 pub(crate) fn de_telephony_outbound_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelephonyOutboundConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "answerMachineDetectionConfig" => {
                             builder = builder.set_answer_machine_detection_config(
-                                crate::protocol_serde::shape_answer_machine_detection_config::de_answer_machine_detection_config(tokens)?,
+                                crate::protocol_serde::shape_answer_machine_detection_config::de_answer_machine_detection_config(tokens, _value)?,
                             );
                         }
                         "ringTimeout" => {

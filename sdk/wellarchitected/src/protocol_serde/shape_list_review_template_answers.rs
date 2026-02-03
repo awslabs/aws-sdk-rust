@@ -123,13 +123,13 @@ pub fn de_list_review_template_answers_http_response(
 }
 
 pub(crate) fn de_list_review_template_answers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_review_template_answers::builders::ListReviewTemplateAnswersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_review_template_answers::builders::ListReviewTemplateAnswersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,7 +138,7 @@ pub(crate) fn de_list_review_template_answers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AnswerSummaries" => {
                     builder = builder.set_answer_summaries(
-                        crate::protocol_serde::shape_review_template_answer_summaries::de_review_template_answer_summaries(tokens)?,
+                        crate::protocol_serde::shape_review_template_answer_summaries::de_review_template_answer_summaries(tokens, _value)?,
                     );
                 }
                 "LensAlias" => {

@@ -35,6 +35,7 @@ pub fn ser_resource_mapping(
 
 pub(crate) fn de_resource_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,8 +85,9 @@ where
                             );
                         }
                         "physicalResourceId" => {
-                            builder =
-                                builder.set_physical_resource_id(crate::protocol_serde::shape_physical_resource_id::de_physical_resource_id(tokens)?);
+                            builder = builder.set_physical_resource_id(crate::protocol_serde::shape_physical_resource_id::de_physical_resource_id(
+                                tokens, _value,
+                            )?);
                         }
                         "terraformSourceName" => {
                             builder = builder.set_terraform_source_name(

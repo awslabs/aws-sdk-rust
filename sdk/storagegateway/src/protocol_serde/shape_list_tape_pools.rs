@@ -81,13 +81,13 @@ pub fn ser_list_tape_pools_input(
 }
 
 pub(crate) fn de_list_tape_pools(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_tape_pools::builders::ListTapePoolsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_tape_pools::builders::ListTapePoolsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -95,7 +95,7 @@ pub(crate) fn de_list_tape_pools(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PoolInfos" => {
-                    builder = builder.set_pool_infos(crate::protocol_serde::shape_pool_infos::de_pool_infos(tokens)?);
+                    builder = builder.set_pool_infos(crate::protocol_serde::shape_pool_infos::de_pool_infos(tokens, _value)?);
                 }
                 "Marker" => {
                     builder = builder.set_marker(

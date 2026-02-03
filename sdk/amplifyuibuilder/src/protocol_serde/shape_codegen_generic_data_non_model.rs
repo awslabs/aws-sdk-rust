@@ -21,6 +21,7 @@ pub fn ser_codegen_generic_data_non_model(
 
 pub(crate) fn de_codegen_generic_data_non_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodegenGenericDataNonModel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "fields" => {
                             builder = builder.set_fields(
-                                crate::protocol_serde::shape_codegen_generic_data_non_model_fields::de_codegen_generic_data_non_model_fields(tokens)?,
+                                crate::protocol_serde::shape_codegen_generic_data_non_model_fields::de_codegen_generic_data_non_model_fields(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -105,13 +105,13 @@ pub fn ser_get_reservation_coverage_input(
 }
 
 pub(crate) fn de_get_reservation_coverage(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_reservation_coverage::builders::GetReservationCoverageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,10 +119,10 @@ pub(crate) fn de_get_reservation_coverage(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CoveragesByTime" => {
-                    builder = builder.set_coverages_by_time(crate::protocol_serde::shape_coverages_by_time::de_coverages_by_time(tokens)?);
+                    builder = builder.set_coverages_by_time(crate::protocol_serde::shape_coverages_by_time::de_coverages_by_time(tokens, _value)?);
                 }
                 "Total" => {
-                    builder = builder.set_total(crate::protocol_serde::shape_coverage::de_coverage(tokens)?);
+                    builder = builder.set_total(crate::protocol_serde::shape_coverage::de_coverage(tokens, _value)?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

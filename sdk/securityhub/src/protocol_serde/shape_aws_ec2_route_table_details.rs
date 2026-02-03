@@ -53,6 +53,7 @@ pub fn ser_aws_ec2_route_table_details(
 
 pub(crate) fn de_aws_ec2_route_table_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2RouteTableDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,8 +68,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AssociationSet" => {
-                            builder =
-                                builder.set_association_set(crate::protocol_serde::shape_association_set_list::de_association_set_list(tokens)?);
+                            builder = builder.set_association_set(crate::protocol_serde::shape_association_set_list::de_association_set_list(
+                                tokens, _value,
+                            )?);
                         }
                         "OwnerId" => {
                             builder = builder.set_owner_id(
@@ -79,7 +81,7 @@ where
                         }
                         "PropagatingVgwSet" => {
                             builder = builder.set_propagating_vgw_set(
-                                crate::protocol_serde::shape_propagating_vgw_set_list::de_propagating_vgw_set_list(tokens)?,
+                                crate::protocol_serde::shape_propagating_vgw_set_list::de_propagating_vgw_set_list(tokens, _value)?,
                             );
                         }
                         "RouteTableId" => {
@@ -90,7 +92,7 @@ where
                             );
                         }
                         "RouteSet" => {
-                            builder = builder.set_route_set(crate::protocol_serde::shape_route_set_list::de_route_set_list(tokens)?);
+                            builder = builder.set_route_set(crate::protocol_serde::shape_route_set_list::de_route_set_list(tokens, _value)?);
                         }
                         "VpcId" => {
                             builder = builder.set_vpc_id(

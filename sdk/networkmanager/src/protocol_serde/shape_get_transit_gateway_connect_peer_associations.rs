@@ -177,13 +177,13 @@ pub fn de_get_transit_gateway_connect_peer_associations_http_response(
 }
 
 pub(crate) fn de_get_transit_gateway_connect_peer_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -200,7 +200,7 @@ pub(crate) fn de_get_transit_gateway_connect_peer_associations(
                     }
                     "TransitGatewayConnectPeerAssociations" => {
                         builder = builder.set_transit_gateway_connect_peer_associations(
-                            crate::protocol_serde::shape_transit_gateway_connect_peer_association_list::de_transit_gateway_connect_peer_association_list(tokens)?
+                            crate::protocol_serde::shape_transit_gateway_connect_peer_association_list::de_transit_gateway_connect_peer_association_list(tokens, _value)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

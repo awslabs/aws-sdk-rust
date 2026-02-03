@@ -50,6 +50,7 @@ pub fn ser_task_override(
 
 pub(crate) fn de_task_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,8 +65,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containerOverrides" => {
-                            builder =
-                                builder.set_container_overrides(crate::protocol_serde::shape_container_overrides::de_container_overrides(tokens)?);
+                            builder = builder
+                                .set_container_overrides(crate::protocol_serde::shape_container_overrides::de_container_overrides(tokens, _value)?);
                         }
                         "cpu" => {
                             builder = builder.set_cpu(
@@ -76,7 +77,7 @@ where
                         }
                         "inferenceAcceleratorOverrides" => {
                             builder = builder.set_inference_accelerator_overrides(
-                                crate::protocol_serde::shape_inference_accelerator_overrides::de_inference_accelerator_overrides(tokens)?,
+                                crate::protocol_serde::shape_inference_accelerator_overrides::de_inference_accelerator_overrides(tokens, _value)?,
                             );
                         }
                         "executionRoleArn" => {
@@ -101,7 +102,8 @@ where
                             );
                         }
                         "ephemeralStorage" => {
-                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
+                            builder =
+                                builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

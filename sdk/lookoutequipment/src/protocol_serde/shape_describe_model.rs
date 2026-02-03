@@ -118,13 +118,13 @@ pub fn ser_describe_model_input(
 }
 
 pub(crate) fn de_describe_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_model::builders::DescribeModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_model::builders::DescribeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_describe_model(
                 }
                 "LabelsInputConfiguration" => {
                     builder = builder.set_labels_input_configuration(
-                        crate::protocol_serde::shape_labels_input_configuration::de_labels_input_configuration(tokens)?,
+                        crate::protocol_serde::shape_labels_input_configuration::de_labels_input_configuration(tokens, _value)?,
                     );
                 }
                 "TrainingDataStartTime" => {
@@ -204,7 +204,7 @@ pub(crate) fn de_describe_model(
                 }
                 "DataPreProcessingConfiguration" => {
                     builder = builder.set_data_pre_processing_configuration(
-                        crate::protocol_serde::shape_data_pre_processing_configuration::de_data_pre_processing_configuration(tokens)?,
+                        crate::protocol_serde::shape_data_pre_processing_configuration::de_data_pre_processing_configuration(tokens, _value)?,
                     );
                 }
                 "Status" => {
@@ -393,7 +393,9 @@ pub(crate) fn de_describe_model(
                 }
                 "ModelDiagnosticsOutputConfiguration" => {
                     builder = builder.set_model_diagnostics_output_configuration(
-                        crate::protocol_serde::shape_model_diagnostics_output_configuration::de_model_diagnostics_output_configuration(tokens)?,
+                        crate::protocol_serde::shape_model_diagnostics_output_configuration::de_model_diagnostics_output_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "ModelQuality" => {

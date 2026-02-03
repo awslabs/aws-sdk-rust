@@ -108,11 +108,11 @@ pub fn ser_list_scenes_input(
 }
 
 pub(crate) fn de_list_scenes(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_scenes::builders::ListScenesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_scenes::builders::ListScenesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_list_scenes(
                     );
                 }
                 "sceneSummaries" => {
-                    builder = builder.set_scene_summaries(crate::protocol_serde::shape_scene_summaries::de_scene_summaries(tokens)?);
+                    builder = builder.set_scene_summaries(crate::protocol_serde::shape_scene_summaries::de_scene_summaries(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

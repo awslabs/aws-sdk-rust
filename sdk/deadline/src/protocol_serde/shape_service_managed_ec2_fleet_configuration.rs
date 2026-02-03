@@ -32,6 +32,7 @@ pub fn ser_service_managed_ec2_fleet_configuration(
 
 pub(crate) fn de_service_managed_ec2_fleet_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceManagedEc2FleetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,31 +45,32 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "instanceCapabilities" => {
-                            builder = builder.set_instance_capabilities(
-                                crate::protocol_serde::shape_service_managed_ec2_instance_capabilities::de_service_managed_ec2_instance_capabilities(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "instanceMarketOptions" => {
-                            builder = builder.set_instance_market_options(
-                                    crate::protocol_serde::shape_service_managed_ec2_instance_market_options::de_service_managed_ec2_instance_market_options(tokens)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "instanceCapabilities" => {
+                                builder = builder.set_instance_capabilities(
+                                    crate::protocol_serde::shape_service_managed_ec2_instance_capabilities::de_service_managed_ec2_instance_capabilities(tokens, _value)?
                                 );
+                            }
+                            "instanceMarketOptions" => {
+                                builder = builder.set_instance_market_options(
+                                    crate::protocol_serde::shape_service_managed_ec2_instance_market_options::de_service_managed_ec2_instance_market_options(tokens, _value)?
+                                );
+                            }
+                            "vpcConfiguration" => {
+                                builder = builder
+                                    .set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value)?);
+                            }
+                            "storageProfileId" => {
+                                builder = builder.set_storage_profile_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "vpcConfiguration" => {
-                            builder = builder.set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?);
-                        }
-                        "storageProfileId" => {
-                            builder = builder.set_storage_profile_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

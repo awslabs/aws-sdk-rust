@@ -17,6 +17,7 @@ pub fn ser_source(
 
 pub(crate) fn de_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Source>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "sourceData" => {
-                            builder = builder.set_source_data(crate::protocol_serde::shape_source_data::de_source_data(tokens)?);
+                            builder = builder.set_source_data(crate::protocol_serde::shape_source_data::de_source_data(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_widget_config(
 
 pub(crate) fn de_widget_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WidgetConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "queryParameters" => {
-                            builder = builder.set_query_parameters(crate::protocol_serde::shape_query_parameters::de_query_parameters(tokens)?);
+                            builder =
+                                builder.set_query_parameters(crate::protocol_serde::shape_query_parameters::de_query_parameters(tokens, _value)?);
                         }
                         "displayConfig" => {
-                            builder = builder.set_display_config(crate::protocol_serde::shape_display_config::de_display_config(tokens)?);
+                            builder = builder.set_display_config(crate::protocol_serde::shape_display_config::de_display_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -26,6 +26,7 @@ pub fn ser_time_series_transformation(
 
 pub(crate) fn de_time_series_transformation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesTransformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
                         }
                         "TimeSeriesConditions" => {
-                            builder = builder
-                                .set_time_series_conditions(crate::protocol_serde::shape_time_series_conditions::de_time_series_conditions(tokens)?);
+                            builder = builder.set_time_series_conditions(
+                                crate::protocol_serde::shape_time_series_conditions::de_time_series_conditions(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

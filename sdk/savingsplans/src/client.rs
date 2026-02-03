@@ -147,7 +147,7 @@ mod create_savings_plan;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_savingsplans::Error> {
 /// # let client: aws_sdk_savingsplans::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_savings_plan()
 ///     .customize()

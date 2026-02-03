@@ -62,6 +62,7 @@ pub fn ser_app_monitor_configuration(
 
 pub(crate) fn de_app_monitor_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AppMonitorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,13 +84,13 @@ where
                             );
                         }
                         "ExcludedPages" => {
-                            builder = builder.set_excluded_pages(crate::protocol_serde::shape_pages::de_pages(tokens)?);
+                            builder = builder.set_excluded_pages(crate::protocol_serde::shape_pages::de_pages(tokens, _value)?);
                         }
                         "IncludedPages" => {
-                            builder = builder.set_included_pages(crate::protocol_serde::shape_pages::de_pages(tokens)?);
+                            builder = builder.set_included_pages(crate::protocol_serde::shape_pages::de_pages(tokens, _value)?);
                         }
                         "FavoritePages" => {
-                            builder = builder.set_favorite_pages(crate::protocol_serde::shape_favorite_pages::de_favorite_pages(tokens)?);
+                            builder = builder.set_favorite_pages(crate::protocol_serde::shape_favorite_pages::de_favorite_pages(tokens, _value)?);
                         }
                         "SessionSampleRate" => {
                             builder = builder.set_session_sample_rate(
@@ -107,7 +108,7 @@ where
                             builder = builder.set_allow_cookies(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Telemetries" => {
-                            builder = builder.set_telemetries(crate::protocol_serde::shape_telemetries::de_telemetries(tokens)?);
+                            builder = builder.set_telemetries(crate::protocol_serde::shape_telemetries::de_telemetries(tokens, _value)?);
                         }
                         "EnableXRay" => {
                             builder = builder.set_enable_x_ray(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

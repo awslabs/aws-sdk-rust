@@ -120,13 +120,13 @@ pub fn de_list_recovery_points_by_backup_vault_http_response(
 }
 
 pub(crate) fn de_list_recovery_points_by_backup_vault(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,7 @@ pub(crate) fn de_list_recovery_points_by_backup_vault(
                 }
                 "RecoveryPoints" => {
                     builder = builder.set_recovery_points(
-                        crate::protocol_serde::shape_recovery_point_by_backup_vault_list::de_recovery_point_by_backup_vault_list(tokens)?,
+                        crate::protocol_serde::shape_recovery_point_by_backup_vault_list::de_recovery_point_by_backup_vault_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

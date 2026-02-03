@@ -68,6 +68,7 @@ pub fn ser_output_destination(
 
 pub(crate) fn de_output_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -90,28 +91,31 @@ where
                         }
                         "mediaPackageSettings" => {
                             builder = builder.set_media_package_settings(
-                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens, _value)?
                                 );
                         }
                         "multiplexSettings" => {
                             builder = builder.set_multiplex_settings(
-                                    crate::protocol_serde::shape_multiplex_program_channel_destination_settings::de_multiplex_program_channel_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_multiplex_program_channel_destination_settings::de_multiplex_program_channel_destination_settings(tokens, _value)?
                                 );
                         }
                         "settings" => {
                             builder = builder.set_settings(
-                                crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "srtSettings" => {
                             builder = builder.set_srt_settings(
                                 crate::protocol_serde::shape_list_of_srt_output_destination_settings::de_list_of_srt_output_destination_settings(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "logicalInterfaceNames" => {
-                            builder = builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder =
+                                builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

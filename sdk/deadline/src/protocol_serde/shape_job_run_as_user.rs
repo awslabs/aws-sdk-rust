@@ -23,6 +23,7 @@ pub fn ser_job_run_as_user(
 
 pub(crate) fn de_job_run_as_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobRunAsUser>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,10 +38,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "posix" => {
-                            builder = builder.set_posix(crate::protocol_serde::shape_posix_user::de_posix_user(tokens)?);
+                            builder = builder.set_posix(crate::protocol_serde::shape_posix_user::de_posix_user(tokens, _value)?);
                         }
                         "windows" => {
-                            builder = builder.set_windows(crate::protocol_serde::shape_windows_user::de_windows_user(tokens)?);
+                            builder = builder.set_windows(crate::protocol_serde::shape_windows_user::de_windows_user(tokens, _value)?);
                         }
                         "runAs" => {
                             builder = builder.set_run_as(

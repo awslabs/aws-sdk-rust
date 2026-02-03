@@ -23,6 +23,7 @@ pub fn ser_comparative_order(
 
 pub(crate) fn de_comparative_order<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComparativeOrder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "SpecifedOrder" => {
-                            builder = builder.set_specifed_order(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_specifed_order(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "TreatUndefinedSpecifiedValues" => {
                             builder = builder.set_treat_undefined_specified_values(

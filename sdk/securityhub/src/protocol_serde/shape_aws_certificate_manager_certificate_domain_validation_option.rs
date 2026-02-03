@@ -38,6 +38,7 @@ pub fn ser_aws_certificate_manager_certificate_domain_validation_option(
 
 pub(crate) fn de_aws_certificate_manager_certificate_domain_validation_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -63,7 +64,7 @@ where
                         }
                         "ResourceRecord" => {
                             builder = builder.set_resource_record(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_resource_record::de_aws_certificate_manager_certificate_resource_record(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_resource_record::de_aws_certificate_manager_certificate_resource_record(tokens, _value)?
                                 );
                         }
                         "ValidationDomain" => {
@@ -74,7 +75,7 @@ where
                             );
                         }
                         "ValidationEmails" => {
-                            builder = builder.set_validation_emails(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_validation_emails(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "ValidationMethod" => {
                             builder = builder.set_validation_method(

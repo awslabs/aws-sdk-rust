@@ -2608,9 +2608,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2642,9 +2642,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2677,9 +2677,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2712,9 +2712,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2747,9 +2747,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2782,9 +2782,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2817,9 +2817,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2850,9 +2850,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2937,9 +2937,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -2970,9 +2970,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3003,9 +3003,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3036,9 +3036,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3123,9 +3123,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3157,9 +3157,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3189,9 +3189,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3276,9 +3276,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3310,9 +3310,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3345,9 +3345,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3380,9 +3380,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3415,9 +3415,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3450,9 +3450,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3485,9 +3485,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3518,9 +3518,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3605,9 +3605,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3638,9 +3638,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3671,9 +3671,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3704,9 +3704,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3791,9 +3791,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3825,9 +3825,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3857,9 +3857,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3944,9 +3944,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -3978,9 +3978,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4013,9 +4013,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4048,9 +4048,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4083,9 +4083,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4118,9 +4118,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4153,9 +4153,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4186,9 +4186,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4273,9 +4273,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4306,9 +4306,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4339,9 +4339,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4372,9 +4372,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4459,9 +4459,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4493,9 +4493,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -4525,9 +4525,9 @@ mod test {
                     "authSchemes",
                     vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "dynamodb".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
                     }
                     .into()]
@@ -8257,9 +8257,28 @@ mod test {
         );
     }
 
-    /// {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}
+    /// {Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}
     #[test]
     fn test_364() {
+        let params = crate::config::endpoint::Params::builder()
+            .endpoint("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws".to_string())
+            .region("us-east-1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws")
+                .build()
+        );
+    }
+
+    /// {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}
+    #[test]
+    fn test_365() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.eu-west-1.api.aws".to_string())
             .region("eu-west-1".to_string())
@@ -8273,7 +8292,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}
     #[test]
-    fn test_365() {
+    fn test_366() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-west-2.api.aws".to_string())
             .region("us-west-2".to_string())
@@ -8287,7 +8306,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}
     #[test]
-    fn test_366() {
+    fn test_367() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.cn-north-1.api.amazonwebservices.com.cn".to_string())
             .region("cn-north-1".to_string())
@@ -8301,7 +8320,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}
     #[test]
-    fn test_367() {
+    fn test_368() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-gov-east-1.api.aws".to_string())
             .region("us-gov-east-1".to_string())
@@ -8315,7 +8334,7 @@ mod test {
 
     /// {Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}
     #[test]
-    fn test_368() {
+    fn test_369() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://dynamodb.us-east-1.api.aws".to_string())
             .region("us-east-1".to_string())
@@ -8329,7 +8348,7 @@ mod test {
 
     /// {Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}
     #[test]
-    fn test_369() {
+    fn test_370() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("https://111111111111.ddb.us-east-1.api.aws".to_string())
             .region("us-east-1".to_string())
@@ -8342,25 +8361,6 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://111111111111.ddb.us-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// {Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}
-    #[test]
-    fn test_370() {
-        let params = crate::config::endpoint::Params::builder()
-            .endpoint("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws".to_string())
-            .region("us-east-1".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws")
                 .build()
         );
     }

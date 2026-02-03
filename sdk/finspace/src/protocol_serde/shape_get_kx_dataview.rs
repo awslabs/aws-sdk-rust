@@ -113,13 +113,13 @@ pub fn de_get_kx_dataview_http_response(
 }
 
 pub(crate) fn de_get_kx_dataview(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_kx_dataview::builders::GetKxDataviewOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_kx_dataview::builders::GetKxDataviewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,7 @@ pub(crate) fn de_get_kx_dataview(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "activeVersions" => {
                     builder = builder.set_active_versions(
-                        crate::protocol_serde::shape_kx_dataview_active_version_list::de_kx_dataview_active_version_list(tokens)?,
+                        crate::protocol_serde::shape_kx_dataview_active_version_list::de_kx_dataview_active_version_list(tokens, _value)?,
                     );
                 }
                 "autoUpdate" => {
@@ -200,7 +200,9 @@ pub(crate) fn de_get_kx_dataview(
                 }
                 "segmentConfigurations" => {
                     builder = builder.set_segment_configurations(
-                        crate::protocol_serde::shape_kx_dataview_segment_configuration_list::de_kx_dataview_segment_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_kx_dataview_segment_configuration_list::de_kx_dataview_segment_configuration_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "status" => {

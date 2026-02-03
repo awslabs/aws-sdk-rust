@@ -151,7 +151,7 @@ mod create_participant_connection;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_connectparticipant::Error> {
 /// # let client: aws_sdk_connectparticipant::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_participant_authentication()
 ///     .customize()

@@ -62,6 +62,7 @@ pub fn ser_audio_description(
 
 pub(crate) fn de_audio_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,17 +78,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioChannelTaggingSettings" => {
                             builder = builder.set_audio_channel_tagging_settings(
-                                crate::protocol_serde::shape_audio_channel_tagging_settings::de_audio_channel_tagging_settings(tokens)?,
+                                crate::protocol_serde::shape_audio_channel_tagging_settings::de_audio_channel_tagging_settings(tokens, _value)?,
                             );
                         }
                         "audioNormalizationSettings" => {
                             builder = builder.set_audio_normalization_settings(
-                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens)?,
+                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens, _value)?,
                             );
                         }
                         "audioPitchCorrectionSettings" => {
                             builder = builder.set_audio_pitch_correction_settings(
-                                crate::protocol_serde::shape_audio_pitch_correction_settings::de_audio_pitch_correction_settings(tokens)?,
+                                crate::protocol_serde::shape_audio_pitch_correction_settings::de_audio_pitch_correction_settings(tokens, _value)?,
                             );
                         }
                         "audioSourceName" => {
@@ -112,7 +113,9 @@ where
                             );
                         }
                         "codecSettings" => {
-                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(tokens)?);
+                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "customLanguageCode" => {
                             builder = builder.set_custom_language_code(
@@ -136,7 +139,7 @@ where
                             );
                         }
                         "remixSettings" => {
-                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens)?);
+                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens, _value)?);
                         }
                         "streamName" => {
                             builder = builder.set_stream_name(

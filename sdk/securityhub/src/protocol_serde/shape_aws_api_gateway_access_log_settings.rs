@@ -14,6 +14,7 @@ pub fn ser_aws_api_gateway_access_log_settings(
 
 pub(crate) fn de_aws_api_gateway_access_log_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiGatewayAccessLogSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

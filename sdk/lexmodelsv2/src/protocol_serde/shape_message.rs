@@ -32,6 +32,7 @@ pub fn ser_message(
 
 pub(crate) fn de_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Message>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,17 +47,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "plainTextMessage" => {
-                            builder = builder.set_plain_text_message(crate::protocol_serde::shape_plain_text_message::de_plain_text_message(tokens)?);
+                            builder = builder
+                                .set_plain_text_message(crate::protocol_serde::shape_plain_text_message::de_plain_text_message(tokens, _value)?);
                         }
                         "customPayload" => {
-                            builder = builder.set_custom_payload(crate::protocol_serde::shape_custom_payload::de_custom_payload(tokens)?);
+                            builder = builder.set_custom_payload(crate::protocol_serde::shape_custom_payload::de_custom_payload(tokens, _value)?);
                         }
                         "ssmlMessage" => {
-                            builder = builder.set_ssml_message(crate::protocol_serde::shape_ssml_message::de_ssml_message(tokens)?);
+                            builder = builder.set_ssml_message(crate::protocol_serde::shape_ssml_message::de_ssml_message(tokens, _value)?);
                         }
                         "imageResponseCard" => {
-                            builder =
-                                builder.set_image_response_card(crate::protocol_serde::shape_image_response_card::de_image_response_card(tokens)?);
+                            builder = builder
+                                .set_image_response_card(crate::protocol_serde::shape_image_response_card::de_image_response_card(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

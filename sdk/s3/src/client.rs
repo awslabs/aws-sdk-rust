@@ -205,7 +205,7 @@ mod create_session;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_s3::Error> {
 /// # let client: aws_sdk_s3::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.abort_multipart_upload()
 ///     .customize()

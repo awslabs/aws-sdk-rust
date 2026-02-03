@@ -20,6 +20,7 @@ pub fn ser_asset_bundle_import_job_data_set_override_parameters(
 
 pub(crate) fn de_asset_bundle_import_job_data_set_override_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobDataSetOverrideParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "DataSetRefreshProperties" => {
                             builder = builder.set_data_set_refresh_properties(
-                                crate::protocol_serde::shape_data_set_refresh_properties::de_data_set_refresh_properties(tokens)?,
+                                crate::protocol_serde::shape_data_set_refresh_properties::de_data_set_refresh_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

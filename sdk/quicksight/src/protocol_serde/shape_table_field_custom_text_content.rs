@@ -17,6 +17,7 @@ pub fn ser_table_field_custom_text_content(
 
 pub(crate) fn de_table_field_custom_text_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableFieldCustomTextContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "FontConfiguration" => {
-                            builder = builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder
+                                .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

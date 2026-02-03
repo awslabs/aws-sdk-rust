@@ -20,6 +20,7 @@ pub fn ser_smpte2110_receiver_group_settings(
 
 pub(crate) fn de_smpte2110_receiver_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Smpte2110ReceiverGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "smpte2110ReceiverGroups" => {
                             builder = builder.set_smpte2110_receiver_groups(
-                                crate::protocol_serde::shape_list_of_smpte2110_receiver_group::de_list_of_smpte2110_receiver_group(tokens)?,
+                                crate::protocol_serde::shape_list_of_smpte2110_receiver_group::de_list_of_smpte2110_receiver_group(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

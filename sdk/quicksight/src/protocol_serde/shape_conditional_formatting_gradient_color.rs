@@ -17,6 +17,7 @@ pub fn ser_conditional_formatting_gradient_color(
 
 pub(crate) fn de_conditional_formatting_gradient_color<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConditionalFormattingGradientColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "Color" => {
-                            builder = builder.set_color(crate::protocol_serde::shape_gradient_color::de_gradient_color(tokens)?);
+                            builder = builder.set_color(crate::protocol_serde::shape_gradient_color::de_gradient_color(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

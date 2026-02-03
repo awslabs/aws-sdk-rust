@@ -20,6 +20,7 @@ pub fn ser_create_project_from_project_profile_policy_grant_detail(
 
 pub(crate) fn de_create_project_from_project_profile_policy_grant_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::CreateProjectFromProjectProfilePolicyGrantDetail>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -41,8 +42,9 @@ where
                                 builder.set_include_child_domain_units(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "projectProfiles" => {
-                            builder =
-                                builder.set_project_profiles(crate::protocol_serde::shape_project_profile_list::de_project_profile_list(tokens)?);
+                            builder = builder.set_project_profiles(crate::protocol_serde::shape_project_profile_list::de_project_profile_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

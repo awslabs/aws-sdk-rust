@@ -29,6 +29,7 @@ pub fn ser_audio_parameters(
 
 pub(crate) fn de_audio_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,8 @@ where
                             );
                         }
                         "CodecOptions" => {
-                            builder = builder.set_codec_options(crate::protocol_serde::shape_audio_codec_options::de_audio_codec_options(tokens)?);
+                            builder =
+                                builder.set_codec_options(crate::protocol_serde::shape_audio_codec_options::de_audio_codec_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

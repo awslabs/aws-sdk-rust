@@ -20,6 +20,7 @@ pub fn ser_ingress_tls_protocol_expression(
 
 pub(crate) fn de_ingress_tls_protocol_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IngressTlsProtocolExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Evaluate" => {
                             builder = builder.set_evaluate(
-                                crate::protocol_serde::shape_ingress_tls_protocol_to_evaluate::de_ingress_tls_protocol_to_evaluate(tokens)?,
+                                crate::protocol_serde::shape_ingress_tls_protocol_to_evaluate::de_ingress_tls_protocol_to_evaluate(tokens, _value)?,
                             );
                         }
                         "Operator" => {

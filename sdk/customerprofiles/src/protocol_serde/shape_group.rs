@@ -38,6 +38,7 @@ pub fn ser_group(
 
 pub(crate) fn de_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Group>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,10 +53,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_list::de_dimension_list(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_list::de_dimension_list(tokens, _value)?);
                         }
                         "SourceSegments" => {
-                            builder = builder.set_source_segments(crate::protocol_serde::shape_source_segment_list::de_source_segment_list(tokens)?);
+                            builder = builder
+                                .set_source_segments(crate::protocol_serde::shape_source_segment_list::de_source_segment_list(tokens, _value)?);
                         }
                         "SourceType" => {
                             builder = builder.set_source_type(

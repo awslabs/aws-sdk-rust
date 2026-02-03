@@ -65,6 +65,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -93,25 +94,27 @@ where
                             );
                         }
                         "Statement" => {
-                            builder = builder.set_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?);
+                            builder = builder.set_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?);
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens, _value)?);
                         }
                         "OverrideAction" => {
-                            builder = builder.set_override_action(crate::protocol_serde::shape_override_action::de_override_action(tokens)?);
+                            builder = builder.set_override_action(crate::protocol_serde::shape_override_action::de_override_action(tokens, _value)?);
                         }
                         "RuleLabels" => {
-                            builder = builder.set_rule_labels(crate::protocol_serde::shape_labels::de_labels(tokens)?);
+                            builder = builder.set_rule_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value)?);
                         }
                         "VisibilityConfig" => {
-                            builder = builder.set_visibility_config(crate::protocol_serde::shape_visibility_config::de_visibility_config(tokens)?);
+                            builder =
+                                builder.set_visibility_config(crate::protocol_serde::shape_visibility_config::de_visibility_config(tokens, _value)?);
                         }
                         "CaptchaConfig" => {
-                            builder = builder.set_captcha_config(crate::protocol_serde::shape_captcha_config::de_captcha_config(tokens)?);
+                            builder = builder.set_captcha_config(crate::protocol_serde::shape_captcha_config::de_captcha_config(tokens, _value)?);
                         }
                         "ChallengeConfig" => {
-                            builder = builder.set_challenge_config(crate::protocol_serde::shape_challenge_config::de_challenge_config(tokens)?);
+                            builder =
+                                builder.set_challenge_config(crate::protocol_serde::shape_challenge_config::de_challenge_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

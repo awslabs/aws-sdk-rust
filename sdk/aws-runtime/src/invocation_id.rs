@@ -7,7 +7,7 @@ use std::fmt::Debug;
 use std::sync::{Arc, Mutex};
 
 use fastrand::Rng;
-use http_02x::{HeaderName, HeaderValue};
+use http_1x::{HeaderName, HeaderValue};
 
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;

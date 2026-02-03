@@ -38,6 +38,7 @@ pub fn ser_cost_category_split_charge_rule(
 
 pub(crate) fn de_cost_category_split_charge_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CostCategorySplitChargeRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                         }
                         "Targets" => {
                             builder = builder.set_targets(
-                                    crate::protocol_serde::shape_cost_category_split_charge_rule_targets_list::de_cost_category_split_charge_rule_targets_list(tokens)?
+                                    crate::protocol_serde::shape_cost_category_split_charge_rule_targets_list::de_cost_category_split_charge_rule_targets_list(tokens, _value)?
                                 );
                         }
                         "Method" => {
@@ -72,7 +73,7 @@ where
                         }
                         "Parameters" => {
                             builder = builder.set_parameters(
-                                    crate::protocol_serde::shape_cost_category_split_charge_rule_parameters_list::de_cost_category_split_charge_rule_parameters_list(tokens)?
+                                    crate::protocol_serde::shape_cost_category_split_charge_rule_parameters_list::de_cost_category_split_charge_rule_parameters_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

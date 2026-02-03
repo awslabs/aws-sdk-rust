@@ -261,7 +261,7 @@ mod create_template_sync_config;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_proton::Error> {
 /// # let client: aws_sdk_proton::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_environment_account_connection()
 ///     .customize()

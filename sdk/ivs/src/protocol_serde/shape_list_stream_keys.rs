@@ -95,13 +95,13 @@ pub fn ser_list_stream_keys_input(
 }
 
 pub(crate) fn de_list_stream_keys(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_stream_keys::builders::ListStreamKeysOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_stream_keys::builders::ListStreamKeysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -116,7 +116,7 @@ pub(crate) fn de_list_stream_keys(
                     );
                 }
                 "streamKeys" => {
-                    builder = builder.set_stream_keys(crate::protocol_serde::shape_stream_key_list::de_stream_key_list(tokens)?);
+                    builder = builder.set_stream_keys(crate::protocol_serde::shape_stream_key_list::de_stream_key_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

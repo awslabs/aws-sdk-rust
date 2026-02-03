@@ -14,6 +14,7 @@ pub fn ser_segment_behaviors(
 
 pub(crate) fn de_segment_behaviors<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SegmentBehaviors>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Recency" => {
-                            builder = builder.set_recency(crate::protocol_serde::shape_recency_dimension::de_recency_dimension(tokens)?);
+                            builder = builder.set_recency(crate::protocol_serde::shape_recency_dimension::de_recency_dimension(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

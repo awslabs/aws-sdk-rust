@@ -35,6 +35,7 @@ pub fn ser_failover_router_input_configuration(
 
 pub(crate) fn de_failover_router_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FailoverRouterInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,7 @@ where
                         }
                         "protocolConfigurations" => {
                             builder = builder.set_protocol_configurations(
-                                    crate::protocol_serde::shape_failover_router_input_protocol_configuration_list::de_failover_router_input_protocol_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_failover_router_input_protocol_configuration_list::de_failover_router_input_protocol_configuration_list(tokens, _value)?
                                 );
                         }
                         "sourcePriorityMode" => {

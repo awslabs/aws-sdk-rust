@@ -38,6 +38,7 @@ pub fn ser_impersonation_rule(
 
 pub(crate) fn de_impersonation_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImpersonationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,10 +81,10 @@ where
                             );
                         }
                         "TargetUsers" => {
-                            builder = builder.set_target_users(crate::protocol_serde::shape_target_users::de_target_users(tokens)?);
+                            builder = builder.set_target_users(crate::protocol_serde::shape_target_users::de_target_users(tokens, _value)?);
                         }
                         "NotTargetUsers" => {
-                            builder = builder.set_not_target_users(crate::protocol_serde::shape_target_users::de_target_users(tokens)?);
+                            builder = builder.set_not_target_users(crate::protocol_serde::shape_target_users::de_target_users(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

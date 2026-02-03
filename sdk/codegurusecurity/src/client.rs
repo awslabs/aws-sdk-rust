@@ -151,7 +151,7 @@ mod create_upload_url;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codegurusecurity::Error> {
 /// # let client: aws_sdk_codegurusecurity::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_findings()
 ///     .customize()

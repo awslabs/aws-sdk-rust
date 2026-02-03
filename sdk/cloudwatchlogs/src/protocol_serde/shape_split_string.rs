@@ -20,6 +20,7 @@ pub fn ser_split_string(
 
 pub(crate) fn de_split_string<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SplitString>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "entries" => {
-                            builder = builder.set_entries(crate::protocol_serde::shape_split_string_entries::de_split_string_entries(tokens)?);
+                            builder = builder.set_entries(crate::protocol_serde::shape_split_string_entries::de_split_string_entries(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

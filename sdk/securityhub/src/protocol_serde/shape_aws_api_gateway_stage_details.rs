@@ -78,6 +78,7 @@ pub fn ser_aws_api_gateway_stage_details(
 
 pub(crate) fn de_aws_api_gateway_stage_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiGatewayStageDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -138,11 +139,13 @@ where
                         }
                         "MethodSettings" => {
                             builder = builder.set_method_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_method_settings_list::de_aws_api_gateway_method_settings_list(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_method_settings_list::de_aws_api_gateway_method_settings_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "DocumentationVersion" => {
                             builder = builder.set_documentation_version(
@@ -153,12 +156,14 @@ where
                         }
                         "AccessLogSettings" => {
                             builder = builder.set_access_log_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "CanarySettings" => {
                             builder = builder.set_canary_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_canary_settings::de_aws_api_gateway_canary_settings(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_canary_settings::de_aws_api_gateway_canary_settings(tokens, _value)?,
                             );
                         }
                         "TracingEnabled" => {

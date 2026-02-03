@@ -26,6 +26,7 @@ pub fn ser_dimension_field(
 
 pub(crate) fn de_dimension_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DimensionField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,17 +42,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NumericalDimensionField" => {
                             builder = builder.set_numerical_dimension_field(
-                                crate::protocol_serde::shape_numerical_dimension_field::de_numerical_dimension_field(tokens)?,
+                                crate::protocol_serde::shape_numerical_dimension_field::de_numerical_dimension_field(tokens, _value)?,
                             );
                         }
                         "CategoricalDimensionField" => {
                             builder = builder.set_categorical_dimension_field(
-                                crate::protocol_serde::shape_categorical_dimension_field::de_categorical_dimension_field(tokens)?,
+                                crate::protocol_serde::shape_categorical_dimension_field::de_categorical_dimension_field(tokens, _value)?,
                             );
                         }
                         "DateDimensionField" => {
-                            builder =
-                                builder.set_date_dimension_field(crate::protocol_serde::shape_date_dimension_field::de_date_dimension_field(tokens)?);
+                            builder = builder.set_date_dimension_field(crate::protocol_serde::shape_date_dimension_field::de_date_dimension_field(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

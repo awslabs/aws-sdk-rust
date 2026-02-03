@@ -26,6 +26,7 @@ pub fn ser_dataflow_endpoint(
 
 pub(crate) fn de_dataflow_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataflowEndpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                             );
                         }
                         "address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_socket_address::de_socket_address(tokens)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_socket_address::de_socket_address(tokens, _value)?);
                         }
                         "status" => {
                             builder = builder.set_status(

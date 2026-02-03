@@ -108,10 +108,10 @@ pub fn de_get_plugin_http_response(
 }
 
 pub(crate) fn de_get_plugin(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_plugin::builders::GetPluginOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_plugin::builders::GetPluginOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_get_plugin(
                 }
                 "authConfiguration" => {
                     builder = builder.set_auth_configuration(crate::protocol_serde::shape_plugin_auth_configuration::de_plugin_auth_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "buildStatus" => {
@@ -145,7 +145,7 @@ pub(crate) fn de_get_plugin(
                 }
                 "customPluginConfiguration" => {
                     builder = builder.set_custom_plugin_configuration(
-                        crate::protocol_serde::shape_custom_plugin_configuration::de_custom_plugin_configuration(tokens)?,
+                        crate::protocol_serde::shape_custom_plugin_configuration::de_custom_plugin_configuration(tokens, _value)?,
                     );
                 }
                 "displayName" => {

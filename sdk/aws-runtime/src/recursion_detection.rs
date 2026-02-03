@@ -9,7 +9,7 @@ use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
-use http_02x::HeaderValue;
+use http_1x::HeaderValue;
 use percent_encoding::{percent_encode, CONTROLS};
 use std::borrow::Cow;
 
@@ -83,7 +83,7 @@ mod tests {
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::body::SdkBody;
     use aws_types::os_shim_internal::Env;
-    use http_02x::HeaderValue;
+    use http_1x::HeaderValue;
     use proptest::{prelude::*, proptest};
     use serde::Deserialize;
     use std::collections::HashMap;
@@ -150,7 +150,7 @@ mod tests {
     fn check(test_case: TestCase) {
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let env = test_case.env();
-        let mut request = http_02x::Request::builder();
+        let mut request = http_1x::Request::builder();
         for (name, value) in test_case.request_headers_before() {
             request = request.header(name, value);
         }

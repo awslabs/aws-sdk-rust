@@ -33,6 +33,7 @@ pub fn ser_value_mappings(
 
 pub(crate) fn de_value_mappings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ValueMappings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,11 +48,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_value_mapping_list::de_value_mapping_list(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_value_mapping_list::de_value_mapping_list(tokens, _value)?);
                         }
                         "bindingProperties" => {
                             builder = builder.set_binding_properties(
-                                crate::protocol_serde::shape_form_input_binding_properties::de_form_input_binding_properties(tokens)?,
+                                crate::protocol_serde::shape_form_input_binding_properties::de_form_input_binding_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

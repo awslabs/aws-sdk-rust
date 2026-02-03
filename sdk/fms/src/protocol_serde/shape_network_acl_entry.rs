@@ -35,6 +35,7 @@ pub fn ser_network_acl_entry(
 
 pub(crate) fn de_network_acl_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IcmpTypeCode" => {
                             builder = builder.set_icmp_type_code(
-                                crate::protocol_serde::shape_network_acl_icmp_type_code::de_network_acl_icmp_type_code(tokens)?,
+                                crate::protocol_serde::shape_network_acl_icmp_type_code::de_network_acl_icmp_type_code(tokens, _value)?,
                             );
                         }
                         "Protocol" => {
@@ -61,7 +62,9 @@ where
                             );
                         }
                         "PortRange" => {
-                            builder = builder.set_port_range(crate::protocol_serde::shape_network_acl_port_range::de_network_acl_port_range(tokens)?);
+                            builder = builder.set_port_range(crate::protocol_serde::shape_network_acl_port_range::de_network_acl_port_range(
+                                tokens, _value,
+                            )?);
                         }
                         "CidrBlock" => {
                             builder = builder.set_cidr_block(

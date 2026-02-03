@@ -148,10 +148,10 @@ pub fn ser_get_track_input(
 }
 
 pub(crate) fn de_get_track(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_track::builders::GetTrackOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_track::builders::GetTrackOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,7 @@ pub(crate) fn de_get_track(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "track" => {
-                    builder = builder.set_track(crate::protocol_serde::shape_serverless_track::de_serverless_track(tokens)?);
+                    builder = builder.set_track(crate::protocol_serde::shape_serverless_track::de_serverless_track(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

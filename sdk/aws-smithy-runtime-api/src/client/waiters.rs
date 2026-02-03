@@ -22,6 +22,7 @@ pub mod error {
     /// time being exceeded, or some other failure occurring.
     #[derive(Debug)]
     #[non_exhaustive]
+    #[allow(clippy::large_enum_variant)] // For `OperationFailed` variant
     pub enum WaiterError<O, E> {
         /// An error occurred during waiter initialization.
         ///

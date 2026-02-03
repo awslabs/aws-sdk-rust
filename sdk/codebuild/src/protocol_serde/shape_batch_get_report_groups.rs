@@ -69,13 +69,13 @@ pub fn ser_batch_get_report_groups_input(
 }
 
 pub(crate) fn de_batch_get_report_groups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -83,10 +83,11 @@ pub(crate) fn de_batch_get_report_groups(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "reportGroups" => {
-                    builder = builder.set_report_groups(crate::protocol_serde::shape_report_groups::de_report_groups(tokens)?);
+                    builder = builder.set_report_groups(crate::protocol_serde::shape_report_groups::de_report_groups(tokens, _value)?);
                 }
                 "reportGroupsNotFound" => {
-                    builder = builder.set_report_groups_not_found(crate::protocol_serde::shape_report_group_arns::de_report_group_arns(tokens)?);
+                    builder =
+                        builder.set_report_groups_not_found(crate::protocol_serde::shape_report_group_arns::de_report_group_arns(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

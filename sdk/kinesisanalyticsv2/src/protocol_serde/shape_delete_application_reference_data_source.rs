@@ -154,13 +154,13 @@ pub fn ser_delete_application_reference_data_source_input(
 }
 
 pub(crate) fn de_delete_application_reference_data_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

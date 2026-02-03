@@ -275,7 +275,7 @@ mod create_worker;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_deadline::Error> {
 /// # let client: aws_sdk_deadline::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_member_to_farm()
 ///     .customize()

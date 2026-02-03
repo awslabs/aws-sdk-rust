@@ -230,13 +230,13 @@ pub fn ser_checkout_borrow_license_input(
 }
 
 pub(crate) fn de_checkout_borrow_license(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -258,7 +258,9 @@ pub(crate) fn de_checkout_borrow_license(
                     );
                 }
                 "EntitlementsAllowed" => {
-                    builder = builder.set_entitlements_allowed(crate::protocol_serde::shape_entitlement_data_list::de_entitlement_data_list(tokens)?);
+                    builder = builder.set_entitlements_allowed(crate::protocol_serde::shape_entitlement_data_list::de_entitlement_data_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NodeId" => {
                     builder = builder.set_node_id(
@@ -289,7 +291,7 @@ pub(crate) fn de_checkout_borrow_license(
                     );
                 }
                 "CheckoutMetadata" => {
-                    builder = builder.set_checkout_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(tokens)?);
+                    builder = builder.set_checkout_metadata(crate::protocol_serde::shape_metadata_list::de_metadata_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

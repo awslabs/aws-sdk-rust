@@ -32,6 +32,7 @@ pub fn ser_pivot_table_total_options(
 
 pub(crate) fn de_pivot_table_total_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableTotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,19 +47,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RowSubtotalOptions" => {
-                            builder = builder.set_row_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?);
+                            builder =
+                                builder.set_row_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens, _value)?);
                         }
                         "ColumnSubtotalOptions" => {
-                            builder =
-                                builder.set_column_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens)?);
+                            builder = builder
+                                .set_column_subtotal_options(crate::protocol_serde::shape_subtotal_options::de_subtotal_options(tokens, _value)?);
                         }
                         "RowTotalOptions" => {
-                            builder =
-                                builder.set_row_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?);
+                            builder = builder
+                                .set_row_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens, _value)?);
                         }
                         "ColumnTotalOptions" => {
-                            builder =
-                                builder.set_column_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens)?);
+                            builder = builder
+                                .set_column_total_options(crate::protocol_serde::shape_pivot_total_options::de_pivot_total_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

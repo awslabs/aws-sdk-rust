@@ -94,13 +94,13 @@ pub fn de_get_workflow_step_http_response(
 }
 
 pub(crate) fn de_get_workflow_step(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "next" => {
-                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "noOfSrvCompleted" => {
                     builder = builder.set_no_of_srv_completed(
@@ -158,7 +158,7 @@ pub(crate) fn de_get_workflow_step(
                 }
                 "outputs" => {
                     builder = builder.set_outputs(crate::protocol_serde::shape_workflow_step_output_list::de_workflow_step_output_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "owner" => {
@@ -169,7 +169,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "previous" => {
-                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "scriptOutputLocation" => {
                     builder = builder.set_script_output_location(
@@ -214,7 +214,7 @@ pub(crate) fn de_get_workflow_step(
                     );
                 }
                 "stepTarget" => {
-                    builder = builder.set_step_target(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_step_target(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "totalNoOfSrv" => {
                     builder = builder.set_total_no_of_srv(
@@ -232,7 +232,9 @@ pub(crate) fn de_get_workflow_step(
                 }
                 "workflowStepAutomationConfiguration" => {
                     builder = builder.set_workflow_step_automation_configuration(
-                        crate::protocol_serde::shape_workflow_step_automation_configuration::de_workflow_step_automation_configuration(tokens)?,
+                        crate::protocol_serde::shape_workflow_step_automation_configuration::de_workflow_step_automation_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

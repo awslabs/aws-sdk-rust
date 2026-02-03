@@ -29,6 +29,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,12 +44,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "includedUsersAndGroups" => {
-                            builder =
-                                builder.set_included_users_and_groups(crate::protocol_serde::shape_users_and_groups::de_users_and_groups(tokens)?);
+                            builder = builder
+                                .set_included_users_and_groups(crate::protocol_serde::shape_users_and_groups::de_users_and_groups(tokens, _value)?);
                         }
                         "excludedUsersAndGroups" => {
-                            builder =
-                                builder.set_excluded_users_and_groups(crate::protocol_serde::shape_users_and_groups::de_users_and_groups(tokens)?);
+                            builder = builder
+                                .set_excluded_users_and_groups(crate::protocol_serde::shape_users_and_groups::de_users_and_groups(tokens, _value)?);
                         }
                         "ruleType" => {
                             builder = builder.set_rule_type(
@@ -58,7 +59,8 @@ where
                             );
                         }
                         "ruleConfiguration" => {
-                            builder = builder.set_rule_configuration(crate::protocol_serde::shape_rule_configuration::de_rule_configuration(tokens)?);
+                            builder = builder
+                                .set_rule_configuration(crate::protocol_serde::shape_rule_configuration::de_rule_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

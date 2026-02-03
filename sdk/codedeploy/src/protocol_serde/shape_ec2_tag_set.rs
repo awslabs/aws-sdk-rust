@@ -26,6 +26,7 @@ pub fn ser_ec2_tag_set(
 
 pub(crate) fn de_ec2_tag_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Ec2TagSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ec2TagSetList" => {
-                            builder = builder.set_ec2_tag_set_list(crate::protocol_serde::shape_ec2_tag_set_list::de_ec2_tag_set_list(tokens)?);
+                            builder =
+                                builder.set_ec2_tag_set_list(crate::protocol_serde::shape_ec2_tag_set_list::de_ec2_tag_set_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

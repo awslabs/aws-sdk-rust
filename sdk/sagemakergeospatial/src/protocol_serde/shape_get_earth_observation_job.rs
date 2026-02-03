@@ -120,13 +120,13 @@ pub fn de_get_earth_observation_job_http_response(
 }
 
 pub(crate) fn de_get_earth_observation_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_get_earth_observation_job(
                 }
                 "ErrorDetails" => {
                     builder = builder.set_error_details(
-                        crate::protocol_serde::shape_earth_observation_job_error_details::de_earth_observation_job_error_details(tokens)?,
+                        crate::protocol_serde::shape_earth_observation_job_error_details::de_earth_observation_job_error_details(tokens, _value)?,
                     );
                 }
                 "ExecutionRoleArn" => {
@@ -166,7 +166,9 @@ pub(crate) fn de_get_earth_observation_job(
                     );
                 }
                 "ExportErrorDetails" => {
-                    builder = builder.set_export_error_details(crate::protocol_serde::shape_export_error_details::de_export_error_details(tokens)?);
+                    builder = builder.set_export_error_details(crate::protocol_serde::shape_export_error_details::de_export_error_details(
+                        tokens, _value,
+                    )?);
                 }
                 "ExportStatus" => {
                     builder = builder.set_export_status(
@@ -176,10 +178,10 @@ pub(crate) fn de_get_earth_observation_job(
                     );
                 }
                 "InputConfig" => {
-                    builder = builder.set_input_config(crate::protocol_serde::shape_input_config_output::de_input_config_output(tokens)?);
+                    builder = builder.set_input_config(crate::protocol_serde::shape_input_config_output::de_input_config_output(tokens, _value)?);
                 }
                 "JobConfig" => {
-                    builder = builder.set_job_config(crate::protocol_serde::shape_job_config_input::de_job_config_input(tokens)?);
+                    builder = builder.set_job_config(crate::protocol_serde::shape_job_config_input::de_job_config_input(tokens, _value)?);
                 }
                 "KmsKeyId" => {
                     builder = builder.set_kms_key_id(
@@ -197,7 +199,7 @@ pub(crate) fn de_get_earth_observation_job(
                 }
                 "OutputBands" => {
                     builder = builder.set_output_bands(
-                        crate::protocol_serde::shape_earth_observation_job_output_bands::de_earth_observation_job_output_bands(tokens)?,
+                        crate::protocol_serde::shape_earth_observation_job_output_bands::de_earth_observation_job_output_bands(tokens, _value)?,
                     );
                 }
                 "Status" => {
@@ -208,7 +210,7 @@ pub(crate) fn de_get_earth_observation_job(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -23,6 +23,7 @@ pub fn ser_s3_destination(
 
 pub(crate) fn de_s3_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3Destination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                         }
                         "S3OutputConfigurations" => {
                             builder = builder.set_s3_output_configurations(
-                                crate::protocol_serde::shape_s3_output_configurations::de_s3_output_configurations(tokens)?,
+                                crate::protocol_serde::shape_s3_output_configurations::de_s3_output_configurations(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

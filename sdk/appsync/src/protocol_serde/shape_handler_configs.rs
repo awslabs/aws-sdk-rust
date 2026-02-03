@@ -20,6 +20,7 @@ pub fn ser_handler_configs(
 
 pub(crate) fn de_handler_configs<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HandlerConfigs>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "onPublish" => {
-                            builder = builder.set_on_publish(crate::protocol_serde::shape_handler_config::de_handler_config(tokens)?);
+                            builder = builder.set_on_publish(crate::protocol_serde::shape_handler_config::de_handler_config(tokens, _value)?);
                         }
                         "onSubscribe" => {
-                            builder = builder.set_on_subscribe(crate::protocol_serde::shape_handler_config::de_handler_config(tokens)?);
+                            builder = builder.set_on_subscribe(crate::protocol_serde::shape_handler_config::de_handler_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -107,13 +107,13 @@ pub fn ser_describe_workspaces_pool_sessions_input(
 }
 
 pub(crate) fn de_describe_workspaces_pool_sessions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_workspaces_pool_sessions::builders::DescribeWorkspacesPoolSessionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_workspaces_pool_sessions::builders::DescribeWorkspacesPoolSessionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,7 +122,7 @@ pub(crate) fn de_describe_workspaces_pool_sessions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Sessions" => {
                     builder = builder.set_sessions(crate::protocol_serde::shape_workspaces_pool_sessions::de_workspaces_pool_sessions(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NextToken" => {

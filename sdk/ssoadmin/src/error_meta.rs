@@ -68,6 +68,33 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_region::AddRegionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_region::AddRegionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_region::AddRegionError> for Error {
+    fn from(err: crate::operation::add_region::AddRegionError) -> Self {
+        match err {
+            crate::operation::add_region::AddRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::add_region::AddRegionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::add_region::AddRegionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::add_region::AddRegionError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::add_region::AddRegionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::add_region::AddRegionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::add_region::AddRegionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1218,6 +1245,32 @@ impl From<crate::operation::describe_permission_set_provisioning_status::Describ
             crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_region::DescribeRegionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_region::DescribeRegionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_region::DescribeRegionError> for Error {
+    fn from(err: crate::operation::describe_region::DescribeRegionError) -> Self {
+        match err {
+            crate::operation::describe_region::DescribeRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_region::DescribeRegionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_region::DescribeRegionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_region::DescribeRegionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_region::DescribeRegionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_region::DescribeRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2388,6 +2441,31 @@ impl From<crate::operation::list_permission_sets_provisioned_to_account::ListPer
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regions::ListRegionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_regions::ListRegionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_regions::ListRegionsError> for Error {
+    fn from(err: crate::operation::list_regions::ListRegionsError) -> Self {
+        match err {
+            crate::operation::list_regions::ListRegionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_regions::ListRegionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_regions::ListRegionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_regions::ListRegionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_regions::ListRegionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2820,6 +2898,33 @@ impl From<crate::operation::put_permissions_boundary_to_permission_set::PutPermi
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_region::RemoveRegionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_region::RemoveRegionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_region::RemoveRegionError> for Error {
+    fn from(err: crate::operation::remove_region::RemoveRegionError) -> Self {
+        match err {
+            crate::operation::remove_region::RemoveRegionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::remove_region::RemoveRegionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::remove_region::RemoveRegionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::remove_region::RemoveRegionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::remove_region::RemoveRegionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::remove_region::RemoveRegionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::remove_region::RemoveRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

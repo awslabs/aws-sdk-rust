@@ -47,6 +47,7 @@ pub fn ser_finding_provider_fields(
 
 pub(crate) fn de_finding_provider_fields<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FindingProviderFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,16 +76,17 @@ where
                             );
                         }
                         "RelatedFindings" => {
-                            builder =
-                                builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(tokens)?);
+                            builder = builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Severity" => {
                             builder = builder.set_severity(crate::protocol_serde::shape_finding_provider_severity::de_finding_provider_severity(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Types" => {
-                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens)?);
+                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_workspace_theme(
 
 pub(crate) fn de_workspace_theme<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceTheme>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Light" => {
-                            builder = builder.set_light(crate::protocol_serde::shape_workspace_theme_config::de_workspace_theme_config(tokens)?);
+                            builder = builder.set_light(crate::protocol_serde::shape_workspace_theme_config::de_workspace_theme_config(
+                                tokens, _value,
+                            )?);
                         }
                         "Dark" => {
-                            builder = builder.set_dark(crate::protocol_serde::shape_workspace_theme_config::de_workspace_theme_config(tokens)?);
+                            builder = builder.set_dark(crate::protocol_serde::shape_workspace_theme_config::de_workspace_theme_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -11,6 +11,7 @@ pub fn ser_aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details
 
 pub(crate) fn de_aws_msk_cluster_cluster_info_client_authentication_sasl_scram_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

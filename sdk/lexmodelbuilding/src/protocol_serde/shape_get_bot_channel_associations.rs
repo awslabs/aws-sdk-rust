@@ -100,13 +100,13 @@ pub fn de_get_bot_channel_associations_http_response(
 }
 
 pub(crate) fn de_get_bot_channel_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,7 +115,7 @@ pub(crate) fn de_get_bot_channel_associations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "botChannelAssociations" => {
                     builder = builder.set_bot_channel_associations(
-                        crate::protocol_serde::shape_bot_channel_association_list::de_bot_channel_association_list(tokens)?,
+                        crate::protocol_serde::shape_bot_channel_association_list::de_bot_channel_association_list(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

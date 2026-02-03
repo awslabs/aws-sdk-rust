@@ -120,13 +120,13 @@ pub fn ser_test_conversion_input(
 }
 
 pub(crate) fn de_test_conversion(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::test_conversion::builders::TestConversionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::test_conversion::builders::TestConversionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,7 +141,8 @@ pub(crate) fn de_test_conversion(
                     );
                 }
                 "validationMessages" => {
-                    builder = builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens)?);
+                    builder =
+                        builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

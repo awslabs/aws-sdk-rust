@@ -104,13 +104,13 @@ pub fn de_list_multicast_groups_http_response(
 }
 
 pub(crate) fn de_list_multicast_groups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,9 @@ pub(crate) fn de_list_multicast_groups(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MulticastGroupList" => {
-                    builder = builder.set_multicast_group_list(crate::protocol_serde::shape_multicast_group_list::de_multicast_group_list(tokens)?);
+                    builder = builder.set_multicast_group_list(crate::protocol_serde::shape_multicast_group_list::de_multicast_group_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

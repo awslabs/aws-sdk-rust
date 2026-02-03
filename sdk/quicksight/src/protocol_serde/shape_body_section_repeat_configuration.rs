@@ -41,6 +41,7 @@ pub fn ser_body_section_repeat_configuration(
 
 pub(crate) fn de_body_section_repeat_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BodySectionRepeatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,17 +57,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DimensionConfigurations" => {
                             builder = builder.set_dimension_configurations(
-                                    crate::protocol_serde::shape_body_section_repeat_dimension_configuration_list::de_body_section_repeat_dimension_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_body_section_repeat_dimension_configuration_list::de_body_section_repeat_dimension_configuration_list(tokens, _value)?
                                 );
                         }
                         "PageBreakConfiguration" => {
                             builder = builder.set_page_break_configuration(
-                                    crate::protocol_serde::shape_body_section_repeat_page_break_configuration::de_body_section_repeat_page_break_configuration(tokens)?
+                                    crate::protocol_serde::shape_body_section_repeat_page_break_configuration::de_body_section_repeat_page_break_configuration(tokens, _value)?
                                 );
                         }
                         "NonRepeatingVisuals" => {
                             builder = builder.set_non_repeating_visuals(
-                                crate::protocol_serde::shape_non_repeating_visuals_list::de_non_repeating_visuals_list(tokens)?,
+                                crate::protocol_serde::shape_non_repeating_visuals_list::de_non_repeating_visuals_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

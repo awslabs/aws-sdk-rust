@@ -305,12 +305,12 @@ pub fn de_initiate_document_version_upload_http_response(
 
 pub fn ser_initiate_document_version_upload_headers(
     input: &crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.authentication_token {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "authentication_token",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -332,13 +332,13 @@ pub fn ser_initiate_document_version_upload_input(
 }
 
 pub(crate) fn de_initiate_document_version_upload(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -346,10 +346,10 @@ pub(crate) fn de_initiate_document_version_upload(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
                 }
                 "UploadMetadata" => {
-                    builder = builder.set_upload_metadata(crate::protocol_serde::shape_upload_metadata::de_upload_metadata(tokens)?);
+                    builder = builder.set_upload_metadata(crate::protocol_serde::shape_upload_metadata::de_upload_metadata(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

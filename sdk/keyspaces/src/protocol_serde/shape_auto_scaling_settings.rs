@@ -29,6 +29,7 @@ pub fn ser_auto_scaling_settings(
 
 pub(crate) fn de_auto_scaling_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoScalingSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,8 @@ where
                             );
                         }
                         "scalingPolicy" => {
-                            builder = builder.set_scaling_policy(crate::protocol_serde::shape_auto_scaling_policy::de_auto_scaling_policy(tokens)?);
+                            builder =
+                                builder.set_scaling_policy(crate::protocol_serde::shape_auto_scaling_policy::de_auto_scaling_policy(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -1,8 +1,7 @@
 [build]
-target = ["wasm32-unknown-unknown", "wasm32-wasip1"]
+target = ["wasm32-unknown-unknown", "wasm32-wasip2"]
 
-[target.wasm32-wasi]
-rustflags = ["-C", "opt-level=1"]
+[target.wasm32-wasip2]
 runner = [
     "wasmtime",
     "-C", "cache=n",
@@ -10,7 +9,11 @@ runner = [
     "-S", "http=y"
 ]
 
-# Requires for getrandom crate to compile
-# https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
+
 [target.wasm32-unknown-unknown]
+# Required for getrandom crate to compile
+# https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
 rustflags = ['--cfg', 'getrandom_backend="wasm_js"']
+runner = [
+    "./run-wasm32-unknown-unknown.sh",
+]

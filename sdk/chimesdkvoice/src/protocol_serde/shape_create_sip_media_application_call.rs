@@ -189,13 +189,13 @@ pub fn ser_create_sip_media_application_call_input(
 }
 
 pub(crate) fn de_create_sip_media_application_call(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -204,7 +204,7 @@ pub(crate) fn de_create_sip_media_application_call(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SipMediaApplicationCall" => {
                     builder = builder.set_sip_media_application_call(
-                        crate::protocol_serde::shape_sip_media_application_call::de_sip_media_application_call(tokens)?,
+                        crate::protocol_serde::shape_sip_media_application_call::de_sip_media_application_call(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

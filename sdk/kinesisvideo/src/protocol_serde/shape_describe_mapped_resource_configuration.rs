@@ -131,13 +131,13 @@ pub fn ser_describe_mapped_resource_configuration_input(
 }
 
 pub(crate) fn de_describe_mapped_resource_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,7 +146,7 @@ pub(crate) fn de_describe_mapped_resource_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MappedResourceConfigurationList" => {
                     builder = builder.set_mapped_resource_configuration_list(
-                        crate::protocol_serde::shape_mapped_resource_configuration_list::de_mapped_resource_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_mapped_resource_configuration_list::de_mapped_resource_configuration_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

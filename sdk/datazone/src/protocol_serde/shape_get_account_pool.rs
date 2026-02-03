@@ -124,13 +124,13 @@ pub fn de_get_account_pool_http_response(
 }
 
 pub(crate) fn de_get_account_pool(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account_pool::builders::GetAccountPoolOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_account_pool::builders::GetAccountPoolOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,7 +138,7 @@ pub(crate) fn de_get_account_pool(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accountSource" => {
-                    builder = builder.set_account_source(crate::protocol_serde::shape_account_source::de_account_source(tokens)?);
+                    builder = builder.set_account_source(crate::protocol_serde::shape_account_source::de_account_source(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

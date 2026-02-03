@@ -29,6 +29,7 @@ pub fn ser_table_lf_tag_policy_and_permissions(
 
 pub(crate) fn de_table_lf_tag_policy_and_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableLfTagPolicyAndPermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,12 +44,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Expression" => {
-                            builder = builder.set_expression(crate::protocol_serde::shape_list_of_lf_tags::de_list_of_lf_tags(tokens)?);
+                            builder = builder.set_expression(crate::protocol_serde::shape_list_of_lf_tags::de_list_of_lf_tags(tokens, _value)?);
                         }
                         "Permissions" => {
                             builder = builder.set_permissions(
                                 crate::protocol_serde::shape_list_of_table_tag_policy_lf_permissions::de_list_of_table_tag_policy_lf_permissions(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

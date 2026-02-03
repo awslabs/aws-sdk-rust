@@ -140,13 +140,13 @@ pub fn de_list_storage_profiles_for_queue_http_response(
 }
 
 pub(crate) fn de_list_storage_profiles_for_queue(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_storage_profiles_for_queue::builders::ListStorageProfilesForQueueOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_storage_profiles_for_queue::builders::ListStorageProfilesForQueueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,7 @@ pub(crate) fn de_list_storage_profiles_for_queue(
                 }
                 "storageProfiles" => {
                     builder = builder.set_storage_profiles(crate::protocol_serde::shape_storage_profile_summaries::de_storage_profile_summaries(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -24,6 +24,7 @@ pub fn ser_rule_verdict_to_evaluate(
 
 pub(crate) fn de_rule_verdict_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleVerdictToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                                 })?,
                         )),
                         "Analysis" => Some(crate::types::RuleVerdictToEvaluate::Analysis(
-                            crate::protocol_serde::shape_analysis::de_analysis(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_analysis::de_analysis(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
                             })?,
                         )),

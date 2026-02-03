@@ -179,13 +179,13 @@ pub fn ser_restart_channel_pipelines_input(
 }
 
 pub(crate) fn de_restart_channel_pipelines(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -194,7 +194,7 @@ pub(crate) fn de_restart_channel_pipelines(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "anywhereSettings" => {
                     builder = builder.set_anywhere_settings(crate::protocol_serde::shape_describe_anywhere_settings::de_describe_anywhere_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "arn" => {
@@ -205,8 +205,9 @@ pub(crate) fn de_restart_channel_pipelines(
                     );
                 }
                 "cdiInputSpecification" => {
-                    builder = builder
-                        .set_cdi_input_specification(crate::protocol_serde::shape_cdi_input_specification::de_cdi_input_specification(tokens)?);
+                    builder = builder.set_cdi_input_specification(crate::protocol_serde::shape_cdi_input_specification::de_cdi_input_specification(
+                        tokens, _value,
+                    )?);
                 }
                 "channelClass" => {
                     builder = builder.set_channel_class(
@@ -217,21 +218,21 @@ pub(crate) fn de_restart_channel_pipelines(
                 }
                 "channelEngineVersion" => {
                     builder = builder.set_channel_engine_version(
-                        crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens)?,
+                        crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens, _value)?,
                     );
                 }
                 "destinations" => {
                     builder = builder.set_destinations(crate::protocol_serde::shape_list_of_output_destination::de_list_of_output_destination(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "egressEndpoints" => {
                     builder = builder.set_egress_endpoints(
-                        crate::protocol_serde::shape_list_of_channel_egress_endpoint::de_list_of_channel_egress_endpoint(tokens)?,
+                        crate::protocol_serde::shape_list_of_channel_egress_endpoint::de_list_of_channel_egress_endpoint(tokens, _value)?,
                     );
                 }
                 "encoderSettings" => {
-                    builder = builder.set_encoder_settings(crate::protocol_serde::shape_encoder_settings::de_encoder_settings(tokens)?);
+                    builder = builder.set_encoder_settings(crate::protocol_serde::shape_encoder_settings::de_encoder_settings(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -242,15 +243,16 @@ pub(crate) fn de_restart_channel_pipelines(
                 }
                 "inputAttachments" => {
                     builder = builder.set_input_attachments(crate::protocol_serde::shape_list_of_input_attachment::de_list_of_input_attachment(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "inputSpecification" => {
-                    builder = builder.set_input_specification(crate::protocol_serde::shape_input_specification::de_input_specification(tokens)?);
+                    builder =
+                        builder.set_input_specification(crate::protocol_serde::shape_input_specification::de_input_specification(tokens, _value)?);
                 }
                 "linkedChannelSettings" => {
                     builder = builder.set_linked_channel_settings(
-                        crate::protocol_serde::shape_describe_linked_channel_settings::de_describe_linked_channel_settings(tokens)?,
+                        crate::protocol_serde::shape_describe_linked_channel_settings::de_describe_linked_channel_settings(tokens, _value)?,
                     );
                 }
                 "logLevel" => {
@@ -261,7 +263,7 @@ pub(crate) fn de_restart_channel_pipelines(
                     );
                 }
                 "maintenance" => {
-                    builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance_status::de_maintenance_status(tokens)?);
+                    builder = builder.set_maintenance(crate::protocol_serde::shape_maintenance_status::de_maintenance_status(tokens, _value)?);
                 }
                 "maintenanceStatus" => {
                     builder = builder.set_maintenance_status(
@@ -278,7 +280,9 @@ pub(crate) fn de_restart_channel_pipelines(
                     );
                 }
                 "pipelineDetails" => {
-                    builder = builder.set_pipeline_details(crate::protocol_serde::shape_list_of_pipeline_detail::de_list_of_pipeline_detail(tokens)?);
+                    builder = builder.set_pipeline_details(crate::protocol_serde::shape_list_of_pipeline_detail::de_list_of_pipeline_detail(
+                        tokens, _value,
+                    )?);
                 }
                 "pipelinesRunningCount" => {
                     builder = builder.set_pipelines_running_count(
@@ -302,11 +306,11 @@ pub(crate) fn de_restart_channel_pipelines(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "vpc" => {
-                    builder =
-                        builder.set_vpc(crate::protocol_serde::shape_vpc_output_settings_description::de_vpc_output_settings_description(tokens)?);
+                    builder = builder
+                        .set_vpc(crate::protocol_serde::shape_vpc_output_settings_description::de_vpc_output_settings_description(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

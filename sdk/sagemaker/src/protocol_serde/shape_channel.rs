@@ -35,6 +35,7 @@ pub fn ser_channel(
 
 pub(crate) fn de_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Channel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                             );
                         }
                         "DataSource" => {
-                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                         }
                         "ContentType" => {
                             builder = builder.set_content_type(
@@ -87,7 +88,7 @@ where
                             );
                         }
                         "ShuffleConfig" => {
-                            builder = builder.set_shuffle_config(crate::protocol_serde::shape_shuffle_config::de_shuffle_config(tokens)?);
+                            builder = builder.set_shuffle_config(crate::protocol_serde::shape_shuffle_config::de_shuffle_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

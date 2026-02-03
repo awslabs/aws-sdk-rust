@@ -65,13 +65,13 @@ pub fn ser_list_cluster_events_input(
 }
 
 pub(crate) fn de_list_cluster_events(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_cluster_events::builders::ListClusterEventsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_cluster_events::builders::ListClusterEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -86,7 +86,9 @@ pub(crate) fn de_list_cluster_events(
                     );
                 }
                 "Events" => {
-                    builder = builder.set_events(crate::protocol_serde::shape_cluster_event_summaries::de_cluster_event_summaries(tokens)?);
+                    builder = builder.set_events(crate::protocol_serde::shape_cluster_event_summaries::de_cluster_event_summaries(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

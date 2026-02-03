@@ -23,6 +23,7 @@ pub fn ser_processing_output_config(
 
 pub(crate) fn de_processing_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProcessingOutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_processing_outputs::de_processing_outputs(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_processing_outputs::de_processing_outputs(tokens, _value)?);
                         }
                         "KmsKeyId" => {
                             builder = builder.set_kms_key_id(

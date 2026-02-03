@@ -157,13 +157,13 @@ pub fn ser_get_text_detection_input(
 }
 
 pub(crate) fn de_get_text_detection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,10 +185,12 @@ pub(crate) fn de_get_text_detection(
                     );
                 }
                 "VideoMetadata" => {
-                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata::de_video_metadata(tokens)?);
+                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata::de_video_metadata(tokens, _value)?);
                 }
                 "TextDetections" => {
-                    builder = builder.set_text_detections(crate::protocol_serde::shape_text_detection_results::de_text_detection_results(tokens)?);
+                    builder = builder.set_text_detections(crate::protocol_serde::shape_text_detection_results::de_text_detection_results(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(
@@ -212,7 +214,7 @@ pub(crate) fn de_get_text_detection(
                     );
                 }
                 "Video" => {
-                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens)?);
+                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens, _value)?);
                 }
                 "JobTag" => {
                     builder = builder.set_job_tag(

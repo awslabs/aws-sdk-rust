@@ -20,6 +20,7 @@ pub fn ser_evaluation_form_item_enablement_configuration(
 
 pub(crate) fn de_evaluation_form_item_enablement_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormItemEnablementConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Condition" => {
                                 builder = builder.set_condition(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_condition::de_evaluation_form_item_enablement_condition(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_condition::de_evaluation_form_item_enablement_condition(tokens, _value)?
                                 );
                             }
                             "Action" => {

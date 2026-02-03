@@ -20,6 +20,7 @@ pub fn ser_pivot_table_sort_configuration(
 
 pub(crate) fn de_pivot_table_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldSortOptions" => {
                             builder = builder.set_field_sort_options(
-                                crate::protocol_serde::shape_pivot_field_sort_options_list::de_pivot_field_sort_options_list(tokens)?,
+                                crate::protocol_serde::shape_pivot_field_sort_options_list::de_pivot_field_sort_options_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

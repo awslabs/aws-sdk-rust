@@ -93,13 +93,13 @@ pub fn ser_create_portal_input(
 }
 
 pub(crate) fn de_create_portal(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_portal::builders::CreatePortalOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_portal::builders::CreatePortalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,16 +107,16 @@ pub(crate) fn de_create_portal(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "authorization" => {
-                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens)?);
+                    builder = builder.set_authorization(crate::protocol_serde::shape_authorization::de_authorization(tokens, _value)?);
                 }
                 "endpointConfiguration" => {
                     builder = builder.set_endpoint_configuration(
-                        crate::protocol_serde::shape_endpoint_configuration_response::de_endpoint_configuration_response(tokens)?,
+                        crate::protocol_serde::shape_endpoint_configuration_response::de_endpoint_configuration_response(tokens, _value)?,
                     );
                 }
                 "includedPortalProductArns" => {
                     builder = builder.set_included_portal_product_arns(
-                        crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(tokens)?,
+                        crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(tokens, _value)?,
                     );
                 }
                 "lastModified" => {
@@ -146,7 +146,7 @@ pub(crate) fn de_create_portal(
                     );
                 }
                 "portalContent" => {
-                    builder = builder.set_portal_content(crate::protocol_serde::shape_portal_content::de_portal_content(tokens)?);
+                    builder = builder.set_portal_content(crate::protocol_serde::shape_portal_content::de_portal_content(tokens, _value)?);
                 }
                 "portalId" => {
                     builder = builder.set_portal_id(
@@ -170,10 +170,10 @@ pub(crate) fn de_create_portal(
                     );
                 }
                 "statusException" => {
-                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens)?);
+                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

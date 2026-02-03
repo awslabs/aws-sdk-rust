@@ -121,10 +121,10 @@ pub fn de_get_queue_http_response(
 }
 
 pub(crate) fn de_get_queue(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_queue::builders::GetQueueOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_queue::builders::GetQueueOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_queue(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "allowedStorageProfileIds" => {
                     builder = builder.set_allowed_storage_profile_ids(
-                        crate::protocol_serde::shape_allowed_storage_profile_ids::de_allowed_storage_profile_ids(tokens)?,
+                        crate::protocol_serde::shape_allowed_storage_profile_ids::de_allowed_storage_profile_ids(tokens, _value)?,
                     );
                 }
                 "blockedReason" => {
@@ -185,11 +185,12 @@ pub(crate) fn de_get_queue(
                     );
                 }
                 "jobAttachmentSettings" => {
-                    builder = builder
-                        .set_job_attachment_settings(crate::protocol_serde::shape_job_attachment_settings::de_job_attachment_settings(tokens)?);
+                    builder = builder.set_job_attachment_settings(crate::protocol_serde::shape_job_attachment_settings::de_job_attachment_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "jobRunAsUser" => {
-                    builder = builder.set_job_run_as_user(crate::protocol_serde::shape_job_run_as_user::de_job_run_as_user(tokens)?);
+                    builder = builder.set_job_run_as_user(crate::protocol_serde::shape_job_run_as_user::de_job_run_as_user(tokens, _value)?);
                 }
                 "queueId" => {
                     builder = builder.set_queue_id(
@@ -200,7 +201,7 @@ pub(crate) fn de_get_queue(
                 }
                 "requiredFileSystemLocationNames" => {
                     builder = builder.set_required_file_system_location_names(
-                        crate::protocol_serde::shape_required_file_system_location_names::de_required_file_system_location_names(tokens)?,
+                        crate::protocol_serde::shape_required_file_system_location_names::de_required_file_system_location_names(tokens, _value)?,
                     );
                 }
                 "roleArn" => {

@@ -23,6 +23,7 @@ pub fn ser_start_condition(
 
 pub(crate) fn de_start_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StartCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,12 +45,13 @@ where
                             );
                         }
                         "EventStartCondition" => {
-                            builder = builder
-                                .set_event_start_condition(crate::protocol_serde::shape_event_start_condition::de_event_start_condition(tokens)?);
+                            builder = builder.set_event_start_condition(
+                                crate::protocol_serde::shape_event_start_condition::de_event_start_condition(tokens, _value)?,
+                            );
                         }
                         "SegmentStartCondition" => {
-                            builder =
-                                builder.set_segment_start_condition(crate::protocol_serde::shape_segment_condition::de_segment_condition(tokens)?);
+                            builder = builder
+                                .set_segment_start_condition(crate::protocol_serde::shape_segment_condition::de_segment_condition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_media_connect_flow_router_input_configuration(
 
 pub(crate) fn de_media_connect_flow_router_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MediaConnectFlowRouterInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "sourceTransitDecryption" => {
                             builder = builder.set_source_transit_decryption(
-                                crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens)?,
+                                crate::protocol_serde::shape_flow_transit_encryption::de_flow_transit_encryption(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

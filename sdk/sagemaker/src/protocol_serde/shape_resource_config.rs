@@ -53,6 +53,7 @@ pub fn ser_resource_config(
 
 pub(crate) fn de_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -102,7 +103,7 @@ where
                             );
                         }
                         "InstanceGroups" => {
-                            builder = builder.set_instance_groups(crate::protocol_serde::shape_instance_groups::de_instance_groups(tokens)?);
+                            builder = builder.set_instance_groups(crate::protocol_serde::shape_instance_groups::de_instance_groups(tokens, _value)?);
                         }
                         "TrainingPlanArn" => {
                             builder = builder.set_training_plan_arn(
@@ -113,7 +114,7 @@ where
                         }
                         "InstancePlacementConfig" => {
                             builder = builder.set_instance_placement_config(
-                                crate::protocol_serde::shape_instance_placement_config::de_instance_placement_config(tokens)?,
+                                crate::protocol_serde::shape_instance_placement_config::de_instance_placement_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -23,6 +23,7 @@ pub fn ser_network_configuration(
 
 pub(crate) fn de_network_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,12 +38,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EgressConfiguration" => {
-                            builder =
-                                builder.set_egress_configuration(crate::protocol_serde::shape_egress_configuration::de_egress_configuration(tokens)?);
+                            builder = builder.set_egress_configuration(crate::protocol_serde::shape_egress_configuration::de_egress_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "IngressConfiguration" => {
-                            builder = builder
-                                .set_ingress_configuration(crate::protocol_serde::shape_ingress_configuration::de_ingress_configuration(tokens)?);
+                            builder = builder.set_ingress_configuration(
+                                crate::protocol_serde::shape_ingress_configuration::de_ingress_configuration(tokens, _value)?,
+                            );
                         }
                         "IpAddressType" => {
                             builder = builder.set_ip_address_type(

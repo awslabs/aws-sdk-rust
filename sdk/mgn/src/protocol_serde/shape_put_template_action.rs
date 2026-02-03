@@ -111,13 +111,13 @@ pub fn ser_put_template_action_input(
 }
 
 pub(crate) fn de_put_template_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_template_action::builders::PutTemplateActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_template_action::builders::PutTemplateActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_put_template_action(
                 }
                 "externalParameters" => {
                     builder = builder.set_external_parameters(
-                        crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens)?,
+                        crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens, _value)?,
                     );
                 }
                 "mustSucceedForCutover" => {
@@ -192,7 +192,9 @@ pub(crate) fn de_put_template_action(
                     );
                 }
                 "parameters" => {
-                    builder = builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(tokens)?);
+                    builder = builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 "timeoutSeconds" => {
                     builder = builder.set_timeout_seconds(

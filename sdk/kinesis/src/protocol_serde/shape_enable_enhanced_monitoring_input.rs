@@ -18,5 +18,8 @@ pub fn ser_enable_enhanced_monitoring_input_input(
     if let Some(var_5) = &input.stream_arn {
         object.key("StreamARN").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.stream_id {
+        object.key("StreamId").string(var_6.as_str());
+    }
     Ok(())
 }

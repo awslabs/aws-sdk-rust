@@ -116,13 +116,13 @@ pub fn ser_list_workspace_instances_input(
 }
 
 pub(crate) fn de_list_workspace_instances(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_workspace_instances::builders::ListWorkspaceInstancesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_workspace_instances::builders::ListWorkspaceInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,8 @@ pub(crate) fn de_list_workspace_instances(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WorkspaceInstances" => {
-                    builder = builder.set_workspace_instances(crate::protocol_serde::shape_workspace_instances::de_workspace_instances(tokens)?);
+                    builder =
+                        builder.set_workspace_instances(crate::protocol_serde::shape_workspace_instances::de_workspace_instances(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

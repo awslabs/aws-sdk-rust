@@ -125,13 +125,13 @@ pub fn de_get_model_customization_job_http_response(
 }
 
 pub(crate) fn de_get_model_customization_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_model_customization_job::builders::GetModelCustomizationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,9 @@ pub(crate) fn de_get_model_customization_job(
                     )?);
                 }
                 "customizationConfig" => {
-                    builder = builder.set_customization_config(crate::protocol_serde::shape_customization_config::de_customization_config(tokens)?);
+                    builder = builder.set_customization_config(crate::protocol_serde::shape_customization_config::de_customization_config(
+                        tokens, _value,
+                    )?);
                 }
                 "customizationType" => {
                     builder = builder.set_customization_type(
@@ -183,7 +185,7 @@ pub(crate) fn de_get_model_customization_job(
                 }
                 "hyperParameters" => {
                     builder = builder.set_hyper_parameters(
-                        crate::protocol_serde::shape_model_customization_hyper_parameters::de_model_customization_hyper_parameters(tokens)?,
+                        crate::protocol_serde::shape_model_customization_hyper_parameters::de_model_customization_hyper_parameters(tokens, _value)?,
                     );
                 }
                 "jobArn" => {
@@ -207,7 +209,7 @@ pub(crate) fn de_get_model_customization_job(
                     )?);
                 }
                 "outputDataConfig" => {
-                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
+                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
                 }
                 "outputModelArn" => {
                     builder = builder.set_output_model_arn(
@@ -245,23 +247,26 @@ pub(crate) fn de_get_model_customization_job(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
                 }
                 "trainingDataConfig" => {
-                    builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                    builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(
+                        tokens, _value,
+                    )?);
                 }
                 "trainingMetrics" => {
-                    builder = builder.set_training_metrics(crate::protocol_serde::shape_training_metrics::de_training_metrics(tokens)?);
+                    builder = builder.set_training_metrics(crate::protocol_serde::shape_training_metrics::de_training_metrics(tokens, _value)?);
                 }
                 "validationDataConfig" => {
-                    builder =
-                        builder.set_validation_data_config(crate::protocol_serde::shape_validation_data_config::de_validation_data_config(tokens)?);
+                    builder = builder.set_validation_data_config(crate::protocol_serde::shape_validation_data_config::de_validation_data_config(
+                        tokens, _value,
+                    )?);
                 }
                 "validationMetrics" => {
-                    builder = builder.set_validation_metrics(crate::protocol_serde::shape_validation_metrics::de_validation_metrics(tokens)?);
+                    builder = builder.set_validation_metrics(crate::protocol_serde::shape_validation_metrics::de_validation_metrics(tokens, _value)?);
                 }
                 "vpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

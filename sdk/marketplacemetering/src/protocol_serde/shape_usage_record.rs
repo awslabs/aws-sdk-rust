@@ -40,6 +40,7 @@ pub fn ser_usage_record(
 
 pub(crate) fn de_usage_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UsageRecord>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,7 +82,8 @@ where
                             );
                         }
                         "UsageAllocations" => {
-                            builder = builder.set_usage_allocations(crate::protocol_serde::shape_usage_allocations::de_usage_allocations(tokens)?);
+                            builder =
+                                builder.set_usage_allocations(crate::protocol_serde::shape_usage_allocations::de_usage_allocations(tokens, _value)?);
                         }
                         "CustomerAWSAccountId" => {
                             builder = builder.set_customer_aws_account_id(

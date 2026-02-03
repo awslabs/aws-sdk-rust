@@ -83,7 +83,7 @@ mod create_o_auth2_token;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_signin::Error> {
 /// # let client: aws_sdk_signin::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_o_auth2_token()
 ///     .customize()

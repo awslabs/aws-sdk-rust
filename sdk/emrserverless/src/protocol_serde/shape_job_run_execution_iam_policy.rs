@@ -20,6 +20,7 @@ pub fn ser_job_run_execution_iam_policy(
 
 pub(crate) fn de_job_run_execution_iam_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobRunExecutionIamPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "policyArns" => {
-                            builder = builder.set_policy_arns(crate::protocol_serde::shape_policy_arn_list::de_policy_arn_list(tokens)?);
+                            builder = builder.set_policy_arns(crate::protocol_serde::shape_policy_arn_list::de_policy_arn_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

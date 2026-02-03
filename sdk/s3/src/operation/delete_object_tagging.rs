@@ -215,15 +215,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteObject
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::delete_object_tagging::DeleteObjectTaggingInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_delete_object_tagging::ser_delete_object_tagging_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");
@@ -321,7 +321,7 @@ mod delete_object_tagging_test {
         let body = http_request.body().bytes().expect("body should be strict");
         // No body.
         ::pretty_assertions::assert_eq!(&body, &::bytes::Bytes::new());
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/my%20key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");
@@ -361,7 +361,7 @@ mod delete_object_tagging_test {
         let body = http_request.body().bytes().expect("body should be strict");
         // No body.
         ::pretty_assertions::assert_eq!(&body, &::bytes::Bytes::new());
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "DELETE", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/bar/my%20key.txt", "path was incorrect");
         ::pretty_assertions::assert_eq!(uri.host().expect("host should be set"), "mybucket.s3.us-west-2.amazonaws.com");

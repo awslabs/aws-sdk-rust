@@ -111,13 +111,13 @@ pub fn ser_batch_disable_alarm_input(
 }
 
 pub(crate) fn de_batch_disable_alarm(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_disable_alarm::builders::BatchDisableAlarmOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_disable_alarm::builders::BatchDisableAlarmOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_batch_disable_alarm(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "errorEntries" => {
                     builder = builder.set_error_entries(
-                        crate::protocol_serde::shape_batch_alarm_action_error_entries::de_batch_alarm_action_error_entries(tokens)?,
+                        crate::protocol_serde::shape_batch_alarm_action_error_entries::de_batch_alarm_action_error_entries(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

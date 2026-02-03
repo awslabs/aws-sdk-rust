@@ -23,6 +23,7 @@ pub fn ser_boolean_operands(
 
 pub(crate) fn de_boolean_operands<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BooleanOperands>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,10 +38,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "operandOne" => {
-                            builder = builder.set_operand_one(crate::protocol_serde::shape_operand_one::de_operand_one(tokens)?);
+                            builder = builder.set_operand_one(crate::protocol_serde::shape_operand_one::de_operand_one(tokens, _value)?);
                         }
                         "operandTwo" => {
-                            builder = builder.set_operand_two(crate::protocol_serde::shape_operand_two::de_operand_two(tokens)?);
+                            builder = builder.set_operand_two(crate::protocol_serde::shape_operand_two::de_operand_two(tokens, _value)?);
                         }
                         "result" => {
                             builder = builder.set_result(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

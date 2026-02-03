@@ -23,6 +23,7 @@ pub fn ser_s3_destination_settings(
 
 pub(crate) fn de_s3_destination_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DestinationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,11 +39,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accessControl" => {
                             builder = builder.set_access_control(
-                                crate::protocol_serde::shape_s3_destination_access_control::de_s3_destination_access_control(tokens)?,
+                                crate::protocol_serde::shape_s3_destination_access_control::de_s3_destination_access_control(tokens, _value)?,
                             );
                         }
                         "encryption" => {
-                            builder = builder.set_encryption(crate::protocol_serde::shape_s3_encryption_settings::de_s3_encryption_settings(tokens)?);
+                            builder = builder.set_encryption(crate::protocol_serde::shape_s3_encryption_settings::de_s3_encryption_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "storageClass" => {
                             builder = builder.set_storage_class(

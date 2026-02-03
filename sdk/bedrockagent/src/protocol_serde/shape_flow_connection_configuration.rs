@@ -30,6 +30,7 @@ pub fn ser_flow_connection_configuration(
 
 pub(crate) fn de_flow_connection_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowConnectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,12 +60,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "data" => Some(crate::types::FlowConnectionConfiguration::Data(
-                            crate::protocol_serde::shape_flow_data_connection_configuration::de_flow_data_connection_configuration(tokens)?
+                            crate::protocol_serde::shape_flow_data_connection_configuration::de_flow_data_connection_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'data' cannot be null"))?,
                         )),
                         "conditional" => Some(crate::types::FlowConnectionConfiguration::Conditional(
                             crate::protocol_serde::shape_flow_conditional_connection_configuration::de_flow_conditional_connection_configuration(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conditional' cannot be null")

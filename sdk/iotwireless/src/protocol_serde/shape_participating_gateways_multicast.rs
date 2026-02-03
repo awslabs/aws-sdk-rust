@@ -23,6 +23,7 @@ pub fn ser_participating_gateways_multicast(
 
 pub(crate) fn de_participating_gateways_multicast<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParticipatingGatewaysMulticast>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,8 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "GatewayList" => {
-                            builder =
-                                builder.set_gateway_list(crate::protocol_serde::shape_gateway_list_multicast::de_gateway_list_multicast(tokens)?);
+                            builder = builder.set_gateway_list(crate::protocol_serde::shape_gateway_list_multicast::de_gateway_list_multicast(
+                                tokens, _value,
+                            )?);
                         }
                         "TransmissionInterval" => {
                             builder = builder.set_transmission_interval(

@@ -78,13 +78,13 @@ pub fn ser_batch_get_crawlers_input(
 }
 
 pub(crate) fn de_batch_get_crawlers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_crawlers::builders::BatchGetCrawlersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_crawlers::builders::BatchGetCrawlersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -92,10 +92,10 @@ pub(crate) fn de_batch_get_crawlers(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Crawlers" => {
-                    builder = builder.set_crawlers(crate::protocol_serde::shape_crawler_list::de_crawler_list(tokens)?);
+                    builder = builder.set_crawlers(crate::protocol_serde::shape_crawler_list::de_crawler_list(tokens, _value)?);
                 }
                 "CrawlersNotFound" => {
-                    builder = builder.set_crawlers_not_found(crate::protocol_serde::shape_crawler_name_list::de_crawler_name_list(tokens)?);
+                    builder = builder.set_crawlers_not_found(crate::protocol_serde::shape_crawler_name_list::de_crawler_name_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

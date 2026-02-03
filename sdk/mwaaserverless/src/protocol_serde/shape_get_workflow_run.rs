@@ -133,13 +133,13 @@ pub fn ser_get_workflow_run_input(
 }
 
 pub(crate) fn de_get_workflow_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow_run::builders::GetWorkflowRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_workflow_run::builders::GetWorkflowRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,10 +175,10 @@ pub(crate) fn de_get_workflow_run(
                     );
                 }
                 "OverrideParameters" => {
-                    builder = builder.set_override_parameters(crate::protocol_serde::shape_object_map::de_object_map(tokens)?);
+                    builder = builder.set_override_parameters(crate::protocol_serde::shape_object_map::de_object_map(tokens, _value)?);
                 }
                 "RunDetail" => {
-                    builder = builder.set_run_detail(crate::protocol_serde::shape_workflow_run_detail::de_workflow_run_detail(tokens)?);
+                    builder = builder.set_run_detail(crate::protocol_serde::shape_workflow_run_detail::de_workflow_run_detail(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

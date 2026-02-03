@@ -135,11 +135,11 @@ pub fn ser_get_workflow_input(
 }
 
 pub(crate) fn de_get_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow::builders::GetWorkflowOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_workflow::builders::GetWorkflowOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -188,12 +188,13 @@ pub(crate) fn de_get_workflow(
                 }
                 "EncryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
                     );
                 }
                 "LoggingConfiguration" => {
-                    builder =
-                        builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens)?);
+                    builder = builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "EngineVersion" => {
                     builder = builder.set_engine_version(
@@ -210,12 +211,14 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "DefinitionS3Location" => {
-                    builder =
-                        builder.set_definition_s3_location(crate::protocol_serde::shape_definition_s3_location::de_definition_s3_location(tokens)?);
+                    builder = builder.set_definition_s3_location(crate::protocol_serde::shape_definition_s3_location::de_definition_s3_location(
+                        tokens, _value,
+                    )?);
                 }
                 "ScheduleConfiguration" => {
-                    builder =
-                        builder.set_schedule_configuration(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens)?);
+                    builder = builder.set_schedule_configuration(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -225,8 +228,9 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "NetworkConfiguration" => {
-                    builder =
-                        builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
+                    builder = builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "TriggerMode" => {
                     builder = builder.set_trigger_mode(

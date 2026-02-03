@@ -20,6 +20,7 @@ pub fn ser_forecast_configuration(
 
 pub(crate) fn de_forecast_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ForecastConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,11 +36,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ForecastProperties" => {
                             builder = builder.set_forecast_properties(
-                                crate::protocol_serde::shape_time_based_forecast_properties::de_time_based_forecast_properties(tokens)?,
+                                crate::protocol_serde::shape_time_based_forecast_properties::de_time_based_forecast_properties(tokens, _value)?,
                             );
                         }
                         "Scenario" => {
-                            builder = builder.set_scenario(crate::protocol_serde::shape_forecast_scenario::de_forecast_scenario(tokens)?);
+                            builder = builder.set_scenario(crate::protocol_serde::shape_forecast_scenario::de_forecast_scenario(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

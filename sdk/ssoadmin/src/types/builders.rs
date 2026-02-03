@@ -41,6 +41,8 @@ pub use crate::types::_permission_set_provisioning_status::PermissionSetProvisio
 
 pub use crate::types::_trusted_token_issuer_metadata::TrustedTokenIssuerMetadataBuilder;
 
+pub use crate::types::_region_metadata::RegionMetadataBuilder;
+
 pub use crate::types::_permission_set_provisioning_status_metadata::PermissionSetProvisioningStatusMetadataBuilder;
 
 pub use crate::types::_operation_status_filter::OperationStatusFilterBuilder;

@@ -129,10 +129,10 @@ pub fn ser_put_intent_input(
 }
 
 pub(crate) fn de_put_intent(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_intent::builders::PutIntentOutputBuilder,
 ) -> ::std::result::Result<crate::operation::put_intent::builders::PutIntentOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,10 +147,10 @@ pub(crate) fn de_put_intent(
                     );
                 }
                 "conclusionStatement" => {
-                    builder = builder.set_conclusion_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?);
+                    builder = builder.set_conclusion_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?);
                 }
                 "confirmationPrompt" => {
-                    builder = builder.set_confirmation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens)?);
+                    builder = builder.set_confirmation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens, _value)?);
                 }
                 "createVersion" => {
                     builder = builder.set_create_version(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -169,19 +169,23 @@ pub(crate) fn de_put_intent(
                     );
                 }
                 "dialogCodeHook" => {
-                    builder = builder.set_dialog_code_hook(crate::protocol_serde::shape_code_hook::de_code_hook(tokens)?);
+                    builder = builder.set_dialog_code_hook(crate::protocol_serde::shape_code_hook::de_code_hook(tokens, _value)?);
                 }
                 "followUpPrompt" => {
-                    builder = builder.set_follow_up_prompt(crate::protocol_serde::shape_follow_up_prompt::de_follow_up_prompt(tokens)?);
+                    builder = builder.set_follow_up_prompt(crate::protocol_serde::shape_follow_up_prompt::de_follow_up_prompt(tokens, _value)?);
                 }
                 "fulfillmentActivity" => {
-                    builder = builder.set_fulfillment_activity(crate::protocol_serde::shape_fulfillment_activity::de_fulfillment_activity(tokens)?);
+                    builder = builder.set_fulfillment_activity(crate::protocol_serde::shape_fulfillment_activity::de_fulfillment_activity(
+                        tokens, _value,
+                    )?);
                 }
                 "inputContexts" => {
-                    builder = builder.set_input_contexts(crate::protocol_serde::shape_input_context_list::de_input_context_list(tokens)?);
+                    builder = builder.set_input_contexts(crate::protocol_serde::shape_input_context_list::de_input_context_list(tokens, _value)?);
                 }
                 "kendraConfiguration" => {
-                    builder = builder.set_kendra_configuration(crate::protocol_serde::shape_kendra_configuration::de_kendra_configuration(tokens)?);
+                    builder = builder.set_kendra_configuration(crate::protocol_serde::shape_kendra_configuration::de_kendra_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "lastUpdatedDate" => {
                     builder = builder.set_last_updated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -197,7 +201,7 @@ pub(crate) fn de_put_intent(
                     );
                 }
                 "outputContexts" => {
-                    builder = builder.set_output_contexts(crate::protocol_serde::shape_output_context_list::de_output_context_list(tokens)?);
+                    builder = builder.set_output_contexts(crate::protocol_serde::shape_output_context_list::de_output_context_list(tokens, _value)?);
                 }
                 "parentIntentSignature" => {
                     builder = builder.set_parent_intent_signature(
@@ -207,13 +211,15 @@ pub(crate) fn de_put_intent(
                     );
                 }
                 "rejectionStatement" => {
-                    builder = builder.set_rejection_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?);
+                    builder = builder.set_rejection_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?);
                 }
                 "sampleUtterances" => {
-                    builder = builder.set_sample_utterances(crate::protocol_serde::shape_intent_utterance_list::de_intent_utterance_list(tokens)?);
+                    builder = builder.set_sample_utterances(crate::protocol_serde::shape_intent_utterance_list::de_intent_utterance_list(
+                        tokens, _value,
+                    )?);
                 }
                 "slots" => {
-                    builder = builder.set_slots(crate::protocol_serde::shape_slot_list::de_slot_list(tokens)?);
+                    builder = builder.set_slots(crate::protocol_serde::shape_slot_list::de_slot_list(tokens, _value)?);
                 }
                 "version" => {
                     builder = builder.set_version(

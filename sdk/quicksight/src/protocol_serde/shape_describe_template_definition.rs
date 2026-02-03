@@ -175,13 +175,13 @@ pub fn de_describe_template_definition_http_response(
 }
 
 pub(crate) fn de_describe_template_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -190,11 +190,11 @@ pub(crate) fn de_describe_template_definition(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Definition" => {
                     builder = builder.set_definition(crate::protocol_serde::shape_template_version_definition::de_template_version_definition(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_template_error_list::de_template_error_list(tokens)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_template_error_list::de_template_error_list(tokens, _value)?);
                 }
                 "Name" => {
                     builder = builder.set_name(

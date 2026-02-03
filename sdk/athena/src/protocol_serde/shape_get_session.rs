@@ -93,11 +93,11 @@ pub fn ser_get_session_input(
 }
 
 pub(crate) fn de_get_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_session::builders::GetSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,9 @@ pub(crate) fn de_get_session(
                     );
                 }
                 "EngineConfiguration" => {
-                    builder = builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(tokens)?);
+                    builder = builder.set_engine_configuration(crate::protocol_serde::shape_engine_configuration::de_engine_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "NotebookVersion" => {
                     builder = builder.set_notebook_version(
@@ -144,18 +146,19 @@ pub(crate) fn de_get_session(
                 }
                 "MonitoringConfiguration" => {
                     builder = builder.set_monitoring_configuration(
-                        crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                        crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value)?,
                     );
                 }
                 "SessionConfiguration" => {
-                    builder =
-                        builder.set_session_configuration(crate::protocol_serde::shape_session_configuration::de_session_configuration(tokens)?);
+                    builder = builder.set_session_configuration(crate::protocol_serde::shape_session_configuration::de_session_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "Status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_session_status::de_session_status(tokens)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_session_status::de_session_status(tokens, _value)?);
                 }
                 "Statistics" => {
-                    builder = builder.set_statistics(crate::protocol_serde::shape_session_statistics::de_session_statistics(tokens)?);
+                    builder = builder.set_statistics(crate::protocol_serde::shape_session_statistics::de_session_statistics(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

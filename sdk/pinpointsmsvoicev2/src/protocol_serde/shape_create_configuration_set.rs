@@ -151,13 +151,13 @@ pub fn ser_create_configuration_set_input(
 }
 
 pub(crate) fn de_create_configuration_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -179,7 +179,7 @@ pub(crate) fn de_create_configuration_set(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

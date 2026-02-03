@@ -23,6 +23,7 @@ pub fn ser_data_partition_storage_options(
 
 pub(crate) fn de_data_partition_storage_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPartitionStorageOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "maximumSize" => {
-                            builder = builder.set_maximum_size(crate::protocol_serde::shape_storage_maximum_size::de_storage_maximum_size(tokens)?);
+                            builder = builder.set_maximum_size(crate::protocol_serde::shape_storage_maximum_size::de_storage_maximum_size(
+                                tokens, _value,
+                            )?);
                         }
                         "storageLocation" => {
                             builder = builder.set_storage_location(
@@ -48,7 +51,7 @@ where
                         }
                         "minimumTimeToLive" => {
                             builder = builder.set_minimum_time_to_live(
-                                crate::protocol_serde::shape_storage_minimum_time_to_live::de_storage_minimum_time_to_live(tokens)?,
+                                crate::protocol_serde::shape_storage_minimum_time_to_live::de_storage_minimum_time_to_live(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

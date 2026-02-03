@@ -62,6 +62,7 @@ pub fn ser_project_environment(
 
 pub(crate) fn de_project_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProjectEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -97,15 +98,17 @@ where
                             );
                         }
                         "computeConfiguration" => {
-                            builder = builder
-                                .set_compute_configuration(crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens)?);
+                            builder = builder.set_compute_configuration(
+                                crate::protocol_serde::shape_compute_configuration::de_compute_configuration(tokens, _value)?,
+                            );
                         }
                         "fleet" => {
-                            builder = builder.set_fleet(crate::protocol_serde::shape_project_fleet::de_project_fleet(tokens)?);
+                            builder = builder.set_fleet(crate::protocol_serde::shape_project_fleet::de_project_fleet(tokens, _value)?);
                         }
                         "environmentVariables" => {
-                            builder = builder
-                                .set_environment_variables(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                            builder = builder.set_environment_variables(
+                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value)?,
+                            );
                         }
                         "privilegedMode" => {
                             builder = builder.set_privileged_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -118,8 +121,8 @@ where
                             );
                         }
                         "registryCredential" => {
-                            builder =
-                                builder.set_registry_credential(crate::protocol_serde::shape_registry_credential::de_registry_credential(tokens)?);
+                            builder = builder
+                                .set_registry_credential(crate::protocol_serde::shape_registry_credential::de_registry_credential(tokens, _value)?);
                         }
                         "imagePullCredentialsType" => {
                             builder = builder.set_image_pull_credentials_type(
@@ -129,7 +132,7 @@ where
                             );
                         }
                         "dockerServer" => {
-                            builder = builder.set_docker_server(crate::protocol_serde::shape_docker_server::de_docker_server(tokens)?);
+                            builder = builder.set_docker_server(crate::protocol_serde::shape_docker_server::de_docker_server(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

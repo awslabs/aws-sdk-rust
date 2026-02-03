@@ -28,6 +28,7 @@ pub fn ser_refresh_schedule(
 
 pub(crate) fn de_refresh_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RefreshSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,8 @@ where
                             );
                         }
                         "ScheduleFrequency" => {
-                            builder = builder.set_schedule_frequency(crate::protocol_serde::shape_refresh_frequency::de_refresh_frequency(tokens)?);
+                            builder =
+                                builder.set_schedule_frequency(crate::protocol_serde::shape_refresh_frequency::de_refresh_frequency(tokens, _value)?);
                         }
                         "StartAfterDateTime" => {
                             builder = builder.set_start_after_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

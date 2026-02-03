@@ -29,6 +29,7 @@ pub fn ser_aws_ecs_service_network_configuration_aws_vpc_configuration_details(
 
 pub(crate) fn de_aws_ecs_service_network_configuration_aws_vpc_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -53,11 +54,14 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder =
-                                builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

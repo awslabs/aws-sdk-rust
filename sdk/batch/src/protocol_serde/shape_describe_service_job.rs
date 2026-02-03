@@ -84,13 +84,13 @@ pub fn ser_describe_service_job_input(
 }
 
 pub(crate) fn de_describe_service_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_service_job::builders::DescribeServiceJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_service_job::builders::DescribeServiceJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_describe_service_job(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attempts" => {
                     builder = builder.set_attempts(crate::protocol_serde::shape_service_job_attempt_details::de_service_job_attempt_details(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "createdAt" => {
@@ -142,12 +142,12 @@ pub(crate) fn de_describe_service_job(
                 }
                 "latestAttempt" => {
                     builder = builder.set_latest_attempt(crate::protocol_serde::shape_latest_service_job_attempt::de_latest_service_job_attempt(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "retryStrategy" => {
                     builder = builder.set_retry_strategy(crate::protocol_serde::shape_service_job_retry_strategy::de_service_job_retry_strategy(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "schedulingPriority" => {
@@ -207,10 +207,10 @@ pub(crate) fn de_describe_service_job(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens, _value)?);
                 }
                 "timeoutConfig" => {
-                    builder = builder.set_timeout_config(crate::protocol_serde::shape_service_job_timeout::de_service_job_timeout(tokens)?);
+                    builder = builder.set_timeout_config(crate::protocol_serde::shape_service_job_timeout::de_service_job_timeout(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

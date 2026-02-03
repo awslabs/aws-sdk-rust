@@ -124,11 +124,11 @@ pub fn de_get_project_http_response(
 }
 
 pub(crate) fn de_get_project(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_project::builders::GetProjectOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_project::builders::GetProjectOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,14 +171,14 @@ pub(crate) fn de_get_project(
                 }
                 "environmentDeploymentDetails" => {
                     builder = builder.set_environment_deployment_details(
-                        crate::protocol_serde::shape_environment_deployment_details::de_environment_deployment_details(tokens)?,
+                        crate::protocol_serde::shape_environment_deployment_details::de_environment_deployment_details(tokens, _value)?,
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "glossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens)?);
+                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -215,11 +215,11 @@ pub(crate) fn de_get_project(
                     );
                 }
                 "resourceTags" => {
-                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens)?);
+                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value)?);
                 }
                 "userParameters" => {
                     builder = builder.set_user_parameters(
-                            crate::protocol_serde::shape_environment_configuration_user_parameters_list::de_environment_configuration_user_parameters_list(tokens)?
+                            crate::protocol_serde::shape_environment_configuration_user_parameters_list::de_environment_configuration_user_parameters_list(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

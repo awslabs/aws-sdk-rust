@@ -69,13 +69,13 @@ pub fn ser_describe_model_bias_job_definition_input(
 }
 
 pub(crate) fn de_describe_model_bias_job_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -104,28 +104,32 @@ pub(crate) fn de_describe_model_bias_job_definition(
                 }
                 "ModelBiasBaselineConfig" => {
                     builder = builder.set_model_bias_baseline_config(
-                        crate::protocol_serde::shape_model_bias_baseline_config::de_model_bias_baseline_config(tokens)?,
+                        crate::protocol_serde::shape_model_bias_baseline_config::de_model_bias_baseline_config(tokens, _value)?,
                     );
                 }
                 "ModelBiasAppSpecification" => {
                     builder = builder.set_model_bias_app_specification(
-                        crate::protocol_serde::shape_model_bias_app_specification::de_model_bias_app_specification(tokens)?,
+                        crate::protocol_serde::shape_model_bias_app_specification::de_model_bias_app_specification(tokens, _value)?,
                     );
                 }
                 "ModelBiasJobInput" => {
-                    builder = builder.set_model_bias_job_input(crate::protocol_serde::shape_model_bias_job_input::de_model_bias_job_input(tokens)?);
+                    builder = builder.set_model_bias_job_input(crate::protocol_serde::shape_model_bias_job_input::de_model_bias_job_input(
+                        tokens, _value,
+                    )?);
                 }
                 "ModelBiasJobOutputConfig" => {
                     builder = builder.set_model_bias_job_output_config(
-                        crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens)?,
+                        crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value)?,
                     );
                 }
                 "JobResources" => {
-                    builder = builder.set_job_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(tokens)?);
+                    builder = builder.set_job_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(
+                        tokens, _value,
+                    )?);
                 }
                 "NetworkConfig" => {
                     builder = builder.set_network_config(crate::protocol_serde::shape_monitoring_network_config::de_monitoring_network_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "RoleArn" => {
@@ -137,7 +141,7 @@ pub(crate) fn de_describe_model_bias_job_definition(
                 }
                 "StoppingCondition" => {
                     builder = builder.set_stopping_condition(
-                        crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens)?,
+                        crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

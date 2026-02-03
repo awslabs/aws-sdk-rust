@@ -124,13 +124,13 @@ pub fn ser_get_workspace_instance_input(
 }
 
 pub(crate) fn de_get_workspace_instance(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workspace_instance::builders::GetWorkspaceInstanceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_workspace_instance::builders::GetWorkspaceInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,11 +139,12 @@ pub(crate) fn de_get_workspace_instance(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WorkspaceInstanceErrors" => {
                     builder = builder.set_workspace_instance_errors(
-                        crate::protocol_serde::shape_workspace_instance_errors::de_workspace_instance_errors(tokens)?,
+                        crate::protocol_serde::shape_workspace_instance_errors::de_workspace_instance_errors(tokens, _value)?,
                     );
                 }
                 "EC2InstanceErrors" => {
-                    builder = builder.set_ec2_instance_errors(crate::protocol_serde::shape_ec2_instance_errors::de_ec2_instance_errors(tokens)?);
+                    builder =
+                        builder.set_ec2_instance_errors(crate::protocol_serde::shape_ec2_instance_errors::de_ec2_instance_errors(tokens, _value)?);
                 }
                 "ProvisionState" => {
                     builder = builder.set_provision_state(
@@ -160,11 +161,14 @@ pub(crate) fn de_get_workspace_instance(
                     );
                 }
                 "EC2ManagedInstance" => {
-                    builder = builder.set_ec2_managed_instance(crate::protocol_serde::shape_ec2_managed_instance::de_ec2_managed_instance(tokens)?);
+                    builder = builder.set_ec2_managed_instance(crate::protocol_serde::shape_ec2_managed_instance::de_ec2_managed_instance(
+                        tokens, _value,
+                    )?);
                 }
                 "BillingConfiguration" => {
-                    builder =
-                        builder.set_billing_configuration(crate::protocol_serde::shape_billing_configuration::de_billing_configuration(tokens)?);
+                    builder = builder.set_billing_configuration(crate::protocol_serde::shape_billing_configuration::de_billing_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

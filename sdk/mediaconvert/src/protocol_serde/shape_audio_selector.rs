@@ -86,6 +86,7 @@ pub fn ser_audio_selector(
 
 pub(crate) fn de_audio_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -129,7 +130,7 @@ where
                         }
                         "hlsRenditionGroupSettings" => {
                             builder = builder.set_hls_rendition_group_settings(
-                                crate::protocol_serde::shape_hls_rendition_group_settings::de_hls_rendition_group_settings(tokens)?,
+                                crate::protocol_serde::shape_hls_rendition_group_settings::de_hls_rendition_group_settings(tokens, _value)?,
                             );
                         }
                         "languageCode" => {
@@ -148,7 +149,9 @@ where
                         }
                         "pids" => {
                             builder = builder.set_pids(
-                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "programSelection" => {
@@ -159,7 +162,7 @@ where
                             );
                         }
                         "remixSettings" => {
-                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens)?);
+                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens, _value)?);
                         }
                         "selectorType" => {
                             builder = builder.set_selector_type(
@@ -170,12 +173,16 @@ where
                         }
                         "streams" => {
                             builder = builder.set_streams(
-                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "tracks" => {
                             builder = builder.set_tracks(
-                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

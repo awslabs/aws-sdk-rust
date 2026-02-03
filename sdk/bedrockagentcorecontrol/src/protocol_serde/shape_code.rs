@@ -17,6 +17,7 @@ pub fn ser_code(
 
 pub(crate) fn de_code<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Code>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::Code::S3(
-                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?
+                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
                         _ => {

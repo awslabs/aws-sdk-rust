@@ -20,6 +20,7 @@ pub fn ser_alarm_notification(
 
 pub(crate) fn de_alarm_notification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AlarmNotification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "notificationActions" => {
-                            builder =
-                                builder.set_notification_actions(crate::protocol_serde::shape_notification_actions::de_notification_actions(tokens)?);
+                            builder = builder.set_notification_actions(crate::protocol_serde::shape_notification_actions::de_notification_actions(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

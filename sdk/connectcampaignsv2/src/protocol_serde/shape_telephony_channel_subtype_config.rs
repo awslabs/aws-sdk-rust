@@ -29,6 +29,7 @@ pub fn ser_telephony_channel_subtype_config(
 
 pub(crate) fn de_telephony_channel_subtype_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelephonyChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,12 +55,13 @@ where
                             );
                         }
                         "outboundMode" => {
-                            builder =
-                                builder.set_outbound_mode(crate::protocol_serde::shape_telephony_outbound_mode::de_telephony_outbound_mode(tokens)?);
+                            builder = builder.set_outbound_mode(crate::protocol_serde::shape_telephony_outbound_mode::de_telephony_outbound_mode(
+                                tokens, _value,
+                            )?);
                         }
                         "defaultOutboundConfig" => {
                             builder = builder.set_default_outbound_config(
-                                crate::protocol_serde::shape_telephony_outbound_config::de_telephony_outbound_config(tokens)?,
+                                crate::protocol_serde::shape_telephony_outbound_config::de_telephony_outbound_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

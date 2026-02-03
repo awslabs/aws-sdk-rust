@@ -48,13 +48,13 @@ pub fn ser_configure_logs_for_channel_input(
 }
 
 pub(crate) fn de_configure_logs_for_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -69,7 +69,7 @@ pub(crate) fn de_configure_logs_for_channel(
                     );
                 }
                 "LogTypes" => {
-                    builder = builder.set_log_types(crate::protocol_serde::shape_log_types::de_log_types(tokens)?);
+                    builder = builder.set_log_types(crate::protocol_serde::shape_log_types::de_log_types(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

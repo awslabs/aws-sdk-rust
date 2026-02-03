@@ -50,6 +50,7 @@ pub fn ser_section_based_layout_configuration(
 
 pub(crate) fn de_section_based_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SectionBasedLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,22 +67,22 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "HeaderSections" => {
                                 builder = builder.set_header_sections(
-                                    crate::protocol_serde::shape_header_footer_section_configuration_list::de_header_footer_section_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_header_footer_section_configuration_list::de_header_footer_section_configuration_list(tokens, _value)?
                                 );
                             }
                             "BodySections" => {
                                 builder = builder.set_body_sections(
-                                    crate::protocol_serde::shape_body_section_configuration_list::de_body_section_configuration_list(tokens)?,
+                                    crate::protocol_serde::shape_body_section_configuration_list::de_body_section_configuration_list(tokens, _value)?,
                                 );
                             }
                             "FooterSections" => {
                                 builder = builder.set_footer_sections(
-                                    crate::protocol_serde::shape_header_footer_section_configuration_list::de_header_footer_section_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_header_footer_section_configuration_list::de_header_footer_section_configuration_list(tokens, _value)?
                                 );
                             }
                             "CanvasSizeOptions" => {
                                 builder = builder.set_canvas_size_options(
-                                    crate::protocol_serde::shape_section_based_layout_canvas_size_options::de_section_based_layout_canvas_size_options(tokens)?
+                                    crate::protocol_serde::shape_section_based_layout_canvas_size_options::de_section_based_layout_canvas_size_options(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

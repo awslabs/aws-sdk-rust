@@ -23,6 +23,7 @@ pub fn ser_date_time_hierarchy(
 
 pub(crate) fn de_date_time_hierarchy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DateTimeHierarchy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "DrillDownFilters" => {
-                            builder = builder
-                                .set_drill_down_filters(crate::protocol_serde::shape_drill_down_filter_list::de_drill_down_filter_list(tokens)?);
+                            builder = builder.set_drill_down_filters(crate::protocol_serde::shape_drill_down_filter_list::de_drill_down_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -38,6 +38,7 @@ pub fn ser_aggregate_operation(
 
 pub(crate) fn de_aggregate_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AggregateOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,16 +61,16 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "GroupByColumnNames" => {
                             builder = builder.set_group_by_column_names(
-                                crate::protocol_serde::shape_group_by_column_name_list::de_group_by_column_name_list(tokens)?,
+                                crate::protocol_serde::shape_group_by_column_name_list::de_group_by_column_name_list(tokens, _value)?,
                             );
                         }
                         "Aggregations" => {
-                            builder = builder.set_aggregations(crate::protocol_serde::shape_aggregation_list::de_aggregation_list(tokens)?);
+                            builder = builder.set_aggregations(crate::protocol_serde::shape_aggregation_list::de_aggregation_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

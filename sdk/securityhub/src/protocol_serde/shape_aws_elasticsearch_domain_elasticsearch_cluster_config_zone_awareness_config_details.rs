@@ -14,6 +14,7 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_
 
 pub(crate) fn de_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

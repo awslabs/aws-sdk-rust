@@ -92,13 +92,13 @@ pub fn de_list_grouping_attribute_definitions_http_response(
 }
 
 pub(crate) fn de_list_grouping_attribute_definitions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_grouping_attribute_definitions::builders::ListGroupingAttributeDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_list_grouping_attribute_definitions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "GroupingAttributeDefinitions" => {
                     builder = builder.set_grouping_attribute_definitions(
-                        crate::protocol_serde::shape_grouping_attribute_definitions::de_grouping_attribute_definitions(tokens)?,
+                        crate::protocol_serde::shape_grouping_attribute_definitions::de_grouping_attribute_definitions(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

@@ -10,6 +10,8 @@ pub struct PutRecordsInput {
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PutRecordsInput {
     /// <p>The records associated with the request.</p>
@@ -26,6 +28,10 @@ impl PutRecordsInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl PutRecordsInput {
     /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
@@ -41,6 +47,7 @@ pub struct PutRecordsInputBuilder {
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PutRecordsInputBuilder {
     /// Appends an item to `records`.
@@ -91,12 +98,27 @@ impl PutRecordsInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_records::PutRecordsInput {
             records: self.records,
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

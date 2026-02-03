@@ -121,13 +121,13 @@ pub fn de_get_provider_service_http_response(
 }
 
 pub(crate) fn de_get_provider_service(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_get_provider_service(
                 }
                 "providerComponentSchema" => {
                     builder = builder.set_provider_component_schema(
-                        crate::protocol_serde::shape_provider_component_schema::de_provider_component_schema(tokens)?,
+                        crate::protocol_serde::shape_provider_component_schema::de_provider_component_schema(tokens, _value)?,
                     );
                 }
                 "providerConfigurationDefinition" => {
@@ -147,7 +147,7 @@ pub(crate) fn de_get_provider_service(
                 }
                 "providerEndpointConfiguration" => {
                     builder = builder.set_provider_endpoint_configuration(
-                        crate::protocol_serde::shape_provider_endpoint_configuration::de_provider_endpoint_configuration(tokens)?,
+                        crate::protocol_serde::shape_provider_endpoint_configuration::de_provider_endpoint_configuration(tokens, _value)?,
                     );
                 }
                 "providerEntityOutputDefinition" => {
@@ -155,12 +155,12 @@ pub(crate) fn de_get_provider_service(
                 }
                 "providerIdNameSpaceConfiguration" => {
                     builder = builder.set_provider_id_name_space_configuration(
-                        crate::protocol_serde::shape_provider_id_name_space_configuration::de_provider_id_name_space_configuration(tokens)?,
+                        crate::protocol_serde::shape_provider_id_name_space_configuration::de_provider_id_name_space_configuration(tokens, _value)?,
                     );
                 }
                 "providerIntermediateDataAccessConfiguration" => {
                     builder = builder.set_provider_intermediate_data_access_configuration(
-                            crate::protocol_serde::shape_provider_intermediate_data_access_configuration::de_provider_intermediate_data_access_configuration(tokens)?
+                            crate::protocol_serde::shape_provider_intermediate_data_access_configuration::de_provider_intermediate_data_access_configuration(tokens, _value)?
                         );
                 }
                 "providerJobConfiguration" => {

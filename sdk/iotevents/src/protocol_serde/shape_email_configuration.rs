@@ -23,6 +23,7 @@ pub fn ser_email_configuration(
 
 pub(crate) fn de_email_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EmailConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "content" => {
-                            builder = builder.set_content(crate::protocol_serde::shape_email_content::de_email_content(tokens)?);
+                            builder = builder.set_content(crate::protocol_serde::shape_email_content::de_email_content(tokens, _value)?);
                         }
                         "recipients" => {
-                            builder = builder.set_recipients(crate::protocol_serde::shape_email_recipients::de_email_recipients(tokens)?);
+                            builder = builder.set_recipients(crate::protocol_serde::shape_email_recipients::de_email_recipients(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

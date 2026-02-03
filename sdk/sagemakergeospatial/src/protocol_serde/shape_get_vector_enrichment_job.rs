@@ -120,13 +120,13 @@ pub fn de_get_vector_enrichment_job_http_response(
 }
 
 pub(crate) fn de_get_vector_enrichment_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_get_vector_enrichment_job(
                 }
                 "ErrorDetails" => {
                     builder = builder.set_error_details(
-                        crate::protocol_serde::shape_vector_enrichment_job_error_details::de_vector_enrichment_job_error_details(tokens)?,
+                        crate::protocol_serde::shape_vector_enrichment_job_error_details::de_vector_enrichment_job_error_details(tokens, _value)?,
                     );
                 }
                 "ExecutionRoleArn" => {
@@ -168,7 +168,7 @@ pub(crate) fn de_get_vector_enrichment_job(
                 "ExportErrorDetails" => {
                     builder = builder.set_export_error_details(
                         crate::protocol_serde::shape_vector_enrichment_job_export_error_details::de_vector_enrichment_job_export_error_details(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
@@ -181,12 +181,12 @@ pub(crate) fn de_get_vector_enrichment_job(
                 }
                 "InputConfig" => {
                     builder = builder.set_input_config(
-                        crate::protocol_serde::shape_vector_enrichment_job_input_config::de_vector_enrichment_job_input_config(tokens)?,
+                        crate::protocol_serde::shape_vector_enrichment_job_input_config::de_vector_enrichment_job_input_config(tokens, _value)?,
                     );
                 }
                 "JobConfig" => {
-                    builder =
-                        builder.set_job_config(crate::protocol_serde::shape_vector_enrichment_job_config::de_vector_enrichment_job_config(tokens)?);
+                    builder = builder
+                        .set_job_config(crate::protocol_serde::shape_vector_enrichment_job_config::de_vector_enrichment_job_config(tokens, _value)?);
                 }
                 "KmsKeyId" => {
                     builder = builder.set_kms_key_id(
@@ -210,7 +210,7 @@ pub(crate) fn de_get_vector_enrichment_job(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "Type" => {
                     builder = builder.set_type(

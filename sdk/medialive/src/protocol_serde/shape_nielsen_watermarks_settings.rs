@@ -23,6 +23,7 @@ pub fn ser_nielsen_watermarks_settings(
 
 pub(crate) fn de_nielsen_watermarks_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NielsenWatermarksSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "nielsenCbetSettings" => {
-                            builder = builder.set_nielsen_cbet_settings(crate::protocol_serde::shape_nielsen_cbet::de_nielsen_cbet(tokens)?);
+                            builder = builder.set_nielsen_cbet_settings(crate::protocol_serde::shape_nielsen_cbet::de_nielsen_cbet(tokens, _value)?);
                         }
                         "nielsenDistributionType" => {
                             builder = builder.set_nielsen_distribution_type(
@@ -50,8 +51,9 @@ where
                             );
                         }
                         "nielsenNaesIiNwSettings" => {
-                            builder = builder
-                                .set_nielsen_naes_ii_nw_settings(crate::protocol_serde::shape_nielsen_naes_ii_nw::de_nielsen_naes_ii_nw(tokens)?);
+                            builder = builder.set_nielsen_naes_ii_nw_settings(
+                                crate::protocol_serde::shape_nielsen_naes_ii_nw::de_nielsen_naes_ii_nw(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

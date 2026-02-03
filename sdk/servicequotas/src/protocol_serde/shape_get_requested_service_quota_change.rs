@@ -138,13 +138,13 @@ pub fn ser_get_requested_service_quota_change_input(
 }
 
 pub(crate) fn de_get_requested_service_quota_change(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,8 +152,9 @@ pub(crate) fn de_get_requested_service_quota_change(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RequestedQuota" => {
-                    builder = builder
-                        .set_requested_quota(crate::protocol_serde::shape_requested_service_quota_change::de_requested_service_quota_change(tokens)?);
+                    builder = builder.set_requested_quota(
+                        crate::protocol_serde::shape_requested_service_quota_change::de_requested_service_quota_change(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

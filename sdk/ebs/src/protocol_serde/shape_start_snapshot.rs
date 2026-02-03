@@ -176,13 +176,13 @@ pub fn ser_start_snapshot_input(
 }
 
 pub(crate) fn de_start_snapshot(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_snapshot::builders::StartSnapshotOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_snapshot::builders::StartSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -252,7 +252,7 @@ pub(crate) fn de_start_snapshot(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "VolumeSize" => {
                     builder = builder.set_volume_size(

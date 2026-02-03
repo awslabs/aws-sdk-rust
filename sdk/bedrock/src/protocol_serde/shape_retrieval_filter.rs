@@ -105,6 +105,7 @@ pub fn ser_retrieval_filter(
 
 pub(crate) fn de_retrieval_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetrievalFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -134,65 +135,65 @@ where
                     }
                     variant = match key.as_ref() {
                         "equals" => Some(crate::types::RetrievalFilter::Equals(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equals' cannot be null")
                             })?,
                         )),
                         "notEquals" => Some(crate::types::RetrievalFilter::NotEquals(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEquals' cannot be null")
                             })?,
                         )),
                         "greaterThan" => Some(crate::types::RetrievalFilter::GreaterThan(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThan' cannot be null")
                             })?,
                         )),
                         "greaterThanOrEquals" => Some(crate::types::RetrievalFilter::GreaterThanOrEquals(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'greaterThanOrEquals' cannot be null")
                             })?,
                         )),
                         "lessThan" => Some(crate::types::RetrievalFilter::LessThan(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThan' cannot be null")
                             })?,
                         )),
                         "lessThanOrEquals" => Some(crate::types::RetrievalFilter::LessThanOrEquals(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lessThanOrEquals' cannot be null")
                             })?,
                         )),
                         "in" => Some(crate::types::RetrievalFilter::In(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'in' cannot be null"))?,
                         )),
                         "notIn" => Some(crate::types::RetrievalFilter::NotIn(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notIn' cannot be null"))?,
                         )),
                         "startsWith" => Some(crate::types::RetrievalFilter::StartsWith(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'startsWith' cannot be null")
                             })?,
                         )),
                         "listContains" => Some(crate::types::RetrievalFilter::ListContains(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'listContains' cannot be null")
                             })?,
                         )),
                         "stringContains" => Some(crate::types::RetrievalFilter::StringContains(
-                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_attribute::de_filter_attribute(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringContains' cannot be null")
                             })?,
                         )),
                         "andAll" => Some(crate::types::RetrievalFilter::AndAll(
-                            crate::protocol_serde::shape_retrieval_filter_list::de_retrieval_filter_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_retrieval_filter_list::de_retrieval_filter_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andAll' cannot be null")
                             })?,
                         )),
                         "orAll" => Some(crate::types::RetrievalFilter::OrAll(
-                            crate::protocol_serde::shape_retrieval_filter_list::de_retrieval_filter_list(tokens)?
+                            crate::protocol_serde::shape_retrieval_filter_list::de_retrieval_filter_list(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orAll' cannot be null"))?,
                         )),
                         _ => {

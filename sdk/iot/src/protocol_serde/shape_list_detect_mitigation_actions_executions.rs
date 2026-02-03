@@ -106,13 +106,13 @@ pub fn de_list_detect_mitigation_actions_executions_http_response(
 }
 
 pub(crate) fn de_list_detect_mitigation_actions_executions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,9 @@ pub(crate) fn de_list_detect_mitigation_actions_executions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionsExecutions" => {
                     builder = builder.set_actions_executions(
-                        crate::protocol_serde::shape_detect_mitigation_action_execution_list::de_detect_mitigation_action_execution_list(tokens)?,
+                        crate::protocol_serde::shape_detect_mitigation_action_execution_list::de_detect_mitigation_action_execution_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "nextToken" => {

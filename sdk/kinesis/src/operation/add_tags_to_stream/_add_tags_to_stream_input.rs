@@ -10,6 +10,8 @@ pub struct AddTagsToStreamInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl AddTagsToStreamInput {
     /// <p>The name of the stream.</p>
@@ -23,6 +25,10 @@ impl AddTagsToStreamInput {
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 impl AddTagsToStreamInput {
@@ -39,6 +45,7 @@ pub struct AddTagsToStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl AddTagsToStreamInputBuilder {
     /// <p>The name of the stream.</p>
@@ -89,6 +96,20 @@ impl AddTagsToStreamInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`AddTagsToStreamInput`](crate::operation::add_tags_to_stream::AddTagsToStreamInput).
     pub fn build(
         self,
@@ -97,6 +118,7 @@ impl AddTagsToStreamInputBuilder {
             stream_name: self.stream_name,
             tags: self.tags,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

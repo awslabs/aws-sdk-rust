@@ -20,6 +20,7 @@ pub fn ser_rendition_configuration(
 
 pub(crate) fn de_rendition_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RenditionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                         "renditions" => {
                             builder = builder.set_renditions(
                                 crate::protocol_serde::shape_rendition_configuration_rendition_list::de_rendition_configuration_rendition_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -100,13 +100,13 @@ pub fn de_describe_audit_task_http_response(
 }
 
 pub(crate) fn de_describe_audit_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_audit_task::builders::DescribeAuditTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_audit_task::builders::DescribeAuditTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_describe_audit_task(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "auditDetails" => {
-                    builder = builder.set_audit_details(crate::protocol_serde::shape_audit_details::de_audit_details(tokens)?);
+                    builder = builder.set_audit_details(crate::protocol_serde::shape_audit_details::de_audit_details(tokens, _value)?);
                 }
                 "scheduledAuditName" => {
                     builder = builder.set_scheduled_audit_name(
@@ -130,7 +130,7 @@ pub(crate) fn de_describe_audit_task(
                     )?);
                 }
                 "taskStatistics" => {
-                    builder = builder.set_task_statistics(crate::protocol_serde::shape_task_statistics::de_task_statistics(tokens)?);
+                    builder = builder.set_task_statistics(crate::protocol_serde::shape_task_statistics::de_task_statistics(tokens, _value)?);
                 }
                 "taskStatus" => {
                     builder = builder.set_task_status(

@@ -157,7 +157,7 @@ mod create_schema_mapping;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_entityresolution::Error> {
 /// # let client: aws_sdk_entityresolution::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_policy_statement()
 ///     .customize()

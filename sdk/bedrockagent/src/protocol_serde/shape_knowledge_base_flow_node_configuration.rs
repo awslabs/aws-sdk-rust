@@ -53,6 +53,7 @@ pub fn ser_knowledge_base_flow_node_configuration(
 
 pub(crate) fn de_knowledge_base_flow_node_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseFlowNodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,7 +83,7 @@ where
                         }
                         "guardrailConfiguration" => {
                             builder = builder.set_guardrail_configuration(
-                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens)?,
+                                crate::protocol_serde::shape_guardrail_configuration::de_guardrail_configuration(tokens, _value)?,
                             );
                         }
                         "numberOfResults" => {
@@ -94,22 +95,24 @@ where
                         }
                         "promptTemplate" => {
                             builder = builder.set_prompt_template(
-                                crate::protocol_serde::shape_knowledge_base_prompt_template::de_knowledge_base_prompt_template(tokens)?,
+                                crate::protocol_serde::shape_knowledge_base_prompt_template::de_knowledge_base_prompt_template(tokens, _value)?,
                             );
                         }
                         "inferenceConfiguration" => {
                             builder = builder.set_inference_configuration(
-                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens, _value)?,
                             );
                         }
                         "rerankingConfiguration" => {
                             builder = builder.set_reranking_configuration(
-                                crate::protocol_serde::shape_vector_search_reranking_configuration::de_vector_search_reranking_configuration(tokens)?,
+                                crate::protocol_serde::shape_vector_search_reranking_configuration::de_vector_search_reranking_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "orchestrationConfiguration" => {
                             builder = builder.set_orchestration_configuration(
-                                    crate::protocol_serde::shape_knowledge_base_orchestration_configuration::de_knowledge_base_orchestration_configuration(tokens)?
+                                    crate::protocol_serde::shape_knowledge_base_orchestration_configuration::de_knowledge_base_orchestration_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

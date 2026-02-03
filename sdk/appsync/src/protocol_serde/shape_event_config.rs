@@ -62,6 +62,7 @@ pub fn ser_event_config(
 
 pub(crate) fn de_event_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,19 +77,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "authProviders" => {
-                            builder = builder.set_auth_providers(crate::protocol_serde::shape_auth_providers::de_auth_providers(tokens)?);
+                            builder = builder.set_auth_providers(crate::protocol_serde::shape_auth_providers::de_auth_providers(tokens, _value)?);
                         }
                         "connectionAuthModes" => {
-                            builder = builder.set_connection_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens)?);
+                            builder = builder.set_connection_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value)?);
                         }
                         "defaultPublishAuthModes" => {
-                            builder = builder.set_default_publish_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens)?);
+                            builder = builder.set_default_publish_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value)?);
                         }
                         "defaultSubscribeAuthModes" => {
-                            builder = builder.set_default_subscribe_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens)?);
+                            builder =
+                                builder.set_default_subscribe_auth_modes(crate::protocol_serde::shape_auth_modes::de_auth_modes(tokens, _value)?);
                         }
                         "logConfig" => {
-                            builder = builder.set_log_config(crate::protocol_serde::shape_event_log_config::de_event_log_config(tokens)?);
+                            builder = builder.set_log_config(crate::protocol_serde::shape_event_log_config::de_event_log_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

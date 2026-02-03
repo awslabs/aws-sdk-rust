@@ -30,6 +30,7 @@ pub fn ser_router_input_transit_encryption_key_configuration(
 
 pub(crate) fn de_router_input_transit_encryption_key_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RouterInputTransitEncryptionKeyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,13 +61,13 @@ where
                     variant = match key.as_ref() {
                             "secretsManager" => {
                                 Some(crate::types::RouterInputTransitEncryptionKeyConfiguration::SecretsManager(
-                                    crate::protocol_serde::shape_secrets_manager_encryption_key_configuration::de_secrets_manager_encryption_key_configuration(tokens)?
+                                    crate::protocol_serde::shape_secrets_manager_encryption_key_configuration::de_secrets_manager_encryption_key_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SecretsManager' cannot be null"))?
                                 ))
                             }
                             "automatic" => {
                                 Some(crate::types::RouterInputTransitEncryptionKeyConfiguration::Automatic(
-                                    crate::protocol_serde::shape_automatic_encryption_key_configuration::de_automatic_encryption_key_configuration(tokens)?
+                                    crate::protocol_serde::shape_automatic_encryption_key_configuration::de_automatic_encryption_key_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Automatic' cannot be null"))?
                                 ))
                             }

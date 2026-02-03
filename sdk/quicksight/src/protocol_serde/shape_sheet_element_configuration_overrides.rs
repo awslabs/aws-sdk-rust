@@ -11,6 +11,7 @@ pub fn ser_sheet_element_configuration_overrides(
 
 pub(crate) fn de_sheet_element_configuration_overrides<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetElementConfigurationOverrides>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

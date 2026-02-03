@@ -50,6 +50,7 @@ pub fn ser_gauge_chart_configuration(
 
 pub(crate) fn de_gauge_chart_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GaugeChartConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,30 +65,32 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder =
-                                builder.set_field_wells(crate::protocol_serde::shape_gauge_chart_field_wells::de_gauge_chart_field_wells(tokens)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_gauge_chart_field_wells::de_gauge_chart_field_wells(
+                                tokens, _value,
+                            )?);
                         }
                         "GaugeChartOptions" => {
-                            builder =
-                                builder.set_gauge_chart_options(crate::protocol_serde::shape_gauge_chart_options::de_gauge_chart_options(tokens)?);
+                            builder = builder
+                                .set_gauge_chart_options(crate::protocol_serde::shape_gauge_chart_options::de_gauge_chart_options(tokens, _value)?);
                         }
                         "DataLabels" => {
-                            builder = builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                            builder =
+                                builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
                         }
                         "TooltipOptions" => {
-                            builder = builder.set_tooltip_options(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                            builder = builder.set_tooltip_options(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "VisualPalette" => {
-                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens, _value)?);
                         }
                         "ColorConfiguration" => {
                             builder = builder.set_color_configuration(
-                                crate::protocol_serde::shape_gauge_chart_color_configuration::de_gauge_chart_color_configuration(tokens)?,
+                                crate::protocol_serde::shape_gauge_chart_color_configuration::de_gauge_chart_color_configuration(tokens, _value)?,
                             );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

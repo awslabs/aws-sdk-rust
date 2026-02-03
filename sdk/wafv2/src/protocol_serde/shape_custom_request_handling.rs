@@ -20,6 +20,7 @@ pub fn ser_custom_request_handling(
 
 pub(crate) fn de_custom_request_handling<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomRequestHandling>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InsertHeaders" => {
-                            builder = builder.set_insert_headers(crate::protocol_serde::shape_custom_http_headers::de_custom_http_headers(tokens)?);
+                            builder =
+                                builder.set_insert_headers(crate::protocol_serde::shape_custom_http_headers::de_custom_http_headers(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

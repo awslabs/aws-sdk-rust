@@ -29,6 +29,7 @@ pub fn ser_noise_reducer(
 
 pub(crate) fn de_noise_reducer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NoiseReducer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,18 +52,20 @@ where
                         }
                         "filterSettings" => {
                             builder = builder.set_filter_settings(
-                                crate::protocol_serde::shape_noise_reducer_filter_settings::de_noise_reducer_filter_settings(tokens)?,
+                                crate::protocol_serde::shape_noise_reducer_filter_settings::de_noise_reducer_filter_settings(tokens, _value)?,
                             );
                         }
                         "spatialFilterSettings" => {
                             builder = builder.set_spatial_filter_settings(
-                                crate::protocol_serde::shape_noise_reducer_spatial_filter_settings::de_noise_reducer_spatial_filter_settings(tokens)?,
+                                crate::protocol_serde::shape_noise_reducer_spatial_filter_settings::de_noise_reducer_spatial_filter_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "temporalFilterSettings" => {
                             builder = builder.set_temporal_filter_settings(
                                 crate::protocol_serde::shape_noise_reducer_temporal_filter_settings::de_noise_reducer_temporal_filter_settings(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

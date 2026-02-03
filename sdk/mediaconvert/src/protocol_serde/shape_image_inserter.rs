@@ -26,6 +26,7 @@ pub fn ser_image_inserter(
 
 pub(crate) fn de_image_inserter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageInserter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "insertableImages" => {
                             builder = builder.set_insertable_images(
-                                crate::protocol_serde::shape_list_of_insertable_image::de_list_of_insertable_image(tokens)?,
+                                crate::protocol_serde::shape_list_of_insertable_image::de_list_of_insertable_image(tokens, _value)?,
                             );
                         }
                         "sdrReferenceWhiteLevel" => {

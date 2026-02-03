@@ -204,7 +204,7 @@ mod create_table;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_timestreamwrite::Error> {
 /// # let client: aws_sdk_timestreamwrite::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_batch_load_task()
 ///     .customize()

@@ -85,8 +85,8 @@ pub fn ser_describe_maintenance_window_execution_task_invocations_input(
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
-pub(crate) fn de_describe_maintenance_window_execution_task_invocations(value: &[u8], mut builder: crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder) -> ::std::result::Result<crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+pub(crate) fn de_describe_maintenance_window_execution_task_invocations(_value: &[u8], mut builder: crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder) -> ::std::result::Result<crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -95,7 +95,7 @@ pub(crate) fn de_describe_maintenance_window_execution_task_invocations(value: &
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WindowExecutionTaskInvocationIdentities" => {
                     builder = builder.set_window_execution_task_invocation_identities(
-                            crate::protocol_serde::shape_maintenance_window_execution_task_invocation_identity_list::de_maintenance_window_execution_task_invocation_identity_list(tokens)?
+                            crate::protocol_serde::shape_maintenance_window_execution_task_invocation_identity_list::de_maintenance_window_execution_task_invocation_identity_list(tokens, _value)?
                         );
                 }
                 "NextToken" => {

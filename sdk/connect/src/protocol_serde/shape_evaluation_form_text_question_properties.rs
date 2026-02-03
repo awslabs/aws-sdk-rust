@@ -14,6 +14,7 @@ pub fn ser_evaluation_form_text_question_properties(
 
 pub(crate) fn de_evaluation_form_text_question_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormTextQuestionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Automation" => {
                                 builder = builder.set_automation(
-                                    crate::protocol_serde::shape_evaluation_form_text_question_automation::de_evaluation_form_text_question_automation(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_text_question_automation::de_evaluation_form_text_question_automation(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

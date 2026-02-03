@@ -134,13 +134,13 @@ pub fn de_complete_snapshot_http_response(
 
 pub fn ser_complete_snapshot_headers(
     input: &crate::operation::complete_snapshot::CompleteSnapshotInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.changed_blocks_count {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "changed_blocks_count",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -151,7 +151,7 @@ pub fn ser_complete_snapshot_headers(
     if let ::std::option::Option::Some(inner_3) = &input.checksum {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -162,7 +162,7 @@ pub fn ser_complete_snapshot_headers(
     if let ::std::option::Option::Some(inner_5) = &input.checksum_algorithm {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_algorithm",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -173,7 +173,7 @@ pub fn ser_complete_snapshot_headers(
     if let ::std::option::Option::Some(inner_7) = &input.checksum_aggregation_method {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_aggregation_method",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -185,13 +185,13 @@ pub fn ser_complete_snapshot_headers(
 }
 
 pub(crate) fn de_complete_snapshot(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::complete_snapshot::builders::CompleteSnapshotOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::complete_snapshot::builders::CompleteSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

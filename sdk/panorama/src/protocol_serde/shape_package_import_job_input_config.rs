@@ -14,6 +14,7 @@ pub fn ser_package_import_job_input_config(
 
 pub(crate) fn de_package_import_job_input_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PackageImportJobInputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PackageVersionInputConfig" => {
                             builder = builder.set_package_version_input_config(
-                                crate::protocol_serde::shape_package_version_input_config::de_package_version_input_config(tokens)?,
+                                crate::protocol_serde::shape_package_version_input_config::de_package_version_input_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

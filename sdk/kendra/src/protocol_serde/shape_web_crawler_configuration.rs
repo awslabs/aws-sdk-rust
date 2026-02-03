@@ -68,6 +68,7 @@ pub fn ser_web_crawler_configuration(
 
 pub(crate) fn de_web_crawler_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WebCrawlerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,7 +84,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Urls" => {
-                                builder = builder.set_urls(crate::protocol_serde::shape_urls::de_urls(tokens)?);
+                                builder = builder.set_urls(crate::protocol_serde::shape_urls::de_urls(tokens, _value)?);
                             }
                             "CrawlDepth" => {
                                 builder = builder.set_crawl_depth(
@@ -113,21 +114,22 @@ where
                             }
                             "UrlInclusionPatterns" => {
                                 builder = builder.set_url_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "UrlExclusionPatterns" => {
                                 builder = builder.set_url_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ProxyConfiguration" => {
-                                builder = builder
-                                    .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
+                                builder = builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(
+                                    tokens, _value,
+                                )?);
                             }
                             "AuthenticationConfiguration" => {
                                 builder = builder.set_authentication_configuration(
-                                    crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens)?,
+                                    crate::protocol_serde::shape_authentication_configuration::de_authentication_configuration(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

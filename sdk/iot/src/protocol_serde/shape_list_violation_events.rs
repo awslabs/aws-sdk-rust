@@ -89,13 +89,13 @@ pub fn de_list_violation_events_http_response(
 }
 
 pub(crate) fn de_list_violation_events(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -110,7 +110,7 @@ pub(crate) fn de_list_violation_events(
                     );
                 }
                 "violationEvents" => {
-                    builder = builder.set_violation_events(crate::protocol_serde::shape_violation_events::de_violation_events(tokens)?);
+                    builder = builder.set_violation_events(crate::protocol_serde::shape_violation_events::de_violation_events(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

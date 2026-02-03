@@ -12,6 +12,7 @@ allowed_external_types = [
     "http::response::Builder",
     "http::response::Response",
     "http::uri::Uri",
+    "http_body::frame::Frame",
 
     # TODO(https://github.com/smithy-lang/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `event-stream` feature
     "futures_core::stream::Stream",

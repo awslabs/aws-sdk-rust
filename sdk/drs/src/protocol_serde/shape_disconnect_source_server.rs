@@ -146,13 +146,13 @@ pub fn ser_disconnect_source_server_input(
 }
 
 pub(crate) fn de_disconnect_source_server(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,8 +174,9 @@ pub(crate) fn de_disconnect_source_server(
                     );
                 }
                 "dataReplicationInfo" => {
-                    builder =
-                        builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens)?);
+                    builder = builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(
+                        tokens, _value,
+                    )?);
                 }
                 "lastLaunchResult" => {
                     builder = builder.set_last_launch_result(
@@ -185,7 +186,7 @@ pub(crate) fn de_disconnect_source_server(
                     );
                 }
                 "lifeCycle" => {
-                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens)?);
+                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value)?);
                 }
                 "recoveryInstanceId" => {
                     builder = builder.set_recovery_instance_id(
@@ -209,8 +210,9 @@ pub(crate) fn de_disconnect_source_server(
                     );
                 }
                 "sourceCloudProperties" => {
-                    builder = builder
-                        .set_source_cloud_properties(crate::protocol_serde::shape_source_cloud_properties::de_source_cloud_properties(tokens)?);
+                    builder = builder.set_source_cloud_properties(crate::protocol_serde::shape_source_cloud_properties::de_source_cloud_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "sourceNetworkID" => {
                     builder = builder.set_source_network_id(
@@ -220,7 +222,7 @@ pub(crate) fn de_disconnect_source_server(
                     );
                 }
                 "sourceProperties" => {
-                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens)?);
+                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens, _value)?);
                 }
                 "sourceServerID" => {
                     builder = builder.set_source_server_id(
@@ -230,10 +232,10 @@ pub(crate) fn de_disconnect_source_server(
                     );
                 }
                 "stagingArea" => {
-                    builder = builder.set_staging_area(crate::protocol_serde::shape_staging_area::de_staging_area(tokens)?);
+                    builder = builder.set_staging_area(crate::protocol_serde::shape_staging_area::de_staging_area(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -59,6 +59,8 @@ pub use crate::types::_application_status::ApplicationStatus;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_region_status::RegionStatus;
+
 pub use crate::types::_permissions_boundary::PermissionsBoundary;
 
 pub use crate::types::_customer_managed_policy_reference::CustomerManagedPolicyReference;
@@ -74,6 +76,8 @@ pub use crate::types::_provision_target_type::ProvisionTargetType;
 pub use crate::types::_trusted_token_issuer_metadata::TrustedTokenIssuerMetadata;
 
 pub use crate::types::_trusted_token_issuer_type::TrustedTokenIssuerType;
+
+pub use crate::types::_region_metadata::RegionMetadata;
 
 pub use crate::types::_provisioning_status::ProvisioningStatus;
 
@@ -238,6 +242,10 @@ mod _provision_target_type;
 mod _provisioning_status;
 
 mod _refresh_token_grant;
+
+mod _region_metadata;
+
+mod _region_status;
 
 mod _resource_not_found_exception_reason;
 

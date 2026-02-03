@@ -36,6 +36,7 @@ pub fn ser_message_insights_data_source(
 
 pub(crate) fn de_message_insights_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageInsightsDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,12 +64,12 @@ where
                         }
                         "Include" => {
                             builder = builder.set_include(crate::protocol_serde::shape_message_insights_filters::de_message_insights_filters(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Exclude" => {
                             builder = builder.set_exclude(crate::protocol_serde::shape_message_insights_filters::de_message_insights_filters(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "MaxResults" => {

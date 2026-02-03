@@ -20,6 +20,7 @@ pub fn ser_s3_data_repository_configuration(
 
 pub(crate) fn de_s3_data_repository_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DataRepositoryConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AutoImportPolicy" => {
-                            builder = builder.set_auto_import_policy(crate::protocol_serde::shape_auto_import_policy::de_auto_import_policy(tokens)?);
+                            builder = builder
+                                .set_auto_import_policy(crate::protocol_serde::shape_auto_import_policy::de_auto_import_policy(tokens, _value)?);
                         }
                         "AutoExportPolicy" => {
-                            builder = builder.set_auto_export_policy(crate::protocol_serde::shape_auto_export_policy::de_auto_export_policy(tokens)?);
+                            builder = builder
+                                .set_auto_export_policy(crate::protocol_serde::shape_auto_export_policy::de_auto_export_policy(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

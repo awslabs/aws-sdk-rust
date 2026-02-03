@@ -156,11 +156,11 @@ pub fn ser_update_terms_input(
 }
 
 pub(crate) fn de_update_terms(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_terms::builders::UpdateTermsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::update_terms::builders::UpdateTermsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_update_terms(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Terms" => {
-                    builder = builder.set_terms(crate::protocol_serde::shape_terms_type::de_terms_type(tokens)?);
+                    builder = builder.set_terms(crate::protocol_serde::shape_terms_type::de_terms_type(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

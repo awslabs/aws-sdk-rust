@@ -117,13 +117,13 @@ pub fn ser_create_product_rest_endpoint_page_input(
 }
 
 pub(crate) fn de_create_product_rest_endpoint_page(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_product_rest_endpoint_page::builders::CreateProductRestEndpointPageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_product_rest_endpoint_page::builders::CreateProductRestEndpointPageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,7 +132,7 @@ pub(crate) fn de_create_product_rest_endpoint_page(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "displayContent" => {
                     builder = builder.set_display_content(
-                        crate::protocol_serde::shape_endpoint_display_content_response::de_endpoint_display_content_response(tokens)?,
+                        crate::protocol_serde::shape_endpoint_display_content_response::de_endpoint_display_content_response(tokens, _value)?,
                     );
                 }
                 "lastModified" => {
@@ -157,7 +157,7 @@ pub(crate) fn de_create_product_rest_endpoint_page(
                 }
                 "restEndpointIdentifier" => {
                     builder = builder.set_rest_endpoint_identifier(
-                        crate::protocol_serde::shape_rest_endpoint_identifier::de_rest_endpoint_identifier(tokens)?,
+                        crate::protocol_serde::shape_rest_endpoint_identifier::de_rest_endpoint_identifier(tokens, _value)?,
                     );
                 }
                 "status" => {
@@ -168,7 +168,7 @@ pub(crate) fn de_create_product_rest_endpoint_page(
                     );
                 }
                 "statusException" => {
-                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens)?);
+                    builder = builder.set_status_exception(crate::protocol_serde::shape_status_exception::de_status_exception(tokens, _value)?);
                 }
                 "tryItState" => {
                     builder = builder.set_try_it_state(

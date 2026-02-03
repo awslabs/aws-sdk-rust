@@ -151,13 +151,13 @@ pub fn ser_create_domain_unit_input(
 }
 
 pub(crate) fn de_create_domain_unit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_domain_unit::builders::CreateDomainUnitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_domain_unit::builders::CreateDomainUnitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,7 +165,7 @@ pub(crate) fn de_create_domain_unit(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ancestorDomainUnitIds" => {
-                    builder = builder.set_ancestor_domain_unit_ids(crate::protocol_serde::shape_domain_unit_ids::de_domain_unit_ids(tokens)?);
+                    builder = builder.set_ancestor_domain_unit_ids(crate::protocol_serde::shape_domain_unit_ids::de_domain_unit_ids(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -209,7 +209,7 @@ pub(crate) fn de_create_domain_unit(
                     );
                 }
                 "owners" => {
-                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(tokens)?);
+                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(tokens, _value)?);
                 }
                 "parentDomainUnitId" => {
                     builder = builder.set_parent_domain_unit_id(

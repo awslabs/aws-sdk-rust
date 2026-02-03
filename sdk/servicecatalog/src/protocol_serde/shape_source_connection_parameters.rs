@@ -14,6 +14,7 @@ pub fn ser_source_connection_parameters(
 
 pub(crate) fn de_source_connection_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceConnectionParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CodeStar" => {
-                            builder = builder.set_code_star(crate::protocol_serde::shape_code_star_parameters::de_code_star_parameters(tokens)?);
+                            builder = builder.set_code_star(crate::protocol_serde::shape_code_star_parameters::de_code_star_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -32,6 +32,7 @@ pub fn ser_word_cloud_aggregated_field_wells(
 
 pub(crate) fn de_word_cloud_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WordCloudAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "GroupBy" => {
                             builder = builder.set_group_by(
-                                crate::protocol_serde::shape_word_cloud_dimension_field_list::de_word_cloud_dimension_field_list(tokens)?,
+                                crate::protocol_serde::shape_word_cloud_dimension_field_list::de_word_cloud_dimension_field_list(tokens, _value)?,
                             );
                         }
                         "Size" => {
-                            builder = builder
-                                .set_size(crate::protocol_serde::shape_word_cloud_measure_field_list::de_word_cloud_measure_field_list(tokens)?);
+                            builder = builder.set_size(
+                                crate::protocol_serde::shape_word_cloud_measure_field_list::de_word_cloud_measure_field_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

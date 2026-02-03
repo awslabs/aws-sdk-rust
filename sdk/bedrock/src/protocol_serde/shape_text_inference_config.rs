@@ -35,6 +35,7 @@ pub fn ser_text_inference_config(
 
 pub(crate) fn de_text_inference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextInferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,7 +66,8 @@ where
                             );
                         }
                         "stopSequences" => {
-                            builder = builder.set_stop_sequences(crate::protocol_serde::shape_rag_stop_sequences::de_rag_stop_sequences(tokens)?);
+                            builder =
+                                builder.set_stop_sequences(crate::protocol_serde::shape_rag_stop_sequences::de_rag_stop_sequences(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ pub fn ser_geo_match_statement(
 
 pub(crate) fn de_geo_match_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeoMatchStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,11 +38,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CountryCodes" => {
-                            builder = builder.set_country_codes(crate::protocol_serde::shape_country_codes::de_country_codes(tokens)?);
+                            builder = builder.set_country_codes(crate::protocol_serde::shape_country_codes::de_country_codes(tokens, _value)?);
                         }
                         "ForwardedIPConfig" => {
-                            builder =
-                                builder.set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens)?);
+                            builder = builder
+                                .set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

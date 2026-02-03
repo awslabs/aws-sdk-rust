@@ -112,10 +112,10 @@ pub fn de_get_index_http_response(
 }
 
 pub(crate) fn de_get_index(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_index::builders::GetIndexOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_index::builders::GetIndexOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,10 +142,10 @@ pub(crate) fn de_get_index(
                     )?);
                 }
                 "ReplicatingFrom" => {
-                    builder = builder.set_replicating_from(crate::protocol_serde::shape_region_list::de_region_list(tokens)?);
+                    builder = builder.set_replicating_from(crate::protocol_serde::shape_region_list::de_region_list(tokens, _value)?);
                 }
                 "ReplicatingTo" => {
-                    builder = builder.set_replicating_to(crate::protocol_serde::shape_region_list::de_region_list(tokens)?);
+                    builder = builder.set_replicating_to(crate::protocol_serde::shape_region_list::de_region_list(tokens, _value)?);
                 }
                 "State" => {
                     builder = builder.set_state(
@@ -155,7 +155,7 @@ pub(crate) fn de_get_index(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "Type" => {
                     builder = builder.set_type(

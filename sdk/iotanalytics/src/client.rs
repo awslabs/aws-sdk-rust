@@ -159,7 +159,7 @@ mod create_pipeline;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotanalytics::Error> {
 /// # let client: aws_sdk_iotanalytics::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_put_message()
 ///     .customize()

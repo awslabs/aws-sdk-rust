@@ -89,13 +89,13 @@ pub fn ser_get_remaining_free_trial_days_input(
 }
 
 pub(crate) fn de_get_remaining_free_trial_days(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -104,11 +104,13 @@ pub(crate) fn de_get_remaining_free_trial_days(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accounts" => {
                     builder = builder.set_accounts(crate::protocol_serde::shape_account_free_trial_infos::de_account_free_trial_infos(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "unprocessedAccounts" => {
-                    builder = builder.set_unprocessed_accounts(crate::protocol_serde::shape_unprocessed_accounts::de_unprocessed_accounts(tokens)?);
+                    builder = builder.set_unprocessed_accounts(crate::protocol_serde::shape_unprocessed_accounts::de_unprocessed_accounts(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

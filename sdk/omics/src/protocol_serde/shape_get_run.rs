@@ -153,10 +153,10 @@ pub fn de_get_run_http_response(
 }
 
 pub(crate) fn de_get_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_run::builders::GetRunOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_run::builders::GetRunOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -240,7 +240,7 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "logLocation" => {
-                    builder = builder.set_log_location(crate::protocol_serde::shape_run_log_location::de_run_log_location(tokens)?);
+                    builder = builder.set_log_location(crate::protocol_serde::shape_run_log_location::de_run_log_location(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -267,7 +267,9 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "resourceDigests" => {
-                    builder = builder.set_resource_digests(crate::protocol_serde::shape_run_resource_digests::de_run_resource_digests(tokens)?);
+                    builder = builder.set_resource_digests(crate::protocol_serde::shape_run_resource_digests::de_run_resource_digests(
+                        tokens, _value,
+                    )?);
                 }
                 "retentionMode" => {
                     builder = builder.set_retention_mode(
@@ -352,7 +354,7 @@ pub(crate) fn de_get_run(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "uuid" => {
                     builder = builder.set_uuid(

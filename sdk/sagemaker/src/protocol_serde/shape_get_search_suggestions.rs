@@ -46,13 +46,13 @@ pub fn ser_get_search_suggestions_input(
 }
 
 pub(crate) fn de_get_search_suggestions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_search_suggestions::builders::GetSearchSuggestionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_search_suggestions::builders::GetSearchSuggestionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -61,7 +61,7 @@ pub(crate) fn de_get_search_suggestions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PropertyNameSuggestions" => {
                     builder = builder.set_property_name_suggestions(
-                        crate::protocol_serde::shape_property_name_suggestion_list::de_property_name_suggestion_list(tokens)?,
+                        crate::protocol_serde::shape_property_name_suggestion_list::de_property_name_suggestion_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

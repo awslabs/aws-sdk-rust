@@ -69,13 +69,13 @@ pub fn ser_describe_compute_quota_input(
 }
 
 pub(crate) fn de_describe_compute_quota(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_compute_quota::builders::DescribeComputeQuotaOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_compute_quota::builders::DescribeComputeQuotaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,10 +139,14 @@ pub(crate) fn de_describe_compute_quota(
                     );
                 }
                 "ComputeQuotaConfig" => {
-                    builder = builder.set_compute_quota_config(crate::protocol_serde::shape_compute_quota_config::de_compute_quota_config(tokens)?);
+                    builder = builder.set_compute_quota_config(crate::protocol_serde::shape_compute_quota_config::de_compute_quota_config(
+                        tokens, _value,
+                    )?);
                 }
                 "ComputeQuotaTarget" => {
-                    builder = builder.set_compute_quota_target(crate::protocol_serde::shape_compute_quota_target::de_compute_quota_target(tokens)?);
+                    builder = builder.set_compute_quota_target(crate::protocol_serde::shape_compute_quota_target::de_compute_quota_target(
+                        tokens, _value,
+                    )?);
                 }
                 "ActivationState" => {
                     builder = builder.set_activation_state(
@@ -158,7 +162,7 @@ pub(crate) fn de_describe_compute_quota(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -167,7 +171,7 @@ pub(crate) fn de_describe_compute_quota(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

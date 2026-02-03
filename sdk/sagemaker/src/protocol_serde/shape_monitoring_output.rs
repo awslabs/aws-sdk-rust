@@ -14,6 +14,7 @@ pub fn ser_monitoring_output(
 
 pub(crate) fn de_monitoring_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoringOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Output" => {
-                            builder = builder.set_s3_output(crate::protocol_serde::shape_monitoring_s3_output::de_monitoring_s3_output(tokens)?);
+                            builder = builder.set_s3_output(crate::protocol_serde::shape_monitoring_s3_output::de_monitoring_s3_output(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

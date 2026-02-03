@@ -108,13 +108,13 @@ pub fn de_describe_device_http_response(
 }
 
 pub(crate) fn de_describe_device(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_device::builders::DescribeDeviceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_device::builders::DescribeDeviceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,7 +129,7 @@ pub(crate) fn de_describe_device(
                     );
                 }
                 "deviceCapacities" => {
-                    builder = builder.set_device_capacities(crate::protocol_serde::shape_capacity_list::de_capacity_list(tokens)?);
+                    builder = builder.set_device_capacities(crate::protocol_serde::shape_capacity_list::de_capacity_list(tokens, _value)?);
                 }
                 "deviceState" => {
                     builder = builder.set_device_state(
@@ -173,14 +173,16 @@ pub(crate) fn de_describe_device(
                 }
                 "physicalNetworkInterfaces" => {
                     builder = builder.set_physical_network_interfaces(
-                        crate::protocol_serde::shape_physical_network_interface_list::de_physical_network_interface_list(tokens)?,
+                        crate::protocol_serde::shape_physical_network_interface_list::de_physical_network_interface_list(tokens, _value)?,
                     );
                 }
                 "software" => {
-                    builder = builder.set_software(crate::protocol_serde::shape_software_information::de_software_information(tokens)?);
+                    builder = builder.set_software(crate::protocol_serde::shape_software_information::de_software_information(
+                        tokens, _value,
+                    )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

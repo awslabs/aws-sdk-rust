@@ -14,6 +14,7 @@ pub fn ser_trigger_properties(
 
 pub(crate) fn de_trigger_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TriggerProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Scheduled" => {
-                            builder = builder
-                                .set_scheduled(crate::protocol_serde::shape_scheduled_trigger_properties::de_scheduled_trigger_properties(tokens)?);
+                            builder = builder.set_scheduled(
+                                crate::protocol_serde::shape_scheduled_trigger_properties::de_scheduled_trigger_properties(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

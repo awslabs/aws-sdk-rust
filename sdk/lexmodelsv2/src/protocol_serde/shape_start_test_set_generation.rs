@@ -158,13 +158,13 @@ pub fn ser_start_test_set_generation_input(
 }
 
 pub(crate) fn de_start_test_set_generation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_test_set_generation::builders::StartTestSetGenerationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_test_set_generation::builders::StartTestSetGenerationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -186,7 +186,7 @@ pub(crate) fn de_start_test_set_generation(
                 }
                 "generationDataSource" => {
                     builder = builder.set_generation_data_source(
-                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens)?,
+                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens, _value)?,
                     );
                 }
                 "roleArn" => {
@@ -198,7 +198,7 @@ pub(crate) fn de_start_test_set_generation(
                 }
                 "storageLocation" => {
                     builder = builder.set_storage_location(crate::protocol_serde::shape_test_set_storage_location::de_test_set_storage_location(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "testSetGenerationId" => {
@@ -223,7 +223,7 @@ pub(crate) fn de_start_test_set_generation(
                     );
                 }
                 "testSetTags" => {
-                    builder = builder.set_test_set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_test_set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

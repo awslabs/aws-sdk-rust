@@ -20,6 +20,7 @@ pub fn ser_source(
 
 pub(crate) fn de_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Source>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                                 })?,
                         )),
                         "eventTrigger" => Some(crate::types::Source::EventTrigger(
-                            crate::protocol_serde::shape_event_trigger::de_event_trigger(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_event_trigger::de_event_trigger(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eventTrigger' cannot be null")
                             })?,
                         )),

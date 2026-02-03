@@ -20,6 +20,7 @@ pub fn ser_trained_model_export_output_configuration(
 
 pub(crate) fn de_trained_model_export_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainedModelExportOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "members" => {
                             builder = builder.set_members(
-                                crate::protocol_serde::shape_trained_model_export_receiver_members::de_trained_model_export_receiver_members(tokens)?,
+                                crate::protocol_serde::shape_trained_model_export_receiver_members::de_trained_model_export_receiver_members(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

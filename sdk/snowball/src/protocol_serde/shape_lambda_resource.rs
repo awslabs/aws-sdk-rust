@@ -23,6 +23,7 @@ pub fn ser_lambda_resource(
 
 pub(crate) fn de_lambda_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LambdaResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "EventTriggers" => {
                             builder = builder.set_event_triggers(
-                                crate::protocol_serde::shape_event_trigger_definition_list::de_event_trigger_definition_list(tokens)?,
+                                crate::protocol_serde::shape_event_trigger_definition_list::de_event_trigger_definition_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

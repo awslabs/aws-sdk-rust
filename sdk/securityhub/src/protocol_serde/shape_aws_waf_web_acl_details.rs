@@ -29,6 +29,7 @@ pub fn ser_aws_waf_web_acl_details(
 
 pub(crate) fn de_aws_waf_web_acl_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafWebAclDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,7 @@ where
                         }
                         "Rules" => {
                             builder = builder.set_rules(crate::protocol_serde::shape_aws_waf_web_acl_rule_list::de_aws_waf_web_acl_rule_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "WebAclId" => {

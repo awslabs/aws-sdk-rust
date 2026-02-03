@@ -47,6 +47,7 @@ pub fn ser_confluence_space_configuration(
 
 pub(crate) fn de_confluence_space_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfluenceSpaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,16 +68,20 @@ where
                             builder = builder.set_crawl_archived_spaces(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "IncludeSpaces" => {
-                            builder =
-                                builder.set_include_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?);
+                            builder = builder.set_include_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(
+                                tokens, _value,
+                            )?);
                         }
                         "ExcludeSpaces" => {
-                            builder =
-                                builder.set_exclude_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(tokens)?);
+                            builder = builder.set_exclude_spaces(crate::protocol_serde::shape_confluence_space_list::de_confluence_space_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SpaceFieldMappings" => {
                             builder = builder.set_space_field_mappings(
-                                crate::protocol_serde::shape_confluence_space_field_mappings_list::de_confluence_space_field_mappings_list(tokens)?,
+                                crate::protocol_serde::shape_confluence_space_field_mappings_list::de_confluence_space_field_mappings_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

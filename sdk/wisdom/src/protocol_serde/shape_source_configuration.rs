@@ -21,6 +21,7 @@ pub fn ser_source_configuration(
 
 pub(crate) fn de_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "appIntegrations" => Some(crate::types::SourceConfiguration::AppIntegrations(
-                            crate::protocol_serde::shape_app_integrations_configuration::de_app_integrations_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'appIntegrations' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_app_integrations_configuration::de_app_integrations_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'appIntegrations' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -236,21 +236,21 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadMultip
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::upload_multipart_part::UploadMultipartPartInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_upload_multipart_part::ser_upload_multipart_part_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("PUT").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/octet-stream");
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
         let body = crate::protocol_serde::shape_upload_multipart_part_input::ser_body_http_payload(input.body)?.into_inner();
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
         }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -345,7 +345,7 @@ mod upload_multipart_part_test {
             "hello world",
             ::aws_smithy_protocol_test::MediaType::from("unknown"),
         ));
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/multipart-uploads/baz", "path was incorrect");
     }

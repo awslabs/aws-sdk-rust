@@ -20,6 +20,7 @@ pub fn ser_aws_backup_backup_vault_notifications_details(
 
 pub(crate) fn de_aws_backup_backup_vault_notifications_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsBackupBackupVaultNotificationsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BackupVaultEvents" => {
-                            builder = builder
-                                .set_backup_vault_events(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_backup_vault_events(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SnsTopicArn" => {
                             builder = builder.set_sns_topic_arn(

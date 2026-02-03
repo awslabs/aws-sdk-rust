@@ -45,6 +45,7 @@ pub fn ser_aws_api_call_action(
 
 pub(crate) fn de_aws_api_call_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiCallAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,16 +82,18 @@ where
                         }
                         "RemoteIpDetails" => {
                             builder = builder.set_remote_ip_details(
-                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens)?,
+                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens, _value)?,
                             );
                         }
                         "DomainDetails" => {
                             builder = builder.set_domain_details(
-                                crate::protocol_serde::shape_aws_api_call_action_domain_details::de_aws_api_call_action_domain_details(tokens)?,
+                                crate::protocol_serde::shape_aws_api_call_action_domain_details::de_aws_api_call_action_domain_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AffectedResources" => {
-                            builder = builder.set_affected_resources(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_affected_resources(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "FirstSeen" => {
                             builder = builder.set_first_seen(

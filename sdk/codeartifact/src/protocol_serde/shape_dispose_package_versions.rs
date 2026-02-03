@@ -149,13 +149,13 @@ pub fn ser_dispose_package_versions_input(
 }
 
 pub(crate) fn de_dispose_package_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,12 +164,12 @@ pub(crate) fn de_dispose_package_versions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failedVersions" => {
                     builder = builder.set_failed_versions(crate::protocol_serde::shape_package_version_error_map::de_package_version_error_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "successfulVersions" => {
                     builder = builder.set_successful_versions(
-                        crate::protocol_serde::shape_successful_package_version_info_map::de_successful_package_version_info_map(tokens)?,
+                        crate::protocol_serde::shape_successful_package_version_info_map::de_successful_package_version_info_map(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

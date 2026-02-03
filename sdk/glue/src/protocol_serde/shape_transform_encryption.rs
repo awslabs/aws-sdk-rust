@@ -17,6 +17,7 @@ pub fn ser_transform_encryption(
 
 pub(crate) fn de_transform_encryption<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TransformEncryption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MlUserDataEncryption" => {
                             builder = builder.set_ml_user_data_encryption(
-                                crate::protocol_serde::shape_ml_user_data_encryption::de_ml_user_data_encryption(tokens)?,
+                                crate::protocol_serde::shape_ml_user_data_encryption::de_ml_user_data_encryption(tokens, _value)?,
                             );
                         }
                         "TaskRunSecurityConfigurationName" => {

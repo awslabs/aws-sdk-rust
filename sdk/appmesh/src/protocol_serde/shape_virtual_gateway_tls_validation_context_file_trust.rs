@@ -11,6 +11,7 @@ pub fn ser_virtual_gateway_tls_validation_context_file_trust(
 
 pub(crate) fn de_virtual_gateway_tls_validation_context_file_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayTlsValidationContextFileTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -145,13 +145,13 @@ pub fn ser_get_routing_control_state_input(
 }
 
 pub(crate) fn de_get_routing_control_state(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_routing_control_state::builders::GetRoutingControlStateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

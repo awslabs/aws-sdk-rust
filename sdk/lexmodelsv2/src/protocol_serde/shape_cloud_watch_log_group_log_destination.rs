@@ -14,6 +14,7 @@ pub fn ser_cloud_watch_log_group_log_destination(
 
 pub(crate) fn de_cloud_watch_log_group_log_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CloudWatchLogGroupLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

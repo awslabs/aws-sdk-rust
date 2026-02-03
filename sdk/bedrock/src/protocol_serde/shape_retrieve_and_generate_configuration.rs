@@ -29,6 +29,7 @@ pub fn ser_retrieve_and_generate_configuration(
 
 pub(crate) fn de_retrieve_and_generate_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetrieveAndGenerateConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,12 +52,12 @@ where
                         }
                         "knowledgeBaseConfiguration" => {
                             builder = builder.set_knowledge_base_configuration(
-                                    crate::protocol_serde::shape_knowledge_base_retrieve_and_generate_configuration::de_knowledge_base_retrieve_and_generate_configuration(tokens)?
+                                    crate::protocol_serde::shape_knowledge_base_retrieve_and_generate_configuration::de_knowledge_base_retrieve_and_generate_configuration(tokens, _value)?
                                 );
                         }
                         "externalSourcesConfiguration" => {
                             builder = builder.set_external_sources_configuration(
-                                    crate::protocol_serde::shape_external_sources_retrieve_and_generate_configuration::de_external_sources_retrieve_and_generate_configuration(tokens)?
+                                    crate::protocol_serde::shape_external_sources_retrieve_and_generate_configuration::de_external_sources_retrieve_and_generate_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

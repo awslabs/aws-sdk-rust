@@ -28,6 +28,7 @@ pub fn ser_logging_format(
 
 pub(crate) fn de_logging_format<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoggingFormat>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,7 +64,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "json" => Some(crate::types::LoggingFormat::Json(
-                            crate::protocol_serde::shape_json_format::de_json_format(tokens)?
+                            crate::protocol_serde::shape_json_format::de_json_format(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'json' cannot be null"))?,
                         )),
                         _ => {

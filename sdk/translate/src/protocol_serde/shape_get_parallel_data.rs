@@ -111,13 +111,13 @@ pub fn ser_get_parallel_data_input(
 }
 
 pub(crate) fn de_get_parallel_data(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_parallel_data::builders::GetParallelDataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_parallel_data::builders::GetParallelDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,22 +126,22 @@ pub(crate) fn de_get_parallel_data(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ParallelDataProperties" => {
                     builder = builder.set_parallel_data_properties(
-                        crate::protocol_serde::shape_parallel_data_properties::de_parallel_data_properties(tokens)?,
+                        crate::protocol_serde::shape_parallel_data_properties::de_parallel_data_properties(tokens, _value)?,
                     );
                 }
                 "DataLocation" => {
                     builder = builder.set_data_location(crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "AuxiliaryDataLocation" => {
                     builder = builder.set_auxiliary_data_location(
-                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens)?,
+                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value)?,
                     );
                 }
                 "LatestUpdateAttemptAuxiliaryDataLocation" => {
                     builder = builder.set_latest_update_attempt_auxiliary_data_location(
-                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens)?,
+                        crate::protocol_serde::shape_parallel_data_data_location::de_parallel_data_data_location(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

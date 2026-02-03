@@ -135,13 +135,13 @@ pub fn de_list_thing_principals_v2_http_response(
 }
 
 pub(crate) fn de_list_thing_principals_v2(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_thing_principals_v2::builders::ListThingPrincipalsV2OutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_thing_principals_v2::builders::ListThingPrincipalsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,8 +156,9 @@ pub(crate) fn de_list_thing_principals_v2(
                     );
                 }
                 "thingPrincipalObjects" => {
-                    builder = builder
-                        .set_thing_principal_objects(crate::protocol_serde::shape_thing_principal_objects::de_thing_principal_objects(tokens)?);
+                    builder = builder.set_thing_principal_objects(crate::protocol_serde::shape_thing_principal_objects::de_thing_principal_objects(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

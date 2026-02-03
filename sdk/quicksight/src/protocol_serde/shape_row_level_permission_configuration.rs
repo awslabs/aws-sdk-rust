@@ -20,6 +20,7 @@ pub fn ser_row_level_permission_configuration(
 
 pub(crate) fn de_row_level_permission_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RowLevelPermissionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,13 +37,13 @@ where
                         "TagConfiguration" => {
                             builder = builder.set_tag_configuration(
                                 crate::protocol_serde::shape_row_level_permission_tag_configuration::de_row_level_permission_tag_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "RowLevelPermissionDataSet" => {
                             builder = builder.set_row_level_permission_data_set(
-                                crate::protocol_serde::shape_row_level_permission_data_set::de_row_level_permission_data_set(tokens)?,
+                                crate::protocol_serde::shape_row_level_permission_data_set::de_row_level_permission_data_set(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

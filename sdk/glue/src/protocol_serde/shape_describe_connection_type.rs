@@ -118,13 +118,13 @@ pub fn ser_describe_connection_type_input(
 }
 
 pub(crate) fn de_describe_connection_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_connection_type::builders::DescribeConnectionTypeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_connection_type::builders::DescribeConnectionTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,34 +146,38 @@ pub(crate) fn de_describe_connection_type(
                     );
                 }
                 "Capabilities" => {
-                    builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens)?);
+                    builder = builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value)?);
                 }
                 "ConnectionProperties" => {
-                    builder = builder.set_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder = builder.set_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 "ConnectionOptions" => {
-                    builder = builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder = builder.set_connection_options(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 "AuthenticationConfiguration" => {
-                    builder =
-                        builder.set_authentication_configuration(crate::protocol_serde::shape_auth_configuration::de_auth_configuration(tokens)?);
+                    builder = builder
+                        .set_authentication_configuration(crate::protocol_serde::shape_auth_configuration::de_auth_configuration(tokens, _value)?);
                 }
                 "ComputeEnvironmentConfigurations" => {
                     builder = builder.set_compute_environment_configurations(
-                        crate::protocol_serde::shape_compute_environment_configuration_map::de_compute_environment_configuration_map(tokens)?,
+                        crate::protocol_serde::shape_compute_environment_configuration_map::de_compute_environment_configuration_map(tokens, _value)?,
                     );
                 }
                 "PhysicalConnectionRequirements" => {
-                    builder = builder.set_physical_connection_requirements(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder =
+                        builder.set_physical_connection_requirements(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 "AthenaConnectionProperties" => {
-                    builder = builder.set_athena_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder =
+                        builder.set_athena_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 "PythonConnectionProperties" => {
-                    builder = builder.set_python_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder =
+                        builder.set_python_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 "SparkConnectionProperties" => {
-                    builder = builder.set_spark_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens)?);
+                    builder =
+                        builder.set_spark_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

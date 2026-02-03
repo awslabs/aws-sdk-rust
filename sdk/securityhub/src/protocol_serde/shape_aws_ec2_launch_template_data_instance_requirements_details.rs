@@ -143,6 +143,7 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_requirements_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -161,25 +162,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AcceleratorCount" => {
                             builder = builder.set_accelerator_count(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details(tokens, _value)?
                                 );
                         }
                         "AcceleratorManufacturers" => {
-                            builder = builder
-                                .set_accelerator_manufacturers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_accelerator_manufacturers(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "AcceleratorNames" => {
-                            builder =
-                                builder.set_accelerator_names(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_accelerator_names(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AcceleratorTotalMemoryMiB" => {
                             builder = builder.set_accelerator_total_memory_mib(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details(tokens, _value)?
                                 );
                         }
                         "AcceleratorTypes" => {
-                            builder =
-                                builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "BareMetal" => {
                             builder = builder.set_bare_metal(
@@ -190,7 +194,7 @@ where
                         }
                         "BaselineEbsBandwidthMbps" => {
                             builder = builder.set_baseline_ebs_bandwidth_mbps(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::de_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::de_aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details(tokens, _value)?
                                 );
                         }
                         "BurstablePerformance" => {
@@ -201,16 +205,19 @@ where
                             );
                         }
                         "CpuManufacturers" => {
-                            builder =
-                                builder.set_cpu_manufacturers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_cpu_manufacturers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "ExcludedInstanceTypes" => {
-                            builder = builder
-                                .set_excluded_instance_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_excluded_instance_types(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "InstanceGenerations" => {
-                            builder = builder
-                                .set_instance_generations(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_instance_generations(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "LocalStorage" => {
                             builder = builder.set_local_storage(
@@ -220,22 +227,23 @@ where
                             );
                         }
                         "LocalStorageTypes" => {
-                            builder = builder
-                                .set_local_storage_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_local_storage_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "MemoryGiBPerVCpu" => {
                             builder = builder.set_memory_gib_per_v_cpu(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details::de_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details::de_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details(tokens, _value)?
                                 );
                         }
                         "MemoryMiB" => {
                             builder = builder.set_memory_mib(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_memory_mib_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_memory_mib_details(tokens, _value)?
                                 );
                         }
                         "NetworkInterfaceCount" => {
                             builder = builder.set_network_interface_count(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::de_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::de_aws_ec2_launch_template_data_instance_requirements_network_interface_count_details(tokens, _value)?
                                 );
                         }
                         "OnDemandMaxPricePercentageOverLowestPrice" => {
@@ -258,12 +266,12 @@ where
                         }
                         "TotalLocalStorageGB" => {
                             builder = builder.set_total_local_storage_gb(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::de_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::de_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details(tokens, _value)?
                                 );
                         }
                         "VCpuCount" => {
                             builder = builder.set_v_cpu_count(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::de_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::de_aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

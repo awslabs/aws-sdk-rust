@@ -41,6 +41,7 @@ pub fn ser_life_cycle(
 
 pub(crate) fn de_life_cycle<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LifeCycle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,8 +105,9 @@ where
                             );
                         }
                         "NextStepsHistory" => {
-                            builder =
-                                builder.set_next_steps_history(crate::protocol_serde::shape_next_steps_histories::de_next_steps_histories(tokens)?);
+                            builder = builder.set_next_steps_history(crate::protocol_serde::shape_next_steps_histories::de_next_steps_histories(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

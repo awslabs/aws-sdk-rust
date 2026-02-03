@@ -68,6 +68,7 @@ pub fn ser_tree_map_configuration(
 
 pub(crate) fn de_tree_map_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TreeMapConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,43 +83,46 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder = builder.set_field_wells(crate::protocol_serde::shape_tree_map_field_wells::de_tree_map_field_wells(tokens)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_tree_map_field_wells::de_tree_map_field_wells(
+                                tokens, _value,
+                            )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_tree_map_sort_configuration::de_tree_map_sort_configuration(tokens)?,
+                                crate::protocol_serde::shape_tree_map_sort_configuration::de_tree_map_sort_configuration(tokens, _value)?,
                             );
                         }
                         "GroupLabelOptions" => {
                             builder = builder.set_group_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "SizeLabelOptions" => {
                             builder = builder.set_size_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "ColorLabelOptions" => {
                             builder = builder.set_color_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "ColorScale" => {
-                            builder = builder.set_color_scale(crate::protocol_serde::shape_color_scale::de_color_scale(tokens)?);
+                            builder = builder.set_color_scale(crate::protocol_serde::shape_color_scale::de_color_scale(tokens, _value)?);
                         }
                         "Legend" => {
-                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value)?);
                         }
                         "DataLabels" => {
-                            builder = builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                            builder =
+                                builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

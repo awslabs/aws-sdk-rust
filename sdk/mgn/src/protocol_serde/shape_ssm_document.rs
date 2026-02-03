@@ -55,6 +55,7 @@ pub fn ser_ssm_document(
 
 pub(crate) fn de_ssm_document<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SsmDocument>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,12 +95,13 @@ where
                                 builder.set_must_succeed_for_cutover(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "parameters" => {
-                            builder =
-                                builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_ssm_document_parameters::de_ssm_document_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "externalParameters" => {
                             builder = builder.set_external_parameters(
-                                crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens)?,
+                                crate::protocol_serde::shape_ssm_document_external_parameters::de_ssm_document_external_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

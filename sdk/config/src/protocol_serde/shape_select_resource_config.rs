@@ -99,13 +99,13 @@ pub fn ser_select_resource_config_input(
 }
 
 pub(crate) fn de_select_resource_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -113,10 +113,10 @@ pub(crate) fn de_select_resource_config(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Results" => {
-                    builder = builder.set_results(crate::protocol_serde::shape_results::de_results(tokens)?);
+                    builder = builder.set_results(crate::protocol_serde::shape_results::de_results(tokens, _value)?);
                 }
                 "QueryInfo" => {
-                    builder = builder.set_query_info(crate::protocol_serde::shape_query_info::de_query_info(tokens)?);
+                    builder = builder.set_query_info(crate::protocol_serde::shape_query_info::de_query_info(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

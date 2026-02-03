@@ -32,6 +32,7 @@ pub fn ser_legend_options(
 
 pub(crate) fn de_legend_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LegendOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                             );
                         }
                         "Title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_label_options::de_label_options(tokens)?);
+                            builder = builder.set_title(crate::protocol_serde::shape_label_options::de_label_options(tokens, _value)?);
                         }
                         "Position" => {
                             builder = builder.set_position(
@@ -77,8 +78,9 @@ where
                             );
                         }
                         "ValueFontConfiguration" => {
-                            builder =
-                                builder.set_value_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder.set_value_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

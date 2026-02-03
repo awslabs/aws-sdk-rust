@@ -118,13 +118,13 @@ pub fn de_list_blocking_instances_for_capacity_task_http_response(
 }
 
 pub(crate) fn de_list_blocking_instances_for_capacity_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_blocking_instances_for_capacity_task::builders::ListBlockingInstancesForCapacityTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_blocking_instances_for_capacity_task::builders::ListBlockingInstancesForCapacityTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,8 +132,9 @@ pub(crate) fn de_list_blocking_instances_for_capacity_task(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "BlockingInstances" => {
-                    builder =
-                        builder.set_blocking_instances(crate::protocol_serde::shape_blocking_instances_list::de_blocking_instances_list(tokens)?);
+                    builder = builder.set_blocking_instances(crate::protocol_serde::shape_blocking_instances_list::de_blocking_instances_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

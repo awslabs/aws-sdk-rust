@@ -45,6 +45,7 @@ pub fn ser_query_parameters(
 
 pub(crate) fn de_query_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QueryParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,37 +75,35 @@ where
                     }
                     variant = match key.as_ref() {
                         "costAndUsage" => Some(crate::types::QueryParameters::CostAndUsage(
-                            crate::protocol_serde::shape_cost_and_usage_query::de_cost_and_usage_query(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_cost_and_usage_query::de_cost_and_usage_query(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'costAndUsage' cannot be null")
                             })?,
                         )),
                         "savingsPlansCoverage" => Some(crate::types::QueryParameters::SavingsPlansCoverage(
-                            crate::protocol_serde::shape_savings_plans_coverage_query::de_savings_plans_coverage_query(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'savingsPlansCoverage' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_savings_plans_coverage_query::de_savings_plans_coverage_query(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'savingsPlansCoverage' cannot be null"),
+                            )?,
                         )),
                         "savingsPlansUtilization" => Some(crate::types::QueryParameters::SavingsPlansUtilization(
-                            crate::protocol_serde::shape_savings_plans_utilization_query::de_savings_plans_utilization_query(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_savings_plans_utilization_query::de_savings_plans_utilization_query(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'savingsPlansUtilization' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "reservationCoverage" => Some(crate::types::QueryParameters::ReservationCoverage(
-                            crate::protocol_serde::shape_reservation_coverage_query::de_reservation_coverage_query(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reservationCoverage' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_reservation_coverage_query::de_reservation_coverage_query(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reservationCoverage' cannot be null"),
+                            )?,
                         )),
                         "reservationUtilization" => Some(crate::types::QueryParameters::ReservationUtilization(
-                            crate::protocol_serde::shape_reservation_utilization_query::de_reservation_utilization_query(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_reservation_utilization_query::de_reservation_utilization_query(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'reservationUtilization' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

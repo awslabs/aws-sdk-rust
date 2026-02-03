@@ -175,7 +175,7 @@ mod create_volume_from_backup;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_fsx::Error> {
 /// # let client: aws_sdk_fsx::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_file_system_aliases()
 ///     .customize()

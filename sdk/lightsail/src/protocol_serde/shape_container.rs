@@ -40,6 +40,7 @@ pub fn ser_container(
 
 pub(crate) fn de_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Container>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,13 +62,13 @@ where
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment::de_environment(tokens)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment::de_environment(tokens, _value)?);
                         }
                         "ports" => {
-                            builder = builder.set_ports(crate::protocol_serde::shape_port_map::de_port_map(tokens)?);
+                            builder = builder.set_ports(crate::protocol_serde::shape_port_map::de_port_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

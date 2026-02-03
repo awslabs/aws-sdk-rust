@@ -71,6 +71,7 @@ pub fn ser_input_settings(
 
 pub(crate) fn de_input_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,12 +86,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioSelectors" => {
-                            builder =
-                                builder.set_audio_selectors(crate::protocol_serde::shape_list_of_audio_selector::de_list_of_audio_selector(tokens)?);
+                            builder = builder.set_audio_selectors(crate::protocol_serde::shape_list_of_audio_selector::de_list_of_audio_selector(
+                                tokens, _value,
+                            )?);
                         }
                         "captionSelectors" => {
                             builder = builder.set_caption_selectors(
-                                crate::protocol_serde::shape_list_of_caption_selector::de_list_of_caption_selector(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_selector::de_list_of_caption_selector(tokens, _value)?,
                             );
                         }
                         "deblockFilter" => {
@@ -122,8 +124,9 @@ where
                             );
                         }
                         "networkInputSettings" => {
-                            builder = builder
-                                .set_network_input_settings(crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens)?);
+                            builder = builder.set_network_input_settings(
+                                crate::protocol_serde::shape_network_input_settings::de_network_input_settings(tokens, _value)?,
+                            );
                         }
                         "scte35Pid" => {
                             builder = builder.set_scte35_pid(
@@ -147,7 +150,7 @@ where
                             );
                         }
                         "videoSelector" => {
-                            builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens)?);
+                            builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ pub fn ser_automation_rules_action_v2(
 
 pub(crate) fn de_automation_rules_action_v2<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomationRulesActionV2>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,12 +47,14 @@ where
                             }
                             "FindingFieldsUpdate" => {
                                 builder = builder.set_finding_fields_update(
-                                    crate::protocol_serde::shape_automation_rules_finding_fields_update_v2::de_automation_rules_finding_fields_update_v2(tokens)?
+                                    crate::protocol_serde::shape_automation_rules_finding_fields_update_v2::de_automation_rules_finding_fields_update_v2(tokens, _value)?
                                 );
                             }
                             "ExternalIntegrationConfiguration" => {
                                 builder = builder.set_external_integration_configuration(
-                                    crate::protocol_serde::shape_external_integration_configuration::de_external_integration_configuration(tokens)?,
+                                    crate::protocol_serde::shape_external_integration_configuration::de_external_integration_configuration(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

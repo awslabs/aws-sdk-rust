@@ -23,6 +23,7 @@ pub fn ser_data_partition(
 
 pub(crate) fn de_data_partition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPartition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "storageOptions" => {
                             builder = builder.set_storage_options(
-                                crate::protocol_serde::shape_data_partition_storage_options::de_data_partition_storage_options(tokens)?,
+                                crate::protocol_serde::shape_data_partition_storage_options::de_data_partition_storage_options(tokens, _value)?,
                             );
                         }
                         "uploadOptions" => {
                             builder = builder.set_upload_options(
-                                crate::protocol_serde::shape_data_partition_upload_options::de_data_partition_upload_options(tokens)?,
+                                crate::protocol_serde::shape_data_partition_upload_options::de_data_partition_upload_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

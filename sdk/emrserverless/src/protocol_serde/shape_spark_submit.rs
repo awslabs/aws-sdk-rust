@@ -23,6 +23,7 @@ pub fn ser_spark_submit(
 
 pub(crate) fn de_spark_submit<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SparkSubmit>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "entryPointArguments" => {
-                            builder = builder
-                                .set_entry_point_arguments(crate::protocol_serde::shape_entry_point_arguments::de_entry_point_arguments(tokens)?);
+                            builder = builder.set_entry_point_arguments(
+                                crate::protocol_serde::shape_entry_point_arguments::de_entry_point_arguments(tokens, _value)?,
+                            );
                         }
                         "sparkSubmitParameters" => {
                             builder = builder.set_spark_submit_parameters(

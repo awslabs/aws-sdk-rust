@@ -20,6 +20,7 @@ pub fn ser_async_inference_config(
 
 pub(crate) fn de_async_inference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AsyncInferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClientConfig" => {
                             builder = builder.set_client_config(
-                                crate::protocol_serde::shape_async_inference_client_config::de_async_inference_client_config(tokens)?,
+                                crate::protocol_serde::shape_async_inference_client_config::de_async_inference_client_config(tokens, _value)?,
                             );
                         }
                         "OutputConfig" => {
                             builder = builder.set_output_config(
-                                crate::protocol_serde::shape_async_inference_output_config::de_async_inference_output_config(tokens)?,
+                                crate::protocol_serde::shape_async_inference_output_config::de_async_inference_output_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

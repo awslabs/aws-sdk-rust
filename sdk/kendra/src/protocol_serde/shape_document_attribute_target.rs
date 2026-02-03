@@ -22,6 +22,7 @@ pub fn ser_document_attribute_target(
 
 pub(crate) fn de_document_attribute_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentAttributeTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "TargetDocumentAttributeValue" => {
                             builder = builder.set_target_document_attribute_value(
-                                crate::protocol_serde::shape_document_attribute_value::de_document_attribute_value(tokens)?,
+                                crate::protocol_serde::shape_document_attribute_value::de_document_attribute_value(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

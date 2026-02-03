@@ -35,6 +35,7 @@ pub fn ser_eks_volume(
 
 pub(crate) fn de_eks_volume<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksVolume>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,17 +57,17 @@ where
                             );
                         }
                         "hostPath" => {
-                            builder = builder.set_host_path(crate::protocol_serde::shape_eks_host_path::de_eks_host_path(tokens)?);
+                            builder = builder.set_host_path(crate::protocol_serde::shape_eks_host_path::de_eks_host_path(tokens, _value)?);
                         }
                         "emptyDir" => {
-                            builder = builder.set_empty_dir(crate::protocol_serde::shape_eks_empty_dir::de_eks_empty_dir(tokens)?);
+                            builder = builder.set_empty_dir(crate::protocol_serde::shape_eks_empty_dir::de_eks_empty_dir(tokens, _value)?);
                         }
                         "secret" => {
-                            builder = builder.set_secret(crate::protocol_serde::shape_eks_secret::de_eks_secret(tokens)?);
+                            builder = builder.set_secret(crate::protocol_serde::shape_eks_secret::de_eks_secret(tokens, _value)?);
                         }
                         "persistentVolumeClaim" => {
                             builder = builder.set_persistent_volume_claim(
-                                crate::protocol_serde::shape_eks_persistent_volume_claim::de_eks_persistent_volume_claim(tokens)?,
+                                crate::protocol_serde::shape_eks_persistent_volume_claim::de_eks_persistent_volume_claim(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

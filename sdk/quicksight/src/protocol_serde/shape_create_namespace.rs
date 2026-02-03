@@ -204,13 +204,13 @@ pub fn ser_create_namespace_input(
 }
 
 pub(crate) fn de_create_namespace(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_namespace::builders::CreateNamespaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_namespace::builders::CreateNamespaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

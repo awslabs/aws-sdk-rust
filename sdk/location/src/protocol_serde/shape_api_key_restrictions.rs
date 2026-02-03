@@ -59,6 +59,7 @@ pub fn ser_api_key_restrictions(
 
 pub(crate) fn de_api_key_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApiKeyRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,19 +74,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AllowActions" => {
-                            builder = builder.set_allow_actions(crate::protocol_serde::shape_api_key_action_list::de_api_key_action_list(tokens)?);
+                            builder =
+                                builder.set_allow_actions(crate::protocol_serde::shape_api_key_action_list::de_api_key_action_list(tokens, _value)?);
                         }
                         "AllowResources" => {
-                            builder = builder.set_allow_resources(crate::protocol_serde::shape_geo_arn_list::de_geo_arn_list(tokens)?);
+                            builder = builder.set_allow_resources(crate::protocol_serde::shape_geo_arn_list::de_geo_arn_list(tokens, _value)?);
                         }
                         "AllowReferers" => {
-                            builder = builder.set_allow_referers(crate::protocol_serde::shape_referer_pattern_list::de_referer_pattern_list(tokens)?);
+                            builder = builder.set_allow_referers(crate::protocol_serde::shape_referer_pattern_list::de_referer_pattern_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AllowAndroidApps" => {
-                            builder = builder.set_allow_android_apps(crate::protocol_serde::shape_android_app_list::de_android_app_list(tokens)?);
+                            builder =
+                                builder.set_allow_android_apps(crate::protocol_serde::shape_android_app_list::de_android_app_list(tokens, _value)?);
                         }
                         "AllowAppleApps" => {
-                            builder = builder.set_allow_apple_apps(crate::protocol_serde::shape_apple_app_list::de_apple_app_list(tokens)?);
+                            builder = builder.set_allow_apple_apps(crate::protocol_serde::shape_apple_app_list::de_apple_app_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

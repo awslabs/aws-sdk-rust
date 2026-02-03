@@ -14,6 +14,7 @@ pub fn ser_logging(
 
 pub(crate) fn de_logging<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Logging>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "s3Logs" => {
-                            builder = builder.set_s3_logs(crate::protocol_serde::shape_s3_logs::de_s3_logs(tokens)?);
+                            builder = builder.set_s3_logs(crate::protocol_serde::shape_s3_logs::de_s3_logs(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

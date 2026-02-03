@@ -23,6 +23,7 @@ pub fn ser_axis_label_options(
 
 pub(crate) fn de_axis_label_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AxisLabelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FontConfiguration" => {
-                            builder = builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder
+                                .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
                         }
                         "CustomLabel" => {
                             builder = builder.set_custom_label(
@@ -47,8 +49,9 @@ where
                             );
                         }
                         "ApplyTo" => {
-                            builder = builder
-                                .set_apply_to(crate::protocol_serde::shape_axis_label_reference_options::de_axis_label_reference_options(tokens)?);
+                            builder = builder.set_apply_to(
+                                crate::protocol_serde::shape_axis_label_reference_options::de_axis_label_reference_options(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

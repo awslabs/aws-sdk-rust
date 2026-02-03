@@ -17,6 +17,7 @@ pub fn ser_ip_set_reference_statement(
 
 pub(crate) fn de_ip_set_reference_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IpSetReferenceStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "IPSetForwardedIPConfig" => {
                             builder = builder.set_ip_set_forwarded_ip_config(
-                                crate::protocol_serde::shape_ip_set_forwarded_ip_config::de_ip_set_forwarded_ip_config(tokens)?,
+                                crate::protocol_serde::shape_ip_set_forwarded_ip_config::de_ip_set_forwarded_ip_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

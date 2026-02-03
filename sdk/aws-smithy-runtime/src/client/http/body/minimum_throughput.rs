@@ -10,6 +10,9 @@
 /// An implementation of v0.4 `http_body::Body` for `MinimumThroughputBody` and related code.
 pub mod http_body_0_4_x;
 
+/// An implementation of v1.0 `http_body::Body` for `MinimumThroughputBody` and related code.
+pub mod http_body_1_x;
+
 /// Options for a [`MinimumThroughputBody`].
 pub mod options;
 pub use throughput::Throughput;

@@ -14,6 +14,7 @@ pub fn ser_outbound_strategy_config(
 
 pub(crate) fn de_outbound_strategy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutboundStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AgentFirst" => {
-                            builder = builder.set_agent_first(crate::protocol_serde::shape_agent_first::de_agent_first(tokens)?);
+                            builder = builder.set_agent_first(crate::protocol_serde::shape_agent_first::de_agent_first(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

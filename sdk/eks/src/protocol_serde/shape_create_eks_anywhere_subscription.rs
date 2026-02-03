@@ -140,13 +140,13 @@ pub fn ser_create_eks_anywhere_subscription_input(
 }
 
 pub(crate) fn de_create_eks_anywhere_subscription(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_eks_anywhere_subscription::builders::CreateEksAnywhereSubscriptionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_eks_anywhere_subscription::builders::CreateEksAnywhereSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_create_eks_anywhere_subscription(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "subscription" => {
                     builder = builder.set_subscription(crate::protocol_serde::shape_eks_anywhere_subscription::de_eks_anywhere_subscription(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

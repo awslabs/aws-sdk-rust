@@ -32,6 +32,7 @@ pub fn ser_sectional_element(
 
 pub(crate) fn de_sectional_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SectionalElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                             );
                         }
                         "position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens, _value)?);
                         }
                         "text" => {
                             builder = builder.set_text(

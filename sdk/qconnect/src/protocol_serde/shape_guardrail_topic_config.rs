@@ -26,6 +26,7 @@ pub fn ser_guardrail_topic_config(
 
 pub(crate) fn de_guardrail_topic_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GuardrailTopicConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "examples" => {
                             builder = builder.set_examples(crate::protocol_serde::shape_guardrail_topic_examples::de_guardrail_topic_examples(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "type" => {

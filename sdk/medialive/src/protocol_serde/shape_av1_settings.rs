@@ -116,6 +116,7 @@ pub fn ser_av1_settings(
 
 pub(crate) fn de_av1_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Av1Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -145,7 +146,7 @@ where
                         }
                         "colorSpaceSettings" => {
                             builder = builder.set_color_space_settings(
-                                crate::protocol_serde::shape_av1_color_space_settings::de_av1_color_space_settings(tokens)?,
+                                crate::protocol_serde::shape_av1_color_space_settings::de_av1_color_space_settings(tokens, _value)?,
                             );
                         }
                         "fixedAfd" => {
@@ -238,7 +239,7 @@ where
                         }
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
-                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens)?,
+                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens, _value)?,
                             );
                         }
                         "bitrate" => {

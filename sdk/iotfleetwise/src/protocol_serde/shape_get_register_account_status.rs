@@ -126,13 +126,13 @@ pub fn ser_get_register_account_status_input(
 }
 
 pub(crate) fn de_get_register_account_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,12 +155,12 @@ pub(crate) fn de_get_register_account_status(
                 }
                 "timestreamRegistrationResponse" => {
                     builder = builder.set_timestream_registration_response(
-                        crate::protocol_serde::shape_timestream_registration_response::de_timestream_registration_response(tokens)?,
+                        crate::protocol_serde::shape_timestream_registration_response::de_timestream_registration_response(tokens, _value)?,
                     );
                 }
                 "iamRegistrationResponse" => {
                     builder = builder.set_iam_registration_response(
-                        crate::protocol_serde::shape_iam_registration_response::de_iam_registration_response(tokens)?,
+                        crate::protocol_serde::shape_iam_registration_response::de_iam_registration_response(tokens, _value)?,
                     );
                 }
                 "creationTime" => {

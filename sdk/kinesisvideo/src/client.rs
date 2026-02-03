@@ -149,7 +149,7 @@ mod create_stream;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_kinesisvideo::Error> {
 /// # let client: aws_sdk_kinesisvideo::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_signaling_channel()
 ///     .customize()

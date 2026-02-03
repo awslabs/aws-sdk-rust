@@ -20,6 +20,7 @@ pub fn ser_run_command_parameters(
 
 pub(crate) fn de_run_command_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RunCommandParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RunCommandTargets" => {
-                            builder =
-                                builder.set_run_command_targets(crate::protocol_serde::shape_run_command_targets::de_run_command_targets(tokens)?);
+                            builder = builder
+                                .set_run_command_targets(crate::protocol_serde::shape_run_command_targets::de_run_command_targets(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -84,13 +84,13 @@ pub fn ser_describe_user_profile_input(
 }
 
 pub(crate) fn de_describe_user_profile(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -166,7 +166,7 @@ pub(crate) fn de_describe_user_profile(
                     );
                 }
                 "UserSettings" => {
-                    builder = builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens)?);
+                    builder = builder.set_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

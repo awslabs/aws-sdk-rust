@@ -35,6 +35,7 @@ pub fn ser_rules_source(
 
 pub(crate) fn de_rules_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RulesSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,17 @@ where
                             );
                         }
                         "RulesSourceList" => {
-                            builder = builder.set_rules_source_list(crate::protocol_serde::shape_rules_source_list::de_rules_source_list(tokens)?);
+                            builder =
+                                builder.set_rules_source_list(crate::protocol_serde::shape_rules_source_list::de_rules_source_list(tokens, _value)?);
                         }
                         "StatefulRules" => {
-                            builder = builder.set_stateful_rules(crate::protocol_serde::shape_stateful_rules::de_stateful_rules(tokens)?);
+                            builder = builder.set_stateful_rules(crate::protocol_serde::shape_stateful_rules::de_stateful_rules(tokens, _value)?);
                         }
                         "StatelessRulesAndCustomActions" => {
                             builder = builder.set_stateless_rules_and_custom_actions(
-                                crate::protocol_serde::shape_stateless_rules_and_custom_actions::de_stateless_rules_and_custom_actions(tokens)?,
+                                crate::protocol_serde::shape_stateless_rules_and_custom_actions::de_stateless_rules_and_custom_actions(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

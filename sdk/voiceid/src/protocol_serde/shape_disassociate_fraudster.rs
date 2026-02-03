@@ -144,13 +144,13 @@ pub fn ser_disassociate_fraudster_input(
 }
 
 pub(crate) fn de_disassociate_fraudster(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disassociate_fraudster::builders::DisassociateFraudsterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disassociate_fraudster::builders::DisassociateFraudsterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,7 +158,7 @@ pub(crate) fn de_disassociate_fraudster(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Fraudster" => {
-                    builder = builder.set_fraudster(crate::protocol_serde::shape_fraudster::de_fraudster(tokens)?);
+                    builder = builder.set_fraudster(crate::protocol_serde::shape_fraudster::de_fraudster(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

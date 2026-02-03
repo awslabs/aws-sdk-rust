@@ -26,6 +26,7 @@ pub fn ser_blue_green_update_policy(
 
 pub(crate) fn de_blue_green_update_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BlueGreenUpdatePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TrafficRoutingConfiguration" => {
                             builder = builder.set_traffic_routing_configuration(
-                                crate::protocol_serde::shape_traffic_routing_config::de_traffic_routing_config(tokens)?,
+                                crate::protocol_serde::shape_traffic_routing_config::de_traffic_routing_config(tokens, _value)?,
                             );
                         }
                         "TerminationWaitInSeconds" => {

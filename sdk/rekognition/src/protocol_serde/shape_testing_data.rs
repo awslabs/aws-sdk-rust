@@ -23,6 +23,7 @@ pub fn ser_testing_data(
 
 pub(crate) fn de_testing_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TestingData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Assets" => {
-                            builder = builder.set_assets(crate::protocol_serde::shape_assets::de_assets(tokens)?);
+                            builder = builder.set_assets(crate::protocol_serde::shape_assets::de_assets(tokens, _value)?);
                         }
                         "AutoCreate" => {
                             builder = builder.set_auto_create(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -38,6 +38,7 @@ pub fn ser_human_evaluation_config(
 
 pub(crate) fn de_human_evaluation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HumanEvaluationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,17 +53,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "humanWorkflowConfig" => {
-                            builder = builder
-                                .set_human_workflow_config(crate::protocol_serde::shape_human_workflow_config::de_human_workflow_config(tokens)?);
+                            builder = builder.set_human_workflow_config(
+                                crate::protocol_serde::shape_human_workflow_config::de_human_workflow_config(tokens, _value)?,
+                            );
                         }
                         "customMetrics" => {
                             builder = builder.set_custom_metrics(
-                                crate::protocol_serde::shape_human_evaluation_custom_metrics::de_human_evaluation_custom_metrics(tokens)?,
+                                crate::protocol_serde::shape_human_evaluation_custom_metrics::de_human_evaluation_custom_metrics(tokens, _value)?,
                             );
                         }
                         "datasetMetricConfigs" => {
                             builder = builder.set_dataset_metric_configs(
-                                crate::protocol_serde::shape_evaluation_dataset_metric_configs::de_evaluation_dataset_metric_configs(tokens)?,
+                                crate::protocol_serde::shape_evaluation_dataset_metric_configs::de_evaluation_dataset_metric_configs(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

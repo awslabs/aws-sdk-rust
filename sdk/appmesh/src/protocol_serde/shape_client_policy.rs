@@ -14,6 +14,7 @@ pub fn ser_client_policy(
 
 pub(crate) fn de_client_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClientPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tls" => {
-                            builder = builder.set_tls(crate::protocol_serde::shape_client_policy_tls::de_client_policy_tls(tokens)?);
+                            builder = builder.set_tls(crate::protocol_serde::shape_client_policy_tls::de_client_policy_tls(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -147,13 +147,13 @@ pub fn de_get_service_network_resource_association_http_response(
 }
 
 pub(crate) fn de_get_service_network_resource_association(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_service_network_resource_association::builders::GetServiceNetworkResourceAssociationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_service_network_resource_association::builders::GetServiceNetworkResourceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -181,7 +181,7 @@ pub(crate) fn de_get_service_network_resource_association(
                     );
                 }
                 "dnsEntry" => {
-                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens)?);
+                    builder = builder.set_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value)?);
                 }
                 "domainVerificationStatus" => {
                     builder = builder.set_domain_verification_status(
@@ -224,7 +224,7 @@ pub(crate) fn de_get_service_network_resource_association(
                     builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "privateDnsEntry" => {
-                    builder = builder.set_private_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens)?);
+                    builder = builder.set_private_dns_entry(crate::protocol_serde::shape_dns_entry::de_dns_entry(tokens, _value)?);
                 }
                 "resourceConfigurationArn" => {
                     builder = builder.set_resource_configuration_arn(

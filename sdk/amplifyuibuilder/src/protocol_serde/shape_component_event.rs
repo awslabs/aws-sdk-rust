@@ -20,6 +20,7 @@ pub fn ser_component_event(
 
 pub(crate) fn de_component_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_action_parameters::de_action_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_action_parameters::de_action_parameters(tokens, _value)?);
                         }
                         "bindingEvent" => {
                             builder = builder.set_binding_event(

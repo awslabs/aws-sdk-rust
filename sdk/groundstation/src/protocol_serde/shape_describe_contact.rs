@@ -83,13 +83,13 @@ pub fn de_describe_contact_http_response(
 }
 
 pub(crate) fn de_describe_contact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_contact::builders::DescribeContactOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_contact::builders::DescribeContactOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -111,7 +111,7 @@ pub(crate) fn de_describe_contact(
                     );
                 }
                 "dataflowList" => {
-                    builder = builder.set_dataflow_list(crate::protocol_serde::shape_dataflow_list::de_dataflow_list(tokens)?);
+                    builder = builder.set_dataflow_list(crate::protocol_serde::shape_dataflow_list::de_dataflow_list(tokens, _value)?);
                 }
                 "endTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -120,7 +120,9 @@ pub(crate) fn de_describe_contact(
                     )?);
                 }
                 "ephemeris" => {
-                    builder = builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(tokens)?);
+                    builder = builder.set_ephemeris(crate::protocol_serde::shape_ephemeris_response_data::de_ephemeris_response_data(
+                        tokens, _value,
+                    )?);
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(
@@ -137,7 +139,7 @@ pub(crate) fn de_describe_contact(
                     );
                 }
                 "maximumElevation" => {
-                    builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens)?);
+                    builder = builder.set_maximum_elevation(crate::protocol_serde::shape_elevation::de_elevation(tokens, _value)?);
                 }
                 "missionProfileArn" => {
                     builder = builder.set_mission_profile_arn(
@@ -179,10 +181,10 @@ pub(crate) fn de_describe_contact(
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "trackingOverrides" => {
-                    builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(tokens)?);
+                    builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(tokens, _value)?);
                 }
                 "visibilityEndTime" => {
                     builder = builder.set_visibility_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

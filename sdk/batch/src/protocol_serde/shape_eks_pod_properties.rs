@@ -74,6 +74,7 @@ pub fn ser_eks_pod_properties(
 
 pub(crate) fn de_eks_pod_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksPodProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -105,19 +106,20 @@ where
                             );
                         }
                         "imagePullSecrets" => {
-                            builder = builder.set_image_pull_secrets(crate::protocol_serde::shape_image_pull_secrets::de_image_pull_secrets(tokens)?);
+                            builder = builder
+                                .set_image_pull_secrets(crate::protocol_serde::shape_image_pull_secrets::de_image_pull_secrets(tokens, _value)?);
                         }
                         "containers" => {
-                            builder = builder.set_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);
+                            builder = builder.set_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens, _value)?);
                         }
                         "initContainers" => {
-                            builder = builder.set_init_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);
+                            builder = builder.set_init_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens, _value)?);
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens)?);
+                            builder = builder.set_volumes(crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens, _value)?);
                         }
                         "metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens, _value)?);
                         }
                         "shareProcessNamespace" => {
                             builder = builder.set_share_process_namespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

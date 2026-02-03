@@ -35,6 +35,7 @@ pub fn ser_aws_backup_backup_plan_backup_plan_details(
 
 pub(crate) fn de_aws_backup_backup_plan_backup_plan_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,12 @@ where
                         }
                         "AdvancedBackupSettings" => {
                             builder = builder.set_advanced_backup_settings(
-                                    crate::protocol_serde::shape_aws_backup_backup_plan_advanced_backup_settings_list::de_aws_backup_backup_plan_advanced_backup_settings_list(tokens)?
+                                    crate::protocol_serde::shape_aws_backup_backup_plan_advanced_backup_settings_list::de_aws_backup_backup_plan_advanced_backup_settings_list(tokens, _value)?
                                 );
                         }
                         "BackupPlanRule" => {
                             builder = builder.set_backup_plan_rule(
-                                crate::protocol_serde::shape_aws_backup_backup_plan_rule_list::de_aws_backup_backup_plan_rule_list(tokens)?,
+                                crate::protocol_serde::shape_aws_backup_backup_plan_rule_list::de_aws_backup_backup_plan_rule_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

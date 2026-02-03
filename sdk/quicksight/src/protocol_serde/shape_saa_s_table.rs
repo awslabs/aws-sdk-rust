@@ -35,6 +35,7 @@ pub fn ser_saa_s_table(
 
 pub(crate) fn de_saa_s_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SaaSTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,13 @@ where
                             );
                         }
                         "TablePath" => {
-                            builder =
-                                builder.set_table_path(crate::protocol_serde::shape_table_path_element_list::de_table_path_element_list(tokens)?);
+                            builder = builder.set_table_path(crate::protocol_serde::shape_table_path_element_list::de_table_path_element_list(
+                                tokens, _value,
+                            )?);
                         }
                         "InputColumns" => {
-                            builder = builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(tokens)?);
+                            builder =
+                                builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

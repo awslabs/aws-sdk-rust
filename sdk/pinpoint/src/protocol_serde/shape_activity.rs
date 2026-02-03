@@ -71,6 +71,7 @@ pub fn ser_activity(
 
 pub(crate) fn de_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Activity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,11 +86,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CUSTOM" => {
-                            builder = builder.set_custom(crate::protocol_serde::shape_custom_message_activity::de_custom_message_activity(tokens)?);
+                            builder = builder.set_custom(crate::protocol_serde::shape_custom_message_activity::de_custom_message_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "ConditionalSplit" => {
                             builder = builder.set_conditional_split(
-                                crate::protocol_serde::shape_conditional_split_activity::de_conditional_split_activity(tokens)?,
+                                crate::protocol_serde::shape_conditional_split_activity::de_conditional_split_activity(tokens, _value)?,
                             );
                         }
                         "Description" => {
@@ -100,31 +103,40 @@ where
                             );
                         }
                         "EMAIL" => {
-                            builder = builder.set_email(crate::protocol_serde::shape_email_message_activity::de_email_message_activity(tokens)?);
+                            builder = builder.set_email(crate::protocol_serde::shape_email_message_activity::de_email_message_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "Holdout" => {
-                            builder = builder.set_holdout(crate::protocol_serde::shape_holdout_activity::de_holdout_activity(tokens)?);
+                            builder = builder.set_holdout(crate::protocol_serde::shape_holdout_activity::de_holdout_activity(tokens, _value)?);
                         }
                         "MultiCondition" => {
                             builder = builder.set_multi_condition(
-                                crate::protocol_serde::shape_multi_conditional_split_activity::de_multi_conditional_split_activity(tokens)?,
+                                crate::protocol_serde::shape_multi_conditional_split_activity::de_multi_conditional_split_activity(tokens, _value)?,
                             );
                         }
                         "PUSH" => {
-                            builder = builder.set_push(crate::protocol_serde::shape_push_message_activity::de_push_message_activity(tokens)?);
+                            builder = builder.set_push(crate::protocol_serde::shape_push_message_activity::de_push_message_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "RandomSplit" => {
-                            builder = builder.set_random_split(crate::protocol_serde::shape_random_split_activity::de_random_split_activity(tokens)?);
+                            builder = builder.set_random_split(crate::protocol_serde::shape_random_split_activity::de_random_split_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "SMS" => {
-                            builder = builder.set_sms(crate::protocol_serde::shape_sms_message_activity::de_sms_message_activity(tokens)?);
+                            builder = builder.set_sms(crate::protocol_serde::shape_sms_message_activity::de_sms_message_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "Wait" => {
-                            builder = builder.set_wait(crate::protocol_serde::shape_wait_activity::de_wait_activity(tokens)?);
+                            builder = builder.set_wait(crate::protocol_serde::shape_wait_activity::de_wait_activity(tokens, _value)?);
                         }
                         "ContactCenter" => {
-                            builder =
-                                builder.set_contact_center(crate::protocol_serde::shape_contact_center_activity::de_contact_center_activity(tokens)?);
+                            builder = builder.set_contact_center(crate::protocol_serde::shape_contact_center_activity::de_contact_center_activity(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

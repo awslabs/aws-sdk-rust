@@ -39,6 +39,7 @@ pub fn ser_router_input_protocol_configuration(
 
 pub(crate) fn de_router_input_protocol_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RouterInputProtocolConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,24 +69,26 @@ where
                     }
                     variant = match key.as_ref() {
                         "rtp" => Some(crate::types::RouterInputProtocolConfiguration::Rtp(
-                            crate::protocol_serde::shape_rtp_router_input_configuration::de_rtp_router_input_configuration(tokens)?
+                            crate::protocol_serde::shape_rtp_router_input_configuration::de_rtp_router_input_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Rtp' cannot be null"))?,
                         )),
                         "rist" => Some(crate::types::RouterInputProtocolConfiguration::Rist(
-                            crate::protocol_serde::shape_rist_router_input_configuration::de_rist_router_input_configuration(tokens)?
+                            crate::protocol_serde::shape_rist_router_input_configuration::de_rist_router_input_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Rist' cannot be null"))?,
                         )),
                         "srtListener" => Some(crate::types::RouterInputProtocolConfiguration::SrtListener(
-                            crate::protocol_serde::shape_srt_listener_router_input_configuration::de_srt_listener_router_input_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtListener' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_srt_listener_router_input_configuration::de_srt_listener_router_input_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtListener' cannot be null")
+                            })?,
                         )),
                         "srtCaller" => Some(crate::types::RouterInputProtocolConfiguration::SrtCaller(
-                            crate::protocol_serde::shape_srt_caller_router_input_configuration::de_srt_caller_router_input_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtCaller' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_srt_caller_router_input_configuration::de_srt_caller_router_input_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtCaller' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

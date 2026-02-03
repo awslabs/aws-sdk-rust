@@ -175,7 +175,7 @@ mod create_solution_version;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_personalize::Error> {
 /// # let client: aws_sdk_personalize::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_batch_inference_job()
 ///     .customize()

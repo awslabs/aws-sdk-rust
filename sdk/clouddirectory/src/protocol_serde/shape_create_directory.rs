@@ -164,12 +164,12 @@ pub fn de_create_directory_http_response(
 
 pub fn ser_create_directory_headers(
     input: &crate::operation::create_directory::CreateDirectoryInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.schema_arn {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "schema_arn",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -191,13 +191,13 @@ pub fn ser_create_directory_input(
 }
 
 pub(crate) fn de_create_directory(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_directory::builders::CreateDirectoryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_directory::builders::CreateDirectoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

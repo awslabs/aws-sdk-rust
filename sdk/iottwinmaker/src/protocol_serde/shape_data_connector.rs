@@ -17,6 +17,7 @@ pub fn ser_data_connector(
 
 pub(crate) fn de_data_connector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataConnector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "lambda" => {
-                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_function::de_lambda_function(tokens)?);
+                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_function::de_lambda_function(tokens, _value)?);
                         }
                         "isNative" => {
                             builder = builder.set_is_native(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

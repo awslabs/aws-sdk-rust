@@ -48,6 +48,7 @@ pub fn ser_s3_delta_source(
 
 pub(crate) fn de_s3_delta_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DeltaSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,20 +70,24 @@ where
                             );
                         }
                         "Paths" => {
-                            builder = builder
-                                .set_paths(crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?);
+                            builder = builder.set_paths(
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
+                            );
                         }
                         "AdditionalDeltaOptions" => {
-                            builder =
-                                builder.set_additional_delta_options(crate::protocol_serde::shape_additional_options::de_additional_options(tokens)?);
+                            builder = builder.set_additional_delta_options(crate::protocol_serde::shape_additional_options::de_additional_options(
+                                tokens, _value,
+                            )?);
                         }
                         "AdditionalOptions" => {
                             builder = builder.set_additional_options(
-                                crate::protocol_serde::shape_s3_direct_source_additional_options::de_s3_direct_source_additional_options(tokens)?,
+                                crate::protocol_serde::shape_s3_direct_source_additional_options::de_s3_direct_source_additional_options(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

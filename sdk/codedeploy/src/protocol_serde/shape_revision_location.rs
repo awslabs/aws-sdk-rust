@@ -35,6 +35,7 @@ pub fn ser_revision_location(
 
 pub(crate) fn de_revision_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RevisionLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,16 +57,18 @@ where
                             );
                         }
                         "s3Location" => {
-                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         "gitHubLocation" => {
-                            builder = builder.set_git_hub_location(crate::protocol_serde::shape_git_hub_location::de_git_hub_location(tokens)?);
+                            builder =
+                                builder.set_git_hub_location(crate::protocol_serde::shape_git_hub_location::de_git_hub_location(tokens, _value)?);
                         }
                         "string" => {
-                            builder = builder.set_string(crate::protocol_serde::shape_raw_string::de_raw_string(tokens)?);
+                            builder = builder.set_string(crate::protocol_serde::shape_raw_string::de_raw_string(tokens, _value)?);
                         }
                         "appSpecContent" => {
-                            builder = builder.set_app_spec_content(crate::protocol_serde::shape_app_spec_content::de_app_spec_content(tokens)?);
+                            builder =
+                                builder.set_app_spec_content(crate::protocol_serde::shape_app_spec_content::de_app_spec_content(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -86,13 +86,13 @@ pub fn ser_get_predictive_scaling_forecast_input(
 }
 
 pub(crate) fn de_get_predictive_scaling_forecast(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -100,10 +100,10 @@ pub(crate) fn de_get_predictive_scaling_forecast(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "LoadForecast" => {
-                    builder = builder.set_load_forecast(crate::protocol_serde::shape_load_forecasts::de_load_forecasts(tokens)?);
+                    builder = builder.set_load_forecast(crate::protocol_serde::shape_load_forecasts::de_load_forecasts(tokens, _value)?);
                 }
                 "CapacityForecast" => {
-                    builder = builder.set_capacity_forecast(crate::protocol_serde::shape_capacity_forecast::de_capacity_forecast(tokens)?);
+                    builder = builder.set_capacity_forecast(crate::protocol_serde::shape_capacity_forecast::de_capacity_forecast(tokens, _value)?);
                 }
                 "UpdateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

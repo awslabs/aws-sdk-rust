@@ -93,13 +93,13 @@ pub fn ser_list_game_servers_input(
 }
 
 pub(crate) fn de_list_game_servers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_game_servers::builders::ListGameServersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_game_servers::builders::ListGameServersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_list_game_servers(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "GameServers" => {
-                    builder = builder.set_game_servers(crate::protocol_serde::shape_game_servers::de_game_servers(tokens)?);
+                    builder = builder.set_game_servers(crate::protocol_serde::shape_game_servers::de_game_servers(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

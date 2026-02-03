@@ -32,6 +32,7 @@ pub fn ser_policy_parameter(
 
 pub(crate) fn de_policy_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PolicyParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,11 +54,11 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "MapEntries" => {
                             builder = builder.set_map_entries(crate::protocol_serde::shape_parameter_map_entry_list::de_parameter_map_entry_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

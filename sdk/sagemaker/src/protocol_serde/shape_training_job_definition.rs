@@ -51,6 +51,7 @@ pub fn ser_training_job_definition(
 
 pub(crate) fn de_training_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainingJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,19 +73,23 @@ where
                             );
                         }
                         "HyperParameters" => {
-                            builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                            builder =
+                                builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                         }
                         "InputDataConfig" => {
-                            builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?);
+                            builder =
+                                builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
                         }
                         "OutputDataConfig" => {
-                            builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
+                            builder = builder
+                                .set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
                         }
                         "ResourceConfig" => {
-                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
+                            builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
                         }
                         "StoppingCondition" => {
-                            builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
+                            builder = builder
+                                .set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

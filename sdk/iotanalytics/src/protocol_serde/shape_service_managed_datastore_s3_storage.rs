@@ -8,6 +8,7 @@ pub fn ser_service_managed_datastore_s3_storage(
 
 pub(crate) fn de_service_managed_datastore_s3_storage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceManagedDatastoreS3Storage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

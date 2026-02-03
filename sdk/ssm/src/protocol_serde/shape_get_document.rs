@@ -93,11 +93,11 @@ pub fn ser_get_document_input(
 }
 
 pub(crate) fn de_get_document(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_document::builders::GetDocumentOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_document::builders::GetDocumentOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,11 +174,14 @@ pub(crate) fn de_get_document(
                     );
                 }
                 "Requires" => {
-                    builder = builder.set_requires(crate::protocol_serde::shape_document_requires_list::de_document_requires_list(tokens)?);
+                    builder = builder.set_requires(crate::protocol_serde::shape_document_requires_list::de_document_requires_list(
+                        tokens, _value,
+                    )?);
                 }
                 "AttachmentsContent" => {
-                    builder =
-                        builder.set_attachments_content(crate::protocol_serde::shape_attachment_content_list::de_attachment_content_list(tokens)?);
+                    builder = builder.set_attachments_content(crate::protocol_serde::shape_attachment_content_list::de_attachment_content_list(
+                        tokens, _value,
+                    )?);
                 }
                 "ReviewStatus" => {
                     builder = builder.set_review_status(

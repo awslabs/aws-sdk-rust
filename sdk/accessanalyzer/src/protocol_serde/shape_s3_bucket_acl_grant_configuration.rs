@@ -17,6 +17,7 @@ pub fn ser_s3_bucket_acl_grant_configuration(
 
 pub(crate) fn de_s3_bucket_acl_grant_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3BucketAclGrantConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "grantee" => {
-                            builder = builder.set_grantee(crate::protocol_serde::shape_acl_grantee::de_acl_grantee(tokens)?);
+                            builder = builder.set_grantee(crate::protocol_serde::shape_acl_grantee::de_acl_grantee(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

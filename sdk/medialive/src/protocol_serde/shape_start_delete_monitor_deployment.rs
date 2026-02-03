@@ -142,13 +142,13 @@ pub fn de_start_delete_monitor_deployment_http_response(
 }
 
 pub(crate) fn de_start_delete_monitor_deployment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_delete_monitor_deployment::builders::StartDeleteMonitorDeploymentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_delete_monitor_deployment::builders::StartDeleteMonitorDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,7 +164,9 @@ pub(crate) fn de_start_delete_monitor_deployment(
                 }
                 "cloudWatchAlarmTemplateGroupIds" => {
                     builder = builder.set_cloud_watch_alarm_template_group_ids(
-                        crate::protocol_serde::shape_list_of_string_min7_max11_pattern_aws097::de_list_of_string_min7_max11_pattern_aws097(tokens)?,
+                        crate::protocol_serde::shape_list_of_string_min7_max11_pattern_aws097::de_list_of_string_min7_max11_pattern_aws097(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "createdAt" => {
@@ -196,12 +198,14 @@ pub(crate) fn de_start_delete_monitor_deployment(
                 }
                 "eventBridgeRuleTemplateGroupIds" => {
                     builder = builder.set_event_bridge_rule_template_group_ids(
-                        crate::protocol_serde::shape_list_of_string_min7_max11_pattern_aws097::de_list_of_string_min7_max11_pattern_aws097(tokens)?,
+                        crate::protocol_serde::shape_list_of_string_min7_max11_pattern_aws097::de_list_of_string_min7_max11_pattern_aws097(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "failedMediaResourceMap" => {
                     builder = builder.set_failed_media_resource_map(
-                        crate::protocol_serde::shape_failed_media_resource_map::de_failed_media_resource_map(tokens)?,
+                        crate::protocol_serde::shape_failed_media_resource_map::de_failed_media_resource_map(tokens, _value)?,
                     );
                 }
                 "id" => {
@@ -219,11 +223,11 @@ pub(crate) fn de_start_delete_monitor_deployment(
                 }
                 "lastSuccessfulMonitorDeployment" => {
                     builder = builder.set_last_successful_monitor_deployment(
-                        crate::protocol_serde::shape_successful_monitor_deployment::de_successful_monitor_deployment(tokens)?,
+                        crate::protocol_serde::shape_successful_monitor_deployment::de_successful_monitor_deployment(tokens, _value)?,
                     );
                 }
                 "mediaResourceMap" => {
-                    builder = builder.set_media_resource_map(crate::protocol_serde::shape_media_resource_map::de_media_resource_map(tokens)?);
+                    builder = builder.set_media_resource_map(crate::protocol_serde::shape_media_resource_map::de_media_resource_map(tokens, _value)?);
                 }
                 "modifiedAt" => {
                     builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -236,7 +240,7 @@ pub(crate) fn de_start_delete_monitor_deployment(
                         builder.set_monitor_changes_pending_deployment(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "monitorDeployment" => {
-                    builder = builder.set_monitor_deployment(crate::protocol_serde::shape_monitor_deployment::de_monitor_deployment(tokens)?);
+                    builder = builder.set_monitor_deployment(crate::protocol_serde::shape_monitor_deployment::de_monitor_deployment(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -253,7 +257,7 @@ pub(crate) fn de_start_delete_monitor_deployment(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

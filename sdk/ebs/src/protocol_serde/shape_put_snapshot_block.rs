@@ -144,13 +144,13 @@ pub fn de_put_snapshot_block_http_response(
 
 pub fn ser_put_snapshot_block_headers(
     input: &crate::operation::put_snapshot_block::PutSnapshotBlockInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.data_length {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "data_length",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -162,7 +162,7 @@ pub fn ser_put_snapshot_block_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_3);
         let formatted_4 = encoder.encode();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "progress",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -173,7 +173,7 @@ pub fn ser_put_snapshot_block_headers(
     if let ::std::option::Option::Some(inner_5) = &input.checksum {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -184,7 +184,7 @@ pub fn ser_put_snapshot_block_headers(
     if let ::std::option::Option::Some(inner_7) = &input.checksum_algorithm {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_algorithm",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

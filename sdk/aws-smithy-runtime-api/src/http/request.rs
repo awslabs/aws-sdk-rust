@@ -187,6 +187,13 @@ impl<B> TryInto<http_02x::Request<B>> for Request<B> {
 }
 
 #[cfg(feature = "http-1x")]
+impl From<http_1x::Uri> for Uri {
+    fn from(value: http_1x::Uri) -> Self {
+        Uri::from_http1x_uri(value)
+    }
+}
+
+#[cfg(feature = "http-1x")]
 impl<B> TryInto<http_1x::Request<B>> for Request<B> {
     type Error = HttpError;
 

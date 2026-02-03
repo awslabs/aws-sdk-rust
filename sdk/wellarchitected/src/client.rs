@@ -167,7 +167,7 @@ mod create_workload_share;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_wellarchitected::Error> {
 /// # let client: aws_sdk_wellarchitected::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_lenses()
 ///     .customize()

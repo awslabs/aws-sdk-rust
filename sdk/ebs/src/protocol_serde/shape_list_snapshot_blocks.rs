@@ -139,13 +139,13 @@ pub fn de_list_snapshot_blocks_http_response(
 }
 
 pub(crate) fn de_list_snapshot_blocks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,7 +160,7 @@ pub(crate) fn de_list_snapshot_blocks(
                     );
                 }
                 "Blocks" => {
-                    builder = builder.set_blocks(crate::protocol_serde::shape_blocks::de_blocks(tokens)?);
+                    builder = builder.set_blocks(crate::protocol_serde::shape_blocks::de_blocks(tokens, _value)?);
                 }
                 "ExpiryTime" => {
                     builder = builder.set_expiry_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

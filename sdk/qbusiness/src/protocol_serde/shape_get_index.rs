@@ -108,10 +108,10 @@ pub fn de_get_index_http_response(
 }
 
 pub(crate) fn de_get_index(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_index::builders::GetIndexOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_index::builders::GetIndexOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_get_index(
                 }
                 "capacityConfiguration" => {
                     builder = builder.set_capacity_configuration(
-                        crate::protocol_serde::shape_index_capacity_configuration::de_index_capacity_configuration(tokens)?,
+                        crate::protocol_serde::shape_index_capacity_configuration::de_index_capacity_configuration(tokens, _value)?,
                     );
                 }
                 "createdAt" => {
@@ -152,11 +152,11 @@ pub(crate) fn de_get_index(
                 }
                 "documentAttributeConfigurations" => {
                     builder = builder.set_document_attribute_configurations(
-                        crate::protocol_serde::shape_document_attribute_configurations::de_document_attribute_configurations(tokens)?,
+                        crate::protocol_serde::shape_document_attribute_configurations::de_document_attribute_configurations(tokens, _value)?,
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
                 }
                 "indexArn" => {
                     builder = builder.set_index_arn(
@@ -173,7 +173,7 @@ pub(crate) fn de_get_index(
                     );
                 }
                 "indexStatistics" => {
-                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(tokens)?);
+                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

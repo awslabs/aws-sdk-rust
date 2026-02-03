@@ -58,6 +58,7 @@ pub fn ser_amazon_transcribe_call_analytics_processor_configuration(
 
 pub(crate) fn de_amazon_transcribe_call_analytics_processor_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -146,12 +147,12 @@ where
                         }
                         "PostCallAnalyticsSettings" => {
                             builder = builder.set_post_call_analytics_settings(
-                                crate::protocol_serde::shape_post_call_analytics_settings::de_post_call_analytics_settings(tokens)?,
+                                crate::protocol_serde::shape_post_call_analytics_settings::de_post_call_analytics_settings(tokens, _value)?,
                             );
                         }
                         "CallAnalyticsStreamCategories" => {
                             builder = builder.set_call_analytics_stream_categories(
-                                crate::protocol_serde::shape_category_name_list::de_category_name_list(tokens)?,
+                                crate::protocol_serde::shape_category_name_list::de_category_name_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

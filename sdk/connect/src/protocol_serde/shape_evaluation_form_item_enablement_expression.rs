@@ -32,6 +32,7 @@ pub fn ser_evaluation_form_item_enablement_expression(
 
 pub(crate) fn de_evaluation_form_item_enablement_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormItemEnablementExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,13 +49,13 @@ where
                         "Source" => {
                             builder = builder.set_source(
                                 crate::protocol_serde::shape_evaluation_form_item_enablement_source::de_evaluation_form_item_enablement_source(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "Values" => {
                             builder = builder.set_values(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_source_value_list::de_evaluation_form_item_enablement_source_value_list(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_source_value_list::de_evaluation_form_item_enablement_source_value_list(tokens, _value)?
                                 );
                         }
                         "Comparator" => {

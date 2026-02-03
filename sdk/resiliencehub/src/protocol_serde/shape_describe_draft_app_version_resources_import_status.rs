@@ -150,13 +150,13 @@ pub fn ser_describe_draft_app_version_resources_import_status_input(
 }
 
 pub(crate) fn de_describe_draft_app_version_resources_import_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -178,7 +178,7 @@ pub(crate) fn de_describe_draft_app_version_resources_import_status(
                     );
                 }
                 "errorDetails" => {
-                    builder = builder.set_error_details(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens)?);
+                    builder = builder.set_error_details(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens, _value)?);
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(

@@ -20,6 +20,7 @@ pub fn ser_rule_is_in_address_list(
 
 pub(crate) fn de_rule_is_in_address_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleIsInAddressList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "AddressLists" => {
                             builder = builder.set_address_lists(
-                                crate::protocol_serde::shape_rule_address_list_arn_list::de_rule_address_list_arn_list(tokens)?,
+                                crate::protocol_serde::shape_rule_address_list_arn_list::de_rule_address_list_arn_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

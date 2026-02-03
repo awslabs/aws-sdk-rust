@@ -129,13 +129,13 @@ pub fn ser_list_lf_tag_expressions_input(
 }
 
 pub(crate) fn de_list_lf_tag_expressions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_lf_tag_expressions::builders::ListLfTagExpressionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_lf_tag_expressions::builders::ListLfTagExpressionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,8 +143,9 @@ pub(crate) fn de_list_lf_tag_expressions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "LFTagExpressions" => {
-                    builder =
-                        builder.set_lf_tag_expressions(crate::protocol_serde::shape_lf_tag_expressions_list::de_lf_tag_expressions_list(tokens)?);
+                    builder = builder.set_lf_tag_expressions(crate::protocol_serde::shape_lf_tag_expressions_list::de_lf_tag_expressions_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

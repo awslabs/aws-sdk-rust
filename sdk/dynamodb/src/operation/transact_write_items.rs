@@ -199,17 +199,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TransactWrit
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::transact_write_items::TransactWriteItemsInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = _header_serialization_settings.set_default_header(
                 builder,
-                ::http::header::HeaderName::from_static("x-amz-target"),
+                ::http_1x::header::HeaderName::from_static("x-amz-target"),
                 "DynamoDB_20120810.TransactWriteItems",
             );
             builder
@@ -218,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TransactWrit
             ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_transact_write_items::ser_transact_write_items_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
         }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -345,7 +345,7 @@ pub enum TransactWriteItemsError {
     /// <li>
     /// <p>There is a user error, such as an invalid data format.</p></li>
     /// </ul><note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
+    /// <p>DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>

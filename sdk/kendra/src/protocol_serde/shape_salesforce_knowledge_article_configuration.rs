@@ -35,6 +35,7 @@ pub fn ser_salesforce_knowledge_article_configuration(
 
 pub(crate) fn de_salesforce_knowledge_article_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SalesforceKnowledgeArticleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,18 +52,18 @@ where
                         "IncludedStates" => {
                             builder = builder.set_included_states(
                                 crate::protocol_serde::shape_salesforce_knowledge_article_state_list::de_salesforce_knowledge_article_state_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "StandardKnowledgeArticleTypeConfiguration" => {
                             builder = builder.set_standard_knowledge_article_type_configuration(
-                                    crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::de_salesforce_standard_knowledge_article_type_configuration(tokens)?
+                                    crate::protocol_serde::shape_salesforce_standard_knowledge_article_type_configuration::de_salesforce_standard_knowledge_article_type_configuration(tokens, _value)?
                                 );
                         }
                         "CustomKnowledgeArticleTypeConfigurations" => {
                             builder = builder.set_custom_knowledge_article_type_configurations(
-                                    crate::protocol_serde::shape_salesforce_custom_knowledge_article_type_configuration_list::de_salesforce_custom_knowledge_article_type_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_salesforce_custom_knowledge_article_type_configuration_list::de_salesforce_custom_knowledge_article_type_configuration_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

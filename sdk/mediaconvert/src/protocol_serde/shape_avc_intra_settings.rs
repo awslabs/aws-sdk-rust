@@ -56,6 +56,7 @@ pub fn ser_avc_intra_settings(
 
 pub(crate) fn de_avc_intra_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AvcIntraSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,8 +78,9 @@ where
                             );
                         }
                         "avcIntraUhdSettings" => {
-                            builder = builder
-                                .set_avc_intra_uhd_settings(crate::protocol_serde::shape_avc_intra_uhd_settings::de_avc_intra_uhd_settings(tokens)?);
+                            builder = builder.set_avc_intra_uhd_settings(
+                                crate::protocol_serde::shape_avc_intra_uhd_settings::de_avc_intra_uhd_settings(tokens, _value)?,
+                            );
                         }
                         "framerateControl" => {
                             builder = builder.set_framerate_control(
@@ -120,7 +122,7 @@ where
                         }
                         "perFrameMetrics" => {
                             builder = builder.set_per_frame_metrics(
-                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens, _value)?,
                             );
                         }
                         "scanTypeConversionMode" => {

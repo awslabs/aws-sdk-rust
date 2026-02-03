@@ -104,13 +104,13 @@ pub fn de_get_command_execution_http_response(
 }
 
 pub(crate) fn de_get_command_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_command_execution::builders::GetCommandExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_command_execution::builders::GetCommandExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,11 +157,13 @@ pub(crate) fn de_get_command_execution(
                     )?);
                 }
                 "parameters" => {
-                    builder = builder
-                        .set_parameters(crate::protocol_serde::shape_command_execution_parameter_map::de_command_execution_parameter_map(tokens)?);
+                    builder = builder.set_parameters(
+                        crate::protocol_serde::shape_command_execution_parameter_map::de_command_execution_parameter_map(tokens, _value)?,
+                    );
                 }
                 "result" => {
-                    builder = builder.set_result(crate::protocol_serde::shape_command_execution_result_map::de_command_execution_result_map(tokens)?);
+                    builder = builder
+                        .set_result(crate::protocol_serde::shape_command_execution_result_map::de_command_execution_result_map(tokens, _value)?);
                 }
                 "startedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -177,7 +179,7 @@ pub(crate) fn de_get_command_execution(
                     );
                 }
                 "statusReason" => {
-                    builder = builder.set_status_reason(crate::protocol_serde::shape_status_reason::de_status_reason(tokens)?);
+                    builder = builder.set_status_reason(crate::protocol_serde::shape_status_reason::de_status_reason(tokens, _value)?);
                 }
                 "targetArn" => {
                     builder = builder.set_target_arn(

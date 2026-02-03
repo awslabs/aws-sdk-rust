@@ -104,12 +104,12 @@ pub fn de_invoke_endpoint_async_http_response(
 
 pub fn ser_invoke_endpoint_async_headers(
     input: &crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -120,7 +120,7 @@ pub fn ser_invoke_endpoint_async_headers(
     if let ::std::option::Option::Some(inner_3) = &input.accept {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "accept",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -131,7 +131,7 @@ pub fn ser_invoke_endpoint_async_headers(
     if let ::std::option::Option::Some(inner_5) = &input.custom_attributes {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "custom_attributes",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -142,7 +142,7 @@ pub fn ser_invoke_endpoint_async_headers(
     if let ::std::option::Option::Some(inner_7) = &input.inference_id {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "inference_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -153,7 +153,7 @@ pub fn ser_invoke_endpoint_async_headers(
     if let ::std::option::Option::Some(inner_9) = &input.input_location {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "input_location",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -165,7 +165,7 @@ pub fn ser_invoke_endpoint_async_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_11);
         let formatted_12 = encoder.encode();
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_ttl_seconds",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -177,7 +177,7 @@ pub fn ser_invoke_endpoint_async_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
         let formatted_14 = encoder.encode();
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "invocation_timeout_seconds",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -189,13 +189,13 @@ pub fn ser_invoke_endpoint_async_headers(
 }
 
 pub(crate) fn de_invoke_endpoint_async(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

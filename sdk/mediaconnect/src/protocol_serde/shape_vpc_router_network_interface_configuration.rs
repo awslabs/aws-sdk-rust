@@ -20,6 +20,7 @@ pub fn ser_vpc_router_network_interface_configuration(
 
 pub(crate) fn de_vpc_router_network_interface_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VpcRouterNetworkInterfaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "securityGroupIds" => {
-                            builder = builder
-                                .set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         "subnetId" => {
                             builder = builder.set_subnet_id(

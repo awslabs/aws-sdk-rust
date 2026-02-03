@@ -139,13 +139,13 @@ pub fn ser_list_resolver_rule_associations_input(
 }
 
 pub(crate) fn de_list_resolver_rule_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_resolver_rule_associations::builders::ListResolverRuleAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_list_resolver_rule_associations(
                 }
                 "ResolverRuleAssociations" => {
                     builder = builder.set_resolver_rule_associations(
-                        crate::protocol_serde::shape_resolver_rule_associations::de_resolver_rule_associations(tokens)?,
+                        crate::protocol_serde::shape_resolver_rule_associations::de_resolver_rule_associations(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

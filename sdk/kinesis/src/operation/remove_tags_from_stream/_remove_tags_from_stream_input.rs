@@ -10,6 +10,8 @@ pub struct RemoveTagsFromStreamInput {
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTagsFromStreamInput {
     /// <p>The name of the stream.</p>
@@ -26,6 +28,10 @@ impl RemoveTagsFromStreamInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl RemoveTagsFromStreamInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
@@ -41,6 +47,7 @@ pub struct RemoveTagsFromStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveTagsFromStreamInputBuilder {
     /// <p>The name of the stream.</p>
@@ -91,6 +98,20 @@ impl RemoveTagsFromStreamInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn build(
         self,
@@ -100,6 +121,7 @@ impl RemoveTagsFromStreamInputBuilder {
             stream_name: self.stream_name,
             tag_keys: self.tag_keys,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

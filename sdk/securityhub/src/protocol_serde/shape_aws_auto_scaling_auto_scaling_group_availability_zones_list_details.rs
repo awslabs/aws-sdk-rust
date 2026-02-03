@@ -11,6 +11,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_availability_zones_list_details(
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_availability_zones_list_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

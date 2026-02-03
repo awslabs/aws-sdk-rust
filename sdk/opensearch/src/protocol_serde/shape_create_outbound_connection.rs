@@ -123,13 +123,13 @@ pub fn ser_create_outbound_connection_input(
 }
 
 pub(crate) fn de_create_outbound_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_outbound_connection::builders::CreateOutboundConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_outbound_connection::builders::CreateOutboundConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,21 +158,24 @@ pub(crate) fn de_create_outbound_connection(
                     );
                 }
                 "ConnectionProperties" => {
-                    builder =
-                        builder.set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(tokens)?);
+                    builder = builder.set_connection_properties(crate::protocol_serde::shape_connection_properties::de_connection_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "ConnectionStatus" => {
                     builder = builder.set_connection_status(crate::protocol_serde::shape_outbound_connection_status::de_outbound_connection_status(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "LocalDomainInfo" => {
-                    builder = builder
-                        .set_local_domain_info(crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens)?);
+                    builder = builder.set_local_domain_info(
+                        crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
+                    );
                 }
                 "RemoteDomainInfo" => {
-                    builder = builder
-                        .set_remote_domain_info(crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens)?);
+                    builder = builder.set_remote_domain_info(
+                        crate::protocol_serde::shape_domain_information_container::de_domain_information_container(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

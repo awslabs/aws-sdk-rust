@@ -26,6 +26,7 @@ pub fn ser_enrollment_job_fraud_detection_config(
 
 pub(crate) fn de_enrollment_job_fraud_detection_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EnrollmentJobFraudDetectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "WatchlistIds" => {
                             builder = builder.set_watchlist_ids(
-                                    crate::protocol_serde::shape_enrollment_job_fraud_detection_config_watchlist_ids::de_enrollment_job_fraud_detection_config_watchlist_ids(tokens)?
+                                    crate::protocol_serde::shape_enrollment_job_fraud_detection_config_watchlist_ids::de_enrollment_job_fraud_detection_config_watchlist_ids(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

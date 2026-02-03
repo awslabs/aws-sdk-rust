@@ -132,13 +132,13 @@ pub fn de_batch_get_router_network_interface_http_response(
 }
 
 pub(crate) fn de_batch_get_router_network_interface(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_router_network_interface::builders::BatchGetRouterNetworkInterfaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_router_network_interface::builders::BatchGetRouterNetworkInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,12 +148,12 @@ pub(crate) fn de_batch_get_router_network_interface(
                 match key.to_unescaped()?.as_ref() {
                     "errors" => {
                         builder = builder.set_errors(
-                            crate::protocol_serde::shape_batch_get_router_network_interface_error_list::de_batch_get_router_network_interface_error_list(tokens)?
+                            crate::protocol_serde::shape_batch_get_router_network_interface_error_list::de_batch_get_router_network_interface_error_list(tokens, _value)?
                         );
                     }
                     "routerNetworkInterfaces" => {
                         builder = builder.set_router_network_interfaces(
-                            crate::protocol_serde::shape_router_network_interface_list::de_router_network_interface_list(tokens)?,
+                            crate::protocol_serde::shape_router_network_interface_list::de_router_network_interface_list(tokens, _value)?,
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

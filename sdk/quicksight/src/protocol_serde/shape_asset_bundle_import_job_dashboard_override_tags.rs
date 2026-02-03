@@ -29,6 +29,7 @@ pub fn ser_asset_bundle_import_job_dashboard_override_tags(
 
 pub(crate) fn de_asset_bundle_import_job_dashboard_override_tags<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobDashboardOverrideTags>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,11 +46,11 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "DashboardIds" => {
                                 builder = builder.set_dashboard_ids(
-                                    crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(tokens)?
+                                    crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(tokens, _value)?
                                 );
                             }
                             "Tags" => {
-                                builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                                builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

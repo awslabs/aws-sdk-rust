@@ -120,13 +120,13 @@ pub fn de_list_profile_attribute_values_http_response(
 }
 
 pub(crate) fn de_list_profile_attribute_values(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_profile_attribute_values::builders::ListProfileAttributeValuesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_profile_attribute_values::builders::ListProfileAttributeValuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,7 @@ pub(crate) fn de_list_profile_attribute_values(
                 }
                 "Items" => {
                     builder = builder.set_items(crate::protocol_serde::shape_attribute_value_item_list::de_attribute_value_item_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

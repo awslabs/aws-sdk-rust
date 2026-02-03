@@ -29,6 +29,7 @@ pub fn ser_logical_table(
 
 pub(crate) fn de_logical_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogicalTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,11 +52,13 @@ where
                         }
                         "DataTransforms" => {
                             builder = builder.set_data_transforms(
-                                crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens)?,
+                                crate::protocol_serde::shape_transform_operation_list::de_transform_operation_list(tokens, _value)?,
                             );
                         }
                         "Source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_logical_table_source::de_logical_table_source(tokens)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_logical_table_source::de_logical_table_source(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

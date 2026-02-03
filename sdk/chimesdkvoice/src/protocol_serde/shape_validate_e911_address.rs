@@ -176,13 +176,13 @@ pub fn ser_validate_e911_address_input(
 }
 
 pub(crate) fn de_validate_e911_address(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -190,7 +190,7 @@ pub(crate) fn de_validate_e911_address(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Address" => {
-                    builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens)?);
+                    builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
                 }
                 "AddressExternalId" => {
                     builder = builder.set_address_external_id(
@@ -200,8 +200,9 @@ pub(crate) fn de_validate_e911_address(
                     );
                 }
                 "CandidateAddressList" => {
-                    builder =
-                        builder.set_candidate_address_list(crate::protocol_serde::shape_candidate_address_list::de_candidate_address_list(tokens)?);
+                    builder = builder.set_candidate_address_list(crate::protocol_serde::shape_candidate_address_list::de_candidate_address_list(
+                        tokens, _value,
+                    )?);
                 }
                 "ValidationResult" => {
                     builder = builder.set_validation_result(

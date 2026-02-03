@@ -44,6 +44,7 @@ pub fn ser_cost_and_usage_query(
 
 pub(crate) fn de_cost_and_usage_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CostAndUsageQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,10 +59,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_metric_names::de_metric_names(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_metric_names::de_metric_names(tokens, _value)?);
                         }
                         "timeRange" => {
-                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(tokens)?);
+                            builder = builder.set_time_range(crate::protocol_serde::shape_date_time_range::de_date_time_range(tokens, _value)?);
                         }
                         "granularity" => {
                             builder = builder.set_granularity(
@@ -71,10 +72,10 @@ where
                             );
                         }
                         "groupBy" => {
-                            builder = builder.set_group_by(crate::protocol_serde::shape_group_definitions::de_group_definitions(tokens)?);
+                            builder = builder.set_group_by(crate::protocol_serde::shape_group_definitions::de_group_definitions(tokens, _value)?);
                         }
                         "filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

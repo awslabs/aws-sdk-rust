@@ -120,13 +120,13 @@ pub fn ser_get_capability_input(
 }
 
 pub(crate) fn de_get_capability(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_capability::builders::GetCapabilityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_capability::builders::GetCapabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,12 +163,13 @@ pub(crate) fn de_get_capability(
                 }
                 "configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_capability_configuration::de_capability_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "instructionsDocuments" => {
-                    builder =
-                        builder.set_instructions_documents(crate::protocol_serde::shape_instructions_documents::de_instructions_documents(tokens)?);
+                    builder = builder.set_instructions_documents(crate::protocol_serde::shape_instructions_documents::de_instructions_documents(
+                        tokens, _value,
+                    )?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

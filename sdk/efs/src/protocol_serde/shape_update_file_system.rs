@@ -175,13 +175,13 @@ pub fn ser_update_file_system_input(
 }
 
 pub(crate) fn de_update_file_system(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -234,7 +234,7 @@ pub(crate) fn de_update_file_system(
                 }
                 "FileSystemProtection" => {
                     builder = builder.set_file_system_protection(
-                        crate::protocol_serde::shape_file_system_protection_description::de_file_system_protection_description(tokens)?,
+                        crate::protocol_serde::shape_file_system_protection_description::de_file_system_protection_description(tokens, _value)?,
                     );
                 }
                 "KmsKeyId" => {
@@ -285,10 +285,10 @@ pub(crate) fn de_update_file_system(
                     );
                 }
                 "SizeInBytes" => {
-                    builder = builder.set_size_in_bytes(crate::protocol_serde::shape_file_system_size::de_file_system_size(tokens)?);
+                    builder = builder.set_size_in_bytes(crate::protocol_serde::shape_file_system_size::de_file_system_size(tokens, _value)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "ThroughputMode" => {
                     builder = builder.set_throughput_mode(

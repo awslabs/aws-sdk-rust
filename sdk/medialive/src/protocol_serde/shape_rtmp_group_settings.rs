@@ -44,6 +44,7 @@ pub fn ser_rtmp_group_settings(
 
 pub(crate) fn de_rtmp_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RtmpGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,8 +59,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder =
-                                builder.set_ad_markers(crate::protocol_serde::shape_list_of_rtmp_ad_markers::de_list_of_rtmp_ad_markers(tokens)?);
+                            builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_rtmp_ad_markers::de_list_of_rtmp_ad_markers(
+                                tokens, _value,
+                            )?);
                         }
                         "authenticationScheme" => {
                             builder = builder.set_authentication_scheme(

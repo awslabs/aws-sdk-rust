@@ -23,6 +23,7 @@ pub fn ser_job_album_art(
 
 pub(crate) fn de_job_album_art<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobAlbumArt>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "Artwork" => {
-                            builder = builder.set_artwork(crate::protocol_serde::shape_artworks::de_artworks(tokens)?);
+                            builder = builder.set_artwork(crate::protocol_serde::shape_artworks::de_artworks(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -167,7 +167,7 @@ mod create_security_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_wickr::Error> {
 /// # let client: aws_sdk_wickr::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_user()
 ///     .customize()

@@ -26,6 +26,7 @@ pub fn ser_s3_output_format_config(
 
 pub(crate) fn de_s3_output_format_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3OutputFormatConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,10 +48,11 @@ where
                             );
                         }
                         "prefixConfig" => {
-                            builder = builder.set_prefix_config(crate::protocol_serde::shape_prefix_config::de_prefix_config(tokens)?);
+                            builder = builder.set_prefix_config(crate::protocol_serde::shape_prefix_config::de_prefix_config(tokens, _value)?);
                         }
                         "aggregationConfig" => {
-                            builder = builder.set_aggregation_config(crate::protocol_serde::shape_aggregation_config::de_aggregation_config(tokens)?);
+                            builder = builder
+                                .set_aggregation_config(crate::protocol_serde::shape_aggregation_config::de_aggregation_config(tokens, _value)?);
                         }
                         "preserveSourceDataTyping" => {
                             builder =

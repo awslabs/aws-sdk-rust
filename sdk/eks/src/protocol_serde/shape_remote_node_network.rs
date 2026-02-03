@@ -17,6 +17,7 @@ pub fn ser_remote_node_network(
 
 pub(crate) fn de_remote_node_network<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RemoteNodeNetwork>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cidrs" => {
-                            builder = builder.set_cidrs(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_cidrs(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

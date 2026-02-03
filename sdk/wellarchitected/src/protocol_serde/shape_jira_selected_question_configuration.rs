@@ -20,6 +20,7 @@ pub fn ser_jira_selected_question_configuration(
 
 pub(crate) fn de_jira_selected_question_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JiraSelectedQuestionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedPillars" => {
-                            builder = builder.set_selected_pillars(crate::protocol_serde::shape_selected_pillars::de_selected_pillars(tokens)?);
+                            builder =
+                                builder.set_selected_pillars(crate::protocol_serde::shape_selected_pillars::de_selected_pillars(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

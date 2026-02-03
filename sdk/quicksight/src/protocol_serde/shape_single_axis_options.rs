@@ -14,6 +14,7 @@ pub fn ser_single_axis_options(
 
 pub(crate) fn de_single_axis_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SingleAxisOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "YAxisOptions" => {
-                            builder = builder.set_y_axis_options(crate::protocol_serde::shape_y_axis_options::de_y_axis_options(tokens)?);
+                            builder = builder.set_y_axis_options(crate::protocol_serde::shape_y_axis_options::de_y_axis_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

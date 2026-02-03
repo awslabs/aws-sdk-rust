@@ -21,6 +21,7 @@ pub fn ser_model_data_source(
 
 pub(crate) fn de_model_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3DataSource" => Some(crate::types::ModelDataSource::S3DataSource(
-                            crate::protocol_serde::shape_s3_data_source::de_s3_data_source(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_data_source::de_s3_data_source(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3DataSource' cannot be null")
                             })?,
                         )),

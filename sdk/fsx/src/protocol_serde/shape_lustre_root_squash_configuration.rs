@@ -20,6 +20,7 @@ pub fn ser_lustre_root_squash_configuration(
 
 pub(crate) fn de_lustre_root_squash_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LustreRootSquashConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "NoSquashNids" => {
-                            builder =
-                                builder.set_no_squash_nids(crate::protocol_serde::shape_lustre_no_squash_nids::de_lustre_no_squash_nids(tokens)?);
+                            builder = builder.set_no_squash_nids(crate::protocol_serde::shape_lustre_no_squash_nids::de_lustre_no_squash_nids(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

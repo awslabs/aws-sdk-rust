@@ -74,13 +74,13 @@ pub fn de_describe_event_configurations_http_response(
 }
 
 pub(crate) fn de_describe_event_configurations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -94,7 +94,9 @@ pub(crate) fn de_describe_event_configurations(
                     )?);
                 }
                 "eventConfigurations" => {
-                    builder = builder.set_event_configurations(crate::protocol_serde::shape_event_configurations::de_event_configurations(tokens)?);
+                    builder = builder.set_event_configurations(crate::protocol_serde::shape_event_configurations::de_event_configurations(
+                        tokens, _value,
+                    )?);
                 }
                 "lastModifiedDate" => {
                     builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

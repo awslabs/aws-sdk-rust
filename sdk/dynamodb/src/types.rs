@@ -53,6 +53,8 @@ pub use crate::types::_sse_status::SseStatus;
 
 pub use crate::types::_restore_summary::RestoreSummary;
 
+pub use crate::types::_global_table_settings_replication_mode::GlobalTableSettingsReplicationMode;
+
 pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescription;
 
 pub use crate::types::_witness_status::WitnessStatus;
@@ -448,6 +450,8 @@ mod _global_table;
 mod _global_table_description;
 
 mod _global_table_global_secondary_index_settings_update;
+
+mod _global_table_settings_replication_mode;
 
 mod _global_table_status;
 

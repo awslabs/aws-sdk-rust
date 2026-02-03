@@ -38,6 +38,7 @@ pub fn ser_column_configuration(
 
 pub(crate) fn de_column_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,13 +76,13 @@ where
                         "FieldMappings" => {
                             builder = builder.set_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "ChangeDetectingColumns" => {
                             builder = builder.set_change_detecting_columns(
-                                crate::protocol_serde::shape_change_detecting_columns::de_change_detecting_columns(tokens)?,
+                                crate::protocol_serde::shape_change_detecting_columns::de_change_detecting_columns(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

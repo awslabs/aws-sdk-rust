@@ -151,7 +151,7 @@ mod create_db_parameter_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_timestreaminfluxdb::Error> {
 /// # let client: aws_sdk_timestreaminfluxdb::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_db_cluster()
 ///     .customize()

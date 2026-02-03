@@ -124,13 +124,13 @@ pub fn de_get_environment_http_response(
 }
 
 pub(crate) fn de_get_environment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_environment::builders::GetEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -187,7 +187,7 @@ pub(crate) fn de_get_environment(
                 }
                 "highAvailabilityConfig" => {
                     builder = builder.set_high_availability_config(
-                        crate::protocol_serde::shape_high_availability_config::de_high_availability_config(tokens)?,
+                        crate::protocol_serde::shape_high_availability_config::de_high_availability_config(tokens, _value)?,
                     );
                 }
                 "instanceType" => {
@@ -226,7 +226,8 @@ pub(crate) fn de_get_environment(
                     );
                 }
                 "pendingMaintenance" => {
-                    builder = builder.set_pending_maintenance(crate::protocol_serde::shape_pending_maintenance::de_pending_maintenance(tokens)?);
+                    builder =
+                        builder.set_pending_maintenance(crate::protocol_serde::shape_pending_maintenance::de_pending_maintenance(tokens, _value)?);
                 }
                 "preferredMaintenanceWindow" => {
                     builder = builder.set_preferred_maintenance_window(
@@ -239,7 +240,7 @@ pub(crate) fn de_get_environment(
                     builder = builder.set_publicly_accessible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
-                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_string50_list::de_string50_list(tokens)?);
+                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_string50_list::de_string50_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -257,14 +258,14 @@ pub(crate) fn de_get_environment(
                 }
                 "storageConfigurations" => {
                     builder = builder.set_storage_configurations(
-                        crate::protocol_serde::shape_storage_configuration_list::de_storage_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_storage_configuration_list::de_storage_configuration_list(tokens, _value)?,
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_string50_list::de_string50_list(tokens)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_string50_list::de_string50_list(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "vpcId" => {
                     builder = builder.set_vpc_id(

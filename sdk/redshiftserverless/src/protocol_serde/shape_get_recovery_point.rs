@@ -104,13 +104,13 @@ pub fn ser_get_recovery_point_input(
 }
 
 pub(crate) fn de_get_recovery_point(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_recovery_point::builders::GetRecoveryPointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,7 @@ pub(crate) fn de_get_recovery_point(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "recoveryPoint" => {
-                    builder = builder.set_recovery_point(crate::protocol_serde::shape_recovery_point::de_recovery_point(tokens)?);
+                    builder = builder.set_recovery_point(crate::protocol_serde::shape_recovery_point::de_recovery_point(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

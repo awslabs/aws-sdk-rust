@@ -98,13 +98,13 @@ pub fn de_describe_asset_bundle_import_job_http_response(
 }
 
 pub(crate) fn de_describe_asset_bundle_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_bundle_import_job::builders::DescribeAssetBundleImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,9 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                 }
                 "AssetBundleImportSource" => {
                     builder = builder.set_asset_bundle_import_source(
-                        crate::protocol_serde::shape_asset_bundle_import_source_description::de_asset_bundle_import_source_description(tokens)?,
+                        crate::protocol_serde::shape_asset_bundle_import_source_description::de_asset_bundle_import_source_description(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "AwsAccountId" => {
@@ -144,8 +146,9 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                     )?);
                 }
                 "Errors" => {
-                    builder = builder
-                        .set_errors(crate::protocol_serde::shape_asset_bundle_import_job_error_list::de_asset_bundle_import_job_error_list(tokens)?);
+                    builder = builder.set_errors(
+                        crate::protocol_serde::shape_asset_bundle_import_job_error_list::de_asset_bundle_import_job_error_list(tokens, _value)?,
+                    );
                 }
                 "FailureAction" => {
                     builder = builder.set_failure_action(
@@ -164,25 +167,25 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                 "OverrideParameters" => {
                     builder = builder.set_override_parameters(
                         crate::protocol_serde::shape_asset_bundle_import_job_override_parameters::de_asset_bundle_import_job_override_parameters(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
                 "OverridePermissions" => {
                     builder = builder.set_override_permissions(
                         crate::protocol_serde::shape_asset_bundle_import_job_override_permissions::de_asset_bundle_import_job_override_permissions(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
                 "OverrideTags" => {
                     builder = builder.set_override_tags(
-                        crate::protocol_serde::shape_asset_bundle_import_job_override_tags::de_asset_bundle_import_job_override_tags(tokens)?,
+                        crate::protocol_serde::shape_asset_bundle_import_job_override_tags::de_asset_bundle_import_job_override_tags(tokens, _value)?,
                     );
                 }
                 "OverrideValidationStrategy" => {
                     builder = builder.set_override_validation_strategy(
-                            crate::protocol_serde::shape_asset_bundle_import_job_override_validation_strategy::de_asset_bundle_import_job_override_validation_strategy(tokens)?
+                            crate::protocol_serde::shape_asset_bundle_import_job_override_validation_strategy::de_asset_bundle_import_job_override_validation_strategy(tokens, _value)?
                         );
                 }
                 "RequestId" => {
@@ -194,12 +197,12 @@ pub(crate) fn de_describe_asset_bundle_import_job(
                 }
                 "RollbackErrors" => {
                     builder = builder.set_rollback_errors(
-                        crate::protocol_serde::shape_asset_bundle_import_job_error_list::de_asset_bundle_import_job_error_list(tokens)?,
+                        crate::protocol_serde::shape_asset_bundle_import_job_error_list::de_asset_bundle_import_job_error_list(tokens, _value)?,
                     );
                 }
                 "Warnings" => {
                     builder = builder.set_warnings(
-                        crate::protocol_serde::shape_asset_bundle_import_job_warning_list::de_asset_bundle_import_job_warning_list(tokens)?,
+                        crate::protocol_serde::shape_asset_bundle_import_job_warning_list::de_asset_bundle_import_job_warning_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

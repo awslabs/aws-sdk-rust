@@ -86,6 +86,7 @@ pub fn ser_destination_connector_properties(
 
 pub(crate) fn de_destination_connector_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DestinationConnectorProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -101,71 +102,75 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Redshift" => {
                             builder = builder.set_redshift(
-                                crate::protocol_serde::shape_redshift_destination_properties::de_redshift_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_redshift_destination_properties::de_redshift_destination_properties(tokens, _value)?,
                             );
                         }
                         "S3" => {
                             builder = builder.set_s3(crate::protocol_serde::shape_s3_destination_properties::de_s3_destination_properties(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Salesforce" => {
                             builder = builder.set_salesforce(
-                                crate::protocol_serde::shape_salesforce_destination_properties::de_salesforce_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_salesforce_destination_properties::de_salesforce_destination_properties(tokens, _value)?,
                             );
                         }
                         "Snowflake" => {
                             builder = builder.set_snowflake(
-                                crate::protocol_serde::shape_snowflake_destination_properties::de_snowflake_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_snowflake_destination_properties::de_snowflake_destination_properties(tokens, _value)?,
                             );
                         }
                         "EventBridge" => {
                             builder = builder.set_event_bridge(
-                                crate::protocol_serde::shape_event_bridge_destination_properties::de_event_bridge_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_event_bridge_destination_properties::de_event_bridge_destination_properties(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LookoutMetrics" => {
                             builder = builder.set_lookout_metrics(
                                 crate::protocol_serde::shape_lookout_metrics_destination_properties::de_lookout_metrics_destination_properties(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "Upsolver" => {
                             builder = builder.set_upsolver(
-                                crate::protocol_serde::shape_upsolver_destination_properties::de_upsolver_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_upsolver_destination_properties::de_upsolver_destination_properties(tokens, _value)?,
                             );
                         }
                         "Honeycode" => {
                             builder = builder.set_honeycode(
-                                crate::protocol_serde::shape_honeycode_destination_properties::de_honeycode_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_honeycode_destination_properties::de_honeycode_destination_properties(tokens, _value)?,
                             );
                         }
                         "CustomerProfiles" => {
                             builder = builder.set_customer_profiles(
                                 crate::protocol_serde::shape_customer_profiles_destination_properties::de_customer_profiles_destination_properties(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "Zendesk" => {
-                            builder = builder
-                                .set_zendesk(crate::protocol_serde::shape_zendesk_destination_properties::de_zendesk_destination_properties(tokens)?);
+                            builder = builder.set_zendesk(
+                                crate::protocol_serde::shape_zendesk_destination_properties::de_zendesk_destination_properties(tokens, _value)?,
+                            );
                         }
                         "Marketo" => {
-                            builder = builder
-                                .set_marketo(crate::protocol_serde::shape_marketo_destination_properties::de_marketo_destination_properties(tokens)?);
+                            builder = builder.set_marketo(
+                                crate::protocol_serde::shape_marketo_destination_properties::de_marketo_destination_properties(tokens, _value)?,
+                            );
                         }
                         "CustomConnector" => {
                             builder = builder.set_custom_connector(
                                 crate::protocol_serde::shape_custom_connector_destination_properties::de_custom_connector_destination_properties(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "SAPOData" => {
                             builder = builder.set_sapo_data(
-                                crate::protocol_serde::shape_sapo_data_destination_properties::de_sapo_data_destination_properties(tokens)?,
+                                crate::protocol_serde::shape_sapo_data_destination_properties::de_sapo_data_destination_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

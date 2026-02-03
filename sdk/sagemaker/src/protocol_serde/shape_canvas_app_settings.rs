@@ -62,6 +62,7 @@ pub fn ser_canvas_app_settings(
 
 pub(crate) fn de_canvas_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CanvasAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,36 +78,39 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TimeSeriesForecastingSettings" => {
                             builder = builder.set_time_series_forecasting_settings(
-                                crate::protocol_serde::shape_time_series_forecasting_settings::de_time_series_forecasting_settings(tokens)?,
+                                crate::protocol_serde::shape_time_series_forecasting_settings::de_time_series_forecasting_settings(tokens, _value)?,
                             );
                         }
                         "ModelRegisterSettings" => {
                             builder = builder.set_model_register_settings(
-                                crate::protocol_serde::shape_model_register_settings::de_model_register_settings(tokens)?,
+                                crate::protocol_serde::shape_model_register_settings::de_model_register_settings(tokens, _value)?,
                             );
                         }
                         "WorkspaceSettings" => {
-                            builder = builder.set_workspace_settings(crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens)?);
+                            builder = builder
+                                .set_workspace_settings(crate::protocol_serde::shape_workspace_settings::de_workspace_settings(tokens, _value)?);
                         }
                         "IdentityProviderOAuthSettings" => {
                             builder = builder.set_identity_provider_o_auth_settings(
-                                crate::protocol_serde::shape_identity_provider_o_auth_settings::de_identity_provider_o_auth_settings(tokens)?,
+                                crate::protocol_serde::shape_identity_provider_o_auth_settings::de_identity_provider_o_auth_settings(tokens, _value)?,
                             );
                         }
                         "DirectDeploySettings" => {
-                            builder = builder
-                                .set_direct_deploy_settings(crate::protocol_serde::shape_direct_deploy_settings::de_direct_deploy_settings(tokens)?);
+                            builder = builder.set_direct_deploy_settings(
+                                crate::protocol_serde::shape_direct_deploy_settings::de_direct_deploy_settings(tokens, _value)?,
+                            );
                         }
                         "KendraSettings" => {
-                            builder = builder.set_kendra_settings(crate::protocol_serde::shape_kendra_settings::de_kendra_settings(tokens)?);
+                            builder = builder.set_kendra_settings(crate::protocol_serde::shape_kendra_settings::de_kendra_settings(tokens, _value)?);
                         }
                         "GenerativeAiSettings" => {
-                            builder = builder
-                                .set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                            builder = builder.set_generative_ai_settings(
+                                crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens, _value)?,
+                            );
                         }
                         "EmrServerlessSettings" => {
                             builder = builder.set_emr_serverless_settings(
-                                crate::protocol_serde::shape_emr_serverless_settings::de_emr_serverless_settings(tokens)?,
+                                crate::protocol_serde::shape_emr_serverless_settings::de_emr_serverless_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

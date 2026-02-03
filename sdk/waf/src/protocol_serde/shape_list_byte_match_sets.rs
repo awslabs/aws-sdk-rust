@@ -85,13 +85,13 @@ pub fn ser_list_byte_match_sets_input(
 }
 
 pub(crate) fn de_list_byte_match_sets(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_byte_match_sets::builders::ListByteMatchSetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_list_byte_match_sets(
                 }
                 "ByteMatchSets" => {
                     builder = builder.set_byte_match_sets(crate::protocol_serde::shape_byte_match_set_summaries::de_byte_match_set_summaries(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -63,11 +63,11 @@ pub fn ser_view_billing_input(
 }
 
 pub(crate) fn de_view_billing(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::view_billing::builders::ViewBillingOutputBuilder,
 ) -> ::std::result::Result<crate::operation::view_billing::builders::ViewBillingOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -82,7 +82,7 @@ pub(crate) fn de_view_billing(
                     );
                 }
                 "BillingRecords" => {
-                    builder = builder.set_billing_records(crate::protocol_serde::shape_billing_records::de_billing_records(tokens)?);
+                    builder = builder.set_billing_records(crate::protocol_serde::shape_billing_records::de_billing_records(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

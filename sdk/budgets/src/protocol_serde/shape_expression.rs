@@ -56,6 +56,7 @@ pub fn ser_expression(
 
 pub(crate) fn de_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Expression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,25 +71,26 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Or" => {
-                            builder = builder.set_or(crate::protocol_serde::shape_expressions::de_expressions(tokens)?);
+                            builder = builder.set_or(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
                         }
                         "And" => {
-                            builder = builder.set_and(crate::protocol_serde::shape_expressions::de_expressions(tokens)?);
+                            builder = builder.set_and(crate::protocol_serde::shape_expressions::de_expressions(tokens, _value)?);
                         }
                         "Not" => {
-                            builder = builder.set_not(crate::protocol_serde::shape_expression::de_expression(tokens)?.map(Box::new));
+                            builder = builder.set_not(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?.map(Box::new));
                         }
                         "Dimensions" => {
                             builder = builder.set_dimensions(
-                                crate::protocol_serde::shape_expression_dimension_values::de_expression_dimension_values(tokens)?,
+                                crate::protocol_serde::shape_expression_dimension_values::de_expression_dimension_values(tokens, _value)?,
                             );
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_values::de_tag_values(tokens, _value)?);
                         }
                         "CostCategories" => {
-                            builder =
-                                builder.set_cost_categories(crate::protocol_serde::shape_cost_category_values::de_cost_category_values(tokens)?);
+                            builder = builder.set_cost_categories(crate::protocol_serde::shape_cost_category_values::de_cost_category_values(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

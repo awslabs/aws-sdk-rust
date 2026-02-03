@@ -173,13 +173,13 @@ pub fn ser_batch_get_partition_input(
 }
 
 pub(crate) fn de_batch_get_partition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_partition::builders::BatchGetPartitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -187,11 +187,11 @@ pub(crate) fn de_batch_get_partition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Partitions" => {
-                    builder = builder.set_partitions(crate::protocol_serde::shape_partition_list::de_partition_list(tokens)?);
+                    builder = builder.set_partitions(crate::protocol_serde::shape_partition_list::de_partition_list(tokens, _value)?);
                 }
                 "UnprocessedKeys" => {
                     builder = builder.set_unprocessed_keys(
-                        crate::protocol_serde::shape_batch_get_partition_value_list::de_batch_get_partition_value_list(tokens)?,
+                        crate::protocol_serde::shape_batch_get_partition_value_list::de_batch_get_partition_value_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

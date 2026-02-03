@@ -210,7 +210,7 @@ mod create_trust_store;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_elasticloadbalancingv2::Error> {
 /// # let client: aws_sdk_elasticloadbalancingv2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_listener_certificates()
 ///     .customize()

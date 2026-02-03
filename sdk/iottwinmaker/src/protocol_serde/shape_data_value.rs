@@ -66,6 +66,7 @@ pub fn ser_data_value(
 
 pub(crate) fn de_data_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -109,13 +110,14 @@ where
                             );
                         }
                         "listValue" => {
-                            builder = builder.set_list_value(crate::protocol_serde::shape_data_value_list::de_data_value_list(tokens)?);
+                            builder = builder.set_list_value(crate::protocol_serde::shape_data_value_list::de_data_value_list(tokens, _value)?);
                         }
                         "mapValue" => {
-                            builder = builder.set_map_value(crate::protocol_serde::shape_data_value_map::de_data_value_map(tokens)?);
+                            builder = builder.set_map_value(crate::protocol_serde::shape_data_value_map::de_data_value_map(tokens, _value)?);
                         }
                         "relationshipValue" => {
-                            builder = builder.set_relationship_value(crate::protocol_serde::shape_relationship_value::de_relationship_value(tokens)?);
+                            builder = builder
+                                .set_relationship_value(crate::protocol_serde::shape_relationship_value::de_relationship_value(tokens, _value)?);
                         }
                         "expression" => {
                             builder = builder.set_expression(

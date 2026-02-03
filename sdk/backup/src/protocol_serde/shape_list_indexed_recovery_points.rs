@@ -101,13 +101,13 @@ pub fn de_list_indexed_recovery_points_http_response(
 }
 
 pub(crate) fn de_list_indexed_recovery_points(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_indexed_recovery_points::builders::ListIndexedRecoveryPointsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_indexed_recovery_points::builders::ListIndexedRecoveryPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -116,7 +116,7 @@ pub(crate) fn de_list_indexed_recovery_points(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "IndexedRecoveryPoints" => {
                     builder = builder.set_indexed_recovery_points(
-                        crate::protocol_serde::shape_indexed_recovery_point_list::de_indexed_recovery_point_list(tokens)?,
+                        crate::protocol_serde::shape_indexed_recovery_point_list::de_indexed_recovery_point_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

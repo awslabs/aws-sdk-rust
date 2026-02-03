@@ -144,13 +144,13 @@ pub fn ser_start_profile_update_task_input(
 }
 
 pub(crate) fn de_start_profile_update_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_profile_update_task::builders::StartProfileUpdateTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_profile_update_task::builders::StartProfileUpdateTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -186,7 +186,7 @@ pub(crate) fn de_start_profile_update_task(
                     );
                 }
                 "TaskDetails" => {
-                    builder = builder.set_task_details(crate::protocol_serde::shape_task_details::de_task_details(tokens)?);
+                    builder = builder.set_task_details(crate::protocol_serde::shape_task_details::de_task_details(tokens, _value)?);
                 }
                 "StartedAt" => {
                     builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -208,7 +208,7 @@ pub(crate) fn de_start_profile_update_task(
                     )?);
                 }
                 "ErrorDetailList" => {
-                    builder = builder.set_error_detail_list(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens)?);
+                    builder = builder.set_error_detail_list(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

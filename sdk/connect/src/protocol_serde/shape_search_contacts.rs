@@ -125,13 +125,13 @@ pub fn ser_search_contacts_input(
 }
 
 pub(crate) fn de_search_contacts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_contacts::builders::SearchContactsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::search_contacts::builders::SearchContactsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_search_contacts(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Contacts" => {
-                    builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens)?);
+                    builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

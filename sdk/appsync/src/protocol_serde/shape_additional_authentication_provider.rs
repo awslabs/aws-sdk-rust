@@ -29,6 +29,7 @@ pub fn ser_additional_authentication_provider(
 
 pub(crate) fn de_additional_authentication_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdditionalAuthenticationProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,17 +51,18 @@ where
                             );
                         }
                         "openIDConnectConfig" => {
-                            builder = builder
-                                .set_open_id_connect_config(crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens)?);
+                            builder = builder.set_open_id_connect_config(
+                                crate::protocol_serde::shape_open_id_connect_config::de_open_id_connect_config(tokens, _value)?,
+                            );
                         }
                         "userPoolConfig" => {
                             builder = builder.set_user_pool_config(
-                                crate::protocol_serde::shape_cognito_user_pool_config::de_cognito_user_pool_config(tokens)?,
+                                crate::protocol_serde::shape_cognito_user_pool_config::de_cognito_user_pool_config(tokens, _value)?,
                             );
                         }
                         "lambdaAuthorizerConfig" => {
                             builder = builder.set_lambda_authorizer_config(
-                                crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens)?,
+                                crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

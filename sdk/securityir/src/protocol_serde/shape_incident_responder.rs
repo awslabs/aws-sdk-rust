@@ -26,6 +26,7 @@ pub fn ser_incident_responder(
 
 pub(crate) fn de_incident_responder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IncidentResponder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,7 +63,7 @@ where
                         }
                         "communicationPreferences" => {
                             builder = builder.set_communication_preferences(
-                                crate::protocol_serde::shape_communication_preferences::de_communication_preferences(tokens)?,
+                                crate::protocol_serde::shape_communication_preferences::de_communication_preferences(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -146,13 +146,13 @@ pub fn ser_batch_delete_custom_vocabulary_item_input(
 }
 
 pub(crate) fn de_batch_delete_custom_vocabulary_item(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,8 +174,8 @@ pub(crate) fn de_batch_delete_custom_vocabulary_item(
                     );
                 }
                 "errors" => {
-                    builder =
-                        builder.set_errors(crate::protocol_serde::shape_failed_custom_vocabulary_items::de_failed_custom_vocabulary_items(tokens)?);
+                    builder = builder
+                        .set_errors(crate::protocol_serde::shape_failed_custom_vocabulary_items::de_failed_custom_vocabulary_items(tokens, _value)?);
                 }
                 "localeId" => {
                     builder = builder.set_locale_id(
@@ -185,7 +185,9 @@ pub(crate) fn de_batch_delete_custom_vocabulary_item(
                     );
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_custom_vocabulary_items::de_custom_vocabulary_items(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_custom_vocabulary_items::de_custom_vocabulary_items(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

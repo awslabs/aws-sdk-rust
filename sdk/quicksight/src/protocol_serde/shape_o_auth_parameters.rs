@@ -23,6 +23,7 @@ pub fn ser_o_auth_parameters(
 
 pub(crate) fn de_o_auth_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OAuthParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                         }
                         "IdentityProviderVpcConnectionProperties" => {
                             builder = builder.set_identity_provider_vpc_connection_properties(
-                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens)?,
+                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens, _value)?,
                             );
                         }
                         "IdentityProviderResourceUri" => {

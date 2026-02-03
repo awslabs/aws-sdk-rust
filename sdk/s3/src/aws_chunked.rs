@@ -21,8 +21,8 @@ use aws_smithy_runtime_api::{
     http::Request,
 };
 use aws_smithy_types::{body::SdkBody, config_bag::ConfigBag, error::operation::BuildError};
-use http::{header, HeaderValue};
-use http_body::Body;
+use http_1x::{header, HeaderValue};
+use http_body_1x::Body;
 
 const X_AMZ_DECODED_CONTENT_LENGTH: &str = "x-amz-decoded-content-length";
 
@@ -128,7 +128,7 @@ impl Intercept for AwsChunkedContentEncodingInterceptor {
             let aws_chunked_body_options = std::mem::take(opt);
             body.map(move |body| {
                 let body = AwsChunkedBody::new(body, aws_chunked_body_options.clone());
-                SdkBody::from_body_0_4(body)
+                SdkBody::from_body_1_x(body)
             })
         };
 
@@ -157,7 +157,7 @@ mod tests {
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::byte_stream::ByteStream;
     use bytes::BytesMut;
-    use http_body::Body;
+    use http_body_util::BodyExt;
     use tempfile::NamedTempFile;
 
     #[tokio::test]
@@ -193,11 +193,13 @@ mod tests {
         let mut body = ctx.request().body().try_clone().expect("body is retryable");
 
         let mut body_data = BytesMut::new();
-        while let Some(data) = body.data().await {
-            body_data.extend_from_slice(&data.unwrap())
+        while let Some(Ok(frame)) = body.frame().await {
+            if frame.is_data() {
+                let data = frame.into_data().unwrap();
+                body_data.extend_from_slice(&data);
+            }
         }
         let body_str = std::str::from_utf8(&body_data).unwrap();
-
         let expected = "This is a large file created for testing purposes 9999\r\n0\r\n\r\n";
         assert!(body_str.ends_with(expected), "expected '{body_str}' to end with '{expected}'");
     }
@@ -250,8 +252,11 @@ mod tests {
         let mut body = ctx.request().body().try_clone().expect("body is retryable");
 
         let mut body_data = BytesMut::new();
-        while let Some(data) = body.data().await {
-            body_data.extend_from_slice(&data.unwrap())
+        while let Some(Ok(frame)) = body.frame().await {
+            if frame.is_data() {
+                let data = frame.into_data().unwrap();
+                body_data.extend_from_slice(&data);
+            }
         }
         let body_str = std::str::from_utf8(&body_data).unwrap();
         // Also implies that `assert!(!body_str.ends_with("0\r\n\r\n"));`, i.e., shouldn't see chunked encoding epilogue.

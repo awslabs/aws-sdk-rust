@@ -94,10 +94,10 @@ pub fn de_get_asset_http_response(
 }
 
 pub(crate) fn de_get_asset(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_asset::builders::GetAssetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_asset::builders::GetAssetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -112,7 +112,7 @@ pub(crate) fn de_get_asset(
                     );
                 }
                 "AssetDetails" => {
-                    builder = builder.set_asset_details(crate::protocol_serde::shape_asset_details::de_asset_details(tokens)?);
+                    builder = builder.set_asset_details(crate::protocol_serde::shape_asset_details::de_asset_details(tokens, _value)?);
                 }
                 "AssetType" => {
                     builder = builder.set_asset_type(

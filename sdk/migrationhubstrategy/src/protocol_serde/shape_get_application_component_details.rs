@@ -94,13 +94,13 @@ pub fn de_get_application_component_details_http_response(
 }
 
 pub(crate) fn de_get_application_component_details(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,16 +109,18 @@ pub(crate) fn de_get_application_component_details(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "applicationComponentDetail" => {
                     builder = builder.set_application_component_detail(
-                        crate::protocol_serde::shape_application_component_detail::de_application_component_detail(tokens)?,
+                        crate::protocol_serde::shape_application_component_detail::de_application_component_detail(tokens, _value)?,
                     );
                 }
                 "associatedApplications" => {
-                    builder = builder
-                        .set_associated_applications(crate::protocol_serde::shape_associated_applications::de_associated_applications(tokens)?);
+                    builder = builder.set_associated_applications(crate::protocol_serde::shape_associated_applications::de_associated_applications(
+                        tokens, _value,
+                    )?);
                 }
                 "associatedServerIds" => {
-                    builder =
-                        builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_ids::de_associated_server_ids(tokens)?);
+                    builder = builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_ids::de_associated_server_ids(
+                        tokens, _value,
+                    )?);
                 }
                 "moreApplicationResource" => {
                     builder = builder.set_more_application_resource(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

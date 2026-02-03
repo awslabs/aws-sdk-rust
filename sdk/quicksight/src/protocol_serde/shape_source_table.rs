@@ -17,6 +17,7 @@ pub fn ser_source_table(
 
 pub(crate) fn de_source_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "DataSet" => {
-                            builder = builder.set_data_set(crate::protocol_serde::shape_parent_data_set::de_parent_data_set(tokens)?);
+                            builder = builder.set_data_set(crate::protocol_serde::shape_parent_data_set::de_parent_data_set(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

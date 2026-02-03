@@ -27,6 +27,7 @@ pub fn ser_notification_recipient_type(
 
 pub(crate) fn de_notification_recipient_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NotificationRecipientType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,10 +42,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserTags" => {
-                            builder = builder.set_user_tags(crate::protocol_serde::shape_user_tag_map::de_user_tag_map(tokens)?);
+                            builder = builder.set_user_tags(crate::protocol_serde::shape_user_tag_map::de_user_tag_map(tokens, _value)?);
                         }
                         "UserIds" => {
-                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens)?);
+                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_id_list::de_user_id_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

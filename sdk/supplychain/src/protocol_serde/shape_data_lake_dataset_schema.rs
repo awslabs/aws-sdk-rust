@@ -35,6 +35,7 @@ pub fn ser_data_lake_dataset_schema(
 
 pub(crate) fn de_data_lake_dataset_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataLakeDatasetSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,12 +59,14 @@ where
                             }
                             "fields" => {
                                 builder = builder.set_fields(
-                                    crate::protocol_serde::shape_data_lake_dataset_schema_field_list::de_data_lake_dataset_schema_field_list(tokens)?,
+                                    crate::protocol_serde::shape_data_lake_dataset_schema_field_list::de_data_lake_dataset_schema_field_list(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             "primaryKeys" => {
                                 builder = builder.set_primary_keys(
-                                    crate::protocol_serde::shape_data_lake_dataset_primary_key_field_list::de_data_lake_dataset_primary_key_field_list(tokens)?
+                                    crate::protocol_serde::shape_data_lake_dataset_primary_key_field_list::de_data_lake_dataset_primary_key_field_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

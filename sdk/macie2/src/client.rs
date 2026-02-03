@@ -194,7 +194,7 @@ mod create_sample_findings;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_macie2::Error> {
 /// # let client: aws_sdk_macie2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_invitation()
 ///     .customize()

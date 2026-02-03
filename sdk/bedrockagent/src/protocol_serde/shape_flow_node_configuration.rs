@@ -111,6 +111,7 @@ pub fn ser_flow_node_configuration(
 
 pub(crate) fn de_flow_node_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowNodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -140,88 +141,102 @@ where
                     }
                     variant = match key.as_ref() {
                         "input" => Some(crate::types::FlowNodeConfiguration::Input(
-                            crate::protocol_serde::shape_input_flow_node_configuration::de_input_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_input_flow_node_configuration::de_input_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'input' cannot be null"))?,
                         )),
                         "output" => Some(crate::types::FlowNodeConfiguration::Output(
-                            crate::protocol_serde::shape_output_flow_node_configuration::de_output_flow_node_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'output' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_output_flow_node_configuration::de_output_flow_node_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'output' cannot be null")
+                                })?,
                         )),
                         "knowledgeBase" => Some(crate::types::FlowNodeConfiguration::KnowledgeBase(
-                            crate::protocol_serde::shape_knowledge_base_flow_node_configuration::de_knowledge_base_flow_node_configuration(tokens)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_knowledge_base_flow_node_configuration::de_knowledge_base_flow_node_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'knowledgeBase' cannot be null")
                             })?,
                         )),
                         "condition" => Some(crate::types::FlowNodeConfiguration::Condition(
-                            crate::protocol_serde::shape_condition_flow_node_configuration::de_condition_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_condition_flow_node_configuration::de_condition_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'condition' cannot be null")
                                 })?,
                         )),
                         "lex" => Some(crate::types::FlowNodeConfiguration::Lex(
-                            crate::protocol_serde::shape_lex_flow_node_configuration::de_lex_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_lex_flow_node_configuration::de_lex_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lex' cannot be null"))?,
                         )),
                         "prompt" => Some(crate::types::FlowNodeConfiguration::Prompt(
-                            crate::protocol_serde::shape_prompt_flow_node_configuration::de_prompt_flow_node_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'prompt' cannot be null"),
-                            )?,
-                        )),
-                        "lambdaFunction" => Some(crate::types::FlowNodeConfiguration::LambdaFunction(
-                            crate::protocol_serde::shape_lambda_function_flow_node_configuration::de_lambda_function_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_prompt_flow_node_configuration::de_prompt_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambdaFunction' cannot be null")
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'prompt' cannot be null")
                                 })?,
                         )),
+                        "lambdaFunction" => Some(crate::types::FlowNodeConfiguration::LambdaFunction(
+                            crate::protocol_serde::shape_lambda_function_flow_node_configuration::de_lambda_function_flow_node_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambdaFunction' cannot be null")
+                            })?,
+                        )),
                         "storage" => Some(crate::types::FlowNodeConfiguration::Storage(
-                            crate::protocol_serde::shape_storage_flow_node_configuration::de_storage_flow_node_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'storage' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_storage_flow_node_configuration::de_storage_flow_node_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'storage' cannot be null")
+                                })?,
                         )),
                         "agent" => Some(crate::types::FlowNodeConfiguration::Agent(
-                            crate::protocol_serde::shape_agent_flow_node_configuration::de_agent_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_agent_flow_node_configuration::de_agent_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agent' cannot be null"))?,
                         )),
                         "retrieval" => Some(crate::types::FlowNodeConfiguration::Retrieval(
-                            crate::protocol_serde::shape_retrieval_flow_node_configuration::de_retrieval_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_retrieval_flow_node_configuration::de_retrieval_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'retrieval' cannot be null")
                                 })?,
                         )),
                         "iterator" => Some(crate::types::FlowNodeConfiguration::Iterator(
-                            crate::protocol_serde::shape_iterator_flow_node_configuration::de_iterator_flow_node_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iterator' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_iterator_flow_node_configuration::de_iterator_flow_node_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iterator' cannot be null")
+                                })?,
                         )),
                         "collector" => Some(crate::types::FlowNodeConfiguration::Collector(
-                            crate::protocol_serde::shape_collector_flow_node_configuration::de_collector_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_collector_flow_node_configuration::de_collector_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collector' cannot be null")
                                 })?,
                         )),
                         "inlineCode" => Some(crate::types::FlowNodeConfiguration::InlineCode(
-                            crate::protocol_serde::shape_inline_code_flow_node_configuration::de_inline_code_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_inline_code_flow_node_configuration::de_inline_code_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'inlineCode' cannot be null")
                                 })?,
                         )),
                         "loop" => Some(crate::types::FlowNodeConfiguration::Loop(
-                            crate::protocol_serde::shape_loop_flow_node_configuration::de_loop_flow_node_configuration(tokens)?
+                            crate::protocol_serde::shape_loop_flow_node_configuration::de_loop_flow_node_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loop' cannot be null"))?,
                         )),
-                        "loopInput" => Some(crate::types::FlowNodeConfiguration::LoopInput(
-                            crate::protocol_serde::shape_loop_input_flow_node_configuration::de_loop_input_flow_node_configuration(tokens)?
+                        "loopInput" => {
+                            Some(crate::types::FlowNodeConfiguration::LoopInput(
+                                crate::protocol_serde::shape_loop_input_flow_node_configuration::de_loop_input_flow_node_configuration(
+                                    tokens, _value,
+                                )?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopInput' cannot be null")
                                 })?,
-                        )),
+                            ))
+                        }
                         "loopController" => Some(crate::types::FlowNodeConfiguration::LoopController(
-                            crate::protocol_serde::shape_loop_controller_flow_node_configuration::de_loop_controller_flow_node_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopController' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_loop_controller_flow_node_configuration::de_loop_controller_flow_node_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'loopController' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

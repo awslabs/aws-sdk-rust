@@ -137,6 +137,7 @@ pub fn ser_combo_chart_configuration(
 
 pub(crate) fn de_combo_chart_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComboChartConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -151,12 +152,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder =
-                                builder.set_field_wells(crate::protocol_serde::shape_combo_chart_field_wells::de_combo_chart_field_wells(tokens)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_combo_chart_field_wells::de_combo_chart_field_wells(
+                                tokens, _value,
+                            )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_combo_chart_sort_configuration::de_combo_chart_sort_configuration(tokens)?,
+                                crate::protocol_serde::shape_combo_chart_sort_configuration::de_combo_chart_sort_configuration(tokens, _value)?,
                             );
                         }
                         "BarsArrangement" => {
@@ -167,71 +169,80 @@ where
                             );
                         }
                         "CategoryAxis" => {
-                            builder = builder.set_category_axis(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
+                            builder = builder.set_category_axis(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(
+                                tokens, _value,
+                            )?);
                         }
                         "CategoryLabelOptions" => {
                             builder = builder.set_category_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "PrimaryYAxisDisplayOptions" => {
                             builder = builder.set_primary_y_axis_display_options(
-                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?,
+                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value)?,
                             );
                         }
                         "PrimaryYAxisLabelOptions" => {
                             builder = builder.set_primary_y_axis_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "SecondaryYAxisDisplayOptions" => {
                             builder = builder.set_secondary_y_axis_display_options(
-                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?,
+                                crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens, _value)?,
                             );
                         }
                         "SecondaryYAxisLabelOptions" => {
                             builder = builder.set_secondary_y_axis_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "SingleAxisOptions" => {
-                            builder =
-                                builder.set_single_axis_options(crate::protocol_serde::shape_single_axis_options::de_single_axis_options(tokens)?);
+                            builder = builder
+                                .set_single_axis_options(crate::protocol_serde::shape_single_axis_options::de_single_axis_options(tokens, _value)?);
                         }
                         "ColorLabelOptions" => {
                             builder = builder.set_color_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "DefaultSeriesSettings" => {
                             builder = builder.set_default_series_settings(
-                                crate::protocol_serde::shape_combo_chart_default_series_settings::de_combo_chart_default_series_settings(tokens)?,
+                                crate::protocol_serde::shape_combo_chart_default_series_settings::de_combo_chart_default_series_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Series" => {
-                            builder = builder.set_series(crate::protocol_serde::shape_combo_series_item_list::de_combo_series_item_list(tokens)?);
+                            builder = builder.set_series(crate::protocol_serde::shape_combo_series_item_list::de_combo_series_item_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Legend" => {
-                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens)?);
+                            builder = builder.set_legend(crate::protocol_serde::shape_legend_options::de_legend_options(tokens, _value)?);
                         }
                         "BarDataLabels" => {
-                            builder = builder.set_bar_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                            builder =
+                                builder.set_bar_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
                         }
                         "LineDataLabels" => {
-                            builder = builder.set_line_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                            builder =
+                                builder.set_line_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "ReferenceLines" => {
-                            builder = builder.set_reference_lines(crate::protocol_serde::shape_reference_line_list::de_reference_line_list(tokens)?);
+                            builder = builder
+                                .set_reference_lines(crate::protocol_serde::shape_reference_line_list::de_reference_line_list(tokens, _value)?);
                         }
                         "VisualPalette" => {
-                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens, _value)?);
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

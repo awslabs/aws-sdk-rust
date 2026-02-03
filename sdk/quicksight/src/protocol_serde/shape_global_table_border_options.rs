@@ -20,6 +20,7 @@ pub fn ser_global_table_border_options(
 
 pub(crate) fn de_global_table_border_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GlobalTableBorderOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UniformBorder" => {
-                            builder = builder.set_uniform_border(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_uniform_border(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "SideSpecificBorder" => {
                             builder = builder.set_side_specific_border(
-                                crate::protocol_serde::shape_table_side_border_options::de_table_side_border_options(tokens)?,
+                                crate::protocol_serde::shape_table_side_border_options::de_table_side_border_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

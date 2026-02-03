@@ -140,13 +140,13 @@ pub fn ser_update_flow_source_input(
 }
 
 pub(crate) fn de_update_flow_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_flow_source::builders::UpdateFlowSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_flow_source::builders::UpdateFlowSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,7 @@ pub(crate) fn de_update_flow_source(
                     );
                 }
                 "source" => {
-                    builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens)?);
+                    builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -636,6 +636,7 @@ pub fn ser_resource_details(
 
 pub(crate) fn de_resource_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -651,485 +652,532 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AwsAutoScalingAutoScalingGroup" => {
                             builder = builder.set_aws_auto_scaling_auto_scaling_group(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_details::de_aws_auto_scaling_auto_scaling_group_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_details::de_aws_auto_scaling_auto_scaling_group_details(tokens, _value)?
                                 );
                         }
                         "AwsCodeBuildProject" => {
                             builder = builder.set_aws_code_build_project(
-                                crate::protocol_serde::shape_aws_code_build_project_details::de_aws_code_build_project_details(tokens)?,
+                                crate::protocol_serde::shape_aws_code_build_project_details::de_aws_code_build_project_details(tokens, _value)?,
                             );
                         }
                         "AwsCloudFrontDistribution" => {
                             builder = builder.set_aws_cloud_front_distribution(
-                                crate::protocol_serde::shape_aws_cloud_front_distribution_details::de_aws_cloud_front_distribution_details(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_front_distribution_details::de_aws_cloud_front_distribution_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsEc2Instance" => {
                             builder = builder.set_aws_ec2_instance(
-                                crate::protocol_serde::shape_aws_ec2_instance_details::de_aws_ec2_instance_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_instance_details::de_aws_ec2_instance_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2NetworkInterface" => {
                             builder = builder.set_aws_ec2_network_interface(
-                                crate::protocol_serde::shape_aws_ec2_network_interface_details::de_aws_ec2_network_interface_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_network_interface_details::de_aws_ec2_network_interface_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2SecurityGroup" => {
                             builder = builder.set_aws_ec2_security_group(
-                                crate::protocol_serde::shape_aws_ec2_security_group_details::de_aws_ec2_security_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_security_group_details::de_aws_ec2_security_group_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2Volume" => {
-                            builder =
-                                builder.set_aws_ec2_volume(crate::protocol_serde::shape_aws_ec2_volume_details::de_aws_ec2_volume_details(tokens)?);
+                            builder = builder.set_aws_ec2_volume(crate::protocol_serde::shape_aws_ec2_volume_details::de_aws_ec2_volume_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsEc2Vpc" => {
-                            builder = builder.set_aws_ec2_vpc(crate::protocol_serde::shape_aws_ec2_vpc_details::de_aws_ec2_vpc_details(tokens)?);
+                            builder =
+                                builder.set_aws_ec2_vpc(crate::protocol_serde::shape_aws_ec2_vpc_details::de_aws_ec2_vpc_details(tokens, _value)?);
                         }
                         "AwsEc2Eip" => {
-                            builder = builder.set_aws_ec2_eip(crate::protocol_serde::shape_aws_ec2_eip_details::de_aws_ec2_eip_details(tokens)?);
+                            builder =
+                                builder.set_aws_ec2_eip(crate::protocol_serde::shape_aws_ec2_eip_details::de_aws_ec2_eip_details(tokens, _value)?);
                         }
                         "AwsEc2Subnet" => {
-                            builder =
-                                builder.set_aws_ec2_subnet(crate::protocol_serde::shape_aws_ec2_subnet_details::de_aws_ec2_subnet_details(tokens)?);
+                            builder = builder.set_aws_ec2_subnet(crate::protocol_serde::shape_aws_ec2_subnet_details::de_aws_ec2_subnet_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsEc2NetworkAcl" => {
                             builder = builder.set_aws_ec2_network_acl(
-                                crate::protocol_serde::shape_aws_ec2_network_acl_details::de_aws_ec2_network_acl_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_network_acl_details::de_aws_ec2_network_acl_details(tokens, _value)?,
                             );
                         }
                         "AwsElbv2LoadBalancer" => {
                             builder = builder.set_aws_elbv2_load_balancer(
-                                crate::protocol_serde::shape_aws_elbv2_load_balancer_details::de_aws_elbv2_load_balancer_details(tokens)?,
+                                crate::protocol_serde::shape_aws_elbv2_load_balancer_details::de_aws_elbv2_load_balancer_details(tokens, _value)?,
                             );
                         }
                         "AwsElasticBeanstalkEnvironment" => {
                             builder = builder.set_aws_elastic_beanstalk_environment(
                                 crate::protocol_serde::shape_aws_elastic_beanstalk_environment_details::de_aws_elastic_beanstalk_environment_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsElasticsearchDomain" => {
                             builder = builder.set_aws_elasticsearch_domain(
-                                crate::protocol_serde::shape_aws_elasticsearch_domain_details::de_aws_elasticsearch_domain_details(tokens)?,
+                                crate::protocol_serde::shape_aws_elasticsearch_domain_details::de_aws_elasticsearch_domain_details(tokens, _value)?,
                             );
                         }
                         "AwsS3Bucket" => {
-                            builder =
-                                builder.set_aws_s3_bucket(crate::protocol_serde::shape_aws_s3_bucket_details::de_aws_s3_bucket_details(tokens)?);
+                            builder = builder.set_aws_s3_bucket(crate::protocol_serde::shape_aws_s3_bucket_details::de_aws_s3_bucket_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsS3AccountPublicAccessBlock" => {
                             builder = builder.set_aws_s3_account_public_access_block(
-                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens, _value)?
                                 );
                         }
                         "AwsS3Object" => {
-                            builder =
-                                builder.set_aws_s3_object(crate::protocol_serde::shape_aws_s3_object_details::de_aws_s3_object_details(tokens)?);
+                            builder = builder.set_aws_s3_object(crate::protocol_serde::shape_aws_s3_object_details::de_aws_s3_object_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsSecretsManagerSecret" => {
                             builder = builder.set_aws_secrets_manager_secret(
-                                crate::protocol_serde::shape_aws_secrets_manager_secret_details::de_aws_secrets_manager_secret_details(tokens)?,
+                                crate::protocol_serde::shape_aws_secrets_manager_secret_details::de_aws_secrets_manager_secret_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsIamAccessKey" => {
                             builder = builder.set_aws_iam_access_key(
-                                crate::protocol_serde::shape_aws_iam_access_key_details::de_aws_iam_access_key_details(tokens)?,
+                                crate::protocol_serde::shape_aws_iam_access_key_details::de_aws_iam_access_key_details(tokens, _value)?,
                             );
                         }
                         "AwsIamUser" => {
-                            builder = builder.set_aws_iam_user(crate::protocol_serde::shape_aws_iam_user_details::de_aws_iam_user_details(tokens)?);
+                            builder = builder.set_aws_iam_user(crate::protocol_serde::shape_aws_iam_user_details::de_aws_iam_user_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsIamPolicy" => {
-                            builder =
-                                builder.set_aws_iam_policy(crate::protocol_serde::shape_aws_iam_policy_details::de_aws_iam_policy_details(tokens)?);
+                            builder = builder.set_aws_iam_policy(crate::protocol_serde::shape_aws_iam_policy_details::de_aws_iam_policy_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsApiGatewayV2Stage" => {
                             builder = builder.set_aws_api_gateway_v2_stage(
-                                crate::protocol_serde::shape_aws_api_gateway_v2_stage_details::de_aws_api_gateway_v2_stage_details(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_v2_stage_details::de_aws_api_gateway_v2_stage_details(tokens, _value)?,
                             );
                         }
                         "AwsApiGatewayV2Api" => {
                             builder = builder.set_aws_api_gateway_v2_api(
-                                crate::protocol_serde::shape_aws_api_gateway_v2_api_details::de_aws_api_gateway_v2_api_details(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_v2_api_details::de_aws_api_gateway_v2_api_details(tokens, _value)?,
                             );
                         }
                         "AwsDynamoDbTable" => {
                             builder = builder.set_aws_dynamo_db_table(
-                                crate::protocol_serde::shape_aws_dynamo_db_table_details::de_aws_dynamo_db_table_details(tokens)?,
+                                crate::protocol_serde::shape_aws_dynamo_db_table_details::de_aws_dynamo_db_table_details(tokens, _value)?,
                             );
                         }
                         "AwsApiGatewayStage" => {
                             builder = builder.set_aws_api_gateway_stage(
-                                crate::protocol_serde::shape_aws_api_gateway_stage_details::de_aws_api_gateway_stage_details(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_stage_details::de_aws_api_gateway_stage_details(tokens, _value)?,
                             );
                         }
                         "AwsApiGatewayRestApi" => {
                             builder = builder.set_aws_api_gateway_rest_api(
-                                crate::protocol_serde::shape_aws_api_gateway_rest_api_details::de_aws_api_gateway_rest_api_details(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_rest_api_details::de_aws_api_gateway_rest_api_details(tokens, _value)?,
                             );
                         }
                         "AwsCloudTrailTrail" => {
                             builder = builder.set_aws_cloud_trail_trail(
-                                crate::protocol_serde::shape_aws_cloud_trail_trail_details::de_aws_cloud_trail_trail_details(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_trail_trail_details::de_aws_cloud_trail_trail_details(tokens, _value)?,
                             );
                         }
                         "AwsSsmPatchCompliance" => {
                             builder = builder.set_aws_ssm_patch_compliance(
-                                crate::protocol_serde::shape_aws_ssm_patch_compliance_details::de_aws_ssm_patch_compliance_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ssm_patch_compliance_details::de_aws_ssm_patch_compliance_details(tokens, _value)?,
                             );
                         }
                         "AwsCertificateManagerCertificate" => {
                             builder = builder.set_aws_certificate_manager_certificate(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_details::de_aws_certificate_manager_certificate_details(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_details::de_aws_certificate_manager_certificate_details(tokens, _value)?
                                 );
                         }
                         "AwsRedshiftCluster" => {
                             builder = builder.set_aws_redshift_cluster(
-                                crate::protocol_serde::shape_aws_redshift_cluster_details::de_aws_redshift_cluster_details(tokens)?,
+                                crate::protocol_serde::shape_aws_redshift_cluster_details::de_aws_redshift_cluster_details(tokens, _value)?,
                             );
                         }
                         "AwsElbLoadBalancer" => {
                             builder = builder.set_aws_elb_load_balancer(
-                                crate::protocol_serde::shape_aws_elb_load_balancer_details::de_aws_elb_load_balancer_details(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_load_balancer_details::de_aws_elb_load_balancer_details(tokens, _value)?,
                             );
                         }
                         "AwsIamGroup" => {
-                            builder =
-                                builder.set_aws_iam_group(crate::protocol_serde::shape_aws_iam_group_details::de_aws_iam_group_details(tokens)?);
+                            builder = builder.set_aws_iam_group(crate::protocol_serde::shape_aws_iam_group_details::de_aws_iam_group_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsIamRole" => {
-                            builder = builder.set_aws_iam_role(crate::protocol_serde::shape_aws_iam_role_details::de_aws_iam_role_details(tokens)?);
+                            builder = builder.set_aws_iam_role(crate::protocol_serde::shape_aws_iam_role_details::de_aws_iam_role_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsKmsKey" => {
-                            builder = builder.set_aws_kms_key(crate::protocol_serde::shape_aws_kms_key_details::de_aws_kms_key_details(tokens)?);
+                            builder =
+                                builder.set_aws_kms_key(crate::protocol_serde::shape_aws_kms_key_details::de_aws_kms_key_details(tokens, _value)?);
                         }
                         "AwsLambdaFunction" => {
                             builder = builder.set_aws_lambda_function(
-                                crate::protocol_serde::shape_aws_lambda_function_details::de_aws_lambda_function_details(tokens)?,
+                                crate::protocol_serde::shape_aws_lambda_function_details::de_aws_lambda_function_details(tokens, _value)?,
                             );
                         }
                         "AwsLambdaLayerVersion" => {
                             builder = builder.set_aws_lambda_layer_version(
-                                crate::protocol_serde::shape_aws_lambda_layer_version_details::de_aws_lambda_layer_version_details(tokens)?,
+                                crate::protocol_serde::shape_aws_lambda_layer_version_details::de_aws_lambda_layer_version_details(tokens, _value)?,
                             );
                         }
                         "AwsRdsDbInstance" => {
                             builder = builder.set_aws_rds_db_instance(
-                                crate::protocol_serde::shape_aws_rds_db_instance_details::de_aws_rds_db_instance_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_instance_details::de_aws_rds_db_instance_details(tokens, _value)?,
                             );
                         }
                         "AwsSnsTopic" => {
-                            builder =
-                                builder.set_aws_sns_topic(crate::protocol_serde::shape_aws_sns_topic_details::de_aws_sns_topic_details(tokens)?);
+                            builder = builder.set_aws_sns_topic(crate::protocol_serde::shape_aws_sns_topic_details::de_aws_sns_topic_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsSqsQueue" => {
-                            builder =
-                                builder.set_aws_sqs_queue(crate::protocol_serde::shape_aws_sqs_queue_details::de_aws_sqs_queue_details(tokens)?);
+                            builder = builder.set_aws_sqs_queue(crate::protocol_serde::shape_aws_sqs_queue_details::de_aws_sqs_queue_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsWafWebAcl" => {
-                            builder = builder
-                                .set_aws_waf_web_acl(crate::protocol_serde::shape_aws_waf_web_acl_details::de_aws_waf_web_acl_details(tokens)?);
+                            builder = builder.set_aws_waf_web_acl(crate::protocol_serde::shape_aws_waf_web_acl_details::de_aws_waf_web_acl_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsRdsDbSnapshot" => {
                             builder = builder.set_aws_rds_db_snapshot(
-                                crate::protocol_serde::shape_aws_rds_db_snapshot_details::de_aws_rds_db_snapshot_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_snapshot_details::de_aws_rds_db_snapshot_details(tokens, _value)?,
                             );
                         }
                         "AwsRdsDbClusterSnapshot" => {
                             builder = builder.set_aws_rds_db_cluster_snapshot(
-                                crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_details::de_aws_rds_db_cluster_snapshot_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_cluster_snapshot_details::de_aws_rds_db_cluster_snapshot_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsRdsDbCluster" => {
                             builder = builder.set_aws_rds_db_cluster(
-                                crate::protocol_serde::shape_aws_rds_db_cluster_details::de_aws_rds_db_cluster_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_cluster_details::de_aws_rds_db_cluster_details(tokens, _value)?,
                             );
                         }
                         "AwsEcsCluster" => {
-                            builder = builder
-                                .set_aws_ecs_cluster(crate::protocol_serde::shape_aws_ecs_cluster_details::de_aws_ecs_cluster_details(tokens)?);
+                            builder = builder.set_aws_ecs_cluster(crate::protocol_serde::shape_aws_ecs_cluster_details::de_aws_ecs_cluster_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsEcsContainer" => {
                             builder = builder.set_aws_ecs_container(
-                                crate::protocol_serde::shape_aws_ecs_container_details::de_aws_ecs_container_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ecs_container_details::de_aws_ecs_container_details(tokens, _value)?,
                             );
                         }
                         "AwsEcsTaskDefinition" => {
                             builder = builder.set_aws_ecs_task_definition(
-                                crate::protocol_serde::shape_aws_ecs_task_definition_details::de_aws_ecs_task_definition_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ecs_task_definition_details::de_aws_ecs_task_definition_details(tokens, _value)?,
                             );
                         }
                         "Container" => {
-                            builder = builder.set_container(crate::protocol_serde::shape_container_details::de_container_details(tokens)?);
+                            builder = builder.set_container(crate::protocol_serde::shape_container_details::de_container_details(tokens, _value)?);
                         }
                         "Other" => {
-                            builder = builder.set_other(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_other(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "AwsRdsEventSubscription" => {
                             builder = builder.set_aws_rds_event_subscription(
-                                crate::protocol_serde::shape_aws_rds_event_subscription_details::de_aws_rds_event_subscription_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_event_subscription_details::de_aws_rds_event_subscription_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsEcsService" => {
-                            builder = builder
-                                .set_aws_ecs_service(crate::protocol_serde::shape_aws_ecs_service_details::de_aws_ecs_service_details(tokens)?);
+                            builder = builder.set_aws_ecs_service(crate::protocol_serde::shape_aws_ecs_service_details::de_aws_ecs_service_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsAutoScalingLaunchConfiguration" => {
                             builder = builder.set_aws_auto_scaling_launch_configuration(
-                                    crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_details::de_aws_auto_scaling_launch_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_details::de_aws_auto_scaling_launch_configuration_details(tokens, _value)?
                                 );
                         }
                         "AwsEc2VpnConnection" => {
                             builder = builder.set_aws_ec2_vpn_connection(
-                                crate::protocol_serde::shape_aws_ec2_vpn_connection_details::de_aws_ec2_vpn_connection_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_vpn_connection_details::de_aws_ec2_vpn_connection_details(tokens, _value)?,
                             );
                         }
                         "AwsEcrContainerImage" => {
                             builder = builder.set_aws_ecr_container_image(
-                                crate::protocol_serde::shape_aws_ecr_container_image_details::de_aws_ecr_container_image_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ecr_container_image_details::de_aws_ecr_container_image_details(tokens, _value)?,
                             );
                         }
                         "AwsOpenSearchServiceDomain" => {
                             builder = builder.set_aws_open_search_service_domain(
                                 crate::protocol_serde::shape_aws_open_search_service_domain_details::de_aws_open_search_service_domain_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsEc2VpcEndpointService" => {
                             builder = builder.set_aws_ec2_vpc_endpoint_service(
-                                crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_details::de_aws_ec2_vpc_endpoint_service_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_vpc_endpoint_service_details::de_aws_ec2_vpc_endpoint_service_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsXrayEncryptionConfig" => {
                             builder = builder.set_aws_xray_encryption_config(
-                                crate::protocol_serde::shape_aws_xray_encryption_config_details::de_aws_xray_encryption_config_details(tokens)?,
+                                crate::protocol_serde::shape_aws_xray_encryption_config_details::de_aws_xray_encryption_config_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsWafRateBasedRule" => {
                             builder = builder.set_aws_waf_rate_based_rule(
-                                crate::protocol_serde::shape_aws_waf_rate_based_rule_details::de_aws_waf_rate_based_rule_details(tokens)?,
+                                crate::protocol_serde::shape_aws_waf_rate_based_rule_details::de_aws_waf_rate_based_rule_details(tokens, _value)?,
                             );
                         }
                         "AwsWafRegionalRateBasedRule" => {
                             builder = builder.set_aws_waf_regional_rate_based_rule(
                                 crate::protocol_serde::shape_aws_waf_regional_rate_based_rule_details::de_aws_waf_regional_rate_based_rule_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsEcrRepository" => {
                             builder = builder.set_aws_ecr_repository(
-                                crate::protocol_serde::shape_aws_ecr_repository_details::de_aws_ecr_repository_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ecr_repository_details::de_aws_ecr_repository_details(tokens, _value)?,
                             );
                         }
                         "AwsEksCluster" => {
-                            builder = builder
-                                .set_aws_eks_cluster(crate::protocol_serde::shape_aws_eks_cluster_details::de_aws_eks_cluster_details(tokens)?);
+                            builder = builder.set_aws_eks_cluster(crate::protocol_serde::shape_aws_eks_cluster_details::de_aws_eks_cluster_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsNetworkFirewallFirewallPolicy" => {
                             builder = builder.set_aws_network_firewall_firewall_policy(
-                                    crate::protocol_serde::shape_aws_network_firewall_firewall_policy_details::de_aws_network_firewall_firewall_policy_details(tokens)?
+                                    crate::protocol_serde::shape_aws_network_firewall_firewall_policy_details::de_aws_network_firewall_firewall_policy_details(tokens, _value)?
                                 );
                         }
                         "AwsNetworkFirewallFirewall" => {
                             builder = builder.set_aws_network_firewall_firewall(
-                                crate::protocol_serde::shape_aws_network_firewall_firewall_details::de_aws_network_firewall_firewall_details(tokens)?,
+                                crate::protocol_serde::shape_aws_network_firewall_firewall_details::de_aws_network_firewall_firewall_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsNetworkFirewallRuleGroup" => {
                             builder = builder.set_aws_network_firewall_rule_group(
                                 crate::protocol_serde::shape_aws_network_firewall_rule_group_details::de_aws_network_firewall_rule_group_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsRdsDbSecurityGroup" => {
                             builder = builder.set_aws_rds_db_security_group(
-                                crate::protocol_serde::shape_aws_rds_db_security_group_details::de_aws_rds_db_security_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_security_group_details::de_aws_rds_db_security_group_details(tokens, _value)?,
                             );
                         }
                         "AwsKinesisStream" => {
                             builder = builder.set_aws_kinesis_stream(
-                                crate::protocol_serde::shape_aws_kinesis_stream_details::de_aws_kinesis_stream_details(tokens)?,
+                                crate::protocol_serde::shape_aws_kinesis_stream_details::de_aws_kinesis_stream_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2TransitGateway" => {
                             builder = builder.set_aws_ec2_transit_gateway(
-                                crate::protocol_serde::shape_aws_ec2_transit_gateway_details::de_aws_ec2_transit_gateway_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_transit_gateway_details::de_aws_ec2_transit_gateway_details(tokens, _value)?,
                             );
                         }
                         "AwsEfsAccessPoint" => {
                             builder = builder.set_aws_efs_access_point(
-                                crate::protocol_serde::shape_aws_efs_access_point_details::de_aws_efs_access_point_details(tokens)?,
+                                crate::protocol_serde::shape_aws_efs_access_point_details::de_aws_efs_access_point_details(tokens, _value)?,
                             );
                         }
                         "AwsCloudFormationStack" => {
                             builder = builder.set_aws_cloud_formation_stack(
-                                crate::protocol_serde::shape_aws_cloud_formation_stack_details::de_aws_cloud_formation_stack_details(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_formation_stack_details::de_aws_cloud_formation_stack_details(tokens, _value)?,
                             );
                         }
                         "AwsCloudWatchAlarm" => {
                             builder = builder.set_aws_cloud_watch_alarm(
-                                crate::protocol_serde::shape_aws_cloud_watch_alarm_details::de_aws_cloud_watch_alarm_details(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_watch_alarm_details::de_aws_cloud_watch_alarm_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2VpcPeeringConnection" => {
                             builder = builder.set_aws_ec2_vpc_peering_connection(
                                 crate::protocol_serde::shape_aws_ec2_vpc_peering_connection_details::de_aws_ec2_vpc_peering_connection_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsWafRegionalRuleGroup" => {
                             builder = builder.set_aws_waf_regional_rule_group(
-                                crate::protocol_serde::shape_aws_waf_regional_rule_group_details::de_aws_waf_regional_rule_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_waf_regional_rule_group_details::de_aws_waf_regional_rule_group_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsWafRegionalRule" => {
                             builder = builder.set_aws_waf_regional_rule(
-                                crate::protocol_serde::shape_aws_waf_regional_rule_details::de_aws_waf_regional_rule_details(tokens)?,
+                                crate::protocol_serde::shape_aws_waf_regional_rule_details::de_aws_waf_regional_rule_details(tokens, _value)?,
                             );
                         }
                         "AwsWafRegionalWebAcl" => {
                             builder = builder.set_aws_waf_regional_web_acl(
-                                crate::protocol_serde::shape_aws_waf_regional_web_acl_details::de_aws_waf_regional_web_acl_details(tokens)?,
+                                crate::protocol_serde::shape_aws_waf_regional_web_acl_details::de_aws_waf_regional_web_acl_details(tokens, _value)?,
                             );
                         }
                         "AwsWafRule" => {
-                            builder = builder.set_aws_waf_rule(crate::protocol_serde::shape_aws_waf_rule_details::de_aws_waf_rule_details(tokens)?);
+                            builder = builder.set_aws_waf_rule(crate::protocol_serde::shape_aws_waf_rule_details::de_aws_waf_rule_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsWafRuleGroup" => {
                             builder = builder.set_aws_waf_rule_group(
-                                crate::protocol_serde::shape_aws_waf_rule_group_details::de_aws_waf_rule_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_waf_rule_group_details::de_aws_waf_rule_group_details(tokens, _value)?,
                             );
                         }
                         "AwsEcsTask" => {
-                            builder = builder.set_aws_ecs_task(crate::protocol_serde::shape_aws_ecs_task_details::de_aws_ecs_task_details(tokens)?);
+                            builder = builder.set_aws_ecs_task(crate::protocol_serde::shape_aws_ecs_task_details::de_aws_ecs_task_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsBackupBackupVault" => {
                             builder = builder.set_aws_backup_backup_vault(
-                                crate::protocol_serde::shape_aws_backup_backup_vault_details::de_aws_backup_backup_vault_details(tokens)?,
+                                crate::protocol_serde::shape_aws_backup_backup_vault_details::de_aws_backup_backup_vault_details(tokens, _value)?,
                             );
                         }
                         "AwsBackupBackupPlan" => {
                             builder = builder.set_aws_backup_backup_plan(
-                                crate::protocol_serde::shape_aws_backup_backup_plan_details::de_aws_backup_backup_plan_details(tokens)?,
+                                crate::protocol_serde::shape_aws_backup_backup_plan_details::de_aws_backup_backup_plan_details(tokens, _value)?,
                             );
                         }
                         "AwsBackupRecoveryPoint" => {
                             builder = builder.set_aws_backup_recovery_point(
-                                crate::protocol_serde::shape_aws_backup_recovery_point_details::de_aws_backup_recovery_point_details(tokens)?,
+                                crate::protocol_serde::shape_aws_backup_recovery_point_details::de_aws_backup_recovery_point_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2LaunchTemplate" => {
                             builder = builder.set_aws_ec2_launch_template(
-                                crate::protocol_serde::shape_aws_ec2_launch_template_details::de_aws_ec2_launch_template_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_launch_template_details::de_aws_ec2_launch_template_details(tokens, _value)?,
                             );
                         }
                         "AwsSageMakerNotebookInstance" => {
                             builder = builder.set_aws_sage_maker_notebook_instance(
                                 crate::protocol_serde::shape_aws_sage_maker_notebook_instance_details::de_aws_sage_maker_notebook_instance_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsWafv2WebAcl" => {
                             builder = builder.set_aws_wafv2_web_acl(
-                                crate::protocol_serde::shape_aws_wafv2_web_acl_details::de_aws_wafv2_web_acl_details(tokens)?,
+                                crate::protocol_serde::shape_aws_wafv2_web_acl_details::de_aws_wafv2_web_acl_details(tokens, _value)?,
                             );
                         }
                         "AwsWafv2RuleGroup" => {
                             builder = builder.set_aws_wafv2_rule_group(
-                                crate::protocol_serde::shape_aws_wafv2_rule_group_details::de_aws_wafv2_rule_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_wafv2_rule_group_details::de_aws_wafv2_rule_group_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2RouteTable" => {
                             builder = builder.set_aws_ec2_route_table(
-                                crate::protocol_serde::shape_aws_ec2_route_table_details::de_aws_ec2_route_table_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_route_table_details::de_aws_ec2_route_table_details(tokens, _value)?,
                             );
                         }
                         "AwsAmazonMqBroker" => {
                             builder = builder.set_aws_amazon_mq_broker(
-                                crate::protocol_serde::shape_aws_amazon_mq_broker_details::de_aws_amazon_mq_broker_details(tokens)?,
+                                crate::protocol_serde::shape_aws_amazon_mq_broker_details::de_aws_amazon_mq_broker_details(tokens, _value)?,
                             );
                         }
                         "AwsAppSyncGraphQlApi" => {
                             builder = builder.set_aws_app_sync_graph_ql_api(
-                                crate::protocol_serde::shape_aws_app_sync_graph_ql_api_details::de_aws_app_sync_graph_ql_api_details(tokens)?,
+                                crate::protocol_serde::shape_aws_app_sync_graph_ql_api_details::de_aws_app_sync_graph_ql_api_details(tokens, _value)?,
                             );
                         }
                         "AwsEventSchemasRegistry" => {
                             builder = builder.set_aws_event_schemas_registry(
-                                crate::protocol_serde::shape_aws_event_schemas_registry_details::de_aws_event_schemas_registry_details(tokens)?,
+                                crate::protocol_serde::shape_aws_event_schemas_registry_details::de_aws_event_schemas_registry_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsGuardDutyDetector" => {
                             builder = builder.set_aws_guard_duty_detector(
-                                crate::protocol_serde::shape_aws_guard_duty_detector_details::de_aws_guard_duty_detector_details(tokens)?,
+                                crate::protocol_serde::shape_aws_guard_duty_detector_details::de_aws_guard_duty_detector_details(tokens, _value)?,
                             );
                         }
                         "AwsStepFunctionStateMachine" => {
                             builder = builder.set_aws_step_function_state_machine(
                                 crate::protocol_serde::shape_aws_step_function_state_machine_details::de_aws_step_function_state_machine_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "AwsAthenaWorkGroup" => {
                             builder = builder.set_aws_athena_work_group(
-                                crate::protocol_serde::shape_aws_athena_work_group_details::de_aws_athena_work_group_details(tokens)?,
+                                crate::protocol_serde::shape_aws_athena_work_group_details::de_aws_athena_work_group_details(tokens, _value)?,
                             );
                         }
                         "AwsEventsEventbus" => {
                             builder = builder.set_aws_events_eventbus(
-                                crate::protocol_serde::shape_aws_events_eventbus_details::de_aws_events_eventbus_details(tokens)?,
+                                crate::protocol_serde::shape_aws_events_eventbus_details::de_aws_events_eventbus_details(tokens, _value)?,
                             );
                         }
                         "AwsDmsEndpoint" => {
                             builder = builder.set_aws_dms_endpoint(
-                                crate::protocol_serde::shape_aws_dms_endpoint_details::de_aws_dms_endpoint_details(tokens)?,
+                                crate::protocol_serde::shape_aws_dms_endpoint_details::de_aws_dms_endpoint_details(tokens, _value)?,
                             );
                         }
                         "AwsEventsEndpoint" => {
                             builder = builder.set_aws_events_endpoint(
-                                crate::protocol_serde::shape_aws_events_endpoint_details::de_aws_events_endpoint_details(tokens)?,
+                                crate::protocol_serde::shape_aws_events_endpoint_details::de_aws_events_endpoint_details(tokens, _value)?,
                             );
                         }
                         "AwsDmsReplicationTask" => {
                             builder = builder.set_aws_dms_replication_task(
-                                crate::protocol_serde::shape_aws_dms_replication_task_details::de_aws_dms_replication_task_details(tokens)?,
+                                crate::protocol_serde::shape_aws_dms_replication_task_details::de_aws_dms_replication_task_details(tokens, _value)?,
                             );
                         }
                         "AwsDmsReplicationInstance" => {
                             builder = builder.set_aws_dms_replication_instance(
-                                crate::protocol_serde::shape_aws_dms_replication_instance_details::de_aws_dms_replication_instance_details(tokens)?,
+                                crate::protocol_serde::shape_aws_dms_replication_instance_details::de_aws_dms_replication_instance_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AwsRoute53HostedZone" => {
                             builder = builder.set_aws_route53_hosted_zone(
-                                crate::protocol_serde::shape_aws_route53_hosted_zone_details::de_aws_route53_hosted_zone_details(tokens)?,
+                                crate::protocol_serde::shape_aws_route53_hosted_zone_details::de_aws_route53_hosted_zone_details(tokens, _value)?,
                             );
                         }
                         "AwsMskCluster" => {
-                            builder = builder
-                                .set_aws_msk_cluster(crate::protocol_serde::shape_aws_msk_cluster_details::de_aws_msk_cluster_details(tokens)?);
+                            builder = builder.set_aws_msk_cluster(crate::protocol_serde::shape_aws_msk_cluster_details::de_aws_msk_cluster_details(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsS3AccessPoint" => {
                             builder = builder.set_aws_s3_access_point(
-                                crate::protocol_serde::shape_aws_s3_access_point_details::de_aws_s3_access_point_details(tokens)?,
+                                crate::protocol_serde::shape_aws_s3_access_point_details::de_aws_s3_access_point_details(tokens, _value)?,
                             );
                         }
                         "AwsEc2ClientVpnEndpoint" => {
                             builder = builder.set_aws_ec2_client_vpn_endpoint(
-                                crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::de_aws_ec2_client_vpn_endpoint_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::de_aws_ec2_client_vpn_endpoint_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "CodeRepository" => {
-                            builder = builder
-                                .set_code_repository(crate::protocol_serde::shape_code_repository_details::de_code_repository_details(tokens)?);
+                            builder = builder.set_code_repository(crate::protocol_serde::shape_code_repository_details::de_code_repository_details(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

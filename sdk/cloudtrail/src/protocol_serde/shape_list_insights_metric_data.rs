@@ -124,13 +124,13 @@ pub fn ser_list_insights_metric_data_input(
 }
 
 pub(crate) fn de_list_insights_metric_data(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_insights_metric_data::builders::ListInsightsMetricDataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_insights_metric_data::builders::ListInsightsMetricDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,10 +173,12 @@ pub(crate) fn de_list_insights_metric_data(
                     );
                 }
                 "Timestamps" => {
-                    builder = builder.set_timestamps(crate::protocol_serde::shape_timestamps::de_timestamps(tokens)?);
+                    builder = builder.set_timestamps(crate::protocol_serde::shape_timestamps::de_timestamps(tokens, _value)?);
                 }
                 "Values" => {
-                    builder = builder.set_values(crate::protocol_serde::shape_insights_metric_values::de_insights_metric_values(tokens)?);
+                    builder = builder.set_values(crate::protocol_serde::shape_insights_metric_values::de_insights_metric_values(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

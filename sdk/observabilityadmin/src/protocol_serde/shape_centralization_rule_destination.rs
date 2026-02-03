@@ -20,6 +20,7 @@ pub fn ser_centralization_rule_destination(
 
 pub(crate) fn de_centralization_rule_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CentralizationRuleDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "DestinationLogsConfiguration" => {
                             builder = builder.set_destination_logs_configuration(
-                                crate::protocol_serde::shape_destination_logs_configuration::de_destination_logs_configuration(tokens)?,
+                                crate::protocol_serde::shape_destination_logs_configuration::de_destination_logs_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

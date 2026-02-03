@@ -35,6 +35,7 @@ pub fn ser_metric(
 
 pub(crate) fn de_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Metric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,16 @@ where
                             );
                         }
                         "variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_expression_variables::de_expression_variables(tokens)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_expression_variables::de_expression_variables(
+                                tokens, _value,
+                            )?);
                         }
                         "window" => {
-                            builder = builder.set_window(crate::protocol_serde::shape_metric_window::de_metric_window(tokens)?);
+                            builder = builder.set_window(crate::protocol_serde::shape_metric_window::de_metric_window(tokens, _value)?);
                         }
                         "processingConfig" => {
                             builder = builder.set_processing_config(
-                                crate::protocol_serde::shape_metric_processing_config::de_metric_processing_config(tokens)?,
+                                crate::protocol_serde::shape_metric_processing_config::de_metric_processing_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

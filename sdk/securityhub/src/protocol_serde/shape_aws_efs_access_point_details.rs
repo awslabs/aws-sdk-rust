@@ -35,6 +35,7 @@ pub fn ser_aws_efs_access_point_details(
 
 pub(crate) fn de_aws_efs_access_point_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEfsAccessPointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -79,13 +80,13 @@ where
                         "PosixUser" => {
                             builder = builder.set_posix_user(
                                 crate::protocol_serde::shape_aws_efs_access_point_posix_user_details::de_aws_efs_access_point_posix_user_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "RootDirectory" => {
                             builder = builder.set_root_directory(
-                                    crate::protocol_serde::shape_aws_efs_access_point_root_directory_details::de_aws_efs_access_point_root_directory_details(tokens)?
+                                    crate::protocol_serde::shape_aws_efs_access_point_root_directory_details::de_aws_efs_access_point_root_directory_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

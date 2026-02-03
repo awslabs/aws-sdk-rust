@@ -133,13 +133,13 @@ pub fn ser_disable_enhanced_monitoring_input(
 }
 
 pub(crate) fn de_disable_enhanced_monitoring(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -154,10 +154,12 @@ pub(crate) fn de_disable_enhanced_monitoring(
                     );
                 }
                 "CurrentShardLevelMetrics" => {
-                    builder = builder.set_current_shard_level_metrics(crate::protocol_serde::shape_metrics_name_list::de_metrics_name_list(tokens)?);
+                    builder = builder
+                        .set_current_shard_level_metrics(crate::protocol_serde::shape_metrics_name_list::de_metrics_name_list(tokens, _value)?);
                 }
                 "DesiredShardLevelMetrics" => {
-                    builder = builder.set_desired_shard_level_metrics(crate::protocol_serde::shape_metrics_name_list::de_metrics_name_list(tokens)?);
+                    builder = builder
+                        .set_desired_shard_level_metrics(crate::protocol_serde::shape_metrics_name_list::de_metrics_name_list(tokens, _value)?);
                 }
                 "StreamARN" => {
                     builder = builder.set_stream_arn(

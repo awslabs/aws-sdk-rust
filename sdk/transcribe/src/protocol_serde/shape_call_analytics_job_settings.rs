@@ -54,6 +54,7 @@ pub fn ser_call_analytics_job_settings(
 
 pub(crate) fn de_call_analytics_job_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CallAnalyticsJobSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,18 +97,20 @@ where
                             );
                         }
                         "ContentRedaction" => {
-                            builder = builder.set_content_redaction(crate::protocol_serde::shape_content_redaction::de_content_redaction(tokens)?);
+                            builder =
+                                builder.set_content_redaction(crate::protocol_serde::shape_content_redaction::de_content_redaction(tokens, _value)?);
                         }
                         "LanguageOptions" => {
-                            builder = builder.set_language_options(crate::protocol_serde::shape_language_options::de_language_options(tokens)?);
+                            builder =
+                                builder.set_language_options(crate::protocol_serde::shape_language_options::de_language_options(tokens, _value)?);
                         }
                         "LanguageIdSettings" => {
                             builder = builder.set_language_id_settings(
-                                crate::protocol_serde::shape_language_id_settings_map::de_language_id_settings_map(tokens)?,
+                                crate::protocol_serde::shape_language_id_settings_map::de_language_id_settings_map(tokens, _value)?,
                             );
                         }
                         "Summarization" => {
-                            builder = builder.set_summarization(crate::protocol_serde::shape_summarization::de_summarization(tokens)?);
+                            builder = builder.set_summarization(crate::protocol_serde::shape_summarization::de_summarization(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

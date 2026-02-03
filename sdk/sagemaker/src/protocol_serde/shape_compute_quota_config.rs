@@ -29,6 +29,7 @@ pub fn ser_compute_quota_config(
 
 pub(crate) fn de_compute_quota_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComputeQuotaConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,12 +45,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ComputeQuotaResources" => {
                             builder = builder.set_compute_quota_resources(
-                                crate::protocol_serde::shape_compute_quota_resource_config_list::de_compute_quota_resource_config_list(tokens)?,
+                                crate::protocol_serde::shape_compute_quota_resource_config_list::de_compute_quota_resource_config_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ResourceSharingConfig" => {
                             builder = builder.set_resource_sharing_config(
-                                crate::protocol_serde::shape_resource_sharing_config::de_resource_sharing_config(tokens)?,
+                                crate::protocol_serde::shape_resource_sharing_config::de_resource_sharing_config(tokens, _value)?,
                             );
                         }
                         "PreemptTeamTasks" => {

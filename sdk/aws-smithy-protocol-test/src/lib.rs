@@ -21,7 +21,6 @@ use crate::xml::try_xml_equivalent;
 use assert_json_diff::assert_json_matches_no_panic;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::http::Headers;
-use http::{HeaderMap, Uri};
 use pretty_assertions::Comparison;
 use std::borrow::Cow;
 use std::collections::HashSet;
@@ -146,11 +145,24 @@ pub fn assert_uris_match(left: impl AsRef<str>, right: impl AsRef<str>) {
         extract_params(right),
         "Query parameters did not match. left: {left}, right: {right}"
     );
-    let left: Uri = left.parse().expect("left is not a valid URI");
-    let right: Uri = right.parse().expect("left is not a valid URI");
-    assert_eq!(left.authority(), right.authority());
-    assert_eq!(left.scheme(), right.scheme());
-    assert_eq!(left.path(), right.path());
+
+    // When both features are enabled, prefer http-1x version
+    #[cfg(feature = "http-1x")]
+    {
+        let left: http_1x::Uri = left.parse().expect("left is not a valid URI");
+        let right: http_1x::Uri = right.parse().expect("right is not a valid URI");
+        assert_eq!(left.authority(), right.authority());
+        assert_eq!(left.scheme(), right.scheme());
+        assert_eq!(left.path(), right.path());
+    }
+    #[cfg(all(feature = "http-02x", not(feature = "http-1x")))]
+    {
+        let left: http_0x::Uri = left.parse().expect("left is not a valid URI");
+        let right: http_0x::Uri = right.parse().expect("right is not a valid URI");
+        assert_eq!(left.authority(), right.authority());
+        assert_eq!(left.scheme(), right.scheme());
+        assert_eq!(left.path(), right.path());
+    }
 }
 
 pub fn validate_query_string(
@@ -230,7 +242,27 @@ impl GetNormalizedHeader for &Headers {
     }
 }
 
-impl GetNormalizedHeader for &HeaderMap {
+// HTTP 0.2.x HeaderMap implementation
+#[cfg(feature = "http-02x")]
+impl GetNormalizedHeader for &http_0x::HeaderMap {
+    fn get_header(&self, key: &str) -> Option<String> {
+        if !self.contains_key(key) {
+            None
+        } else {
+            Some(
+                self.get_all(key)
+                    .iter()
+                    .map(|value| std::str::from_utf8(value.as_bytes()).expect("invalid utf-8"))
+                    .collect::<Vec<_>>()
+                    .join(", "),
+            )
+        }
+    }
+}
+
+// HTTP 1.x HeaderMap implementation
+#[cfg(feature = "http-1x")]
+impl GetNormalizedHeader for &http_1x::HeaderMap {
     fn get_header(&self, key: &str) -> Option<String> {
         if !self.contains_key(key) {
             None
@@ -741,8 +773,12 @@ mod tests {
     }
 
     #[test]
+    #[cfg(feature = "http-02x")]
     fn test_validate_headers_http0x() {
-        let request = http::Request::builder().header("a", "b").body(()).unwrap();
+        let request = http_0x::Request::builder()
+            .header("a", "b")
+            .body(())
+            .unwrap();
         validate_headers(request.headers(), [("a", "b")]).unwrap()
     }
 

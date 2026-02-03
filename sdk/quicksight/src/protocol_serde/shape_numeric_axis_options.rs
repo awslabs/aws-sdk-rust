@@ -20,6 +20,7 @@ pub fn ser_numeric_axis_options(
 
 pub(crate) fn de_numeric_axis_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NumericAxisOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Scale" => {
-                            builder = builder.set_scale(crate::protocol_serde::shape_axis_scale::de_axis_scale(tokens)?);
+                            builder = builder.set_scale(crate::protocol_serde::shape_axis_scale::de_axis_scale(tokens, _value)?);
                         }
                         "Range" => {
-                            builder = builder.set_range(crate::protocol_serde::shape_axis_display_range::de_axis_display_range(tokens)?);
+                            builder = builder.set_range(crate::protocol_serde::shape_axis_display_range::de_axis_display_range(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

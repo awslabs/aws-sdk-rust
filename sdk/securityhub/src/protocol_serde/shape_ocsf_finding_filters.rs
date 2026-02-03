@@ -23,6 +23,7 @@ pub fn ser_ocsf_finding_filters(
 
 pub(crate) fn de_ocsf_finding_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OcsfFindingFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,8 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CompositeFilters" => {
-                            builder =
-                                builder.set_composite_filters(crate::protocol_serde::shape_composite_filter_list::de_composite_filter_list(tokens)?);
+                            builder = builder.set_composite_filters(crate::protocol_serde::shape_composite_filter_list::de_composite_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "CompositeOperator" => {
                             builder = builder.set_composite_operator(

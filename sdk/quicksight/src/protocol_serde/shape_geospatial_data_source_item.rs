@@ -14,6 +14,7 @@ pub fn ser_geospatial_data_source_item(
 
 pub(crate) fn de_geospatial_data_source_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialDataSourceItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StaticFileDataSource" => {
                             builder = builder.set_static_file_data_source(
-                                crate::protocol_serde::shape_geospatial_static_file_source::de_geospatial_static_file_source(tokens)?,
+                                crate::protocol_serde::shape_geospatial_static_file_source::de_geospatial_static_file_source(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

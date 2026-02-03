@@ -20,6 +20,7 @@ pub fn ser_geospatial_heatmap_color_scale(
 
 pub(crate) fn de_geospatial_heatmap_color_scale<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialHeatmapColorScale>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Colors" => {
                             builder = builder.set_colors(
-                                crate::protocol_serde::shape_geospatial_heatmap_data_color_list::de_geospatial_heatmap_data_color_list(tokens)?,
+                                crate::protocol_serde::shape_geospatial_heatmap_data_color_list::de_geospatial_heatmap_data_color_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -69,13 +69,13 @@ pub fn ser_describe_processing_job_input(
 }
 
 pub(crate) fn de_describe_processing_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_processing_job::builders::DescribeProcessingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_processing_job::builders::DescribeProcessingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -83,11 +83,11 @@ pub(crate) fn de_describe_processing_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProcessingInputs" => {
-                    builder = builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(tokens)?);
+                    builder = builder.set_processing_inputs(crate::protocol_serde::shape_processing_inputs::de_processing_inputs(tokens, _value)?);
                 }
                 "ProcessingOutputConfig" => {
                     builder = builder.set_processing_output_config(
-                        crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens)?,
+                        crate::protocol_serde::shape_processing_output_config::de_processing_output_config(tokens, _value)?,
                     );
                 }
                 "ProcessingJobName" => {
@@ -98,23 +98,25 @@ pub(crate) fn de_describe_processing_job(
                     );
                 }
                 "ProcessingResources" => {
-                    builder = builder.set_processing_resources(crate::protocol_serde::shape_processing_resources::de_processing_resources(tokens)?);
+                    builder = builder.set_processing_resources(crate::protocol_serde::shape_processing_resources::de_processing_resources(
+                        tokens, _value,
+                    )?);
                 }
                 "StoppingCondition" => {
                     builder = builder.set_stopping_condition(
-                        crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(tokens)?,
+                        crate::protocol_serde::shape_processing_stopping_condition::de_processing_stopping_condition(tokens, _value)?,
                     );
                 }
                 "AppSpecification" => {
-                    builder = builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(tokens)?);
+                    builder = builder.set_app_specification(crate::protocol_serde::shape_app_specification::de_app_specification(tokens, _value)?);
                 }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_processing_environment_map::de_processing_environment_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NetworkConfig" => {
-                    builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens)?);
+                    builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -124,7 +126,7 @@ pub(crate) fn de_describe_processing_job(
                     );
                 }
                 "ExperimentConfig" => {
-                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens)?);
+                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens, _value)?);
                 }
                 "ProcessingJobArn" => {
                     builder = builder.set_processing_job_arn(

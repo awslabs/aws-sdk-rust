@@ -82,13 +82,13 @@ pub fn de_list_gateways_http_response(
 }
 
 pub(crate) fn de_list_gateways(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_gateways::builders::ListGatewaysOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_gateways::builders::ListGatewaysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -96,7 +96,7 @@ pub(crate) fn de_list_gateways(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "gatewaySummaries" => {
-                    builder = builder.set_gateway_summaries(crate::protocol_serde::shape_gateway_summaries::de_gateway_summaries(tokens)?);
+                    builder = builder.set_gateway_summaries(crate::protocol_serde::shape_gateway_summaries::de_gateway_summaries(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

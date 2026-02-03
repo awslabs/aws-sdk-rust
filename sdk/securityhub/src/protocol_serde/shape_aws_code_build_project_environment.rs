@@ -38,6 +38,7 @@ pub fn ser_aws_code_build_project_environment(
 
 pub(crate) fn de_aws_code_build_project_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                         }
                         "EnvironmentVariables" => {
                             builder = builder.set_environment_variables(
-                                    crate::protocol_serde::shape_aws_code_build_project_environment_environment_variables_list::de_aws_code_build_project_environment_environment_variables_list(tokens)?
+                                    crate::protocol_serde::shape_aws_code_build_project_environment_environment_variables_list::de_aws_code_build_project_environment_environment_variables_list(tokens, _value)?
                                 );
                         }
                         "PrivilegedMode" => {
@@ -75,7 +76,7 @@ where
                         }
                         "RegistryCredential" => {
                             builder = builder.set_registry_credential(
-                                    crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::de_aws_code_build_project_environment_registry_credential(tokens)?
+                                    crate::protocol_serde::shape_aws_code_build_project_environment_registry_credential::de_aws_code_build_project_environment_registry_credential(tokens, _value)?
                                 );
                         }
                         "Type" => {

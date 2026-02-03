@@ -115,13 +115,13 @@ pub fn de_get_evaluation_job_http_response(
 }
 
 pub(crate) fn de_get_evaluation_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_evaluation_job::builders::GetEvaluationJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_evaluation_job::builders::GetEvaluationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,14 +149,14 @@ pub(crate) fn de_get_evaluation_job(
                     );
                 }
                 "evaluationConfig" => {
-                    builder = builder.set_evaluation_config(crate::protocol_serde::shape_evaluation_config::de_evaluation_config(tokens)?);
+                    builder = builder.set_evaluation_config(crate::protocol_serde::shape_evaluation_config::de_evaluation_config(tokens, _value)?);
                 }
                 "failureMessages" => {
-                    builder = builder.set_failure_messages(crate::protocol_serde::shape_error_messages::de_error_messages(tokens)?);
+                    builder = builder.set_failure_messages(crate::protocol_serde::shape_error_messages::de_error_messages(tokens, _value)?);
                 }
                 "inferenceConfig" => {
                     builder = builder.set_inference_config(crate::protocol_serde::shape_evaluation_inference_config::de_evaluation_inference_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "jobArn" => {
@@ -195,7 +195,7 @@ pub(crate) fn de_get_evaluation_job(
                 }
                 "outputDataConfig" => {
                     builder = builder.set_output_data_config(
-                        crate::protocol_serde::shape_evaluation_output_data_config::de_evaluation_output_data_config(tokens)?,
+                        crate::protocol_serde::shape_evaluation_output_data_config::de_evaluation_output_data_config(tokens, _value)?,
                     );
                 }
                 "roleArn" => {

@@ -205,7 +205,7 @@ mod create_realtime_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_machinelearning::Error> {
 /// # let client: aws_sdk_machinelearning::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags()
 ///     .customize()

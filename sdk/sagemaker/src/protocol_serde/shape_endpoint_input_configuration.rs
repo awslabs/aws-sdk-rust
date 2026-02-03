@@ -26,6 +26,7 @@ pub fn ser_endpoint_input_configuration(
 
 pub(crate) fn de_endpoint_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EndpointInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,9 @@ where
                         }
                         "ServerlessConfig" => {
                             builder = builder.set_serverless_config(
-                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?,
+                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "InferenceSpecificationName" => {
@@ -60,7 +63,7 @@ where
                         }
                         "EnvironmentParameterRanges" => {
                             builder = builder.set_environment_parameter_ranges(
-                                crate::protocol_serde::shape_environment_parameter_ranges::de_environment_parameter_ranges(tokens)?,
+                                crate::protocol_serde::shape_environment_parameter_ranges::de_environment_parameter_ranges(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

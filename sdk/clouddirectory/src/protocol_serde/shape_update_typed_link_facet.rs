@@ -209,12 +209,12 @@ pub fn de_update_typed_link_facet_http_response(
 
 pub fn ser_update_typed_link_facet_headers(
     input: &crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.schema_arn {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "schema_arn",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

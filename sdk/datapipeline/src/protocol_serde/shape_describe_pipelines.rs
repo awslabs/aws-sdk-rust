@@ -112,13 +112,13 @@ pub fn ser_describe_pipelines_input(
 }
 
 pub(crate) fn de_describe_pipelines(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_describe_pipelines(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "pipelineDescriptionList" => {
                     builder = builder.set_pipeline_description_list(
-                        crate::protocol_serde::shape_pipeline_description_list::de_pipeline_description_list(tokens)?,
+                        crate::protocol_serde::shape_pipeline_description_list::de_pipeline_description_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -120,13 +120,13 @@ pub fn ser_list_ops_item_events_input(
 }
 
 pub(crate) fn de_list_ops_item_events(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_ops_item_events::builders::ListOpsItemEventsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_ops_item_events::builders::ListOpsItemEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,7 @@ pub(crate) fn de_list_ops_item_events(
                 }
                 "Summaries" => {
                     builder = builder.set_summaries(crate::protocol_serde::shape_ops_item_event_summaries::de_ops_item_event_summaries(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

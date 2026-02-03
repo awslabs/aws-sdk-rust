@@ -69,13 +69,13 @@ pub fn ser_describe_inference_experiment_input(
 }
 
 pub(crate) fn de_describe_inference_experiment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -104,8 +104,8 @@ pub(crate) fn de_describe_inference_experiment(
                     );
                 }
                 "Schedule" => {
-                    builder =
-                        builder.set_schedule(crate::protocol_serde::shape_inference_experiment_schedule::de_inference_experiment_schedule(tokens)?);
+                    builder = builder
+                        .set_schedule(crate::protocol_serde::shape_inference_experiment_schedule::de_inference_experiment_schedule(tokens, _value)?);
                 }
                 "Status" => {
                     builder = builder.set_status(
@@ -154,20 +154,22 @@ pub(crate) fn de_describe_inference_experiment(
                     );
                 }
                 "EndpointMetadata" => {
-                    builder = builder.set_endpoint_metadata(crate::protocol_serde::shape_endpoint_metadata::de_endpoint_metadata(tokens)?);
+                    builder = builder.set_endpoint_metadata(crate::protocol_serde::shape_endpoint_metadata::de_endpoint_metadata(tokens, _value)?);
                 }
                 "ModelVariants" => {
                     builder = builder.set_model_variants(
-                        crate::protocol_serde::shape_model_variant_config_summary_list::de_model_variant_config_summary_list(tokens)?,
+                        crate::protocol_serde::shape_model_variant_config_summary_list::de_model_variant_config_summary_list(tokens, _value)?,
                     );
                 }
                 "DataStorageConfig" => {
                     builder = builder.set_data_storage_config(
-                        crate::protocol_serde::shape_inference_experiment_data_storage_config::de_inference_experiment_data_storage_config(tokens)?,
+                        crate::protocol_serde::shape_inference_experiment_data_storage_config::de_inference_experiment_data_storage_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "ShadowModeConfig" => {
-                    builder = builder.set_shadow_mode_config(crate::protocol_serde::shape_shadow_mode_config::de_shadow_mode_config(tokens)?);
+                    builder = builder.set_shadow_mode_config(crate::protocol_serde::shape_shadow_mode_config::de_shadow_mode_config(tokens, _value)?);
                 }
                 "KmsKey" => {
                     builder = builder.set_kms_key(

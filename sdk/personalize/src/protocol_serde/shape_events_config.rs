@@ -20,6 +20,7 @@ pub fn ser_events_config(
 
 pub(crate) fn de_events_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eventParametersList" => {
-                            builder = builder
-                                .set_event_parameters_list(crate::protocol_serde::shape_event_parameters_list::de_event_parameters_list(tokens)?);
+                            builder = builder.set_event_parameters_list(
+                                crate::protocol_serde::shape_event_parameters_list::de_event_parameters_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -17,6 +17,7 @@ pub fn ser_srt_encryption_configuration(
 
 pub(crate) fn de_srt_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SrtEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "encryptionKey" => {
                             builder = builder.set_encryption_key(
-                                    crate::protocol_serde::shape_secrets_manager_encryption_key_configuration::de_secrets_manager_encryption_key_configuration(tokens)?
+                                    crate::protocol_serde::shape_secrets_manager_encryption_key_configuration::de_secrets_manager_encryption_key_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

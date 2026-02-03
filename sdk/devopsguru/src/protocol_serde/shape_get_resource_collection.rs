@@ -128,13 +128,13 @@ pub fn de_get_resource_collection_http_response(
 }
 
 pub(crate) fn de_get_resource_collection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_get_resource_collection(
                 }
                 "ResourceCollection" => {
                     builder = builder.set_resource_collection(
-                        crate::protocol_serde::shape_resource_collection_filter::de_resource_collection_filter(tokens)?,
+                        crate::protocol_serde::shape_resource_collection_filter::de_resource_collection_filter(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

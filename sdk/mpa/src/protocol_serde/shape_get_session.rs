@@ -108,11 +108,11 @@ pub fn de_get_session_http_response(
 }
 
 pub(crate) fn de_get_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_session::builders::GetSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,12 +135,12 @@ pub(crate) fn de_get_session(
                 }
                 "AdditionalSecurityRequirements" => {
                     builder = builder.set_additional_security_requirements(
-                        crate::protocol_serde::shape_additional_security_requirements::de_additional_security_requirements(tokens)?,
+                        crate::protocol_serde::shape_additional_security_requirements::de_additional_security_requirements(tokens, _value)?,
                     );
                 }
                 "ApprovalStrategy" => {
                     builder = builder.set_approval_strategy(crate::protocol_serde::shape_approval_strategy_response::de_approval_strategy_response(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ApprovalTeamArn" => {
@@ -159,7 +159,9 @@ pub(crate) fn de_get_session(
                 }
                 "ApproverResponses" => {
                     builder = builder.set_approver_responses(
-                        crate::protocol_serde::shape_get_session_response_approver_responses::de_get_session_response_approver_responses(tokens)?,
+                        crate::protocol_serde::shape_get_session_response_approver_responses::de_get_session_response_approver_responses(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "CompletionTime" => {
@@ -195,7 +197,7 @@ pub(crate) fn de_get_session(
                     )?);
                 }
                 "Metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_session_metadata::de_session_metadata(tokens)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_session_metadata::de_session_metadata(tokens, _value)?);
                 }
                 "NumberOfApprovers" => {
                     builder = builder.set_number_of_approvers(

@@ -204,7 +204,7 @@ mod create_vpc_association_authorization;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53::Error> {
 /// # let client: aws_sdk_route53::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.activate_key_signing_key()
 ///     .customize()

@@ -17,6 +17,7 @@ pub fn ser_user_attribute_update_settings_type(
 
 pub(crate) fn de_user_attribute_update_settings_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UserAttributeUpdateSettingsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AttributesRequireVerificationBeforeUpdate" => {
                             builder = builder.set_attributes_require_verification_before_update(
-                                    crate::protocol_serde::shape_attributes_require_verification_before_update_type::de_attributes_require_verification_before_update_type(tokens)?
+                                    crate::protocol_serde::shape_attributes_require_verification_before_update_type::de_attributes_require_verification_before_update_type(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

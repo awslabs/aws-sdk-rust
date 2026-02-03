@@ -103,13 +103,13 @@ pub fn de_get_authorizer_http_response(
 }
 
 pub(crate) fn de_get_authorizer(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_authorizer::builders::GetAuthorizerOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_authorizer::builders::GetAuthorizerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,7 +173,7 @@ pub(crate) fn de_get_authorizer(
                     );
                 }
                 "providerARNs" => {
-                    builder = builder.set_provider_arns(crate::protocol_serde::shape_list_of_arns::de_list_of_arns(tokens)?);
+                    builder = builder.set_provider_arns(crate::protocol_serde::shape_list_of_arns::de_list_of_arns(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

@@ -65,6 +65,7 @@ pub fn ser_aws_events_endpoint_details(
 
 pub(crate) fn de_aws_events_endpoint_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEventsEndpointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -108,7 +109,9 @@ where
                         }
                         "EventBuses" => {
                             builder = builder.set_event_buses(
-                                crate::protocol_serde::shape_aws_events_endpoint_event_buses_list::de_aws_events_endpoint_event_buses_list(tokens)?,
+                                crate::protocol_serde::shape_aws_events_endpoint_event_buses_list::de_aws_events_endpoint_event_buses_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Name" => {
@@ -120,7 +123,7 @@ where
                         }
                         "ReplicationConfig" => {
                             builder = builder.set_replication_config(
-                                    crate::protocol_serde::shape_aws_events_endpoint_replication_config_details::de_aws_events_endpoint_replication_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_events_endpoint_replication_config_details::de_aws_events_endpoint_replication_config_details(tokens, _value)?
                                 );
                         }
                         "RoleArn" => {
@@ -132,7 +135,7 @@ where
                         }
                         "RoutingConfig" => {
                             builder = builder.set_routing_config(
-                                    crate::protocol_serde::shape_aws_events_endpoint_routing_config_details::de_aws_events_endpoint_routing_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_events_endpoint_routing_config_details::de_aws_events_endpoint_routing_config_details(tokens, _value)?
                                 );
                         }
                         "State" => {

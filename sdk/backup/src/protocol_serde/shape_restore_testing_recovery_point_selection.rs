@@ -44,6 +44,7 @@ pub fn ser_restore_testing_recovery_point_selection(
 
 pub(crate) fn de_restore_testing_recovery_point_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RestoreTestingRecoveryPointSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,14 +70,14 @@ where
                                 );
                             }
                             "ExcludeVaults" => {
-                                builder = builder.set_exclude_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                                builder = builder.set_exclude_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                             }
                             "IncludeVaults" => {
-                                builder = builder.set_include_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                                builder = builder.set_include_vaults(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                             }
                             "RecoveryPointTypes" => {
                                 builder = builder.set_recovery_point_types(
-                                    crate::protocol_serde::shape_restore_testing_recovery_point_type_list::de_restore_testing_recovery_point_type_list(tokens)?
+                                    crate::protocol_serde::shape_restore_testing_recovery_point_type_list::de_restore_testing_recovery_point_type_list(tokens, _value)?
                                 );
                             }
                             "SelectionWindowDays" => {

@@ -6,7 +6,7 @@
 pub struct PutRecordInput {
     /// <p>The name of the stream to put the data record into.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     pub partition_key: ::std::option::Option<::std::string::String>,
@@ -16,13 +16,15 @@ pub struct PutRecordInput {
     pub sequence_number_for_ordering: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PutRecordInput {
     /// <p>The name of the stream to put the data record into.</p>
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
@@ -42,6 +44,10 @@ impl PutRecordInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl PutRecordInput {
     /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
@@ -60,6 +66,7 @@ pub struct PutRecordInputBuilder {
     pub(crate) explicit_hash_key: ::std::option::Option<::std::string::String>,
     pub(crate) sequence_number_for_ordering: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl PutRecordInputBuilder {
     /// <p>The name of the stream to put the data record into.</p>
@@ -76,18 +83,18 @@ impl PutRecordInputBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     /// This field is required.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
-    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
+    /// <p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.data
     }
@@ -148,6 +155,20 @@ impl PutRecordInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordInput {
@@ -157,6 +178,7 @@ impl PutRecordInputBuilder {
             explicit_hash_key: self.explicit_hash_key,
             sequence_number_for_ordering: self.sequence_number_for_ordering,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

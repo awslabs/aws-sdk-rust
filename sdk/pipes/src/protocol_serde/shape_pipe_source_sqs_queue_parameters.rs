@@ -20,6 +20,7 @@ pub fn ser_pipe_source_sqs_queue_parameters(
 
 pub(crate) fn de_pipe_source_sqs_queue_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeSourceSqsQueueParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

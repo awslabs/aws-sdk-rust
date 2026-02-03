@@ -118,13 +118,13 @@ pub fn ser_describe_dataset_input(
 }
 
 pub(crate) fn de_describe_dataset(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -180,15 +180,18 @@ pub(crate) fn de_describe_dataset(
                 }
                 "IngestionInputConfiguration" => {
                     builder = builder.set_ingestion_input_configuration(
-                        crate::protocol_serde::shape_ingestion_input_configuration::de_ingestion_input_configuration(tokens)?,
+                        crate::protocol_serde::shape_ingestion_input_configuration::de_ingestion_input_configuration(tokens, _value)?,
                     );
                 }
                 "DataQualitySummary" => {
-                    builder = builder.set_data_quality_summary(crate::protocol_serde::shape_data_quality_summary::de_data_quality_summary(tokens)?);
+                    builder = builder.set_data_quality_summary(crate::protocol_serde::shape_data_quality_summary::de_data_quality_summary(
+                        tokens, _value,
+                    )?);
                 }
                 "IngestedFilesSummary" => {
-                    builder =
-                        builder.set_ingested_files_summary(crate::protocol_serde::shape_ingested_files_summary::de_ingested_files_summary(tokens)?);
+                    builder = builder.set_ingested_files_summary(crate::protocol_serde::shape_ingested_files_summary::de_ingested_files_summary(
+                        tokens, _value,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(

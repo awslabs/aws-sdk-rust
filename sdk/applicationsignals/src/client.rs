@@ -151,7 +151,7 @@ mod create_service_level_objective;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_applicationsignals::Error> {
 /// # let client: aws_sdk_applicationsignals::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_service_level_objective_budget_report()
 ///     .customize()

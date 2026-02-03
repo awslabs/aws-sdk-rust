@@ -26,6 +26,7 @@ pub fn ser_rule_statement(
 
 pub(crate) fn de_rule_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,16 +42,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LicenseConfigurationRuleStatement" => {
                             builder = builder.set_license_configuration_rule_statement(
-                                crate::protocol_serde::shape_license_configuration_rule_statement::de_license_configuration_rule_statement(tokens)?,
+                                crate::protocol_serde::shape_license_configuration_rule_statement::de_license_configuration_rule_statement(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LicenseRuleStatement" => {
-                            builder = builder
-                                .set_license_rule_statement(crate::protocol_serde::shape_license_rule_statement::de_license_rule_statement(tokens)?);
+                            builder = builder.set_license_rule_statement(
+                                crate::protocol_serde::shape_license_rule_statement::de_license_rule_statement(tokens, _value)?,
+                            );
                         }
                         "InstanceRuleStatement" => {
                             builder = builder.set_instance_rule_statement(
-                                crate::protocol_serde::shape_instance_rule_statement::de_instance_rule_statement(tokens)?,
+                                crate::protocol_serde::shape_instance_rule_statement::de_instance_rule_statement(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

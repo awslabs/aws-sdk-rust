@@ -112,13 +112,13 @@ pub fn ser_get_buyer_dashboard_input(
 }
 
 pub(crate) fn de_get_buyer_dashboard(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_buyer_dashboard::builders::GetBuyerDashboardOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_buyer_dashboard::builders::GetBuyerDashboardOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_get_buyer_dashboard(
                     );
                 }
                 "embeddingDomains" => {
-                    builder = builder.set_embedding_domains(crate::protocol_serde::shape_embedding_domains::de_embedding_domains(tokens)?);
+                    builder = builder.set_embedding_domains(crate::protocol_serde::shape_embedding_domains::de_embedding_domains(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

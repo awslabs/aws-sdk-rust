@@ -17,6 +17,7 @@ pub fn ser_grader_config(
 
 pub(crate) fn de_grader_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GraderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "lambdaGrader" => Some(crate::types::GraderConfig::LambdaGrader(
-                            crate::protocol_serde::shape_lambda_grader_config::de_lambda_grader_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_lambda_grader_config::de_lambda_grader_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'lambdaGrader' cannot be null")
                             })?,
                         )),

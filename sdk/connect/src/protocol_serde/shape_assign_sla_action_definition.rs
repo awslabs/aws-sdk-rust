@@ -17,6 +17,7 @@ pub fn ser_assign_sla_action_definition(
 
 pub(crate) fn de_assign_sla_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssignSlaActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "CaseSlaConfiguration" => {
-                            builder = builder
-                                .set_case_sla_configuration(crate::protocol_serde::shape_case_sla_configuration::de_case_sla_configuration(tokens)?);
+                            builder = builder.set_case_sla_configuration(
+                                crate::protocol_serde::shape_case_sla_configuration::de_case_sla_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -464,6 +464,7 @@ pub fn ser_automation_rules_finding_filters(
 
 pub(crate) fn de_automation_rules_finding_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomationRulesFindingFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -478,125 +479,152 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ProductArn" => {
-                            builder = builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "AwsAccountId" => {
-                            builder = builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_aws_account_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "Id" => {
-                            builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "GeneratorId" => {
-                            builder = builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_generator_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "Type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "FirstObservedAt" => {
-                            builder = builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                            builder =
+                                builder.set_first_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
                         }
                         "LastObservedAt" => {
-                            builder = builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                            builder =
+                                builder.set_last_observed_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
                         }
                         "CreatedAt" => {
-                            builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                            builder = builder.set_created_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
                         }
                         "UpdatedAt" => {
-                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                            builder = builder.set_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
                         }
                         "Confidence" => {
-                            builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                            builder = builder.set_confidence(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
                         }
                         "Criticality" => {
-                            builder = builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens)?);
+                            builder =
+                                builder.set_criticality(crate::protocol_serde::shape_number_filter_list::de_number_filter_list(tokens, _value)?);
                         }
                         "Title" => {
-                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_title(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "Description" => {
-                            builder = builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_description(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "SourceUrl" => {
-                            builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_source_url(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ProductName" => {
-                            builder = builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_product_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "CompanyName" => {
-                            builder = builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_company_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "SeverityLabel" => {
-                            builder = builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_severity_label(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ResourceType" => {
-                            builder = builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_resource_type(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ResourceId" => {
-                            builder = builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_resource_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ResourcePartition" => {
-                            builder = builder.set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder
+                                .set_resource_partition(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ResourceRegion" => {
-                            builder = builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_resource_region(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ResourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
                         }
                         "ResourceDetailsOther" => {
-                            builder = builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                            builder =
+                                builder.set_resource_details_other(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
                         }
                         "ComplianceStatus" => {
-                            builder = builder.set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder
+                                .set_compliance_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "ComplianceSecurityControlId" => {
-                            builder = builder
-                                .set_compliance_security_control_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_compliance_security_control_id(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
+                            );
                         }
                         "ComplianceAssociatedStandardsId" => {
                             builder = builder.set_compliance_associated_standards_id(
-                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
                             );
                         }
                         "VerificationState" => {
-                            builder = builder.set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder
+                                .set_verification_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "WorkflowStatus" => {
-                            builder = builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_workflow_status(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "RecordState" => {
-                            builder = builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_record_state(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "RelatedFindingsProductArn" => {
-                            builder = builder
-                                .set_related_findings_product_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_related_findings_product_arn(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?,
+                            );
                         }
                         "RelatedFindingsId" => {
-                            builder =
-                                builder.set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder
+                                .set_related_findings_id(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "NoteText" => {
-                            builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_note_text(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "NoteUpdatedAt" => {
-                            builder = builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens)?);
+                            builder =
+                                builder.set_note_updated_at(crate::protocol_serde::shape_date_filter_list::de_date_filter_list(tokens, _value)?);
                         }
                         "NoteUpdatedBy" => {
-                            builder = builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_note_updated_by(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         "UserDefinedFields" => {
-                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                            builder =
+                                builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens, _value)?);
                         }
                         "ResourceApplicationArn" => {
-                            builder =
-                                builder.set_resource_application_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_resource_application_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "ResourceApplicationName" => {
-                            builder = builder
-                                .set_resource_application_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder = builder.set_resource_application_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AwsAccountName" => {
-                            builder = builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                            builder =
+                                builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

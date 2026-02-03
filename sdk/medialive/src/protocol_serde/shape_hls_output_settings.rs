@@ -23,6 +23,7 @@ pub fn ser_hls_output_settings(
 
 pub(crate) fn de_hls_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HlsOutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "hlsSettings" => {
-                            builder = builder.set_hls_settings(crate::protocol_serde::shape_hls_settings::de_hls_settings(tokens)?);
+                            builder = builder.set_hls_settings(crate::protocol_serde::shape_hls_settings::de_hls_settings(tokens, _value)?);
                         }
                         "nameModifier" => {
                             builder = builder.set_name_modifier(

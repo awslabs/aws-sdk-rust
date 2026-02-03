@@ -44,6 +44,7 @@ pub fn ser_code_editor_app_settings(
 
 pub(crate) fn de_code_editor_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeEditorAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,18 +59,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultResourceSpec" => {
-                            builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                            builder =
+                                builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens, _value)?);
                         }
                         "CustomImages" => {
-                            builder = builder.set_custom_images(crate::protocol_serde::shape_custom_images::de_custom_images(tokens)?);
+                            builder = builder.set_custom_images(crate::protocol_serde::shape_custom_images::de_custom_images(tokens, _value)?);
                         }
                         "LifecycleConfigArns" => {
-                            builder = builder
-                                .set_lifecycle_config_arns(crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens)?);
+                            builder = builder.set_lifecycle_config_arns(
+                                crate::protocol_serde::shape_lifecycle_config_arns::de_lifecycle_config_arns(tokens, _value)?,
+                            );
                         }
                         "AppLifecycleManagement" => {
                             builder = builder.set_app_lifecycle_management(
-                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens)?,
+                                crate::protocol_serde::shape_app_lifecycle_management::de_app_lifecycle_management(tokens, _value)?,
                             );
                         }
                         "BuiltInLifecycleConfigArn" => {

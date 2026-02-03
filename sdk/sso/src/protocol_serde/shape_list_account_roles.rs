@@ -99,12 +99,12 @@ pub fn de_list_account_roles_http_response(
 
 pub fn ser_list_account_roles_headers(
     input: &crate::operation::list_account_roles::ListAccountRolesInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.access_token {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "access_token",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -116,13 +116,13 @@ pub fn ser_list_account_roles_headers(
 }
 
 pub(crate) fn de_list_account_roles(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_account_roles::builders::ListAccountRolesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_account_roles::builders::ListAccountRolesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_list_account_roles(
                     );
                 }
                 "roleList" => {
-                    builder = builder.set_role_list(crate::protocol_serde::shape_role_list_type::de_role_list_type(tokens)?);
+                    builder = builder.set_role_list(crate::protocol_serde::shape_role_list_type::de_role_list_type(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

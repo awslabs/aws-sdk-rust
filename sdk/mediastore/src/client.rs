@@ -147,7 +147,7 @@ mod create_container;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mediastore::Error> {
 /// # let client: aws_sdk_mediastore::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_container()
 ///     .customize()

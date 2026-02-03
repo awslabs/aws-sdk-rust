@@ -47,6 +47,7 @@ pub fn ser_s3_data_source(
 
 pub(crate) fn de_s3_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,18 +83,20 @@ where
                             );
                         }
                         "AttributeNames" => {
-                            builder = builder.set_attribute_names(crate::protocol_serde::shape_attribute_names::de_attribute_names(tokens)?);
+                            builder = builder.set_attribute_names(crate::protocol_serde::shape_attribute_names::de_attribute_names(tokens, _value)?);
                         }
                         "InstanceGroupNames" => {
-                            builder =
-                                builder.set_instance_group_names(crate::protocol_serde::shape_instance_group_names::de_instance_group_names(tokens)?);
+                            builder = builder.set_instance_group_names(crate::protocol_serde::shape_instance_group_names::de_instance_group_names(
+                                tokens, _value,
+                            )?);
                         }
                         "ModelAccessConfig" => {
-                            builder =
-                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
+                            builder = builder
+                                .set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens, _value)?);
                         }
                         "HubAccessConfig" => {
-                            builder = builder.set_hub_access_config(crate::protocol_serde::shape_hub_access_config::de_hub_access_config(tokens)?);
+                            builder =
+                                builder.set_hub_access_config(crate::protocol_serde::shape_hub_access_config::de_hub_access_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

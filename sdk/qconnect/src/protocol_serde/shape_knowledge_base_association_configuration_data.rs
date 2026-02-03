@@ -23,6 +23,7 @@ pub fn ser_knowledge_base_association_configuration_data(
 
 pub(crate) fn de_knowledge_base_association_configuration_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseAssociationConfigurationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "contentTagFilter" => {
-                            builder = builder.set_content_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens)?);
+                            builder = builder.set_content_tag_filter(crate::protocol_serde::shape_tag_filter::de_tag_filter(tokens, _value)?);
                         }
                         "maxResults" => {
                             builder = builder.set_max_results(

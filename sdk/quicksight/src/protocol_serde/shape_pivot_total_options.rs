@@ -50,6 +50,7 @@ pub fn ser_pivot_total_options(
 
 pub(crate) fn de_pivot_total_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -92,18 +93,20 @@ where
                             );
                         }
                         "TotalCellStyle" => {
-                            builder = builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "ValueCellStyle" => {
-                            builder = builder.set_value_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_value_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "MetricHeaderCellStyle" => {
-                            builder =
-                                builder.set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder
+                                .set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "TotalAggregationOptions" => {
                             builder = builder.set_total_aggregation_options(
-                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(tokens)?,
+                                crate::protocol_serde::shape_total_aggregation_option_list::de_total_aggregation_option_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

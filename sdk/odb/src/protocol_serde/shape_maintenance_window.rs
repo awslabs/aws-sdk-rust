@@ -80,6 +80,7 @@ pub fn ser_maintenance_window(
 
 pub(crate) fn de_maintenance_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MaintenanceWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -101,10 +102,10 @@ where
                             );
                         }
                         "daysOfWeek" => {
-                            builder = builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens)?);
+                            builder = builder.set_days_of_week(crate::protocol_serde::shape_days_of_week::de_days_of_week(tokens, _value)?);
                         }
                         "hoursOfDay" => {
-                            builder = builder.set_hours_of_day(crate::protocol_serde::shape_hours_of_day::de_hours_of_day(tokens)?);
+                            builder = builder.set_hours_of_day(crate::protocol_serde::shape_hours_of_day::de_hours_of_day(tokens, _value)?);
                         }
                         "isCustomActionTimeoutEnabled" => {
                             builder = builder
@@ -118,7 +119,7 @@ where
                             );
                         }
                         "months" => {
-                            builder = builder.set_months(crate::protocol_serde::shape_months::de_months(tokens)?);
+                            builder = builder.set_months(crate::protocol_serde::shape_months::de_months(tokens, _value)?);
                         }
                         "patchingMode" => {
                             builder = builder.set_patching_mode(
@@ -138,7 +139,7 @@ where
                             builder = builder.set_skip_ru(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "weeksOfMonth" => {
-                            builder = builder.set_weeks_of_month(crate::protocol_serde::shape_weeks_of_month::de_weeks_of_month(tokens)?);
+                            builder = builder.set_weeks_of_month(crate::protocol_serde::shape_weeks_of_month::de_weeks_of_month(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

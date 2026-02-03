@@ -65,6 +65,7 @@ pub fn ser_advanced_field_selector(
 
 pub(crate) fn de_advanced_field_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdvancedFieldSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,22 +87,22 @@ where
                             );
                         }
                         "Equals" => {
-                            builder = builder.set_equals(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_equals(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "StartsWith" => {
-                            builder = builder.set_starts_with(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_starts_with(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "EndsWith" => {
-                            builder = builder.set_ends_with(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_ends_with(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "NotEquals" => {
-                            builder = builder.set_not_equals(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_not_equals(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "NotStartsWith" => {
-                            builder = builder.set_not_starts_with(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_not_starts_with(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "NotEndsWith" => {
-                            builder = builder.set_not_ends_with(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_not_ends_with(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

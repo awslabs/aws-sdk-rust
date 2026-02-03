@@ -29,6 +29,7 @@ pub fn ser_workflow_step_automation_configuration(
 
 pub(crate) fn de_workflow_step_automation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkflowStepAutomationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,12 @@ where
                             );
                         }
                         "scriptLocationS3Key" => {
-                            builder =
-                                builder.set_script_location_s3_key(crate::protocol_serde::shape_platform_script_key::de_platform_script_key(tokens)?);
+                            builder = builder.set_script_location_s3_key(crate::protocol_serde::shape_platform_script_key::de_platform_script_key(
+                                tokens, _value,
+                            )?);
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_platform_command::de_platform_command(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_platform_command::de_platform_command(tokens, _value)?);
                         }
                         "runEnvironment" => {
                             builder = builder.set_run_environment(

@@ -35,6 +35,7 @@ pub fn ser_aws_rds_db_subnet_group(
 
 pub(crate) fn de_aws_rds_db_subnet_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbSubnetGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,7 @@ where
                         }
                         "Subnets" => {
                             builder = builder.set_subnets(
-                                crate::protocol_serde::shape_aws_rds_db_subnet_group_subnets::de_aws_rds_db_subnet_group_subnets(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_subnet_group_subnets::de_aws_rds_db_subnet_group_subnets(tokens, _value)?,
                             );
                         }
                         "DbSubnetGroupArn" => {

@@ -168,13 +168,13 @@ pub fn de_get_linked_whats_app_business_account_phone_number_http_response(
 }
 
 pub(crate) fn de_get_linked_whats_app_business_account_phone_number(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_linked_whats_app_business_account_phone_number::builders::GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_linked_whats_app_business_account_phone_number::builders::GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -189,8 +189,9 @@ pub(crate) fn de_get_linked_whats_app_business_account_phone_number(
                     );
                 }
                 "phoneNumber" => {
-                    builder = builder
-                        .set_phone_number(crate::protocol_serde::shape_whats_app_phone_number_detail::de_whats_app_phone_number_detail(tokens)?);
+                    builder = builder.set_phone_number(
+                        crate::protocol_serde::shape_whats_app_phone_number_detail::de_whats_app_phone_number_detail(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

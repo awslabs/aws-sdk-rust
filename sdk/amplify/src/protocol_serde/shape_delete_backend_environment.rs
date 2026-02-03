@@ -128,13 +128,13 @@ pub fn de_delete_backend_environment_http_response(
 }
 
 pub(crate) fn de_delete_backend_environment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,8 @@ pub(crate) fn de_delete_backend_environment(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "backendEnvironment" => {
-                    builder = builder.set_backend_environment(crate::protocol_serde::shape_backend_environment::de_backend_environment(tokens)?);
+                    builder =
+                        builder.set_backend_environment(crate::protocol_serde::shape_backend_environment::de_backend_environment(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

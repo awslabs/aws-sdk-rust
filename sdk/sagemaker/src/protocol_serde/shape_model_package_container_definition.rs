@@ -72,6 +72,7 @@ pub fn ser_model_package_container_definition(
 
 pub(crate) fn de_model_package_container_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelPackageContainerDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -114,7 +115,8 @@ where
                             );
                         }
                         "ModelDataSource" => {
-                            builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
+                            builder =
+                                builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens, _value)?);
                         }
                         "ProductId" => {
                             builder = builder.set_product_id(
@@ -124,10 +126,10 @@ where
                             );
                         }
                         "Environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens, _value)?);
                         }
                         "ModelInput" => {
-                            builder = builder.set_model_input(crate::protocol_serde::shape_model_input::de_model_input(tokens)?);
+                            builder = builder.set_model_input(crate::protocol_serde::shape_model_input::de_model_input(tokens, _value)?);
                         }
                         "Framework" => {
                             builder = builder.set_framework(
@@ -152,7 +154,7 @@ where
                         }
                         "AdditionalS3DataSource" => {
                             builder = builder.set_additional_s3_data_source(
-                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens)?,
+                                crate::protocol_serde::shape_additional_s3_data_source::de_additional_s3_data_source(tokens, _value)?,
                             );
                         }
                         "ModelDataETag" => {
@@ -166,7 +168,7 @@ where
                             builder = builder.set_is_checkpoint(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "BaseModel" => {
-                            builder = builder.set_base_model(crate::protocol_serde::shape_base_model::de_base_model(tokens)?);
+                            builder = builder.set_base_model(crate::protocol_serde::shape_base_model::de_base_model(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

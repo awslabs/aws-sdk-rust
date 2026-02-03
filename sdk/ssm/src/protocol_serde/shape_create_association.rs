@@ -245,13 +245,13 @@ pub fn ser_create_association_input(
 }
 
 pub(crate) fn de_create_association(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_association::builders::CreateAssociationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_association::builders::CreateAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -259,8 +259,9 @@ pub(crate) fn de_create_association(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AssociationDescription" => {
-                    builder = builder
-                        .set_association_description(crate::protocol_serde::shape_association_description::de_association_description(tokens)?);
+                    builder = builder.set_association_description(crate::protocol_serde::shape_association_description::de_association_description(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

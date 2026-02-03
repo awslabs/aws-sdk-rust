@@ -120,13 +120,13 @@ pub fn de_get_inbound_external_link_http_response(
 }
 
 pub(crate) fn de_get_inbound_external_link(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_inbound_external_link::builders::GetInboundExternalLinkOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_inbound_external_link::builders::GetInboundExternalLinkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_get_inbound_external_link(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -151,7 +151,7 @@ pub(crate) fn de_get_inbound_external_link(
                 }
                 "flowModules" => {
                     builder = builder.set_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "gatewayId" => {
@@ -169,11 +169,11 @@ pub(crate) fn de_get_inbound_external_link(
                     );
                 }
                 "logSettings" => {
-                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens)?);
+                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens, _value)?);
                 }
                 "pendingFlowModules" => {
                     builder = builder.set_pending_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "status" => {
@@ -184,7 +184,7 @@ pub(crate) fn de_get_inbound_external_link(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

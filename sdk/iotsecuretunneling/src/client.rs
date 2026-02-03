@@ -147,7 +147,7 @@ mod close_tunnel;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotsecuretunneling::Error> {
 /// # let client: aws_sdk_iotsecuretunneling::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.close_tunnel()
 ///     .customize()

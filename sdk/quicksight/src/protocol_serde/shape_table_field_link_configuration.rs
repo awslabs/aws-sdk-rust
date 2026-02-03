@@ -17,6 +17,7 @@ pub fn ser_table_field_link_configuration(
 
 pub(crate) fn de_table_field_link_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableFieldLinkConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                         "Content" => {
                             builder = builder.set_content(
                                 crate::protocol_serde::shape_table_field_link_content_configuration::de_table_field_link_content_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

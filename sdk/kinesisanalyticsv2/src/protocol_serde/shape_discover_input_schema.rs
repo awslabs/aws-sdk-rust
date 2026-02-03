@@ -150,13 +150,13 @@ pub fn ser_discover_input_schema_input(
 }
 
 pub(crate) fn de_discover_input_schema(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::discover_input_schema::builders::DiscoverInputSchemaOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::discover_input_schema::builders::DiscoverInputSchemaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,17 +164,20 @@ pub(crate) fn de_discover_input_schema(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "InputSchema" => {
-                    builder = builder.set_input_schema(crate::protocol_serde::shape_source_schema::de_source_schema(tokens)?);
+                    builder = builder.set_input_schema(crate::protocol_serde::shape_source_schema::de_source_schema(tokens, _value)?);
                 }
                 "ParsedInputRecords" => {
-                    builder = builder.set_parsed_input_records(crate::protocol_serde::shape_parsed_input_records::de_parsed_input_records(tokens)?);
+                    builder = builder.set_parsed_input_records(crate::protocol_serde::shape_parsed_input_records::de_parsed_input_records(
+                        tokens, _value,
+                    )?);
                 }
                 "ProcessedInputRecords" => {
-                    builder = builder
-                        .set_processed_input_records(crate::protocol_serde::shape_processed_input_records::de_processed_input_records(tokens)?);
+                    builder = builder.set_processed_input_records(crate::protocol_serde::shape_processed_input_records::de_processed_input_records(
+                        tokens, _value,
+                    )?);
                 }
                 "RawInputRecords" => {
-                    builder = builder.set_raw_input_records(crate::protocol_serde::shape_raw_input_records::de_raw_input_records(tokens)?);
+                    builder = builder.set_raw_input_records(crate::protocol_serde::shape_raw_input_records::de_raw_input_records(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

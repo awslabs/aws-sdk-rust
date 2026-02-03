@@ -62,6 +62,7 @@ pub fn ser_service_managed_ebs_volume_configuration(
 
 pub(crate) fn de_service_managed_ebs_volume_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceManagedEbsVolumeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -128,8 +129,9 @@ where
                             );
                         }
                         "tagSpecifications" => {
-                            builder = builder
-                                .set_tag_specifications(crate::protocol_serde::shape_ebs_tag_specifications::de_ebs_tag_specifications(tokens)?);
+                            builder = builder.set_tag_specifications(crate::protocol_serde::shape_ebs_tag_specifications::de_ebs_tag_specifications(
+                                tokens, _value,
+                            )?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(

@@ -29,6 +29,7 @@ pub fn ser_pipe_target_event_bridge_event_bus_parameters(
 
 pub(crate) fn de_pipe_target_event_bridge_event_bus_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeTargetEventBridgeEventBusParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,7 +66,7 @@ where
                         }
                         "Resources" => {
                             builder = builder.set_resources(
-                                crate::protocol_serde::shape_event_bridge_event_resource_list::de_event_bridge_event_resource_list(tokens)?,
+                                crate::protocol_serde::shape_event_bridge_event_resource_list::de_event_bridge_event_resource_list(tokens, _value)?,
                             );
                         }
                         "Time" => {

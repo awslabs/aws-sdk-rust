@@ -161,13 +161,13 @@ pub fn ser_create_configuration_input(
 }
 
 pub(crate) fn de_create_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_configuration::builders::CreateConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -188,7 +188,9 @@ pub(crate) fn de_create_configuration(
                     )?);
                 }
                 "latestRevision" => {
-                    builder = builder.set_latest_revision(crate::protocol_serde::shape_configuration_revision::de_configuration_revision(tokens)?);
+                    builder = builder.set_latest_revision(crate::protocol_serde::shape_configuration_revision::de_configuration_revision(
+                        tokens, _value,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(

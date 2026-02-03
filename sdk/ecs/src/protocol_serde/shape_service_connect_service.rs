@@ -44,6 +44,7 @@ pub fn ser_service_connect_service(
 
 pub(crate) fn de_service_connect_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectService>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,7 +74,7 @@ where
                         }
                         "clientAliases" => {
                             builder = builder.set_client_aliases(
-                                crate::protocol_serde::shape_service_connect_client_alias_list::de_service_connect_client_alias_list(tokens)?,
+                                crate::protocol_serde::shape_service_connect_client_alias_list::de_service_connect_client_alias_list(tokens, _value)?,
                             );
                         }
                         "ingressPortOverride" => {
@@ -84,11 +85,13 @@ where
                             );
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(crate::protocol_serde::shape_timeout_configuration::de_timeout_configuration(tokens)?);
+                            builder = builder.set_timeout(crate::protocol_serde::shape_timeout_configuration::de_timeout_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "tls" => {
                             builder = builder.set_tls(
-                                crate::protocol_serde::shape_service_connect_tls_configuration::de_service_connect_tls_configuration(tokens)?,
+                                crate::protocol_serde::shape_service_connect_tls_configuration::de_service_connect_tls_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

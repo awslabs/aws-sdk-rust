@@ -125,13 +125,13 @@ pub fn ser_describe_organization_config_rules_input(
 }
 
 pub(crate) fn de_describe_organization_config_rules(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_organization_config_rules::builders::DescribeOrganizationConfigRulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_describe_organization_config_rules(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "OrganizationConfigRules" => {
                     builder = builder.set_organization_config_rules(
-                        crate::protocol_serde::shape_organization_config_rules::de_organization_config_rules(tokens)?,
+                        crate::protocol_serde::shape_organization_config_rules::de_organization_config_rules(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

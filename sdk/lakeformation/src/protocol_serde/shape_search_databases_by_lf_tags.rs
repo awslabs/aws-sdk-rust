@@ -148,13 +148,13 @@ pub fn ser_search_databases_by_lf_tags_input(
 }
 
 pub(crate) fn de_search_databases_by_lf_tags(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,9 @@ pub(crate) fn de_search_databases_by_lf_tags(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DatabaseList" => {
-                    builder = builder.set_database_list(crate::protocol_serde::shape_database_lf_tags_list::de_database_lf_tags_list(tokens)?);
+                    builder = builder.set_database_list(crate::protocol_serde::shape_database_lf_tags_list::de_database_lf_tags_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

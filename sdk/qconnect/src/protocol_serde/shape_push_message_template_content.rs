@@ -32,6 +32,7 @@ pub fn ser_push_message_template_content(
 
 pub(crate) fn de_push_message_template_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PushMessageTemplateContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,22 +48,26 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adm" => {
                             builder = builder.set_adm(
-                                crate::protocol_serde::shape_push_adm_message_template_content::de_push_adm_message_template_content(tokens)?,
+                                crate::protocol_serde::shape_push_adm_message_template_content::de_push_adm_message_template_content(tokens, _value)?,
                             );
                         }
                         "apns" => {
                             builder = builder.set_apns(
-                                crate::protocol_serde::shape_push_apns_message_template_content::de_push_apns_message_template_content(tokens)?,
+                                crate::protocol_serde::shape_push_apns_message_template_content::de_push_apns_message_template_content(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "fcm" => {
                             builder = builder.set_fcm(
-                                crate::protocol_serde::shape_push_fcm_message_template_content::de_push_fcm_message_template_content(tokens)?,
+                                crate::protocol_serde::shape_push_fcm_message_template_content::de_push_fcm_message_template_content(tokens, _value)?,
                             );
                         }
                         "baidu" => {
                             builder = builder.set_baidu(
-                                crate::protocol_serde::shape_push_baidu_message_template_content::de_push_baidu_message_template_content(tokens)?,
+                                crate::protocol_serde::shape_push_baidu_message_template_content::de_push_baidu_message_template_content(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

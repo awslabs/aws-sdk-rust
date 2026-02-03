@@ -49,6 +49,7 @@ pub fn ser_metrics_data_source(
 
 pub(crate) fn de_metrics_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MetricsDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,7 +64,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_export_dimensions::de_export_dimensions(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_export_dimensions::de_export_dimensions(tokens, _value)?);
                         }
                         "Namespace" => {
                             builder = builder.set_namespace(
@@ -73,7 +74,7 @@ where
                             );
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_export_metrics::de_export_metrics(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_export_metrics::de_export_metrics(tokens, _value)?);
                         }
                         "StartDate" => {
                             builder = builder.set_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

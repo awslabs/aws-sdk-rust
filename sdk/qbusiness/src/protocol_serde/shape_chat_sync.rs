@@ -160,10 +160,10 @@ pub fn ser_chat_sync_input(
 }
 
 pub(crate) fn de_chat_sync(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::chat_sync::builders::ChatSyncOutputBuilder,
 ) -> ::std::result::Result<crate::operation::chat_sync::builders::ChatSyncOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,11 +171,12 @@ pub(crate) fn de_chat_sync(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionReview" => {
-                    builder = builder.set_action_review(crate::protocol_serde::shape_action_review::de_action_review(tokens)?);
+                    builder = builder.set_action_review(crate::protocol_serde::shape_action_review::de_action_review(tokens, _value)?);
                 }
                 "authChallengeRequest" => {
-                    builder =
-                        builder.set_auth_challenge_request(crate::protocol_serde::shape_auth_challenge_request::de_auth_challenge_request(tokens)?);
+                    builder = builder.set_auth_challenge_request(crate::protocol_serde::shape_auth_challenge_request::de_auth_challenge_request(
+                        tokens, _value,
+                    )?);
                 }
                 "conversationId" => {
                     builder = builder.set_conversation_id(
@@ -185,10 +186,11 @@ pub(crate) fn de_chat_sync(
                     );
                 }
                 "failedAttachments" => {
-                    builder = builder.set_failed_attachments(crate::protocol_serde::shape_attachments_output::de_attachments_output(tokens)?);
+                    builder = builder.set_failed_attachments(crate::protocol_serde::shape_attachments_output::de_attachments_output(tokens, _value)?);
                 }
                 "sourceAttributions" => {
-                    builder = builder.set_source_attributions(crate::protocol_serde::shape_source_attributions::de_source_attributions(tokens)?);
+                    builder =
+                        builder.set_source_attributions(crate::protocol_serde::shape_source_attributions::de_source_attributions(tokens, _value)?);
                 }
                 "systemMessage" => {
                     builder = builder.set_system_message(

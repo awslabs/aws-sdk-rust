@@ -169,7 +169,7 @@ mod create_prompt_version;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockagent::Error> {
 /// # let client: aws_sdk_bedrockagent::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_agent_collaborator()
 ///     .customize()

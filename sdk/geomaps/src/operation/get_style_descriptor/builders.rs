@@ -261,8 +261,10 @@ impl GetStyleDescriptorFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn terrain(mut self, input: crate::types::Terrain) -> Self {
         self.inner = self.inner.terrain(input);
         self
@@ -272,8 +274,10 @@ impl GetStyleDescriptorFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn set_terrain(mut self, input: ::std::option::Option<crate::types::Terrain>) -> Self {
         self.inner = self.inner.set_terrain(input);
         self
@@ -283,25 +287,27 @@ impl GetStyleDescriptorFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Hillshade</code>: Displays the physical terrain details through shading and highlighting of elevation change and geographic features.</p></li>
+    /// <li>
+    /// <p><code>Terrain3D</code>: Displays physical terrain details and elevations as a three-dimensional model.</p></li>
     /// </ul>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p><code>Hillshade</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub fn get_terrain(&self) -> &::std::option::Option<crate::types::Terrain> {
         self.inner.get_terrain()
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
         self.inner = self.inner.contour_density(input);
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
         self.inner = self.inner.set_contour_density(input);
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
     pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
         self.inner.get_contour_density()
     }
@@ -343,6 +349,38 @@ impl GetStyleDescriptorFluentBuilder {
     /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
     pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
         self.inner.get_travel_modes()
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn buildings(mut self, input: crate::types::Buildings) -> Self {
+        self.inner = self.inner.buildings(input);
+        self
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn set_buildings(mut self, input: ::std::option::Option<crate::types::Buildings>) -> Self {
+        self.inner = self.inner.set_buildings(input);
+        self
+    }
+    /// <p>Adjusts how building details are rendered on the map.</p>
+    /// <p>The following building styles are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Buildings3D</code>: Displays buildings as three-dimensional extrusions on the map.</p></li>
+    /// </ul>
+    /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
+    pub fn get_buildings(&self) -> &::std::option::Option<crate::types::Buildings> {
+        self.inner.get_buildings()
     }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

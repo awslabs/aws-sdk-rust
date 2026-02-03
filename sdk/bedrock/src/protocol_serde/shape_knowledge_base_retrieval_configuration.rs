@@ -17,6 +17,7 @@ pub fn ser_knowledge_base_retrieval_configuration(
 
 pub(crate) fn de_knowledge_base_retrieval_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseRetrievalConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vectorSearchConfiguration" => {
                             builder = builder.set_vector_search_configuration(
-                                    crate::protocol_serde::shape_knowledge_base_vector_search_configuration::de_knowledge_base_vector_search_configuration(tokens)?
+                                    crate::protocol_serde::shape_knowledge_base_vector_search_configuration::de_knowledge_base_vector_search_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

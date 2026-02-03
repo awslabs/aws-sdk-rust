@@ -23,6 +23,7 @@ pub fn ser_uplink_aws_ground_station_agent_endpoint_details(
 
 pub(crate) fn de_uplink_aws_ground_station_agent_endpoint_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UplinkAwsGroundStationAgentEndpointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "dataflowDetails" => {
-                            builder = builder
-                                .set_dataflow_details(crate::protocol_serde::shape_uplink_dataflow_details::de_uplink_dataflow_details(tokens)?);
+                            builder = builder.set_dataflow_details(crate::protocol_serde::shape_uplink_dataflow_details::de_uplink_dataflow_details(
+                                tokens, _value,
+                            )?);
                         }
                         "agentStatus" => {
                             builder = builder.set_agent_status(

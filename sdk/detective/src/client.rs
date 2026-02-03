@@ -155,7 +155,7 @@ mod create_members;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_detective::Error> {
 /// # let client: aws_sdk_detective::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_invitation()
 ///     .customize()

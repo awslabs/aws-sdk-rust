@@ -80,6 +80,7 @@ pub fn ser_service_managed_ec2_instance_capabilities(
 
 pub(crate) fn de_service_managed_ec2_instance_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceManagedEc2InstanceCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,10 +95,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vCpuCount" => {
-                            builder = builder.set_v_cpu_count(crate::protocol_serde::shape_v_cpu_count_range::de_v_cpu_count_range(tokens)?);
+                            builder = builder.set_v_cpu_count(crate::protocol_serde::shape_v_cpu_count_range::de_v_cpu_count_range(tokens, _value)?);
                         }
                         "memoryMiB" => {
-                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_range::de_memory_mib_range(tokens)?);
+                            builder = builder.set_memory_mib(crate::protocol_serde::shape_memory_mib_range::de_memory_mib_range(tokens, _value)?);
                         }
                         "osFamily" => {
                             builder = builder.set_os_family(
@@ -117,27 +118,31 @@ where
                             );
                         }
                         "rootEbsVolume" => {
-                            builder = builder.set_root_ebs_volume(crate::protocol_serde::shape_ec2_ebs_volume::de_ec2_ebs_volume(tokens)?);
+                            builder = builder.set_root_ebs_volume(crate::protocol_serde::shape_ec2_ebs_volume::de_ec2_ebs_volume(tokens, _value)?);
                         }
                         "acceleratorCapabilities" => {
                             builder = builder.set_accelerator_capabilities(
-                                crate::protocol_serde::shape_accelerator_capabilities::de_accelerator_capabilities(tokens)?,
+                                crate::protocol_serde::shape_accelerator_capabilities::de_accelerator_capabilities(tokens, _value)?,
                             );
                         }
                         "allowedInstanceTypes" => {
-                            builder = builder.set_allowed_instance_types(crate::protocol_serde::shape_instance_types::de_instance_types(tokens)?);
+                            builder =
+                                builder.set_allowed_instance_types(crate::protocol_serde::shape_instance_types::de_instance_types(tokens, _value)?);
                         }
                         "excludedInstanceTypes" => {
-                            builder = builder.set_excluded_instance_types(crate::protocol_serde::shape_instance_types::de_instance_types(tokens)?);
+                            builder =
+                                builder.set_excluded_instance_types(crate::protocol_serde::shape_instance_types::de_instance_types(tokens, _value)?);
                         }
                         "customAmounts" => {
                             builder = builder.set_custom_amounts(
-                                crate::protocol_serde::shape_custom_fleet_amount_capabilities::de_custom_fleet_amount_capabilities(tokens)?,
+                                crate::protocol_serde::shape_custom_fleet_amount_capabilities::de_custom_fleet_amount_capabilities(tokens, _value)?,
                             );
                         }
                         "customAttributes" => {
                             builder = builder.set_custom_attributes(
-                                crate::protocol_serde::shape_custom_fleet_attribute_capabilities::de_custom_fleet_attribute_capabilities(tokens)?,
+                                crate::protocol_serde::shape_custom_fleet_attribute_capabilities::de_custom_fleet_attribute_capabilities(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

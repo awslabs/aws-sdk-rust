@@ -138,10 +138,10 @@ pub fn de_get_stage_http_response(
 }
 
 pub(crate) fn de_get_stage(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_stage::builders::GetStageOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_stage::builders::GetStageOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,8 @@ pub(crate) fn de_get_stage(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accessLogSettings" => {
-                    builder = builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens)?);
+                    builder =
+                        builder.set_access_log_settings(crate::protocol_serde::shape_access_log_settings::de_access_log_settings(tokens, _value)?);
                 }
                 "cacheClusterEnabled" => {
                     builder = builder.set_cache_cluster_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -169,7 +170,7 @@ pub(crate) fn de_get_stage(
                     );
                 }
                 "canarySettings" => {
-                    builder = builder.set_canary_settings(crate::protocol_serde::shape_canary_settings::de_canary_settings(tokens)?);
+                    builder = builder.set_canary_settings(crate::protocol_serde::shape_canary_settings::de_canary_settings(tokens, _value)?);
                 }
                 "clientCertificateId" => {
                     builder = builder.set_client_certificate_id(
@@ -212,7 +213,9 @@ pub(crate) fn de_get_stage(
                     )?);
                 }
                 "methodSettings" => {
-                    builder = builder.set_method_settings(crate::protocol_serde::shape_map_of_method_settings::de_map_of_method_settings(tokens)?);
+                    builder = builder.set_method_settings(crate::protocol_serde::shape_map_of_method_settings::de_map_of_method_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "stageName" => {
                     builder = builder.set_stage_name(
@@ -222,13 +225,17 @@ pub(crate) fn de_get_stage(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "tracingEnabled" => {
                     builder = builder.set_tracing_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "variables" => {
-                    builder = builder.set_variables(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_variables(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "webAclArn" => {
                     builder = builder.set_web_acl_arn(

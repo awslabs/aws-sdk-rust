@@ -112,13 +112,13 @@ pub fn ser_detect_key_phrases_input(
 }
 
 pub(crate) fn de_detect_key_phrases(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detect_key_phrases::builders::DetectKeyPhrasesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_detect_key_phrases(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "KeyPhrases" => {
-                    builder = builder.set_key_phrases(crate::protocol_serde::shape_list_of_key_phrases::de_list_of_key_phrases(tokens)?);
+                    builder = builder.set_key_phrases(crate::protocol_serde::shape_list_of_key_phrases::de_list_of_key_phrases(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

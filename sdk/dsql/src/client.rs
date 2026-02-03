@@ -181,7 +181,7 @@ mod create_cluster;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_dsql::Error> {
 /// # let client: aws_sdk_dsql::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_cluster()
 ///     .customize()

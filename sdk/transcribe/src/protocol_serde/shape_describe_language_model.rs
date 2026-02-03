@@ -114,13 +114,13 @@ pub fn ser_describe_language_model_input(
 }
 
 pub(crate) fn de_describe_language_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_language_model::builders::DescribeLanguageModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_language_model::builders::DescribeLanguageModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,7 @@ pub(crate) fn de_describe_language_model(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "LanguageModel" => {
-                    builder = builder.set_language_model(crate::protocol_serde::shape_language_model::de_language_model(tokens)?);
+                    builder = builder.set_language_model(crate::protocol_serde::shape_language_model::de_language_model(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -14,6 +14,7 @@ pub fn ser_application_source_config(
 
 pub(crate) fn de_application_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApplicationSourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ExternalUrlConfig" => {
-                            builder =
-                                builder.set_external_url_config(crate::protocol_serde::shape_external_url_config::de_external_url_config(tokens)?);
+                            builder = builder
+                                .set_external_url_config(crate::protocol_serde::shape_external_url_config::de_external_url_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -114,13 +114,13 @@ pub fn de_check_document_access_http_response(
 }
 
 pub(crate) fn de_check_document_access(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::check_document_access::builders::CheckDocumentAccessOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::check_document_access::builders::CheckDocumentAccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,16 +128,16 @@ pub(crate) fn de_check_document_access(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "documentAcl" => {
-                    builder = builder.set_document_acl(crate::protocol_serde::shape_document_acl::de_document_acl(tokens)?);
+                    builder = builder.set_document_acl(crate::protocol_serde::shape_document_acl::de_document_acl(tokens, _value)?);
                 }
                 "hasAccess" => {
                     builder = builder.set_has_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "userAliases" => {
-                    builder = builder.set_user_aliases(crate::protocol_serde::shape_associated_users::de_associated_users(tokens)?);
+                    builder = builder.set_user_aliases(crate::protocol_serde::shape_associated_users::de_associated_users(tokens, _value)?);
                 }
                 "userGroups" => {
-                    builder = builder.set_user_groups(crate::protocol_serde::shape_associated_groups::de_associated_groups(tokens)?);
+                    builder = builder.set_user_groups(crate::protocol_serde::shape_associated_groups::de_associated_groups(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

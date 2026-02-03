@@ -38,6 +38,7 @@ pub fn ser_filter_list_control(
 
 pub(crate) fn de_filter_list_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterListControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                         }
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                crate::protocol_serde::shape_list_control_display_options::de_list_control_display_options(tokens)?,
+                                crate::protocol_serde::shape_list_control_display_options::de_list_control_display_options(tokens, _value)?,
                             );
                         }
                         "Type" => {
@@ -86,12 +87,12 @@ where
                         }
                         "SelectableValues" => {
                             builder = builder.set_selectable_values(
-                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens)?,
+                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens, _value)?,
                             );
                         }
                         "CascadingControlConfiguration" => {
                             builder = builder.set_cascading_control_configuration(
-                                crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(tokens)?,
+                                crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

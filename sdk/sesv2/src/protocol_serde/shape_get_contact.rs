@@ -83,11 +83,11 @@ pub fn de_get_contact_http_response(
 }
 
 pub(crate) fn de_get_contact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_contact::builders::GetContactOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_contact::builders::GetContactOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,11 +128,14 @@ pub(crate) fn de_get_contact(
                     )?);
                 }
                 "TopicDefaultPreferences" => {
-                    builder =
-                        builder.set_topic_default_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(tokens)?);
+                    builder = builder.set_topic_default_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(
+                        tokens, _value,
+                    )?);
                 }
                 "TopicPreferences" => {
-                    builder = builder.set_topic_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(tokens)?);
+                    builder = builder.set_topic_preferences(crate::protocol_serde::shape_topic_preference_list::de_topic_preference_list(
+                        tokens, _value,
+                    )?);
                 }
                 "UnsubscribeAll" => {
                     builder = builder.set_unsubscribe_all(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

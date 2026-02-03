@@ -65,6 +65,7 @@ pub fn ser_pivot_table_options(
 
 pub(crate) fn de_pivot_table_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -107,20 +108,23 @@ where
                             );
                         }
                         "ColumnHeaderStyle" => {
-                            builder = builder.set_column_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_column_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "RowHeaderStyle" => {
-                            builder = builder.set_row_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_row_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "CellStyle" => {
-                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "RowFieldNamesStyle" => {
-                            builder = builder.set_row_field_names_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder
+                                .set_row_field_names_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "RowAlternateColorOptions" => {
                             builder = builder.set_row_alternate_color_options(
-                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?,
+                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens, _value)?,
                             );
                         }
                         "CollapsedRowDimensionsVisibility" => {
@@ -139,7 +143,7 @@ where
                         }
                         "RowsLabelOptions" => {
                             builder = builder.set_rows_label_options(
-                                crate::protocol_serde::shape_pivot_table_rows_label_options::de_pivot_table_rows_label_options(tokens)?,
+                                crate::protocol_serde::shape_pivot_table_rows_label_options::de_pivot_table_rows_label_options(tokens, _value)?,
                             );
                         }
                         "DefaultCellWidth" => {

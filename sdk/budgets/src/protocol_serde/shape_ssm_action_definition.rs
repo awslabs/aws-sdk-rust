@@ -23,6 +23,7 @@ pub fn ser_ssm_action_definition(
 
 pub(crate) fn de_ssm_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SsmActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                             );
                         }
                         "InstanceIds" => {
-                            builder = builder.set_instance_ids(crate::protocol_serde::shape_instance_ids::de_instance_ids(tokens)?);
+                            builder = builder.set_instance_ids(crate::protocol_serde::shape_instance_ids::de_instance_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

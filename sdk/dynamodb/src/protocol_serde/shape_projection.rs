@@ -20,6 +20,7 @@ pub fn ser_projection(
 
 pub(crate) fn de_projection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Projection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "NonKeyAttributes" => {
                             builder = builder.set_non_key_attributes(
-                                crate::protocol_serde::shape_non_key_attribute_name_list::de_non_key_attribute_name_list(tokens)?,
+                                crate::protocol_serde::shape_non_key_attribute_name_list::de_non_key_attribute_name_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

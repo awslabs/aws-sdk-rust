@@ -32,6 +32,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,13 +47,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "samplingConfig" => {
-                            builder = builder.set_sampling_config(crate::protocol_serde::shape_sampling_config::de_sampling_config(tokens)?);
+                            builder = builder.set_sampling_config(crate::protocol_serde::shape_sampling_config::de_sampling_config(tokens, _value)?);
                         }
                         "filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                         }
                         "sessionConfig" => {
-                            builder = builder.set_session_config(crate::protocol_serde::shape_session_config::de_session_config(tokens)?);
+                            builder = builder.set_session_config(crate::protocol_serde::shape_session_config::de_session_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -155,7 +155,7 @@ mod create_relationship;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_partnercentralchannel::Error> {
 /// # let client: aws_sdk_partnercentralchannel::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_channel_handshake()
 ///     .customize()

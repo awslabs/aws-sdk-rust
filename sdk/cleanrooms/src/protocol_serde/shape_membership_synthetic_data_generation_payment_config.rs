@@ -11,6 +11,7 @@ pub fn ser_membership_synthetic_data_generation_payment_config(
 
 pub(crate) fn de_membership_synthetic_data_generation_payment_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::MembershipSyntheticDataGenerationPaymentConfig>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

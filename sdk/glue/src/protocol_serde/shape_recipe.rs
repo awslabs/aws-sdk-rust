@@ -38,6 +38,7 @@ pub fn ser_recipe(
 
 pub(crate) fn de_recipe<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Recipe>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,13 +60,14 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "RecipeReference" => {
-                            builder = builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens)?);
+                            builder =
+                                builder.set_recipe_reference(crate::protocol_serde::shape_recipe_reference::de_recipe_reference(tokens, _value)?);
                         }
                         "RecipeSteps" => {
-                            builder = builder.set_recipe_steps(crate::protocol_serde::shape_recipe_steps::de_recipe_steps(tokens)?);
+                            builder = builder.set_recipe_steps(crate::protocol_serde::shape_recipe_steps::de_recipe_steps(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -26,6 +26,7 @@ pub fn ser_rag_config(
 
 pub(crate) fn de_rag_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RagConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,13 +56,13 @@ where
                     }
                     variant = match key.as_ref() {
                         "knowledgeBaseConfig" => Some(crate::types::RagConfig::KnowledgeBaseConfig(
-                            crate::protocol_serde::shape_knowledge_base_config::de_knowledge_base_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_knowledge_base_config::de_knowledge_base_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'knowledgeBaseConfig' cannot be null")
                             })?,
                         )),
                         "precomputedRagSourceConfig" => Some(crate::types::RagConfig::PrecomputedRagSourceConfig(
                             crate::protocol_serde::shape_evaluation_precomputed_rag_source_config::de_evaluation_precomputed_rag_source_config(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(

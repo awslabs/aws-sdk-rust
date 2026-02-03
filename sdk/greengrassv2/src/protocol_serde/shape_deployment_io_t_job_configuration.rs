@@ -26,6 +26,7 @@ pub fn ser_deployment_io_t_job_configuration(
 
 pub(crate) fn de_deployment_io_t_job_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeploymentIoTJobConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,15 +42,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "jobExecutionsRolloutConfig" => {
                             builder = builder.set_job_executions_rollout_config(
-                                crate::protocol_serde::shape_io_t_job_executions_rollout_config::de_io_t_job_executions_rollout_config(tokens)?,
+                                crate::protocol_serde::shape_io_t_job_executions_rollout_config::de_io_t_job_executions_rollout_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "abortConfig" => {
-                            builder = builder.set_abort_config(crate::protocol_serde::shape_io_t_job_abort_config::de_io_t_job_abort_config(tokens)?);
+                            builder = builder.set_abort_config(crate::protocol_serde::shape_io_t_job_abort_config::de_io_t_job_abort_config(
+                                tokens, _value,
+                            )?);
                         }
                         "timeoutConfig" => {
-                            builder =
-                                builder.set_timeout_config(crate::protocol_serde::shape_io_t_job_timeout_config::de_io_t_job_timeout_config(tokens)?);
+                            builder = builder.set_timeout_config(crate::protocol_serde::shape_io_t_job_timeout_config::de_io_t_job_timeout_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

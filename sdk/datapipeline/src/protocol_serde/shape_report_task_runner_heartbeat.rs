@@ -88,13 +88,13 @@ pub fn ser_report_task_runner_heartbeat_input(
 }
 
 pub(crate) fn de_report_task_runner_heartbeat(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

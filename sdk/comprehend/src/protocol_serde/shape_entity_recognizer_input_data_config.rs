@@ -53,6 +53,7 @@ pub fn ser_entity_recognizer_input_data_config(
 
 pub(crate) fn de_entity_recognizer_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EntityRecognizerInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,26 +75,26 @@ where
                             );
                         }
                         "EntityTypes" => {
-                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens)?);
+                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens, _value)?);
                         }
                         "Documents" => {
                             builder = builder.set_documents(
-                                crate::protocol_serde::shape_entity_recognizer_documents::de_entity_recognizer_documents(tokens)?,
+                                crate::protocol_serde::shape_entity_recognizer_documents::de_entity_recognizer_documents(tokens, _value)?,
                             );
                         }
                         "Annotations" => {
                             builder = builder.set_annotations(
-                                crate::protocol_serde::shape_entity_recognizer_annotations::de_entity_recognizer_annotations(tokens)?,
+                                crate::protocol_serde::shape_entity_recognizer_annotations::de_entity_recognizer_annotations(tokens, _value)?,
                             );
                         }
                         "EntityList" => {
                             builder = builder.set_entity_list(
-                                crate::protocol_serde::shape_entity_recognizer_entity_list::de_entity_recognizer_entity_list(tokens)?,
+                                crate::protocol_serde::shape_entity_recognizer_entity_list::de_entity_recognizer_entity_list(tokens, _value)?,
                             );
                         }
                         "AugmentedManifests" => {
                             builder = builder.set_augmented_manifests(
-                                    crate::protocol_serde::shape_entity_recognizer_augmented_manifests_list::de_entity_recognizer_augmented_manifests_list(tokens)?
+                                    crate::protocol_serde::shape_entity_recognizer_augmented_manifests_list::de_entity_recognizer_augmented_manifests_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

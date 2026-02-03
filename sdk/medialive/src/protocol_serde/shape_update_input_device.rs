@@ -172,13 +172,13 @@ pub fn ser_update_input_device_input(
 }
 
 pub(crate) fn de_update_input_device(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_input_device::builders::UpdateInputDeviceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_input_device::builders::UpdateInputDeviceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -222,7 +222,7 @@ pub(crate) fn de_update_input_device(
                 }
                 "hdDeviceSettings" => {
                     builder = builder.set_hd_device_settings(crate::protocol_serde::shape_input_device_hd_settings::de_input_device_hd_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "id" => {
@@ -240,7 +240,7 @@ pub(crate) fn de_update_input_device(
                     );
                 }
                 "medialiveInputArns" => {
-                    builder = builder.set_medialive_input_arns(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_medialive_input_arns(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -250,8 +250,9 @@ pub(crate) fn de_update_input_device(
                     );
                 }
                 "networkSettings" => {
-                    builder = builder
-                        .set_network_settings(crate::protocol_serde::shape_input_device_network_settings::de_input_device_network_settings(tokens)?);
+                    builder = builder.set_network_settings(
+                        crate::protocol_serde::shape_input_device_network_settings::de_input_device_network_settings(tokens, _value)?,
+                    );
                 }
                 "outputType" => {
                     builder = builder.set_output_type(
@@ -268,7 +269,7 @@ pub(crate) fn de_update_input_device(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(
@@ -279,7 +280,7 @@ pub(crate) fn de_update_input_device(
                 }
                 "uhdDeviceSettings" => {
                     builder = builder.set_uhd_device_settings(crate::protocol_serde::shape_input_device_uhd_settings::de_input_device_uhd_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

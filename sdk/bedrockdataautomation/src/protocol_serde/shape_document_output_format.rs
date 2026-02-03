@@ -20,6 +20,7 @@ pub fn ser_document_output_format(
 
 pub(crate) fn de_document_output_format<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentOutputFormat>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,13 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "textFormat" => {
                             builder = builder.set_text_format(
-                                crate::protocol_serde::shape_document_output_text_format::de_document_output_text_format(tokens)?,
+                                crate::protocol_serde::shape_document_output_text_format::de_document_output_text_format(tokens, _value)?,
                             );
                         }
                         "additionalFileFormat" => {
                             builder = builder.set_additional_file_format(
                                 crate::protocol_serde::shape_document_output_additional_file_format::de_document_output_additional_file_format(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

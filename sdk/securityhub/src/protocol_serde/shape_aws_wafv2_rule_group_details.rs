@@ -47,6 +47,7 @@ pub fn ser_aws_wafv2_rule_group_details(
 
 pub(crate) fn de_aws_wafv2_rule_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafv2RuleGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,7 +97,9 @@ where
                             );
                         }
                         "Rules" => {
-                            builder = builder.set_rules(crate::protocol_serde::shape_aws_wafv2_rules_list::de_aws_wafv2_rules_list(tokens)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_aws_wafv2_rules_list::de_aws_wafv2_rules_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Scope" => {
                             builder = builder.set_scope(
@@ -107,7 +110,9 @@ where
                         }
                         "VisibilityConfig" => {
                             builder = builder.set_visibility_config(
-                                crate::protocol_serde::shape_aws_wafv2_visibility_config_details::de_aws_wafv2_visibility_config_details(tokens)?,
+                                crate::protocol_serde::shape_aws_wafv2_visibility_config_details::de_aws_wafv2_visibility_config_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

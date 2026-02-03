@@ -38,13 +38,13 @@ pub fn de_list_organization_service_access_status_http_response(
 }
 
 pub(crate) fn de_list_organization_service_access_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -59,7 +59,8 @@ pub(crate) fn de_list_organization_service_access_status(
                     );
                 }
                 "OrganizationStatus" => {
-                    builder = builder.set_organization_status(crate::protocol_serde::shape_organization_status::de_organization_status(tokens)?);
+                    builder =
+                        builder.set_organization_status(crate::protocol_serde::shape_organization_status::de_organization_status(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

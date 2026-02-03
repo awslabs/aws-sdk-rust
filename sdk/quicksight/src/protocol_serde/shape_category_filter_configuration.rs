@@ -26,6 +26,7 @@ pub fn ser_category_filter_configuration(
 
 pub(crate) fn de_category_filter_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CategoryFilterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,17 +42,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FilterListConfiguration" => {
                             builder = builder.set_filter_list_configuration(
-                                crate::protocol_serde::shape_filter_list_configuration::de_filter_list_configuration(tokens)?,
+                                crate::protocol_serde::shape_filter_list_configuration::de_filter_list_configuration(tokens, _value)?,
                             );
                         }
                         "CustomFilterListConfiguration" => {
                             builder = builder.set_custom_filter_list_configuration(
-                                crate::protocol_serde::shape_custom_filter_list_configuration::de_custom_filter_list_configuration(tokens)?,
+                                crate::protocol_serde::shape_custom_filter_list_configuration::de_custom_filter_list_configuration(tokens, _value)?,
                             );
                         }
                         "CustomFilterConfiguration" => {
                             builder = builder.set_custom_filter_configuration(
-                                crate::protocol_serde::shape_custom_filter_configuration::de_custom_filter_configuration(tokens)?,
+                                crate::protocol_serde::shape_custom_filter_configuration::de_custom_filter_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

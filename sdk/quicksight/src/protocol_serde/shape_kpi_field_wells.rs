@@ -44,6 +44,7 @@ pub fn ser_kpi_field_wells(
 
 pub(crate) fn de_kpi_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,13 +59,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
                         }
                         "TargetValues" => {
-                            builder = builder.set_target_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?);
+                            builder =
+                                builder.set_target_values(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
                         }
                         "TrendGroups" => {
-                            builder = builder.set_trend_groups(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_trend_groups(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

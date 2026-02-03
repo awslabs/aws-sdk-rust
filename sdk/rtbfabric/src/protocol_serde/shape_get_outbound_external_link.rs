@@ -120,13 +120,13 @@ pub fn de_get_outbound_external_link_http_response(
 }
 
 pub(crate) fn de_get_outbound_external_link(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -154,7 +154,7 @@ pub(crate) fn de_get_outbound_external_link(
                     );
                 }
                 "logSettings" => {
-                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens)?);
+                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens, _value)?);
                 }
                 "publicEndpoint" => {
                     builder = builder.set_public_endpoint(
@@ -171,7 +171,7 @@ pub(crate) fn de_get_outbound_external_link(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

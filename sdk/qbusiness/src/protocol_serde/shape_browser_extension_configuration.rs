@@ -17,6 +17,7 @@ pub fn ser_browser_extension_configuration(
 
 pub(crate) fn de_browser_extension_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BrowserExtensionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enabledBrowserExtensions" => {
                             builder = builder.set_enabled_browser_extensions(
-                                crate::protocol_serde::shape_browser_extension_list::de_browser_extension_list(tokens)?,
+                                crate::protocol_serde::shape_browser_extension_list::de_browser_extension_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

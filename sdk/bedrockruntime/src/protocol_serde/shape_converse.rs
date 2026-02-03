@@ -186,10 +186,10 @@ pub fn ser_converse_input(
 }
 
 pub(crate) fn de_converse(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::converse::builders::ConverseOutputBuilder,
 ) -> ::std::result::Result<crate::operation::converse::builders::ConverseOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -200,18 +200,18 @@ pub(crate) fn de_converse(
                     builder = builder.set_additional_model_response_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
                 "metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_converse_metrics::de_converse_metrics(tokens)?);
+                    builder = builder.set_metrics(crate::protocol_serde::shape_converse_metrics::de_converse_metrics(tokens, _value)?);
                 }
                 "output" => {
-                    builder = builder.set_output(crate::protocol_serde::shape_converse_output::de_converse_output(tokens)?);
+                    builder = builder.set_output(crate::protocol_serde::shape_converse_output::de_converse_output(tokens, _value)?);
                 }
                 "performanceConfig" => {
                     builder = builder.set_performance_config(crate::protocol_serde::shape_performance_configuration::de_performance_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "serviceTier" => {
-                    builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens)?);
+                    builder = builder.set_service_tier(crate::protocol_serde::shape_service_tier::de_service_tier(tokens, _value)?);
                 }
                 "stopReason" => {
                     builder = builder.set_stop_reason(
@@ -221,10 +221,10 @@ pub(crate) fn de_converse(
                     );
                 }
                 "trace" => {
-                    builder = builder.set_trace(crate::protocol_serde::shape_converse_trace::de_converse_trace(tokens)?);
+                    builder = builder.set_trace(crate::protocol_serde::shape_converse_trace::de_converse_trace(tokens, _value)?);
                 }
                 "usage" => {
-                    builder = builder.set_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens)?);
+                    builder = builder.set_usage(crate::protocol_serde::shape_token_usage::de_token_usage(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

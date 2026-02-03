@@ -107,13 +107,13 @@ pub fn de_describe_scan_job_http_response(
 }
 
 pub(crate) fn de_describe_scan_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_scan_job::builders::DescribeScanJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_scan_job::builders::DescribeScanJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,7 +148,7 @@ pub(crate) fn de_describe_scan_job(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_scan_job_creator::de_scan_job_creator(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_scan_job_creator::de_scan_job_creator(tokens, _value)?);
                 }
                 "CreationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -227,7 +227,7 @@ pub(crate) fn de_describe_scan_job(
                     );
                 }
                 "ScanResult" => {
-                    builder = builder.set_scan_result(crate::protocol_serde::shape_scan_result_info::de_scan_result_info(tokens)?);
+                    builder = builder.set_scan_result(crate::protocol_serde::shape_scan_result_info::de_scan_result_info(tokens, _value)?);
                 }
                 "ScannerRoleArn" => {
                     builder = builder.set_scanner_role_arn(

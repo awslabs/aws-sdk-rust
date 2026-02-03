@@ -26,6 +26,7 @@ pub fn ser_centralization_rule_source(
 
 pub(crate) fn de_centralization_rule_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CentralizationRuleSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
                         }
                         "Scope" => {
                             builder = builder.set_scope(
@@ -51,7 +52,7 @@ where
                         }
                         "SourceLogsConfiguration" => {
                             builder = builder.set_source_logs_configuration(
-                                crate::protocol_serde::shape_source_logs_configuration::de_source_logs_configuration(tokens)?,
+                                crate::protocol_serde::shape_source_logs_configuration::de_source_logs_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

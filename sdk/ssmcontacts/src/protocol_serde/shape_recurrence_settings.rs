@@ -75,6 +75,7 @@ pub fn ser_recurrence_settings(
 
 pub(crate) fn de_recurrence_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecurrenceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -89,13 +90,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MonthlySettings" => {
-                            builder = builder.set_monthly_settings(crate::protocol_serde::shape_monthly_settings::de_monthly_settings(tokens)?);
+                            builder =
+                                builder.set_monthly_settings(crate::protocol_serde::shape_monthly_settings::de_monthly_settings(tokens, _value)?);
                         }
                         "WeeklySettings" => {
-                            builder = builder.set_weekly_settings(crate::protocol_serde::shape_weekly_settings::de_weekly_settings(tokens)?);
+                            builder = builder.set_weekly_settings(crate::protocol_serde::shape_weekly_settings::de_weekly_settings(tokens, _value)?);
                         }
                         "DailySettings" => {
-                            builder = builder.set_daily_settings(crate::protocol_serde::shape_daily_settings::de_daily_settings(tokens)?);
+                            builder = builder.set_daily_settings(crate::protocol_serde::shape_daily_settings::de_daily_settings(tokens, _value)?);
                         }
                         "NumberOfOnCalls" => {
                             builder = builder.set_number_of_on_calls(
@@ -105,7 +107,8 @@ where
                             );
                         }
                         "ShiftCoverages" => {
-                            builder = builder.set_shift_coverages(crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(tokens)?);
+                            builder = builder
+                                .set_shift_coverages(crate::protocol_serde::shape_shift_coverages_map::de_shift_coverages_map(tokens, _value)?);
                         }
                         "RecurrenceMultiplier" => {
                             builder = builder.set_recurrence_multiplier(

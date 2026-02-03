@@ -130,13 +130,13 @@ pub fn de_list_app_instances_http_response(
 }
 
 pub(crate) fn de_list_app_instances(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_app_instances::builders::ListAppInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_list_app_instances(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AppInstances" => {
-                    builder = builder.set_app_instances(crate::protocol_serde::shape_app_instance_list::de_app_instance_list(tokens)?);
+                    builder = builder.set_app_instances(crate::protocol_serde::shape_app_instance_list::de_app_instance_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

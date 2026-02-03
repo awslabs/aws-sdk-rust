@@ -209,6 +209,7 @@ pub fn ser_aws_ec2_launch_template_data_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2LaunchTemplateDataDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -224,22 +225,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BlockDeviceMappingSet" => {
                             builder = builder.set_block_device_mapping_set(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_block_device_mapping_set_list::de_aws_ec2_launch_template_data_block_device_mapping_set_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_block_device_mapping_set_list::de_aws_ec2_launch_template_data_block_device_mapping_set_list(tokens, _value)?
                                 );
                         }
                         "CapacityReservationSpecification" => {
                             builder = builder.set_capacity_reservation_specification(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_capacity_reservation_specification_details::de_aws_ec2_launch_template_data_capacity_reservation_specification_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_capacity_reservation_specification_details::de_aws_ec2_launch_template_data_capacity_reservation_specification_details(tokens, _value)?
                                 );
                         }
                         "CpuOptions" => {
                             builder = builder.set_cpu_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_cpu_options_details::de_aws_ec2_launch_template_data_cpu_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_cpu_options_details::de_aws_ec2_launch_template_data_cpu_options_details(tokens, _value)?
                                 );
                         }
                         "CreditSpecification" => {
                             builder = builder.set_credit_specification(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_credit_specification_details::de_aws_ec2_launch_template_data_credit_specification_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_credit_specification_details::de_aws_ec2_launch_template_data_credit_specification_details(tokens, _value)?
                                 );
                         }
                         "DisableApiStop" => {
@@ -253,27 +254,27 @@ where
                         }
                         "ElasticGpuSpecificationSet" => {
                             builder = builder.set_elastic_gpu_specification_set(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_gpu_specification_set_list::de_aws_ec2_launch_template_data_elastic_gpu_specification_set_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_gpu_specification_set_list::de_aws_ec2_launch_template_data_elastic_gpu_specification_set_list(tokens, _value)?
                                 );
                         }
                         "ElasticInferenceAcceleratorSet" => {
                             builder = builder.set_elastic_inference_accelerator_set(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_inference_accelerator_set_list::de_aws_ec2_launch_template_data_elastic_inference_accelerator_set_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_elastic_inference_accelerator_set_list::de_aws_ec2_launch_template_data_elastic_inference_accelerator_set_list(tokens, _value)?
                                 );
                         }
                         "EnclaveOptions" => {
                             builder = builder.set_enclave_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_enclave_options_details::de_aws_ec2_launch_template_data_enclave_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_enclave_options_details::de_aws_ec2_launch_template_data_enclave_options_details(tokens, _value)?
                                 );
                         }
                         "HibernationOptions" => {
                             builder = builder.set_hibernation_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_hibernation_options_details::de_aws_ec2_launch_template_data_hibernation_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_hibernation_options_details::de_aws_ec2_launch_template_data_hibernation_options_details(tokens, _value)?
                                 );
                         }
                         "IamInstanceProfile" => {
                             builder = builder.set_iam_instance_profile(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_iam_instance_profile_details::de_aws_ec2_launch_template_data_iam_instance_profile_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_iam_instance_profile_details::de_aws_ec2_launch_template_data_iam_instance_profile_details(tokens, _value)?
                                 );
                         }
                         "ImageId" => {
@@ -292,12 +293,12 @@ where
                         }
                         "InstanceMarketOptions" => {
                             builder = builder.set_instance_market_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_market_options_details::de_aws_ec2_launch_template_data_instance_market_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_market_options_details::de_aws_ec2_launch_template_data_instance_market_options_details(tokens, _value)?
                                 );
                         }
                         "InstanceRequirements" => {
                             builder = builder.set_instance_requirements(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_details::de_aws_ec2_launch_template_data_instance_requirements_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_details::de_aws_ec2_launch_template_data_instance_requirements_details(tokens, _value)?
                                 );
                         }
                         "InstanceType" => {
@@ -323,37 +324,37 @@ where
                         }
                         "LicenseSet" => {
                             builder = builder.set_license_set(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_license_set_list::de_aws_ec2_launch_template_data_license_set_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_license_set_list::de_aws_ec2_launch_template_data_license_set_list(tokens, _value)?
                                 );
                         }
                         "MaintenanceOptions" => {
                             builder = builder.set_maintenance_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_maintenance_options_details::de_aws_ec2_launch_template_data_maintenance_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_maintenance_options_details::de_aws_ec2_launch_template_data_maintenance_options_details(tokens, _value)?
                                 );
                         }
                         "MetadataOptions" => {
                             builder = builder.set_metadata_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_metadata_options_details::de_aws_ec2_launch_template_data_metadata_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_metadata_options_details::de_aws_ec2_launch_template_data_metadata_options_details(tokens, _value)?
                                 );
                         }
                         "Monitoring" => {
                             builder = builder.set_monitoring(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_monitoring_details::de_aws_ec2_launch_template_data_monitoring_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_monitoring_details::de_aws_ec2_launch_template_data_monitoring_details(tokens, _value)?
                                 );
                         }
                         "NetworkInterfaceSet" => {
                             builder = builder.set_network_interface_set(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_list::de_aws_ec2_launch_template_data_network_interface_set_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_network_interface_set_list::de_aws_ec2_launch_template_data_network_interface_set_list(tokens, _value)?
                                 );
                         }
                         "Placement" => {
                             builder = builder.set_placement(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_placement_details::de_aws_ec2_launch_template_data_placement_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_placement_details::de_aws_ec2_launch_template_data_placement_details(tokens, _value)?
                                 );
                         }
                         "PrivateDnsNameOptions" => {
                             builder = builder.set_private_dns_name_options(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_private_dns_name_options_details::de_aws_ec2_launch_template_data_private_dns_name_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_private_dns_name_options_details::de_aws_ec2_launch_template_data_private_dns_name_options_details(tokens, _value)?
                                 );
                         }
                         "RamDiskId" => {
@@ -364,12 +365,14 @@ where
                             );
                         }
                         "SecurityGroupIdSet" => {
-                            builder = builder
-                                .set_security_group_id_set(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_security_group_id_set(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "SecurityGroupSet" => {
-                            builder =
-                                builder.set_security_group_set(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_security_group_set(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "UserData" => {
                             builder = builder.set_user_data(

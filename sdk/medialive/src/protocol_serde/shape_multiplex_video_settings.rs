@@ -20,6 +20,7 @@ pub fn ser_multiplex_video_settings(
 
 pub(crate) fn de_multiplex_video_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiplexVideoSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "statmuxSettings" => {
                             builder = builder.set_statmux_settings(
-                                crate::protocol_serde::shape_multiplex_statmux_video_settings::de_multiplex_statmux_video_settings(tokens)?,
+                                crate::protocol_serde::shape_multiplex_statmux_video_settings::de_multiplex_statmux_video_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

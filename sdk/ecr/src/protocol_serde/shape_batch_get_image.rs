@@ -127,13 +127,13 @@ pub fn ser_batch_get_image_input(
 }
 
 pub(crate) fn de_batch_get_image(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_image::builders::BatchGetImageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_image::builders::BatchGetImageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,10 +141,10 @@ pub(crate) fn de_batch_get_image(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "images" => {
-                    builder = builder.set_images(crate::protocol_serde::shape_image_list::de_image_list(tokens)?);
+                    builder = builder.set_images(crate::protocol_serde::shape_image_list::de_image_list(tokens, _value)?);
                 }
                 "failures" => {
-                    builder = builder.set_failures(crate::protocol_serde::shape_image_failure_list::de_image_failure_list(tokens)?);
+                    builder = builder.set_failures(crate::protocol_serde::shape_image_failure_list::de_image_failure_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

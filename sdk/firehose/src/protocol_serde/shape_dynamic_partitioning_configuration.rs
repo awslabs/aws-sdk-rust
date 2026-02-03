@@ -17,6 +17,7 @@ pub fn ser_dynamic_partitioning_configuration(
 
 pub(crate) fn de_dynamic_partitioning_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DynamicPartitioningConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RetryOptions" => {
-                            builder = builder.set_retry_options(crate::protocol_serde::shape_retry_options::de_retry_options(tokens)?);
+                            builder = builder.set_retry_options(crate::protocol_serde::shape_retry_options::de_retry_options(tokens, _value)?);
                         }
                         "Enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

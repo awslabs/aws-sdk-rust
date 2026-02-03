@@ -30,10 +30,10 @@ mod test {
 
     #[test]
     fn parse_aws_query_compatible_error_should_parse_code_and_type_fields() {
-        let mut response: http::Response<()> = http::Response::default();
+        let mut response: http_1x::Response<()> = http_1x::Response::default();
         response.headers_mut().insert(
             X_AMZN_QUERY_ERROR,
-            http::HeaderValue::from_static("AWS.SimpleQueueService.NonExistentQueue;Sender"),
+            http_1x::HeaderValue::from_static("AWS.SimpleQueueService.NonExistentQueue;Sender"),
         );
         let response = Response::try_from(response).unwrap();
 
@@ -44,10 +44,10 @@ mod test {
 
     #[test]
     fn parse_aws_query_compatible_error_should_return_none_when_header_value_has_no_delimiter() {
-        let mut response: http::Response<()> = http::Response::default();
+        let mut response: http_1x::Response<()> = http_1x::Response::default();
         response.headers_mut().insert(
             X_AMZN_QUERY_ERROR,
-            http::HeaderValue::from_static("AWS.SimpleQueueService.NonExistentQueue"),
+            http_1x::HeaderValue::from_static("AWS.SimpleQueueService.NonExistentQueue"),
         );
         let response = Response::try_from(response).unwrap();
 
@@ -58,10 +58,11 @@ mod test {
 
     #[test]
     fn parse_aws_query_compatible_error_should_return_none_when_there_is_no_target_header() {
-        let mut response: http::Response<()> = http::Response::default();
-        response
-            .headers_mut()
-            .insert("x-amzn-requestid", http::HeaderValue::from_static("a918fbf2-457a-4fe1-99ba-5685ce220fc1"));
+        let mut response: http_1x::Response<()> = http_1x::Response::default();
+        response.headers_mut().insert(
+            "x-amzn-requestid",
+            http_1x::HeaderValue::from_static("a918fbf2-457a-4fe1-99ba-5685ce220fc1"),
+        );
         let response = Response::try_from(response).unwrap();
 
         let actual = parse_aws_query_compatible_error(response.headers());

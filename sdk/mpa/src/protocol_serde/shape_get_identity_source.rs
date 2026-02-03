@@ -110,13 +110,13 @@ pub fn de_get_identity_source_http_response(
 }
 
 pub(crate) fn de_get_identity_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,7 +138,7 @@ pub(crate) fn de_get_identity_source(
                 }
                 "IdentitySourceParameters" => {
                     builder = builder.set_identity_source_parameters(
-                        crate::protocol_serde::shape_identity_source_parameters_for_get::de_identity_source_parameters_for_get(tokens)?,
+                        crate::protocol_serde::shape_identity_source_parameters_for_get::de_identity_source_parameters_for_get(tokens, _value)?,
                     );
                 }
                 "IdentitySourceType" => {

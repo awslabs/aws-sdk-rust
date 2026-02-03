@@ -68,6 +68,7 @@ pub fn ser_grid_layout_element(
 
 pub(crate) fn de_grid_layout_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GridLayoutElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -125,21 +126,24 @@ where
                         }
                         "BorderStyle" => {
                             builder = builder.set_border_style(
-                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens)?,
+                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens, _value)?,
                             );
                         }
                         "SelectedBorderStyle" => {
                             builder = builder.set_selected_border_style(
-                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens)?,
+                                crate::protocol_serde::shape_grid_layout_element_border_style::de_grid_layout_element_border_style(tokens, _value)?,
                             );
                         }
                         "BackgroundStyle" => {
                             builder = builder.set_background_style(
-                                crate::protocol_serde::shape_grid_layout_element_background_style::de_grid_layout_element_background_style(tokens)?,
+                                crate::protocol_serde::shape_grid_layout_element_background_style::de_grid_layout_element_background_style(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LoadingAnimation" => {
-                            builder = builder.set_loading_animation(crate::protocol_serde::shape_loading_animation::de_loading_animation(tokens)?);
+                            builder =
+                                builder.set_loading_animation(crate::protocol_serde::shape_loading_animation::de_loading_animation(tokens, _value)?);
                         }
                         "BorderRadius" => {
                             builder = builder.set_border_radius(

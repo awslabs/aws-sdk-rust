@@ -45,6 +45,7 @@ pub fn ser_auto_branch_creation_config(
 
 pub(crate) fn de_auto_branch_creation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoBranchCreationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,8 +77,9 @@ where
                             builder = builder.set_enable_auto_build(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "environmentVariables" => {
-                            builder = builder
-                                .set_environment_variables(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                            builder = builder.set_environment_variables(
+                                crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value)?,
+                            );
                         }
                         "basicAuthCredentials" => {
                             builder = builder.set_basic_auth_credentials(

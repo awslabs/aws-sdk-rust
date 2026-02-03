@@ -157,7 +157,7 @@ mod create_resource_share;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ram::Error> {
 /// # let client: aws_sdk_ram::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_resource_share_invitation()
 ///     .customize()

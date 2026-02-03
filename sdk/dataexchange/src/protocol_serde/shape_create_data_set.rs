@@ -121,13 +121,13 @@ pub fn ser_create_data_set_input(
 }
 
 pub(crate) fn de_create_data_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_data_set::builders::CreateDataSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_data_set::builders::CreateDataSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -183,7 +183,7 @@ pub(crate) fn de_create_data_set(
                     );
                 }
                 "OriginDetails" => {
-                    builder = builder.set_origin_details(crate::protocol_serde::shape_origin_details::de_origin_details(tokens)?);
+                    builder = builder.set_origin_details(crate::protocol_serde::shape_origin_details::de_origin_details(tokens, _value)?);
                 }
                 "SourceId" => {
                     builder = builder.set_source_id(
@@ -193,7 +193,7 @@ pub(crate) fn de_create_data_set(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 "UpdatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

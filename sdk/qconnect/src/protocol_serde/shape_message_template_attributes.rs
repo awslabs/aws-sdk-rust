@@ -36,6 +36,7 @@ pub fn ser_message_template_attributes(
 
 pub(crate) fn de_message_template_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageTemplateAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,18 +51,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "systemAttributes" => {
-                            builder = builder.set_system_attributes(crate::protocol_serde::shape_system_attributes::de_system_attributes(tokens)?);
+                            builder =
+                                builder.set_system_attributes(crate::protocol_serde::shape_system_attributes::de_system_attributes(tokens, _value)?);
                         }
                         "agentAttributes" => {
-                            builder = builder.set_agent_attributes(crate::protocol_serde::shape_agent_attributes::de_agent_attributes(tokens)?);
+                            builder =
+                                builder.set_agent_attributes(crate::protocol_serde::shape_agent_attributes::de_agent_attributes(tokens, _value)?);
                         }
                         "customerProfileAttributes" => {
                             builder = builder.set_customer_profile_attributes(
-                                crate::protocol_serde::shape_customer_profile_attributes::de_customer_profile_attributes(tokens)?,
+                                crate::protocol_serde::shape_customer_profile_attributes::de_customer_profile_attributes(tokens, _value)?,
                             );
                         }
                         "customAttributes" => {
-                            builder = builder.set_custom_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(tokens)?);
+                            builder =
+                                builder.set_custom_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

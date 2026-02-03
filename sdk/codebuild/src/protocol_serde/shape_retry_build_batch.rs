@@ -78,13 +78,13 @@ pub fn ser_retry_build_batch_input(
 }
 
 pub(crate) fn de_retry_build_batch(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::retry_build_batch::builders::RetryBuildBatchOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::retry_build_batch::builders::RetryBuildBatchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -92,7 +92,7 @@ pub(crate) fn de_retry_build_batch(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "buildBatch" => {
-                    builder = builder.set_build_batch(crate::protocol_serde::shape_build_batch::de_build_batch(tokens)?);
+                    builder = builder.set_build_batch(crate::protocol_serde::shape_build_batch::de_build_batch(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

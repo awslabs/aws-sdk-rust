@@ -14,6 +14,7 @@ pub fn ser_aws_athena_work_group_configuration_result_configuration_encryption_c
 
 pub(crate) fn de_aws_athena_work_group_configuration_result_configuration_encryption_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

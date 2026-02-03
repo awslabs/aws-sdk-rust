@@ -105,13 +105,13 @@ pub fn de_get_integration_http_response(
 }
 
 pub(crate) fn de_get_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,7 +119,7 @@ pub(crate) fn de_get_integration(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cacheKeyParameters" => {
-                    builder = builder.set_cache_key_parameters(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_cache_key_parameters(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "cacheNamespace" => {
                     builder = builder.set_cache_namespace(
@@ -165,7 +165,7 @@ pub(crate) fn de_get_integration(
                 }
                 "integrationResponses" => {
                     builder = builder.set_integration_responses(
-                        crate::protocol_serde::shape_map_of_integration_response::de_map_of_integration_response(tokens)?,
+                        crate::protocol_serde::shape_map_of_integration_response::de_map_of_integration_response(tokens, _value)?,
                     );
                 }
                 "integrationTarget" => {
@@ -183,12 +183,14 @@ pub(crate) fn de_get_integration(
                     );
                 }
                 "requestParameters" => {
-                    builder =
-                        builder.set_request_parameters(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_request_parameters(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "requestTemplates" => {
-                    builder =
-                        builder.set_request_templates(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_request_templates(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "responseTransferMode" => {
                     builder = builder.set_response_transfer_mode(
@@ -205,7 +207,7 @@ pub(crate) fn de_get_integration(
                     );
                 }
                 "tlsConfig" => {
-                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens)?);
+                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

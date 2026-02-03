@@ -183,7 +183,7 @@ mod create_vpc_peering_connection;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_gamelift::Error> {
 /// # let client: aws_sdk_gamelift::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_match()
 ///     .customize()

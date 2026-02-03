@@ -102,13 +102,13 @@ pub fn de_describe_bulk_import_job_http_response(
 }
 
 pub(crate) fn de_describe_bulk_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,14 +122,15 @@ pub(crate) fn de_describe_bulk_import_job(
                     builder = builder.set_delete_files_after_import(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "errorReportLocation" => {
-                    builder =
-                        builder.set_error_report_location(crate::protocol_serde::shape_error_report_location::de_error_report_location(tokens)?);
+                    builder = builder.set_error_report_location(crate::protocol_serde::shape_error_report_location::de_error_report_location(
+                        tokens, _value,
+                    )?);
                 }
                 "files" => {
-                    builder = builder.set_files(crate::protocol_serde::shape_files::de_files(tokens)?);
+                    builder = builder.set_files(crate::protocol_serde::shape_files::de_files(tokens, _value)?);
                 }
                 "jobConfiguration" => {
-                    builder = builder.set_job_configuration(crate::protocol_serde::shape_job_configuration::de_job_configuration(tokens)?);
+                    builder = builder.set_job_configuration(crate::protocol_serde::shape_job_configuration::de_job_configuration(tokens, _value)?);
                 }
                 "jobCreationDate" => {
                     builder = builder.set_job_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

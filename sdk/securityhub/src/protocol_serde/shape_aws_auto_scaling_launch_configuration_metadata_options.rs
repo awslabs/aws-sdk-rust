@@ -20,6 +20,7 @@ pub fn ser_aws_auto_scaling_launch_configuration_metadata_options(
 
 pub(crate) fn de_aws_auto_scaling_launch_configuration_metadata_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -154,13 +154,13 @@ pub fn de_describe_input_security_group_http_response(
 }
 
 pub(crate) fn de_describe_input_security_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -182,7 +182,7 @@ pub(crate) fn de_describe_input_security_group(
                     );
                 }
                 "inputs" => {
-                    builder = builder.set_inputs(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_inputs(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -192,11 +192,12 @@ pub(crate) fn de_describe_input_security_group(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "whitelistRules" => {
-                    builder = builder
-                        .set_whitelist_rules(crate::protocol_serde::shape_list_of_input_whitelist_rule::de_list_of_input_whitelist_rule(tokens)?);
+                    builder = builder.set_whitelist_rules(
+                        crate::protocol_serde::shape_list_of_input_whitelist_rule::de_list_of_input_whitelist_rule(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

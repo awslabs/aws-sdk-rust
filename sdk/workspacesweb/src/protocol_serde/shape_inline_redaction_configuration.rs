@@ -44,6 +44,7 @@ pub fn ser_inline_redaction_configuration(
 
 pub(crate) fn de_inline_redaction_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InlineRedactionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,17 +60,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inlineRedactionPatterns" => {
                             builder = builder.set_inline_redaction_patterns(
-                                crate::protocol_serde::shape_inline_redaction_patterns::de_inline_redaction_patterns(tokens)?,
+                                crate::protocol_serde::shape_inline_redaction_patterns::de_inline_redaction_patterns(tokens, _value)?,
                             );
                         }
                         "globalEnforcedUrls" => {
                             builder = builder.set_global_enforced_urls(
-                                crate::protocol_serde::shape_global_inline_redaction_urls::de_global_inline_redaction_urls(tokens)?,
+                                crate::protocol_serde::shape_global_inline_redaction_urls::de_global_inline_redaction_urls(tokens, _value)?,
                             );
                         }
                         "globalExemptUrls" => {
                             builder = builder.set_global_exempt_urls(
-                                crate::protocol_serde::shape_global_inline_redaction_urls::de_global_inline_redaction_urls(tokens)?,
+                                crate::protocol_serde::shape_global_inline_redaction_urls::de_global_inline_redaction_urls(tokens, _value)?,
                             );
                         }
                         "globalConfidenceLevel" => {

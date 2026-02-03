@@ -159,7 +159,7 @@ mod create_return_shipping_label;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_snowball::Error> {
 /// # let client: aws_sdk_snowball::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_cluster()
 ///     .customize()

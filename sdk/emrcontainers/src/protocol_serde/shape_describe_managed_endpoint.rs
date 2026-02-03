@@ -93,13 +93,13 @@ pub fn de_describe_managed_endpoint_http_response(
 }
 
 pub(crate) fn de_describe_managed_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_managed_endpoint::builders::DescribeManagedEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_describe_managed_endpoint(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "endpoint" => {
-                    builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens)?);
+                    builder = builder.set_endpoint(crate::protocol_serde::shape_endpoint::de_endpoint(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

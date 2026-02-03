@@ -38,6 +38,7 @@ pub fn ser_sub_slot_value_elicitation_setting(
 
 pub(crate) fn de_sub_slot_value_elicitation_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SubSlotValueElicitationSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,20 +54,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "defaultValueSpecification" => {
                             builder = builder.set_default_value_specification(
-                                crate::protocol_serde::shape_slot_default_value_specification::de_slot_default_value_specification(tokens)?,
+                                crate::protocol_serde::shape_slot_default_value_specification::de_slot_default_value_specification(tokens, _value)?,
                             );
                         }
                         "promptSpecification" => {
-                            builder =
-                                builder.set_prompt_specification(crate::protocol_serde::shape_prompt_specification::de_prompt_specification(tokens)?);
+                            builder = builder.set_prompt_specification(crate::protocol_serde::shape_prompt_specification::de_prompt_specification(
+                                tokens, _value,
+                            )?);
                         }
                         "sampleUtterances" => {
-                            builder = builder
-                                .set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(tokens)?);
+                            builder = builder.set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(
+                                tokens, _value,
+                            )?);
                         }
                         "waitAndContinueSpecification" => {
                             builder = builder.set_wait_and_continue_specification(
-                                crate::protocol_serde::shape_wait_and_continue_specification::de_wait_and_continue_specification(tokens)?,
+                                crate::protocol_serde::shape_wait_and_continue_specification::de_wait_and_continue_specification(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -171,13 +171,13 @@ pub fn ser_start_data_source_run_input(
 }
 
 pub(crate) fn de_start_data_source_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_data_source_run::builders::StartDataSourceRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_data_source_run::builders::StartDataSourceRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -213,7 +213,7 @@ pub(crate) fn de_start_data_source_run(
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "id" => {
@@ -232,7 +232,7 @@ pub(crate) fn de_start_data_source_run(
                 }
                 "runStatisticsForAssets" => {
                     builder = builder.set_run_statistics_for_assets(
-                        crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens)?,
+                        crate::protocol_serde::shape_run_statistics_for_assets::de_run_statistics_for_assets(tokens, _value)?,
                     );
                 }
                 "startedAt" => {

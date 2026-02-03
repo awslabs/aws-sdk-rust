@@ -171,7 +171,7 @@ mod create_tiering_configuration;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_backup::Error> {
 /// # let client: aws_sdk_backup::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_backup_vault_mpa_approval_team()
 ///     .customize()

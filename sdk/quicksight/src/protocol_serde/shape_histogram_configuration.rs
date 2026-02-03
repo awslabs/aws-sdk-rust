@@ -62,6 +62,7 @@ pub fn ser_histogram_configuration(
 
 pub(crate) fn de_histogram_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HistogramConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,36 +77,43 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
-                            builder = builder.set_field_wells(crate::protocol_serde::shape_histogram_field_wells::de_histogram_field_wells(tokens)?);
+                            builder = builder.set_field_wells(crate::protocol_serde::shape_histogram_field_wells::de_histogram_field_wells(
+                                tokens, _value,
+                            )?);
                         }
                         "XAxisDisplayOptions" => {
-                            builder = builder
-                                .set_x_axis_display_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
+                            builder = builder.set_x_axis_display_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(
+                                tokens, _value,
+                            )?);
                         }
                         "XAxisLabelOptions" => {
                             builder = builder.set_x_axis_label_options(
-                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens)?,
+                                crate::protocol_serde::shape_chart_axis_label_options::de_chart_axis_label_options(tokens, _value)?,
                             );
                         }
                         "YAxisDisplayOptions" => {
-                            builder = builder
-                                .set_y_axis_display_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
+                            builder = builder.set_y_axis_display_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(
+                                tokens, _value,
+                            )?);
                         }
                         "BinOptions" => {
-                            builder = builder.set_bin_options(crate::protocol_serde::shape_histogram_bin_options::de_histogram_bin_options(tokens)?);
+                            builder = builder.set_bin_options(crate::protocol_serde::shape_histogram_bin_options::de_histogram_bin_options(
+                                tokens, _value,
+                            )?);
                         }
                         "DataLabels" => {
-                            builder = builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens)?);
+                            builder =
+                                builder.set_data_labels(crate::protocol_serde::shape_data_label_options::de_data_label_options(tokens, _value)?);
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "VisualPalette" => {
-                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                            builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens, _value)?);
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

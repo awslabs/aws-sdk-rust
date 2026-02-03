@@ -23,6 +23,7 @@ pub fn ser_s3_access_point_configuration(
 
 pub(crate) fn de_s3_access_point_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3AccessPointConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,14 @@ where
                         }
                         "publicAccessBlock" => {
                             builder = builder.set_public_access_block(
-                                crate::protocol_serde::shape_s3_public_access_block_configuration::de_s3_public_access_block_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_public_access_block_configuration::de_s3_public_access_block_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "networkOrigin" => {
                             builder = builder.set_network_origin(
-                                crate::protocol_serde::shape_network_origin_configuration::de_network_origin_configuration(tokens)?,
+                                crate::protocol_serde::shape_network_origin_configuration::de_network_origin_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -23,6 +23,7 @@ pub fn ser_aws_efs_access_point_posix_user_details(
 
 pub(crate) fn de_aws_efs_access_point_posix_user_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEfsAccessPointPosixUserDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "SecondaryGids" => {
-                            builder =
-                                builder.set_secondary_gids(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_secondary_gids(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Uid" => {
                             builder = builder.set_uid(

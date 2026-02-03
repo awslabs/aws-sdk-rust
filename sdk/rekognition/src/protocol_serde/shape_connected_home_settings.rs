@@ -23,6 +23,7 @@ pub fn ser_connected_home_settings(
 
 pub(crate) fn de_connected_home_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConnectedHomeSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_connected_home_labels::de_connected_home_labels(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_connected_home_labels::de_connected_home_labels(
+                                tokens, _value,
+                            )?);
                         }
                         "MinConfidence" => {
                             builder = builder.set_min_confidence(

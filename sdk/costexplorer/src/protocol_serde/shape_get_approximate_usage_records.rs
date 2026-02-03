@@ -84,13 +84,13 @@ pub fn ser_get_approximate_usage_records_input(
 }
 
 pub(crate) fn de_get_approximate_usage_records(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_approximate_usage_records::builders::GetApproximateUsageRecordsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_get_approximate_usage_records(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Services" => {
                     builder = builder.set_services(
-                        crate::protocol_serde::shape_approximate_usage_records_per_service::de_approximate_usage_records_per_service(tokens)?,
+                        crate::protocol_serde::shape_approximate_usage_records_per_service::de_approximate_usage_records_per_service(tokens, _value)?,
                     );
                 }
                 "TotalRecords" => {
@@ -110,7 +110,7 @@ pub(crate) fn de_get_approximate_usage_records(
                     );
                 }
                 "LookbackPeriod" => {
-                    builder = builder.set_lookback_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens)?);
+                    builder = builder.set_lookback_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

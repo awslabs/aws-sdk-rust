@@ -59,6 +59,7 @@ pub fn ser_pipe_source_self_managed_kafka_parameters(
 
 pub(crate) fn de_pipe_source_self_managed_kafka_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeSourceSelfManagedKafkaParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,7 +89,7 @@ where
                         }
                         "AdditionalBootstrapServers" => {
                             builder = builder.set_additional_bootstrap_servers(
-                                crate::protocol_serde::shape_kafka_bootstrap_servers::de_kafka_bootstrap_servers(tokens)?,
+                                crate::protocol_serde::shape_kafka_bootstrap_servers::de_kafka_bootstrap_servers(tokens, _value)?,
                             );
                         }
                         "BatchSize" => {
@@ -114,7 +115,7 @@ where
                         }
                         "Credentials" => {
                             builder = builder.set_credentials(
-                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::de_self_managed_kafka_access_configuration_credentials(tokens)?
+                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_credentials::de_self_managed_kafka_access_configuration_credentials(tokens, _value)?
                                 );
                         }
                         "ServerRootCaCertificate" => {
@@ -126,7 +127,7 @@ where
                         }
                         "Vpc" => {
                             builder = builder.set_vpc(
-                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::de_self_managed_kafka_access_configuration_vpc(tokens)?
+                                    crate::protocol_serde::shape_self_managed_kafka_access_configuration_vpc::de_self_managed_kafka_access_configuration_vpc(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -11,6 +11,7 @@ pub fn ser_aws_elasticsearch_domain_node_to_node_encryption_options(
 
 pub(crate) fn de_aws_elasticsearch_domain_node_to_node_encryption_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

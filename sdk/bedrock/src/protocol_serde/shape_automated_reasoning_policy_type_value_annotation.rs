@@ -42,6 +42,7 @@ pub fn ser_automated_reasoning_policy_type_value_annotation(
 
 pub(crate) fn de_automated_reasoning_policy_type_value_annotation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyTypeValueAnnotation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,19 +73,19 @@ where
                     variant = match key.as_ref() {
                             "addTypeValue" => {
                                 Some(crate::types::AutomatedReasoningPolicyTypeValueAnnotation::AddTypeValue(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_add_type_value::de_automated_reasoning_policy_add_type_value(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_add_type_value::de_automated_reasoning_policy_add_type_value(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addTypeValue' cannot be null"))?
                                 ))
                             }
                             "updateTypeValue" => {
                                 Some(crate::types::AutomatedReasoningPolicyTypeValueAnnotation::UpdateTypeValue(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_type_value::de_automated_reasoning_policy_update_type_value(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_type_value::de_automated_reasoning_policy_update_type_value(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateTypeValue' cannot be null"))?
                                 ))
                             }
                             "deleteTypeValue" => {
                                 Some(crate::types::AutomatedReasoningPolicyTypeValueAnnotation::DeleteTypeValue(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_type_value::de_automated_reasoning_policy_delete_type_value(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_type_value::de_automated_reasoning_policy_delete_type_value(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'deleteTypeValue' cannot be null"))?
                                 ))
                             }

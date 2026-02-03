@@ -38,6 +38,7 @@ pub fn ser_video_codec_settings(
 
 pub(crate) fn de_video_codec_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoCodecSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,20 +53,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "frameCaptureSettings" => {
-                            builder = builder
-                                .set_frame_capture_settings(crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens)?);
+                            builder = builder.set_frame_capture_settings(
+                                crate::protocol_serde::shape_frame_capture_settings::de_frame_capture_settings(tokens, _value)?,
+                            );
                         }
                         "h264Settings" => {
-                            builder = builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens)?);
+                            builder = builder.set_h264_settings(crate::protocol_serde::shape_h264_settings::de_h264_settings(tokens, _value)?);
                         }
                         "h265Settings" => {
-                            builder = builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens)?);
+                            builder = builder.set_h265_settings(crate::protocol_serde::shape_h265_settings::de_h265_settings(tokens, _value)?);
                         }
                         "mpeg2Settings" => {
-                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens)?);
+                            builder = builder.set_mpeg2_settings(crate::protocol_serde::shape_mpeg2_settings::de_mpeg2_settings(tokens, _value)?);
                         }
                         "av1Settings" => {
-                            builder = builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens)?);
+                            builder = builder.set_av1_settings(crate::protocol_serde::shape_av1_settings::de_av1_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -26,6 +26,7 @@ pub fn ser_avail_settings(
 
 pub(crate) fn de_avail_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AvailSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,15 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "esam" => {
-                            builder = builder.set_esam(crate::protocol_serde::shape_esam::de_esam(tokens)?);
+                            builder = builder.set_esam(crate::protocol_serde::shape_esam::de_esam(tokens, _value)?);
                         }
                         "scte35SpliceInsert" => {
-                            builder =
-                                builder.set_scte35_splice_insert(crate::protocol_serde::shape_scte35_splice_insert::de_scte35_splice_insert(tokens)?);
+                            builder = builder.set_scte35_splice_insert(crate::protocol_serde::shape_scte35_splice_insert::de_scte35_splice_insert(
+                                tokens, _value,
+                            )?);
                         }
                         "scte35TimeSignalApos" => {
                             builder = builder.set_scte35_time_signal_apos(
-                                crate::protocol_serde::shape_scte35_time_signal_apos::de_scte35_time_signal_apos(tokens)?,
+                                crate::protocol_serde::shape_scte35_time_signal_apos::de_scte35_time_signal_apos(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

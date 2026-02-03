@@ -128,13 +128,13 @@ pub fn ser_update_method_input(
 }
 
 pub(crate) fn de_update_method(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_method::builders::UpdateMethodOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_method::builders::UpdateMethodOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,7 +145,7 @@ pub(crate) fn de_update_method(
                     builder = builder.set_api_key_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "authorizationScopes" => {
-                    builder = builder.set_authorization_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_authorization_scopes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "authorizationType" => {
                     builder = builder.set_authorization_type(
@@ -169,10 +169,12 @@ pub(crate) fn de_update_method(
                     );
                 }
                 "methodIntegration" => {
-                    builder = builder.set_method_integration(crate::protocol_serde::shape_integration::de_integration(tokens)?);
+                    builder = builder.set_method_integration(crate::protocol_serde::shape_integration::de_integration(tokens, _value)?);
                 }
                 "methodResponses" => {
-                    builder = builder.set_method_responses(crate::protocol_serde::shape_map_of_method_response::de_map_of_method_response(tokens)?);
+                    builder = builder.set_method_responses(crate::protocol_serde::shape_map_of_method_response::de_map_of_method_response(
+                        tokens, _value,
+                    )?);
                 }
                 "operationName" => {
                     builder = builder.set_operation_name(
@@ -182,11 +184,13 @@ pub(crate) fn de_update_method(
                     );
                 }
                 "requestModels" => {
-                    builder = builder.set_request_models(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_request_models(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "requestParameters" => {
                     builder = builder.set_request_parameters(crate::protocol_serde::shape_map_of_string_to_boolean::de_map_of_string_to_boolean(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "requestValidatorId" => {

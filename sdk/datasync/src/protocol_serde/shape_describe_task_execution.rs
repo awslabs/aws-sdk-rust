@@ -84,13 +84,13 @@ pub fn ser_describe_task_execution_input(
 }
 
 pub(crate) fn de_describe_task_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -112,16 +112,16 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "Options" => {
-                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens)?);
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value)?);
                 }
                 "Excludes" => {
-                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                 }
                 "Includes" => {
-                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                 }
                 "ManifestConfig" => {
-                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens)?);
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens, _value)?);
                 }
                 "StartTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -172,10 +172,11 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "Result" => {
-                    builder = builder.set_result(crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens)?);
+                    builder = builder
+                        .set_result(crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens, _value)?);
                 }
                 "TaskReportConfig" => {
-                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens, _value)?);
                 }
                 "FilesDeleted" => {
                     builder = builder.set_files_deleted(
@@ -199,7 +200,7 @@ pub(crate) fn de_describe_task_execution(
                     );
                 }
                 "ReportResult" => {
-                    builder = builder.set_report_result(crate::protocol_serde::shape_report_result::de_report_result(tokens)?);
+                    builder = builder.set_report_result(crate::protocol_serde::shape_report_result::de_report_result(tokens, _value)?);
                 }
                 "EstimatedFilesToDelete" => {
                     builder = builder.set_estimated_files_to_delete(
@@ -224,12 +225,12 @@ pub(crate) fn de_describe_task_execution(
                 }
                 "FilesListed" => {
                     builder = builder.set_files_listed(
-                        crate::protocol_serde::shape_task_execution_files_listed_detail::de_task_execution_files_listed_detail(tokens)?,
+                        crate::protocol_serde::shape_task_execution_files_listed_detail::de_task_execution_files_listed_detail(tokens, _value)?,
                     );
                 }
                 "FilesFailed" => {
                     builder = builder.set_files_failed(
-                        crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens)?,
+                        crate::protocol_serde::shape_task_execution_files_failed_detail::de_task_execution_files_failed_detail(tokens, _value)?,
                     );
                 }
                 "EstimatedFoldersToDelete" => {
@@ -283,12 +284,12 @@ pub(crate) fn de_describe_task_execution(
                 }
                 "FoldersListed" => {
                     builder = builder.set_folders_listed(
-                        crate::protocol_serde::shape_task_execution_folders_listed_detail::de_task_execution_folders_listed_detail(tokens)?,
+                        crate::protocol_serde::shape_task_execution_folders_listed_detail::de_task_execution_folders_listed_detail(tokens, _value)?,
                     );
                 }
                 "FoldersFailed" => {
                     builder = builder.set_folders_failed(
-                        crate::protocol_serde::shape_task_execution_folders_failed_detail::de_task_execution_folders_failed_detail(tokens)?,
+                        crate::protocol_serde::shape_task_execution_folders_failed_detail::de_task_execution_folders_failed_detail(tokens, _value)?,
                     );
                 }
                 "LaunchTime" => {

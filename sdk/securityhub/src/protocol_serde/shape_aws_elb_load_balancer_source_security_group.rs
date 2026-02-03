@@ -14,6 +14,7 @@ pub fn ser_aws_elb_load_balancer_source_security_group(
 
 pub(crate) fn de_aws_elb_load_balancer_source_security_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

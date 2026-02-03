@@ -29,6 +29,7 @@ pub fn ser_gateway_interceptor_configuration(
 
 pub(crate) fn de_gateway_interceptor_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GatewayInterceptorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,17 +45,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "interceptor" => {
                             builder = builder.set_interceptor(crate::protocol_serde::shape_interceptor_configuration::de_interceptor_configuration(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "interceptionPoints" => {
                             builder = builder.set_interception_points(
-                                crate::protocol_serde::shape_gateway_interception_points::de_gateway_interception_points(tokens)?,
+                                crate::protocol_serde::shape_gateway_interception_points::de_gateway_interception_points(tokens, _value)?,
                             );
                         }
                         "inputConfiguration" => {
                             builder = builder.set_input_configuration(
-                                crate::protocol_serde::shape_interceptor_input_configuration::de_interceptor_input_configuration(tokens)?,
+                                crate::protocol_serde::shape_interceptor_input_configuration::de_interceptor_input_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

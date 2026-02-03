@@ -129,13 +129,13 @@ pub fn ser_describe_experience_input(
 }
 
 pub(crate) fn de_describe_experience(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_experience::builders::DescribeExperienceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,11 +164,13 @@ pub(crate) fn de_describe_experience(
                     );
                 }
                 "Endpoints" => {
-                    builder = builder.set_endpoints(crate::protocol_serde::shape_experience_endpoints::de_experience_endpoints(tokens)?);
+                    builder = builder.set_endpoints(crate::protocol_serde::shape_experience_endpoints::de_experience_endpoints(
+                        tokens, _value,
+                    )?);
                 }
                 "Configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_experience_configuration::de_experience_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "CreatedAt" => {

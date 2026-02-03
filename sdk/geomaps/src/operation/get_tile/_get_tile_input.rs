@@ -6,7 +6,7 @@ pub struct GetTileInput {
     /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
     pub additional_features: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>,
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub tileset: ::std::option::Option<::std::string::String>,
     /// <p>The zoom value for the map tile.</p>
     pub z: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl GetTileInput {
         self.additional_features.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn tileset(&self) -> ::std::option::Option<&str> {
         self.tileset.as_deref()
     }
@@ -98,20 +98,20 @@ impl GetTileInputBuilder {
         &self.additional_features
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     /// This field is required.
     pub fn tileset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tileset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn set_tileset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tileset = input;
         self
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn get_tileset(&self) -> &::std::option::Option<::std::string::String> {
         &self.tileset
     }

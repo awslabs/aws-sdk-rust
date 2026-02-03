@@ -138,13 +138,13 @@ pub fn ser_accept_connection_invitation_input(
 }
 
 pub(crate) fn de_accept_connection_invitation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::accept_connection_invitation::builders::AcceptConnectionInvitationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::accept_connection_invitation::builders::AcceptConnectionInvitationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,7 +152,7 @@ pub(crate) fn de_accept_connection_invitation(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Connection" => {
-                    builder = builder.set_connection(crate::protocol_serde::shape_connection::de_connection(tokens)?);
+                    builder = builder.set_connection(crate::protocol_serde::shape_connection::de_connection(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

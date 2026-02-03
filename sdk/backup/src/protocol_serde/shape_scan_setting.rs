@@ -23,6 +23,7 @@ pub fn ser_scan_setting(
 
 pub(crate) fn de_scan_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScanSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "ResourceTypes" => {
-                            builder = builder.set_resource_types(crate::protocol_serde::shape_resource_types::de_resource_types(tokens)?);
+                            builder = builder.set_resource_types(crate::protocol_serde::shape_resource_types::de_resource_types(tokens, _value)?);
                         }
                         "ScannerRoleArn" => {
                             builder = builder.set_scanner_role_arn(

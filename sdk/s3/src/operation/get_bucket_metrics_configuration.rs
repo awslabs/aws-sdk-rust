@@ -224,8 +224,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBucketMet
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -233,7 +233,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBucketMet
                     crate::protocol_serde::shape_get_bucket_metrics_configuration::ser_get_bucket_metrics_configuration_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");

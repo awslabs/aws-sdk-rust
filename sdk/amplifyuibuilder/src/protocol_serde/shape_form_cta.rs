@@ -29,6 +29,7 @@ pub fn ser_form_cta(
 
 pub(crate) fn de_form_cta<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormCta>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,13 +51,13 @@ where
                             );
                         }
                         "clear" => {
-                            builder = builder.set_clear(crate::protocol_serde::shape_form_button::de_form_button(tokens)?);
+                            builder = builder.set_clear(crate::protocol_serde::shape_form_button::de_form_button(tokens, _value)?);
                         }
                         "cancel" => {
-                            builder = builder.set_cancel(crate::protocol_serde::shape_form_button::de_form_button(tokens)?);
+                            builder = builder.set_cancel(crate::protocol_serde::shape_form_button::de_form_button(tokens, _value)?);
                         }
                         "submit" => {
-                            builder = builder.set_submit(crate::protocol_serde::shape_form_button::de_form_button(tokens)?);
+                            builder = builder.set_submit(crate::protocol_serde::shape_form_button::de_form_button(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

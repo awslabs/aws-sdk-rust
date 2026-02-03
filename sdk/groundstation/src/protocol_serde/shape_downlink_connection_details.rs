@@ -20,6 +20,7 @@ pub fn ser_downlink_connection_details(
 
 pub(crate) fn de_downlink_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DownlinkConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "agentIpAndPortAddress" => {
                             builder = builder.set_agent_ip_and_port_address(
-                                crate::protocol_serde::shape_ranged_connection_details::de_ranged_connection_details(tokens)?,
+                                crate::protocol_serde::shape_ranged_connection_details::de_ranged_connection_details(tokens, _value)?,
                             );
                         }
                         "egressAddressAndPort" => {
-                            builder =
-                                builder.set_egress_address_and_port(crate::protocol_serde::shape_connection_details::de_connection_details(tokens)?);
+                            builder = builder
+                                .set_egress_address_and_port(crate::protocol_serde::shape_connection_details::de_connection_details(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

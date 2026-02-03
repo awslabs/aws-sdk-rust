@@ -47,6 +47,7 @@ pub fn ser_inline_redaction_pattern(
 
 pub(crate) fn de_inline_redaction_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InlineRedactionPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,18 +69,22 @@ where
                             );
                         }
                         "customPattern" => {
-                            builder = builder.set_custom_pattern(crate::protocol_serde::shape_custom_pattern::de_custom_pattern(tokens)?);
+                            builder = builder.set_custom_pattern(crate::protocol_serde::shape_custom_pattern::de_custom_pattern(tokens, _value)?);
                         }
                         "redactionPlaceHolder" => {
-                            builder = builder
-                                .set_redaction_place_holder(crate::protocol_serde::shape_redaction_place_holder::de_redaction_place_holder(tokens)?);
+                            builder = builder.set_redaction_place_holder(
+                                crate::protocol_serde::shape_redaction_place_holder::de_redaction_place_holder(tokens, _value)?,
+                            );
                         }
                         "enforcedUrls" => {
-                            builder =
-                                builder.set_enforced_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(tokens)?);
+                            builder = builder.set_enforced_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(
+                                tokens, _value,
+                            )?);
                         }
                         "exemptUrls" => {
-                            builder = builder.set_exempt_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(tokens)?);
+                            builder = builder.set_exempt_urls(crate::protocol_serde::shape_inline_redaction_urls::de_inline_redaction_urls(
+                                tokens, _value,
+                            )?);
                         }
                         "confidenceLevel" => {
                             builder = builder.set_confidence_level(

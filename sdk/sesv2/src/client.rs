@@ -179,7 +179,7 @@ mod create_tenant_resource_association;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_sesv2::Error> {
 /// # let client: aws_sdk_sesv2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_metric_data()
 ///     .customize()

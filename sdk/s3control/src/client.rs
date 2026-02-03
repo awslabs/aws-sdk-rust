@@ -165,7 +165,7 @@ mod create_storage_lens_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_s3control::Error> {
 /// # let client: aws_sdk_s3control::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_access_grants_identity_center()
 ///     .customize()

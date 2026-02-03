@@ -14,6 +14,7 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_private_ip_address
 
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

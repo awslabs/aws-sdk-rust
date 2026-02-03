@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_connectcontactlens::Error> {
 /// # let client: aws_sdk_connectcontactlens::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.list_realtime_contact_analysis_segments()
 ///     .customize()

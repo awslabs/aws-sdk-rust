@@ -151,7 +151,7 @@ mod commit_transaction;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_rdsdata::Error> {
 /// # let client: aws_sdk_rdsdata::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_execute_statement()
 ///     .customize()

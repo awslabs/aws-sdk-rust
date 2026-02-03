@@ -106,13 +106,13 @@ pub fn ser_list_odb_networks_input(
 }
 
 pub(crate) fn de_list_odb_networks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_odb_networks::builders::ListOdbNetworksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_odb_networks::builders::ListOdbNetworksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_list_odb_networks(
                     );
                 }
                 "odbNetworks" => {
-                    builder = builder.set_odb_networks(crate::protocol_serde::shape_odb_network_list::de_odb_network_list(tokens)?);
+                    builder = builder.set_odb_networks(crate::protocol_serde::shape_odb_network_list::de_odb_network_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

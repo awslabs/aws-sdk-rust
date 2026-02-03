@@ -20,6 +20,7 @@ pub fn ser_static_file(
 
 pub(crate) fn de_static_file<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StaticFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ImageStaticFile" => {
-                            builder = builder.set_image_static_file(crate::protocol_serde::shape_image_static_file::de_image_static_file(tokens)?);
+                            builder =
+                                builder.set_image_static_file(crate::protocol_serde::shape_image_static_file::de_image_static_file(tokens, _value)?);
                         }
                         "SpatialStaticFile" => {
-                            builder =
-                                builder.set_spatial_static_file(crate::protocol_serde::shape_spatial_static_file::de_spatial_static_file(tokens)?);
+                            builder = builder
+                                .set_spatial_static_file(crate::protocol_serde::shape_spatial_static_file::de_spatial_static_file(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

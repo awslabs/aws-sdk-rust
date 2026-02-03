@@ -20,6 +20,7 @@ pub fn ser_add_things_to_thing_group_params(
 
 pub(crate) fn de_add_things_to_thing_group_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AddThingsToThingGroupParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "thingGroupNames" => {
-                            builder = builder.set_thing_group_names(crate::protocol_serde::shape_thing_group_names::de_thing_group_names(tokens)?);
+                            builder =
+                                builder.set_thing_group_names(crate::protocol_serde::shape_thing_group_names::de_thing_group_names(tokens, _value)?);
                         }
                         "overrideDynamicGroups" => {
                             builder = builder.set_override_dynamic_groups(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

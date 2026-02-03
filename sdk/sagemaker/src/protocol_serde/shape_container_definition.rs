@@ -66,6 +66,7 @@ pub fn ser_container_definition(
 
 pub(crate) fn de_container_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,7 +95,7 @@ where
                             );
                         }
                         "ImageConfig" => {
-                            builder = builder.set_image_config(crate::protocol_serde::shape_image_config::de_image_config(tokens)?);
+                            builder = builder.set_image_config(crate::protocol_serde::shape_image_config::de_image_config(tokens, _value)?);
                         }
                         "Mode" => {
                             builder = builder.set_mode(
@@ -111,15 +112,16 @@ where
                             );
                         }
                         "ModelDataSource" => {
-                            builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
+                            builder =
+                                builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens, _value)?);
                         }
                         "AdditionalModelDataSources" => {
                             builder = builder.set_additional_model_data_sources(
-                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(tokens)?,
+                                crate::protocol_serde::shape_additional_model_data_sources::de_additional_model_data_sources(tokens, _value)?,
                             );
                         }
                         "Environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_map::de_environment_map(tokens, _value)?);
                         }
                         "ModelPackageName" => {
                             builder = builder.set_model_package_name(
@@ -136,7 +138,8 @@ where
                             );
                         }
                         "MultiModelConfig" => {
-                            builder = builder.set_multi_model_config(crate::protocol_serde::shape_multi_model_config::de_multi_model_config(tokens)?);
+                            builder = builder
+                                .set_multi_model_config(crate::protocol_serde::shape_multi_model_config::de_multi_model_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

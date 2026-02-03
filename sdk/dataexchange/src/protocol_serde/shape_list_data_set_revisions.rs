@@ -100,13 +100,13 @@ pub fn de_list_data_set_revisions_http_response(
 }
 
 pub(crate) fn de_list_data_set_revisions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,9 @@ pub(crate) fn de_list_data_set_revisions(
                     );
                 }
                 "Revisions" => {
-                    builder = builder.set_revisions(crate::protocol_serde::shape_list_of_revision_entry::de_list_of_revision_entry(tokens)?);
+                    builder = builder.set_revisions(crate::protocol_serde::shape_list_of_revision_entry::de_list_of_revision_entry(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

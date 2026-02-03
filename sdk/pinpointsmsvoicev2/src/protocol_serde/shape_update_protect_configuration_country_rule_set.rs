@@ -166,13 +166,13 @@ pub fn ser_update_protect_configuration_country_rule_set_input(
 }
 
 pub(crate) fn de_update_protect_configuration_country_rule_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_protect_configuration_country_rule_set::builders::UpdateProtectConfigurationCountryRuleSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_protect_configuration_country_rule_set::builders::UpdateProtectConfigurationCountryRuleSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -202,7 +202,9 @@ pub(crate) fn de_update_protect_configuration_country_rule_set(
                 }
                 "CountryRuleSet" => {
                     builder = builder.set_country_rule_set(
-                        crate::protocol_serde::shape_protect_configuration_country_rule_set::de_protect_configuration_country_rule_set(tokens)?,
+                        crate::protocol_serde::shape_protect_configuration_country_rule_set::de_protect_configuration_country_rule_set(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

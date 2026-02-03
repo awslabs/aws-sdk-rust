@@ -114,13 +114,13 @@ pub fn de_get_gateway_target_http_response(
 }
 
 pub(crate) fn de_get_gateway_target(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_gateway_target::builders::GetGatewayTargetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_gateway_target::builders::GetGatewayTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_get_gateway_target(
                 }
                 "credentialProviderConfigurations" => {
                     builder = builder.set_credential_provider_configurations(
-                        crate::protocol_serde::shape_credential_provider_configurations::de_credential_provider_configurations(tokens)?,
+                        crate::protocol_serde::shape_credential_provider_configurations::de_credential_provider_configurations(tokens, _value)?,
                     );
                 }
                 "description" => {
@@ -159,8 +159,9 @@ pub(crate) fn de_get_gateway_target(
                     )?);
                 }
                 "metadataConfiguration" => {
-                    builder =
-                        builder.set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(tokens)?);
+                    builder = builder.set_metadata_configuration(crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -177,10 +178,12 @@ pub(crate) fn de_get_gateway_target(
                     );
                 }
                 "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens)?);
+                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value)?);
                 }
                 "targetConfiguration" => {
-                    builder = builder.set_target_configuration(crate::protocol_serde::shape_target_configuration::de_target_configuration(tokens)?);
+                    builder = builder.set_target_configuration(crate::protocol_serde::shape_target_configuration::de_target_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "targetId" => {
                     builder = builder.set_target_id(

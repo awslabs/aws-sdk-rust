@@ -14,6 +14,7 @@ pub fn ser_archive_rule(
 
 pub(crate) fn de_archive_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArchiveRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RetainRule" => {
-                            builder = builder.set_retain_rule(crate::protocol_serde::shape_archive_retain_rule::de_archive_retain_rule(tokens)?);
+                            builder =
+                                builder.set_retain_rule(crate::protocol_serde::shape_archive_retain_rule::de_archive_retain_rule(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

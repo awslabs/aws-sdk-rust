@@ -26,6 +26,7 @@ pub fn ser_predictive_scaling_metric_data_query(
 
 pub(crate) fn de_predictive_scaling_metric_data_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PredictiveScalingMetricDataQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "MetricStat" => {
                             builder = builder.set_metric_stat(
-                                crate::protocol_serde::shape_predictive_scaling_metric_stat::de_predictive_scaling_metric_stat(tokens)?,
+                                crate::protocol_serde::shape_predictive_scaling_metric_stat::de_predictive_scaling_metric_stat(tokens, _value)?,
                             );
                         }
                         "Label" => {

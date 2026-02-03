@@ -17,6 +17,7 @@ pub fn ser_on_prem_config(
 
 pub(crate) fn de_on_prem_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OnPremConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AgentArns" => {
-                            builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens)?);
+                            builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

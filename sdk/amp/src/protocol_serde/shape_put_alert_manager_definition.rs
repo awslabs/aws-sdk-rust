@@ -175,13 +175,13 @@ pub fn ser_put_alert_manager_definition_input(
 }
 
 pub(crate) fn de_put_alert_manager_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_alert_manager_definition::builders::PutAlertManagerDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -189,8 +189,9 @@ pub(crate) fn de_put_alert_manager_definition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "status" => {
-                    builder =
-                        builder.set_status(crate::protocol_serde::shape_alert_manager_definition_status::de_alert_manager_definition_status(tokens)?);
+                    builder = builder.set_status(
+                        crate::protocol_serde::shape_alert_manager_definition_status::de_alert_manager_definition_status(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

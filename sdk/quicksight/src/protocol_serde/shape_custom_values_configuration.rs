@@ -17,6 +17,7 @@ pub fn ser_custom_values_configuration(
 
 pub(crate) fn de_custom_values_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomValuesConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                             builder = builder.set_include_null_value(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "CustomValues" => {
-                            builder =
-                                builder.set_custom_values(crate::protocol_serde::shape_custom_parameter_values::de_custom_parameter_values(tokens)?);
+                            builder = builder.set_custom_values(crate::protocol_serde::shape_custom_parameter_values::de_custom_parameter_values(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

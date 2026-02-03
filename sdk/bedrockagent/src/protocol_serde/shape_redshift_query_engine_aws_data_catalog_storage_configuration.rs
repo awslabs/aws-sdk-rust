@@ -17,6 +17,7 @@ pub fn ser_redshift_query_engine_aws_data_catalog_storage_configuration(
 
 pub(crate) fn de_redshift_query_engine_aws_data_catalog_storage_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::RedshiftQueryEngineAwsDataCatalogStorageConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tableNames" => {
-                            builder = builder
-                                .set_table_names(crate::protocol_serde::shape_aws_data_catalog_table_names::de_aws_data_catalog_table_names(tokens)?);
+                            builder = builder.set_table_names(
+                                crate::protocol_serde::shape_aws_data_catalog_table_names::de_aws_data_catalog_table_names(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

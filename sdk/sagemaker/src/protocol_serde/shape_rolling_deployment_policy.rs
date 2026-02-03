@@ -20,6 +20,7 @@ pub fn ser_rolling_deployment_policy(
 
 pub(crate) fn de_rolling_deployment_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RollingDeploymentPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MaximumBatchSize" => {
-                            builder =
-                                builder.set_maximum_batch_size(crate::protocol_serde::shape_capacity_size_config::de_capacity_size_config(tokens)?);
+                            builder = builder.set_maximum_batch_size(crate::protocol_serde::shape_capacity_size_config::de_capacity_size_config(
+                                tokens, _value,
+                            )?);
                         }
                         "RollbackMaximumBatchSize" => {
-                            builder = builder
-                                .set_rollback_maximum_batch_size(crate::protocol_serde::shape_capacity_size_config::de_capacity_size_config(tokens)?);
+                            builder = builder.set_rollback_maximum_batch_size(
+                                crate::protocol_serde::shape_capacity_size_config::de_capacity_size_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

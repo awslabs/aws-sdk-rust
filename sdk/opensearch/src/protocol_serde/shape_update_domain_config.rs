@@ -144,13 +144,13 @@ pub fn ser_update_domain_config_input(
 }
 
 pub(crate) fn de_update_domain_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_domain_config::builders::UpdateDomainConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,14 +158,15 @@ pub(crate) fn de_update_domain_config(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DomainConfig" => {
-                    builder = builder.set_domain_config(crate::protocol_serde::shape_domain_config::de_domain_config(tokens)?);
+                    builder = builder.set_domain_config(crate::protocol_serde::shape_domain_config::de_domain_config(tokens, _value)?);
                 }
                 "DryRunProgressStatus" => {
-                    builder = builder
-                        .set_dry_run_progress_status(crate::protocol_serde::shape_dry_run_progress_status::de_dry_run_progress_status(tokens)?);
+                    builder = builder.set_dry_run_progress_status(crate::protocol_serde::shape_dry_run_progress_status::de_dry_run_progress_status(
+                        tokens, _value,
+                    )?);
                 }
                 "DryRunResults" => {
-                    builder = builder.set_dry_run_results(crate::protocol_serde::shape_dry_run_results::de_dry_run_results(tokens)?);
+                    builder = builder.set_dry_run_results(crate::protocol_serde::shape_dry_run_results::de_dry_run_results(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

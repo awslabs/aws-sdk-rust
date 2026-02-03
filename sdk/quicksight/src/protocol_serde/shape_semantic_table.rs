@@ -20,6 +20,7 @@ pub fn ser_semantic_table(
 
 pub(crate) fn de_semantic_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SemanticTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,9 @@ where
                         }
                         "RowLevelPermissionConfiguration" => {
                             builder = builder.set_row_level_permission_configuration(
-                                crate::protocol_serde::shape_row_level_permission_configuration::de_row_level_permission_configuration(tokens)?,
+                                crate::protocol_serde::shape_row_level_permission_configuration::de_row_level_permission_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

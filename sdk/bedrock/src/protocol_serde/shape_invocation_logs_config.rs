@@ -23,6 +23,7 @@ pub fn ser_invocation_logs_config(
 
 pub(crate) fn de_invocation_logs_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InvocationLogsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,13 @@ where
                             builder = builder.set_use_prompt_response(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "invocationLogSource" => {
-                            builder = builder
-                                .set_invocation_log_source(crate::protocol_serde::shape_invocation_log_source::de_invocation_log_source(tokens)?);
+                            builder = builder.set_invocation_log_source(
+                                crate::protocol_serde::shape_invocation_log_source::de_invocation_log_source(tokens, _value)?,
+                            );
                         }
                         "requestMetadataFilters" => {
                             builder = builder.set_request_metadata_filters(
-                                crate::protocol_serde::shape_request_metadata_filters::de_request_metadata_filters(tokens)?,
+                                crate::protocol_serde::shape_request_metadata_filters::de_request_metadata_filters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

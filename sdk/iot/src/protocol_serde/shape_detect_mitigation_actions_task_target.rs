@@ -23,6 +23,7 @@ pub fn ser_detect_mitigation_actions_task_target(
 
 pub(crate) fn de_detect_mitigation_actions_task_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DetectMitigationActionsTaskTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "violationIds" => {
                             builder = builder.set_violation_ids(
-                                    crate::protocol_serde::shape_target_violation_ids_for_detect_mitigation_actions::de_target_violation_ids_for_detect_mitigation_actions(tokens)?
+                                    crate::protocol_serde::shape_target_violation_ids_for_detect_mitigation_actions::de_target_violation_ids_for_detect_mitigation_actions(tokens, _value)?
                                 );
                         }
                         "securityProfileName" => {

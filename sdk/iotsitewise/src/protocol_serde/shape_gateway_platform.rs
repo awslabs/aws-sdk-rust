@@ -26,6 +26,7 @@ pub fn ser_gateway_platform(
 
 pub(crate) fn de_gateway_platform<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GatewayPlatform>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "greengrass" => {
-                            builder = builder.set_greengrass(crate::protocol_serde::shape_greengrass::de_greengrass(tokens)?);
+                            builder = builder.set_greengrass(crate::protocol_serde::shape_greengrass::de_greengrass(tokens, _value)?);
                         }
                         "greengrassV2" => {
-                            builder = builder.set_greengrass_v2(crate::protocol_serde::shape_greengrass_v2::de_greengrass_v2(tokens)?);
+                            builder = builder.set_greengrass_v2(crate::protocol_serde::shape_greengrass_v2::de_greengrass_v2(tokens, _value)?);
                         }
                         "siemensIE" => {
-                            builder = builder.set_siemens_ie(crate::protocol_serde::shape_siemens_ie::de_siemens_ie(tokens)?);
+                            builder = builder.set_siemens_ie(crate::protocol_serde::shape_siemens_ie::de_siemens_ie(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

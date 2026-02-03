@@ -26,6 +26,7 @@ pub fn ser_time_series_replacements_data_source(
 
 pub(crate) fn de_time_series_replacements_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesReplacementsDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Config" => {
-                            builder = builder.set_s3_config(crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?);
+                            builder = builder.set_s3_config(crate::protocol_serde::shape_s3_config::de_s3_config(tokens, _value)?);
                         }
                         "Schema" => {
-                            builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens)?);
+                            builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value)?);
                         }
                         "Format" => {
                             builder = builder.set_format(

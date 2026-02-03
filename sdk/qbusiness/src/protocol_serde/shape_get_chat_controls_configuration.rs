@@ -117,13 +117,13 @@ pub fn de_get_chat_controls_configuration_http_response(
 }
 
 pub(crate) fn de_get_chat_controls_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_chat_controls_configuration::builders::GetChatControlsConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_chat_controls_configuration::builders::GetChatControlsConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,17 +131,18 @@ pub(crate) fn de_get_chat_controls_configuration(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "blockedPhrases" => {
-                    builder = builder
-                        .set_blocked_phrases(crate::protocol_serde::shape_blocked_phrases_configuration::de_blocked_phrases_configuration(tokens)?);
+                    builder = builder.set_blocked_phrases(
+                        crate::protocol_serde::shape_blocked_phrases_configuration::de_blocked_phrases_configuration(tokens, _value)?,
+                    );
                 }
                 "creatorModeConfiguration" => {
                     builder = builder.set_creator_mode_configuration(
-                        crate::protocol_serde::shape_applied_creator_mode_configuration::de_applied_creator_mode_configuration(tokens)?,
+                        crate::protocol_serde::shape_applied_creator_mode_configuration::de_applied_creator_mode_configuration(tokens, _value)?,
                     );
                 }
                 "hallucinationReductionConfiguration" => {
                     builder = builder.set_hallucination_reduction_configuration(
-                        crate::protocol_serde::shape_hallucination_reduction_configuration::de_hallucination_reduction_configuration(tokens)?,
+                        crate::protocol_serde::shape_hallucination_reduction_configuration::de_hallucination_reduction_configuration(tokens, _value)?,
                     );
                 }
                 "nextToken" => {
@@ -153,7 +154,7 @@ pub(crate) fn de_get_chat_controls_configuration(
                 }
                 "orchestrationConfiguration" => {
                     builder = builder.set_orchestration_configuration(
-                        crate::protocol_serde::shape_applied_orchestration_configuration::de_applied_orchestration_configuration(tokens)?,
+                        crate::protocol_serde::shape_applied_orchestration_configuration::de_applied_orchestration_configuration(tokens, _value)?,
                     );
                 }
                 "responseScope" => {
@@ -164,7 +165,9 @@ pub(crate) fn de_get_chat_controls_configuration(
                     );
                 }
                 "topicConfigurations" => {
-                    builder = builder.set_topic_configurations(crate::protocol_serde::shape_topic_configurations::de_topic_configurations(tokens)?);
+                    builder = builder.set_topic_configurations(crate::protocol_serde::shape_topic_configurations::de_topic_configurations(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

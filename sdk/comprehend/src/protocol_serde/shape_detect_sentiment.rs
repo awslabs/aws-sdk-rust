@@ -112,13 +112,13 @@ pub fn ser_detect_sentiment_input(
 }
 
 pub(crate) fn de_detect_sentiment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detect_sentiment::builders::DetectSentimentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detect_sentiment::builders::DetectSentimentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_detect_sentiment(
                     );
                 }
                 "SentimentScore" => {
-                    builder = builder.set_sentiment_score(crate::protocol_serde::shape_sentiment_score::de_sentiment_score(tokens)?);
+                    builder = builder.set_sentiment_score(crate::protocol_serde::shape_sentiment_score::de_sentiment_score(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

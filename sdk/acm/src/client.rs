@@ -176,7 +176,7 @@ mod add_tags_to_certificate;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_acm::Error> {
 /// # let client: aws_sdk_acm::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags_to_certificate()
 ///     .customize()

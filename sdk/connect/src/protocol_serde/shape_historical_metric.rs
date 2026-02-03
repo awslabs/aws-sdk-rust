@@ -23,6 +23,7 @@ pub fn ser_historical_metric(
 
 pub(crate) fn de_historical_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HistoricalMetric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "Threshold" => {
-                            builder = builder.set_threshold(crate::protocol_serde::shape_threshold::de_threshold(tokens)?);
+                            builder = builder.set_threshold(crate::protocol_serde::shape_threshold::de_threshold(tokens, _value)?);
                         }
                         "Statistic" => {
                             builder = builder.set_statistic(

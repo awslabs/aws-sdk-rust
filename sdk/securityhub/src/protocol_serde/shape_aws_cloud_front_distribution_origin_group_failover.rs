@@ -14,6 +14,7 @@ pub fn ser_aws_cloud_front_distribution_origin_group_failover(
 
 pub(crate) fn de_aws_cloud_front_distribution_origin_group_failover<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCloudFrontDistributionOriginGroupFailover>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatusCodes" => {
                             builder = builder.set_status_codes(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_group_failover_status_codes::de_aws_cloud_front_distribution_origin_group_failover_status_codes(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_group_failover_status_codes::de_aws_cloud_front_distribution_origin_group_failover_status_codes(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

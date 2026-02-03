@@ -98,13 +98,13 @@ pub fn de_get_portal_product_http_response(
 }
 
 pub(crate) fn de_get_portal_product(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_portal_product::builders::GetPortalProductOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_portal_product::builders::GetPortalProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_get_portal_product(
                     );
                 }
                 "displayOrder" => {
-                    builder = builder.set_display_order(crate::protocol_serde::shape_display_order::de_display_order(tokens)?);
+                    builder = builder.set_display_order(crate::protocol_serde::shape_display_order::de_display_order(tokens, _value)?);
                 }
                 "lastModified" => {
                     builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -149,7 +149,7 @@ pub(crate) fn de_get_portal_product(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

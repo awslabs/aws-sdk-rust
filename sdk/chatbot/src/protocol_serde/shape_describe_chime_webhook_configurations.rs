@@ -106,13 +106,13 @@ pub fn ser_describe_chime_webhook_configurations_input(
 }
 
 pub(crate) fn de_describe_chime_webhook_configurations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_chime_webhook_configurations::builders::DescribeChimeWebhookConfigurationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_chime_webhook_configurations::builders::DescribeChimeWebhookConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,7 @@ pub(crate) fn de_describe_chime_webhook_configurations(
                 }
                 "WebhookConfigurations" => {
                     builder = builder.set_webhook_configurations(
-                        crate::protocol_serde::shape_chime_webhook_configuration_list::de_chime_webhook_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_chime_webhook_configuration_list::de_chime_webhook_configuration_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

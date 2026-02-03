@@ -35,6 +35,7 @@ pub fn ser_aws_secrets_manager_secret_details(
 
 pub(crate) fn de_aws_secrets_manager_secret_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsSecretsManagerSecretDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         "RotationRules" => {
                             builder = builder.set_rotation_rules(
                                 crate::protocol_serde::shape_aws_secrets_manager_secret_rotation_rules::de_aws_secrets_manager_secret_rotation_rules(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

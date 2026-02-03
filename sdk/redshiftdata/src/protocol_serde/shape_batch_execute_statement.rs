@@ -154,13 +154,13 @@ pub fn ser_batch_execute_statement_input(
 }
 
 pub(crate) fn de_batch_execute_statement(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_execute_statement::builders::BatchExecuteStatementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -195,7 +195,7 @@ pub(crate) fn de_batch_execute_statement(
                     );
                 }
                 "DbGroups" => {
-                    builder = builder.set_db_groups(crate::protocol_serde::shape_db_group_list::de_db_group_list(tokens)?);
+                    builder = builder.set_db_groups(crate::protocol_serde::shape_db_group_list::de_db_group_list(tokens, _value)?);
                 }
                 "Database" => {
                     builder = builder.set_database(

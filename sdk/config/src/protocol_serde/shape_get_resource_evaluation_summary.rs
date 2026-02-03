@@ -72,13 +72,13 @@ pub fn ser_get_resource_evaluation_summary_input(
 }
 
 pub(crate) fn de_get_resource_evaluation_summary(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -100,7 +100,7 @@ pub(crate) fn de_get_resource_evaluation_summary(
                     );
                 }
                 "EvaluationStatus" => {
-                    builder = builder.set_evaluation_status(crate::protocol_serde::shape_evaluation_status::de_evaluation_status(tokens)?);
+                    builder = builder.set_evaluation_status(crate::protocol_serde::shape_evaluation_status::de_evaluation_status(tokens, _value)?);
                 }
                 "EvaluationStartTimestamp" => {
                     builder = builder.set_evaluation_start_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -116,10 +116,10 @@ pub(crate) fn de_get_resource_evaluation_summary(
                     );
                 }
                 "EvaluationContext" => {
-                    builder = builder.set_evaluation_context(crate::protocol_serde::shape_evaluation_context::de_evaluation_context(tokens)?);
+                    builder = builder.set_evaluation_context(crate::protocol_serde::shape_evaluation_context::de_evaluation_context(tokens, _value)?);
                 }
                 "ResourceDetails" => {
-                    builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens)?);
+                    builder = builder.set_resource_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

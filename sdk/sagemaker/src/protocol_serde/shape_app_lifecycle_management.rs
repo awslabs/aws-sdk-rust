@@ -14,6 +14,7 @@ pub fn ser_app_lifecycle_management(
 
 pub(crate) fn de_app_lifecycle_management<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AppLifecycleManagement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IdleSettings" => {
-                            builder = builder.set_idle_settings(crate::protocol_serde::shape_idle_settings::de_idle_settings(tokens)?);
+                            builder = builder.set_idle_settings(crate::protocol_serde::shape_idle_settings::de_idle_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

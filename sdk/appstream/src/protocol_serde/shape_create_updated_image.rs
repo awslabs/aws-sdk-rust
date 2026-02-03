@@ -171,13 +171,13 @@ pub fn ser_create_updated_image_input(
 }
 
 pub(crate) fn de_create_updated_image(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,7 +185,7 @@ pub(crate) fn de_create_updated_image(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "image" => {
-                    builder = builder.set_image(crate::protocol_serde::shape_image::de_image(tokens)?);
+                    builder = builder.set_image(crate::protocol_serde::shape_image::de_image(tokens, _value)?);
                 }
                 "canUpdateImage" => {
                     builder = builder.set_can_update_image(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

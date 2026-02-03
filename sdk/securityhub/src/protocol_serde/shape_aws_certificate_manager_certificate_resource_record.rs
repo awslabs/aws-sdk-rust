@@ -17,6 +17,7 @@ pub fn ser_aws_certificate_manager_certificate_resource_record(
 
 pub(crate) fn de_aws_certificate_manager_certificate_resource_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsCertificateManagerCertificateResourceRecord>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

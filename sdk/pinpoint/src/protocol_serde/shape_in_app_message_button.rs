@@ -32,6 +32,7 @@ pub fn ser_in_app_message_button(
 
 pub(crate) fn de_in_app_message_button<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InAppMessageButton>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,21 +47,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Android" => {
-                            builder = builder
-                                .set_android(crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens)?);
+                            builder = builder.set_android(
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                            );
                         }
                         "DefaultConfig" => {
                             builder = builder.set_default_config(
-                                crate::protocol_serde::shape_default_button_configuration::de_default_button_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_button_configuration::de_default_button_configuration(tokens, _value)?,
                             );
                         }
                         "IOS" => {
-                            builder = builder
-                                .set_ios(crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens)?);
+                            builder = builder.set_ios(
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                            );
                         }
                         "Web" => {
-                            builder = builder
-                                .set_web(crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens)?);
+                            builder = builder.set_web(
+                                crate::protocol_serde::shape_override_button_configuration::de_override_button_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

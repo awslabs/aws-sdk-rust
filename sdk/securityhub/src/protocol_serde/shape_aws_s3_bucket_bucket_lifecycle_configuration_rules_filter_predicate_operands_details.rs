@@ -20,6 +20,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_o
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -45,7 +46,7 @@ where
                         }
                         "Tag" => {
                             builder = builder.set_tag(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details(tokens, _value)?
                                 );
                         }
                         "Type" => {

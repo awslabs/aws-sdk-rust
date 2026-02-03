@@ -26,6 +26,7 @@ pub fn ser_dataset_input_config(
 
 pub(crate) fn de_dataset_input_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetInputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "schema" => {
-                            builder = builder.set_schema(crate::protocol_serde::shape_dataset_schema_list::de_dataset_schema_list(tokens)?);
+                            builder = builder.set_schema(crate::protocol_serde::shape_dataset_schema_list::de_dataset_schema_list(tokens, _value)?);
                         }
                         "dataSource" => {
-                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

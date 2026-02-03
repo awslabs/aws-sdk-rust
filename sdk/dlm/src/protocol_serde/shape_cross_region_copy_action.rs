@@ -23,6 +23,7 @@ pub fn ser_cross_region_copy_action(
 
 pub(crate) fn de_cross_region_copy_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CrossRegionCopyAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "EncryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
                             );
                         }
                         "RetainRule" => {
                             builder = builder.set_retain_rule(
-                                crate::protocol_serde::shape_cross_region_copy_retain_rule::de_cross_region_copy_retain_rule(tokens)?,
+                                crate::protocol_serde::shape_cross_region_copy_retain_rule::de_cross_region_copy_retain_rule(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

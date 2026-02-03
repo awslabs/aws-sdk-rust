@@ -217,8 +217,7 @@ mod test {
     use aws_smithy_types::byte_stream::ByteStream;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use bytes::Bytes;
-    use http_02x::header::CONTENT_LENGTH;
-    use http_body_04x::Body;
+    use http_1x::header::CONTENT_LENGTH;
     use http_body_1x::Frame;
     use std::error::Error;
     use std::pin::Pin;
@@ -240,7 +239,7 @@ mod test {
 
     impl http_body_1x::Body for ManyFrameBody {
         type Data = Bytes;
-        type Error = <SdkBody as Body>::Error;
+        type Error = <SdkBody as http_body_1x::Body>::Error;
 
         fn poll_frame(
             mut self: Pin<&mut Self>,
@@ -277,6 +276,7 @@ mod test {
 
     #[tokio::test]
     async fn stream_just_right() {
+        use http_body_util::BodyExt;
         let body = ManyFrameBody::new("abcdefghijk");
         let enforced = ContentLengthEnforcingBody::wrap(body, 11);
         let data = enforced.collect().await.unwrap().to_bytes();

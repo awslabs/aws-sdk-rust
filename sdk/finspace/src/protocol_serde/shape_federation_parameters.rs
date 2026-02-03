@@ -33,6 +33,7 @@ pub fn ser_federation_parameters(
 
 pub(crate) fn de_federation_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FederationParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,7 +83,7 @@ where
                             );
                         }
                         "attributeMap" => {
-                            builder = builder.set_attribute_map(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens)?);
+                            builder = builder.set_attribute_map(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

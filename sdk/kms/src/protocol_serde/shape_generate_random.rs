@@ -130,13 +130,13 @@ pub fn ser_generate_random_input(
 }
 
 pub(crate) fn de_generate_random(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::generate_random::builders::GenerateRandomOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::generate_random::builders::GenerateRandomOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

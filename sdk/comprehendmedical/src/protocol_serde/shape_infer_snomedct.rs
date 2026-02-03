@@ -144,13 +144,13 @@ pub fn ser_infer_snomedct_input(
 }
 
 pub(crate) fn de_infer_snomedct(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,7 +158,9 @@ pub(crate) fn de_infer_snomedct(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Entities" => {
-                    builder = builder.set_entities(crate::protocol_serde::shape_snomedct_entity_list::de_snomedct_entity_list(tokens)?);
+                    builder = builder.set_entities(crate::protocol_serde::shape_snomedct_entity_list::de_snomedct_entity_list(
+                        tokens, _value,
+                    )?);
                 }
                 "PaginationToken" => {
                     builder = builder.set_pagination_token(
@@ -175,10 +177,10 @@ pub(crate) fn de_infer_snomedct(
                     );
                 }
                 "SNOMEDCTDetails" => {
-                    builder = builder.set_snomedct_details(crate::protocol_serde::shape_snomedct_details::de_snomedct_details(tokens)?);
+                    builder = builder.set_snomedct_details(crate::protocol_serde::shape_snomedct_details::de_snomedct_details(tokens, _value)?);
                 }
                 "Characters" => {
-                    builder = builder.set_characters(crate::protocol_serde::shape_characters::de_characters(tokens)?);
+                    builder = builder.set_characters(crate::protocol_serde::shape_characters::de_characters(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

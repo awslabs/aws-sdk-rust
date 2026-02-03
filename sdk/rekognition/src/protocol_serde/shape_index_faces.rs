@@ -203,11 +203,11 @@ pub fn ser_index_faces_input(
 }
 
 pub(crate) fn de_index_faces(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::index_faces::builders::IndexFacesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::index_faces::builders::IndexFacesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -215,7 +215,7 @@ pub(crate) fn de_index_faces(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FaceRecords" => {
-                    builder = builder.set_face_records(crate::protocol_serde::shape_face_record_list::de_face_record_list(tokens)?);
+                    builder = builder.set_face_records(crate::protocol_serde::shape_face_record_list::de_face_record_list(tokens, _value)?);
                 }
                 "OrientationCorrection" => {
                     builder = builder.set_orientation_correction(
@@ -232,7 +232,7 @@ pub(crate) fn de_index_faces(
                     );
                 }
                 "UnindexedFaces" => {
-                    builder = builder.set_unindexed_faces(crate::protocol_serde::shape_unindexed_faces::de_unindexed_faces(tokens)?);
+                    builder = builder.set_unindexed_faces(crate::protocol_serde::shape_unindexed_faces::de_unindexed_faces(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

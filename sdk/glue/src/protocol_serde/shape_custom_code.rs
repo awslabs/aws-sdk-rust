@@ -38,6 +38,7 @@ pub fn ser_custom_code(
 
 pub(crate) fn de_custom_code<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomCode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens, _value)?);
                         }
                         "Code" => {
                             builder = builder.set_code(
@@ -76,7 +77,7 @@ where
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

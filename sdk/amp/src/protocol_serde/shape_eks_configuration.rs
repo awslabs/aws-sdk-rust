@@ -29,6 +29,7 @@ pub fn ser_eks_configuration(
 
 pub(crate) fn de_eks_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,11 @@ where
                             );
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                            builder = builder
+                                .set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
                         }
                         "subnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_ids::de_subnet_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

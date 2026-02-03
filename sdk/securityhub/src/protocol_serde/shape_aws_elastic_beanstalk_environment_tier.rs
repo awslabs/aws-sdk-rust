@@ -17,6 +17,7 @@ pub fn ser_aws_elastic_beanstalk_environment_tier(
 
 pub(crate) fn de_aws_elastic_beanstalk_environment_tier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElasticBeanstalkEnvironmentTier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

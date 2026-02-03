@@ -17,6 +17,7 @@ pub fn ser_pivot_table_field_collapse_state_option(
 
 pub(crate) fn de_pivot_table_field_collapse_state_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableFieldCollapseStateOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -33,7 +34,7 @@ where
                         "Target" => {
                             builder = builder.set_target(
                                 crate::protocol_serde::shape_pivot_table_field_collapse_state_target::de_pivot_table_field_collapse_state_target(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -23,6 +23,7 @@ pub fn ser_ontap_file_system_identity(
 
 pub(crate) fn de_ontap_file_system_identity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OntapFileSystemIdentity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "UnixUser" => {
                             builder = builder.set_unix_user(
-                                crate::protocol_serde::shape_ontap_unix_file_system_user::de_ontap_unix_file_system_user(tokens)?,
+                                crate::protocol_serde::shape_ontap_unix_file_system_user::de_ontap_unix_file_system_user(tokens, _value)?,
                             );
                         }
                         "WindowsUser" => {
                             builder = builder.set_windows_user(
-                                crate::protocol_serde::shape_ontap_windows_file_system_user::de_ontap_windows_file_system_user(tokens)?,
+                                crate::protocol_serde::shape_ontap_windows_file_system_user::de_ontap_windows_file_system_user(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -151,7 +151,7 @@ mod batch_get_resource_config;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_config::Error> {
 /// # let client: aws_sdk_config::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_resource_types()
 ///     .customize()

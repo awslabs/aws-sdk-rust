@@ -121,13 +121,13 @@ pub fn de_get_profile_object_type_http_response(
 }
 
 pub(crate) fn de_get_profile_object_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,10 +165,10 @@ pub(crate) fn de_get_profile_object_type(
                     );
                 }
                 "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                 }
                 "Keys" => {
-                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens)?);
+                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens, _value)?);
                 }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -205,7 +205,7 @@ pub(crate) fn de_get_profile_object_type(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "TemplateId" => {
                     builder = builder.set_template_id(

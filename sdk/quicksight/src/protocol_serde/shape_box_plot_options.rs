@@ -20,6 +20,7 @@ pub fn ser_box_plot_options(
 
 pub(crate) fn de_box_plot_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BoxPlotOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StyleOptions" => {
-                            builder =
-                                builder.set_style_options(crate::protocol_serde::shape_box_plot_style_options::de_box_plot_style_options(tokens)?);
+                            builder = builder.set_style_options(crate::protocol_serde::shape_box_plot_style_options::de_box_plot_style_options(
+                                tokens, _value,
+                            )?);
                         }
                         "OutlierVisibility" => {
                             builder = builder.set_outlier_visibility(

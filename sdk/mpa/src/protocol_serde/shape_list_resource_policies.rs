@@ -114,13 +114,13 @@ pub fn de_list_resource_policies_http_response(
 }
 
 pub(crate) fn de_list_resource_policies(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_resource_policies::builders::ListResourcePoliciesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_resource_policies::builders::ListResourcePoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,7 @@ pub(crate) fn de_list_resource_policies(
                 }
                 "ResourcePolicies" => {
                     builder = builder.set_resource_policies(
-                            crate::protocol_serde::shape_list_resource_policies_response_resource_policies::de_list_resource_policies_response_resource_policies(tokens)?
+                            crate::protocol_serde::shape_list_resource_policies_response_resource_policies::de_list_resource_policies_response_resource_policies(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -11,6 +11,7 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_deta
 
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

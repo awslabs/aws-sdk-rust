@@ -63,6 +63,7 @@ pub fn ser_aws_api_gateway_v2_stage_details(
 
 pub(crate) fn de_aws_api_gateway_v2_stage_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiGatewayV2StageDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -99,7 +100,7 @@ where
                         }
                         "DefaultRouteSettings" => {
                             builder = builder.set_default_route_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens, _value)?,
                             );
                         }
                         "DeploymentId" => {
@@ -118,7 +119,7 @@ where
                         }
                         "RouteSettings" => {
                             builder = builder.set_route_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_v2_route_settings::de_aws_api_gateway_v2_route_settings(tokens, _value)?,
                             );
                         }
                         "StageName" => {
@@ -129,11 +130,13 @@ where
                             );
                         }
                         "StageVariables" => {
-                            builder = builder.set_stage_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_stage_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "AccessLogSettings" => {
                             builder = builder.set_access_log_settings(
-                                crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(tokens)?,
+                                crate::protocol_serde::shape_aws_api_gateway_access_log_settings::de_aws_api_gateway_access_log_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "AutoDeploy" => {

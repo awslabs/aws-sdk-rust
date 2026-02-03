@@ -41,6 +41,7 @@ pub fn ser_aws_ec2_launch_template_data_block_device_mapping_set_ebs_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_block_device_mapping_set_ebs_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

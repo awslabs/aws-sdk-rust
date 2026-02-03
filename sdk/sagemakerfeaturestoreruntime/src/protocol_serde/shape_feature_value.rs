@@ -23,6 +23,7 @@ pub fn ser_feature_value(
 
 pub(crate) fn de_feature_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FeatureValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,8 +52,9 @@ where
                             );
                         }
                         "ValueAsStringList" => {
-                            builder =
-                                builder.set_value_as_string_list(crate::protocol_serde::shape_value_as_string_list::de_value_as_string_list(tokens)?);
+                            builder = builder.set_value_as_string_list(crate::protocol_serde::shape_value_as_string_list::de_value_as_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -26,6 +26,7 @@ pub fn ser_role_values(
 
 pub(crate) fn de_role_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RoleValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "editor" => {
-                            builder = builder.set_editor(crate::protocol_serde::shape_role_value_list::de_role_value_list(tokens)?);
+                            builder = builder.set_editor(crate::protocol_serde::shape_role_value_list::de_role_value_list(tokens, _value)?);
                         }
                         "admin" => {
-                            builder = builder.set_admin(crate::protocol_serde::shape_role_value_list::de_role_value_list(tokens)?);
+                            builder = builder.set_admin(crate::protocol_serde::shape_role_value_list::de_role_value_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

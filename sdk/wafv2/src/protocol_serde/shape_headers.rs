@@ -20,6 +20,7 @@ pub fn ser_headers(
 
 pub(crate) fn de_headers<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Headers>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MatchPattern" => {
-                            builder = builder.set_match_pattern(crate::protocol_serde::shape_header_match_pattern::de_header_match_pattern(tokens)?);
+                            builder = builder.set_match_pattern(crate::protocol_serde::shape_header_match_pattern::de_header_match_pattern(
+                                tokens, _value,
+                            )?);
                         }
                         "MatchScope" => {
                             builder = builder.set_match_scope(

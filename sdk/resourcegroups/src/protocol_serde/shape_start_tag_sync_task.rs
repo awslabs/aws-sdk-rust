@@ -156,13 +156,13 @@ pub fn ser_start_tag_sync_task_input(
 }
 
 pub(crate) fn de_start_tag_sync_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_tag_sync_task::builders::StartTagSyncTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_tag_sync_task::builders::StartTagSyncTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -184,7 +184,7 @@ pub(crate) fn de_start_tag_sync_task(
                     );
                 }
                 "ResourceQuery" => {
-                    builder = builder.set_resource_query(crate::protocol_serde::shape_resource_query::de_resource_query(tokens)?);
+                    builder = builder.set_resource_query(crate::protocol_serde::shape_resource_query::de_resource_query(tokens, _value)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(

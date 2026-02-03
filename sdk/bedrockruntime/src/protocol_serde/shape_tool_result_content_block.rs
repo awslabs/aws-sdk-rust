@@ -45,6 +45,7 @@ pub fn ser_tool_result_content_block(
 
 pub(crate) fn de_tool_result_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolResultContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,20 +85,20 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "image" => Some(crate::types::ToolResultContentBlock::Image(
-                            crate::protocol_serde::shape_image_block::de_image_block(tokens)?
+                            crate::protocol_serde::shape_image_block::de_image_block(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'image' cannot be null"))?,
                         )),
                         "document" => Some(crate::types::ToolResultContentBlock::Document(
-                            crate::protocol_serde::shape_document_block::de_document_block(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_block::de_document_block(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null")
                             })?,
                         )),
                         "video" => Some(crate::types::ToolResultContentBlock::Video(
-                            crate::protocol_serde::shape_video_block::de_video_block(tokens)?
+                            crate::protocol_serde::shape_video_block::de_video_block(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'video' cannot be null"))?,
                         )),
                         "searchResult" => Some(crate::types::ToolResultContentBlock::SearchResult(
-                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null")
                             })?,
                         )),

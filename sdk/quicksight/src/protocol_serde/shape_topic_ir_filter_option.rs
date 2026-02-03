@@ -105,6 +105,7 @@ pub fn ser_topic_ir_filter_option(
 
 pub(crate) fn de_topic_ir_filter_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicIrFilterOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -133,7 +134,7 @@ where
                             );
                         }
                         "OperandField" => {
-                            builder = builder.set_operand_field(crate::protocol_serde::shape_identifier::de_identifier(tokens)?);
+                            builder = builder.set_operand_field(crate::protocol_serde::shape_identifier::de_identifier(tokens, _value)?);
                         }
                         "Function" => {
                             builder = builder.set_function(
@@ -143,7 +144,9 @@ where
                             );
                         }
                         "Constant" => {
-                            builder = builder.set_constant(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(tokens)?);
+                            builder = builder.set_constant(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(
+                                tokens, _value,
+                            )?);
                         }
                         "Inverse" => {
                             builder = builder.set_inverse(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -164,16 +167,18 @@ where
                         }
                         "AggregationFunctionParameters" => {
                             builder = builder.set_aggregation_function_parameters(
-                                crate::protocol_serde::shape_agg_function_param_map::de_agg_function_param_map(tokens)?,
+                                crate::protocol_serde::shape_agg_function_param_map::de_agg_function_param_map(tokens, _value)?,
                             );
                         }
                         "AggregationPartitionBy" => {
                             builder = builder.set_aggregation_partition_by(
-                                crate::protocol_serde::shape_aggregation_partition_by_list::de_aggregation_partition_by_list(tokens)?,
+                                crate::protocol_serde::shape_aggregation_partition_by_list::de_aggregation_partition_by_list(tokens, _value)?,
                             );
                         }
                         "Range" => {
-                            builder = builder.set_range(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(tokens)?);
+                            builder = builder.set_range(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(
+                                tokens, _value,
+                            )?);
                         }
                         "Inclusive" => {
                             builder = builder.set_inclusive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -186,16 +191,19 @@ where
                             );
                         }
                         "LastNextOffset" => {
-                            builder =
-                                builder.set_last_next_offset(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(tokens)?);
+                            builder = builder.set_last_next_offset(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(
+                                tokens, _value,
+                            )?);
                         }
                         "AggMetrics" => {
-                            builder =
-                                builder.set_agg_metrics(crate::protocol_serde::shape_filter_agg_metrics_list::de_filter_agg_metrics_list(tokens)?);
+                            builder = builder.set_agg_metrics(crate::protocol_serde::shape_filter_agg_metrics_list::de_filter_agg_metrics_list(
+                                tokens, _value,
+                            )?);
                         }
                         "TopBottomLimit" => {
-                            builder =
-                                builder.set_top_bottom_limit(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(tokens)?);
+                            builder = builder.set_top_bottom_limit(crate::protocol_serde::shape_topic_constant_value::de_topic_constant_value(
+                                tokens, _value,
+                            )?);
                         }
                         "SortDirection" => {
                             builder = builder.set_sort_direction(
@@ -205,7 +213,7 @@ where
                             );
                         }
                         "Anchor" => {
-                            builder = builder.set_anchor(crate::protocol_serde::shape_anchor::de_anchor(tokens)?);
+                            builder = builder.set_anchor(crate::protocol_serde::shape_anchor::de_anchor(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

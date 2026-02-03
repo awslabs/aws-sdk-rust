@@ -29,6 +29,7 @@ pub fn ser_prompt_flow_node_inline_configuration(
 
 pub(crate) fn de_prompt_flow_node_inline_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PromptFlowNodeInlineConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         }
                         "templateConfiguration" => {
                             builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(tokens, _value)?,
                             );
                         }
                         "modelId" => {
@@ -63,7 +64,7 @@ where
                         }
                         "inferenceConfiguration" => {
                             builder = builder.set_inference_configuration(
-                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens, _value)?,
                             );
                         }
                         "additionalModelRequestFields" => {

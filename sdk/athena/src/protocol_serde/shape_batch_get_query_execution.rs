@@ -88,13 +88,13 @@ pub fn ser_batch_get_query_execution_input(
 }
 
 pub(crate) fn de_batch_get_query_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,11 +102,13 @@ pub(crate) fn de_batch_get_query_execution(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "QueryExecutions" => {
-                    builder = builder.set_query_executions(crate::protocol_serde::shape_query_execution_list::de_query_execution_list(tokens)?);
+                    builder = builder.set_query_executions(crate::protocol_serde::shape_query_execution_list::de_query_execution_list(
+                        tokens, _value,
+                    )?);
                 }
                 "UnprocessedQueryExecutionIds" => {
                     builder = builder.set_unprocessed_query_execution_ids(
-                        crate::protocol_serde::shape_unprocessed_query_execution_id_list::de_unprocessed_query_execution_id_list(tokens)?,
+                        crate::protocol_serde::shape_unprocessed_query_execution_id_list::de_unprocessed_query_execution_id_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

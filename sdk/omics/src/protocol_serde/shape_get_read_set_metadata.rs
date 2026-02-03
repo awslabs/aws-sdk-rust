@@ -130,13 +130,13 @@ pub fn de_get_read_set_metadata_http_response(
 }
 
 pub(crate) fn de_get_read_set_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -178,7 +178,7 @@ pub(crate) fn de_get_read_set_metadata(
                     );
                 }
                 "etag" => {
-                    builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens)?);
+                    builder = builder.set_etag(crate::protocol_serde::shape_e_tag::de_e_tag(tokens, _value)?);
                 }
                 "fileType" => {
                     builder = builder.set_file_type(
@@ -188,7 +188,7 @@ pub(crate) fn de_get_read_set_metadata(
                     );
                 }
                 "files" => {
-                    builder = builder.set_files(crate::protocol_serde::shape_read_set_files::de_read_set_files(tokens)?);
+                    builder = builder.set_files(crate::protocol_serde::shape_read_set_files::de_read_set_files(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -219,7 +219,9 @@ pub(crate) fn de_get_read_set_metadata(
                     );
                 }
                 "sequenceInformation" => {
-                    builder = builder.set_sequence_information(crate::protocol_serde::shape_sequence_information::de_sequence_information(tokens)?);
+                    builder = builder.set_sequence_information(crate::protocol_serde::shape_sequence_information::de_sequence_information(
+                        tokens, _value,
+                    )?);
                 }
                 "sequenceStoreId" => {
                     builder = builder.set_sequence_store_id(

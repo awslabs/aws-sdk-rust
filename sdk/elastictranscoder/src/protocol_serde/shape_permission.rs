@@ -23,6 +23,7 @@ pub fn ser_permission(
 
 pub(crate) fn de_permission<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Permission>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                             );
                         }
                         "Access" => {
-                            builder = builder.set_access(crate::protocol_serde::shape_access_controls::de_access_controls(tokens)?);
+                            builder = builder.set_access(crate::protocol_serde::shape_access_controls::de_access_controls(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

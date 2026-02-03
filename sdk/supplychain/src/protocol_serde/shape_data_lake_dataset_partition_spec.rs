@@ -20,6 +20,7 @@ pub fn ser_data_lake_dataset_partition_spec(
 
 pub(crate) fn de_data_lake_dataset_partition_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataLakeDatasetPartitionSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         "fields" => {
                             builder = builder.set_fields(
                                 crate::protocol_serde::shape_data_lake_dataset_partition_field_list::de_data_lake_dataset_partition_field_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

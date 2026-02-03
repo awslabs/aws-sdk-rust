@@ -202,13 +202,13 @@ pub fn ser_replicate_key_input(
 }
 
 pub(crate) fn de_replicate_key(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::replicate_key::builders::ReplicateKeyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::replicate_key::builders::ReplicateKeyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -216,7 +216,7 @@ pub(crate) fn de_replicate_key(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ReplicaKeyMetadata" => {
-                    builder = builder.set_replica_key_metadata(crate::protocol_serde::shape_key_metadata::de_key_metadata(tokens)?);
+                    builder = builder.set_replica_key_metadata(crate::protocol_serde::shape_key_metadata::de_key_metadata(tokens, _value)?);
                 }
                 "ReplicaPolicy" => {
                     builder = builder.set_replica_policy(
@@ -226,7 +226,7 @@ pub(crate) fn de_replicate_key(
                     );
                 }
                 "ReplicaTags" => {
-                    builder = builder.set_replica_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_replica_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

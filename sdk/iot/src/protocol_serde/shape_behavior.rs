@@ -32,6 +32,7 @@ pub fn ser_behavior(
 
 pub(crate) fn de_behavior<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Behavior>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,10 +61,11 @@ where
                             );
                         }
                         "metricDimension" => {
-                            builder = builder.set_metric_dimension(crate::protocol_serde::shape_metric_dimension::de_metric_dimension(tokens)?);
+                            builder =
+                                builder.set_metric_dimension(crate::protocol_serde::shape_metric_dimension::de_metric_dimension(tokens, _value)?);
                         }
                         "criteria" => {
-                            builder = builder.set_criteria(crate::protocol_serde::shape_behavior_criteria::de_behavior_criteria(tokens)?);
+                            builder = builder.set_criteria(crate::protocol_serde::shape_behavior_criteria::de_behavior_criteria(tokens, _value)?);
                         }
                         "suppressAlerts" => {
                             builder = builder.set_suppress_alerts(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

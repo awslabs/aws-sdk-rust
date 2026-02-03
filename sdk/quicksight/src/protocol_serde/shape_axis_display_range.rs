@@ -20,6 +20,7 @@ pub fn ser_axis_display_range(
 
 pub(crate) fn de_axis_display_range<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AxisDisplayRange>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MinMax" => {
                             builder = builder.set_min_max(crate::protocol_serde::shape_axis_display_min_max_range::de_axis_display_min_max_range(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "DataDriven" => {
                             builder = builder.set_data_driven(
-                                crate::protocol_serde::shape_axis_display_data_driven_range::de_axis_display_data_driven_range(tokens)?,
+                                crate::protocol_serde::shape_axis_display_data_driven_range::de_axis_display_data_driven_range(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

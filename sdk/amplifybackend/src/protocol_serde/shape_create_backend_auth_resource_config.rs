@@ -26,6 +26,7 @@ pub fn ser_create_backend_auth_resource_config(
 
 pub(crate) fn de_create_backend_auth_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,35 +39,37 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "authResources" => {
-                            builder = builder.set_auth_resources(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AuthResources::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "authResources" => {
+                                builder = builder.set_auth_resources(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::AuthResources::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "identityPoolConfigs" => {
+                                builder = builder.set_identity_pool_configs(
+                                    crate::protocol_serde::shape_create_backend_auth_identity_pool_config::de_create_backend_auth_identity_pool_config(tokens, _value)?
+                                );
+                            }
+                            "service" => {
+                                builder = builder.set_service(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::Service::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "userPoolConfigs" => {
+                                builder = builder.set_user_pool_configs(
+                                    crate::protocol_serde::shape_create_backend_auth_user_pool_config::de_create_backend_auth_user_pool_config(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "identityPoolConfigs" => {
-                            builder = builder.set_identity_pool_configs(
-                                crate::protocol_serde::shape_create_backend_auth_identity_pool_config::de_create_backend_auth_identity_pool_config(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "service" => {
-                            builder = builder.set_service(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Service::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "userPoolConfigs" => {
-                            builder = builder.set_user_pool_configs(
-                                crate::protocol_serde::shape_create_backend_auth_user_pool_config::de_create_backend_auth_user_pool_config(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

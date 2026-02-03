@@ -32,6 +32,7 @@ pub fn ser_health_events_config(
 
 pub(crate) fn de_health_events_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HealthEventsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,12 @@ where
                         }
                         "AvailabilityLocalHealthEventsConfig" => {
                             builder = builder.set_availability_local_health_events_config(
-                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens)?,
+                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens, _value)?,
                             );
                         }
                         "PerformanceLocalHealthEventsConfig" => {
                             builder = builder.set_performance_local_health_events_config(
-                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens)?,
+                                crate::protocol_serde::shape_local_health_events_config::de_local_health_events_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

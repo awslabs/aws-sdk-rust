@@ -131,10 +131,10 @@ pub fn ser_get_link_input(
 }
 
 pub(crate) fn de_get_link(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_link::builders::GetLinkOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_link::builders::GetLinkOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,10 +170,12 @@ pub(crate) fn de_get_link(
                     );
                 }
                 "LinkConfiguration" => {
-                    builder = builder.set_link_configuration(crate::protocol_serde::shape_link_configuration::de_link_configuration(tokens)?);
+                    builder = builder.set_link_configuration(crate::protocol_serde::shape_link_configuration::de_link_configuration(tokens, _value)?);
                 }
                 "ResourceTypes" => {
-                    builder = builder.set_resource_types(crate::protocol_serde::shape_resource_types_output::de_resource_types_output(tokens)?);
+                    builder = builder.set_resource_types(crate::protocol_serde::shape_resource_types_output::de_resource_types_output(
+                        tokens, _value,
+                    )?);
                 }
                 "SinkArn" => {
                     builder = builder.set_sink_arn(
@@ -183,7 +185,7 @@ pub(crate) fn de_get_link(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map_output::de_tag_map_output(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map_output::de_tag_map_output(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -84,13 +84,13 @@ pub fn ser_list_review_policy_results_for_hit_input(
 }
 
 pub(crate) fn de_list_review_policy_results_for_hit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -105,16 +105,16 @@ pub(crate) fn de_list_review_policy_results_for_hit(
                     );
                 }
                 "AssignmentReviewPolicy" => {
-                    builder = builder.set_assignment_review_policy(crate::protocol_serde::shape_review_policy::de_review_policy(tokens)?);
+                    builder = builder.set_assignment_review_policy(crate::protocol_serde::shape_review_policy::de_review_policy(tokens, _value)?);
                 }
                 "HITReviewPolicy" => {
-                    builder = builder.set_hit_review_policy(crate::protocol_serde::shape_review_policy::de_review_policy(tokens)?);
+                    builder = builder.set_hit_review_policy(crate::protocol_serde::shape_review_policy::de_review_policy(tokens, _value)?);
                 }
                 "AssignmentReviewReport" => {
-                    builder = builder.set_assignment_review_report(crate::protocol_serde::shape_review_report::de_review_report(tokens)?);
+                    builder = builder.set_assignment_review_report(crate::protocol_serde::shape_review_report::de_review_report(tokens, _value)?);
                 }
                 "HITReviewReport" => {
-                    builder = builder.set_hit_review_report(crate::protocol_serde::shape_review_report::de_review_report(tokens)?);
+                    builder = builder.set_hit_review_report(crate::protocol_serde::shape_review_report::de_review_report(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

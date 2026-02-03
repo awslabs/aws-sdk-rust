@@ -27,6 +27,7 @@ pub fn ser_storage_configuration(
 
 pub(crate) fn de_storage_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StorageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,11 @@ where
                     }
                     variant = match key.as_ref() {
                         "efs" => Some(crate::types::StorageConfiguration::Efs(
-                            crate::protocol_serde::shape_efs_storage_configuration::de_efs_storage_configuration(tokens)?
+                            crate::protocol_serde::shape_efs_storage_configuration::de_efs_storage_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efs' cannot be null"))?,
                         )),
                         "fsx" => Some(crate::types::StorageConfiguration::Fsx(
-                            crate::protocol_serde::shape_fsx_storage_configuration::de_fsx_storage_configuration(tokens)?
+                            crate::protocol_serde::shape_fsx_storage_configuration::de_fsx_storage_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fsx' cannot be null"))?,
                         )),
                         _ => {

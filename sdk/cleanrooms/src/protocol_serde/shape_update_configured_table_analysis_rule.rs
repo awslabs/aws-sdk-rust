@@ -157,13 +157,13 @@ pub fn ser_update_configured_table_analysis_rule_input(
 }
 
 pub(crate) fn de_update_configured_table_analysis_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,8 +171,9 @@ pub(crate) fn de_update_configured_table_analysis_rule(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "analysisRule" => {
-                    builder = builder
-                        .set_analysis_rule(crate::protocol_serde::shape_configured_table_analysis_rule::de_configured_table_analysis_rule(tokens)?);
+                    builder = builder.set_analysis_rule(
+                        crate::protocol_serde::shape_configured_table_analysis_rule::de_configured_table_analysis_rule(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

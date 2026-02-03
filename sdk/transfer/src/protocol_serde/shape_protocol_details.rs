@@ -26,6 +26,7 @@ pub fn ser_protocol_details(
 
 pub(crate) fn de_protocol_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProtocolDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                             );
                         }
                         "As2Transports" => {
-                            builder = builder.set_as2_transports(crate::protocol_serde::shape_as2_transports::de_as2_transports(tokens)?);
+                            builder = builder.set_as2_transports(crate::protocol_serde::shape_as2_transports::de_as2_transports(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

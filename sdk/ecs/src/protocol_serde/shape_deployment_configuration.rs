@@ -65,6 +65,7 @@ pub fn ser_deployment_configuration(
 
 pub(crate) fn de_deployment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeploymentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,7 +81,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "deploymentCircuitBreaker" => {
                             builder = builder.set_deployment_circuit_breaker(
-                                crate::protocol_serde::shape_deployment_circuit_breaker::de_deployment_circuit_breaker(tokens)?,
+                                crate::protocol_serde::shape_deployment_circuit_breaker::de_deployment_circuit_breaker(tokens, _value)?,
                             );
                         }
                         "maximumPercent" => {
@@ -98,7 +99,7 @@ where
                             );
                         }
                         "alarms" => {
-                            builder = builder.set_alarms(crate::protocol_serde::shape_deployment_alarms::de_deployment_alarms(tokens)?);
+                            builder = builder.set_alarms(crate::protocol_serde::shape_deployment_alarms::de_deployment_alarms(tokens, _value)?);
                         }
                         "strategy" => {
                             builder = builder.set_strategy(
@@ -116,16 +117,18 @@ where
                         }
                         "lifecycleHooks" => {
                             builder = builder.set_lifecycle_hooks(
-                                crate::protocol_serde::shape_deployment_lifecycle_hook_list::de_deployment_lifecycle_hook_list(tokens)?,
+                                crate::protocol_serde::shape_deployment_lifecycle_hook_list::de_deployment_lifecycle_hook_list(tokens, _value)?,
                             );
                         }
                         "linearConfiguration" => {
-                            builder =
-                                builder.set_linear_configuration(crate::protocol_serde::shape_linear_configuration::de_linear_configuration(tokens)?);
+                            builder = builder.set_linear_configuration(crate::protocol_serde::shape_linear_configuration::de_linear_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "canaryConfiguration" => {
-                            builder =
-                                builder.set_canary_configuration(crate::protocol_serde::shape_canary_configuration::de_canary_configuration(tokens)?);
+                            builder = builder.set_canary_configuration(crate::protocol_serde::shape_canary_configuration::de_canary_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

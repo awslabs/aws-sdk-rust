@@ -32,6 +32,7 @@ pub fn ser_log_configuration_type(
 
 pub(crate) fn de_log_configuration_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogConfigurationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,16 +62,19 @@ where
                         }
                         "CloudWatchLogsConfiguration" => {
                             builder = builder.set_cloud_watch_logs_configuration(
-                                crate::protocol_serde::shape_cloud_watch_logs_configuration_type::de_cloud_watch_logs_configuration_type(tokens)?,
+                                crate::protocol_serde::shape_cloud_watch_logs_configuration_type::de_cloud_watch_logs_configuration_type(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "S3Configuration" => {
-                            builder =
-                                builder.set_s3_configuration(crate::protocol_serde::shape_s3_configuration_type::de_s3_configuration_type(tokens)?);
+                            builder = builder.set_s3_configuration(crate::protocol_serde::shape_s3_configuration_type::de_s3_configuration_type(
+                                tokens, _value,
+                            )?);
                         }
                         "FirehoseConfiguration" => {
                             builder = builder.set_firehose_configuration(
-                                crate::protocol_serde::shape_firehose_configuration_type::de_firehose_configuration_type(tokens)?,
+                                crate::protocol_serde::shape_firehose_configuration_type::de_firehose_configuration_type(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

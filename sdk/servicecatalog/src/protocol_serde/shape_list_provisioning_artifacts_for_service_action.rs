@@ -93,13 +93,13 @@ pub fn ser_list_provisioning_artifacts_for_service_action_input(
 }
 
 pub(crate) fn de_list_provisioning_artifacts_for_service_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_list_provisioning_artifacts_for_service_action(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisioningArtifactViews" => {
                     builder = builder.set_provisioning_artifact_views(
-                        crate::protocol_serde::shape_provisioning_artifact_views::de_provisioning_artifact_views(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_views::de_provisioning_artifact_views(tokens, _value)?,
                     );
                 }
                 "NextPageToken" => {

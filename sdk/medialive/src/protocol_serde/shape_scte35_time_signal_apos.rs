@@ -20,6 +20,7 @@ pub fn ser_scte35_time_signal_apos(
 
 pub(crate) fn de_scte35_time_signal_apos<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Scte35TimeSignalApos>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -32,6 +32,7 @@ pub fn ser_put_asset_property_value_entry(
 
 pub(crate) fn de_put_asset_property_value_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PutAssetPropertyValueEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,7 +76,7 @@ where
                         }
                         "propertyValues" => {
                             builder = builder.set_property_values(
-                                crate::protocol_serde::shape_asset_property_value_list::de_asset_property_value_list(tokens)?,
+                                crate::protocol_serde::shape_asset_property_value_list::de_asset_property_value_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

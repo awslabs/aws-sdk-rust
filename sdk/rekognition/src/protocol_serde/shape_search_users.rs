@@ -139,11 +139,11 @@ pub fn ser_search_users_input(
 }
 
 pub(crate) fn de_search_users(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_users::builders::SearchUsersOutputBuilder,
 ) -> ::std::result::Result<crate::operation::search_users::builders::SearchUsersOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,7 +151,7 @@ pub(crate) fn de_search_users(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UserMatches" => {
-                    builder = builder.set_user_matches(crate::protocol_serde::shape_user_match_list::de_user_match_list(tokens)?);
+                    builder = builder.set_user_matches(crate::protocol_serde::shape_user_match_list::de_user_match_list(tokens, _value)?);
                 }
                 "FaceModelVersion" => {
                     builder = builder.set_face_model_version(
@@ -161,10 +161,10 @@ pub(crate) fn de_search_users(
                     );
                 }
                 "SearchedFace" => {
-                    builder = builder.set_searched_face(crate::protocol_serde::shape_searched_face::de_searched_face(tokens)?);
+                    builder = builder.set_searched_face(crate::protocol_serde::shape_searched_face::de_searched_face(tokens, _value)?);
                 }
                 "SearchedUser" => {
-                    builder = builder.set_searched_user(crate::protocol_serde::shape_searched_user::de_searched_user(tokens)?);
+                    builder = builder.set_searched_user(crate::protocol_serde::shape_searched_user::de_searched_user(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

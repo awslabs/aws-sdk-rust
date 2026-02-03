@@ -20,6 +20,7 @@ pub fn ser_time_signal_message(
 
 pub(crate) fn de_time_signal_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSignalMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SegmentationDescriptors" => {
                             builder = builder.set_segmentation_descriptors(
-                                crate::protocol_serde::shape_segmentation_descriptor_list::de_segmentation_descriptor_list(tokens)?,
+                                crate::protocol_serde::shape_segmentation_descriptor_list::de_segmentation_descriptor_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

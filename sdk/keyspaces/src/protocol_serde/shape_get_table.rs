@@ -128,10 +128,10 @@ pub fn ser_get_table_input(
 }
 
 pub(crate) fn de_get_table(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_table::builders::GetTableOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_table::builders::GetTableOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,25 +173,25 @@ pub(crate) fn de_get_table(
                     );
                 }
                 "schemaDefinition" => {
-                    builder = builder.set_schema_definition(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens)?);
+                    builder = builder.set_schema_definition(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens, _value)?);
                 }
                 "capacitySpecification" => {
                     builder = builder.set_capacity_specification(
-                        crate::protocol_serde::shape_capacity_specification_summary::de_capacity_specification_summary(tokens)?,
+                        crate::protocol_serde::shape_capacity_specification_summary::de_capacity_specification_summary(tokens, _value)?,
                     );
                 }
                 "encryptionSpecification" => {
                     builder = builder.set_encryption_specification(
-                        crate::protocol_serde::shape_encryption_specification::de_encryption_specification(tokens)?,
+                        crate::protocol_serde::shape_encryption_specification::de_encryption_specification(tokens, _value)?,
                     );
                 }
                 "pointInTimeRecovery" => {
                     builder = builder.set_point_in_time_recovery(
-                        crate::protocol_serde::shape_point_in_time_recovery_summary::de_point_in_time_recovery_summary(tokens)?,
+                        crate::protocol_serde::shape_point_in_time_recovery_summary::de_point_in_time_recovery_summary(tokens, _value)?,
                     );
                 }
                 "ttl" => {
-                    builder = builder.set_ttl(crate::protocol_serde::shape_time_to_live::de_time_to_live(tokens)?);
+                    builder = builder.set_ttl(crate::protocol_serde::shape_time_to_live::de_time_to_live(tokens, _value)?);
                 }
                 "defaultTimeToLive" => {
                     builder = builder.set_default_time_to_live(
@@ -201,15 +201,16 @@ pub(crate) fn de_get_table(
                     );
                 }
                 "comment" => {
-                    builder = builder.set_comment(crate::protocol_serde::shape_comment::de_comment(tokens)?);
+                    builder = builder.set_comment(crate::protocol_serde::shape_comment::de_comment(tokens, _value)?);
                 }
                 "clientSideTimestamps" => {
-                    builder =
-                        builder.set_client_side_timestamps(crate::protocol_serde::shape_client_side_timestamps::de_client_side_timestamps(tokens)?);
+                    builder = builder.set_client_side_timestamps(crate::protocol_serde::shape_client_side_timestamps::de_client_side_timestamps(
+                        tokens, _value,
+                    )?);
                 }
                 "replicaSpecifications" => {
                     builder = builder.set_replica_specifications(
-                        crate::protocol_serde::shape_replica_specification_summary_list::de_replica_specification_summary_list(tokens)?,
+                        crate::protocol_serde::shape_replica_specification_summary_list::de_replica_specification_summary_list(tokens, _value)?,
                     );
                 }
                 "latestStreamArn" => {
@@ -221,12 +222,12 @@ pub(crate) fn de_get_table(
                 }
                 "cdcSpecification" => {
                     builder = builder.set_cdc_specification(crate::protocol_serde::shape_cdc_specification_summary::de_cdc_specification_summary(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "warmThroughputSpecification" => {
                     builder = builder.set_warm_throughput_specification(
-                        crate::protocol_serde::shape_warm_throughput_specification_summary::de_warm_throughput_specification_summary(tokens)?,
+                        crate::protocol_serde::shape_warm_throughput_specification_summary::de_warm_throughput_specification_summary(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -138,13 +138,13 @@ pub fn ser_search_relevant_content_input(
 }
 
 pub(crate) fn de_search_relevant_content(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_relevant_content::builders::SearchRelevantContentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::search_relevant_content::builders::SearchRelevantContentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,9 @@ pub(crate) fn de_search_relevant_content(
                     );
                 }
                 "relevantContent" => {
-                    builder = builder.set_relevant_content(crate::protocol_serde::shape_relevant_content_list::de_relevant_content_list(tokens)?);
+                    builder = builder.set_relevant_content(crate::protocol_serde::shape_relevant_content_list::de_relevant_content_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

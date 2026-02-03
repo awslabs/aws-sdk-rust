@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotjobsdataplane::Error> {
 /// # let client: aws_sdk_iotjobsdataplane::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.describe_job_execution()
 ///     .customize()

@@ -15,26 +15,26 @@ futures = "0.3.25"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "1.8.12"
+version = "1.8.13"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "1.121.0"
+version = "1.122.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
-version = "1.2.7"
+version = "1.2.11"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["test-util"]
-version = "1.9.8"
+version = "1.10.0"
 
 [dev-dependencies.aws-smithy-http-client]
 path = "../../sdk/aws-smithy-http-client"
 features = ["test-util"]
-version = "1.1.5"
+version = "1.1.9"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"

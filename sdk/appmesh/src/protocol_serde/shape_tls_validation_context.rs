@@ -20,6 +20,7 @@ pub fn ser_tls_validation_context(
 
 pub(crate) fn de_tls_validation_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TlsValidationContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "trust" => {
-                            builder = builder
-                                .set_trust(crate::protocol_serde::shape_tls_validation_context_trust::de_tls_validation_context_trust(tokens)?);
+                            builder = builder.set_trust(
+                                crate::protocol_serde::shape_tls_validation_context_trust::de_tls_validation_context_trust(tokens, _value)?,
+                            );
                         }
                         "subjectAlternativeNames" => {
                             builder = builder.set_subject_alternative_names(
-                                crate::protocol_serde::shape_subject_alternative_names::de_subject_alternative_names(tokens)?,
+                                crate::protocol_serde::shape_subject_alternative_names::de_subject_alternative_names(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

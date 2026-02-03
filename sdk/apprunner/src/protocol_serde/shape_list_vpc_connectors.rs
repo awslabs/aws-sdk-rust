@@ -85,13 +85,13 @@ pub fn ser_list_vpc_connectors_input(
 }
 
 pub(crate) fn de_list_vpc_connectors(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_list_vpc_connectors(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "VpcConnectors" => {
-                    builder = builder.set_vpc_connectors(crate::protocol_serde::shape_vpc_connectors::de_vpc_connectors(tokens)?);
+                    builder = builder.set_vpc_connectors(crate::protocol_serde::shape_vpc_connectors::de_vpc_connectors(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

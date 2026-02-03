@@ -106,13 +106,13 @@ pub fn de_describe_computation_model_http_response(
 }
 
 pub(crate) fn de_describe_computation_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_computation_model::builders::DescribeComputationModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_computation_model::builders::DescribeComputationModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,7 +120,7 @@ pub(crate) fn de_describe_computation_model(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionDefinitions" => {
-                    builder = builder.set_action_definitions(crate::protocol_serde::shape_action_definitions::de_action_definitions(tokens)?);
+                    builder = builder.set_action_definitions(crate::protocol_serde::shape_action_definitions::de_action_definitions(tokens, _value)?);
                 }
                 "computationModelArn" => {
                     builder = builder.set_computation_model_arn(
@@ -131,7 +131,7 @@ pub(crate) fn de_describe_computation_model(
                 }
                 "computationModelConfiguration" => {
                     builder = builder.set_computation_model_configuration(
-                        crate::protocol_serde::shape_computation_model_configuration::de_computation_model_configuration(tokens)?,
+                        crate::protocol_serde::shape_computation_model_configuration::de_computation_model_configuration(tokens, _value)?,
                     );
                 }
                 "computationModelCreationDate" => {
@@ -142,7 +142,7 @@ pub(crate) fn de_describe_computation_model(
                 }
                 "computationModelDataBinding" => {
                     builder = builder.set_computation_model_data_binding(
-                        crate::protocol_serde::shape_computation_model_data_binding::de_computation_model_data_binding(tokens)?,
+                        crate::protocol_serde::shape_computation_model_data_binding::de_computation_model_data_binding(tokens, _value)?,
                     );
                 }
                 "computationModelDescription" => {
@@ -174,7 +174,7 @@ pub(crate) fn de_describe_computation_model(
                 }
                 "computationModelStatus" => {
                     builder = builder.set_computation_model_status(
-                        crate::protocol_serde::shape_computation_model_status::de_computation_model_status(tokens)?,
+                        crate::protocol_serde::shape_computation_model_status::de_computation_model_status(tokens, _value)?,
                     );
                 }
                 "computationModelVersion" => {

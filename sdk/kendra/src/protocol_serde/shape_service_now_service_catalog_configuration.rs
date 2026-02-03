@@ -47,6 +47,7 @@ pub fn ser_service_now_service_catalog_configuration(
 
 pub(crate) fn de_service_now_service_catalog_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceNowServiceCatalogConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,12 +67,12 @@ where
                             }
                             "IncludeAttachmentFilePatterns" => {
                                 builder = builder.set_include_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExcludeAttachmentFilePatterns" => {
                                 builder = builder.set_exclude_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "DocumentDataFieldName" => {
@@ -91,7 +92,7 @@ where
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }

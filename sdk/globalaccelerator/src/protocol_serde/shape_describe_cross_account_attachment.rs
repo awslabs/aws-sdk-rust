@@ -126,13 +126,13 @@ pub fn ser_describe_cross_account_attachment_input(
 }
 
 pub(crate) fn de_describe_cross_account_attachment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_cross_account_attachment::builders::DescribeCrossAccountAttachmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_cross_account_attachment::builders::DescribeCrossAccountAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_describe_cross_account_attachment(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CrossAccountAttachment" => {
-                    builder = builder.set_cross_account_attachment(crate::protocol_serde::shape_attachment::de_attachment(tokens)?);
+                    builder = builder.set_cross_account_attachment(crate::protocol_serde::shape_attachment::de_attachment(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

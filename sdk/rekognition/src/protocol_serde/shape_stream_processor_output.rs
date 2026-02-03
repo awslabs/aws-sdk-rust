@@ -20,6 +20,7 @@ pub fn ser_stream_processor_output(
 
 pub(crate) fn de_stream_processor_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StreamProcessorOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KinesisDataStream" => {
-                            builder =
-                                builder.set_kinesis_data_stream(crate::protocol_serde::shape_kinesis_data_stream::de_kinesis_data_stream(tokens)?);
+                            builder = builder
+                                .set_kinesis_data_stream(crate::protocol_serde::shape_kinesis_data_stream::de_kinesis_data_stream(tokens, _value)?);
                         }
                         "S3Destination" => {
-                            builder = builder.set_s3_destination(crate::protocol_serde::shape_s3_destination::de_s3_destination(tokens)?);
+                            builder = builder.set_s3_destination(crate::protocol_serde::shape_s3_destination::de_s3_destination(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

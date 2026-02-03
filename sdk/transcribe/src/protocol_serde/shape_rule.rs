@@ -35,6 +35,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,22 +65,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "NonTalkTimeFilter" => Some(crate::types::Rule::NonTalkTimeFilter(
-                            crate::protocol_serde::shape_non_talk_time_filter::de_non_talk_time_filter(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_non_talk_time_filter::de_non_talk_time_filter(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NonTalkTimeFilter' cannot be null")
                             })?,
                         )),
                         "InterruptionFilter" => Some(crate::types::Rule::InterruptionFilter(
-                            crate::protocol_serde::shape_interruption_filter::de_interruption_filter(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_interruption_filter::de_interruption_filter(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InterruptionFilter' cannot be null")
                             })?,
                         )),
                         "TranscriptFilter" => Some(crate::types::Rule::TranscriptFilter(
-                            crate::protocol_serde::shape_transcript_filter::de_transcript_filter(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_transcript_filter::de_transcript_filter(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TranscriptFilter' cannot be null")
                             })?,
                         )),
                         "SentimentFilter" => Some(crate::types::Rule::SentimentFilter(
-                            crate::protocol_serde::shape_sentiment_filter::de_sentiment_filter(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sentiment_filter::de_sentiment_filter(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SentimentFilter' cannot be null")
                             })?,
                         )),

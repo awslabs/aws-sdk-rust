@@ -14,6 +14,7 @@ pub fn ser_scaling_trigger(
 
 pub(crate) fn de_scaling_trigger<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScalingTrigger>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CloudWatchAlarmDefinition" => {
                             builder = builder.set_cloud_watch_alarm_definition(
-                                crate::protocol_serde::shape_cloud_watch_alarm_definition::de_cloud_watch_alarm_definition(tokens)?,
+                                crate::protocol_serde::shape_cloud_watch_alarm_definition::de_cloud_watch_alarm_definition(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

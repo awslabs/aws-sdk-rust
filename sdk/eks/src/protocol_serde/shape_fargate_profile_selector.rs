@@ -21,6 +21,7 @@ pub fn ser_fargate_profile_selector(
 
 pub(crate) fn de_fargate_profile_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FargateProfileSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,9 @@ where
                             );
                         }
                         "labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_fargate_profile_label::de_fargate_profile_label(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_fargate_profile_label::de_fargate_profile_label(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

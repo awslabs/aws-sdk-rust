@@ -17,6 +17,7 @@ pub fn ser_sheet_element_rendering_rule(
 
 pub(crate) fn de_sheet_element_rendering_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetElementRenderingRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,9 @@ where
                         }
                         "ConfigurationOverrides" => {
                             builder = builder.set_configuration_overrides(
-                                crate::protocol_serde::shape_sheet_element_configuration_overrides::de_sheet_element_configuration_overrides(tokens)?,
+                                crate::protocol_serde::shape_sheet_element_configuration_overrides::de_sheet_element_configuration_overrides(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

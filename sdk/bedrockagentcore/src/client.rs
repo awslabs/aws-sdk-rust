@@ -155,7 +155,7 @@ mod create_event;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockagentcore::Error> {
 /// # let client: aws_sdk_bedrockagentcore::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_memory_records()
 ///     .customize()

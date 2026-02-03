@@ -130,13 +130,13 @@ pub fn ser_put_alliance_lead_contact_input(
 }
 
 pub(crate) fn de_put_alliance_lead_contact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_alliance_lead_contact::builders::PutAllianceLeadContactOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_alliance_lead_contact::builders::PutAllianceLeadContactOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,8 +165,9 @@ pub(crate) fn de_put_alliance_lead_contact(
                     );
                 }
                 "AllianceLeadContact" => {
-                    builder =
-                        builder.set_alliance_lead_contact(crate::protocol_serde::shape_alliance_lead_contact::de_alliance_lead_contact(tokens)?);
+                    builder = builder.set_alliance_lead_contact(crate::protocol_serde::shape_alliance_lead_contact::de_alliance_lead_contact(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

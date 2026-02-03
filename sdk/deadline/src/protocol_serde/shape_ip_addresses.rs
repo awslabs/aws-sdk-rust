@@ -26,6 +26,7 @@ pub fn ser_ip_addresses(
 
 pub(crate) fn de_ip_addresses<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IpAddresses>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ipV4Addresses" => {
-                            builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens)?);
+                            builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens, _value)?);
                         }
                         "ipV6Addresses" => {
-                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_addresses::de_ipv6_addresses(tokens)?);
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_addresses::de_ipv6_addresses(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

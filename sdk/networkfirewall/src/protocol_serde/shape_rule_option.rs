@@ -20,6 +20,7 @@ pub fn ser_rule_option(
 
 pub(crate) fn de_rule_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "Settings" => {
-                            builder = builder.set_settings(crate::protocol_serde::shape_settings::de_settings(tokens)?);
+                            builder = builder.set_settings(crate::protocol_serde::shape_settings::de_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

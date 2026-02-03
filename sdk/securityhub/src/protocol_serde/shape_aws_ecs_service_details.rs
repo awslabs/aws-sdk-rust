@@ -155,6 +155,7 @@ pub fn ser_aws_ecs_service_details(
 
 pub(crate) fn de_aws_ecs_service_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEcsServiceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -170,7 +171,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CapacityProviderStrategy" => {
                             builder = builder.set_capacity_provider_strategy(
-                                    crate::protocol_serde::shape_aws_ecs_service_capacity_provider_strategy_list::de_aws_ecs_service_capacity_provider_strategy_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_service_capacity_provider_strategy_list::de_aws_ecs_service_capacity_provider_strategy_list(tokens, _value)?
                                 );
                         }
                         "Cluster" => {
@@ -182,12 +183,12 @@ where
                         }
                         "DeploymentConfiguration" => {
                             builder = builder.set_deployment_configuration(
-                                    crate::protocol_serde::shape_aws_ecs_service_deployment_configuration_details::de_aws_ecs_service_deployment_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_service_deployment_configuration_details::de_aws_ecs_service_deployment_configuration_details(tokens, _value)?
                                 );
                         }
                         "DeploymentController" => {
                             builder = builder.set_deployment_controller(
-                                    crate::protocol_serde::shape_aws_ecs_service_deployment_controller_details::de_aws_ecs_service_deployment_controller_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_service_deployment_controller_details::de_aws_ecs_service_deployment_controller_details(tokens, _value)?
                                 );
                         }
                         "DesiredCount" => {
@@ -219,7 +220,9 @@ where
                         }
                         "LoadBalancers" => {
                             builder = builder.set_load_balancers(
-                                crate::protocol_serde::shape_aws_ecs_service_load_balancers_list::de_aws_ecs_service_load_balancers_list(tokens)?,
+                                crate::protocol_serde::shape_aws_ecs_service_load_balancers_list::de_aws_ecs_service_load_balancers_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Name" => {
@@ -231,18 +234,18 @@ where
                         }
                         "NetworkConfiguration" => {
                             builder = builder.set_network_configuration(
-                                    crate::protocol_serde::shape_aws_ecs_service_network_configuration_details::de_aws_ecs_service_network_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_service_network_configuration_details::de_aws_ecs_service_network_configuration_details(tokens, _value)?
                                 );
                         }
                         "PlacementConstraints" => {
                             builder = builder.set_placement_constraints(
-                                    crate::protocol_serde::shape_aws_ecs_service_placement_constraints_list::de_aws_ecs_service_placement_constraints_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_service_placement_constraints_list::de_aws_ecs_service_placement_constraints_list(tokens, _value)?
                                 );
                         }
                         "PlacementStrategies" => {
                             builder = builder.set_placement_strategies(
                                 crate::protocol_serde::shape_aws_ecs_service_placement_strategies_list::de_aws_ecs_service_placement_strategies_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -291,7 +294,7 @@ where
                         "ServiceRegistries" => {
                             builder = builder.set_service_registries(
                                 crate::protocol_serde::shape_aws_ecs_service_service_registries_list::de_aws_ecs_service_service_registries_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

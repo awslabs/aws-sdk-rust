@@ -14,6 +14,7 @@ pub fn ser_action_filter_configuration(
 
 pub(crate) fn de_action_filter_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActionFilterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "documentAttributeFilter" => {
-                            builder =
-                                builder.set_document_attribute_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens)?);
+                            builder = builder
+                                .set_document_attribute_filter(crate::protocol_serde::shape_attribute_filter::de_attribute_filter(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

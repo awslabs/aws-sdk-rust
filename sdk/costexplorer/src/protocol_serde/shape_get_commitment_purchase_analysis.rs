@@ -106,13 +106,13 @@ pub fn ser_get_commitment_purchase_analysis_input(
 }
 
 pub(crate) fn de_get_commitment_purchase_analysis(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_commitment_purchase_analysis::builders::GetCommitmentPurchaseAnalysisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_commitment_purchase_analysis::builders::GetCommitmentPurchaseAnalysisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,12 +162,12 @@ pub(crate) fn de_get_commitment_purchase_analysis(
                     );
                 }
                 "AnalysisDetails" => {
-                    builder = builder.set_analysis_details(crate::protocol_serde::shape_analysis_details::de_analysis_details(tokens)?);
+                    builder = builder.set_analysis_details(crate::protocol_serde::shape_analysis_details::de_analysis_details(tokens, _value)?);
                 }
                 "CommitmentPurchaseAnalysisConfiguration" => {
                     builder = builder.set_commitment_purchase_analysis_configuration(
                         crate::protocol_serde::shape_commitment_purchase_analysis_configuration::de_commitment_purchase_analysis_configuration(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

@@ -26,6 +26,7 @@ pub fn ser_aws_rds_pending_cloud_watch_logs_exports(
 
 pub(crate) fn de_aws_rds_pending_cloud_watch_logs_exports<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsPendingCloudWatchLogsExports>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LogTypesToEnable" => {
-                            builder = builder.set_log_types_to_enable(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_log_types_to_enable(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "LogTypesToDisable" => {
-                            builder = builder.set_log_types_to_disable(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_log_types_to_disable(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

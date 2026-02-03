@@ -114,13 +114,13 @@ pub fn ser_describe_fhir_datastore_input(
 }
 
 pub(crate) fn de_describe_fhir_datastore(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,9 @@ pub(crate) fn de_describe_fhir_datastore(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DatastoreProperties" => {
-                    builder = builder.set_datastore_properties(crate::protocol_serde::shape_datastore_properties::de_datastore_properties(tokens)?);
+                    builder = builder.set_datastore_properties(crate::protocol_serde::shape_datastore_properties::de_datastore_properties(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

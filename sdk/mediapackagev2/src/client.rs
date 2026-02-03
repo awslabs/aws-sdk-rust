@@ -184,7 +184,7 @@ mod create_origin_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mediapackagev2::Error> {
 /// # let client: aws_sdk_mediapackagev2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_harvest_job()
 ///     .customize()

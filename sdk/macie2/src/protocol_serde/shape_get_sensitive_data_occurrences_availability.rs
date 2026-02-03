@@ -128,13 +128,13 @@ pub fn de_get_sensitive_data_occurrences_availability_http_response(
 }
 
 pub(crate) fn de_get_sensitive_data_occurrences_availability(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,8 +149,9 @@ pub(crate) fn de_get_sensitive_data_occurrences_availability(
                     );
                 }
                 "reasons" => {
-                    builder = builder
-                        .set_reasons(crate::protocol_serde::shape_list_of_unavailability_reason_code::de_list_of_unavailability_reason_code(tokens)?);
+                    builder = builder.set_reasons(
+                        crate::protocol_serde::shape_list_of_unavailability_reason_code::de_list_of_unavailability_reason_code(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

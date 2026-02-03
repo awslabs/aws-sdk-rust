@@ -30,6 +30,7 @@ pub fn ser_glue_table(
 
 pub(crate) fn de_glue_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GlueTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,7 +74,7 @@ where
                         }
                         "AdditionalOptions" => {
                             builder = builder.set_additional_options(
-                                crate::protocol_serde::shape_glue_table_additional_options::de_glue_table_additional_options(tokens)?,
+                                crate::protocol_serde::shape_glue_table_additional_options::de_glue_table_additional_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

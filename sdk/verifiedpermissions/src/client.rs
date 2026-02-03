@@ -159,7 +159,7 @@ mod create_policy_template;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_verifiedpermissions::Error> {
 /// # let client: aws_sdk_verifiedpermissions::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_policy()
 ///     .customize()

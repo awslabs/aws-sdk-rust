@@ -20,6 +20,7 @@ pub fn ser_aws_ecs_cluster_configuration_execute_command_configuration_details(
 
 pub(crate) fn de_aws_ecs_cluster_configuration_execute_command_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -45,7 +46,7 @@ where
                         }
                         "LogConfiguration" => {
                             builder = builder.set_log_configuration(
-                                    crate::protocol_serde::shape_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::de_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::de_aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details(tokens, _value)?
                                 );
                         }
                         "Logging" => {

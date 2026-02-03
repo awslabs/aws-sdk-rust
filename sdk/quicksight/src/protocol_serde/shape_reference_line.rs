@@ -29,6 +29,7 @@ pub fn ser_reference_line(
 
 pub(crate) fn de_reference_line<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReferenceLine>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,21 @@ where
                         }
                         "DataConfiguration" => {
                             builder = builder.set_data_configuration(
-                                crate::protocol_serde::shape_reference_line_data_configuration::de_reference_line_data_configuration(tokens)?,
+                                crate::protocol_serde::shape_reference_line_data_configuration::de_reference_line_data_configuration(tokens, _value)?,
                             );
                         }
                         "StyleConfiguration" => {
                             builder = builder.set_style_configuration(
-                                crate::protocol_serde::shape_reference_line_style_configuration::de_reference_line_style_configuration(tokens)?,
+                                crate::protocol_serde::shape_reference_line_style_configuration::de_reference_line_style_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LabelConfiguration" => {
                             builder = builder.set_label_configuration(
-                                crate::protocol_serde::shape_reference_line_label_configuration::de_reference_line_label_configuration(tokens)?,
+                                crate::protocol_serde::shape_reference_line_label_configuration::de_reference_line_label_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

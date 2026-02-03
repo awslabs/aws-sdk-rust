@@ -26,6 +26,7 @@ pub fn ser_integer_default_values(
 
 pub(crate) fn de_integer_default_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IntegerDefaultValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DynamicValue" => {
-                            builder =
-                                builder.set_dynamic_value(crate::protocol_serde::shape_dynamic_default_value::de_dynamic_default_value(tokens)?);
+                            builder = builder.set_dynamic_value(crate::protocol_serde::shape_dynamic_default_value::de_dynamic_default_value(
+                                tokens, _value,
+                            )?);
                         }
                         "StaticValues" => {
                             builder = builder.set_static_values(
-                                crate::protocol_serde::shape_integer_default_value_list::de_integer_default_value_list(tokens)?,
+                                crate::protocol_serde::shape_integer_default_value_list::de_integer_default_value_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

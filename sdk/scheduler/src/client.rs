@@ -149,7 +149,7 @@ mod create_schedule_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_scheduler::Error> {
 /// # let client: aws_sdk_scheduler::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_schedule()
 ///     .customize()

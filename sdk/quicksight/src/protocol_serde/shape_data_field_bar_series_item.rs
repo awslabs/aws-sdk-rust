@@ -20,6 +20,7 @@ pub fn ser_data_field_bar_series_item(
 
 pub(crate) fn de_data_field_bar_series_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataFieldBarSeriesItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "Settings" => {
                             builder = builder.set_settings(crate::protocol_serde::shape_bar_chart_series_settings::de_bar_chart_series_settings(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

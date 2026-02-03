@@ -3112,6 +3112,807 @@ mod test {
                 .build()
         );
     }
+
+    /// StreamId test: OperationType not set with StreamId
+    #[test]
+    fn test_155() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [StreamId test: OperationType not set with StreamId]");
+        assert_eq!(
+            format!("{}", error),
+            "Operation Type is not set. Please contact service team for resolution."
+        )
+    }
+
+    /// StreamId test: Stream endpoint targeting control operation type
+    #[test]
+    fn test_156() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint targeting data operation type
+    #[test]
+    fn test_157() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with fips targeting data operation type
+    #[test]
+    fn test_158() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with fips targeting control operation type
+    #[test]
+    fn test_159() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with Dual Stack and FIPS enabled
+    #[test]
+    fn test_160() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with Dual Stack enabled
+    #[test]
+    fn test_161() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis.us-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis.us-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with FIPS and DualStack disabled
+    #[test]
+    fn test_162() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .stream_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint FIPS and DualStack disabled with endpoint
+    #[test]
+    fn test_163() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint targeting data operation type with endpoint
+    #[test]
+    fn test_164() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with fips targeting data operation type with endpoint
+    #[test]
+    fn test_165() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with fips targeting control operation type with endpoint
+    #[test]
+    fn test_166() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with Dual Stack and FIPS enabled with endpoint
+    #[test]
+    fn test_167() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with Dual Stack enabled with endpoint
+    #[test]
+    fn test_168() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint targeting data operation type with https endpoint
+    #[test]
+    fn test_169() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with FIPS enabled targeting control operation type
+    #[test]
+    fn test_170() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with FIPS enabled targeting data operation type
+    #[test]
+    fn test_171() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with DualStack enabled targeting control operation type
+    #[test]
+    fn test_172() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with DualStack enabled targeting data operation type
+    #[test]
+    fn test_173() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting control operation type
+    #[test]
+    fn test_174() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting data operation type
+    #[test]
+    fn test_175() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod1.us-east-1.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with FIPS enabled in different region
+    #[test]
+    fn test_176() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis-pod2-fips.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis-pod2-fips.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: HTTPS endpoint with DualStack enabled in different region
+    #[test]
+    fn test_177() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis-pod2.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis-pod2.us-west-2.api.aws")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with ConsumerARN targeting control operation type
+    #[test]
+    fn test_178() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with ConsumerARN targeting data operation type
+    #[test]
+    fn test_179() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .consumer_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with ResourceARN targeting control operation type
+    #[test]
+    fn test_180() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Stream endpoint with ResourceARN targeting data operation type
+    #[test]
+    fn test_181() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071-xyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid StreamId with ARN
+    #[test]
+    fn test_182() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .stream_id("af4lwng4k01746835071=xyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with custom endpoint
+    #[test]
+    fn test_183() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071=xyz".to_string())
+            .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-pod2.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-pod2.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId
+    #[test]
+    fn test_184() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071=xyz".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with custom endpoint and ARN
+    #[test]
+    fn test_185() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071=xyz".to_string())
+            .endpoint("https://kinesis-pod2.us-west-2.amazonaws.com".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-pod2.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-pod2.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with longer prefix
+    #[test]
+    fn test_186() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k0174683507123-xyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with shorter prefix
+    #[test]
+    fn test_187() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835-xyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with longer suffix
+    #[test]
+    fn test_188() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-wxyz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// StreamId test: Invalid streamId with shorter suffix
+    #[test]
+    fn test_189() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_id("af4lwng4k01746835071-yz".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon Kinesis
@@ -3192,6 +3993,8 @@ pub struct Params {
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    /// The unique identifier of the Kinesis stream
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the Kinesis stream
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     /// Internal parameter to distinguish between Control/Data plane API and accordingly generate control/data plane endpoint
@@ -3222,6 +4025,10 @@ impl Params {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// The unique identifier of the Kinesis stream
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
     /// The ARN of the Kinesis stream
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
@@ -3247,6 +4054,7 @@ pub struct ParamsBuilder {
     use_dual_stack: ::std::option::Option<bool>,
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
+    stream_id: ::std::option::Option<::std::string::String>,
     stream_arn: ::std::option::Option<::std::string::String>,
     operation_type: ::std::option::Option<::std::string::String>,
     consumer_arn: ::std::option::Option<::std::string::String>,
@@ -3280,6 +4088,7 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
+                stream_id: self.stream_id,
                 stream_arn: self.stream_arn,
                 operation_type: self.operation_type,
                 consumer_arn: self.consumer_arn,
@@ -3349,6 +4158,21 @@ impl ParamsBuilder {
     /// Override the endpoint used to send this request
     pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
+        self
+    }
+    /// Sets the value for stream_id
+    ///
+    /// The unique identifier of the Kinesis stream
+    pub fn stream_id(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.stream_id = Some(value.into());
+        self
+    }
+
+    /// Sets the value for stream_id
+    ///
+    /// The unique identifier of the Kinesis stream
+    pub fn set_stream_id(mut self, param: Option<::std::string::String>) -> Self {
+        self.stream_id = param;
         self
     }
     /// Sets the value for stream_arn

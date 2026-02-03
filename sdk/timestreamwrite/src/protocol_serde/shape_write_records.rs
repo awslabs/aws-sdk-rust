@@ -149,13 +149,13 @@ pub fn ser_write_records_input(
 }
 
 pub(crate) fn de_write_records(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::write_records::builders::WriteRecordsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::write_records::builders::WriteRecordsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_write_records(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RecordsIngested" => {
-                    builder = builder.set_records_ingested(crate::protocol_serde::shape_records_ingested::de_records_ingested(tokens)?);
+                    builder = builder.set_records_ingested(crate::protocol_serde::shape_records_ingested::de_records_ingested(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

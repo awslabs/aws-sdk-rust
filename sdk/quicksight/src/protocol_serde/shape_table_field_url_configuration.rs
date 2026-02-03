@@ -20,6 +20,7 @@ pub fn ser_table_field_url_configuration(
 
 pub(crate) fn de_table_field_url_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableFieldUrlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LinkConfiguration" => {
                             builder = builder.set_link_configuration(
-                                crate::protocol_serde::shape_table_field_link_configuration::de_table_field_link_configuration(tokens)?,
+                                crate::protocol_serde::shape_table_field_link_configuration::de_table_field_link_configuration(tokens, _value)?,
                             );
                         }
                         "ImageConfiguration" => {
                             builder = builder.set_image_configuration(
-                                crate::protocol_serde::shape_table_field_image_configuration::de_table_field_image_configuration(tokens)?,
+                                crate::protocol_serde::shape_table_field_image_configuration::de_table_field_image_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

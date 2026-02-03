@@ -123,13 +123,13 @@ pub fn de_describe_topic_refresh_http_response(
 }
 
 pub(crate) fn de_describe_topic_refresh(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,9 @@ pub(crate) fn de_describe_topic_refresh(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RefreshDetails" => {
-                    builder = builder.set_refresh_details(crate::protocol_serde::shape_topic_refresh_details::de_topic_refresh_details(tokens)?);
+                    builder = builder.set_refresh_details(crate::protocol_serde::shape_topic_refresh_details::de_topic_refresh_details(
+                        tokens, _value,
+                    )?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

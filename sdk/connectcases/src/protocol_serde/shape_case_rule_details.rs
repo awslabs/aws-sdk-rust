@@ -33,6 +33,7 @@ pub fn ser_case_rule_details(
 
 pub(crate) fn de_case_rule_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaseRuleDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,17 +63,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "required" => Some(crate::types::CaseRuleDetails::Required(
-                            crate::protocol_serde::shape_required_case_rule::de_required_case_rule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_required_case_rule::de_required_case_rule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'required' cannot be null")
                             })?,
                         )),
                         "fieldOptions" => Some(crate::types::CaseRuleDetails::FieldOptions(
-                            crate::protocol_serde::shape_field_options_case_rule::de_field_options_case_rule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_field_options_case_rule::de_field_options_case_rule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fieldOptions' cannot be null")
                             })?,
                         )),
                         "hidden" => Some(crate::types::CaseRuleDetails::Hidden(
-                            crate::protocol_serde::shape_hidden_case_rule::de_hidden_case_rule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_hidden_case_rule::de_hidden_case_rule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'hidden' cannot be null")
                             })?,
                         )),

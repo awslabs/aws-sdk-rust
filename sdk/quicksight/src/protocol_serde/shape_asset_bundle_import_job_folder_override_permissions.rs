@@ -23,6 +23,7 @@ pub fn ser_asset_bundle_import_job_folder_override_permissions(
 
 pub(crate) fn de_asset_bundle_import_job_folder_override_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobFolderOverridePermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,21 +36,21 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "FolderIds" => {
-                                builder = builder.set_folder_ids(
-                                    crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(tokens)?
-                                );
-                            }
-                            "Permissions" => {
-                                builder = builder.set_permissions(
-                                    crate::protocol_serde::shape_asset_bundle_resource_permissions::de_asset_bundle_resource_permissions(tokens)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FolderIds" => {
+                            builder = builder.set_folder_ids(
+                                crate::protocol_serde::shape_asset_bundle_restrictive_resource_id_list::de_asset_bundle_restrictive_resource_id_list(
+                                    tokens, _value,
+                                )?,
+                            );
                         }
-                    }
+                        "Permissions" => {
+                            builder = builder.set_permissions(
+                                crate::protocol_serde::shape_asset_bundle_resource_permissions::de_asset_bundle_resource_permissions(tokens, _value)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

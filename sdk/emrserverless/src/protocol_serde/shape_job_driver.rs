@@ -23,6 +23,7 @@ pub fn ser_job_driver(
 
 pub(crate) fn de_job_driver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,12 +53,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "sparkSubmit" => Some(crate::types::JobDriver::SparkSubmit(
-                            crate::protocol_serde::shape_spark_submit::de_spark_submit(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_spark_submit::de_spark_submit(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sparkSubmit' cannot be null")
                             })?,
                         )),
                         "hive" => Some(crate::types::JobDriver::Hive(
-                            crate::protocol_serde::shape_hive::de_hive(tokens)?
+                            crate::protocol_serde::shape_hive::de_hive(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'hive' cannot be null"))?,
                         )),
                         _ => {

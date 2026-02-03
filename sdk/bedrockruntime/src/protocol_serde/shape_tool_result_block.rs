@@ -29,6 +29,7 @@ pub fn ser_tool_result_block(
 
 pub(crate) fn de_tool_result_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolResultBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         }
                         "content" => {
                             builder = builder.set_content(crate::protocol_serde::shape_tool_result_content_blocks::de_tool_result_content_blocks(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "status" => {

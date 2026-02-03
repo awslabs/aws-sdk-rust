@@ -20,6 +20,7 @@ pub fn ser_override_dataset_parameter_operation(
 
 pub(crate) fn de_override_dataset_parameter_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OverrideDatasetParameterOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,8 @@ where
                             );
                         }
                         "NewDefaultValues" => {
-                            builder = builder.set_new_default_values(crate::protocol_serde::shape_new_default_values::de_new_default_values(tokens)?);
+                            builder = builder
+                                .set_new_default_values(crate::protocol_serde::shape_new_default_values::de_new_default_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

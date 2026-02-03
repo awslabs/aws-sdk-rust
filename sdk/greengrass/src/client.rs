@@ -187,7 +187,7 @@ mod create_subscription_definition_version;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_greengrass::Error> {
 /// # let client: aws_sdk_greengrass::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_role_to_group()
 ///     .customize()

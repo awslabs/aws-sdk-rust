@@ -20,6 +20,7 @@ pub fn ser_form_button(
 
 pub(crate) fn de_form_button<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormButton>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

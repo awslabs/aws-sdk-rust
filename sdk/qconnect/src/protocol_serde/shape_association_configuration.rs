@@ -20,6 +20,7 @@ pub fn ser_association_configuration(
 
 pub(crate) fn de_association_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssociationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                         }
                         "associationConfigurationData" => {
                             builder = builder.set_association_configuration_data(
-                                crate::protocol_serde::shape_association_configuration_data::de_association_configuration_data(tokens)?,
+                                crate::protocol_serde::shape_association_configuration_data::de_association_configuration_data(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

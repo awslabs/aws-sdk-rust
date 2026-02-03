@@ -108,6 +108,7 @@ pub fn ser_compute_resource(
 
 pub(crate) fn de_compute_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComputeResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -157,7 +158,7 @@ where
                             );
                         }
                         "instanceTypes" => {
-                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "imageId" => {
                             builder = builder.set_image_id(
@@ -167,10 +168,10 @@ where
                             );
                         }
                         "subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "ec2KeyPair" => {
                             builder = builder.set_ec2_key_pair(
@@ -187,7 +188,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                         }
                         "placementGroup" => {
                             builder = builder.set_placement_group(
@@ -212,12 +213,13 @@ where
                         }
                         "launchTemplate" => {
                             builder = builder.set_launch_template(
-                                crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(tokens)?,
+                                crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(tokens, _value)?,
                             );
                         }
                         "ec2Configuration" => {
-                            builder = builder
-                                .set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_list::de_ec2_configuration_list(tokens)?);
+                            builder = builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_list::de_ec2_configuration_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

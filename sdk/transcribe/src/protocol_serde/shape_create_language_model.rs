@@ -114,13 +114,13 @@ pub fn ser_create_language_model_input(
 }
 
 pub(crate) fn de_create_language_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,7 @@ pub(crate) fn de_create_language_model(
                     );
                 }
                 "InputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?);
+                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
                 }
                 "ModelStatus" => {
                     builder = builder.set_model_status(

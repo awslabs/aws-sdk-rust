@@ -9,6 +9,8 @@ pub struct DescribeStreamConsumerInput {
     pub consumer_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -22,6 +24,10 @@ impl DescribeStreamConsumerInput {
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 impl DescribeStreamConsumerInput {
@@ -38,6 +44,7 @@ pub struct DescribeStreamConsumerInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_name: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamConsumerInputBuilder {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -82,6 +89,20 @@ impl DescribeStreamConsumerInputBuilder {
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`DescribeStreamConsumerInput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerInput).
     pub fn build(
         self,
@@ -93,6 +114,7 @@ impl DescribeStreamConsumerInputBuilder {
             stream_arn: self.stream_arn,
             consumer_name: self.consumer_name,
             consumer_arn: self.consumer_arn,
+            stream_id: self.stream_id,
         })
     }
 }

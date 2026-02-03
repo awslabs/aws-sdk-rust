@@ -122,13 +122,13 @@ pub fn de_get_user_profile_http_response(
 }
 
 pub(crate) fn de_get_user_profile(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_user_profile::builders::GetUserProfileOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_user_profile::builders::GetUserProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,9 @@ pub(crate) fn de_get_user_profile(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_user_profile_details::de_user_profile_details(tokens)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_user_profile_details::de_user_profile_details(
+                        tokens, _value,
+                    )?);
                 }
                 "domainId" => {
                     builder = builder.set_domain_id(

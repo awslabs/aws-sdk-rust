@@ -20,6 +20,7 @@ pub fn ser_external_filtering_configuration(
 
 pub(crate) fn de_external_filtering_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExternalFilteringConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "AuthorizedTargets" => {
-                            builder = builder.set_authorized_targets(crate::protocol_serde::shape_scope_targets::de_scope_targets(tokens)?);
+                            builder = builder.set_authorized_targets(crate::protocol_serde::shape_scope_targets::de_scope_targets(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

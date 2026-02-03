@@ -125,13 +125,13 @@ pub fn de_get_session_action_http_response(
 }
 
 pub(crate) fn de_get_session_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session_action::builders::GetSessionActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_session_action::builders::GetSessionActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,11 +139,11 @@ pub(crate) fn de_get_session_action(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "acquiredLimits" => {
-                    builder = builder.set_acquired_limits(crate::protocol_serde::shape_acquired_limits::de_acquired_limits(tokens)?);
+                    builder = builder.set_acquired_limits(crate::protocol_serde::shape_acquired_limits::de_acquired_limits(tokens, _value)?);
                 }
                 "definition" => {
                     builder = builder.set_definition(crate::protocol_serde::shape_session_action_definition::de_session_action_definition(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "endedAt" => {
@@ -155,7 +155,7 @@ pub(crate) fn de_get_session_action(
                 "manifests" => {
                     builder = builder.set_manifests(
                         crate::protocol_serde::shape_task_run_manifest_properties_list_response::de_task_run_manifest_properties_list_response(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

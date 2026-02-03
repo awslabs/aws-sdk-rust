@@ -20,6 +20,7 @@ pub fn ser_datastore_partition(
 
 pub(crate) fn de_datastore_partition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatastorePartition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "attributePartition" => {
-                            builder = builder.set_attribute_partition(crate::protocol_serde::shape_partition::de_partition(tokens)?);
+                            builder = builder.set_attribute_partition(crate::protocol_serde::shape_partition::de_partition(tokens, _value)?);
                         }
                         "timestampPartition" => {
-                            builder =
-                                builder.set_timestamp_partition(crate::protocol_serde::shape_timestamp_partition::de_timestamp_partition(tokens)?);
+                            builder = builder
+                                .set_timestamp_partition(crate::protocol_serde::shape_timestamp_partition::de_timestamp_partition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

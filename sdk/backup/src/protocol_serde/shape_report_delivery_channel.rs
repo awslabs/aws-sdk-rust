@@ -23,6 +23,7 @@ pub fn ser_report_delivery_channel(
 
 pub(crate) fn de_report_delivery_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReportDeliveryChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                             );
                         }
                         "Formats" => {
-                            builder = builder.set_formats(crate::protocol_serde::shape_format_list::de_format_list(tokens)?);
+                            builder = builder.set_formats(crate::protocol_serde::shape_format_list::de_format_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

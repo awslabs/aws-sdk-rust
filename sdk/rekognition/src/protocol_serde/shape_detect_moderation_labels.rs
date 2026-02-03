@@ -230,13 +230,13 @@ pub fn ser_detect_moderation_labels_input(
 }
 
 pub(crate) fn de_detect_moderation_labels(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -244,7 +244,7 @@ pub(crate) fn de_detect_moderation_labels(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ModerationLabels" => {
-                    builder = builder.set_moderation_labels(crate::protocol_serde::shape_moderation_labels::de_moderation_labels(tokens)?);
+                    builder = builder.set_moderation_labels(crate::protocol_serde::shape_moderation_labels::de_moderation_labels(tokens, _value)?);
                 }
                 "ModerationModelVersion" => {
                     builder = builder.set_moderation_model_version(
@@ -255,7 +255,7 @@ pub(crate) fn de_detect_moderation_labels(
                 }
                 "HumanLoopActivationOutput" => {
                     builder = builder.set_human_loop_activation_output(
-                        crate::protocol_serde::shape_human_loop_activation_output::de_human_loop_activation_output(tokens)?,
+                        crate::protocol_serde::shape_human_loop_activation_output::de_human_loop_activation_output(tokens, _value)?,
                     );
                 }
                 "ProjectVersion" => {
@@ -266,7 +266,7 @@ pub(crate) fn de_detect_moderation_labels(
                     );
                 }
                 "ContentTypes" => {
-                    builder = builder.set_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens)?);
+                    builder = builder.set_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

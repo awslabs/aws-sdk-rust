@@ -33,6 +33,7 @@ pub fn ser_workflow_step_output_union(
 
 pub(crate) fn de_workflow_step_output_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkflowStepOutputUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,7 @@ where
                                 })?,
                         )),
                         "listOfStringValue" => Some(crate::types::WorkflowStepOutputUnion::ListOfStringValue(
-                            crate::protocol_serde::shape_max_string_list::de_max_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_max_string_list::de_max_string_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'listOfStringValue' cannot be null")
                             })?,
                         )),

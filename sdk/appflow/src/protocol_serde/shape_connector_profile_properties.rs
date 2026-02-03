@@ -125,6 +125,7 @@ pub fn ser_connector_profile_properties(
 
 pub(crate) fn de_connector_profile_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConnectorProfileProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -137,122 +138,138 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "Amplitude" => {
-                            builder = builder.set_amplitude(
-                                crate::protocol_serde::shape_amplitude_connector_profile_properties::de_amplitude_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "Datadog" => {
-                            builder = builder.set_datadog(
-                                crate::protocol_serde::shape_datadog_connector_profile_properties::de_datadog_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Dynatrace" => {
-                            builder = builder.set_dynatrace(
-                                crate::protocol_serde::shape_dynatrace_connector_profile_properties::de_dynatrace_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "GoogleAnalytics" => {
-                            builder = builder.set_google_analytics(
-                                    crate::protocol_serde::shape_google_analytics_connector_profile_properties::de_google_analytics_connector_profile_properties(tokens)?
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Amplitude" => {
+                                builder = builder.set_amplitude(
+                                    crate::protocol_serde::shape_amplitude_connector_profile_properties::de_amplitude_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
                                 );
+                            }
+                            "Datadog" => {
+                                builder = builder.set_datadog(
+                                    crate::protocol_serde::shape_datadog_connector_profile_properties::de_datadog_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Dynatrace" => {
+                                builder = builder.set_dynatrace(
+                                    crate::protocol_serde::shape_dynatrace_connector_profile_properties::de_dynatrace_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "GoogleAnalytics" => {
+                                builder = builder.set_google_analytics(
+                                    crate::protocol_serde::shape_google_analytics_connector_profile_properties::de_google_analytics_connector_profile_properties(tokens, _value)?
+                                );
+                            }
+                            "Honeycode" => {
+                                builder = builder.set_honeycode(
+                                    crate::protocol_serde::shape_honeycode_connector_profile_properties::de_honeycode_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "InforNexus" => {
+                                builder = builder.set_infor_nexus(
+                                    crate::protocol_serde::shape_infor_nexus_connector_profile_properties::de_infor_nexus_connector_profile_properties(tokens, _value)?
+                                );
+                            }
+                            "Marketo" => {
+                                builder = builder.set_marketo(
+                                    crate::protocol_serde::shape_marketo_connector_profile_properties::de_marketo_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Redshift" => {
+                                builder = builder.set_redshift(
+                                    crate::protocol_serde::shape_redshift_connector_profile_properties::de_redshift_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Salesforce" => {
+                                builder = builder.set_salesforce(
+                                    crate::protocol_serde::shape_salesforce_connector_profile_properties::de_salesforce_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "ServiceNow" => {
+                                builder = builder.set_service_now(
+                                    crate::protocol_serde::shape_service_now_connector_profile_properties::de_service_now_connector_profile_properties(tokens, _value)?
+                                );
+                            }
+                            "Singular" => {
+                                builder = builder.set_singular(
+                                    crate::protocol_serde::shape_singular_connector_profile_properties::de_singular_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Slack" => {
+                                builder = builder.set_slack(
+                                    crate::protocol_serde::shape_slack_connector_profile_properties::de_slack_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Snowflake" => {
+                                builder = builder.set_snowflake(
+                                    crate::protocol_serde::shape_snowflake_connector_profile_properties::de_snowflake_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Trendmicro" => {
+                                builder = builder.set_trendmicro(
+                                    crate::protocol_serde::shape_trendmicro_connector_profile_properties::de_trendmicro_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Veeva" => {
+                                builder = builder.set_veeva(
+                                    crate::protocol_serde::shape_veeva_connector_profile_properties::de_veeva_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Zendesk" => {
+                                builder = builder.set_zendesk(
+                                    crate::protocol_serde::shape_zendesk_connector_profile_properties::de_zendesk_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "SAPOData" => {
+                                builder = builder.set_sapo_data(
+                                    crate::protocol_serde::shape_sapo_data_connector_profile_properties::de_sapo_data_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "CustomConnector" => {
+                                builder = builder.set_custom_connector(
+                                    crate::protocol_serde::shape_custom_connector_profile_properties::de_custom_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            "Pardot" => {
+                                builder = builder.set_pardot(
+                                    crate::protocol_serde::shape_pardot_connector_profile_properties::de_pardot_connector_profile_properties(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Honeycode" => {
-                            builder = builder.set_honeycode(
-                                crate::protocol_serde::shape_honeycode_connector_profile_properties::de_honeycode_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "InforNexus" => {
-                            builder = builder.set_infor_nexus(
-                                crate::protocol_serde::shape_infor_nexus_connector_profile_properties::de_infor_nexus_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "Marketo" => {
-                            builder = builder.set_marketo(
-                                crate::protocol_serde::shape_marketo_connector_profile_properties::de_marketo_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Redshift" => {
-                            builder = builder.set_redshift(
-                                crate::protocol_serde::shape_redshift_connector_profile_properties::de_redshift_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Salesforce" => {
-                            builder = builder.set_salesforce(
-                                crate::protocol_serde::shape_salesforce_connector_profile_properties::de_salesforce_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "ServiceNow" => {
-                            builder = builder.set_service_now(
-                                crate::protocol_serde::shape_service_now_connector_profile_properties::de_service_now_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "Singular" => {
-                            builder = builder.set_singular(
-                                crate::protocol_serde::shape_singular_connector_profile_properties::de_singular_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Slack" => {
-                            builder = builder.set_slack(
-                                crate::protocol_serde::shape_slack_connector_profile_properties::de_slack_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Snowflake" => {
-                            builder = builder.set_snowflake(
-                                crate::protocol_serde::shape_snowflake_connector_profile_properties::de_snowflake_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "Trendmicro" => {
-                            builder = builder.set_trendmicro(
-                                crate::protocol_serde::shape_trendmicro_connector_profile_properties::de_trendmicro_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "Veeva" => {
-                            builder = builder.set_veeva(
-                                crate::protocol_serde::shape_veeva_connector_profile_properties::de_veeva_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Zendesk" => {
-                            builder = builder.set_zendesk(
-                                crate::protocol_serde::shape_zendesk_connector_profile_properties::de_zendesk_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "SAPOData" => {
-                            builder = builder.set_sapo_data(
-                                crate::protocol_serde::shape_sapo_data_connector_profile_properties::de_sapo_data_connector_profile_properties(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "CustomConnector" => {
-                            builder = builder.set_custom_connector(
-                                crate::protocol_serde::shape_custom_connector_profile_properties::de_custom_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        "Pardot" => {
-                            builder = builder.set_pardot(
-                                crate::protocol_serde::shape_pardot_connector_profile_properties::de_pardot_connector_profile_properties(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

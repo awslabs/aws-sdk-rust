@@ -103,13 +103,13 @@ pub fn ser_describe_task_definition_input(
 }
 
 pub(crate) fn de_describe_task_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_task_definition::builders::DescribeTaskDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_task_definition::builders::DescribeTaskDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,10 +117,10 @@ pub(crate) fn de_describe_task_definition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "taskDefinition" => {
-                    builder = builder.set_task_definition(crate::protocol_serde::shape_task_definition::de_task_definition(tokens)?);
+                    builder = builder.set_task_definition(crate::protocol_serde::shape_task_definition::de_task_definition(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

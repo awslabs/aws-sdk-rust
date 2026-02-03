@@ -124,11 +124,11 @@ pub fn de_get_image_set_http_response(
 }
 
 pub(crate) fn de_get_image_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_image_set::builders::GetImageSetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_image_set::builders::GetImageSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -199,7 +199,7 @@ pub(crate) fn de_get_image_set(
                     );
                 }
                 "overrides" => {
-                    builder = builder.set_overrides(crate::protocol_serde::shape_overrides::de_overrides(tokens)?);
+                    builder = builder.set_overrides(crate::protocol_serde::shape_overrides::de_overrides(tokens, _value)?);
                 }
                 "storageTier" => {
                     builder = builder.set_storage_tier(

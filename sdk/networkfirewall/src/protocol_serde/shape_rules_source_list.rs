@@ -29,6 +29,7 @@ pub fn ser_rules_source_list(
 
 pub(crate) fn de_rules_source_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RulesSourceList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_rule_targets::de_rule_targets(tokens)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_rule_targets::de_rule_targets(tokens, _value)?);
                         }
                         "TargetTypes" => {
-                            builder = builder.set_target_types(crate::protocol_serde::shape_target_types::de_target_types(tokens)?);
+                            builder = builder.set_target_types(crate::protocol_serde::shape_target_types::de_target_types(tokens, _value)?);
                         }
                         "GeneratedRulesType" => {
                             builder = builder.set_generated_rules_type(

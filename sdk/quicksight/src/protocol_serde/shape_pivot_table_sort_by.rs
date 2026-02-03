@@ -26,6 +26,7 @@ pub fn ser_pivot_table_sort_by(
 
 pub(crate) fn de_pivot_table_sort_by<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableSortBy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Field" => {
-                            builder = builder.set_field(crate::protocol_serde::shape_field_sort::de_field_sort(tokens)?);
+                            builder = builder.set_field(crate::protocol_serde::shape_field_sort::de_field_sort(tokens, _value)?);
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_sort::de_column_sort(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_sort::de_column_sort(tokens, _value)?);
                         }
                         "DataPath" => {
-                            builder = builder.set_data_path(crate::protocol_serde::shape_data_path_sort::de_data_path_sort(tokens)?);
+                            builder = builder.set_data_path(crate::protocol_serde::shape_data_path_sort::de_data_path_sort(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

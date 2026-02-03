@@ -125,13 +125,13 @@ pub fn ser_create_domain_input(
 }
 
 pub(crate) fn de_create_domain(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_domain::builders::CreateDomainOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_domain::builders::CreateDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,7 +145,7 @@ pub(crate) fn de_create_domain(
                     )?);
                 }
                 "DataStore" => {
-                    builder = builder.set_data_store(crate::protocol_serde::shape_data_store_response::de_data_store_response(tokens)?);
+                    builder = builder.set_data_store(crate::protocol_serde::shape_data_store_response::de_data_store_response(tokens, _value)?);
                 }
                 "DeadLetterQueueUrl" => {
                     builder = builder.set_dead_letter_queue_url(
@@ -182,14 +182,15 @@ pub(crate) fn de_create_domain(
                     )?);
                 }
                 "Matching" => {
-                    builder = builder.set_matching(crate::protocol_serde::shape_matching_response::de_matching_response(tokens)?);
+                    builder = builder.set_matching(crate::protocol_serde::shape_matching_response::de_matching_response(tokens, _value)?);
                 }
                 "RuleBasedMatching" => {
-                    builder = builder
-                        .set_rule_based_matching(crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens)?);
+                    builder = builder.set_rule_based_matching(
+                        crate::protocol_serde::shape_rule_based_matching_response::de_rule_based_matching_response(tokens, _value)?,
+                    );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

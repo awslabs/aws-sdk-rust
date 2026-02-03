@@ -20,6 +20,7 @@ pub fn ser_forecast_scenario(
 
 pub(crate) fn de_forecast_scenario<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ForecastScenario>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "WhatIfPointScenario" => {
-                            builder = builder
-                                .set_what_if_point_scenario(crate::protocol_serde::shape_what_if_point_scenario::de_what_if_point_scenario(tokens)?);
+                            builder = builder.set_what_if_point_scenario(
+                                crate::protocol_serde::shape_what_if_point_scenario::de_what_if_point_scenario(tokens, _value)?,
+                            );
                         }
                         "WhatIfRangeScenario" => {
-                            builder = builder
-                                .set_what_if_range_scenario(crate::protocol_serde::shape_what_if_range_scenario::de_what_if_range_scenario(tokens)?);
+                            builder = builder.set_what_if_range_scenario(
+                                crate::protocol_serde::shape_what_if_range_scenario::de_what_if_range_scenario(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

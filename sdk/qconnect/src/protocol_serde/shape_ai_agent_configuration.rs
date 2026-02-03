@@ -78,6 +78,7 @@ pub fn ser_ai_agent_configuration(
 
 pub(crate) fn de_ai_agent_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AiAgentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -108,55 +109,55 @@ where
                     variant = match key.as_ref() {
                             "manualSearchAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::ManualSearchAiAgentConfiguration(
-                                    crate::protocol_serde::shape_manual_search_ai_agent_configuration::de_manual_search_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_manual_search_ai_agent_configuration::de_manual_search_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'manualSearchAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "answerRecommendationAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::AnswerRecommendationAiAgentConfiguration(
-                                    crate::protocol_serde::shape_answer_recommendation_ai_agent_configuration::de_answer_recommendation_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_answer_recommendation_ai_agent_configuration::de_answer_recommendation_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'answerRecommendationAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "selfServiceAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::SelfServiceAiAgentConfiguration(
-                                    crate::protocol_serde::shape_self_service_ai_agent_configuration::de_self_service_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_self_service_ai_agent_configuration::de_self_service_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfServiceAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "emailResponseAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::EmailResponseAiAgentConfiguration(
-                                    crate::protocol_serde::shape_email_response_ai_agent_configuration::de_email_response_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_email_response_ai_agent_configuration::de_email_response_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailResponseAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "emailOverviewAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::EmailOverviewAiAgentConfiguration(
-                                    crate::protocol_serde::shape_email_overview_ai_agent_configuration::de_email_overview_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_email_overview_ai_agent_configuration::de_email_overview_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailOverviewAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "emailGenerativeAnswerAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::EmailGenerativeAnswerAiAgentConfiguration(
-                                    crate::protocol_serde::shape_email_generative_answer_ai_agent_configuration::de_email_generative_answer_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_email_generative_answer_ai_agent_configuration::de_email_generative_answer_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emailGenerativeAnswerAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "orchestrationAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::OrchestrationAiAgentConfiguration(
-                                    crate::protocol_serde::shape_orchestration_ai_agent_configuration::de_orchestration_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_orchestration_ai_agent_configuration::de_orchestration_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orchestrationAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "noteTakingAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::NoteTakingAiAgentConfiguration(
-                                    crate::protocol_serde::shape_note_taking_ai_agent_configuration::de_note_taking_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_note_taking_ai_agent_configuration::de_note_taking_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noteTakingAIAgentConfiguration' cannot be null"))?
                                 ))
                             }
                             "caseSummarizationAIAgentConfiguration" => {
                                 Some(crate::types::AiAgentConfiguration::CaseSummarizationAiAgentConfiguration(
-                                    crate::protocol_serde::shape_case_summarization_ai_agent_configuration::de_case_summarization_ai_agent_configuration(tokens)?
+                                    crate::protocol_serde::shape_case_summarization_ai_agent_configuration::de_case_summarization_ai_agent_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'caseSummarizationAIAgentConfiguration' cannot be null"))?
                                 ))
                             }

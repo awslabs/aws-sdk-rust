@@ -185,13 +185,13 @@ pub fn ser_create_dashboard_input(
 }
 
 pub(crate) fn de_create_dashboard(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_dashboard::builders::CreateDashboardOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -220,13 +220,13 @@ pub(crate) fn de_create_dashboard(
                     );
                 }
                 "Widgets" => {
-                    builder = builder.set_widgets(crate::protocol_serde::shape_widget_list::de_widget_list(tokens)?);
+                    builder = builder.set_widgets(crate::protocol_serde::shape_widget_list::de_widget_list(tokens, _value)?);
                 }
                 "TagsList" => {
-                    builder = builder.set_tags_list(crate::protocol_serde::shape_tags_list::de_tags_list(tokens)?);
+                    builder = builder.set_tags_list(crate::protocol_serde::shape_tags_list::de_tags_list(tokens, _value)?);
                 }
                 "RefreshSchedule" => {
-                    builder = builder.set_refresh_schedule(crate::protocol_serde::shape_refresh_schedule::de_refresh_schedule(tokens)?);
+                    builder = builder.set_refresh_schedule(crate::protocol_serde::shape_refresh_schedule::de_refresh_schedule(tokens, _value)?);
                 }
                 "TerminationProtectionEnabled" => {
                     builder = builder.set_termination_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

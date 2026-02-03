@@ -68,13 +68,13 @@ pub fn de_get_integration_http_response(
 }
 
 pub(crate) fn de_get_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -176,13 +176,16 @@ pub(crate) fn de_get_integration(
                     );
                 }
                 "requestParameters" => {
-                    builder = builder.set_request_parameters(crate::protocol_serde::shape_integration_parameters::de_integration_parameters(tokens)?);
+                    builder = builder.set_request_parameters(crate::protocol_serde::shape_integration_parameters::de_integration_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 "requestTemplates" => {
-                    builder = builder.set_request_templates(crate::protocol_serde::shape_template_map::de_template_map(tokens)?);
+                    builder = builder.set_request_templates(crate::protocol_serde::shape_template_map::de_template_map(tokens, _value)?);
                 }
                 "responseParameters" => {
-                    builder = builder.set_response_parameters(crate::protocol_serde::shape_response_parameters::de_response_parameters(tokens)?);
+                    builder =
+                        builder.set_response_parameters(crate::protocol_serde::shape_response_parameters::de_response_parameters(tokens, _value)?);
                 }
                 "templateSelectionExpression" => {
                     builder = builder.set_template_selection_expression(
@@ -199,7 +202,7 @@ pub(crate) fn de_get_integration(
                     );
                 }
                 "tlsConfig" => {
-                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens)?);
+                    builder = builder.set_tls_config(crate::protocol_serde::shape_tls_config::de_tls_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

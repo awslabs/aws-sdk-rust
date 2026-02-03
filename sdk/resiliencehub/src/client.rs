@@ -161,7 +161,7 @@ mod create_resiliency_policy;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_resiliencehub::Error> {
 /// # let client: aws_sdk_resiliencehub::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_resource_grouping_recommendations()
 ///     .customize()

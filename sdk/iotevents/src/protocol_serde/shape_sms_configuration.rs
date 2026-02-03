@@ -26,6 +26,7 @@ pub fn ser_sms_configuration(
 
 pub(crate) fn de_sms_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SmsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "recipients" => {
-                            builder = builder.set_recipients(crate::protocol_serde::shape_recipient_details::de_recipient_details(tokens)?);
+                            builder = builder.set_recipients(crate::protocol_serde::shape_recipient_details::de_recipient_details(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

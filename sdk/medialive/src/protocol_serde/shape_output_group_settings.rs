@@ -68,6 +68,7 @@ pub fn ser_output_group_settings(
 
 pub(crate) fn de_output_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,46 +83,50 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "archiveGroupSettings" => {
-                            builder = builder
-                                .set_archive_group_settings(crate::protocol_serde::shape_archive_group_settings::de_archive_group_settings(tokens)?);
+                            builder = builder.set_archive_group_settings(
+                                crate::protocol_serde::shape_archive_group_settings::de_archive_group_settings(tokens, _value)?,
+                            );
                         }
                         "frameCaptureGroupSettings" => {
                             builder = builder.set_frame_capture_group_settings(
-                                crate::protocol_serde::shape_frame_capture_group_settings::de_frame_capture_group_settings(tokens)?,
+                                crate::protocol_serde::shape_frame_capture_group_settings::de_frame_capture_group_settings(tokens, _value)?,
                             );
                         }
                         "hlsGroupSettings" => {
-                            builder = builder.set_hls_group_settings(crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens)?);
+                            builder = builder
+                                .set_hls_group_settings(crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens, _value)?);
                         }
                         "mediaPackageGroupSettings" => {
                             builder = builder.set_media_package_group_settings(
-                                crate::protocol_serde::shape_media_package_group_settings::de_media_package_group_settings(tokens)?,
+                                crate::protocol_serde::shape_media_package_group_settings::de_media_package_group_settings(tokens, _value)?,
                             );
                         }
                         "msSmoothGroupSettings" => {
                             builder = builder.set_ms_smooth_group_settings(
-                                crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens)?,
+                                crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens, _value)?,
                             );
                         }
                         "multiplexGroupSettings" => {
                             builder = builder.set_multiplex_group_settings(
-                                crate::protocol_serde::shape_multiplex_group_settings::de_multiplex_group_settings(tokens)?,
+                                crate::protocol_serde::shape_multiplex_group_settings::de_multiplex_group_settings(tokens, _value)?,
                             );
                         }
                         "rtmpGroupSettings" => {
-                            builder =
-                                builder.set_rtmp_group_settings(crate::protocol_serde::shape_rtmp_group_settings::de_rtmp_group_settings(tokens)?);
+                            builder = builder
+                                .set_rtmp_group_settings(crate::protocol_serde::shape_rtmp_group_settings::de_rtmp_group_settings(tokens, _value)?);
                         }
                         "udpGroupSettings" => {
-                            builder = builder.set_udp_group_settings(crate::protocol_serde::shape_udp_group_settings::de_udp_group_settings(tokens)?);
+                            builder = builder
+                                .set_udp_group_settings(crate::protocol_serde::shape_udp_group_settings::de_udp_group_settings(tokens, _value)?);
                         }
                         "cmafIngestGroupSettings" => {
                             builder = builder.set_cmaf_ingest_group_settings(
-                                crate::protocol_serde::shape_cmaf_ingest_group_settings::de_cmaf_ingest_group_settings(tokens)?,
+                                crate::protocol_serde::shape_cmaf_ingest_group_settings::de_cmaf_ingest_group_settings(tokens, _value)?,
                             );
                         }
                         "srtGroupSettings" => {
-                            builder = builder.set_srt_group_settings(crate::protocol_serde::shape_srt_group_settings::de_srt_group_settings(tokens)?);
+                            builder = builder
+                                .set_srt_group_settings(crate::protocol_serde::shape_srt_group_settings::de_srt_group_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

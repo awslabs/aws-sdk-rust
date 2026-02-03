@@ -103,13 +103,13 @@ pub fn de_get_usage_plan_http_response(
 }
 
 pub(crate) fn de_get_usage_plan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_usage_plan::builders::GetUsagePlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_usage_plan::builders::GetUsagePlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,7 @@ pub(crate) fn de_get_usage_plan(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "apiStages" => {
-                    builder = builder.set_api_stages(crate::protocol_serde::shape_list_of_api_stage::de_list_of_api_stage(tokens)?);
+                    builder = builder.set_api_stages(crate::protocol_serde::shape_list_of_api_stage::de_list_of_api_stage(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -148,13 +148,15 @@ pub(crate) fn de_get_usage_plan(
                     );
                 }
                 "quota" => {
-                    builder = builder.set_quota(crate::protocol_serde::shape_quota_settings::de_quota_settings(tokens)?);
+                    builder = builder.set_quota(crate::protocol_serde::shape_quota_settings::de_quota_settings(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 "throttle" => {
-                    builder = builder.set_throttle(crate::protocol_serde::shape_throttle_settings::de_throttle_settings(tokens)?);
+                    builder = builder.set_throttle(crate::protocol_serde::shape_throttle_settings::de_throttle_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

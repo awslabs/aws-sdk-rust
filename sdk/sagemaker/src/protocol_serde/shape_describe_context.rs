@@ -63,13 +63,13 @@ pub fn ser_describe_context_input(
 }
 
 pub(crate) fn de_describe_context(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_context::builders::DescribeContextOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_context::builders::DescribeContextOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -91,7 +91,7 @@ pub(crate) fn de_describe_context(
                     );
                 }
                 "Source" => {
-                    builder = builder.set_source(crate::protocol_serde::shape_context_source::de_context_source(tokens)?);
+                    builder = builder.set_source(crate::protocol_serde::shape_context_source::de_context_source(tokens, _value)?);
                 }
                 "ContextType" => {
                     builder = builder.set_context_type(
@@ -109,7 +109,7 @@ pub(crate) fn de_describe_context(
                 }
                 "Properties" => {
                     builder = builder.set_properties(crate::protocol_serde::shape_lineage_entity_parameters::de_lineage_entity_parameters(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "CreationTime" => {
@@ -119,7 +119,7 @@ pub(crate) fn de_describe_context(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -128,7 +128,7 @@ pub(crate) fn de_describe_context(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LineageGroupArn" => {
                     builder = builder.set_lineage_group_arn(

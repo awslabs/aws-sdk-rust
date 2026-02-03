@@ -23,6 +23,7 @@ pub fn ser_logging_filter(
 
 pub(crate) fn de_logging_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoggingFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_filters::de_filters(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_filters::de_filters(tokens, _value)?);
                         }
                         "DefaultBehavior" => {
                             builder = builder.set_default_behavior(

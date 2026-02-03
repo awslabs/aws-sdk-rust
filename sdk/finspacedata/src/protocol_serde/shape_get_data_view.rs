@@ -113,11 +113,11 @@ pub fn de_get_data_view_http_response(
 }
 
 pub(crate) fn de_get_data_view(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_data_view::builders::GetDataViewOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_data_view::builders::GetDataViewOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,11 +164,13 @@ pub(crate) fn de_get_data_view(
                 }
                 "destinationTypeParams" => {
                     builder = builder.set_destination_type_params(
-                        crate::protocol_serde::shape_data_view_destination_type_params::de_data_view_destination_type_params(tokens)?,
+                        crate::protocol_serde::shape_data_view_destination_type_params::de_data_view_destination_type_params(tokens, _value)?,
                     );
                 }
                 "errorInfo" => {
-                    builder = builder.set_error_info(crate::protocol_serde::shape_data_view_error_info::de_data_view_error_info(tokens)?);
+                    builder = builder.set_error_info(crate::protocol_serde::shape_data_view_error_info::de_data_view_error_info(
+                        tokens, _value,
+                    )?);
                 }
                 "lastModifiedTime" => {
                     builder = builder.set_last_modified_time(
@@ -178,10 +180,12 @@ pub(crate) fn de_get_data_view(
                     );
                 }
                 "partitionColumns" => {
-                    builder = builder.set_partition_columns(crate::protocol_serde::shape_partition_column_list::de_partition_column_list(tokens)?);
+                    builder = builder.set_partition_columns(crate::protocol_serde::shape_partition_column_list::de_partition_column_list(
+                        tokens, _value,
+                    )?);
                 }
                 "sortColumns" => {
-                    builder = builder.set_sort_columns(crate::protocol_serde::shape_sort_column_list::de_sort_column_list(tokens)?);
+                    builder = builder.set_sort_columns(crate::protocol_serde::shape_sort_column_list::de_sort_column_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

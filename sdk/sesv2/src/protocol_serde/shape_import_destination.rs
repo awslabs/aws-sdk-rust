@@ -20,6 +20,7 @@ pub fn ser_import_destination(
 
 pub(crate) fn de_import_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImportDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SuppressionListDestination" => {
                             builder = builder.set_suppression_list_destination(
-                                crate::protocol_serde::shape_suppression_list_destination::de_suppression_list_destination(tokens)?,
+                                crate::protocol_serde::shape_suppression_list_destination::de_suppression_list_destination(tokens, _value)?,
                             );
                         }
                         "ContactListDestination" => {
                             builder = builder.set_contact_list_destination(
-                                crate::protocol_serde::shape_contact_list_destination::de_contact_list_destination(tokens)?,
+                                crate::protocol_serde::shape_contact_list_destination::de_contact_list_destination(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

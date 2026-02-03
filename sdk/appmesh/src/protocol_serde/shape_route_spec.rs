@@ -38,6 +38,7 @@ pub fn ser_route_spec(
 
 pub(crate) fn de_route_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RouteSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,16 +60,16 @@ where
                             );
                         }
                         "httpRoute" => {
-                            builder = builder.set_http_route(crate::protocol_serde::shape_http_route::de_http_route(tokens)?);
+                            builder = builder.set_http_route(crate::protocol_serde::shape_http_route::de_http_route(tokens, _value)?);
                         }
                         "tcpRoute" => {
-                            builder = builder.set_tcp_route(crate::protocol_serde::shape_tcp_route::de_tcp_route(tokens)?);
+                            builder = builder.set_tcp_route(crate::protocol_serde::shape_tcp_route::de_tcp_route(tokens, _value)?);
                         }
                         "http2Route" => {
-                            builder = builder.set_http2_route(crate::protocol_serde::shape_http_route::de_http_route(tokens)?);
+                            builder = builder.set_http2_route(crate::protocol_serde::shape_http_route::de_http_route(tokens, _value)?);
                         }
                         "grpcRoute" => {
-                            builder = builder.set_grpc_route(crate::protocol_serde::shape_grpc_route::de_grpc_route(tokens)?);
+                            builder = builder.set_grpc_route(crate::protocol_serde::shape_grpc_route::de_grpc_route(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

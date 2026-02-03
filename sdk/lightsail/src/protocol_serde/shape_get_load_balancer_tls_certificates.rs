@@ -193,13 +193,13 @@ pub fn ser_get_load_balancer_tls_certificates_input(
 }
 
 pub(crate) fn de_get_load_balancer_tls_certificates(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,7 +208,7 @@ pub(crate) fn de_get_load_balancer_tls_certificates(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "tlsCertificates" => {
                     builder = builder.set_tls_certificates(
-                        crate::protocol_serde::shape_load_balancer_tls_certificate_list::de_load_balancer_tls_certificate_list(tokens)?,
+                        crate::protocol_serde::shape_load_balancer_tls_certificate_list::de_load_balancer_tls_certificate_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_alarm_configuration(
 
 pub(crate) fn de_alarm_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AlarmConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                                 builder.set_ignore_poll_alarm_failure(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "alarms" => {
-                            builder = builder.set_alarms(crate::protocol_serde::shape_alarm_list::de_alarm_list(tokens)?);
+                            builder = builder.set_alarms(crate::protocol_serde::shape_alarm_list::de_alarm_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -69,13 +69,13 @@ pub fn ser_describe_training_job_input(
 }
 
 pub(crate) fn de_describe_training_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_training_job::builders::DescribeTrainingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_training_job::builders::DescribeTrainingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,7 @@ pub(crate) fn de_describe_training_job(
                     );
                 }
                 "ModelArtifacts" => {
-                    builder = builder.set_model_artifacts(crate::protocol_serde::shape_model_artifacts::de_model_artifacts(tokens)?);
+                    builder = builder.set_model_artifacts(crate::protocol_serde::shape_model_artifacts::de_model_artifacts(tokens, _value)?);
                 }
                 "TrainingJobStatus" => {
                     builder = builder.set_training_job_status(
@@ -142,11 +142,12 @@ pub(crate) fn de_describe_training_job(
                     );
                 }
                 "HyperParameters" => {
-                    builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                    builder = builder.set_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                 }
                 "AlgorithmSpecification" => {
-                    builder = builder
-                        .set_algorithm_specification(crate::protocol_serde::shape_algorithm_specification::de_algorithm_specification(tokens)?);
+                    builder = builder.set_algorithm_specification(crate::protocol_serde::shape_algorithm_specification::de_algorithm_specification(
+                        tokens, _value,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -156,22 +157,22 @@ pub(crate) fn de_describe_training_job(
                     );
                 }
                 "InputDataConfig" => {
-                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens)?);
+                    builder = builder.set_input_data_config(crate::protocol_serde::shape_input_data_config::de_input_data_config(tokens, _value)?);
                 }
                 "OutputDataConfig" => {
-                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
+                    builder = builder.set_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens, _value)?);
                 }
                 "ResourceConfig" => {
-                    builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
+                    builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens, _value)?);
                 }
                 "WarmPoolStatus" => {
-                    builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens)?);
+                    builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens, _value)?);
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                 }
                 "StoppingCondition" => {
-                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
+                    builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -199,12 +200,13 @@ pub(crate) fn de_describe_training_job(
                 }
                 "SecondaryStatusTransitions" => {
                     builder = builder.set_secondary_status_transitions(
-                        crate::protocol_serde::shape_secondary_status_transitions::de_secondary_status_transitions(tokens)?,
+                        crate::protocol_serde::shape_secondary_status_transitions::de_secondary_status_transitions(tokens, _value)?,
                     );
                 }
                 "FinalMetricDataList" => {
-                    builder =
-                        builder.set_final_metric_data_list(crate::protocol_serde::shape_final_metric_data_list::de_final_metric_data_list(tokens)?);
+                    builder = builder.set_final_metric_data_list(crate::protocol_serde::shape_final_metric_data_list::de_final_metric_data_list(
+                        tokens, _value,
+                    )?);
                 }
                 "EnableNetworkIsolation" => {
                     builder = builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -217,7 +219,7 @@ pub(crate) fn de_describe_training_job(
                     builder = builder.set_enable_managed_spot_training(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "CheckpointConfig" => {
-                    builder = builder.set_checkpoint_config(crate::protocol_serde::shape_checkpoint_config::de_checkpoint_config(tokens)?);
+                    builder = builder.set_checkpoint_config(crate::protocol_serde::shape_checkpoint_config::de_checkpoint_config(tokens, _value)?);
                 }
                 "TrainingTimeInSeconds" => {
                     builder = builder.set_training_time_in_seconds(
@@ -241,37 +243,37 @@ pub(crate) fn de_describe_training_job(
                     );
                 }
                 "DebugHookConfig" => {
-                    builder = builder.set_debug_hook_config(crate::protocol_serde::shape_debug_hook_config::de_debug_hook_config(tokens)?);
+                    builder = builder.set_debug_hook_config(crate::protocol_serde::shape_debug_hook_config::de_debug_hook_config(tokens, _value)?);
                 }
                 "ExperimentConfig" => {
-                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens)?);
+                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens, _value)?);
                 }
                 "DebugRuleConfigurations" => {
                     builder = builder.set_debug_rule_configurations(
-                        crate::protocol_serde::shape_debug_rule_configurations::de_debug_rule_configurations(tokens)?,
+                        crate::protocol_serde::shape_debug_rule_configurations::de_debug_rule_configurations(tokens, _value)?,
                     );
                 }
                 "TensorBoardOutputConfig" => {
                     builder = builder.set_tensor_board_output_config(
-                        crate::protocol_serde::shape_tensor_board_output_config::de_tensor_board_output_config(tokens)?,
+                        crate::protocol_serde::shape_tensor_board_output_config::de_tensor_board_output_config(tokens, _value)?,
                     );
                 }
                 "DebugRuleEvaluationStatuses" => {
                     builder = builder.set_debug_rule_evaluation_statuses(
-                        crate::protocol_serde::shape_debug_rule_evaluation_statuses::de_debug_rule_evaluation_statuses(tokens)?,
+                        crate::protocol_serde::shape_debug_rule_evaluation_statuses::de_debug_rule_evaluation_statuses(tokens, _value)?,
                     );
                 }
                 "ProfilerConfig" => {
-                    builder = builder.set_profiler_config(crate::protocol_serde::shape_profiler_config::de_profiler_config(tokens)?);
+                    builder = builder.set_profiler_config(crate::protocol_serde::shape_profiler_config::de_profiler_config(tokens, _value)?);
                 }
                 "ProfilerRuleConfigurations" => {
                     builder = builder.set_profiler_rule_configurations(
-                        crate::protocol_serde::shape_profiler_rule_configurations::de_profiler_rule_configurations(tokens)?,
+                        crate::protocol_serde::shape_profiler_rule_configurations::de_profiler_rule_configurations(tokens, _value)?,
                     );
                 }
                 "ProfilerRuleEvaluationStatuses" => {
                     builder = builder.set_profiler_rule_evaluation_statuses(
-                        crate::protocol_serde::shape_profiler_rule_evaluation_statuses::de_profiler_rule_evaluation_statuses(tokens)?,
+                        crate::protocol_serde::shape_profiler_rule_evaluation_statuses::de_profiler_rule_evaluation_statuses(tokens, _value)?,
                     );
                 }
                 "ProfilingStatus" => {
@@ -283,33 +285,39 @@ pub(crate) fn de_describe_training_job(
                 }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_training_environment_map::de_training_environment_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "RetryStrategy" => {
-                    builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
+                    builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens, _value)?);
                 }
                 "RemoteDebugConfig" => {
-                    builder = builder.set_remote_debug_config(crate::protocol_serde::shape_remote_debug_config::de_remote_debug_config(tokens)?);
+                    builder =
+                        builder.set_remote_debug_config(crate::protocol_serde::shape_remote_debug_config::de_remote_debug_config(tokens, _value)?);
                 }
                 "InfraCheckConfig" => {
-                    builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens)?);
+                    builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens, _value)?);
                 }
                 "ServerlessJobConfig" => {
-                    builder =
-                        builder.set_serverless_job_config(crate::protocol_serde::shape_serverless_job_config::de_serverless_job_config(tokens)?);
+                    builder = builder.set_serverless_job_config(crate::protocol_serde::shape_serverless_job_config::de_serverless_job_config(
+                        tokens, _value,
+                    )?);
                 }
                 "MlflowConfig" => {
-                    builder = builder.set_mlflow_config(crate::protocol_serde::shape_mlflow_config::de_mlflow_config(tokens)?);
+                    builder = builder.set_mlflow_config(crate::protocol_serde::shape_mlflow_config::de_mlflow_config(tokens, _value)?);
                 }
                 "ModelPackageConfig" => {
-                    builder = builder.set_model_package_config(crate::protocol_serde::shape_model_package_config::de_model_package_config(tokens)?);
+                    builder = builder.set_model_package_config(crate::protocol_serde::shape_model_package_config::de_model_package_config(
+                        tokens, _value,
+                    )?);
                 }
                 "MlflowDetails" => {
-                    builder = builder.set_mlflow_details(crate::protocol_serde::shape_mlflow_details::de_mlflow_details(tokens)?);
+                    builder = builder.set_mlflow_details(crate::protocol_serde::shape_mlflow_details::de_mlflow_details(tokens, _value)?);
                 }
                 "ProgressInfo" => {
-                    builder = builder.set_progress_info(crate::protocol_serde::shape_training_progress_info::de_training_progress_info(tokens)?);
+                    builder = builder.set_progress_info(crate::protocol_serde::shape_training_progress_info::de_training_progress_info(
+                        tokens, _value,
+                    )?);
                 }
                 "OutputModelPackageArn" => {
                     builder = builder.set_output_model_package_arn(

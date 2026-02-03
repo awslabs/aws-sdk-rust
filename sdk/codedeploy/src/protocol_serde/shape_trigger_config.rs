@@ -23,6 +23,7 @@ pub fn ser_trigger_config(
 
 pub(crate) fn de_trigger_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TriggerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,8 +52,9 @@ where
                             );
                         }
                         "triggerEvents" => {
-                            builder =
-                                builder.set_trigger_events(crate::protocol_serde::shape_trigger_event_type_list::de_trigger_event_type_list(tokens)?);
+                            builder = builder.set_trigger_events(crate::protocol_serde::shape_trigger_event_type_list::de_trigger_event_type_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

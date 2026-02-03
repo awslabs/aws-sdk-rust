@@ -23,6 +23,7 @@ pub fn ser_sheet_visual_scoping_configuration(
 
 pub(crate) fn de_sheet_visual_scoping_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetVisualScopingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,9 @@ where
                             );
                         }
                         "VisualIds" => {
-                            builder = builder.set_visual_ids(crate::protocol_serde::shape_filtered_visuals_list::de_filtered_visuals_list(tokens)?);
+                            builder = builder.set_visual_ids(crate::protocol_serde::shape_filtered_visuals_list::de_filtered_visuals_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

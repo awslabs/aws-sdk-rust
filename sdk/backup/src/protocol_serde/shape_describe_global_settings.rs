@@ -79,13 +79,13 @@ pub fn de_describe_global_settings_http_response(
 }
 
 pub(crate) fn de_describe_global_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_global_settings::builders::DescribeGlobalSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_global_settings::builders::DescribeGlobalSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -93,7 +93,7 @@ pub(crate) fn de_describe_global_settings(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "GlobalSettings" => {
-                    builder = builder.set_global_settings(crate::protocol_serde::shape_global_settings::de_global_settings(tokens)?);
+                    builder = builder.set_global_settings(crate::protocol_serde::shape_global_settings::de_global_settings(tokens, _value)?);
                 }
                 "LastUpdateTime" => {
                     builder = builder.set_last_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -8,6 +8,7 @@ pub fn ser_scte20_plus_embedded_destination_settings(
 
 pub(crate) fn de_scte20_plus_embedded_destination_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Scte20PlusEmbeddedDestinationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

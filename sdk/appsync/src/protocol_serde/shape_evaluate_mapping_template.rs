@@ -103,13 +103,13 @@ pub fn ser_evaluate_mapping_template_input(
 }
 
 pub(crate) fn de_evaluate_mapping_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,7 @@ pub(crate) fn de_evaluate_mapping_template(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
                 }
                 "evaluationResult" => {
                     builder = builder.set_evaluation_result(
@@ -127,7 +127,7 @@ pub(crate) fn de_evaluate_mapping_template(
                     );
                 }
                 "logs" => {
-                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens)?);
+                    builder = builder.set_logs(crate::protocol_serde::shape_logs::de_logs(tokens, _value)?);
                 }
                 "outErrors" => {
                     builder = builder.set_out_errors(

@@ -149,7 +149,7 @@ mod create_vector_bucket;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_s3vectors::Error> {
 /// # let client: aws_sdk_s3vectors::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_index()
 ///     .customize()

@@ -23,6 +23,7 @@ pub fn ser_network_header(
 
 pub(crate) fn de_network_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,13 @@ where
                         }
                         "Destination" => {
                             builder = builder.set_destination(
-                                crate::protocol_serde::shape_network_path_component_details::de_network_path_component_details(tokens)?,
+                                crate::protocol_serde::shape_network_path_component_details::de_network_path_component_details(tokens, _value)?,
                             );
                         }
                         "Source" => {
-                            builder = builder
-                                .set_source(crate::protocol_serde::shape_network_path_component_details::de_network_path_component_details(tokens)?);
+                            builder = builder.set_source(
+                                crate::protocol_serde::shape_network_path_component_details::de_network_path_component_details(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

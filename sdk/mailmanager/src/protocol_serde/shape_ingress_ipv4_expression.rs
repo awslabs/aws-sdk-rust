@@ -26,6 +26,7 @@ pub fn ser_ingress_ipv4_expression(
 
 pub(crate) fn de_ingress_ipv4_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IngressIpv4Expression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Evaluate" => {
-                            builder = builder.set_evaluate(crate::protocol_serde::shape_ingress_ip_to_evaluate::de_ingress_ip_to_evaluate(tokens)?);
+                            builder = builder.set_evaluate(crate::protocol_serde::shape_ingress_ip_to_evaluate::de_ingress_ip_to_evaluate(
+                                tokens, _value,
+                            )?);
                         }
                         "Operator" => {
                             builder = builder.set_operator(
@@ -50,7 +53,7 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_ipv4_cidrs::de_ipv4_cidrs(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_ipv4_cidrs::de_ipv4_cidrs(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

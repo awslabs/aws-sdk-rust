@@ -38,6 +38,7 @@ pub fn ser_drop_null_fields(
 
 pub(crate) fn de_drop_null_fields<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DropNullFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,14 +60,15 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "NullCheckBoxList" => {
-                            builder =
-                                builder.set_null_check_box_list(crate::protocol_serde::shape_null_check_box_list::de_null_check_box_list(tokens)?);
+                            builder = builder
+                                .set_null_check_box_list(crate::protocol_serde::shape_null_check_box_list::de_null_check_box_list(tokens, _value)?);
                         }
                         "NullTextList" => {
-                            builder = builder.set_null_text_list(crate::protocol_serde::shape_null_value_fields::de_null_value_fields(tokens)?);
+                            builder =
+                                builder.set_null_text_list(crate::protocol_serde::shape_null_value_fields::de_null_value_fields(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

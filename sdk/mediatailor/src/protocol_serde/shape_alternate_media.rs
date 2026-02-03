@@ -47,6 +47,7 @@ pub fn ser_alternate_media(
 
 pub(crate) fn de_alternate_media<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AlternateMedia>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,7 +83,7 @@ where
                             );
                         }
                         "ClipRange" => {
-                            builder = builder.set_clip_range(crate::protocol_serde::shape_clip_range::de_clip_range(tokens)?);
+                            builder = builder.set_clip_range(crate::protocol_serde::shape_clip_range::de_clip_range(tokens, _value)?);
                         }
                         "ScheduledStartTimeMillis" => {
                             builder = builder.set_scheduled_start_time_millis(
@@ -92,7 +93,7 @@ where
                             );
                         }
                         "AdBreaks" => {
-                            builder = builder.set_ad_breaks(crate::protocol_serde::shape_list_of_ad_break::de_list_of_ad_break(tokens)?);
+                            builder = builder.set_ad_breaks(crate::protocol_serde::shape_list_of_ad_break::de_list_of_ad_break(tokens, _value)?);
                         }
                         "DurationMillis" => {
                             builder = builder.set_duration_millis(

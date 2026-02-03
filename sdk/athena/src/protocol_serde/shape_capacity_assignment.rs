@@ -17,6 +17,7 @@ pub fn ser_capacity_assignment(
 
 pub(crate) fn de_capacity_assignment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CapacityAssignment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,8 +32,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "WorkGroupNames" => {
-                            builder =
-                                builder.set_work_group_names(crate::protocol_serde::shape_work_group_names_list::de_work_group_names_list(tokens)?);
+                            builder = builder.set_work_group_names(crate::protocol_serde::shape_work_group_names_list::de_work_group_names_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -88,13 +88,13 @@ pub fn ser_describe_what_if_forecast_input(
 }
 
 pub(crate) fn de_describe_what_if_forecast(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_what_if_forecast::builders::DescribeWhatIfForecastOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,16 +157,16 @@ pub(crate) fn de_describe_what_if_forecast(
                 }
                 "TimeSeriesTransformations" => {
                     builder = builder.set_time_series_transformations(
-                        crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens)?,
+                        crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value)?,
                     );
                 }
                 "TimeSeriesReplacementsDataSource" => {
                     builder = builder.set_time_series_replacements_data_source(
-                        crate::protocol_serde::shape_time_series_replacements_data_source::de_time_series_replacements_data_source(tokens)?,
+                        crate::protocol_serde::shape_time_series_replacements_data_source::de_time_series_replacements_data_source(tokens, _value)?,
                     );
                 }
                 "ForecastTypes" => {
-                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens)?);
+                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

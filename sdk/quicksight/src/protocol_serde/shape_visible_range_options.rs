@@ -14,6 +14,7 @@ pub fn ser_visible_range_options(
 
 pub(crate) fn de_visible_range_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VisibleRangeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PercentRange" => {
-                            builder =
-                                builder.set_percent_range(crate::protocol_serde::shape_percent_visible_range::de_percent_visible_range(tokens)?);
+                            builder = builder.set_percent_range(crate::protocol_serde::shape_percent_visible_range::de_percent_visible_range(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

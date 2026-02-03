@@ -32,6 +32,7 @@ pub fn ser_aws_ec2_launch_template_details(
 
 pub(crate) fn de_aws_ec2_launch_template_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2LaunchTemplateDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,9 @@ where
                         }
                         "LaunchTemplateData" => {
                             builder = builder.set_launch_template_data(
-                                crate::protocol_serde::shape_aws_ec2_launch_template_data_details::de_aws_ec2_launch_template_data_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_launch_template_data_details::de_aws_ec2_launch_template_data_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "DefaultVersionNumber" => {

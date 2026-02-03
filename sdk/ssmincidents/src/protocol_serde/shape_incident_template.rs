@@ -45,6 +45,7 @@ pub fn ser_incident_template(
 
 pub(crate) fn de_incident_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IncidentTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -87,11 +88,12 @@ where
                             );
                         }
                         "notificationTargets" => {
-                            builder = builder
-                                .set_notification_targets(crate::protocol_serde::shape_notification_target_set::de_notification_target_set(tokens)?);
+                            builder = builder.set_notification_targets(
+                                crate::protocol_serde::shape_notification_target_set::de_notification_target_set(tokens, _value)?,
+                            );
                         }
                         "incidentTags" => {
-                            builder = builder.set_incident_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                            builder = builder.set_incident_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -17,6 +17,7 @@ pub fn ser_scheduled_update_config(
 
 pub(crate) fn de_scheduled_update_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScheduledUpdateConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "DeploymentConfig" => {
                             builder = builder.set_deployment_config(
-                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens)?,
+                                crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

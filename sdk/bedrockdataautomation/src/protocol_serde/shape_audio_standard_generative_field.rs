@@ -20,6 +20,7 @@ pub fn ser_audio_standard_generative_field(
 
 pub(crate) fn de_audio_standard_generative_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioStandardGenerativeField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,9 @@ where
                         }
                         "types" => {
                             builder = builder.set_types(
-                                crate::protocol_serde::shape_audio_standard_generative_field_types::de_audio_standard_generative_field_types(tokens)?,
+                                crate::protocol_serde::shape_audio_standard_generative_field_types::de_audio_standard_generative_field_types(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

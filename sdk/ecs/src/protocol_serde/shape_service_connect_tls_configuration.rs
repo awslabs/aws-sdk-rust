@@ -20,6 +20,7 @@ pub fn ser_service_connect_tls_configuration(
 
 pub(crate) fn de_service_connect_tls_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectTlsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "issuerCertificateAuthority" => {
                                 builder = builder.set_issuer_certificate_authority(
-                                    crate::protocol_serde::shape_service_connect_tls_certificate_authority::de_service_connect_tls_certificate_authority(tokens)?
+                                    crate::protocol_serde::shape_service_connect_tls_certificate_authority::de_service_connect_tls_certificate_authority(tokens, _value)?
                                 );
                             }
                             "kmsKey" => {

@@ -35,6 +35,7 @@ pub fn ser_cross_region_copy_rule(
 
 pub(crate) fn de_cross_region_copy_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CrossRegionCopyRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,12 +78,12 @@ where
                         }
                         "RetainRule" => {
                             builder = builder.set_retain_rule(
-                                crate::protocol_serde::shape_cross_region_copy_retain_rule::de_cross_region_copy_retain_rule(tokens)?,
+                                crate::protocol_serde::shape_cross_region_copy_retain_rule::de_cross_region_copy_retain_rule(tokens, _value)?,
                             );
                         }
                         "DeprecateRule" => {
                             builder = builder.set_deprecate_rule(
-                                crate::protocol_serde::shape_cross_region_copy_deprecate_rule::de_cross_region_copy_deprecate_rule(tokens)?,
+                                crate::protocol_serde::shape_cross_region_copy_deprecate_rule::de_cross_region_copy_deprecate_rule(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

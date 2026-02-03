@@ -126,13 +126,13 @@ pub fn de_get_sensitivity_inspection_template_http_response(
 }
 
 pub(crate) fn de_get_sensitivity_inspection_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,12 +148,16 @@ pub(crate) fn de_get_sensitivity_inspection_template(
                 }
                 "excludes" => {
                     builder = builder.set_excludes(
-                        crate::protocol_serde::shape_sensitivity_inspection_template_excludes::de_sensitivity_inspection_template_excludes(tokens)?,
+                        crate::protocol_serde::shape_sensitivity_inspection_template_excludes::de_sensitivity_inspection_template_excludes(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "includes" => {
                     builder = builder.set_includes(
-                        crate::protocol_serde::shape_sensitivity_inspection_template_includes::de_sensitivity_inspection_template_includes(tokens)?,
+                        crate::protocol_serde::shape_sensitivity_inspection_template_includes::de_sensitivity_inspection_template_includes(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "name" => {

@@ -35,6 +35,7 @@ pub fn ser_telemetry_rule(
 
 pub(crate) fn de_telemetry_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelemetryRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,12 +64,15 @@ where
                             );
                         }
                         "TelemetrySourceTypes" => {
-                            builder = builder
-                                .set_telemetry_source_types(crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens)?);
+                            builder = builder.set_telemetry_source_types(
+                                crate::protocol_serde::shape_telemetry_source_types::de_telemetry_source_types(tokens, _value)?,
+                            );
                         }
                         "DestinationConfiguration" => {
                             builder = builder.set_destination_configuration(
-                                crate::protocol_serde::shape_telemetry_destination_configuration::de_telemetry_destination_configuration(tokens)?,
+                                crate::protocol_serde::shape_telemetry_destination_configuration::de_telemetry_destination_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Scope" => {

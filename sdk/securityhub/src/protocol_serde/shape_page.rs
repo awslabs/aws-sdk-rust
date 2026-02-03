@@ -26,6 +26,7 @@ pub fn ser_page(
 
 pub(crate) fn de_page<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Page>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,10 +48,10 @@ where
                             );
                         }
                         "LineRange" => {
-                            builder = builder.set_line_range(crate::protocol_serde::shape_range::de_range(tokens)?);
+                            builder = builder.set_line_range(crate::protocol_serde::shape_range::de_range(tokens, _value)?);
                         }
                         "OffsetRange" => {
-                            builder = builder.set_offset_range(crate::protocol_serde::shape_range::de_range(tokens)?);
+                            builder = builder.set_offset_range(crate::protocol_serde::shape_range::de_range(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

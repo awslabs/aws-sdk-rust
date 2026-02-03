@@ -26,6 +26,7 @@ pub fn ser_nested_filter(
 
 pub(crate) fn de_nested_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NestedFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,13 +48,13 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "IncludeInnerSet" => {
                             builder = builder.set_include_inner_set(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "InnerFilter" => {
-                            builder = builder.set_inner_filter(crate::protocol_serde::shape_inner_filter::de_inner_filter(tokens)?);
+                            builder = builder.set_inner_filter(crate::protocol_serde::shape_inner_filter::de_inner_filter(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

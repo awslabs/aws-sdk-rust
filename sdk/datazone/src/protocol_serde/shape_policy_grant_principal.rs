@@ -39,6 +39,7 @@ pub fn ser_policy_grant_principal(
 
 pub(crate) fn de_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,23 +69,24 @@ where
                     }
                     variant = match key.as_ref() {
                         "user" => Some(crate::types::PolicyGrantPrincipal::User(
-                            crate::protocol_serde::shape_user_policy_grant_principal::de_user_policy_grant_principal(tokens)?
+                            crate::protocol_serde::shape_user_policy_grant_principal::de_user_policy_grant_principal(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'user' cannot be null"))?,
                         )),
                         "group" => Some(crate::types::PolicyGrantPrincipal::Group(
-                            crate::protocol_serde::shape_group_policy_grant_principal::de_group_policy_grant_principal(tokens)?
+                            crate::protocol_serde::shape_group_policy_grant_principal::de_group_policy_grant_principal(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'group' cannot be null"))?,
                         )),
                         "project" => Some(crate::types::PolicyGrantPrincipal::Project(
-                            crate::protocol_serde::shape_project_policy_grant_principal::de_project_policy_grant_principal(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'project' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_project_policy_grant_principal::de_project_policy_grant_principal(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'project' cannot be null")
+                                })?,
                         )),
                         "domainUnit" => Some(crate::types::PolicyGrantPrincipal::DomainUnit(
-                            crate::protocol_serde::shape_domain_unit_policy_grant_principal::de_domain_unit_policy_grant_principal(tokens)?
+                            crate::protocol_serde::shape_domain_unit_policy_grant_principal::de_domain_unit_policy_grant_principal(tokens, _value)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'domainUnit' cannot be null")
-                                })?,
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'domainUnit' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

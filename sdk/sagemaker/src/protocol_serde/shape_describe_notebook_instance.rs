@@ -48,13 +48,13 @@ pub fn ser_describe_notebook_instance_input(
 }
 
 pub(crate) fn de_describe_notebook_instance(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,7 @@ pub(crate) fn de_describe_notebook_instance(
                     );
                 }
                 "SecurityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -176,7 +176,7 @@ pub(crate) fn de_describe_notebook_instance(
                 }
                 "AcceleratorTypes" => {
                     builder = builder.set_accelerator_types(
-                        crate::protocol_serde::shape_notebook_instance_accelerator_types::de_notebook_instance_accelerator_types(tokens)?,
+                        crate::protocol_serde::shape_notebook_instance_accelerator_types::de_notebook_instance_accelerator_types(tokens, _value)?,
                     );
                 }
                 "DefaultCodeRepository" => {
@@ -188,7 +188,9 @@ pub(crate) fn de_describe_notebook_instance(
                 }
                 "AdditionalCodeRepositories" => {
                     builder = builder.set_additional_code_repositories(
-                        crate::protocol_serde::shape_additional_code_repository_names_or_urls::de_additional_code_repository_names_or_urls(tokens)?,
+                        crate::protocol_serde::shape_additional_code_repository_names_or_urls::de_additional_code_repository_names_or_urls(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "RootAccess" => {
@@ -207,7 +209,9 @@ pub(crate) fn de_describe_notebook_instance(
                 }
                 "InstanceMetadataServiceConfiguration" => {
                     builder = builder.set_instance_metadata_service_configuration(
-                        crate::protocol_serde::shape_instance_metadata_service_configuration::de_instance_metadata_service_configuration(tokens)?,
+                        crate::protocol_serde::shape_instance_metadata_service_configuration::de_instance_metadata_service_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

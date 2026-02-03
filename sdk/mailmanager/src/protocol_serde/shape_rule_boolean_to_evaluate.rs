@@ -30,6 +30,7 @@ pub fn ser_rule_boolean_to_evaluate(
 
 pub(crate) fn de_rule_boolean_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleBooleanToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,12 +68,12 @@ where
                                 })?,
                         )),
                         "Analysis" => Some(crate::types::RuleBooleanToEvaluate::Analysis(
-                            crate::protocol_serde::shape_analysis::de_analysis(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_analysis::de_analysis(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
                             })?,
                         )),
                         "IsInAddressList" => Some(crate::types::RuleBooleanToEvaluate::IsInAddressList(
-                            crate::protocol_serde::shape_rule_is_in_address_list::de_rule_is_in_address_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_is_in_address_list::de_rule_is_in_address_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IsInAddressList' cannot be null")
                             })?,
                         )),

@@ -200,7 +200,7 @@ mod create_resource_data_sync;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ssm::Error> {
 /// # let client: aws_sdk_ssm::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags_to_resource()
 ///     .customize()

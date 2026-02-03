@@ -80,6 +80,7 @@ pub fn ser_mpeg2_settings(
 
 pub(crate) fn de_mpeg2_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Mpeg2Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -129,8 +130,9 @@ where
                             );
                         }
                         "filterSettings" => {
-                            builder =
-                                builder.set_filter_settings(crate::protocol_serde::shape_mpeg2_filter_settings::de_mpeg2_filter_settings(tokens)?);
+                            builder = builder.set_filter_settings(crate::protocol_serde::shape_mpeg2_filter_settings::de_mpeg2_filter_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "fixedAfd" => {
                             builder = builder.set_fixed_afd(
@@ -201,7 +203,7 @@ where
                         }
                         "timecodeBurninSettings" => {
                             builder = builder.set_timecode_burnin_settings(
-                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens)?,
+                                crate::protocol_serde::shape_timecode_burnin_settings::de_timecode_burnin_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

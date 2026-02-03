@@ -26,6 +26,7 @@ pub fn ser_chat_channel(
 
 pub(crate) fn de_chat_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChatChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,13 +56,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "empty" => Some(crate::types::ChatChannel::Empty(
-                            crate::protocol_serde::shape_empty_chat_channel::de_empty_chat_channel(tokens)?
+                            crate::protocol_serde::shape_empty_chat_channel::de_empty_chat_channel(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'empty' cannot be null"))?,
                         )),
                         "chatbotSns" => Some(crate::types::ChatChannel::ChatbotSns(
-                            crate::protocol_serde::shape_chatbot_sns_configuration_set::de_chatbot_sns_configuration_set(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'chatbotSns' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_chatbot_sns_configuration_set::de_chatbot_sns_configuration_set(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'chatbotSns' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

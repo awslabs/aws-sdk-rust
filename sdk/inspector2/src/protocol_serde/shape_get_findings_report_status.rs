@@ -142,13 +142,13 @@ pub fn ser_get_findings_report_status_input(
 }
 
 pub(crate) fn de_get_findings_report_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_findings_report_status::builders::GetFindingsReportStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_findings_report_status::builders::GetFindingsReportStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,7 @@ pub(crate) fn de_get_findings_report_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "destination" => {
-                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens)?);
+                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value)?);
                 }
                 "errorCode" => {
                     builder = builder.set_error_code(
@@ -173,7 +173,7 @@ pub(crate) fn de_get_findings_report_status(
                     );
                 }
                 "filterCriteria" => {
-                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens)?);
+                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens, _value)?);
                 }
                 "reportId" => {
                     builder = builder.set_report_id(

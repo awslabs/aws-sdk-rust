@@ -20,6 +20,7 @@ pub fn ser_function(
 
 pub(crate) fn de_function<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Function>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "FunctionConfiguration" => {
-                            builder = builder
-                                .set_function_configuration(crate::protocol_serde::shape_function_configuration::de_function_configuration(tokens)?);
+                            builder = builder.set_function_configuration(
+                                crate::protocol_serde::shape_function_configuration::de_function_configuration(tokens, _value)?,
+                            );
                         }
                         "Id" => {
                             builder = builder.set_id(

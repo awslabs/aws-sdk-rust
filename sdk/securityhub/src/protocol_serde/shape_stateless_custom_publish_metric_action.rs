@@ -23,6 +23,7 @@ pub fn ser_stateless_custom_publish_metric_action(
 
 pub(crate) fn de_stateless_custom_publish_metric_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StatelessCustomPublishMetricAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
                             builder = builder.set_dimensions(
-                                    crate::protocol_serde::shape_stateless_custom_publish_metric_action_dimensions_list::de_stateless_custom_publish_metric_action_dimensions_list(tokens)?
+                                    crate::protocol_serde::shape_stateless_custom_publish_metric_action_dimensions_list::de_stateless_custom_publish_metric_action_dimensions_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

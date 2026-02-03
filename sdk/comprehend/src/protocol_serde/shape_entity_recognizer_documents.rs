@@ -17,6 +17,7 @@ pub fn ser_entity_recognizer_documents(
 
 pub(crate) fn de_entity_recognizer_documents<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EntityRecognizerDocuments>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

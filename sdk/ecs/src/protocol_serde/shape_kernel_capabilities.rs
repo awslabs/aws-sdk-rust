@@ -26,6 +26,7 @@ pub fn ser_kernel_capabilities(
 
 pub(crate) fn de_kernel_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KernelCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "add" => {
-                            builder = builder.set_add(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_add(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "drop" => {
-                            builder = builder.set_drop(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_drop(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

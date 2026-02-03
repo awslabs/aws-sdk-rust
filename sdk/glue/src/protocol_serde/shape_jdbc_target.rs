@@ -32,6 +32,7 @@ pub fn ser_jdbc_target(
 
 pub(crate) fn de_jdbc_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JdbcTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,11 +61,11 @@ where
                             );
                         }
                         "Exclusions" => {
-                            builder = builder.set_exclusions(crate::protocol_serde::shape_path_list::de_path_list(tokens)?);
+                            builder = builder.set_exclusions(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value)?);
                         }
                         "EnableAdditionalMetadata" => {
                             builder = builder.set_enable_additional_metadata(
-                                crate::protocol_serde::shape_enable_additional_metadata::de_enable_additional_metadata(tokens)?,
+                                crate::protocol_serde::shape_enable_additional_metadata::de_enable_additional_metadata(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -93,13 +93,13 @@ pub fn ser_get_canary_runs_input(
 }
 
 pub(crate) fn de_get_canary_runs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_canary_runs::builders::GetCanaryRunsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_canary_runs::builders::GetCanaryRunsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_get_canary_runs(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CanaryRuns" => {
-                    builder = builder.set_canary_runs(crate::protocol_serde::shape_canary_runs::de_canary_runs(tokens)?);
+                    builder = builder.set_canary_runs(crate::protocol_serde::shape_canary_runs::de_canary_runs(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

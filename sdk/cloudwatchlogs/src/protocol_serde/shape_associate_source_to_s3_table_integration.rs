@@ -149,13 +149,13 @@ pub fn ser_associate_source_to_s3_table_integration_input(
 }
 
 pub(crate) fn de_associate_source_to_s3_table_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::associate_source_to_s3_table_integration::builders::AssociateSourceToS3TableIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::associate_source_to_s3_table_integration::builders::AssociateSourceToS3TableIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

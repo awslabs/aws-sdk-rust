@@ -157,7 +157,7 @@ mod create_retraining_scheduler;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_lookoutequipment::Error> {
 /// # let client: aws_sdk_lookoutequipment::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_dataset()
 ///     .customize()

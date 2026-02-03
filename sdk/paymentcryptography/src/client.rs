@@ -151,7 +151,7 @@ mod create_key;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_paymentcryptography::Error> {
 /// # let client: aws_sdk_paymentcryptography::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_key_replication_regions()
 ///     .customize()

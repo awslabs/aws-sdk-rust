@@ -50,6 +50,7 @@ pub fn ser_display_format_options(
 
 pub(crate) fn de_display_format_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DisplayFormatOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -126,7 +127,7 @@ where
                             );
                         }
                         "NegativeFormat" => {
-                            builder = builder.set_negative_format(crate::protocol_serde::shape_negative_format::de_negative_format(tokens)?);
+                            builder = builder.set_negative_format(crate::protocol_serde::shape_negative_format::de_negative_format(tokens, _value)?);
                         }
                         "CurrencySymbol" => {
                             builder = builder.set_currency_symbol(

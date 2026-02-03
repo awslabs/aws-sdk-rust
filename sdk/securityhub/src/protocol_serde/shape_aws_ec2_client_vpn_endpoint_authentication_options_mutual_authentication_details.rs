@@ -11,6 +11,7 @@ pub fn ser_aws_ec2_client_vpn_endpoint_authentication_options_mutual_authenticat
 
 pub(crate) fn de_aws_ec2_client_vpn_endpoint_authentication_options_mutual_authentication_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

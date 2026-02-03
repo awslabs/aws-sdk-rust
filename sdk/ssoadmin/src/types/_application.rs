@@ -22,6 +22,8 @@ pub struct Application {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the application was originally created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub created_from: ::std::option::Option<::std::string::String>,
 }
 impl Application {
     /// <p>The ARN of the application.</p>
@@ -60,6 +62,10 @@ impl Application {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn created_from(&self) -> ::std::option::Option<&str> {
+        self.created_from.as_deref()
+    }
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::types::Application).
@@ -81,6 +87,7 @@ pub struct ApplicationBuilder {
     pub(crate) portal_options: ::std::option::Option<crate::types::PortalOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_from: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationBuilder {
     /// <p>The ARN of the application.</p>
@@ -209,6 +216,20 @@ impl ApplicationBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn created_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_from = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn set_created_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_from = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn get_created_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_from
+    }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
@@ -221,6 +242,7 @@ impl ApplicationBuilder {
             portal_options: self.portal_options,
             description: self.description,
             created_date: self.created_date,
+            created_from: self.created_from,
         }
     }
 }

@@ -29,6 +29,7 @@ pub fn ser_s3_source(
 
 pub(crate) fn de_s3_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3Source>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,11 @@ where
                             );
                         }
                         "UploadSettings" => {
-                            builder = builder.set_upload_settings(crate::protocol_serde::shape_upload_settings::de_upload_settings(tokens)?);
+                            builder = builder.set_upload_settings(crate::protocol_serde::shape_upload_settings::de_upload_settings(tokens, _value)?);
                         }
                         "InputColumns" => {
-                            builder = builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(tokens)?);
+                            builder =
+                                builder.set_input_columns(crate::protocol_serde::shape_input_column_list::de_input_column_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

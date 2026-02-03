@@ -180,13 +180,13 @@ pub fn de_get_membership_http_response(
 }
 
 pub(crate) fn de_get_membership(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_membership::builders::GetMembershipOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_membership::builders::GetMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,12 +208,13 @@ pub(crate) fn de_get_membership(
                     );
                 }
                 "incidentResponseTeam" => {
-                    builder =
-                        builder.set_incident_response_team(crate::protocol_serde::shape_incident_response_team::de_incident_response_team(tokens)?);
+                    builder = builder.set_incident_response_team(crate::protocol_serde::shape_incident_response_team::de_incident_response_team(
+                        tokens, _value,
+                    )?);
                 }
                 "membershipAccountsConfigurations" => {
                     builder = builder.set_membership_accounts_configurations(
-                        crate::protocol_serde::shape_membership_accounts_configurations::de_membership_accounts_configurations(tokens)?,
+                        crate::protocol_serde::shape_membership_accounts_configurations::de_membership_accounts_configurations(tokens, _value)?,
                     );
                 }
                 "membershipActivationTimestamp" => {
@@ -264,7 +265,7 @@ pub(crate) fn de_get_membership(
                     );
                 }
                 "optInFeatures" => {
-                    builder = builder.set_opt_in_features(crate::protocol_serde::shape_opt_in_features::de_opt_in_features(tokens)?);
+                    builder = builder.set_opt_in_features(crate::protocol_serde::shape_opt_in_features::de_opt_in_features(tokens, _value)?);
                 }
                 "region" => {
                     builder = builder.set_region(

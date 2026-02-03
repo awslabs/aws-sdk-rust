@@ -32,6 +32,7 @@ pub fn ser_capability_report_endpoint(
 
 pub(crate) fn de_capability_report_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CapabilityReportEndpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,11 +54,11 @@ where
                             );
                         }
                         "deviceTypes" => {
-                            builder = builder.set_device_types(crate::protocol_serde::shape_device_types::de_device_types(tokens)?);
+                            builder = builder.set_device_types(crate::protocol_serde::shape_device_types::de_device_types(tokens, _value)?);
                         }
                         "capabilities" => {
                             builder = builder.set_capabilities(
-                                crate::protocol_serde::shape_capability_report_capabilities::de_capability_report_capabilities(tokens)?,
+                                crate::protocol_serde::shape_capability_report_capabilities::de_capability_report_capabilities(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

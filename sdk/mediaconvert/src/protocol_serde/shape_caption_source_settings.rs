@@ -53,6 +53,7 @@ pub fn ser_caption_source_settings(
 
 pub(crate) fn de_caption_source_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptionSourceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,22 +69,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ancillarySourceSettings" => {
                             builder = builder.set_ancillary_source_settings(
-                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens)?,
+                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens, _value)?,
                             );
                         }
                         "dvbSubSourceSettings" => {
                             builder = builder.set_dvb_sub_source_settings(
-                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens)?,
+                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens, _value)?,
                             );
                         }
                         "embeddedSourceSettings" => {
                             builder = builder.set_embedded_source_settings(
-                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens)?,
+                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens, _value)?,
                             );
                         }
                         "fileSourceSettings" => {
-                            builder =
-                                builder.set_file_source_settings(crate::protocol_serde::shape_file_source_settings::de_file_source_settings(tokens)?);
+                            builder = builder.set_file_source_settings(crate::protocol_serde::shape_file_source_settings::de_file_source_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "sourceType" => {
                             builder = builder.set_source_type(
@@ -94,16 +96,17 @@ where
                         }
                         "teletextSourceSettings" => {
                             builder = builder.set_teletext_source_settings(
-                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens)?,
+                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens, _value)?,
                             );
                         }
                         "trackSourceSettings" => {
-                            builder = builder
-                                .set_track_source_settings(crate::protocol_serde::shape_track_source_settings::de_track_source_settings(tokens)?);
+                            builder = builder.set_track_source_settings(
+                                crate::protocol_serde::shape_track_source_settings::de_track_source_settings(tokens, _value)?,
+                            );
                         }
                         "webvttHlsSourceSettings" => {
                             builder = builder.set_webvtt_hls_source_settings(
-                                crate::protocol_serde::shape_webvtt_hls_source_settings::de_webvtt_hls_source_settings(tokens)?,
+                                crate::protocol_serde::shape_webvtt_hls_source_settings::de_webvtt_hls_source_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

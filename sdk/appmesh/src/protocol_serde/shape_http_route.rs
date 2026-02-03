@@ -32,6 +32,7 @@ pub fn ser_http_route(
 
 pub(crate) fn de_http_route<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpRoute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,16 +47,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "match" => {
-                            builder = builder.set_match(crate::protocol_serde::shape_http_route_match::de_http_route_match(tokens)?);
+                            builder = builder.set_match(crate::protocol_serde::shape_http_route_match::de_http_route_match(tokens, _value)?);
                         }
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_http_route_action::de_http_route_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_http_route_action::de_http_route_action(tokens, _value)?);
                         }
                         "retryPolicy" => {
-                            builder = builder.set_retry_policy(crate::protocol_serde::shape_http_retry_policy::de_http_retry_policy(tokens)?);
+                            builder = builder.set_retry_policy(crate::protocol_serde::shape_http_retry_policy::de_http_retry_policy(tokens, _value)?);
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens)?);
+                            builder = builder.set_timeout(crate::protocol_serde::shape_http_timeout::de_http_timeout(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

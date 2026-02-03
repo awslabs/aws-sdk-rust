@@ -129,13 +129,13 @@ pub fn ser_get_resource_sync_status_input(
 }
 
 pub(crate) fn de_get_resource_sync_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_sync_status::builders::GetResourceSyncStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_sync_status::builders::GetResourceSyncStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,14 +143,17 @@ pub(crate) fn de_get_resource_sync_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DesiredState" => {
-                    builder = builder.set_desired_state(crate::protocol_serde::shape_revision::de_revision(tokens)?);
+                    builder = builder.set_desired_state(crate::protocol_serde::shape_revision::de_revision(tokens, _value)?);
                 }
                 "LatestSuccessfulSync" => {
-                    builder =
-                        builder.set_latest_successful_sync(crate::protocol_serde::shape_resource_sync_attempt::de_resource_sync_attempt(tokens)?);
+                    builder = builder.set_latest_successful_sync(crate::protocol_serde::shape_resource_sync_attempt::de_resource_sync_attempt(
+                        tokens, _value,
+                    )?);
                 }
                 "LatestSync" => {
-                    builder = builder.set_latest_sync(crate::protocol_serde::shape_resource_sync_attempt::de_resource_sync_attempt(tokens)?);
+                    builder = builder.set_latest_sync(crate::protocol_serde::shape_resource_sync_attempt::de_resource_sync_attempt(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

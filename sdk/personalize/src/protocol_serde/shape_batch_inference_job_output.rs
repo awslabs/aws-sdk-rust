@@ -14,6 +14,7 @@ pub fn ser_batch_inference_job_output(
 
 pub(crate) fn de_batch_inference_job_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchInferenceJobOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "s3DataDestination" => {
-                            builder = builder.set_s3_data_destination(crate::protocol_serde::shape_s3_data_config::de_s3_data_config(tokens)?);
+                            builder =
+                                builder.set_s3_data_destination(crate::protocol_serde::shape_s3_data_config::de_s3_data_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -88,13 +88,13 @@ pub fn ser_list_portfolios_for_product_input(
 }
 
 pub(crate) fn de_list_portfolios_for_product(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_portfolios_for_product::builders::ListPortfoliosForProductOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_portfolios_for_product::builders::ListPortfoliosForProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,7 +102,7 @@ pub(crate) fn de_list_portfolios_for_product(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PortfolioDetails" => {
-                    builder = builder.set_portfolio_details(crate::protocol_serde::shape_portfolio_details::de_portfolio_details(tokens)?);
+                    builder = builder.set_portfolio_details(crate::protocol_serde::shape_portfolio_details::de_portfolio_details(tokens, _value)?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

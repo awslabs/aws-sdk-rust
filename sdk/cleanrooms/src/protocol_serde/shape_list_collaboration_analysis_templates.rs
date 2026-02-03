@@ -132,13 +132,13 @@ pub fn de_list_collaboration_analysis_templates_http_response(
 }
 
 pub(crate) fn de_list_collaboration_analysis_templates(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,7 +148,7 @@ pub(crate) fn de_list_collaboration_analysis_templates(
                 match key.to_unescaped()?.as_ref() {
                     "collaborationAnalysisTemplateSummaries" => {
                         builder = builder.set_collaboration_analysis_template_summaries(
-                            crate::protocol_serde::shape_collaboration_analysis_template_summary_list::de_collaboration_analysis_template_summary_list(tokens)?
+                            crate::protocol_serde::shape_collaboration_analysis_template_summary_list::de_collaboration_analysis_template_summary_list(tokens, _value)?
                         );
                     }
                     "nextToken" => {

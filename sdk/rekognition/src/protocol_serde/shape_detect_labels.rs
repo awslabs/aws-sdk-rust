@@ -170,13 +170,13 @@ pub fn ser_detect_labels_input(
 }
 
 pub(crate) fn de_detect_labels(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detect_labels::builders::DetectLabelsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detect_labels::builders::DetectLabelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -184,7 +184,7 @@ pub(crate) fn de_detect_labels(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Labels" => {
-                    builder = builder.set_labels(crate::protocol_serde::shape_labels::de_labels(tokens)?);
+                    builder = builder.set_labels(crate::protocol_serde::shape_labels::de_labels(tokens, _value)?);
                 }
                 "OrientationCorrection" => {
                     builder = builder.set_orientation_correction(
@@ -202,7 +202,7 @@ pub(crate) fn de_detect_labels(
                 }
                 "ImageProperties" => {
                     builder = builder.set_image_properties(
-                        crate::protocol_serde::shape_detect_labels_image_properties::de_detect_labels_image_properties(tokens)?,
+                        crate::protocol_serde::shape_detect_labels_image_properties::de_detect_labels_image_properties(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

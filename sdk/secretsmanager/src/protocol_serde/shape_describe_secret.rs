@@ -93,13 +93,13 @@ pub fn ser_describe_secret_input(
 }
 
 pub(crate) fn de_describe_secret(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_secret::builders::DescribeSecretOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_secret::builders::DescribeSecretOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,11 +152,13 @@ pub(crate) fn de_describe_secret(
                     );
                 }
                 "RotationRules" => {
-                    builder = builder.set_rotation_rules(crate::protocol_serde::shape_rotation_rules_type::de_rotation_rules_type(tokens)?);
+                    builder = builder.set_rotation_rules(crate::protocol_serde::shape_rotation_rules_type::de_rotation_rules_type(tokens, _value)?);
                 }
                 "ExternalSecretRotationMetadata" => {
                     builder = builder.set_external_secret_rotation_metadata(
-                        crate::protocol_serde::shape_external_secret_rotation_metadata_type::de_external_secret_rotation_metadata_type(tokens)?,
+                        crate::protocol_serde::shape_external_secret_rotation_metadata_type::de_external_secret_rotation_metadata_type(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "ExternalSecretRotationRoleArn" => {
@@ -197,11 +199,11 @@ pub(crate) fn de_describe_secret(
                     )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list_type::de_tag_list_type(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list_type::de_tag_list_type(tokens, _value)?);
                 }
                 "VersionIdsToStages" => {
                     builder = builder.set_version_ids_to_stages(
-                        crate::protocol_serde::shape_secret_versions_to_stages_map_type::de_secret_versions_to_stages_map_type(tokens)?,
+                        crate::protocol_serde::shape_secret_versions_to_stages_map_type::de_secret_versions_to_stages_map_type(tokens, _value)?,
                     );
                 }
                 "OwningService" => {
@@ -225,8 +227,9 @@ pub(crate) fn de_describe_secret(
                     );
                 }
                 "ReplicationStatus" => {
-                    builder = builder
-                        .set_replication_status(crate::protocol_serde::shape_replication_status_list_type::de_replication_status_list_type(tokens)?);
+                    builder = builder.set_replication_status(
+                        crate::protocol_serde::shape_replication_status_list_type::de_replication_status_list_type(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

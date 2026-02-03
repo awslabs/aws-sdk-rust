@@ -35,6 +35,7 @@ pub fn ser_gauge_chart_options(
 
 pub(crate) fn de_gauge_chart_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GaugeChartOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,18 +58,20 @@ where
                         }
                         "Comparison" => {
                             builder = builder.set_comparison(crate::protocol_serde::shape_comparison_configuration::de_comparison_configuration(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "ArcAxis" => {
-                            builder = builder.set_arc_axis(crate::protocol_serde::shape_arc_axis_configuration::de_arc_axis_configuration(tokens)?);
+                            builder = builder.set_arc_axis(crate::protocol_serde::shape_arc_axis_configuration::de_arc_axis_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "Arc" => {
-                            builder = builder.set_arc(crate::protocol_serde::shape_arc_configuration::de_arc_configuration(tokens)?);
+                            builder = builder.set_arc(crate::protocol_serde::shape_arc_configuration::de_arc_configuration(tokens, _value)?);
                         }
                         "PrimaryValueFontConfiguration" => {
                             builder = builder.set_primary_value_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

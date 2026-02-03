@@ -26,6 +26,7 @@ pub fn ser_governed_catalog_source(
 
 pub(crate) fn de_governed_catalog_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GovernedCatalogSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,7 +70,7 @@ where
                         }
                         "AdditionalOptions" => {
                             builder = builder.set_additional_options(
-                                crate::protocol_serde::shape_s3_source_additional_options::de_s3_source_additional_options(tokens)?,
+                                crate::protocol_serde::shape_s3_source_additional_options::de_s3_source_additional_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

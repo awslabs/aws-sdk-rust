@@ -21,6 +21,7 @@ pub fn ser_sms_outbound_mode(
 
 pub(crate) fn de_sms_outbound_mode<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SmsOutboundMode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "agentless" => Some(crate::types::SmsOutboundMode::Agentless(
-                            crate::protocol_serde::shape_agentless_config::de_agentless_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_agentless_config::de_agentless_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agentless' cannot be null")
                             })?,
                         )),

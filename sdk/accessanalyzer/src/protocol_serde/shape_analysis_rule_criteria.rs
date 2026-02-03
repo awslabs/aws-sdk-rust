@@ -33,6 +33,7 @@ pub fn ser_analysis_rule_criteria(
 
 pub(crate) fn de_analysis_rule_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,10 +48,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accountIds" => {
-                            builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids_list::de_account_ids_list(tokens)?);
+                            builder = builder.set_account_ids(crate::protocol_serde::shape_account_ids_list::de_account_ids_list(tokens, _value)?);
                         }
                         "resourceTags" => {
-                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tags_list::de_tags_list(tokens)?);
+                            builder = builder.set_resource_tags(crate::protocol_serde::shape_tags_list::de_tags_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

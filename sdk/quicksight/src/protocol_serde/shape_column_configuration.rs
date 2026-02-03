@@ -35,6 +35,7 @@ pub fn ser_column_configuration(
 
 pub(crate) fn de_column_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,11 +50,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "FormatConfiguration" => {
-                            builder =
-                                builder.set_format_configuration(crate::protocol_serde::shape_format_configuration::de_format_configuration(tokens)?);
+                            builder = builder.set_format_configuration(crate::protocol_serde::shape_format_configuration::de_format_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "Role" => {
                             builder = builder.set_role(
@@ -63,12 +65,13 @@ where
                             );
                         }
                         "ColorsConfiguration" => {
-                            builder =
-                                builder.set_colors_configuration(crate::protocol_serde::shape_colors_configuration::de_colors_configuration(tokens)?);
+                            builder = builder.set_colors_configuration(crate::protocol_serde::shape_colors_configuration::de_colors_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "DecalSettingsConfiguration" => {
                             builder = builder.set_decal_settings_configuration(
-                                crate::protocol_serde::shape_decal_settings_configuration::de_decal_settings_configuration(tokens)?,
+                                crate::protocol_serde::shape_decal_settings_configuration::de_decal_settings_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

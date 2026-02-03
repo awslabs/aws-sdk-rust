@@ -129,13 +129,13 @@ pub fn ser_describe_featured_results_set_input(
 }
 
 pub(crate) fn de_describe_featured_results_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,16 +171,16 @@ pub(crate) fn de_describe_featured_results_set(
                     );
                 }
                 "QueryTexts" => {
-                    builder = builder.set_query_texts(crate::protocol_serde::shape_query_text_list::de_query_text_list(tokens)?);
+                    builder = builder.set_query_texts(crate::protocol_serde::shape_query_text_list::de_query_text_list(tokens, _value)?);
                 }
                 "FeaturedDocumentsWithMetadata" => {
                     builder = builder.set_featured_documents_with_metadata(
-                        crate::protocol_serde::shape_featured_document_with_metadata_list::de_featured_document_with_metadata_list(tokens)?,
+                        crate::protocol_serde::shape_featured_document_with_metadata_list::de_featured_document_with_metadata_list(tokens, _value)?,
                     );
                 }
                 "FeaturedDocumentsMissing" => {
                     builder = builder.set_featured_documents_missing(
-                        crate::protocol_serde::shape_featured_document_missing_list::de_featured_document_missing_list(tokens)?,
+                        crate::protocol_serde::shape_featured_document_missing_list::de_featured_document_missing_list(tokens, _value)?,
                     );
                 }
                 "LastUpdatedTimestamp" => {

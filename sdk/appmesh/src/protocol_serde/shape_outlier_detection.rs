@@ -32,6 +32,7 @@ pub fn ser_outlier_detection(
 
 pub(crate) fn de_outlier_detection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutlierDetection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,10 +54,10 @@ where
                             );
                         }
                         "interval" => {
-                            builder = builder.set_interval(crate::protocol_serde::shape_duration::de_duration(tokens)?);
+                            builder = builder.set_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
                         }
                         "baseEjectionDuration" => {
-                            builder = builder.set_base_ejection_duration(crate::protocol_serde::shape_duration::de_duration(tokens)?);
+                            builder = builder.set_base_ejection_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
                         }
                         "maxEjectionPercent" => {
                             builder = builder.set_max_ejection_percent(

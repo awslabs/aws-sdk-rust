@@ -147,7 +147,7 @@ mod assume_role_for_pod_identity;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_eksauth::Error> {
 /// # let client: aws_sdk_eksauth::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.assume_role_for_pod_identity()
 ///     .customize()

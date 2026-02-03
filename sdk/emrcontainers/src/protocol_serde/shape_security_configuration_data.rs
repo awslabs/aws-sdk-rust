@@ -14,6 +14,7 @@ pub fn ser_security_configuration_data(
 
 pub(crate) fn de_security_configuration_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SecurityConfigurationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "authorizationConfiguration" => {
                             builder = builder.set_authorization_configuration(
-                                crate::protocol_serde::shape_authorization_configuration::de_authorization_configuration(tokens)?,
+                                crate::protocol_serde::shape_authorization_configuration::de_authorization_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -17,6 +17,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_s
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -20,6 +20,7 @@ pub fn ser_api_schema(
 
 pub(crate) fn de_api_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApiSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::ApiSchema::S3(
-                            crate::protocol_serde::shape_s3_identifier::de_s3_identifier(tokens)?
+                            crate::protocol_serde::shape_s3_identifier::de_s3_identifier(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
                         "payload" => Some(crate::types::ApiSchema::Payload(

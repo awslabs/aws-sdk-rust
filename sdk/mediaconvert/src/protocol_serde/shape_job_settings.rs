@@ -110,6 +110,7 @@ pub fn ser_job_settings(
 
 pub(crate) fn de_job_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -131,21 +132,22 @@ where
                             );
                         }
                         "availBlanking" => {
-                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens)?);
+                            builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens, _value)?);
                         }
                         "colorConversion3DLUTSettings" => {
                             builder = builder.set_color_conversion3_dlut_settings(
                                 crate::protocol_serde::shape_list_of_color_conversion3_dlut_setting::de_list_of_color_conversion3_dlut_setting(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "esam" => {
-                            builder = builder.set_esam(crate::protocol_serde::shape_esam_settings::de_esam_settings(tokens)?);
+                            builder = builder.set_esam(crate::protocol_serde::shape_esam_settings::de_esam_settings(tokens, _value)?);
                         }
                         "extendedDataServices" => {
-                            builder = builder
-                                .set_extended_data_services(crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens)?);
+                            builder = builder.set_extended_data_services(
+                                crate::protocol_serde::shape_extended_data_services::de_extended_data_services(tokens, _value)?,
+                            );
                         }
                         "followSource" => {
                             builder = builder.set_follow_source(
@@ -155,35 +157,41 @@ where
                             );
                         }
                         "inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_list_of_input::de_list_of_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_list_of_input::de_list_of_input(tokens, _value)?);
                         }
                         "kantarWatermark" => {
                             builder = builder.set_kantar_watermark(
-                                crate::protocol_serde::shape_kantar_watermark_settings::de_kantar_watermark_settings(tokens)?,
+                                crate::protocol_serde::shape_kantar_watermark_settings::de_kantar_watermark_settings(tokens, _value)?,
                             );
                         }
                         "motionImageInserter" => {
-                            builder = builder
-                                .set_motion_image_inserter(crate::protocol_serde::shape_motion_image_inserter::de_motion_image_inserter(tokens)?);
+                            builder = builder.set_motion_image_inserter(
+                                crate::protocol_serde::shape_motion_image_inserter::de_motion_image_inserter(tokens, _value)?,
+                            );
                         }
                         "nielsenConfiguration" => {
-                            builder = builder
-                                .set_nielsen_configuration(crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?);
+                            builder = builder.set_nielsen_configuration(
+                                crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens, _value)?,
+                            );
                         }
                         "nielsenNonLinearWatermark" => {
                             builder = builder.set_nielsen_non_linear_watermark(
-                                crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::de_nielsen_non_linear_watermark_settings(tokens)?,
+                                crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::de_nielsen_non_linear_watermark_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "outputGroups" => {
-                            builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(tokens)?);
+                            builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(
+                                tokens, _value,
+                            )?);
                         }
                         "timecodeConfig" => {
-                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);
+                            builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens, _value)?);
                         }
                         "timedMetadataInsertion" => {
                             builder = builder.set_timed_metadata_insertion(
-                                crate::protocol_serde::shape_timed_metadata_insertion::de_timed_metadata_insertion(tokens)?,
+                                crate::protocol_serde::shape_timed_metadata_insertion::de_timed_metadata_insertion(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

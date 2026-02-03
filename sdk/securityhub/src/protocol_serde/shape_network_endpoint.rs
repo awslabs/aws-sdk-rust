@@ -41,6 +41,7 @@ pub fn ser_network_endpoint(
 
 pub(crate) fn de_network_endpoint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkEndpoint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,15 +84,17 @@ where
                             );
                         }
                         "Location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_network_geo_location::de_network_geo_location(tokens)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_network_geo_location::de_network_geo_location(
+                                tokens, _value,
+                            )?);
                         }
                         "AutonomousSystem" => {
                             builder = builder.set_autonomous_system(
-                                crate::protocol_serde::shape_network_autonomous_system::de_network_autonomous_system(tokens)?,
+                                crate::protocol_serde::shape_network_autonomous_system::de_network_autonomous_system(tokens, _value)?,
                             );
                         }
                         "Connection" => {
-                            builder = builder.set_connection(crate::protocol_serde::shape_network_connection::de_network_connection(tokens)?);
+                            builder = builder.set_connection(crate::protocol_serde::shape_network_connection::de_network_connection(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

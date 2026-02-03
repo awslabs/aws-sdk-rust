@@ -50,6 +50,7 @@ pub fn ser_project_source(
 
 pub(crate) fn de_project_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProjectSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,8 +86,9 @@ where
                             );
                         }
                         "gitSubmodulesConfig" => {
-                            builder = builder
-                                .set_git_submodules_config(crate::protocol_serde::shape_git_submodules_config::de_git_submodules_config(tokens)?);
+                            builder = builder.set_git_submodules_config(
+                                crate::protocol_serde::shape_git_submodules_config::de_git_submodules_config(tokens, _value)?,
+                            );
                         }
                         "buildspec" => {
                             builder = builder.set_buildspec(
@@ -96,14 +98,14 @@ where
                             );
                         }
                         "auth" => {
-                            builder = builder.set_auth(crate::protocol_serde::shape_source_auth::de_source_auth(tokens)?);
+                            builder = builder.set_auth(crate::protocol_serde::shape_source_auth::de_source_auth(tokens, _value)?);
                         }
                         "reportBuildStatus" => {
                             builder = builder.set_report_build_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "buildStatusConfig" => {
-                            builder =
-                                builder.set_build_status_config(crate::protocol_serde::shape_build_status_config::de_build_status_config(tokens)?);
+                            builder = builder
+                                .set_build_status_config(crate::protocol_serde::shape_build_status_config::de_build_status_config(tokens, _value)?);
                         }
                         "insecureSsl" => {
                             builder = builder.set_insecure_ssl(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -134,11 +134,11 @@ pub fn ser_get_contact_input(
 }
 
 pub(crate) fn de_get_contact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_contact::builders::GetContactOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_contact::builders::GetContactOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,7 +174,7 @@ pub(crate) fn de_get_contact(
                     );
                 }
                 "Plan" => {
-                    builder = builder.set_plan(crate::protocol_serde::shape_plan::de_plan(tokens)?);
+                    builder = builder.set_plan(crate::protocol_serde::shape_plan::de_plan(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

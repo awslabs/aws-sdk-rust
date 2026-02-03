@@ -89,13 +89,13 @@ pub fn de_delete_attribute_group_http_response(
 }
 
 pub(crate) fn de_delete_attribute_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -103,7 +103,9 @@ pub(crate) fn de_delete_attribute_group(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attributeGroup" => {
-                    builder = builder.set_attribute_group(crate::protocol_serde::shape_attribute_group_summary::de_attribute_group_summary(tokens)?);
+                    builder = builder.set_attribute_group(crate::protocol_serde::shape_attribute_group_summary::de_attribute_group_summary(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

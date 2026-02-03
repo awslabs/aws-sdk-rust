@@ -32,6 +32,7 @@ pub fn ser_code_gen_node(
 
 pub(crate) fn de_code_gen_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeGenNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                             );
                         }
                         "Args" => {
-                            builder = builder.set_args(crate::protocol_serde::shape_code_gen_node_args::de_code_gen_node_args(tokens)?);
+                            builder = builder.set_args(crate::protocol_serde::shape_code_gen_node_args::de_code_gen_node_args(tokens, _value)?);
                         }
                         "LineNumber" => {
                             builder = builder.set_line_number(

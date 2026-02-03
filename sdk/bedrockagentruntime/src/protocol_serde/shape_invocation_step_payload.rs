@@ -27,6 +27,7 @@ pub fn ser_invocation_step_payload(
 
 pub(crate) fn de_invocation_step_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InvocationStepPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,9 +57,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "contentBlocks" => Some(crate::types::InvocationStepPayload::ContentBlocks(
-                            crate::protocol_serde::shape_bedrock_session_content_blocks::de_bedrock_session_content_blocks(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentBlocks' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_bedrock_session_content_blocks::de_bedrock_session_content_blocks(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contentBlocks' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

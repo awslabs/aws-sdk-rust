@@ -32,13 +32,13 @@ pub fn de_describe_vod_source_http_response(
 }
 
 pub(crate) fn de_describe_vod_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -46,8 +46,9 @@ pub(crate) fn de_describe_vod_source(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdBreakOpportunities" => {
-                    builder =
-                        builder.set_ad_break_opportunities(crate::protocol_serde::shape_ad_break_opportunities::de_ad_break_opportunities(tokens)?);
+                    builder = builder.set_ad_break_opportunities(crate::protocol_serde::shape_ad_break_opportunities::de_ad_break_opportunities(
+                        tokens, _value,
+                    )?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -64,7 +65,7 @@ pub(crate) fn de_describe_vod_source(
                 }
                 "HttpPackageConfigurations" => {
                     builder = builder.set_http_package_configurations(
-                        crate::protocol_serde::shape_http_package_configurations::de_http_package_configurations(tokens)?,
+                        crate::protocol_serde::shape_http_package_configurations::de_http_package_configurations(tokens, _value)?,
                     );
                 }
                 "LastModifiedTime" => {
@@ -81,7 +82,7 @@ pub(crate) fn de_describe_vod_source(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 "VodSourceName" => {
                     builder = builder.set_vod_source_name(

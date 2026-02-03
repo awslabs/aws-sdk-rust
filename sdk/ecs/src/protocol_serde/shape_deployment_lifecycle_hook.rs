@@ -26,6 +26,7 @@ pub fn ser_deployment_lifecycle_hook(
 
 pub(crate) fn de_deployment_lifecycle_hook<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeploymentLifecycleHook>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,9 @@ where
                         }
                         "lifecycleStages" => {
                             builder = builder.set_lifecycle_stages(
-                                crate::protocol_serde::shape_deployment_lifecycle_hook_stage_list::de_deployment_lifecycle_hook_stage_list(tokens)?,
+                                crate::protocol_serde::shape_deployment_lifecycle_hook_stage_list::de_deployment_lifecycle_hook_stage_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "hookDetails" => {

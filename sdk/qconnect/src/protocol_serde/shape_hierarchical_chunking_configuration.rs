@@ -29,6 +29,7 @@ pub fn ser_hierarchical_chunking_configuration(
 
 pub(crate) fn de_hierarchical_chunking_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HierarchicalChunkingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "levelConfigurations" => {
                             builder = builder.set_level_configurations(
-                                    crate::protocol_serde::shape_hierarchical_chunking_level_configurations::de_hierarchical_chunking_level_configurations(tokens)?
+                                    crate::protocol_serde::shape_hierarchical_chunking_level_configurations::de_hierarchical_chunking_level_configurations(tokens, _value)?
                                 );
                         }
                         "overlapTokens" => {

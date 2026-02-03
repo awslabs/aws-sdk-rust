@@ -23,6 +23,7 @@ pub fn ser_instance_block_device_mapping(
 
 pub(crate) fn de_instance_block_device_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceBlockDeviceMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                         "ebs" => {
                             builder = builder.set_ebs(
                                 crate::protocol_serde::shape_ebs_instance_block_device_specification::de_ebs_instance_block_device_specification(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

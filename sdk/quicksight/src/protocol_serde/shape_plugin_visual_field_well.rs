@@ -47,6 +47,7 @@ pub fn ser_plugin_visual_field_well(
 
 pub(crate) fn de_plugin_visual_field_well<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PluginVisualFieldWell>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,14 +69,17 @@ where
                             );
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Measures" => {
-                            builder = builder.set_measures(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?);
+                            builder = builder.set_measures(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
                         }
                         "Unaggregated" => {
-                            builder =
-                                builder.set_unaggregated(crate::protocol_serde::shape_unaggregated_field_list::de_unaggregated_field_list(tokens)?);
+                            builder = builder.set_unaggregated(crate::protocol_serde::shape_unaggregated_field_list::de_unaggregated_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

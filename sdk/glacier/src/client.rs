@@ -191,7 +191,7 @@ mod create_vault;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_glacier::Error> {
 /// # let client: aws_sdk_glacier::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.abort_multipart_upload()
 ///     .customize()

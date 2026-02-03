@@ -20,6 +20,7 @@ pub fn ser_aws_dynamo_db_table_restore_summary(
 
 pub(crate) fn de_aws_dynamo_db_table_restore_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsDynamoDbTableRestoreSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

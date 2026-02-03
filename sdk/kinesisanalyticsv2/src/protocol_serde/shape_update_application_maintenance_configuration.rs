@@ -146,13 +146,13 @@ pub fn ser_update_application_maintenance_configuration_input(
 }
 
 pub(crate) fn de_update_application_maintenance_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_application_maintenance_configuration::builders::UpdateApplicationMaintenanceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_update_application_maintenance_configuration(
                 }
                 "ApplicationMaintenanceConfigurationDescription" => {
                     builder = builder.set_application_maintenance_configuration_description(
-                            crate::protocol_serde::shape_application_maintenance_configuration_description::de_application_maintenance_configuration_description(tokens)?
+                            crate::protocol_serde::shape_application_maintenance_configuration_description::de_application_maintenance_configuration_description(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

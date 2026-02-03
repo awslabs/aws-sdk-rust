@@ -123,13 +123,13 @@ pub fn de_get_identity_resolution_job_http_response(
 }
 
 pub(crate) fn de_get_identity_resolution_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_get_identity_resolution_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AutoMerging" => {
-                    builder = builder.set_auto_merging(crate::protocol_serde::shape_auto_merging::de_auto_merging(tokens)?);
+                    builder = builder.set_auto_merging(crate::protocol_serde::shape_auto_merging::de_auto_merging(tokens, _value)?);
                 }
                 "DomainName" => {
                     builder = builder.set_domain_name(
@@ -147,7 +147,7 @@ pub(crate) fn de_get_identity_resolution_job(
                     );
                 }
                 "ExportingLocation" => {
-                    builder = builder.set_exporting_location(crate::protocol_serde::shape_exporting_location::de_exporting_location(tokens)?);
+                    builder = builder.set_exporting_location(crate::protocol_serde::shape_exporting_location::de_exporting_location(tokens, _value)?);
                 }
                 "JobEndTime" => {
                     builder = builder.set_job_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -175,7 +175,7 @@ pub(crate) fn de_get_identity_resolution_job(
                     )?);
                 }
                 "JobStats" => {
-                    builder = builder.set_job_stats(crate::protocol_serde::shape_job_stats::de_job_stats(tokens)?);
+                    builder = builder.set_job_stats(crate::protocol_serde::shape_job_stats::de_job_stats(tokens, _value)?);
                 }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

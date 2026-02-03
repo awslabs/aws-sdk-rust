@@ -47,6 +47,7 @@ pub fn ser_node_repair_config(
 
 pub(crate) fn de_node_repair_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NodeRepairConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -93,7 +94,7 @@ where
                         }
                         "nodeRepairConfigOverrides" => {
                             builder = builder.set_node_repair_config_overrides(
-                                crate::protocol_serde::shape_node_repair_config_overrides_list::de_node_repair_config_overrides_list(tokens)?,
+                                crate::protocol_serde::shape_node_repair_config_overrides_list::de_node_repair_config_overrides_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

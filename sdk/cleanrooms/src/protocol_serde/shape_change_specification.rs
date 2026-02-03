@@ -27,6 +27,7 @@ pub fn ser_change_specification(
 
 pub(crate) fn de_change_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChangeSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,15 +57,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "member" => Some(crate::types::ChangeSpecification::Member(
-                            crate::protocol_serde::shape_member_change_specification::de_member_change_specification(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_member_change_specification::de_member_change_specification(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'member' cannot be null"),
+                            )?,
                         )),
                         "collaboration" => Some(crate::types::ChangeSpecification::Collaboration(
-                            crate::protocol_serde::shape_collaboration_change_specification::de_collaboration_change_specification(tokens)?
+                            crate::protocol_serde::shape_collaboration_change_specification::de_collaboration_change_specification(tokens, _value)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collaboration' cannot be null")
-                                })?,
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'collaboration' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

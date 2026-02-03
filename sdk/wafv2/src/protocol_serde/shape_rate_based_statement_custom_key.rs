@@ -80,6 +80,7 @@ pub fn ser_rate_based_statement_custom_key(
 
 pub(crate) fn de_rate_based_statement_custom_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RateBasedStatementCustomKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,51 +95,54 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_rate_limit_header::de_rate_limit_header(tokens)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_rate_limit_header::de_rate_limit_header(tokens, _value)?);
                         }
                         "Cookie" => {
-                            builder = builder.set_cookie(crate::protocol_serde::shape_rate_limit_cookie::de_rate_limit_cookie(tokens)?);
+                            builder = builder.set_cookie(crate::protocol_serde::shape_rate_limit_cookie::de_rate_limit_cookie(tokens, _value)?);
                         }
                         "QueryArgument" => {
                             builder = builder.set_query_argument(
-                                crate::protocol_serde::shape_rate_limit_query_argument::de_rate_limit_query_argument(tokens)?,
+                                crate::protocol_serde::shape_rate_limit_query_argument::de_rate_limit_query_argument(tokens, _value)?,
                             );
                         }
                         "QueryString" => {
-                            builder =
-                                builder.set_query_string(crate::protocol_serde::shape_rate_limit_query_string::de_rate_limit_query_string(tokens)?);
+                            builder = builder.set_query_string(crate::protocol_serde::shape_rate_limit_query_string::de_rate_limit_query_string(
+                                tokens, _value,
+                            )?);
                         }
                         "HTTPMethod" => {
-                            builder =
-                                builder.set_http_method(crate::protocol_serde::shape_rate_limit_http_method::de_rate_limit_http_method(tokens)?);
+                            builder = builder.set_http_method(crate::protocol_serde::shape_rate_limit_http_method::de_rate_limit_http_method(
+                                tokens, _value,
+                            )?);
                         }
                         "ForwardedIP" => {
-                            builder =
-                                builder.set_forwarded_ip(crate::protocol_serde::shape_rate_limit_forwarded_ip::de_rate_limit_forwarded_ip(tokens)?);
+                            builder = builder.set_forwarded_ip(crate::protocol_serde::shape_rate_limit_forwarded_ip::de_rate_limit_forwarded_ip(
+                                tokens, _value,
+                            )?);
                         }
                         "IP" => {
-                            builder = builder.set_ip(crate::protocol_serde::shape_rate_limit_ip::de_rate_limit_ip(tokens)?);
+                            builder = builder.set_ip(crate::protocol_serde::shape_rate_limit_ip::de_rate_limit_ip(tokens, _value)?);
                         }
                         "LabelNamespace" => {
                             builder = builder.set_label_namespace(
-                                crate::protocol_serde::shape_rate_limit_label_namespace::de_rate_limit_label_namespace(tokens)?,
+                                crate::protocol_serde::shape_rate_limit_label_namespace::de_rate_limit_label_namespace(tokens, _value)?,
                             );
                         }
                         "UriPath" => {
-                            builder = builder.set_uri_path(crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(tokens)?);
+                            builder = builder.set_uri_path(crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(tokens, _value)?);
                         }
                         "JA3Fingerprint" => {
                             builder = builder.set_ja3_fingerprint(
-                                crate::protocol_serde::shape_rate_limit_ja3_fingerprint::de_rate_limit_ja3_fingerprint(tokens)?,
+                                crate::protocol_serde::shape_rate_limit_ja3_fingerprint::de_rate_limit_ja3_fingerprint(tokens, _value)?,
                             );
                         }
                         "JA4Fingerprint" => {
                             builder = builder.set_ja4_fingerprint(
-                                crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens)?,
+                                crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens, _value)?,
                             );
                         }
                         "ASN" => {
-                            builder = builder.set_asn(crate::protocol_serde::shape_rate_limit_asn::de_rate_limit_asn(tokens)?);
+                            builder = builder.set_asn(crate::protocol_serde::shape_rate_limit_asn::de_rate_limit_asn(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

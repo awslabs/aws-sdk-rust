@@ -17,6 +17,7 @@ pub fn ser_transformation(
 
 pub(crate) fn de_transformation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Transformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "transformationFunction" => {
                             builder = builder.set_transformation_function(
-                                crate::protocol_serde::shape_transformation_function::de_transformation_function(tokens)?,
+                                crate::protocol_serde::shape_transformation_function::de_transformation_function(tokens, _value)?,
                             );
                         }
                         "stepToApply" => {

@@ -32,6 +32,7 @@ pub fn ser_on_input_lifecycle(
 
 pub(crate) fn de_on_input_lifecycle<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OnInputLifecycle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "events" => {
-                            builder = builder.set_events(crate::protocol_serde::shape_events::de_events(tokens)?);
+                            builder = builder.set_events(crate::protocol_serde::shape_events::de_events(tokens, _value)?);
                         }
                         "transitionEvents" => {
-                            builder = builder.set_transition_events(crate::protocol_serde::shape_transition_events::de_transition_events(tokens)?);
+                            builder =
+                                builder.set_transition_events(crate::protocol_serde::shape_transition_events::de_transition_events(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

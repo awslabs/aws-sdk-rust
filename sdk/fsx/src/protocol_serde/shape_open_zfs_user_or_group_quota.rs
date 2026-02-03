@@ -23,6 +23,7 @@ pub fn ser_open_zfs_user_or_group_quota(
 
 pub(crate) fn de_open_zfs_user_or_group_quota<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenZfsUserOrGroupQuota>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

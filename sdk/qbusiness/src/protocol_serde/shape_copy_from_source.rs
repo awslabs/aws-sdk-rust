@@ -21,6 +21,7 @@ pub fn ser_copy_from_source(
 
 pub(crate) fn de_copy_from_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CopyFromSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "conversation" => Some(crate::types::CopyFromSource::Conversation(
-                            crate::protocol_serde::shape_conversation_source::de_conversation_source(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_conversation_source::de_conversation_source(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conversation' cannot be null")
                             })?,
                         )),

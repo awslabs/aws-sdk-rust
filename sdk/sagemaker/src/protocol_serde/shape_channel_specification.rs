@@ -44,6 +44,7 @@ pub fn ser_channel_specification(
 
 pub(crate) fn de_channel_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChannelSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,14 +76,16 @@ where
                             builder = builder.set_is_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "SupportedContentTypes" => {
-                            builder = builder.set_supported_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens)?);
+                            builder =
+                                builder.set_supported_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens, _value)?);
                         }
                         "SupportedCompressionTypes" => {
-                            builder = builder
-                                .set_supported_compression_types(crate::protocol_serde::shape_compression_types::de_compression_types(tokens)?);
+                            builder = builder.set_supported_compression_types(crate::protocol_serde::shape_compression_types::de_compression_types(
+                                tokens, _value,
+                            )?);
                         }
                         "SupportedInputModes" => {
-                            builder = builder.set_supported_input_modes(crate::protocol_serde::shape_input_modes::de_input_modes(tokens)?);
+                            builder = builder.set_supported_input_modes(crate::protocol_serde::shape_input_modes::de_input_modes(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

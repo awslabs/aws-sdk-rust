@@ -33,6 +33,7 @@ pub fn ser_grpc_route_metadata_match_method(
 
 pub(crate) fn de_grpc_route_metadata_match_method<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GrpcRouteMetadataMatchMethod>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'regex' cannot be null"))?,
                         )),
                         "range" => Some(crate::types::GrpcRouteMetadataMatchMethod::Range(
-                            crate::protocol_serde::shape_match_range::de_match_range(tokens)?
+                            crate::protocol_serde::shape_match_range::de_match_range(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'range' cannot be null"))?,
                         )),
                         "prefix" => Some(crate::types::GrpcRouteMetadataMatchMethod::Prefix(

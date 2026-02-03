@@ -17,6 +17,7 @@ pub fn ser_specifications(
 
 pub(crate) fn de_specifications<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Specifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,9 @@ where
                         }
                         "valueElicitationSetting" => {
                             builder = builder.set_value_elicitation_setting(
-                                crate::protocol_serde::shape_sub_slot_value_elicitation_setting::de_sub_slot_value_elicitation_setting(tokens)?,
+                                crate::protocol_serde::shape_sub_slot_value_elicitation_setting::de_sub_slot_value_elicitation_setting(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

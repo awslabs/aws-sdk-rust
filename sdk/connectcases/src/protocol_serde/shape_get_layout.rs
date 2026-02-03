@@ -115,10 +115,10 @@ pub fn de_get_layout_http_response(
 }
 
 pub(crate) fn de_get_layout(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_layout::builders::GetLayoutOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_layout::builders::GetLayoutOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_get_layout(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "content" => {
-                    builder = builder.set_content(crate::protocol_serde::shape_layout_content::de_layout_content(tokens)?);
+                    builder = builder.set_content(crate::protocol_serde::shape_layout_content::de_layout_content(tokens, _value)?);
                 }
                 "createdTime" => {
                     builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -165,7 +165,7 @@ pub(crate) fn de_get_layout(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

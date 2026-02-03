@@ -111,13 +111,13 @@ pub fn de_list_security_profiles_for_target_http_response(
 }
 
 pub(crate) fn de_list_security_profiles_for_target(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_list_security_profiles_for_target(
                 }
                 "securityProfileTargetMappings" => {
                     builder = builder.set_security_profile_target_mappings(
-                        crate::protocol_serde::shape_security_profile_target_mappings::de_security_profile_target_mappings(tokens)?,
+                        crate::protocol_serde::shape_security_profile_target_mappings::de_security_profile_target_mappings(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

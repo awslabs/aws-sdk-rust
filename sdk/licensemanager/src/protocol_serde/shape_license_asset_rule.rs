@@ -14,6 +14,7 @@ pub fn ser_license_asset_rule(
 
 pub(crate) fn de_license_asset_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LicenseAssetRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RuleStatement" => {
-                            builder = builder.set_rule_statement(crate::protocol_serde::shape_rule_statement::de_rule_statement(tokens)?);
+                            builder = builder.set_rule_statement(crate::protocol_serde::shape_rule_statement::de_rule_statement(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

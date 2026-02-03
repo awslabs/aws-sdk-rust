@@ -26,6 +26,7 @@ pub fn ser_join_column(
 
 pub(crate) fn de_join_column<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JoinColumn>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,9 @@ where
                             );
                         }
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(tokens)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

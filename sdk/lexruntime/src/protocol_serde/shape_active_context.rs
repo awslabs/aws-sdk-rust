@@ -27,6 +27,7 @@ pub fn ser_active_context(
 
 pub(crate) fn de_active_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActiveContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,12 +50,12 @@ where
                         }
                         "timeToLive" => {
                             builder = builder.set_time_to_live(
-                                crate::protocol_serde::shape_active_context_time_to_live::de_active_context_time_to_live(tokens)?,
+                                crate::protocol_serde::shape_active_context_time_to_live::de_active_context_time_to_live(tokens, _value)?,
                             );
                         }
                         "parameters" => {
                             builder = builder.set_parameters(
-                                crate::protocol_serde::shape_active_context_parameters_map::de_active_context_parameters_map(tokens)?,
+                                crate::protocol_serde::shape_active_context_parameters_map::de_active_context_parameters_map(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

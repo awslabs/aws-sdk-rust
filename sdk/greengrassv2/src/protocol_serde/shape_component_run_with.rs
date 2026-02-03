@@ -20,6 +20,7 @@ pub fn ser_component_run_with(
 
 pub(crate) fn de_component_run_with<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentRunWith>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "systemResourceLimits" => {
-                            builder = builder
-                                .set_system_resource_limits(crate::protocol_serde::shape_system_resource_limits::de_system_resource_limits(tokens)?);
+                            builder = builder.set_system_resource_limits(
+                                crate::protocol_serde::shape_system_resource_limits::de_system_resource_limits(tokens, _value)?,
+                            );
                         }
                         "windowsUser" => {
                             builder = builder.set_windows_user(

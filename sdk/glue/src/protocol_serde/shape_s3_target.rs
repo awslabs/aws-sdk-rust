@@ -35,6 +35,7 @@ pub fn ser_s3_target(
 
 pub(crate) fn de_s3_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3Target>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                             );
                         }
                         "Exclusions" => {
-                            builder = builder.set_exclusions(crate::protocol_serde::shape_path_list::de_path_list(tokens)?);
+                            builder = builder.set_exclusions(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value)?);
                         }
                         "ConnectionName" => {
                             builder = builder.set_connection_name(

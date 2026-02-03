@@ -20,6 +20,7 @@ pub fn ser_layout_configuration(
 
 pub(crate) fn de_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "grid" => {
-                            builder = builder.set_grid(crate::protocol_serde::shape_grid_configuration::de_grid_configuration(tokens)?);
+                            builder = builder.set_grid(crate::protocol_serde::shape_grid_configuration::de_grid_configuration(tokens, _value)?);
                         }
                         "pip" => {
-                            builder = builder.set_pip(crate::protocol_serde::shape_pip_configuration::de_pip_configuration(tokens)?);
+                            builder = builder.set_pip(crate::protocol_serde::shape_pip_configuration::de_pip_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

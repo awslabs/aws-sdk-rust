@@ -89,13 +89,13 @@ pub fn ser_get_launch_configuration_input(
 }
 
 pub(crate) fn de_get_launch_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_launch_configuration(
                     );
                 }
                 "licensing" => {
-                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens)?);
+                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens, _value)?);
                 }
                 "mapAutoTaggingMpeID" => {
                     builder = builder.set_map_auto_tagging_mpe_id(
@@ -150,7 +150,8 @@ pub(crate) fn de_get_launch_configuration(
                     );
                 }
                 "postLaunchActions" => {
-                    builder = builder.set_post_launch_actions(crate::protocol_serde::shape_post_launch_actions::de_post_launch_actions(tokens)?);
+                    builder =
+                        builder.set_post_launch_actions(crate::protocol_serde::shape_post_launch_actions::de_post_launch_actions(tokens, _value)?);
                 }
                 "sourceServerID" => {
                     builder = builder.set_source_server_id(

@@ -112,13 +112,13 @@ pub fn ser_get_mail_domain_input(
 }
 
 pub(crate) fn de_get_mail_domain(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_mail_domain::builders::GetMailDomainOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_mail_domain::builders::GetMailDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_get_mail_domain(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Records" => {
-                    builder = builder.set_records(crate::protocol_serde::shape_dns_records::de_dns_records(tokens)?);
+                    builder = builder.set_records(crate::protocol_serde::shape_dns_records::de_dns_records(tokens, _value)?);
                 }
                 "IsTestDomain" => {
                     builder = builder.set_is_test_domain(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

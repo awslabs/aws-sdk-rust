@@ -46,13 +46,13 @@ pub fn ser_describe_remediation_configurations_input(
 }
 
 pub(crate) fn de_describe_remediation_configurations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -61,7 +61,7 @@ pub(crate) fn de_describe_remediation_configurations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RemediationConfigurations" => {
                     builder = builder.set_remediation_configurations(
-                        crate::protocol_serde::shape_remediation_configurations::de_remediation_configurations(tokens)?,
+                        crate::protocol_serde::shape_remediation_configurations::de_remediation_configurations(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -9,5 +9,8 @@ pub fn ser_describe_stream_summary_input_input(
     if let Some(var_2) = &input.stream_arn {
         object.key("StreamARN").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.stream_id {
+        object.key("StreamId").string(var_3.as_str());
+    }
     Ok(())
 }

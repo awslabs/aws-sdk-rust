@@ -11,6 +11,7 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes_sources(
 
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes_sources<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSources>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

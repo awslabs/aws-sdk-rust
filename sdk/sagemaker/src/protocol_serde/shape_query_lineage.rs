@@ -63,13 +63,13 @@ pub fn ser_query_lineage_input(
 }
 
 pub(crate) fn de_query_lineage(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::query_lineage::builders::QueryLineageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::query_lineage::builders::QueryLineageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -77,10 +77,10 @@ pub(crate) fn de_query_lineage(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Vertices" => {
-                    builder = builder.set_vertices(crate::protocol_serde::shape_vertices::de_vertices(tokens)?);
+                    builder = builder.set_vertices(crate::protocol_serde::shape_vertices::de_vertices(tokens, _value)?);
                 }
                 "Edges" => {
-                    builder = builder.set_edges(crate::protocol_serde::shape_edges::de_edges(tokens)?);
+                    builder = builder.set_edges(crate::protocol_serde::shape_edges::de_edges(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

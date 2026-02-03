@@ -147,7 +147,7 @@ mod create_lifecycle_policy;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_dlm::Error> {
 /// # let client: aws_sdk_dlm::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_lifecycle_policy()
 ///     .customize()

@@ -158,13 +158,13 @@ pub fn ser_create_subscription_target_input(
 }
 
 pub(crate) fn de_create_subscription_target(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_subscription_target::builders::CreateSubscriptionTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,12 +172,13 @@ pub(crate) fn de_create_subscription_target(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "applicableAssetTypes" => {
-                    builder =
-                        builder.set_applicable_asset_types(crate::protocol_serde::shape_applicable_asset_types::de_applicable_asset_types(tokens)?);
+                    builder = builder.set_applicable_asset_types(crate::protocol_serde::shape_applicable_asset_types::de_applicable_asset_types(
+                        tokens, _value,
+                    )?);
                 }
                 "authorizedPrincipals" => {
                     builder = builder.set_authorized_principals(
-                        crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(tokens)?,
+                        crate::protocol_serde::shape_authorized_principal_identifiers::de_authorized_principal_identifiers(tokens, _value)?,
                     );
                 }
                 "createdAt" => {
@@ -251,7 +252,7 @@ pub(crate) fn de_create_subscription_target(
                 }
                 "subscriptionTargetConfig" => {
                     builder = builder.set_subscription_target_config(
-                        crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens)?,
+                        crate::protocol_serde::shape_subscription_target_forms::de_subscription_target_forms(tokens, _value)?,
                     );
                 }
                 "type" => {

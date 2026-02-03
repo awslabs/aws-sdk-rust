@@ -14,6 +14,7 @@ pub fn ser_dashboard_customization_visual_options(
 
 pub(crate) fn de_dashboard_customization_visual_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashboardCustomizationVisualOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "FieldsConfiguration" => {
                                 builder = builder.set_fields_configuration(
-                                    crate::protocol_serde::shape_visual_customization_fields_configuration::de_visual_customization_fields_configuration(tokens)?
+                                    crate::protocol_serde::shape_visual_customization_fields_configuration::de_visual_customization_fields_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

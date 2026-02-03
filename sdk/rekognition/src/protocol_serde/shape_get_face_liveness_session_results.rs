@@ -153,13 +153,13 @@ pub fn ser_get_face_liveness_session_results_input(
 }
 
 pub(crate) fn de_get_face_liveness_session_results(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,13 +185,13 @@ pub(crate) fn de_get_face_liveness_session_results(
                         .set_confidence(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
                 }
                 "ReferenceImage" => {
-                    builder = builder.set_reference_image(crate::protocol_serde::shape_audit_image::de_audit_image(tokens)?);
+                    builder = builder.set_reference_image(crate::protocol_serde::shape_audit_image::de_audit_image(tokens, _value)?);
                 }
                 "AuditImages" => {
-                    builder = builder.set_audit_images(crate::protocol_serde::shape_audit_images::de_audit_images(tokens)?);
+                    builder = builder.set_audit_images(crate::protocol_serde::shape_audit_images::de_audit_images(tokens, _value)?);
                 }
                 "Challenge" => {
-                    builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens)?);
+                    builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

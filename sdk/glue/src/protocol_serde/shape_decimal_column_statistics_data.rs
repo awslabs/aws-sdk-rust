@@ -32,6 +32,7 @@ pub fn ser_decimal_column_statistics_data(
 
 pub(crate) fn de_decimal_column_statistics_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DecimalColumnStatisticsData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MinimumValue" => {
-                            builder = builder.set_minimum_value(crate::protocol_serde::shape_decimal_number::de_decimal_number(tokens)?);
+                            builder = builder.set_minimum_value(crate::protocol_serde::shape_decimal_number::de_decimal_number(tokens, _value)?);
                         }
                         "MaximumValue" => {
-                            builder = builder.set_maximum_value(crate::protocol_serde::shape_decimal_number::de_decimal_number(tokens)?);
+                            builder = builder.set_maximum_value(crate::protocol_serde::shape_decimal_number::de_decimal_number(tokens, _value)?);
                         }
                         "NumberOfNulls" => {
                             builder = builder.set_number_of_nulls(

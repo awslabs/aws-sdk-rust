@@ -17,6 +17,7 @@ pub fn ser_filled_map_shape_conditional_formatting(
 
 pub(crate) fn de_filled_map_shape_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilledMapShapeConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "Format" => {
                             builder = builder.set_format(crate::protocol_serde::shape_shape_conditional_format::de_shape_conditional_format(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

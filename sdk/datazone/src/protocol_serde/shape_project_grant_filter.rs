@@ -21,6 +21,7 @@ pub fn ser_project_grant_filter(
 
 pub(crate) fn de_project_grant_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProjectGrantFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "domainUnitFilter" => Some(crate::types::ProjectGrantFilter::DomainUnitFilter(
-                            crate::protocol_serde::shape_domain_unit_filter_for_project::de_domain_unit_filter_for_project(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'domainUnitFilter' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_domain_unit_filter_for_project::de_domain_unit_filter_for_project(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'domainUnitFilter' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

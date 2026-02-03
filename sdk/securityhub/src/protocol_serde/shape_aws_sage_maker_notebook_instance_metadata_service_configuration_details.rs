@@ -11,6 +11,7 @@ pub fn ser_aws_sage_maker_notebook_instance_metadata_service_configuration_detai
 
 pub(crate) fn de_aws_sage_maker_notebook_instance_metadata_service_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

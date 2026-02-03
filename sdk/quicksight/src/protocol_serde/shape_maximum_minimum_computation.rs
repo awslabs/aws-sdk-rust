@@ -29,6 +29,7 @@ pub fn ser_maximum_minimum_computation(
 
 pub(crate) fn de_maximum_minimum_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MaximumMinimumComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,10 +58,10 @@ where
                             );
                         }
                         "Time" => {
-                            builder = builder.set_time(crate::protocol_serde::shape_dimension_field::de_dimension_field(tokens)?);
+                            builder = builder.set_time(crate::protocol_serde::shape_dimension_field::de_dimension_field(tokens, _value)?);
                         }
                         "Value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_measure_field::de_measure_field(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_measure_field::de_measure_field(tokens, _value)?);
                         }
                         "Type" => {
                             builder = builder.set_type(

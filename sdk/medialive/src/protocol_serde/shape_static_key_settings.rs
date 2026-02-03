@@ -17,6 +17,7 @@ pub fn ser_static_key_settings(
 
 pub(crate) fn de_static_key_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StaticKeySettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "keyProviderServer" => {
-                            builder = builder.set_key_provider_server(crate::protocol_serde::shape_input_location::de_input_location(tokens)?);
+                            builder =
+                                builder.set_key_provider_server(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
                         }
                         "staticKeyValue" => {
                             builder = builder.set_static_key_value(

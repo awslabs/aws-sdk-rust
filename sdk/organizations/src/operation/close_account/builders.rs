@@ -32,6 +32,8 @@ impl crate::operation::close_account::builders::CloseAccountInputBuilder {
 /// </ul><note>
 /// <ul>
 /// <li>
+/// <p>Resources remaining within the account after closing will be automatically deleted after 90 days. During this 90-day period, the resources won't be available unless you contact Amazon Web Services Support to reopen the account. After 90 days, you can't reopen an account. You might still receive a <a href="https://repost.aws/knowledge-center/closed-account-bill">bill after account closure</a>.</p></li>
+/// <li>
 /// <p>You can close only 10% of member accounts, between 10 and 1000, within a rolling 30 day period. This quota is not bound by a calendar month, but starts when you close an account. After you reach this limit, you can't close additional accounts. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for Organizations</a> in the <i>Organizations User Guide</i>.</p></li>
 /// <li>
 /// <p>To reinstate a closed account, contact Amazon Web Services Support within the 90-day grace period while the account is in SUSPENDED status.</p></li>

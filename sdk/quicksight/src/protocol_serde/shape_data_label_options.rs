@@ -50,6 +50,7 @@ pub fn ser_data_label_options(
 
 pub(crate) fn de_data_label_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataLabelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,7 +86,8 @@ where
                             );
                         }
                         "DataLabelTypes" => {
-                            builder = builder.set_data_label_types(crate::protocol_serde::shape_data_label_types::de_data_label_types(tokens)?);
+                            builder =
+                                builder.set_data_label_types(crate::protocol_serde::shape_data_label_types::de_data_label_types(tokens, _value)?);
                         }
                         "Position" => {
                             builder = builder.set_position(
@@ -102,8 +104,9 @@ where
                             );
                         }
                         "LabelFontConfiguration" => {
-                            builder =
-                                builder.set_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder.set_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "LabelColor" => {
                             builder = builder.set_label_color(

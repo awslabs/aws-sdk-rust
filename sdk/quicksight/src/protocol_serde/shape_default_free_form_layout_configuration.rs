@@ -14,6 +14,7 @@ pub fn ser_default_free_form_layout_configuration(
 
 pub(crate) fn de_default_free_form_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DefaultFreeFormLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CanvasSizeOptions" => {
                             builder = builder.set_canvas_size_options(
-                                crate::protocol_serde::shape_free_form_layout_canvas_size_options::de_free_form_layout_canvas_size_options(tokens)?,
+                                crate::protocol_serde::shape_free_form_layout_canvas_size_options::de_free_form_layout_canvas_size_options(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

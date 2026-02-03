@@ -155,13 +155,13 @@ pub fn ser_get_event_data_store_input(
 }
 
 pub(crate) fn de_get_event_data_store(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_data_store::builders::GetEventDataStoreOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_data_store::builders::GetEventDataStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,7 +191,7 @@ pub(crate) fn de_get_event_data_store(
                 }
                 "AdvancedEventSelectors" => {
                     builder = builder.set_advanced_event_selectors(
-                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens)?,
+                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens, _value)?,
                     );
                 }
                 "MultiRegionEnabled" => {
@@ -251,7 +251,7 @@ pub(crate) fn de_get_event_data_store(
                     );
                 }
                 "PartitionKeys" => {
-                    builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens)?);
+                    builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

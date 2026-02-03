@@ -44,6 +44,7 @@ pub fn ser_task_template_constraints(
 
 pub(crate) fn de_task_template_constraints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskTemplateConstraints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,17 +60,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RequiredFields" => {
                             builder = builder.set_required_fields(
-                                crate::protocol_serde::shape_required_task_template_fields::de_required_task_template_fields(tokens)?,
+                                crate::protocol_serde::shape_required_task_template_fields::de_required_task_template_fields(tokens, _value)?,
                             );
                         }
                         "ReadOnlyFields" => {
                             builder = builder.set_read_only_fields(
-                                crate::protocol_serde::shape_read_only_task_template_fields::de_read_only_task_template_fields(tokens)?,
+                                crate::protocol_serde::shape_read_only_task_template_fields::de_read_only_task_template_fields(tokens, _value)?,
                             );
                         }
                         "InvisibleFields" => {
                             builder = builder.set_invisible_fields(
-                                crate::protocol_serde::shape_invisible_task_template_fields::de_invisible_task_template_fields(tokens)?,
+                                crate::protocol_serde::shape_invisible_task_template_fields::de_invisible_task_template_fields(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

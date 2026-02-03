@@ -115,57 +115,59 @@ pub fn ser_optimize_waypoints_input(
 }
 
 pub(crate) fn de_optimize_waypoints(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::optimize_waypoints::builders::OptimizeWaypointsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::optimize_waypoints::builders::OptimizeWaypointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "Connections" => {
-                        builder = builder.set_connections(
-                            crate::protocol_serde::shape_waypoint_optimization_connection_list::de_waypoint_optimization_connection_list(tokens)?,
-                        );
-                    }
-                    "Distance" => {
-                        builder = builder.set_distance(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                .map(i64::try_from)
-                                .transpose()?,
-                        );
-                    }
-                    "Duration" => {
-                        builder = builder.set_duration(
-                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                .map(i64::try_from)
-                                .transpose()?,
-                        );
-                    }
-                    "ImpedingWaypoints" => {
-                        builder = builder.set_impeding_waypoints(
-                            crate::protocol_serde::shape_waypoint_optimization_impeding_waypoint_list::de_waypoint_optimization_impeding_waypoint_list(tokens)?
-                        );
-                    }
-                    "OptimizedWaypoints" => {
-                        builder = builder.set_optimized_waypoints(
-                            crate::protocol_serde::shape_waypoint_optimization_optimized_waypoint_list::de_waypoint_optimization_optimized_waypoint_list(tokens)?
-                        );
-                    }
-                    "TimeBreakdown" => {
-                        builder = builder.set_time_breakdown(
-                            crate::protocol_serde::shape_waypoint_optimization_time_breakdown::de_waypoint_optimization_time_breakdown(tokens)?,
-                        );
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "Connections" => {
+                    builder = builder.set_connections(
+                        crate::protocol_serde::shape_waypoint_optimization_connection_list::de_waypoint_optimization_connection_list(tokens, _value)?,
+                    );
                 }
-            }
+                "Distance" => {
+                    builder = builder.set_distance(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "Duration" => {
+                    builder = builder.set_duration(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "ImpedingWaypoints" => {
+                    builder = builder.set_impeding_waypoints(
+                        crate::protocol_serde::shape_waypoint_optimization_impeding_waypoint_list::de_waypoint_optimization_impeding_waypoint_list(
+                            tokens, _value,
+                        )?,
+                    );
+                }
+                "OptimizedWaypoints" => {
+                    builder = builder.set_optimized_waypoints(
+                        crate::protocol_serde::shape_waypoint_optimization_optimized_waypoint_list::de_waypoint_optimization_optimized_waypoint_list(
+                            tokens, _value,
+                        )?,
+                    );
+                }
+                "TimeBreakdown" => {
+                    builder = builder.set_time_breakdown(
+                        crate::protocol_serde::shape_waypoint_optimization_time_breakdown::de_waypoint_optimization_time_breakdown(tokens, _value)?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

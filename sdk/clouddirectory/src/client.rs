@@ -173,7 +173,7 @@ mod create_typed_link_facet;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_clouddirectory::Error> {
 /// # let client: aws_sdk_clouddirectory::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_facet_to_object()
 ///     .customize()

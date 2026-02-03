@@ -124,13 +124,13 @@ pub fn ser_get_benefit_allocation_input(
 }
 
 pub(crate) fn de_get_benefit_allocation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_benefit_allocation::builders::GetBenefitAllocationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_benefit_allocation::builders::GetBenefitAllocationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,10 +208,12 @@ pub(crate) fn de_get_benefit_allocation(
                     );
                 }
                 "ApplicableBenefitIds" => {
-                    builder = builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_identifiers::de_benefit_identifiers(tokens)?);
+                    builder =
+                        builder.set_applicable_benefit_ids(crate::protocol_serde::shape_benefit_identifiers::de_benefit_identifiers(tokens, _value)?);
                 }
                 "FulfillmentDetail" => {
-                    builder = builder.set_fulfillment_detail(crate::protocol_serde::shape_fulfillment_details::de_fulfillment_details(tokens)?);
+                    builder =
+                        builder.set_fulfillment_detail(crate::protocol_serde::shape_fulfillment_details::de_fulfillment_details(tokens, _value)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

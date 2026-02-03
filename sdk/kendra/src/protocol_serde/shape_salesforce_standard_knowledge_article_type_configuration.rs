@@ -26,6 +26,7 @@ pub fn ser_salesforce_standard_knowledge_article_type_configuration(
 
 pub(crate) fn de_salesforce_standard_knowledge_article_type_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -59,7 +60,7 @@ where
                         "FieldMappings" => {
                             builder = builder.set_field_mappings(
                                 crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

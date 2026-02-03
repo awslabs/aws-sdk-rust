@@ -23,6 +23,7 @@ pub fn ser_frame_metric(
 
 pub(crate) fn de_frame_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FrameMetric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                             );
                         }
                         "threadStates" => {
-                            builder = builder.set_thread_states(crate::protocol_serde::shape_thread_states::de_thread_states(tokens)?);
+                            builder = builder.set_thread_states(crate::protocol_serde::shape_thread_states::de_thread_states(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

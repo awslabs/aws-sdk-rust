@@ -115,13 +115,13 @@ pub fn de_get_wireless_device_http_response(
 }
 
 pub(crate) fn de_get_wireless_device(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_wireless_device::builders::GetWirelessDeviceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_wireless_device::builders::GetWirelessDeviceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,7 +157,7 @@ pub(crate) fn de_get_wireless_device(
                     );
                 }
                 "LoRaWAN" => {
-                    builder = builder.set_lo_ra_wan(crate::protocol_serde::shape_lo_ra_wan_device::de_lo_ra_wan_device(tokens)?);
+                    builder = builder.set_lo_ra_wan(crate::protocol_serde::shape_lo_ra_wan_device::de_lo_ra_wan_device(tokens, _value)?);
                 }
                 "Name" => {
                     builder = builder.set_name(
@@ -174,7 +174,7 @@ pub(crate) fn de_get_wireless_device(
                     );
                 }
                 "Sidewalk" => {
-                    builder = builder.set_sidewalk(crate::protocol_serde::shape_sidewalk_device::de_sidewalk_device(tokens)?);
+                    builder = builder.set_sidewalk(crate::protocol_serde::shape_sidewalk_device::de_sidewalk_device(tokens, _value)?);
                 }
                 "ThingArn" => {
                     builder = builder.set_thing_arn(

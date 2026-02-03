@@ -119,13 +119,13 @@ pub fn de_get_managed_resource_http_response(
 }
 
 pub(crate) fn de_get_managed_resource(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_managed_resource(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appliedWeights" => {
-                    builder = builder.set_applied_weights(crate::protocol_serde::shape_applied_weights::de_applied_weights(tokens)?);
+                    builder = builder.set_applied_weights(crate::protocol_serde::shape_applied_weights::de_applied_weights(tokens, _value)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -143,7 +143,9 @@ pub(crate) fn de_get_managed_resource(
                     );
                 }
                 "autoshifts" => {
-                    builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(tokens)?);
+                    builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(
+                        tokens, _value,
+                    )?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -154,7 +156,7 @@ pub(crate) fn de_get_managed_resource(
                 }
                 "practiceRunConfiguration" => {
                     builder = builder.set_practice_run_configuration(
-                        crate::protocol_serde::shape_practice_run_configuration::de_practice_run_configuration(tokens)?,
+                        crate::protocol_serde::shape_practice_run_configuration::de_practice_run_configuration(tokens, _value)?,
                     );
                 }
                 "zonalAutoshiftStatus" => {
@@ -166,7 +168,7 @@ pub(crate) fn de_get_managed_resource(
                 }
                 "zonalShifts" => {
                     builder = builder.set_zonal_shifts(crate::protocol_serde::shape_zonal_shifts_in_resource::de_zonal_shifts_in_resource(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

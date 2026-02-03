@@ -29,6 +29,7 @@ pub fn ser_knowledge_base_configuration(
 
 pub(crate) fn de_knowledge_base_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,21 @@ where
                         }
                         "vectorKnowledgeBaseConfiguration" => {
                             builder = builder.set_vector_knowledge_base_configuration(
-                                crate::protocol_serde::shape_vector_knowledge_base_configuration::de_vector_knowledge_base_configuration(tokens)?,
+                                crate::protocol_serde::shape_vector_knowledge_base_configuration::de_vector_knowledge_base_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "kendraKnowledgeBaseConfiguration" => {
                             builder = builder.set_kendra_knowledge_base_configuration(
-                                crate::protocol_serde::shape_kendra_knowledge_base_configuration::de_kendra_knowledge_base_configuration(tokens)?,
+                                crate::protocol_serde::shape_kendra_knowledge_base_configuration::de_kendra_knowledge_base_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "sqlKnowledgeBaseConfiguration" => {
                             builder = builder.set_sql_knowledge_base_configuration(
-                                crate::protocol_serde::shape_sql_knowledge_base_configuration::de_sql_knowledge_base_configuration(tokens)?,
+                                crate::protocol_serde::shape_sql_knowledge_base_configuration::de_sql_knowledge_base_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

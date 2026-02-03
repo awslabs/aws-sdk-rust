@@ -147,13 +147,13 @@ pub fn ser_add_endpoints_input(
 }
 
 pub(crate) fn de_add_endpoints(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_endpoints::builders::AddEndpointsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_endpoints::builders::AddEndpointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,8 +161,9 @@ pub(crate) fn de_add_endpoints(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EndpointDescriptions" => {
-                    builder =
-                        builder.set_endpoint_descriptions(crate::protocol_serde::shape_endpoint_descriptions::de_endpoint_descriptions(tokens)?);
+                    builder = builder.set_endpoint_descriptions(crate::protocol_serde::shape_endpoint_descriptions::de_endpoint_descriptions(
+                        tokens, _value,
+                    )?);
                 }
                 "EndpointGroupArn" => {
                     builder = builder.set_endpoint_group_arn(

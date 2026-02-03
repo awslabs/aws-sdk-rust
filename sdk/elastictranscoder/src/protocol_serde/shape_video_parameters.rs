@@ -69,6 +69,7 @@ pub fn ser_video_parameters(
 
 pub(crate) fn de_video_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -90,7 +91,7 @@ where
                             );
                         }
                         "CodecOptions" => {
-                            builder = builder.set_codec_options(crate::protocol_serde::shape_codec_options::de_codec_options(tokens)?);
+                            builder = builder.set_codec_options(crate::protocol_serde::shape_codec_options::de_codec_options(tokens, _value)?);
                         }
                         "KeyframesMaxDist" => {
                             builder = builder.set_keyframes_max_dist(
@@ -177,7 +178,7 @@ where
                             );
                         }
                         "Watermarks" => {
-                            builder = builder.set_watermarks(crate::protocol_serde::shape_preset_watermarks::de_preset_watermarks(tokens)?);
+                            builder = builder.set_watermarks(crate::protocol_serde::shape_preset_watermarks::de_preset_watermarks(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

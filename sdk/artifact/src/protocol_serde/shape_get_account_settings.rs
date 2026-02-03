@@ -159,13 +159,13 @@ pub fn de_get_account_settings_http_response(
 }
 
 pub(crate) fn de_get_account_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_account_settings::builders::GetAccountSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,7 +173,7 @@ pub(crate) fn de_get_account_settings(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accountSettings" => {
-                    builder = builder.set_account_settings(crate::protocol_serde::shape_account_settings::de_account_settings(tokens)?);
+                    builder = builder.set_account_settings(crate::protocol_serde::shape_account_settings::de_account_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

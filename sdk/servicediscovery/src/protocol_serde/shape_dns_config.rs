@@ -26,6 +26,7 @@ pub fn ser_dns_config(
 
 pub(crate) fn de_dns_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DnsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "DnsRecords" => {
-                            builder = builder.set_dns_records(crate::protocol_serde::shape_dns_record_list::de_dns_record_list(tokens)?);
+                            builder = builder.set_dns_records(crate::protocol_serde::shape_dns_record_list::de_dns_record_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

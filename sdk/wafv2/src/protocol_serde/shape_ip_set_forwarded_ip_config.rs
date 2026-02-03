@@ -17,6 +17,7 @@ pub fn ser_ip_set_forwarded_ip_config(
 
 pub(crate) fn de_ip_set_forwarded_ip_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IpSetForwardedIpConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

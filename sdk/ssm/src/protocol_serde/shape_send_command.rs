@@ -213,11 +213,11 @@ pub fn ser_send_command_input(
 }
 
 pub(crate) fn de_send_command(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::send_command::builders::SendCommandOutputBuilder,
 ) -> ::std::result::Result<crate::operation::send_command::builders::SendCommandOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -225,7 +225,7 @@ pub(crate) fn de_send_command(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Command" => {
-                    builder = builder.set_command(crate::protocol_serde::shape_command::de_command(tokens)?);
+                    builder = builder.set_command(crate::protocol_serde::shape_command::de_command(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

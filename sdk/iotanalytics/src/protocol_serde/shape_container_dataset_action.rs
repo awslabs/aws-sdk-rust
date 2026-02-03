@@ -32,6 +32,7 @@ pub fn ser_container_dataset_action(
 
 pub(crate) fn de_container_dataset_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerDatasetAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,11 +61,12 @@ where
                             );
                         }
                         "resourceConfiguration" => {
-                            builder = builder
-                                .set_resource_configuration(crate::protocol_serde::shape_resource_configuration::de_resource_configuration(tokens)?);
+                            builder = builder.set_resource_configuration(
+                                crate::protocol_serde::shape_resource_configuration::de_resource_configuration(tokens, _value)?,
+                            );
                         }
                         "variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_variables::de_variables(tokens)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_variables::de_variables(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

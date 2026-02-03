@@ -111,6 +111,7 @@ pub fn ser_policy_grant_detail(
 
 pub(crate) fn de_policy_grant_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PolicyGrantDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -141,85 +142,85 @@ where
                     variant = match key.as_ref() {
                             "createDomainUnit" => {
                                 Some(crate::types::PolicyGrantDetail::CreateDomainUnit(
-                                    crate::protocol_serde::shape_create_domain_unit_policy_grant_detail::de_create_domain_unit_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_domain_unit_policy_grant_detail::de_create_domain_unit_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createDomainUnit' cannot be null"))?
                                 ))
                             }
                             "overrideDomainUnitOwners" => {
                                 Some(crate::types::PolicyGrantDetail::OverrideDomainUnitOwners(
-                                    crate::protocol_serde::shape_override_domain_unit_owners_policy_grant_detail::de_override_domain_unit_owners_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_override_domain_unit_owners_policy_grant_detail::de_override_domain_unit_owners_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'overrideDomainUnitOwners' cannot be null"))?
                                 ))
                             }
                             "addToProjectMemberPool" => {
                                 Some(crate::types::PolicyGrantDetail::AddToProjectMemberPool(
-                                    crate::protocol_serde::shape_add_to_project_member_pool_policy_grant_detail::de_add_to_project_member_pool_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_add_to_project_member_pool_policy_grant_detail::de_add_to_project_member_pool_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addToProjectMemberPool' cannot be null"))?
                                 ))
                             }
                             "overrideProjectOwners" => {
                                 Some(crate::types::PolicyGrantDetail::OverrideProjectOwners(
-                                    crate::protocol_serde::shape_override_project_owners_policy_grant_detail::de_override_project_owners_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_override_project_owners_policy_grant_detail::de_override_project_owners_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'overrideProjectOwners' cannot be null"))?
                                 ))
                             }
                             "createGlossary" => {
                                 Some(crate::types::PolicyGrantDetail::CreateGlossary(
-                                    crate::protocol_serde::shape_create_glossary_policy_grant_detail::de_create_glossary_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_glossary_policy_grant_detail::de_create_glossary_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createGlossary' cannot be null"))?
                                 ))
                             }
                             "createFormType" => {
                                 Some(crate::types::PolicyGrantDetail::CreateFormType(
-                                    crate::protocol_serde::shape_create_form_type_policy_grant_detail::de_create_form_type_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_form_type_policy_grant_detail::de_create_form_type_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createFormType' cannot be null"))?
                                 ))
                             }
                             "createAssetType" => {
                                 Some(crate::types::PolicyGrantDetail::CreateAssetType(
-                                    crate::protocol_serde::shape_create_asset_type_policy_grant_detail::de_create_asset_type_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_asset_type_policy_grant_detail::de_create_asset_type_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createAssetType' cannot be null"))?
                                 ))
                             }
                             "createProject" => {
                                 Some(crate::types::PolicyGrantDetail::CreateProject(
-                                    crate::protocol_serde::shape_create_project_policy_grant_detail::de_create_project_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_project_policy_grant_detail::de_create_project_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createProject' cannot be null"))?
                                 ))
                             }
                             "createEnvironmentProfile" => {
                                 Some(crate::types::PolicyGrantDetail::CreateEnvironmentProfile(
-                                    crate::protocol_serde::shape_create_environment_profile_policy_grant_detail::de_create_environment_profile_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_environment_profile_policy_grant_detail::de_create_environment_profile_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createEnvironmentProfile' cannot be null"))?
                                 ))
                             }
                             "delegateCreateEnvironmentProfile" => {
                                 Some(crate::types::PolicyGrantDetail::DelegateCreateEnvironmentProfile(
-                                    crate::protocol_serde::shape_unit::de_unit(tokens)?
+                                    crate::protocol_serde::shape_unit::de_unit(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'delegateCreateEnvironmentProfile' cannot be null"))?
                                 ))
                             }
                             "createEnvironment" => {
                                 Some(crate::types::PolicyGrantDetail::CreateEnvironment(
-                                    crate::protocol_serde::shape_unit::de_unit(tokens)?
+                                    crate::protocol_serde::shape_unit::de_unit(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createEnvironment' cannot be null"))?
                                 ))
                             }
                             "createEnvironmentFromBlueprint" => {
                                 Some(crate::types::PolicyGrantDetail::CreateEnvironmentFromBlueprint(
-                                    crate::protocol_serde::shape_unit::de_unit(tokens)?
+                                    crate::protocol_serde::shape_unit::de_unit(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createEnvironmentFromBlueprint' cannot be null"))?
                                 ))
                             }
                             "createProjectFromProjectProfile" => {
                                 Some(crate::types::PolicyGrantDetail::CreateProjectFromProjectProfile(
-                                    crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::de_create_project_from_project_profile_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_create_project_from_project_profile_policy_grant_detail::de_create_project_from_project_profile_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'createProjectFromProjectProfile' cannot be null"))?
                                 ))
                             }
                             "useAssetType" => {
                                 Some(crate::types::PolicyGrantDetail::UseAssetType(
-                                    crate::protocol_serde::shape_use_asset_type_policy_grant_detail::de_use_asset_type_policy_grant_detail(tokens)?
+                                    crate::protocol_serde::shape_use_asset_type_policy_grant_detail::de_use_asset_type_policy_grant_detail(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'useAssetType' cannot be null"))?
                                 ))
                             }

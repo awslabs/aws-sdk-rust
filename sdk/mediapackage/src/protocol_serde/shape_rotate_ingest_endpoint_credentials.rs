@@ -150,13 +150,13 @@ pub fn de_rotate_ingest_endpoint_credentials_http_response(
 }
 
 pub(crate) fn de_rotate_ingest_endpoint_credentials(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,10 +185,10 @@ pub(crate) fn de_rotate_ingest_endpoint_credentials(
                     );
                 }
                 "egressAccessLogs" => {
-                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(tokens)?);
+                    builder = builder.set_egress_access_logs(crate::protocol_serde::shape_egress_access_logs::de_egress_access_logs(tokens, _value)?);
                 }
                 "hlsIngest" => {
-                    builder = builder.set_hls_ingest(crate::protocol_serde::shape_hls_ingest::de_hls_ingest(tokens)?);
+                    builder = builder.set_hls_ingest(crate::protocol_serde::shape_hls_ingest::de_hls_ingest(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -198,10 +198,11 @@ pub(crate) fn de_rotate_ingest_endpoint_credentials(
                     );
                 }
                 "ingressAccessLogs" => {
-                    builder = builder.set_ingress_access_logs(crate::protocol_serde::shape_ingress_access_logs::de_ingress_access_logs(tokens)?);
+                    builder =
+                        builder.set_ingress_access_logs(crate::protocol_serde::shape_ingress_access_logs::de_ingress_access_logs(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -23,6 +23,7 @@ pub fn ser_audience_media(
 
 pub(crate) fn de_audience_media<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudienceMedia>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "AlternateMedia" => {
-                            builder = builder
-                                .set_alternate_media(crate::protocol_serde::shape_list_of_alternate_media::de_list_of_alternate_media(tokens)?);
+                            builder = builder.set_alternate_media(crate::protocol_serde::shape_list_of_alternate_media::de_list_of_alternate_media(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

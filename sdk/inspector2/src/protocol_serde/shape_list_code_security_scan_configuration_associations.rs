@@ -139,13 +139,13 @@ pub fn ser_list_code_security_scan_configuration_associations_input(
 }
 
 pub(crate) fn de_list_code_security_scan_configuration_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_code_security_scan_configuration_associations::builders::ListCodeSecurityScanConfigurationAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_code_security_scan_configuration_associations::builders::ListCodeSecurityScanConfigurationAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -154,7 +154,7 @@ pub(crate) fn de_list_code_security_scan_configuration_associations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "associations" => {
                     builder = builder.set_associations(
-                            crate::protocol_serde::shape_code_security_scan_configuration_association_summaries::de_code_security_scan_configuration_association_summaries(tokens)?
+                            crate::protocol_serde::shape_code_security_scan_configuration_association_summaries::de_code_security_scan_configuration_association_summaries(tokens, _value)?
                         );
                 }
                 "nextToken" => {

@@ -145,13 +145,13 @@ pub fn ser_update_recovery_point_lifecycle_input(
 }
 
 pub(crate) fn de_update_recovery_point_lifecycle(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -166,10 +166,12 @@ pub(crate) fn de_update_recovery_point_lifecycle(
                     );
                 }
                 "CalculatedLifecycle" => {
-                    builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(tokens)?);
+                    builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(
+                        tokens, _value,
+                    )?);
                 }
                 "Lifecycle" => {
-                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
+                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
                 }
                 "RecoveryPointArn" => {
                     builder = builder.set_recovery_point_arn(

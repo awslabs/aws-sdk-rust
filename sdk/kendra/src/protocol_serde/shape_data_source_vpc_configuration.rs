@@ -26,6 +26,7 @@ pub fn ser_data_source_vpc_configuration(
 
 pub(crate) fn de_data_source_vpc_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSourceVpcConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SubnetIds" => {
-                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens)?);
+                            builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value)?);
                         }
                         "SecurityGroupIds" => {
-                            builder = builder
-                                .set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

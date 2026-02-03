@@ -113,8 +113,8 @@ pub fn ser_start_savings_plans_purchase_recommendation_generation_input(
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
-pub(crate) fn de_start_savings_plans_purchase_recommendation_generation(value: &[u8], mut builder: crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder) -> ::std::result::Result<crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+pub(crate) fn de_start_savings_plans_purchase_recommendation_generation(_value: &[u8], mut builder: crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder) -> ::std::result::Result<crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

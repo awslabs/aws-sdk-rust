@@ -78,13 +78,13 @@ pub fn ser_describe_monitor_input(
 }
 
 pub(crate) fn de_describe_monitor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_monitor::builders::DescribeMonitorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_monitor::builders::DescribeMonitorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_describe_monitor(
                     );
                 }
                 "Baseline" => {
-                    builder = builder.set_baseline(crate::protocol_serde::shape_baseline::de_baseline(tokens)?);
+                    builder = builder.set_baseline(crate::protocol_serde::shape_baseline::de_baseline(tokens, _value)?);
                 }
                 "Message" => {
                     builder = builder.set_message(

@@ -35,6 +35,7 @@ pub fn ser_flow_filter(
 
 pub(crate) fn de_flow_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,10 +50,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SourceAddress" => {
-                            builder = builder.set_source_address(crate::protocol_serde::shape_address::de_address(tokens)?);
+                            builder = builder.set_source_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
                         }
                         "DestinationAddress" => {
-                            builder = builder.set_destination_address(crate::protocol_serde::shape_address::de_address(tokens)?);
+                            builder = builder.set_destination_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
                         }
                         "SourcePort" => {
                             builder = builder.set_source_port(
@@ -69,7 +70,7 @@ where
                             );
                         }
                         "Protocols" => {
-                            builder = builder.set_protocols(crate::protocol_serde::shape_protocol_strings::de_protocol_strings(tokens)?);
+                            builder = builder.set_protocols(crate::protocol_serde::shape_protocol_strings::de_protocol_strings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

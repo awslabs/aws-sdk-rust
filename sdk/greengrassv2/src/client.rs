@@ -157,7 +157,7 @@ mod create_deployment;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_greengrassv2::Error> {
 /// # let client: aws_sdk_greengrassv2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_service_role_to_account()
 ///     .customize()

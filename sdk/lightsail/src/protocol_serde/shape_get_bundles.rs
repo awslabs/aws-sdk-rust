@@ -174,11 +174,11 @@ pub fn ser_get_bundles_input(
 }
 
 pub(crate) fn de_get_bundles(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_bundles::builders::GetBundlesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_bundles::builders::GetBundlesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -186,7 +186,7 @@ pub(crate) fn de_get_bundles(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "bundles" => {
-                    builder = builder.set_bundles(crate::protocol_serde::shape_bundle_list::de_bundle_list(tokens)?);
+                    builder = builder.set_bundles(crate::protocol_serde::shape_bundle_list::de_bundle_list(tokens, _value)?);
                 }
                 "nextPageToken" => {
                     builder = builder.set_next_page_token(

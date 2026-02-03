@@ -93,11 +93,11 @@ pub fn ser_get_channel_input(
 }
 
 pub(crate) fn de_get_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_channel::builders::GetChannelOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_channel::builders::GetChannelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -105,7 +105,7 @@ pub(crate) fn de_get_channel(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "channel" => {
-                    builder = builder.set_channel(crate::protocol_serde::shape_channel::de_channel(tokens)?);
+                    builder = builder.set_channel(crate::protocol_serde::shape_channel::de_channel(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

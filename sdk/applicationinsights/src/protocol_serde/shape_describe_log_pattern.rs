@@ -99,13 +99,13 @@ pub fn ser_describe_log_pattern_input(
 }
 
 pub(crate) fn de_describe_log_pattern(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_log_pattern::builders::DescribeLogPatternOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_log_pattern::builders::DescribeLogPatternOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_describe_log_pattern(
                     );
                 }
                 "LogPattern" => {
-                    builder = builder.set_log_pattern(crate::protocol_serde::shape_log_pattern::de_log_pattern(tokens)?);
+                    builder = builder.set_log_pattern(crate::protocol_serde::shape_log_pattern::de_log_pattern(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

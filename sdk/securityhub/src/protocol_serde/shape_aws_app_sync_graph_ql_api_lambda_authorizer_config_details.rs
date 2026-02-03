@@ -20,6 +20,7 @@ pub fn ser_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(
 
 pub(crate) fn de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -145,13 +145,13 @@ pub fn ser_describe_effective_patches_for_patch_baseline_input(
 }
 
 pub(crate) fn de_describe_effective_patches_for_patch_baseline(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,9 @@ pub(crate) fn de_describe_effective_patches_for_patch_baseline(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EffectivePatches" => {
-                    builder = builder.set_effective_patches(crate::protocol_serde::shape_effective_patch_list::de_effective_patch_list(tokens)?);
+                    builder = builder.set_effective_patches(crate::protocol_serde::shape_effective_patch_list::de_effective_patch_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

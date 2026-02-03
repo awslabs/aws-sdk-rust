@@ -20,6 +20,7 @@ pub fn ser_evaluation_review_notification_recipient(
 
 pub(crate) fn de_evaluation_review_notification_recipient<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationReviewNotificationRecipient>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "Value" => {
                             builder = builder.set_value(
-                                    crate::protocol_serde::shape_evaluation_review_notification_recipient_value::de_evaluation_review_notification_recipient_value(tokens)?
+                                    crate::protocol_serde::shape_evaluation_review_notification_recipient_value::de_evaluation_review_notification_recipient_value(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

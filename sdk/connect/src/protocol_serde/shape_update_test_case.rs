@@ -157,12 +157,12 @@ pub fn de_update_test_case_http_response(
 
 pub fn ser_update_test_case_headers(
     input: &crate::operation::update_test_case::UpdateTestCaseInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.last_modified_time {
         let formatted_2 = inner_1.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "last_modified_time",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -173,7 +173,7 @@ pub fn ser_update_test_case_headers(
     if let ::std::option::Option::Some(inner_3) = &input.last_modified_region {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "last_modified_region",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

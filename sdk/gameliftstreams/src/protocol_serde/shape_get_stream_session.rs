@@ -108,13 +108,13 @@ pub fn de_get_stream_session_http_response(
 }
 
 pub(crate) fn de_get_stream_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_stream_session::builders::GetStreamSessionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_stream_session::builders::GetStreamSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,11 +122,14 @@ pub(crate) fn de_get_stream_session(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdditionalEnvironmentVariables" => {
-                    builder = builder
-                        .set_additional_environment_variables(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                    builder = builder.set_additional_environment_variables(
+                        crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value)?,
+                    );
                 }
                 "AdditionalLaunchArgs" => {
-                    builder = builder.set_additional_launch_args(crate::protocol_serde::shape_game_launch_arg_list::de_game_launch_arg_list(tokens)?);
+                    builder = builder.set_additional_launch_args(crate::protocol_serde::shape_game_launch_arg_list::de_game_launch_arg_list(
+                        tokens, _value,
+                    )?);
                 }
                 "ApplicationArn" => {
                     builder = builder.set_application_arn(
@@ -163,8 +166,9 @@ pub(crate) fn de_get_stream_session(
                     );
                 }
                 "ExportFilesMetadata" => {
-                    builder =
-                        builder.set_export_files_metadata(crate::protocol_serde::shape_export_files_metadata::de_export_files_metadata(tokens)?);
+                    builder = builder.set_export_files_metadata(crate::protocol_serde::shape_export_files_metadata::de_export_files_metadata(
+                        tokens, _value,
+                    )?);
                 }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -188,7 +192,7 @@ pub(crate) fn de_get_stream_session(
                 }
                 "PerformanceStatsConfiguration" => {
                     builder = builder.set_performance_stats_configuration(
-                        crate::protocol_serde::shape_performance_stats_configuration::de_performance_stats_configuration(tokens)?,
+                        crate::protocol_serde::shape_performance_stats_configuration::de_performance_stats_configuration(tokens, _value)?,
                     );
                 }
                 "Protocol" => {

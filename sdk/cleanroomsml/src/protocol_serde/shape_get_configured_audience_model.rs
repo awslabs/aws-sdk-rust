@@ -88,13 +88,13 @@ pub fn de_get_configured_audience_model_http_response(
 }
 
 pub(crate) fn de_get_configured_audience_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_configured_audience_model::builders::GetConfiguredAudienceModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,7 +109,9 @@ pub(crate) fn de_get_configured_audience_model(
                     );
                 }
                 "audienceSizeConfig" => {
-                    builder = builder.set_audience_size_config(crate::protocol_serde::shape_audience_size_config::de_audience_size_config(tokens)?);
+                    builder = builder.set_audience_size_config(crate::protocol_serde::shape_audience_size_config::de_audience_size_config(
+                        tokens, _value,
+                    )?);
                 }
                 "childResourceTagOnCreatePolicy" => {
                     builder = builder.set_child_resource_tag_on_create_policy(
@@ -154,11 +156,13 @@ pub(crate) fn de_get_configured_audience_model(
                 }
                 "outputConfig" => {
                     builder = builder.set_output_config(
-                        crate::protocol_serde::shape_configured_audience_model_output_config::de_configured_audience_model_output_config(tokens)?,
+                        crate::protocol_serde::shape_configured_audience_model_output_config::de_configured_audience_model_output_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "sharedAudienceMetrics" => {
-                    builder = builder.set_shared_audience_metrics(crate::protocol_serde::shape_metrics_list::de_metrics_list(tokens)?);
+                    builder = builder.set_shared_audience_metrics(crate::protocol_serde::shape_metrics_list::de_metrics_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -168,7 +172,7 @@ pub(crate) fn de_get_configured_audience_model(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "updateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

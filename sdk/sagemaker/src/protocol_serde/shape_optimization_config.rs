@@ -39,6 +39,7 @@ pub fn ser_optimization_config(
 
 pub(crate) fn de_optimization_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OptimizationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,22 +69,26 @@ where
                     }
                     variant = match key.as_ref() {
                         "ModelQuantizationConfig" => Some(crate::types::OptimizationConfig::ModelQuantizationConfig(
-                            crate::protocol_serde::shape_model_quantization_config::de_model_quantization_config(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ModelQuantizationConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_model_quantization_config::de_model_quantization_config(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'ModelQuantizationConfig' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "ModelCompilationConfig" => Some(crate::types::OptimizationConfig::ModelCompilationConfig(
-                            crate::protocol_serde::shape_model_compilation_config::de_model_compilation_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_model_compilation_config::de_model_compilation_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ModelCompilationConfig' cannot be null")
                             })?,
                         )),
                         "ModelShardingConfig" => Some(crate::types::OptimizationConfig::ModelShardingConfig(
-                            crate::protocol_serde::shape_model_sharding_config::de_model_sharding_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_model_sharding_config::de_model_sharding_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ModelShardingConfig' cannot be null")
                             })?,
                         )),
                         "ModelSpeculativeDecodingConfig" => Some(crate::types::OptimizationConfig::ModelSpeculativeDecodingConfig(
-                            crate::protocol_serde::shape_model_speculative_decoding_config::de_model_speculative_decoding_config(tokens)?
+                            crate::protocol_serde::shape_model_speculative_decoding_config::de_model_speculative_decoding_config(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'ModelSpeculativeDecodingConfig' cannot be null",

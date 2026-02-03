@@ -115,13 +115,13 @@ pub fn ser_get_log_anomaly_detector_input(
 }
 
 pub(crate) fn de_get_log_anomaly_detector(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_log_anomaly_detector::builders::GetLogAnomalyDetectorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_log_anomaly_detector::builders::GetLogAnomalyDetectorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,7 @@ pub(crate) fn de_get_log_anomaly_detector(
                     );
                 }
                 "logGroupArnList" => {
-                    builder = builder.set_log_group_arn_list(crate::protocol_serde::shape_log_group_arn_list::de_log_group_arn_list(tokens)?);
+                    builder = builder.set_log_group_arn_list(crate::protocol_serde::shape_log_group_arn_list::de_log_group_arn_list(tokens, _value)?);
                 }
                 "evaluationFrequency" => {
                     builder = builder.set_evaluation_frequency(

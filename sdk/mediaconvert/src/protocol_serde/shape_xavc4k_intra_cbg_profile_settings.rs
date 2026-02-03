@@ -11,6 +11,7 @@ pub fn ser_xavc4k_intra_cbg_profile_settings(
 
 pub(crate) fn de_xavc4k_intra_cbg_profile_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Xavc4kIntraCbgProfileSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

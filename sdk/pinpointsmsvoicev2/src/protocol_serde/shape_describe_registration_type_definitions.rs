@@ -129,13 +129,13 @@ pub fn ser_describe_registration_type_definitions_input(
 }
 
 pub(crate) fn de_describe_registration_type_definitions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_registration_type_definitions::builders::DescribeRegistrationTypeDefinitionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_registration_type_definitions::builders::DescribeRegistrationTypeDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_describe_registration_type_definitions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RegistrationTypeDefinitions" => {
                     builder = builder.set_registration_type_definitions(
-                        crate::protocol_serde::shape_registration_type_definition_list::de_registration_type_definition_list(tokens)?,
+                        crate::protocol_serde::shape_registration_type_definition_list::de_registration_type_definition_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

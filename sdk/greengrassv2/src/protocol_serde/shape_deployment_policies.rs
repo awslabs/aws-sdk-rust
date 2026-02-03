@@ -26,6 +26,7 @@ pub fn ser_deployment_policies(
 
 pub(crate) fn de_deployment_policies<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeploymentPolicies>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,12 +49,14 @@ where
                         }
                         "componentUpdatePolicy" => {
                             builder = builder.set_component_update_policy(
-                                crate::protocol_serde::shape_deployment_component_update_policy::de_deployment_component_update_policy(tokens)?,
+                                crate::protocol_serde::shape_deployment_component_update_policy::de_deployment_component_update_policy(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "configurationValidationPolicy" => {
                             builder = builder.set_configuration_validation_policy(
-                                    crate::protocol_serde::shape_deployment_configuration_validation_policy::de_deployment_configuration_validation_policy(tokens)?
+                                    crate::protocol_serde::shape_deployment_configuration_validation_policy::de_deployment_configuration_validation_policy(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -92,6 +92,7 @@ pub fn ser_aws_ec2_client_vpn_endpoint_details(
 
 pub(crate) fn de_aws_ec2_client_vpn_endpoint_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2ClientVpnEndpointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -127,7 +128,7 @@ where
                             );
                         }
                         "DnsServer" => {
-                            builder = builder.set_dns_server(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_dns_server(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "SplitTunnel" => {
                             builder = builder.set_split_tunnel(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -155,16 +156,16 @@ where
                         }
                         "AuthenticationOptions" => {
                             builder = builder.set_authentication_options(
-                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_authentication_options_list::de_aws_ec2_client_vpn_endpoint_authentication_options_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_authentication_options_list::de_aws_ec2_client_vpn_endpoint_authentication_options_list(tokens, _value)?
                                 );
                         }
                         "ConnectionLogOptions" => {
                             builder = builder.set_connection_log_options(
-                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_connection_log_options_details::de_aws_ec2_client_vpn_endpoint_connection_log_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_connection_log_options_details::de_aws_ec2_client_vpn_endpoint_connection_log_options_details(tokens, _value)?
                                 );
                         }
                         "SecurityGroupIdSet" => {
-                            builder = builder.set_security_group_id_set(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_security_group_id_set(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "VpcId" => {
                             builder = builder.set_vpc_id(
@@ -182,7 +183,7 @@ where
                         }
                         "ClientConnectOptions" => {
                             builder = builder.set_client_connect_options(
-                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_client_connect_options_details::de_aws_ec2_client_vpn_endpoint_client_connect_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_client_connect_options_details::de_aws_ec2_client_vpn_endpoint_client_connect_options_details(tokens, _value)?
                                 );
                         }
                         "SessionTimeoutHours" => {
@@ -194,7 +195,7 @@ where
                         }
                         "ClientLoginBannerOptions" => {
                             builder = builder.set_client_login_banner_options(
-                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::de_aws_ec2_client_vpn_endpoint_client_login_banner_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::de_aws_ec2_client_vpn_endpoint_client_login_banner_options_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

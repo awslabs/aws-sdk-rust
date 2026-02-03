@@ -27,6 +27,7 @@ pub fn ser_virtual_service_provider(
 
 pub(crate) fn de_virtual_service_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualServiceProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "virtualNode" => Some(crate::types::VirtualServiceProvider::VirtualNode(
-                            crate::protocol_serde::shape_virtual_node_service_provider::de_virtual_node_service_provider(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualNode' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_virtual_node_service_provider::de_virtual_node_service_provider(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualNode' cannot be null")
+                                })?,
                         )),
                         "virtualRouter" => Some(crate::types::VirtualServiceProvider::VirtualRouter(
-                            crate::protocol_serde::shape_virtual_router_service_provider::de_virtual_router_service_provider(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualRouter' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_virtual_router_service_provider::de_virtual_router_service_provider(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'virtualRouter' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

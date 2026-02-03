@@ -119,13 +119,13 @@ pub fn de_list_automation_rules_http_response(
 }
 
 pub(crate) fn de_list_automation_rules(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_list_automation_rules(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AutomationRulesMetadata" => {
                     builder = builder.set_automation_rules_metadata(
-                        crate::protocol_serde::shape_automation_rules_metadata_list::de_automation_rules_metadata_list(tokens)?,
+                        crate::protocol_serde::shape_automation_rules_metadata_list::de_automation_rules_metadata_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

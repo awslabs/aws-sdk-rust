@@ -83,13 +83,13 @@ pub fn de_get_deployment_http_response(
 }
 
 pub(crate) fn de_get_deployment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_deployment::builders::GetDeploymentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_deployment::builders::GetDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -104,7 +104,7 @@ pub(crate) fn de_get_deployment(
                     );
                 }
                 "AppliedExtensions" => {
-                    builder = builder.set_applied_extensions(crate::protocol_serde::shape_applied_extensions::de_applied_extensions(tokens)?);
+                    builder = builder.set_applied_extensions(crate::protocol_serde::shape_applied_extensions::de_applied_extensions(tokens, _value)?);
                 }
                 "CompletedAt" => {
                     builder = builder.set_completed_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -176,7 +176,7 @@ pub(crate) fn de_get_deployment(
                     );
                 }
                 "EventLog" => {
-                    builder = builder.set_event_log(crate::protocol_serde::shape_deployment_events::de_deployment_events(tokens)?);
+                    builder = builder.set_event_log(crate::protocol_serde::shape_deployment_events::de_deployment_events(tokens, _value)?);
                 }
                 "FinalBakeTimeInMinutes" => {
                     builder = builder.set_final_bake_time_in_minutes(

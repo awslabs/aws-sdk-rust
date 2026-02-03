@@ -20,6 +20,7 @@ pub fn ser_stream_file(
 
 pub(crate) fn de_stream_file<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StreamFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "s3Location" => {
-                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ pub fn ser_rate_limit_cookie(
 
 pub(crate) fn de_rate_limit_cookie<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RateLimitCookie>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "TextTransformations" => {
-                            builder =
-                                builder.set_text_transformations(crate::protocol_serde::shape_text_transformations::de_text_transformations(tokens)?);
+                            builder = builder.set_text_transformations(crate::protocol_serde::shape_text_transformations::de_text_transformations(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

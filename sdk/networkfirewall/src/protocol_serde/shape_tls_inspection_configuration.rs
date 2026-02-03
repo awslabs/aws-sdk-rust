@@ -20,6 +20,7 @@ pub fn ser_tls_inspection_configuration(
 
 pub(crate) fn de_tls_inspection_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TlsInspectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ServerCertificateConfigurations" => {
                             builder = builder.set_server_certificate_configurations(
-                                crate::protocol_serde::shape_server_certificate_configurations::de_server_certificate_configurations(tokens)?,
+                                crate::protocol_serde::shape_server_certificate_configurations::de_server_certificate_configurations(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

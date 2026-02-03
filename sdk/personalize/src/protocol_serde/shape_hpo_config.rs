@@ -26,6 +26,7 @@ pub fn ser_hpo_config(
 
 pub(crate) fn de_hpo_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HpoConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,15 +41,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "hpoObjective" => {
-                            builder = builder.set_hpo_objective(crate::protocol_serde::shape_hpo_objective::de_hpo_objective(tokens)?);
+                            builder = builder.set_hpo_objective(crate::protocol_serde::shape_hpo_objective::de_hpo_objective(tokens, _value)?);
                         }
                         "hpoResourceConfig" => {
-                            builder =
-                                builder.set_hpo_resource_config(crate::protocol_serde::shape_hpo_resource_config::de_hpo_resource_config(tokens)?);
+                            builder = builder
+                                .set_hpo_resource_config(crate::protocol_serde::shape_hpo_resource_config::de_hpo_resource_config(tokens, _value)?);
                         }
                         "algorithmHyperParameterRanges" => {
                             builder = builder.set_algorithm_hyper_parameter_ranges(
-                                crate::protocol_serde::shape_hyper_parameter_ranges::de_hyper_parameter_ranges(tokens)?,
+                                crate::protocol_serde::shape_hyper_parameter_ranges::de_hyper_parameter_ranges(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -29,6 +29,7 @@ pub fn ser_conditional_branch(
 
 pub(crate) fn de_conditional_branch<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConditionalBranch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,13 +51,15 @@ where
                             );
                         }
                         "condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens, _value)?);
                         }
                         "nextStep" => {
-                            builder = builder.set_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens)?);
+                            builder = builder.set_next_step(crate::protocol_serde::shape_dialog_state::de_dialog_state(tokens, _value)?);
                         }
                         "response" => {
-                            builder = builder.set_response(crate::protocol_serde::shape_response_specification::de_response_specification(tokens)?);
+                            builder = builder.set_response(crate::protocol_serde::shape_response_specification::de_response_specification(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

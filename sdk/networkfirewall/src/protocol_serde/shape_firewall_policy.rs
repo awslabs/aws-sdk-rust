@@ -89,6 +89,7 @@ pub fn ser_firewall_policy(
 
 pub(crate) fn de_firewall_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FirewallPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,33 +105,34 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StatelessRuleGroupReferences" => {
                             builder = builder.set_stateless_rule_group_references(
-                                crate::protocol_serde::shape_stateless_rule_group_references::de_stateless_rule_group_references(tokens)?,
+                                crate::protocol_serde::shape_stateless_rule_group_references::de_stateless_rule_group_references(tokens, _value)?,
                             );
                         }
                         "StatelessDefaultActions" => {
-                            builder =
-                                builder.set_stateless_default_actions(crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens)?);
+                            builder = builder
+                                .set_stateless_default_actions(crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value)?);
                         }
                         "StatelessFragmentDefaultActions" => {
                             builder = builder.set_stateless_fragment_default_actions(
-                                crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens)?,
+                                crate::protocol_serde::shape_stateless_actions::de_stateless_actions(tokens, _value)?,
                             );
                         }
                         "StatelessCustomActions" => {
-                            builder = builder.set_stateless_custom_actions(crate::protocol_serde::shape_custom_actions::de_custom_actions(tokens)?);
+                            builder =
+                                builder.set_stateless_custom_actions(crate::protocol_serde::shape_custom_actions::de_custom_actions(tokens, _value)?);
                         }
                         "StatefulRuleGroupReferences" => {
                             builder = builder.set_stateful_rule_group_references(
-                                crate::protocol_serde::shape_stateful_rule_group_references::de_stateful_rule_group_references(tokens)?,
+                                crate::protocol_serde::shape_stateful_rule_group_references::de_stateful_rule_group_references(tokens, _value)?,
                             );
                         }
                         "StatefulDefaultActions" => {
-                            builder =
-                                builder.set_stateful_default_actions(crate::protocol_serde::shape_stateful_actions::de_stateful_actions(tokens)?);
+                            builder = builder
+                                .set_stateful_default_actions(crate::protocol_serde::shape_stateful_actions::de_stateful_actions(tokens, _value)?);
                         }
                         "StatefulEngineOptions" => {
                             builder = builder.set_stateful_engine_options(
-                                crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens)?,
+                                crate::protocol_serde::shape_stateful_engine_options::de_stateful_engine_options(tokens, _value)?,
                             );
                         }
                         "TLSInspectionConfigurationArn" => {
@@ -141,7 +143,8 @@ where
                             );
                         }
                         "PolicyVariables" => {
-                            builder = builder.set_policy_variables(crate::protocol_serde::shape_policy_variables::de_policy_variables(tokens)?);
+                            builder =
+                                builder.set_policy_variables(crate::protocol_serde::shape_policy_variables::de_policy_variables(tokens, _value)?);
                         }
                         "EnableTLSSessionHolding" => {
                             builder =

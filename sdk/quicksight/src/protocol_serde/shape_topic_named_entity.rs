@@ -41,6 +41,7 @@ pub fn ser_topic_named_entity(
 
 pub(crate) fn de_topic_named_entity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicNamedEntity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,15 +70,16 @@ where
                             );
                         }
                         "EntitySynonyms" => {
-                            builder = builder.set_entity_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens)?);
+                            builder = builder.set_entity_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value)?);
                         }
                         "SemanticEntityType" => {
-                            builder =
-                                builder.set_semantic_entity_type(crate::protocol_serde::shape_semantic_entity_type::de_semantic_entity_type(tokens)?);
+                            builder = builder.set_semantic_entity_type(crate::protocol_serde::shape_semantic_entity_type::de_semantic_entity_type(
+                                tokens, _value,
+                            )?);
                         }
                         "Definition" => {
                             builder = builder.set_definition(crate::protocol_serde::shape_named_entity_definitions::de_named_entity_definitions(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

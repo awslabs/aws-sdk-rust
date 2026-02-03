@@ -147,13 +147,13 @@ pub fn ser_update_task_template_input(
 }
 
 pub(crate) fn de_update_task_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_task_template::builders::UpdateTaskTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_task_template::builders::UpdateTaskTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -169,7 +169,7 @@ pub(crate) fn de_update_task_template(
                 }
                 "Constraints" => {
                     builder = builder.set_constraints(crate::protocol_serde::shape_task_template_constraints::de_task_template_constraints(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ContactFlowId" => {
@@ -186,7 +186,9 @@ pub(crate) fn de_update_task_template(
                     )?);
                 }
                 "Defaults" => {
-                    builder = builder.set_defaults(crate::protocol_serde::shape_task_template_defaults::de_task_template_defaults(tokens)?);
+                    builder = builder.set_defaults(crate::protocol_serde::shape_task_template_defaults::de_task_template_defaults(
+                        tokens, _value,
+                    )?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -196,7 +198,9 @@ pub(crate) fn de_update_task_template(
                     );
                 }
                 "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_task_template_fields::de_task_template_fields(tokens)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_task_template_fields::de_task_template_fields(
+                        tokens, _value,
+                    )?);
                 }
                 "Id" => {
                     builder = builder.set_id(

@@ -32,6 +32,7 @@ pub fn ser_s3_job_definition(
 
 pub(crate) fn de_s3_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3JobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,16 +48,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "bucketCriteria" => {
                             builder = builder.set_bucket_criteria(
-                                crate::protocol_serde::shape_s3_bucket_criteria_for_job::de_s3_bucket_criteria_for_job(tokens)?,
+                                crate::protocol_serde::shape_s3_bucket_criteria_for_job::de_s3_bucket_criteria_for_job(tokens, _value)?,
                             );
                         }
                         "bucketDefinitions" => {
                             builder = builder.set_bucket_definitions(
-                                crate::protocol_serde::shape_list_of_s3_bucket_definition_for_job::de_list_of_s3_bucket_definition_for_job(tokens)?,
+                                crate::protocol_serde::shape_list_of_s3_bucket_definition_for_job::de_list_of_s3_bucket_definition_for_job(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "scoping" => {
-                            builder = builder.set_scoping(crate::protocol_serde::shape_scoping::de_scoping(tokens)?);
+                            builder = builder.set_scoping(crate::protocol_serde::shape_scoping::de_scoping(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

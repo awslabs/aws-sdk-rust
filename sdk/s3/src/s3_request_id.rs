@@ -76,7 +76,7 @@ mod test {
 
     #[test]
     fn handle_missing_header() {
-        let resp = Response::try_from(http::Response::builder().status(400).body("").unwrap()).unwrap();
+        let resp = Response::try_from(http_1x::Response::builder().status(400).body("").unwrap()).unwrap();
         let mut builder = ErrorMetadata::builder().message("123");
         builder = apply_extended_request_id(builder, resp.headers());
         assert_eq!(builder.build().extended_request_id(), None);
@@ -84,10 +84,10 @@ mod test {
 
     #[test]
     fn test_extended_request_id_sdk_error() {
-        let without_extended_request_id = || Response::try_from(http::Response::builder().body(SdkBody::empty()).unwrap()).unwrap();
+        let without_extended_request_id = || Response::try_from(http_1x::Response::builder().body(SdkBody::empty()).unwrap()).unwrap();
         let with_extended_request_id = || {
             Response::try_from(
-                http::Response::builder()
+                http_1x::Response::builder()
                     .header("x-amz-id-2", "some-request-id")
                     .body(SdkBody::empty())
                     .unwrap(),

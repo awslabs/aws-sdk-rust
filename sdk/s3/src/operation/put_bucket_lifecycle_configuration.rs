@@ -280,8 +280,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -289,8 +289,8 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
                     crate::protocol_serde::shape_put_bucket_lifecycle_configuration::ser_put_bucket_lifecycle_configuration_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("PUT").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/xml");
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/xml");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from(
@@ -300,7 +300,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
         );
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
         }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -413,7 +413,7 @@ mod put_bucket_lifecycle_configuration_test {
         ::aws_smithy_protocol_test::assert_ok(
         ::aws_smithy_protocol_test::validate_body(body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule>\n        <Expiration>\n            <Days>1</Days>\n        </Expiration>\n        <ID>Expire</ID>\n        <Status>Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", ::aws_smithy_protocol_test::MediaType::from("application/xml"))
         );
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/", "path was incorrect");
     }

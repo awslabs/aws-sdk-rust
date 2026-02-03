@@ -27,6 +27,7 @@ pub fn ser_product_information_filter(
 
 pub(crate) fn de_product_information_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProductInformationFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,8 @@ where
                             );
                         }
                         "ProductInformationFilterValue" => {
-                            builder = builder.set_product_information_filter_value(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder
+                                .set_product_information_filter_value(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "ProductInformationFilterComparator" => {
                             builder = builder.set_product_information_filter_comparator(

@@ -23,6 +23,7 @@ pub fn ser_table_resource(
 
 pub(crate) fn de_table_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,7 @@ where
                             );
                         }
                         "TableWildcard" => {
-                            builder = builder.set_table_wildcard(crate::protocol_serde::shape_table_wildcard::de_table_wildcard(tokens)?);
+                            builder = builder.set_table_wildcard(crate::protocol_serde::shape_table_wildcard::de_table_wildcard(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

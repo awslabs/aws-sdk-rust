@@ -32,6 +32,7 @@ pub fn ser_posix_profile(
 
 pub(crate) fn de_posix_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PosixProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                             );
                         }
                         "SecondaryGids" => {
-                            builder = builder.set_secondary_gids(crate::protocol_serde::shape_secondary_gids::de_secondary_gids(tokens)?);
+                            builder = builder.set_secondary_gids(crate::protocol_serde::shape_secondary_gids::de_secondary_gids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

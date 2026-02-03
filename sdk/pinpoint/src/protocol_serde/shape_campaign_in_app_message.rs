@@ -36,6 +36,7 @@ pub fn ser_campaign_in_app_message(
 
 pub(crate) fn de_campaign_in_app_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CampaignInAppMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,11 +58,12 @@ where
                             );
                         }
                         "Content" => {
-                            builder = builder
-                                .set_content(crate::protocol_serde::shape_list_of_in_app_message_content::de_list_of_in_app_message_content(tokens)?);
+                            builder = builder.set_content(
+                                crate::protocol_serde::shape_list_of_in_app_message_content::de_list_of_in_app_message_content(tokens, _value)?,
+                            );
                         }
                         "CustomConfig" => {
-                            builder = builder.set_custom_config(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                            builder = builder.set_custom_config(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                         }
                         "Layout" => {
                             builder = builder.set_layout(

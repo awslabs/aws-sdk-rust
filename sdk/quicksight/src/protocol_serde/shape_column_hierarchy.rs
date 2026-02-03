@@ -26,6 +26,7 @@ pub fn ser_column_hierarchy(
 
 pub(crate) fn de_column_hierarchy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnHierarchy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,15 +41,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ExplicitHierarchy" => {
-                            builder = builder.set_explicit_hierarchy(crate::protocol_serde::shape_explicit_hierarchy::de_explicit_hierarchy(tokens)?);
+                            builder = builder
+                                .set_explicit_hierarchy(crate::protocol_serde::shape_explicit_hierarchy::de_explicit_hierarchy(tokens, _value)?);
                         }
                         "DateTimeHierarchy" => {
-                            builder =
-                                builder.set_date_time_hierarchy(crate::protocol_serde::shape_date_time_hierarchy::de_date_time_hierarchy(tokens)?);
+                            builder = builder
+                                .set_date_time_hierarchy(crate::protocol_serde::shape_date_time_hierarchy::de_date_time_hierarchy(tokens, _value)?);
                         }
                         "PredefinedHierarchy" => {
-                            builder =
-                                builder.set_predefined_hierarchy(crate::protocol_serde::shape_predefined_hierarchy::de_predefined_hierarchy(tokens)?);
+                            builder = builder.set_predefined_hierarchy(crate::protocol_serde::shape_predefined_hierarchy::de_predefined_hierarchy(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

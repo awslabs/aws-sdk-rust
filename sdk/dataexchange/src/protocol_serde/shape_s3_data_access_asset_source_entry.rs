@@ -41,6 +41,7 @@ pub fn ser_s3_data_access_asset_source_entry(
 
 pub(crate) fn de_s3_data_access_asset_source_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DataAccessAssetSourceEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,14 +63,14 @@ where
                             );
                         }
                         "KeyPrefixes" => {
-                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "KmsKeysToGrant" => {
                             builder = builder.set_kms_keys_to_grant(
-                                crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens)?,
+                                crate::protocol_serde::shape_list_of_kms_keys_to_grant::de_list_of_kms_keys_to_grant(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

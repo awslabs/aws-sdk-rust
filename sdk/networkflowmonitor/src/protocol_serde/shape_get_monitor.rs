@@ -115,11 +115,11 @@ pub fn de_get_monitor_http_response(
 }
 
 pub(crate) fn de_get_monitor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_monitor::builders::GetMonitorOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_monitor::builders::GetMonitorOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,9 @@ pub(crate) fn de_get_monitor(
                     )?);
                 }
                 "localResources" => {
-                    builder = builder.set_local_resources(crate::protocol_serde::shape_monitor_local_resources::de_monitor_local_resources(tokens)?);
+                    builder = builder.set_local_resources(crate::protocol_serde::shape_monitor_local_resources::de_monitor_local_resources(
+                        tokens, _value,
+                    )?);
                 }
                 "modifiedAt" => {
                     builder = builder.set_modified_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -164,11 +166,11 @@ pub(crate) fn de_get_monitor(
                 }
                 "remoteResources" => {
                     builder = builder.set_remote_resources(crate::protocol_serde::shape_monitor_remote_resources::de_monitor_remote_resources(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

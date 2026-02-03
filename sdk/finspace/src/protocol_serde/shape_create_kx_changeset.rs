@@ -155,13 +155,13 @@ pub fn ser_create_kx_changeset_input(
 }
 
 pub(crate) fn de_create_kx_changeset(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_kx_changeset::builders::CreateKxChangesetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_kx_changeset::builders::CreateKxChangesetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -169,7 +169,7 @@ pub(crate) fn de_create_kx_changeset(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "changeRequests" => {
-                    builder = builder.set_change_requests(crate::protocol_serde::shape_change_requests::de_change_requests(tokens)?);
+                    builder = builder.set_change_requests(crate::protocol_serde::shape_change_requests::de_change_requests(tokens, _value)?);
                 }
                 "changesetId" => {
                     builder = builder.set_changeset_id(
@@ -199,7 +199,7 @@ pub(crate) fn de_create_kx_changeset(
                     );
                 }
                 "errorInfo" => {
-                    builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens)?);
+                    builder = builder.set_error_info(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value)?);
                 }
                 "lastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

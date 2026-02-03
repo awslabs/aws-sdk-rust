@@ -103,13 +103,13 @@ pub fn ser_list_linux_subscriptions_input(
 }
 
 pub(crate) fn de_list_linux_subscriptions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_list_linux_subscriptions(
                     );
                 }
                 "Subscriptions" => {
-                    builder = builder.set_subscriptions(crate::protocol_serde::shape_subscription_list::de_subscription_list(tokens)?);
+                    builder = builder.set_subscriptions(crate::protocol_serde::shape_subscription_list::de_subscription_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

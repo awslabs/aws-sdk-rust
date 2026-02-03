@@ -17,6 +17,7 @@ pub fn ser_total_aggregation_option(
 
 pub(crate) fn de_total_aggregation_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TotalAggregationOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "TotalAggregationFunction" => {
                             builder = builder.set_total_aggregation_function(
-                                crate::protocol_serde::shape_total_aggregation_function::de_total_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_total_aggregation_function::de_total_aggregation_function(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

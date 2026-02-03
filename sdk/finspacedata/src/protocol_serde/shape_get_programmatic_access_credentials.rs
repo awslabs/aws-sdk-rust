@@ -108,13 +108,13 @@ pub fn de_get_programmatic_access_credentials_http_response(
 }
 
 pub(crate) fn de_get_programmatic_access_credentials(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,7 +122,7 @@ pub(crate) fn de_get_programmatic_access_credentials(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "credentials" => {
-                    builder = builder.set_credentials(crate::protocol_serde::shape_credentials::de_credentials(tokens)?);
+                    builder = builder.set_credentials(crate::protocol_serde::shape_credentials::de_credentials(tokens, _value)?);
                 }
                 "durationInMinutes" => {
                     builder = builder.set_duration_in_minutes(

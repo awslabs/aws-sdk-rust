@@ -87,13 +87,13 @@ pub fn ser_describe_upload_buffer_input(
 }
 
 pub(crate) fn de_describe_upload_buffer(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_upload_buffer::builders::DescribeUploadBufferOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_describe_upload_buffer(
                     );
                 }
                 "DiskIds" => {
-                    builder = builder.set_disk_ids(crate::protocol_serde::shape_disk_ids::de_disk_ids(tokens)?);
+                    builder = builder.set_disk_ids(crate::protocol_serde::shape_disk_ids::de_disk_ids(tokens, _value)?);
                 }
                 "UploadBufferUsedInBytes" => {
                     builder = builder.set_upload_buffer_used_in_bytes(

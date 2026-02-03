@@ -131,13 +131,13 @@ pub fn ser_describe_metrics_export_input(
 }
 
 pub(crate) fn de_describe_metrics_export(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_metrics_export::builders::DescribeMetricsExportOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_metrics_export::builders::DescribeMetricsExportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,7 +152,7 @@ pub(crate) fn de_describe_metrics_export(
                     );
                 }
                 "exportLocation" => {
-                    builder = builder.set_export_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                    builder = builder.set_export_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                 }
                 "metricsExportId" => {
                     builder = builder.set_metrics_export_id(

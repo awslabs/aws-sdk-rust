@@ -23,6 +23,7 @@ pub fn ser_parameter_selectable_values(
 
 pub(crate) fn de_parameter_selectable_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParameterSelectableValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Values" => {
                             builder = builder.set_values(
-                                crate::protocol_serde::shape_parameter_selectable_value_list::de_parameter_selectable_value_list(tokens)?,
+                                crate::protocol_serde::shape_parameter_selectable_value_list::de_parameter_selectable_value_list(tokens, _value)?,
                             );
                         }
                         "LinkToDataSetColumn" => {
-                            builder =
-                                builder.set_link_to_data_set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder
+                                .set_link_to_data_set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

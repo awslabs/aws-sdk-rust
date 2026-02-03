@@ -20,6 +20,7 @@ pub fn ser_log_setup(
 
 pub(crate) fn de_log_setup<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogSetup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "types" => {
-                            builder = builder.set_types(crate::protocol_serde::shape_log_types::de_log_types(tokens)?);
+                            builder = builder.set_types(crate::protocol_serde::shape_log_types::de_log_types(tokens, _value)?);
                         }
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

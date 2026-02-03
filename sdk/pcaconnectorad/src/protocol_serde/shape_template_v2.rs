@@ -59,6 +59,7 @@ pub fn ser_template_v2(
 
 pub(crate) fn de_template_v2<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TemplateV2>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,34 +74,38 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CertificateValidity" => {
-                            builder =
-                                builder.set_certificate_validity(crate::protocol_serde::shape_certificate_validity::de_certificate_validity(tokens)?);
+                            builder = builder.set_certificate_validity(crate::protocol_serde::shape_certificate_validity::de_certificate_validity(
+                                tokens, _value,
+                            )?);
                         }
                         "SupersededTemplates" => {
-                            builder =
-                                builder.set_superseded_templates(crate::protocol_serde::shape_template_name_list::de_template_name_list(tokens)?);
+                            builder = builder
+                                .set_superseded_templates(crate::protocol_serde::shape_template_name_list::de_template_name_list(tokens, _value)?);
                         }
                         "PrivateKeyAttributes" => {
                             builder = builder.set_private_key_attributes(
-                                crate::protocol_serde::shape_private_key_attributes_v2::de_private_key_attributes_v2(tokens)?,
+                                crate::protocol_serde::shape_private_key_attributes_v2::de_private_key_attributes_v2(tokens, _value)?,
                             );
                         }
                         "PrivateKeyFlags" => {
-                            builder =
-                                builder.set_private_key_flags(crate::protocol_serde::shape_private_key_flags_v2::de_private_key_flags_v2(tokens)?);
+                            builder = builder.set_private_key_flags(crate::protocol_serde::shape_private_key_flags_v2::de_private_key_flags_v2(
+                                tokens, _value,
+                            )?);
                         }
                         "EnrollmentFlags" => {
-                            builder = builder.set_enrollment_flags(crate::protocol_serde::shape_enrollment_flags_v2::de_enrollment_flags_v2(tokens)?);
+                            builder = builder
+                                .set_enrollment_flags(crate::protocol_serde::shape_enrollment_flags_v2::de_enrollment_flags_v2(tokens, _value)?);
                         }
                         "SubjectNameFlags" => {
-                            builder =
-                                builder.set_subject_name_flags(crate::protocol_serde::shape_subject_name_flags_v2::de_subject_name_flags_v2(tokens)?);
+                            builder = builder.set_subject_name_flags(crate::protocol_serde::shape_subject_name_flags_v2::de_subject_name_flags_v2(
+                                tokens, _value,
+                            )?);
                         }
                         "GeneralFlags" => {
-                            builder = builder.set_general_flags(crate::protocol_serde::shape_general_flags_v2::de_general_flags_v2(tokens)?);
+                            builder = builder.set_general_flags(crate::protocol_serde::shape_general_flags_v2::de_general_flags_v2(tokens, _value)?);
                         }
                         "Extensions" => {
-                            builder = builder.set_extensions(crate::protocol_serde::shape_extensions_v2::de_extensions_v2(tokens)?);
+                            builder = builder.set_extensions(crate::protocol_serde::shape_extensions_v2::de_extensions_v2(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -128,10 +128,10 @@ pub fn ser_get_type_input(
 }
 
 pub(crate) fn de_get_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_type::builders::GetTypeOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_type::builders::GetTypeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,7 +153,7 @@ pub(crate) fn de_get_type(
                     );
                 }
                 "fieldDefinitions" => {
-                    builder = builder.set_field_definitions(crate::protocol_serde::shape_field_list::de_field_list(tokens)?);
+                    builder = builder.set_field_definitions(crate::protocol_serde::shape_field_list::de_field_list(tokens, _value)?);
                 }
                 "lastModifiedTimestamp" => {
                     builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -169,10 +169,10 @@ pub(crate) fn de_get_type(
                     );
                 }
                 "directReferringTables" => {
-                    builder = builder.set_direct_referring_tables(crate::protocol_serde::shape_table_name_list::de_table_name_list(tokens)?);
+                    builder = builder.set_direct_referring_tables(crate::protocol_serde::shape_table_name_list::de_table_name_list(tokens, _value)?);
                 }
                 "directParentTypes" => {
-                    builder = builder.set_direct_parent_types(crate::protocol_serde::shape_type_name_list::de_type_name_list(tokens)?);
+                    builder = builder.set_direct_parent_types(crate::protocol_serde::shape_type_name_list::de_type_name_list(tokens, _value)?);
                 }
                 "maxNestingDepth" => {
                     builder = builder.set_max_nesting_depth(

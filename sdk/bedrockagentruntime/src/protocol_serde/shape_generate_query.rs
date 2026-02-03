@@ -186,13 +186,13 @@ pub fn ser_generate_query_input(
 }
 
 pub(crate) fn de_generate_query(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::generate_query::builders::GenerateQueryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::generate_query::builders::GenerateQueryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -200,7 +200,7 @@ pub(crate) fn de_generate_query(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "queries" => {
-                    builder = builder.set_queries(crate::protocol_serde::shape_generated_queries::de_generated_queries(tokens)?);
+                    builder = builder.set_queries(crate::protocol_serde::shape_generated_queries::de_generated_queries(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

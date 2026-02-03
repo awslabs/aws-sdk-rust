@@ -38,6 +38,7 @@ pub fn ser_override_configuration(
 
 pub(crate) fn de_override_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OverrideConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,24 +54,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "document" => {
                             builder = builder.set_document(
-                                crate::protocol_serde::shape_document_override_configuration::de_document_override_configuration(tokens)?,
+                                crate::protocol_serde::shape_document_override_configuration::de_document_override_configuration(tokens, _value)?,
                             );
                         }
                         "image" => {
-                            builder = builder
-                                .set_image(crate::protocol_serde::shape_image_override_configuration::de_image_override_configuration(tokens)?);
+                            builder = builder.set_image(
+                                crate::protocol_serde::shape_image_override_configuration::de_image_override_configuration(tokens, _value)?,
+                            );
                         }
                         "video" => {
-                            builder = builder
-                                .set_video(crate::protocol_serde::shape_video_override_configuration::de_video_override_configuration(tokens)?);
+                            builder = builder.set_video(
+                                crate::protocol_serde::shape_video_override_configuration::de_video_override_configuration(tokens, _value)?,
+                            );
                         }
                         "audio" => {
-                            builder = builder
-                                .set_audio(crate::protocol_serde::shape_audio_override_configuration::de_audio_override_configuration(tokens)?);
+                            builder = builder.set_audio(
+                                crate::protocol_serde::shape_audio_override_configuration::de_audio_override_configuration(tokens, _value)?,
+                            );
                         }
                         "modalityRouting" => {
                             builder = builder.set_modality_routing(
-                                crate::protocol_serde::shape_modality_routing_configuration::de_modality_routing_configuration(tokens)?,
+                                crate::protocol_serde::shape_modality_routing_configuration::de_modality_routing_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -29,6 +29,7 @@ pub fn ser_data_integration_flow_target(
 
 pub(crate) fn de_data_integration_flow_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataIntegrationFlowTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,12 +52,12 @@ where
                         }
                         "s3Target" => {
                             builder = builder.set_s3_target(
-                                    crate::protocol_serde::shape_data_integration_flow_s3_target_configuration::de_data_integration_flow_s3_target_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_integration_flow_s3_target_configuration::de_data_integration_flow_s3_target_configuration(tokens, _value)?
                                 );
                         }
                         "datasetTarget" => {
                             builder = builder.set_dataset_target(
-                                    crate::protocol_serde::shape_data_integration_flow_dataset_target_configuration::de_data_integration_flow_dataset_target_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_integration_flow_dataset_target_configuration::de_data_integration_flow_dataset_target_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

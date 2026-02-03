@@ -26,6 +26,7 @@ pub fn ser_dolby_vision(
 
 pub(crate) fn de_dolby_vision<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DolbyVision>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,8 +48,9 @@ where
                             );
                         }
                         "l6Metadata" => {
-                            builder = builder
-                                .set_l6_metadata(crate::protocol_serde::shape_dolby_vision_level6_metadata::de_dolby_vision_level6_metadata(tokens)?);
+                            builder = builder.set_l6_metadata(
+                                crate::protocol_serde::shape_dolby_vision_level6_metadata::de_dolby_vision_level6_metadata(tokens, _value)?,
+                            );
                         }
                         "l6Mode" => {
                             builder = builder.set_l6_mode(

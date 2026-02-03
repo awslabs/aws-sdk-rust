@@ -38,6 +38,7 @@ pub fn ser_topic_ir_group_by(
 
 pub(crate) fn de_topic_ir_group_by<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicIrGroupBy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldName" => {
-                            builder = builder.set_field_name(crate::protocol_serde::shape_identifier::de_identifier(tokens)?);
+                            builder = builder.set_field_name(crate::protocol_serde::shape_identifier::de_identifier(tokens, _value)?);
                         }
                         "TimeGranularity" => {
                             builder = builder.set_time_granularity(
@@ -62,7 +63,7 @@ where
                             );
                         }
                         "Sort" => {
-                            builder = builder.set_sort(crate::protocol_serde::shape_topic_sort_clause::de_topic_sort_clause(tokens)?);
+                            builder = builder.set_sort(crate::protocol_serde::shape_topic_sort_clause::de_topic_sort_clause(tokens, _value)?);
                         }
                         "DisplayFormat" => {
                             builder = builder.set_display_format(
@@ -72,11 +73,12 @@ where
                             );
                         }
                         "DisplayFormatOptions" => {
-                            builder = builder
-                                .set_display_format_options(crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens)?);
+                            builder = builder.set_display_format_options(
+                                crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens, _value)?,
+                            );
                         }
                         "NamedEntity" => {
-                            builder = builder.set_named_entity(crate::protocol_serde::shape_named_entity_ref::de_named_entity_ref(tokens)?);
+                            builder = builder.set_named_entity(crate::protocol_serde::shape_named_entity_ref::de_named_entity_ref(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -17,6 +17,7 @@ pub fn ser_model_diagnostics_output_configuration(
 
 pub(crate) fn de_model_diagnostics_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelDiagnosticsOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -33,7 +34,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "S3OutputConfiguration" => {
                                 builder = builder.set_s3_output_configuration(
-                                    crate::protocol_serde::shape_model_diagnostics_s3_output_configuration::de_model_diagnostics_s3_output_configuration(tokens)?
+                                    crate::protocol_serde::shape_model_diagnostics_s3_output_configuration::de_model_diagnostics_s3_output_configuration(tokens, _value)?
                                 );
                             }
                             "KmsKeyId" => {

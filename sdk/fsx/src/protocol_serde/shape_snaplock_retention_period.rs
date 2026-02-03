@@ -26,6 +26,7 @@ pub fn ser_snaplock_retention_period(
 
 pub(crate) fn de_snaplock_retention_period<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SnaplockRetentionPeriod>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultRetention" => {
-                            builder = builder.set_default_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                            builder =
+                                builder.set_default_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
                         }
                         "MinimumRetention" => {
-                            builder = builder.set_minimum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                            builder =
+                                builder.set_minimum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
                         }
                         "MaximumRetention" => {
-                            builder = builder.set_maximum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                            builder =
+                                builder.set_maximum_retention(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

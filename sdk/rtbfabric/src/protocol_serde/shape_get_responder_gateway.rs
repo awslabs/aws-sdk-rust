@@ -116,13 +116,13 @@ pub fn de_get_responder_gateway_http_response(
 }
 
 pub(crate) fn de_get_responder_gateway(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_responder_gateway::builders::GetResponderGatewayOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_responder_gateway::builders::GetResponderGatewayOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,7 +172,7 @@ pub(crate) fn de_get_responder_gateway(
                 }
                 "managedEndpointConfiguration" => {
                     builder = builder.set_managed_endpoint_configuration(
-                        crate::protocol_serde::shape_managed_endpoint_configuration::de_managed_endpoint_configuration(tokens)?,
+                        crate::protocol_serde::shape_managed_endpoint_configuration::de_managed_endpoint_configuration(tokens, _value)?,
                     );
                 }
                 "port" => {
@@ -190,7 +190,9 @@ pub(crate) fn de_get_responder_gateway(
                     );
                 }
                 "securityGroupIds" => {
-                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);
+                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -200,10 +202,10 @@ pub(crate) fn de_get_responder_gateway(
                     );
                 }
                 "subnetIds" => {
-                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens)?);
+                    builder = builder.set_subnet_ids(crate::protocol_serde::shape_subnet_id_list::de_subnet_id_list(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "totalLinksCount" => {
                     builder = builder.set_total_links_count(
@@ -214,7 +216,7 @@ pub(crate) fn de_get_responder_gateway(
                 }
                 "trustStoreConfiguration" => {
                     builder = builder.set_trust_store_configuration(
-                        crate::protocol_serde::shape_trust_store_configuration::de_trust_store_configuration(tokens)?,
+                        crate::protocol_serde::shape_trust_store_configuration::de_trust_store_configuration(tokens, _value)?,
                     );
                 }
                 "updatedAt" => {

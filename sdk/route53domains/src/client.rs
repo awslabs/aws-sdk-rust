@@ -155,7 +155,7 @@ mod check_domain_transferability;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53domains::Error> {
 /// # let client: aws_sdk_route53domains::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_domain_transfer_from_another_aws_account()
 ///     .customize()

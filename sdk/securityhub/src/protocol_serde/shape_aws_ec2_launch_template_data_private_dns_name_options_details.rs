@@ -17,6 +17,7 @@ pub fn ser_aws_ec2_launch_template_data_private_dns_name_options_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_private_dns_name_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

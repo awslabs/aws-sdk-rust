@@ -29,6 +29,7 @@ pub fn ser_catalog_target(
 
 pub(crate) fn de_catalog_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CatalogTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                             );
                         }
                         "Tables" => {
-                            builder = builder.set_tables(crate::protocol_serde::shape_catalog_tables_list::de_catalog_tables_list(tokens)?);
+                            builder = builder.set_tables(crate::protocol_serde::shape_catalog_tables_list::de_catalog_tables_list(tokens, _value)?);
                         }
                         "ConnectionName" => {
                             builder = builder.set_connection_name(

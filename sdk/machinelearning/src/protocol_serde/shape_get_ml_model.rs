@@ -93,11 +93,11 @@ pub fn ser_get_ml_model_input(
 }
 
 pub(crate) fn de_get_ml_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ml_model::builders::GetMlModelOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_ml_model::builders::GetMlModelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,10 +159,13 @@ pub(crate) fn de_get_ml_model(
                     );
                 }
                 "EndpointInfo" => {
-                    builder = builder.set_endpoint_info(crate::protocol_serde::shape_realtime_endpoint_info::de_realtime_endpoint_info(tokens)?);
+                    builder = builder.set_endpoint_info(crate::protocol_serde::shape_realtime_endpoint_info::de_realtime_endpoint_info(
+                        tokens, _value,
+                    )?);
                 }
                 "TrainingParameters" => {
-                    builder = builder.set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(tokens)?);
+                    builder =
+                        builder.set_training_parameters(crate::protocol_serde::shape_training_parameters::de_training_parameters(tokens, _value)?);
                 }
                 "InputDataLocationS3" => {
                     builder = builder.set_input_data_location_s3(

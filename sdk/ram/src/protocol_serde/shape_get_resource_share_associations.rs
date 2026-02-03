@@ -168,13 +168,13 @@ pub fn ser_get_resource_share_associations_input(
 }
 
 pub(crate) fn de_get_resource_share_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_share_associations::builders::GetResourceShareAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -190,7 +190,7 @@ pub(crate) fn de_get_resource_share_associations(
                 }
                 "resourceShareAssociations" => {
                     builder = builder.set_resource_share_associations(
-                        crate::protocol_serde::shape_resource_share_association_list::de_resource_share_association_list(tokens)?,
+                        crate::protocol_serde::shape_resource_share_association_list::de_resource_share_association_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

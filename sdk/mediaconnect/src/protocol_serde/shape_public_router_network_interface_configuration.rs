@@ -20,6 +20,7 @@ pub fn ser_public_router_network_interface_configuration(
 
 pub(crate) fn de_public_router_network_interface_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PublicRouterNetworkInterfaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowRules" => {
                             builder = builder.set_allow_rules(
-                                crate::protocol_serde::shape_network_interface_rule_list::de_network_interface_rule_list(tokens)?,
+                                crate::protocol_serde::shape_network_interface_rule_list::de_network_interface_rule_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

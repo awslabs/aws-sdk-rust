@@ -150,13 +150,13 @@ pub fn ser_start_query_workload_insights_top_contributors_data_input(
 }
 
 pub(crate) fn de_start_query_workload_insights_top_contributors_data(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_query_workload_insights_top_contributors_data::builders::StartQueryWorkloadInsightsTopContributorsDataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_query_workload_insights_top_contributors_data::builders::StartQueryWorkloadInsightsTopContributorsDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

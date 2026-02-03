@@ -17,6 +17,7 @@ pub fn ser_relational_database_data_source_config(
 
 pub(crate) fn de_relational_database_data_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RelationalDatabaseDataSourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "rdsHttpEndpointConfig" => {
                             builder = builder.set_rds_http_endpoint_config(
-                                crate::protocol_serde::shape_rds_http_endpoint_config::de_rds_http_endpoint_config(tokens)?,
+                                crate::protocol_serde::shape_rds_http_endpoint_config::de_rds_http_endpoint_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

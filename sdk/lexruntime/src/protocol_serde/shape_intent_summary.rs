@@ -36,6 +36,7 @@ pub fn ser_intent_summary(
 
 pub(crate) fn de_intent_summary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IntentSummary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,7 +65,7 @@ where
                             );
                         }
                         "slots" => {
-                            builder = builder.set_slots(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                            builder = builder.set_slots(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                         }
                         "confirmationStatus" => {
                             builder = builder.set_confirmation_status(

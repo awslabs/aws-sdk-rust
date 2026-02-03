@@ -74,6 +74,7 @@ pub fn ser_ecs_container_override(
 
 pub(crate) fn de_ecs_container_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EcsContainerOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,7 +89,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "Cpu" => {
                             builder = builder.set_cpu(
@@ -99,12 +100,12 @@ where
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_ecs_environment_variable_list::de_ecs_environment_variable_list(tokens)?,
+                                crate::protocol_serde::shape_ecs_environment_variable_list::de_ecs_environment_variable_list(tokens, _value)?,
                             );
                         }
                         "EnvironmentFiles" => {
                             builder = builder.set_environment_files(
-                                crate::protocol_serde::shape_ecs_environment_file_list::de_ecs_environment_file_list(tokens)?,
+                                crate::protocol_serde::shape_ecs_environment_file_list::de_ecs_environment_file_list(tokens, _value)?,
                             );
                         }
                         "Memory" => {
@@ -130,7 +131,7 @@ where
                         }
                         "ResourceRequirements" => {
                             builder = builder.set_resource_requirements(
-                                crate::protocol_serde::shape_ecs_resource_requirements_list::de_ecs_resource_requirements_list(tokens)?,
+                                crate::protocol_serde::shape_ecs_resource_requirements_list::de_ecs_resource_requirements_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

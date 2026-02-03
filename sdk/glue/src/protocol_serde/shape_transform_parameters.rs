@@ -17,6 +17,7 @@ pub fn ser_transform_parameters(
 
 pub(crate) fn de_transform_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TransformParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "FindMatchesParameters" => {
                             builder = builder.set_find_matches_parameters(
-                                crate::protocol_serde::shape_find_matches_parameters::de_find_matches_parameters(tokens)?,
+                                crate::protocol_serde::shape_find_matches_parameters::de_find_matches_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -15,7 +15,7 @@ use aws_smithy_types::date_time::Format;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_smithy_types::DateTime;
-use http_02x::{HeaderName, HeaderValue};
+use http_1x::{HeaderName, HeaderValue};
 use std::borrow::Cow;
 use std::time::Duration;
 
@@ -188,7 +188,7 @@ mod tests {
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
 
-    use http_02x::HeaderValue;
+    use http_1x::HeaderValue;
     use std::time::Duration;
 
     fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {

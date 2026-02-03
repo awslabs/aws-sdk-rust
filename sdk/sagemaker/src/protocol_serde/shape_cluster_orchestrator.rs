@@ -14,6 +14,7 @@ pub fn ser_cluster_orchestrator(
 
 pub(crate) fn de_cluster_orchestrator<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClusterOrchestrator>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Eks" => {
-                            builder = builder
-                                .set_eks(crate::protocol_serde::shape_cluster_orchestrator_eks_config::de_cluster_orchestrator_eks_config(tokens)?);
+                            builder = builder.set_eks(
+                                crate::protocol_serde::shape_cluster_orchestrator_eks_config::de_cluster_orchestrator_eks_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

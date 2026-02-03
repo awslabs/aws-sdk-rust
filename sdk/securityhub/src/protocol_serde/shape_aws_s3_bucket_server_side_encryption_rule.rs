@@ -17,6 +17,7 @@ pub fn ser_aws_s3_bucket_server_side_encryption_rule(
 
 pub(crate) fn de_aws_s3_bucket_server_side_encryption_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsS3BucketServerSideEncryptionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ApplyServerSideEncryptionByDefault" => {
                             builder = builder.set_apply_server_side_encryption_by_default(
-                                    crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_by_default::de_aws_s3_bucket_server_side_encryption_by_default(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_server_side_encryption_by_default::de_aws_s3_bucket_server_side_encryption_by_default(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

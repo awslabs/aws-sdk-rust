@@ -27,6 +27,7 @@ pub fn ser_boolean_condition(
 
 pub(crate) fn de_boolean_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BooleanCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "equalTo" => Some(crate::types::BooleanCondition::EqualTo(
-                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equalTo' cannot be null")
                             })?,
                         )),
                         "notEqualTo" => Some(crate::types::BooleanCondition::NotEqualTo(
-                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEqualTo' cannot be null")
                             })?,
                         )),

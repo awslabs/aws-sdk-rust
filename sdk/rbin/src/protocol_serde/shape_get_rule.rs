@@ -83,10 +83,10 @@ pub fn de_get_rule_http_response(
 }
 
 pub(crate) fn de_get_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_rule::builders::GetRuleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_rule::builders::GetRuleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -101,8 +101,9 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "ExcludeResourceTags" => {
-                    builder =
-                        builder.set_exclude_resource_tags(crate::protocol_serde::shape_exclude_resource_tags::de_exclude_resource_tags(tokens)?);
+                    builder = builder.set_exclude_resource_tags(crate::protocol_serde::shape_exclude_resource_tags::de_exclude_resource_tags(
+                        tokens, _value,
+                    )?);
                 }
                 "Identifier" => {
                     builder = builder.set_identifier(
@@ -112,7 +113,7 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "LockConfiguration" => {
-                    builder = builder.set_lock_configuration(crate::protocol_serde::shape_lock_configuration::de_lock_configuration(tokens)?);
+                    builder = builder.set_lock_configuration(crate::protocol_serde::shape_lock_configuration::de_lock_configuration(tokens, _value)?);
                 }
                 "LockEndTime" => {
                     builder = builder.set_lock_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -128,7 +129,7 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "ResourceTags" => {
-                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens)?);
+                    builder = builder.set_resource_tags(crate::protocol_serde::shape_resource_tags::de_resource_tags(tokens, _value)?);
                 }
                 "ResourceType" => {
                     builder = builder.set_resource_type(
@@ -138,7 +139,7 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "RetentionPeriod" => {
-                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                    builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens, _value)?);
                 }
                 "RuleArn" => {
                     builder = builder.set_rule_arn(

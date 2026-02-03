@@ -23,6 +23,7 @@ pub fn ser_code_signing(
 
 pub(crate) fn de_code_signing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeSigning>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "startSigningJobParameter" => {
                             builder = builder.set_start_signing_job_parameter(
-                                crate::protocol_serde::shape_start_signing_job_parameter::de_start_signing_job_parameter(tokens)?,
+                                crate::protocol_serde::shape_start_signing_job_parameter::de_start_signing_job_parameter(tokens, _value)?,
                             );
                         }
                         "customCodeSigning" => {
-                            builder =
-                                builder.set_custom_code_signing(crate::protocol_serde::shape_custom_code_signing::de_custom_code_signing(tokens)?);
+                            builder = builder
+                                .set_custom_code_signing(crate::protocol_serde::shape_custom_code_signing::de_custom_code_signing(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

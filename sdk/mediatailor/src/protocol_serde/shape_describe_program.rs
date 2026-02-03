@@ -30,13 +30,13 @@ pub fn de_describe_program_http_response(
 }
 
 pub(crate) fn de_describe_program(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_program::builders::DescribeProgramOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_program::builders::DescribeProgramOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -44,7 +44,7 @@ pub(crate) fn de_describe_program(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdBreaks" => {
-                    builder = builder.set_ad_breaks(crate::protocol_serde::shape_list_of_ad_break::de_list_of_ad_break(tokens)?);
+                    builder = builder.set_ad_breaks(crate::protocol_serde::shape_list_of_ad_break::de_list_of_ad_break(tokens, _value)?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -54,7 +54,9 @@ pub(crate) fn de_describe_program(
                     );
                 }
                 "AudienceMedia" => {
-                    builder = builder.set_audience_media(crate::protocol_serde::shape_list_of_audience_media::de_list_of_audience_media(tokens)?);
+                    builder = builder.set_audience_media(crate::protocol_serde::shape_list_of_audience_media::de_list_of_audience_media(
+                        tokens, _value,
+                    )?);
                 }
                 "ChannelName" => {
                     builder = builder.set_channel_name(
@@ -64,7 +66,7 @@ pub(crate) fn de_describe_program(
                     );
                 }
                 "ClipRange" => {
-                    builder = builder.set_clip_range(crate::protocol_serde::shape_clip_range::de_clip_range(tokens)?);
+                    builder = builder.set_clip_range(crate::protocol_serde::shape_clip_range::de_clip_range(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

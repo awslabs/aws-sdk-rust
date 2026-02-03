@@ -142,13 +142,13 @@ pub fn ser_update_replication_configuration_template_input(
 }
 
 pub(crate) fn de_update_replication_configuration_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -236,7 +236,9 @@ pub(crate) fn de_update_replication_configuration_template(
                 }
                 "replicationServersSecurityGroupsIDs" => {
                     builder = builder.set_replication_servers_security_groups_ids(
-                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(tokens)?,
+                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "stagingAreaSubnetId" => {
@@ -247,10 +249,10 @@ pub(crate) fn de_update_replication_configuration_template(
                     );
                 }
                 "stagingAreaTags" => {
-                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "useDedicatedReplicationServer" => {
                     builder =

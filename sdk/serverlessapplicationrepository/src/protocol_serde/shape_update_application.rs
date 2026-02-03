@@ -141,13 +141,13 @@ pub fn ser_update_application_input(
 }
 
 pub(crate) fn de_update_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_application::builders::UpdateApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_application::builders::UpdateApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -193,7 +193,7 @@ pub(crate) fn de_update_application(
                     builder = builder.set_is_verified_author(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "labels" => {
-                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "licenseUrl" => {
                     builder = builder.set_license_url(
@@ -231,7 +231,7 @@ pub(crate) fn de_update_application(
                     );
                 }
                 "version" => {
-                    builder = builder.set_version(crate::protocol_serde::shape_version::de_version(tokens)?);
+                    builder = builder.set_version(crate::protocol_serde::shape_version::de_version(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -17,6 +17,7 @@ pub fn ser_connectivity_info(
 
 pub(crate) fn de_connectivity_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConnectivityInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "privateRouteServerPeerings" => {
                             builder = builder.set_private_route_server_peerings(
-                                crate::protocol_serde::shape_route_server_peering_list::de_route_server_peering_list(tokens)?,
+                                crate::protocol_serde::shape_route_server_peering_list::de_route_server_peering_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

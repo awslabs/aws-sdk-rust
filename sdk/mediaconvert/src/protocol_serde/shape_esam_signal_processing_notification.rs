@@ -11,6 +11,7 @@ pub fn ser_esam_signal_processing_notification(
 
 pub(crate) fn de_esam_signal_processing_notification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EsamSignalProcessingNotification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

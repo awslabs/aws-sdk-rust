@@ -39,6 +39,7 @@ pub fn ser_document_source(
 
 pub(crate) fn de_document_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,7 +73,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bytes' cannot be null"))?,
                         )),
                         "s3Location" => Some(crate::types::DocumentSource::S3Location(
-                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Location' cannot be null")
                             })?,
                         )),
@@ -83,7 +84,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "content" => Some(crate::types::DocumentSource::Content(
-                            crate::protocol_serde::shape_document_content_blocks::de_document_content_blocks(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_content_blocks::de_document_content_blocks(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'content' cannot be null")
                             })?,
                         )),

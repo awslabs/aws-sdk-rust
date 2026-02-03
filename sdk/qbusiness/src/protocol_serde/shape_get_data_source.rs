@@ -108,13 +108,13 @@ pub fn de_get_data_source_http_response(
 }
 
 pub(crate) fn de_get_data_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_data_source::builders::GetDataSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_data_source::builders::GetDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,11 +167,11 @@ pub(crate) fn de_get_data_source(
                 }
                 "documentEnrichmentConfiguration" => {
                     builder = builder.set_document_enrichment_configuration(
-                        crate::protocol_serde::shape_document_enrichment_configuration::de_document_enrichment_configuration(tokens)?,
+                        crate::protocol_serde::shape_document_enrichment_configuration::de_document_enrichment_configuration(tokens, _value)?,
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
                 }
                 "indexId" => {
                     builder = builder.set_index_id(
@@ -182,7 +182,7 @@ pub(crate) fn de_get_data_source(
                 }
                 "mediaExtractionConfiguration" => {
                     builder = builder.set_media_extraction_configuration(
-                        crate::protocol_serde::shape_media_extraction_configuration::de_media_extraction_configuration(tokens)?,
+                        crate::protocol_serde::shape_media_extraction_configuration::de_media_extraction_configuration(tokens, _value)?,
                     );
                 }
                 "roleArn" => {
@@ -220,8 +220,9 @@ pub(crate) fn de_get_data_source(
                     )?);
                 }
                 "vpcConfiguration" => {
-                    builder = builder
-                        .set_vpc_configuration(crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?);
+                    builder = builder.set_vpc_configuration(
+                        crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -153,7 +153,7 @@ mod create_origin_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mediapackage::Error> {
 /// # let client: aws_sdk_mediapackage::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.configure_logs()
 ///     .customize()

@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_health::Error> {
 /// # let client: aws_sdk_health::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.describe_affected_accounts_for_organization()
 ///     .customize()

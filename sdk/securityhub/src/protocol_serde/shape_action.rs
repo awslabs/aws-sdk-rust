@@ -35,6 +35,7 @@ pub fn ser_action(
 
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,18 +58,20 @@ where
                         }
                         "NetworkConnectionAction" => {
                             builder = builder.set_network_connection_action(
-                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens)?,
+                                crate::protocol_serde::shape_network_connection_action::de_network_connection_action(tokens, _value)?,
                             );
                         }
                         "AwsApiCallAction" => {
-                            builder =
-                                builder.set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens)?);
+                            builder = builder
+                                .set_aws_api_call_action(crate::protocol_serde::shape_aws_api_call_action::de_aws_api_call_action(tokens, _value)?);
                         }
                         "DnsRequestAction" => {
-                            builder = builder.set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens)?);
+                            builder = builder
+                                .set_dns_request_action(crate::protocol_serde::shape_dns_request_action::de_dns_request_action(tokens, _value)?);
                         }
                         "PortProbeAction" => {
-                            builder = builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens)?);
+                            builder =
+                                builder.set_port_probe_action(crate::protocol_serde::shape_port_probe_action::de_port_probe_action(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_archive_output_settings(
 
 pub(crate) fn de_archive_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArchiveOutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containerSettings" => {
                             builder = builder.set_container_settings(
-                                crate::protocol_serde::shape_archive_container_settings::de_archive_container_settings(tokens)?,
+                                crate::protocol_serde::shape_archive_container_settings::de_archive_container_settings(tokens, _value)?,
                             );
                         }
                         "extension" => {

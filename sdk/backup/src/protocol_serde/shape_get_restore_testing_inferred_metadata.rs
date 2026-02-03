@@ -122,13 +122,13 @@ pub fn de_get_restore_testing_inferred_metadata_http_response(
 }
 
 pub(crate) fn de_get_restore_testing_inferred_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,7 @@ pub(crate) fn de_get_restore_testing_inferred_metadata(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "InferredMetadata" => {
-                    builder = builder.set_inferred_metadata(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                    builder = builder.set_inferred_metadata(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

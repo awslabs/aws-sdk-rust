@@ -21,6 +21,7 @@ pub fn ser_area_of_interest(
 
 pub(crate) fn de_area_of_interest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AreaOfInterest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,13 @@ where
                     }
                     variant = match key.as_ref() {
                         "AreaOfInterestGeometry" => Some(crate::types::AreaOfInterest::AreaOfInterestGeometry(
-                            crate::protocol_serde::shape_area_of_interest_geometry::de_area_of_interest_geometry(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AreaOfInterestGeometry' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_area_of_interest_geometry::de_area_of_interest_geometry(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'AreaOfInterestGeometry' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

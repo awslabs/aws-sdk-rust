@@ -14,6 +14,7 @@ pub fn ser_waterfall_chart_color_configuration(
 
 pub(crate) fn de_waterfall_chart_color_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WaterfallChartColorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "GroupColorConfiguration" => {
                                 builder = builder.set_group_color_configuration(
-                                    crate::protocol_serde::shape_waterfall_chart_group_color_configuration::de_waterfall_chart_group_color_configuration(tokens)?
+                                    crate::protocol_serde::shape_waterfall_chart_group_color_configuration::de_waterfall_chart_group_color_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

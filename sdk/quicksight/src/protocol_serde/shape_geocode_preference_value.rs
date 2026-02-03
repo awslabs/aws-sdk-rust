@@ -27,6 +27,7 @@ pub fn ser_geocode_preference_value(
 
 pub(crate) fn de_geocode_preference_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeocodePreferenceValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "GeocoderHierarchy" => Some(crate::types::GeocodePreferenceValue::GeocoderHierarchy(
-                            crate::protocol_serde::shape_geocoder_hierarchy::de_geocoder_hierarchy(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_geocoder_hierarchy::de_geocoder_hierarchy(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'GeocoderHierarchy' cannot be null")
                             })?,
                         )),
                         "Coordinate" => Some(crate::types::GeocodePreferenceValue::Coordinate(
-                            crate::protocol_serde::shape_coordinate::de_coordinate(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_coordinate::de_coordinate(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Coordinate' cannot be null")
                             })?,
                         )),

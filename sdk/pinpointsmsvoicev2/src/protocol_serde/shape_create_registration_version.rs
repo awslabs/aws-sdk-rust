@@ -170,13 +170,13 @@ pub fn ser_create_registration_version_input(
 }
 
 pub(crate) fn de_create_registration_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_registration_version::builders::CreateRegistrationVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_registration_version::builders::CreateRegistrationVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -213,7 +213,7 @@ pub(crate) fn de_create_registration_version(
                 }
                 "RegistrationVersionStatusHistory" => {
                     builder = builder.set_registration_version_status_history(
-                        crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(tokens)?,
+                        crate::protocol_serde::shape_registration_version_status_history::de_registration_version_status_history(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

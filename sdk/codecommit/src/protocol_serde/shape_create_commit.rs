@@ -679,13 +679,13 @@ pub fn ser_create_commit_input(
 }
 
 pub(crate) fn de_create_commit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_commit::builders::CreateCommitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_commit::builders::CreateCommitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -707,13 +707,13 @@ pub(crate) fn de_create_commit(
                     );
                 }
                 "filesAdded" => {
-                    builder = builder.set_files_added(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens)?);
+                    builder = builder.set_files_added(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens, _value)?);
                 }
                 "filesUpdated" => {
-                    builder = builder.set_files_updated(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens)?);
+                    builder = builder.set_files_updated(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens, _value)?);
                 }
                 "filesDeleted" => {
-                    builder = builder.set_files_deleted(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens)?);
+                    builder = builder.set_files_deleted(crate::protocol_serde::shape_files_metadata::de_files_metadata(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

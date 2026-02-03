@@ -44,6 +44,7 @@ pub fn ser_evaluation_form_question(
 
 pub(crate) fn de_evaluation_form_question<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormQuestion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,13 +92,13 @@ where
                         "QuestionTypeProperties" => {
                             builder = builder.set_question_type_properties(
                                 crate::protocol_serde::shape_evaluation_form_question_type_properties::de_evaluation_form_question_type_properties(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "Enablement" => {
                             builder = builder.set_enablement(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::de_evaluation_form_item_enablement_configuration(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_configuration::de_evaluation_form_item_enablement_configuration(tokens, _value)?
                                 );
                         }
                         "Weight" => {

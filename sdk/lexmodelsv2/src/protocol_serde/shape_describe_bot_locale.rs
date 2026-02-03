@@ -125,13 +125,13 @@ pub fn de_describe_bot_locale_http_response(
 }
 
 pub(crate) fn de_describe_bot_locale(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_bot_locale::builders::DescribeBotLocaleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_bot_locale::builders::DescribeBotLocaleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_describe_bot_locale(
                 }
                 "botLocaleHistoryEvents" => {
                     builder = builder.set_bot_locale_history_events(
-                        crate::protocol_serde::shape_bot_locale_history_events_list::de_bot_locale_history_events_list(tokens)?,
+                        crate::protocol_serde::shape_bot_locale_history_events_list::de_bot_locale_history_events_list(tokens, _value)?,
                     );
                 }
                 "botLocaleStatus" => {
@@ -178,11 +178,12 @@ pub(crate) fn de_describe_bot_locale(
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "generativeAISettings" => {
-                    builder =
-                        builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                    builder = builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "intentsCount" => {
                     builder = builder.set_intents_count(
@@ -223,7 +224,8 @@ pub(crate) fn de_describe_bot_locale(
                     );
                 }
                 "recommendedActions" => {
-                    builder = builder.set_recommended_actions(crate::protocol_serde::shape_recommended_actions::de_recommended_actions(tokens)?);
+                    builder =
+                        builder.set_recommended_actions(crate::protocol_serde::shape_recommended_actions::de_recommended_actions(tokens, _value)?);
                 }
                 "slotTypesCount" => {
                     builder = builder.set_slot_types_count(
@@ -241,15 +243,16 @@ pub(crate) fn de_describe_bot_locale(
                 }
                 "speechRecognitionSettings" => {
                     builder = builder.set_speech_recognition_settings(
-                        crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens)?,
+                        crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens, _value)?,
                     );
                 }
                 "unifiedSpeechSettings" => {
-                    builder = builder
-                        .set_unified_speech_settings(crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens)?);
+                    builder = builder.set_unified_speech_settings(crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "voiceSettings" => {
-                    builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens)?);
+                    builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -35,6 +35,7 @@ pub fn ser_axis_display_options(
 
 pub(crate) fn de_axis_display_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AxisDisplayOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,8 +50,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TickLabelOptions" => {
-                            builder = builder
-                                .set_tick_label_options(crate::protocol_serde::shape_axis_tick_label_options::de_axis_tick_label_options(tokens)?);
+                            builder = builder.set_tick_label_options(
+                                crate::protocol_serde::shape_axis_tick_label_options::de_axis_tick_label_options(tokens, _value)?,
+                            );
                         }
                         "AxisLineVisibility" => {
                             builder = builder.set_axis_line_visibility(
@@ -67,10 +69,11 @@ where
                             );
                         }
                         "DataOptions" => {
-                            builder = builder.set_data_options(crate::protocol_serde::shape_axis_data_options::de_axis_data_options(tokens)?);
+                            builder = builder.set_data_options(crate::protocol_serde::shape_axis_data_options::de_axis_data_options(tokens, _value)?);
                         }
                         "ScrollbarOptions" => {
-                            builder = builder.set_scrollbar_options(crate::protocol_serde::shape_scroll_bar_options::de_scroll_bar_options(tokens)?);
+                            builder = builder
+                                .set_scrollbar_options(crate::protocol_serde::shape_scroll_bar_options::de_scroll_bar_options(tokens, _value)?);
                         }
                         "AxisOffset" => {
                             builder = builder.set_axis_offset(

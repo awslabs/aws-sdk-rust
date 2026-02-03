@@ -94,13 +94,13 @@ pub fn ser_mark_as_archived_input(
 }
 
 pub(crate) fn de_mark_as_archived(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::mark_as_archived::builders::MarkAsArchivedOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::mark_as_archived::builders::MarkAsArchivedOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,12 +123,13 @@ pub(crate) fn de_mark_as_archived(
                 }
                 "connectorAction" => {
                     builder = builder.set_connector_action(
-                        crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens)?,
+                        crate::protocol_serde::shape_source_server_connector_action::de_source_server_connector_action(tokens, _value)?,
                     );
                 }
                 "dataReplicationInfo" => {
-                    builder =
-                        builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(tokens)?);
+                    builder = builder.set_data_replication_info(crate::protocol_serde::shape_data_replication_info::de_data_replication_info(
+                        tokens, _value,
+                    )?);
                 }
                 "fqdnForActionFramework" => {
                     builder = builder.set_fqdn_for_action_framework(
@@ -141,10 +142,10 @@ pub(crate) fn de_mark_as_archived(
                     builder = builder.set_is_archived(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "launchedInstance" => {
-                    builder = builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(tokens)?);
+                    builder = builder.set_launched_instance(crate::protocol_serde::shape_launched_instance::de_launched_instance(tokens, _value)?);
                 }
                 "lifeCycle" => {
-                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens)?);
+                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value)?);
                 }
                 "replicationType" => {
                     builder = builder.set_replication_type(
@@ -154,7 +155,7 @@ pub(crate) fn de_mark_as_archived(
                     );
                 }
                 "sourceProperties" => {
-                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens)?);
+                    builder = builder.set_source_properties(crate::protocol_serde::shape_source_properties::de_source_properties(tokens, _value)?);
                 }
                 "sourceServerID" => {
                     builder = builder.set_source_server_id(
@@ -164,7 +165,7 @@ pub(crate) fn de_mark_as_archived(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "userProvidedID" => {
                     builder = builder.set_user_provided_id(

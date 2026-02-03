@@ -35,6 +35,7 @@ pub fn ser_schema_attribute_type(
 
 pub(crate) fn de_schema_attribute_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchemaAttributeType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,12 +75,12 @@ where
                         }
                         "NumberAttributeConstraints" => {
                             builder = builder.set_number_attribute_constraints(
-                                crate::protocol_serde::shape_number_attribute_constraints_type::de_number_attribute_constraints_type(tokens)?,
+                                crate::protocol_serde::shape_number_attribute_constraints_type::de_number_attribute_constraints_type(tokens, _value)?,
                             );
                         }
                         "StringAttributeConstraints" => {
                             builder = builder.set_string_attribute_constraints(
-                                crate::protocol_serde::shape_string_attribute_constraints_type::de_string_attribute_constraints_type(tokens)?,
+                                crate::protocol_serde::shape_string_attribute_constraints_type::de_string_attribute_constraints_type(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

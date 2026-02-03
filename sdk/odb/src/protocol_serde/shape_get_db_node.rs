@@ -118,10 +118,10 @@ pub fn ser_get_db_node_input(
 }
 
 pub(crate) fn de_get_db_node(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_db_node::builders::GetDbNodeOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_db_node::builders::GetDbNodeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,7 +129,7 @@ pub(crate) fn de_get_db_node(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "dbNode" => {
-                    builder = builder.set_db_node(crate::protocol_serde::shape_db_node::de_db_node(tokens)?);
+                    builder = builder.set_db_node(crate::protocol_serde::shape_db_node::de_db_node(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

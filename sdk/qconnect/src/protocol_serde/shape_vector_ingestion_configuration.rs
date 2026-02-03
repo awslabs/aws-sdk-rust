@@ -20,6 +20,7 @@ pub fn ser_vector_ingestion_configuration(
 
 pub(crate) fn de_vector_ingestion_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VectorIngestionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "chunkingConfiguration" => {
-                            builder = builder
-                                .set_chunking_configuration(crate::protocol_serde::shape_chunking_configuration::de_chunking_configuration(tokens)?);
+                            builder = builder.set_chunking_configuration(
+                                crate::protocol_serde::shape_chunking_configuration::de_chunking_configuration(tokens, _value)?,
+                            );
                         }
                         "parsingConfiguration" => {
-                            builder = builder
-                                .set_parsing_configuration(crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens)?);
+                            builder = builder.set_parsing_configuration(
+                                crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

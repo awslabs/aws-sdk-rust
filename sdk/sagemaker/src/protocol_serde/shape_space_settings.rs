@@ -59,6 +59,7 @@ pub fn ser_space_settings(
 
 pub(crate) fn de_space_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SpaceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,22 +75,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "JupyterServerAppSettings" => {
                             builder = builder.set_jupyter_server_app_settings(
-                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens)?,
+                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value)?,
                             );
                         }
                         "KernelGatewayAppSettings" => {
                             builder = builder.set_kernel_gateway_app_settings(
-                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens)?,
+                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value)?,
                             );
                         }
                         "CodeEditorAppSettings" => {
                             builder = builder.set_code_editor_app_settings(
-                                crate::protocol_serde::shape_space_code_editor_app_settings::de_space_code_editor_app_settings(tokens)?,
+                                crate::protocol_serde::shape_space_code_editor_app_settings::de_space_code_editor_app_settings(tokens, _value)?,
                             );
                         }
                         "JupyterLabAppSettings" => {
                             builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(tokens)?,
+                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(tokens, _value)?,
                             );
                         }
                         "AppType" => {
@@ -100,8 +101,9 @@ where
                             );
                         }
                         "SpaceStorageSettings" => {
-                            builder = builder
-                                .set_space_storage_settings(crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens)?);
+                            builder = builder.set_space_storage_settings(
+                                crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens, _value)?,
+                            );
                         }
                         "SpaceManagedResources" => {
                             builder = builder.set_space_managed_resources(
@@ -111,8 +113,8 @@ where
                             );
                         }
                         "CustomFileSystems" => {
-                            builder =
-                                builder.set_custom_file_systems(crate::protocol_serde::shape_custom_file_systems::de_custom_file_systems(tokens)?);
+                            builder = builder
+                                .set_custom_file_systems(crate::protocol_serde::shape_custom_file_systems::de_custom_file_systems(tokens, _value)?);
                         }
                         "RemoteAccess" => {
                             builder = builder.set_remote_access(

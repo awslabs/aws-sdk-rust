@@ -26,6 +26,7 @@ pub fn ser_output_locking_settings(
 
 pub(crate) fn de_output_locking_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputLockingSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,17 +41,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "epochLockingSettings" => {
-                            builder = builder
-                                .set_epoch_locking_settings(crate::protocol_serde::shape_epoch_locking_settings::de_epoch_locking_settings(tokens)?);
+                            builder = builder.set_epoch_locking_settings(
+                                crate::protocol_serde::shape_epoch_locking_settings::de_epoch_locking_settings(tokens, _value)?,
+                            );
                         }
                         "pipelineLockingSettings" => {
                             builder = builder.set_pipeline_locking_settings(
-                                crate::protocol_serde::shape_pipeline_locking_settings::de_pipeline_locking_settings(tokens)?,
+                                crate::protocol_serde::shape_pipeline_locking_settings::de_pipeline_locking_settings(tokens, _value)?,
                             );
                         }
                         "disabledLockingSettings" => {
                             builder = builder.set_disabled_locking_settings(
-                                crate::protocol_serde::shape_disabled_locking_settings::de_disabled_locking_settings(tokens)?,
+                                crate::protocol_serde::shape_disabled_locking_settings::de_disabled_locking_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

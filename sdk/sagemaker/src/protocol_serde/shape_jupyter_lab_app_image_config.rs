@@ -20,6 +20,7 @@ pub fn ser_jupyter_lab_app_image_config(
 
 pub(crate) fn de_jupyter_lab_app_image_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JupyterLabAppImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FileSystemConfig" => {
-                            builder = builder.set_file_system_config(crate::protocol_serde::shape_file_system_config::de_file_system_config(tokens)?);
+                            builder = builder
+                                .set_file_system_config(crate::protocol_serde::shape_file_system_config::de_file_system_config(tokens, _value)?);
                         }
                         "ContainerConfig" => {
-                            builder = builder.set_container_config(crate::protocol_serde::shape_container_config::de_container_config(tokens)?);
+                            builder =
+                                builder.set_container_config(crate::protocol_serde::shape_container_config::de_container_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

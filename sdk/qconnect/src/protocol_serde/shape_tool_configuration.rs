@@ -71,6 +71,7 @@ pub fn ser_tool_configuration(
 
 pub(crate) fn de_tool_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -120,16 +121,17 @@ where
                             );
                         }
                         "instruction" => {
-                            builder = builder.set_instruction(crate::protocol_serde::shape_tool_instruction::de_tool_instruction(tokens)?);
+                            builder = builder.set_instruction(crate::protocol_serde::shape_tool_instruction::de_tool_instruction(tokens, _value)?);
                         }
                         "overrideInputValues" => {
                             builder = builder.set_override_input_values(
-                                crate::protocol_serde::shape_tool_override_input_value_list::de_tool_override_input_value_list(tokens)?,
+                                crate::protocol_serde::shape_tool_override_input_value_list::de_tool_override_input_value_list(tokens, _value)?,
                             );
                         }
                         "outputFilters" => {
-                            builder =
-                                builder.set_output_filters(crate::protocol_serde::shape_tool_output_filter_list::de_tool_output_filter_list(tokens)?);
+                            builder = builder.set_output_filters(crate::protocol_serde::shape_tool_output_filter_list::de_tool_output_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "inputSchema" => {
                             builder = builder.set_input_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
@@ -138,11 +140,11 @@ where
                             builder = builder.set_output_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         "annotations" => {
-                            builder = builder.set_annotations(crate::protocol_serde::shape_annotation::de_annotation(tokens)?);
+                            builder = builder.set_annotations(crate::protocol_serde::shape_annotation::de_annotation(tokens, _value)?);
                         }
                         "userInteractionConfiguration" => {
                             builder = builder.set_user_interaction_configuration(
-                                crate::protocol_serde::shape_user_interaction_configuration::de_user_interaction_configuration(tokens)?,
+                                crate::protocol_serde::shape_user_interaction_configuration::de_user_interaction_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

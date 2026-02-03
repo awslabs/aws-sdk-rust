@@ -20,6 +20,7 @@ pub fn ser_channel_storage(
 
 pub(crate) fn de_channel_storage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChannelStorage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "serviceManagedS3" => {
                             builder = builder.set_service_managed_s3(
-                                crate::protocol_serde::shape_service_managed_channel_s3_storage::de_service_managed_channel_s3_storage(tokens)?,
+                                crate::protocol_serde::shape_service_managed_channel_s3_storage::de_service_managed_channel_s3_storage(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "customerManagedS3" => {
                             builder = builder.set_customer_managed_s3(
-                                crate::protocol_serde::shape_customer_managed_channel_s3_storage::de_customer_managed_channel_s3_storage(tokens)?,
+                                crate::protocol_serde::shape_customer_managed_channel_s3_storage::de_customer_managed_channel_s3_storage(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

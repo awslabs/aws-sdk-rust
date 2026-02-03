@@ -29,6 +29,7 @@ pub fn ser_traffic_pattern(
 
 pub(crate) fn de_traffic_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrafficPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,10 @@ where
                             );
                         }
                         "Phases" => {
-                            builder = builder.set_phases(crate::protocol_serde::shape_phases::de_phases(tokens)?);
+                            builder = builder.set_phases(crate::protocol_serde::shape_phases::de_phases(tokens, _value)?);
                         }
                         "Stairs" => {
-                            builder = builder.set_stairs(crate::protocol_serde::shape_stairs::de_stairs(tokens)?);
+                            builder = builder.set_stairs(crate::protocol_serde::shape_stairs::de_stairs(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

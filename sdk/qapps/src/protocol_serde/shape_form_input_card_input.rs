@@ -26,6 +26,7 @@ pub fn ser_form_input_card_input(
 
 pub(crate) fn de_form_input_card_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormInputCardInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,7 +63,7 @@ where
                         }
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_form_input_card_metadata::de_form_input_card_metadata(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "computeMode" => {

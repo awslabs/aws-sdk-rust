@@ -23,6 +23,7 @@ pub fn ser_aws_rds_db_cluster_member(
 
 pub(crate) fn de_aws_rds_db_cluster_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbClusterMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

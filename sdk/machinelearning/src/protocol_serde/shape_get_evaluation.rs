@@ -93,13 +93,13 @@ pub fn ser_get_evaluation_input(
 }
 
 pub(crate) fn de_get_evaluation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_evaluation::builders::GetEvaluationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_evaluation::builders::GetEvaluationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,8 @@ pub(crate) fn de_get_evaluation(
                     );
                 }
                 "PerformanceMetrics" => {
-                    builder = builder.set_performance_metrics(crate::protocol_serde::shape_performance_metrics::de_performance_metrics(tokens)?);
+                    builder =
+                        builder.set_performance_metrics(crate::protocol_serde::shape_performance_metrics::de_performance_metrics(tokens, _value)?);
                 }
                 "LogUri" => {
                     builder = builder.set_log_uri(

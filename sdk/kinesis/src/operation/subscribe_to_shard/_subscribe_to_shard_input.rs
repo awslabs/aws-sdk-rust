@@ -5,6 +5,8 @@
 pub struct SubscribeToShardInput {
     /// <p>For this parameter, use the value you obtained when you called <code>RegisterStreamConsumer</code>.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the shard you want to subscribe to. To see a list of all the shards for a given stream, use <code>ListShards</code>.</p>
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The starting position in the data stream from which to start streaming.</p>
@@ -14,6 +16,10 @@ impl SubscribeToShardInput {
     /// <p>For this parameter, use the value you obtained when you called <code>RegisterStreamConsumer</code>.</p>
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>The ID of the shard you want to subscribe to. To see a list of all the shards for a given stream, use <code>ListShards</code>.</p>
     pub fn shard_id(&self) -> ::std::option::Option<&str> {
@@ -36,6 +42,7 @@ impl SubscribeToShardInput {
 #[non_exhaustive]
 pub struct SubscribeToShardInputBuilder {
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) starting_position: ::std::option::Option<crate::types::StartingPosition>,
 }
@@ -54,6 +61,20 @@ impl SubscribeToShardInputBuilder {
     /// <p>For this parameter, use the value you obtained when you called <code>RegisterStreamConsumer</code>.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>The ID of the shard you want to subscribe to. To see a list of all the shards for a given stream, use <code>ListShards</code>.</p>
     /// This field is required.
@@ -91,6 +112,7 @@ impl SubscribeToShardInputBuilder {
     ) -> ::std::result::Result<crate::operation::subscribe_to_shard::SubscribeToShardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::subscribe_to_shard::SubscribeToShardInput {
             consumer_arn: self.consumer_arn,
+            stream_id: self.stream_id,
             shard_id: self.shard_id,
             starting_position: self.starting_position,
         })

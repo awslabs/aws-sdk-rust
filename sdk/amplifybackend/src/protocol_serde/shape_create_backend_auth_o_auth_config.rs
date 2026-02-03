@@ -47,6 +47,7 @@ pub fn ser_create_backend_auth_o_auth_config(
 
 pub(crate) fn de_create_backend_auth_o_auth_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthOAuthConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,18 +77,20 @@ where
                         }
                         "oAuthScopes" => {
                             builder = builder.set_o_auth_scopes(
-                                crate::protocol_serde::shape_list_of_o_auth_scopes_element::de_list_of_o_auth_scopes_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_o_auth_scopes_element::de_list_of_o_auth_scopes_element(tokens, _value)?,
                             );
                         }
                         "redirectSignInURIs" => {
-                            builder = builder.set_redirect_sign_in_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder =
+                                builder.set_redirect_sign_in_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "redirectSignOutURIs" => {
-                            builder = builder.set_redirect_sign_out_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder =
+                                builder.set_redirect_sign_out_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "socialProviderSettings" => {
                             builder = builder.set_social_provider_settings(
-                                crate::protocol_serde::shape_social_provider_settings::de_social_provider_settings(tokens)?,
+                                crate::protocol_serde::shape_social_provider_settings::de_social_provider_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

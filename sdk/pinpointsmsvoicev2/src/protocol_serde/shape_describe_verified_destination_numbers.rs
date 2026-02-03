@@ -146,13 +146,13 @@ pub fn ser_describe_verified_destination_numbers_input(
 }
 
 pub(crate) fn de_describe_verified_destination_numbers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_verified_destination_numbers::builders::DescribeVerifiedDestinationNumbersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_verified_destination_numbers::builders::DescribeVerifiedDestinationNumbersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,7 @@ pub(crate) fn de_describe_verified_destination_numbers(
                 match key.to_unescaped()?.as_ref() {
                     "VerifiedDestinationNumbers" => {
                         builder = builder.set_verified_destination_numbers(
-                            crate::protocol_serde::shape_verified_destination_number_information_list::de_verified_destination_number_information_list(tokens)?
+                            crate::protocol_serde::shape_verified_destination_number_information_list::de_verified_destination_number_information_list(tokens, _value)?
                         );
                     }
                     "NextToken" => {

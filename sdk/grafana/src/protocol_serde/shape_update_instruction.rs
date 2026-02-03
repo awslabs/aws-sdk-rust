@@ -26,6 +26,7 @@ pub fn ser_update_instruction(
 
 pub(crate) fn de_update_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UpdateInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "users" => {
-                            builder = builder.set_users(crate::protocol_serde::shape_user_list::de_user_list(tokens)?);
+                            builder = builder.set_users(crate::protocol_serde::shape_user_list::de_user_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -125,13 +125,13 @@ pub fn de_get_messaging_session_endpoint_http_response(
 }
 
 pub(crate) fn de_get_messaging_session_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_get_messaging_session_endpoint(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Endpoint" => {
                     builder = builder.set_endpoint(crate::protocol_serde::shape_messaging_session_endpoint::de_messaging_session_endpoint(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -53,6 +53,7 @@ pub fn ser_recurrence_pattern(
 
 pub(crate) fn de_recurrence_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecurrencePattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,14 +82,15 @@ where
                             );
                         }
                         "ByMonth" => {
-                            builder = builder.set_by_month(crate::protocol_serde::shape_month_list::de_month_list(tokens)?);
+                            builder = builder.set_by_month(crate::protocol_serde::shape_month_list::de_month_list(tokens, _value)?);
                         }
                         "ByMonthDay" => {
-                            builder = builder.set_by_month_day(crate::protocol_serde::shape_month_day_list::de_month_day_list(tokens)?);
+                            builder = builder.set_by_month_day(crate::protocol_serde::shape_month_day_list::de_month_day_list(tokens, _value)?);
                         }
                         "ByWeekdayOccurrence" => {
-                            builder = builder
-                                .set_by_weekday_occurrence(crate::protocol_serde::shape_weekday_occurrence_list::de_weekday_occurrence_list(tokens)?);
+                            builder = builder.set_by_weekday_occurrence(
+                                crate::protocol_serde::shape_weekday_occurrence_list::de_weekday_occurrence_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

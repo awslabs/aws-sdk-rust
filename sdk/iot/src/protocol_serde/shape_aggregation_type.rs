@@ -20,6 +20,7 @@ pub fn ser_aggregation_type(
 
 pub(crate) fn de_aggregation_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AggregationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,9 @@ where
                             );
                         }
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_aggregation_type_values::de_aggregation_type_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_aggregation_type_values::de_aggregation_type_values(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

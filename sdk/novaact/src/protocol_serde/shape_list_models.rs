@@ -92,11 +92,11 @@ pub fn de_list_models_http_response(
 }
 
 pub(crate) fn de_list_models(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_models::builders::ListModelsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_models::builders::ListModelsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -105,14 +105,14 @@ pub(crate) fn de_list_models(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "compatibilityInformation" => {
                     builder = builder.set_compatibility_information(
-                        crate::protocol_serde::shape_compatibility_information::de_compatibility_information(tokens)?,
+                        crate::protocol_serde::shape_compatibility_information::de_compatibility_information(tokens, _value)?,
                     );
                 }
                 "modelAliases" => {
-                    builder = builder.set_model_aliases(crate::protocol_serde::shape_model_aliases::de_model_aliases(tokens)?);
+                    builder = builder.set_model_aliases(crate::protocol_serde::shape_model_aliases::de_model_aliases(tokens, _value)?);
                 }
                 "modelSummaries" => {
-                    builder = builder.set_model_summaries(crate::protocol_serde::shape_model_summaries::de_model_summaries(tokens)?);
+                    builder = builder.set_model_summaries(crate::protocol_serde::shape_model_summaries::de_model_summaries(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

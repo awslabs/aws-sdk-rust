@@ -114,6 +114,7 @@ pub fn ser_automated_reasoning_policy_annotation(
 
 pub(crate) fn de_automated_reasoning_policy_annotation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomatedReasoningPolicyAnnotation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -144,79 +145,79 @@ where
                     variant = match key.as_ref() {
                             "addType" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::AddType(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_add_type_annotation::de_automated_reasoning_policy_add_type_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_add_type_annotation::de_automated_reasoning_policy_add_type_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addType' cannot be null"))?
                                 ))
                             }
                             "updateType" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::UpdateType(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_type_annotation::de_automated_reasoning_policy_update_type_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_type_annotation::de_automated_reasoning_policy_update_type_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateType' cannot be null"))?
                                 ))
                             }
                             "deleteType" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::DeleteType(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_type_annotation::de_automated_reasoning_policy_delete_type_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_type_annotation::de_automated_reasoning_policy_delete_type_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'deleteType' cannot be null"))?
                                 ))
                             }
                             "addVariable" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::AddVariable(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_add_variable_annotation::de_automated_reasoning_policy_add_variable_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_add_variable_annotation::de_automated_reasoning_policy_add_variable_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addVariable' cannot be null"))?
                                 ))
                             }
                             "updateVariable" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::UpdateVariable(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_variable_annotation::de_automated_reasoning_policy_update_variable_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_variable_annotation::de_automated_reasoning_policy_update_variable_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateVariable' cannot be null"))?
                                 ))
                             }
                             "deleteVariable" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::DeleteVariable(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_variable_annotation::de_automated_reasoning_policy_delete_variable_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_variable_annotation::de_automated_reasoning_policy_delete_variable_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'deleteVariable' cannot be null"))?
                                 ))
                             }
                             "addRule" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::AddRule(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_add_rule_annotation::de_automated_reasoning_policy_add_rule_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_add_rule_annotation::de_automated_reasoning_policy_add_rule_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addRule' cannot be null"))?
                                 ))
                             }
                             "updateRule" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::UpdateRule(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_rule_annotation::de_automated_reasoning_policy_update_rule_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_rule_annotation::de_automated_reasoning_policy_update_rule_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateRule' cannot be null"))?
                                 ))
                             }
                             "deleteRule" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::DeleteRule(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_rule_annotation::de_automated_reasoning_policy_delete_rule_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_delete_rule_annotation::de_automated_reasoning_policy_delete_rule_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'deleteRule' cannot be null"))?
                                 ))
                             }
                             "addRuleFromNaturalLanguage" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::AddRuleFromNaturalLanguage(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_add_rule_from_natural_language_annotation::de_automated_reasoning_policy_add_rule_from_natural_language_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_add_rule_from_natural_language_annotation::de_automated_reasoning_policy_add_rule_from_natural_language_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'addRuleFromNaturalLanguage' cannot be null"))?
                                 ))
                             }
                             "updateFromRulesFeedback" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::UpdateFromRulesFeedback(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_from_rule_feedback_annotation::de_automated_reasoning_policy_update_from_rule_feedback_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_from_rule_feedback_annotation::de_automated_reasoning_policy_update_from_rule_feedback_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateFromRulesFeedback' cannot be null"))?
                                 ))
                             }
                             "updateFromScenarioFeedback" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::UpdateFromScenarioFeedback(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_update_from_scenario_feedback_annotation::de_automated_reasoning_policy_update_from_scenario_feedback_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_update_from_scenario_feedback_annotation::de_automated_reasoning_policy_update_from_scenario_feedback_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'updateFromScenarioFeedback' cannot be null"))?
                                 ))
                             }
                             "ingestContent" => {
                                 Some(crate::types::AutomatedReasoningPolicyAnnotation::IngestContent(
-                                    crate::protocol_serde::shape_automated_reasoning_policy_ingest_content_annotation::de_automated_reasoning_policy_ingest_content_annotation(tokens)?
+                                    crate::protocol_serde::shape_automated_reasoning_policy_ingest_content_annotation::de_automated_reasoning_policy_ingest_content_annotation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ingestContent' cannot be null"))?
                                 ))
                             }

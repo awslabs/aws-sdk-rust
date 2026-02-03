@@ -38,6 +38,7 @@ pub fn ser_http_retry_policy(
 
 pub(crate) fn de_http_retry_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpRetryPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "perRetryTimeout" => {
-                            builder = builder.set_per_retry_timeout(crate::protocol_serde::shape_duration::de_duration(tokens)?);
+                            builder = builder.set_per_retry_timeout(crate::protocol_serde::shape_duration::de_duration(tokens, _value)?);
                         }
                         "maxRetries" => {
                             builder = builder.set_max_retries(
@@ -63,12 +64,13 @@ where
                         }
                         "httpRetryEvents" => {
                             builder = builder.set_http_retry_events(
-                                crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens)?,
+                                crate::protocol_serde::shape_http_retry_policy_events::de_http_retry_policy_events(tokens, _value)?,
                             );
                         }
                         "tcpRetryEvents" => {
-                            builder = builder
-                                .set_tcp_retry_events(crate::protocol_serde::shape_tcp_retry_policy_events::de_tcp_retry_policy_events(tokens)?);
+                            builder = builder.set_tcp_retry_events(crate::protocol_serde::shape_tcp_retry_policy_events::de_tcp_retry_policy_events(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

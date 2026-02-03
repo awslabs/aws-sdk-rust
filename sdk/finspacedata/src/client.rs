@@ -157,7 +157,7 @@ mod create_user;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_finspacedata::Error> {
 /// # let client: aws_sdk_finspacedata::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_user_to_permission_group()
 ///     .customize()

@@ -20,6 +20,7 @@ pub fn ser_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute(
 
 pub(crate) fn de_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "AttributeValues" => {
-                            builder =
-                                builder.set_attribute_values(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_attribute_values(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

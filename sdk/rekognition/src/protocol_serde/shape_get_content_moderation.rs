@@ -163,13 +163,13 @@ pub fn ser_get_content_moderation_input(
 }
 
 pub(crate) fn de_get_content_moderation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_content_moderation::builders::GetContentModerationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,11 +191,12 @@ pub(crate) fn de_get_content_moderation(
                     );
                 }
                 "VideoMetadata" => {
-                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata::de_video_metadata(tokens)?);
+                    builder = builder.set_video_metadata(crate::protocol_serde::shape_video_metadata::de_video_metadata(tokens, _value)?);
                 }
                 "ModerationLabels" => {
-                    builder = builder
-                        .set_moderation_labels(crate::protocol_serde::shape_content_moderation_detections::de_content_moderation_detections(tokens)?);
+                    builder = builder.set_moderation_labels(
+                        crate::protocol_serde::shape_content_moderation_detections::de_content_moderation_detections(tokens, _value)?,
+                    );
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(
@@ -219,7 +220,7 @@ pub(crate) fn de_get_content_moderation(
                     );
                 }
                 "Video" => {
-                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens)?);
+                    builder = builder.set_video(crate::protocol_serde::shape_video::de_video(tokens, _value)?);
                 }
                 "JobTag" => {
                     builder = builder.set_job_tag(
@@ -230,7 +231,9 @@ pub(crate) fn de_get_content_moderation(
                 }
                 "GetRequestMetadata" => {
                     builder = builder.set_get_request_metadata(
-                        crate::protocol_serde::shape_get_content_moderation_request_metadata::de_get_content_moderation_request_metadata(tokens)?,
+                        crate::protocol_serde::shape_get_content_moderation_request_metadata::de_get_content_moderation_request_metadata(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

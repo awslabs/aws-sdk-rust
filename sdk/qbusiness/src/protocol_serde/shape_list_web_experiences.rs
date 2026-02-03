@@ -114,13 +114,13 @@ pub fn de_list_web_experiences_http_response(
 }
 
 pub(crate) fn de_list_web_experiences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_web_experiences::builders::ListWebExperiencesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_web_experiences::builders::ListWebExperiencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_list_web_experiences(
                     );
                 }
                 "webExperiences" => {
-                    builder = builder.set_web_experiences(crate::protocol_serde::shape_web_experiences::de_web_experiences(tokens)?);
+                    builder = builder.set_web_experiences(crate::protocol_serde::shape_web_experiences::de_web_experiences(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

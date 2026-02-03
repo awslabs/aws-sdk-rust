@@ -17,6 +17,7 @@ pub fn ser_toxicity_detection_settings(
 
 pub(crate) fn de_toxicity_detection_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToxicityDetectionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,8 +32,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ToxicityCategories" => {
-                            builder =
-                                builder.set_toxicity_categories(crate::protocol_serde::shape_toxicity_categories::de_toxicity_categories(tokens)?);
+                            builder = builder
+                                .set_toxicity_categories(crate::protocol_serde::shape_toxicity_categories::de_toxicity_categories(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

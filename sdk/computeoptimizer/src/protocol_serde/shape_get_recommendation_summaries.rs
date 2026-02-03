@@ -169,13 +169,13 @@ pub fn ser_get_recommendation_summaries_input(
 }
 
 pub(crate) fn de_get_recommendation_summaries(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,7 +191,7 @@ pub(crate) fn de_get_recommendation_summaries(
                 }
                 "recommendationSummaries" => {
                     builder = builder.set_recommendation_summaries(
-                        crate::protocol_serde::shape_recommendation_summaries::de_recommendation_summaries(tokens)?,
+                        crate::protocol_serde::shape_recommendation_summaries::de_recommendation_summaries(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

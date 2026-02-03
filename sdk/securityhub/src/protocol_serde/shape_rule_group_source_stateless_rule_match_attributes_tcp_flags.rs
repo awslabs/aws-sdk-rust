@@ -26,6 +26,7 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes_tcp_flags(
 
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes_tcp_flags<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -43,10 +44,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Flags" => {
-                            builder = builder.set_flags(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_flags(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Masks" => {
-                            builder = builder.set_masks(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_masks(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

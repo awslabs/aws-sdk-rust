@@ -103,11 +103,11 @@ pub fn de_get_session_http_response(
 }
 
 pub(crate) fn de_get_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_session::builders::GetSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,17 +115,19 @@ pub(crate) fn de_get_session(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "activeContexts" => {
-                    builder = builder.set_active_contexts(crate::protocol_serde::shape_active_contexts_list::de_active_contexts_list(tokens)?);
+                    builder = builder.set_active_contexts(crate::protocol_serde::shape_active_contexts_list::de_active_contexts_list(
+                        tokens, _value,
+                    )?);
                 }
                 "dialogAction" => {
-                    builder = builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens)?);
+                    builder = builder.set_dialog_action(crate::protocol_serde::shape_dialog_action::de_dialog_action(tokens, _value)?);
                 }
                 "recentIntentSummaryView" => {
-                    builder =
-                        builder.set_recent_intent_summary_view(crate::protocol_serde::shape_intent_summary_list::de_intent_summary_list(tokens)?);
+                    builder = builder
+                        .set_recent_intent_summary_view(crate::protocol_serde::shape_intent_summary_list::de_intent_summary_list(tokens, _value)?);
                 }
                 "sessionAttributes" => {
-                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                    builder = builder.set_session_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(

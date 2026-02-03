@@ -106,13 +106,13 @@ pub fn de_describe_pipe_http_response(
 }
 
 pub(crate) fn de_describe_pipe(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_pipe::builders::DescribePipeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_pipe::builders::DescribePipeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,7 +165,7 @@ pub(crate) fn de_describe_pipe(
                 }
                 "EnrichmentParameters" => {
                     builder = builder.set_enrichment_parameters(
-                        crate::protocol_serde::shape_pipe_enrichment_parameters::de_pipe_enrichment_parameters(tokens)?,
+                        crate::protocol_serde::shape_pipe_enrichment_parameters::de_pipe_enrichment_parameters(tokens, _value)?,
                     );
                 }
                 "KmsKeyIdentifier" => {
@@ -182,7 +182,9 @@ pub(crate) fn de_describe_pipe(
                     )?);
                 }
                 "LogConfiguration" => {
-                    builder = builder.set_log_configuration(crate::protocol_serde::shape_pipe_log_configuration::de_pipe_log_configuration(tokens)?);
+                    builder = builder.set_log_configuration(crate::protocol_serde::shape_pipe_log_configuration::de_pipe_log_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "Name" => {
                     builder = builder.set_name(
@@ -206,7 +208,9 @@ pub(crate) fn de_describe_pipe(
                     );
                 }
                 "SourceParameters" => {
-                    builder = builder.set_source_parameters(crate::protocol_serde::shape_pipe_source_parameters::de_pipe_source_parameters(tokens)?);
+                    builder = builder.set_source_parameters(crate::protocol_serde::shape_pipe_source_parameters::de_pipe_source_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 "StateReason" => {
                     builder = builder.set_state_reason(
@@ -216,7 +220,7 @@ pub(crate) fn de_describe_pipe(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "Target" => {
                     builder = builder.set_target(
@@ -226,7 +230,9 @@ pub(crate) fn de_describe_pipe(
                     );
                 }
                 "TargetParameters" => {
-                    builder = builder.set_target_parameters(crate::protocol_serde::shape_pipe_target_parameters::de_pipe_target_parameters(tokens)?);
+                    builder = builder.set_target_parameters(crate::protocol_serde::shape_pipe_target_parameters::de_pipe_target_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

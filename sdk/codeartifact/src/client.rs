@@ -155,7 +155,7 @@ mod create_repository;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codeartifact::Error> {
 /// # let client: aws_sdk_codeartifact::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_external_connection()
 ///     .customize()

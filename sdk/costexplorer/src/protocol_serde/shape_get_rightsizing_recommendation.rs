@@ -87,13 +87,13 @@ pub fn ser_get_rightsizing_recommendation_input(
 }
 
 pub(crate) fn de_get_rightsizing_recommendation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,16 +102,17 @@ pub(crate) fn de_get_rightsizing_recommendation(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Metadata" => {
                     builder = builder.set_metadata(
-                        crate::protocol_serde::shape_rightsizing_recommendation_metadata::de_rightsizing_recommendation_metadata(tokens)?,
+                        crate::protocol_serde::shape_rightsizing_recommendation_metadata::de_rightsizing_recommendation_metadata(tokens, _value)?,
                     );
                 }
                 "Summary" => {
-                    builder = builder
-                        .set_summary(crate::protocol_serde::shape_rightsizing_recommendation_summary::de_rightsizing_recommendation_summary(tokens)?);
+                    builder = builder.set_summary(
+                        crate::protocol_serde::shape_rightsizing_recommendation_summary::de_rightsizing_recommendation_summary(tokens, _value)?,
+                    );
                 }
                 "RightsizingRecommendations" => {
                     builder = builder.set_rightsizing_recommendations(
-                        crate::protocol_serde::shape_rightsizing_recommendation_list::de_rightsizing_recommendation_list(tokens)?,
+                        crate::protocol_serde::shape_rightsizing_recommendation_list::de_rightsizing_recommendation_list(tokens, _value)?,
                     );
                 }
                 "NextPageToken" => {
@@ -123,7 +124,9 @@ pub(crate) fn de_get_rightsizing_recommendation(
                 }
                 "Configuration" => {
                     builder = builder.set_configuration(
-                        crate::protocol_serde::shape_rightsizing_recommendation_configuration::de_rightsizing_recommendation_configuration(tokens)?,
+                        crate::protocol_serde::shape_rightsizing_recommendation_configuration::de_rightsizing_recommendation_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

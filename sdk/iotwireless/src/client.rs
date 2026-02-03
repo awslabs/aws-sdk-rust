@@ -181,7 +181,7 @@ mod create_wireless_gateway_task_definition;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotwireless::Error> {
 /// # let client: aws_sdk_iotwireless::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_aws_account_with_partner_account()
 ///     .customize()

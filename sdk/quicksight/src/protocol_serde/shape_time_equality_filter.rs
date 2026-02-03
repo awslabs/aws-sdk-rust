@@ -40,6 +40,7 @@ pub fn ser_time_equality_filter(
 
 pub(crate) fn de_time_equality_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeEqualityFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "Value" => {
                             builder = builder.set_value(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -85,12 +86,14 @@ where
                         }
                         "RollingDate" => {
                             builder = builder.set_rolling_date(
-                                crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens)?,
+                                crate::protocol_serde::shape_rolling_date_configuration::de_rolling_date_configuration(tokens, _value)?,
                             );
                         }
                         "DefaultFilterControlConfiguration" => {
                             builder = builder.set_default_filter_control_configuration(
-                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

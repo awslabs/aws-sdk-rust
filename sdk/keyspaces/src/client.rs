@@ -151,7 +151,7 @@ mod create_type;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_keyspaces::Error> {
 /// # let client: aws_sdk_keyspaces::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_keyspace()
 ///     .customize()

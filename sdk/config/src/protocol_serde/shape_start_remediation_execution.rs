@@ -114,13 +114,13 @@ pub fn ser_start_remediation_execution_input(
 }
 
 pub(crate) fn de_start_remediation_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_remediation_execution::builders::StartRemediationExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_start_remediation_execution(
                     );
                 }
                 "FailedItems" => {
-                    builder = builder.set_failed_items(crate::protocol_serde::shape_resource_keys::de_resource_keys(tokens)?);
+                    builder = builder.set_failed_items(crate::protocol_serde::shape_resource_keys::de_resource_keys(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

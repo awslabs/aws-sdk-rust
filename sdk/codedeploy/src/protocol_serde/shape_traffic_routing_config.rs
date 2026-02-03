@@ -23,6 +23,7 @@ pub fn ser_traffic_routing_config(
 
 pub(crate) fn de_traffic_routing_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrafficRoutingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,12 @@ where
                             );
                         }
                         "timeBasedCanary" => {
-                            builder = builder.set_time_based_canary(crate::protocol_serde::shape_time_based_canary::de_time_based_canary(tokens)?);
+                            builder =
+                                builder.set_time_based_canary(crate::protocol_serde::shape_time_based_canary::de_time_based_canary(tokens, _value)?);
                         }
                         "timeBasedLinear" => {
-                            builder = builder.set_time_based_linear(crate::protocol_serde::shape_time_based_linear::de_time_based_linear(tokens)?);
+                            builder =
+                                builder.set_time_based_linear(crate::protocol_serde::shape_time_based_linear::de_time_based_linear(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -251,9 +251,9 @@ async fn user_provides_data_too_slowly() {
 
 use upload_test_tools::*;
 mod upload_test_tools {
-    use aws_smithy_async::rt::sleep::AsyncSleep;
-
     use crate::stalled_stream_common::*;
+    use aws_smithy_async::rt::sleep::AsyncSleep;
+    use http_body_1x::Body;
 
     pub fn successful_response() -> HttpResponse {
         HttpResponse::try_from(
@@ -338,7 +338,7 @@ mod upload_test_tools {
             _: TickAdvanceSleep,
             advance_time: bool,
         ) -> HttpResponse {
-            while poll_fn(|cx| body.as_mut().poll_data(cx)).await.is_some() {
+            while poll_fn(|cx| body.as_mut().poll_frame(cx)).await.is_some() {
                 if advance_time {
                     tick!(time, Duration::from_secs(1));
                 }
@@ -360,7 +360,7 @@ mod upload_test_tools {
             respond_after: Option<Duration>,
         ) -> HttpResponse {
             let mut times = 5;
-            while times > 0 && poll_fn(|cx| body.as_mut().poll_data(cx)).await.is_some() {
+            while times > 0 && poll_fn(|cx| body.as_mut().poll_frame(cx)).await.is_some() {
                 times -= 1;
             }
 
@@ -400,7 +400,7 @@ mod upload_test_tools {
         ) -> HttpResponse {
             let mut time_sequence: VecDeque<Duration> =
                 time_sequence.into_iter().map(Duration::from_secs).collect();
-            while poll_fn(|cx| body.as_mut().poll_data(cx)).await.is_some() {
+            while poll_fn(|cx| body.as_mut().poll_frame(cx)).await.is_some() {
                 let next_time = time_sequence.pop_front().unwrap_or(Duration::from_secs(1));
                 tick!(time, next_time);
             }
@@ -428,9 +428,9 @@ mod upload_test_tools {
         ) -> HttpResponse {
             let mut remaining = params.0;
             loop {
-                match poll_fn(|cx| body.as_mut().poll_data(cx)).await {
+                match poll_fn(|cx| body.as_mut().poll_frame(cx)).await {
                     Some(res) => {
-                        let rc = res.unwrap().len();
+                        let rc = res.unwrap().into_data().expect("data frame").len();
                         remaining -= rc;
                         tracing::info!("read {rc} bytes; remaining: {remaining}");
                         if remaining == 0 {
@@ -440,7 +440,7 @@ mod upload_test_tools {
                     }
                     None => {
                         tracing::info!(
-                            "read until poll_data() returned None, no data left, stopping polling"
+                            "read until poll_frame() returned None, no data left, stopping polling"
                         );
                         break;
                     }

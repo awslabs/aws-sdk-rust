@@ -6,10 +6,13 @@ pub fn ser_update_max_record_size_input_input(
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.max_record_size_in_kib {
+    if let Some(var_2) = &input.stream_id {
+        object.key("StreamId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.max_record_size_in_kib {
         object.key("MaxRecordSizeInKiB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

@@ -45,6 +45,7 @@ pub fn ser_data_quality_app_specification(
 
 pub(crate) fn de_data_quality_app_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataQualityAppSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,12 +67,13 @@ where
                             );
                         }
                         "ContainerEntrypoint" => {
-                            builder =
-                                builder.set_container_entrypoint(crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(tokens)?);
+                            builder = builder.set_container_entrypoint(crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(
+                                tokens, _value,
+                            )?);
                         }
                         "ContainerArguments" => {
                             builder = builder.set_container_arguments(
-                                crate::protocol_serde::shape_monitoring_container_arguments::de_monitoring_container_arguments(tokens)?,
+                                crate::protocol_serde::shape_monitoring_container_arguments::de_monitoring_container_arguments(tokens, _value)?,
                             );
                         }
                         "RecordPreprocessorSourceUri" => {
@@ -90,7 +92,7 @@ where
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens)?,
+                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

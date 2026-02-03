@@ -154,13 +154,13 @@ pub fn ser_create_cluster_input(
 }
 
 pub(crate) fn de_create_cluster(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_create_cluster(
                     );
                 }
                 "channelIds" => {
-                    builder = builder.set_channel_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_channel_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "clusterType" => {
                     builder = builder.set_cluster_type(
@@ -207,7 +207,7 @@ pub(crate) fn de_create_cluster(
                 }
                 "networkSettings" => {
                     builder = builder.set_network_settings(crate::protocol_serde::shape_cluster_network_settings::de_cluster_network_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "state" => {

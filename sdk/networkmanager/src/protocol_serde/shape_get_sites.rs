@@ -118,10 +118,10 @@ pub fn de_get_sites_http_response(
 }
 
 pub(crate) fn de_get_sites(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sites::builders::GetSitesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_sites::builders::GetSitesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,7 @@ pub(crate) fn de_get_sites(
                     );
                 }
                 "Sites" => {
-                    builder = builder.set_sites(crate::protocol_serde::shape_site_list::de_site_list(tokens)?);
+                    builder = builder.set_sites(crate::protocol_serde::shape_site_list::de_site_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

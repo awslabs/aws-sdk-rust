@@ -23,6 +23,7 @@ pub fn ser_aws_auto_scaling_launch_configuration_block_device_mappings_details(
 
 pub(crate) fn de_aws_auto_scaling_launch_configuration_block_device_mappings_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -48,7 +49,7 @@ where
                         }
                         "Ebs" => {
                             builder = builder.set_ebs(
-                                    crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::de_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::de_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details(tokens, _value)?
                                 );
                         }
                         "NoDevice" => {

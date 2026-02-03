@@ -39,6 +39,7 @@ pub fn ser_router_output_configuration(
 
 pub(crate) fn de_router_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RouterOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,19 +70,19 @@ where
                     variant = match key.as_ref() {
                             "standard" => {
                                 Some(crate::types::RouterOutputConfiguration::Standard(
-                                    crate::protocol_serde::shape_standard_router_output_configuration::de_standard_router_output_configuration(tokens)?
+                                    crate::protocol_serde::shape_standard_router_output_configuration::de_standard_router_output_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Standard' cannot be null"))?
                                 ))
                             }
                             "mediaConnectFlow" => {
                                 Some(crate::types::RouterOutputConfiguration::MediaConnectFlow(
-                                    crate::protocol_serde::shape_media_connect_flow_router_output_configuration::de_media_connect_flow_router_output_configuration(tokens)?
+                                    crate::protocol_serde::shape_media_connect_flow_router_output_configuration::de_media_connect_flow_router_output_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaConnectFlow' cannot be null"))?
                                 ))
                             }
                             "mediaLiveInput" => {
                                 Some(crate::types::RouterOutputConfiguration::MediaLiveInput(
-                                    crate::protocol_serde::shape_media_live_input_router_output_configuration::de_media_live_input_router_output_configuration(tokens)?
+                                    crate::protocol_serde::shape_media_live_input_router_output_configuration::de_media_live_input_router_output_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveInput' cannot be null"))?
                                 ))
                             }

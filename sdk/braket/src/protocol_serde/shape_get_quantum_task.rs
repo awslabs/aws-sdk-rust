@@ -115,13 +115,13 @@ pub fn de_get_quantum_task_http_response(
 }
 
 pub(crate) fn de_get_quantum_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,10 +129,10 @@ pub(crate) fn de_get_quantum_task(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionMetadata" => {
-                    builder = builder.set_action_metadata(crate::protocol_serde::shape_action_metadata::de_action_metadata(tokens)?);
+                    builder = builder.set_action_metadata(crate::protocol_serde::shape_action_metadata::de_action_metadata(tokens, _value)?);
                 }
                 "associations" => {
-                    builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens)?);
+                    builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -162,7 +162,7 @@ pub(crate) fn de_get_quantum_task(
                 }
                 "experimentalCapabilities" => {
                     builder = builder.set_experimental_capabilities(
-                        crate::protocol_serde::shape_experimental_capabilities::de_experimental_capabilities(tokens)?,
+                        crate::protocol_serde::shape_experimental_capabilities::de_experimental_capabilities(tokens, _value)?,
                     );
                 }
                 "failureReason" => {
@@ -208,7 +208,9 @@ pub(crate) fn de_get_quantum_task(
                     );
                 }
                 "queueInfo" => {
-                    builder = builder.set_queue_info(crate::protocol_serde::shape_quantum_task_queue_info::de_quantum_task_queue_info(tokens)?);
+                    builder = builder.set_queue_info(crate::protocol_serde::shape_quantum_task_queue_info::de_quantum_task_queue_info(
+                        tokens, _value,
+                    )?);
                 }
                 "shots" => {
                     builder = builder.set_shots(
@@ -225,7 +227,7 @@ pub(crate) fn de_get_quantum_task(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -243,7 +243,7 @@ mod create_topic_rule_destination;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iot::Error> {
 /// # let client: aws_sdk_iot::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_certificate_transfer()
 ///     .customize()

@@ -59,6 +59,7 @@ pub fn ser_linux_parameters(
 
 pub(crate) fn de_linux_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LinuxParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,10 +74,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "capabilities" => {
-                            builder = builder.set_capabilities(crate::protocol_serde::shape_kernel_capabilities::de_kernel_capabilities(tokens)?);
+                            builder =
+                                builder.set_capabilities(crate::protocol_serde::shape_kernel_capabilities::de_kernel_capabilities(tokens, _value)?);
                         }
                         "devices" => {
-                            builder = builder.set_devices(crate::protocol_serde::shape_devices_list::de_devices_list(tokens)?);
+                            builder = builder.set_devices(crate::protocol_serde::shape_devices_list::de_devices_list(tokens, _value)?);
                         }
                         "initProcessEnabled" => {
                             builder = builder.set_init_process_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -89,7 +91,7 @@ where
                             );
                         }
                         "tmpfs" => {
-                            builder = builder.set_tmpfs(crate::protocol_serde::shape_tmpfs_list::de_tmpfs_list(tokens)?);
+                            builder = builder.set_tmpfs(crate::protocol_serde::shape_tmpfs_list::de_tmpfs_list(tokens, _value)?);
                         }
                         "maxSwap" => {
                             builder = builder.set_max_swap(

@@ -17,6 +17,7 @@ pub fn ser_cluster_kubernetes_taint(
 
 pub(crate) fn de_cluster_kubernetes_taint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClusterKubernetesTaint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -165,13 +165,13 @@ pub fn ser_create_data_source_input(
 }
 
 pub(crate) fn de_create_data_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -179,11 +179,11 @@ pub(crate) fn de_create_data_source(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assetFormsOutput" => {
-                    builder = builder.set_asset_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens)?);
+                    builder = builder.set_asset_forms_output(crate::protocol_serde::shape_form_output_list::de_form_output_list(tokens, _value)?);
                 }
                 "configuration" => {
                     builder = builder.set_configuration(
-                        crate::protocol_serde::shape_data_source_configuration_output::de_data_source_configuration_output(tokens)?,
+                        crate::protocol_serde::shape_data_source_configuration_output::de_data_source_configuration_output(tokens, _value)?,
                     );
                 }
                 "connectionId" => {
@@ -229,7 +229,7 @@ pub(crate) fn de_create_data_source(
                 }
                 "errorMessage" => {
                     builder = builder.set_error_message(crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "id" => {
@@ -247,7 +247,7 @@ pub(crate) fn de_create_data_source(
                 }
                 "lastRunErrorMessage" => {
                     builder = builder.set_last_run_error_message(
-                        crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens)?,
+                        crate::protocol_serde::shape_data_source_error_message::de_data_source_error_message(tokens, _value)?,
                     );
                 }
                 "lastRunStatus" => {
@@ -275,11 +275,14 @@ pub(crate) fn de_create_data_source(
                     builder = builder.set_publish_on_import(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "recommendation" => {
-                    builder = builder
-                        .set_recommendation(crate::protocol_serde::shape_recommendation_configuration::de_recommendation_configuration(tokens)?);
+                    builder = builder.set_recommendation(
+                        crate::protocol_serde::shape_recommendation_configuration::de_recommendation_configuration(tokens, _value)?,
+                    );
                 }
                 "schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens)?);
+                    builder = builder.set_schedule(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

@@ -20,6 +20,7 @@ pub fn ser_resource(
 
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "ResourceDataContainer" => {
                             builder = builder.set_resource_data_container(
-                                crate::protocol_serde::shape_resource_data_container::de_resource_data_container(tokens)?,
+                                crate::protocol_serde::shape_resource_data_container::de_resource_data_container(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

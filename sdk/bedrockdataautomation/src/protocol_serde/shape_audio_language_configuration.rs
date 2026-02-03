@@ -23,6 +23,7 @@ pub fn ser_audio_language_configuration(
 
 pub(crate) fn de_audio_language_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioLanguageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,8 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inputLanguages" => {
-                            builder =
-                                builder.set_input_languages(crate::protocol_serde::shape_audio_input_languages::de_audio_input_languages(tokens)?);
+                            builder = builder.set_input_languages(crate::protocol_serde::shape_audio_input_languages::de_audio_input_languages(
+                                tokens, _value,
+                            )?);
                         }
                         "generativeOutputLanguage" => {
                             builder = builder.set_generative_output_language(

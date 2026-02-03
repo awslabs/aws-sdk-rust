@@ -153,13 +153,13 @@ pub fn ser_get_property_value_input(
 }
 
 pub(crate) fn de_get_property_value(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_property_value::builders::GetPropertyValueOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_property_value::builders::GetPropertyValueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,12 +175,13 @@ pub(crate) fn de_get_property_value(
                 }
                 "propertyValues" => {
                     builder = builder.set_property_values(crate::protocol_serde::shape_property_latest_value_map::de_property_latest_value_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "tabularPropertyValues" => {
-                    builder = builder
-                        .set_tabular_property_values(crate::protocol_serde::shape_tabular_property_values::de_tabular_property_values(tokens)?);
+                    builder = builder.set_tabular_property_values(crate::protocol_serde::shape_tabular_property_values::de_tabular_property_values(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

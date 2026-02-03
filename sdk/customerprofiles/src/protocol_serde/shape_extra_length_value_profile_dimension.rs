@@ -20,6 +20,7 @@ pub fn ser_extra_length_value_profile_dimension(
 
 pub(crate) fn de_extra_length_value_profile_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExtraLengthValueProfileDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "Values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_extra_length_values::de_extra_length_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_extra_length_values::de_extra_length_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,7 @@ pub fn ser_virtual_gateway_client_policy_tls(
 
 pub(crate) fn de_virtual_gateway_client_policy_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayClientPolicyTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,19 +53,19 @@ where
                             builder = builder.set_enforce(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ports" => {
-                            builder = builder.set_ports(crate::protocol_serde::shape_port_set::de_port_set(tokens)?);
+                            builder = builder.set_ports(crate::protocol_serde::shape_port_set::de_port_set(tokens, _value)?);
                         }
                         "certificate" => {
                             builder = builder.set_certificate(
                                 crate::protocol_serde::shape_virtual_gateway_client_tls_certificate::de_virtual_gateway_client_tls_certificate(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "validation" => {
                             builder = builder.set_validation(
                                 crate::protocol_serde::shape_virtual_gateway_tls_validation_context::de_virtual_gateway_tls_validation_context(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

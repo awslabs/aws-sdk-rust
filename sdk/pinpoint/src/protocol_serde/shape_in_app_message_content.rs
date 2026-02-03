@@ -38,6 +38,7 @@ pub fn ser_in_app_message_content(
 
 pub(crate) fn de_in_app_message_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InAppMessageContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,12 +61,12 @@ where
                         }
                         "BodyConfig" => {
                             builder = builder.set_body_config(
-                                crate::protocol_serde::shape_in_app_message_body_config::de_in_app_message_body_config(tokens)?,
+                                crate::protocol_serde::shape_in_app_message_body_config::de_in_app_message_body_config(tokens, _value)?,
                             );
                         }
                         "HeaderConfig" => {
                             builder = builder.set_header_config(
-                                crate::protocol_serde::shape_in_app_message_header_config::de_in_app_message_header_config(tokens)?,
+                                crate::protocol_serde::shape_in_app_message_header_config::de_in_app_message_header_config(tokens, _value)?,
                             );
                         }
                         "ImageUrl" => {
@@ -76,11 +77,14 @@ where
                             );
                         }
                         "PrimaryBtn" => {
-                            builder = builder.set_primary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(tokens)?);
+                            builder = builder.set_primary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(
+                                tokens, _value,
+                            )?);
                         }
                         "SecondaryBtn" => {
-                            builder =
-                                builder.set_secondary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(tokens)?);
+                            builder = builder.set_secondary_btn(crate::protocol_serde::shape_in_app_message_button::de_in_app_message_button(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -467,13 +467,13 @@ pub fn ser_describe_merge_conflicts_input(
 }
 
 pub(crate) fn de_describe_merge_conflicts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -481,10 +481,10 @@ pub(crate) fn de_describe_merge_conflicts(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "conflictMetadata" => {
-                    builder = builder.set_conflict_metadata(crate::protocol_serde::shape_conflict_metadata::de_conflict_metadata(tokens)?);
+                    builder = builder.set_conflict_metadata(crate::protocol_serde::shape_conflict_metadata::de_conflict_metadata(tokens, _value)?);
                 }
                 "mergeHunks" => {
-                    builder = builder.set_merge_hunks(crate::protocol_serde::shape_merge_hunks::de_merge_hunks(tokens)?);
+                    builder = builder.set_merge_hunks(crate::protocol_serde::shape_merge_hunks::de_merge_hunks(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

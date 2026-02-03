@@ -40,13 +40,13 @@ pub fn ser_describe_endpoint_input(
 }
 
 pub(crate) fn de_describe_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -76,12 +76,12 @@ pub(crate) fn de_describe_endpoint(
                 }
                 "ProductionVariants" => {
                     builder = builder.set_production_variants(
-                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens)?,
+                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value)?,
                     );
                 }
                 "DataCaptureConfig" => {
                     builder = builder.set_data_capture_config(
-                        crate::protocol_serde::shape_data_capture_config_summary::de_data_capture_config_summary(tokens)?,
+                        crate::protocol_serde::shape_data_capture_config_summary::de_data_capture_config_summary(tokens, _value)?,
                     );
                 }
                 "EndpointStatus" => {
@@ -111,27 +111,29 @@ pub(crate) fn de_describe_endpoint(
                     )?);
                 }
                 "LastDeploymentConfig" => {
-                    builder = builder.set_last_deployment_config(crate::protocol_serde::shape_deployment_config::de_deployment_config(tokens)?);
+                    builder =
+                        builder.set_last_deployment_config(crate::protocol_serde::shape_deployment_config::de_deployment_config(tokens, _value)?);
                 }
                 "AsyncInferenceConfig" => {
-                    builder =
-                        builder.set_async_inference_config(crate::protocol_serde::shape_async_inference_config::de_async_inference_config(tokens)?);
+                    builder = builder.set_async_inference_config(crate::protocol_serde::shape_async_inference_config::de_async_inference_config(
+                        tokens, _value,
+                    )?);
                 }
                 "PendingDeploymentSummary" => {
                     builder = builder.set_pending_deployment_summary(
-                        crate::protocol_serde::shape_pending_deployment_summary::de_pending_deployment_summary(tokens)?,
+                        crate::protocol_serde::shape_pending_deployment_summary::de_pending_deployment_summary(tokens, _value)?,
                     );
                 }
                 "ExplainerConfig" => {
-                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(tokens)?);
+                    builder = builder.set_explainer_config(crate::protocol_serde::shape_explainer_config::de_explainer_config(tokens, _value)?);
                 }
                 "ShadowProductionVariants" => {
                     builder = builder.set_shadow_production_variants(
-                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens)?,
+                        crate::protocol_serde::shape_production_variant_summary_list::de_production_variant_summary_list(tokens, _value)?,
                     );
                 }
                 "MetricsConfig" => {
-                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens)?);
+                    builder = builder.set_metrics_config(crate::protocol_serde::shape_metrics_config::de_metrics_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -33,6 +33,7 @@ pub fn ser_tls_validation_context_trust(
 
 pub(crate) fn de_tls_validation_context_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TlsValidationContextTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,15 +63,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "acm" => Some(crate::types::TlsValidationContextTrust::Acm(
-                            crate::protocol_serde::shape_tls_validation_context_acm_trust::de_tls_validation_context_acm_trust(tokens)?
+                            crate::protocol_serde::shape_tls_validation_context_acm_trust::de_tls_validation_context_acm_trust(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'acm' cannot be null"))?,
                         )),
                         "file" => Some(crate::types::TlsValidationContextTrust::File(
-                            crate::protocol_serde::shape_tls_validation_context_file_trust::de_tls_validation_context_file_trust(tokens)?
+                            crate::protocol_serde::shape_tls_validation_context_file_trust::de_tls_validation_context_file_trust(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
                         )),
                         "sds" => Some(crate::types::TlsValidationContextTrust::Sds(
-                            crate::protocol_serde::shape_tls_validation_context_sds_trust::de_tls_validation_context_sds_trust(tokens)?
+                            crate::protocol_serde::shape_tls_validation_context_sds_trust::de_tls_validation_context_sds_trust(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?,
                         )),
                         _ => {

@@ -35,6 +35,7 @@ pub fn ser_marketing(
 
 pub(crate) fn de_marketing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Marketing>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,10 +64,10 @@ where
                             );
                         }
                         "UseCases" => {
-                            builder = builder.set_use_cases(crate::protocol_serde::shape_use_cases::de_use_cases(tokens)?);
+                            builder = builder.set_use_cases(crate::protocol_serde::shape_use_cases::de_use_cases(tokens, _value)?);
                         }
                         "Channels" => {
-                            builder = builder.set_channels(crate::protocol_serde::shape_channels::de_channels(tokens)?);
+                            builder = builder.set_channels(crate::protocol_serde::shape_channels::de_channels(tokens, _value)?);
                         }
                         "AwsFundingUsed" => {
                             builder = builder.set_aws_funding_used(

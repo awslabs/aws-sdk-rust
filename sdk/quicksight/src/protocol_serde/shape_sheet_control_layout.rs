@@ -14,6 +14,7 @@ pub fn ser_sheet_control_layout(
 
 pub(crate) fn de_sheet_control_layout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetControlLayout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Configuration" => {
                             builder = builder.set_configuration(
-                                crate::protocol_serde::shape_sheet_control_layout_configuration::de_sheet_control_layout_configuration(tokens)?,
+                                crate::protocol_serde::shape_sheet_control_layout_configuration::de_sheet_control_layout_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

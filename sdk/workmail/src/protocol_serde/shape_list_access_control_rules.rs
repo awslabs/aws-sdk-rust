@@ -91,13 +91,13 @@ pub fn ser_list_access_control_rules_input(
 }
 
 pub(crate) fn de_list_access_control_rules(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_access_control_rules::builders::ListAccessControlRulesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_access_control_rules::builders::ListAccessControlRulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -106,7 +106,7 @@ pub(crate) fn de_list_access_control_rules(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Rules" => {
                     builder = builder.set_rules(crate::protocol_serde::shape_access_control_rules_list::de_access_control_rules_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

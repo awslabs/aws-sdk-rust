@@ -99,13 +99,13 @@ pub fn ser_search_system_templates_input(
 }
 
 pub(crate) fn de_search_system_templates(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_system_templates::builders::SearchSystemTemplatesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::search_system_templates::builders::SearchSystemTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_search_system_templates(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "summaries" => {
                     builder = builder.set_summaries(crate::protocol_serde::shape_system_template_summaries::de_system_template_summaries(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "nextToken" => {

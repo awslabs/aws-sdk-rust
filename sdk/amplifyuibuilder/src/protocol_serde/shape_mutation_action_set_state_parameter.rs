@@ -20,6 +20,7 @@ pub fn ser_mutation_action_set_state_parameter(
 
 pub(crate) fn de_mutation_action_set_state_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MutationActionSetStateParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                             );
                         }
                         "set" => {
-                            builder = builder.set_set(crate::protocol_serde::shape_component_property::de_component_property(tokens)?);
+                            builder = builder.set_set(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

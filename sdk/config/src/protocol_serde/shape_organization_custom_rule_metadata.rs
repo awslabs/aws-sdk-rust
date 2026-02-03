@@ -47,6 +47,7 @@ pub fn ser_organization_custom_rule_metadata(
 
 pub(crate) fn de_organization_custom_rule_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OrganizationCustomRuleMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,7 +78,7 @@ where
                         "OrganizationConfigRuleTriggerTypes" => {
                             builder = builder.set_organization_config_rule_trigger_types(
                                 crate::protocol_serde::shape_organization_config_rule_trigger_types::de_organization_config_rule_trigger_types(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -96,8 +97,9 @@ where
                             );
                         }
                         "ResourceTypesScope" => {
-                            builder =
-                                builder.set_resource_types_scope(crate::protocol_serde::shape_resource_types_scope::de_resource_types_scope(tokens)?);
+                            builder = builder.set_resource_types_scope(crate::protocol_serde::shape_resource_types_scope::de_resource_types_scope(
+                                tokens, _value,
+                            )?);
                         }
                         "ResourceIdScope" => {
                             builder = builder.set_resource_id_scope(

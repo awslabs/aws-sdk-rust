@@ -69,13 +69,13 @@ pub fn ser_describe_labeling_job_input(
 }
 
 pub(crate) fn de_describe_labeling_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_labeling_job::builders::DescribeLabelingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_labeling_job::builders::DescribeLabelingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -90,7 +90,7 @@ pub(crate) fn de_describe_labeling_job(
                     );
                 }
                 "LabelCounters" => {
-                    builder = builder.set_label_counters(crate::protocol_serde::shape_label_counters::de_label_counters(tokens)?);
+                    builder = builder.set_label_counters(crate::protocol_serde::shape_label_counters::de_label_counters(tokens, _value)?);
                 }
                 "FailureReason" => {
                     builder = builder.set_failure_reason(
@@ -141,12 +141,12 @@ pub(crate) fn de_describe_labeling_job(
                 }
                 "InputConfig" => {
                     builder = builder.set_input_config(crate::protocol_serde::shape_labeling_job_input_config::de_labeling_job_input_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "OutputConfig" => {
                     builder = builder.set_output_config(crate::protocol_serde::shape_labeling_job_output_config::de_labeling_job_output_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "RoleArn" => {
@@ -165,22 +165,23 @@ pub(crate) fn de_describe_labeling_job(
                 }
                 "StoppingConditions" => {
                     builder = builder.set_stopping_conditions(
-                        crate::protocol_serde::shape_labeling_job_stopping_conditions::de_labeling_job_stopping_conditions(tokens)?,
+                        crate::protocol_serde::shape_labeling_job_stopping_conditions::de_labeling_job_stopping_conditions(tokens, _value)?,
                     );
                 }
                 "LabelingJobAlgorithmsConfig" => {
                     builder = builder.set_labeling_job_algorithms_config(
-                        crate::protocol_serde::shape_labeling_job_algorithms_config::de_labeling_job_algorithms_config(tokens)?,
+                        crate::protocol_serde::shape_labeling_job_algorithms_config::de_labeling_job_algorithms_config(tokens, _value)?,
                     );
                 }
                 "HumanTaskConfig" => {
-                    builder = builder.set_human_task_config(crate::protocol_serde::shape_human_task_config::de_human_task_config(tokens)?);
+                    builder = builder.set_human_task_config(crate::protocol_serde::shape_human_task_config::de_human_task_config(tokens, _value)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "LabelingJobOutput" => {
-                    builder = builder.set_labeling_job_output(crate::protocol_serde::shape_labeling_job_output::de_labeling_job_output(tokens)?);
+                    builder =
+                        builder.set_labeling_job_output(crate::protocol_serde::shape_labeling_job_output::de_labeling_job_output(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

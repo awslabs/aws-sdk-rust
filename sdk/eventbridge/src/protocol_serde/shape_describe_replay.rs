@@ -78,13 +78,13 @@ pub fn ser_describe_replay_input(
 }
 
 pub(crate) fn de_describe_replay(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_replay::builders::DescribeReplayOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_replay::builders::DescribeReplayOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_describe_replay(
                     );
                 }
                 "Destination" => {
-                    builder = builder.set_destination(crate::protocol_serde::shape_replay_destination::de_replay_destination(tokens)?);
+                    builder = builder.set_destination(crate::protocol_serde::shape_replay_destination::de_replay_destination(tokens, _value)?);
                 }
                 "EventStartTime" => {
                     builder = builder.set_event_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

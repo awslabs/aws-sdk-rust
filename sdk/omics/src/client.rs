@@ -307,7 +307,7 @@ mod create_workflow_version;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_omics::Error> {
 /// # let client: aws_sdk_omics::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.abort_multipart_read_set_upload()
 ///     .customize()

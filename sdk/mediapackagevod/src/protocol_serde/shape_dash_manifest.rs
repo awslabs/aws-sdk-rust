@@ -32,6 +32,7 @@ pub fn ser_dash_manifest(
 
 pub(crate) fn de_dash_manifest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashManifest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,7 +82,8 @@ where
                             );
                         }
                         "streamSelection" => {
-                            builder = builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(tokens)?);
+                            builder =
+                                builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

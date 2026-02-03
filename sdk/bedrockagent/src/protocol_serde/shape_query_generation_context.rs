@@ -32,6 +32,7 @@ pub fn ser_query_generation_context(
 
 pub(crate) fn de_query_generation_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QueryGenerationContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tables" => {
-                            builder = builder.set_tables(crate::protocol_serde::shape_query_generation_tables::de_query_generation_tables(tokens)?);
+                            builder = builder.set_tables(crate::protocol_serde::shape_query_generation_tables::de_query_generation_tables(
+                                tokens, _value,
+                            )?);
                         }
                         "curatedQueries" => {
-                            builder = builder.set_curated_queries(crate::protocol_serde::shape_curated_queries::de_curated_queries(tokens)?);
+                            builder = builder.set_curated_queries(crate::protocol_serde::shape_curated_queries::de_curated_queries(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

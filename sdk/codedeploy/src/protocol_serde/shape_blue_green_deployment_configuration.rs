@@ -26,6 +26,7 @@ pub fn ser_blue_green_deployment_configuration(
 
 pub(crate) fn de_blue_green_deployment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BlueGreenDeploymentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,17 +42,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "terminateBlueInstancesOnDeploymentSuccess" => {
                             builder = builder.set_terminate_blue_instances_on_deployment_success(
-                                crate::protocol_serde::shape_blue_instance_termination_option::de_blue_instance_termination_option(tokens)?,
+                                crate::protocol_serde::shape_blue_instance_termination_option::de_blue_instance_termination_option(tokens, _value)?,
                             );
                         }
                         "deploymentReadyOption" => {
                             builder = builder.set_deployment_ready_option(
-                                crate::protocol_serde::shape_deployment_ready_option::de_deployment_ready_option(tokens)?,
+                                crate::protocol_serde::shape_deployment_ready_option::de_deployment_ready_option(tokens, _value)?,
                             );
                         }
                         "greenFleetProvisioningOption" => {
                             builder = builder.set_green_fleet_provisioning_option(
-                                crate::protocol_serde::shape_green_fleet_provisioning_option::de_green_fleet_provisioning_option(tokens)?,
+                                crate::protocol_serde::shape_green_fleet_provisioning_option::de_green_fleet_provisioning_option(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

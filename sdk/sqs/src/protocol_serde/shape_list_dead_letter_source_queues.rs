@@ -135,13 +135,13 @@ pub fn ser_list_dead_letter_source_queues_input(
 }
 
 pub(crate) fn de_list_dead_letter_source_queues(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,7 @@ pub(crate) fn de_list_dead_letter_source_queues(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "queueUrls" => {
-                    builder = builder.set_queue_urls(crate::protocol_serde::shape_queue_url_list::de_queue_url_list(tokens)?);
+                    builder = builder.set_queue_urls(crate::protocol_serde::shape_queue_url_list::de_queue_url_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

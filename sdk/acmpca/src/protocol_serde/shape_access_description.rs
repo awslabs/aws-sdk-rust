@@ -20,6 +20,7 @@ pub fn ser_access_description(
 
 pub(crate) fn de_access_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AccessDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AccessMethod" => {
-                            builder = builder.set_access_method(crate::protocol_serde::shape_access_method::de_access_method(tokens)?);
+                            builder = builder.set_access_method(crate::protocol_serde::shape_access_method::de_access_method(tokens, _value)?);
                         }
                         "AccessLocation" => {
-                            builder = builder.set_access_location(crate::protocol_serde::shape_general_name::de_general_name(tokens)?);
+                            builder = builder.set_access_location(crate::protocol_serde::shape_general_name::de_general_name(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

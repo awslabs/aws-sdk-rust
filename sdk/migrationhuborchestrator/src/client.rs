@@ -153,7 +153,7 @@ mod create_workflow_step_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_migrationhuborchestrator::Error> {
 /// # let client: aws_sdk_migrationhuborchestrator::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_template()
 ///     .customize()

@@ -148,13 +148,13 @@ pub fn ser_delete_account_assignment_input(
 }
 
 pub(crate) fn de_delete_account_assignment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_account_assignment::builders::DeleteAccountAssignmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_delete_account_assignment(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccountAssignmentDeletionStatus" => {
                     builder = builder.set_account_assignment_deletion_status(
-                        crate::protocol_serde::shape_account_assignment_operation_status::de_account_assignment_operation_status(tokens)?,
+                        crate::protocol_serde::shape_account_assignment_operation_status::de_account_assignment_operation_status(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

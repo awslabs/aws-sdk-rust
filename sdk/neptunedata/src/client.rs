@@ -159,7 +159,7 @@ mod create_ml_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_neptunedata::Error> {
 /// # let client: aws_sdk_neptunedata::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_gremlin_query()
 ///     .customize()

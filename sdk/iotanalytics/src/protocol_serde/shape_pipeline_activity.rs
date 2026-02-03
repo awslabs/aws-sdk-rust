@@ -68,6 +68,7 @@ pub fn ser_pipeline_activity(
 
 pub(crate) fn de_pipeline_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipelineActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,42 +83,43 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "channel" => {
-                            builder = builder.set_channel(crate::protocol_serde::shape_channel_activity::de_channel_activity(tokens)?);
+                            builder = builder.set_channel(crate::protocol_serde::shape_channel_activity::de_channel_activity(tokens, _value)?);
                         }
                         "lambda" => {
-                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_activity::de_lambda_activity(tokens)?);
+                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_activity::de_lambda_activity(tokens, _value)?);
                         }
                         "datastore" => {
-                            builder = builder.set_datastore(crate::protocol_serde::shape_datastore_activity::de_datastore_activity(tokens)?);
+                            builder = builder.set_datastore(crate::protocol_serde::shape_datastore_activity::de_datastore_activity(tokens, _value)?);
                         }
                         "addAttributes" => {
-                            builder =
-                                builder.set_add_attributes(crate::protocol_serde::shape_add_attributes_activity::de_add_attributes_activity(tokens)?);
+                            builder = builder.set_add_attributes(crate::protocol_serde::shape_add_attributes_activity::de_add_attributes_activity(
+                                tokens, _value,
+                            )?);
                         }
                         "removeAttributes" => {
                             builder = builder.set_remove_attributes(
-                                crate::protocol_serde::shape_remove_attributes_activity::de_remove_attributes_activity(tokens)?,
+                                crate::protocol_serde::shape_remove_attributes_activity::de_remove_attributes_activity(tokens, _value)?,
                             );
                         }
                         "selectAttributes" => {
                             builder = builder.set_select_attributes(
-                                crate::protocol_serde::shape_select_attributes_activity::de_select_attributes_activity(tokens)?,
+                                crate::protocol_serde::shape_select_attributes_activity::de_select_attributes_activity(tokens, _value)?,
                             );
                         }
                         "filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_filter_activity::de_filter_activity(tokens)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_filter_activity::de_filter_activity(tokens, _value)?);
                         }
                         "math" => {
-                            builder = builder.set_math(crate::protocol_serde::shape_math_activity::de_math_activity(tokens)?);
+                            builder = builder.set_math(crate::protocol_serde::shape_math_activity::de_math_activity(tokens, _value)?);
                         }
                         "deviceRegistryEnrich" => {
                             builder = builder.set_device_registry_enrich(
-                                crate::protocol_serde::shape_device_registry_enrich_activity::de_device_registry_enrich_activity(tokens)?,
+                                crate::protocol_serde::shape_device_registry_enrich_activity::de_device_registry_enrich_activity(tokens, _value)?,
                             );
                         }
                         "deviceShadowEnrich" => {
                             builder = builder.set_device_shadow_enrich(
-                                crate::protocol_serde::shape_device_shadow_enrich_activity::de_device_shadow_enrich_activity(tokens)?,
+                                crate::protocol_serde::shape_device_shadow_enrich_activity::de_device_shadow_enrich_activity(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

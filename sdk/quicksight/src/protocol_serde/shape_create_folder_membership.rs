@@ -178,13 +178,13 @@ pub fn de_create_folder_membership_http_response(
 }
 
 pub(crate) fn de_create_folder_membership(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_folder_membership::builders::CreateFolderMembershipOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_folder_membership::builders::CreateFolderMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -192,7 +192,7 @@ pub(crate) fn de_create_folder_membership(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FolderMember" => {
-                    builder = builder.set_folder_member(crate::protocol_serde::shape_folder_member::de_folder_member(tokens)?);
+                    builder = builder.set_folder_member(crate::protocol_serde::shape_folder_member::de_folder_member(tokens, _value)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

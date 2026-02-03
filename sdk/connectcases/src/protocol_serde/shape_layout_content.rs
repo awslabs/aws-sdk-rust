@@ -19,6 +19,7 @@ pub fn ser_layout_content(
 
 pub(crate) fn de_layout_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LayoutContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "basic" => Some(crate::types::LayoutContent::Basic(
-                            crate::protocol_serde::shape_basic_layout::de_basic_layout(tokens)?
+                            crate::protocol_serde::shape_basic_layout::de_basic_layout(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'basic' cannot be null"))?,
                         )),
                         _ => {

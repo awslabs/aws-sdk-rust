@@ -35,6 +35,7 @@ pub fn ser_rule_group_source_stateful_rules_details(
 
 pub(crate) fn de_rule_group_source_stateful_rules_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleGroupSourceStatefulRulesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,12 @@ where
                         }
                         "Header" => {
                             builder = builder.set_header(
-                                    crate::protocol_serde::shape_rule_group_source_stateful_rules_header_details::de_rule_group_source_stateful_rules_header_details(tokens)?
+                                    crate::protocol_serde::shape_rule_group_source_stateful_rules_header_details::de_rule_group_source_stateful_rules_header_details(tokens, _value)?
                                 );
                         }
                         "RuleOptions" => {
                             builder = builder.set_rule_options(
-                                    crate::protocol_serde::shape_rule_group_source_stateful_rules_options_list::de_rule_group_source_stateful_rules_options_list(tokens)?
+                                    crate::protocol_serde::shape_rule_group_source_stateful_rules_options_list::de_rule_group_source_stateful_rules_options_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

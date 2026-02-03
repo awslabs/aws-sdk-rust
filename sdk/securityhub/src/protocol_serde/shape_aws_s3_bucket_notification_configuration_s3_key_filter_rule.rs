@@ -14,6 +14,7 @@ pub fn ser_aws_s3_bucket_notification_configuration_s3_key_filter_rule(
 
 pub(crate) fn de_aws_s3_bucket_notification_configuration_s3_key_filter_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

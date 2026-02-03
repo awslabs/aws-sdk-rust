@@ -46,12 +46,12 @@ pub fn de_delete_object_http_response(
 
 pub fn ser_delete_object_headers(
     input: &crate::operation::delete_object::DeleteObjectInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.mfa {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "mfa",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -62,7 +62,7 @@ pub fn ser_delete_object_headers(
     if let ::std::option::Option::Some(inner_3) = &input.request_payer {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_payer",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -74,7 +74,7 @@ pub fn ser_delete_object_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_5);
         let formatted_6 = encoder.encode();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "bypass_governance_retention",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -85,7 +85,7 @@ pub fn ser_delete_object_headers(
     if let ::std::option::Option::Some(inner_7) = &input.expected_bucket_owner {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expected_bucket_owner",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -96,7 +96,7 @@ pub fn ser_delete_object_headers(
     if let ::std::option::Option::Some(inner_9) = &input.if_match {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_match",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -107,7 +107,7 @@ pub fn ser_delete_object_headers(
     if let ::std::option::Option::Some(inner_11) = &input.if_match_last_modified_time {
         let formatted_12 = inner_11.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_match_last_modified_time",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -119,7 +119,7 @@ pub fn ser_delete_object_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
         let formatted_14 = encoder.encode();
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_match_size",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

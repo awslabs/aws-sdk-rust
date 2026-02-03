@@ -80,13 +80,13 @@ pub fn ser_get_scaling_configuration_recommendation_input(
 }
 
 pub(crate) fn de_get_scaling_configuration_recommendation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_scaling_configuration_recommendation::builders::GetScalingConfigurationRecommendationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_scaling_configuration_recommendation::builders::GetScalingConfigurationRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,15 +123,17 @@ pub(crate) fn de_get_scaling_configuration_recommendation(
                 }
                 "ScalingPolicyObjective" => {
                     builder = builder.set_scaling_policy_objective(
-                        crate::protocol_serde::shape_scaling_policy_objective::de_scaling_policy_objective(tokens)?,
+                        crate::protocol_serde::shape_scaling_policy_objective::de_scaling_policy_objective(tokens, _value)?,
                     );
                 }
                 "Metric" => {
-                    builder = builder.set_metric(crate::protocol_serde::shape_scaling_policy_metric::de_scaling_policy_metric(tokens)?);
+                    builder = builder.set_metric(crate::protocol_serde::shape_scaling_policy_metric::de_scaling_policy_metric(
+                        tokens, _value,
+                    )?);
                 }
                 "DynamicScalingConfiguration" => {
                     builder = builder.set_dynamic_scaling_configuration(
-                        crate::protocol_serde::shape_dynamic_scaling_configuration::de_dynamic_scaling_configuration(tokens)?,
+                        crate::protocol_serde::shape_dynamic_scaling_configuration::de_dynamic_scaling_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

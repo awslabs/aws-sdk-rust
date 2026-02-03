@@ -26,6 +26,7 @@ pub fn ser_dynamodb_data_source_config(
 
 pub(crate) fn de_dynamodb_data_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DynamodbDataSourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,8 @@ where
                             builder = builder.set_use_caller_credentials(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "deltaSyncConfig" => {
-                            builder = builder.set_delta_sync_config(crate::protocol_serde::shape_delta_sync_config::de_delta_sync_config(tokens)?);
+                            builder =
+                                builder.set_delta_sync_config(crate::protocol_serde::shape_delta_sync_config::de_delta_sync_config(tokens, _value)?);
                         }
                         "versioned" => {
                             builder = builder.set_versioned(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

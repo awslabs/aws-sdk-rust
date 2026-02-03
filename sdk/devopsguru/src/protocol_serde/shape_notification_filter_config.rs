@@ -26,6 +26,7 @@ pub fn ser_notification_filter_config(
 
 pub(crate) fn de_notification_filter_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NotificationFilterConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Severities" => {
-                            builder = builder.set_severities(crate::protocol_serde::shape_insight_severities::de_insight_severities(tokens)?);
+                            builder = builder.set_severities(crate::protocol_serde::shape_insight_severities::de_insight_severities(tokens, _value)?);
                         }
                         "MessageTypes" => {
                             builder = builder.set_message_types(
-                                crate::protocol_serde::shape_notification_message_types::de_notification_message_types(tokens)?,
+                                crate::protocol_serde::shape_notification_message_types::de_notification_message_types(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

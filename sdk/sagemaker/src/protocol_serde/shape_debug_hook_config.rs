@@ -36,6 +36,7 @@ pub fn ser_debug_hook_config(
 
 pub(crate) fn de_debug_hook_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DebugHookConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,11 +65,11 @@ where
                             );
                         }
                         "HookParameters" => {
-                            builder = builder.set_hook_parameters(crate::protocol_serde::shape_hook_parameters::de_hook_parameters(tokens)?);
+                            builder = builder.set_hook_parameters(crate::protocol_serde::shape_hook_parameters::de_hook_parameters(tokens, _value)?);
                         }
                         "CollectionConfigurations" => {
                             builder = builder.set_collection_configurations(
-                                crate::protocol_serde::shape_collection_configurations::de_collection_configurations(tokens)?,
+                                crate::protocol_serde::shape_collection_configurations::de_collection_configurations(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

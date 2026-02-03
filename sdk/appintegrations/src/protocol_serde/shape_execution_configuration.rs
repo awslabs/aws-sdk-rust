@@ -23,6 +23,7 @@ pub fn ser_execution_configuration(
 
 pub(crate) fn de_execution_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExecutionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,13 @@ where
                         }
                         "OnDemandConfiguration" => {
                             builder = builder.set_on_demand_configuration(
-                                crate::protocol_serde::shape_on_demand_configuration::de_on_demand_configuration(tokens)?,
+                                crate::protocol_serde::shape_on_demand_configuration::de_on_demand_configuration(tokens, _value)?,
                             );
                         }
                         "ScheduleConfiguration" => {
-                            builder = builder
-                                .set_schedule_configuration(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens)?);
+                            builder = builder.set_schedule_configuration(
+                                crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

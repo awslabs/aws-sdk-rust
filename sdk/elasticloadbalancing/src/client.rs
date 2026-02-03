@@ -202,7 +202,7 @@ mod create_load_balancer_policy;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_elasticloadbalancing::Error> {
 /// # let client: aws_sdk_elasticloadbalancing::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags()
 ///     .customize()

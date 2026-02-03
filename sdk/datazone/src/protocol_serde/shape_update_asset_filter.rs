@@ -150,13 +150,13 @@ pub fn ser_update_asset_filter_input(
 }
 
 pub(crate) fn de_update_asset_filter(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_asset_filter::builders::UpdateAssetFilterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,7 +172,7 @@ pub(crate) fn de_update_asset_filter(
                 }
                 "configuration" => {
                     builder = builder.set_configuration(crate::protocol_serde::shape_asset_filter_configuration::de_asset_filter_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "createdAt" => {
@@ -196,7 +196,7 @@ pub(crate) fn de_update_asset_filter(
                     );
                 }
                 "effectiveColumnNames" => {
-                    builder = builder.set_effective_column_names(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens)?);
+                    builder = builder.set_effective_column_names(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens, _value)?);
                 }
                 "effectiveRowFilter" => {
                     builder = builder.set_effective_row_filter(

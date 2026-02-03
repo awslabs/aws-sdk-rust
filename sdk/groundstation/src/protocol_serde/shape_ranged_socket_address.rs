@@ -17,6 +17,7 @@ pub fn ser_ranged_socket_address(
 
 pub(crate) fn de_ranged_socket_address<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RangedSocketAddress>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "portRange" => {
-                            builder = builder.set_port_range(crate::protocol_serde::shape_integer_range::de_integer_range(tokens)?);
+                            builder = builder.set_port_range(crate::protocol_serde::shape_integer_range::de_integer_range(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -46,13 +46,13 @@ pub fn ser_create_prefetch_schedule_input(
 }
 
 pub(crate) fn de_create_prefetch_schedule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -67,7 +67,9 @@ pub(crate) fn de_create_prefetch_schedule(
                     );
                 }
                 "Consumption" => {
-                    builder = builder.set_consumption(crate::protocol_serde::shape_prefetch_consumption::de_prefetch_consumption(tokens)?);
+                    builder = builder.set_consumption(crate::protocol_serde::shape_prefetch_consumption::de_prefetch_consumption(
+                        tokens, _value,
+                    )?);
                 }
                 "Name" => {
                     builder = builder.set_name(
@@ -85,11 +87,11 @@ pub(crate) fn de_create_prefetch_schedule(
                 }
                 "RecurringPrefetchConfiguration" => {
                     builder = builder.set_recurring_prefetch_configuration(
-                        crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(tokens)?,
+                        crate::protocol_serde::shape_recurring_prefetch_configuration::de_recurring_prefetch_configuration(tokens, _value)?,
                     );
                 }
                 "Retrieval" => {
-                    builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(tokens)?);
+                    builder = builder.set_retrieval(crate::protocol_serde::shape_prefetch_retrieval::de_prefetch_retrieval(tokens, _value)?);
                 }
                 "ScheduleType" => {
                     builder = builder.set_schedule_type(

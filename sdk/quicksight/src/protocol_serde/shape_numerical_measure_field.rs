@@ -29,6 +29,7 @@ pub fn ser_numerical_measure_field(
 
 pub(crate) fn de_numerical_measure_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NumericalMeasureField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,16 +51,16 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "AggregationFunction" => {
                             builder = builder.set_aggregation_function(
-                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_numerical_aggregation_function::de_numerical_aggregation_function(tokens, _value)?,
                             );
                         }
                         "FormatConfiguration" => {
                             builder = builder.set_format_configuration(
-                                crate::protocol_serde::shape_number_format_configuration::de_number_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_number_format_configuration::de_number_format_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

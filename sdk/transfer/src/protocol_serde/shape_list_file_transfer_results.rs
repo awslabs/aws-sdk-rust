@@ -118,13 +118,13 @@ pub fn ser_list_file_transfer_results_input(
 }
 
 pub(crate) fn de_list_file_transfer_results(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_file_transfer_results::builders::ListFileTransferResultsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_file_transfer_results::builders::ListFileTransferResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_list_file_transfer_results(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FileTransferResults" => {
                     builder = builder.set_file_transfer_results(
-                        crate::protocol_serde::shape_connector_file_transfer_results::de_connector_file_transfer_results(tokens)?,
+                        crate::protocol_serde::shape_connector_file_transfer_results::de_connector_file_transfer_results(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

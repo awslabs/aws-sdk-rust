@@ -11,6 +11,7 @@ pub fn ser_data_integration_flow_sql_transformation_configuration(
 
 pub(crate) fn de_data_integration_flow_sql_transformation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::DataIntegrationFlowSqlTransformationConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

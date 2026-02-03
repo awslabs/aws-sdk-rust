@@ -56,6 +56,7 @@ pub fn ser_slot(
 
 pub(crate) fn de_slot<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Slot>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -105,7 +106,7 @@ where
                             );
                         }
                         "valueElicitationPrompt" => {
-                            builder = builder.set_value_elicitation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens)?);
+                            builder = builder.set_value_elicitation_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens, _value)?);
                         }
                         "priority" => {
                             builder = builder.set_priority(
@@ -115,8 +116,8 @@ where
                             );
                         }
                         "sampleUtterances" => {
-                            builder =
-                                builder.set_sample_utterances(crate::protocol_serde::shape_slot_utterance_list::de_slot_utterance_list(tokens)?);
+                            builder = builder
+                                .set_sample_utterances(crate::protocol_serde::shape_slot_utterance_list::de_slot_utterance_list(tokens, _value)?);
                         }
                         "responseCard" => {
                             builder = builder.set_response_card(
@@ -133,8 +134,9 @@ where
                             );
                         }
                         "defaultValueSpec" => {
-                            builder = builder
-                                .set_default_value_spec(crate::protocol_serde::shape_slot_default_value_spec::de_slot_default_value_spec(tokens)?);
+                            builder = builder.set_default_value_spec(
+                                crate::protocol_serde::shape_slot_default_value_spec::de_slot_default_value_spec(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -124,13 +124,13 @@ pub fn de_get_online_evaluation_config_http_response(
 }
 
 pub(crate) fn de_get_online_evaluation_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_online_evaluation_config::builders::GetOnlineEvaluationConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_get_online_evaluation_config(
                     )?);
                 }
                 "dataSourceConfig" => {
-                    builder = builder.set_data_source_config(crate::protocol_serde::shape_data_source_config::de_data_source_config(tokens)?);
+                    builder = builder.set_data_source_config(crate::protocol_serde::shape_data_source_config::de_data_source_config(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -161,7 +161,7 @@ pub(crate) fn de_get_online_evaluation_config(
                     );
                 }
                 "evaluators" => {
-                    builder = builder.set_evaluators(crate::protocol_serde::shape_evaluator_list::de_evaluator_list(tokens)?);
+                    builder = builder.set_evaluators(crate::protocol_serde::shape_evaluator_list::de_evaluator_list(tokens, _value)?);
                 }
                 "executionStatus" => {
                     builder = builder.set_execution_status(
@@ -199,10 +199,10 @@ pub(crate) fn de_get_online_evaluation_config(
                     );
                 }
                 "outputConfig" => {
-                    builder = builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens)?);
+                    builder = builder.set_output_config(crate::protocol_serde::shape_output_config::de_output_config(tokens, _value)?);
                 }
                 "rule" => {
-                    builder = builder.set_rule(crate::protocol_serde::shape_rule::de_rule(tokens)?);
+                    builder = builder.set_rule(crate::protocol_serde::shape_rule::de_rule(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

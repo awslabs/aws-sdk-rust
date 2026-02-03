@@ -35,6 +35,7 @@ pub fn ser_target_instances(
 
 pub(crate) fn de_target_instances<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetInstances>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,15 +50,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tagFilters" => {
-                            builder = builder.set_tag_filters(crate::protocol_serde::shape_ec2_tag_filter_list::de_ec2_tag_filter_list(tokens)?);
+                            builder =
+                                builder.set_tag_filters(crate::protocol_serde::shape_ec2_tag_filter_list::de_ec2_tag_filter_list(tokens, _value)?);
                         }
                         "autoScalingGroups" => {
                             builder = builder.set_auto_scaling_groups(
-                                crate::protocol_serde::shape_auto_scaling_group_name_list::de_auto_scaling_group_name_list(tokens)?,
+                                crate::protocol_serde::shape_auto_scaling_group_name_list::de_auto_scaling_group_name_list(tokens, _value)?,
                             );
                         }
                         "ec2TagSet" => {
-                            builder = builder.set_ec2_tag_set(crate::protocol_serde::shape_ec2_tag_set::de_ec2_tag_set(tokens)?);
+                            builder = builder.set_ec2_tag_set(crate::protocol_serde::shape_ec2_tag_set::de_ec2_tag_set(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

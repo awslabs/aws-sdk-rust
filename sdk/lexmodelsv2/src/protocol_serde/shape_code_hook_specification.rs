@@ -14,6 +14,7 @@ pub fn ser_code_hook_specification(
 
 pub(crate) fn de_code_hook_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeHookSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "lambdaCodeHook" => {
-                            builder = builder.set_lambda_code_hook(crate::protocol_serde::shape_lambda_code_hook::de_lambda_code_hook(tokens)?);
+                            builder =
+                                builder.set_lambda_code_hook(crate::protocol_serde::shape_lambda_code_hook::de_lambda_code_hook(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

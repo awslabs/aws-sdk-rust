@@ -28,6 +28,7 @@ pub fn ser_grant_constraints(
 
 pub(crate) fn de_grant_constraints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GrantConstraints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,12 +44,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EncryptionContextSubset" => {
                             builder = builder.set_encryption_context_subset(
-                                crate::protocol_serde::shape_encryption_context_type::de_encryption_context_type(tokens)?,
+                                crate::protocol_serde::shape_encryption_context_type::de_encryption_context_type(tokens, _value)?,
                             );
                         }
                         "EncryptionContextEquals" => {
                             builder = builder.set_encryption_context_equals(
-                                crate::protocol_serde::shape_encryption_context_type::de_encryption_context_type(tokens)?,
+                                crate::protocol_serde::shape_encryption_context_type::de_encryption_context_type(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

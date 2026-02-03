@@ -23,6 +23,7 @@ pub fn ser_principal_permissions(
 
 pub(crate) fn de_principal_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PrincipalPermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,10 +38,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Principal" => {
-                            builder = builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens)?);
+                            builder =
+                                builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens, _value)?);
                         }
                         "Permissions" => {
-                            builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                            builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

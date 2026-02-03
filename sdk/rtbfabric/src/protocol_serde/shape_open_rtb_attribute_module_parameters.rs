@@ -35,6 +35,7 @@ pub fn ser_open_rtb_attribute_module_parameters(
 
 pub(crate) fn de_open_rtb_attribute_module_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenRtbAttributeModuleParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,12 @@ where
                             );
                         }
                         "filterConfiguration" => {
-                            builder =
-                                builder.set_filter_configuration(crate::protocol_serde::shape_filter_configuration::de_filter_configuration(tokens)?);
+                            builder = builder.set_filter_configuration(crate::protocol_serde::shape_filter_configuration::de_filter_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
                         }
                         "holdbackPercentage" => {
                             builder = builder.set_holdback_percentage(

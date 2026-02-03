@@ -23,6 +23,7 @@ pub fn ser_component_deployment_specification(
 
 pub(crate) fn de_component_deployment_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentDeploymentSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,11 +46,11 @@ where
                         }
                         "configurationUpdate" => {
                             builder = builder.set_configuration_update(
-                                crate::protocol_serde::shape_component_configuration_update::de_component_configuration_update(tokens)?,
+                                crate::protocol_serde::shape_component_configuration_update::de_component_configuration_update(tokens, _value)?,
                             );
                         }
                         "runWith" => {
-                            builder = builder.set_run_with(crate::protocol_serde::shape_component_run_with::de_component_run_with(tokens)?);
+                            builder = builder.set_run_with(crate::protocol_serde::shape_component_run_with::de_component_run_with(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

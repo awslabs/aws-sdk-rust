@@ -11,6 +11,7 @@ pub fn ser_data_accessor_idc_trusted_token_issuer_configuration(
 
 pub(crate) fn de_data_accessor_idc_trusted_token_issuer_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::DataAccessorIdcTrustedTokenIssuerConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

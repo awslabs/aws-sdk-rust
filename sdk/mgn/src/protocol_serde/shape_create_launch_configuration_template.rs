@@ -113,13 +113,13 @@ pub fn ser_create_launch_configuration_template_input(
 }
 
 pub(crate) fn de_create_launch_configuration_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,7 +164,7 @@ pub(crate) fn de_create_launch_configuration_template(
                 }
                 "largeVolumeConf" => {
                     builder = builder.set_large_volume_conf(crate::protocol_serde::shape_launch_template_disk_conf::de_launch_template_disk_conf(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "launchConfigurationTemplateID" => {
@@ -182,7 +182,7 @@ pub(crate) fn de_create_launch_configuration_template(
                     );
                 }
                 "licensing" => {
-                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens)?);
+                    builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens, _value)?);
                 }
                 "mapAutoTaggingMpeID" => {
                     builder = builder.set_map_auto_tagging_mpe_id(
@@ -199,11 +199,12 @@ pub(crate) fn de_create_launch_configuration_template(
                     );
                 }
                 "postLaunchActions" => {
-                    builder = builder.set_post_launch_actions(crate::protocol_serde::shape_post_launch_actions::de_post_launch_actions(tokens)?);
+                    builder =
+                        builder.set_post_launch_actions(crate::protocol_serde::shape_post_launch_actions::de_post_launch_actions(tokens, _value)?);
                 }
                 "smallVolumeConf" => {
                     builder = builder.set_small_volume_conf(crate::protocol_serde::shape_launch_template_disk_conf::de_launch_template_disk_conf(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "smallVolumeMaxSize" => {
@@ -214,7 +215,7 @@ pub(crate) fn de_create_launch_configuration_template(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "targetInstanceTypeRightSizingMethod" => {
                     builder = builder.set_target_instance_type_right_sizing_method(

@@ -29,6 +29,7 @@ pub fn ser_recommendation_job_stopping_conditions(
 
 pub(crate) fn de_recommendation_job_stopping_conditions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecommendationJobStoppingConditions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         }
                         "ModelLatencyThresholds" => {
                             builder = builder.set_model_latency_thresholds(
-                                crate::protocol_serde::shape_model_latency_thresholds::de_model_latency_thresholds(tokens)?,
+                                crate::protocol_serde::shape_model_latency_thresholds::de_model_latency_thresholds(tokens, _value)?,
                             );
                         }
                         "FlatInvocations" => {

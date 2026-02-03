@@ -73,13 +73,13 @@ pub fn ser_describe_image_permissions_input(
 }
 
 pub(crate) fn de_describe_image_permissions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_image_permissions::builders::DescribeImagePermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -95,7 +95,7 @@ pub(crate) fn de_describe_image_permissions(
                 }
                 "SharedImagePermissionsList" => {
                     builder = builder.set_shared_image_permissions_list(
-                        crate::protocol_serde::shape_shared_image_permissions_list::de_shared_image_permissions_list(tokens)?,
+                        crate::protocol_serde::shape_shared_image_permissions_list::de_shared_image_permissions_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

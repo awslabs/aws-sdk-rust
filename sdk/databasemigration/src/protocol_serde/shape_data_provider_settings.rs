@@ -84,6 +84,7 @@ pub fn ser_data_provider_settings(
 
 pub(crate) fn de_data_provider_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataProviderSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,104 +92,108 @@ where
     let mut variant = None;
     match tokens.next().transpose()? {
         Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => return Ok(None),
-        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => loop {
-            match tokens.next().transpose()? {
-                Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                    if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
-                        tokens.peek()
-                    {
-                        let _ = tokens.next().expect("peek returned a token")?;
-                        continue;
-                    }
-                    let key = key.to_unescaped()?;
-                    if key == "__type" {
-                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                        continue;
-                    }
-                    if variant.is_some() {
-                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                            "encountered mixed variants in union",
-                        ));
-                    }
-                    variant = match key.as_ref() {
-                        "RedshiftSettings" => Some(crate::types::DataProviderSettings::RedshiftSettings(
-                            crate::protocol_serde::shape_redshift_data_provider_settings::de_redshift_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftSettings' cannot be null"),
-                            )?,
-                        )),
-                        "PostgreSqlSettings" => Some(crate::types::DataProviderSettings::PostgreSqlSettings(
-                            crate::protocol_serde::shape_postgre_sql_data_provider_settings::de_postgre_sql_data_provider_settings(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlSettings' cannot be null")
-                                })?,
-                        )),
-                        "MySqlSettings" => Some(crate::types::DataProviderSettings::MySqlSettings(
-                            crate::protocol_serde::shape_my_sql_data_provider_settings::de_my_sql_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlSettings' cannot be null"),
-                            )?,
-                        )),
-                        "OracleSettings" => Some(crate::types::DataProviderSettings::OracleSettings(
-                            crate::protocol_serde::shape_oracle_data_provider_settings::de_oracle_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleSettings' cannot be null"),
-                            )?,
-                        )),
-                        "SybaseAseSettings" => Some(crate::types::DataProviderSettings::SybaseAseSettings(
-                            crate::protocol_serde::shape_sybase_ase_data_provider_settings::de_sybase_ase_data_provider_settings(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SybaseAseSettings' cannot be null")
-                                })?,
-                        )),
-                        "MicrosoftSqlServerSettings" => Some(crate::types::DataProviderSettings::MicrosoftSqlServerSettings(
-                            crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::de_microsoft_sql_server_data_provider_settings(
-                                tokens,
-                            )?
-                            .ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'MicrosoftSqlServerSettings' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "DocDbSettings" => Some(crate::types::DataProviderSettings::DocDbSettings(
-                            crate::protocol_serde::shape_doc_db_data_provider_settings::de_doc_db_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DocDbSettings' cannot be null"),
-                            )?,
-                        )),
-                        "MariaDbSettings" => Some(crate::types::DataProviderSettings::MariaDbSettings(
-                            crate::protocol_serde::shape_maria_db_data_provider_settings::de_maria_db_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbSettings' cannot be null"),
-                            )?,
-                        )),
-                        "IbmDb2LuwSettings" => Some(crate::types::DataProviderSettings::IbmDb2LuwSettings(
-                            crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::de_ibm_db2_luw_data_provider_settings(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2LuwSettings' cannot be null")
-                                })?,
-                        )),
-                        "IbmDb2zOsSettings" => Some(crate::types::DataProviderSettings::IbmDb2zOsSettings(
-                            crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::de_ibm_db2z_os_data_provider_settings(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2zOsSettings' cannot be null")
-                                })?,
-                        )),
-                        "MongoDbSettings" => Some(crate::types::DataProviderSettings::MongoDbSettings(
-                            crate::protocol_serde::shape_mongo_db_data_provider_settings::de_mongo_db_data_provider_settings(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MongoDbSettings' cannot be null"),
-                            )?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::DataProviderSettings::Unknown)
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            loop {
+                match tokens.next().transpose()? {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        if let ::std::option::Option::Some(::std::result::Result::Ok(::aws_smithy_json::deserialize::Token::ValueNull { .. })) =
+                            tokens.peek()
+                        {
+                            let _ = tokens.next().expect("peek returned a token")?;
+                            continue;
                         }
-                    };
-                }
-                other => {
-                    return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                        "expected object key or end object, found: {other:?}"
-                    )))
+                        let key = key.to_unescaped()?;
+                        if key == "__type" {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            continue;
+                        }
+                        if variant.is_some() {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "encountered mixed variants in union",
+                            ));
+                        }
+                        variant = match key.as_ref() {
+                            "RedshiftSettings" => {
+                                Some(crate::types::DataProviderSettings::RedshiftSettings(
+                                    crate::protocol_serde::shape_redshift_data_provider_settings::de_redshift_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftSettings' cannot be null"))?
+                                ))
+                            }
+                            "PostgreSqlSettings" => {
+                                Some(crate::types::DataProviderSettings::PostgreSqlSettings(
+                                    crate::protocol_serde::shape_postgre_sql_data_provider_settings::de_postgre_sql_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlSettings' cannot be null"))?
+                                ))
+                            }
+                            "MySqlSettings" => {
+                                Some(crate::types::DataProviderSettings::MySqlSettings(
+                                    crate::protocol_serde::shape_my_sql_data_provider_settings::de_my_sql_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlSettings' cannot be null"))?
+                                ))
+                            }
+                            "OracleSettings" => {
+                                Some(crate::types::DataProviderSettings::OracleSettings(
+                                    crate::protocol_serde::shape_oracle_data_provider_settings::de_oracle_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleSettings' cannot be null"))?
+                                ))
+                            }
+                            "SybaseAseSettings" => {
+                                Some(crate::types::DataProviderSettings::SybaseAseSettings(
+                                    crate::protocol_serde::shape_sybase_ase_data_provider_settings::de_sybase_ase_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SybaseAseSettings' cannot be null"))?
+                                ))
+                            }
+                            "MicrosoftSqlServerSettings" => {
+                                Some(crate::types::DataProviderSettings::MicrosoftSqlServerSettings(
+                                    crate::protocol_serde::shape_microsoft_sql_server_data_provider_settings::de_microsoft_sql_server_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MicrosoftSqlServerSettings' cannot be null"))?
+                                ))
+                            }
+                            "DocDbSettings" => {
+                                Some(crate::types::DataProviderSettings::DocDbSettings(
+                                    crate::protocol_serde::shape_doc_db_data_provider_settings::de_doc_db_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DocDbSettings' cannot be null"))?
+                                ))
+                            }
+                            "MariaDbSettings" => {
+                                Some(crate::types::DataProviderSettings::MariaDbSettings(
+                                    crate::protocol_serde::shape_maria_db_data_provider_settings::de_maria_db_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbSettings' cannot be null"))?
+                                ))
+                            }
+                            "IbmDb2LuwSettings" => {
+                                Some(crate::types::DataProviderSettings::IbmDb2LuwSettings(
+                                    crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::de_ibm_db2_luw_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2LuwSettings' cannot be null"))?
+                                ))
+                            }
+                            "IbmDb2zOsSettings" => {
+                                Some(crate::types::DataProviderSettings::IbmDb2zOsSettings(
+                                    crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::de_ibm_db2z_os_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2zOsSettings' cannot be null"))?
+                                ))
+                            }
+                            "MongoDbSettings" => {
+                                Some(crate::types::DataProviderSettings::MongoDbSettings(
+                                    crate::protocol_serde::shape_mongo_db_data_provider_settings::de_mongo_db_data_provider_settings(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MongoDbSettings' cannot be null"))?
+                                ))
+                            }
+                            _ => {
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::DataProviderSettings::Unknown)
+                                                                            }
+                        };
+                    }
+                    other => {
+                        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                            "expected object key or end object, found: {other:?}"
+                        )))
+                    }
                 }
             }
-        },
+        }
         _ => {
             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",

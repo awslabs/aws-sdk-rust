@@ -88,13 +88,13 @@ pub fn ser_describe_resource_groups_input(
 }
 
 pub(crate) fn de_describe_resource_groups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,10 +102,10 @@ pub(crate) fn de_describe_resource_groups(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "resourceGroups" => {
-                    builder = builder.set_resource_groups(crate::protocol_serde::shape_resource_group_list::de_resource_group_list(tokens)?);
+                    builder = builder.set_resource_groups(crate::protocol_serde::shape_resource_group_list::de_resource_group_list(tokens, _value)?);
                 }
                 "failedItems" => {
-                    builder = builder.set_failed_items(crate::protocol_serde::shape_failed_items::de_failed_items(tokens)?);
+                    builder = builder.set_failed_items(crate::protocol_serde::shape_failed_items::de_failed_items(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

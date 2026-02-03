@@ -35,6 +35,7 @@ pub fn ser_predefined_hierarchy(
 
 pub(crate) fn de_predefined_hierarchy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PredefinedHierarchy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,13 @@ where
                         }
                         "Columns" => {
                             builder = builder.set_columns(
-                                crate::protocol_serde::shape_predefined_hierarchy_column_list::de_predefined_hierarchy_column_list(tokens)?,
+                                crate::protocol_serde::shape_predefined_hierarchy_column_list::de_predefined_hierarchy_column_list(tokens, _value)?,
                             );
                         }
                         "DrillDownFilters" => {
-                            builder = builder
-                                .set_drill_down_filters(crate::protocol_serde::shape_drill_down_filter_list::de_drill_down_filter_list(tokens)?);
+                            builder = builder.set_drill_down_filters(crate::protocol_serde::shape_drill_down_filter_list::de_drill_down_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

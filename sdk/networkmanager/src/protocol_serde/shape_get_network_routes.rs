@@ -132,13 +132,13 @@ pub fn ser_get_network_routes_input(
 }
 
 pub(crate) fn de_get_network_routes(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_network_routes::builders::GetNetworkRoutesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_network_routes::builders::GetNetworkRoutesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,11 +147,11 @@ pub(crate) fn de_get_network_routes(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CoreNetworkSegmentEdge" => {
                     builder = builder.set_core_network_segment_edge(
-                        crate::protocol_serde::shape_core_network_segment_edge_identifier::de_core_network_segment_edge_identifier(tokens)?,
+                        crate::protocol_serde::shape_core_network_segment_edge_identifier::de_core_network_segment_edge_identifier(tokens, _value)?,
                     );
                 }
                 "NetworkRoutes" => {
-                    builder = builder.set_network_routes(crate::protocol_serde::shape_network_route_list::de_network_route_list(tokens)?);
+                    builder = builder.set_network_routes(crate::protocol_serde::shape_network_route_list::de_network_route_list(tokens, _value)?);
                 }
                 "RouteTableArn" => {
                     builder = builder.set_route_table_arn(

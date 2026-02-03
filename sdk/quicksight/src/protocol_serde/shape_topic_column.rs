@@ -95,6 +95,7 @@ pub fn ser_topic_column(
 
 pub(crate) fn de_topic_column<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicColumn>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -130,7 +131,7 @@ where
                             );
                         }
                         "ColumnSynonyms" => {
-                            builder = builder.set_column_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens)?);
+                            builder = builder.set_column_synonyms(crate::protocol_serde::shape_synonyms::de_synonyms(tokens, _value)?);
                         }
                         "ColumnDataRole" => {
                             builder = builder.set_column_data_role(
@@ -153,10 +154,11 @@ where
                             builder = builder.set_disable_indexing(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ComparativeOrder" => {
-                            builder = builder.set_comparative_order(crate::protocol_serde::shape_comparative_order::de_comparative_order(tokens)?);
+                            builder =
+                                builder.set_comparative_order(crate::protocol_serde::shape_comparative_order::de_comparative_order(tokens, _value)?);
                         }
                         "SemanticType" => {
-                            builder = builder.set_semantic_type(crate::protocol_serde::shape_semantic_type::de_semantic_type(tokens)?);
+                            builder = builder.set_semantic_type(crate::protocol_serde::shape_semantic_type::de_semantic_type(tokens, _value)?);
                         }
                         "TimeGranularity" => {
                             builder = builder.set_time_granularity(
@@ -167,24 +169,25 @@ where
                         }
                         "AllowedAggregations" => {
                             builder = builder.set_allowed_aggregations(
-                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens)?,
+                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens, _value)?,
                             );
                         }
                         "NotAllowedAggregations" => {
                             builder = builder.set_not_allowed_aggregations(
-                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens)?,
+                                crate::protocol_serde::shape_author_specified_aggregations::de_author_specified_aggregations(tokens, _value)?,
                             );
                         }
                         "DefaultFormatting" => {
-                            builder = builder.set_default_formatting(crate::protocol_serde::shape_default_formatting::de_default_formatting(tokens)?);
+                            builder = builder
+                                .set_default_formatting(crate::protocol_serde::shape_default_formatting::de_default_formatting(tokens, _value)?);
                         }
                         "NeverAggregateInFilter" => {
                             builder =
                                 builder.set_never_aggregate_in_filter(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "CellValueSynonyms" => {
-                            builder =
-                                builder.set_cell_value_synonyms(crate::protocol_serde::shape_cell_value_synonyms::de_cell_value_synonyms(tokens)?);
+                            builder = builder
+                                .set_cell_value_synonyms(crate::protocol_serde::shape_cell_value_synonyms::de_cell_value_synonyms(tokens, _value)?);
                         }
                         "NonAdditive" => {
                             builder = builder.set_non_additive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

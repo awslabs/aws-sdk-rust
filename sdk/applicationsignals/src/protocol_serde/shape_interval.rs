@@ -23,6 +23,7 @@ pub fn ser_interval(
 
 pub(crate) fn de_interval<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Interval>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,12 +53,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "RollingInterval" => Some(crate::types::Interval::RollingInterval(
-                            crate::protocol_serde::shape_rolling_interval::de_rolling_interval(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rolling_interval::de_rolling_interval(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RollingInterval' cannot be null")
                             })?,
                         )),
                         "CalendarInterval" => Some(crate::types::Interval::CalendarInterval(
-                            crate::protocol_serde::shape_calendar_interval::de_calendar_interval(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_calendar_interval::de_calendar_interval(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CalendarInterval' cannot be null")
                             })?,
                         )),

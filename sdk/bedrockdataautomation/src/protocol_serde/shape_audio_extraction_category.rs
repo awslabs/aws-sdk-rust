@@ -29,6 +29,7 @@ pub fn ser_audio_extraction_category(
 
 pub(crate) fn de_audio_extraction_category<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioExtractionCategory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,12 +51,13 @@ where
                             );
                         }
                         "types" => {
-                            builder = builder
-                                .set_types(crate::protocol_serde::shape_audio_extraction_category_types::de_audio_extraction_category_types(tokens)?);
+                            builder = builder.set_types(
+                                crate::protocol_serde::shape_audio_extraction_category_types::de_audio_extraction_category_types(tokens, _value)?,
+                            );
                         }
                         "typeConfiguration" => {
                             builder = builder.set_type_configuration(
-                                    crate::protocol_serde::shape_audio_extraction_category_type_configuration::de_audio_extraction_category_type_configuration(tokens)?
+                                    crate::protocol_serde::shape_audio_extraction_category_type_configuration::de_audio_extraction_category_type_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

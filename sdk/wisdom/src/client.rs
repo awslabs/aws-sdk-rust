@@ -157,7 +157,7 @@ mod create_session;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_wisdom::Error> {
 /// # let client: aws_sdk_wisdom::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_assistant()
 ///     .customize()

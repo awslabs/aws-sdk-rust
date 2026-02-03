@@ -32,6 +32,7 @@ pub fn ser_variable(
 
 pub(crate) fn de_variable<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Variable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,12 +67,13 @@ where
                         }
                         "datasetContentVersionValue" => {
                             builder = builder.set_dataset_content_version_value(
-                                crate::protocol_serde::shape_dataset_content_version_value::de_dataset_content_version_value(tokens)?,
+                                crate::protocol_serde::shape_dataset_content_version_value::de_dataset_content_version_value(tokens, _value)?,
                             );
                         }
                         "outputFileUriValue" => {
-                            builder = builder
-                                .set_output_file_uri_value(crate::protocol_serde::shape_output_file_uri_value::de_output_file_uri_value(tokens)?);
+                            builder = builder.set_output_file_uri_value(
+                                crate::protocol_serde::shape_output_file_uri_value::de_output_file_uri_value(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

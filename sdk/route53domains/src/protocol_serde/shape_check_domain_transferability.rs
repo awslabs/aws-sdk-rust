@@ -84,13 +84,13 @@ pub fn ser_check_domain_transferability_input(
 }
 
 pub(crate) fn de_check_domain_transferability(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,7 +98,9 @@ pub(crate) fn de_check_domain_transferability(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Transferability" => {
-                    builder = builder.set_transferability(crate::protocol_serde::shape_domain_transferability::de_domain_transferability(tokens)?);
+                    builder = builder.set_transferability(crate::protocol_serde::shape_domain_transferability::de_domain_transferability(
+                        tokens, _value,
+                    )?);
                 }
                 "Message" => {
                     builder = builder.set_message(

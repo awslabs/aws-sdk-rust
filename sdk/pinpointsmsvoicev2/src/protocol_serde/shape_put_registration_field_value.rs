@@ -150,13 +150,13 @@ pub fn ser_put_registration_field_value_input(
 }
 
 pub(crate) fn de_put_registration_field_value(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_registration_field_value::builders::PutRegistrationFieldValueOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_registration_field_value::builders::PutRegistrationFieldValueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -192,7 +192,7 @@ pub(crate) fn de_put_registration_field_value(
                     );
                 }
                 "SelectChoices" => {
-                    builder = builder.set_select_choices(crate::protocol_serde::shape_select_choice_list::de_select_choice_list(tokens)?);
+                    builder = builder.set_select_choices(crate::protocol_serde::shape_select_choice_list::de_select_choice_list(tokens, _value)?);
                 }
                 "TextValue" => {
                     builder = builder.set_text_value(

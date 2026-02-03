@@ -20,6 +20,7 @@ pub fn ser_video_standard_extraction(
 
 pub(crate) fn de_video_standard_extraction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoStandardExtraction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,11 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "category" => {
                             builder = builder.set_category(crate::protocol_serde::shape_video_extraction_category::de_video_extraction_category(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "boundingBox" => {
-                            builder = builder.set_bounding_box(crate::protocol_serde::shape_video_bounding_box::de_video_bounding_box(tokens)?);
+                            builder =
+                                builder.set_bounding_box(crate::protocol_serde::shape_video_bounding_box::de_video_bounding_box(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

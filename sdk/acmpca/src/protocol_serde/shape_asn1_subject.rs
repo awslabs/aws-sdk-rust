@@ -62,6 +62,7 @@ pub fn ser_asn1_subject(
 
 pub(crate) fn de_asn1_subject<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Asn1Subject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -174,8 +175,9 @@ where
                             );
                         }
                         "CustomAttributes" => {
-                            builder =
-                                builder.set_custom_attributes(crate::protocol_serde::shape_custom_attribute_list::de_custom_attribute_list(tokens)?);
+                            builder = builder.set_custom_attributes(crate::protocol_serde::shape_custom_attribute_list::de_custom_attribute_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

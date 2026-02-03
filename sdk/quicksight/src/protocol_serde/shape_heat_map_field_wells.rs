@@ -14,6 +14,7 @@ pub fn ser_heat_map_field_wells(
 
 pub(crate) fn de_heat_map_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HeatMapFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "HeatMapAggregatedFieldWells" => {
                             builder = builder.set_heat_map_aggregated_field_wells(
-                                crate::protocol_serde::shape_heat_map_aggregated_field_wells::de_heat_map_aggregated_field_wells(tokens)?,
+                                crate::protocol_serde::shape_heat_map_aggregated_field_wells::de_heat_map_aggregated_field_wells(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

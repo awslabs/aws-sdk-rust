@@ -14,6 +14,7 @@ pub fn ser_cluster_marker_configuration(
 
 pub(crate) fn de_cluster_marker_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClusterMarkerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClusterMarker" => {
-                            builder = builder.set_cluster_marker(crate::protocol_serde::shape_cluster_marker::de_cluster_marker(tokens)?);
+                            builder = builder.set_cluster_marker(crate::protocol_serde::shape_cluster_marker::de_cluster_marker(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -96,13 +96,13 @@ pub fn ser_list_parallel_data_input(
 }
 
 pub(crate) fn de_list_parallel_data(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_parallel_data::builders::ListParallelDataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_parallel_data::builders::ListParallelDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -111,7 +111,7 @@ pub(crate) fn de_list_parallel_data(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ParallelDataPropertiesList" => {
                     builder = builder.set_parallel_data_properties_list(
-                        crate::protocol_serde::shape_parallel_data_properties_list::de_parallel_data_properties_list(tokens)?,
+                        crate::protocol_serde::shape_parallel_data_properties_list::de_parallel_data_properties_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

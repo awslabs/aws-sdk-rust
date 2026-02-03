@@ -118,13 +118,13 @@ pub fn ser_request_upload_credentials_input(
 }
 
 pub(crate) fn de_request_upload_credentials(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::request_upload_credentials::builders::RequestUploadCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,10 +132,10 @@ pub(crate) fn de_request_upload_credentials(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UploadCredentials" => {
-                    builder = builder.set_upload_credentials(crate::protocol_serde::shape_aws_credentials::de_aws_credentials(tokens)?);
+                    builder = builder.set_upload_credentials(crate::protocol_serde::shape_aws_credentials::de_aws_credentials(tokens, _value)?);
                 }
                 "StorageLocation" => {
-                    builder = builder.set_storage_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                    builder = builder.set_storage_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -21,6 +21,7 @@ pub fn ser_evaluator_model_config(
 
 pub(crate) fn de_evaluator_model_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluatorModelConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,13 +51,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "bedrockEvaluatorModelConfig" => Some(crate::types::EvaluatorModelConfig::BedrockEvaluatorModelConfig(
-                            crate::protocol_serde::shape_bedrock_evaluator_model_config::de_bedrock_evaluator_model_config(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_bedrock_evaluator_model_config::de_bedrock_evaluator_model_config(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'bedrockEvaluatorModelConfig' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

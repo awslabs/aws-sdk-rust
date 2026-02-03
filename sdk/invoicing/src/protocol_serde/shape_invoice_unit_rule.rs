@@ -26,6 +26,7 @@ pub fn ser_invoice_unit_rule(
 
 pub(crate) fn de_invoice_unit_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InvoiceUnitRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LinkedAccounts" => {
-                            builder =
-                                builder.set_linked_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(tokens)?);
+                            builder = builder.set_linked_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         "BillSourceAccounts" => {
-                            builder =
-                                builder.set_bill_source_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(tokens)?);
+                            builder = builder.set_bill_source_accounts(crate::protocol_serde::shape_rule_account_id_list::de_rule_account_id_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

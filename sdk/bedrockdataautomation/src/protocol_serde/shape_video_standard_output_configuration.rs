@@ -20,6 +20,7 @@ pub fn ser_video_standard_output_configuration(
 
 pub(crate) fn de_video_standard_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoStandardOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "extraction" => {
                             builder = builder.set_extraction(crate::protocol_serde::shape_video_standard_extraction::de_video_standard_extraction(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "generativeField" => {
                             builder = builder.set_generative_field(
-                                crate::protocol_serde::shape_video_standard_generative_field::de_video_standard_generative_field(tokens)?,
+                                crate::protocol_serde::shape_video_standard_generative_field::de_video_standard_generative_field(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

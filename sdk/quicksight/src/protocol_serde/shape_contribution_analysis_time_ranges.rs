@@ -20,6 +20,7 @@ pub fn ser_contribution_analysis_time_ranges(
 
 pub(crate) fn de_contribution_analysis_time_ranges<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContributionAnalysisTimeRanges>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StartRange" => {
-                            builder =
-                                builder.set_start_range(crate::protocol_serde::shape_topic_ir_filter_option::de_topic_ir_filter_option(tokens)?);
+                            builder = builder.set_start_range(crate::protocol_serde::shape_topic_ir_filter_option::de_topic_ir_filter_option(
+                                tokens, _value,
+                            )?);
                         }
                         "EndRange" => {
-                            builder = builder.set_end_range(crate::protocol_serde::shape_topic_ir_filter_option::de_topic_ir_filter_option(tokens)?);
+                            builder = builder.set_end_range(crate::protocol_serde::shape_topic_ir_filter_option::de_topic_ir_filter_option(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

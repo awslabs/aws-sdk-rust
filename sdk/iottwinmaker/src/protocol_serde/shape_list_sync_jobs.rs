@@ -126,13 +126,13 @@ pub fn ser_list_sync_jobs_input(
 }
 
 pub(crate) fn de_list_sync_jobs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_sync_jobs::builders::ListSyncJobsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_sync_jobs::builders::ListSyncJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_list_sync_jobs(
                     );
                 }
                 "syncJobSummaries" => {
-                    builder = builder.set_sync_job_summaries(crate::protocol_serde::shape_sync_job_summaries::de_sync_job_summaries(tokens)?);
+                    builder = builder.set_sync_job_summaries(crate::protocol_serde::shape_sync_job_summaries::de_sync_job_summaries(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

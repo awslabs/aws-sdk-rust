@@ -151,7 +151,7 @@ mod create_environment_host;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_evs::Error> {
 /// # let client: aws_sdk_evs::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_eip_to_vlan()
 ///     .customize()

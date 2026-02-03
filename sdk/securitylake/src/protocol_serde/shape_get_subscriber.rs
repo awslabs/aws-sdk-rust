@@ -133,13 +133,13 @@ pub fn de_get_subscriber_http_response(
 }
 
 pub(crate) fn de_get_subscriber(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_subscriber::builders::GetSubscriberOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_subscriber::builders::GetSubscriberOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_get_subscriber(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "subscriber" => {
-                    builder = builder.set_subscriber(crate::protocol_serde::shape_subscriber_resource::de_subscriber_resource(tokens)?);
+                    builder = builder.set_subscriber(crate::protocol_serde::shape_subscriber_resource::de_subscriber_resource(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

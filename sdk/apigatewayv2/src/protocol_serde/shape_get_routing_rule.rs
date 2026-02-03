@@ -83,13 +83,13 @@ pub fn de_get_routing_rule_http_response(
 }
 
 pub(crate) fn de_get_routing_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_routing_rule::builders::GetRoutingRuleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_routing_rule::builders::GetRoutingRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,12 +98,13 @@ pub(crate) fn de_get_routing_rule(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actions" => {
                     builder = builder.set_actions(crate::protocol_serde::shape_list_of_routing_rule_action::de_list_of_routing_rule_action(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "conditions" => {
-                    builder = builder
-                        .set_conditions(crate::protocol_serde::shape_list_of_routing_rule_condition::de_list_of_routing_rule_condition(tokens)?);
+                    builder = builder.set_conditions(
+                        crate::protocol_serde::shape_list_of_routing_rule_condition::de_list_of_routing_rule_condition(tokens, _value)?,
+                    );
                 }
                 "priority" => {
                     builder = builder.set_priority(

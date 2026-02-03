@@ -151,7 +151,7 @@ mod create_case;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_support::Error> {
 /// # let client: aws_sdk_support::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_attachments_to_set()
 ///     .customize()

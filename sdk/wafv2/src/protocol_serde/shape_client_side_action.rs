@@ -26,6 +26,7 @@ pub fn ser_client_side_action(
 
 pub(crate) fn de_client_side_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClientSideAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "ExemptUriRegularExpressions" => {
                             builder = builder.set_exempt_uri_regular_expressions(
-                                crate::protocol_serde::shape_regular_expression_list::de_regular_expression_list(tokens)?,
+                                crate::protocol_serde::shape_regular_expression_list::de_regular_expression_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

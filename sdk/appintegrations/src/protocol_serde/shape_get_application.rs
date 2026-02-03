@@ -113,13 +113,13 @@ pub fn de_get_application_http_response(
 }
 
 pub(crate) fn de_get_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application::builders::GetApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,11 +127,11 @@ pub(crate) fn de_get_application(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ApplicationConfig" => {
-                    builder = builder.set_application_config(crate::protocol_serde::shape_application_config::de_application_config(tokens)?);
+                    builder = builder.set_application_config(crate::protocol_serde::shape_application_config::de_application_config(tokens, _value)?);
                 }
                 "ApplicationSourceConfig" => {
                     builder = builder.set_application_source_config(
-                        crate::protocol_serde::shape_application_source_config::de_application_source_config(tokens)?,
+                        crate::protocol_serde::shape_application_source_config::de_application_source_config(tokens, _value)?,
                     );
                 }
                 "ApplicationType" => {
@@ -169,7 +169,7 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "IframeConfig" => {
-                    builder = builder.set_iframe_config(crate::protocol_serde::shape_iframe_config::de_iframe_config(tokens)?);
+                    builder = builder.set_iframe_config(crate::protocol_serde::shape_iframe_config::de_iframe_config(tokens, _value)?);
                 }
                 "InitializationTimeout" => {
                     builder = builder.set_initialization_timeout(
@@ -202,16 +202,16 @@ pub(crate) fn de_get_application(
                     );
                 }
                 "Permissions" => {
-                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens, _value)?);
                 }
                 "Publications" => {
-                    builder = builder.set_publications(crate::protocol_serde::shape_publication_list::de_publication_list(tokens)?);
+                    builder = builder.set_publications(crate::protocol_serde::shape_publication_list::de_publication_list(tokens, _value)?);
                 }
                 "Subscriptions" => {
-                    builder = builder.set_subscriptions(crate::protocol_serde::shape_subscription_list::de_subscription_list(tokens)?);
+                    builder = builder.set_subscriptions(crate::protocol_serde::shape_subscription_list::de_subscription_list(tokens, _value)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -26,6 +26,7 @@ pub fn ser_batch_parameters(
 
 pub(crate) fn de_batch_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,11 +55,14 @@ where
                             );
                         }
                         "ArrayProperties" => {
-                            builder =
-                                builder.set_array_properties(crate::protocol_serde::shape_batch_array_properties::de_batch_array_properties(tokens)?);
+                            builder = builder.set_array_properties(crate::protocol_serde::shape_batch_array_properties::de_batch_array_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "RetryStrategy" => {
-                            builder = builder.set_retry_strategy(crate::protocol_serde::shape_batch_retry_strategy::de_batch_retry_strategy(tokens)?);
+                            builder = builder.set_retry_strategy(crate::protocol_serde::shape_batch_retry_strategy::de_batch_retry_strategy(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -14,6 +14,7 @@ pub fn ser_sheet_image_source(
 
 pub(crate) fn de_sheet_image_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetImageSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SheetImageStaticFileSource" => {
                             builder = builder.set_sheet_image_static_file_source(
-                                crate::protocol_serde::shape_sheet_image_static_file_source::de_sheet_image_static_file_source(tokens)?,
+                                crate::protocol_serde::shape_sheet_image_static_file_source::de_sheet_image_static_file_source(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

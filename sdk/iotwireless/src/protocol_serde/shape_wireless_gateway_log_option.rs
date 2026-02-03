@@ -26,6 +26,7 @@ pub fn ser_wireless_gateway_log_option(
 
 pub(crate) fn de_wireless_gateway_log_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WirelessGatewayLogOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                         "Events" => {
                             builder = builder.set_events(
                                 crate::protocol_serde::shape_wireless_gateway_event_log_option_list::de_wireless_gateway_event_log_option_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -17,6 +17,7 @@ pub fn ser_action(
 
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "ssmAutomation" => Some(crate::types::Action::SsmAutomation(
-                            crate::protocol_serde::shape_ssm_automation::de_ssm_automation(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ssm_automation::de_ssm_automation(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ssmAutomation' cannot be null")
                             })?,
                         )),

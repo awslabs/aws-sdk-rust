@@ -145,13 +145,13 @@ pub fn ser_list_account_assignments_for_principal_input(
 }
 
 pub(crate) fn de_list_account_assignments_for_principal(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_account_assignments_for_principal::builders::ListAccountAssignmentsForPrincipalOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_account_assignments_for_principal::builders::ListAccountAssignmentsForPrincipalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,7 +160,7 @@ pub(crate) fn de_list_account_assignments_for_principal(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccountAssignments" => {
                     builder = builder.set_account_assignments(
-                        crate::protocol_serde::shape_account_assignment_list_for_principal::de_account_assignment_list_for_principal(tokens)?,
+                        crate::protocol_serde::shape_account_assignment_list_for_principal::de_account_assignment_list_for_principal(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

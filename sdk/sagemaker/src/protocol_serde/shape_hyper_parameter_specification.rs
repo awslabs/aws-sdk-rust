@@ -32,6 +32,7 @@ pub fn ser_hyper_parameter_specification(
 
 pub(crate) fn de_hyper_parameter_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HyperParameterSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,7 +68,7 @@ where
                             );
                         }
                         "Range" => {
-                            builder = builder.set_range(crate::protocol_serde::shape_parameter_range::de_parameter_range(tokens)?);
+                            builder = builder.set_range(crate::protocol_serde::shape_parameter_range::de_parameter_range(tokens, _value)?);
                         }
                         "IsTunable" => {
                             builder = builder.set_is_tunable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

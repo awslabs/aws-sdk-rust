@@ -120,11 +120,11 @@ pub fn de_get_channel_http_response(
 }
 
 pub(crate) fn de_get_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_channel::builders::GetChannelOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_channel::builders::GetChannelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,7 +153,7 @@ pub(crate) fn de_get_channel(
                     );
                 }
                 "channelRoles" => {
-                    builder = builder.set_channel_roles(crate::protocol_serde::shape_channel_roles::de_channel_roles(tokens)?);
+                    builder = builder.set_channel_roles(crate::protocol_serde::shape_channel_roles::de_channel_roles(tokens, _value)?);
                 }
                 "channelStatus" => {
                     builder = builder.set_channel_status(

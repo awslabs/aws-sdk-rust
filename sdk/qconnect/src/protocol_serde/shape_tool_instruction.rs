@@ -20,6 +20,7 @@ pub fn ser_tool_instruction(
 
 pub(crate) fn de_tool_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "examples" => {
-                            builder = builder.set_examples(crate::protocol_serde::shape_tool_example_list::de_tool_example_list(tokens)?);
+                            builder = builder.set_examples(crate::protocol_serde::shape_tool_example_list::de_tool_example_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

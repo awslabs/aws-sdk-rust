@@ -38,6 +38,7 @@ pub fn ser_step_scaling_policy_configuration(
 
 pub(crate) fn de_step_scaling_policy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StepScalingPolicyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,8 @@ where
                             );
                         }
                         "StepAdjustments" => {
-                            builder = builder.set_step_adjustments(crate::protocol_serde::shape_step_adjustments::de_step_adjustments(tokens)?);
+                            builder =
+                                builder.set_step_adjustments(crate::protocol_serde::shape_step_adjustments::de_step_adjustments(tokens, _value)?);
                         }
                         "MinAdjustmentMagnitude" => {
                             builder = builder.set_min_adjustment_magnitude(

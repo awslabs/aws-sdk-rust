@@ -32,6 +32,7 @@ pub fn ser_aws_app_sync_graph_ql_api_additional_authentication_providers_details
 
 pub(crate) fn de_aws_app_sync_graph_ql_api_additional_authentication_providers_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -57,17 +58,17 @@ where
                         }
                         "LambdaAuthorizerConfig" => {
                             builder = builder.set_lambda_authorizer_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(tokens, _value)?
                                 );
                         }
                         "OpenIdConnectConfig" => {
                             builder = builder.set_open_id_connect_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_open_id_connect_config_details::de_aws_app_sync_graph_ql_api_open_id_connect_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_open_id_connect_config_details::de_aws_app_sync_graph_ql_api_open_id_connect_config_details(tokens, _value)?
                                 );
                         }
                         "UserPoolConfig" => {
                             builder = builder.set_user_pool_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::de_aws_app_sync_graph_ql_api_user_pool_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::de_aws_app_sync_graph_ql_api_user_pool_config_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

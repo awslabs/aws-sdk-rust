@@ -27,6 +27,7 @@ pub fn ser_archive_filter_condition(
 
 pub(crate) fn de_archive_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArchiveFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "StringExpression" => Some(crate::types::ArchiveFilterCondition::StringExpression(
-                            crate::protocol_serde::shape_archive_string_expression::de_archive_string_expression(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringExpression' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_archive_string_expression::de_archive_string_expression(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringExpression' cannot be null"),
+                            )?,
                         )),
                         "BooleanExpression" => Some(crate::types::ArchiveFilterCondition::BooleanExpression(
-                            crate::protocol_serde::shape_archive_boolean_expression::de_archive_boolean_expression(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanExpression' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_archive_boolean_expression::de_archive_boolean_expression(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanExpression' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

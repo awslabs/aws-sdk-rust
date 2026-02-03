@@ -14,6 +14,7 @@ pub fn ser_aws_wafv2_web_acl_captcha_config_details(
 
 pub(crate) fn de_aws_wafv2_web_acl_captcha_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafv2WebAclCaptchaConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ImmunityTimeProperty" => {
                             builder = builder.set_immunity_time_property(
-                                    crate::protocol_serde::shape_aws_wafv2_web_acl_captcha_config_immunity_time_property_details::de_aws_wafv2_web_acl_captcha_config_immunity_time_property_details(tokens)?
+                                    crate::protocol_serde::shape_aws_wafv2_web_acl_captcha_config_immunity_time_property_details::de_aws_wafv2_web_acl_captcha_config_immunity_time_property_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

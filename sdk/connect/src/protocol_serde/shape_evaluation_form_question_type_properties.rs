@@ -51,6 +51,7 @@ pub fn ser_evaluation_form_question_type_properties(
 
 pub(crate) fn de_evaluation_form_question_type_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormQuestionTypeProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,25 +82,25 @@ where
                     variant = match key.as_ref() {
                             "Numeric" => {
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::Numeric(
-                                    crate::protocol_serde::shape_evaluation_form_numeric_question_properties::de_evaluation_form_numeric_question_properties(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_numeric_question_properties::de_evaluation_form_numeric_question_properties(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Numeric' cannot be null"))?
                                 ))
                             }
                             "SingleSelect" => {
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::SingleSelect(
-                                    crate::protocol_serde::shape_evaluation_form_single_select_question_properties::de_evaluation_form_single_select_question_properties(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_single_select_question_properties::de_evaluation_form_single_select_question_properties(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SingleSelect' cannot be null"))?
                                 ))
                             }
                             "Text" => {
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::Text(
-                                    crate::protocol_serde::shape_evaluation_form_text_question_properties::de_evaluation_form_text_question_properties(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_text_question_properties::de_evaluation_form_text_question_properties(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Text' cannot be null"))?
                                 ))
                             }
                             "MultiSelect" => {
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::MultiSelect(
-                                    crate::protocol_serde::shape_evaluation_form_multi_select_question_properties::de_evaluation_form_multi_select_question_properties(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_multi_select_question_properties::de_evaluation_form_multi_select_question_properties(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiSelect' cannot be null"))?
                                 ))
                             }

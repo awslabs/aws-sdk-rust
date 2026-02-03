@@ -36,6 +36,7 @@ pub fn ser_knowledge_base_orchestration_configuration(
 
 pub(crate) fn de_knowledge_base_orchestration_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseOrchestrationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,22 +52,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "promptTemplate" => {
                             builder = builder.set_prompt_template(
-                                crate::protocol_serde::shape_knowledge_base_prompt_template::de_knowledge_base_prompt_template(tokens)?,
+                                crate::protocol_serde::shape_knowledge_base_prompt_template::de_knowledge_base_prompt_template(tokens, _value)?,
                             );
                         }
                         "inferenceConfig" => {
                             builder = builder.set_inference_config(
-                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens, _value)?,
                             );
                         }
                         "additionalModelRequestFields" => {
                             builder = builder.set_additional_model_request_fields(
-                                crate::protocol_serde::shape_additional_model_request_fields::de_additional_model_request_fields(tokens)?,
+                                crate::protocol_serde::shape_additional_model_request_fields::de_additional_model_request_fields(tokens, _value)?,
                             );
                         }
                         "performanceConfig" => {
                             builder = builder.set_performance_config(
-                                crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens)?,
+                                crate::protocol_serde::shape_performance_configuration::de_performance_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

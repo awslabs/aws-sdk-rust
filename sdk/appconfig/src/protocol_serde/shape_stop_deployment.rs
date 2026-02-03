@@ -84,13 +84,13 @@ pub fn de_stop_deployment_http_response(
 
 pub fn ser_stop_deployment_headers(
     input: &crate::operation::stop_deployment::StopDeploymentInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.allow_revert {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "allow_revert",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -102,13 +102,13 @@ pub fn ser_stop_deployment_headers(
 }
 
 pub(crate) fn de_stop_deployment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::stop_deployment::builders::StopDeploymentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::stop_deployment::builders::StopDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,7 +123,7 @@ pub(crate) fn de_stop_deployment(
                     );
                 }
                 "AppliedExtensions" => {
-                    builder = builder.set_applied_extensions(crate::protocol_serde::shape_applied_extensions::de_applied_extensions(tokens)?);
+                    builder = builder.set_applied_extensions(crate::protocol_serde::shape_applied_extensions::de_applied_extensions(tokens, _value)?);
                 }
                 "CompletedAt" => {
                     builder = builder.set_completed_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -195,7 +195,7 @@ pub(crate) fn de_stop_deployment(
                     );
                 }
                 "EventLog" => {
-                    builder = builder.set_event_log(crate::protocol_serde::shape_deployment_events::de_deployment_events(tokens)?);
+                    builder = builder.set_event_log(crate::protocol_serde::shape_deployment_events::de_deployment_events(tokens, _value)?);
                 }
                 "FinalBakeTimeInMinutes" => {
                     builder = builder.set_final_bake_time_in_minutes(

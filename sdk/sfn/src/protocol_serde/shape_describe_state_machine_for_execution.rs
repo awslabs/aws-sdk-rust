@@ -144,13 +144,13 @@ pub fn ser_describe_state_machine_for_execution_input(
 }
 
 pub(crate) fn de_describe_state_machine_for_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_state_machine_for_execution::builders::DescribeStateMachineForExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -192,12 +192,14 @@ pub(crate) fn de_describe_state_machine_for_execution(
                     )?);
                 }
                 "loggingConfiguration" => {
-                    builder =
-                        builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens)?);
+                    builder = builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "tracingConfiguration" => {
-                    builder =
-                        builder.set_tracing_configuration(crate::protocol_serde::shape_tracing_configuration::de_tracing_configuration(tokens)?);
+                    builder = builder.set_tracing_configuration(crate::protocol_serde::shape_tracing_configuration::de_tracing_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "mapRunArn" => {
                     builder = builder.set_map_run_arn(
@@ -222,11 +224,12 @@ pub(crate) fn de_describe_state_machine_for_execution(
                 }
                 "encryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
                     );
                 }
                 "variableReferences" => {
-                    builder = builder.set_variable_references(crate::protocol_serde::shape_variable_references::de_variable_references(tokens)?);
+                    builder =
+                        builder.set_variable_references(crate::protocol_serde::shape_variable_references::de_variable_references(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

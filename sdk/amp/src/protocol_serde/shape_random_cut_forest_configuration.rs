@@ -35,6 +35,7 @@ pub fn ser_random_cut_forest_configuration(
 
 pub(crate) fn de_random_cut_forest_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RandomCutForestConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,12 +72,12 @@ where
                         }
                         "ignoreNearExpectedFromAbove" => {
                             builder = builder.set_ignore_near_expected_from_above(
-                                crate::protocol_serde::shape_ignore_near_expected::de_ignore_near_expected(tokens)?,
+                                crate::protocol_serde::shape_ignore_near_expected::de_ignore_near_expected(tokens, _value)?,
                             );
                         }
                         "ignoreNearExpectedFromBelow" => {
                             builder = builder.set_ignore_near_expected_from_below(
-                                crate::protocol_serde::shape_ignore_near_expected::de_ignore_near_expected(tokens)?,
+                                crate::protocol_serde::shape_ignore_near_expected::de_ignore_near_expected(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

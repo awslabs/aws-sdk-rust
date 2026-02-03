@@ -132,13 +132,13 @@ pub fn ser_describe_rescore_execution_plan_input(
 }
 
 pub(crate) fn de_describe_rescore_execution_plan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_rescore_execution_plan::builders::DescribeRescoreExecutionPlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,8 +174,9 @@ pub(crate) fn de_describe_rescore_execution_plan(
                     );
                 }
                 "CapacityUnits" => {
-                    builder = builder
-                        .set_capacity_units(crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens)?);
+                    builder = builder.set_capacity_units(
+                        crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens, _value)?,
+                    );
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

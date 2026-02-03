@@ -26,6 +26,7 @@ pub fn ser_emr_settings(
 
 pub(crate) fn de_emr_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EmrSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AssumableRoleArns" => {
-                            builder =
-                                builder.set_assumable_role_arns(crate::protocol_serde::shape_assumable_role_arns::de_assumable_role_arns(tokens)?);
+                            builder = builder
+                                .set_assumable_role_arns(crate::protocol_serde::shape_assumable_role_arns::de_assumable_role_arns(tokens, _value)?);
                         }
                         "ExecutionRoleArns" => {
-                            builder =
-                                builder.set_execution_role_arns(crate::protocol_serde::shape_execution_role_arns::de_execution_role_arns(tokens)?);
+                            builder = builder
+                                .set_execution_role_arns(crate::protocol_serde::shape_execution_role_arns::de_execution_role_arns(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

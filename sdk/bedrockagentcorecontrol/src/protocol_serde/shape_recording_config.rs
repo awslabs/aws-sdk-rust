@@ -17,6 +17,7 @@ pub fn ser_recording_config(
 
 pub(crate) fn de_recording_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecordingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "s3Location" => {
-                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

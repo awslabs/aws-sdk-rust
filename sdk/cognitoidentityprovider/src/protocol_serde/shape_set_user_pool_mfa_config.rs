@@ -206,13 +206,13 @@ pub fn ser_set_user_pool_mfa_config_input(
 }
 
 pub(crate) fn de_set_user_pool_mfa_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -220,16 +220,18 @@ pub(crate) fn de_set_user_pool_mfa_config(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SmsMfaConfiguration" => {
-                    builder = builder.set_sms_mfa_configuration(crate::protocol_serde::shape_sms_mfa_config_type::de_sms_mfa_config_type(tokens)?);
+                    builder =
+                        builder.set_sms_mfa_configuration(crate::protocol_serde::shape_sms_mfa_config_type::de_sms_mfa_config_type(tokens, _value)?);
                 }
                 "SoftwareTokenMfaConfiguration" => {
                     builder = builder.set_software_token_mfa_configuration(
-                        crate::protocol_serde::shape_software_token_mfa_config_type::de_software_token_mfa_config_type(tokens)?,
+                        crate::protocol_serde::shape_software_token_mfa_config_type::de_software_token_mfa_config_type(tokens, _value)?,
                     );
                 }
                 "EmailMfaConfiguration" => {
-                    builder =
-                        builder.set_email_mfa_configuration(crate::protocol_serde::shape_email_mfa_config_type::de_email_mfa_config_type(tokens)?);
+                    builder = builder.set_email_mfa_configuration(crate::protocol_serde::shape_email_mfa_config_type::de_email_mfa_config_type(
+                        tokens, _value,
+                    )?);
                 }
                 "MfaConfiguration" => {
                     builder = builder.set_mfa_configuration(
@@ -240,7 +242,7 @@ pub(crate) fn de_set_user_pool_mfa_config(
                 }
                 "WebAuthnConfiguration" => {
                     builder = builder.set_web_authn_configuration(
-                        crate::protocol_serde::shape_web_authn_configuration_type::de_web_authn_configuration_type(tokens)?,
+                        crate::protocol_serde::shape_web_authn_configuration_type::de_web_authn_configuration_type(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

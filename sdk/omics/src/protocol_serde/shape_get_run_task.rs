@@ -153,11 +153,11 @@ pub fn de_get_run_task_http_response(
 }
 
 pub(crate) fn de_get_run_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_run_task::builders::GetRunTaskOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_run_task::builders::GetRunTaskOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -202,7 +202,7 @@ pub(crate) fn de_get_run_task(
                     );
                 }
                 "imageDetails" => {
-                    builder = builder.set_image_details(crate::protocol_serde::shape_image_details::de_image_details(tokens)?);
+                    builder = builder.set_image_details(crate::protocol_serde::shape_image_details::de_image_details(tokens, _value)?);
                 }
                 "instanceType" => {
                     builder = builder.set_instance_type(

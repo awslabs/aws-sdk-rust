@@ -81,13 +81,13 @@ pub fn ser_list_local_disks_input(
 }
 
 pub(crate) fn de_list_local_disks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_local_disks::builders::ListLocalDisksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_local_disks::builders::ListLocalDisksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,7 +102,7 @@ pub(crate) fn de_list_local_disks(
                     );
                 }
                 "Disks" => {
-                    builder = builder.set_disks(crate::protocol_serde::shape_disks::de_disks(tokens)?);
+                    builder = builder.set_disks(crate::protocol_serde::shape_disks::de_disks(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

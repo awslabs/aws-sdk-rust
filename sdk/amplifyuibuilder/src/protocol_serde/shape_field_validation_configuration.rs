@@ -35,6 +35,7 @@ pub fn ser_field_validation_configuration(
 
 pub(crate) fn de_field_validation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldValidationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,10 +57,10 @@ where
                             );
                         }
                         "strValues" => {
-                            builder = builder.set_str_values(crate::protocol_serde::shape_str_values::de_str_values(tokens)?);
+                            builder = builder.set_str_values(crate::protocol_serde::shape_str_values::de_str_values(tokens, _value)?);
                         }
                         "numValues" => {
-                            builder = builder.set_num_values(crate::protocol_serde::shape_num_values::de_num_values(tokens)?);
+                            builder = builder.set_num_values(crate::protocol_serde::shape_num_values::de_num_values(tokens, _value)?);
                         }
                         "validationMessage" => {
                             builder = builder.set_validation_message(

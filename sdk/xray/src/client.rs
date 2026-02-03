@@ -153,7 +153,7 @@ mod create_sampling_rule;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_xray::Error> {
 /// # let client: aws_sdk_xray::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_traces()
 ///     .customize()

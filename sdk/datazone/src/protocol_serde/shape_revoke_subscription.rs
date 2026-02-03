@@ -154,13 +154,13 @@ pub fn ser_revoke_subscription_input(
 }
 
 pub(crate) fn de_revoke_subscription(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::revoke_subscription::builders::RevokeSubscriptionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::revoke_subscription::builders::RevokeSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -205,10 +205,12 @@ pub(crate) fn de_revoke_subscription(
                     );
                 }
                 "subscribedListing" => {
-                    builder = builder.set_subscribed_listing(crate::protocol_serde::shape_subscribed_listing::de_subscribed_listing(tokens)?);
+                    builder = builder.set_subscribed_listing(crate::protocol_serde::shape_subscribed_listing::de_subscribed_listing(tokens, _value)?);
                 }
                 "subscribedPrincipal" => {
-                    builder = builder.set_subscribed_principal(crate::protocol_serde::shape_subscribed_principal::de_subscribed_principal(tokens)?);
+                    builder = builder.set_subscribed_principal(crate::protocol_serde::shape_subscribed_principal::de_subscribed_principal(
+                        tokens, _value,
+                    )?);
                 }
                 "subscriptionRequestId" => {
                     builder = builder.set_subscription_request_id(

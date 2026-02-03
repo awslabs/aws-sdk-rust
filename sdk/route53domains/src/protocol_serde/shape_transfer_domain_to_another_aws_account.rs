@@ -121,13 +121,13 @@ pub fn ser_transfer_domain_to_another_aws_account_input(
 }
 
 pub(crate) fn de_transfer_domain_to_another_aws_account(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

@@ -47,6 +47,7 @@ pub fn ser_maintenance_window(
 
 pub(crate) fn de_maintenance_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MaintenanceWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,7 +97,8 @@ where
                             );
                         }
                         "daysOfTheWeek" => {
-                            builder = builder.set_days_of_the_week(crate::protocol_serde::shape_day_of_week_list::de_day_of_week_list(tokens)?);
+                            builder =
+                                builder.set_days_of_the_week(crate::protocol_serde::shape_day_of_week_list::de_day_of_week_list(tokens, _value)?);
                         }
                         "applyTimeOf" => {
                             builder = builder.set_apply_time_of(

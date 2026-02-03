@@ -29,6 +29,7 @@ pub fn ser_association_set_details(
 
 pub(crate) fn de_association_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssociationSetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AssociationState" => {
                             builder = builder.set_association_state(
-                                crate::protocol_serde::shape_association_state_details::de_association_state_details(tokens)?,
+                                crate::protocol_serde::shape_association_state_details::de_association_state_details(tokens, _value)?,
                             );
                         }
                         "GatewayId" => {

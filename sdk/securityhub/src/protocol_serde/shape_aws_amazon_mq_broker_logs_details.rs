@@ -26,6 +26,7 @@ pub fn ser_aws_amazon_mq_broker_logs_details(
 
 pub(crate) fn de_aws_amazon_mq_broker_logs_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsAmazonMqBrokerLogsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,7 +63,7 @@ where
                             }
                             "Pending" => {
                                 builder = builder.set_pending(
-                                    crate::protocol_serde::shape_aws_amazon_mq_broker_logs_pending_details::de_aws_amazon_mq_broker_logs_pending_details(tokens)?
+                                    crate::protocol_serde::shape_aws_amazon_mq_broker_logs_pending_details::de_aws_amazon_mq_broker_logs_pending_details(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -113,12 +113,12 @@ pub fn de_send_api_asset_http_response(
 
 pub fn ser_send_api_asset_headers(
     input: &crate::operation::send_api_asset::SendApiAssetInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.asset_id {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "asset_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -129,7 +129,7 @@ pub fn ser_send_api_asset_headers(
     if let ::std::option::Option::Some(inner_3) = &input.data_set_id {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "data_set_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -140,7 +140,7 @@ pub fn ser_send_api_asset_headers(
     if let ::std::option::Option::Some(inner_5) = &input.method {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "method",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -151,7 +151,7 @@ pub fn ser_send_api_asset_headers(
     if let ::std::option::Option::Some(inner_7) = &input.path {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "path",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -162,7 +162,7 @@ pub fn ser_send_api_asset_headers(
     if let ::std::option::Option::Some(inner_9) = &input.revision_id {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "revision_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -174,14 +174,14 @@ pub fn ser_send_api_asset_headers(
         {
             for (k, v) in inner_11 {
                 use std::str::FromStr;
-                let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amzn-dataexchange-header-", &k)).map_err(|err| {
+                let header_name = ::http_1x::HeaderName::from_str(&format!("{}{}", "x-amzn-dataexchange-header-", &k)).map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{k}` cannot be used as a header name: {err}"),
                     )
                 })?;
                 let header_value = v.as_str();
-                let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{v}` cannot be used as a header value: {err}"),

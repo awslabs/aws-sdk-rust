@@ -26,6 +26,7 @@ pub fn ser_confluence_attachment_configuration(
 
 pub(crate) fn de_confluence_attachment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfluenceAttachmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                             }
                             "AttachmentFieldMappings" => {
                                 builder = builder.set_attachment_field_mappings(
-                                    crate::protocol_serde::shape_confluence_attachment_field_mappings_list::de_confluence_attachment_field_mappings_list(tokens)?
+                                    crate::protocol_serde::shape_confluence_attachment_field_mappings_list::de_confluence_attachment_field_mappings_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -24,6 +24,7 @@ pub fn ser_custom_connector_profile_properties(
 
 pub(crate) fn de_custom_connector_profile_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomConnectorProfileProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,11 +39,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "profileProperties" => {
-                            builder = builder
-                                .set_profile_properties(crate::protocol_serde::shape_profile_properties_map::de_profile_properties_map(tokens)?);
+                            builder = builder.set_profile_properties(crate::protocol_serde::shape_profile_properties_map::de_profile_properties_map(
+                                tokens, _value,
+                            )?);
                         }
                         "oAuth2Properties" => {
-                            builder = builder.set_o_auth2_properties(crate::protocol_serde::shape_o_auth2_properties::de_o_auth2_properties(tokens)?);
+                            builder = builder
+                                .set_o_auth2_properties(crate::protocol_serde::shape_o_auth2_properties::de_o_auth2_properties(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

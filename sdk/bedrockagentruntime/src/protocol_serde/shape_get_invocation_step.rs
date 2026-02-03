@@ -125,13 +125,13 @@ pub fn ser_get_invocation_step_input(
 }
 
 pub(crate) fn de_get_invocation_step(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_invocation_step::builders::GetInvocationStepOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_invocation_step::builders::GetInvocationStepOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_get_invocation_step(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "invocationStep" => {
-                    builder = builder.set_invocation_step(crate::protocol_serde::shape_invocation_step::de_invocation_step(tokens)?);
+                    builder = builder.set_invocation_step(crate::protocol_serde::shape_invocation_step::de_invocation_step(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -134,13 +134,13 @@ pub fn ser_list_snapshot_copy_configurations_input(
 }
 
 pub(crate) fn de_list_snapshot_copy_configurations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_snapshot_copy_configurations::builders::ListSnapshotCopyConfigurationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_snapshot_copy_configurations::builders::ListSnapshotCopyConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,7 @@ pub(crate) fn de_list_snapshot_copy_configurations(
                 }
                 "snapshotCopyConfigurations" => {
                     builder = builder.set_snapshot_copy_configurations(
-                        crate::protocol_serde::shape_snapshot_copy_configurations::de_snapshot_copy_configurations(tokens)?,
+                        crate::protocol_serde::shape_snapshot_copy_configurations::de_snapshot_copy_configurations(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -108,11 +108,11 @@ pub fn ser_get_members_input(
 }
 
 pub(crate) fn de_get_members(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_members::builders::GetMembersOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_members::builders::GetMembersOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,11 +120,11 @@ pub(crate) fn de_get_members(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MemberDetails" => {
-                    builder = builder.set_member_details(crate::protocol_serde::shape_member_detail_list::de_member_detail_list(tokens)?);
+                    builder = builder.set_member_details(crate::protocol_serde::shape_member_detail_list::de_member_detail_list(tokens, _value)?);
                 }
                 "UnprocessedAccounts" => {
                     builder = builder.set_unprocessed_accounts(crate::protocol_serde::shape_unprocessed_account_list::de_unprocessed_account_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

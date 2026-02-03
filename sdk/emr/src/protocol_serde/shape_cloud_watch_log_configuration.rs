@@ -36,6 +36,7 @@ pub fn ser_cloud_watch_log_configuration(
 
 pub(crate) fn de_cloud_watch_log_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CloudWatchLogConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                             );
                         }
                         "LogTypes" => {
-                            builder = builder.set_log_types(crate::protocol_serde::shape_log_types_map::de_log_types_map(tokens)?);
+                            builder = builder.set_log_types(crate::protocol_serde::shape_log_types_map::de_log_types_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

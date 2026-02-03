@@ -33,6 +33,7 @@ pub fn ser_evaluation_form_numeric_question_automation(
 
 pub(crate) fn de_evaluation_form_numeric_question_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormNumericQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,13 +64,13 @@ where
                     variant = match key.as_ref() {
                             "PropertyValue" => {
                                 Some(crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue(
-                                    crate::protocol_serde::shape_numeric_question_property_value_automation::de_numeric_question_property_value_automation(tokens)?
+                                    crate::protocol_serde::shape_numeric_question_property_value_automation::de_numeric_question_property_value_automation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PropertyValue' cannot be null"))?
                                 ))
                             }
                             "AnswerSource" => {
                                 Some(crate::types::EvaluationFormNumericQuestionAutomation::AnswerSource(
-                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AnswerSource' cannot be null"))?
                                 ))
                             }

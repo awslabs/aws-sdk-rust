@@ -118,13 +118,13 @@ pub fn ser_get_workflow_run_properties_input(
 }
 
 pub(crate) fn de_get_workflow_run_properties(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,7 +132,9 @@ pub(crate) fn de_get_workflow_run_properties(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RunProperties" => {
-                    builder = builder.set_run_properties(crate::protocol_serde::shape_workflow_run_properties::de_workflow_run_properties(tokens)?);
+                    builder = builder.set_run_properties(crate::protocol_serde::shape_workflow_run_properties::de_workflow_run_properties(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

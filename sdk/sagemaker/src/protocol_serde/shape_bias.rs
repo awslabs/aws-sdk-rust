@@ -26,6 +26,7 @@ pub fn ser_bias(
 
 pub(crate) fn de_bias<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Bias>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Report" => {
-                            builder = builder.set_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens)?);
+                            builder = builder.set_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens, _value)?);
                         }
                         "PreTrainingReport" => {
-                            builder = builder.set_pre_training_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens)?);
+                            builder =
+                                builder.set_pre_training_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens, _value)?);
                         }
                         "PostTrainingReport" => {
-                            builder = builder.set_post_training_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens)?);
+                            builder =
+                                builder.set_post_training_report(crate::protocol_serde::shape_metrics_source::de_metrics_source(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

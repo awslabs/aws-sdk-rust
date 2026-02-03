@@ -171,7 +171,7 @@ mod create_verified_destination_number;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_pinpointsmsvoicev2::Error> {
 /// # let client: aws_sdk_pinpointsmsvoicev2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_origination_identity()
 ///     .customize()

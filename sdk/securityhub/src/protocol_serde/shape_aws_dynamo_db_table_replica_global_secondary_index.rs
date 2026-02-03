@@ -20,6 +20,7 @@ pub fn ser_aws_dynamo_db_table_replica_global_secondary_index(
 
 pub(crate) fn de_aws_dynamo_db_table_replica_global_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "ProvisionedThroughputOverride" => {
                             builder = builder.set_provisioned_throughput_override(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::de_aws_dynamo_db_table_provisioned_throughput_override(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::de_aws_dynamo_db_table_provisioned_throughput_override(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

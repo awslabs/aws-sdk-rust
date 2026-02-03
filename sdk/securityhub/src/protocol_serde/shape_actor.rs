@@ -23,6 +23,7 @@ pub fn ser_actor(
 
 pub(crate) fn de_actor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Actor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "User" => {
-                            builder = builder.set_user(crate::protocol_serde::shape_actor_user::de_actor_user(tokens)?);
+                            builder = builder.set_user(crate::protocol_serde::shape_actor_user::de_actor_user(tokens, _value)?);
                         }
                         "Session" => {
-                            builder = builder.set_session(crate::protocol_serde::shape_actor_session::de_actor_session(tokens)?);
+                            builder = builder.set_session(crate::protocol_serde::shape_actor_session::de_actor_session(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

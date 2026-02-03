@@ -50,6 +50,7 @@ pub fn ser_einvoice_delivery_preference(
 
 pub(crate) fn de_einvoice_delivery_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EinvoiceDeliveryPreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,12 +66,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EinvoiceDeliveryDocumentTypes" => {
                             builder = builder.set_einvoice_delivery_document_types(
-                                crate::protocol_serde::shape_einvoice_delivery_document_types::de_einvoice_delivery_document_types(tokens)?,
+                                crate::protocol_serde::shape_einvoice_delivery_document_types::de_einvoice_delivery_document_types(tokens, _value)?,
                             );
                         }
                         "EinvoiceDeliveryAttachmentTypes" => {
                             builder = builder.set_einvoice_delivery_attachment_types(
-                                crate::protocol_serde::shape_einvoice_delivery_attachment_types::de_einvoice_delivery_attachment_types(tokens)?,
+                                crate::protocol_serde::shape_einvoice_delivery_attachment_types::de_einvoice_delivery_attachment_types(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Protocol" => {
@@ -82,7 +85,7 @@ where
                         }
                         "PurchaseOrderDataSources" => {
                             builder = builder.set_purchase_order_data_sources(
-                                crate::protocol_serde::shape_purchase_order_data_sources::de_purchase_order_data_sources(tokens)?,
+                                crate::protocol_serde::shape_purchase_order_data_sources::de_purchase_order_data_sources(tokens, _value)?,
                             );
                         }
                         "ConnectionTestingMethod" => {

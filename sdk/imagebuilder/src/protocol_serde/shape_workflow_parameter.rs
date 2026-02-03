@@ -20,6 +20,7 @@ pub fn ser_workflow_parameter(
 
 pub(crate) fn de_workflow_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkflowParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder
-                                .set_value(crate::protocol_serde::shape_workflow_parameter_value_list::de_workflow_parameter_value_list(tokens)?);
+                            builder = builder.set_value(
+                                crate::protocol_serde::shape_workflow_parameter_value_list::de_workflow_parameter_value_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

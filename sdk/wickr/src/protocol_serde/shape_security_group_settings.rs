@@ -179,6 +179,7 @@ pub fn ser_security_group_settings(
 
 pub(crate) fn de_security_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SecurityGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -197,11 +198,11 @@ where
                         }
                         "atakPackageValues" => {
                             builder = builder.set_atak_package_values(
-                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens)?,
+                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value)?,
                             );
                         }
                         "calling" => {
-                            builder = builder.set_calling(crate::protocol_serde::shape_calling_settings::de_calling_settings(tokens)?);
+                            builder = builder.set_calling(crate::protocol_serde::shape_calling_settings::de_calling_settings(tokens, _value)?);
                         }
                         "checkForUpdates" => {
                             builder = builder.set_check_for_updates(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -287,15 +288,16 @@ where
                                 builder.set_message_forwarding_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "passwordRequirements" => {
-                            builder = builder
-                                .set_password_requirements(crate::protocol_serde::shape_password_requirements::de_password_requirements(tokens)?);
+                            builder = builder.set_password_requirements(
+                                crate::protocol_serde::shape_password_requirements::de_password_requirements(tokens, _value)?,
+                            );
                         }
                         "presenceEnabled" => {
                             builder = builder.set_presence_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "quickResponses" => {
                             builder = builder.set_quick_responses(
-                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens)?,
+                                crate::protocol_serde::shape_security_group_string_list::de_security_group_string_list(tokens, _value)?,
                             );
                         }
                         "showMasterRecoveryKey" => {
@@ -303,7 +305,7 @@ where
                                 builder.set_show_master_recovery_key(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "shredder" => {
-                            builder = builder.set_shredder(crate::protocol_serde::shape_shredder_settings::de_shredder_settings(tokens)?);
+                            builder = builder.set_shredder(crate::protocol_serde::shape_shredder_settings::de_shredder_settings(tokens, _value)?);
                         }
                         "ssoMaxIdleMinutes" => {
                             builder = builder.set_sso_max_idle_minutes(
@@ -327,18 +329,19 @@ where
                             );
                         }
                         "permittedNetworks" => {
-                            builder = builder
-                                .set_permitted_networks(crate::protocol_serde::shape_permitted_networks_list::de_permitted_networks_list(tokens)?);
+                            builder = builder.set_permitted_networks(
+                                crate::protocol_serde::shape_permitted_networks_list::de_permitted_networks_list(tokens, _value)?,
+                            );
                         }
                         "permittedWickrAwsNetworks" => {
                             builder = builder.set_permitted_wickr_aws_networks(
-                                crate::protocol_serde::shape_wickr_aws_networks_list::de_wickr_aws_networks_list(tokens)?,
+                                crate::protocol_serde::shape_wickr_aws_networks_list::de_wickr_aws_networks_list(tokens, _value)?,
                             );
                         }
                         "permittedWickrEnterpriseNetworks" => {
                             builder = builder.set_permitted_wickr_enterprise_networks(
                                 crate::protocol_serde::shape_permitted_wickr_enterprise_networks_list::de_permitted_wickr_enterprise_networks_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

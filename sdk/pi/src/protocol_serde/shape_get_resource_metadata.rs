@@ -99,13 +99,13 @@ pub fn ser_get_resource_metadata_input(
 }
 
 pub(crate) fn de_get_resource_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,7 +120,9 @@ pub(crate) fn de_get_resource_metadata(
                     );
                 }
                 "Features" => {
-                    builder = builder.set_features(crate::protocol_serde::shape_feature_metadata_map::de_feature_metadata_map(tokens)?);
+                    builder = builder.set_features(crate::protocol_serde::shape_feature_metadata_map::de_feature_metadata_map(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

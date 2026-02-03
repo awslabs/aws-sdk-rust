@@ -173,7 +173,7 @@ mod create_what_if_forecast_export;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_forecast::Error> {
 /// # let client: aws_sdk_forecast::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_auto_predictor()
 ///     .customize()

@@ -17,6 +17,7 @@ pub fn ser_target_resource(
 
 pub(crate) fn de_target_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "targetIdentifier" => {
-                            builder = builder.set_target_identifier(crate::protocol_serde::shape_target_identifier::de_target_identifier(tokens)?);
+                            builder =
+                                builder.set_target_identifier(crate::protocol_serde::shape_target_identifier::de_target_identifier(tokens, _value)?);
                         }
                         "region" => {
                             builder = builder.set_region(

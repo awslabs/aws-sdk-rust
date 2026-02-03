@@ -173,7 +173,7 @@ mod create_vpc_endpoint_association;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_networkfirewall::Error> {
 /// # let client: aws_sdk_networkfirewall::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_network_firewall_transit_gateway_attachment()
 ///     .customize()

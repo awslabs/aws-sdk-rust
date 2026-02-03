@@ -102,13 +102,13 @@ pub fn de_describe_access_policy_http_response(
 }
 
 pub(crate) fn de_describe_access_policy(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,7 +136,7 @@ pub(crate) fn de_describe_access_policy(
                     );
                 }
                 "accessPolicyIdentity" => {
-                    builder = builder.set_access_policy_identity(crate::protocol_serde::shape_identity::de_identity(tokens)?);
+                    builder = builder.set_access_policy_identity(crate::protocol_serde::shape_identity::de_identity(tokens, _value)?);
                 }
                 "accessPolicyLastUpdateDate" => {
                     builder = builder.set_access_policy_last_update_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -152,7 +152,7 @@ pub(crate) fn de_describe_access_policy(
                     );
                 }
                 "accessPolicyResource" => {
-                    builder = builder.set_access_policy_resource(crate::protocol_serde::shape_resource::de_resource(tokens)?);
+                    builder = builder.set_access_policy_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

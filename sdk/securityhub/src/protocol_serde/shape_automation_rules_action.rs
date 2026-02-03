@@ -17,6 +17,7 @@ pub fn ser_automation_rules_action(
 
 pub(crate) fn de_automation_rules_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomationRulesAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                         "FindingFieldsUpdate" => {
                             builder = builder.set_finding_fields_update(
                                 crate::protocol_serde::shape_automation_rules_finding_fields_update::de_automation_rules_finding_fields_update(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

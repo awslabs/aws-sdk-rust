@@ -14,6 +14,7 @@ pub fn ser_tax_documents(
 
 pub(crate) fn de_tax_documents<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaxDocuments>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IND" => {
-                            builder = builder.set_ind(crate::protocol_serde::shape_ind_tax_documents::de_ind_tax_documents(tokens)?);
+                            builder = builder.set_ind(crate::protocol_serde::shape_ind_tax_documents::de_ind_tax_documents(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

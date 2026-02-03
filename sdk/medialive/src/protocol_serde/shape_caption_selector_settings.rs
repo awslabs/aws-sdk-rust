@@ -50,6 +50,7 @@ pub fn ser_caption_selector_settings(
 
 pub(crate) fn de_caption_selector_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptionSelectorSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,34 +66,37 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ancillarySourceSettings" => {
                             builder = builder.set_ancillary_source_settings(
-                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens)?,
+                                crate::protocol_serde::shape_ancillary_source_settings::de_ancillary_source_settings(tokens, _value)?,
                             );
                         }
                         "aribSourceSettings" => {
-                            builder =
-                                builder.set_arib_source_settings(crate::protocol_serde::shape_arib_source_settings::de_arib_source_settings(tokens)?);
+                            builder = builder.set_arib_source_settings(crate::protocol_serde::shape_arib_source_settings::de_arib_source_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "dvbSubSourceSettings" => {
                             builder = builder.set_dvb_sub_source_settings(
-                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens)?,
+                                crate::protocol_serde::shape_dvb_sub_source_settings::de_dvb_sub_source_settings(tokens, _value)?,
                             );
                         }
                         "embeddedSourceSettings" => {
                             builder = builder.set_embedded_source_settings(
-                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens)?,
+                                crate::protocol_serde::shape_embedded_source_settings::de_embedded_source_settings(tokens, _value)?,
                             );
                         }
                         "scte20SourceSettings" => {
-                            builder = builder
-                                .set_scte20_source_settings(crate::protocol_serde::shape_scte20_source_settings::de_scte20_source_settings(tokens)?);
+                            builder = builder.set_scte20_source_settings(
+                                crate::protocol_serde::shape_scte20_source_settings::de_scte20_source_settings(tokens, _value)?,
+                            );
                         }
                         "scte27SourceSettings" => {
-                            builder = builder
-                                .set_scte27_source_settings(crate::protocol_serde::shape_scte27_source_settings::de_scte27_source_settings(tokens)?);
+                            builder = builder.set_scte27_source_settings(
+                                crate::protocol_serde::shape_scte27_source_settings::de_scte27_source_settings(tokens, _value)?,
+                            );
                         }
                         "teletextSourceSettings" => {
                             builder = builder.set_teletext_source_settings(
-                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens)?,
+                                crate::protocol_serde::shape_teletext_source_settings::de_teletext_source_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

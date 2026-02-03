@@ -14,6 +14,7 @@ pub fn ser_processing_resources(
 
 pub(crate) fn de_processing_resources<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProcessingResources>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClusterConfig" => {
                             builder = builder.set_cluster_config(
-                                crate::protocol_serde::shape_processing_cluster_config::de_processing_cluster_config(tokens)?,
+                                crate::protocol_serde::shape_processing_cluster_config::de_processing_cluster_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -53,6 +53,7 @@ pub fn ser_broker_node_group_info(
 
 pub(crate) fn de_broker_node_group_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BrokerNodeGroupInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                             );
                         }
                         "clientSubnets" => {
-                            builder = builder.set_client_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_client_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "instanceType" => {
                             builder = builder.set_instance_type(
@@ -84,16 +85,17 @@ where
                             );
                         }
                         "securityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "storageInfo" => {
-                            builder = builder.set_storage_info(crate::protocol_serde::shape_storage_info::de_storage_info(tokens)?);
+                            builder = builder.set_storage_info(crate::protocol_serde::shape_storage_info::de_storage_info(tokens, _value)?);
                         }
                         "connectivityInfo" => {
-                            builder = builder.set_connectivity_info(crate::protocol_serde::shape_connectivity_info::de_connectivity_info(tokens)?);
+                            builder =
+                                builder.set_connectivity_info(crate::protocol_serde::shape_connectivity_info::de_connectivity_info(tokens, _value)?);
                         }
                         "zoneIds" => {
-                            builder = builder.set_zone_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_zone_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

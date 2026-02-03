@@ -26,6 +26,7 @@ pub fn ser_field_options_case_rule(
 
 pub(crate) fn de_field_options_case_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldOptionsCaseRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                         "parentChildFieldOptionsMappings" => {
                             builder = builder.set_parent_child_field_options_mappings(
                                 crate::protocol_serde::shape_parent_child_field_options_mapping_list::de_parent_child_field_options_mapping_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

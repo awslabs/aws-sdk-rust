@@ -124,10 +124,10 @@ pub fn de_get_rule_http_response(
 }
 
 pub(crate) fn de_get_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_rule::builders::GetRuleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_rule::builders::GetRuleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,7 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "detail" => {
-                    builder = builder.set_detail(crate::protocol_serde::shape_rule_detail::de_rule_detail(tokens)?);
+                    builder = builder.set_detail(crate::protocol_serde::shape_rule_detail::de_rule_detail(tokens, _value)?);
                 }
                 "identifier" => {
                     builder = builder.set_identifier(
@@ -200,10 +200,10 @@ pub(crate) fn de_get_rule(
                     );
                 }
                 "scope" => {
-                    builder = builder.set_scope(crate::protocol_serde::shape_rule_scope::de_rule_scope(tokens)?);
+                    builder = builder.set_scope(crate::protocol_serde::shape_rule_scope::de_rule_scope(tokens, _value)?);
                 }
                 "target" => {
-                    builder = builder.set_target(crate::protocol_serde::shape_rule_target::de_rule_target(tokens)?);
+                    builder = builder.set_target(crate::protocol_serde::shape_rule_target::de_rule_target(tokens, _value)?);
                 }
                 "targetType" => {
                     builder = builder.set_target_type(

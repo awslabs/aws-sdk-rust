@@ -175,13 +175,13 @@ pub fn ser_get_expense_analysis_input(
 }
 
 pub(crate) fn de_get_expense_analysis(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -189,7 +189,7 @@ pub(crate) fn de_get_expense_analysis(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
                 }
                 "JobStatus" => {
                     builder = builder.set_job_status(
@@ -206,10 +206,12 @@ pub(crate) fn de_get_expense_analysis(
                     );
                 }
                 "ExpenseDocuments" => {
-                    builder = builder.set_expense_documents(crate::protocol_serde::shape_expense_document_list::de_expense_document_list(tokens)?);
+                    builder = builder.set_expense_documents(crate::protocol_serde::shape_expense_document_list::de_expense_document_list(
+                        tokens, _value,
+                    )?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value)?);
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(

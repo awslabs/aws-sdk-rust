@@ -108,11 +108,11 @@ pub fn de_get_workflow_http_response(
 }
 
 pub(crate) fn de_get_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow::builders::GetWorkflowOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_workflow::builders::GetWorkflowOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -213,7 +213,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                 }
                 "templateId" => {
                     builder = builder.set_template_id(
@@ -223,7 +223,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tools" => {
-                    builder = builder.set_tools(crate::protocol_serde::shape_tools_list::de_tools_list(tokens)?);
+                    builder = builder.set_tools(crate::protocol_serde::shape_tools_list::de_tools_list(tokens, _value)?);
                 }
                 "totalSteps" => {
                     builder = builder.set_total_steps(
@@ -240,7 +240,9 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "workflowInputs" => {
-                    builder = builder.set_workflow_inputs(crate::protocol_serde::shape_step_input_parameters::de_step_input_parameters(tokens)?);
+                    builder = builder.set_workflow_inputs(crate::protocol_serde::shape_step_input_parameters::de_step_input_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

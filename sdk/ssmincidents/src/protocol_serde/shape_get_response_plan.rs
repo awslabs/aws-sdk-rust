@@ -110,13 +110,13 @@ pub fn de_get_response_plan_http_response(
 }
 
 pub(crate) fn de_get_response_plan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_response_plan::builders::GetResponsePlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_get_response_plan(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actions" => {
-                    builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens)?);
+                    builder = builder.set_actions(crate::protocol_serde::shape_actions_list::de_actions_list(tokens, _value)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -134,7 +134,7 @@ pub(crate) fn de_get_response_plan(
                     );
                 }
                 "chatChannel" => {
-                    builder = builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens)?);
+                    builder = builder.set_chat_channel(crate::protocol_serde::shape_chat_channel::de_chat_channel(tokens, _value)?);
                 }
                 "displayName" => {
                     builder = builder.set_display_name(
@@ -144,13 +144,13 @@ pub(crate) fn de_get_response_plan(
                     );
                 }
                 "engagements" => {
-                    builder = builder.set_engagements(crate::protocol_serde::shape_engagement_set::de_engagement_set(tokens)?);
+                    builder = builder.set_engagements(crate::protocol_serde::shape_engagement_set::de_engagement_set(tokens, _value)?);
                 }
                 "incidentTemplate" => {
-                    builder = builder.set_incident_template(crate::protocol_serde::shape_incident_template::de_incident_template(tokens)?);
+                    builder = builder.set_incident_template(crate::protocol_serde::shape_incident_template::de_incident_template(tokens, _value)?);
                 }
                 "integrations" => {
-                    builder = builder.set_integrations(crate::protocol_serde::shape_integrations::de_integrations(tokens)?);
+                    builder = builder.set_integrations(crate::protocol_serde::shape_integrations::de_integrations(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(

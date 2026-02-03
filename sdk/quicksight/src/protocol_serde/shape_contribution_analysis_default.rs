@@ -23,6 +23,7 @@ pub fn ser_contribution_analysis_default(
 
 pub(crate) fn de_contribution_analysis_default<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContributionAnalysisDefault>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ContributorDimensions" => {
                             builder = builder.set_contributor_dimensions(
-                                crate::protocol_serde::shape_contributor_dimension_list::de_contributor_dimension_list(tokens)?,
+                                crate::protocol_serde::shape_contributor_dimension_list::de_contributor_dimension_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

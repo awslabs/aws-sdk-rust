@@ -49,6 +49,7 @@ pub fn ser_ssm_automation(
 
 pub(crate) fn de_ssm_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SsmAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,11 +92,12 @@ where
                             );
                         }
                         "parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_ssm_parameters::de_ssm_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_ssm_parameters::de_ssm_parameters(tokens, _value)?);
                         }
                         "dynamicParameters" => {
-                            builder = builder
-                                .set_dynamic_parameters(crate::protocol_serde::shape_dynamic_ssm_parameters::de_dynamic_ssm_parameters(tokens)?);
+                            builder = builder.set_dynamic_parameters(crate::protocol_serde::shape_dynamic_ssm_parameters::de_dynamic_ssm_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

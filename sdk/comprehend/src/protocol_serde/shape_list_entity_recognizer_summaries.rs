@@ -106,13 +106,13 @@ pub fn ser_list_entity_recognizer_summaries_input(
 }
 
 pub(crate) fn de_list_entity_recognizer_summaries(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_entity_recognizer_summaries::builders::ListEntityRecognizerSummariesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,7 @@ pub(crate) fn de_list_entity_recognizer_summaries(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "EntityRecognizerSummariesList" => {
                     builder = builder.set_entity_recognizer_summaries_list(
-                        crate::protocol_serde::shape_entity_recognizer_summaries_list::de_entity_recognizer_summaries_list(tokens)?,
+                        crate::protocol_serde::shape_entity_recognizer_summaries_list::de_entity_recognizer_summaries_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

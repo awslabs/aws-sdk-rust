@@ -17,6 +17,7 @@ pub fn ser_code_configuration(
 
 pub(crate) fn de_code_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "CodeConfigurationValues" => {
                             builder = builder.set_code_configuration_values(
-                                crate::protocol_serde::shape_code_configuration_values::de_code_configuration_values(tokens)?,
+                                crate::protocol_serde::shape_code_configuration_values::de_code_configuration_values(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

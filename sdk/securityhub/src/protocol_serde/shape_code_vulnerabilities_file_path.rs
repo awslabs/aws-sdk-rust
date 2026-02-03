@@ -26,6 +26,7 @@ pub fn ser_code_vulnerabilities_file_path(
 
 pub(crate) fn de_code_vulnerabilities_file_path<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeVulnerabilitiesFilePath>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

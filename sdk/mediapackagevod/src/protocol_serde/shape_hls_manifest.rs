@@ -32,6 +32,7 @@ pub fn ser_hls_manifest(
 
 pub(crate) fn de_hls_manifest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HlsManifest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,8 @@ where
                             builder = builder.set_repeat_ext_x_key(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "streamSelection" => {
-                            builder = builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(tokens)?);
+                            builder =
+                                builder.set_stream_selection(crate::protocol_serde::shape_stream_selection::de_stream_selection(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

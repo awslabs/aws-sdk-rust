@@ -39,6 +39,7 @@ pub fn ser_structured_message(
 
 pub(crate) fn de_structured_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StructuredMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,14 +69,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "primitiveMessageDefinition" => Some(crate::types::StructuredMessage::PrimitiveMessageDefinition(
-                            crate::protocol_serde::shape_primitive_message_definition::de_primitive_message_definition(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'primitiveMessageDefinition' cannot be null",
-                                )
-                            })?,
+                            crate::protocol_serde::shape_primitive_message_definition::de_primitive_message_definition(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'primitiveMessageDefinition' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "structuredMessageListDefinition" => Some(crate::types::StructuredMessage::StructuredMessageListDefinition(
-                            crate::protocol_serde::shape_structured_message_list_definition::de_structured_message_list_definition(tokens)?
+                            crate::protocol_serde::shape_structured_message_list_definition::de_structured_message_list_definition(tokens, _value)?
                                 .map(Box::new)
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -84,13 +87,12 @@ where
                                 })?,
                         )),
                         "structuredMessageDefinition" => Some(crate::types::StructuredMessage::StructuredMessageDefinition(
-                            crate::protocol_serde::shape_structured_message_definition::de_structured_message_definition(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_structured_message_definition::de_structured_message_definition(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'structuredMessageDefinition' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

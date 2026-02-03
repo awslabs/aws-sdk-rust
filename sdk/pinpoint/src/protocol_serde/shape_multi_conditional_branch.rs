@@ -17,6 +17,7 @@ pub fn ser_multi_conditional_branch(
 
 pub(crate) fn de_multi_conditional_branch<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiConditionalBranch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_simple_condition::de_simple_condition(tokens)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_simple_condition::de_simple_condition(tokens, _value)?);
                         }
                         "NextActivity" => {
                             builder = builder.set_next_activity(

@@ -35,6 +35,7 @@ pub fn ser_layer_map_visual(
 
 pub(crate) fn de_layer_map_visual<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LayerMapVisual>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,16 +58,19 @@ where
                         }
                         "Title" => {
                             builder = builder.set_title(crate::protocol_serde::shape_visual_title_label_options::de_visual_title_label_options(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Subtitle" => {
-                            builder = builder
-                                .set_subtitle(crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(tokens)?);
+                            builder = builder.set_subtitle(
+                                crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(tokens, _value)?,
+                            );
                         }
                         "ChartConfiguration" => {
                             builder = builder.set_chart_configuration(
-                                crate::protocol_serde::shape_geospatial_layer_map_configuration::de_geospatial_layer_map_configuration(tokens)?,
+                                crate::protocol_serde::shape_geospatial_layer_map_configuration::de_geospatial_layer_map_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "DataSetIdentifier" => {

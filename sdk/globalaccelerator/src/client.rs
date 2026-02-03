@@ -167,7 +167,7 @@ mod create_listener;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_globalaccelerator::Error> {
 /// # let client: aws_sdk_globalaccelerator::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_custom_routing_endpoints()
 ///     .customize()

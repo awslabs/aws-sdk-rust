@@ -153,11 +153,11 @@ pub fn de_get_workflow_http_response(
 }
 
 pub(crate) fn de_get_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow::builders::GetWorkflowOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_workflow::builders::GetWorkflowOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -179,8 +179,9 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "containerRegistryMap" => {
-                    builder =
-                        builder.set_container_registry_map(crate::protocol_serde::shape_container_registry_map::de_container_registry_map(tokens)?);
+                    builder = builder.set_container_registry_map(crate::protocol_serde::shape_container_registry_map::de_container_registry_map(
+                        tokens, _value,
+                    )?);
                 }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -197,7 +198,7 @@ pub(crate) fn de_get_workflow(
                 }
                 "definitionRepositoryDetails" => {
                     builder = builder.set_definition_repository_details(
-                        crate::protocol_serde::shape_definition_repository_details::de_definition_repository_details(tokens)?,
+                        crate::protocol_serde::shape_definition_repository_details::de_definition_repository_details(tokens, _value)?,
                     );
                 }
                 "description" => {
@@ -236,7 +237,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_workflow_metadata::de_workflow_metadata(tokens)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_workflow_metadata::de_workflow_metadata(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -247,7 +248,7 @@ pub(crate) fn de_get_workflow(
                 }
                 "parameterTemplate" => {
                     builder = builder.set_parameter_template(
-                        crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens)?,
+                        crate::protocol_serde::shape_workflow_parameter_template::de_workflow_parameter_template(tokens, _value)?,
                     );
                 }
                 "readme" => {
@@ -293,7 +294,7 @@ pub(crate) fn de_get_workflow(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

@@ -229,15 +229,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectVe
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::list_object_versions::ListObjectVersionsInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_list_object_versions::ser_list_object_versions_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");
@@ -398,7 +398,7 @@ mod list_object_versions_test {
                     .build(),
             ]))
             .build();
-        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http::response::Builder::new()
+        let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(::http_1x::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_types::body::SdkBody::from("<?xml version=\"1.0\"?>\n<ListVersionsResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n  <Name>sdk-obj-versions-test</Name>\n  <Prefix/>\n  <KeyMarker/>\n  <VersionIdMarker/>\n  <MaxKeys>1000</MaxKeys>\n  <IsTruncated>false</IsTruncated>\n  <DeleteMarker>\n    <Key>build.gradle.kts</Key>\n    <VersionId>null</VersionId>\n    <IsLatest>true</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n  </DeleteMarker>\n  <Version>\n    <Key>build.gradle.kts</Key>\n    <VersionId>IfK9Z4.H5TLAtMxFrxN_C7rFEZbufF3V</VersionId>\n    <IsLatest>false</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <ETag>\"99613b85e3f38b222c4ee548cde1e59d\"</ETag>\n    <Size>6903</Size>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n    <StorageClass>STANDARD</StorageClass>\n  </Version>\n  <DeleteMarker>\n    <Key>file-2</Key>\n    <VersionId>o98RL6vmlOYiymftbX7wgy_4XWQG4AmY</VersionId>\n    <IsLatest>true</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n  </DeleteMarker>\n  <Version>\n    <Key>file-2</Key>\n    <VersionId>PSVAbvQihRdsNiktGothjGng7q.5ou9Q</VersionId>\n    <IsLatest>false</IsLatest>\n    <LastModified>2009-02-13T23:31:30Z</LastModified>\n    <ETag>\"1727d9cb38dd325d9c12c973ef3675fc\"</ETag>\n    <Size>14</Size>\n    <Owner>\n      <ID>c1665459250c459f1849ddce9b291fc3a72bcf5220dc8f6391a0a1045c683b34</ID>\n      <DisplayName>test-name</DisplayName>\n    </Owner>\n    <StorageClass>STANDARD</StorageClass>\n  </Version>\n</ListVersionsResult>\n"))
                     .unwrap()

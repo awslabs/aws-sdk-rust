@@ -50,6 +50,7 @@ pub fn ser_custom_parameter_values(
 
 pub(crate) fn de_custom_parameter_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomParameterValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,22 +66,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StringValues" => {
                             builder = builder.set_string_values(
-                                crate::protocol_serde::shape_string_default_value_list::de_string_default_value_list(tokens)?,
+                                crate::protocol_serde::shape_string_default_value_list::de_string_default_value_list(tokens, _value)?,
                             );
                         }
                         "IntegerValues" => {
                             builder = builder.set_integer_values(
-                                crate::protocol_serde::shape_integer_default_value_list::de_integer_default_value_list(tokens)?,
+                                crate::protocol_serde::shape_integer_default_value_list::de_integer_default_value_list(tokens, _value)?,
                             );
                         }
                         "DecimalValues" => {
                             builder = builder.set_decimal_values(
-                                crate::protocol_serde::shape_decimal_default_value_list::de_decimal_default_value_list(tokens)?,
+                                crate::protocol_serde::shape_decimal_default_value_list::de_decimal_default_value_list(tokens, _value)?,
                             );
                         }
                         "DateTimeValues" => {
                             builder = builder.set_date_time_values(
-                                crate::protocol_serde::shape_date_time_default_value_list::de_date_time_default_value_list(tokens)?,
+                                crate::protocol_serde::shape_date_time_default_value_list::de_date_time_default_value_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

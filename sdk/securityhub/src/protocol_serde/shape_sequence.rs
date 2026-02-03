@@ -59,6 +59,7 @@ pub fn ser_sequence(
 
 pub(crate) fn de_sequence<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Sequence>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,16 +81,19 @@ where
                             );
                         }
                         "Actors" => {
-                            builder = builder.set_actors(crate::protocol_serde::shape_actors_list::de_actors_list(tokens)?);
+                            builder = builder.set_actors(crate::protocol_serde::shape_actors_list::de_actors_list(tokens, _value)?);
                         }
                         "Endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_network_endpoints_list::de_network_endpoints_list(tokens)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_network_endpoints_list::de_network_endpoints_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Signals" => {
-                            builder = builder.set_signals(crate::protocol_serde::shape_signals_list::de_signals_list(tokens)?);
+                            builder = builder.set_signals(crate::protocol_serde::shape_signals_list::de_signals_list(tokens, _value)?);
                         }
                         "SequenceIndicators" => {
-                            builder = builder.set_sequence_indicators(crate::protocol_serde::shape_indicators_list::de_indicators_list(tokens)?);
+                            builder =
+                                builder.set_sequence_indicators(crate::protocol_serde::shape_indicators_list::de_indicators_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -40,6 +40,7 @@ pub fn ser_code_configuration_values(
 
 pub(crate) fn de_code_configuration_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeConfigurationValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,12 +84,12 @@ where
                         }
                         "RuntimeEnvironmentVariables" => {
                             builder = builder.set_runtime_environment_variables(
-                                crate::protocol_serde::shape_runtime_environment_variables::de_runtime_environment_variables(tokens)?,
+                                crate::protocol_serde::shape_runtime_environment_variables::de_runtime_environment_variables(tokens, _value)?,
                             );
                         }
                         "RuntimeEnvironmentSecrets" => {
                             builder = builder.set_runtime_environment_secrets(
-                                crate::protocol_serde::shape_runtime_environment_secrets::de_runtime_environment_secrets(tokens)?,
+                                crate::protocol_serde::shape_runtime_environment_secrets::de_runtime_environment_secrets(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

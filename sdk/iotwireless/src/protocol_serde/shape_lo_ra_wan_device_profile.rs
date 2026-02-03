@@ -107,6 +107,7 @@ pub fn ser_lo_ra_wan_device_profile(
 
 pub(crate) fn de_lo_ra_wan_device_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoRaWanDeviceProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -205,7 +206,7 @@ where
                         }
                         "FactoryPresetFreqsList" => {
                             builder = builder.set_factory_preset_freqs_list(
-                                crate::protocol_serde::shape_factory_preset_freqs_list::de_factory_preset_freqs_list(tokens)?,
+                                crate::protocol_serde::shape_factory_preset_freqs_list::de_factory_preset_freqs_list(tokens, _value)?,
                             );
                         }
                         "MaxEirp" => {

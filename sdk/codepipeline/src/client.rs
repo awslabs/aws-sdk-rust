@@ -153,7 +153,7 @@ mod create_pipeline;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codepipeline::Error> {
 /// # let client: aws_sdk_codepipeline::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.acknowledge_job()
 ///     .customize()

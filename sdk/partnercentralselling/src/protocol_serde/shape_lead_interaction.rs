@@ -37,6 +37,7 @@ pub fn ser_lead_interaction(
 
 pub(crate) fn de_lead_interaction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LeadInteraction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -99,7 +100,7 @@ where
                             );
                         }
                         "Contact" => {
-                            builder = builder.set_contact(crate::protocol_serde::shape_lead_contact::de_lead_contact(tokens)?);
+                            builder = builder.set_contact(crate::protocol_serde::shape_lead_contact::de_lead_contact(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -87,6 +87,7 @@ pub fn ser_aws_elasticsearch_domain_details(
 
 pub(crate) fn de_aws_elasticsearch_domain_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElasticsearchDomainDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -109,7 +110,7 @@ where
                         }
                         "DomainEndpointOptions" => {
                             builder = builder.set_domain_endpoint_options(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_domain_endpoint_options::de_aws_elasticsearch_domain_domain_endpoint_options(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_domain_endpoint_options::de_aws_elasticsearch_domain_domain_endpoint_options(tokens, _value)?
                                 );
                         }
                         "DomainId" => {
@@ -134,7 +135,7 @@ where
                             );
                         }
                         "Endpoints" => {
-                            builder = builder.set_endpoints(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_endpoints(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "ElasticsearchVersion" => {
                             builder = builder.set_elasticsearch_version(
@@ -145,32 +146,34 @@ where
                         }
                         "ElasticsearchClusterConfig" => {
                             builder = builder.set_elasticsearch_cluster_config(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_elasticsearch_cluster_config_details::de_aws_elasticsearch_domain_elasticsearch_cluster_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_elasticsearch_cluster_config_details::de_aws_elasticsearch_domain_elasticsearch_cluster_config_details(tokens, _value)?
                                 );
                         }
                         "EncryptionAtRestOptions" => {
                             builder = builder.set_encryption_at_rest_options(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_encryption_at_rest_options::de_aws_elasticsearch_domain_encryption_at_rest_options(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_encryption_at_rest_options::de_aws_elasticsearch_domain_encryption_at_rest_options(tokens, _value)?
                                 );
                         }
                         "LogPublishingOptions" => {
                             builder = builder.set_log_publishing_options(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options::de_aws_elasticsearch_domain_log_publishing_options(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_log_publishing_options::de_aws_elasticsearch_domain_log_publishing_options(tokens, _value)?
                                 );
                         }
                         "NodeToNodeEncryptionOptions" => {
                             builder = builder.set_node_to_node_encryption_options(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_node_to_node_encryption_options::de_aws_elasticsearch_domain_node_to_node_encryption_options(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_node_to_node_encryption_options::de_aws_elasticsearch_domain_node_to_node_encryption_options(tokens, _value)?
                                 );
                         }
                         "ServiceSoftwareOptions" => {
                             builder = builder.set_service_software_options(
-                                    crate::protocol_serde::shape_aws_elasticsearch_domain_service_software_options::de_aws_elasticsearch_domain_service_software_options(tokens)?
+                                    crate::protocol_serde::shape_aws_elasticsearch_domain_service_software_options::de_aws_elasticsearch_domain_service_software_options(tokens, _value)?
                                 );
                         }
                         "VPCOptions" => {
                             builder = builder.set_vpc_options(
-                                crate::protocol_serde::shape_aws_elasticsearch_domain_vpc_options::de_aws_elasticsearch_domain_vpc_options(tokens)?,
+                                crate::protocol_serde::shape_aws_elasticsearch_domain_vpc_options::de_aws_elasticsearch_domain_vpc_options(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

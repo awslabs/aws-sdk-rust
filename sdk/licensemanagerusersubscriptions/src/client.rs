@@ -149,7 +149,7 @@ mod create_license_server_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_licensemanagerusersubscriptions::Error> {
 /// # let client: aws_sdk_licensemanagerusersubscriptions::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_user()
 ///     .customize()

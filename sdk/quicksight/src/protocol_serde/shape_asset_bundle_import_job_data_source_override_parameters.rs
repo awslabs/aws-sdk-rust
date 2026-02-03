@@ -41,6 +41,7 @@ pub fn ser_asset_bundle_import_job_data_source_override_parameters(
 
 pub(crate) fn de_asset_bundle_import_job_data_source_override_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AssetBundleImportJobDataSourceOverrideParameters>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -72,20 +73,21 @@ where
                             );
                         }
                         "DataSourceParameters" => {
-                            builder = builder
-                                .set_data_source_parameters(crate::protocol_serde::shape_data_source_parameters::de_data_source_parameters(tokens)?);
+                            builder = builder.set_data_source_parameters(
+                                crate::protocol_serde::shape_data_source_parameters::de_data_source_parameters(tokens, _value)?,
+                            );
                         }
                         "VpcConnectionProperties" => {
                             builder = builder.set_vpc_connection_properties(
-                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens)?,
+                                crate::protocol_serde::shape_vpc_connection_properties::de_vpc_connection_properties(tokens, _value)?,
                             );
                         }
                         "SslProperties" => {
-                            builder = builder.set_ssl_properties(crate::protocol_serde::shape_ssl_properties::de_ssl_properties(tokens)?);
+                            builder = builder.set_ssl_properties(crate::protocol_serde::shape_ssl_properties::de_ssl_properties(tokens, _value)?);
                         }
                         "Credentials" => {
                             builder = builder.set_credentials(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_credentials::de_asset_bundle_import_job_data_source_credentials(tokens)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_credentials::de_asset_bundle_import_job_data_source_credentials(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

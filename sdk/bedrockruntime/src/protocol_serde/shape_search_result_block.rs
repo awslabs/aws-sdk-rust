@@ -32,6 +32,7 @@ pub fn ser_search_result_block(
 
 pub(crate) fn de_search_result_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SearchResultBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,11 +61,12 @@ where
                             );
                         }
                         "content" => {
-                            builder = builder
-                                .set_content(crate::protocol_serde::shape_search_result_content_blocks::de_search_result_content_blocks(tokens)?);
+                            builder = builder.set_content(
+                                crate::protocol_serde::shape_search_result_content_blocks::de_search_result_content_blocks(tokens, _value)?,
+                            );
                         }
                         "citations" => {
-                            builder = builder.set_citations(crate::protocol_serde::shape_citations_config::de_citations_config(tokens)?);
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations_config::de_citations_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

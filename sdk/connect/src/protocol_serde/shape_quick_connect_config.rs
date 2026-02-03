@@ -35,6 +35,7 @@ pub fn ser_quick_connect_config(
 
 pub(crate) fn de_quick_connect_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QuickConnectConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,22 +58,22 @@ where
                         }
                         "UserConfig" => {
                             builder = builder.set_user_config(crate::protocol_serde::shape_user_quick_connect_config::de_user_quick_connect_config(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "QueueConfig" => {
                             builder = builder.set_queue_config(
-                                crate::protocol_serde::shape_queue_quick_connect_config::de_queue_quick_connect_config(tokens)?,
+                                crate::protocol_serde::shape_queue_quick_connect_config::de_queue_quick_connect_config(tokens, _value)?,
                             );
                         }
                         "PhoneConfig" => {
                             builder = builder.set_phone_config(
-                                crate::protocol_serde::shape_phone_number_quick_connect_config::de_phone_number_quick_connect_config(tokens)?,
+                                crate::protocol_serde::shape_phone_number_quick_connect_config::de_phone_number_quick_connect_config(tokens, _value)?,
                             );
                         }
                         "FlowConfig" => {
                             builder = builder.set_flow_config(crate::protocol_serde::shape_flow_quick_connect_config::de_flow_quick_connect_config(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

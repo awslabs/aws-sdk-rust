@@ -69,13 +69,13 @@ pub fn ser_describe_edge_deployment_plan_input(
 }
 
 pub(crate) fn de_describe_edge_deployment_plan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,8 +97,9 @@ pub(crate) fn de_describe_edge_deployment_plan(
                     );
                 }
                 "ModelConfigs" => {
-                    builder = builder
-                        .set_model_configs(crate::protocol_serde::shape_edge_deployment_model_configs::de_edge_deployment_model_configs(tokens)?);
+                    builder = builder.set_model_configs(
+                        crate::protocol_serde::shape_edge_deployment_model_configs::de_edge_deployment_model_configs(tokens, _value)?,
+                    );
                 }
                 "DeviceFleetName" => {
                     builder = builder.set_device_fleet_name(
@@ -129,8 +130,9 @@ pub(crate) fn de_describe_edge_deployment_plan(
                     );
                 }
                 "Stages" => {
-                    builder = builder
-                        .set_stages(crate::protocol_serde::shape_deployment_stage_status_summaries::de_deployment_stage_status_summaries(tokens)?);
+                    builder = builder.set_stages(
+                        crate::protocol_serde::shape_deployment_stage_status_summaries::de_deployment_stage_status_summaries(tokens, _value)?,
+                    );
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

@@ -130,13 +130,13 @@ pub fn de_batch_get_attributes_metadata_http_response(
 }
 
 pub(crate) fn de_batch_get_attributes_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_attributes_metadata::builders::BatchGetAttributesMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_attributes_metadata::builders::BatchGetAttributesMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,11 +145,11 @@ pub(crate) fn de_batch_get_attributes_metadata(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_batch_get_attribute_items::de_batch_get_attribute_items(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_attributes_errors::de_attributes_errors(tokens)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_attributes_errors::de_attributes_errors(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

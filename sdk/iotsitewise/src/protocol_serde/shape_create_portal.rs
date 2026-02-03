@@ -120,13 +120,13 @@ pub fn ser_create_portal_input(
 }
 
 pub(crate) fn de_create_portal(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_portal::builders::CreatePortalOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_portal::builders::CreatePortalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_create_portal(
                     );
                 }
                 "portalStatus" => {
-                    builder = builder.set_portal_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens)?);
+                    builder = builder.set_portal_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens, _value)?);
                 }
                 "ssoApplicationId" => {
                     builder = builder.set_sso_application_id(

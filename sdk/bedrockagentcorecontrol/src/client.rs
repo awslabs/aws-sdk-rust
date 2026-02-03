@@ -227,7 +227,7 @@ mod create_workload_identity;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrockagentcorecontrol::Error> {
 /// # let client: aws_sdk_bedrockagentcorecontrol::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_agent_runtime()
 ///     .customize()

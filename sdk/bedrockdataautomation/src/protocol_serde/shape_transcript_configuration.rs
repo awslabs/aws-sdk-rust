@@ -20,6 +20,7 @@ pub fn ser_transcript_configuration(
 
 pub(crate) fn de_transcript_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TranscriptConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "speakerLabeling" => {
                             builder = builder.set_speaker_labeling(
-                                crate::protocol_serde::shape_speaker_labeling_configuration::de_speaker_labeling_configuration(tokens)?,
+                                crate::protocol_serde::shape_speaker_labeling_configuration::de_speaker_labeling_configuration(tokens, _value)?,
                             );
                         }
                         "channelLabeling" => {
                             builder = builder.set_channel_labeling(
-                                crate::protocol_serde::shape_channel_labeling_configuration::de_channel_labeling_configuration(tokens)?,
+                                crate::protocol_serde::shape_channel_labeling_configuration::de_channel_labeling_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

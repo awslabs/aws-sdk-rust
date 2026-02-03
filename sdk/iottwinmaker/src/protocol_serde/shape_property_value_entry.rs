@@ -26,6 +26,7 @@ pub fn ser_property_value_entry(
 
 pub(crate) fn de_property_value_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PropertyValueEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,11 +42,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "entityPropertyReference" => {
                             builder = builder.set_entity_property_reference(
-                                crate::protocol_serde::shape_entity_property_reference::de_entity_property_reference(tokens)?,
+                                crate::protocol_serde::shape_entity_property_reference::de_entity_property_reference(tokens, _value)?,
                             );
                         }
                         "propertyValues" => {
-                            builder = builder.set_property_values(crate::protocol_serde::shape_property_values::de_property_values(tokens)?);
+                            builder = builder.set_property_values(crate::protocol_serde::shape_property_values::de_property_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

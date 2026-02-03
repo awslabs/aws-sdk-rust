@@ -29,6 +29,8 @@ pub struct ListShardsInput {
     pub shard_filter: ::std::option::Option<crate::types::ShardFilter>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListShardsInput {
     /// <p>The name of the data stream whose shards you want to list.</p>
@@ -71,6 +73,10 @@ impl ListShardsInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl ListShardsInput {
     /// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
@@ -90,6 +96,7 @@ pub struct ListShardsInputBuilder {
     pub(crate) stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) shard_filter: ::std::option::Option<crate::types::ShardFilter>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListShardsInputBuilder {
     /// <p>The name of the data stream whose shards you want to list.</p>
@@ -226,6 +233,20 @@ impl ListShardsInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_shards::ListShardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_shards::ListShardsInput {
@@ -236,6 +257,7 @@ impl ListShardsInputBuilder {
             stream_creation_timestamp: self.stream_creation_timestamp,
             shard_filter: self.shard_filter,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

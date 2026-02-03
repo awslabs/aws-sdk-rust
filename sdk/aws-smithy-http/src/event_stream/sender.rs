@@ -37,7 +37,7 @@ impl<T: Send + Sync + 'static, E: StdError + Send + Sync + 'static> EventStreamS
     }
 }
 
-impl<T, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
+impl<T: Send + Sync, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
     #[doc(hidden)]
     pub fn into_body_stream(
         self,
@@ -118,24 +118,24 @@ impl fmt::Display for MessageStreamError {
 /// This will yield an `Err(SdkError::ConstructionFailure)` if a message can't be
 /// marshalled into an Event Stream frame, (e.g., if the message payload was too large).
 #[allow(missing_debug_implementations)]
-pub struct MessageStreamAdapter<T, E: StdError + Send + Sync + 'static> {
+pub struct MessageStreamAdapter<T: Send + Sync, E: StdError + Send + Sync + 'static> {
     marshaller: Box<dyn MarshallMessage<Input = T> + Send + Sync>,
     error_marshaller: Box<dyn MarshallMessage<Input = E> + Send + Sync>,
     signer: Box<dyn SignMessage + Send + Sync>,
-    stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send>>,
+    stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send + Sync>>,
     end_signal_sent: bool,
     _phantom: PhantomData<E>,
 }
 
-impl<T, E: StdError + Send + Sync + 'static> Unpin for MessageStreamAdapter<T, E> {}
+impl<T: Send + Sync, E: StdError + Send + Sync + 'static> Unpin for MessageStreamAdapter<T, E> {}
 
-impl<T, E: StdError + Send + Sync + 'static> MessageStreamAdapter<T, E> {
+impl<T: Send + Sync, E: StdError + Send + Sync + 'static> MessageStreamAdapter<T, E> {
     /// Create a new `MessageStreamAdapter`.
     pub fn new(
         marshaller: impl MarshallMessage<Input = T> + Send + Sync + 'static,
         error_marshaller: impl MarshallMessage<Input = E> + Send + Sync + 'static,
         signer: impl SignMessage + Send + Sync + 'static,
-        stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send>>,
+        stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send + Sync>>,
     ) -> Self {
         MessageStreamAdapter {
             marshaller: Box::new(marshaller),
@@ -148,9 +148,11 @@ impl<T, E: StdError + Send + Sync + 'static> MessageStreamAdapter<T, E> {
     }
 }
 
-impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, E> {
-    type Item =
-        Result<Bytes, SdkError<E, aws_smithy_runtime_api::client::orchestrator::HttpResponse>>;
+impl<T: Send + Sync, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, E> {
+    type Item = Result<
+        http_body_1x::Frame<Bytes>,
+        SdkError<E, aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+    >;
 
     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
         match self.stream.as_mut().poll_next(cx) {
@@ -177,7 +179,7 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                     write_message_to(&message, &mut buffer)
                         .map_err(SdkError::construction_failure)?;
                     trace!(signed_message = ?buffer, "sending signed event stream message");
-                    Poll::Ready(Some(Ok(Bytes::from(buffer))))
+                    Poll::Ready(Some(Ok(http_body_1x::Frame::data(Bytes::from(buffer)))))
                 } else if !self.end_signal_sent {
                     self.end_signal_sent = true;
                     match self.signer.sign_empty() {
@@ -187,7 +189,7 @@ impl<T, E: StdError + Send + Sync + 'static> Stream for MessageStreamAdapter<T, 
                             write_message_to(&message, &mut buffer)
                                 .map_err(SdkError::construction_failure)?;
                             trace!(signed_message = ?buffer, "sending signed empty message to terminate the event stream");
-                            Poll::Ready(Some(Ok(Bytes::from(buffer))))
+                            Poll::Ready(Some(Ok(http_body_1x::Frame::data(Bytes::from(buffer)))))
                         }
                         None => Poll::Ready(None),
                     }
@@ -211,8 +213,6 @@ mod tests {
     };
     use aws_smithy_runtime_api::client::result::SdkError;
     use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
-    use bytes::Bytes;
-    use futures_core::Stream;
     use futures_util::stream::StreamExt;
     use std::error::Error as StdError;
 
@@ -274,39 +274,27 @@ mod tests {
         }));
     }
 
-    fn check_compatible_with_hyper_wrap_stream<S, O, E>(stream: S) -> S
-    where
-        S: Stream<Item = Result<O, E>> + Send + 'static,
-        O: Into<Bytes> + 'static,
-        E: Into<Box<dyn StdError + Send + Sync + 'static>> + 'static,
-    {
-        stream
-    }
-
     #[tokio::test]
     async fn message_stream_adapter_success() {
         let stream = stream! {
             yield Ok(TestMessage("test".into()));
         };
-        let mut adapter = check_compatible_with_hyper_wrap_stream(MessageStreamAdapter::<
-            TestMessage,
-            TestServiceError,
-        >::new(
+        let mut adapter = MessageStreamAdapter::<TestMessage, TestServiceError>::new(
             Marshaller,
             ErrorMarshaller,
             TestSigner,
             Box::pin(stream),
-        ));
+        );
 
-        let mut sent_bytes = adapter.next().await.unwrap().unwrap();
-        let sent = read_message_from(&mut sent_bytes).unwrap();
+        let sent_bytes = adapter.next().await.unwrap().unwrap();
+        let sent = read_message_from(&mut sent_bytes.into_data().unwrap()).unwrap();
         assert_eq!("signed", sent.headers()[0].name().as_str());
         assert_eq!(&HeaderValue::Bool(true), sent.headers()[0].value());
         let inner = read_message_from(&mut (&sent.payload()[..])).unwrap();
         assert_eq!(&b"test"[..], &inner.payload()[..]);
 
-        let mut end_signal_bytes = adapter.next().await.unwrap().unwrap();
-        let end_signal = read_message_from(&mut end_signal_bytes).unwrap();
+        let end_signal_bytes = adapter.next().await.unwrap().unwrap();
+        let end_signal = read_message_from(&mut end_signal_bytes.into_data().unwrap()).unwrap();
         assert_eq!("signed", end_signal.headers()[0].name().as_str());
         assert_eq!(&HeaderValue::Bool(true), end_signal.headers()[0].value());
         assert_eq!(0, end_signal.payload().len());
@@ -317,15 +305,12 @@ mod tests {
         let stream = stream! {
             yield Err(TestServiceError);
         };
-        let mut adapter = check_compatible_with_hyper_wrap_stream(MessageStreamAdapter::<
-            TestMessage,
-            TestServiceError,
-        >::new(
+        let mut adapter = MessageStreamAdapter::<TestMessage, TestServiceError>::new(
             Marshaller,
             ErrorMarshaller,
             NoOpSigner {},
             Box::pin(stream),
-        ));
+        );
 
         let result = adapter.next().await.unwrap();
         assert!(result.is_err());
@@ -345,15 +330,15 @@ mod tests {
             sender.input_stream,
         );
 
-        let mut sent_bytes = adapter.next().await.unwrap().unwrap();
-        let sent = read_message_from(&mut sent_bytes).unwrap();
+        let sent_bytes = adapter.next().await.unwrap().unwrap();
+        let sent = read_message_from(&mut sent_bytes.into_data().unwrap()).unwrap();
         assert_eq!("signed", sent.headers()[0].name().as_str());
         let inner = read_message_from(&mut (&sent.payload()[..])).unwrap();
         assert_eq!(&b"test"[..], &inner.payload()[..]);
 
         // Should get end signal next
-        let mut end_signal_bytes = adapter.next().await.unwrap().unwrap();
-        let end_signal = read_message_from(&mut end_signal_bytes).unwrap();
+        let end_signal_bytes = adapter.next().await.unwrap().unwrap();
+        let end_signal = read_message_from(&mut end_signal_bytes.into_data().unwrap()).unwrap();
         assert_eq!("signed", end_signal.headers()[0].name().as_str());
         assert_eq!(0, end_signal.payload().len());
 

@@ -29,12 +29,12 @@ pub fn de_put_bucket_policy_http_response(
 
 pub fn ser_put_bucket_policy_headers(
     input: &crate::operation::put_bucket_policy::PutBucketPolicyInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.account_id {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "account_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -46,7 +46,7 @@ pub fn ser_put_bucket_policy_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_3);
         let formatted_4 = encoder.encode();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "confirm_remove_self_bucket_access",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

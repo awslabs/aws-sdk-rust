@@ -23,6 +23,7 @@ pub fn ser_key_attributes(
 
 pub(crate) fn de_key_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KeyAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,8 @@ where
                             );
                         }
                         "KeyModesOfUse" => {
-                            builder = builder.set_key_modes_of_use(crate::protocol_serde::shape_key_modes_of_use::de_key_modes_of_use(tokens)?);
+                            builder =
+                                builder.set_key_modes_of_use(crate::protocol_serde::shape_key_modes_of_use::de_key_modes_of_use(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

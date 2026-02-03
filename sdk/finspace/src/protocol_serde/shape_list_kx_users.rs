@@ -113,11 +113,11 @@ pub fn de_list_kx_users_http_response(
 }
 
 pub(crate) fn de_list_kx_users(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_kx_users::builders::ListKxUsersOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_kx_users::builders::ListKxUsersOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,7 +132,7 @@ pub(crate) fn de_list_kx_users(
                     );
                 }
                 "users" => {
-                    builder = builder.set_users(crate::protocol_serde::shape_kx_user_list::de_kx_user_list(tokens)?);
+                    builder = builder.set_users(crate::protocol_serde::shape_kx_user_list::de_kx_user_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

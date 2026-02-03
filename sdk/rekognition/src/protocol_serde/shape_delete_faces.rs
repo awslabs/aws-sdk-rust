@@ -139,11 +139,11 @@ pub fn ser_delete_faces_input(
 }
 
 pub(crate) fn de_delete_faces(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_faces::builders::DeleteFacesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::delete_faces::builders::DeleteFacesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,11 +151,11 @@ pub(crate) fn de_delete_faces(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DeletedFaces" => {
-                    builder = builder.set_deleted_faces(crate::protocol_serde::shape_face_id_list::de_face_id_list(tokens)?);
+                    builder = builder.set_deleted_faces(crate::protocol_serde::shape_face_id_list::de_face_id_list(tokens, _value)?);
                 }
                 "UnsuccessfulFaceDeletions" => {
                     builder = builder.set_unsuccessful_face_deletions(
-                        crate::protocol_serde::shape_unsuccessful_face_deletions_list::de_unsuccessful_face_deletions_list(tokens)?,
+                        crate::protocol_serde::shape_unsuccessful_face_deletions_list::de_unsuccessful_face_deletions_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

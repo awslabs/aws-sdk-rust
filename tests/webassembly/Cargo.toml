@@ -14,12 +14,6 @@ license = "Apache-2.0"
 repository = "https://github.com/smithy-lang/smithy-rs"
 publish = false
 
-
-[features]
-default = ["test-util"]
-test-util = []
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [target.'cfg(target_family = "wasm")'.dependencies]
 aws-config = { path = "../../sdk/aws-config", default-features = false, features = [
     "rt-tokio",
@@ -27,20 +21,19 @@ aws-config = { path = "../../sdk/aws-config", default-features = false, features
 ] }
 aws-credential-types = { path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-s3 = { path = "../../sdk/s3", default-features = false }
+aws-smithy-async = { path = "../../sdk/aws-smithy-async", default-features = false, features = ["test-util", "rt-tokio"] }
 aws-smithy-http = { path = "../../sdk/aws-smithy-http" }
+aws-smithy-http-client = { path = "../../sdk/aws-smithy-http-client", default-features = false, features = ["test-util"] }
 aws-smithy-runtime = { path = "../../sdk/aws-smithy-runtime", features = ["client"] }
 aws-smithy-runtime-api = { path = "../../sdk/aws-smithy-runtime-api", features = ["client"] }
 aws-smithy-types = { path = "../../sdk/aws-smithy-types" }
 aws-smithy-wasm = { path = "../../sdk/aws-smithy-wasm" }
-http = "0.2.9"
+http-1x = { package = "http", version = "1" }
 tokio = { version = "1.32.0", features = ["macros", "rt"] }
 # getrandom is a transitive dependency, but requires the wasm_js feature to compile for wasm
 # also requires a compiler flag which is set in .cargo/config.toml
 # https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
 getrandom = {version="0.3.3", features = ["wasm_js"]}
-
-[target.'cfg(all(target_family = "wasm", target_env = "p1"))'.dependencies]
-wit-bindgen = { version = "0.16.0", features = ["macros", "realloc"] }
 
 [lib]
 crate-type = ["cdylib"]

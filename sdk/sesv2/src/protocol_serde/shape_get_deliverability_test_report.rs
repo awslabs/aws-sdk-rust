@@ -91,13 +91,13 @@ pub fn de_get_deliverability_test_report_http_response(
 }
 
 pub(crate) fn de_get_deliverability_test_report(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -106,11 +106,11 @@ pub(crate) fn de_get_deliverability_test_report(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DeliverabilityTestReport" => {
                     builder = builder.set_deliverability_test_report(
-                        crate::protocol_serde::shape_deliverability_test_report::de_deliverability_test_report(tokens)?,
+                        crate::protocol_serde::shape_deliverability_test_report::de_deliverability_test_report(tokens, _value)?,
                     );
                 }
                 "IspPlacements" => {
-                    builder = builder.set_isp_placements(crate::protocol_serde::shape_isp_placements::de_isp_placements(tokens)?);
+                    builder = builder.set_isp_placements(crate::protocol_serde::shape_isp_placements::de_isp_placements(tokens, _value)?);
                 }
                 "Message" => {
                     builder = builder.set_message(
@@ -120,10 +120,12 @@ pub(crate) fn de_get_deliverability_test_report(
                     );
                 }
                 "OverallPlacement" => {
-                    builder = builder.set_overall_placement(crate::protocol_serde::shape_placement_statistics::de_placement_statistics(tokens)?);
+                    builder = builder.set_overall_placement(crate::protocol_serde::shape_placement_statistics::de_placement_statistics(
+                        tokens, _value,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

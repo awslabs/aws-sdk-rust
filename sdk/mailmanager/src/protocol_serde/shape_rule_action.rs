@@ -71,6 +71,7 @@ pub fn ser_rule_action(
 
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,49 +101,49 @@ where
                     }
                     variant = match key.as_ref() {
                         "Drop" => Some(crate::types::RuleAction::Drop(
-                            crate::protocol_serde::shape_drop_action::de_drop_action(tokens)?
+                            crate::protocol_serde::shape_drop_action::de_drop_action(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Drop' cannot be null"))?,
                         )),
                         "Relay" => Some(crate::types::RuleAction::Relay(
-                            crate::protocol_serde::shape_relay_action::de_relay_action(tokens)?
+                            crate::protocol_serde::shape_relay_action::de_relay_action(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Relay' cannot be null"))?,
                         )),
                         "Archive" => Some(crate::types::RuleAction::Archive(
-                            crate::protocol_serde::shape_archive_action::de_archive_action(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_archive_action::de_archive_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Archive' cannot be null")
                             })?,
                         )),
                         "WriteToS3" => Some(crate::types::RuleAction::WriteToS3(
-                            crate::protocol_serde::shape_s3_action::de_s3_action(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_action::de_s3_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'WriteToS3' cannot be null")
                             })?,
                         )),
                         "Send" => Some(crate::types::RuleAction::Send(
-                            crate::protocol_serde::shape_send_action::de_send_action(tokens)?
+                            crate::protocol_serde::shape_send_action::de_send_action(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Send' cannot be null"))?,
                         )),
                         "AddHeader" => Some(crate::types::RuleAction::AddHeader(
-                            crate::protocol_serde::shape_add_header_action::de_add_header_action(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_add_header_action::de_add_header_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AddHeader' cannot be null")
                             })?,
                         )),
                         "ReplaceRecipient" => Some(crate::types::RuleAction::ReplaceRecipient(
-                            crate::protocol_serde::shape_replace_recipient_action::de_replace_recipient_action(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_replace_recipient_action::de_replace_recipient_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ReplaceRecipient' cannot be null")
                             })?,
                         )),
                         "DeliverToMailbox" => Some(crate::types::RuleAction::DeliverToMailbox(
-                            crate::protocol_serde::shape_deliver_to_mailbox_action::de_deliver_to_mailbox_action(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToMailbox' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_deliver_to_mailbox_action::de_deliver_to_mailbox_action(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToMailbox' cannot be null"),
+                            )?,
                         )),
                         "DeliverToQBusiness" => Some(crate::types::RuleAction::DeliverToQBusiness(
-                            crate::protocol_serde::shape_deliver_to_q_business_action::de_deliver_to_q_business_action(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToQBusiness' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_deliver_to_q_business_action::de_deliver_to_q_business_action(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DeliverToQBusiness' cannot be null"),
+                            )?,
                         )),
                         "PublishToSns" => Some(crate::types::RuleAction::PublishToSns(
-                            crate::protocol_serde::shape_sns_action::de_sns_action(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sns_action::de_sns_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PublishToSns' cannot be null")
                             })?,
                         )),

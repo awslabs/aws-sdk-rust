@@ -5,6 +5,8 @@
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>Details of the resource policy. It must include the identity of the principal and the actions allowed on this resource. This is formatted as a JSON string.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
@@ -12,6 +14,10 @@ impl PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>Details of the resource policy. It must include the identity of the principal and the actions allowed on this resource. This is formatted as a JSON string.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
@@ -30,6 +36,7 @@ impl PutResourcePolicyInput {
 #[non_exhaustive]
 pub struct PutResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
@@ -47,6 +54,20 @@ impl PutResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>Details of the resource policy. It must include the identity of the principal and the actions allowed on this resource. This is formatted as a JSON string.</p>
     /// This field is required.
@@ -69,6 +90,7 @@ impl PutResourcePolicyInputBuilder {
     ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             resource_arn: self.resource_arn,
+            stream_id: self.stream_id,
             policy: self.policy,
         })
     }

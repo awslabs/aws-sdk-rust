@@ -95,13 +95,13 @@ pub fn ser_describe_component_input(
 }
 
 pub(crate) fn de_describe_component(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_component::builders::DescribeComponentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_component::builders::DescribeComponentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,11 +109,12 @@ pub(crate) fn de_describe_component(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ApplicationComponent" => {
-                    builder =
-                        builder.set_application_component(crate::protocol_serde::shape_application_component::de_application_component(tokens)?);
+                    builder = builder.set_application_component(crate::protocol_serde::shape_application_component::de_application_component(
+                        tokens, _value,
+                    )?);
                 }
                 "ResourceList" => {
-                    builder = builder.set_resource_list(crate::protocol_serde::shape_resource_list::de_resource_list(tokens)?);
+                    builder = builder.set_resource_list(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

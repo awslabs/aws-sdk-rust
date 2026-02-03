@@ -20,6 +20,7 @@ pub fn ser_csv_options(
 
 pub(crate) fn de_csv_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CsvOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "HeaderList" => {
-                            builder = builder.set_header_list(crate::protocol_serde::shape_csv_header_list::de_csv_header_list(tokens)?);
+                            builder = builder.set_header_list(crate::protocol_serde::shape_csv_header_list::de_csv_header_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

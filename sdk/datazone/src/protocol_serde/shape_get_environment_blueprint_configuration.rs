@@ -147,13 +147,13 @@ pub fn de_get_environment_blueprint_configuration_http_response(
 }
 
 pub(crate) fn de_get_environment_blueprint_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,7 +174,7 @@ pub(crate) fn de_get_environment_blueprint_configuration(
                     );
                 }
                 "enabledRegions" => {
-                    builder = builder.set_enabled_regions(crate::protocol_serde::shape_enabled_region_list::de_enabled_region_list(tokens)?);
+                    builder = builder.set_enabled_regions(crate::protocol_serde::shape_enabled_region_list::de_enabled_region_list(tokens, _value)?);
                 }
                 "environmentBlueprintId" => {
                     builder = builder.set_environment_blueprint_id(
@@ -199,7 +199,7 @@ pub(crate) fn de_get_environment_blueprint_configuration(
                 }
                 "provisioningConfigurations" => {
                     builder = builder.set_provisioning_configurations(
-                        crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_provisioning_configuration_list::de_provisioning_configuration_list(tokens, _value)?,
                     );
                 }
                 "provisioningRoleArn" => {
@@ -210,8 +210,9 @@ pub(crate) fn de_get_environment_blueprint_configuration(
                     );
                 }
                 "regionalParameters" => {
-                    builder =
-                        builder.set_regional_parameters(crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(tokens)?);
+                    builder = builder.set_regional_parameters(crate::protocol_serde::shape_regional_parameter_map::de_regional_parameter_map(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

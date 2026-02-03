@@ -17,6 +17,7 @@ pub fn ser_additional_model_data_source(
 
 pub(crate) fn de_additional_model_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdditionalModelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,9 @@ where
                             );
                         }
                         "S3DataSource" => {
-                            builder = builder.set_s3_data_source(crate::protocol_serde::shape_s3_model_data_source::de_s3_model_data_source(tokens)?);
+                            builder = builder.set_s3_data_source(crate::protocol_serde::shape_s3_model_data_source::de_s3_model_data_source(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

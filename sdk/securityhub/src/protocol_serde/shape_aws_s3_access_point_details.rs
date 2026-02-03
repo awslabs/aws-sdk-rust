@@ -44,6 +44,7 @@ pub fn ser_aws_s3_access_point_details(
 
 pub(crate) fn de_aws_s3_access_point_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsS3AccessPointDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -101,12 +102,12 @@ where
                         }
                         "PublicAccessBlockConfiguration" => {
                             builder = builder.set_public_access_block_configuration(
-                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_account_public_access_block_details::de_aws_s3_account_public_access_block_details(tokens, _value)?
                                 );
                         }
                         "VpcConfiguration" => {
                             builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_aws_s3_access_point_vpc_configuration_details::de_aws_s3_access_point_vpc_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_access_point_vpc_configuration_details::de_aws_s3_access_point_vpc_configuration_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

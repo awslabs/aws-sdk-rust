@@ -26,6 +26,7 @@ pub fn ser_deployment_config(
 
 pub(crate) fn de_deployment_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeploymentConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,16 +42,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BlueGreenUpdatePolicy" => {
                             builder = builder.set_blue_green_update_policy(
-                                crate::protocol_serde::shape_blue_green_update_policy::de_blue_green_update_policy(tokens)?,
+                                crate::protocol_serde::shape_blue_green_update_policy::de_blue_green_update_policy(tokens, _value)?,
                             );
                         }
                         "RollingUpdatePolicy" => {
-                            builder = builder
-                                .set_rolling_update_policy(crate::protocol_serde::shape_rolling_update_policy::de_rolling_update_policy(tokens)?);
+                            builder = builder.set_rolling_update_policy(
+                                crate::protocol_serde::shape_rolling_update_policy::de_rolling_update_policy(tokens, _value)?,
+                            );
                         }
                         "AutoRollbackConfiguration" => {
-                            builder = builder
-                                .set_auto_rollback_configuration(crate::protocol_serde::shape_auto_rollback_config::de_auto_rollback_config(tokens)?);
+                            builder = builder.set_auto_rollback_configuration(
+                                crate::protocol_serde::shape_auto_rollback_config::de_auto_rollback_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

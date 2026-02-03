@@ -200,13 +200,13 @@ pub fn ser_transact_write_items_input(
 }
 
 pub(crate) fn de_transact_write_items(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::transact_write_items::builders::TransactWriteItemsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::transact_write_items::builders::TransactWriteItemsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -215,12 +215,12 @@ pub(crate) fn de_transact_write_items(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConsumedCapacity" => {
                     builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity_multiple::de_consumed_capacity_multiple(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ItemCollectionMetrics" => {
                     builder = builder.set_item_collection_metrics(
-                        crate::protocol_serde::shape_item_collection_metrics_per_table::de_item_collection_metrics_per_table(tokens)?,
+                        crate::protocol_serde::shape_item_collection_metrics_per_table::de_item_collection_metrics_per_table(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

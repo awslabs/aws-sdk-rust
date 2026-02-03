@@ -41,7 +41,7 @@ pub fn fmt_timestamp(t: &DateTime, format: Format) -> Result<String, DateTimeFor
 #[cfg(test)]
 mod test {
     use crate::label::{fmt_string, EncodingStrategy};
-    use http_02x::Uri;
+    use http_1x::Uri;
     use proptest::proptest;
 
     #[test]

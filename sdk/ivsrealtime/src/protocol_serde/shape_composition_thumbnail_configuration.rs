@@ -23,6 +23,7 @@ pub fn ser_composition_thumbnail_configuration(
 
 pub(crate) fn de_composition_thumbnail_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CompositionThumbnailConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "storage" => {
                             builder = builder.set_storage(crate::protocol_serde::shape_thumbnail_storage_type_list::de_thumbnail_storage_type_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

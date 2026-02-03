@@ -133,13 +133,13 @@ pub fn ser_get_quota_utilization_report_input(
 }
 
 pub(crate) fn de_get_quota_utilization_report(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_quota_utilization_report::builders::GetQuotaUtilizationReportOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_quota_utilization_report::builders::GetQuotaUtilizationReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_get_quota_utilization_report(
                 }
                 "Quotas" => {
                     builder = builder.set_quotas(crate::protocol_serde::shape_quota_utilization_info_list::de_quota_utilization_info_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NextToken" => {

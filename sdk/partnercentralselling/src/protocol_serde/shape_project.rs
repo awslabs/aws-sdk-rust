@@ -74,6 +74,7 @@ pub fn ser_project(
 
 pub(crate) fn de_project<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Project>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,11 +89,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DeliveryModels" => {
-                            builder = builder.set_delivery_models(crate::protocol_serde::shape_delivery_models::de_delivery_models(tokens)?);
+                            builder = builder.set_delivery_models(crate::protocol_serde::shape_delivery_models::de_delivery_models(tokens, _value)?);
                         }
                         "ExpectedCustomerSpend" => {
                             builder = builder.set_expected_customer_spend(
-                                crate::protocol_serde::shape_expected_customer_spend_list::de_expected_customer_spend_list(tokens)?,
+                                crate::protocol_serde::shape_expected_customer_spend_list::de_expected_customer_spend_list(tokens, _value)?,
                             );
                         }
                         "Title" => {
@@ -103,7 +104,7 @@ where
                             );
                         }
                         "ApnPrograms" => {
-                            builder = builder.set_apn_programs(crate::protocol_serde::shape_apn_programs::de_apn_programs(tokens)?);
+                            builder = builder.set_apn_programs(crate::protocol_serde::shape_apn_programs::de_apn_programs(tokens, _value)?);
                         }
                         "CustomerBusinessProblem" => {
                             builder = builder.set_customer_business_problem(
@@ -127,7 +128,8 @@ where
                             );
                         }
                         "SalesActivities" => {
-                            builder = builder.set_sales_activities(crate::protocol_serde::shape_sales_activities::de_sales_activities(tokens)?);
+                            builder =
+                                builder.set_sales_activities(crate::protocol_serde::shape_sales_activities::de_sales_activities(tokens, _value)?);
                         }
                         "CompetitorName" => {
                             builder = builder.set_competitor_name(

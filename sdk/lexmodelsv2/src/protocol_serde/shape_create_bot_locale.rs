@@ -149,13 +149,13 @@ pub fn ser_create_bot_locale_input(
 }
 
 pub(crate) fn de_create_bot_locale(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_bot_locale::builders::CreateBotLocaleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_bot_locale::builders::CreateBotLocaleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -197,8 +197,9 @@ pub(crate) fn de_create_bot_locale(
                     );
                 }
                 "generativeAISettings" => {
-                    builder =
-                        builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                    builder = builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "localeId" => {
                     builder = builder.set_locale_id(
@@ -228,15 +229,16 @@ pub(crate) fn de_create_bot_locale(
                 }
                 "speechRecognitionSettings" => {
                     builder = builder.set_speech_recognition_settings(
-                        crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens)?,
+                        crate::protocol_serde::shape_speech_recognition_settings::de_speech_recognition_settings(tokens, _value)?,
                     );
                 }
                 "unifiedSpeechSettings" => {
-                    builder = builder
-                        .set_unified_speech_settings(crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(tokens)?);
+                    builder = builder.set_unified_speech_settings(crate::protocol_serde::shape_unified_speech_settings::de_unified_speech_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "voiceSettings" => {
-                    builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens)?);
+                    builder = builder.set_voice_settings(crate::protocol_serde::shape_voice_settings::de_voice_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

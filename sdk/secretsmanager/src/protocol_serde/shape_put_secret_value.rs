@@ -168,13 +168,13 @@ pub fn ser_put_secret_value_input(
 }
 
 pub(crate) fn de_put_secret_value(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_secret_value::builders::PutSecretValueOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_secret_value::builders::PutSecretValueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -204,7 +204,7 @@ pub(crate) fn de_put_secret_value(
                 }
                 "VersionStages" => {
                     builder = builder.set_version_stages(crate::protocol_serde::shape_secret_version_stages_type::de_secret_version_stages_type(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

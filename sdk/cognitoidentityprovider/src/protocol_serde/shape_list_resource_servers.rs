@@ -131,13 +131,13 @@ pub fn ser_list_resource_servers_input(
 }
 
 pub(crate) fn de_list_resource_servers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,7 +146,7 @@ pub(crate) fn de_list_resource_servers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ResourceServers" => {
                     builder = builder.set_resource_servers(crate::protocol_serde::shape_resource_servers_list_type::de_resource_servers_list_type(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NextToken" => {

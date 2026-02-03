@@ -173,7 +173,7 @@ mod create_task;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_datasync::Error> {
 /// # let client: aws_sdk_datasync::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_task_execution()
 ///     .customize()

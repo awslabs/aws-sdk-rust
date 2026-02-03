@@ -247,7 +247,7 @@ mod create_upload_url;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_lexmodelsv2::Error> {
 /// # let client: aws_sdk_lexmodelsv2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_custom_vocabulary_item()
 ///     .customize()

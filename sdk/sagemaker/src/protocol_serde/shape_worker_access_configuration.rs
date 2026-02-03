@@ -14,6 +14,7 @@ pub fn ser_worker_access_configuration(
 
 pub(crate) fn de_worker_access_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkerAccessConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Presign" => {
-                            builder = builder.set_s3_presign(crate::protocol_serde::shape_s3_presign::de_s3_presign(tokens)?);
+                            builder = builder.set_s3_presign(crate::protocol_serde::shape_s3_presign::de_s3_presign(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

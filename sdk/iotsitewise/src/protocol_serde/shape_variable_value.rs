@@ -26,6 +26,7 @@ pub fn ser_variable_value(
 
 pub(crate) fn de_variable_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VariableValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "propertyPath" => {
                             builder = builder.set_property_path(
-                                crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(tokens)?,
+                                crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_pii_entities_configuration(
 
 pub(crate) fn de_pii_entities_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PiiEntitiesConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "piiEntityTypes" => {
-                            builder = builder.set_pii_entity_types(crate::protocol_serde::shape_pii_entity_types::de_pii_entity_types(tokens)?);
+                            builder =
+                                builder.set_pii_entity_types(crate::protocol_serde::shape_pii_entity_types::de_pii_entity_types(tokens, _value)?);
                         }
                         "redactionMaskMode" => {
                             builder = builder.set_redaction_mask_mode(

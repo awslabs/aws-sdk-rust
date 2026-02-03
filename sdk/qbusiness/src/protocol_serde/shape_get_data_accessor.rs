@@ -108,13 +108,13 @@ pub fn de_get_data_accessor_http_response(
 }
 
 pub(crate) fn de_get_data_accessor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_data_accessor::builders::GetDataAccessorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_data_accessor::builders::GetDataAccessorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,7 +123,7 @@ pub(crate) fn de_get_data_accessor(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionConfigurations" => {
                     builder = builder.set_action_configurations(
-                        crate::protocol_serde::shape_action_configuration_list::de_action_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_action_configuration_list::de_action_configuration_list(tokens, _value)?,
                     );
                 }
                 "applicationId" => {
@@ -135,7 +135,7 @@ pub(crate) fn de_get_data_accessor(
                 }
                 "authenticationDetail" => {
                     builder = builder.set_authentication_detail(
-                        crate::protocol_serde::shape_data_accessor_authentication_detail::de_data_accessor_authentication_detail(tokens)?,
+                        crate::protocol_serde::shape_data_accessor_authentication_detail::de_data_accessor_authentication_detail(tokens, _value)?,
                     );
                 }
                 "createdAt" => {

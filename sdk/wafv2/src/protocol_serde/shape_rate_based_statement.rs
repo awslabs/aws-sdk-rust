@@ -47,6 +47,7 @@ pub fn ser_rate_based_statement(
 
 pub(crate) fn de_rate_based_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RateBasedStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,15 +86,16 @@ where
                             );
                         }
                         "ScopeDownStatement" => {
-                            builder = builder.set_scope_down_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?.map(Box::new));
+                            builder =
+                                builder.set_scope_down_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?.map(Box::new));
                         }
                         "ForwardedIPConfig" => {
-                            builder =
-                                builder.set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens)?);
+                            builder = builder
+                                .set_forwarded_ip_config(crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens, _value)?);
                         }
                         "CustomKeys" => {
                             builder = builder.set_custom_keys(
-                                crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens)?,
+                                crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

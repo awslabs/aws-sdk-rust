@@ -23,6 +23,7 @@ pub fn ser_tile_style(
 
 pub(crate) fn de_tile_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TileStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "Border" => {
-                            builder = builder.set_border(crate::protocol_serde::shape_border_style::de_border_style(tokens)?);
+                            builder = builder.set_border(crate::protocol_serde::shape_border_style::de_border_style(tokens, _value)?);
                         }
                         "BorderRadius" => {
                             builder = builder.set_border_radius(

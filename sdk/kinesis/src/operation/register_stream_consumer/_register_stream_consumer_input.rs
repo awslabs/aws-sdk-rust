@@ -7,6 +7,8 @@ pub struct RegisterStreamConsumerInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
     pub consumer_name: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of up to 50 key-value pairs. A tag consists of a required key and an optional value.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,6 +20,10 @@ impl RegisterStreamConsumerInput {
     /// <p>For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.</p>
     pub fn consumer_name(&self) -> ::std::option::Option<&str> {
         self.consumer_name.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>A set of up to 50 key-value pairs. A tag consists of a required key and an optional value.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -37,6 +43,7 @@ impl RegisterStreamConsumerInput {
 pub struct RegisterStreamConsumerInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegisterStreamConsumerInputBuilder {
@@ -70,6 +77,20 @@ impl RegisterStreamConsumerInputBuilder {
     pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_name
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -100,6 +121,7 @@ impl RegisterStreamConsumerInputBuilder {
         ::std::result::Result::Ok(crate::operation::register_stream_consumer::RegisterStreamConsumerInput {
             stream_arn: self.stream_arn,
             consumer_name: self.consumer_name,
+            stream_id: self.stream_id,
             tags: self.tags,
         })
     }

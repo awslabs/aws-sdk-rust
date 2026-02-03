@@ -158,6 +158,7 @@ pub fn ser_hls_group_settings(
 
 pub(crate) fn de_hls_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HlsGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -172,11 +173,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_hls_ad_markers::de_list_of_hls_ad_markers(tokens)?);
+                            builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_hls_ad_markers::de_list_of_hls_ad_markers(
+                                tokens, _value,
+                            )?);
                         }
                         "additionalManifests" => {
                             builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape_list_of_hls_additional_manifest::de_list_of_hls_additional_manifest(tokens)?,
+                                crate::protocol_serde::shape_list_of_hls_additional_manifest::de_list_of_hls_additional_manifest(tokens, _value)?,
                             );
                         }
                         "audioOnlyHeader" => {
@@ -195,7 +198,9 @@ where
                         }
                         "captionLanguageMappings" => {
                             builder = builder.set_caption_language_mappings(
-                                crate::protocol_serde::shape_list_of_hls_caption_language_mapping::de_list_of_hls_caption_language_mapping(tokens)?,
+                                crate::protocol_serde::shape_list_of_hls_caption_language_mapping::de_list_of_hls_caption_language_mapping(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "captionLanguageSetting" => {
@@ -234,8 +239,9 @@ where
                             );
                         }
                         "destinationSettings" => {
-                            builder =
-                                builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(tokens)?);
+                            builder = builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "directoryStructure" => {
                             builder = builder.set_directory_structure(
@@ -245,8 +251,9 @@ where
                             );
                         }
                         "encryption" => {
-                            builder =
-                                builder.set_encryption(crate::protocol_serde::shape_hls_encryption_settings::de_hls_encryption_settings(tokens)?);
+                            builder = builder.set_encryption(crate::protocol_serde::shape_hls_encryption_settings::de_hls_encryption_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "imageBasedTrickPlay" => {
                             builder = builder.set_image_based_trick_play(
@@ -257,7 +264,9 @@ where
                         }
                         "imageBasedTrickPlaySettings" => {
                             builder = builder.set_image_based_trick_play_settings(
-                                crate::protocol_serde::shape_hls_image_based_trick_play_settings::de_hls_image_based_trick_play_settings(tokens)?,
+                                crate::protocol_serde::shape_hls_image_based_trick_play_settings::de_hls_image_based_trick_play_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "manifestCompression" => {

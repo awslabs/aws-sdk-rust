@@ -72,6 +72,12 @@ impl<'a> JsonValueWriter<'a> {
         self.output.push('"');
     }
 
+    /// Writes a raw value without any quoting or escaping.
+    /// Used for BigInteger/BigDecimal which are stored as strings but serialize as JSON numbers.
+    pub fn write_raw_value(self, value: &str) {
+        self.output.push_str(value);
+    }
+
     /// Writes a number `value`.
     pub fn number(self, value: Number) {
         match value {
@@ -312,6 +318,16 @@ mod tests {
             r#"{"epoch_seconds":5.2,"date_time":"2021-05-24T15:34:50.123Z","http_date":"Wed, 21 Oct 2015 07:28:00 GMT"}"#,
             &output,
         )
+    }
+
+    #[test]
+    fn write_raw_value() {
+        let mut output = String::new();
+        let mut object = JsonObjectWriter::new(&mut output);
+        object.key("big_int").write_raw_value("123456789");
+        object.key("big_dec").write_raw_value("123.456");
+        object.finish();
+        assert_eq!(r#"{"big_int":123456789,"big_dec":123.456}"#, &output);
     }
 
     #[test]

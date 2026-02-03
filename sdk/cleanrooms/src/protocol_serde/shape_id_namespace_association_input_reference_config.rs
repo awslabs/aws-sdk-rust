@@ -14,6 +14,7 @@ pub fn ser_id_namespace_association_input_reference_config(
 
 pub(crate) fn de_id_namespace_association_input_reference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IdNamespaceAssociationInputReferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

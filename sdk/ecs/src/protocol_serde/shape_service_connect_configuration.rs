@@ -38,6 +38,7 @@ pub fn ser_service_connect_configuration(
 
 pub(crate) fn de_service_connect_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,33 +51,35 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "enabled" => {
-                            builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "enabled" => {
+                                builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "namespace" => {
+                                builder = builder.set_namespace(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "services" => {
+                                builder = builder.set_services(
+                                    crate::protocol_serde::shape_service_connect_service_list::de_service_connect_service_list(tokens, _value)?,
+                                );
+                            }
+                            "logConfiguration" => {
+                                builder = builder
+                                    .set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
+                            }
+                            "accessLogConfiguration" => {
+                                builder = builder.set_access_log_configuration(
+                                    crate::protocol_serde::shape_service_connect_access_log_configuration::de_service_connect_access_log_configuration(tokens, _value)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "namespace" => {
-                            builder = builder.set_namespace(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "services" => {
-                            builder = builder
-                                .set_services(crate::protocol_serde::shape_service_connect_service_list::de_service_connect_service_list(tokens)?);
-                        }
-                        "logConfiguration" => {
-                            builder = builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
-                        }
-                        "accessLogConfiguration" => {
-                            builder = builder.set_access_log_configuration(
-                                crate::protocol_serde::shape_service_connect_access_log_configuration::de_service_connect_access_log_configuration(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

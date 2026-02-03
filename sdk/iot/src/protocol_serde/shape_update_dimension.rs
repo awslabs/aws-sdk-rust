@@ -108,13 +108,13 @@ pub fn ser_update_dimension_input(
 }
 
 pub(crate) fn de_update_dimension(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_dimension::builders::UpdateDimensionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_dimension::builders::UpdateDimensionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,7 +148,9 @@ pub(crate) fn de_update_dimension(
                     );
                 }
                 "stringValues" => {
-                    builder = builder.set_string_values(crate::protocol_serde::shape_dimension_string_values::de_dimension_string_values(tokens)?);
+                    builder = builder.set_string_values(crate::protocol_serde::shape_dimension_string_values::de_dimension_string_values(
+                        tokens, _value,
+                    )?);
                 }
                 "type" => {
                     builder = builder.set_type(

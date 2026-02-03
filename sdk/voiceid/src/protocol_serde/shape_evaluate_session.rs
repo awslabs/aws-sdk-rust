@@ -138,13 +138,13 @@ pub fn ser_evaluate_session_input(
 }
 
 pub(crate) fn de_evaluate_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::evaluate_session::builders::EvaluateSessionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::evaluate_session::builders::EvaluateSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -180,12 +180,14 @@ pub(crate) fn de_evaluate_session(
                     );
                 }
                 "AuthenticationResult" => {
-                    builder =
-                        builder.set_authentication_result(crate::protocol_serde::shape_authentication_result::de_authentication_result(tokens)?);
+                    builder = builder.set_authentication_result(crate::protocol_serde::shape_authentication_result::de_authentication_result(
+                        tokens, _value,
+                    )?);
                 }
                 "FraudDetectionResult" => {
-                    builder =
-                        builder.set_fraud_detection_result(crate::protocol_serde::shape_fraud_detection_result::de_fraud_detection_result(tokens)?);
+                    builder = builder.set_fraud_detection_result(crate::protocol_serde::shape_fraud_detection_result::de_fraud_detection_result(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

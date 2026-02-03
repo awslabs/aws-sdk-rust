@@ -175,13 +175,13 @@ pub fn ser_update_fleet_capacity_input(
 }
 
 pub(crate) fn de_update_fleet_capacity(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -211,7 +211,7 @@ pub(crate) fn de_update_fleet_capacity(
                 }
                 "ManagedCapacityConfiguration" => {
                     builder = builder.set_managed_capacity_configuration(
-                        crate::protocol_serde::shape_managed_capacity_configuration::de_managed_capacity_configuration(tokens)?,
+                        crate::protocol_serde::shape_managed_capacity_configuration::de_managed_capacity_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

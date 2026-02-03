@@ -175,7 +175,7 @@ mod create_upload_job;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_customerprofiles::Error> {
 /// # let client: aws_sdk_customerprofiles::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_profile_key()
 ///     .customize()

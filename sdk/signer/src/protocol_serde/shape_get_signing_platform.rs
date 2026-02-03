@@ -107,13 +107,13 @@ pub fn de_get_signing_platform_http_response(
 }
 
 pub(crate) fn de_get_signing_platform(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_signing_platform::builders::GetSigningPlatformOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,11 +159,14 @@ pub(crate) fn de_get_signing_platform(
                     builder = builder.set_revocation_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "signingConfiguration" => {
-                    builder =
-                        builder.set_signing_configuration(crate::protocol_serde::shape_signing_configuration::de_signing_configuration(tokens)?);
+                    builder = builder.set_signing_configuration(crate::protocol_serde::shape_signing_configuration::de_signing_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "signingImageFormat" => {
-                    builder = builder.set_signing_image_format(crate::protocol_serde::shape_signing_image_format::de_signing_image_format(tokens)?);
+                    builder = builder.set_signing_image_format(crate::protocol_serde::shape_signing_image_format::de_signing_image_format(
+                        tokens, _value,
+                    )?);
                 }
                 "target" => {
                     builder = builder.set_target(

@@ -130,13 +130,13 @@ pub fn ser_list_allowed_node_type_updates_input(
 }
 
 pub(crate) fn de_list_allowed_node_type_updates(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,10 +144,10 @@ pub(crate) fn de_list_allowed_node_type_updates(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ScaleUpNodeTypes" => {
-                    builder = builder.set_scale_up_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens)?);
+                    builder = builder.set_scale_up_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value)?);
                 }
                 "ScaleDownNodeTypes" => {
-                    builder = builder.set_scale_down_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens)?);
+                    builder = builder.set_scale_down_node_types(crate::protocol_serde::shape_node_type_list::de_node_type_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

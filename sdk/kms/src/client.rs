@@ -157,7 +157,7 @@ mod create_key;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_kms::Error> {
 /// # let client: aws_sdk_kms::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_key_deletion()
 ///     .customize()

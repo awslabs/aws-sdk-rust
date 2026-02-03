@@ -17,6 +17,7 @@ pub fn ser_scraper_component(
 
 pub(crate) fn de_scraper_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScraperComponent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "config" => {
-                            builder = builder.set_config(crate::protocol_serde::shape_component_config::de_component_config(tokens)?);
+                            builder = builder.set_config(crate::protocol_serde::shape_component_config::de_component_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

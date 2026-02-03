@@ -23,6 +23,7 @@ pub fn ser_segment_group_list(
 
 pub(crate) fn de_segment_group_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SegmentGroupList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Groups" => {
-                            builder = builder.set_groups(crate::protocol_serde::shape_list_of_segment_group::de_list_of_segment_group(tokens)?);
+                            builder = builder.set_groups(crate::protocol_serde::shape_list_of_segment_group::de_list_of_segment_group(
+                                tokens, _value,
+                            )?);
                         }
                         "Include" => {
                             builder = builder.set_include(

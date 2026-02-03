@@ -70,12 +70,12 @@ pub fn de_put_object_http_response(
 
 pub fn ser_put_object_headers(
     input: &crate::operation::put_object::PutObjectInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -86,7 +86,7 @@ pub fn ser_put_object_headers(
     if let ::std::option::Option::Some(inner_3) = &input.cache_control {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "cache_control",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -97,7 +97,7 @@ pub fn ser_put_object_headers(
     if let ::std::option::Option::Some(inner_5) = &input.storage_class {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "storage_class",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -108,7 +108,7 @@ pub fn ser_put_object_headers(
     if let ::std::option::Option::Some(inner_7) = &input.upload_availability {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "upload_availability",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -120,10 +120,10 @@ pub fn ser_put_object_headers(
 }
 
 pub(crate) fn de_put_object(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_object::builders::PutObjectOutputBuilder,
 ) -> ::std::result::Result<crate::operation::put_object::builders::PutObjectOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

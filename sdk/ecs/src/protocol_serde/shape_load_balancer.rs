@@ -29,6 +29,7 @@ pub fn ser_load_balancer(
 
 pub(crate) fn de_load_balancer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoadBalancer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,8 +72,9 @@ where
                             );
                         }
                         "advancedConfiguration" => {
-                            builder = builder
-                                .set_advanced_configuration(crate::protocol_serde::shape_advanced_configuration::de_advanced_configuration(tokens)?);
+                            builder = builder.set_advanced_configuration(
+                                crate::protocol_serde::shape_advanced_configuration::de_advanced_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

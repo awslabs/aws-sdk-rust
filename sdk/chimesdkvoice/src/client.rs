@@ -171,7 +171,7 @@ mod create_voice_profile_domain;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_chimesdkvoice::Error> {
 /// # let client: aws_sdk_chimesdkvoice::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_phone_numbers_with_voice_connector()
 ///     .customize()

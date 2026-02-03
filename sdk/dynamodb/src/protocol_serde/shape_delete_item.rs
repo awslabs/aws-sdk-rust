@@ -205,11 +205,11 @@ pub fn ser_delete_item_input(
 }
 
 pub(crate) fn de_delete_item(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_item::builders::DeleteItemOutputBuilder,
 ) -> ::std::result::Result<crate::operation::delete_item::builders::DeleteItemOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -217,14 +217,15 @@ pub(crate) fn de_delete_item(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens, _value)?);
                 }
                 "ConsumedCapacity" => {
-                    builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(tokens)?);
+                    builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity::de_consumed_capacity(tokens, _value)?);
                 }
                 "ItemCollectionMetrics" => {
-                    builder = builder
-                        .set_item_collection_metrics(crate::protocol_serde::shape_item_collection_metrics::de_item_collection_metrics(tokens)?);
+                    builder = builder.set_item_collection_metrics(crate::protocol_serde::shape_item_collection_metrics::de_item_collection_metrics(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

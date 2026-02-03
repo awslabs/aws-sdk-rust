@@ -20,6 +20,7 @@ pub fn ser_model_speculative_decoding_config(
 
 pub(crate) fn de_model_speculative_decoding_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelSpeculativeDecodingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "TrainingDataSource" => {
                             builder = builder.set_training_data_source(
-                                    crate::protocol_serde::shape_model_speculative_decoding_training_data_source::de_model_speculative_decoding_training_data_source(tokens)?
+                                    crate::protocol_serde::shape_model_speculative_decoding_training_data_source::de_model_speculative_decoding_training_data_source(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

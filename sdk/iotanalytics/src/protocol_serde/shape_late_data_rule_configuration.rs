@@ -14,6 +14,7 @@ pub fn ser_late_data_rule_configuration(
 
 pub(crate) fn de_late_data_rule_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LateDataRuleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "deltaTimeSessionWindowConfiguration" => {
                             builder = builder.set_delta_time_session_window_configuration(
                                 crate::protocol_serde::shape_delta_time_session_window_configuration::de_delta_time_session_window_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

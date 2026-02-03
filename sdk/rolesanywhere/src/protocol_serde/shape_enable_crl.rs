@@ -68,10 +68,10 @@ pub fn de_enable_crl_http_response(
 }
 
 pub(crate) fn de_enable_crl(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::enable_crl::builders::EnableCrlOutputBuilder,
 ) -> ::std::result::Result<crate::operation::enable_crl::builders::EnableCrlOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -79,7 +79,7 @@ pub(crate) fn de_enable_crl(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "crl" => {
-                    builder = builder.set_crl(crate::protocol_serde::shape_crl_detail::de_crl_detail(tokens)?);
+                    builder = builder.set_crl(crate::protocol_serde::shape_crl_detail::de_crl_detail(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

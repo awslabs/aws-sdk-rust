@@ -94,13 +94,13 @@ pub fn ser_get_query_results_input(
 }
 
 pub(crate) fn de_get_query_results(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,10 +115,10 @@ pub(crate) fn de_get_query_results(
                     );
                 }
                 "results" => {
-                    builder = builder.set_results(crate::protocol_serde::shape_query_results::de_query_results(tokens)?);
+                    builder = builder.set_results(crate::protocol_serde::shape_query_results::de_query_results(tokens, _value)?);
                 }
                 "statistics" => {
-                    builder = builder.set_statistics(crate::protocol_serde::shape_query_statistics::de_query_statistics(tokens)?);
+                    builder = builder.set_statistics(crate::protocol_serde::shape_query_statistics::de_query_statistics(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

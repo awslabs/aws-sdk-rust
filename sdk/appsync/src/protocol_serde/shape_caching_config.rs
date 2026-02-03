@@ -23,6 +23,7 @@ pub fn ser_caching_config(
 
 pub(crate) fn de_caching_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CachingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "cachingKeys" => {
-                            builder = builder.set_caching_keys(crate::protocol_serde::shape_caching_keys::de_caching_keys(tokens)?);
+                            builder = builder.set_caching_keys(crate::protocol_serde::shape_caching_keys::de_caching_keys(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

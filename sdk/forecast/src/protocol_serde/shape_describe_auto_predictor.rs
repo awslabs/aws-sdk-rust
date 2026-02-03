@@ -84,13 +84,13 @@ pub fn ser_describe_auto_predictor_input(
 }
 
 pub(crate) fn de_describe_auto_predictor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_auto_predictor::builders::DescribeAutoPredictorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,7 +119,7 @@ pub(crate) fn de_describe_auto_predictor(
                     );
                 }
                 "ForecastTypes" => {
-                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens)?);
+                    builder = builder.set_forecast_types(crate::protocol_serde::shape_forecast_types::de_forecast_types(tokens, _value)?);
                 }
                 "ForecastFrequency" => {
                     builder = builder.set_forecast_frequency(
@@ -129,20 +129,21 @@ pub(crate) fn de_describe_auto_predictor(
                     );
                 }
                 "ForecastDimensions" => {
-                    builder = builder.set_forecast_dimensions(crate::protocol_serde::shape_forecast_dimensions::de_forecast_dimensions(tokens)?);
+                    builder =
+                        builder.set_forecast_dimensions(crate::protocol_serde::shape_forecast_dimensions::de_forecast_dimensions(tokens, _value)?);
                 }
                 "DatasetImportJobArns" => {
-                    builder = builder.set_dataset_import_job_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                    builder = builder.set_dataset_import_job_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                 }
                 "DataConfig" => {
-                    builder = builder.set_data_config(crate::protocol_serde::shape_data_config::de_data_config(tokens)?);
+                    builder = builder.set_data_config(crate::protocol_serde::shape_data_config::de_data_config(tokens, _value)?);
                 }
                 "EncryptionConfig" => {
-                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens)?);
+                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens, _value)?);
                 }
                 "ReferencePredictorSummary" => {
                     builder = builder.set_reference_predictor_summary(
-                        crate::protocol_serde::shape_reference_predictor_summary::de_reference_predictor_summary(tokens)?,
+                        crate::protocol_serde::shape_reference_predictor_summary::de_reference_predictor_summary(tokens, _value)?,
                     );
                 }
                 "EstimatedTimeRemainingInMinutes" => {
@@ -186,14 +187,16 @@ pub(crate) fn de_describe_auto_predictor(
                     );
                 }
                 "ExplainabilityInfo" => {
-                    builder = builder.set_explainability_info(crate::protocol_serde::shape_explainability_info::de_explainability_info(tokens)?);
+                    builder =
+                        builder.set_explainability_info(crate::protocol_serde::shape_explainability_info::de_explainability_info(tokens, _value)?);
                 }
                 "MonitorInfo" => {
-                    builder = builder.set_monitor_info(crate::protocol_serde::shape_monitor_info::de_monitor_info(tokens)?);
+                    builder = builder.set_monitor_info(crate::protocol_serde::shape_monitor_info::de_monitor_info(tokens, _value)?);
                 }
                 "TimeAlignmentBoundary" => {
-                    builder = builder
-                        .set_time_alignment_boundary(crate::protocol_serde::shape_time_alignment_boundary::de_time_alignment_boundary(tokens)?);
+                    builder = builder.set_time_alignment_boundary(crate::protocol_serde::shape_time_alignment_boundary::de_time_alignment_boundary(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

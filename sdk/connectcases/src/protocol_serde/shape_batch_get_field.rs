@@ -125,13 +125,13 @@ pub fn ser_batch_get_field_input(
 }
 
 pub(crate) fn de_batch_get_field(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,11 +140,13 @@ pub(crate) fn de_batch_get_field(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "errors" => {
                     builder = builder.set_errors(crate::protocol_serde::shape_batch_get_field_error_list::de_batch_get_field_error_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_batch_get_field_list::de_batch_get_field_list(tokens)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_batch_get_field_list::de_batch_get_field_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

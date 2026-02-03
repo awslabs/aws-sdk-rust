@@ -35,6 +35,7 @@ pub fn ser_service_now_configuration(
 
 pub(crate) fn de_service_now_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceNowConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,12 +73,12 @@ where
                             }
                             "KnowledgeArticleConfiguration" => {
                                 builder = builder.set_knowledge_article_configuration(
-                                    crate::protocol_serde::shape_service_now_knowledge_article_configuration::de_service_now_knowledge_article_configuration(tokens)?
+                                    crate::protocol_serde::shape_service_now_knowledge_article_configuration::de_service_now_knowledge_article_configuration(tokens, _value)?
                                 );
                             }
                             "ServiceCatalogConfiguration" => {
                                 builder = builder.set_service_catalog_configuration(
-                                    crate::protocol_serde::shape_service_now_service_catalog_configuration::de_service_now_service_catalog_configuration(tokens)?
+                                    crate::protocol_serde::shape_service_now_service_catalog_configuration::de_service_now_service_catalog_configuration(tokens, _value)?
                                 );
                             }
                             "AuthenticationType" => {

@@ -158,13 +158,13 @@ pub fn ser_update_subscription_request_input(
 }
 
 pub(crate) fn de_update_subscription_request(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_subscription_request::builders::UpdateSubscriptionRequestOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -213,7 +213,7 @@ pub(crate) fn de_update_subscription_request(
                     );
                 }
                 "metadataForms" => {
-                    builder = builder.set_metadata_forms(crate::protocol_serde::shape_metadata_forms::de_metadata_forms(tokens)?);
+                    builder = builder.set_metadata_forms(crate::protocol_serde::shape_metadata_forms::de_metadata_forms(tokens, _value)?);
                 }
                 "requestReason" => {
                     builder = builder.set_request_reason(
@@ -237,11 +237,13 @@ pub(crate) fn de_update_subscription_request(
                     );
                 }
                 "subscribedListings" => {
-                    builder = builder.set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(tokens)?);
+                    builder =
+                        builder.set_subscribed_listings(crate::protocol_serde::shape_subscribed_listings::de_subscribed_listings(tokens, _value)?);
                 }
                 "subscribedPrincipals" => {
-                    builder =
-                        builder.set_subscribed_principals(crate::protocol_serde::shape_subscribed_principals::de_subscribed_principals(tokens)?);
+                    builder = builder.set_subscribed_principals(crate::protocol_serde::shape_subscribed_principals::de_subscribed_principals(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

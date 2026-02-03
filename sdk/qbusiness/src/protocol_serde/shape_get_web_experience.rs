@@ -108,13 +108,13 @@ pub fn de_get_web_experience_http_response(
 }
 
 pub(crate) fn de_get_web_experience(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_web_experience::builders::GetWebExperienceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_web_experience::builders::GetWebExperienceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,12 +130,12 @@ pub(crate) fn de_get_web_experience(
                 }
                 "authenticationConfiguration" => {
                     builder = builder.set_authentication_configuration(
-                        crate::protocol_serde::shape_web_experience_auth_configuration::de_web_experience_auth_configuration(tokens)?,
+                        crate::protocol_serde::shape_web_experience_auth_configuration::de_web_experience_auth_configuration(tokens, _value)?,
                     );
                 }
                 "browserExtensionConfiguration" => {
                     builder = builder.set_browser_extension_configuration(
-                        crate::protocol_serde::shape_browser_extension_configuration::de_browser_extension_configuration(tokens)?,
+                        crate::protocol_serde::shape_browser_extension_configuration::de_browser_extension_configuration(tokens, _value)?,
                     );
                 }
                 "createdAt" => {
@@ -146,7 +146,7 @@ pub(crate) fn de_get_web_experience(
                 }
                 "customizationConfiguration" => {
                     builder = builder.set_customization_configuration(
-                        crate::protocol_serde::shape_customization_configuration::de_customization_configuration(tokens)?,
+                        crate::protocol_serde::shape_customization_configuration::de_customization_configuration(tokens, _value)?,
                     );
                 }
                 "defaultEndpoint" => {
@@ -157,15 +157,17 @@ pub(crate) fn de_get_web_experience(
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
                 }
                 "identityProviderConfiguration" => {
                     builder = builder.set_identity_provider_configuration(
-                        crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens)?,
+                        crate::protocol_serde::shape_identity_provider_configuration::de_identity_provider_configuration(tokens, _value)?,
                     );
                 }
                 "origins" => {
-                    builder = builder.set_origins(crate::protocol_serde::shape_web_experience_origins::de_web_experience_origins(tokens)?);
+                    builder = builder.set_origins(crate::protocol_serde::shape_web_experience_origins::de_web_experience_origins(
+                        tokens, _value,
+                    )?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

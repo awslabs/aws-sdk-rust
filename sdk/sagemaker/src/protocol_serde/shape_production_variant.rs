@@ -92,6 +92,7 @@ pub fn ser_production_variant(
 
 pub(crate) fn de_production_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProductionVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -147,12 +148,16 @@ where
                         }
                         "CoreDumpConfig" => {
                             builder = builder.set_core_dump_config(
-                                crate::protocol_serde::shape_production_variant_core_dump_config::de_production_variant_core_dump_config(tokens)?,
+                                crate::protocol_serde::shape_production_variant_core_dump_config::de_production_variant_core_dump_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ServerlessConfig" => {
                             builder = builder.set_serverless_config(
-                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?,
+                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "VolumeSizeInGB" => {
@@ -181,12 +186,12 @@ where
                         }
                         "ManagedInstanceScaling" => {
                             builder = builder.set_managed_instance_scaling(
-                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens)?
+                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens, _value)?
                                 );
                         }
                         "RoutingConfig" => {
                             builder = builder.set_routing_config(
-                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens)?,
+                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens, _value)?,
                             );
                         }
                         "InferenceAmiVersion" => {
@@ -201,7 +206,7 @@ where
                         }
                         "CapacityReservationConfig" => {
                             builder = builder.set_capacity_reservation_config(
-                                    crate::protocol_serde::shape_production_variant_capacity_reservation_config::de_production_variant_capacity_reservation_config(tokens)?
+                                    crate::protocol_serde::shape_production_variant_capacity_reservation_config::de_production_variant_capacity_reservation_config(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

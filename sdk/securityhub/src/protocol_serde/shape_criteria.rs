@@ -17,6 +17,7 @@ pub fn ser_criteria(
 
 pub(crate) fn de_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Criteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "OcsfFindingCriteria" => Some(crate::types::Criteria::OcsfFindingCriteria(
-                            crate::protocol_serde::shape_ocsf_finding_filters::de_ocsf_finding_filters(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ocsf_finding_filters::de_ocsf_finding_filters(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OcsfFindingCriteria' cannot be null")
                             })?,
                         )),

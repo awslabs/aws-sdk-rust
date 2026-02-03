@@ -83,13 +83,13 @@ pub fn de_get_dedicated_ips_http_response(
 }
 
 pub(crate) fn de_get_dedicated_ips(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,7 +97,7 @@ pub(crate) fn de_get_dedicated_ips(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DedicatedIps" => {
-                    builder = builder.set_dedicated_ips(crate::protocol_serde::shape_dedicated_ip_list::de_dedicated_ip_list(tokens)?);
+                    builder = builder.set_dedicated_ips(crate::protocol_serde::shape_dedicated_ip_list::de_dedicated_ip_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

@@ -84,13 +84,13 @@ pub fn ser_get_sampling_targets_input(
 }
 
 pub(crate) fn de_get_sampling_targets(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sampling_targets::builders::GetSamplingTargetsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_sampling_targets::builders::GetSamplingTargetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -105,17 +105,17 @@ pub(crate) fn de_get_sampling_targets(
                 }
                 "SamplingTargetDocuments" => {
                     builder = builder.set_sampling_target_documents(
-                        crate::protocol_serde::shape_sampling_target_document_list::de_sampling_target_document_list(tokens)?,
+                        crate::protocol_serde::shape_sampling_target_document_list::de_sampling_target_document_list(tokens, _value)?,
                     );
                 }
                 "UnprocessedBoostStatistics" => {
                     builder = builder.set_unprocessed_boost_statistics(
-                        crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens)?,
+                        crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens, _value)?,
                     );
                 }
                 "UnprocessedStatistics" => {
                     builder = builder.set_unprocessed_statistics(
-                        crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens)?,
+                        crate::protocol_serde::shape_unprocessed_statistics_list::de_unprocessed_statistics_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

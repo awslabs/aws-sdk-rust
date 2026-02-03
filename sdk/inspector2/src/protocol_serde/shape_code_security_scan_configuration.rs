@@ -29,6 +29,7 @@ pub fn ser_code_security_scan_configuration(
 
 pub(crate) fn de_code_security_scan_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeSecurityScanConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,25 +42,25 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "periodicScanConfiguration" => {
-                                builder = builder.set_periodic_scan_configuration(
-                                    crate::protocol_serde::shape_periodic_scan_configuration::de_periodic_scan_configuration(tokens)?,
-                                );
-                            }
-                            "continuousIntegrationScanConfiguration" => {
-                                builder = builder.set_continuous_integration_scan_configuration(
-                                    crate::protocol_serde::shape_continuous_integration_scan_configuration::de_continuous_integration_scan_configuration(tokens)?
-                                );
-                            }
-                            "ruleSetCategories" => {
-                                builder = builder
-                                    .set_rule_set_categories(crate::protocol_serde::shape_rule_set_categories::de_rule_set_categories(tokens)?);
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "periodicScanConfiguration" => {
+                            builder = builder.set_periodic_scan_configuration(
+                                crate::protocol_serde::shape_periodic_scan_configuration::de_periodic_scan_configuration(tokens, _value)?,
+                            );
                         }
-                    }
+                        "continuousIntegrationScanConfiguration" => {
+                            builder = builder.set_continuous_integration_scan_configuration(
+                                crate::protocol_serde::shape_continuous_integration_scan_configuration::de_continuous_integration_scan_configuration(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "ruleSetCategories" => {
+                            builder = builder
+                                .set_rule_set_categories(crate::protocol_serde::shape_rule_set_categories::de_rule_set_categories(tokens, _value)?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

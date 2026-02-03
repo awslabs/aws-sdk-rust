@@ -20,6 +20,7 @@ pub fn ser_table_field_link_content_configuration(
 
 pub(crate) fn de_table_field_link_content_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableFieldLinkContentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CustomTextContent" => {
                             builder = builder.set_custom_text_content(
-                                crate::protocol_serde::shape_table_field_custom_text_content::de_table_field_custom_text_content(tokens)?,
+                                crate::protocol_serde::shape_table_field_custom_text_content::de_table_field_custom_text_content(tokens, _value)?,
                             );
                         }
                         "CustomIconContent" => {
                             builder = builder.set_custom_icon_content(
-                                crate::protocol_serde::shape_table_field_custom_icon_content::de_table_field_custom_icon_content(tokens)?,
+                                crate::protocol_serde::shape_table_field_custom_icon_content::de_table_field_custom_icon_content(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -23,6 +23,7 @@ pub fn ser_tool(
 
 pub(crate) fn de_tool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Tool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,12 +53,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "toolSpec" => Some(crate::types::Tool::ToolSpec(
-                            crate::protocol_serde::shape_tool_specification::de_tool_specification(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tool_specification::de_tool_specification(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolSpec' cannot be null")
                             })?,
                         )),
                         "cachePoint" => Some(crate::types::Tool::CachePoint(
-                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cachePoint' cannot be null")
                             })?,
                         )),

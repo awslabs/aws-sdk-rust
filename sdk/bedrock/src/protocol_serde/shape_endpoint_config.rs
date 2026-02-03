@@ -21,6 +21,7 @@ pub fn ser_endpoint_config(
 
 pub(crate) fn de_endpoint_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EndpointConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "sageMaker" => Some(crate::types::EndpointConfig::SageMaker(
-                            crate::protocol_serde::shape_sage_maker_endpoint::de_sage_maker_endpoint(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sage_maker_endpoint::de_sage_maker_endpoint(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sageMaker' cannot be null")
                             })?,
                         )),

@@ -127,13 +127,13 @@ pub fn ser_get_aggregate_discovered_resource_counts_input(
 }
 
 pub(crate) fn de_get_aggregate_discovered_resource_counts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,7 @@ pub(crate) fn de_get_aggregate_discovered_resource_counts(
                 }
                 "GroupedResourceCounts" => {
                     builder = builder.set_grouped_resource_counts(
-                        crate::protocol_serde::shape_grouped_resource_count_list::de_grouped_resource_count_list(tokens)?,
+                        crate::protocol_serde::shape_grouped_resource_count_list::de_grouped_resource_count_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

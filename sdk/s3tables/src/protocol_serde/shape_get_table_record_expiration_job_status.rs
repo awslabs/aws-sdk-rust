@@ -153,13 +153,13 @@ pub fn de_get_table_record_expiration_job_status_http_response(
 }
 
 pub(crate) fn de_get_table_record_expiration_job_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_table_record_expiration_job_status::builders::GetTableRecordExpirationJobStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_table_record_expiration_job_status::builders::GetTableRecordExpirationJobStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -181,7 +181,7 @@ pub(crate) fn de_get_table_record_expiration_job_status(
                 }
                 "metrics" => {
                     builder = builder.set_metrics(
-                        crate::protocol_serde::shape_table_record_expiration_job_metrics::de_table_record_expiration_job_metrics(tokens)?,
+                        crate::protocol_serde::shape_table_record_expiration_job_metrics::de_table_record_expiration_job_metrics(tokens, _value)?,
                     );
                 }
                 "status" => {

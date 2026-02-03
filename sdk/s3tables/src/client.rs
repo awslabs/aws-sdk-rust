@@ -151,7 +151,7 @@ mod create_table_bucket;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_s3tables::Error> {
 /// # let client: aws_sdk_s3tables::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_namespace()
 ///     .customize()

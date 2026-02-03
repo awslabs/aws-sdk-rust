@@ -23,6 +23,7 @@ pub fn ser_document_reader_config(
 
 pub(crate) fn de_document_reader_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentReaderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,9 @@ where
                         }
                         "FeatureTypes" => {
                             builder = builder.set_feature_types(
-                                crate::protocol_serde::shape_list_of_document_read_feature_types::de_list_of_document_read_feature_types(tokens)?,
+                                crate::protocol_serde::shape_list_of_document_read_feature_types::de_list_of_document_read_feature_types(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

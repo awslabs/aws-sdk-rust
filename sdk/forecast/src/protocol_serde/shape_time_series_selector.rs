@@ -14,6 +14,7 @@ pub fn ser_time_series_selector(
 
 pub(crate) fn de_time_series_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TimeSeriesIdentifiers" => {
                             builder = builder.set_time_series_identifiers(
-                                crate::protocol_serde::shape_time_series_identifiers::de_time_series_identifiers(tokens)?,
+                                crate::protocol_serde::shape_time_series_identifiers::de_time_series_identifiers(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

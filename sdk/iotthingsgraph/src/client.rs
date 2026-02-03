@@ -153,7 +153,7 @@ mod create_system_template;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotthingsgraph::Error> {
 /// # let client: aws_sdk_iotthingsgraph::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_entity_to_thing()
 ///     .customize()

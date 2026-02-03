@@ -159,13 +159,13 @@ pub fn de_start_multiplex_http_response(
 }
 
 pub(crate) fn de_start_multiplex(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_multiplex::builders::StartMultiplexOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_multiplex::builders::StartMultiplexOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -180,11 +180,11 @@ pub(crate) fn de_start_multiplex(
                     );
                 }
                 "availabilityZones" => {
-                    builder = builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "destinations" => {
                     builder = builder.set_destinations(
-                        crate::protocol_serde::shape_list_of_multiplex_output_destination::de_list_of_multiplex_output_destination(tokens)?,
+                        crate::protocol_serde::shape_list_of_multiplex_output_destination::de_list_of_multiplex_output_destination(tokens, _value)?,
                     );
                 }
                 "id" => {
@@ -195,7 +195,7 @@ pub(crate) fn de_start_multiplex(
                     );
                 }
                 "multiplexSettings" => {
-                    builder = builder.set_multiplex_settings(crate::protocol_serde::shape_multiplex_settings::de_multiplex_settings(tokens)?);
+                    builder = builder.set_multiplex_settings(crate::protocol_serde::shape_multiplex_settings::de_multiplex_settings(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -226,7 +226,7 @@ pub(crate) fn de_start_multiplex(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

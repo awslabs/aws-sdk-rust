@@ -23,6 +23,7 @@ pub fn ser_document_identifier(
 
 pub(crate) fn de_document_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,11 +45,11 @@ where
                             );
                         }
                         "s3" => {
-                            builder = builder.set_s3(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         "custom" => {
                             builder = builder.set_custom(crate::protocol_serde::shape_custom_document_identifier::de_custom_document_identifier(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

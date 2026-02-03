@@ -20,6 +20,7 @@ pub fn ser_table_row_conditional_formatting(
 
 pub(crate) fn de_table_row_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableRowConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BackgroundColor" => {
                             builder = builder.set_background_color(
-                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens)?,
+                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens, _value)?,
                             );
                         }
                         "TextColor" => {
-                            builder = builder
-                                .set_text_color(crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens)?);
+                            builder = builder.set_text_color(
+                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -124,13 +124,13 @@ pub fn de_get_domain_unit_http_response(
 }
 
 pub(crate) fn de_get_domain_unit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_domain_unit::builders::GetDomainUnitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_domain_unit::builders::GetDomainUnitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -192,7 +192,7 @@ pub(crate) fn de_get_domain_unit(
                     );
                 }
                 "owners" => {
-                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(tokens)?);
+                    builder = builder.set_owners(crate::protocol_serde::shape_domain_unit_owners::de_domain_unit_owners(tokens, _value)?);
                 }
                 "parentDomainUnitId" => {
                     builder = builder.set_parent_domain_unit_id(

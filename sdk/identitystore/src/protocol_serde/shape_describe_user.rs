@@ -125,13 +125,13 @@ pub fn ser_describe_user_input(
 }
 
 pub(crate) fn de_describe_user(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_user::builders::DescribeUserOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_user::builders::DescribeUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,10 +160,10 @@ pub(crate) fn de_describe_user(
                     );
                 }
                 "ExternalIds" => {
-                    builder = builder.set_external_ids(crate::protocol_serde::shape_external_ids::de_external_ids(tokens)?);
+                    builder = builder.set_external_ids(crate::protocol_serde::shape_external_ids::de_external_ids(tokens, _value)?);
                 }
                 "Name" => {
-                    builder = builder.set_name(crate::protocol_serde::shape_name::de_name(tokens)?);
+                    builder = builder.set_name(crate::protocol_serde::shape_name::de_name(tokens, _value)?);
                 }
                 "DisplayName" => {
                     builder = builder.set_display_name(
@@ -187,13 +187,13 @@ pub(crate) fn de_describe_user(
                     );
                 }
                 "Emails" => {
-                    builder = builder.set_emails(crate::protocol_serde::shape_emails::de_emails(tokens)?);
+                    builder = builder.set_emails(crate::protocol_serde::shape_emails::de_emails(tokens, _value)?);
                 }
                 "Addresses" => {
-                    builder = builder.set_addresses(crate::protocol_serde::shape_addresses::de_addresses(tokens)?);
+                    builder = builder.set_addresses(crate::protocol_serde::shape_addresses::de_addresses(tokens, _value)?);
                 }
                 "PhoneNumbers" => {
-                    builder = builder.set_phone_numbers(crate::protocol_serde::shape_phone_numbers::de_phone_numbers(tokens)?);
+                    builder = builder.set_phone_numbers(crate::protocol_serde::shape_phone_numbers::de_phone_numbers(tokens, _value)?);
                 }
                 "UserType" => {
                     builder = builder.set_user_type(
@@ -238,7 +238,7 @@ pub(crate) fn de_describe_user(
                     );
                 }
                 "Photos" => {
-                    builder = builder.set_photos(crate::protocol_serde::shape_photos::de_photos(tokens)?);
+                    builder = builder.set_photos(crate::protocol_serde::shape_photos::de_photos(tokens, _value)?);
                 }
                 "Website" => {
                     builder = builder.set_website(
@@ -255,7 +255,7 @@ pub(crate) fn de_describe_user(
                     );
                 }
                 "Roles" => {
-                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens)?);
+                    builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -284,7 +284,7 @@ pub(crate) fn de_describe_user(
                     );
                 }
                 "Extensions" => {
-                    builder = builder.set_extensions(crate::protocol_serde::shape_extensions::de_extensions(tokens)?);
+                    builder = builder.set_extensions(crate::protocol_serde::shape_extensions::de_extensions(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -176,13 +176,13 @@ pub fn ser_batch_update_schedule_input(
 }
 
 pub(crate) fn de_batch_update_schedule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_update_schedule::builders::BatchUpdateScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,12 +191,12 @@ pub(crate) fn de_batch_update_schedule(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "creates" => {
                     builder = builder.set_creates(
-                        crate::protocol_serde::shape_batch_schedule_action_create_result::de_batch_schedule_action_create_result(tokens)?,
+                        crate::protocol_serde::shape_batch_schedule_action_create_result::de_batch_schedule_action_create_result(tokens, _value)?,
                     );
                 }
                 "deletes" => {
                     builder = builder.set_deletes(
-                        crate::protocol_serde::shape_batch_schedule_action_delete_result::de_batch_schedule_action_delete_result(tokens)?,
+                        crate::protocol_serde::shape_batch_schedule_action_delete_result::de_batch_schedule_action_delete_result(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -47,6 +47,7 @@ pub fn ser_behavior_criteria(
 
 pub(crate) fn de_behavior_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BehaviorCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_metric_value::de_metric_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_metric_value::de_metric_value(tokens, _value)?);
                         }
                         "durationSeconds" => {
                             builder = builder.set_duration_seconds(
@@ -92,12 +93,13 @@ where
                             );
                         }
                         "statisticalThreshold" => {
-                            builder = builder
-                                .set_statistical_threshold(crate::protocol_serde::shape_statistical_threshold::de_statistical_threshold(tokens)?);
+                            builder = builder.set_statistical_threshold(
+                                crate::protocol_serde::shape_statistical_threshold::de_statistical_threshold(tokens, _value)?,
+                            );
                         }
                         "mlDetectionConfig" => {
                             builder = builder.set_ml_detection_config(
-                                crate::protocol_serde::shape_machine_learning_detection_config::de_machine_learning_detection_config(tokens)?,
+                                crate::protocol_serde::shape_machine_learning_detection_config::de_machine_learning_detection_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -219,13 +219,13 @@ pub fn ser_reject_resource_share_invitation_input(
 }
 
 pub(crate) fn de_reject_resource_share_invitation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -241,7 +241,7 @@ pub(crate) fn de_reject_resource_share_invitation(
                 }
                 "resourceShareInvitation" => {
                     builder = builder.set_resource_share_invitation(
-                        crate::protocol_serde::shape_resource_share_invitation::de_resource_share_invitation(tokens)?,
+                        crate::protocol_serde::shape_resource_share_invitation::de_resource_share_invitation(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

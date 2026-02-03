@@ -42,6 +42,7 @@ pub fn ser_ami_distribution_configuration(
 
 pub(crate) fn de_ami_distribution_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AmiDistributionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,10 +71,10 @@ where
                             );
                         }
                         "targetAccountIds" => {
-                            builder = builder.set_target_account_ids(crate::protocol_serde::shape_account_list::de_account_list(tokens)?);
+                            builder = builder.set_target_account_ids(crate::protocol_serde::shape_account_list::de_account_list(tokens, _value)?);
                         }
                         "amiTags" => {
-                            builder = builder.set_ami_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                            builder = builder.set_ami_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }
                         "kmsKeyId" => {
                             builder = builder.set_kms_key_id(
@@ -84,7 +85,7 @@ where
                         }
                         "launchPermission" => {
                             builder = builder.set_launch_permission(
-                                crate::protocol_serde::shape_launch_permission_configuration::de_launch_permission_configuration(tokens)?,
+                                crate::protocol_serde::shape_launch_permission_configuration::de_launch_permission_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

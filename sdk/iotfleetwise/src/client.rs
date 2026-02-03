@@ -165,7 +165,7 @@ mod create_vehicle;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotfleetwise::Error> {
 /// # let client: aws_sdk_iotfleetwise::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_vehicle_fleet()
 ///     .customize()

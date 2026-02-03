@@ -63,6 +63,7 @@ pub fn ser_remediation_configuration(
 
 pub(crate) fn de_remediation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RemediationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -105,7 +106,9 @@ where
                             );
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_remediation_parameters::de_remediation_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_remediation_parameters::de_remediation_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "ResourceType" => {
                             builder = builder.set_resource_type(
@@ -118,7 +121,8 @@ where
                             builder = builder.set_automatic(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ExecutionControls" => {
-                            builder = builder.set_execution_controls(crate::protocol_serde::shape_execution_controls::de_execution_controls(tokens)?);
+                            builder = builder
+                                .set_execution_controls(crate::protocol_serde::shape_execution_controls::de_execution_controls(tokens, _value)?);
                         }
                         "MaximumAutomaticAttempts" => {
                             builder = builder.set_maximum_automatic_attempts(

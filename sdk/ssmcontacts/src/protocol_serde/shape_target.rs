@@ -20,6 +20,7 @@ pub fn ser_target(
 
 pub(crate) fn de_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Target>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ChannelTargetInfo" => {
-                            builder =
-                                builder.set_channel_target_info(crate::protocol_serde::shape_channel_target_info::de_channel_target_info(tokens)?);
+                            builder = builder
+                                .set_channel_target_info(crate::protocol_serde::shape_channel_target_info::de_channel_target_info(tokens, _value)?);
                         }
                         "ContactTargetInfo" => {
-                            builder =
-                                builder.set_contact_target_info(crate::protocol_serde::shape_contact_target_info::de_contact_target_info(tokens)?);
+                            builder = builder
+                                .set_contact_target_info(crate::protocol_serde::shape_contact_target_info::de_contact_target_info(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

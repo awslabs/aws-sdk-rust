@@ -126,13 +126,13 @@ pub fn ser_batch_get_asset_property_value_history_input(
 }
 
 pub(crate) fn de_batch_get_asset_property_value_history(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,7 +141,7 @@ pub(crate) fn de_batch_get_asset_property_value_history(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "errorEntries" => {
                     builder = builder.set_error_entries(
-                            crate::protocol_serde::shape_batch_get_asset_property_value_history_error_entries::de_batch_get_asset_property_value_history_error_entries(tokens)?
+                            crate::protocol_serde::shape_batch_get_asset_property_value_history_error_entries::de_batch_get_asset_property_value_history_error_entries(tokens, _value)?
                         );
                 }
                 "nextToken" => {
@@ -153,12 +153,12 @@ pub(crate) fn de_batch_get_asset_property_value_history(
                 }
                 "skippedEntries" => {
                     builder = builder.set_skipped_entries(
-                            crate::protocol_serde::shape_batch_get_asset_property_value_history_skipped_entries::de_batch_get_asset_property_value_history_skipped_entries(tokens)?
+                            crate::protocol_serde::shape_batch_get_asset_property_value_history_skipped_entries::de_batch_get_asset_property_value_history_skipped_entries(tokens, _value)?
                         );
                 }
                 "successEntries" => {
                     builder = builder.set_success_entries(
-                            crate::protocol_serde::shape_batch_get_asset_property_value_history_success_entries::de_batch_get_asset_property_value_history_success_entries(tokens)?
+                            crate::protocol_serde::shape_batch_get_asset_property_value_history_success_entries::de_batch_get_asset_property_value_history_success_entries(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

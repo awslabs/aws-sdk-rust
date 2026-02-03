@@ -184,7 +184,7 @@ mod create_transformer;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_b2bi::Error> {
 /// # let client: aws_sdk_b2bi::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_capability()
 ///     .customize()

@@ -69,13 +69,13 @@ pub fn ser_describe_partner_app_input(
 }
 
 pub(crate) fn de_describe_partner_app(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_partner_app::builders::DescribePartnerAppOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_partner_app::builders::DescribePartnerAppOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,7 +145,7 @@ pub(crate) fn de_describe_partner_app(
                 }
                 "MaintenanceConfig" => {
                     builder = builder.set_maintenance_config(
-                        crate::protocol_serde::shape_partner_app_maintenance_config::de_partner_app_maintenance_config(tokens)?,
+                        crate::protocol_serde::shape_partner_app_maintenance_config::de_partner_app_maintenance_config(tokens, _value)?,
                     );
                 }
                 "Tier" => {
@@ -163,7 +163,7 @@ pub(crate) fn de_describe_partner_app(
                     );
                 }
                 "ApplicationConfig" => {
-                    builder = builder.set_application_config(crate::protocol_serde::shape_partner_app_config::de_partner_app_config(tokens)?);
+                    builder = builder.set_application_config(crate::protocol_serde::shape_partner_app_config::de_partner_app_config(tokens, _value)?);
                 }
                 "AuthType" => {
                     builder = builder.set_auth_type(
@@ -177,7 +177,7 @@ pub(crate) fn de_describe_partner_app(
                         builder.set_enable_iam_session_based_identity(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_info::de_error_info(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_info::de_error_info(tokens, _value)?);
                 }
                 "EnableAutoMinorVersionUpgrade" => {
                     builder =
@@ -190,7 +190,7 @@ pub(crate) fn de_describe_partner_app(
                     )?);
                 }
                 "AvailableUpgrade" => {
-                    builder = builder.set_available_upgrade(crate::protocol_serde::shape_available_upgrade::de_available_upgrade(tokens)?);
+                    builder = builder.set_available_upgrade(crate::protocol_serde::shape_available_upgrade::de_available_upgrade(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

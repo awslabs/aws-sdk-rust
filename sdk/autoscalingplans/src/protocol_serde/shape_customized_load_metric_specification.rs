@@ -32,6 +32,7 @@ pub fn ser_customized_load_metric_specification(
 
 pub(crate) fn de_customized_load_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomizedLoadMetricSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                             );
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_metric_dimensions::de_metric_dimensions(tokens, _value)?);
                         }
                         "Statistic" => {
                             builder = builder.set_statistic(

@@ -38,6 +38,7 @@ pub fn ser_s3_model_data_source(
 
 pub(crate) fn de_s3_model_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3ModelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,12 +74,12 @@ where
                             );
                         }
                         "ModelAccessConfig" => {
-                            builder =
-                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
+                            builder = builder
+                                .set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens, _value)?);
                         }
                         "HubAccessConfig" => {
                             builder = builder.set_hub_access_config(
-                                crate::protocol_serde::shape_inference_hub_access_config::de_inference_hub_access_config(tokens)?,
+                                crate::protocol_serde::shape_inference_hub_access_config::de_inference_hub_access_config(tokens, _value)?,
                             );
                         }
                         "ManifestS3Uri" => {

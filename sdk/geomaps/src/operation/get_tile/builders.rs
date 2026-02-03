@@ -120,19 +120,19 @@ impl GetTileFluentBuilder {
         self.inner.get_additional_features()
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn tileset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tileset(input.into());
         self
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn set_tileset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tileset(input);
         self
     }
     /// <p>Specifies the desired tile set.</p>
-    /// <p>Valid Values: <code>raster.satellite | vector.basemap</code></p>
+    /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn get_tileset(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_tileset()
     }

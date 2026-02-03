@@ -29,6 +29,7 @@ pub fn ser_cast_column_types_operation(
 
 pub(crate) fn de_cast_column_types_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CastColumnTypesOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,12 +52,12 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "CastColumnTypeOperations" => {
                             builder = builder.set_cast_column_type_operations(
-                                crate::protocol_serde::shape_cast_column_type_operation_list::de_cast_column_type_operation_list(tokens)?,
+                                crate::protocol_serde::shape_cast_column_type_operation_list::de_cast_column_type_operation_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -120,13 +120,13 @@ pub fn ser_create_partner_input(
 }
 
 pub(crate) fn de_create_partner(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_partner::builders::CreatePartnerOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_partner::builders::CreatePartnerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,16 +168,17 @@ pub(crate) fn de_create_partner(
                     )?);
                 }
                 "Profile" => {
-                    builder = builder.set_profile(crate::protocol_serde::shape_partner_profile::de_partner_profile(tokens)?);
+                    builder = builder.set_profile(crate::protocol_serde::shape_partner_profile::de_partner_profile(tokens, _value)?);
                 }
                 "AwsTrainingCertificationEmailDomains" => {
                     builder = builder.set_aws_training_certification_email_domains(
-                        crate::protocol_serde::shape_partner_domain_list::de_partner_domain_list(tokens)?,
+                        crate::protocol_serde::shape_partner_domain_list::de_partner_domain_list(tokens, _value)?,
                     );
                 }
                 "AllianceLeadContact" => {
-                    builder =
-                        builder.set_alliance_lead_contact(crate::protocol_serde::shape_alliance_lead_contact::de_alliance_lead_contact(tokens)?);
+                    builder = builder.set_alliance_lead_contact(crate::protocol_serde::shape_alliance_lead_contact::de_alliance_lead_contact(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

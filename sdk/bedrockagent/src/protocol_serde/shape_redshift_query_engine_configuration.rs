@@ -23,6 +23,7 @@ pub fn ser_redshift_query_engine_configuration(
 
 pub(crate) fn de_redshift_query_engine_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedshiftQueryEngineConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,14 @@ where
                         }
                         "serverlessConfiguration" => {
                             builder = builder.set_serverless_configuration(
-                                crate::protocol_serde::shape_redshift_serverless_configuration::de_redshift_serverless_configuration(tokens)?,
+                                crate::protocol_serde::shape_redshift_serverless_configuration::de_redshift_serverless_configuration(tokens, _value)?,
                             );
                         }
                         "provisionedConfiguration" => {
                             builder = builder.set_provisioned_configuration(
-                                crate::protocol_serde::shape_redshift_provisioned_configuration::de_redshift_provisioned_configuration(tokens)?,
+                                crate::protocol_serde::shape_redshift_provisioned_configuration::de_redshift_provisioned_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

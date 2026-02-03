@@ -88,13 +88,13 @@ pub fn ser_retrieve_domain_auth_code_input(
 }
 
 pub(crate) fn de_retrieve_domain_auth_code(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

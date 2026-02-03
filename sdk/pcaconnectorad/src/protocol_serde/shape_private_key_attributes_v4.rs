@@ -35,6 +35,7 @@ pub fn ser_private_key_attributes_v4(
 
 pub(crate) fn de_private_key_attributes_v4<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PrivateKeyAttributesV4>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,11 +64,13 @@ where
                             );
                         }
                         "CryptoProviders" => {
-                            builder =
-                                builder.set_crypto_providers(crate::protocol_serde::shape_crypto_providers_list::de_crypto_providers_list(tokens)?);
+                            builder = builder.set_crypto_providers(crate::protocol_serde::shape_crypto_providers_list::de_crypto_providers_list(
+                                tokens, _value,
+                            )?);
                         }
                         "KeyUsageProperty" => {
-                            builder = builder.set_key_usage_property(crate::protocol_serde::shape_key_usage_property::de_key_usage_property(tokens)?);
+                            builder = builder
+                                .set_key_usage_property(crate::protocol_serde::shape_key_usage_property::de_key_usage_property(tokens, _value)?);
                         }
                         "Algorithm" => {
                             builder = builder.set_algorithm(

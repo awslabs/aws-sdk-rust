@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-osis = "1.96.0"
+//! aws-sdk-osis = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

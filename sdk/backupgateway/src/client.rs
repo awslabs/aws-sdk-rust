@@ -149,7 +149,7 @@ mod create_gateway;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_backupgateway::Error> {
 /// # let client: aws_sdk_backupgateway::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_gateway_to_server()
 ///     .customize()

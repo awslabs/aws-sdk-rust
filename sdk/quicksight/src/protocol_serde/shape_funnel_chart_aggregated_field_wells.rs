@@ -32,6 +32,7 @@ pub fn ser_funnel_chart_aggregated_field_wells(
 
 pub(crate) fn de_funnel_chart_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunnelChartAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Category" => {
                             builder = builder.set_category(
-                                crate::protocol_serde::shape_funnel_chart_dimension_field_list::de_funnel_chart_dimension_field_list(tokens)?,
+                                crate::protocol_serde::shape_funnel_chart_dimension_field_list::de_funnel_chart_dimension_field_list(tokens, _value)?,
                             );
                         }
                         "Values" => {
                             builder = builder.set_values(
-                                crate::protocol_serde::shape_funnel_chart_measure_field_list::de_funnel_chart_measure_field_list(tokens)?,
+                                crate::protocol_serde::shape_funnel_chart_measure_field_list::de_funnel_chart_measure_field_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

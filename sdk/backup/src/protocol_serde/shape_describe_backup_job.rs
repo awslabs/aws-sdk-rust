@@ -122,13 +122,13 @@ pub fn de_describe_backup_job_http_response(
 }
 
 pub(crate) fn de_describe_backup_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_backup_job::builders::DescribeBackupJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_backup_job::builders::DescribeBackupJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_describe_backup_job(
                     );
                 }
                 "BackupOptions" => {
-                    builder = builder.set_backup_options(crate::protocol_serde::shape_backup_options::de_backup_options(tokens)?);
+                    builder = builder.set_backup_options(crate::protocol_serde::shape_backup_options::de_backup_options(tokens, _value)?);
                 }
                 "BackupSizeInBytes" => {
                     builder = builder.set_backup_size_in_bytes(
@@ -189,7 +189,7 @@ pub(crate) fn de_describe_backup_job(
                 }
                 "ChildJobsInState" => {
                     builder = builder.set_child_jobs_in_state(
-                        crate::protocol_serde::shape_backup_job_child_jobs_in_state::de_backup_job_child_jobs_in_state(tokens)?,
+                        crate::protocol_serde::shape_backup_job_child_jobs_in_state::de_backup_job_child_jobs_in_state(tokens, _value)?,
                     );
                 }
                 "CompletionDate" => {
@@ -199,7 +199,9 @@ pub(crate) fn de_describe_backup_job(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(
+                        tokens, _value,
+                    )?);
                 }
                 "CreationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -275,7 +277,7 @@ pub(crate) fn de_describe_backup_job(
                     );
                 }
                 "RecoveryPointLifecycle" => {
-                    builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
+                    builder = builder.set_recovery_point_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
                 }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(

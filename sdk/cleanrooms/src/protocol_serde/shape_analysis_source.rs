@@ -24,6 +24,7 @@ pub fn ser_analysis_source(
 
 pub(crate) fn de_analysis_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,9 +60,9 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "artifacts" => Some(crate::types::AnalysisSource::Artifacts(
-                            crate::protocol_serde::shape_analysis_template_artifacts::de_analysis_template_artifacts(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'artifacts' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_analysis_template_artifacts::de_analysis_template_artifacts(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'artifacts' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

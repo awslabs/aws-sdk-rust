@@ -17,6 +17,7 @@ pub fn ser_data_set_string_list_filter_value(
 
 pub(crate) fn de_data_set_string_list_filter_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSetStringListFilterValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -33,7 +34,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "StaticValues" => {
                                 builder = builder.set_static_values(
-                                    crate::protocol_serde::shape_data_set_string_filter_static_value_list::de_data_set_string_filter_static_value_list(tokens)?
+                                    crate::protocol_serde::shape_data_set_string_filter_static_value_list::de_data_set_string_filter_static_value_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

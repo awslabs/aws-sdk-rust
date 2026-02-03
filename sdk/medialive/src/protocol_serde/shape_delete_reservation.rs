@@ -161,13 +161,13 @@ pub fn de_delete_reservation_http_response(
 }
 
 pub(crate) fn de_delete_reservation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_reservation::builders::DeleteReservationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_reservation::builders::DeleteReservationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -256,7 +256,7 @@ pub(crate) fn de_delete_reservation(
                     );
                 }
                 "renewalSettings" => {
-                    builder = builder.set_renewal_settings(crate::protocol_serde::shape_renewal_settings::de_renewal_settings(tokens)?);
+                    builder = builder.set_renewal_settings(crate::protocol_serde::shape_renewal_settings::de_renewal_settings(tokens, _value)?);
                 }
                 "reservationId" => {
                     builder = builder.set_reservation_id(
@@ -267,7 +267,7 @@ pub(crate) fn de_delete_reservation(
                 }
                 "resourceSpecification" => {
                     builder = builder.set_resource_specification(
-                        crate::protocol_serde::shape_reservation_resource_specification::de_reservation_resource_specification(tokens)?,
+                        crate::protocol_serde::shape_reservation_resource_specification::de_reservation_resource_specification(tokens, _value)?,
                     );
                 }
                 "start" => {
@@ -285,7 +285,7 @@ pub(crate) fn de_delete_reservation(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "usagePrice" => {
                     builder = builder

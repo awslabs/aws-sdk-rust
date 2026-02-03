@@ -85,6 +85,7 @@ pub fn ser_runbook(
 
 pub(crate) fn de_runbook<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Runbook>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -114,7 +115,7 @@ where
                         }
                         "Parameters" => {
                             builder = builder.set_parameters(crate::protocol_serde::shape_automation_parameter_map::de_automation_parameter_map(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "TargetParameterName" => {
@@ -125,10 +126,10 @@ where
                             );
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
                         }
                         "TargetMaps" => {
-                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens)?);
+                            builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value)?);
                         }
                         "MaxConcurrency" => {
                             builder = builder.set_max_concurrency(
@@ -145,7 +146,8 @@ where
                             );
                         }
                         "TargetLocations" => {
-                            builder = builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(tokens)?);
+                            builder =
+                                builder.set_target_locations(crate::protocol_serde::shape_target_locations::de_target_locations(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

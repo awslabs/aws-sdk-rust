@@ -20,6 +20,7 @@ pub fn ser_static_file_source(
 
 pub(crate) fn de_static_file_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StaticFileSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UrlOptions" => {
                             builder = builder.set_url_options(
-                                crate::protocol_serde::shape_static_file_url_source_options::de_static_file_url_source_options(tokens)?,
+                                crate::protocol_serde::shape_static_file_url_source_options::de_static_file_url_source_options(tokens, _value)?,
                             );
                         }
                         "S3Options" => {
                             builder = builder.set_s3_options(
-                                crate::protocol_serde::shape_static_file_s3_source_options::de_static_file_s3_source_options(tokens)?,
+                                crate::protocol_serde::shape_static_file_s3_source_options::de_static_file_s3_source_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

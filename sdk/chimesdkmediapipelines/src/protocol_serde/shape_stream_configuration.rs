@@ -20,6 +20,7 @@ pub fn ser_stream_configuration(
 
 pub(crate) fn de_stream_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StreamConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "StreamChannelDefinition" => {
                             builder = builder.set_stream_channel_definition(
-                                crate::protocol_serde::shape_stream_channel_definition::de_stream_channel_definition(tokens)?,
+                                crate::protocol_serde::shape_stream_channel_definition::de_stream_channel_definition(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

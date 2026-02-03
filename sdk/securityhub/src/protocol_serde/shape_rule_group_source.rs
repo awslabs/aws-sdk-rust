@@ -38,6 +38,7 @@ pub fn ser_rule_group_source(
 
 pub(crate) fn de_rule_group_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleGroupSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RulesSourceList" => {
                             builder = builder.set_rules_source_list(
-                                crate::protocol_serde::shape_rule_group_source_list_details::de_rule_group_source_list_details(tokens)?,
+                                crate::protocol_serde::shape_rule_group_source_list_details::de_rule_group_source_list_details(tokens, _value)?,
                             );
                         }
                         "RulesString" => {
@@ -65,12 +66,14 @@ where
                         }
                         "StatefulRules" => {
                             builder = builder.set_stateful_rules(
-                                crate::protocol_serde::shape_rule_group_source_stateful_rules_list::de_rule_group_source_stateful_rules_list(tokens)?,
+                                crate::protocol_serde::shape_rule_group_source_stateful_rules_list::de_rule_group_source_stateful_rules_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "StatelessRulesAndCustomActions" => {
                             builder = builder.set_stateless_rules_and_custom_actions(
-                                    crate::protocol_serde::shape_rule_group_source_stateless_rules_and_custom_actions_details::de_rule_group_source_stateless_rules_and_custom_actions_details(tokens)?
+                                    crate::protocol_serde::shape_rule_group_source_stateless_rules_and_custom_actions_details::de_rule_group_source_stateless_rules_and_custom_actions_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

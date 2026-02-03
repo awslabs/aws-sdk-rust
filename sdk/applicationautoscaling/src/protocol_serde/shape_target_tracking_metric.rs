@@ -26,6 +26,7 @@ pub fn ser_target_tracking_metric(
 
 pub(crate) fn de_target_tracking_metric<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetTrackingMetric>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
                             builder = builder.set_dimensions(
-                                crate::protocol_serde::shape_target_tracking_metric_dimensions::de_target_tracking_metric_dimensions(tokens)?,
+                                crate::protocol_serde::shape_target_tracking_metric_dimensions::de_target_tracking_metric_dimensions(tokens, _value)?,
                             );
                         }
                         "MetricName" => {

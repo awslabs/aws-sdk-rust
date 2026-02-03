@@ -98,13 +98,13 @@ pub fn ser_accept_direct_connect_gateway_association_proposal_input(
 }
 
 pub(crate) fn de_accept_direct_connect_gateway_association_proposal(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -113,7 +113,7 @@ pub(crate) fn de_accept_direct_connect_gateway_association_proposal(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "directConnectGatewayAssociation" => {
                     builder = builder.set_direct_connect_gateway_association(
-                        crate::protocol_serde::shape_direct_connect_gateway_association::de_direct_connect_gateway_association(tokens)?,
+                        crate::protocol_serde::shape_direct_connect_gateway_association::de_direct_connect_gateway_association(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

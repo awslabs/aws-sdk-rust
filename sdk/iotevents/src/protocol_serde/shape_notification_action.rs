@@ -38,6 +38,7 @@ pub fn ser_notification_action(
 
 pub(crate) fn de_notification_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NotificationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,15 +54,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "action" => {
                             builder = builder.set_action(crate::protocol_serde::shape_notification_target_actions::de_notification_target_actions(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "smsConfigurations" => {
-                            builder = builder.set_sms_configurations(crate::protocol_serde::shape_sms_configurations::de_sms_configurations(tokens)?);
+                            builder = builder
+                                .set_sms_configurations(crate::protocol_serde::shape_sms_configurations::de_sms_configurations(tokens, _value)?);
                         }
                         "emailConfigurations" => {
-                            builder =
-                                builder.set_email_configurations(crate::protocol_serde::shape_email_configurations::de_email_configurations(tokens)?);
+                            builder = builder.set_email_configurations(crate::protocol_serde::shape_email_configurations::de_email_configurations(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -104,6 +104,7 @@ pub fn ser_dashboard_version_definition(
 
 pub(crate) fn de_dashboard_version_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashboardVersionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -119,36 +120,43 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSetIdentifierDeclarations" => {
                             builder = builder.set_data_set_identifier_declarations(
-                                crate::protocol_serde::shape_data_set_identifier_declaration_list::de_data_set_identifier_declaration_list(tokens)?,
+                                crate::protocol_serde::shape_data_set_identifier_declaration_list::de_data_set_identifier_declaration_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Sheets" => {
-                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_definition_list::de_sheet_definition_list(tokens)?);
+                            builder = builder.set_sheets(crate::protocol_serde::shape_sheet_definition_list::de_sheet_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "CalculatedFields" => {
-                            builder = builder.set_calculated_fields(crate::protocol_serde::shape_calculated_fields::de_calculated_fields(tokens)?);
+                            builder =
+                                builder.set_calculated_fields(crate::protocol_serde::shape_calculated_fields::de_calculated_fields(tokens, _value)?);
                         }
                         "ParameterDeclarations" => {
                             builder = builder.set_parameter_declarations(
-                                crate::protocol_serde::shape_parameter_declaration_list::de_parameter_declaration_list(tokens)?,
+                                crate::protocol_serde::shape_parameter_declaration_list::de_parameter_declaration_list(tokens, _value)?,
                             );
                         }
                         "FilterGroups" => {
-                            builder = builder.set_filter_groups(crate::protocol_serde::shape_filter_group_list::de_filter_group_list(tokens)?);
+                            builder =
+                                builder.set_filter_groups(crate::protocol_serde::shape_filter_group_list::de_filter_group_list(tokens, _value)?);
                         }
                         "ColumnConfigurations" => {
                             builder = builder.set_column_configurations(
-                                crate::protocol_serde::shape_column_configuration_list::de_column_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_column_configuration_list::de_column_configuration_list(tokens, _value)?,
                             );
                         }
                         "AnalysisDefaults" => {
-                            builder = builder.set_analysis_defaults(crate::protocol_serde::shape_analysis_defaults::de_analysis_defaults(tokens)?);
+                            builder =
+                                builder.set_analysis_defaults(crate::protocol_serde::shape_analysis_defaults::de_analysis_defaults(tokens, _value)?);
                         }
                         "Options" => {
-                            builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens)?);
+                            builder = builder.set_options(crate::protocol_serde::shape_asset_options::de_asset_options(tokens, _value)?);
                         }
                         "StaticFiles" => {
-                            builder = builder.set_static_files(crate::protocol_serde::shape_static_file_list::de_static_file_list(tokens)?);
+                            builder = builder.set_static_files(crate::protocol_serde::shape_static_file_list::de_static_file_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

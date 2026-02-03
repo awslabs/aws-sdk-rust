@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use http0::header::{AUTHORIZATION, TRANSFER_ENCODING, USER_AGENT};
+use http::header::{AUTHORIZATION, TRANSFER_ENCODING, USER_AGENT};
 use std::borrow::Cow;
 use std::time::Duration;
 

@@ -77,6 +77,7 @@ pub fn ser_pii_detection(
 
 pub(crate) fn de_pii_detection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PiiDetection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -98,7 +99,7 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "PiiType" => {
                             builder = builder.set_pii_type(
@@ -109,7 +110,7 @@ where
                         }
                         "EntityTypesToDetect" => {
                             builder = builder.set_entity_types_to_detect(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
                             );
                         }
                         "OutputColumnName" => {

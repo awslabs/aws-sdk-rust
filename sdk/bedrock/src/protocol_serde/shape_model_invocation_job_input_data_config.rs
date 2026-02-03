@@ -24,6 +24,7 @@ pub fn ser_model_invocation_job_input_data_config(
 
 pub(crate) fn de_model_invocation_job_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelInvocationJobInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                         "s3InputDataConfig" => Some(crate::types::ModelInvocationJobInputDataConfig::S3InputDataConfig(
                             crate::protocol_serde::shape_model_invocation_job_s3_input_data_config::de_model_invocation_job_s3_input_data_config(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3InputDataConfig' cannot be null")

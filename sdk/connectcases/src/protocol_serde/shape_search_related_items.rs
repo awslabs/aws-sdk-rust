@@ -133,13 +133,13 @@ pub fn ser_search_related_items_input(
 }
 
 pub(crate) fn de_search_related_items(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,9 @@ pub(crate) fn de_search_related_items(
                 }
                 "relatedItems" => {
                     builder = builder.set_related_items(
-                        crate::protocol_serde::shape_search_related_items_response_item_list::de_search_related_items_response_item_list(tokens)?,
+                        crate::protocol_serde::shape_search_related_items_response_item_list::de_search_related_items_response_item_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

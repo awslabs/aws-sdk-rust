@@ -23,6 +23,7 @@ pub fn ser_email_message_activity(
 
 pub(crate) fn de_email_message_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EmailMessageActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,8 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "MessageConfig" => {
-                            builder =
-                                builder.set_message_config(crate::protocol_serde::shape_journey_email_message::de_journey_email_message(tokens)?);
+                            builder = builder.set_message_config(crate::protocol_serde::shape_journey_email_message::de_journey_email_message(
+                                tokens, _value,
+                            )?);
                         }
                         "NextActivity" => {
                             builder = builder.set_next_activity(

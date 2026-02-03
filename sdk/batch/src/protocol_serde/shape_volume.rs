@@ -23,6 +23,7 @@ pub fn ser_volume(
 
 pub(crate) fn de_volume<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Volume>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "host" => {
-                            builder = builder.set_host(crate::protocol_serde::shape_host::de_host(tokens)?);
+                            builder = builder.set_host(crate::protocol_serde::shape_host::de_host(tokens, _value)?);
                         }
                         "name" => {
                             builder = builder.set_name(
@@ -48,7 +49,7 @@ where
                         }
                         "efsVolumeConfiguration" => {
                             builder = builder.set_efs_volume_configuration(
-                                crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens)?,
+                                crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

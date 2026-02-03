@@ -62,6 +62,7 @@ pub fn ser_create_backend_auth_user_pool_config(
 
 pub(crate) fn de_create_backend_auth_user_pool_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthUserPoolConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,26 +78,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "forgotPassword" => {
                             builder = builder.set_forgot_password(
-                                    crate::protocol_serde::shape_create_backend_auth_forgot_password_config::de_create_backend_auth_forgot_password_config(tokens)?
+                                    crate::protocol_serde::shape_create_backend_auth_forgot_password_config::de_create_backend_auth_forgot_password_config(tokens, _value)?
                                 );
                         }
                         "mfa" => {
-                            builder = builder
-                                .set_mfa(crate::protocol_serde::shape_create_backend_auth_mfa_config::de_create_backend_auth_mfa_config(tokens)?);
+                            builder = builder.set_mfa(
+                                crate::protocol_serde::shape_create_backend_auth_mfa_config::de_create_backend_auth_mfa_config(tokens, _value)?,
+                            );
                         }
                         "oAuth" => {
                             builder = builder.set_o_auth(
-                                crate::protocol_serde::shape_create_backend_auth_o_auth_config::de_create_backend_auth_o_auth_config(tokens)?,
+                                crate::protocol_serde::shape_create_backend_auth_o_auth_config::de_create_backend_auth_o_auth_config(tokens, _value)?,
                             );
                         }
                         "passwordPolicy" => {
                             builder = builder.set_password_policy(
-                                    crate::protocol_serde::shape_create_backend_auth_password_policy_config::de_create_backend_auth_password_policy_config(tokens)?
+                                    crate::protocol_serde::shape_create_backend_auth_password_policy_config::de_create_backend_auth_password_policy_config(tokens, _value)?
                                 );
                         }
                         "requiredSignUpAttributes" => {
                             builder = builder.set_required_sign_up_attributes(
-                                    crate::protocol_serde::shape_list_of_required_sign_up_attributes_element::de_list_of_required_sign_up_attributes_element(tokens)?
+                                    crate::protocol_serde::shape_list_of_required_sign_up_attributes_element::de_list_of_required_sign_up_attributes_element(tokens, _value)?
                                 );
                         }
                         "signInMethod" => {
@@ -115,7 +117,7 @@ where
                         }
                         "verificationMessage" => {
                             builder = builder.set_verification_message(
-                                    crate::protocol_serde::shape_create_backend_auth_verification_message_config::de_create_backend_auth_verification_message_config(tokens)?
+                                    crate::protocol_serde::shape_create_backend_auth_verification_message_config::de_create_backend_auth_verification_message_config(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

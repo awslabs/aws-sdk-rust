@@ -116,6 +116,7 @@ pub fn ser_aws_cloud_watch_alarm_details(
 
 pub(crate) fn de_aws_cloud_watch_alarm_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCloudWatchAlarmDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -133,8 +134,9 @@ where
                             builder = builder.set_actions_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "AlarmActions" => {
-                            builder =
-                                builder.set_alarm_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_alarm_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AlarmArn" => {
                             builder = builder.set_alarm_arn(
@@ -180,7 +182,9 @@ where
                         }
                         "Dimensions" => {
                             builder = builder.set_dimensions(
-                                crate::protocol_serde::shape_aws_cloud_watch_alarm_dimensions_list::de_aws_cloud_watch_alarm_dimensions_list(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_watch_alarm_dimensions_list::de_aws_cloud_watch_alarm_dimensions_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "EvaluateLowSampleCountPercentile" => {
@@ -205,8 +209,9 @@ where
                             );
                         }
                         "InsufficientDataActions" => {
-                            builder = builder
-                                .set_insufficient_data_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_insufficient_data_actions(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "MetricName" => {
                             builder = builder.set_metric_name(
@@ -223,7 +228,9 @@ where
                             );
                         }
                         "OkActions" => {
-                            builder = builder.set_ok_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_ok_actions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Period" => {
                             builder = builder.set_period(

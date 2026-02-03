@@ -29,6 +29,7 @@ pub fn ser_network_path_component_details(
 
 pub(crate) fn de_network_path_component_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkPathComponentDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "PortRanges" => {
-                            builder = builder.set_port_ranges(crate::protocol_serde::shape_port_range_list::de_port_range_list(tokens)?);
+                            builder = builder.set_port_ranges(crate::protocol_serde::shape_port_range_list::de_port_range_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -77,6 +77,7 @@ pub fn ser_scaling_instruction(
 
 pub(crate) fn de_scaling_instruction<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScalingInstruction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -127,17 +128,21 @@ where
                         }
                         "TargetTrackingConfigurations" => {
                             builder = builder.set_target_tracking_configurations(
-                                crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(tokens)?,
+                                crate::protocol_serde::shape_target_tracking_configurations::de_target_tracking_configurations(tokens, _value)?,
                             );
                         }
                         "PredefinedLoadMetricSpecification" => {
                             builder = builder.set_predefined_load_metric_specification(
-                                crate::protocol_serde::shape_predefined_load_metric_specification::de_predefined_load_metric_specification(tokens)?,
+                                crate::protocol_serde::shape_predefined_load_metric_specification::de_predefined_load_metric_specification(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "CustomizedLoadMetricSpecification" => {
                             builder = builder.set_customized_load_metric_specification(
-                                crate::protocol_serde::shape_customized_load_metric_specification::de_customized_load_metric_specification(tokens)?,
+                                crate::protocol_serde::shape_customized_load_metric_specification::de_customized_load_metric_specification(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ScheduledActionBufferTime" => {

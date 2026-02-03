@@ -79,13 +79,13 @@ pub fn ser_list_coverage_input(
 }
 
 pub(crate) fn de_list_coverage(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_coverage::builders::ListCoverageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_coverage::builders::ListCoverageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -100,7 +100,7 @@ pub(crate) fn de_list_coverage(
                     );
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_coverage_resources::de_coverage_resources(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_coverage_resources::de_coverage_resources(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

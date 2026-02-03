@@ -20,6 +20,7 @@ pub fn ser_memory_gib_per_v_cpu_request(
 
 pub(crate) fn de_memory_gib_per_v_cpu_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MemoryGiBPerVCpuRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

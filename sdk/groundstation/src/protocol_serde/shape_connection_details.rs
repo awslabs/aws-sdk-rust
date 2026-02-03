@@ -20,6 +20,7 @@ pub fn ser_connection_details(
 
 pub(crate) fn de_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "socketAddress" => {
-                            builder = builder.set_socket_address(crate::protocol_serde::shape_socket_address::de_socket_address(tokens)?);
+                            builder = builder.set_socket_address(crate::protocol_serde::shape_socket_address::de_socket_address(tokens, _value)?);
                         }
                         "mtu" => {
                             builder = builder.set_mtu(

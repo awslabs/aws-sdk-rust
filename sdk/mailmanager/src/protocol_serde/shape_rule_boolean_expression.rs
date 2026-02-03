@@ -17,6 +17,7 @@ pub fn ser_rule_boolean_expression(
 
 pub(crate) fn de_rule_boolean_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleBooleanExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Evaluate" => {
                             builder = builder.set_evaluate(crate::protocol_serde::shape_rule_boolean_to_evaluate::de_rule_boolean_to_evaluate(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Operator" => {

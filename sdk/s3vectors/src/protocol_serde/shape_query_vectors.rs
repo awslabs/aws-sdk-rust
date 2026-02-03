@@ -206,13 +206,13 @@ pub fn ser_query_vectors_input(
 }
 
 pub(crate) fn de_query_vectors(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::query_vectors::builders::QueryVectorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::query_vectors::builders::QueryVectorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -228,7 +228,7 @@ pub(crate) fn de_query_vectors(
                 }
                 "vectors" => {
                     builder = builder.set_vectors(crate::protocol_serde::shape_query_vectors_output_list::de_query_vectors_output_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

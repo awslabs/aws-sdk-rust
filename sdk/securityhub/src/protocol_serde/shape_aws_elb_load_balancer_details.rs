@@ -125,6 +125,7 @@ pub fn ser_aws_elb_load_balancer_details(
 
 pub(crate) fn de_aws_elb_load_balancer_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -139,11 +140,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AvailabilityZones" => {
-                            builder = builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_availability_zones(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "BackendServerDescriptions" => {
                             builder = builder.set_backend_server_descriptions(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_backend_server_descriptions::de_aws_elb_load_balancer_backend_server_descriptions(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_backend_server_descriptions::de_aws_elb_load_balancer_backend_server_descriptions(tokens, _value)?
                                 );
                         }
                         "CanonicalHostedZoneName" => {
@@ -176,22 +177,24 @@ where
                         }
                         "HealthCheck" => {
                             builder = builder.set_health_check(
-                                crate::protocol_serde::shape_aws_elb_load_balancer_health_check::de_aws_elb_load_balancer_health_check(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_load_balancer_health_check::de_aws_elb_load_balancer_health_check(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Instances" => {
                             builder = builder.set_instances(
-                                crate::protocol_serde::shape_aws_elb_load_balancer_instances::de_aws_elb_load_balancer_instances(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_load_balancer_instances::de_aws_elb_load_balancer_instances(tokens, _value)?,
                             );
                         }
                         "ListenerDescriptions" => {
                             builder = builder.set_listener_descriptions(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_listener_descriptions::de_aws_elb_load_balancer_listener_descriptions(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_listener_descriptions::de_aws_elb_load_balancer_listener_descriptions(tokens, _value)?
                                 );
                         }
                         "LoadBalancerAttributes" => {
                             builder = builder.set_load_balancer_attributes(
-                                crate::protocol_serde::shape_aws_elb_load_balancer_attributes::de_aws_elb_load_balancer_attributes(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_load_balancer_attributes::de_aws_elb_load_balancer_attributes(tokens, _value)?,
                             );
                         }
                         "LoadBalancerName" => {
@@ -203,7 +206,7 @@ where
                         }
                         "Policies" => {
                             builder = builder.set_policies(
-                                crate::protocol_serde::shape_aws_elb_load_balancer_policies::de_aws_elb_load_balancer_policies(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_load_balancer_policies::de_aws_elb_load_balancer_policies(tokens, _value)?,
                             );
                         }
                         "Scheme" => {
@@ -214,15 +217,15 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "SourceSecurityGroup" => {
                             builder = builder.set_source_security_group(
-                                    crate::protocol_serde::shape_aws_elb_load_balancer_source_security_group::de_aws_elb_load_balancer_source_security_group(tokens)?
+                                    crate::protocol_serde::shape_aws_elb_load_balancer_source_security_group::de_aws_elb_load_balancer_source_security_group(tokens, _value)?
                                 );
                         }
                         "Subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "VpcId" => {
                             builder = builder.set_vpc_id(

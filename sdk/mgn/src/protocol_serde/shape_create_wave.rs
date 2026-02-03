@@ -97,11 +97,11 @@ pub fn ser_create_wave_input(
 }
 
 pub(crate) fn de_create_wave(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_wave::builders::CreateWaveOutputBuilder,
 ) -> ::std::result::Result<crate::operation::create_wave::builders::CreateWaveOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,11 +147,12 @@ pub(crate) fn de_create_wave(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "waveAggregatedStatus" => {
-                    builder =
-                        builder.set_wave_aggregated_status(crate::protocol_serde::shape_wave_aggregated_status::de_wave_aggregated_status(tokens)?);
+                    builder = builder.set_wave_aggregated_status(crate::protocol_serde::shape_wave_aggregated_status::de_wave_aggregated_status(
+                        tokens, _value,
+                    )?);
                 }
                 "waveID" => {
                     builder = builder.set_wave_id(

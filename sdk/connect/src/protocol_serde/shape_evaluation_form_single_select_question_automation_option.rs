@@ -24,6 +24,7 @@ pub fn ser_evaluation_form_single_select_question_automation_option(
 
 pub(crate) fn de_evaluation_form_single_select_question_automation_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::EvaluationFormSingleSelectQuestionAutomationOption>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -57,7 +58,7 @@ where
                     variant = match key.as_ref() {
                             "RuleCategory" => {
                                 Some(crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(
-                                    crate::protocol_serde::shape_single_select_question_rule_category_automation::de_single_select_question_rule_category_automation(tokens)?
+                                    crate::protocol_serde::shape_single_select_question_rule_category_automation::de_single_select_question_rule_category_automation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RuleCategory' cannot be null"))?
                                 ))
                             }

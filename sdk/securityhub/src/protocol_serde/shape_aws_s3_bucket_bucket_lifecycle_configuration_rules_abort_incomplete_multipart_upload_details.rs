@@ -14,6 +14,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_m
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

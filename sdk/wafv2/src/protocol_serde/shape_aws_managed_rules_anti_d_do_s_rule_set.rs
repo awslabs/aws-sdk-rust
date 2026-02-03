@@ -17,6 +17,7 @@ pub fn ser_aws_managed_rules_anti_d_do_s_rule_set(
 
 pub(crate) fn de_aws_managed_rules_anti_d_do_s_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsManagedRulesAntiDDoSRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClientSideActionConfig" => {
                             builder = builder.set_client_side_action_config(
-                                crate::protocol_serde::shape_client_side_action_config::de_client_side_action_config(tokens)?,
+                                crate::protocol_serde::shape_client_side_action_config::de_client_side_action_config(tokens, _value)?,
                             );
                         }
                         "SensitivityToBlock" => {

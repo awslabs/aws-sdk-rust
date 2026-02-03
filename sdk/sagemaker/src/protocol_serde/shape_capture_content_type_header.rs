@@ -26,6 +26,7 @@ pub fn ser_capture_content_type_header(
 
 pub(crate) fn de_capture_content_type_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptureContentTypeHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CsvContentTypes" => {
-                            builder = builder.set_csv_content_types(crate::protocol_serde::shape_csv_content_types::de_csv_content_types(tokens)?);
+                            builder =
+                                builder.set_csv_content_types(crate::protocol_serde::shape_csv_content_types::de_csv_content_types(tokens, _value)?);
                         }
                         "JsonContentTypes" => {
-                            builder = builder.set_json_content_types(crate::protocol_serde::shape_json_content_types::de_json_content_types(tokens)?);
+                            builder = builder
+                                .set_json_content_types(crate::protocol_serde::shape_json_content_types::de_json_content_types(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

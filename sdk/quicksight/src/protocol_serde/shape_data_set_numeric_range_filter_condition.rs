@@ -26,6 +26,7 @@ pub fn ser_data_set_numeric_range_filter_condition(
 
 pub(crate) fn de_data_set_numeric_range_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSetNumericRangeFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RangeMinimum" => {
                             builder = builder.set_range_minimum(
-                                crate::protocol_serde::shape_data_set_numeric_filter_value::de_data_set_numeric_filter_value(tokens)?,
+                                crate::protocol_serde::shape_data_set_numeric_filter_value::de_data_set_numeric_filter_value(tokens, _value)?,
                             );
                         }
                         "RangeMaximum" => {
                             builder = builder.set_range_maximum(
-                                crate::protocol_serde::shape_data_set_numeric_filter_value::de_data_set_numeric_filter_value(tokens)?,
+                                crate::protocol_serde::shape_data_set_numeric_filter_value::de_data_set_numeric_filter_value(tokens, _value)?,
                             );
                         }
                         "IncludeMinimum" => {

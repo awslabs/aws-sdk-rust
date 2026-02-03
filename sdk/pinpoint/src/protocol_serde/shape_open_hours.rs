@@ -103,6 +103,7 @@ pub fn ser_open_hours(
 
 pub(crate) fn de_open_hours<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenHours>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -117,24 +118,28 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EMAIL" => {
-                            builder = builder
-                                .set_email(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                            builder = builder.set_email(
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens, _value)?,
+                            );
                         }
                         "SMS" => {
-                            builder = builder
-                                .set_sms(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                            builder = builder.set_sms(
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens, _value)?,
+                            );
                         }
                         "PUSH" => {
-                            builder = builder
-                                .set_push(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                            builder = builder.set_push(
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens, _value)?,
+                            );
                         }
                         "VOICE" => {
-                            builder = builder
-                                .set_voice(crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?);
+                            builder = builder.set_voice(
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens, _value)?,
+                            );
                         }
                         "CUSTOM" => {
                             builder = builder.set_custom(
-                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens)?,
+                                crate::protocol_serde::shape_map_of_list_of_open_hours_rules::de_map_of_list_of_open_hours_rules(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_centralization_rule(
 
 pub(crate) fn de_centralization_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CentralizationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_centralization_rule_source::de_centralization_rule_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Destination" => {
                             builder = builder.set_destination(
-                                crate::protocol_serde::shape_centralization_rule_destination::de_centralization_rule_destination(tokens)?,
+                                crate::protocol_serde::shape_centralization_rule_destination::de_centralization_rule_destination(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

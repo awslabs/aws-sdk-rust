@@ -116,13 +116,13 @@ pub fn ser_batch_get_frame_metric_data_input(
 }
 
 pub(crate) fn de_batch_get_frame_metric_data(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,10 +136,10 @@ pub(crate) fn de_batch_get_frame_metric_data(
                     )?);
                 }
                 "endTimes" => {
-                    builder = builder.set_end_times(crate::protocol_serde::shape_list_of_timestamps::de_list_of_timestamps(tokens)?);
+                    builder = builder.set_end_times(crate::protocol_serde::shape_list_of_timestamps::de_list_of_timestamps(tokens, _value)?);
                 }
                 "frameMetricData" => {
-                    builder = builder.set_frame_metric_data(crate::protocol_serde::shape_frame_metric_data::de_frame_metric_data(tokens)?);
+                    builder = builder.set_frame_metric_data(crate::protocol_serde::shape_frame_metric_data::de_frame_metric_data(tokens, _value)?);
                 }
                 "resolution" => {
                     builder = builder.set_resolution(
@@ -156,7 +156,7 @@ pub(crate) fn de_batch_get_frame_metric_data(
                 }
                 "unprocessedEndTimes" => {
                     builder = builder.set_unprocessed_end_times(crate::protocol_serde::shape_unprocessed_end_time_map::de_unprocessed_end_time_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

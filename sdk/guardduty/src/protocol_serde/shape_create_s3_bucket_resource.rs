@@ -20,6 +20,7 @@ pub fn ser_create_s3_bucket_resource(
 
 pub(crate) fn de_create_s3_bucket_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateS3BucketResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "objectPrefixes" => {
                             builder = builder.set_object_prefixes(
-                                    crate::protocol_serde::shape_malware_protection_plan_object_prefixes_list::de_malware_protection_plan_object_prefixes_list(tokens)?
+                                    crate::protocol_serde::shape_malware_protection_plan_object_prefixes_list::de_malware_protection_plan_object_prefixes_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

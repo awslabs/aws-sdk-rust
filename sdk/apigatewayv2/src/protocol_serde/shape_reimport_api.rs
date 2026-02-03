@@ -108,11 +108,11 @@ pub fn ser_reimport_api_input(
 }
 
 pub(crate) fn de_reimport_api(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::reimport_api::builders::ReimportApiOutputBuilder,
 ) -> ::std::result::Result<crate::operation::reimport_api::builders::ReimportApiOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "corsConfiguration" => {
-                    builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens)?);
+                    builder = builder.set_cors_configuration(crate::protocol_serde::shape_cors::de_cors(tokens, _value)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -166,7 +166,7 @@ pub(crate) fn de_reimport_api(
                     builder = builder.set_disable_schema_validation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "importInfo" => {
-                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "ipAddressType" => {
                     builder = builder.set_ip_address_type(
@@ -197,7 +197,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "version" => {
                     builder = builder.set_version(
@@ -207,7 +207,7 @@ pub(crate) fn de_reimport_api(
                     );
                 }
                 "warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

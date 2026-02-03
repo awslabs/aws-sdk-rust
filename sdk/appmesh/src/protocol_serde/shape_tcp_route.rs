@@ -26,6 +26,7 @@ pub fn ser_tcp_route(
 
 pub(crate) fn de_tcp_route<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TcpRoute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_tcp_route_action::de_tcp_route_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_tcp_route_action::de_tcp_route_action(tokens, _value)?);
                         }
                         "timeout" => {
-                            builder = builder.set_timeout(crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens)?);
+                            builder = builder.set_timeout(crate::protocol_serde::shape_tcp_timeout::de_tcp_timeout(tokens, _value)?);
                         }
                         "match" => {
-                            builder = builder.set_match(crate::protocol_serde::shape_tcp_route_match::de_tcp_route_match(tokens)?);
+                            builder = builder.set_match(crate::protocol_serde::shape_tcp_route_match::de_tcp_route_match(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

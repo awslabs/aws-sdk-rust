@@ -108,13 +108,13 @@ pub fn de_list_protected_resources_by_backup_vault_http_response(
 }
 
 pub(crate) fn de_list_protected_resources_by_backup_vault(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_protected_resources_by_backup_vault::builders::ListProtectedResourcesByBackupVaultOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_protected_resources_by_backup_vault::builders::ListProtectedResourcesByBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_list_protected_resources_by_backup_vault(
                 }
                 "Results" => {
                     builder = builder.set_results(crate::protocol_serde::shape_protected_resources_list::de_protected_resources_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

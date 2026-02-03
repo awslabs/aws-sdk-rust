@@ -21,6 +21,7 @@ pub fn ser_disk_encryption_configuration(
 
 pub(crate) fn de_disk_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DiskEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "encryptionContext" => {
-                            builder = builder.set_encryption_context(crate::protocol_serde::shape_encryption_context::de_encryption_context(tokens)?);
+                            builder = builder
+                                .set_encryption_context(crate::protocol_serde::shape_encryption_context::de_encryption_context(tokens, _value)?);
                         }
                         "encryptionKeyArn" => {
                             builder = builder.set_encryption_key_arn(

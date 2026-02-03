@@ -122,13 +122,13 @@ pub fn de_describe_insight_http_response(
 }
 
 pub(crate) fn de_describe_insight(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_insight::builders::DescribeInsightOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_insight::builders::DescribeInsightOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -136,10 +136,10 @@ pub(crate) fn de_describe_insight(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProactiveInsight" => {
-                    builder = builder.set_proactive_insight(crate::protocol_serde::shape_proactive_insight::de_proactive_insight(tokens)?);
+                    builder = builder.set_proactive_insight(crate::protocol_serde::shape_proactive_insight::de_proactive_insight(tokens, _value)?);
                 }
                 "ReactiveInsight" => {
-                    builder = builder.set_reactive_insight(crate::protocol_serde::shape_reactive_insight::de_reactive_insight(tokens)?);
+                    builder = builder.set_reactive_insight(crate::protocol_serde::shape_reactive_insight::de_reactive_insight(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -17,6 +17,7 @@ pub fn ser_tool_override_input_value(
 
 pub(crate) fn de_tool_override_input_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ToolOverrideInputValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                         "value" => {
                             builder = builder.set_value(
                                 crate::protocol_serde::shape_tool_override_input_value_configuration::de_tool_override_input_value_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

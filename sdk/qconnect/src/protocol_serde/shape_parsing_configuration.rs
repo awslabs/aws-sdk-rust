@@ -20,6 +20,7 @@ pub fn ser_parsing_configuration(
 
 pub(crate) fn de_parsing_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParsingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "bedrockFoundationModelConfiguration" => {
                             builder = builder.set_bedrock_foundation_model_configuration(
-                                    crate::protocol_serde::shape_bedrock_foundation_model_configuration_for_parsing::de_bedrock_foundation_model_configuration_for_parsing(tokens)?
+                                    crate::protocol_serde::shape_bedrock_foundation_model_configuration_for_parsing::de_bedrock_foundation_model_configuration_for_parsing(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

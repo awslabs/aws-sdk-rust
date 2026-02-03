@@ -92,13 +92,13 @@ pub fn ser_describe_usage_report_subscriptions_input(
 }
 
 pub(crate) fn de_describe_usage_report_subscriptions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_usage_report_subscriptions::builders::DescribeUsageReportSubscriptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_describe_usage_report_subscriptions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UsageReportSubscriptions" => {
                     builder = builder.set_usage_report_subscriptions(
-                        crate::protocol_serde::shape_usage_report_subscription_list::de_usage_report_subscription_list(tokens)?,
+                        crate::protocol_serde::shape_usage_report_subscription_list::de_usage_report_subscription_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

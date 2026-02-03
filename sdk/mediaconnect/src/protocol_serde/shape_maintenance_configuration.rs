@@ -30,6 +30,7 @@ pub fn ser_maintenance_configuration(
 
 pub(crate) fn de_maintenance_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MaintenanceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,13 +61,13 @@ where
                     variant = match key.as_ref() {
                             "preferredDayTime" => {
                                 Some(crate::types::MaintenanceConfiguration::PreferredDayTime(
-                                    crate::protocol_serde::shape_preferred_day_time_maintenance_configuration::de_preferred_day_time_maintenance_configuration(tokens)?
+                                    crate::protocol_serde::shape_preferred_day_time_maintenance_configuration::de_preferred_day_time_maintenance_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PreferredDayTime' cannot be null"))?
                                 ))
                             }
                             "default" => {
                                 Some(crate::types::MaintenanceConfiguration::Default(
-                                    crate::protocol_serde::shape_default_maintenance_configuration::de_default_maintenance_configuration(tokens)?
+                                    crate::protocol_serde::shape_default_maintenance_configuration::de_default_maintenance_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Default' cannot be null"))?
                                 ))
                             }

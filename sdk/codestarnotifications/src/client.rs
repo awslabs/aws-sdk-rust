@@ -147,7 +147,7 @@ mod create_notification_rule;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codestarnotifications::Error> {
 /// # let client: aws_sdk_codestarnotifications::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_notification_rule()
 ///     .customize()

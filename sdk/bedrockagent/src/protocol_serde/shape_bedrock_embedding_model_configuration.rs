@@ -41,6 +41,7 @@ pub fn ser_bedrock_embedding_model_configuration(
 
 pub(crate) fn de_bedrock_embedding_model_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BedrockEmbeddingModelConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,10 +70,14 @@ where
                             );
                         }
                         "audio" => {
-                            builder = builder.set_audio(crate::protocol_serde::shape_audio_configurations::de_audio_configurations(tokens)?);
+                            builder = builder.set_audio(crate::protocol_serde::shape_audio_configurations::de_audio_configurations(
+                                tokens, _value,
+                            )?);
                         }
                         "video" => {
-                            builder = builder.set_video(crate::protocol_serde::shape_video_configurations::de_video_configurations(tokens)?);
+                            builder = builder.set_video(crate::protocol_serde::shape_video_configurations::de_video_configurations(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

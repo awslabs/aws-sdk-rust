@@ -14,6 +14,7 @@ pub fn ser_granular_access_control_configuration(
 
 pub(crate) fn de_granular_access_control_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GranularAccessControlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "DataTableAccessControlConfiguration" => {
                             builder = builder.set_data_table_access_control_configuration(
                                 crate::protocol_serde::shape_data_table_access_control_configuration::de_data_table_access_control_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

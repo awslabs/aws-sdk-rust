@@ -20,6 +20,7 @@ pub fn ser_data_lake_dataset_partition_field(
 
 pub(crate) fn de_data_lake_dataset_partition_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataLakeDatasetPartitionField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "transform" => {
                             builder = builder.set_transform(
-                                    crate::protocol_serde::shape_data_lake_dataset_partition_field_transform::de_data_lake_dataset_partition_field_transform(tokens)?
+                                    crate::protocol_serde::shape_data_lake_dataset_partition_field_transform::de_data_lake_dataset_partition_field_transform(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -243,7 +243,7 @@ mod create_replication_task;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_databasemigration::Error> {
 /// # let client: aws_sdk_databasemigration::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags_to_resource()
 ///     .customize()

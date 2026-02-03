@@ -5,11 +5,17 @@
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
@@ -24,6 +30,7 @@ impl DeleteResourcePolicyInput {
 #[non_exhaustive]
 pub struct DeleteResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
@@ -41,6 +48,20 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,
@@ -48,6 +69,7 @@ impl DeleteResourcePolicyInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
             resource_arn: self.resource_arn,
+            stream_id: self.stream_id,
         })
     }
 }

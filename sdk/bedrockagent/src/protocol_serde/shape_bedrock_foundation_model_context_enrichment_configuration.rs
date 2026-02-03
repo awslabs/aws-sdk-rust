@@ -17,6 +17,7 @@ pub fn ser_bedrock_foundation_model_context_enrichment_configuration(
 
 pub(crate) fn de_bedrock_foundation_model_context_enrichment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::BedrockFoundationModelContextEnrichmentConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enrichmentStrategyConfiguration" => {
                             builder = builder.set_enrichment_strategy_configuration(
-                                crate::protocol_serde::shape_enrichment_strategy_configuration::de_enrichment_strategy_configuration(tokens)?,
+                                crate::protocol_serde::shape_enrichment_strategy_configuration::de_enrichment_strategy_configuration(tokens, _value)?,
                             );
                         }
                         "modelArn" => {

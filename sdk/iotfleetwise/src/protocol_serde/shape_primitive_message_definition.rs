@@ -21,6 +21,7 @@ pub fn ser_primitive_message_definition(
 
 pub(crate) fn de_primitive_message_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PrimitiveMessageDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "ros2PrimitiveMessageDefinition" => Some(crate::types::PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition(
-                            crate::protocol_serde::shape_ros2_primitive_message_definition::de_ros2_primitive_message_definition(tokens)?
+                            crate::protocol_serde::shape_ros2_primitive_message_definition::de_ros2_primitive_message_definition(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'ros2PrimitiveMessageDefinition' cannot be null",

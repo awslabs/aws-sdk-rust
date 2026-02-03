@@ -62,6 +62,7 @@ pub fn ser_report_definition(
 
 pub(crate) fn de_report_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReportDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,8 +105,9 @@ where
                             );
                         }
                         "AdditionalSchemaElements" => {
-                            builder = builder
-                                .set_additional_schema_elements(crate::protocol_serde::shape_schema_element_list::de_schema_element_list(tokens)?);
+                            builder = builder.set_additional_schema_elements(
+                                crate::protocol_serde::shape_schema_element_list::de_schema_element_list(tokens, _value)?,
+                            );
                         }
                         "S3Bucket" => {
                             builder = builder.set_s3_bucket(
@@ -130,7 +132,7 @@ where
                         }
                         "AdditionalArtifacts" => {
                             builder = builder.set_additional_artifacts(
-                                crate::protocol_serde::shape_additional_artifact_list::de_additional_artifact_list(tokens)?,
+                                crate::protocol_serde::shape_additional_artifact_list::de_additional_artifact_list(tokens, _value)?,
                             );
                         }
                         "RefreshClosedReports" => {
@@ -151,7 +153,7 @@ where
                             );
                         }
                         "ReportStatus" => {
-                            builder = builder.set_report_status(crate::protocol_serde::shape_report_status::de_report_status(tokens)?);
+                            builder = builder.set_report_status(crate::protocol_serde::shape_report_status::de_report_status(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

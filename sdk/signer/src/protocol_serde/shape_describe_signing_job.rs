@@ -107,13 +107,13 @@ pub fn de_describe_signing_job_http_response(
 }
 
 pub(crate) fn de_describe_signing_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_signing_job::builders::DescribeSigningJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_signing_job::builders::DescribeSigningJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_describe_signing_job(
                 }
                 "overrides" => {
                     builder = builder.set_overrides(crate::protocol_serde::shape_signing_platform_overrides::de_signing_platform_overrides(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "platformDisplayName" => {
@@ -194,8 +194,9 @@ pub(crate) fn de_describe_signing_job(
                     );
                 }
                 "revocationRecord" => {
-                    builder = builder
-                        .set_revocation_record(crate::protocol_serde::shape_signing_job_revocation_record::de_signing_job_revocation_record(tokens)?);
+                    builder = builder.set_revocation_record(
+                        crate::protocol_serde::shape_signing_job_revocation_record::de_signing_job_revocation_record(tokens, _value)?,
+                    );
                 }
                 "signatureExpiresAt" => {
                     builder = builder.set_signature_expires_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -204,16 +205,16 @@ pub(crate) fn de_describe_signing_job(
                     )?);
                 }
                 "signedObject" => {
-                    builder = builder.set_signed_object(crate::protocol_serde::shape_signed_object::de_signed_object(tokens)?);
+                    builder = builder.set_signed_object(crate::protocol_serde::shape_signed_object::de_signed_object(tokens, _value)?);
                 }
                 "signingMaterial" => {
-                    builder = builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(tokens)?);
+                    builder = builder.set_signing_material(crate::protocol_serde::shape_signing_material::de_signing_material(tokens, _value)?);
                 }
                 "signingParameters" => {
-                    builder = builder.set_signing_parameters(crate::protocol_serde::shape_signing_parameters::de_signing_parameters(tokens)?);
+                    builder = builder.set_signing_parameters(crate::protocol_serde::shape_signing_parameters::de_signing_parameters(tokens, _value)?);
                 }
                 "source" => {
-                    builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens)?);
+                    builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

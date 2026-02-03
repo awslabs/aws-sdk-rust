@@ -17,6 +17,7 @@ pub fn ser_dependent_service(
 
 pub(crate) fn de_dependent_service<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DependentService>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "ServiceVersion" => {
-                            builder = builder.set_service_version(crate::protocol_serde::shape_service_version::de_service_version(tokens)?);
+                            builder = builder.set_service_version(crate::protocol_serde::shape_service_version::de_service_version(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -24,6 +24,7 @@ pub fn ser_protected_job_compute_configuration(
 
 pub(crate) fn de_protected_job_compute_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProtectedJobComputeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                         "worker" => Some(crate::types::ProtectedJobComputeConfiguration::Worker(
                             crate::protocol_serde::shape_protected_job_worker_compute_configuration::de_protected_job_worker_compute_configuration(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'worker' cannot be null"))?,
                         )),

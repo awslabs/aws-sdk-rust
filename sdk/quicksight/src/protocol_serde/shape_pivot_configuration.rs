@@ -23,6 +23,7 @@ pub fn ser_pivot_configuration(
 
 pub(crate) fn de_pivot_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,8 @@ where
                             );
                         }
                         "PivotedLabels" => {
-                            builder = builder.set_pivoted_labels(crate::protocol_serde::shape_pivoted_label_list::de_pivoted_label_list(tokens)?);
+                            builder =
+                                builder.set_pivoted_labels(crate::protocol_serde::shape_pivoted_label_list::de_pivoted_label_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

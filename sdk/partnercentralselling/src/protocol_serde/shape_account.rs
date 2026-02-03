@@ -32,6 +32,7 @@ pub fn ser_account(
 
 pub(crate) fn de_account<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Account>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,7 +82,7 @@ where
                             );
                         }
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens)?);
+                            builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
                         }
                         "Duns" => {
                             builder = builder.set_duns(

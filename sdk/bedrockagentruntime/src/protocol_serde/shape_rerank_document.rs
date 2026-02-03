@@ -20,6 +20,7 @@ pub fn ser_rerank_document(
 
 pub(crate) fn de_rerank_document<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RerankDocument>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,9 @@ where
                             );
                         }
                         "textDocument" => {
-                            builder = builder.set_text_document(crate::protocol_serde::shape_rerank_text_document::de_rerank_text_document(tokens)?);
+                            builder = builder.set_text_document(crate::protocol_serde::shape_rerank_text_document::de_rerank_text_document(
+                                tokens, _value,
+                            )?);
                         }
                         "jsonDocument" => {
                             builder = builder.set_json_document(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));

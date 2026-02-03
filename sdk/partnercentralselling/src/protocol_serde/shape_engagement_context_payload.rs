@@ -27,6 +27,7 @@ pub fn ser_engagement_context_payload(
 
 pub(crate) fn de_engagement_context_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EngagementContextPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "CustomerProject" => Some(crate::types::EngagementContextPayload::CustomerProject(
-                            crate::protocol_serde::shape_customer_projects_context::de_customer_projects_context(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomerProject' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_customer_projects_context::de_customer_projects_context(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomerProject' cannot be null"),
+                            )?,
                         )),
                         "Lead" => Some(crate::types::EngagementContextPayload::Lead(
-                            crate::protocol_serde::shape_lead_context::de_lead_context(tokens)?
+                            crate::protocol_serde::shape_lead_context::de_lead_context(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Lead' cannot be null"))?,
                         )),
                         _ => {

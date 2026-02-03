@@ -44,6 +44,7 @@ pub fn ser_aws_waf_web_acl_rule(
 
 pub(crate) fn de_aws_waf_web_acl_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafWebAclRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,14 +59,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_waf_action::de_waf_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_waf_action::de_waf_action(tokens, _value)?);
                         }
                         "ExcludedRules" => {
-                            builder =
-                                builder.set_excluded_rules(crate::protocol_serde::shape_waf_excluded_rule_list::de_waf_excluded_rule_list(tokens)?);
+                            builder = builder.set_excluded_rules(crate::protocol_serde::shape_waf_excluded_rule_list::de_waf_excluded_rule_list(
+                                tokens, _value,
+                            )?);
                         }
                         "OverrideAction" => {
-                            builder = builder.set_override_action(crate::protocol_serde::shape_waf_override_action::de_waf_override_action(tokens)?);
+                            builder = builder
+                                .set_override_action(crate::protocol_serde::shape_waf_override_action::de_waf_override_action(tokens, _value)?);
                         }
                         "Priority" => {
                             builder = builder.set_priority(

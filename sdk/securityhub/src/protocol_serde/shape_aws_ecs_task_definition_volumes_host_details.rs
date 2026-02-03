@@ -11,6 +11,7 @@ pub fn ser_aws_ecs_task_definition_volumes_host_details(
 
 pub(crate) fn de_aws_ecs_task_definition_volumes_host_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEcsTaskDefinitionVolumesHostDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

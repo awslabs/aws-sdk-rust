@@ -29,6 +29,7 @@ pub fn ser_module_configuration(
 
 pub(crate) fn de_module_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModuleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,10 +58,13 @@ where
                             );
                         }
                         "dependsOn" => {
-                            builder = builder.set_depends_on(crate::protocol_serde::shape_flow_module_name_list::de_flow_module_name_list(tokens)?);
+                            builder = builder.set_depends_on(crate::protocol_serde::shape_flow_module_name_list::de_flow_module_name_list(
+                                tokens, _value,
+                            )?);
                         }
                         "moduleParameters" => {
-                            builder = builder.set_module_parameters(crate::protocol_serde::shape_module_parameters::de_module_parameters(tokens)?);
+                            builder =
+                                builder.set_module_parameters(crate::protocol_serde::shape_module_parameters::de_module_parameters(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

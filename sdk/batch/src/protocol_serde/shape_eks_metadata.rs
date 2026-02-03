@@ -31,6 +31,7 @@ pub fn ser_eks_metadata(
 
 pub(crate) fn de_eks_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,10 +46,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_eks_labels_map::de_eks_labels_map(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_eks_labels_map::de_eks_labels_map(tokens, _value)?);
                         }
                         "annotations" => {
-                            builder = builder.set_annotations(crate::protocol_serde::shape_eks_annotations_map::de_eks_annotations_map(tokens)?);
+                            builder =
+                                builder.set_annotations(crate::protocol_serde::shape_eks_annotations_map::de_eks_annotations_map(tokens, _value)?);
                         }
                         "namespace" => {
                             builder = builder.set_namespace(

@@ -32,6 +32,7 @@ pub fn ser_instance_resize_policy(
 
 pub(crate) fn de_instance_resize_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceResizePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,12 +47,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InstancesToTerminate" => {
-                            builder = builder
-                                .set_instances_to_terminate(crate::protocol_serde::shape_ec2_instance_ids_list::de_ec2_instance_ids_list(tokens)?);
+                            builder = builder.set_instances_to_terminate(
+                                crate::protocol_serde::shape_ec2_instance_ids_list::de_ec2_instance_ids_list(tokens, _value)?,
+                            );
                         }
                         "InstancesToProtect" => {
-                            builder = builder
-                                .set_instances_to_protect(crate::protocol_serde::shape_ec2_instance_ids_list::de_ec2_instance_ids_list(tokens)?);
+                            builder = builder.set_instances_to_protect(crate::protocol_serde::shape_ec2_instance_ids_list::de_ec2_instance_ids_list(
+                                tokens, _value,
+                            )?);
                         }
                         "InstanceTerminationTimeout" => {
                             builder = builder.set_instance_termination_timeout(

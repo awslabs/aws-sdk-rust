@@ -120,11 +120,11 @@ pub fn ser_test_parsing_input(
 }
 
 pub(crate) fn de_test_parsing(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::test_parsing::builders::TestParsingOutputBuilder,
 ) -> ::std::result::Result<crate::operation::test_parsing::builders::TestParsingOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,11 +140,12 @@ pub(crate) fn de_test_parsing(
                 }
                 "parsedSplitFileContents" => {
                     builder = builder.set_parsed_split_file_contents(
-                        crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens)?,
+                        crate::protocol_serde::shape_parsed_split_file_contents_list::de_parsed_split_file_contents_list(tokens, _value)?,
                     );
                 }
                 "validationMessages" => {
-                    builder = builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens)?);
+                    builder =
+                        builder.set_validation_messages(crate::protocol_serde::shape_validation_messages::de_validation_messages(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

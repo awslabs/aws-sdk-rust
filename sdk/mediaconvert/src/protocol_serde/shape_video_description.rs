@@ -83,6 +83,7 @@ pub fn ser_video_description(
 
 pub(crate) fn de_video_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -118,7 +119,9 @@ where
                             );
                         }
                         "codecSettings" => {
-                            builder = builder.set_codec_settings(crate::protocol_serde::shape_video_codec_settings::de_video_codec_settings(tokens)?);
+                            builder = builder.set_codec_settings(crate::protocol_serde::shape_video_codec_settings::de_video_codec_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "colorMetadata" => {
                             builder = builder.set_color_metadata(
@@ -128,7 +131,7 @@ where
                             );
                         }
                         "crop" => {
-                            builder = builder.set_crop(crate::protocol_serde::shape_rectangle::de_rectangle(tokens)?);
+                            builder = builder.set_crop(crate::protocol_serde::shape_rectangle::de_rectangle(tokens, _value)?);
                         }
                         "dropFrameTimecode" => {
                             builder = builder.set_drop_frame_timecode(
@@ -152,7 +155,7 @@ where
                             );
                         }
                         "position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_rectangle::de_rectangle(tokens)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_rectangle::de_rectangle(tokens, _value)?);
                         }
                         "respondToAfd" => {
                             builder = builder.set_respond_to_afd(
@@ -190,8 +193,8 @@ where
                             );
                         }
                         "videoPreprocessors" => {
-                            builder =
-                                builder.set_video_preprocessors(crate::protocol_serde::shape_video_preprocessor::de_video_preprocessor(tokens)?);
+                            builder = builder
+                                .set_video_preprocessors(crate::protocol_serde::shape_video_preprocessor::de_video_preprocessor(tokens, _value)?);
                         }
                         "width" => {
                             builder = builder.set_width(

@@ -157,13 +157,13 @@ pub fn ser_create_global_resolver_input(
 }
 
 pub(crate) fn de_create_global_resolver(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_global_resolver::builders::CreateGlobalResolverOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_global_resolver::builders::CreateGlobalResolverOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -212,7 +212,7 @@ pub(crate) fn de_create_global_resolver(
                     );
                 }
                 "ipv4Addresses" => {
-                    builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens)?);
+                    builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -229,7 +229,7 @@ pub(crate) fn de_create_global_resolver(
                     );
                 }
                 "regions" => {
-                    builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens)?);
+                    builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

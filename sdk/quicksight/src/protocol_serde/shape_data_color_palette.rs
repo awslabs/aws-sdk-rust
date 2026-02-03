@@ -29,6 +29,7 @@ pub fn ser_data_color_palette(
 
 pub(crate) fn de_data_color_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataColorPalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Colors" => {
-                            builder = builder.set_colors(crate::protocol_serde::shape_color_list::de_color_list(tokens)?);
+                            builder = builder.set_colors(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value)?);
                         }
                         "MinMaxGradient" => {
-                            builder = builder.set_min_max_gradient(crate::protocol_serde::shape_color_list::de_color_list(tokens)?);
+                            builder = builder.set_min_max_gradient(crate::protocol_serde::shape_color_list::de_color_list(tokens, _value)?);
                         }
                         "EmptyFillColor" => {
                             builder = builder.set_empty_fill_color(

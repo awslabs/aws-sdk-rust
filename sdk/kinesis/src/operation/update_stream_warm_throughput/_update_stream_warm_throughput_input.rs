@@ -7,6 +7,8 @@ pub struct UpdateStreamWarmThroughputInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stream to be updated.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
     pub warm_throughput_mibps: ::std::option::Option<i32>,
 }
@@ -18,6 +20,10 @@ impl UpdateStreamWarmThroughputInput {
     /// <p>The name of the stream to be updated.</p>
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
     pub fn warm_throughput_mibps(&self) -> ::std::option::Option<i32> {
@@ -37,6 +43,7 @@ impl UpdateStreamWarmThroughputInput {
 pub struct UpdateStreamWarmThroughputInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) warm_throughput_mibps: ::std::option::Option<i32>,
 }
 impl UpdateStreamWarmThroughputInputBuilder {
@@ -68,6 +75,20 @@ impl UpdateStreamWarmThroughputInputBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations.</p>
     /// This field is required.
     pub fn warm_throughput_mibps(mut self, input: i32) -> Self {
@@ -93,6 +114,7 @@ impl UpdateStreamWarmThroughputInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_stream_warm_throughput::UpdateStreamWarmThroughputInput {
             stream_arn: self.stream_arn,
             stream_name: self.stream_name,
+            stream_id: self.stream_id,
             warm_throughput_mibps: self.warm_throughput_mibps,
         })
     }

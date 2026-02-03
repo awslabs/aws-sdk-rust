@@ -17,6 +17,7 @@ pub fn ser_enrollment_config(
 
 pub(crate) fn de_enrollment_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EnrollmentConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,9 @@ where
                         }
                         "FraudDetectionConfig" => {
                             builder = builder.set_fraud_detection_config(
-                                crate::protocol_serde::shape_enrollment_job_fraud_detection_config::de_enrollment_job_fraud_detection_config(tokens)?,
+                                crate::protocol_serde::shape_enrollment_job_fraud_detection_config::de_enrollment_job_fraud_detection_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_dns_target_resource(
 
 pub(crate) fn de_dns_target_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DnsTargetResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "targetResource" => {
-                            builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens)?);
+                            builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ pub fn ser_data_path_sort(
 
 pub(crate) fn de_data_path_sort<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPathSort>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,9 @@ where
                             );
                         }
                         "SortPaths" => {
-                            builder = builder.set_sort_paths(crate::protocol_serde::shape_data_path_value_list::de_data_path_value_list(tokens)?);
+                            builder = builder.set_sort_paths(crate::protocol_serde::shape_data_path_value_list::de_data_path_value_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -74,6 +74,7 @@ pub fn ser_aws_cloud_front_distribution_details(
 
 pub(crate) fn de_aws_cloud_front_distribution_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCloudFrontDistributionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -89,12 +90,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CacheBehaviors" => {
                             builder = builder.set_cache_behaviors(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_cache_behaviors::de_aws_cloud_front_distribution_cache_behaviors(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_cache_behaviors::de_aws_cloud_front_distribution_cache_behaviors(tokens, _value)?
                                 );
                         }
                         "DefaultCacheBehavior" => {
                             builder = builder.set_default_cache_behavior(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_default_cache_behavior::de_aws_cloud_front_distribution_default_cache_behavior(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_default_cache_behavior::de_aws_cloud_front_distribution_default_cache_behavior(tokens, _value)?
                                 );
                         }
                         "DefaultRootObject" => {
@@ -127,22 +128,26 @@ where
                         }
                         "Logging" => {
                             builder = builder.set_logging(
-                                crate::protocol_serde::shape_aws_cloud_front_distribution_logging::de_aws_cloud_front_distribution_logging(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_front_distribution_logging::de_aws_cloud_front_distribution_logging(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Origins" => {
                             builder = builder.set_origins(
-                                crate::protocol_serde::shape_aws_cloud_front_distribution_origins::de_aws_cloud_front_distribution_origins(tokens)?,
+                                crate::protocol_serde::shape_aws_cloud_front_distribution_origins::de_aws_cloud_front_distribution_origins(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "OriginGroups" => {
                             builder = builder.set_origin_groups(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_groups::de_aws_cloud_front_distribution_origin_groups(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_groups::de_aws_cloud_front_distribution_origin_groups(tokens, _value)?
                                 );
                         }
                         "ViewerCertificate" => {
                             builder = builder.set_viewer_certificate(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_viewer_certificate::de_aws_cloud_front_distribution_viewer_certificate(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_viewer_certificate::de_aws_cloud_front_distribution_viewer_certificate(tokens, _value)?
                                 );
                         }
                         "Status" => {

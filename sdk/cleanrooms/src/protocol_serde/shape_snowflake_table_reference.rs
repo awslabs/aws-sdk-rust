@@ -29,6 +29,7 @@ pub fn ser_snowflake_table_reference(
 
 pub(crate) fn de_snowflake_table_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SnowflakeTableReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,8 +79,9 @@ where
                             );
                         }
                         "tableSchema" => {
-                            builder =
-                                builder.set_table_schema(crate::protocol_serde::shape_snowflake_table_schema::de_snowflake_table_schema(tokens)?);
+                            builder = builder.set_table_schema(crate::protocol_serde::shape_snowflake_table_schema::de_snowflake_table_schema(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

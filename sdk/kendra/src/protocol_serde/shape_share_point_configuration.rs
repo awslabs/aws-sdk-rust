@@ -86,6 +86,7 @@ pub fn ser_share_point_configuration(
 
 pub(crate) fn de_share_point_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SharePointConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -108,7 +109,9 @@ where
                                 );
                             }
                             "Urls" => {
-                                builder = builder.set_urls(crate::protocol_serde::shape_share_point_url_list::de_share_point_url_list(tokens)?);
+                                builder = builder.set_urls(crate::protocol_serde::shape_share_point_url_list::de_share_point_url_list(
+                                    tokens, _value,
+                                )?);
                             }
                             "SecretArn" => {
                                 builder = builder.set_secret_arn(
@@ -125,23 +128,23 @@ where
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExclusionPatterns" => {
                                 builder = builder.set_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
                                 );
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
@@ -157,7 +160,7 @@ where
                                     builder.set_disable_local_groups(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "SslCertificateS3Path" => {
-                                builder = builder.set_ssl_certificate_s3_path(crate::protocol_serde::shape_s3_path::de_s3_path(tokens)?);
+                                builder = builder.set_ssl_certificate_s3_path(crate::protocol_serde::shape_s3_path::de_s3_path(tokens, _value)?);
                             }
                             "AuthenticationType" => {
                                 builder = builder.set_authentication_type(
@@ -170,8 +173,9 @@ where
                                 );
                             }
                             "ProxyConfiguration" => {
-                                builder = builder
-                                    .set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens)?);
+                                builder = builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(
+                                    tokens, _value,
+                                )?);
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

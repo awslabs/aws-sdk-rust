@@ -129,13 +129,13 @@ pub fn de_list_reservations_http_response(
 }
 
 pub(crate) fn de_list_reservations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_reservations::builders::ListReservationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_reservations::builders::ListReservationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_list_reservations(
                     );
                 }
                 "reservations" => {
-                    builder = builder.set_reservations(crate::protocol_serde::shape_list_of_reservation::de_list_of_reservation(tokens)?);
+                    builder = builder.set_reservations(crate::protocol_serde::shape_list_of_reservation::de_list_of_reservation(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

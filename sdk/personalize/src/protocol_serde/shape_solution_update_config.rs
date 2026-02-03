@@ -20,6 +20,7 @@ pub fn ser_solution_update_config(
 
 pub(crate) fn de_solution_update_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SolutionUpdateConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "autoTrainingConfig" => {
-                            builder =
-                                builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(tokens)?);
+                            builder = builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(
+                                tokens, _value,
+                            )?);
                         }
                         "eventsConfig" => {
-                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens)?);
+                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

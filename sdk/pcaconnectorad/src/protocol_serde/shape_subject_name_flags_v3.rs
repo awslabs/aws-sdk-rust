@@ -38,6 +38,7 @@ pub fn ser_subject_name_flags_v3(
 
 pub(crate) fn de_subject_name_flags_v3<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SubjectNameFlagsV3>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

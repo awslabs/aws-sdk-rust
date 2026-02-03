@@ -133,13 +133,13 @@ pub fn ser_cancel_domain_config_change_input(
 }
 
 pub(crate) fn de_cancel_domain_config_change(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::cancel_domain_config_change::builders::CancelDomainConfigChangeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::cancel_domain_config_change::builders::CancelDomainConfigChangeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,11 +147,11 @@ pub(crate) fn de_cancel_domain_config_change(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CancelledChangeIds" => {
-                    builder = builder.set_cancelled_change_ids(crate::protocol_serde::shape_guid_list::de_guid_list(tokens)?);
+                    builder = builder.set_cancelled_change_ids(crate::protocol_serde::shape_guid_list::de_guid_list(tokens, _value)?);
                 }
                 "CancelledChangeProperties" => {
                     builder = builder.set_cancelled_change_properties(
-                        crate::protocol_serde::shape_cancelled_change_property_list::de_cancelled_change_property_list(tokens)?,
+                        crate::protocol_serde::shape_cancelled_change_property_list::de_cancelled_change_property_list(tokens, _value)?,
                     );
                 }
                 "DryRun" => {

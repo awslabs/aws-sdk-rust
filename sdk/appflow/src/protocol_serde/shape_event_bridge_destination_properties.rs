@@ -17,6 +17,7 @@ pub fn ser_event_bridge_destination_properties(
 
 pub(crate) fn de_event_bridge_destination_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventBridgeDestinationProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "errorHandlingConfig" => {
-                            builder = builder
-                                .set_error_handling_config(crate::protocol_serde::shape_error_handling_config::de_error_handling_config(tokens)?);
+                            builder = builder.set_error_handling_config(
+                                crate::protocol_serde::shape_error_handling_config::de_error_handling_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

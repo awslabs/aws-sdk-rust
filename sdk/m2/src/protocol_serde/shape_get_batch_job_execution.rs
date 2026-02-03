@@ -130,13 +130,13 @@ pub fn de_get_batch_job_execution_http_response(
 }
 
 pub(crate) fn de_get_batch_job_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,7 +151,9 @@ pub(crate) fn de_get_batch_job_execution(
                     );
                 }
                 "batchJobIdentifier" => {
-                    builder = builder.set_batch_job_identifier(crate::protocol_serde::shape_batch_job_identifier::de_batch_job_identifier(tokens)?);
+                    builder = builder.set_batch_job_identifier(crate::protocol_serde::shape_batch_job_identifier::de_batch_job_identifier(
+                        tokens, _value,
+                    )?);
                 }
                 "endTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -181,8 +183,9 @@ pub(crate) fn de_get_batch_job_execution(
                     );
                 }
                 "jobStepRestartMarker" => {
-                    builder = builder
-                        .set_job_step_restart_marker(crate::protocol_serde::shape_job_step_restart_marker::de_job_step_restart_marker(tokens)?);
+                    builder = builder.set_job_step_restart_marker(crate::protocol_serde::shape_job_step_restart_marker::de_job_step_restart_marker(
+                        tokens, _value,
+                    )?);
                 }
                 "jobType" => {
                     builder = builder.set_job_type(

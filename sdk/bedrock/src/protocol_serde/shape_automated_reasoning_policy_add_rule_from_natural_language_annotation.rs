@@ -11,6 +11,7 @@ pub fn ser_automated_reasoning_policy_add_rule_from_natural_language_annotation(
 
 pub(crate) fn de_automated_reasoning_policy_add_rule_from_natural_language_annotation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotation>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

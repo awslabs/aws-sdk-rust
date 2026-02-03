@@ -118,13 +118,13 @@ pub fn de_get_deployment_http_response(
 }
 
 pub(crate) fn de_get_deployment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_deployment::builders::GetDeploymentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_deployment::builders::GetDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_deployment(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "components" => {
                     builder = builder.set_components(
-                        crate::protocol_serde::shape_component_deployment_specifications::de_component_deployment_specifications(tokens)?,
+                        crate::protocol_serde::shape_component_deployment_specifications::de_component_deployment_specifications(tokens, _value)?,
                     );
                 }
                 "creationTimestamp" => {
@@ -157,7 +157,8 @@ pub(crate) fn de_get_deployment(
                     );
                 }
                 "deploymentPolicies" => {
-                    builder = builder.set_deployment_policies(crate::protocol_serde::shape_deployment_policies::de_deployment_policies(tokens)?);
+                    builder =
+                        builder.set_deployment_policies(crate::protocol_serde::shape_deployment_policies::de_deployment_policies(tokens, _value)?);
                 }
                 "deploymentStatus" => {
                     builder = builder.set_deployment_status(
@@ -175,7 +176,7 @@ pub(crate) fn de_get_deployment(
                 }
                 "iotJobConfiguration" => {
                     builder = builder.set_iot_job_configuration(
-                        crate::protocol_serde::shape_deployment_io_t_job_configuration::de_deployment_io_t_job_configuration(tokens)?,
+                        crate::protocol_serde::shape_deployment_io_t_job_configuration::de_deployment_io_t_job_configuration(tokens, _value)?,
                     );
                 }
                 "iotJobId" => {
@@ -203,7 +204,7 @@ pub(crate) fn de_get_deployment(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "targetArn" => {
                     builder = builder.set_target_arn(

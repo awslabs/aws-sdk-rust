@@ -38,6 +38,7 @@ pub fn ser_field_config(
 
 pub(crate) fn de_field_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,16 +60,16 @@ where
                             );
                         }
                         "position" => {
-                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens)?);
+                            builder = builder.set_position(crate::protocol_serde::shape_field_position::de_field_position(tokens, _value)?);
                         }
                         "excluded" => {
                             builder = builder.set_excluded(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "inputType" => {
-                            builder = builder.set_input_type(crate::protocol_serde::shape_field_input_config::de_field_input_config(tokens)?);
+                            builder = builder.set_input_type(crate::protocol_serde::shape_field_input_config::de_field_input_config(tokens, _value)?);
                         }
                         "validations" => {
-                            builder = builder.set_validations(crate::protocol_serde::shape_validations_list::de_validations_list(tokens)?);
+                            builder = builder.set_validations(crate::protocol_serde::shape_validations_list::de_validations_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

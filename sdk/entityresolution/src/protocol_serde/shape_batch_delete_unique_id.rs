@@ -92,12 +92,12 @@ pub fn de_batch_delete_unique_id_http_response(
 
 pub fn ser_batch_delete_unique_id_headers(
     input: &crate::operation::batch_delete_unique_id::BatchDeleteUniqueIdInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.input_source {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "input_source",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -113,7 +113,7 @@ pub fn ser_batch_delete_unique_id_headers(
             for inner_4 in inner_3 {
                 let formatted_5 = ::aws_smithy_http::header::quote_header_value(inner_4.as_str());
                 let header_value = formatted_5;
-                let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "unique_ids",
                         format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -127,13 +127,13 @@ pub fn ser_batch_delete_unique_id_headers(
 }
 
 pub(crate) fn de_batch_delete_unique_id(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_delete_unique_id::builders::BatchDeleteUniqueIdOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_delete_unique_id::builders::BatchDeleteUniqueIdOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,15 +141,18 @@ pub(crate) fn de_batch_delete_unique_id(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "deleted" => {
-                    builder = builder.set_deleted(crate::protocol_serde::shape_deleted_unique_id_list::de_deleted_unique_id_list(tokens)?);
+                    builder = builder.set_deleted(crate::protocol_serde::shape_deleted_unique_id_list::de_deleted_unique_id_list(
+                        tokens, _value,
+                    )?);
                 }
                 "disconnectedUniqueIds" => {
                     builder = builder.set_disconnected_unique_ids(
-                        crate::protocol_serde::shape_disconnected_unique_ids_list::de_disconnected_unique_ids_list(tokens)?,
+                        crate::protocol_serde::shape_disconnected_unique_ids_list::de_disconnected_unique_ids_list(tokens, _value)?,
                     );
                 }
                 "errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_delete_unique_id_errors_list::de_delete_unique_id_errors_list(tokens)?);
+                    builder = builder
+                        .set_errors(crate::protocol_serde::shape_delete_unique_id_errors_list::de_delete_unique_id_errors_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

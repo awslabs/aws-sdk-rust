@@ -155,7 +155,7 @@ mod create_proposal;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_managedblockchain::Error> {
 /// # let client: aws_sdk_managedblockchain::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_accessor()
 ///     .customize()

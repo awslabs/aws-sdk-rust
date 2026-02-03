@@ -20,6 +20,7 @@ pub fn ser_alarm_capabilities(
 
 pub(crate) fn de_alarm_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AlarmCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,11 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "initializationConfiguration" => {
                             builder = builder.set_initialization_configuration(
-                                crate::protocol_serde::shape_initialization_configuration::de_initialization_configuration(tokens)?,
+                                crate::protocol_serde::shape_initialization_configuration::de_initialization_configuration(tokens, _value)?,
                             );
                         }
                         "acknowledgeFlow" => {
-                            builder = builder.set_acknowledge_flow(crate::protocol_serde::shape_acknowledge_flow::de_acknowledge_flow(tokens)?);
+                            builder =
+                                builder.set_acknowledge_flow(crate::protocol_serde::shape_acknowledge_flow::de_acknowledge_flow(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

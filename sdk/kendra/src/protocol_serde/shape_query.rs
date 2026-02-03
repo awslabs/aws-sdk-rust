@@ -155,10 +155,10 @@ pub fn ser_query_input(
 }
 
 pub(crate) fn de_query(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::query::builders::QueryOutputBuilder,
 ) -> ::std::result::Result<crate::operation::query::builders::QueryOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,10 +173,12 @@ pub(crate) fn de_query(
                     );
                 }
                 "ResultItems" => {
-                    builder = builder.set_result_items(crate::protocol_serde::shape_query_result_item_list::de_query_result_item_list(tokens)?);
+                    builder = builder.set_result_items(crate::protocol_serde::shape_query_result_item_list::de_query_result_item_list(
+                        tokens, _value,
+                    )?);
                 }
                 "FacetResults" => {
-                    builder = builder.set_facet_results(crate::protocol_serde::shape_facet_result_list::de_facet_result_list(tokens)?);
+                    builder = builder.set_facet_results(crate::protocol_serde::shape_facet_result_list::de_facet_result_list(tokens, _value)?);
                 }
                 "TotalNumberOfResults" => {
                     builder = builder.set_total_number_of_results(
@@ -186,16 +188,16 @@ pub(crate) fn de_query(
                     );
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warning_list::de_warning_list(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warning_list::de_warning_list(tokens, _value)?);
                 }
                 "SpellCorrectedQueries" => {
                     builder = builder.set_spell_corrected_queries(
-                        crate::protocol_serde::shape_spell_corrected_query_list::de_spell_corrected_query_list(tokens)?,
+                        crate::protocol_serde::shape_spell_corrected_query_list::de_spell_corrected_query_list(tokens, _value)?,
                     );
                 }
                 "FeaturedResultsItems" => {
                     builder = builder.set_featured_results_items(
-                        crate::protocol_serde::shape_featured_results_item_list::de_featured_results_item_list(tokens)?,
+                        crate::protocol_serde::shape_featured_results_item_list::de_featured_results_item_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

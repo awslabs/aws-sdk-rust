@@ -20,6 +20,7 @@ pub fn ser_predictive_scaling_customized_metric_specification(
 
 pub(crate) fn de_predictive_scaling_customized_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::PredictiveScalingCustomizedMetricSpecification>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -39,7 +40,7 @@ where
                         "MetricDataQueries" => {
                             builder = builder.set_metric_data_queries(
                                 crate::protocol_serde::shape_predictive_scaling_metric_data_queries::de_predictive_scaling_metric_data_queries(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

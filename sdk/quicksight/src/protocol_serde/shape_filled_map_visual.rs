@@ -74,6 +74,7 @@ pub fn ser_filled_map_visual(
 
 pub(crate) fn de_filled_map_visual<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilledMapVisual>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,30 +97,32 @@ where
                         }
                         "Title" => {
                             builder = builder.set_title(crate::protocol_serde::shape_visual_title_label_options::de_visual_title_label_options(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Subtitle" => {
-                            builder = builder
-                                .set_subtitle(crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(tokens)?);
+                            builder = builder.set_subtitle(
+                                crate::protocol_serde::shape_visual_subtitle_label_options::de_visual_subtitle_label_options(tokens, _value)?,
+                            );
                         }
                         "ChartConfiguration" => {
                             builder = builder.set_chart_configuration(
-                                crate::protocol_serde::shape_filled_map_configuration::de_filled_map_configuration(tokens)?,
+                                crate::protocol_serde::shape_filled_map_configuration::de_filled_map_configuration(tokens, _value)?,
                             );
                         }
                         "ConditionalFormatting" => {
                             builder = builder.set_conditional_formatting(
-                                crate::protocol_serde::shape_filled_map_conditional_formatting::de_filled_map_conditional_formatting(tokens)?,
+                                crate::protocol_serde::shape_filled_map_conditional_formatting::de_filled_map_conditional_formatting(tokens, _value)?,
                             );
                         }
                         "ColumnHierarchies" => {
-                            builder =
-                                builder.set_column_hierarchies(crate::protocol_serde::shape_column_hierarchy_list::de_column_hierarchy_list(tokens)?);
+                            builder = builder.set_column_hierarchies(crate::protocol_serde::shape_column_hierarchy_list::de_column_hierarchy_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Actions" => {
                             builder = builder.set_actions(crate::protocol_serde::shape_visual_custom_action_list::de_visual_custom_action_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "VisualContentAltText" => {
@@ -130,8 +133,9 @@ where
                             );
                         }
                         "GeocodingPreferences" => {
-                            builder = builder
-                                .set_geocoding_preferences(crate::protocol_serde::shape_geocode_preference_list::de_geocode_preference_list(tokens)?);
+                            builder = builder.set_geocoding_preferences(
+                                crate::protocol_serde::shape_geocode_preference_list::de_geocode_preference_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

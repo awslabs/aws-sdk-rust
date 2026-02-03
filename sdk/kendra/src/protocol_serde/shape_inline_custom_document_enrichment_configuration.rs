@@ -23,6 +23,7 @@ pub fn ser_inline_custom_document_enrichment_configuration(
 
 pub(crate) fn de_inline_custom_document_enrichment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InlineCustomDocumentEnrichmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,12 +38,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Condition" => {
-                            builder = builder
-                                .set_condition(crate::protocol_serde::shape_document_attribute_condition::de_document_attribute_condition(tokens)?);
+                            builder = builder.set_condition(
+                                crate::protocol_serde::shape_document_attribute_condition::de_document_attribute_condition(tokens, _value)?,
+                            );
                         }
                         "Target" => {
                             builder = builder.set_target(crate::protocol_serde::shape_document_attribute_target::de_document_attribute_target(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "DocumentContentDeletion" => {

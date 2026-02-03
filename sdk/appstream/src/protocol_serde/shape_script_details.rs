@@ -26,6 +26,7 @@ pub fn ser_script_details(
 
 pub(crate) fn de_script_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScriptDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ScriptS3Location" => {
-                            builder = builder.set_script_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_script_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         "ExecutablePath" => {
                             builder = builder.set_executable_path(

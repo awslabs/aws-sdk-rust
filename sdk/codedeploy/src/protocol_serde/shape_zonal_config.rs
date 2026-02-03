@@ -26,6 +26,7 @@ pub fn ser_zonal_config(
 
 pub(crate) fn de_zonal_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ZonalConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "minimumHealthyHostsPerZone" => {
                             builder = builder.set_minimum_healthy_hosts_per_zone(
-                                crate::protocol_serde::shape_minimum_healthy_hosts_per_zone::de_minimum_healthy_hosts_per_zone(tokens)?,
+                                crate::protocol_serde::shape_minimum_healthy_hosts_per_zone::de_minimum_healthy_hosts_per_zone(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

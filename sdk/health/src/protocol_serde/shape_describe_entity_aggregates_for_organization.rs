@@ -53,13 +53,13 @@ pub fn ser_describe_entity_aggregates_for_organization_input(
 }
 
 pub(crate) fn de_describe_entity_aggregates_for_organization(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_entity_aggregates_for_organization::builders::DescribeEntityAggregatesForOrganizationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_entity_aggregates_for_organization::builders::DescribeEntityAggregatesForOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -68,7 +68,7 @@ pub(crate) fn de_describe_entity_aggregates_for_organization(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "organizationEntityAggregates" => {
                     builder = builder.set_organization_entity_aggregates(
-                        crate::protocol_serde::shape_organization_entity_aggregates_list::de_organization_entity_aggregates_list(tokens)?,
+                        crate::protocol_serde::shape_organization_entity_aggregates_list::de_organization_entity_aggregates_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -176,6 +176,7 @@ pub fn ser_oracle_settings(
 
 pub(crate) fn de_oracle_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OracleSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -208,7 +209,8 @@ where
                             );
                         }
                         "ExtraArchivedLogDestIds" => {
-                            builder = builder.set_extra_archived_log_dest_ids(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
+                            builder =
+                                builder.set_extra_archived_log_dest_ids(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
                         }
                         "AllowSelectNestedTables" => {
                             builder =

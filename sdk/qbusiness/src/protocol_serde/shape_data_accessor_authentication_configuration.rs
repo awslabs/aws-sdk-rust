@@ -21,6 +21,7 @@ pub fn ser_data_accessor_authentication_configuration(
 
 pub(crate) fn de_data_accessor_authentication_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataAccessorAuthenticationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                     variant = match key.as_ref() {
                             "idcTrustedTokenIssuerConfiguration" => {
                                 Some(crate::types::DataAccessorAuthenticationConfiguration::IdcTrustedTokenIssuerConfiguration(
-                                    crate::protocol_serde::shape_data_accessor_idc_trusted_token_issuer_configuration::de_data_accessor_idc_trusted_token_issuer_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_accessor_idc_trusted_token_issuer_configuration::de_data_accessor_idc_trusted_token_issuer_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'idcTrustedTokenIssuerConfiguration' cannot be null"))?
                                 ))
                             }

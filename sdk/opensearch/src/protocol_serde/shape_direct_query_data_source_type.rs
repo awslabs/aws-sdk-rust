@@ -27,6 +27,7 @@ pub fn ser_direct_query_data_source_type(
 
 pub(crate) fn de_direct_query_data_source_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DirectQueryDataSourceType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,18 @@ where
                     }
                     variant = match key.as_ref() {
                         "CloudWatchLog" => Some(crate::types::DirectQueryDataSourceType::CloudWatchLog(
-                            crate::protocol_serde::shape_cloud_watch_direct_query_data_source::de_cloud_watch_direct_query_data_source(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudWatchLog' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_cloud_watch_direct_query_data_source::de_cloud_watch_direct_query_data_source(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CloudWatchLog' cannot be null")
+                            })?,
                         )),
                         "SecurityLake" => Some(crate::types::DirectQueryDataSourceType::SecurityLake(
-                            crate::protocol_serde::shape_security_lake_direct_query_data_source::de_security_lake_direct_query_data_source(tokens)?
-                                .ok_or_else(|| {
+                            crate::protocol_serde::shape_security_lake_direct_query_data_source::de_security_lake_direct_query_data_source(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SecurityLake' cannot be null")
                             })?,
                         )),

@@ -14,6 +14,7 @@ pub fn ser_aws_events_endpoint_routing_config_details(
 
 pub(crate) fn de_aws_events_endpoint_routing_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEventsEndpointRoutingConfigDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FailoverConfig" => {
                             builder = builder.set_failover_config(
-                                    crate::protocol_serde::shape_aws_events_endpoint_routing_config_failover_config_details::de_aws_events_endpoint_routing_config_failover_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_events_endpoint_routing_config_failover_config_details::de_aws_events_endpoint_routing_config_failover_config_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

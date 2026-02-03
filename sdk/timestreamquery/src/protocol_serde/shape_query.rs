@@ -154,10 +154,10 @@ pub fn ser_query_input(
 }
 
 pub(crate) fn de_query(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::query::builders::QueryOutputBuilder,
 ) -> ::std::result::Result<crate::operation::query::builders::QueryOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -179,17 +179,18 @@ pub(crate) fn de_query(
                     );
                 }
                 "Rows" => {
-                    builder = builder.set_rows(crate::protocol_serde::shape_row_list::de_row_list(tokens)?);
+                    builder = builder.set_rows(crate::protocol_serde::shape_row_list::de_row_list(tokens, _value)?);
                 }
                 "ColumnInfo" => {
-                    builder = builder.set_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(tokens)?);
+                    builder = builder.set_column_info(crate::protocol_serde::shape_column_info_list::de_column_info_list(tokens, _value)?);
                 }
                 "QueryStatus" => {
-                    builder = builder.set_query_status(crate::protocol_serde::shape_query_status::de_query_status(tokens)?);
+                    builder = builder.set_query_status(crate::protocol_serde::shape_query_status::de_query_status(tokens, _value)?);
                 }
                 "QueryInsightsResponse" => {
-                    builder = builder
-                        .set_query_insights_response(crate::protocol_serde::shape_query_insights_response::de_query_insights_response(tokens)?);
+                    builder = builder.set_query_insights_response(crate::protocol_serde::shape_query_insights_response::de_query_insights_response(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

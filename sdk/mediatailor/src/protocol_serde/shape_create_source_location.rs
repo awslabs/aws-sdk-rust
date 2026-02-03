@@ -46,13 +46,13 @@ pub fn ser_create_source_location_input(
 }
 
 pub(crate) fn de_create_source_location(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_source_location::builders::CreateSourceLocationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_source_location::builders::CreateSourceLocationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -60,7 +60,9 @@ pub(crate) fn de_create_source_location(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccessConfiguration" => {
-                    builder = builder.set_access_configuration(crate::protocol_serde::shape_access_configuration::de_access_configuration(tokens)?);
+                    builder = builder.set_access_configuration(crate::protocol_serde::shape_access_configuration::de_access_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -77,11 +79,13 @@ pub(crate) fn de_create_source_location(
                 }
                 "DefaultSegmentDeliveryConfiguration" => {
                     builder = builder.set_default_segment_delivery_configuration(
-                        crate::protocol_serde::shape_default_segment_delivery_configuration::de_default_segment_delivery_configuration(tokens)?,
+                        crate::protocol_serde::shape_default_segment_delivery_configuration::de_default_segment_delivery_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "HttpConfiguration" => {
-                    builder = builder.set_http_configuration(crate::protocol_serde::shape_http_configuration::de_http_configuration(tokens)?);
+                    builder = builder.set_http_configuration(crate::protocol_serde::shape_http_configuration::de_http_configuration(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -91,7 +95,9 @@ pub(crate) fn de_create_source_location(
                 }
                 "SegmentDeliveryConfigurations" => {
                     builder = builder.set_segment_delivery_configurations(
-                        crate::protocol_serde::shape_list_of_segment_delivery_configuration::de_list_of_segment_delivery_configuration(tokens)?,
+                        crate::protocol_serde::shape_list_of_segment_delivery_configuration::de_list_of_segment_delivery_configuration(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "SourceLocationName" => {
@@ -102,7 +108,7 @@ pub(crate) fn de_create_source_location(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

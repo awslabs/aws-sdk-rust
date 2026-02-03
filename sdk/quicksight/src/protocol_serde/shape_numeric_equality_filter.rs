@@ -47,6 +47,7 @@ pub fn ser_numeric_equality_filter(
 
 pub(crate) fn de_numeric_equality_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NumericEqualityFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "Value" => {
                             builder = builder
@@ -89,8 +90,9 @@ where
                             );
                         }
                         "AggregationFunction" => {
-                            builder =
-                                builder.set_aggregation_function(crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens)?);
+                            builder = builder.set_aggregation_function(crate::protocol_serde::shape_aggregation_function::de_aggregation_function(
+                                tokens, _value,
+                            )?);
                         }
                         "ParameterName" => {
                             builder = builder.set_parameter_name(
@@ -108,7 +110,9 @@ where
                         }
                         "DefaultFilterControlConfiguration" => {
                             builder = builder.set_default_filter_control_configuration(
-                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

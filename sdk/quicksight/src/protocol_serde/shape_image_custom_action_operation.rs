@@ -26,6 +26,7 @@ pub fn ser_image_custom_action_operation(
 
 pub(crate) fn de_image_custom_action_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageCustomActionOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,18 +42,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NavigationOperation" => {
                             builder = builder.set_navigation_operation(
-                                crate::protocol_serde::shape_custom_action_navigation_operation::de_custom_action_navigation_operation(tokens)?,
+                                crate::protocol_serde::shape_custom_action_navigation_operation::de_custom_action_navigation_operation(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "URLOperation" => {
                             builder = builder.set_url_operation(
-                                crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens)?,
+                                crate::protocol_serde::shape_custom_action_url_operation::de_custom_action_url_operation(tokens, _value)?,
                             );
                         }
                         "SetParametersOperation" => {
                             builder = builder.set_set_parameters_operation(
                                 crate::protocol_serde::shape_custom_action_set_parameters_operation::de_custom_action_set_parameters_operation(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

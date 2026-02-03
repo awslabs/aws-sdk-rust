@@ -98,6 +98,7 @@ pub fn ser_dashboard_publish_options(
 
 pub(crate) fn de_dashboard_publish_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashboardPublishOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -113,74 +114,78 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AdHocFilteringOption" => {
                             builder = builder.set_ad_hoc_filtering_option(
-                                crate::protocol_serde::shape_ad_hoc_filtering_option::de_ad_hoc_filtering_option(tokens)?,
+                                crate::protocol_serde::shape_ad_hoc_filtering_option::de_ad_hoc_filtering_option(tokens, _value)?,
                             );
                         }
                         "ExportToCSVOption" => {
-                            builder =
-                                builder.set_export_to_csv_option(crate::protocol_serde::shape_export_to_csv_option::de_export_to_csv_option(tokens)?);
+                            builder = builder.set_export_to_csv_option(crate::protocol_serde::shape_export_to_csv_option::de_export_to_csv_option(
+                                tokens, _value,
+                            )?);
                         }
                         "SheetControlsOption" => {
-                            builder = builder
-                                .set_sheet_controls_option(crate::protocol_serde::shape_sheet_controls_option::de_sheet_controls_option(tokens)?);
+                            builder = builder.set_sheet_controls_option(
+                                crate::protocol_serde::shape_sheet_controls_option::de_sheet_controls_option(tokens, _value)?,
+                            );
                         }
                         "VisualPublishOptions" => {
                             builder = builder.set_visual_publish_options(
-                                crate::protocol_serde::shape_dashboard_visual_publish_options::de_dashboard_visual_publish_options(tokens)?,
+                                crate::protocol_serde::shape_dashboard_visual_publish_options::de_dashboard_visual_publish_options(tokens, _value)?,
                             );
                         }
                         "SheetLayoutElementMaximizationOption" => {
                             builder = builder.set_sheet_layout_element_maximization_option(
                                 crate::protocol_serde::shape_sheet_layout_element_maximization_option::de_sheet_layout_element_maximization_option(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "VisualMenuOption" => {
-                            builder = builder.set_visual_menu_option(crate::protocol_serde::shape_visual_menu_option::de_visual_menu_option(tokens)?);
+                            builder = builder
+                                .set_visual_menu_option(crate::protocol_serde::shape_visual_menu_option::de_visual_menu_option(tokens, _value)?);
                         }
                         "VisualAxisSortOption" => {
                             builder = builder.set_visual_axis_sort_option(
-                                crate::protocol_serde::shape_visual_axis_sort_option::de_visual_axis_sort_option(tokens)?,
+                                crate::protocol_serde::shape_visual_axis_sort_option::de_visual_axis_sort_option(tokens, _value)?,
                             );
                         }
                         "ExportWithHiddenFieldsOption" => {
                             builder = builder.set_export_with_hidden_fields_option(
-                                crate::protocol_serde::shape_export_with_hidden_fields_option::de_export_with_hidden_fields_option(tokens)?,
+                                crate::protocol_serde::shape_export_with_hidden_fields_option::de_export_with_hidden_fields_option(tokens, _value)?,
                             );
                         }
                         "DataPointDrillUpDownOption" => {
                             builder = builder.set_data_point_drill_up_down_option(
-                                crate::protocol_serde::shape_data_point_drill_up_down_option::de_data_point_drill_up_down_option(tokens)?,
+                                crate::protocol_serde::shape_data_point_drill_up_down_option::de_data_point_drill_up_down_option(tokens, _value)?,
                             );
                         }
                         "DataPointMenuLabelOption" => {
                             builder = builder.set_data_point_menu_label_option(
-                                crate::protocol_serde::shape_data_point_menu_label_option::de_data_point_menu_label_option(tokens)?,
+                                crate::protocol_serde::shape_data_point_menu_label_option::de_data_point_menu_label_option(tokens, _value)?,
                             );
                         }
                         "DataPointTooltipOption" => {
                             builder = builder.set_data_point_tooltip_option(
-                                crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens)?,
+                                crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens, _value)?,
                             );
                         }
                         "DataQAEnabledOption" => {
-                            builder = builder
-                                .set_data_qa_enabled_option(crate::protocol_serde::shape_data_qa_enabled_option::de_data_qa_enabled_option(tokens)?);
+                            builder = builder.set_data_qa_enabled_option(
+                                crate::protocol_serde::shape_data_qa_enabled_option::de_data_qa_enabled_option(tokens, _value)?,
+                            );
                         }
                         "QuickSuiteActionsOption" => {
                             builder = builder.set_quick_suite_actions_option(
-                                crate::protocol_serde::shape_quick_suite_actions_option::de_quick_suite_actions_option(tokens)?,
+                                crate::protocol_serde::shape_quick_suite_actions_option::de_quick_suite_actions_option(tokens, _value)?,
                             );
                         }
                         "ExecutiveSummaryOption" => {
                             builder = builder.set_executive_summary_option(
-                                crate::protocol_serde::shape_executive_summary_option::de_executive_summary_option(tokens)?,
+                                crate::protocol_serde::shape_executive_summary_option::de_executive_summary_option(tokens, _value)?,
                             );
                         }
                         "DataStoriesSharingOption" => {
                             builder = builder.set_data_stories_sharing_option(
-                                crate::protocol_serde::shape_data_stories_sharing_option::de_data_stories_sharing_option(tokens)?,
+                                crate::protocol_serde::shape_data_stories_sharing_option::de_data_stories_sharing_option(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

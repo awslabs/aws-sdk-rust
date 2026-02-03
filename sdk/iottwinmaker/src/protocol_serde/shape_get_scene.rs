@@ -115,10 +115,10 @@ pub fn de_get_scene_http_response(
 }
 
 pub(crate) fn de_get_scene(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_scene::builders::GetSceneOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_scene::builders::GetSceneOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_scene(
                     );
                 }
                 "capabilities" => {
-                    builder = builder.set_capabilities(crate::protocol_serde::shape_scene_capabilities::de_scene_capabilities(tokens)?);
+                    builder = builder.set_capabilities(crate::protocol_serde::shape_scene_capabilities::de_scene_capabilities(tokens, _value)?);
                 }
                 "contentLocation" => {
                     builder = builder.set_content_location(
@@ -156,11 +156,11 @@ pub(crate) fn de_get_scene(
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_scene_error::de_scene_error(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_scene_error::de_scene_error(tokens, _value)?);
                 }
                 "generatedSceneMetadata" => {
                     builder = builder.set_generated_scene_metadata(
-                        crate::protocol_serde::shape_generated_scene_metadata_map::de_generated_scene_metadata_map(tokens)?,
+                        crate::protocol_serde::shape_generated_scene_metadata_map::de_generated_scene_metadata_map(tokens, _value)?,
                     );
                 }
                 "sceneId" => {
@@ -171,7 +171,7 @@ pub(crate) fn de_get_scene(
                     );
                 }
                 "sceneMetadata" => {
-                    builder = builder.set_scene_metadata(crate::protocol_serde::shape_scene_metadata_map::de_scene_metadata_map(tokens)?);
+                    builder = builder.set_scene_metadata(crate::protocol_serde::shape_scene_metadata_map::de_scene_metadata_map(tokens, _value)?);
                 }
                 "updateDateTime" => {
                     builder = builder.set_update_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

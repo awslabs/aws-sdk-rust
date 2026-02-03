@@ -50,6 +50,7 @@ pub fn ser_virtual_node_spec(
 
 pub(crate) fn de_virtual_node_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualNodeSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,19 +65,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "serviceDiscovery" => {
-                            builder = builder.set_service_discovery(crate::protocol_serde::shape_service_discovery::de_service_discovery(tokens)?);
+                            builder =
+                                builder.set_service_discovery(crate::protocol_serde::shape_service_discovery::de_service_discovery(tokens, _value)?);
                         }
                         "listeners" => {
-                            builder = builder.set_listeners(crate::protocol_serde::shape_listeners::de_listeners(tokens)?);
+                            builder = builder.set_listeners(crate::protocol_serde::shape_listeners::de_listeners(tokens, _value)?);
                         }
                         "backends" => {
-                            builder = builder.set_backends(crate::protocol_serde::shape_backends::de_backends(tokens)?);
+                            builder = builder.set_backends(crate::protocol_serde::shape_backends::de_backends(tokens, _value)?);
                         }
                         "backendDefaults" => {
-                            builder = builder.set_backend_defaults(crate::protocol_serde::shape_backend_defaults::de_backend_defaults(tokens)?);
+                            builder =
+                                builder.set_backend_defaults(crate::protocol_serde::shape_backend_defaults::de_backend_defaults(tokens, _value)?);
                         }
                         "logging" => {
-                            builder = builder.set_logging(crate::protocol_serde::shape_logging::de_logging(tokens)?);
+                            builder = builder.set_logging(crate::protocol_serde::shape_logging::de_logging(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

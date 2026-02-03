@@ -24,6 +24,7 @@ pub fn ser_aws_lambda_function_environment(
 
 pub(crate) fn de_aws_lambda_function_environment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsLambdaFunctionEnvironment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,11 +39,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Variables" => {
-                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_variables(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Error" => {
                             builder = builder.set_error(
-                                crate::protocol_serde::shape_aws_lambda_function_environment_error::de_aws_lambda_function_environment_error(tokens)?,
+                                crate::protocol_serde::shape_aws_lambda_function_environment_error::de_aws_lambda_function_environment_error(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

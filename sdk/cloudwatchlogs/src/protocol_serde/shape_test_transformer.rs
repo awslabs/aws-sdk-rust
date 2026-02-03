@@ -94,13 +94,13 @@ pub fn ser_test_transformer_input(
 }
 
 pub(crate) fn de_test_transformer(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::test_transformer::builders::TestTransformerOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::test_transformer::builders::TestTransformerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_test_transformer(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "transformedLogs" => {
-                    builder = builder.set_transformed_logs(crate::protocol_serde::shape_transformed_logs::de_transformed_logs(tokens)?);
+                    builder = builder.set_transformed_logs(crate::protocol_serde::shape_transformed_logs::de_transformed_logs(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -26,6 +26,7 @@ pub fn ser_filter_list_configuration(
 
 pub(crate) fn de_filter_list_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterListConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,8 @@ where
                             );
                         }
                         "CategoryValues" => {
-                            builder = builder.set_category_values(crate::protocol_serde::shape_category_value_list::de_category_value_list(tokens)?);
+                            builder = builder
+                                .set_category_values(crate::protocol_serde::shape_category_value_list::de_category_value_list(tokens, _value)?);
                         }
                         "SelectAllOptions" => {
                             builder = builder.set_select_all_options(

@@ -26,6 +26,7 @@ pub fn ser_rds_configuration(
 
 pub(crate) fn de_rds_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RdsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,8 @@ where
                             );
                         }
                         "fieldMapping" => {
-                            builder = builder.set_field_mapping(crate::protocol_serde::shape_rds_field_mapping::de_rds_field_mapping(tokens)?);
+                            builder =
+                                builder.set_field_mapping(crate::protocol_serde::shape_rds_field_mapping::de_rds_field_mapping(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

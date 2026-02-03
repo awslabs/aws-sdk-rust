@@ -29,6 +29,7 @@ pub fn ser_participating_gateways(
 
 pub(crate) fn de_participating_gateways<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParticipatingGateways>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                             );
                         }
                         "GatewayList" => {
-                            builder = builder.set_gateway_list(crate::protocol_serde::shape_gateway_list::de_gateway_list(tokens)?);
+                            builder = builder.set_gateway_list(crate::protocol_serde::shape_gateway_list::de_gateway_list(tokens, _value)?);
                         }
                         "TransmissionInterval" => {
                             builder = builder.set_transmission_interval(

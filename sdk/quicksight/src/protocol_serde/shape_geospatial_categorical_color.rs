@@ -35,6 +35,7 @@ pub fn ser_geospatial_categorical_color(
 
 pub(crate) fn de_geospatial_categorical_color<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialCategoricalColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         "CategoryDataColors" => {
                             builder = builder.set_category_data_colors(
                                 crate::protocol_serde::shape_geospatial_categorical_data_color_list::de_geospatial_categorical_data_color_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -64,7 +65,7 @@ where
                         }
                         "NullDataSettings" => {
                             builder = builder.set_null_data_settings(
-                                crate::protocol_serde::shape_geospatial_null_data_settings::de_geospatial_null_data_settings(tokens)?,
+                                crate::protocol_serde::shape_geospatial_null_data_settings::de_geospatial_null_data_settings(tokens, _value)?,
                             );
                         }
                         "DefaultOpacity" => {

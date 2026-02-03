@@ -27,6 +27,7 @@ pub fn ser_network_configuration(
 
 pub(crate) fn de_network_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,20 +57,21 @@ where
                     }
                     variant = match key.as_ref() {
                         "PublicNetworkConfiguration" => Some(crate::types::NetworkConfiguration::PublicNetworkConfiguration(
-                            crate::protocol_serde::shape_public_network_configuration::de_public_network_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'PublicNetworkConfiguration' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "PrivateNetworkConfiguration" => Some(crate::types::NetworkConfiguration::PrivateNetworkConfiguration(
-                            crate::protocol_serde::shape_private_network_configuration::de_private_network_configuration(tokens)?.ok_or_else(
+                            crate::protocol_serde::shape_public_network_configuration::de_public_network_configuration(tokens, _value)?.ok_or_else(
                                 || {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'PrivateNetworkConfiguration' cannot be null",
+                                        "value for 'PublicNetworkConfiguration' cannot be null",
                                     )
                                 },
                             )?,
+                        )),
+                        "PrivateNetworkConfiguration" => Some(crate::types::NetworkConfiguration::PrivateNetworkConfiguration(
+                            crate::protocol_serde::shape_private_network_configuration::de_private_network_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'PrivateNetworkConfiguration' cannot be null",
+                                    )
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

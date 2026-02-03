@@ -167,6 +167,7 @@ pub fn ser_container_properties(
 
 pub(crate) fn de_container_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -202,7 +203,7 @@ where
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "jobRoleArn" => {
                             builder = builder.set_job_role_arn(
@@ -219,13 +220,15 @@ where
                             );
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
                         }
                         "environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(
+                                tokens, _value,
+                            )?);
                         }
                         "mountPoints" => {
-                            builder = builder.set_mount_points(crate::protocol_serde::shape_mount_points::de_mount_points(tokens)?);
+                            builder = builder.set_mount_points(crate::protocol_serde::shape_mount_points::de_mount_points(tokens, _value)?);
                         }
                         "readonlyRootFilesystem" => {
                             builder =
@@ -235,7 +238,7 @@ where
                             builder = builder.set_privileged(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ulimits" => {
-                            builder = builder.set_ulimits(crate::protocol_serde::shape_ulimits::de_ulimits(tokens)?);
+                            builder = builder.set_ulimits(crate::protocol_serde::shape_ulimits::de_ulimits(tokens, _value)?);
                         }
                         "user" => {
                             builder = builder.set_user(
@@ -252,39 +255,46 @@ where
                             );
                         }
                         "resourceRequirements" => {
-                            builder = builder
-                                .set_resource_requirements(crate::protocol_serde::shape_resource_requirements::de_resource_requirements(tokens)?);
+                            builder = builder.set_resource_requirements(
+                                crate::protocol_serde::shape_resource_requirements::de_resource_requirements(tokens, _value)?,
+                            );
                         }
                         "linuxParameters" => {
-                            builder = builder.set_linux_parameters(crate::protocol_serde::shape_linux_parameters::de_linux_parameters(tokens)?);
+                            builder =
+                                builder.set_linux_parameters(crate::protocol_serde::shape_linux_parameters::de_linux_parameters(tokens, _value)?);
                         }
                         "logConfiguration" => {
-                            builder = builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
+                            builder =
+                                builder.set_log_configuration(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
                         }
                         "secrets" => {
-                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens)?);
+                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens, _value)?);
                         }
                         "networkConfiguration" => {
-                            builder = builder
-                                .set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
+                            builder = builder.set_network_configuration(
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                            );
                         }
                         "fargatePlatformConfiguration" => {
                             builder = builder.set_fargate_platform_configuration(
-                                crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?,
+                                crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens, _value)?,
                             );
                         }
                         "enableExecuteCommand" => {
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ephemeralStorage" => {
-                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
+                            builder =
+                                builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
                         }
                         "runtimePlatform" => {
-                            builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens)?);
+                            builder =
+                                builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens, _value)?);
                         }
                         "repositoryCredentials" => {
-                            builder = builder
-                                .set_repository_credentials(crate::protocol_serde::shape_repository_credentials::de_repository_credentials(tokens)?);
+                            builder = builder.set_repository_credentials(
+                                crate::protocol_serde::shape_repository_credentials::de_repository_credentials(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

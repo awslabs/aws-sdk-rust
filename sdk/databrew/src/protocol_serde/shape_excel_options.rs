@@ -32,6 +32,7 @@ pub fn ser_excel_options(
 
 pub(crate) fn de_excel_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExcelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SheetNames" => {
-                            builder = builder.set_sheet_names(crate::protocol_serde::shape_sheet_name_list::de_sheet_name_list(tokens)?);
+                            builder = builder.set_sheet_names(crate::protocol_serde::shape_sheet_name_list::de_sheet_name_list(tokens, _value)?);
                         }
                         "SheetIndexes" => {
-                            builder = builder.set_sheet_indexes(crate::protocol_serde::shape_sheet_index_list::de_sheet_index_list(tokens)?);
+                            builder = builder.set_sheet_indexes(crate::protocol_serde::shape_sheet_index_list::de_sheet_index_list(tokens, _value)?);
                         }
                         "HeaderRow" => {
                             builder = builder.set_header_row(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

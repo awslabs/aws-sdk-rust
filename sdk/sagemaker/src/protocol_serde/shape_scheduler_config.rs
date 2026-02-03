@@ -26,6 +26,7 @@ pub fn ser_scheduler_config(
 
 pub(crate) fn de_scheduler_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchedulerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PriorityClasses" => {
-                            builder = builder.set_priority_classes(crate::protocol_serde::shape_priority_class_list::de_priority_class_list(tokens)?);
+                            builder = builder
+                                .set_priority_classes(crate::protocol_serde::shape_priority_class_list::de_priority_class_list(tokens, _value)?);
                         }
                         "FairShare" => {
                             builder = builder.set_fair_share(

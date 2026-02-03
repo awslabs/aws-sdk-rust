@@ -241,7 +241,7 @@ mod test {
     #[test]
     fn classify_by_response_status() {
         let policy = HttpStatusCodeClassifier::default();
-        let res = http_02x::Response::builder()
+        let res = http_1x::Response::builder()
             .status(500)
             .body("error!")
             .unwrap()
@@ -254,7 +254,7 @@ mod test {
     #[test]
     fn classify_by_response_status_not_retryable() {
         let policy = HttpStatusCodeClassifier::default();
-        let res = http_02x::Response::builder()
+        let res = http_1x::Response::builder()
             .status(408)
             .body("error!")
             .unwrap()

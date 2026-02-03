@@ -69,13 +69,13 @@ pub fn ser_describe_model_card_export_job_input(
 }
 
 pub(crate) fn de_describe_model_card_export_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,8 +118,9 @@ pub(crate) fn de_describe_model_card_export_job(
                     );
                 }
                 "OutputConfig" => {
-                    builder = builder
-                        .set_output_config(crate::protocol_serde::shape_model_card_export_output_config::de_model_card_export_output_config(tokens)?);
+                    builder = builder.set_output_config(
+                        crate::protocol_serde::shape_model_card_export_output_config::de_model_card_export_output_config(tokens, _value)?,
+                    );
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -142,7 +143,7 @@ pub(crate) fn de_describe_model_card_export_job(
                 }
                 "ExportArtifacts" => {
                     builder = builder.set_export_artifacts(crate::protocol_serde::shape_model_card_export_artifacts::de_model_card_export_artifacts(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

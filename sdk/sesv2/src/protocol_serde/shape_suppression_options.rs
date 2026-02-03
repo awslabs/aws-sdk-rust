@@ -23,6 +23,7 @@ pub fn ser_suppression_options(
 
 pub(crate) fn de_suppression_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SuppressionOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SuppressedReasons" => {
                             builder = builder.set_suppressed_reasons(
-                                crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens)?,
+                                crate::protocol_serde::shape_suppression_list_reasons::de_suppression_list_reasons(tokens, _value)?,
                             );
                         }
                         "ValidationOptions" => {
                             builder = builder.set_validation_options(
-                                crate::protocol_serde::shape_suppression_validation_options::de_suppression_validation_options(tokens)?,
+                                crate::protocol_serde::shape_suppression_validation_options::de_suppression_validation_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

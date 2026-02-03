@@ -149,13 +149,13 @@ pub fn ser_get_replication_configuration_input(
 }
 
 pub(crate) fn de_get_replication_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_replication_configuration::builders::GetReplicationConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_replication_configuration::builders::GetReplicationConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -224,12 +224,12 @@ pub(crate) fn de_get_replication_configuration(
                     );
                 }
                 "pitPolicy" => {
-                    builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens)?);
+                    builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens, _value)?);
                 }
                 "replicatedDisks" => {
                     builder = builder.set_replicated_disks(
                         crate::protocol_serde::shape_replication_configuration_replicated_disks::de_replication_configuration_replicated_disks(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
@@ -242,7 +242,9 @@ pub(crate) fn de_get_replication_configuration(
                 }
                 "replicationServersSecurityGroupsIDs" => {
                     builder = builder.set_replication_servers_security_groups_ids(
-                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(tokens)?,
+                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "sourceServerID" => {
@@ -260,7 +262,7 @@ pub(crate) fn de_get_replication_configuration(
                     );
                 }
                 "stagingAreaTags" => {
-                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 "useDedicatedReplicationServer" => {
                     builder =

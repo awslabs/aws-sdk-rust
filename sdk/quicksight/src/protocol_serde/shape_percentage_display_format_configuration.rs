@@ -38,6 +38,7 @@ pub fn ser_percentage_display_format_configuration(
 
 pub(crate) fn de_percentage_display_format_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PercentageDisplayFormatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,22 +68,22 @@ where
                         }
                         "SeparatorConfiguration" => {
                             builder = builder.set_separator_configuration(
-                                crate::protocol_serde::shape_numeric_separator_configuration::de_numeric_separator_configuration(tokens)?,
+                                crate::protocol_serde::shape_numeric_separator_configuration::de_numeric_separator_configuration(tokens, _value)?,
                             );
                         }
                         "DecimalPlacesConfiguration" => {
                             builder = builder.set_decimal_places_configuration(
-                                crate::protocol_serde::shape_decimal_places_configuration::de_decimal_places_configuration(tokens)?,
+                                crate::protocol_serde::shape_decimal_places_configuration::de_decimal_places_configuration(tokens, _value)?,
                             );
                         }
                         "NegativeValueConfiguration" => {
                             builder = builder.set_negative_value_configuration(
-                                crate::protocol_serde::shape_negative_value_configuration::de_negative_value_configuration(tokens)?,
+                                crate::protocol_serde::shape_negative_value_configuration::de_negative_value_configuration(tokens, _value)?,
                             );
                         }
                         "NullValueFormatConfiguration" => {
                             builder = builder.set_null_value_format_configuration(
-                                crate::protocol_serde::shape_null_value_format_configuration::de_null_value_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_null_value_format_configuration::de_null_value_format_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

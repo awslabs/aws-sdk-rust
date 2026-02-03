@@ -30,6 +30,7 @@ pub fn ser_segment_override(
 
 pub(crate) fn de_segment_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SegmentOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,7 @@ where
                             );
                         }
                         "weights" => {
-                            builder = builder.set_weights(crate::protocol_serde::shape_group_to_weight_map::de_group_to_weight_map(tokens)?);
+                            builder = builder.set_weights(crate::protocol_serde::shape_group_to_weight_map::de_group_to_weight_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

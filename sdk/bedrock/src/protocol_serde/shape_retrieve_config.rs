@@ -17,6 +17,7 @@ pub fn ser_retrieve_config(
 
 pub(crate) fn de_retrieve_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetrieveConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                         "knowledgeBaseRetrievalConfiguration" => {
                             builder = builder.set_knowledge_base_retrieval_configuration(
                                 crate::protocol_serde::shape_knowledge_base_retrieval_configuration::de_knowledge_base_retrieval_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -41,6 +41,7 @@ pub fn ser_workspace_access_properties(
 
 pub(crate) fn de_workspace_access_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceAccessProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -118,8 +119,9 @@ where
                             );
                         }
                         "AccessEndpointConfig" => {
-                            builder = builder
-                                .set_access_endpoint_config(crate::protocol_serde::shape_access_endpoint_config::de_access_endpoint_config(tokens)?);
+                            builder = builder.set_access_endpoint_config(
+                                crate::protocol_serde::shape_access_endpoint_config::de_access_endpoint_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

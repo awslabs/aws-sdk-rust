@@ -154,13 +154,13 @@ pub fn ser_update_bill_estimate_input(
 }
 
 pub(crate) fn de_update_bill_estimate(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_bill_estimate::builders::UpdateBillEstimateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_bill_estimate::builders::UpdateBillEstimateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -196,11 +196,11 @@ pub(crate) fn de_update_bill_estimate(
                     );
                 }
                 "billInterval" => {
-                    builder = builder.set_bill_interval(crate::protocol_serde::shape_bill_interval::de_bill_interval(tokens)?);
+                    builder = builder.set_bill_interval(crate::protocol_serde::shape_bill_interval::de_bill_interval(tokens, _value)?);
                 }
                 "costSummary" => {
                     builder = builder.set_cost_summary(crate::protocol_serde::shape_bill_estimate_cost_summary::de_bill_estimate_cost_summary(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "createdAt" => {

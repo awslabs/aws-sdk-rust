@@ -90,11 +90,11 @@ pub fn ser_list_tables_input(
 }
 
 pub(crate) fn de_list_tables(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_tables::builders::ListTablesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_tables::builders::ListTablesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,7 +102,7 @@ pub(crate) fn de_list_tables(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Tables" => {
-                    builder = builder.set_tables(crate::protocol_serde::shape_table_list::de_table_list(tokens)?);
+                    builder = builder.set_tables(crate::protocol_serde::shape_table_list::de_table_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

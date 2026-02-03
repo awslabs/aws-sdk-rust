@@ -147,7 +147,7 @@ mod batch_update_recommendation_resource_exclusion;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_trustedadvisor::Error> {
 /// # let client: aws_sdk_trustedadvisor::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_update_recommendation_resource_exclusion()
 ///     .customize()

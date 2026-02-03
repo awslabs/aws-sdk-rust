@@ -194,7 +194,7 @@ mod create_permission;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_acmpca::Error> {
 /// # let client: aws_sdk_acmpca::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_certificate_authority()
 ///     .customize()

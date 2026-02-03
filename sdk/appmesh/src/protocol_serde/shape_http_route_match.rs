@@ -53,6 +53,7 @@ pub fn ser_http_route_match(
 
 pub(crate) fn de_http_route_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpRouteMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,11 +75,12 @@ where
                             );
                         }
                         "path" => {
-                            builder = builder.set_path(crate::protocol_serde::shape_http_path_match::de_http_path_match(tokens)?);
+                            builder = builder.set_path(crate::protocol_serde::shape_http_path_match::de_http_path_match(tokens, _value)?);
                         }
                         "queryParameters" => {
-                            builder =
-                                builder.set_query_parameters(crate::protocol_serde::shape_http_query_parameters::de_http_query_parameters(tokens)?);
+                            builder = builder.set_query_parameters(crate::protocol_serde::shape_http_query_parameters::de_http_query_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "method" => {
                             builder = builder.set_method(
@@ -95,7 +97,7 @@ where
                             );
                         }
                         "headers" => {
-                            builder = builder.set_headers(crate::protocol_serde::shape_http_route_headers::de_http_route_headers(tokens)?);
+                            builder = builder.set_headers(crate::protocol_serde::shape_http_route_headers::de_http_route_headers(tokens, _value)?);
                         }
                         "port" => {
                             builder = builder.set_port(

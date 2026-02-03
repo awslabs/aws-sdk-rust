@@ -23,6 +23,7 @@ pub fn ser_create_backend_auth_forgot_password_config(
 
 pub(crate) fn de_create_backend_auth_forgot_password_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthForgotPasswordConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "emailSettings" => {
-                            builder = builder.set_email_settings(crate::protocol_serde::shape_email_settings::de_email_settings(tokens)?);
+                            builder = builder.set_email_settings(crate::protocol_serde::shape_email_settings::de_email_settings(tokens, _value)?);
                         }
                         "smsSettings" => {
-                            builder = builder.set_sms_settings(crate::protocol_serde::shape_sms_settings::de_sms_settings(tokens)?);
+                            builder = builder.set_sms_settings(crate::protocol_serde::shape_sms_settings::de_sms_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

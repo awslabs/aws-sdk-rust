@@ -158,13 +158,13 @@ pub fn de_describe_classification_job_http_response(
 }
 
 pub(crate) fn de_describe_classification_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_classification_job::builders::DescribeClassificationJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_classification_job::builders::DescribeClassificationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,7 +172,7 @@ pub(crate) fn de_describe_classification_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "allowListIds" => {
-                    builder = builder.set_allow_list_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_allow_list_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "clientToken" => {
                     builder = builder.set_client_token(
@@ -188,7 +188,7 @@ pub(crate) fn de_describe_classification_job(
                     )?);
                 }
                 "customDataIdentifierIds" => {
-                    builder = builder.set_custom_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_custom_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -229,8 +229,9 @@ pub(crate) fn de_describe_classification_job(
                     );
                 }
                 "lastRunErrorStatus" => {
-                    builder =
-                        builder.set_last_run_error_status(crate::protocol_serde::shape_last_run_error_status::de_last_run_error_status(tokens)?);
+                    builder = builder.set_last_run_error_status(crate::protocol_serde::shape_last_run_error_status::de_last_run_error_status(
+                        tokens, _value,
+                    )?);
                 }
                 "lastRunTime" => {
                     builder = builder.set_last_run_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -239,7 +240,8 @@ pub(crate) fn de_describe_classification_job(
                     )?);
                 }
                 "managedDataIdentifierIds" => {
-                    builder = builder.set_managed_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder =
+                        builder.set_managed_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "managedDataIdentifierSelector" => {
                     builder = builder.set_managed_data_identifier_selector(
@@ -256,7 +258,7 @@ pub(crate) fn de_describe_classification_job(
                     );
                 }
                 "s3JobDefinition" => {
-                    builder = builder.set_s3_job_definition(crate::protocol_serde::shape_s3_job_definition::de_s3_job_definition(tokens)?);
+                    builder = builder.set_s3_job_definition(crate::protocol_serde::shape_s3_job_definition::de_s3_job_definition(tokens, _value)?);
                 }
                 "samplingPercentage" => {
                     builder = builder.set_sampling_percentage(
@@ -266,16 +268,19 @@ pub(crate) fn de_describe_classification_job(
                     );
                 }
                 "scheduleFrequency" => {
-                    builder = builder.set_schedule_frequency(crate::protocol_serde::shape_job_schedule_frequency::de_job_schedule_frequency(tokens)?);
+                    builder = builder.set_schedule_frequency(crate::protocol_serde::shape_job_schedule_frequency::de_job_schedule_frequency(
+                        tokens, _value,
+                    )?);
                 }
                 "statistics" => {
-                    builder = builder.set_statistics(crate::protocol_serde::shape_statistics::de_statistics(tokens)?);
+                    builder = builder.set_statistics(crate::protocol_serde::shape_statistics::de_statistics(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "userPausedDetails" => {
-                    builder = builder.set_user_paused_details(crate::protocol_serde::shape_user_paused_details::de_user_paused_details(tokens)?);
+                    builder =
+                        builder.set_user_paused_details(crate::protocol_serde::shape_user_paused_details::de_user_paused_details(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

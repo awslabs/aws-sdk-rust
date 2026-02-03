@@ -38,6 +38,7 @@ pub fn ser_organization_managed_rule_metadata(
 
 pub(crate) fn de_organization_managed_rule_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OrganizationManagedRuleMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,8 +81,9 @@ where
                             );
                         }
                         "ResourceTypesScope" => {
-                            builder =
-                                builder.set_resource_types_scope(crate::protocol_serde::shape_resource_types_scope::de_resource_types_scope(tokens)?);
+                            builder = builder.set_resource_types_scope(crate::protocol_serde::shape_resource_types_scope::de_resource_types_scope(
+                                tokens, _value,
+                            )?);
                         }
                         "ResourceIdScope" => {
                             builder = builder.set_resource_id_scope(

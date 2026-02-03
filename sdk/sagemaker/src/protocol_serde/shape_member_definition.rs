@@ -20,6 +20,7 @@ pub fn ser_member_definition(
 
 pub(crate) fn de_member_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MemberDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CognitoMemberDefinition" => {
                             builder = builder.set_cognito_member_definition(
-                                crate::protocol_serde::shape_cognito_member_definition::de_cognito_member_definition(tokens)?,
+                                crate::protocol_serde::shape_cognito_member_definition::de_cognito_member_definition(tokens, _value)?,
                             );
                         }
                         "OidcMemberDefinition" => {
-                            builder = builder
-                                .set_oidc_member_definition(crate::protocol_serde::shape_oidc_member_definition::de_oidc_member_definition(tokens)?);
+                            builder = builder.set_oidc_member_definition(
+                                crate::protocol_serde::shape_oidc_member_definition::de_oidc_member_definition(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

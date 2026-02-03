@@ -44,6 +44,7 @@ pub fn ser_create_rule(
 
 pub(crate) fn de_create_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -79,7 +80,7 @@ where
                             );
                         }
                         "Times" => {
-                            builder = builder.set_times(crate::protocol_serde::shape_times_list::de_times_list(tokens)?);
+                            builder = builder.set_times(crate::protocol_serde::shape_times_list::de_times_list(tokens, _value)?);
                         }
                         "CronExpression" => {
                             builder = builder.set_cron_expression(
@@ -89,7 +90,7 @@ where
                             );
                         }
                         "Scripts" => {
-                            builder = builder.set_scripts(crate::protocol_serde::shape_scripts_list::de_scripts_list(tokens)?);
+                            builder = builder.set_scripts(crate::protocol_serde::shape_scripts_list::de_scripts_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

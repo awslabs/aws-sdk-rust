@@ -11,6 +11,7 @@ pub fn ser_evaluation_review_notification_recipient_value(
 
 pub(crate) fn de_evaluation_review_notification_recipient_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationReviewNotificationRecipientValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

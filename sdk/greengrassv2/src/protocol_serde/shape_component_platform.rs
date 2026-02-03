@@ -21,6 +21,7 @@ pub fn ser_component_platform(
 
 pub(crate) fn de_component_platform<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentPlatform>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,8 +43,9 @@ where
                             );
                         }
                         "attributes" => {
-                            builder =
-                                builder.set_attributes(crate::protocol_serde::shape_platform_attributes_map::de_platform_attributes_map(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_platform_attributes_map::de_platform_attributes_map(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

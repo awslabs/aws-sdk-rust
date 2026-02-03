@@ -23,6 +23,7 @@ pub fn ser_license_conversion_context(
 
 pub(crate) fn de_license_conversion_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LicenseConversionContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,8 @@ where
                             );
                         }
                         "ProductCodes" => {
-                            builder = builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens)?);
+                            builder =
+                                builder.set_product_codes(crate::protocol_serde::shape_product_code_list::de_product_code_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

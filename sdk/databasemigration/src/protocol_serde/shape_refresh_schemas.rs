@@ -109,13 +109,13 @@ pub fn ser_refresh_schemas_input(
 }
 
 pub(crate) fn de_refresh_schemas(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,8 +123,9 @@ pub(crate) fn de_refresh_schemas(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RefreshSchemasStatus" => {
-                    builder =
-                        builder.set_refresh_schemas_status(crate::protocol_serde::shape_refresh_schemas_status::de_refresh_schemas_status(tokens)?);
+                    builder = builder.set_refresh_schemas_status(crate::protocol_serde::shape_refresh_schemas_status::de_refresh_schemas_status(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

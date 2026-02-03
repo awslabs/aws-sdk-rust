@@ -153,7 +153,7 @@ mod create_workflow_run;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_novaact::Error> {
 /// # let client: aws_sdk_novaact::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_act()
 ///     .customize()

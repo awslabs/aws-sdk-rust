@@ -35,6 +35,7 @@ pub fn ser_filter_group(
 
 pub(crate) fn de_filter_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,11 @@ where
                             );
                         }
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                         }
                         "ScopeConfiguration" => {
                             builder = builder.set_scope_configuration(
-                                crate::protocol_serde::shape_filter_scope_configuration::de_filter_scope_configuration(tokens)?,
+                                crate::protocol_serde::shape_filter_scope_configuration::de_filter_scope_configuration(tokens, _value)?,
                             );
                         }
                         "Status" => {

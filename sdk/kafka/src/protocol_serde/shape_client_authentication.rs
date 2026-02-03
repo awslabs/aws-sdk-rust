@@ -26,6 +26,7 @@ pub fn ser_client_authentication(
 
 pub(crate) fn de_client_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClientAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sasl" => {
-                            builder = builder.set_sasl(crate::protocol_serde::shape_sasl::de_sasl(tokens)?);
+                            builder = builder.set_sasl(crate::protocol_serde::shape_sasl::de_sasl(tokens, _value)?);
                         }
                         "tls" => {
-                            builder = builder.set_tls(crate::protocol_serde::shape_tls::de_tls(tokens)?);
+                            builder = builder.set_tls(crate::protocol_serde::shape_tls::de_tls(tokens, _value)?);
                         }
                         "unauthenticated" => {
-                            builder = builder.set_unauthenticated(crate::protocol_serde::shape_unauthenticated::de_unauthenticated(tokens)?);
+                            builder = builder.set_unauthenticated(crate::protocol_serde::shape_unauthenticated::de_unauthenticated(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

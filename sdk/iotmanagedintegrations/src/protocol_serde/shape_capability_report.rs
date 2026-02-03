@@ -26,6 +26,7 @@ pub fn ser_capability_report(
 
 pub(crate) fn de_capability_report<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CapabilityReport>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "endpoints" => {
                             builder = builder.set_endpoints(
-                                crate::protocol_serde::shape_capability_report_endpoints::de_capability_report_endpoints(tokens)?,
+                                crate::protocol_serde::shape_capability_report_endpoints::de_capability_report_endpoints(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

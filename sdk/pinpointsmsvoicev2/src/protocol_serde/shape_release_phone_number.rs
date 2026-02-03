@@ -144,13 +144,13 @@ pub fn ser_release_phone_number_input(
 }
 
 pub(crate) fn de_release_phone_number(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::release_phone_number::builders::ReleasePhoneNumberOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -200,8 +200,9 @@ pub(crate) fn de_release_phone_number(
                     );
                 }
                 "NumberCapabilities" => {
-                    builder =
-                        builder.set_number_capabilities(crate::protocol_serde::shape_number_capability_list::de_number_capability_list(tokens)?);
+                    builder = builder.set_number_capabilities(crate::protocol_serde::shape_number_capability_list::de_number_capability_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NumberType" => {
                     builder = builder.set_number_type(

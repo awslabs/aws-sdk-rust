@@ -160,13 +160,13 @@ pub fn ser_create_flow_version_input(
 }
 
 pub(crate) fn de_create_flow_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_flow_version::builders::CreateFlowVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_flow_version::builders::CreateFlowVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -194,7 +194,7 @@ pub(crate) fn de_create_flow_version(
                     );
                 }
                 "definition" => {
-                    builder = builder.set_definition(crate::protocol_serde::shape_flow_definition::de_flow_definition(tokens)?);
+                    builder = builder.set_definition(crate::protocol_serde::shape_flow_definition::de_flow_definition(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(

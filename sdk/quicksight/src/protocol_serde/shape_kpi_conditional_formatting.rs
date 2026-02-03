@@ -20,6 +20,7 @@ pub fn ser_kpi_conditional_formatting(
 
 pub(crate) fn de_kpi_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         "ConditionalFormattingOptions" => {
                             builder = builder.set_conditional_formatting_options(
                                 crate::protocol_serde::shape_kpi_conditional_formatting_option_list::de_kpi_conditional_formatting_option_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

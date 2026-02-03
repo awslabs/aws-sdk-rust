@@ -21,6 +21,7 @@ pub fn ser_vector_search_bedrock_reranking_model_configuration(
 
 pub(crate) fn de_vector_search_bedrock_reranking_model_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::VectorSearchBedrockRerankingModelConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -46,7 +47,7 @@ where
                         }
                         "additionalModelRequestFields" => {
                             builder = builder.set_additional_model_request_fields(
-                                crate::protocol_serde::shape_additional_model_request_fields::de_additional_model_request_fields(tokens)?,
+                                crate::protocol_serde::shape_additional_model_request_fields::de_additional_model_request_fields(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

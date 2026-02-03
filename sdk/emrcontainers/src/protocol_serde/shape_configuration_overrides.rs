@@ -26,6 +26,7 @@ pub fn ser_configuration_overrides(
 
 pub(crate) fn de_configuration_overrides<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfigurationOverrides>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "applicationConfiguration" => {
-                            builder = builder
-                                .set_application_configuration(crate::protocol_serde::shape_configuration_list::de_configuration_list(tokens)?);
+                            builder = builder.set_application_configuration(crate::protocol_serde::shape_configuration_list::de_configuration_list(
+                                tokens, _value,
+                            )?);
                         }
                         "monitoringConfiguration" => {
                             builder = builder.set_monitoring_configuration(
-                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

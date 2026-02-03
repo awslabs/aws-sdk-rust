@@ -93,13 +93,13 @@ pub fn ser_get_archive_search_input(
 }
 
 pub(crate) fn de_get_archive_search(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_archive_search::builders::GetArchiveSearchOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_archive_search::builders::GetArchiveSearchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_get_archive_search(
                     );
                 }
                 "Filters" => {
-                    builder = builder.set_filters(crate::protocol_serde::shape_archive_filters::de_archive_filters(tokens)?);
+                    builder = builder.set_filters(crate::protocol_serde::shape_archive_filters::de_archive_filters(tokens, _value)?);
                 }
                 "FromTimestamp" => {
                     builder = builder.set_from_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -136,7 +136,7 @@ pub(crate) fn de_get_archive_search(
                     );
                 }
                 "Status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_search_status::de_search_status(tokens)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_search_status::de_search_status(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

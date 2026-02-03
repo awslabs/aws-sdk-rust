@@ -128,13 +128,13 @@ pub fn ser_detect_entities_input(
 }
 
 pub(crate) fn de_detect_entities(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,19 +142,21 @@ pub(crate) fn de_detect_entities(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Entities" => {
-                    builder = builder.set_entities(crate::protocol_serde::shape_list_of_entities::de_list_of_entities(tokens)?);
+                    builder = builder.set_entities(crate::protocol_serde::shape_list_of_entities::de_list_of_entities(tokens, _value)?);
                 }
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
                 }
                 "DocumentType" => {
-                    builder = builder.set_document_type(crate::protocol_serde::shape_list_of_document_type::de_list_of_document_type(tokens)?);
+                    builder = builder.set_document_type(crate::protocol_serde::shape_list_of_document_type::de_list_of_document_type(
+                        tokens, _value,
+                    )?);
                 }
                 "Blocks" => {
-                    builder = builder.set_blocks(crate::protocol_serde::shape_list_of_blocks::de_list_of_blocks(tokens)?);
+                    builder = builder.set_blocks(crate::protocol_serde::shape_list_of_blocks::de_list_of_blocks(tokens, _value)?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_errors::de_list_of_errors(tokens)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_errors::de_list_of_errors(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

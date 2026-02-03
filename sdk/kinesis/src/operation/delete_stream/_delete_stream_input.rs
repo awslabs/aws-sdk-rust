@@ -10,6 +10,8 @@ pub struct DeleteStreamInput {
     pub enforce_consumer_deletion: ::std::option::Option<bool>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStreamInput {
     /// <p>The name of the stream to delete.</p>
@@ -23,6 +25,10 @@ impl DeleteStreamInput {
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 impl DeleteStreamInput {
@@ -39,6 +45,7 @@ pub struct DeleteStreamInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) enforce_consumer_deletion: ::std::option::Option<bool>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStreamInputBuilder {
     /// <p>The name of the stream to delete.</p>
@@ -83,6 +90,20 @@ impl DeleteStreamInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl DeleteStreamInputBuilder {
             stream_name: self.stream_name,
             enforce_consumer_deletion: self.enforce_consumer_deletion,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

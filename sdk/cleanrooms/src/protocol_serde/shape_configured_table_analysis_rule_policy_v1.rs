@@ -33,6 +33,7 @@ pub fn ser_configured_table_analysis_rule_policy_v1(
 
 pub(crate) fn de_configured_table_analysis_rule_policy_v1<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfiguredTableAnalysisRulePolicyV1>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,16 +63,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "list" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::List(
-                            crate::protocol_serde::shape_analysis_rule_list::de_analysis_rule_list(tokens)?
+                            crate::protocol_serde::shape_analysis_rule_list::de_analysis_rule_list(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'list' cannot be null"))?,
                         )),
                         "aggregation" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::Aggregation(
-                            crate::protocol_serde::shape_analysis_rule_aggregation::de_analysis_rule_aggregation(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'aggregation' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_analysis_rule_aggregation::de_analysis_rule_aggregation(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'aggregation' cannot be null"),
+                            )?,
                         )),
                         "custom" => Some(crate::types::ConfiguredTableAnalysisRulePolicyV1::Custom(
-                            crate::protocol_serde::shape_analysis_rule_custom::de_analysis_rule_custom(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_analysis_rule_custom::de_analysis_rule_custom(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null")
                             })?,
                         )),

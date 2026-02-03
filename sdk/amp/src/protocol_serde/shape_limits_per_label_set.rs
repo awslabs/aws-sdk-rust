@@ -24,6 +24,7 @@ pub fn ser_limits_per_label_set(
 
 pub(crate) fn de_limits_per_label_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LimitsPerLabelSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,11 +40,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "limits" => {
                             builder = builder.set_limits(crate::protocol_serde::shape_limits_per_label_set_entry::de_limits_per_label_set_entry(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "labelSet" => {
-                            builder = builder.set_label_set(crate::protocol_serde::shape_label_set::de_label_set(tokens)?);
+                            builder = builder.set_label_set(crate::protocol_serde::shape_label_set::de_label_set(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

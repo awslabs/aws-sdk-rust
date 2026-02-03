@@ -93,13 +93,13 @@ pub fn ser_list_transactions_input(
 }
 
 pub(crate) fn de_list_transactions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_transactions::builders::ListTransactionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_transactions::builders::ListTransactionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,8 +114,9 @@ pub(crate) fn de_list_transactions(
                     );
                 }
                 "Transactions" => {
-                    builder =
-                        builder.set_transactions(crate::protocol_serde::shape_transaction_description_list::de_transaction_description_list(tokens)?);
+                    builder = builder.set_transactions(
+                        crate::protocol_serde::shape_transaction_description_list::de_transaction_description_list(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

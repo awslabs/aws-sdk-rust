@@ -143,13 +143,13 @@ pub fn ser_put_scaling_policy_input(
 }
 
 pub(crate) fn de_put_scaling_policy(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,7 +164,7 @@ pub(crate) fn de_put_scaling_policy(
                     );
                 }
                 "Alarms" => {
-                    builder = builder.set_alarms(crate::protocol_serde::shape_alarms::de_alarms(tokens)?);
+                    builder = builder.set_alarms(crate::protocol_serde::shape_alarms::de_alarms(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -94,10 +94,10 @@ pub fn de_get_job_http_response(
 }
 
 pub(crate) fn de_get_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_job::builders::GetJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_job::builders::GetJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,10 +118,10 @@ pub(crate) fn de_get_job(
                     )?);
                 }
                 "Details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_response_details::de_response_details(tokens)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_response_details::de_response_details(tokens, _value)?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_job_error::de_list_of_job_error(tokens)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_list_of_job_error::de_list_of_job_error(tokens, _value)?);
                 }
                 "Id" => {
                     builder = builder.set_id(

@@ -41,6 +41,7 @@ pub fn ser_container_config(
 
 pub(crate) fn de_container_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,14 +63,18 @@ where
                             );
                         }
                         "entrypoint" => {
-                            builder = builder.set_entrypoint(crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(tokens)?);
+                            builder = builder.set_entrypoint(crate::protocol_serde::shape_container_entrypoint::de_container_entrypoint(
+                                tokens, _value,
+                            )?);
                         }
                         "arguments" => {
-                            builder = builder.set_arguments(crate::protocol_serde::shape_container_arguments::de_container_arguments(tokens)?);
+                            builder =
+                                builder.set_arguments(crate::protocol_serde::shape_container_arguments::de_container_arguments(tokens, _value)?);
                         }
                         "metricDefinitions" => {
-                            builder = builder
-                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                            builder = builder.set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

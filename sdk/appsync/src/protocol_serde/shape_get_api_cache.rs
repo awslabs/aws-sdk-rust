@@ -116,11 +116,11 @@ pub fn de_get_api_cache_http_response(
 }
 
 pub(crate) fn de_get_api_cache(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,7 @@ pub(crate) fn de_get_api_cache(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "apiCache" => {
-                    builder = builder.set_api_cache(crate::protocol_serde::shape_api_cache::de_api_cache(tokens)?);
+                    builder = builder.set_api_cache(crate::protocol_serde::shape_api_cache::de_api_cache(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

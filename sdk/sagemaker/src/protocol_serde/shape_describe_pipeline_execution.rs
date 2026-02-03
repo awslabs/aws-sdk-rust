@@ -73,13 +73,13 @@ pub fn ser_describe_pipeline_execution_input(
 }
 
 pub(crate) fn de_describe_pipeline_execution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,7 +123,7 @@ pub(crate) fn de_describe_pipeline_execution(
                 }
                 "PipelineExperimentConfig" => {
                     builder = builder.set_pipeline_experiment_config(
-                        crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens)?,
+                        crate::protocol_serde::shape_pipeline_experiment_config::de_pipeline_experiment_config(tokens, _value)?,
                     );
                 }
                 "FailureReason" => {
@@ -146,19 +146,19 @@ pub(crate) fn de_describe_pipeline_execution(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "ParallelismConfiguration" => {
                     builder = builder.set_parallelism_configuration(
-                        crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens)?,
+                        crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens, _value)?,
                     );
                 }
                 "SelectiveExecutionConfig" => {
                     builder = builder.set_selective_execution_config(
-                        crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens)?,
+                        crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens, _value)?,
                     );
                 }
                 "PipelineVersionId" => {
@@ -169,7 +169,9 @@ pub(crate) fn de_describe_pipeline_execution(
                     );
                 }
                 "MLflowConfig" => {
-                    builder = builder.set_m_lflow_config(crate::protocol_serde::shape_m_lflow_configuration::de_m_lflow_configuration(tokens)?);
+                    builder = builder.set_m_lflow_config(crate::protocol_serde::shape_m_lflow_configuration::de_m_lflow_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

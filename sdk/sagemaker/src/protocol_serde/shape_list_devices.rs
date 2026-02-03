@@ -40,11 +40,11 @@ pub fn ser_list_devices_input(
 }
 
 pub(crate) fn de_list_devices(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_devices::builders::ListDevicesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_devices::builders::ListDevicesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -52,7 +52,7 @@ pub(crate) fn de_list_devices(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DeviceSummaries" => {
-                    builder = builder.set_device_summaries(crate::protocol_serde::shape_device_summaries::de_device_summaries(tokens)?);
+                    builder = builder.set_device_summaries(crate::protocol_serde::shape_device_summaries::de_device_summaries(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

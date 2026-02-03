@@ -167,7 +167,7 @@ mod create_provisioning_profile;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotmanagedintegrations::Error> {
 /// # let client: aws_sdk_iotmanagedintegrations::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_account_association()
 ///     .customize()

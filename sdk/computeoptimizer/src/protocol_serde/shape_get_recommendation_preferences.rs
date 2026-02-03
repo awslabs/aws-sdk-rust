@@ -187,13 +187,13 @@ pub fn ser_get_recommendation_preferences_input(
 }
 
 pub(crate) fn de_get_recommendation_preferences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -209,7 +209,7 @@ pub(crate) fn de_get_recommendation_preferences(
                 }
                 "recommendationPreferencesDetails" => {
                     builder = builder.set_recommendation_preferences_details(
-                        crate::protocol_serde::shape_recommendation_preferences_details::de_recommendation_preferences_details(tokens)?,
+                        crate::protocol_serde::shape_recommendation_preferences_details::de_recommendation_preferences_details(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

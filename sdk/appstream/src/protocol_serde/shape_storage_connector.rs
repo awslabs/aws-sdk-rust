@@ -32,6 +32,7 @@ pub fn ser_storage_connector(
 
 pub(crate) fn de_storage_connector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StorageConnector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,10 +61,11 @@ where
                             );
                         }
                         "Domains" => {
-                            builder = builder.set_domains(crate::protocol_serde::shape_domain_list::de_domain_list(tokens)?);
+                            builder = builder.set_domains(crate::protocol_serde::shape_domain_list::de_domain_list(tokens, _value)?);
                         }
                         "DomainsRequireAdminConsent" => {
-                            builder = builder.set_domains_require_admin_consent(crate::protocol_serde::shape_domain_list::de_domain_list(tokens)?);
+                            builder =
+                                builder.set_domains_require_admin_consent(crate::protocol_serde::shape_domain_list::de_domain_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

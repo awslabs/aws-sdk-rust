@@ -26,6 +26,7 @@ pub fn ser_registration_config(
 
 pub(crate) fn de_registration_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RegistrationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "WatchlistIds" => {
                             builder = builder.set_watchlist_ids(
-                                crate::protocol_serde::shape_registration_config_watchlist_ids::de_registration_config_watchlist_ids(tokens)?,
+                                crate::protocol_serde::shape_registration_config_watchlist_ids::de_registration_config_watchlist_ids(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

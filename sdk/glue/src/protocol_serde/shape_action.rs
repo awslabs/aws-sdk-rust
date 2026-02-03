@@ -39,6 +39,7 @@ pub fn ser_action(
 
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                             );
                         }
                         "Arguments" => {
-                            builder = builder.set_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(tokens)?);
+                            builder = builder.set_arguments(crate::protocol_serde::shape_generic_map::de_generic_map(tokens, _value)?);
                         }
                         "Timeout" => {
                             builder = builder.set_timeout(
@@ -77,8 +78,9 @@ where
                             );
                         }
                         "NotificationProperty" => {
-                            builder = builder
-                                .set_notification_property(crate::protocol_serde::shape_notification_property::de_notification_property(tokens)?);
+                            builder = builder.set_notification_property(
+                                crate::protocol_serde::shape_notification_property::de_notification_property(tokens, _value)?,
+                            );
                         }
                         "CrawlerName" => {
                             builder = builder.set_crawler_name(

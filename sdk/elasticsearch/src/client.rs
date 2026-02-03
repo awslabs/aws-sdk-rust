@@ -165,7 +165,7 @@ mod create_vpc_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_elasticsearch::Error> {
 /// # let client: aws_sdk_elasticsearch::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_inbound_cross_cluster_search_connection()
 ///     .customize()

@@ -94,13 +94,13 @@ pub fn ser_allocate_connection_on_interconnect_input(
 }
 
 pub(crate) fn de_allocate_connection_on_interconnect(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -215,7 +215,7 @@ pub(crate) fn de_allocate_connection_on_interconnect(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "providerName" => {
                     builder = builder.set_provider_name(
@@ -242,7 +242,7 @@ pub(crate) fn de_allocate_connection_on_interconnect(
                     );
                 }
                 "macSecKeys" => {
-                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens)?);
+                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(tokens, _value)?);
                 }
                 "partnerInterconnectMacSecCapable" => {
                     builder =

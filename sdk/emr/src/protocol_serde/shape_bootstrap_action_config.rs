@@ -17,6 +17,7 @@ pub fn ser_bootstrap_action_config(
 
 pub(crate) fn de_bootstrap_action_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BootstrapActionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "ScriptBootstrapAction" => {
                             builder = builder.set_script_bootstrap_action(
-                                crate::protocol_serde::shape_script_bootstrap_action_config::de_script_bootstrap_action_config(tokens)?,
+                                crate::protocol_serde::shape_script_bootstrap_action_config::de_script_bootstrap_action_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

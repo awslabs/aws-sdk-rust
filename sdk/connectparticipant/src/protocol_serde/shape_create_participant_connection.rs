@@ -101,12 +101,12 @@ pub fn de_create_participant_connection_http_response(
 
 pub fn ser_create_participant_connection_headers(
     input: &crate::operation::create_participant_connection::CreateParticipantConnectionInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.participant_token {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "participant_token",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -128,13 +128,13 @@ pub fn ser_create_participant_connection_input(
 }
 
 pub(crate) fn de_create_participant_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_participant_connection::builders::CreateParticipantConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_participant_connection::builders::CreateParticipantConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,14 +142,15 @@ pub(crate) fn de_create_participant_connection(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConnectionCredentials" => {
-                    builder =
-                        builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(tokens)?);
+                    builder = builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(
+                        tokens, _value,
+                    )?);
                 }
                 "WebRTCConnection" => {
-                    builder = builder.set_web_rtc_connection(crate::protocol_serde::shape_web_rtc_connection::de_web_rtc_connection(tokens)?);
+                    builder = builder.set_web_rtc_connection(crate::protocol_serde::shape_web_rtc_connection::de_web_rtc_connection(tokens, _value)?);
                 }
                 "Websocket" => {
-                    builder = builder.set_websocket(crate::protocol_serde::shape_websocket::de_websocket(tokens)?);
+                    builder = builder.set_websocket(crate::protocol_serde::shape_websocket::de_websocket(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

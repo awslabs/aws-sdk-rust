@@ -20,6 +20,7 @@ pub fn ser_lake_formation_configuration(
 
 pub(crate) fn de_lake_formation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LakeFormationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "locationRegistrationExcludeS3Locations" => {
                             builder = builder.set_location_registration_exclude_s3_locations(
-                                crate::protocol_serde::shape_s3_location_list::de_s3_location_list(tokens)?,
+                                crate::protocol_serde::shape_s3_location_list::de_s3_location_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

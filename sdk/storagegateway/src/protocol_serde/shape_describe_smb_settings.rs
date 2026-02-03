@@ -87,13 +87,13 @@ pub fn ser_describe_smb_settings_input(
 }
 
 pub(crate) fn de_describe_smb_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_describe_smb_settings(
                     builder = builder.set_file_shares_visible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SMBLocalGroups" => {
-                    builder = builder.set_smb_local_groups(crate::protocol_serde::shape_smb_local_groups::de_smb_local_groups(tokens)?);
+                    builder = builder.set_smb_local_groups(crate::protocol_serde::shape_smb_local_groups::de_smb_local_groups(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

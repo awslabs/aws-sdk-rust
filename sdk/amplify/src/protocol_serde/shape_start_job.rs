@@ -123,10 +123,10 @@ pub fn ser_start_job_input(
 }
 
 pub(crate) fn de_start_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_job::builders::StartJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::start_job::builders::StartJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_start_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "jobSummary" => {
-                    builder = builder.set_job_summary(crate::protocol_serde::shape_job_summary::de_job_summary(tokens)?);
+                    builder = builder.set_job_summary(crate::protocol_serde::shape_job_summary::de_job_summary(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

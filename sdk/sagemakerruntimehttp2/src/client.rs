@@ -145,7 +145,7 @@ impl Client {
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_sagemakerruntimehttp2::Error> {
 /// # let client: aws_sdk_sagemakerruntimehttp2::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.invoke_endpoint_with_bidirectional_stream()
 ///     .customize()

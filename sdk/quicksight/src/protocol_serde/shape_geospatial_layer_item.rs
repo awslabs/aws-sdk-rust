@@ -56,6 +56,7 @@ pub fn ser_geospatial_layer_item(
 
 pub(crate) fn de_geospatial_layer_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialLayerItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,7 +86,7 @@ where
                         }
                         "DataSource" => {
                             builder = builder.set_data_source(
-                                crate::protocol_serde::shape_geospatial_data_source_item::de_geospatial_data_source_item(tokens)?,
+                                crate::protocol_serde::shape_geospatial_data_source_item::de_geospatial_data_source_item(tokens, _value)?,
                             );
                         }
                         "Label" => {
@@ -104,20 +105,20 @@ where
                         }
                         "LayerDefinition" => {
                             builder = builder.set_layer_definition(
-                                crate::protocol_serde::shape_geospatial_layer_definition::de_geospatial_layer_definition(tokens)?,
+                                crate::protocol_serde::shape_geospatial_layer_definition::de_geospatial_layer_definition(tokens, _value)?,
                             );
                         }
                         "Tooltip" => {
-                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "JoinDefinition" => {
                             builder = builder.set_join_definition(
-                                crate::protocol_serde::shape_geospatial_layer_join_definition::de_geospatial_layer_join_definition(tokens)?,
+                                crate::protocol_serde::shape_geospatial_layer_join_definition::de_geospatial_layer_join_definition(tokens, _value)?,
                             );
                         }
                         "Actions" => {
                             builder = builder.set_actions(crate::protocol_serde::shape_layer_custom_action_list::de_layer_custom_action_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

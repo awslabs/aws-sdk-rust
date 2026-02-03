@@ -29,6 +29,7 @@ pub fn ser_aws_ecs_container_details(
 
 pub(crate) fn de_aws_ecs_container_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEcsContainerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,9 @@ where
                             );
                         }
                         "MountPoints" => {
-                            builder = builder.set_mount_points(crate::protocol_serde::shape_aws_mount_point_list::de_aws_mount_point_list(tokens)?);
+                            builder = builder.set_mount_points(crate::protocol_serde::shape_aws_mount_point_list::de_aws_mount_point_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Privileged" => {
                             builder = builder.set_privileged(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

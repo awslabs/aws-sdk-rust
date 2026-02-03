@@ -14,6 +14,7 @@ pub fn ser_waterfall_chart_field_wells(
 
 pub(crate) fn de_waterfall_chart_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WaterfallChartFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "WaterfallChartAggregatedFieldWells" => {
                             builder = builder.set_waterfall_chart_aggregated_field_wells(
                                 crate::protocol_serde::shape_waterfall_chart_aggregated_field_wells::de_waterfall_chart_aggregated_field_wells(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

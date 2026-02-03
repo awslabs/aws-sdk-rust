@@ -21,6 +21,7 @@ pub fn ser_prompt_gen_ai_resource(
 
 pub(crate) fn de_prompt_gen_ai_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PromptGenAiResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "agent" => Some(crate::types::PromptGenAiResource::Agent(
-                            crate::protocol_serde::shape_prompt_agent_resource::de_prompt_agent_resource(tokens)?
+                            crate::protocol_serde::shape_prompt_agent_resource::de_prompt_agent_resource(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'agent' cannot be null"))?,
                         )),
                         _ => {

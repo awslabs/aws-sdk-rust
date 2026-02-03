@@ -165,11 +165,11 @@ pub fn ser_update_rule_input(
 }
 
 pub(crate) fn de_update_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_rule::builders::UpdateRuleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::update_rule::builders::UpdateRuleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -204,7 +204,7 @@ pub(crate) fn de_update_rule(
                     );
                 }
                 "detail" => {
-                    builder = builder.set_detail(crate::protocol_serde::shape_rule_detail::de_rule_detail(tokens)?);
+                    builder = builder.set_detail(crate::protocol_serde::shape_rule_detail::de_rule_detail(tokens, _value)?);
                 }
                 "identifier" => {
                     builder = builder.set_identifier(
@@ -242,10 +242,10 @@ pub(crate) fn de_update_rule(
                     );
                 }
                 "scope" => {
-                    builder = builder.set_scope(crate::protocol_serde::shape_rule_scope::de_rule_scope(tokens)?);
+                    builder = builder.set_scope(crate::protocol_serde::shape_rule_scope::de_rule_scope(tokens, _value)?);
                 }
                 "target" => {
-                    builder = builder.set_target(crate::protocol_serde::shape_rule_target::de_rule_target(tokens)?);
+                    builder = builder.set_target(crate::protocol_serde::shape_rule_target::de_rule_target(tokens, _value)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

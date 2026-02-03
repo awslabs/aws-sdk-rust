@@ -26,6 +26,7 @@ pub fn ser_reasoning_content_block(
 
 pub(crate) fn de_reasoning_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReasoningContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "reasoningText" => Some(crate::types::ReasoningContentBlock::ReasoningText(
-                            crate::protocol_serde::shape_reasoning_text_block::de_reasoning_text_block(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_reasoning_text_block::de_reasoning_text_block(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningText' cannot be null")
                             })?,
                         )),

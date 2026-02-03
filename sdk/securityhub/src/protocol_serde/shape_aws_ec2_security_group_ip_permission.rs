@@ -77,6 +77,7 @@ pub fn ser_aws_ec2_security_group_ip_permission(
 
 pub(crate) fn de_aws_ec2_security_group_ip_permission<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2SecurityGroupIpPermission>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -113,24 +114,26 @@ where
                         }
                         "UserIdGroupPairs" => {
                             builder = builder.set_user_id_group_pairs(
-                                    crate::protocol_serde::shape_aws_ec2_security_group_user_id_group_pair_list::de_aws_ec2_security_group_user_id_group_pair_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_security_group_user_id_group_pair_list::de_aws_ec2_security_group_user_id_group_pair_list(tokens, _value)?
                                 );
                         }
                         "IpRanges" => {
                             builder = builder.set_ip_ranges(
-                                crate::protocol_serde::shape_aws_ec2_security_group_ip_range_list::de_aws_ec2_security_group_ip_range_list(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_security_group_ip_range_list::de_aws_ec2_security_group_ip_range_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Ipv6Ranges" => {
                             builder = builder.set_ipv6_ranges(
                                 crate::protocol_serde::shape_aws_ec2_security_group_ipv6_range_list::de_aws_ec2_security_group_ipv6_range_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "PrefixListIds" => {
                             builder = builder.set_prefix_list_ids(
-                                    crate::protocol_serde::shape_aws_ec2_security_group_prefix_list_id_list::de_aws_ec2_security_group_prefix_list_id_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_security_group_prefix_list_id_list::de_aws_ec2_security_group_prefix_list_id_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

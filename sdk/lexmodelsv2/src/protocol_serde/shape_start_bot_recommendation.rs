@@ -174,13 +174,13 @@ pub fn ser_start_bot_recommendation_input(
 }
 
 pub(crate) fn de_start_bot_recommendation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -222,7 +222,7 @@ pub(crate) fn de_start_bot_recommendation(
                     )?);
                 }
                 "encryptionSetting" => {
-                    builder = builder.set_encryption_setting(crate::protocol_serde::shape_encryption_setting::de_encryption_setting(tokens)?);
+                    builder = builder.set_encryption_setting(crate::protocol_serde::shape_encryption_setting::de_encryption_setting(tokens, _value)?);
                 }
                 "localeId" => {
                     builder = builder.set_locale_id(
@@ -233,7 +233,7 @@ pub(crate) fn de_start_bot_recommendation(
                 }
                 "transcriptSourceSetting" => {
                     builder = builder.set_transcript_source_setting(
-                        crate::protocol_serde::shape_transcript_source_setting::de_transcript_source_setting(tokens)?,
+                        crate::protocol_serde::shape_transcript_source_setting::de_transcript_source_setting(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

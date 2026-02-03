@@ -29,6 +29,7 @@ pub fn ser_container_restart_policy(
 
 pub(crate) fn de_container_restart_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerRestartPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ignoredExitCodes" => {
-                            builder = builder.set_ignored_exit_codes(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
+                            builder = builder.set_ignored_exit_codes(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
                         }
                         "restartAttemptPeriod" => {
                             builder = builder.set_restart_attempt_period(

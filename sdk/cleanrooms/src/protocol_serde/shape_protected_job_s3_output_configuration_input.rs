@@ -14,6 +14,7 @@ pub fn ser_protected_job_s3_output_configuration_input(
 
 pub(crate) fn de_protected_job_s3_output_configuration_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProtectedJobS3OutputConfigurationInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -26,6 +26,7 @@ pub fn ser_fuota_task_log_option(
 
 pub(crate) fn de_fuota_task_log_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FuotaTaskLogOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "Events" => {
                             builder = builder.set_events(
-                                crate::protocol_serde::shape_fuota_task_event_log_option_list::de_fuota_task_event_log_option_list(tokens)?,
+                                crate::protocol_serde::shape_fuota_task_event_log_option_list::de_fuota_task_event_log_option_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

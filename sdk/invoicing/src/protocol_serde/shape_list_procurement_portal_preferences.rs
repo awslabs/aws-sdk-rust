@@ -152,13 +152,13 @@ pub fn ser_list_procurement_portal_preferences_input(
 }
 
 pub(crate) fn de_list_procurement_portal_preferences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_procurement_portal_preferences::builders::ListProcurementPortalPreferencesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_procurement_portal_preferences::builders::ListProcurementPortalPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,9 @@ pub(crate) fn de_list_procurement_portal_preferences(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProcurementPortalPreferences" => {
                     builder = builder.set_procurement_portal_preferences(
-                        crate::protocol_serde::shape_procurement_portal_preference_summaries::de_procurement_portal_preference_summaries(tokens)?,
+                        crate::protocol_serde::shape_procurement_portal_preference_summaries::de_procurement_portal_preference_summaries(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "NextToken" => {

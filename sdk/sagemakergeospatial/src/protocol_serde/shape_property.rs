@@ -47,6 +47,7 @@ pub fn ser_property(
 
 pub(crate) fn de_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Property>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,38 +77,37 @@ where
                     }
                     variant = match key.as_ref() {
                         "EoCloudCover" => Some(crate::types::Property::EoCloudCover(
-                            crate::protocol_serde::shape_eo_cloud_cover_input::de_eo_cloud_cover_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_eo_cloud_cover_input::de_eo_cloud_cover_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EoCloudCover' cannot be null")
                             })?,
                         )),
                         "ViewOffNadir" => Some(crate::types::Property::ViewOffNadir(
-                            crate::protocol_serde::shape_view_off_nadir_input::de_view_off_nadir_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_view_off_nadir_input::de_view_off_nadir_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewOffNadir' cannot be null")
                             })?,
                         )),
                         "ViewSunAzimuth" => Some(crate::types::Property::ViewSunAzimuth(
-                            crate::protocol_serde::shape_view_sun_azimuth_input::de_view_sun_azimuth_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_view_sun_azimuth_input::de_view_sun_azimuth_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunAzimuth' cannot be null")
                             })?,
                         )),
                         "ViewSunElevation" => Some(crate::types::Property::ViewSunElevation(
-                            crate::protocol_serde::shape_view_sun_elevation_input::de_view_sun_elevation_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_view_sun_elevation_input::de_view_sun_elevation_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ViewSunElevation' cannot be null")
                             })?,
                         )),
                         "Platform" => Some(crate::types::Property::Platform(
-                            crate::protocol_serde::shape_platform_input::de_platform_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_platform_input::de_platform_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Platform' cannot be null")
                             })?,
                         )),
                         "LandsatCloudCoverLand" => Some(crate::types::Property::LandsatCloudCoverLand(
-                            crate::protocol_serde::shape_landsat_cloud_cover_land_input::de_landsat_cloud_cover_land_input(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_landsat_cloud_cover_land_input::de_landsat_cloud_cover_land_input(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'LandsatCloudCoverLand' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

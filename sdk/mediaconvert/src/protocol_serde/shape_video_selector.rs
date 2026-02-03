@@ -68,6 +68,7 @@ pub fn ser_video_selector(
 
 pub(crate) fn de_video_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -110,7 +111,7 @@ where
                             );
                         }
                         "hdr10Metadata" => {
-                            builder = builder.set_hdr10_metadata(crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(tokens)?);
+                            builder = builder.set_hdr10_metadata(crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(tokens, _value)?);
                         }
                         "maxLuminance" => {
                             builder = builder.set_max_luminance(
@@ -163,7 +164,9 @@ where
                         }
                         "streams" => {
                             builder = builder.set_streams(
-                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

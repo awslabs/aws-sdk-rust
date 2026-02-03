@@ -108,13 +108,13 @@ pub fn ser_get_ml_task_runs_input(
 }
 
 pub(crate) fn de_get_ml_task_runs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ml_task_runs::builders::GetMlTaskRunsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_ml_task_runs::builders::GetMlTaskRunsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,7 +122,7 @@ pub(crate) fn de_get_ml_task_runs(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TaskRuns" => {
-                    builder = builder.set_task_runs(crate::protocol_serde::shape_task_run_list::de_task_run_list(tokens)?);
+                    builder = builder.set_task_runs(crate::protocol_serde::shape_task_run_list::de_task_run_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

@@ -26,6 +26,7 @@ pub fn ser_membership_payment_configuration(
 
 pub(crate) fn de_membership_payment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MembershipPaymentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,18 +43,20 @@ where
                         "queryCompute" => {
                             builder = builder.set_query_compute(
                                 crate::protocol_serde::shape_membership_query_compute_payment_config::de_membership_query_compute_payment_config(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "machineLearning" => {
                             builder = builder.set_machine_learning(
-                                crate::protocol_serde::shape_membership_ml_payment_config::de_membership_ml_payment_config(tokens)?,
+                                crate::protocol_serde::shape_membership_ml_payment_config::de_membership_ml_payment_config(tokens, _value)?,
                             );
                         }
                         "jobCompute" => {
                             builder = builder.set_job_compute(
-                                crate::protocol_serde::shape_membership_job_compute_payment_config::de_membership_job_compute_payment_config(tokens)?,
+                                crate::protocol_serde::shape_membership_job_compute_payment_config::de_membership_job_compute_payment_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

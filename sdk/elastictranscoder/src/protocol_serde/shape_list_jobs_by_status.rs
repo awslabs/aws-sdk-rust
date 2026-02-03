@@ -111,13 +111,13 @@ pub fn de_list_jobs_by_status_http_response(
 }
 
 pub(crate) fn de_list_jobs_by_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -125,7 +125,7 @@ pub(crate) fn de_list_jobs_by_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Jobs" => {
-                    builder = builder.set_jobs(crate::protocol_serde::shape_jobs::de_jobs(tokens)?);
+                    builder = builder.set_jobs(crate::protocol_serde::shape_jobs::de_jobs(tokens, _value)?);
                 }
                 "NextPageToken" => {
                     builder = builder.set_next_page_token(

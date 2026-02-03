@@ -20,6 +20,7 @@ pub fn ser_stateful_engine_options(
 
 pub(crate) fn de_stateful_engine_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StatefulEngineOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                             );
                         }
                         "FlowTimeouts" => {
-                            builder = builder.set_flow_timeouts(crate::protocol_serde::shape_flow_timeouts::de_flow_timeouts(tokens)?);
+                            builder = builder.set_flow_timeouts(crate::protocol_serde::shape_flow_timeouts::de_flow_timeouts(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

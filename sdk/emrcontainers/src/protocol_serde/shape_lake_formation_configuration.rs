@@ -20,6 +20,7 @@ pub fn ser_lake_formation_configuration(
 
 pub(crate) fn de_lake_formation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LakeFormationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "secureNamespaceInfo" => {
-                            builder = builder
-                                .set_secure_namespace_info(crate::protocol_serde::shape_secure_namespace_info::de_secure_namespace_info(tokens)?);
+                            builder = builder.set_secure_namespace_info(
+                                crate::protocol_serde::shape_secure_namespace_info::de_secure_namespace_info(tokens, _value)?,
+                            );
                         }
                         "queryEngineRoleArn" => {
                             builder = builder.set_query_engine_role_arn(

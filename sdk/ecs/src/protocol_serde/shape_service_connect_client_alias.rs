@@ -23,6 +23,7 @@ pub fn ser_service_connect_client_alias(
 
 pub(crate) fn de_service_connect_client_alias<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectClientAlias>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,9 @@ where
                         }
                         "testTrafficRules" => {
                             builder = builder.set_test_traffic_rules(
-                                crate::protocol_serde::shape_service_connect_test_traffic_rules::de_service_connect_test_traffic_rules(tokens)?,
+                                crate::protocol_serde::shape_service_connect_test_traffic_rules::de_service_connect_test_traffic_rules(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

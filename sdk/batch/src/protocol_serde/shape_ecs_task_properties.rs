@@ -68,6 +68,7 @@ pub fn ser_ecs_task_properties(
 
 pub(crate) fn de_ecs_task_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EcsTaskProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,11 +84,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containers" => {
                             builder = builder.set_containers(
-                                crate::protocol_serde::shape_list_task_container_properties::de_list_task_container_properties(tokens)?,
+                                crate::protocol_serde::shape_list_task_container_properties::de_list_task_container_properties(tokens, _value)?,
                             );
                         }
                         "ephemeralStorage" => {
-                            builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
+                            builder =
+                                builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
                         }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
@@ -125,14 +127,16 @@ where
                             );
                         }
                         "networkConfiguration" => {
-                            builder = builder
-                                .set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
+                            builder = builder.set_network_configuration(
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                            );
                         }
                         "runtimePlatform" => {
-                            builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens)?);
+                            builder =
+                                builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens, _value)?);
                         }
                         "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
                         }
                         "enableExecuteCommand" => {
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

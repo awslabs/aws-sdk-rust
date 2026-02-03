@@ -89,13 +89,13 @@ pub fn ser_describe_gateway_information_input(
 }
 
 pub(crate) fn de_describe_gateway_information(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_gateway_information::builders::DescribeGatewayInformationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_gateway_information::builders::DescribeGatewayInformationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_describe_gateway_information(
                 }
                 "GatewayNetworkInterfaces" => {
                     builder = builder.set_gateway_network_interfaces(
-                        crate::protocol_serde::shape_gateway_network_interfaces::de_gateway_network_interfaces(tokens)?,
+                        crate::protocol_serde::shape_gateway_network_interfaces::de_gateway_network_interfaces(tokens, _value)?,
                     );
                 }
                 "GatewayType" => {
@@ -178,7 +178,7 @@ pub(crate) fn de_describe_gateway_information(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "VPCEndpoint" => {
                     builder = builder.set_vpc_endpoint(
@@ -231,7 +231,7 @@ pub(crate) fn de_describe_gateway_information(
                 }
                 "SupportedGatewayCapacities" => {
                     builder = builder.set_supported_gateway_capacities(
-                        crate::protocol_serde::shape_supported_gateway_capacities::de_supported_gateway_capacities(tokens)?,
+                        crate::protocol_serde::shape_supported_gateway_capacities::de_supported_gateway_capacities(tokens, _value)?,
                     );
                 }
                 "HostEnvironmentId" => {

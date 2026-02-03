@@ -23,6 +23,7 @@ pub fn ser_metric_filter_v2(
 
 pub(crate) fn de_metric_filter_v2<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MetricFilterV2>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "MetricFilterValues" => {
                             builder = builder.set_metric_filter_values(
-                                crate::protocol_serde::shape_metric_filter_value_list::de_metric_filter_value_list(tokens)?,
+                                crate::protocol_serde::shape_metric_filter_value_list::de_metric_filter_value_list(tokens, _value)?,
                             );
                         }
                         "Negate" => {

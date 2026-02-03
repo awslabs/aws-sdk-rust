@@ -23,6 +23,7 @@ pub fn ser_sapo_data_source_properties(
 
 pub(crate) fn de_sapo_data_source_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SapoDataSourceProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "parallelismConfig" => {
                             builder = builder.set_parallelism_config(
-                                crate::protocol_serde::shape_sapo_data_parallelism_config::de_sapo_data_parallelism_config(tokens)?,
+                                crate::protocol_serde::shape_sapo_data_parallelism_config::de_sapo_data_parallelism_config(tokens, _value)?,
                             );
                         }
                         "paginationConfig" => {
                             builder = builder.set_pagination_config(
-                                crate::protocol_serde::shape_sapo_data_pagination_config::de_sapo_data_pagination_config(tokens)?,
+                                crate::protocol_serde::shape_sapo_data_pagination_config::de_sapo_data_pagination_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

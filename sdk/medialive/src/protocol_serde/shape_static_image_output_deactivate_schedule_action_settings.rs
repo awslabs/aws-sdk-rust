@@ -29,6 +29,7 @@ pub fn ser_static_image_output_deactivate_schedule_action_settings(
 
 pub(crate) fn de_static_image_output_deactivate_schedule_action_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -60,7 +61,7 @@ where
                             );
                         }
                         "outputNames" => {
-                            builder = builder.set_output_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_output_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

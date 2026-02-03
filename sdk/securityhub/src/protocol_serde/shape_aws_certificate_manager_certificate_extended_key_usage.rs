@@ -14,6 +14,7 @@ pub fn ser_aws_certificate_manager_certificate_extended_key_usage(
 
 pub(crate) fn de_aws_certificate_manager_certificate_extended_key_usage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

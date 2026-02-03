@@ -7,6 +7,8 @@ pub struct UntagResourceInput {
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Kinesis resource from which to remove tags.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl UntagResourceInput {
     /// <p>A list of tag key-value pairs. Existing tags of the resource whose keys are members of this list will be removed from the Kinesis resource.</p>
@@ -18,6 +20,10 @@ impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis resource from which to remove tags.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
 }
 impl UntagResourceInput {
@@ -33,6 +39,7 @@ impl UntagResourceInput {
 pub struct UntagResourceInputBuilder {
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl UntagResourceInputBuilder {
     /// Appends an item to `tag_keys`.
@@ -70,6 +77,20 @@ impl UntagResourceInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(
         self,
@@ -77,6 +98,7 @@ impl UntagResourceInputBuilder {
         ::std::result::Result::Ok(crate::operation::untag_resource::UntagResourceInput {
             tag_keys: self.tag_keys,
             resource_arn: self.resource_arn,
+            stream_id: self.stream_id,
         })
     }
 }

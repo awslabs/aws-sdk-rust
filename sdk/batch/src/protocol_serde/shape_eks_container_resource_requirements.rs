@@ -28,6 +28,7 @@ pub fn ser_eks_container_resource_requirements(
 
 pub(crate) fn de_eks_container_resource_requirements<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksContainerResourceRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,10 +43,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "limits" => {
-                            builder = builder.set_limits(crate::protocol_serde::shape_eks_limits::de_eks_limits(tokens)?);
+                            builder = builder.set_limits(crate::protocol_serde::shape_eks_limits::de_eks_limits(tokens, _value)?);
                         }
                         "requests" => {
-                            builder = builder.set_requests(crate::protocol_serde::shape_eks_requests::de_eks_requests(tokens)?);
+                            builder = builder.set_requests(crate::protocol_serde::shape_eks_requests::de_eks_requests(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

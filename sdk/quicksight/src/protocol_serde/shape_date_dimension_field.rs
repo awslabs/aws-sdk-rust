@@ -29,6 +29,7 @@ pub fn ser_date_dimension_field(
 
 pub(crate) fn de_date_dimension_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DateDimensionField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "DateGranularity" => {
                             builder = builder.set_date_granularity(
@@ -68,7 +69,7 @@ where
                         }
                         "FormatConfiguration" => {
                             builder = builder.set_format_configuration(
-                                crate::protocol_serde::shape_date_time_format_configuration::de_date_time_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_date_time_format_configuration::de_date_time_format_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

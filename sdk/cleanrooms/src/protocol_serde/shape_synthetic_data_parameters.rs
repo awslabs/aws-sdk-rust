@@ -21,6 +21,7 @@ pub fn ser_synthetic_data_parameters(
 
 pub(crate) fn de_synthetic_data_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SyntheticDataParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,13 @@ where
                     }
                     variant = match key.as_ref() {
                         "mlSyntheticDataParameters" => Some(crate::types::SyntheticDataParameters::MlSyntheticDataParameters(
-                            crate::protocol_serde::shape_ml_synthetic_data_parameters::de_ml_synthetic_data_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'mlSyntheticDataParameters' cannot be null",
-                                )
-                            })?,
+                            crate::protocol_serde::shape_ml_synthetic_data_parameters::de_ml_synthetic_data_parameters(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'mlSyntheticDataParameters' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

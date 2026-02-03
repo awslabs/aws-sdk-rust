@@ -139,13 +139,13 @@ pub fn ser_describe_edge_configuration_input(
 }
 
 pub(crate) fn de_describe_edge_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,10 +159,10 @@ pub(crate) fn de_describe_edge_configuration(
                     )?);
                 }
                 "EdgeAgentStatus" => {
-                    builder = builder.set_edge_agent_status(crate::protocol_serde::shape_edge_agent_status::de_edge_agent_status(tokens)?);
+                    builder = builder.set_edge_agent_status(crate::protocol_serde::shape_edge_agent_status::de_edge_agent_status(tokens, _value)?);
                 }
                 "EdgeConfig" => {
-                    builder = builder.set_edge_config(crate::protocol_serde::shape_edge_config::de_edge_config(tokens)?);
+                    builder = builder.set_edge_config(crate::protocol_serde::shape_edge_config::de_edge_config(tokens, _value)?);
                 }
                 "FailedStatusDetails" => {
                     builder = builder.set_failed_status_details(

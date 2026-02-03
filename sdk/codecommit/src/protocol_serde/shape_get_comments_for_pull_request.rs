@@ -374,13 +374,13 @@ pub fn ser_get_comments_for_pull_request_input(
 }
 
 pub(crate) fn de_get_comments_for_pull_request(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_comments_for_pull_request::builders::GetCommentsForPullRequestOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -389,7 +389,7 @@ pub(crate) fn de_get_comments_for_pull_request(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "commentsForPullRequestData" => {
                     builder = builder.set_comments_for_pull_request_data(
-                        crate::protocol_serde::shape_comments_for_pull_request_data::de_comments_for_pull_request_data(tokens)?,
+                        crate::protocol_serde::shape_comments_for_pull_request_data::de_comments_for_pull_request_data(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

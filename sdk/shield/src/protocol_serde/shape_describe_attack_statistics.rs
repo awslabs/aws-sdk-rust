@@ -71,13 +71,13 @@ pub fn ser_describe_attack_statistics_input(
 }
 
 pub(crate) fn de_describe_attack_statistics(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -85,11 +85,11 @@ pub(crate) fn de_describe_attack_statistics(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TimeRange" => {
-                    builder = builder.set_time_range(crate::protocol_serde::shape_time_range::de_time_range(tokens)?);
+                    builder = builder.set_time_range(crate::protocol_serde::shape_time_range::de_time_range(tokens, _value)?);
                 }
                 "DataItems" => {
                     builder = builder.set_data_items(crate::protocol_serde::shape_attack_statistics_data_list::de_attack_statistics_data_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

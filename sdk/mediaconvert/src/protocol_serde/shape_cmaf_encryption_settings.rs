@@ -32,6 +32,7 @@ pub fn ser_cmaf_encryption_settings(
 
 pub(crate) fn de_cmaf_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CmafEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,12 +71,13 @@ where
                             );
                         }
                         "spekeKeyProvider" => {
-                            builder = builder
-                                .set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens)?);
+                            builder = builder.set_speke_key_provider(
+                                crate::protocol_serde::shape_speke_key_provider_cmaf::de_speke_key_provider_cmaf(tokens, _value)?,
+                            );
                         }
                         "staticKeyProvider" => {
-                            builder =
-                                builder.set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens)?);
+                            builder = builder
+                                .set_static_key_provider(crate::protocol_serde::shape_static_key_provider::de_static_key_provider(tokens, _value)?);
                         }
                         "type" => {
                             builder = builder.set_type(

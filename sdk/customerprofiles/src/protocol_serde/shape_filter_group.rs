@@ -23,6 +23,7 @@ pub fn ser_filter_group(
 
 pub(crate) fn de_filter_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,9 @@ where
                             );
                         }
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_filter_dimension_list::de_filter_dimension_list(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_filter_dimension_list::de_filter_dimension_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

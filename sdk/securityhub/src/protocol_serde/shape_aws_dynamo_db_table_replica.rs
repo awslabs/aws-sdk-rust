@@ -41,6 +41,7 @@ pub fn ser_aws_dynamo_db_table_replica(
 
 pub(crate) fn de_aws_dynamo_db_table_replica<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsDynamoDbTableReplica>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "GlobalSecondaryIndexes" => {
                             builder = builder.set_global_secondary_indexes(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_replica_global_secondary_index_list::de_aws_dynamo_db_table_replica_global_secondary_index_list(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_replica_global_secondary_index_list::de_aws_dynamo_db_table_replica_global_secondary_index_list(tokens, _value)?
                                 );
                         }
                         "KmsMasterKeyId" => {
@@ -68,7 +69,7 @@ where
                         }
                         "ProvisionedThroughputOverride" => {
                             builder = builder.set_provisioned_throughput_override(
-                                    crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::de_aws_dynamo_db_table_provisioned_throughput_override(tokens)?
+                                    crate::protocol_serde::shape_aws_dynamo_db_table_provisioned_throughput_override::de_aws_dynamo_db_table_provisioned_throughput_override(tokens, _value)?
                                 );
                         }
                         "RegionName" => {

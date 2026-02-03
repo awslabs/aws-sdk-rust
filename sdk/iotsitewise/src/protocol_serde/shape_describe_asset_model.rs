@@ -106,13 +106,13 @@ pub fn de_describe_asset_model_http_response(
 }
 
 pub(crate) fn de_describe_asset_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,12 +128,12 @@ pub(crate) fn de_describe_asset_model(
                 }
                 "assetModelCompositeModelSummaries" => {
                     builder = builder.set_asset_model_composite_model_summaries(
-                        crate::protocol_serde::shape_asset_model_composite_model_summaries::de_asset_model_composite_model_summaries(tokens)?,
+                        crate::protocol_serde::shape_asset_model_composite_model_summaries::de_asset_model_composite_model_summaries(tokens, _value)?,
                     );
                 }
                 "assetModelCompositeModels" => {
                     builder = builder.set_asset_model_composite_models(
-                        crate::protocol_serde::shape_asset_model_composite_models::de_asset_model_composite_models(tokens)?,
+                        crate::protocol_serde::shape_asset_model_composite_models::de_asset_model_composite_models(tokens, _value)?,
                     );
                 }
                 "assetModelCreationDate" => {
@@ -157,8 +157,9 @@ pub(crate) fn de_describe_asset_model(
                     );
                 }
                 "assetModelHierarchies" => {
-                    builder = builder
-                        .set_asset_model_hierarchies(crate::protocol_serde::shape_asset_model_hierarchies::de_asset_model_hierarchies(tokens)?);
+                    builder = builder.set_asset_model_hierarchies(crate::protocol_serde::shape_asset_model_hierarchies::de_asset_model_hierarchies(
+                        tokens, _value,
+                    )?);
                 }
                 "assetModelId" => {
                     builder = builder.set_asset_model_id(
@@ -181,11 +182,12 @@ pub(crate) fn de_describe_asset_model(
                     );
                 }
                 "assetModelProperties" => {
-                    builder =
-                        builder.set_asset_model_properties(crate::protocol_serde::shape_asset_model_properties::de_asset_model_properties(tokens)?);
+                    builder = builder.set_asset_model_properties(crate::protocol_serde::shape_asset_model_properties::de_asset_model_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "assetModelStatus" => {
-                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens)?);
+                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens, _value)?);
                 }
                 "assetModelType" => {
                     builder = builder.set_asset_model_type(
@@ -202,7 +204,7 @@ pub(crate) fn de_describe_asset_model(
                     );
                 }
                 "interfaceDetails" => {
-                    builder = builder.set_interface_details(crate::protocol_serde::shape_interface_details::de_interface_details(tokens)?);
+                    builder = builder.set_interface_details(crate::protocol_serde::shape_interface_details::de_interface_details(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

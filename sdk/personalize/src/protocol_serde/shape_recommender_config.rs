@@ -33,6 +33,7 @@ pub fn ser_recommender_config(
 
 pub(crate) fn de_recommender_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecommenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,8 +48,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "itemExplorationConfig" => {
-                            builder =
-                                builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                            builder = builder
+                                .set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                         }
                         "minRecommendationRequestsPerSecond" => {
                             builder = builder.set_min_recommendation_requests_per_second(
@@ -58,8 +59,9 @@ where
                             );
                         }
                         "trainingDataConfig" => {
-                            builder =
-                                builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                            builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(
+                                tokens, _value,
+                            )?);
                         }
                         "enableMetadataWithRecommendations" => {
                             builder = builder

@@ -77,6 +77,7 @@ pub fn ser_s3_json_source(
 
 pub(crate) fn de_s3_json_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3JsonSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -98,8 +99,9 @@ where
                             );
                         }
                         "Paths" => {
-                            builder = builder
-                                .set_paths(crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?);
+                            builder = builder.set_paths(
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
+                            );
                         }
                         "CompressionType" => {
                             builder = builder.set_compression_type(
@@ -110,7 +112,7 @@ where
                         }
                         "Exclusions" => {
                             builder = builder.set_exclusions(
-                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties::de_enclosed_in_string_properties(tokens, _value)?,
                             );
                         }
                         "GroupSize" => {
@@ -146,7 +148,9 @@ where
                         }
                         "AdditionalOptions" => {
                             builder = builder.set_additional_options(
-                                crate::protocol_serde::shape_s3_direct_source_additional_options::de_s3_direct_source_additional_options(tokens)?,
+                                crate::protocol_serde::shape_s3_direct_source_additional_options::de_s3_direct_source_additional_options(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "JsonPath" => {
@@ -160,7 +164,7 @@ where
                             builder = builder.set_multiline(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

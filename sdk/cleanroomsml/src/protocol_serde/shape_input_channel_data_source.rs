@@ -21,6 +21,7 @@ pub fn ser_input_channel_data_source(
 
 pub(crate) fn de_input_channel_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputChannelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,13 +51,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "protectedQueryInputParameters" => Some(crate::types::InputChannelDataSource::ProtectedQueryInputParameters(
-                            crate::protocol_serde::shape_protected_query_input_parameters::de_protected_query_input_parameters(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_protected_query_input_parameters::de_protected_query_input_parameters(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'protectedQueryInputParameters' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

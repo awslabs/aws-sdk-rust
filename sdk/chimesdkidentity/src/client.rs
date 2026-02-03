@@ -153,7 +153,7 @@ mod create_app_instance_user;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_chimesdkidentity::Error> {
 /// # let client: aws_sdk_chimesdkidentity::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_app_instance()
 ///     .customize()

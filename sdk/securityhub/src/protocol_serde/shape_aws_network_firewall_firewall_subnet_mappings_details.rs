@@ -11,6 +11,7 @@ pub fn ser_aws_network_firewall_firewall_subnet_mappings_details(
 
 pub(crate) fn de_aws_network_firewall_firewall_subnet_mappings_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

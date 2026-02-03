@@ -131,12 +131,12 @@ pub fn de_update_channel_http_response(
 
 pub fn ser_update_channel_headers(
     input: &crate::operation::update_channel::UpdateChannelInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.e_tag {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "e_tag",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -158,13 +158,13 @@ pub fn ser_update_channel_input(
 }
 
 pub(crate) fn de_update_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_channel::builders::UpdateChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_channel::builders::UpdateChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -213,11 +213,13 @@ pub(crate) fn de_update_channel(
                     );
                 }
                 "IngestEndpoints" => {
-                    builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(tokens)?);
+                    builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(
+                        tokens, _value,
+                    )?);
                 }
                 "InputSwitchConfiguration" => {
                     builder = builder.set_input_switch_configuration(
-                        crate::protocol_serde::shape_input_switch_configuration::de_input_switch_configuration(tokens)?,
+                        crate::protocol_serde::shape_input_switch_configuration::de_input_switch_configuration(tokens, _value)?,
                     );
                 }
                 "InputType" => {
@@ -235,11 +237,11 @@ pub(crate) fn de_update_channel(
                 }
                 "OutputHeaderConfiguration" => {
                     builder = builder.set_output_header_configuration(
-                        crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens)?,
+                        crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens, _value)?,
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

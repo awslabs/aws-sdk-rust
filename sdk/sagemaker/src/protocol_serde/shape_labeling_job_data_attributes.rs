@@ -17,6 +17,7 @@ pub fn ser_labeling_job_data_attributes(
 
 pub(crate) fn de_labeling_job_data_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LabelingJobDataAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,8 +32,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ContentClassifiers" => {
-                            builder =
-                                builder.set_content_classifiers(crate::protocol_serde::shape_content_classifiers::de_content_classifiers(tokens)?);
+                            builder = builder
+                                .set_content_classifiers(crate::protocol_serde::shape_content_classifiers::de_content_classifiers(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

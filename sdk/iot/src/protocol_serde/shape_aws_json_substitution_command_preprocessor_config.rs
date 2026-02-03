@@ -11,6 +11,7 @@ pub fn ser_aws_json_substitution_command_preprocessor_config(
 
 pub(crate) fn de_aws_json_substitution_command_preprocessor_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsJsonSubstitutionCommandPreprocessorConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -147,7 +147,7 @@ mod bulk_publish;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cognitosync::Error> {
 /// # let client: aws_sdk_cognitosync::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.bulk_publish()
 ///     .customize()

@@ -56,6 +56,7 @@ pub fn ser_dynamic_transform(
 
 pub(crate) fn de_dynamic_transform<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DynamicTransform>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,11 +85,11 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "Parameters" => {
                             builder = builder.set_parameters(
-                                crate::protocol_serde::shape_transform_config_parameter_list::de_transform_config_parameter_list(tokens)?,
+                                crate::protocol_serde::shape_transform_config_parameter_list::de_transform_config_parameter_list(tokens, _value)?,
                             );
                         }
                         "FunctionName" => {
@@ -113,7 +114,7 @@ where
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_asset_bundle_export_job_refresh_schedule_override_properties(
 
 pub(crate) fn de_asset_bundle_export_job_refresh_schedule_override_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AssetBundleExportJobRefreshScheduleOverrideProperties>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -45,7 +46,7 @@ where
                         }
                         "Properties" => {
                             builder = builder.set_properties(
-                                    crate::protocol_serde::shape_asset_bundle_export_job_refresh_schedule_property_to_override_list::de_asset_bundle_export_job_refresh_schedule_property_to_override_list(tokens)?
+                                    crate::protocol_serde::shape_asset_bundle_export_job_refresh_schedule_property_to_override_list::de_asset_bundle_export_job_refresh_schedule_property_to_override_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

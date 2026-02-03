@@ -25,6 +25,7 @@ pub fn ser_column_statistics(
 
 pub(crate) fn de_column_statistics<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnStatistics>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,8 +60,9 @@ where
                             )?);
                         }
                         "StatisticsData" => {
-                            builder =
-                                builder.set_statistics_data(crate::protocol_serde::shape_column_statistics_data::de_column_statistics_data(tokens)?);
+                            builder = builder.set_statistics_data(crate::protocol_serde::shape_column_statistics_data::de_column_statistics_data(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

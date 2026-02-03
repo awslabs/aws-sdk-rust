@@ -8,6 +8,8 @@ pub struct StreamDescriptionSummary {
     pub stream_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
     pub stream_arn: ::std::string::String,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
     /// <ul>
     /// <li>
@@ -69,6 +71,10 @@ impl StreamDescriptionSummary {
     pub fn stream_arn(&self) -> &str {
         use std::ops::Deref;
         self.stream_arn.deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
     /// <ul>
@@ -157,6 +163,7 @@ impl StreamDescriptionSummary {
 pub struct StreamDescriptionSummaryBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_status: ::std::option::Option<crate::types::StreamStatus>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     pub(crate) retention_period_hours: ::std::option::Option<i32>,
@@ -199,6 +206,20 @@ impl StreamDescriptionSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>The current status of the stream being described. The stream status is one of the following states:</p>
     /// <ul>
@@ -471,6 +492,7 @@ impl StreamDescriptionSummaryBuilder {
                     "stream_arn was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
+            stream_id: self.stream_id,
             stream_status: self.stream_status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_status",

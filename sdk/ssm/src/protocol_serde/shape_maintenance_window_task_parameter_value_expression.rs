@@ -17,6 +17,7 @@ pub fn ser_maintenance_window_task_parameter_value_expression(
 
 pub(crate) fn de_maintenance_window_task_parameter_value_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MaintenanceWindowTaskParameterValueExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Values" => {
                             builder = builder.set_values(
-                                    crate::protocol_serde::shape_maintenance_window_task_parameter_value_list::de_maintenance_window_task_parameter_value_list(tokens)?
+                                    crate::protocol_serde::shape_maintenance_window_task_parameter_value_list::de_maintenance_window_task_parameter_value_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

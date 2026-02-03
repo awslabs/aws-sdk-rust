@@ -20,6 +20,7 @@ pub fn ser_basic_layout(
 
 pub(crate) fn de_basic_layout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BasicLayout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "topPanel" => {
-                            builder = builder.set_top_panel(crate::protocol_serde::shape_layout_sections::de_layout_sections(tokens)?);
+                            builder = builder.set_top_panel(crate::protocol_serde::shape_layout_sections::de_layout_sections(tokens, _value)?);
                         }
                         "moreInfo" => {
-                            builder = builder.set_more_info(crate::protocol_serde::shape_layout_sections::de_layout_sections(tokens)?);
+                            builder = builder.set_more_info(crate::protocol_serde::shape_layout_sections::de_layout_sections(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

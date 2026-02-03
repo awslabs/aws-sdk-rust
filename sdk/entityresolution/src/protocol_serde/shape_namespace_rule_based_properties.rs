@@ -41,6 +41,7 @@ pub fn ser_namespace_rule_based_properties(
 
 pub(crate) fn de_namespace_rule_based_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NamespaceRuleBasedProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,11 +56,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "rules" => {
-                            builder = builder.set_rules(crate::protocol_serde::shape_rule_list::de_rule_list(tokens)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_rule_list::de_rule_list(tokens, _value)?);
                         }
                         "ruleDefinitionTypes" => {
                             builder = builder.set_rule_definition_types(
-                                    crate::protocol_serde::shape_id_mapping_workflow_rule_definition_type_list::de_id_mapping_workflow_rule_definition_type_list(tokens)?
+                                    crate::protocol_serde::shape_id_mapping_workflow_rule_definition_type_list::de_id_mapping_workflow_rule_definition_type_list(tokens, _value)?
                                 );
                         }
                         "attributeMatchingModel" => {
@@ -71,7 +72,7 @@ where
                         }
                         "recordMatchingModels" => {
                             builder = builder.set_record_matching_models(
-                                crate::protocol_serde::shape_record_matching_model_list::de_record_matching_model_list(tokens)?,
+                                crate::protocol_serde::shape_record_matching_model_list::de_record_matching_model_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

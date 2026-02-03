@@ -122,6 +122,7 @@ pub fn ser_cmaf_group_settings(
 
 pub(crate) fn de_cmaf_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CmafGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -137,7 +138,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "additionalManifests" => {
                             builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape_list_of_cmaf_additional_manifest::de_list_of_cmaf_additional_manifest(tokens)?,
+                                crate::protocol_serde::shape_list_of_cmaf_additional_manifest::de_list_of_cmaf_additional_manifest(tokens, _value)?,
                             );
                         }
                         "baseUrl" => {
@@ -183,12 +184,13 @@ where
                             );
                         }
                         "destinationSettings" => {
-                            builder =
-                                builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(tokens)?);
+                            builder = builder.set_destination_settings(crate::protocol_serde::shape_destination_settings::de_destination_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "encryption" => {
                             builder = builder.set_encryption(crate::protocol_serde::shape_cmaf_encryption_settings::de_cmaf_encryption_settings(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "fragmentLength" => {
@@ -207,7 +209,9 @@ where
                         }
                         "imageBasedTrickPlaySettings" => {
                             builder = builder.set_image_based_trick_play_settings(
-                                crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::de_cmaf_image_based_trick_play_settings(tokens)?,
+                                crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::de_cmaf_image_based_trick_play_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "manifestCompression" => {

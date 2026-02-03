@@ -23,6 +23,7 @@ pub fn ser_message_data(
 
 pub(crate) fn de_message_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,11 +53,11 @@ where
                     }
                     variant = match key.as_ref() {
                         "text" => Some(crate::types::MessageData::Text(
-                            crate::protocol_serde::shape_text_message::de_text_message(tokens)?
+                            crate::protocol_serde::shape_text_message::de_text_message(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "toolUseResult" => Some(crate::types::MessageData::ToolUseResult(
-                            crate::protocol_serde::shape_tool_use_result_data::de_tool_use_result_data(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tool_use_result_data::de_tool_use_result_data(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUseResult' cannot be null")
                             })?,
                         )),

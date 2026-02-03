@@ -17,6 +17,7 @@ pub fn ser_backend_api_auth_type(
 
 pub(crate) fn de_backend_api_auth_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BackendApiAuthType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,9 @@ where
                         }
                         "settings" => {
                             builder = builder.set_settings(
-                                crate::protocol_serde::shape_backend_api_app_sync_auth_settings::de_backend_api_app_sync_auth_settings(tokens)?,
+                                crate::protocol_serde::shape_backend_api_app_sync_auth_settings::de_backend_api_app_sync_auth_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

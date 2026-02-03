@@ -32,6 +32,7 @@ pub fn ser_av1_color_space_settings(
 
 pub(crate) fn de_av1_color_space_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Av1ColorSpaceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,17 +48,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "colorSpacePassthroughSettings" => {
                             builder = builder.set_color_space_passthrough_settings(
-                                crate::protocol_serde::shape_color_space_passthrough_settings::de_color_space_passthrough_settings(tokens)?,
+                                crate::protocol_serde::shape_color_space_passthrough_settings::de_color_space_passthrough_settings(tokens, _value)?,
                             );
                         }
                         "hdr10Settings" => {
-                            builder = builder.set_hdr10_settings(crate::protocol_serde::shape_hdr10_settings::de_hdr10_settings(tokens)?);
+                            builder = builder.set_hdr10_settings(crate::protocol_serde::shape_hdr10_settings::de_hdr10_settings(tokens, _value)?);
                         }
                         "rec601Settings" => {
-                            builder = builder.set_rec601_settings(crate::protocol_serde::shape_rec601_settings::de_rec601_settings(tokens)?);
+                            builder = builder.set_rec601_settings(crate::protocol_serde::shape_rec601_settings::de_rec601_settings(tokens, _value)?);
                         }
                         "rec709Settings" => {
-                            builder = builder.set_rec709_settings(crate::protocol_serde::shape_rec709_settings::de_rec709_settings(tokens)?);
+                            builder = builder.set_rec709_settings(crate::protocol_serde::shape_rec709_settings::de_rec709_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

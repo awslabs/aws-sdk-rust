@@ -35,6 +35,7 @@ pub fn ser_event_selector(
 
 pub(crate) fn de_event_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,11 +61,11 @@ where
                                 builder.set_include_management_events(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DataResources" => {
-                            builder = builder.set_data_resources(crate::protocol_serde::shape_data_resources::de_data_resources(tokens)?);
+                            builder = builder.set_data_resources(crate::protocol_serde::shape_data_resources::de_data_resources(tokens, _value)?);
                         }
                         "ExcludeManagementEventSources" => {
                             builder = builder.set_exclude_management_event_sources(
-                                crate::protocol_serde::shape_exclude_management_event_sources::de_exclude_management_event_sources(tokens)?,
+                                crate::protocol_serde::shape_exclude_management_event_sources::de_exclude_management_event_sources(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_default_filter_drop_down_control_options(
 
 pub(crate) fn de_default_filter_drop_down_control_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DefaultFilterDropDownControlOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                crate::protocol_serde::shape_drop_down_control_display_options::de_drop_down_control_display_options(tokens)?,
+                                crate::protocol_serde::shape_drop_down_control_display_options::de_drop_down_control_display_options(tokens, _value)?,
                             );
                         }
                         "Type" => {
@@ -53,7 +54,7 @@ where
                         }
                         "SelectableValues" => {
                             builder = builder.set_selectable_values(
-                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens)?,
+                                crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens, _value)?,
                             );
                         }
                         "CommitMode" => {

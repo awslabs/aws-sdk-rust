@@ -14,6 +14,7 @@ pub fn ser_text_log_destination(
 
 pub(crate) fn de_text_log_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cloudWatch" => {
                             builder = builder.set_cloud_watch(
-                                crate::protocol_serde::shape_cloud_watch_log_group_log_destination::de_cloud_watch_log_group_log_destination(tokens)?,
+                                crate::protocol_serde::shape_cloud_watch_log_group_log_destination::de_cloud_watch_log_group_log_destination(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

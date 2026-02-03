@@ -120,13 +120,13 @@ pub fn ser_list_variant_stores_input(
 }
 
 pub(crate) fn de_list_variant_stores(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_variant_stores::builders::ListVariantStoresOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,7 +141,7 @@ pub(crate) fn de_list_variant_stores(
                     );
                 }
                 "variantStores" => {
-                    builder = builder.set_variant_stores(crate::protocol_serde::shape_variant_store_items::de_variant_store_items(tokens)?);
+                    builder = builder.set_variant_stores(crate::protocol_serde::shape_variant_store_items::de_variant_store_items(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

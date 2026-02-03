@@ -93,13 +93,13 @@ pub fn ser_get_protocols_list_input(
 }
 
 pub(crate) fn de_get_protocols_list(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_protocols_list::builders::GetProtocolsListOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_protocols_list::builders::GetProtocolsListOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_get_protocols_list(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProtocolsList" => {
-                    builder = builder.set_protocols_list(crate::protocol_serde::shape_protocols_list_data::de_protocols_list_data(tokens)?);
+                    builder = builder.set_protocols_list(crate::protocol_serde::shape_protocols_list_data::de_protocols_list_data(tokens, _value)?);
                 }
                 "ProtocolsListArn" => {
                     builder = builder.set_protocols_list_arn(

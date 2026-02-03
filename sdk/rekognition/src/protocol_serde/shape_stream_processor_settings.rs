@@ -20,6 +20,7 @@ pub fn ser_stream_processor_settings(
 
 pub(crate) fn de_stream_processor_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StreamProcessorSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FaceSearch" => {
-                            builder = builder.set_face_search(crate::protocol_serde::shape_face_search_settings::de_face_search_settings(tokens)?);
+                            builder = builder.set_face_search(crate::protocol_serde::shape_face_search_settings::de_face_search_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "ConnectedHome" => {
-                            builder =
-                                builder.set_connected_home(crate::protocol_serde::shape_connected_home_settings::de_connected_home_settings(tokens)?);
+                            builder = builder.set_connected_home(crate::protocol_serde::shape_connected_home_settings::de_connected_home_settings(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -133,13 +133,13 @@ pub fn de_delete_brand_assignment_http_response(
 }
 
 pub(crate) fn de_delete_brand_assignment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_brand_assignment::builders::DeleteBrandAssignmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_brand_assignment::builders::DeleteBrandAssignmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

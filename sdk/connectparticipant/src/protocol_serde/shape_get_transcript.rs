@@ -95,12 +95,12 @@ pub fn de_get_transcript_http_response(
 
 pub fn ser_get_transcript_headers(
     input: &crate::operation::get_transcript::GetTranscriptInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.connection_token {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "connection_token",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -122,13 +122,13 @@ pub fn ser_get_transcript_input(
 }
 
 pub(crate) fn de_get_transcript(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_transcript::builders::GetTranscriptOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_transcript::builders::GetTranscriptOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_get_transcript(
                     );
                 }
                 "Transcript" => {
-                    builder = builder.set_transcript(crate::protocol_serde::shape_transcript::de_transcript(tokens)?);
+                    builder = builder.set_transcript(crate::protocol_serde::shape_transcript::de_transcript(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

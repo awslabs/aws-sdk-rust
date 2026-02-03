@@ -151,7 +151,7 @@ mod create_flow;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_appflow::Error> {
 /// # let client: aws_sdk_appflow::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_flow_executions()
 ///     .customize()

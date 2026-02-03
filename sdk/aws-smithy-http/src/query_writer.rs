@@ -4,8 +4,8 @@
  */
 
 use crate::query::fmt_string as percent_encode_query;
-use http_02x::uri::InvalidUri;
-use http_02x::Uri;
+use http_1x::uri::InvalidUri;
+use http_1x::Uri;
 
 /// Utility for updating the query string in a [`Uri`].
 #[allow(missing_debug_implementations)]
@@ -87,7 +87,7 @@ impl QueryWriter {
 #[cfg(test)]
 mod test {
     use super::QueryWriter;
-    use http_02x::Uri;
+    use http_1x::Uri;
 
     #[test]
     fn empty_uri() {

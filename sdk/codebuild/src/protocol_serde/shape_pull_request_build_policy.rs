@@ -20,6 +20,7 @@ pub fn ser_pull_request_build_policy(
 
 pub(crate) fn de_pull_request_build_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PullRequestBuildPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "approverRoles" => {
                             builder = builder.set_approver_roles(
-                                crate::protocol_serde::shape_pull_request_build_approver_roles::de_pull_request_build_approver_roles(tokens)?,
+                                crate::protocol_serde::shape_pull_request_build_approver_roles::de_pull_request_build_approver_roles(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

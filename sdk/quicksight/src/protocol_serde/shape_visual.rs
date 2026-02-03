@@ -158,6 +158,7 @@ pub fn ser_visual(
 
 pub(crate) fn de_visual<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Visual>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -172,84 +173,99 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TableVisual" => {
-                            builder = builder.set_table_visual(crate::protocol_serde::shape_table_visual::de_table_visual(tokens)?);
+                            builder = builder.set_table_visual(crate::protocol_serde::shape_table_visual::de_table_visual(tokens, _value)?);
                         }
                         "PivotTableVisual" => {
-                            builder = builder.set_pivot_table_visual(crate::protocol_serde::shape_pivot_table_visual::de_pivot_table_visual(tokens)?);
+                            builder = builder
+                                .set_pivot_table_visual(crate::protocol_serde::shape_pivot_table_visual::de_pivot_table_visual(tokens, _value)?);
                         }
                         "BarChartVisual" => {
-                            builder = builder.set_bar_chart_visual(crate::protocol_serde::shape_bar_chart_visual::de_bar_chart_visual(tokens)?);
+                            builder =
+                                builder.set_bar_chart_visual(crate::protocol_serde::shape_bar_chart_visual::de_bar_chart_visual(tokens, _value)?);
                         }
                         "KPIVisual" => {
-                            builder = builder.set_kpi_visual(crate::protocol_serde::shape_kpi_visual::de_kpi_visual(tokens)?);
+                            builder = builder.set_kpi_visual(crate::protocol_serde::shape_kpi_visual::de_kpi_visual(tokens, _value)?);
                         }
                         "PieChartVisual" => {
-                            builder = builder.set_pie_chart_visual(crate::protocol_serde::shape_pie_chart_visual::de_pie_chart_visual(tokens)?);
+                            builder =
+                                builder.set_pie_chart_visual(crate::protocol_serde::shape_pie_chart_visual::de_pie_chart_visual(tokens, _value)?);
                         }
                         "GaugeChartVisual" => {
-                            builder = builder.set_gauge_chart_visual(crate::protocol_serde::shape_gauge_chart_visual::de_gauge_chart_visual(tokens)?);
+                            builder = builder
+                                .set_gauge_chart_visual(crate::protocol_serde::shape_gauge_chart_visual::de_gauge_chart_visual(tokens, _value)?);
                         }
                         "LineChartVisual" => {
-                            builder = builder.set_line_chart_visual(crate::protocol_serde::shape_line_chart_visual::de_line_chart_visual(tokens)?);
+                            builder =
+                                builder.set_line_chart_visual(crate::protocol_serde::shape_line_chart_visual::de_line_chart_visual(tokens, _value)?);
                         }
                         "HeatMapVisual" => {
-                            builder = builder.set_heat_map_visual(crate::protocol_serde::shape_heat_map_visual::de_heat_map_visual(tokens)?);
+                            builder = builder.set_heat_map_visual(crate::protocol_serde::shape_heat_map_visual::de_heat_map_visual(tokens, _value)?);
                         }
                         "TreeMapVisual" => {
-                            builder = builder.set_tree_map_visual(crate::protocol_serde::shape_tree_map_visual::de_tree_map_visual(tokens)?);
+                            builder = builder.set_tree_map_visual(crate::protocol_serde::shape_tree_map_visual::de_tree_map_visual(tokens, _value)?);
                         }
                         "GeospatialMapVisual" => {
-                            builder = builder
-                                .set_geospatial_map_visual(crate::protocol_serde::shape_geospatial_map_visual::de_geospatial_map_visual(tokens)?);
+                            builder = builder.set_geospatial_map_visual(
+                                crate::protocol_serde::shape_geospatial_map_visual::de_geospatial_map_visual(tokens, _value)?,
+                            );
                         }
                         "FilledMapVisual" => {
-                            builder = builder.set_filled_map_visual(crate::protocol_serde::shape_filled_map_visual::de_filled_map_visual(tokens)?);
+                            builder =
+                                builder.set_filled_map_visual(crate::protocol_serde::shape_filled_map_visual::de_filled_map_visual(tokens, _value)?);
                         }
                         "LayerMapVisual" => {
-                            builder = builder.set_layer_map_visual(crate::protocol_serde::shape_layer_map_visual::de_layer_map_visual(tokens)?);
+                            builder =
+                                builder.set_layer_map_visual(crate::protocol_serde::shape_layer_map_visual::de_layer_map_visual(tokens, _value)?);
                         }
                         "FunnelChartVisual" => {
-                            builder =
-                                builder.set_funnel_chart_visual(crate::protocol_serde::shape_funnel_chart_visual::de_funnel_chart_visual(tokens)?);
+                            builder = builder
+                                .set_funnel_chart_visual(crate::protocol_serde::shape_funnel_chart_visual::de_funnel_chart_visual(tokens, _value)?);
                         }
                         "ScatterPlotVisual" => {
-                            builder =
-                                builder.set_scatter_plot_visual(crate::protocol_serde::shape_scatter_plot_visual::de_scatter_plot_visual(tokens)?);
+                            builder = builder
+                                .set_scatter_plot_visual(crate::protocol_serde::shape_scatter_plot_visual::de_scatter_plot_visual(tokens, _value)?);
                         }
                         "ComboChartVisual" => {
-                            builder = builder.set_combo_chart_visual(crate::protocol_serde::shape_combo_chart_visual::de_combo_chart_visual(tokens)?);
+                            builder = builder
+                                .set_combo_chart_visual(crate::protocol_serde::shape_combo_chart_visual::de_combo_chart_visual(tokens, _value)?);
                         }
                         "BoxPlotVisual" => {
-                            builder = builder.set_box_plot_visual(crate::protocol_serde::shape_box_plot_visual::de_box_plot_visual(tokens)?);
+                            builder = builder.set_box_plot_visual(crate::protocol_serde::shape_box_plot_visual::de_box_plot_visual(tokens, _value)?);
                         }
                         "WaterfallVisual" => {
-                            builder = builder.set_waterfall_visual(crate::protocol_serde::shape_waterfall_visual::de_waterfall_visual(tokens)?);
+                            builder =
+                                builder.set_waterfall_visual(crate::protocol_serde::shape_waterfall_visual::de_waterfall_visual(tokens, _value)?);
                         }
                         "HistogramVisual" => {
-                            builder = builder.set_histogram_visual(crate::protocol_serde::shape_histogram_visual::de_histogram_visual(tokens)?);
+                            builder =
+                                builder.set_histogram_visual(crate::protocol_serde::shape_histogram_visual::de_histogram_visual(tokens, _value)?);
                         }
                         "WordCloudVisual" => {
-                            builder = builder.set_word_cloud_visual(crate::protocol_serde::shape_word_cloud_visual::de_word_cloud_visual(tokens)?);
+                            builder =
+                                builder.set_word_cloud_visual(crate::protocol_serde::shape_word_cloud_visual::de_word_cloud_visual(tokens, _value)?);
                         }
                         "InsightVisual" => {
-                            builder = builder.set_insight_visual(crate::protocol_serde::shape_insight_visual::de_insight_visual(tokens)?);
+                            builder = builder.set_insight_visual(crate::protocol_serde::shape_insight_visual::de_insight_visual(tokens, _value)?);
                         }
                         "SankeyDiagramVisual" => {
-                            builder = builder
-                                .set_sankey_diagram_visual(crate::protocol_serde::shape_sankey_diagram_visual::de_sankey_diagram_visual(tokens)?);
+                            builder = builder.set_sankey_diagram_visual(
+                                crate::protocol_serde::shape_sankey_diagram_visual::de_sankey_diagram_visual(tokens, _value)?,
+                            );
                         }
                         "CustomContentVisual" => {
-                            builder = builder
-                                .set_custom_content_visual(crate::protocol_serde::shape_custom_content_visual::de_custom_content_visual(tokens)?);
+                            builder = builder.set_custom_content_visual(
+                                crate::protocol_serde::shape_custom_content_visual::de_custom_content_visual(tokens, _value)?,
+                            );
                         }
                         "EmptyVisual" => {
-                            builder = builder.set_empty_visual(crate::protocol_serde::shape_empty_visual::de_empty_visual(tokens)?);
+                            builder = builder.set_empty_visual(crate::protocol_serde::shape_empty_visual::de_empty_visual(tokens, _value)?);
                         }
                         "RadarChartVisual" => {
-                            builder = builder.set_radar_chart_visual(crate::protocol_serde::shape_radar_chart_visual::de_radar_chart_visual(tokens)?);
+                            builder = builder
+                                .set_radar_chart_visual(crate::protocol_serde::shape_radar_chart_visual::de_radar_chart_visual(tokens, _value)?);
                         }
                         "PluginVisual" => {
-                            builder = builder.set_plugin_visual(crate::protocol_serde::shape_plugin_visual::de_plugin_visual(tokens)?);
+                            builder = builder.set_plugin_visual(crate::protocol_serde::shape_plugin_visual::de_plugin_visual(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

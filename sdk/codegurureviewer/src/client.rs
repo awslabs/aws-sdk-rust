@@ -187,7 +187,7 @@ mod create_code_review;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codegurureviewer::Error> {
 /// # let client: aws_sdk_codegurureviewer::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_repository()
 ///     .customize()

@@ -153,13 +153,13 @@ pub fn ser_describe_image_scan_findings_input(
 }
 
 pub(crate) fn de_describe_image_scan_findings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -181,13 +181,14 @@ pub(crate) fn de_describe_image_scan_findings(
                     );
                 }
                 "imageId" => {
-                    builder = builder.set_image_id(crate::protocol_serde::shape_image_identifier::de_image_identifier(tokens)?);
+                    builder = builder.set_image_id(crate::protocol_serde::shape_image_identifier::de_image_identifier(tokens, _value)?);
                 }
                 "imageScanStatus" => {
-                    builder = builder.set_image_scan_status(crate::protocol_serde::shape_image_scan_status::de_image_scan_status(tokens)?);
+                    builder = builder.set_image_scan_status(crate::protocol_serde::shape_image_scan_status::de_image_scan_status(tokens, _value)?);
                 }
                 "imageScanFindings" => {
-                    builder = builder.set_image_scan_findings(crate::protocol_serde::shape_image_scan_findings::de_image_scan_findings(tokens)?);
+                    builder =
+                        builder.set_image_scan_findings(crate::protocol_serde::shape_image_scan_findings::de_image_scan_findings(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

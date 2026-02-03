@@ -26,6 +26,7 @@ pub fn ser_target_tracking_metric_data_query(
 
 pub(crate) fn de_target_tracking_metric_data_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetTrackingMetricDataQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,7 +63,7 @@ where
                         }
                         "MetricStat" => {
                             builder = builder.set_metric_stat(
-                                crate::protocol_serde::shape_target_tracking_metric_stat::de_target_tracking_metric_stat(tokens)?,
+                                crate::protocol_serde::shape_target_tracking_metric_stat::de_target_tracking_metric_stat(tokens, _value)?,
                             );
                         }
                         "ReturnData" => {

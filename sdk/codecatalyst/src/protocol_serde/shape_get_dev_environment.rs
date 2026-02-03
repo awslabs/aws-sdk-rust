@@ -129,13 +129,13 @@ pub fn de_get_dev_environment_http_response(
 }
 
 pub(crate) fn de_get_dev_environment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_dev_environment::builders::GetDevEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,7 +164,7 @@ pub(crate) fn de_get_dev_environment(
                     );
                 }
                 "ides" => {
-                    builder = builder.set_ides(crate::protocol_serde::shape_ides::de_ides(tokens)?);
+                    builder = builder.set_ides(crate::protocol_serde::shape_ides::de_ides(tokens, _value)?);
                 }
                 "inactivityTimeoutMinutes" => {
                     builder = builder.set_inactivity_timeout_minutes(
@@ -187,7 +187,7 @@ pub(crate) fn de_get_dev_environment(
                     )?);
                 }
                 "persistentStorage" => {
-                    builder = builder.set_persistent_storage(crate::protocol_serde::shape_persistent_storage::de_persistent_storage(tokens)?);
+                    builder = builder.set_persistent_storage(crate::protocol_serde::shape_persistent_storage::de_persistent_storage(tokens, _value)?);
                 }
                 "projectName" => {
                     builder = builder.set_project_name(
@@ -198,7 +198,7 @@ pub(crate) fn de_get_dev_environment(
                 }
                 "repositories" => {
                     builder = builder.set_repositories(
-                        crate::protocol_serde::shape_dev_environment_repository_summaries::de_dev_environment_repository_summaries(tokens)?,
+                        crate::protocol_serde::shape_dev_environment_repository_summaries::de_dev_environment_repository_summaries(tokens, _value)?,
                     );
                 }
                 "spaceName" => {

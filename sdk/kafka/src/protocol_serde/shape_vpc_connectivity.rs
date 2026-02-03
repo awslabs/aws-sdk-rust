@@ -14,6 +14,7 @@ pub fn ser_vpc_connectivity(
 
 pub(crate) fn de_vpc_connectivity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VpcConnectivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "clientAuthentication" => {
                             builder = builder.set_client_authentication(
                                 crate::protocol_serde::shape_vpc_connectivity_client_authentication::de_vpc_connectivity_client_authentication(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

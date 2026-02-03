@@ -23,6 +23,7 @@ pub fn ser_action(
 
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "CrossRegionCopy" => {
                             builder = builder.set_cross_region_copy(
-                                crate::protocol_serde::shape_cross_region_copy_action_list::de_cross_region_copy_action_list(tokens)?,
+                                crate::protocol_serde::shape_cross_region_copy_action_list::de_cross_region_copy_action_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

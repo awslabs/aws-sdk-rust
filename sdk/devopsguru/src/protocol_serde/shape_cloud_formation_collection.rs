@@ -17,6 +17,7 @@ pub fn ser_cloud_formation_collection(
 
 pub(crate) fn de_cloud_formation_collection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CloudFormationCollection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StackNames" => {
-                            builder = builder.set_stack_names(crate::protocol_serde::shape_stack_names::de_stack_names(tokens)?);
+                            builder = builder.set_stack_names(crate::protocol_serde::shape_stack_names::de_stack_names(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

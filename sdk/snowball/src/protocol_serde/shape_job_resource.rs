@@ -44,6 +44,7 @@ pub fn ser_job_resource(
 
 pub(crate) fn de_job_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,15 +59,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Resources" => {
-                            builder = builder.set_s3_resources(crate::protocol_serde::shape_s3_resource_list::de_s3_resource_list(tokens)?);
+                            builder = builder.set_s3_resources(crate::protocol_serde::shape_s3_resource_list::de_s3_resource_list(tokens, _value)?);
                         }
                         "LambdaResources" => {
-                            builder =
-                                builder.set_lambda_resources(crate::protocol_serde::shape_lambda_resource_list::de_lambda_resource_list(tokens)?);
+                            builder = builder.set_lambda_resources(crate::protocol_serde::shape_lambda_resource_list::de_lambda_resource_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Ec2AmiResources" => {
-                            builder =
-                                builder.set_ec2_ami_resources(crate::protocol_serde::shape_ec2_ami_resource_list::de_ec2_ami_resource_list(tokens)?);
+                            builder = builder.set_ec2_ami_resources(crate::protocol_serde::shape_ec2_ami_resource_list::de_ec2_ami_resource_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

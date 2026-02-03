@@ -14,6 +14,7 @@ pub fn ser_periodic_state_template_update_strategy(
 
 pub(crate) fn de_periodic_state_template_update_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PeriodicStateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "stateTemplateUpdateRate" => {
-                            builder = builder.set_state_template_update_rate(crate::protocol_serde::shape_time_period::de_time_period(tokens)?);
+                            builder =
+                                builder.set_state_template_update_rate(crate::protocol_serde::shape_time_period::de_time_period(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

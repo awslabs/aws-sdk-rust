@@ -50,6 +50,7 @@ pub fn ser_workspace_request(
 
 pub(crate) fn de_workspace_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,11 +101,12 @@ where
                                 .set_root_volume_encryption_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "WorkspaceProperties" => {
-                            builder =
-                                builder.set_workspace_properties(crate::protocol_serde::shape_workspace_properties::de_workspace_properties(tokens)?);
+                            builder = builder.set_workspace_properties(crate::protocol_serde::shape_workspace_properties::de_workspace_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                         }
                         "WorkspaceName" => {
                             builder = builder.set_workspace_name(

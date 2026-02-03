@@ -65,13 +65,13 @@ pub fn ser_describe_portfolio_input(
 }
 
 pub(crate) fn de_describe_portfolio(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -79,16 +79,16 @@ pub(crate) fn de_describe_portfolio(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "PortfolioDetail" => {
-                    builder = builder.set_portfolio_detail(crate::protocol_serde::shape_portfolio_detail::de_portfolio_detail(tokens)?);
+                    builder = builder.set_portfolio_detail(crate::protocol_serde::shape_portfolio_detail::de_portfolio_detail(tokens, _value)?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "TagOptions" => {
-                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_details::de_tag_option_details(tokens)?);
+                    builder = builder.set_tag_options(crate::protocol_serde::shape_tag_option_details::de_tag_option_details(tokens, _value)?);
                 }
                 "Budgets" => {
-                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens)?);
+                    builder = builder.set_budgets(crate::protocol_serde::shape_budgets::de_budgets(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

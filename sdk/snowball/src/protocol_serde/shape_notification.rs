@@ -26,6 +26,7 @@ pub fn ser_notification(
 
 pub(crate) fn de_notification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Notification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,8 @@ where
                             );
                         }
                         "JobStatesToNotify" => {
-                            builder = builder.set_job_states_to_notify(crate::protocol_serde::shape_job_state_list::de_job_state_list(tokens)?);
+                            builder =
+                                builder.set_job_states_to_notify(crate::protocol_serde::shape_job_state_list::de_job_state_list(tokens, _value)?);
                         }
                         "NotifyAll" => {
                             builder = builder.set_notify_all(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

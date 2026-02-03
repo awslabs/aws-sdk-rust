@@ -44,6 +44,7 @@ pub fn ser_resource_identifier(
 
 pub(crate) fn de_resource_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -87,7 +88,7 @@ where
                         }
                         "policyVersionIdentifier" => {
                             builder = builder.set_policy_version_identifier(
-                                crate::protocol_serde::shape_policy_version_identifier::de_policy_version_identifier(tokens)?,
+                                crate::protocol_serde::shape_policy_version_identifier::de_policy_version_identifier(tokens, _value)?,
                             );
                         }
                         "account" => {
@@ -113,7 +114,7 @@ where
                         }
                         "issuerCertificateIdentifier" => {
                             builder = builder.set_issuer_certificate_identifier(
-                                crate::protocol_serde::shape_issuer_certificate_identifier::de_issuer_certificate_identifier(tokens)?,
+                                crate::protocol_serde::shape_issuer_certificate_identifier::de_issuer_certificate_identifier(tokens, _value)?,
                             );
                         }
                         "deviceCertificateArn" => {

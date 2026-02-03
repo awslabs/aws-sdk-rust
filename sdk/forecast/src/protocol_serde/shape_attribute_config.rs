@@ -21,6 +21,7 @@ pub fn ser_attribute_config(
 
 pub(crate) fn de_attribute_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AttributeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                             );
                         }
                         "Transformations" => {
-                            builder = builder.set_transformations(crate::protocol_serde::shape_transformations::de_transformations(tokens)?);
+                            builder = builder.set_transformations(crate::protocol_serde::shape_transformations::de_transformations(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

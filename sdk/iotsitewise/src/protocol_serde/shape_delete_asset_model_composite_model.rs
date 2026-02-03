@@ -144,12 +144,12 @@ pub fn de_delete_asset_model_composite_model_http_response(
 
 pub fn ser_delete_asset_model_composite_model_headers(
     input: &crate::operation::delete_asset_model_composite_model::DeleteAssetModelCompositeModelInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_match",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -160,7 +160,7 @@ pub fn ser_delete_asset_model_composite_model_headers(
     if let ::std::option::Option::Some(inner_3) = &input.if_none_match {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_none_match",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -171,7 +171,7 @@ pub fn ser_delete_asset_model_composite_model_headers(
     if let ::std::option::Option::Some(inner_5) = &input.match_for_version_type {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "match_for_version_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -183,13 +183,13 @@ pub fn ser_delete_asset_model_composite_model_headers(
 }
 
 pub(crate) fn de_delete_asset_model_composite_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -197,7 +197,7 @@ pub(crate) fn de_delete_asset_model_composite_model(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assetModelStatus" => {
-                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens)?);
+                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

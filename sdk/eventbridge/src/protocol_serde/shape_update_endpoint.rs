@@ -96,13 +96,13 @@ pub fn ser_update_endpoint_input(
 }
 
 pub(crate) fn de_update_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_endpoint::builders::UpdateEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_endpoint::builders::UpdateEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,13 +124,15 @@ pub(crate) fn de_update_endpoint(
                     );
                 }
                 "RoutingConfig" => {
-                    builder = builder.set_routing_config(crate::protocol_serde::shape_routing_config::de_routing_config(tokens)?);
+                    builder = builder.set_routing_config(crate::protocol_serde::shape_routing_config::de_routing_config(tokens, _value)?);
                 }
                 "ReplicationConfig" => {
-                    builder = builder.set_replication_config(crate::protocol_serde::shape_replication_config::de_replication_config(tokens)?);
+                    builder = builder.set_replication_config(crate::protocol_serde::shape_replication_config::de_replication_config(tokens, _value)?);
                 }
                 "EventBuses" => {
-                    builder = builder.set_event_buses(crate::protocol_serde::shape_endpoint_event_bus_list::de_endpoint_event_bus_list(tokens)?);
+                    builder = builder.set_event_buses(crate::protocol_serde::shape_endpoint_event_bus_list::de_endpoint_event_bus_list(
+                        tokens, _value,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(

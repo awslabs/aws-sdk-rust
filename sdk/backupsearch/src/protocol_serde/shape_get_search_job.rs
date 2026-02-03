@@ -120,13 +120,13 @@ pub fn de_get_search_job_http_response(
 }
 
 pub(crate) fn de_get_search_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_search_job::builders::GetSearchJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_search_job::builders::GetSearchJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,8 +146,9 @@ pub(crate) fn de_get_search_job(
                     )?);
                 }
                 "CurrentSearchProgress" => {
-                    builder = builder
-                        .set_current_search_progress(crate::protocol_serde::shape_current_search_progress::de_current_search_progress(tokens)?);
+                    builder = builder.set_current_search_progress(crate::protocol_serde::shape_current_search_progress::de_current_search_progress(
+                        tokens, _value,
+                    )?);
                 }
                 "EncryptionKeyArn" => {
                     builder = builder.set_encryption_key_arn(
@@ -157,7 +158,7 @@ pub(crate) fn de_get_search_job(
                     );
                 }
                 "ItemFilters" => {
-                    builder = builder.set_item_filters(crate::protocol_serde::shape_item_filters::de_item_filters(tokens)?);
+                    builder = builder.set_item_filters(crate::protocol_serde::shape_item_filters::de_item_filters(tokens, _value)?);
                 }
                 "Name" => {
                     builder = builder.set_name(
@@ -181,10 +182,12 @@ pub(crate) fn de_get_search_job(
                     );
                 }
                 "SearchScope" => {
-                    builder = builder.set_search_scope(crate::protocol_serde::shape_search_scope::de_search_scope(tokens)?);
+                    builder = builder.set_search_scope(crate::protocol_serde::shape_search_scope::de_search_scope(tokens, _value)?);
                 }
                 "SearchScopeSummary" => {
-                    builder = builder.set_search_scope_summary(crate::protocol_serde::shape_search_scope_summary::de_search_scope_summary(tokens)?);
+                    builder = builder.set_search_scope_summary(crate::protocol_serde::shape_search_scope_summary::de_search_scope_summary(
+                        tokens, _value,
+                    )?);
                 }
                 "Status" => {
                     builder = builder.set_status(

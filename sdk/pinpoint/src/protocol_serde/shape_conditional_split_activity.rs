@@ -26,6 +26,7 @@ pub fn ser_conditional_split_activity(
 
 pub(crate) fn de_conditional_split_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConditionalSplitActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens, _value)?);
                         }
                         "EvaluationWaitTime" => {
-                            builder = builder.set_evaluation_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens)?);
+                            builder = builder.set_evaluation_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens, _value)?);
                         }
                         "FalseActivity" => {
                             builder = builder.set_false_activity(

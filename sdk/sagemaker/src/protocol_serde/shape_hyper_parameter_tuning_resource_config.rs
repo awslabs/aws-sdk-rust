@@ -44,6 +44,7 @@ pub fn ser_hyper_parameter_tuning_resource_config(
 
 pub(crate) fn de_hyper_parameter_tuning_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HyperParameterTuningResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -98,7 +99,7 @@ where
                         "InstanceConfigs" => {
                             builder = builder.set_instance_configs(
                                 crate::protocol_serde::shape_hyper_parameter_tuning_instance_configs::de_hyper_parameter_tuning_instance_configs(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

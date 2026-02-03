@@ -49,6 +49,7 @@ pub fn ser_rule_condition(
 
 pub(crate) fn de_rule_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,32 +79,32 @@ where
                     }
                     variant = match key.as_ref() {
                         "BooleanExpression" => Some(crate::types::RuleCondition::BooleanExpression(
-                            crate::protocol_serde::shape_rule_boolean_expression::de_rule_boolean_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_boolean_expression::de_rule_boolean_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanExpression' cannot be null")
                             })?,
                         )),
                         "StringExpression" => Some(crate::types::RuleCondition::StringExpression(
-                            crate::protocol_serde::shape_rule_string_expression::de_rule_string_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_string_expression::de_rule_string_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringExpression' cannot be null")
                             })?,
                         )),
                         "NumberExpression" => Some(crate::types::RuleCondition::NumberExpression(
-                            crate::protocol_serde::shape_rule_number_expression::de_rule_number_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_number_expression::de_rule_number_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NumberExpression' cannot be null")
                             })?,
                         )),
                         "IpExpression" => Some(crate::types::RuleCondition::IpExpression(
-                            crate::protocol_serde::shape_rule_ip_expression::de_rule_ip_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_ip_expression::de_rule_ip_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IpExpression' cannot be null")
                             })?,
                         )),
                         "VerdictExpression" => Some(crate::types::RuleCondition::VerdictExpression(
-                            crate::protocol_serde::shape_rule_verdict_expression::de_rule_verdict_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_verdict_expression::de_rule_verdict_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'VerdictExpression' cannot be null")
                             })?,
                         )),
                         "DmarcExpression" => Some(crate::types::RuleCondition::DmarcExpression(
-                            crate::protocol_serde::shape_rule_dmarc_expression::de_rule_dmarc_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rule_dmarc_expression::de_rule_dmarc_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DmarcExpression' cannot be null")
                             })?,
                         )),

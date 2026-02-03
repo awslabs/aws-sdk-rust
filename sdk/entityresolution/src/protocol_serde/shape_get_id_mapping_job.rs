@@ -115,13 +115,13 @@ pub fn de_get_id_mapping_job_http_response(
 }
 
 pub(crate) fn de_get_id_mapping_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_id_mapping_job::builders::GetIdMappingJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_id_mapping_job::builders::GetIdMappingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,7 +135,7 @@ pub(crate) fn de_get_id_mapping_job(
                     )?);
                 }
                 "errorDetails" => {
-                    builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens)?);
+                    builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value)?);
                 }
                 "jobId" => {
                     builder = builder.set_job_id(
@@ -152,11 +152,13 @@ pub(crate) fn de_get_id_mapping_job(
                     );
                 }
                 "metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_id_mapping_job_metrics::de_id_mapping_job_metrics(tokens)?);
+                    builder = builder.set_metrics(crate::protocol_serde::shape_id_mapping_job_metrics::de_id_mapping_job_metrics(
+                        tokens, _value,
+                    )?);
                 }
                 "outputSourceConfig" => {
                     builder = builder.set_output_source_config(
-                        crate::protocol_serde::shape_id_mapping_job_output_source_config::de_id_mapping_job_output_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_job_output_source_config::de_id_mapping_job_output_source_config(tokens, _value)?,
                     );
                 }
                 "startTime" => {

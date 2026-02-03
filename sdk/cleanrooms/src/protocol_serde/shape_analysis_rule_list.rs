@@ -38,6 +38,7 @@ pub fn ser_analysis_rule_list(
 
 pub(crate) fn de_analysis_rule_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,16 +54,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "joinColumns" => {
                             builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "allowedJoinOperators" => {
-                            builder =
-                                builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?);
+                            builder = builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(
+                                tokens, _value,
+                            )?);
                         }
                         "listColumns" => {
                             builder = builder.set_list_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "additionalAnalyses" => {

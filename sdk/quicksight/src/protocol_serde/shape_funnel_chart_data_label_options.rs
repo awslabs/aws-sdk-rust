@@ -32,6 +32,7 @@ pub fn ser_funnel_chart_data_label_options(
 
 pub(crate) fn de_funnel_chart_data_label_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunnelChartDataLabelOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,8 +75,9 @@ where
                             );
                         }
                         "LabelFontConfiguration" => {
-                            builder =
-                                builder.set_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder.set_label_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "LabelColor" => {
                             builder = builder.set_label_color(

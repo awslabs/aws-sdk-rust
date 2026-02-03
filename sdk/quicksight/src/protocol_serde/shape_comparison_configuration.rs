@@ -17,6 +17,7 @@ pub fn ser_comparison_configuration(
 
 pub(crate) fn de_comparison_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComparisonConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "ComparisonFormat" => {
                             builder = builder.set_comparison_format(
-                                crate::protocol_serde::shape_comparison_format_configuration::de_comparison_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_comparison_format_configuration::de_comparison_format_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

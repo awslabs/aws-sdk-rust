@@ -32,6 +32,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_d
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -50,7 +51,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Operands" => {
                             builder = builder.set_operands(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_list(tokens, _value)?
                                 );
                         }
                         "Prefix" => {
@@ -62,7 +63,7 @@ where
                         }
                         "Tag" => {
                             builder = builder.set_tag(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details(tokens, _value)?
                                 );
                         }
                         "Type" => {

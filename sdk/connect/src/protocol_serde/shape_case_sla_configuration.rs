@@ -35,6 +35,7 @@ pub fn ser_case_sla_configuration(
 
 pub(crate) fn de_case_sla_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaseSlaConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,7 +72,7 @@ where
                         }
                         "TargetFieldValues" => {
                             builder = builder.set_target_field_values(
-                                crate::protocol_serde::shape_sla_field_value_union_list::de_sla_field_value_union_list(tokens)?,
+                                crate::protocol_serde::shape_sla_field_value_union_list::de_sla_field_value_union_list(tokens, _value)?,
                             );
                         }
                         "TargetSlaMinutes" => {

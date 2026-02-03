@@ -26,6 +26,7 @@ pub fn ser_offline_store_config(
 
 pub(crate) fn de_offline_store_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OfflineStoreConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,15 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3StorageConfig" => {
-                            builder = builder.set_s3_storage_config(crate::protocol_serde::shape_s3_storage_config::de_s3_storage_config(tokens)?);
+                            builder =
+                                builder.set_s3_storage_config(crate::protocol_serde::shape_s3_storage_config::de_s3_storage_config(tokens, _value)?);
                         }
                         "DisableGlueTableCreation" => {
                             builder =
                                 builder.set_disable_glue_table_creation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DataCatalogConfig" => {
-                            builder =
-                                builder.set_data_catalog_config(crate::protocol_serde::shape_data_catalog_config::de_data_catalog_config(tokens)?);
+                            builder = builder
+                                .set_data_catalog_config(crate::protocol_serde::shape_data_catalog_config::de_data_catalog_config(tokens, _value)?);
                         }
                         "TableFormat" => {
                             builder = builder.set_table_format(

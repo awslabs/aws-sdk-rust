@@ -189,13 +189,13 @@ pub fn ser_register_user_input(
 }
 
 pub(crate) fn de_register_user(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::register_user::builders::RegisterUserOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::register_user::builders::RegisterUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -210,7 +210,7 @@ pub(crate) fn de_register_user(
                     );
                 }
                 "User" => {
-                    builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens)?);
+                    builder = builder.set_user(crate::protocol_serde::shape_user::de_user(tokens, _value)?);
                 }
                 "UserInvitationUrl" => {
                     builder = builder.set_user_invitation_url(

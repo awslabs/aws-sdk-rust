@@ -20,6 +20,7 @@ pub fn ser_job_driver(
 
 pub(crate) fn de_job_driver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sparkSubmitJobDriver" => {
                             builder = builder.set_spark_submit_job_driver(
-                                crate::protocol_serde::shape_spark_submit_job_driver::de_spark_submit_job_driver(tokens)?,
+                                crate::protocol_serde::shape_spark_submit_job_driver::de_spark_submit_job_driver(tokens, _value)?,
                             );
                         }
                         "sparkSqlJobDriver" => {
-                            builder =
-                                builder.set_spark_sql_job_driver(crate::protocol_serde::shape_spark_sql_job_driver::de_spark_sql_job_driver(tokens)?);
+                            builder = builder.set_spark_sql_job_driver(crate::protocol_serde::shape_spark_sql_job_driver::de_spark_sql_job_driver(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

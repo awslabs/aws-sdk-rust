@@ -32,6 +32,7 @@ pub fn ser_trained_models_configuration_policy(
 
 pub(crate) fn de_trained_models_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainedModelsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,17 +48,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containerLogs" => {
                             builder = builder.set_container_logs(
-                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(tokens)?,
+                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(tokens, _value)?,
                             );
                         }
                         "containerMetrics" => {
                             builder = builder.set_container_metrics(
-                                crate::protocol_serde::shape_metrics_configuration_policy::de_metrics_configuration_policy(tokens)?,
+                                crate::protocol_serde::shape_metrics_configuration_policy::de_metrics_configuration_policy(tokens, _value)?,
                             );
                         }
                         "maxArtifactSize" => {
                             builder = builder.set_max_artifact_size(
-                                crate::protocol_serde::shape_trained_model_artifact_max_size::de_trained_model_artifact_max_size(tokens)?,
+                                crate::protocol_serde::shape_trained_model_artifact_max_size::de_trained_model_artifact_max_size(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

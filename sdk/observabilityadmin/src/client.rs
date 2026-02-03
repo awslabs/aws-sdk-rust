@@ -155,7 +155,7 @@ mod create_telemetry_rule_for_organization;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_observabilityadmin::Error> {
 /// # let client: aws_sdk_observabilityadmin::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_centralization_rule_for_organization()
 ///     .customize()

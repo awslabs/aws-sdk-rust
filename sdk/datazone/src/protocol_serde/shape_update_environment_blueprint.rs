@@ -173,13 +173,13 @@ pub fn ser_update_environment_blueprint_input(
 }
 
 pub(crate) fn de_update_environment_blueprint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_environment_blueprint::builders::UpdateEnvironmentBlueprintOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_environment_blueprint::builders::UpdateEnvironmentBlueprintOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -193,8 +193,9 @@ pub(crate) fn de_update_environment_blueprint(
                     )?);
                 }
                 "deploymentProperties" => {
-                    builder =
-                        builder.set_deployment_properties(crate::protocol_serde::shape_deployment_properties::de_deployment_properties(tokens)?);
+                    builder = builder.set_deployment_properties(crate::protocol_serde::shape_deployment_properties::de_deployment_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -204,7 +205,7 @@ pub(crate) fn de_update_environment_blueprint(
                     );
                 }
                 "glossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens)?);
+                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -228,8 +229,9 @@ pub(crate) fn de_update_environment_blueprint(
                     );
                 }
                 "provisioningProperties" => {
-                    builder = builder
-                        .set_provisioning_properties(crate::protocol_serde::shape_provisioning_properties::de_provisioning_properties(tokens)?);
+                    builder = builder.set_provisioning_properties(crate::protocol_serde::shape_provisioning_properties::de_provisioning_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -238,7 +240,9 @@ pub(crate) fn de_update_environment_blueprint(
                     )?);
                 }
                 "userParameters" => {
-                    builder = builder.set_user_parameters(crate::protocol_serde::shape_custom_parameter_list::de_custom_parameter_list(tokens)?);
+                    builder = builder.set_user_parameters(crate::protocol_serde::shape_custom_parameter_list::de_custom_parameter_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

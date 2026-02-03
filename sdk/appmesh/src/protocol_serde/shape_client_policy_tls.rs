@@ -35,6 +35,7 @@ pub fn ser_client_policy_tls(
 
 pub(crate) fn de_client_policy_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClientPolicyTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,14 +53,17 @@ where
                             builder = builder.set_enforce(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ports" => {
-                            builder = builder.set_ports(crate::protocol_serde::shape_port_set::de_port_set(tokens)?);
+                            builder = builder.set_ports(crate::protocol_serde::shape_port_set::de_port_set(tokens, _value)?);
                         }
                         "certificate" => {
-                            builder =
-                                builder.set_certificate(crate::protocol_serde::shape_client_tls_certificate::de_client_tls_certificate(tokens)?);
+                            builder = builder.set_certificate(crate::protocol_serde::shape_client_tls_certificate::de_client_tls_certificate(
+                                tokens, _value,
+                            )?);
                         }
                         "validation" => {
-                            builder = builder.set_validation(crate::protocol_serde::shape_tls_validation_context::de_tls_validation_context(tokens)?);
+                            builder = builder.set_validation(crate::protocol_serde::shape_tls_validation_context::de_tls_validation_context(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

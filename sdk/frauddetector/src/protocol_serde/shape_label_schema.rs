@@ -27,6 +27,7 @@ pub fn ser_label_schema(
 
 pub(crate) fn de_label_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LabelSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "labelMapper" => {
-                            builder = builder.set_label_mapper(crate::protocol_serde::shape_label_mapper::de_label_mapper(tokens)?);
+                            builder = builder.set_label_mapper(crate::protocol_serde::shape_label_mapper::de_label_mapper(tokens, _value)?);
                         }
                         "unlabeledEventsTreatment" => {
                             builder = builder.set_unlabeled_events_treatment(

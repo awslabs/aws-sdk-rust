@@ -124,13 +124,13 @@ pub fn ser_get_detector_version_input(
 }
 
 pub(crate) fn de_get_detector_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_detector_version::builders::GetDetectorVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_detector_version::builders::GetDetectorVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,13 +159,15 @@ pub(crate) fn de_get_detector_version(
                     );
                 }
                 "externalModelEndpoints" => {
-                    builder = builder.set_external_model_endpoints(crate::protocol_serde::shape_list_of_strings::de_list_of_strings(tokens)?);
+                    builder = builder.set_external_model_endpoints(crate::protocol_serde::shape_list_of_strings::de_list_of_strings(tokens, _value)?);
                 }
                 "modelVersions" => {
-                    builder = builder.set_model_versions(crate::protocol_serde::shape_list_of_model_versions::de_list_of_model_versions(tokens)?);
+                    builder = builder.set_model_versions(crate::protocol_serde::shape_list_of_model_versions::de_list_of_model_versions(
+                        tokens, _value,
+                    )?);
                 }
                 "rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape_rule_list::de_rule_list(tokens)?);
+                    builder = builder.set_rules(crate::protocol_serde::shape_rule_list::de_rule_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

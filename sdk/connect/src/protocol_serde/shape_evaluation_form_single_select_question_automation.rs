@@ -32,6 +32,7 @@ pub fn ser_evaluation_form_single_select_question_automation(
 
 pub(crate) fn de_evaluation_form_single_select_question_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Options" => {
                             builder = builder.set_options(
-                                    crate::protocol_serde::shape_evaluation_form_single_select_question_automation_option_list::de_evaluation_form_single_select_question_automation_option_list(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_single_select_question_automation_option_list::de_evaluation_form_single_select_question_automation_option_list(tokens, _value)?
                                 );
                         }
                         "DefaultOptionRefId" => {
@@ -59,7 +60,7 @@ where
                         }
                         "AnswerSource" => {
                             builder = builder.set_answer_source(
-                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_question_automation_answer_source::de_evaluation_form_question_automation_answer_source(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

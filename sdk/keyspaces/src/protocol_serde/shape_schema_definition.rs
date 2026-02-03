@@ -56,6 +56,7 @@ pub fn ser_schema_definition(
 
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,17 +71,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allColumns" => {
-                            builder =
-                                builder.set_all_columns(crate::protocol_serde::shape_column_definition_list::de_column_definition_list(tokens)?);
+                            builder = builder.set_all_columns(crate::protocol_serde::shape_column_definition_list::de_column_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "partitionKeys" => {
-                            builder = builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens)?);
+                            builder =
+                                builder.set_partition_keys(crate::protocol_serde::shape_partition_key_list::de_partition_key_list(tokens, _value)?);
                         }
                         "clusteringKeys" => {
-                            builder = builder.set_clustering_keys(crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(tokens)?);
+                            builder = builder
+                                .set_clustering_keys(crate::protocol_serde::shape_clustering_key_list::de_clustering_key_list(tokens, _value)?);
                         }
                         "staticColumns" => {
-                            builder = builder.set_static_columns(crate::protocol_serde::shape_static_column_list::de_static_column_list(tokens)?);
+                            builder =
+                                builder.set_static_columns(crate::protocol_serde::shape_static_column_list::de_static_column_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_sasl(
 
 pub(crate) fn de_sasl<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Sasl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "scram" => {
-                            builder = builder.set_scram(crate::protocol_serde::shape_scram::de_scram(tokens)?);
+                            builder = builder.set_scram(crate::protocol_serde::shape_scram::de_scram(tokens, _value)?);
                         }
                         "iam" => {
-                            builder = builder.set_iam(crate::protocol_serde::shape_iam::de_iam(tokens)?);
+                            builder = builder.set_iam(crate::protocol_serde::shape_iam::de_iam(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

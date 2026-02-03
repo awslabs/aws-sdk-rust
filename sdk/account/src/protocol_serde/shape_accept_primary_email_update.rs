@@ -177,13 +177,13 @@ pub fn ser_accept_primary_email_update_input(
 }
 
 pub(crate) fn de_accept_primary_email_update(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::accept_primary_email_update::builders::AcceptPrimaryEmailUpdateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::accept_primary_email_update::builders::AcceptPrimaryEmailUpdateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

@@ -89,6 +89,7 @@ pub fn ser_xavc_settings(
 
 pub(crate) fn de_xavc_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::XavcSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -146,7 +147,7 @@ where
                         }
                         "perFrameMetrics" => {
                             builder = builder.set_per_frame_metrics(
-                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens, _value)?,
                             );
                         }
                         "profile" => {
@@ -186,27 +187,29 @@ where
                         }
                         "xavc4kIntraCbgProfileSettings" => {
                             builder = builder.set_xavc4k_intra_cbg_profile_settings(
-                                crate::protocol_serde::shape_xavc4k_intra_cbg_profile_settings::de_xavc4k_intra_cbg_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_xavc4k_intra_cbg_profile_settings::de_xavc4k_intra_cbg_profile_settings(tokens, _value)?,
                             );
                         }
                         "xavc4kIntraVbrProfileSettings" => {
                             builder = builder.set_xavc4k_intra_vbr_profile_settings(
-                                crate::protocol_serde::shape_xavc4k_intra_vbr_profile_settings::de_xavc4k_intra_vbr_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_xavc4k_intra_vbr_profile_settings::de_xavc4k_intra_vbr_profile_settings(tokens, _value)?,
                             );
                         }
                         "xavc4kProfileSettings" => {
                             builder = builder.set_xavc4k_profile_settings(
-                                crate::protocol_serde::shape_xavc4k_profile_settings::de_xavc4k_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_xavc4k_profile_settings::de_xavc4k_profile_settings(tokens, _value)?,
                             );
                         }
                         "xavcHdIntraCbgProfileSettings" => {
                             builder = builder.set_xavc_hd_intra_cbg_profile_settings(
-                                crate::protocol_serde::shape_xavc_hd_intra_cbg_profile_settings::de_xavc_hd_intra_cbg_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_xavc_hd_intra_cbg_profile_settings::de_xavc_hd_intra_cbg_profile_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "xavcHdProfileSettings" => {
                             builder = builder.set_xavc_hd_profile_settings(
-                                crate::protocol_serde::shape_xavc_hd_profile_settings::de_xavc_hd_profile_settings(tokens)?,
+                                crate::protocol_serde::shape_xavc_hd_profile_settings::de_xavc_hd_profile_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

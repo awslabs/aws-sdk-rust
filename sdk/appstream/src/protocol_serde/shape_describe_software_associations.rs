@@ -92,13 +92,13 @@ pub fn ser_describe_software_associations_input(
 }
 
 pub(crate) fn de_describe_software_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_software_associations::builders::DescribeSoftwareAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_software_associations::builders::DescribeSoftwareAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_describe_software_associations(
                 }
                 "SoftwareAssociations" => {
                     builder = builder.set_software_associations(
-                        crate::protocol_serde::shape_software_associations_list::de_software_associations_list(tokens)?,
+                        crate::protocol_serde::shape_software_associations_list::de_software_associations_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

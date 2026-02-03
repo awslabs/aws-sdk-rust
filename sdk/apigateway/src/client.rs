@@ -177,7 +177,7 @@ mod create_vpc_link;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_apigateway::Error> {
 /// # let client: aws_sdk_apigateway::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_api_key()
 ///     .customize()

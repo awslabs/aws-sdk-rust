@@ -20,6 +20,7 @@ pub fn ser_domain_unit_policy_grant_principal(
 
 pub(crate) fn de_domain_unit_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DomainUnitPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "domainUnitGrantFilter" => {
                             builder = builder.set_domain_unit_grant_filter(
-                                crate::protocol_serde::shape_domain_unit_grant_filter::de_domain_unit_grant_filter(tokens)?,
+                                crate::protocol_serde::shape_domain_unit_grant_filter::de_domain_unit_grant_filter(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

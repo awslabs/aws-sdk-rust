@@ -50,6 +50,7 @@ pub fn ser_backup_selection(
 
 pub(crate) fn de_backup_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BackupSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,16 +79,16 @@ where
                             );
                         }
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_arns::de_resource_arns(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_arns::de_resource_arns(tokens, _value)?);
                         }
                         "ListOfTags" => {
-                            builder = builder.set_list_of_tags(crate::protocol_serde::shape_list_of_tags::de_list_of_tags(tokens)?);
+                            builder = builder.set_list_of_tags(crate::protocol_serde::shape_list_of_tags::de_list_of_tags(tokens, _value)?);
                         }
                         "NotResources" => {
-                            builder = builder.set_not_resources(crate::protocol_serde::shape_resource_arns::de_resource_arns(tokens)?);
+                            builder = builder.set_not_resources(crate::protocol_serde::shape_resource_arns::de_resource_arns(tokens, _value)?);
                         }
                         "Conditions" => {
-                            builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens)?);
+                            builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

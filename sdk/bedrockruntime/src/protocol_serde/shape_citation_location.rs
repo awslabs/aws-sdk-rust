@@ -45,6 +45,7 @@ pub fn ser_citation_location(
 
 pub(crate) fn de_citation_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CitationLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,26 +75,26 @@ where
                     }
                     variant = match key.as_ref() {
                         "web" => Some(crate::types::CitationLocation::Web(
-                            crate::protocol_serde::shape_web_location::de_web_location(tokens)?
+                            crate::protocol_serde::shape_web_location::de_web_location(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'web' cannot be null"))?,
                         )),
                         "documentChar" => Some(crate::types::CitationLocation::DocumentChar(
-                            crate::protocol_serde::shape_document_char_location::de_document_char_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_char_location::de_document_char_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChar' cannot be null")
                             })?,
                         )),
                         "documentPage" => Some(crate::types::CitationLocation::DocumentPage(
-                            crate::protocol_serde::shape_document_page_location::de_document_page_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_page_location::de_document_page_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentPage' cannot be null")
                             })?,
                         )),
                         "documentChunk" => Some(crate::types::CitationLocation::DocumentChunk(
-                            crate::protocol_serde::shape_document_chunk_location::de_document_chunk_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_document_chunk_location::de_document_chunk_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'documentChunk' cannot be null")
                             })?,
                         )),
                         "searchResultLocation" => Some(crate::types::CitationLocation::SearchResultLocation(
-                            crate::protocol_serde::shape_search_result_location::de_search_result_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_search_result_location::de_search_result_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResultLocation' cannot be null")
                             })?,
                         )),

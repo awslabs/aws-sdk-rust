@@ -100,13 +100,13 @@ pub fn de_get_health_event_http_response(
 }
 
 pub(crate) fn de_get_health_event(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_health_event::builders::GetHealthEventOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_health_event::builders::GetHealthEventOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,8 +152,9 @@ pub(crate) fn de_get_health_event(
                     );
                 }
                 "ImpactedLocations" => {
-                    builder =
-                        builder.set_impacted_locations(crate::protocol_serde::shape_impacted_locations_list::de_impacted_locations_list(tokens)?);
+                    builder = builder.set_impacted_locations(crate::protocol_serde::shape_impacted_locations_list::de_impacted_locations_list(
+                        tokens, _value,
+                    )?);
                 }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

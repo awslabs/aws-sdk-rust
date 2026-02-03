@@ -26,6 +26,7 @@ pub fn ser_virtual_gateway_listener_tls(
 
 pub(crate) fn de_virtual_gateway_listener_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayListenerTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,12 +50,12 @@ where
                             }
                             "validation" => {
                                 builder = builder.set_validation(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::de_virtual_gateway_listener_tls_validation_context(tokens)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_validation_context::de_virtual_gateway_listener_tls_validation_context(tokens, _value)?
                                 );
                             }
                             "certificate" => {
                                 builder = builder.set_certificate(
-                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_certificate::de_virtual_gateway_listener_tls_certificate(tokens)?
+                                    crate::protocol_serde::shape_virtual_gateway_listener_tls_certificate::de_virtual_gateway_listener_tls_certificate(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

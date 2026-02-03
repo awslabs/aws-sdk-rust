@@ -99,13 +99,13 @@ pub fn ser_describe_time_to_live_input(
 }
 
 pub(crate) fn de_describe_time_to_live(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_time_to_live::builders::DescribeTimeToLiveOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_time_to_live::builders::DescribeTimeToLiveOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -114,7 +114,7 @@ pub(crate) fn de_describe_time_to_live(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TimeToLiveDescription" => {
                     builder = builder.set_time_to_live_description(
-                        crate::protocol_serde::shape_time_to_live_description::de_time_to_live_description(tokens)?,
+                        crate::protocol_serde::shape_time_to_live_description::de_time_to_live_description(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

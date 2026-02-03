@@ -20,6 +20,7 @@ pub fn ser_rule_group_details(
 
 pub(crate) fn de_rule_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RuleVariables" => {
-                            builder = builder.set_rule_variables(crate::protocol_serde::shape_rule_group_variables::de_rule_group_variables(tokens)?);
+                            builder = builder.set_rule_variables(crate::protocol_serde::shape_rule_group_variables::de_rule_group_variables(
+                                tokens, _value,
+                            )?);
                         }
                         "RulesSource" => {
-                            builder = builder.set_rules_source(crate::protocol_serde::shape_rule_group_source::de_rule_group_source(tokens)?);
+                            builder = builder.set_rules_source(crate::protocol_serde::shape_rule_group_source::de_rule_group_source(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

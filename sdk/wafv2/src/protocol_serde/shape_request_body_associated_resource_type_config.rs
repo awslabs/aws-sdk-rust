@@ -13,6 +13,7 @@ pub fn ser_request_body_associated_resource_type_config(
 
 pub(crate) fn de_request_body_associated_resource_type_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RequestBodyAssociatedResourceTypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

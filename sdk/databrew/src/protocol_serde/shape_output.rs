@@ -44,6 +44,7 @@ pub fn ser_output(
 
 pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,17 +73,19 @@ where
                             );
                         }
                         "PartitionColumns" => {
-                            builder = builder.set_partition_columns(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens)?);
+                            builder =
+                                builder.set_partition_columns(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens, _value)?);
                         }
                         "Location" => {
-                            builder = builder.set_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         "Overwrite" => {
                             builder = builder.set_overwrite(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "FormatOptions" => {
-                            builder =
-                                builder.set_format_options(crate::protocol_serde::shape_output_format_options::de_output_format_options(tokens)?);
+                            builder = builder.set_format_options(crate::protocol_serde::shape_output_format_options::de_output_format_options(
+                                tokens, _value,
+                            )?);
                         }
                         "MaxOutputFiles" => {
                             builder = builder.set_max_output_files(

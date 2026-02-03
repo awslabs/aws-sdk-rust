@@ -44,6 +44,7 @@ pub fn ser_heat_map_sort_configuration(
 
 pub(crate) fn de_heat_map_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HeatMapSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,21 +59,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "HeatMapRowSort" => {
-                            builder = builder
-                                .set_heat_map_row_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
+                            builder = builder.set_heat_map_row_sort(
+                                crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens, _value)?,
+                            );
                         }
                         "HeatMapColumnSort" => {
-                            builder = builder
-                                .set_heat_map_column_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
+                            builder = builder.set_heat_map_column_sort(
+                                crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens, _value)?,
+                            );
                         }
                         "HeatMapRowItemsLimitConfiguration" => {
                             builder = builder.set_heat_map_row_items_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
                             );
                         }
                         "HeatMapColumnItemsLimitConfiguration" => {
                             builder = builder.set_heat_map_column_items_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

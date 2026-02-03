@@ -20,6 +20,7 @@ pub fn ser_time_window(
 
 pub(crate) fn de_time_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "openHours" => {
-                            builder = builder.set_open_hours(crate::protocol_serde::shape_open_hours::de_open_hours(tokens)?);
+                            builder = builder.set_open_hours(crate::protocol_serde::shape_open_hours::de_open_hours(tokens, _value)?);
                         }
                         "restrictedPeriods" => {
-                            builder = builder.set_restricted_periods(crate::protocol_serde::shape_restricted_periods::de_restricted_periods(tokens)?);
+                            builder = builder
+                                .set_restricted_periods(crate::protocol_serde::shape_restricted_periods::de_restricted_periods(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

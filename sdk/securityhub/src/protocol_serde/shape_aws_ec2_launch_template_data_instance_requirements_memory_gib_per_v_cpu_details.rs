@@ -20,6 +20,7 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_c
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

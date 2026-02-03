@@ -29,6 +29,7 @@ pub fn ser_batch_get_record_identifier(
 
 pub(crate) fn de_batch_get_record_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchGetRecordIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,11 +52,11 @@ where
                         }
                         "RecordIdentifiersValueAsString" => {
                             builder = builder.set_record_identifiers_value_as_string(
-                                crate::protocol_serde::shape_record_identifiers::de_record_identifiers(tokens)?,
+                                crate::protocol_serde::shape_record_identifiers::de_record_identifiers(tokens, _value)?,
                             );
                         }
                         "FeatureNames" => {
-                            builder = builder.set_feature_names(crate::protocol_serde::shape_feature_names::de_feature_names(tokens)?);
+                            builder = builder.set_feature_names(crate::protocol_serde::shape_feature_names::de_feature_names(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -151,7 +151,7 @@ mod create_worker_configuration;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_kafkaconnect::Error> {
 /// # let client: aws_sdk_kafkaconnect::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_connector()
 ///     .customize()

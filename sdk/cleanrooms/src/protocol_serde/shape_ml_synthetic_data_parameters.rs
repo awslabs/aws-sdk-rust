@@ -26,6 +26,7 @@ pub fn ser_ml_synthetic_data_parameters(
 
 pub(crate) fn de_ml_synthetic_data_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MlSyntheticDataParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                         }
                         "columnClassification" => {
                             builder = builder.set_column_classification(
-                                crate::protocol_serde::shape_column_classification_details::de_column_classification_details(tokens)?,
+                                crate::protocol_serde::shape_column_classification_details::de_column_classification_details(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

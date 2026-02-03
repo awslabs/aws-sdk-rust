@@ -23,6 +23,7 @@ pub fn ser_channel(
 
 pub(crate) fn de_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Channel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,8 @@ where
                             );
                         }
                         "eventPublishers" => {
-                            builder = builder.set_event_publishers(crate::protocol_serde::shape_event_publishers::de_event_publishers(tokens)?);
+                            builder =
+                                builder.set_event_publishers(crate::protocol_serde::shape_event_publishers::de_event_publishers(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

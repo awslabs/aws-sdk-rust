@@ -53,6 +53,7 @@ pub fn ser_aws_ec2_volume_details(
 
 pub(crate) fn de_aws_ec2_volume_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2VolumeDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -113,7 +114,7 @@ where
                         }
                         "Attachments" => {
                             builder = builder.set_attachments(
-                                crate::protocol_serde::shape_aws_ec2_volume_attachment_list::de_aws_ec2_volume_attachment_list(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_volume_attachment_list::de_aws_ec2_volume_attachment_list(tokens, _value)?,
                             );
                         }
                         "VolumeId" => {

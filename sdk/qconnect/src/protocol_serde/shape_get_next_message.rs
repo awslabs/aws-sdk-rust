@@ -101,13 +101,13 @@ pub fn de_get_next_message_http_response(
 }
 
 pub(crate) fn de_get_next_message(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_next_message::builders::GetNextMessageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_next_message::builders::GetNextMessageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,11 +119,11 @@ pub(crate) fn de_get_next_message(
                 }
                 "conversationSessionData" => {
                     builder = builder.set_conversation_session_data(
-                        crate::protocol_serde::shape_runtime_session_data_list::de_runtime_session_data_list(tokens)?,
+                        crate::protocol_serde::shape_runtime_session_data_list::de_runtime_session_data_list(tokens, _value)?,
                     );
                 }
                 "conversationState" => {
-                    builder = builder.set_conversation_state(crate::protocol_serde::shape_conversation_state::de_conversation_state(tokens)?);
+                    builder = builder.set_conversation_state(crate::protocol_serde::shape_conversation_state::de_conversation_state(tokens, _value)?);
                 }
                 "nextMessageToken" => {
                     builder = builder.set_next_message_token(
@@ -140,7 +140,7 @@ pub(crate) fn de_get_next_message(
                     );
                 }
                 "response" => {
-                    builder = builder.set_response(crate::protocol_serde::shape_message_output::de_message_output(tokens)?);
+                    builder = builder.set_response(crate::protocol_serde::shape_message_output::de_message_output(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

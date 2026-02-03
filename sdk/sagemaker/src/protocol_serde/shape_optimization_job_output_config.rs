@@ -20,6 +20,7 @@ pub fn ser_optimization_job_output_config(
 
 pub(crate) fn de_optimization_job_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OptimizationJobOutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "SageMakerModel" => {
                             builder = builder.set_sage_maker_model(
-                                crate::protocol_serde::shape_optimization_sage_maker_model::de_optimization_sage_maker_model(tokens)?,
+                                crate::protocol_serde::shape_optimization_sage_maker_model::de_optimization_sage_maker_model(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

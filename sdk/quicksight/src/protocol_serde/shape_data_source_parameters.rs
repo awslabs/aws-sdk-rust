@@ -207,6 +207,7 @@ pub fn ser_data_source_parameters(
 
 pub(crate) fn de_data_source_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSourceParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -234,190 +235,191 @@ where
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.as_ref() {
-                        "AmazonElasticsearchParameters" => Some(crate::types::DataSourceParameters::AmazonElasticsearchParameters(
-                            crate::protocol_serde::shape_amazon_elasticsearch_parameters::de_amazon_elasticsearch_parameters(tokens)?.ok_or_else(
-                                || {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'AmazonElasticsearchParameters' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "AthenaParameters" => Some(crate::types::DataSourceParameters::AthenaParameters(
-                            crate::protocol_serde::shape_athena_parameters::de_athena_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AthenaParameters' cannot be null")
-                            })?,
-                        )),
-                        "AuroraParameters" => Some(crate::types::DataSourceParameters::AuroraParameters(
-                            crate::protocol_serde::shape_aurora_parameters::de_aurora_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AuroraParameters' cannot be null")
-                            })?,
-                        )),
-                        "AuroraPostgreSqlParameters" => Some(crate::types::DataSourceParameters::AuroraPostgreSqlParameters(
-                            crate::protocol_serde::shape_aurora_postgre_sql_parameters::de_aurora_postgre_sql_parameters(tokens)?.ok_or_else(
-                                || {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'AuroraPostgreSqlParameters' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "AwsIotAnalyticsParameters" => Some(crate::types::DataSourceParameters::AwsIotAnalyticsParameters(
-                            crate::protocol_serde::shape_aws_iot_analytics_parameters::de_aws_iot_analytics_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'AwsIotAnalyticsParameters' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "JiraParameters" => Some(crate::types::DataSourceParameters::JiraParameters(
-                            crate::protocol_serde::shape_jira_parameters::de_jira_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'JiraParameters' cannot be null")
-                            })?,
-                        )),
-                        "MariaDbParameters" => Some(crate::types::DataSourceParameters::MariaDbParameters(
-                            crate::protocol_serde::shape_maria_db_parameters::de_maria_db_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbParameters' cannot be null")
-                            })?,
-                        )),
-                        "MySqlParameters" => Some(crate::types::DataSourceParameters::MySqlParameters(
-                            crate::protocol_serde::shape_my_sql_parameters::de_my_sql_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlParameters' cannot be null")
-                            })?,
-                        )),
-                        "OracleParameters" => Some(crate::types::DataSourceParameters::OracleParameters(
-                            crate::protocol_serde::shape_oracle_parameters::de_oracle_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleParameters' cannot be null")
-                            })?,
-                        )),
-                        "PostgreSqlParameters" => Some(crate::types::DataSourceParameters::PostgreSqlParameters(
-                            crate::protocol_serde::shape_postgre_sql_parameters::de_postgre_sql_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlParameters' cannot be null")
-                            })?,
-                        )),
-                        "PrestoParameters" => Some(crate::types::DataSourceParameters::PrestoParameters(
-                            crate::protocol_serde::shape_presto_parameters::de_presto_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PrestoParameters' cannot be null")
-                            })?,
-                        )),
-                        "RdsParameters" => Some(crate::types::DataSourceParameters::RdsParameters(
-                            crate::protocol_serde::shape_rds_parameters::de_rds_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RdsParameters' cannot be null")
-                            })?,
-                        )),
-                        "RedshiftParameters" => Some(crate::types::DataSourceParameters::RedshiftParameters(
-                            crate::protocol_serde::shape_redshift_parameters::de_redshift_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftParameters' cannot be null")
-                            })?,
-                        )),
-                        "S3Parameters" => Some(crate::types::DataSourceParameters::S3Parameters(
-                            crate::protocol_serde::shape_s3_parameters::de_s3_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Parameters' cannot be null")
-                            })?,
-                        )),
-                        "S3KnowledgeBaseParameters" => Some(crate::types::DataSourceParameters::S3KnowledgeBaseParameters(
-                            crate::protocol_serde::shape_s3_knowledge_base_parameters::de_s3_knowledge_base_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'S3KnowledgeBaseParameters' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "ServiceNowParameters" => Some(crate::types::DataSourceParameters::ServiceNowParameters(
-                            crate::protocol_serde::shape_service_now_parameters::de_service_now_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ServiceNowParameters' cannot be null")
-                            })?,
-                        )),
-                        "SnowflakeParameters" => Some(crate::types::DataSourceParameters::SnowflakeParameters(
-                            crate::protocol_serde::shape_snowflake_parameters::de_snowflake_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SnowflakeParameters' cannot be null")
-                            })?,
-                        )),
-                        "SparkParameters" => Some(crate::types::DataSourceParameters::SparkParameters(
-                            crate::protocol_serde::shape_spark_parameters::de_spark_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SparkParameters' cannot be null")
-                            })?,
-                        )),
-                        "SqlServerParameters" => Some(crate::types::DataSourceParameters::SqlServerParameters(
-                            crate::protocol_serde::shape_sql_server_parameters::de_sql_server_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SqlServerParameters' cannot be null")
-                            })?,
-                        )),
-                        "TeradataParameters" => Some(crate::types::DataSourceParameters::TeradataParameters(
-                            crate::protocol_serde::shape_teradata_parameters::de_teradata_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TeradataParameters' cannot be null")
-                            })?,
-                        )),
-                        "TwitterParameters" => Some(crate::types::DataSourceParameters::TwitterParameters(
-                            crate::protocol_serde::shape_twitter_parameters::de_twitter_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TwitterParameters' cannot be null")
-                            })?,
-                        )),
-                        "AmazonOpenSearchParameters" => Some(crate::types::DataSourceParameters::AmazonOpenSearchParameters(
-                            crate::protocol_serde::shape_amazon_open_search_parameters::de_amazon_open_search_parameters(tokens)?.ok_or_else(
-                                || {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'AmazonOpenSearchParameters' cannot be null",
-                                    )
-                                },
-                            )?,
-                        )),
-                        "ExasolParameters" => Some(crate::types::DataSourceParameters::ExasolParameters(
-                            crate::protocol_serde::shape_exasol_parameters::de_exasol_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ExasolParameters' cannot be null")
-                            })?,
-                        )),
-                        "DatabricksParameters" => Some(crate::types::DataSourceParameters::DatabricksParameters(
-                            crate::protocol_serde::shape_databricks_parameters::de_databricks_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DatabricksParameters' cannot be null")
-                            })?,
-                        )),
-                        "StarburstParameters" => Some(crate::types::DataSourceParameters::StarburstParameters(
-                            crate::protocol_serde::shape_starburst_parameters::de_starburst_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StarburstParameters' cannot be null")
-                            })?,
-                        )),
-                        "TrinoParameters" => Some(crate::types::DataSourceParameters::TrinoParameters(
-                            crate::protocol_serde::shape_trino_parameters::de_trino_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TrinoParameters' cannot be null")
-                            })?,
-                        )),
-                        "BigQueryParameters" => Some(crate::types::DataSourceParameters::BigQueryParameters(
-                            crate::protocol_serde::shape_big_query_parameters::de_big_query_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BigQueryParameters' cannot be null")
-                            })?,
-                        )),
-                        "ImpalaParameters" => Some(crate::types::DataSourceParameters::ImpalaParameters(
-                            crate::protocol_serde::shape_impala_parameters::de_impala_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ImpalaParameters' cannot be null")
-                            })?,
-                        )),
-                        "CustomConnectionParameters" => Some(crate::types::DataSourceParameters::CustomConnectionParameters(
-                            crate::protocol_serde::shape_custom_connection_parameters::de_custom_connection_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                    "value for 'CustomConnectionParameters' cannot be null",
-                                )
-                            })?,
-                        )),
-                        "WebCrawlerParameters" => Some(crate::types::DataSourceParameters::WebCrawlerParameters(
-                            crate::protocol_serde::shape_web_crawler_parameters::de_web_crawler_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'WebCrawlerParameters' cannot be null")
-                            })?,
-                        )),
-                        "ConfluenceParameters" => Some(crate::types::DataSourceParameters::ConfluenceParameters(
-                            crate::protocol_serde::shape_confluence_parameters::de_confluence_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ConfluenceParameters' cannot be null")
-                            })?,
-                        )),
-                        "QBusinessParameters" => Some(crate::types::DataSourceParameters::QBusinessParameters(
-                            crate::protocol_serde::shape_q_business_parameters::de_q_business_parameters(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'QBusinessParameters' cannot be null")
-                            })?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::DataSourceParameters::Unknown)
-                        }
-                    };
+                    variant =
+                        match key.as_ref() {
+                            "AmazonElasticsearchParameters" => Some(crate::types::DataSourceParameters::AmazonElasticsearchParameters(
+                                crate::protocol_serde::shape_amazon_elasticsearch_parameters::de_amazon_elasticsearch_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'AmazonElasticsearchParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "AthenaParameters" => Some(crate::types::DataSourceParameters::AthenaParameters(
+                                crate::protocol_serde::shape_athena_parameters::de_athena_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AthenaParameters' cannot be null")
+                                })?,
+                            )),
+                            "AuroraParameters" => Some(crate::types::DataSourceParameters::AuroraParameters(
+                                crate::protocol_serde::shape_aurora_parameters::de_aurora_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'AuroraParameters' cannot be null")
+                                })?,
+                            )),
+                            "AuroraPostgreSqlParameters" => Some(crate::types::DataSourceParameters::AuroraPostgreSqlParameters(
+                                crate::protocol_serde::shape_aurora_postgre_sql_parameters::de_aurora_postgre_sql_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'AuroraPostgreSqlParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "AwsIotAnalyticsParameters" => Some(crate::types::DataSourceParameters::AwsIotAnalyticsParameters(
+                                crate::protocol_serde::shape_aws_iot_analytics_parameters::de_aws_iot_analytics_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'AwsIotAnalyticsParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "JiraParameters" => Some(crate::types::DataSourceParameters::JiraParameters(
+                                crate::protocol_serde::shape_jira_parameters::de_jira_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'JiraParameters' cannot be null")
+                                })?,
+                            )),
+                            "MariaDbParameters" => Some(crate::types::DataSourceParameters::MariaDbParameters(
+                                crate::protocol_serde::shape_maria_db_parameters::de_maria_db_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbParameters' cannot be null")
+                                })?,
+                            )),
+                            "MySqlParameters" => Some(crate::types::DataSourceParameters::MySqlParameters(
+                                crate::protocol_serde::shape_my_sql_parameters::de_my_sql_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MySqlParameters' cannot be null")
+                                })?,
+                            )),
+                            "OracleParameters" => Some(crate::types::DataSourceParameters::OracleParameters(
+                                crate::protocol_serde::shape_oracle_parameters::de_oracle_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OracleParameters' cannot be null")
+                                })?,
+                            )),
+                            "PostgreSqlParameters" => Some(crate::types::DataSourceParameters::PostgreSqlParameters(
+                                crate::protocol_serde::shape_postgre_sql_parameters::de_postgre_sql_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PostgreSqlParameters' cannot be null")
+                                })?,
+                            )),
+                            "PrestoParameters" => Some(crate::types::DataSourceParameters::PrestoParameters(
+                                crate::protocol_serde::shape_presto_parameters::de_presto_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PrestoParameters' cannot be null")
+                                })?,
+                            )),
+                            "RdsParameters" => Some(crate::types::DataSourceParameters::RdsParameters(
+                                crate::protocol_serde::shape_rds_parameters::de_rds_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RdsParameters' cannot be null")
+                                })?,
+                            )),
+                            "RedshiftParameters" => Some(crate::types::DataSourceParameters::RedshiftParameters(
+                                crate::protocol_serde::shape_redshift_parameters::de_redshift_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftParameters' cannot be null")
+                                })?,
+                            )),
+                            "S3Parameters" => Some(crate::types::DataSourceParameters::S3Parameters(
+                                crate::protocol_serde::shape_s3_parameters::de_s3_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Parameters' cannot be null")
+                                })?,
+                            )),
+                            "S3KnowledgeBaseParameters" => Some(crate::types::DataSourceParameters::S3KnowledgeBaseParameters(
+                                crate::protocol_serde::shape_s3_knowledge_base_parameters::de_s3_knowledge_base_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'S3KnowledgeBaseParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "ServiceNowParameters" => Some(crate::types::DataSourceParameters::ServiceNowParameters(
+                                crate::protocol_serde::shape_service_now_parameters::de_service_now_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ServiceNowParameters' cannot be null")
+                                })?,
+                            )),
+                            "SnowflakeParameters" => Some(crate::types::DataSourceParameters::SnowflakeParameters(
+                                crate::protocol_serde::shape_snowflake_parameters::de_snowflake_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SnowflakeParameters' cannot be null")
+                                })?,
+                            )),
+                            "SparkParameters" => Some(crate::types::DataSourceParameters::SparkParameters(
+                                crate::protocol_serde::shape_spark_parameters::de_spark_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SparkParameters' cannot be null")
+                                })?,
+                            )),
+                            "SqlServerParameters" => Some(crate::types::DataSourceParameters::SqlServerParameters(
+                                crate::protocol_serde::shape_sql_server_parameters::de_sql_server_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SqlServerParameters' cannot be null")
+                                })?,
+                            )),
+                            "TeradataParameters" => Some(crate::types::DataSourceParameters::TeradataParameters(
+                                crate::protocol_serde::shape_teradata_parameters::de_teradata_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TeradataParameters' cannot be null")
+                                })?,
+                            )),
+                            "TwitterParameters" => Some(crate::types::DataSourceParameters::TwitterParameters(
+                                crate::protocol_serde::shape_twitter_parameters::de_twitter_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TwitterParameters' cannot be null")
+                                })?,
+                            )),
+                            "AmazonOpenSearchParameters" => Some(crate::types::DataSourceParameters::AmazonOpenSearchParameters(
+                                crate::protocol_serde::shape_amazon_open_search_parameters::de_amazon_open_search_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'AmazonOpenSearchParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "ExasolParameters" => Some(crate::types::DataSourceParameters::ExasolParameters(
+                                crate::protocol_serde::shape_exasol_parameters::de_exasol_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ExasolParameters' cannot be null")
+                                })?,
+                            )),
+                            "DatabricksParameters" => Some(crate::types::DataSourceParameters::DatabricksParameters(
+                                crate::protocol_serde::shape_databricks_parameters::de_databricks_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DatabricksParameters' cannot be null")
+                                })?,
+                            )),
+                            "StarburstParameters" => Some(crate::types::DataSourceParameters::StarburstParameters(
+                                crate::protocol_serde::shape_starburst_parameters::de_starburst_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StarburstParameters' cannot be null")
+                                })?,
+                            )),
+                            "TrinoParameters" => Some(crate::types::DataSourceParameters::TrinoParameters(
+                                crate::protocol_serde::shape_trino_parameters::de_trino_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TrinoParameters' cannot be null")
+                                })?,
+                            )),
+                            "BigQueryParameters" => Some(crate::types::DataSourceParameters::BigQueryParameters(
+                                crate::protocol_serde::shape_big_query_parameters::de_big_query_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BigQueryParameters' cannot be null")
+                                })?,
+                            )),
+                            "ImpalaParameters" => Some(crate::types::DataSourceParameters::ImpalaParameters(
+                                crate::protocol_serde::shape_impala_parameters::de_impala_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ImpalaParameters' cannot be null")
+                                })?,
+                            )),
+                            "CustomConnectionParameters" => Some(crate::types::DataSourceParameters::CustomConnectionParameters(
+                                crate::protocol_serde::shape_custom_connection_parameters::de_custom_connection_parameters(tokens, _value)?
+                                    .ok_or_else(|| {
+                                        ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                            "value for 'CustomConnectionParameters' cannot be null",
+                                        )
+                                    })?,
+                            )),
+                            "WebCrawlerParameters" => Some(crate::types::DataSourceParameters::WebCrawlerParameters(
+                                crate::protocol_serde::shape_web_crawler_parameters::de_web_crawler_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'WebCrawlerParameters' cannot be null")
+                                })?,
+                            )),
+                            "ConfluenceParameters" => Some(crate::types::DataSourceParameters::ConfluenceParameters(
+                                crate::protocol_serde::shape_confluence_parameters::de_confluence_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ConfluenceParameters' cannot be null")
+                                })?,
+                            )),
+                            "QBusinessParameters" => Some(crate::types::DataSourceParameters::QBusinessParameters(
+                                crate::protocol_serde::shape_q_business_parameters::de_q_business_parameters(tokens, _value)?.ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'QBusinessParameters' cannot be null")
+                                })?,
+                            )),
+                            _ => {
+                                ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                Some(crate::types::DataSourceParameters::Unknown)
+                            }
+                        };
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(

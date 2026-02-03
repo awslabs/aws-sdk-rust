@@ -56,6 +56,7 @@ pub fn ser_http_gateway_route_match(
 
 pub(crate) fn de_http_gateway_route_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HttpGatewayRouteMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,11 +78,12 @@ where
                             );
                         }
                         "path" => {
-                            builder = builder.set_path(crate::protocol_serde::shape_http_path_match::de_http_path_match(tokens)?);
+                            builder = builder.set_path(crate::protocol_serde::shape_http_path_match::de_http_path_match(tokens, _value)?);
                         }
                         "queryParameters" => {
-                            builder =
-                                builder.set_query_parameters(crate::protocol_serde::shape_http_query_parameters::de_http_query_parameters(tokens)?);
+                            builder = builder.set_query_parameters(crate::protocol_serde::shape_http_query_parameters::de_http_query_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "method" => {
                             builder = builder.set_method(
@@ -91,12 +93,13 @@ where
                             );
                         }
                         "hostname" => {
-                            builder = builder
-                                .set_hostname(crate::protocol_serde::shape_gateway_route_hostname_match::de_gateway_route_hostname_match(tokens)?);
+                            builder = builder.set_hostname(
+                                crate::protocol_serde::shape_gateway_route_hostname_match::de_gateway_route_hostname_match(tokens, _value)?,
+                            );
                         }
                         "headers" => {
                             builder = builder.set_headers(crate::protocol_serde::shape_http_gateway_route_headers::de_http_gateway_route_headers(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "port" => {

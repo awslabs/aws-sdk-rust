@@ -35,6 +35,7 @@ pub fn ser_environment_configuration_parameters_details(
 
 pub(crate) fn de_environment_configuration_parameters_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EnvironmentConfigurationParametersDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,12 +59,12 @@ where
                             }
                             "parameterOverrides" => {
                                 builder = builder.set_parameter_overrides(
-                                    crate::protocol_serde::shape_environment_configuration_parameters_list::de_environment_configuration_parameters_list(tokens)?
+                                    crate::protocol_serde::shape_environment_configuration_parameters_list::de_environment_configuration_parameters_list(tokens, _value)?
                                 );
                             }
                             "resolvedParameters" => {
                                 builder = builder.set_resolved_parameters(
-                                    crate::protocol_serde::shape_environment_configuration_parameters_list::de_environment_configuration_parameters_list(tokens)?
+                                    crate::protocol_serde::shape_environment_configuration_parameters_list::de_environment_configuration_parameters_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

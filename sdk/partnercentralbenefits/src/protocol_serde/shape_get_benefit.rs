@@ -118,11 +118,11 @@ pub fn ser_get_benefit_input(
 }
 
 pub(crate) fn de_get_benefit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_benefit::builders::GetBenefitOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_benefit::builders::GetBenefitOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,10 +165,10 @@ pub(crate) fn de_get_benefit(
                     );
                 }
                 "Programs" => {
-                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens)?);
+                    builder = builder.set_programs(crate::protocol_serde::shape_programs::de_programs(tokens, _value)?);
                 }
                 "FulfillmentTypes" => {
-                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens)?);
+                    builder = builder.set_fulfillment_types(crate::protocol_serde::shape_fulfillment_types::de_fulfillment_types(tokens, _value)?);
                 }
                 "BenefitRequestSchema" => {
                     builder = builder.set_benefit_request_schema(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));

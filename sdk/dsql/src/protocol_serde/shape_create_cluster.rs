@@ -147,13 +147,13 @@ pub fn ser_create_cluster_input(
 }
 
 pub(crate) fn de_create_cluster(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -177,7 +177,7 @@ pub(crate) fn de_create_cluster(
                     builder = builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "encryptionDetails" => {
-                    builder = builder.set_encryption_details(crate::protocol_serde::shape_encryption_details::de_encryption_details(tokens)?);
+                    builder = builder.set_encryption_details(crate::protocol_serde::shape_encryption_details::de_encryption_details(tokens, _value)?);
                 }
                 "endpoint" => {
                     builder = builder.set_endpoint(
@@ -194,8 +194,9 @@ pub(crate) fn de_create_cluster(
                     );
                 }
                 "multiRegionProperties" => {
-                    builder = builder
-                        .set_multi_region_properties(crate::protocol_serde::shape_multi_region_properties::de_multi_region_properties(tokens)?);
+                    builder = builder.set_multi_region_properties(crate::protocol_serde::shape_multi_region_properties::de_multi_region_properties(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

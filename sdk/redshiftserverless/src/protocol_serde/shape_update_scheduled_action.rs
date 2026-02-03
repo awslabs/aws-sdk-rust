@@ -110,13 +110,13 @@ pub fn ser_update_scheduled_action_input(
 }
 
 pub(crate) fn de_update_scheduled_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_scheduled_action::builders::UpdateScheduledActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_scheduled_action::builders::UpdateScheduledActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -125,7 +125,7 @@ pub(crate) fn de_update_scheduled_action(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "scheduledAction" => {
                     builder = builder.set_scheduled_action(crate::protocol_serde::shape_scheduled_action_response::de_scheduled_action_response(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

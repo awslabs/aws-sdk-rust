@@ -20,6 +20,7 @@ pub fn ser_deserializer(
 
 pub(crate) fn de_deserializer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Deserializer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "OpenXJsonSerDe" => {
-                            builder = builder.set_open_x_json_ser_de(crate::protocol_serde::shape_open_x_json_ser_de::de_open_x_json_ser_de(tokens)?);
+                            builder = builder
+                                .set_open_x_json_ser_de(crate::protocol_serde::shape_open_x_json_ser_de::de_open_x_json_ser_de(tokens, _value)?);
                         }
                         "HiveJsonSerDe" => {
-                            builder = builder.set_hive_json_ser_de(crate::protocol_serde::shape_hive_json_ser_de::de_hive_json_ser_de(tokens)?);
+                            builder =
+                                builder.set_hive_json_ser_de(crate::protocol_serde::shape_hive_json_ser_de::de_hive_json_ser_de(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

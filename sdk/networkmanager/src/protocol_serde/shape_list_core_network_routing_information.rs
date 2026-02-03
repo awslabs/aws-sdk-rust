@@ -152,13 +152,13 @@ pub fn ser_list_core_network_routing_information_input(
 }
 
 pub(crate) fn de_list_core_network_routing_information(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_core_network_routing_information::builders::ListCoreNetworkRoutingInformationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_core_network_routing_information::builders::ListCoreNetworkRoutingInformationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,7 @@ pub(crate) fn de_list_core_network_routing_information(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CoreNetworkRoutingInformation" => {
                     builder = builder.set_core_network_routing_information(
-                        crate::protocol_serde::shape_core_network_routing_information_list::de_core_network_routing_information_list(tokens)?,
+                        crate::protocol_serde::shape_core_network_routing_information_list::de_core_network_routing_information_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

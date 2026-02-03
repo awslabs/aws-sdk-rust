@@ -147,7 +147,7 @@ mod accept_primary_email_update;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_account::Error> {
 /// # let client: aws_sdk_account::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_primary_email_update()
 ///     .customize()

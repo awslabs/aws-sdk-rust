@@ -157,13 +157,13 @@ pub fn de_get_voice_connector_termination_http_response(
 }
 
 pub(crate) fn de_get_voice_connector_termination(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_voice_connector_termination::builders::GetVoiceConnectorTerminationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_get_voice_connector_termination(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Termination" => {
-                    builder = builder.set_termination(crate::protocol_serde::shape_termination::de_termination(tokens)?);
+                    builder = builder.set_termination(crate::protocol_serde::shape_termination::de_termination(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

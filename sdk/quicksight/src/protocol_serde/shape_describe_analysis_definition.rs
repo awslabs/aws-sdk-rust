@@ -175,13 +175,13 @@ pub fn de_describe_analysis_definition_http_response(
 }
 
 pub(crate) fn de_describe_analysis_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -196,10 +196,10 @@ pub(crate) fn de_describe_analysis_definition(
                     );
                 }
                 "Definition" => {
-                    builder = builder.set_definition(crate::protocol_serde::shape_analysis_definition::de_analysis_definition(tokens)?);
+                    builder = builder.set_definition(crate::protocol_serde::shape_analysis_definition::de_analysis_definition(tokens, _value)?);
                 }
                 "Errors" => {
-                    builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(tokens)?);
+                    builder = builder.set_errors(crate::protocol_serde::shape_analysis_error_list::de_analysis_error_list(tokens, _value)?);
                 }
                 "Name" => {
                     builder = builder.set_name(

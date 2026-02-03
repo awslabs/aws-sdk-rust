@@ -155,7 +155,7 @@ mod create_spending_limit;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_braket::Error> {
 /// # let client: aws_sdk_braket::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_job()
 ///     .customize()

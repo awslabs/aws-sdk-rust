@@ -84,13 +84,13 @@ pub fn ser_update_patch_baseline_input(
 }
 
 pub(crate) fn de_update_patch_baseline(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_patch_baseline::builders::UpdatePatchBaselineOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,13 +119,13 @@ pub(crate) fn de_update_patch_baseline(
                     );
                 }
                 "GlobalFilters" => {
-                    builder = builder.set_global_filters(crate::protocol_serde::shape_patch_filter_group::de_patch_filter_group(tokens)?);
+                    builder = builder.set_global_filters(crate::protocol_serde::shape_patch_filter_group::de_patch_filter_group(tokens, _value)?);
                 }
                 "ApprovalRules" => {
-                    builder = builder.set_approval_rules(crate::protocol_serde::shape_patch_rule_group::de_patch_rule_group(tokens)?);
+                    builder = builder.set_approval_rules(crate::protocol_serde::shape_patch_rule_group::de_patch_rule_group(tokens, _value)?);
                 }
                 "ApprovedPatches" => {
-                    builder = builder.set_approved_patches(crate::protocol_serde::shape_patch_id_list::de_patch_id_list(tokens)?);
+                    builder = builder.set_approved_patches(crate::protocol_serde::shape_patch_id_list::de_patch_id_list(tokens, _value)?);
                 }
                 "ApprovedPatchesComplianceLevel" => {
                     builder = builder.set_approved_patches_compliance_level(
@@ -139,7 +139,7 @@ pub(crate) fn de_update_patch_baseline(
                         builder.set_approved_patches_enable_non_security(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "RejectedPatches" => {
-                    builder = builder.set_rejected_patches(crate::protocol_serde::shape_patch_id_list::de_patch_id_list(tokens)?);
+                    builder = builder.set_rejected_patches(crate::protocol_serde::shape_patch_id_list::de_patch_id_list(tokens, _value)?);
                 }
                 "RejectedPatchesAction" => {
                     builder = builder.set_rejected_patches_action(
@@ -168,7 +168,7 @@ pub(crate) fn de_update_patch_baseline(
                     );
                 }
                 "Sources" => {
-                    builder = builder.set_sources(crate::protocol_serde::shape_patch_source_list::de_patch_source_list(tokens)?);
+                    builder = builder.set_sources(crate::protocol_serde::shape_patch_source_list::de_patch_source_list(tokens, _value)?);
                 }
                 "AvailableSecurityUpdatesComplianceStatus" => {
                     builder = builder.set_available_security_updates_compliance_status(

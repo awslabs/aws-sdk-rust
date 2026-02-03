@@ -158,13 +158,13 @@ pub fn ser_set_token_vault_cmk_input(
 }
 
 pub(crate) fn de_set_token_vault_cmk(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::set_token_vault_cmk::builders::SetTokenVaultCmkOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::set_token_vault_cmk::builders::SetTokenVaultCmkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,7 +172,7 @@ pub(crate) fn de_set_token_vault_cmk(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "kmsConfiguration" => {
-                    builder = builder.set_kms_configuration(crate::protocol_serde::shape_kms_configuration::de_kms_configuration(tokens)?);
+                    builder = builder.set_kms_configuration(crate::protocol_serde::shape_kms_configuration::de_kms_configuration(tokens, _value)?);
                 }
                 "lastModifiedDate" => {
                     builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

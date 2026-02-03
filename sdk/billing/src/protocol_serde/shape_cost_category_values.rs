@@ -20,6 +20,7 @@ pub fn ser_cost_category_values(
 
 pub(crate) fn de_cost_category_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CostCategoryValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_values::de_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_values::de_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ pub fn ser_port_probe_action(
 
 pub(crate) fn de_port_probe_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PortProbeAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,8 +38,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PortProbeDetails" => {
-                            builder = builder
-                                .set_port_probe_details(crate::protocol_serde::shape_port_probe_detail_list::de_port_probe_detail_list(tokens)?);
+                            builder = builder.set_port_probe_details(crate::protocol_serde::shape_port_probe_detail_list::de_port_probe_detail_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Blocked" => {
                             builder = builder.set_blocked(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

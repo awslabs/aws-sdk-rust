@@ -113,11 +113,11 @@ pub fn de_get_workflow_http_response(
 }
 
 pub(crate) fn de_get_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_workflow::builders::GetWorkflowOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_workflow::builders::GetWorkflowOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -125,7 +125,7 @@ pub(crate) fn de_get_workflow(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_workflow_attributes::de_workflow_attributes(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_workflow_attributes::de_workflow_attributes(tokens, _value)?);
                 }
                 "ErrorDescription" => {
                     builder = builder.set_error_description(
@@ -141,7 +141,7 @@ pub(crate) fn de_get_workflow(
                     )?);
                 }
                 "Metrics" => {
-                    builder = builder.set_metrics(crate::protocol_serde::shape_workflow_metrics::de_workflow_metrics(tokens)?);
+                    builder = builder.set_metrics(crate::protocol_serde::shape_workflow_metrics::de_workflow_metrics(tokens, _value)?);
                 }
                 "StartDate" => {
                     builder = builder.set_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -104,6 +104,7 @@ pub fn ser_resource_filter_criteria(
 
 pub(crate) fn de_resource_filter_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceFilterCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -119,42 +120,42 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "accountId" => {
                             builder = builder.set_account_id(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "resourceId" => {
                             builder = builder.set_resource_id(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "resourceType" => {
                             builder = builder.set_resource_type(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "ecrRepositoryName" => {
                             builder = builder.set_ecr_repository_name(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "lambdaFunctionName" => {
                             builder = builder.set_lambda_function_name(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "ecrImageTags" => {
                             builder = builder.set_ecr_image_tags(
-                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value)?,
                             );
                         }
                         "ec2InstanceTags" => {
                             builder = builder.set_ec2_instance_tags(
-                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens, _value)?,
                             );
                         }
                         "lambdaFunctionTags" => {
                             builder = builder.set_lambda_function_tags(
-                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens)?,
+                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

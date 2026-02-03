@@ -71,6 +71,7 @@ pub fn ser_aws_app_sync_graph_ql_api_details(
 
 pub(crate) fn de_aws_app_sync_graph_ql_api_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsAppSyncGraphQlApiDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,7 +101,7 @@ where
                         }
                         "OpenIdConnectConfig" => {
                             builder = builder.set_open_id_connect_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_open_id_connect_config_details::de_aws_app_sync_graph_ql_api_open_id_connect_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_open_id_connect_config_details::de_aws_app_sync_graph_ql_api_open_id_connect_config_details(tokens, _value)?
                                 );
                         }
                         "Name" => {
@@ -112,7 +113,7 @@ where
                         }
                         "LambdaAuthorizerConfig" => {
                             builder = builder.set_lambda_authorizer_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_lambda_authorizer_config_details::de_aws_app_sync_graph_ql_api_lambda_authorizer_config_details(tokens, _value)?
                                 );
                         }
                         "XrayEnabled" => {
@@ -127,7 +128,7 @@ where
                         }
                         "UserPoolConfig" => {
                             builder = builder.set_user_pool_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::de_aws_app_sync_graph_ql_api_user_pool_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_user_pool_config_details::de_aws_app_sync_graph_ql_api_user_pool_config_details(tokens, _value)?
                                 );
                         }
                         "AuthenticationType" => {
@@ -139,12 +140,12 @@ where
                         }
                         "LogConfig" => {
                             builder = builder.set_log_config(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::de_aws_app_sync_graph_ql_api_log_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_log_config_details::de_aws_app_sync_graph_ql_api_log_config_details(tokens, _value)?
                                 );
                         }
                         "AdditionalAuthenticationProviders" => {
                             builder = builder.set_additional_authentication_providers(
-                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_additional_authentication_providers_list::de_aws_app_sync_graph_ql_api_additional_authentication_providers_list(tokens)?
+                                    crate::protocol_serde::shape_aws_app_sync_graph_ql_api_additional_authentication_providers_list::de_aws_app_sync_graph_ql_api_additional_authentication_providers_list(tokens, _value)?
                                 );
                         }
                         "WafWebAclArn" => {

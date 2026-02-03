@@ -74,6 +74,7 @@ pub fn ser_aws_code_build_project_details(
 
 pub(crate) fn de_aws_code_build_project_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCodeBuildProjectDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,12 +97,16 @@ where
                         }
                         "Artifacts" => {
                             builder = builder.set_artifacts(
-                                crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(tokens)?,
+                                crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_aws_code_build_project_environment::de_aws_code_build_project_environment(tokens)?,
+                                crate::protocol_serde::shape_aws_code_build_project_environment::de_aws_code_build_project_environment(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Name" => {
@@ -112,8 +117,9 @@ where
                             );
                         }
                         "Source" => {
-                            builder = builder
-                                .set_source(crate::protocol_serde::shape_aws_code_build_project_source::de_aws_code_build_project_source(tokens)?);
+                            builder = builder.set_source(
+                                crate::protocol_serde::shape_aws_code_build_project_source::de_aws_code_build_project_source(tokens, _value)?,
+                            );
                         }
                         "ServiceRole" => {
                             builder = builder.set_service_role(
@@ -124,17 +130,19 @@ where
                         }
                         "LogsConfig" => {
                             builder = builder.set_logs_config(
-                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_details::de_aws_code_build_project_logs_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_code_build_project_logs_config_details::de_aws_code_build_project_logs_config_details(tokens, _value)?
                                 );
                         }
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
-                                crate::protocol_serde::shape_aws_code_build_project_vpc_config::de_aws_code_build_project_vpc_config(tokens)?,
+                                crate::protocol_serde::shape_aws_code_build_project_vpc_config::de_aws_code_build_project_vpc_config(tokens, _value)?,
                             );
                         }
                         "SecondaryArtifacts" => {
                             builder = builder.set_secondary_artifacts(
-                                crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(tokens)?,
+                                crate::protocol_serde::shape_aws_code_build_project_artifacts_list::de_aws_code_build_project_artifacts_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

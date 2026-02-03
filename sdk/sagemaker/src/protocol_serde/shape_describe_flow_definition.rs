@@ -73,13 +73,13 @@ pub fn ser_describe_flow_definition_input(
 }
 
 pub(crate) fn de_describe_flow_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,20 +115,21 @@ pub(crate) fn de_describe_flow_definition(
                 }
                 "HumanLoopRequestSource" => {
                     builder = builder.set_human_loop_request_source(
-                        crate::protocol_serde::shape_human_loop_request_source::de_human_loop_request_source(tokens)?,
+                        crate::protocol_serde::shape_human_loop_request_source::de_human_loop_request_source(tokens, _value)?,
                     );
                 }
                 "HumanLoopActivationConfig" => {
                     builder = builder.set_human_loop_activation_config(
-                        crate::protocol_serde::shape_human_loop_activation_config::de_human_loop_activation_config(tokens)?,
+                        crate::protocol_serde::shape_human_loop_activation_config::de_human_loop_activation_config(tokens, _value)?,
                     );
                 }
                 "HumanLoopConfig" => {
-                    builder = builder.set_human_loop_config(crate::protocol_serde::shape_human_loop_config::de_human_loop_config(tokens)?);
+                    builder = builder.set_human_loop_config(crate::protocol_serde::shape_human_loop_config::de_human_loop_config(tokens, _value)?);
                 }
                 "OutputConfig" => {
-                    builder = builder
-                        .set_output_config(crate::protocol_serde::shape_flow_definition_output_config::de_flow_definition_output_config(tokens)?);
+                    builder = builder.set_output_config(
+                        crate::protocol_serde::shape_flow_definition_output_config::de_flow_definition_output_config(tokens, _value)?,
+                    );
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(

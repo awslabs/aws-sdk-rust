@@ -6,28 +6,23 @@
 use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, SensitiveOutput};
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
-use bytes::{Buf, Bytes};
-use http_body_04x::Body;
+use bytes::Bytes;
 use pin_utils::pin_mut;
 use tracing::trace;
 
 const LOG_SENSITIVE_BODIES: &str = "LOG_SENSITIVE_BODIES";
 
-async fn body_to_bytes(body: SdkBody) -> Result<Bytes, <SdkBody as Body>::Error> {
-    let mut output = Vec::new();
+async fn body_to_bytes(body: SdkBody) -> Result<Bytes, <SdkBody as http_body_1x::Body>::Error> {
+    use http_body_util::BodyExt;
     pin_mut!(body);
-    while let Some(buf) = body.data().await {
-        let mut buf = buf?;
-        while buf.has_remaining() {
-            output.extend_from_slice(buf.chunk());
-            buf.advance(buf.chunk().len())
-        }
-    }
+    let collected = body.collect().await?;
 
-    Ok(Bytes::from(output))
+    Ok(collected.to_bytes())
 }
 
-pub(crate) async fn read_body(response: &mut HttpResponse) -> Result<(), <SdkBody as Body>::Error> {
+pub(crate) async fn read_body(
+    response: &mut HttpResponse,
+) -> Result<(), <SdkBody as http_body_1x::Body>::Error> {
     let mut body = SdkBody::taken();
     std::mem::swap(&mut body, response.body_mut());
 

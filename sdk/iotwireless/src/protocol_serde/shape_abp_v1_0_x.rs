@@ -23,6 +23,7 @@ pub fn ser_abp_v1_0_x(
 
 pub(crate) fn de_abp_v1_0_x<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AbpV10X>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "SessionKeys" => {
-                            builder =
-                                builder.set_session_keys(crate::protocol_serde::shape_session_keys_abp_v1_0_x::de_session_keys_abp_v1_0_x(tokens)?);
+                            builder = builder.set_session_keys(crate::protocol_serde::shape_session_keys_abp_v1_0_x::de_session_keys_abp_v1_0_x(
+                                tokens, _value,
+                            )?);
                         }
                         "FCntStart" => {
                             builder = builder.set_f_cnt_start(

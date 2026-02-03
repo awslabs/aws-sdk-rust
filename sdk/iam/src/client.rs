@@ -237,7 +237,7 @@ mod create_virtual_mfa_device;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iam::Error> {
 /// # let client: aws_sdk_iam::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_delegation_request()
 ///     .customize()

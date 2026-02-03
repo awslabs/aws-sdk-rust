@@ -32,6 +32,7 @@ pub fn ser_schedule_action_start_settings(
 
 pub(crate) fn de_schedule_action_start_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScheduleActionStartSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,17 +49,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "fixedModeScheduleActionStartSettings" => {
                                 builder = builder.set_fixed_mode_schedule_action_start_settings(
-                                    crate::protocol_serde::shape_fixed_mode_schedule_action_start_settings::de_fixed_mode_schedule_action_start_settings(tokens)?
+                                    crate::protocol_serde::shape_fixed_mode_schedule_action_start_settings::de_fixed_mode_schedule_action_start_settings(tokens, _value)?
                                 );
                             }
                             "followModeScheduleActionStartSettings" => {
                                 builder = builder.set_follow_mode_schedule_action_start_settings(
-                                    crate::protocol_serde::shape_follow_mode_schedule_action_start_settings::de_follow_mode_schedule_action_start_settings(tokens)?
+                                    crate::protocol_serde::shape_follow_mode_schedule_action_start_settings::de_follow_mode_schedule_action_start_settings(tokens, _value)?
                                 );
                             }
                             "immediateModeScheduleActionStartSettings" => {
                                 builder = builder.set_immediate_mode_schedule_action_start_settings(
-                                    crate::protocol_serde::shape_immediate_mode_schedule_action_start_settings::de_immediate_mode_schedule_action_start_settings(tokens)?
+                                    crate::protocol_serde::shape_immediate_mode_schedule_action_start_settings::de_immediate_mode_schedule_action_start_settings(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

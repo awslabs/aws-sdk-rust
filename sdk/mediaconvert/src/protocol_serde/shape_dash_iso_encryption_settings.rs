@@ -17,6 +17,7 @@ pub fn ser_dash_iso_encryption_settings(
 
 pub(crate) fn de_dash_iso_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashIsoEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,8 @@ where
                             );
                         }
                         "spekeKeyProvider" => {
-                            builder = builder.set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens)?);
+                            builder = builder
+                                .set_speke_key_provider(crate::protocol_serde::shape_speke_key_provider::de_speke_key_provider(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

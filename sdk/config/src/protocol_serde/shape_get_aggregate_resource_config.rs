@@ -125,13 +125,13 @@ pub fn ser_get_aggregate_resource_config_input(
 }
 
 pub(crate) fn de_get_aggregate_resource_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_get_aggregate_resource_config(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConfigurationItem" => {
-                    builder = builder.set_configuration_item(crate::protocol_serde::shape_configuration_item::de_configuration_item(tokens)?);
+                    builder = builder.set_configuration_item(crate::protocol_serde::shape_configuration_item::de_configuration_item(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -26,6 +26,7 @@ pub fn ser_categorical_measure_field(
 
 pub(crate) fn de_categorical_measure_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CategoricalMeasureField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "AggregationFunction" => {
                             builder = builder.set_aggregation_function(
@@ -58,7 +59,7 @@ where
                         }
                         "FormatConfiguration" => {
                             builder = builder.set_format_configuration(
-                                crate::protocol_serde::shape_string_format_configuration::de_string_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_string_format_configuration::de_string_format_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

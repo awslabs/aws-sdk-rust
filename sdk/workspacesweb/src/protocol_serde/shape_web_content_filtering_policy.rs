@@ -35,6 +35,7 @@ pub fn ser_web_content_filtering_policy(
 
 pub(crate) fn de_web_content_filtering_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WebContentFilteringPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,13 +50,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blockedCategories" => {
-                            builder = builder.set_blocked_categories(crate::protocol_serde::shape_blocked_categories::de_blocked_categories(tokens)?);
+                            builder = builder
+                                .set_blocked_categories(crate::protocol_serde::shape_blocked_categories::de_blocked_categories(tokens, _value)?);
                         }
                         "allowedUrls" => {
-                            builder = builder.set_allowed_urls(crate::protocol_serde::shape_url_pattern_list::de_url_pattern_list(tokens)?);
+                            builder = builder.set_allowed_urls(crate::protocol_serde::shape_url_pattern_list::de_url_pattern_list(tokens, _value)?);
                         }
                         "blockedUrls" => {
-                            builder = builder.set_blocked_urls(crate::protocol_serde::shape_url_pattern_list::de_url_pattern_list(tokens)?);
+                            builder = builder.set_blocked_urls(crate::protocol_serde::shape_url_pattern_list::de_url_pattern_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_output_artifact(
 
 pub(crate) fn de_output_artifact<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputArtifact>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "files" => {
-                            builder = builder.set_files(crate::protocol_serde::shape_file_path_list::de_file_path_list(tokens)?);
+                            builder = builder.set_files(crate::protocol_serde::shape_file_path_list::de_file_path_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

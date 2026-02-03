@@ -29,6 +29,7 @@ pub fn ser_dataset_parameter(
 
 pub(crate) fn de_dataset_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,13 +58,14 @@ where
                             );
                         }
                         "DatetimeOptions" => {
-                            builder = builder.set_datetime_options(crate::protocol_serde::shape_datetime_options::de_datetime_options(tokens)?);
+                            builder =
+                                builder.set_datetime_options(crate::protocol_serde::shape_datetime_options::de_datetime_options(tokens, _value)?);
                         }
                         "CreateColumn" => {
                             builder = builder.set_create_column(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Filter" => {
-                            builder = builder.set_filter(crate::protocol_serde::shape_filter_expression::de_filter_expression(tokens)?);
+                            builder = builder.set_filter(crate::protocol_serde::shape_filter_expression::de_filter_expression(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

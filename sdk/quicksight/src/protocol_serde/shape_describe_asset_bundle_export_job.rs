@@ -98,13 +98,13 @@ pub fn de_describe_asset_bundle_export_job_http_response(
 }
 
 pub(crate) fn de_describe_asset_bundle_export_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_bundle_export_job::builders::DescribeAssetBundleExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                 }
                 "CloudFormationOverridePropertyConfiguration" => {
                     builder = builder.set_cloud_formation_override_property_configuration(
-                            crate::protocol_serde::shape_asset_bundle_cloud_formation_override_property_configuration::de_asset_bundle_cloud_formation_override_property_configuration(tokens)?
+                            crate::protocol_serde::shape_asset_bundle_cloud_formation_override_property_configuration::de_asset_bundle_cloud_formation_override_property_configuration(tokens, _value)?
                         );
                 }
                 "CreatedTime" => {
@@ -151,8 +151,9 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                     );
                 }
                 "Errors" => {
-                    builder = builder
-                        .set_errors(crate::protocol_serde::shape_asset_bundle_export_job_error_list::de_asset_bundle_export_job_error_list(tokens)?);
+                    builder = builder.set_errors(
+                        crate::protocol_serde::shape_asset_bundle_export_job_error_list::de_asset_bundle_export_job_error_list(tokens, _value)?,
+                    );
                 }
                 "ExportFormat" => {
                     builder = builder.set_export_format(
@@ -196,19 +197,19 @@ pub(crate) fn de_describe_asset_bundle_export_job(
                 }
                 "ResourceArns" => {
                     builder = builder.set_resource_arns(crate::protocol_serde::shape_asset_bundle_resource_arns::de_asset_bundle_resource_arns(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ValidationStrategy" => {
                     builder = builder.set_validation_strategy(
                         crate::protocol_serde::shape_asset_bundle_export_job_validation_strategy::de_asset_bundle_export_job_validation_strategy(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
                 "Warnings" => {
                     builder = builder.set_warnings(
-                        crate::protocol_serde::shape_asset_bundle_export_job_warning_list::de_asset_bundle_export_job_warning_list(tokens)?,
+                        crate::protocol_serde::shape_asset_bundle_export_job_warning_list::de_asset_bundle_export_job_warning_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

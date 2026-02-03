@@ -130,13 +130,13 @@ pub fn ser_withdraw_byoip_cidr_input(
 }
 
 pub(crate) fn de_withdraw_byoip_cidr(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_withdraw_byoip_cidr(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ByoipCidr" => {
-                    builder = builder.set_byoip_cidr(crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(tokens)?);
+                    builder = builder.set_byoip_cidr(crate::protocol_serde::shape_byoip_cidr::de_byoip_cidr(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

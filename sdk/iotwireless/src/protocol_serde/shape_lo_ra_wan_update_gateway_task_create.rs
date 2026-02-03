@@ -29,6 +29,7 @@ pub fn ser_lo_ra_wan_update_gateway_task_create(
 
 pub(crate) fn de_lo_ra_wan_update_gateway_task_create<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoRaWanUpdateGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,12 +59,12 @@ where
                         }
                         "CurrentVersion" => {
                             builder = builder.set_current_version(
-                                crate::protocol_serde::shape_lo_ra_wan_gateway_version::de_lo_ra_wan_gateway_version(tokens)?,
+                                crate::protocol_serde::shape_lo_ra_wan_gateway_version::de_lo_ra_wan_gateway_version(tokens, _value)?,
                             );
                         }
                         "UpdateVersion" => {
                             builder = builder.set_update_version(
-                                crate::protocol_serde::shape_lo_ra_wan_gateway_version::de_lo_ra_wan_gateway_version(tokens)?,
+                                crate::protocol_serde::shape_lo_ra_wan_gateway_version::de_lo_ra_wan_gateway_version(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

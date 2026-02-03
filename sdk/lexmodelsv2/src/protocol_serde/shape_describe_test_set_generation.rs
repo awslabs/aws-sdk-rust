@@ -135,13 +135,13 @@ pub fn de_describe_test_set_generation_http_response(
 }
 
 pub(crate) fn de_describe_test_set_generation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_test_set_generation::builders::DescribeTestSetGenerationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,11 +162,11 @@ pub(crate) fn de_describe_test_set_generation(
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "generationDataSource" => {
                     builder = builder.set_generation_data_source(
-                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens)?,
+                        crate::protocol_serde::shape_test_set_generation_data_source::de_test_set_generation_data_source(tokens, _value)?,
                     );
                 }
                 "lastUpdatedDateTime" => {
@@ -184,7 +184,7 @@ pub(crate) fn de_describe_test_set_generation(
                 }
                 "storageLocation" => {
                     builder = builder.set_storage_location(crate::protocol_serde::shape_test_set_storage_location::de_test_set_storage_location(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "testSetGenerationId" => {

@@ -50,6 +50,7 @@ pub fn ser_new_default_values(
 
 pub(crate) fn de_new_default_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NewDefaultValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,24 +66,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StringStaticValues" => {
                             builder = builder.set_string_static_values(
-                                crate::protocol_serde::shape_string_dataset_parameter_value_list::de_string_dataset_parameter_value_list(tokens)?,
+                                crate::protocol_serde::shape_string_dataset_parameter_value_list::de_string_dataset_parameter_value_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "DecimalStaticValues" => {
                             builder = builder.set_decimal_static_values(
-                                crate::protocol_serde::shape_decimal_dataset_parameter_value_list::de_decimal_dataset_parameter_value_list(tokens)?,
+                                crate::protocol_serde::shape_decimal_dataset_parameter_value_list::de_decimal_dataset_parameter_value_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "DateTimeStaticValues" => {
                             builder = builder.set_date_time_static_values(
                                 crate::protocol_serde::shape_date_time_dataset_parameter_value_list::de_date_time_dataset_parameter_value_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "IntegerStaticValues" => {
                             builder = builder.set_integer_static_values(
-                                crate::protocol_serde::shape_integer_dataset_parameter_value_list::de_integer_dataset_parameter_value_list(tokens)?,
+                                crate::protocol_serde::shape_integer_dataset_parameter_value_list::de_integer_dataset_parameter_value_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

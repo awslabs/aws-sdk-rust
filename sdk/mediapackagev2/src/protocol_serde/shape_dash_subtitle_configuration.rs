@@ -14,6 +14,7 @@ pub fn ser_dash_subtitle_configuration(
 
 pub(crate) fn de_dash_subtitle_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DashSubtitleConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TtmlConfiguration" => {
-                            builder = builder
-                                .set_ttml_configuration(crate::protocol_serde::shape_dash_ttml_configuration::de_dash_ttml_configuration(tokens)?);
+                            builder = builder.set_ttml_configuration(
+                                crate::protocol_serde::shape_dash_ttml_configuration::de_dash_ttml_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

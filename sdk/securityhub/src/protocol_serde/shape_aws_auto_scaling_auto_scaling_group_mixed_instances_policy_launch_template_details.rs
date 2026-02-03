@@ -26,6 +26,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_tem
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -44,12 +45,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LaunchTemplateSpecification" => {
                             builder = builder.set_launch_template_specification(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification(tokens, _value)?
                                 );
                         }
                         "Overrides" => {
                             builder = builder.set_overrides(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

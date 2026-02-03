@@ -21,6 +21,7 @@ pub fn ser_membership_protected_query_output_configuration(
 
 pub(crate) fn de_membership_protected_query_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MembershipProtectedQueryOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,8 +51,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::MembershipProtectedQueryOutputConfiguration::S3(
-                            crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(tokens)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
+                            crate::protocol_serde::shape_protected_query_s3_output_configuration::de_protected_query_s3_output_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

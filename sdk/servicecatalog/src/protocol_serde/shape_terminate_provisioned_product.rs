@@ -72,13 +72,13 @@ pub fn ser_terminate_provisioned_product_input(
 }
 
 pub(crate) fn de_terminate_provisioned_product(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -86,7 +86,7 @@ pub(crate) fn de_terminate_provisioned_product(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "RecordDetail" => {
-                    builder = builder.set_record_detail(crate::protocol_serde::shape_record_detail::de_record_detail(tokens)?);
+                    builder = builder.set_record_detail(crate::protocol_serde::shape_record_detail::de_record_detail(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

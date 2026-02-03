@@ -113,6 +113,7 @@ pub fn ser_user_settings(
 
 pub(crate) fn de_user_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UserSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -134,52 +135,55 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                            builder =
+                                builder.set_security_groups(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
                         }
                         "SharingSettings" => {
-                            builder = builder.set_sharing_settings(crate::protocol_serde::shape_sharing_settings::de_sharing_settings(tokens)?);
+                            builder =
+                                builder.set_sharing_settings(crate::protocol_serde::shape_sharing_settings::de_sharing_settings(tokens, _value)?);
                         }
                         "JupyterServerAppSettings" => {
                             builder = builder.set_jupyter_server_app_settings(
-                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens)?,
+                                crate::protocol_serde::shape_jupyter_server_app_settings::de_jupyter_server_app_settings(tokens, _value)?,
                             );
                         }
                         "KernelGatewayAppSettings" => {
                             builder = builder.set_kernel_gateway_app_settings(
-                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens)?,
+                                crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens, _value)?,
                             );
                         }
                         "TensorBoardAppSettings" => {
                             builder = builder.set_tensor_board_app_settings(
-                                crate::protocol_serde::shape_tensor_board_app_settings::de_tensor_board_app_settings(tokens)?,
+                                crate::protocol_serde::shape_tensor_board_app_settings::de_tensor_board_app_settings(tokens, _value)?,
                             );
                         }
                         "RStudioServerProAppSettings" => {
                             builder = builder.set_r_studio_server_pro_app_settings(
-                                crate::protocol_serde::shape_r_studio_server_pro_app_settings::de_r_studio_server_pro_app_settings(tokens)?,
+                                crate::protocol_serde::shape_r_studio_server_pro_app_settings::de_r_studio_server_pro_app_settings(tokens, _value)?,
                             );
                         }
                         "RSessionAppSettings" => {
-                            builder = builder
-                                .set_r_session_app_settings(crate::protocol_serde::shape_r_session_app_settings::de_r_session_app_settings(tokens)?);
+                            builder = builder.set_r_session_app_settings(
+                                crate::protocol_serde::shape_r_session_app_settings::de_r_session_app_settings(tokens, _value)?,
+                            );
                         }
                         "CanvasAppSettings" => {
-                            builder =
-                                builder.set_canvas_app_settings(crate::protocol_serde::shape_canvas_app_settings::de_canvas_app_settings(tokens)?);
+                            builder = builder
+                                .set_canvas_app_settings(crate::protocol_serde::shape_canvas_app_settings::de_canvas_app_settings(tokens, _value)?);
                         }
                         "CodeEditorAppSettings" => {
                             builder = builder.set_code_editor_app_settings(
-                                crate::protocol_serde::shape_code_editor_app_settings::de_code_editor_app_settings(tokens)?,
+                                crate::protocol_serde::shape_code_editor_app_settings::de_code_editor_app_settings(tokens, _value)?,
                             );
                         }
                         "JupyterLabAppSettings" => {
                             builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens)?,
+                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens, _value)?,
                             );
                         }
                         "SpaceStorageSettings" => {
                             builder = builder.set_space_storage_settings(
-                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(tokens)?,
+                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(tokens, _value)?,
                             );
                         }
                         "DefaultLandingUri" => {
@@ -198,17 +202,17 @@ where
                         }
                         "CustomPosixUserConfig" => {
                             builder = builder.set_custom_posix_user_config(
-                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens)?,
+                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens, _value)?,
                             );
                         }
                         "CustomFileSystemConfigs" => {
                             builder = builder.set_custom_file_system_configs(
-                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens)?,
+                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens, _value)?,
                             );
                         }
                         "StudioWebPortalSettings" => {
                             builder = builder.set_studio_web_portal_settings(
-                                crate::protocol_serde::shape_studio_web_portal_settings::de_studio_web_portal_settings(tokens)?,
+                                crate::protocol_serde::shape_studio_web_portal_settings::de_studio_web_portal_settings(tokens, _value)?,
                             );
                         }
                         "AutoMountHomeEFS" => {

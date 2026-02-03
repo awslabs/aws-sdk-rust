@@ -29,6 +29,7 @@ pub fn ser_rtmp_output_settings(
 
 pub(crate) fn de_rtmp_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RtmpOutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,8 @@ where
                             );
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                            builder =
+                                builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens, _value)?);
                         }
                         "numRetries" => {
                             builder = builder.set_num_retries(

@@ -23,6 +23,8 @@ pub struct StartStreamEncryptionInput {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamEncryptionInput {
     /// <p>The name of the stream for which to start encrypting records.</p>
@@ -53,6 +55,10 @@ impl StartStreamEncryptionInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl StartStreamEncryptionInput {
     /// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::operation::start_stream_encryption::StartStreamEncryptionInput).
@@ -69,6 +75,7 @@ pub struct StartStreamEncryptionInputBuilder {
     pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     pub(crate) key_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamEncryptionInputBuilder {
     /// <p>The name of the stream for which to start encrypting records.</p>
@@ -165,6 +172,20 @@ impl StartStreamEncryptionInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`StartStreamEncryptionInput`](crate::operation::start_stream_encryption::StartStreamEncryptionInput).
     pub fn build(
         self,
@@ -175,6 +196,7 @@ impl StartStreamEncryptionInputBuilder {
             encryption_type: self.encryption_type,
             key_id: self.key_id,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_tile_additional_feature::TileAdditionalFeature;
 
+pub use crate::types::_buildings::Buildings;
+
 pub use crate::types::_travel_mode::TravelMode;
 
 pub use crate::types::_traffic::Traffic;
@@ -26,6 +28,8 @@ pub use crate::types::_map_feature_mode::MapFeatureMode;
 pub use crate::types::_label_size::LabelSize;
 
 pub use crate::types::_variant::Variant;
+
+mod _buildings;
 
 mod _color_scheme;
 

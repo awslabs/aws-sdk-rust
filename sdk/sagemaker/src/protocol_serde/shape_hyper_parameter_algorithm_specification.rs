@@ -29,6 +29,7 @@ pub fn ser_hyper_parameter_algorithm_specification(
 
 pub(crate) fn de_hyper_parameter_algorithm_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HyperParameterAlgorithmSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,8 +65,9 @@ where
                             );
                         }
                         "MetricDefinitions" => {
-                            builder = builder
-                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                            builder = builder.set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

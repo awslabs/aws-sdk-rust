@@ -50,6 +50,7 @@ pub fn ser_output_group_settings(
 
 pub(crate) fn de_output_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,29 +65,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cmafGroupSettings" => {
-                            builder =
-                                builder.set_cmaf_group_settings(crate::protocol_serde::shape_cmaf_group_settings::de_cmaf_group_settings(tokens)?);
+                            builder = builder
+                                .set_cmaf_group_settings(crate::protocol_serde::shape_cmaf_group_settings::de_cmaf_group_settings(tokens, _value)?);
                         }
                         "dashIsoGroupSettings" => {
                             builder = builder.set_dash_iso_group_settings(
-                                crate::protocol_serde::shape_dash_iso_group_settings::de_dash_iso_group_settings(tokens)?,
+                                crate::protocol_serde::shape_dash_iso_group_settings::de_dash_iso_group_settings(tokens, _value)?,
                             );
                         }
                         "fileGroupSettings" => {
-                            builder =
-                                builder.set_file_group_settings(crate::protocol_serde::shape_file_group_settings::de_file_group_settings(tokens)?);
+                            builder = builder
+                                .set_file_group_settings(crate::protocol_serde::shape_file_group_settings::de_file_group_settings(tokens, _value)?);
                         }
                         "hlsGroupSettings" => {
-                            builder = builder.set_hls_group_settings(crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens)?);
+                            builder = builder
+                                .set_hls_group_settings(crate::protocol_serde::shape_hls_group_settings::de_hls_group_settings(tokens, _value)?);
                         }
                         "msSmoothGroupSettings" => {
                             builder = builder.set_ms_smooth_group_settings(
-                                crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens)?,
+                                crate::protocol_serde::shape_ms_smooth_group_settings::de_ms_smooth_group_settings(tokens, _value)?,
                             );
                         }
                         "perFrameMetrics" => {
                             builder = builder.set_per_frame_metrics(
-                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens, _value)?,
                             );
                         }
                         "type" => {

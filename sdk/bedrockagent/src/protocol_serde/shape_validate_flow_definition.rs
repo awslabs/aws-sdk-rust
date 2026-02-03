@@ -120,13 +120,13 @@ pub fn ser_validate_flow_definition_input(
 }
 
 pub(crate) fn de_validate_flow_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::validate_flow_definition::builders::ValidateFlowDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::validate_flow_definition::builders::ValidateFlowDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_validate_flow_definition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "validations" => {
-                    builder = builder.set_validations(crate::protocol_serde::shape_flow_validations::de_flow_validations(tokens)?);
+                    builder = builder.set_validations(crate::protocol_serde::shape_flow_validations::de_flow_validations(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

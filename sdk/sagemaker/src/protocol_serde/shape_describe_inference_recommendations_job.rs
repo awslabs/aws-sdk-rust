@@ -74,13 +74,13 @@ pub fn ser_describe_inference_recommendations_job_input(
 }
 
 pub(crate) fn de_describe_inference_recommendations_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_inference_recommendations_job::builders::DescribeInferenceRecommendationsJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,22 +155,26 @@ pub(crate) fn de_describe_inference_recommendations_job(
                     );
                 }
                 "InputConfig" => {
-                    builder = builder
-                        .set_input_config(crate::protocol_serde::shape_recommendation_job_input_config::de_recommendation_job_input_config(tokens)?);
+                    builder = builder.set_input_config(
+                        crate::protocol_serde::shape_recommendation_job_input_config::de_recommendation_job_input_config(tokens, _value)?,
+                    );
                 }
                 "StoppingConditions" => {
                     builder = builder.set_stopping_conditions(
-                        crate::protocol_serde::shape_recommendation_job_stopping_conditions::de_recommendation_job_stopping_conditions(tokens)?,
+                        crate::protocol_serde::shape_recommendation_job_stopping_conditions::de_recommendation_job_stopping_conditions(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "InferenceRecommendations" => {
                     builder = builder.set_inference_recommendations(
-                        crate::protocol_serde::shape_inference_recommendations::de_inference_recommendations(tokens)?,
+                        crate::protocol_serde::shape_inference_recommendations::de_inference_recommendations(tokens, _value)?,
                     );
                 }
                 "EndpointPerformances" => {
-                    builder =
-                        builder.set_endpoint_performances(crate::protocol_serde::shape_endpoint_performances::de_endpoint_performances(tokens)?);
+                    builder = builder.set_endpoint_performances(crate::protocol_serde::shape_endpoint_performances::de_endpoint_performances(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

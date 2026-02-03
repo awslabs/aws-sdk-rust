@@ -158,13 +158,13 @@ pub fn de_describe_multiplex_program_http_response(
 }
 
 pub(crate) fn de_describe_multiplex_program(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -180,17 +180,21 @@ pub(crate) fn de_describe_multiplex_program(
                 }
                 "multiplexProgramSettings" => {
                     builder = builder.set_multiplex_program_settings(
-                        crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(tokens)?,
+                        crate::protocol_serde::shape_multiplex_program_settings::de_multiplex_program_settings(tokens, _value)?,
                     );
                 }
                 "packetIdentifiersMap" => {
                     builder = builder.set_packet_identifiers_map(
-                        crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::de_multiplex_program_packet_identifiers_map(tokens)?,
+                        crate::protocol_serde::shape_multiplex_program_packet_identifiers_map::de_multiplex_program_packet_identifiers_map(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "pipelineDetails" => {
                     builder = builder.set_pipeline_details(
-                        crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(tokens)?,
+                        crate::protocol_serde::shape_list_of_multiplex_program_pipeline_detail::de_list_of_multiplex_program_pipeline_detail(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "programName" => {

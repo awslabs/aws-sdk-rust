@@ -106,11 +106,11 @@ pub fn de_get_function_http_response(
 }
 
 pub(crate) fn de_get_function(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_function::builders::GetFunctionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_function::builders::GetFunctionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,19 +118,23 @@ pub(crate) fn de_get_function(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Code" => {
-                    builder = builder.set_code(crate::protocol_serde::shape_function_code_location::de_function_code_location(tokens)?);
+                    builder = builder.set_code(crate::protocol_serde::shape_function_code_location::de_function_code_location(
+                        tokens, _value,
+                    )?);
                 }
                 "Concurrency" => {
-                    builder = builder.set_concurrency(crate::protocol_serde::shape_concurrency::de_concurrency(tokens)?);
+                    builder = builder.set_concurrency(crate::protocol_serde::shape_concurrency::de_concurrency(tokens, _value)?);
                 }
                 "Configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_function_configuration::de_function_configuration(tokens)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_function_configuration::de_function_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "TagsError" => {
-                    builder = builder.set_tags_error(crate::protocol_serde::shape_tags_error::de_tags_error(tokens)?);
+                    builder = builder.set_tags_error(crate::protocol_serde::shape_tags_error::de_tags_error(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -26,6 +26,7 @@ pub fn ser_audio_track_selection(
 
 pub(crate) fn de_audio_track_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioTrackSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tracks" => {
-                            builder = builder.set_tracks(crate::protocol_serde::shape_list_of_audio_track::de_list_of_audio_track(tokens)?);
+                            builder = builder.set_tracks(crate::protocol_serde::shape_list_of_audio_track::de_list_of_audio_track(tokens, _value)?);
                         }
                         "dolbyEDecode" => {
-                            builder = builder.set_dolby_e_decode(crate::protocol_serde::shape_audio_dolby_e_decode::de_audio_dolby_e_decode(tokens)?);
+                            builder = builder.set_dolby_e_decode(crate::protocol_serde::shape_audio_dolby_e_decode::de_audio_dolby_e_decode(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -149,7 +149,7 @@ mod create_support_case;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_servicequotas::Error> {
 /// # let client: aws_sdk_servicequotas::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_service_quota_template()
 ///     .customize()

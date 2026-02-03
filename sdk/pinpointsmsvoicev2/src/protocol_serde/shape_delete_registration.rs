@@ -146,13 +146,13 @@ pub fn ser_delete_registration_input(
 }
 
 pub(crate) fn de_delete_registration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_registration::builders::DeleteRegistrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_registration::builders::DeleteRegistrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -209,7 +209,7 @@ pub(crate) fn de_delete_registration(
                     );
                 }
                 "AdditionalAttributes" => {
-                    builder = builder.set_additional_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                    builder = builder.set_additional_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

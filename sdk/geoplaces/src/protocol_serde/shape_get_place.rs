@@ -101,10 +101,10 @@ pub fn de_get_place_http_response(
 }
 
 pub(crate) fn de_get_place(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_place::builders::GetPlaceOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_place::builders::GetPlaceOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -112,41 +112,42 @@ pub(crate) fn de_get_place(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccessPoints" => {
-                    builder = builder.set_access_points(crate::protocol_serde::shape_access_point_list::de_access_point_list(tokens)?);
+                    builder = builder.set_access_points(crate::protocol_serde::shape_access_point_list::de_access_point_list(tokens, _value)?);
                 }
                 "AccessRestrictions" => {
-                    builder =
-                        builder.set_access_restrictions(crate::protocol_serde::shape_access_restriction_list::de_access_restriction_list(tokens)?);
+                    builder = builder.set_access_restrictions(crate::protocol_serde::shape_access_restriction_list::de_access_restriction_list(
+                        tokens, _value,
+                    )?);
                 }
                 "Address" => {
-                    builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens)?);
+                    builder = builder.set_address(crate::protocol_serde::shape_address::de_address(tokens, _value)?);
                 }
                 "AddressNumberCorrected" => {
                     builder = builder.set_address_number_corrected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "BusinessChains" => {
-                    builder = builder.set_business_chains(crate::protocol_serde::shape_business_chain_list::de_business_chain_list(tokens)?);
+                    builder = builder.set_business_chains(crate::protocol_serde::shape_business_chain_list::de_business_chain_list(tokens, _value)?);
                 }
                 "Categories" => {
-                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens)?);
+                    builder = builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value)?);
                 }
                 "Contacts" => {
-                    builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens)?);
+                    builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value)?);
                 }
                 "FoodTypes" => {
-                    builder = builder.set_food_types(crate::protocol_serde::shape_food_type_list::de_food_type_list(tokens)?);
+                    builder = builder.set_food_types(crate::protocol_serde::shape_food_type_list::de_food_type_list(tokens, _value)?);
                 }
                 "MainAddress" => {
-                    builder = builder.set_main_address(crate::protocol_serde::shape_related_place::de_related_place(tokens)?);
+                    builder = builder.set_main_address(crate::protocol_serde::shape_related_place::de_related_place(tokens, _value)?);
                 }
                 "MapView" => {
-                    builder = builder.set_map_view(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens)?);
+                    builder = builder.set_map_view(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
                 }
                 "OpeningHours" => {
-                    builder = builder.set_opening_hours(crate::protocol_serde::shape_opening_hours_list::de_opening_hours_list(tokens)?);
+                    builder = builder.set_opening_hours(crate::protocol_serde::shape_opening_hours_list::de_opening_hours_list(tokens, _value)?);
                 }
                 "Phonemes" => {
-                    builder = builder.set_phonemes(crate::protocol_serde::shape_phoneme_details::de_phoneme_details(tokens)?);
+                    builder = builder.set_phonemes(crate::protocol_serde::shape_phoneme_details::de_phoneme_details(tokens, _value)?);
                 }
                 "PlaceId" => {
                     builder = builder.set_place_id(
@@ -170,18 +171,19 @@ pub(crate) fn de_get_place(
                     );
                 }
                 "Position" => {
-                    builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens)?);
+                    builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
                 }
                 "PostalCodeDetails" => {
                     builder = builder.set_postal_code_details(crate::protocol_serde::shape_postal_code_details_list::de_postal_code_details_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "SecondaryAddresses" => {
-                    builder = builder.set_secondary_addresses(crate::protocol_serde::shape_related_place_list::de_related_place_list(tokens)?);
+                    builder =
+                        builder.set_secondary_addresses(crate::protocol_serde::shape_related_place_list::de_related_place_list(tokens, _value)?);
                 }
                 "TimeZone" => {
-                    builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens)?);
+                    builder = builder.set_time_zone(crate::protocol_serde::shape_time_zone::de_time_zone(tokens, _value)?);
                 }
                 "Title" => {
                     builder = builder.set_title(

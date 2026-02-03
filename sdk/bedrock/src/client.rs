@@ -183,7 +183,7 @@ mod create_provisioned_model_throughput;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrock::Error> {
 /// # let client: aws_sdk_bedrock::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_delete_evaluation_job()
 ///     .customize()

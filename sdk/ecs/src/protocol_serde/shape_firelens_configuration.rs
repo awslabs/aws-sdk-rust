@@ -21,6 +21,7 @@ pub fn ser_firelens_configuration(
 
 pub(crate) fn de_firelens_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FirelensConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,7 +44,9 @@ where
                         }
                         "options" => {
                             builder = builder.set_options(
-                                crate::protocol_serde::shape_firelens_configuration_options_map::de_firelens_configuration_options_map(tokens)?,
+                                crate::protocol_serde::shape_firelens_configuration_options_map::de_firelens_configuration_options_map(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

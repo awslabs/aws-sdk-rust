@@ -124,13 +124,13 @@ pub fn ser_list_custom_line_item_versions_input(
 }
 
 pub(crate) fn de_list_custom_line_item_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_list_custom_line_item_versions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CustomLineItemVersions" => {
                     builder = builder.set_custom_line_item_versions(
-                        crate::protocol_serde::shape_custom_line_item_version_list::de_custom_line_item_version_list(tokens)?,
+                        crate::protocol_serde::shape_custom_line_item_version_list::de_custom_line_item_version_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

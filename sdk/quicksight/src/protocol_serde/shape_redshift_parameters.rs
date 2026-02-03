@@ -35,6 +35,7 @@ pub fn ser_redshift_parameters(
 
 pub(crate) fn de_redshift_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedshiftParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,12 +78,13 @@ where
                             );
                         }
                         "IAMParameters" => {
-                            builder =
-                                builder.set_iam_parameters(crate::protocol_serde::shape_redshift_iam_parameters::de_redshift_iam_parameters(tokens)?);
+                            builder = builder.set_iam_parameters(crate::protocol_serde::shape_redshift_iam_parameters::de_redshift_iam_parameters(
+                                tokens, _value,
+                            )?);
                         }
                         "IdentityCenterConfiguration" => {
                             builder = builder.set_identity_center_configuration(
-                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

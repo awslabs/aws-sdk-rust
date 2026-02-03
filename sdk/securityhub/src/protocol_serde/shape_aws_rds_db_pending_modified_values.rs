@@ -77,6 +77,7 @@ pub fn ser_aws_rds_db_pending_modified_values(
 
 pub(crate) fn de_aws_rds_db_pending_modified_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbPendingModifiedValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -180,12 +181,12 @@ where
                             }
                             "PendingCloudWatchLogsExports" => {
                                 builder = builder.set_pending_cloud_watch_logs_exports(
-                                    crate::protocol_serde::shape_aws_rds_pending_cloud_watch_logs_exports::de_aws_rds_pending_cloud_watch_logs_exports(tokens)?
+                                    crate::protocol_serde::shape_aws_rds_pending_cloud_watch_logs_exports::de_aws_rds_pending_cloud_watch_logs_exports(tokens, _value)?
                                 );
                             }
                             "ProcessorFeatures" => {
                                 builder = builder.set_processor_features(
-                                    crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(tokens)?,
+                                    crate::protocol_serde::shape_aws_rds_db_processor_features::de_aws_rds_db_processor_features(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

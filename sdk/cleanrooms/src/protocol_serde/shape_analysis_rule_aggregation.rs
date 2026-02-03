@@ -74,6 +74,7 @@ pub fn ser_analysis_rule_aggregation(
 
 pub(crate) fn de_analysis_rule_aggregation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisRuleAggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,12 +89,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "aggregateColumns" => {
-                            builder =
-                                builder.set_aggregate_columns(crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(tokens)?);
+                            builder = builder.set_aggregate_columns(crate::protocol_serde::shape_aggregate_column_list::de_aggregate_column_list(
+                                tokens, _value,
+                            )?);
                         }
                         "joinColumns" => {
                             builder = builder.set_join_columns(crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "joinRequired" => {
@@ -104,21 +106,24 @@ where
                             );
                         }
                         "allowedJoinOperators" => {
-                            builder =
-                                builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(tokens)?);
+                            builder = builder.set_allowed_join_operators(crate::protocol_serde::shape_join_operators_list::de_join_operators_list(
+                                tokens, _value,
+                            )?);
                         }
                         "dimensionColumns" => {
                             builder = builder.set_dimension_columns(
-                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens)?,
+                                crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value)?,
                             );
                         }
                         "scalarFunctions" => {
-                            builder =
-                                builder.set_scalar_functions(crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(tokens)?);
+                            builder = builder.set_scalar_functions(crate::protocol_serde::shape_scalar_functions_list::de_scalar_functions_list(
+                                tokens, _value,
+                            )?);
                         }
                         "outputConstraints" => {
-                            builder = builder
-                                .set_output_constraints(crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens)?);
+                            builder = builder.set_output_constraints(
+                                crate::protocol_serde::shape_aggregation_constraints::de_aggregation_constraints(tokens, _value)?,
+                            );
                         }
                         "additionalAnalyses" => {
                             builder = builder.set_additional_analyses(

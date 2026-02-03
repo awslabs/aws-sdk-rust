@@ -17,6 +17,7 @@ pub fn ser_aws_ecs_task_volume_details(
 
 pub(crate) fn de_aws_ecs_task_volume_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEcsTaskVolumeDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "Host" => {
                             builder = builder.set_host(
-                                crate::protocol_serde::shape_aws_ecs_task_volume_host_details::de_aws_ecs_task_volume_host_details(tokens)?,
+                                crate::protocol_serde::shape_aws_ecs_task_volume_host_details::de_aws_ecs_task_volume_host_details(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

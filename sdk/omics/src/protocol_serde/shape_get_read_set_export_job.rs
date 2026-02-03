@@ -130,13 +130,13 @@ pub fn de_get_read_set_export_job_http_response(
 }
 
 pub(crate) fn de_get_read_set_export_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_get_read_set_export_job(
                 }
                 "readSets" => {
                     builder = builder.set_read_sets(crate::protocol_serde::shape_export_read_set_detail_list::de_export_read_set_detail_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "sequenceStoreId" => {

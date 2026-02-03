@@ -104,6 +104,7 @@ pub fn ser_statement(
 
 pub(crate) fn de_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Statement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -118,70 +119,77 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ByteMatchStatement" => {
-                            builder =
-                                builder.set_byte_match_statement(crate::protocol_serde::shape_byte_match_statement::de_byte_match_statement(tokens)?);
+                            builder = builder.set_byte_match_statement(crate::protocol_serde::shape_byte_match_statement::de_byte_match_statement(
+                                tokens, _value,
+                            )?);
                         }
                         "SqliMatchStatement" => {
-                            builder =
-                                builder.set_sqli_match_statement(crate::protocol_serde::shape_sqli_match_statement::de_sqli_match_statement(tokens)?);
+                            builder = builder.set_sqli_match_statement(crate::protocol_serde::shape_sqli_match_statement::de_sqli_match_statement(
+                                tokens, _value,
+                            )?);
                         }
                         "XssMatchStatement" => {
-                            builder =
-                                builder.set_xss_match_statement(crate::protocol_serde::shape_xss_match_statement::de_xss_match_statement(tokens)?);
+                            builder = builder
+                                .set_xss_match_statement(crate::protocol_serde::shape_xss_match_statement::de_xss_match_statement(tokens, _value)?);
                         }
                         "SizeConstraintStatement" => {
                             builder = builder.set_size_constraint_statement(
-                                crate::protocol_serde::shape_size_constraint_statement::de_size_constraint_statement(tokens)?,
+                                crate::protocol_serde::shape_size_constraint_statement::de_size_constraint_statement(tokens, _value)?,
                             );
                         }
                         "GeoMatchStatement" => {
-                            builder =
-                                builder.set_geo_match_statement(crate::protocol_serde::shape_geo_match_statement::de_geo_match_statement(tokens)?);
+                            builder = builder
+                                .set_geo_match_statement(crate::protocol_serde::shape_geo_match_statement::de_geo_match_statement(tokens, _value)?);
                         }
                         "RuleGroupReferenceStatement" => {
                             builder = builder.set_rule_group_reference_statement(
-                                crate::protocol_serde::shape_rule_group_reference_statement::de_rule_group_reference_statement(tokens)?,
+                                crate::protocol_serde::shape_rule_group_reference_statement::de_rule_group_reference_statement(tokens, _value)?,
                             );
                         }
                         "IPSetReferenceStatement" => {
                             builder = builder.set_ip_set_reference_statement(
-                                crate::protocol_serde::shape_ip_set_reference_statement::de_ip_set_reference_statement(tokens)?,
+                                crate::protocol_serde::shape_ip_set_reference_statement::de_ip_set_reference_statement(tokens, _value)?,
                             );
                         }
                         "RegexPatternSetReferenceStatement" => {
                             builder = builder.set_regex_pattern_set_reference_statement(
-                                crate::protocol_serde::shape_regex_pattern_set_reference_statement::de_regex_pattern_set_reference_statement(tokens)?,
+                                crate::protocol_serde::shape_regex_pattern_set_reference_statement::de_regex_pattern_set_reference_statement(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "RateBasedStatement" => {
-                            builder =
-                                builder.set_rate_based_statement(crate::protocol_serde::shape_rate_based_statement::de_rate_based_statement(tokens)?);
+                            builder = builder.set_rate_based_statement(crate::protocol_serde::shape_rate_based_statement::de_rate_based_statement(
+                                tokens, _value,
+                            )?);
                         }
                         "AndStatement" => {
-                            builder = builder.set_and_statement(crate::protocol_serde::shape_and_statement::de_and_statement(tokens)?);
+                            builder = builder.set_and_statement(crate::protocol_serde::shape_and_statement::de_and_statement(tokens, _value)?);
                         }
                         "OrStatement" => {
-                            builder = builder.set_or_statement(crate::protocol_serde::shape_or_statement::de_or_statement(tokens)?);
+                            builder = builder.set_or_statement(crate::protocol_serde::shape_or_statement::de_or_statement(tokens, _value)?);
                         }
                         "NotStatement" => {
-                            builder = builder.set_not_statement(crate::protocol_serde::shape_not_statement::de_not_statement(tokens)?);
+                            builder = builder.set_not_statement(crate::protocol_serde::shape_not_statement::de_not_statement(tokens, _value)?);
                         }
                         "ManagedRuleGroupStatement" => {
                             builder = builder.set_managed_rule_group_statement(
-                                crate::protocol_serde::shape_managed_rule_group_statement::de_managed_rule_group_statement(tokens)?,
+                                crate::protocol_serde::shape_managed_rule_group_statement::de_managed_rule_group_statement(tokens, _value)?,
                             );
                         }
                         "LabelMatchStatement" => {
-                            builder = builder
-                                .set_label_match_statement(crate::protocol_serde::shape_label_match_statement::de_label_match_statement(tokens)?);
+                            builder = builder.set_label_match_statement(
+                                crate::protocol_serde::shape_label_match_statement::de_label_match_statement(tokens, _value)?,
+                            );
                         }
                         "RegexMatchStatement" => {
-                            builder = builder
-                                .set_regex_match_statement(crate::protocol_serde::shape_regex_match_statement::de_regex_match_statement(tokens)?);
+                            builder = builder.set_regex_match_statement(
+                                crate::protocol_serde::shape_regex_match_statement::de_regex_match_statement(tokens, _value)?,
+                            );
                         }
                         "AsnMatchStatement" => {
-                            builder =
-                                builder.set_asn_match_statement(crate::protocol_serde::shape_asn_match_statement::de_asn_match_statement(tokens)?);
+                            builder = builder
+                                .set_asn_match_statement(crate::protocol_serde::shape_asn_match_statement::de_asn_match_statement(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

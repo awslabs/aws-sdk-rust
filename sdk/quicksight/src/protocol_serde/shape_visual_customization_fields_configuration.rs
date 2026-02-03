@@ -23,6 +23,7 @@ pub fn ser_visual_customization_fields_configuration(
 
 pub(crate) fn de_visual_customization_fields_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VisualCustomizationFieldsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "AdditionalFields" => {
                             builder = builder.set_additional_fields(
-                                    crate::protocol_serde::shape_visual_customization_additional_fields_list::de_visual_customization_additional_fields_list(tokens)?
+                                    crate::protocol_serde::shape_visual_customization_additional_fields_list::de_visual_customization_additional_fields_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

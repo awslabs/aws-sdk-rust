@@ -29,6 +29,7 @@ pub fn ser_action_execution(
 
 pub(crate) fn de_action_execution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActionExecution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,7 @@ where
                         }
                         "payload" => {
                             builder = builder.set_payload(crate::protocol_serde::shape_action_execution_payload::de_action_execution_payload(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "payloadFieldNameSeparator" => {

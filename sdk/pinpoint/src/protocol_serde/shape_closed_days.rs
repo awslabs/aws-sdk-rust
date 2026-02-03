@@ -68,6 +68,7 @@ pub fn ser_closed_days(
 
 pub(crate) fn de_closed_days<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClosedDays>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,27 +84,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EMAIL" => {
                             builder = builder.set_email(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "SMS" => {
                             builder = builder.set_sms(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "PUSH" => {
                             builder = builder.set_push(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "VOICE" => {
                             builder = builder.set_voice(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "CUSTOM" => {
                             builder = builder.set_custom(crate::protocol_serde::shape_list_of_closed_days_rules::de_list_of_closed_days_rules(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

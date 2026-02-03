@@ -29,6 +29,7 @@ pub fn ser_automated_evaluation_custom_metric_config(
 
 pub(crate) fn de_automated_evaluation_custom_metric_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutomatedEvaluationCustomMetricConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,12 +45,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "customMetrics" => {
                             builder = builder.set_custom_metrics(
-                                crate::protocol_serde::shape_automated_evaluation_custom_metrics::de_automated_evaluation_custom_metrics(tokens)?,
+                                crate::protocol_serde::shape_automated_evaluation_custom_metrics::de_automated_evaluation_custom_metrics(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "evaluatorModelConfig" => {
                             builder = builder.set_evaluator_model_config(
-                                crate::protocol_serde::shape_custom_metric_evaluator_model_config::de_custom_metric_evaluator_model_config(tokens)?,
+                                crate::protocol_serde::shape_custom_metric_evaluator_model_config::de_custom_metric_evaluator_model_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

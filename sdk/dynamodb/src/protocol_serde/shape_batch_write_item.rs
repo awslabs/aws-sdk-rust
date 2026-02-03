@@ -173,13 +173,13 @@ pub fn ser_batch_write_item_input(
 }
 
 pub(crate) fn de_batch_write_item(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_write_item::builders::BatchWriteItemOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_write_item::builders::BatchWriteItemOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -187,17 +187,18 @@ pub(crate) fn de_batch_write_item(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "UnprocessedItems" => {
-                    builder = builder
-                        .set_unprocessed_items(crate::protocol_serde::shape_batch_write_item_request_map::de_batch_write_item_request_map(tokens)?);
+                    builder = builder.set_unprocessed_items(
+                        crate::protocol_serde::shape_batch_write_item_request_map::de_batch_write_item_request_map(tokens, _value)?,
+                    );
                 }
                 "ItemCollectionMetrics" => {
                     builder = builder.set_item_collection_metrics(
-                        crate::protocol_serde::shape_item_collection_metrics_per_table::de_item_collection_metrics_per_table(tokens)?,
+                        crate::protocol_serde::shape_item_collection_metrics_per_table::de_item_collection_metrics_per_table(tokens, _value)?,
                     );
                 }
                 "ConsumedCapacity" => {
                     builder = builder.set_consumed_capacity(crate::protocol_serde::shape_consumed_capacity_multiple::de_consumed_capacity_multiple(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

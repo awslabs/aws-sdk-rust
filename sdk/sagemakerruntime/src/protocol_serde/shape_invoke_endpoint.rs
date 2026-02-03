@@ -162,12 +162,12 @@ pub fn de_invoke_endpoint_http_response(
 
 pub fn ser_invoke_endpoint_headers(
     input: &crate::operation::invoke_endpoint::InvokeEndpointInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.content_type {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -178,7 +178,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_3) = &input.accept {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "accept",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -189,7 +189,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_5) = &input.custom_attributes {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "custom_attributes",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -200,7 +200,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_7) = &input.target_model {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "target_model",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -211,7 +211,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_9) = &input.target_variant {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "target_variant",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -222,7 +222,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_11) = &input.target_container_hostname {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "target_container_hostname",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -233,7 +233,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_13) = &input.inference_id {
         let formatted_14 = inner_13.as_str();
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "inference_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -244,7 +244,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_15) = &input.enable_explanations {
         let formatted_16 = inner_15.as_str();
         let header_value = formatted_16;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "enable_explanations",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -255,7 +255,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_17) = &input.inference_component_name {
         let formatted_18 = inner_17.as_str();
         let header_value = formatted_18;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "inference_component_name",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -266,7 +266,7 @@ pub fn ser_invoke_endpoint_headers(
     if let ::std::option::Option::Some(inner_19) = &input.session_id {
         let formatted_20 = inner_19.as_str();
         let header_value = formatted_20;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "session_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

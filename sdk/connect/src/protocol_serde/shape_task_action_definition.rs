@@ -30,6 +30,7 @@ pub fn ser_task_action_definition(
 
 pub(crate) fn de_task_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,7 +66,7 @@ where
                             );
                         }
                         "References" => {
-                            builder = builder.set_references(crate::protocol_serde::shape_contact_references::de_contact_references(tokens)?);
+                            builder = builder.set_references(crate::protocol_serde::shape_contact_references::de_contact_references(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

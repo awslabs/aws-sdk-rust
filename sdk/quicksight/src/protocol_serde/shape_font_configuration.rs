@@ -32,6 +32,7 @@ pub fn ser_font_configuration(
 
 pub(crate) fn de_font_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FontConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,7 +47,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FontSize" => {
-                            builder = builder.set_font_size(crate::protocol_serde::shape_font_size::de_font_size(tokens)?);
+                            builder = builder.set_font_size(crate::protocol_serde::shape_font_size::de_font_size(tokens, _value)?);
                         }
                         "FontDecoration" => {
                             builder = builder.set_font_decoration(
@@ -63,7 +64,7 @@ where
                             );
                         }
                         "FontWeight" => {
-                            builder = builder.set_font_weight(crate::protocol_serde::shape_font_weight::de_font_weight(tokens)?);
+                            builder = builder.set_font_weight(crate::protocol_serde::shape_font_weight::de_font_weight(tokens, _value)?);
                         }
                         "FontStyle" => {
                             builder = builder.set_font_style(

@@ -41,6 +41,7 @@ pub fn ser_anomaly_monitor(
 
 pub(crate) fn de_anomaly_monitor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnomalyMonitor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,7 +105,7 @@ where
                             );
                         }
                         "MonitorSpecification" => {
-                            builder = builder.set_monitor_specification(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_monitor_specification(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         "DimensionalValueCount" => {
                             builder = builder.set_dimensional_value_count(

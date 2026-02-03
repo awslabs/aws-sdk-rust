@@ -128,13 +128,13 @@ pub fn de_get_changeset_http_response(
 }
 
 pub(crate) fn de_get_changeset(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_changeset::builders::GetChangesetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_changeset::builders::GetChangesetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,13 +191,15 @@ pub(crate) fn de_get_changeset(
                     );
                 }
                 "errorInfo" => {
-                    builder = builder.set_error_info(crate::protocol_serde::shape_changeset_error_info::de_changeset_error_info(tokens)?);
+                    builder = builder.set_error_info(crate::protocol_serde::shape_changeset_error_info::de_changeset_error_info(
+                        tokens, _value,
+                    )?);
                 }
                 "formatParams" => {
-                    builder = builder.set_format_params(crate::protocol_serde::shape_format_params::de_format_params(tokens)?);
+                    builder = builder.set_format_params(crate::protocol_serde::shape_format_params::de_format_params(tokens, _value)?);
                 }
                 "sourceParams" => {
-                    builder = builder.set_source_params(crate::protocol_serde::shape_source_params::de_source_params(tokens)?);
+                    builder = builder.set_source_params(crate::protocol_serde::shape_source_params::de_source_params(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

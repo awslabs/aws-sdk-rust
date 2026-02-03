@@ -29,6 +29,7 @@ pub fn ser_histogram_bin_options(
 
 pub(crate) fn de_histogram_bin_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HistogramBinOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,10 @@ where
                             );
                         }
                         "BinCount" => {
-                            builder = builder.set_bin_count(crate::protocol_serde::shape_bin_count_options::de_bin_count_options(tokens)?);
+                            builder = builder.set_bin_count(crate::protocol_serde::shape_bin_count_options::de_bin_count_options(tokens, _value)?);
                         }
                         "BinWidth" => {
-                            builder = builder.set_bin_width(crate::protocol_serde::shape_bin_width_options::de_bin_width_options(tokens)?);
+                            builder = builder.set_bin_width(crate::protocol_serde::shape_bin_width_options::de_bin_width_options(tokens, _value)?);
                         }
                         "StartValue" => {
                             builder = builder.set_start_value(

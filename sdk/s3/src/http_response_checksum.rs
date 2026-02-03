@@ -153,8 +153,8 @@ pub(crate) fn wrap_body_with_checksum_validator(
 ) -> SdkBody {
     use aws_smithy_checksums::body::validate;
 
-    body.map(move |body| {
-        SdkBody::from_body_0_4(validate::ChecksumBody::new(
+    body.map(move |body: SdkBody| {
+        SdkBody::from_body_1_x(validate::ChecksumBody::new(
             body,
             checksum_algorithm.into_impl(),
             precalculated_checksum.clone(),

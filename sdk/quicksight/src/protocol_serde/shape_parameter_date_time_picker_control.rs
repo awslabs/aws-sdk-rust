@@ -23,6 +23,7 @@ pub fn ser_parameter_date_time_picker_control(
 
 pub(crate) fn de_parameter_date_time_picker_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParameterDateTimePickerControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                             }
                             "DisplayOptions" => {
                                 builder = builder.set_display_options(
-                                    crate::protocol_serde::shape_date_time_picker_control_display_options::de_date_time_picker_control_display_options(tokens)?
+                                    crate::protocol_serde::shape_date_time_picker_control_display_options::de_date_time_picker_control_display_options(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

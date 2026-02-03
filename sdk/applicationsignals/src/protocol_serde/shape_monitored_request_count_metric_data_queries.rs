@@ -39,6 +39,7 @@ pub fn ser_monitored_request_count_metric_data_queries(
 
 pub(crate) fn de_monitored_request_count_metric_data_queries<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoredRequestCountMetricDataQueries>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,12 +69,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "GoodCountMetric" => Some(crate::types::MonitoredRequestCountMetricDataQueries::GoodCountMetric(
-                            crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'GoodCountMetric' cannot be null")
                             })?,
                         )),
                         "BadCountMetric" => Some(crate::types::MonitoredRequestCountMetricDataQueries::BadCountMetric(
-                            crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_metric_data_queries::de_metric_data_queries(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BadCountMetric' cannot be null")
                             })?,
                         )),

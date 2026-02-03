@@ -20,6 +20,7 @@ pub fn ser_filter_criterion(
 
 pub(crate) fn de_filter_criterion<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterCriterion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_value_list::de_value_list(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_value_list::de_value_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

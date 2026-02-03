@@ -194,13 +194,13 @@ pub fn ser_retrieve_and_generate_input(
 }
 
 pub(crate) fn de_retrieve_and_generate(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,7 +208,7 @@ pub(crate) fn de_retrieve_and_generate(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "citations" => {
-                    builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens)?);
+                    builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens, _value)?);
                 }
                 "guardrailAction" => {
                     builder = builder.set_guardrail_action(
@@ -218,7 +218,8 @@ pub(crate) fn de_retrieve_and_generate(
                     );
                 }
                 "output" => {
-                    builder = builder.set_output(crate::protocol_serde::shape_retrieve_and_generate_output::de_retrieve_and_generate_output(tokens)?);
+                    builder = builder
+                        .set_output(crate::protocol_serde::shape_retrieve_and_generate_output::de_retrieve_and_generate_output(tokens, _value)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(

@@ -122,13 +122,13 @@ pub fn ser_get_account_plan_state_input(
 }
 
 pub(crate) fn de_get_account_plan_state(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account_plan_state::builders::GetAccountPlanStateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_account_plan_state::builders::GetAccountPlanStateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,7 +157,8 @@ pub(crate) fn de_get_account_plan_state(
                     );
                 }
                 "accountPlanRemainingCredits" => {
-                    builder = builder.set_account_plan_remaining_credits(crate::protocol_serde::shape_monetary_amount::de_monetary_amount(tokens)?);
+                    builder =
+                        builder.set_account_plan_remaining_credits(crate::protocol_serde::shape_monetary_amount::de_monetary_amount(tokens, _value)?);
                 }
                 "accountPlanExpirationDate" => {
                     builder = builder.set_account_plan_expiration_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

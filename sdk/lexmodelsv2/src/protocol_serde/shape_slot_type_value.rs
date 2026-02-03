@@ -26,6 +26,7 @@ pub fn ser_slot_type_value(
 
 pub(crate) fn de_slot_type_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SlotTypeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sampleValue" => {
-                            builder = builder.set_sample_value(crate::protocol_serde::shape_sample_value::de_sample_value(tokens)?);
+                            builder = builder.set_sample_value(crate::protocol_serde::shape_sample_value::de_sample_value(tokens, _value)?);
                         }
                         "synonyms" => {
-                            builder = builder.set_synonyms(crate::protocol_serde::shape_synonym_list::de_synonym_list(tokens)?);
+                            builder = builder.set_synonyms(crate::protocol_serde::shape_synonym_list::de_synonym_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

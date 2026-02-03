@@ -126,13 +126,13 @@ pub fn de_get_network_analyzer_configuration_http_response(
 }
 
 pub(crate) fn de_get_network_analyzer_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_get_network_analyzer_configuration(
                 }
                 "MulticastGroups" => {
                     builder = builder.set_multicast_groups(
-                        crate::protocol_serde::shape_network_analyzer_multicast_group_list::de_network_analyzer_multicast_group_list(tokens)?,
+                        crate::protocol_serde::shape_network_analyzer_multicast_group_list::de_network_analyzer_multicast_group_list(tokens, _value)?,
                     );
                 }
                 "Name" => {
@@ -166,13 +166,17 @@ pub(crate) fn de_get_network_analyzer_configuration(
                     );
                 }
                 "TraceContent" => {
-                    builder = builder.set_trace_content(crate::protocol_serde::shape_trace_content::de_trace_content(tokens)?);
+                    builder = builder.set_trace_content(crate::protocol_serde::shape_trace_content::de_trace_content(tokens, _value)?);
                 }
                 "WirelessDevices" => {
-                    builder = builder.set_wireless_devices(crate::protocol_serde::shape_wireless_device_list::de_wireless_device_list(tokens)?);
+                    builder = builder.set_wireless_devices(crate::protocol_serde::shape_wireless_device_list::de_wireless_device_list(
+                        tokens, _value,
+                    )?);
                 }
                 "WirelessGateways" => {
-                    builder = builder.set_wireless_gateways(crate::protocol_serde::shape_wireless_gateway_list::de_wireless_gateway_list(tokens)?);
+                    builder = builder.set_wireless_gateways(crate::protocol_serde::shape_wireless_gateway_list::de_wireless_gateway_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

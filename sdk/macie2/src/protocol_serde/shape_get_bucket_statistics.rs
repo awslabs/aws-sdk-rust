@@ -162,13 +162,13 @@ pub fn ser_get_bucket_statistics_input(
 }
 
 pub(crate) fn de_get_bucket_statistics(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_bucket_statistics::builders::GetBucketStatisticsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_bucket_statistics::builders::GetBucketStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -184,27 +184,27 @@ pub(crate) fn de_get_bucket_statistics(
                 }
                 "bucketCountByEffectivePermission" => {
                     builder = builder.set_bucket_count_by_effective_permission(
-                        crate::protocol_serde::shape_bucket_count_by_effective_permission::de_bucket_count_by_effective_permission(tokens)?,
+                        crate::protocol_serde::shape_bucket_count_by_effective_permission::de_bucket_count_by_effective_permission(tokens, _value)?,
                     );
                 }
                 "bucketCountByEncryptionType" => {
                     builder = builder.set_bucket_count_by_encryption_type(
-                        crate::protocol_serde::shape_bucket_count_by_encryption_type::de_bucket_count_by_encryption_type(tokens)?,
+                        crate::protocol_serde::shape_bucket_count_by_encryption_type::de_bucket_count_by_encryption_type(tokens, _value)?,
                     );
                 }
                 "bucketCountByObjectEncryptionRequirement" => {
                     builder = builder.set_bucket_count_by_object_encryption_requirement(
-                            crate::protocol_serde::shape_bucket_count_policy_allows_unencrypted_object_uploads::de_bucket_count_policy_allows_unencrypted_object_uploads(tokens)?
+                            crate::protocol_serde::shape_bucket_count_policy_allows_unencrypted_object_uploads::de_bucket_count_policy_allows_unencrypted_object_uploads(tokens, _value)?
                         );
                 }
                 "bucketCountBySharedAccessType" => {
                     builder = builder.set_bucket_count_by_shared_access_type(
-                        crate::protocol_serde::shape_bucket_count_by_shared_access_type::de_bucket_count_by_shared_access_type(tokens)?,
+                        crate::protocol_serde::shape_bucket_count_by_shared_access_type::de_bucket_count_by_shared_access_type(tokens, _value)?,
                     );
                 }
                 "bucketStatisticsBySensitivity" => {
                     builder = builder.set_bucket_statistics_by_sensitivity(
-                        crate::protocol_serde::shape_bucket_statistics_by_sensitivity::de_bucket_statistics_by_sensitivity(tokens)?,
+                        crate::protocol_serde::shape_bucket_statistics_by_sensitivity::de_bucket_statistics_by_sensitivity(tokens, _value)?,
                     );
                 }
                 "classifiableObjectCount" => {
@@ -249,12 +249,13 @@ pub(crate) fn de_get_bucket_statistics(
                     );
                 }
                 "unclassifiableObjectCount" => {
-                    builder = builder
-                        .set_unclassifiable_object_count(crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens)?);
+                    builder = builder.set_unclassifiable_object_count(
+                        crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
+                    );
                 }
                 "unclassifiableObjectSizeInBytes" => {
                     builder = builder.set_unclassifiable_object_size_in_bytes(
-                        crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens)?,
+                        crate::protocol_serde::shape_object_level_statistics::de_object_level_statistics(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

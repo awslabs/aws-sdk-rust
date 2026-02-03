@@ -125,13 +125,13 @@ pub fn ser_update_invoice_unit_input(
 }
 
 pub(crate) fn de_update_invoice_unit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_invoice_unit::builders::UpdateInvoiceUnitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_invoice_unit::builders::UpdateInvoiceUnitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

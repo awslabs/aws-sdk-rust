@@ -23,6 +23,7 @@ pub fn ser_async_inference_notification_config(
 
 pub(crate) fn de_async_inference_notification_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AsyncInferenceNotificationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,9 @@ where
                         }
                         "IncludeInferenceResponseIn" => {
                             builder = builder.set_include_inference_response_in(
-                                crate::protocol_serde::shape_async_notification_topic_type_list::de_async_notification_topic_type_list(tokens)?,
+                                crate::protocol_serde::shape_async_notification_topic_type_list::de_async_notification_topic_type_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

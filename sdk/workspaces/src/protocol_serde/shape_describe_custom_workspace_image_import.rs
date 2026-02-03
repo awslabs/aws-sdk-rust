@@ -94,13 +94,13 @@ pub fn ser_describe_custom_workspace_image_import_input(
 }
 
 pub(crate) fn de_describe_custom_workspace_image_import(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_custom_workspace_image_import::builders::DescribeCustomWorkspaceImageImportOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_custom_workspace_image_import::builders::DescribeCustomWorkspaceImageImportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,9 @@ pub(crate) fn de_describe_custom_workspace_image_import(
                     )?);
                 }
                 "ImageSource" => {
-                    builder = builder.set_image_source(crate::protocol_serde::shape_image_source_identifier::de_image_source_identifier(tokens)?);
+                    builder = builder.set_image_source(crate::protocol_serde::shape_image_source_identifier::de_image_source_identifier(
+                        tokens, _value,
+                    )?);
                 }
                 "ImageBuilderInstanceId" => {
                     builder = builder.set_image_builder_instance_id(
@@ -166,7 +168,7 @@ pub(crate) fn de_describe_custom_workspace_image_import(
                 }
                 "ErrorDetails" => {
                     builder = builder.set_error_details(
-                            crate::protocol_serde::shape_custom_workspace_image_import_error_details_list::de_custom_workspace_image_import_error_details_list(tokens)?
+                            crate::protocol_serde::shape_custom_workspace_image_import_error_details_list::de_custom_workspace_image_import_error_details_list(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

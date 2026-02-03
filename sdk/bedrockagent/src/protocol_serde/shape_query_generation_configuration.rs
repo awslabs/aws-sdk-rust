@@ -20,6 +20,7 @@ pub fn ser_query_generation_configuration(
 
 pub(crate) fn de_query_generation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QueryGenerationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "generationContext" => {
                             builder = builder.set_generation_context(
-                                crate::protocol_serde::shape_query_generation_context::de_query_generation_context(tokens)?,
+                                crate::protocol_serde::shape_query_generation_context::de_query_generation_context(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

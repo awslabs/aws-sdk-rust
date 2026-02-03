@@ -23,6 +23,7 @@ pub fn ser_scatter_plot_field_wells(
 
 pub(crate) fn de_scatter_plot_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScatterPlotFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ScatterPlotCategoricallyAggregatedFieldWells" => {
                             builder = builder.set_scatter_plot_categorically_aggregated_field_wells(
-                                    crate::protocol_serde::shape_scatter_plot_categorically_aggregated_field_wells::de_scatter_plot_categorically_aggregated_field_wells(tokens)?
+                                    crate::protocol_serde::shape_scatter_plot_categorically_aggregated_field_wells::de_scatter_plot_categorically_aggregated_field_wells(tokens, _value)?
                                 );
                         }
                         "ScatterPlotUnaggregatedFieldWells" => {
                             builder = builder.set_scatter_plot_unaggregated_field_wells(
-                                crate::protocol_serde::shape_scatter_plot_unaggregated_field_wells::de_scatter_plot_unaggregated_field_wells(tokens)?,
+                                crate::protocol_serde::shape_scatter_plot_unaggregated_field_wells::de_scatter_plot_unaggregated_field_wells(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -39,6 +39,7 @@ pub fn ser_step_input(
 
 pub(crate) fn de_step_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StepInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,12 +85,12 @@ where
                                 })?,
                         )),
                         "listOfStringsValue" => Some(crate::types::StepInput::ListOfStringsValue(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'listOfStringsValue' cannot be null")
                             })?,
                         )),
                         "mapOfStringValue" => Some(crate::types::StepInput::MapOfStringValue(
-                            crate::protocol_serde::shape_string_map::de_string_map(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mapOfStringValue' cannot be null")
                             })?,
                         )),

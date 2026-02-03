@@ -6,7 +6,7 @@
 use std::borrow::Cow;
 use std::fmt;
 
-use http_02x::header::{HeaderName, HeaderValue, InvalidHeaderValue, USER_AGENT};
+use http_1x::header::{HeaderName, HeaderValue, InvalidHeaderValue, USER_AGENT};
 
 use aws_credential_types::credential_feature::AwsCredentialFeature;
 use aws_smithy_runtime::client::sdk_feature::SmithySdkFeature;

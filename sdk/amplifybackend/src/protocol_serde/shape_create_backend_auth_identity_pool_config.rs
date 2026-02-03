@@ -14,6 +14,7 @@ pub fn ser_create_backend_auth_identity_pool_config(
 
 pub(crate) fn de_create_backend_auth_identity_pool_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthIdentityPoolConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

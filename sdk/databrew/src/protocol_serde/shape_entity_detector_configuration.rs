@@ -29,6 +29,7 @@ pub fn ser_entity_detector_configuration(
 
 pub(crate) fn de_entity_detector_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EntityDetectorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,11 +44,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EntityTypes" => {
-                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens)?);
+                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens, _value)?);
                         }
                         "AllowedStatistics" => {
-                            builder = builder
-                                .set_allowed_statistics(crate::protocol_serde::shape_allowed_statistic_list::de_allowed_statistic_list(tokens)?);
+                            builder = builder.set_allowed_statistics(crate::protocol_serde::shape_allowed_statistic_list::de_allowed_statistic_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

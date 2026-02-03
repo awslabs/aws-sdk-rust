@@ -32,5 +32,8 @@ pub fn ser_list_shards_input_input(
     if let Some(var_8) = &input.stream_arn {
         object.key("StreamARN").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.stream_id {
+        object.key("StreamId").string(var_9.as_str());
+    }
     Ok(())
 }

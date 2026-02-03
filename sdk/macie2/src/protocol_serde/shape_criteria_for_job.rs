@@ -20,6 +20,7 @@ pub fn ser_criteria_for_job(
 
 pub(crate) fn de_criteria_for_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CriteriaForJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "simpleCriterion" => {
                             builder = builder.set_simple_criterion(
-                                crate::protocol_serde::shape_simple_criterion_for_job::de_simple_criterion_for_job(tokens)?,
+                                crate::protocol_serde::shape_simple_criterion_for_job::de_simple_criterion_for_job(tokens, _value)?,
                             );
                         }
                         "tagCriterion" => {
-                            builder =
-                                builder.set_tag_criterion(crate::protocol_serde::shape_tag_criterion_for_job::de_tag_criterion_for_job(tokens)?);
+                            builder = builder.set_tag_criterion(crate::protocol_serde::shape_tag_criterion_for_job::de_tag_criterion_for_job(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

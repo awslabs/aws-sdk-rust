@@ -122,13 +122,13 @@ pub fn de_get_log_levels_by_resource_types_http_response(
 }
 
 pub(crate) fn de_get_log_levels_by_resource_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,17 +144,17 @@ pub(crate) fn de_get_log_levels_by_resource_types(
                 }
                 "FuotaTaskLogOptions" => {
                     builder = builder.set_fuota_task_log_options(
-                        crate::protocol_serde::shape_fuota_task_log_option_list::de_fuota_task_log_option_list(tokens)?,
+                        crate::protocol_serde::shape_fuota_task_log_option_list::de_fuota_task_log_option_list(tokens, _value)?,
                     );
                 }
                 "WirelessDeviceLogOptions" => {
                     builder = builder.set_wireless_device_log_options(
-                        crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens)?,
+                        crate::protocol_serde::shape_wireless_device_log_option_list::de_wireless_device_log_option_list(tokens, _value)?,
                     );
                 }
                 "WirelessGatewayLogOptions" => {
                     builder = builder.set_wireless_gateway_log_options(
-                        crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(tokens)?,
+                        crate::protocol_serde::shape_wireless_gateway_log_option_list::de_wireless_gateway_log_option_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

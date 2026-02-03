@@ -24,6 +24,7 @@ pub fn ser_relay_authentication(
 
 pub(crate) fn de_relay_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RelayAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                                 })?,
                         )),
                         "NoAuthentication" => Some(crate::types::RelayAuthentication::NoAuthentication(
-                            crate::protocol_serde::shape_no_authentication::de_no_authentication(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_no_authentication::de_no_authentication(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'NoAuthentication' cannot be null")
                             })?,
                         )),

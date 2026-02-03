@@ -32,6 +32,7 @@ pub fn ser_cookie_match_pattern(
 
 pub(crate) fn de_cookie_match_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CookieMatchPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,13 +47,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "All" => {
-                            builder = builder.set_all(crate::protocol_serde::shape_all::de_all(tokens)?);
+                            builder = builder.set_all(crate::protocol_serde::shape_all::de_all(tokens, _value)?);
                         }
                         "IncludedCookies" => {
-                            builder = builder.set_included_cookies(crate::protocol_serde::shape_cookie_names::de_cookie_names(tokens)?);
+                            builder = builder.set_included_cookies(crate::protocol_serde::shape_cookie_names::de_cookie_names(tokens, _value)?);
                         }
                         "ExcludedCookies" => {
-                            builder = builder.set_excluded_cookies(crate::protocol_serde::shape_cookie_names::de_cookie_names(tokens)?);
+                            builder = builder.set_excluded_cookies(crate::protocol_serde::shape_cookie_names::de_cookie_names(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

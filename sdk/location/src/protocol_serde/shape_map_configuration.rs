@@ -23,6 +23,7 @@ pub fn ser_map_configuration(
 
 pub(crate) fn de_map_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MapConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,8 @@ where
                             );
                         }
                         "CustomLayers" => {
-                            builder = builder.set_custom_layers(crate::protocol_serde::shape_custom_layer_list::de_custom_layer_list(tokens)?);
+                            builder =
+                                builder.set_custom_layers(crate::protocol_serde::shape_custom_layer_list::de_custom_layer_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

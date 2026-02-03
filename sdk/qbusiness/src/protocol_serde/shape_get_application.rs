@@ -108,13 +108,13 @@ pub fn de_get_application_http_response(
 }
 
 pub(crate) fn de_get_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application::builders::GetApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,16 +137,17 @@ pub(crate) fn de_get_application(
                 }
                 "attachmentsConfiguration" => {
                     builder = builder.set_attachments_configuration(
-                        crate::protocol_serde::shape_applied_attachments_configuration::de_applied_attachments_configuration(tokens)?,
+                        crate::protocol_serde::shape_applied_attachments_configuration::de_applied_attachments_configuration(tokens, _value)?,
                     );
                 }
                 "autoSubscriptionConfiguration" => {
                     builder = builder.set_auto_subscription_configuration(
-                        crate::protocol_serde::shape_auto_subscription_configuration::de_auto_subscription_configuration(tokens)?,
+                        crate::protocol_serde::shape_auto_subscription_configuration::de_auto_subscription_configuration(tokens, _value)?,
                     );
                 }
                 "clientIdsForOIDC" => {
-                    builder = builder.set_client_ids_for_oidc(crate::protocol_serde::shape_client_ids_for_oidc::de_client_ids_for_oidc(tokens)?);
+                    builder =
+                        builder.set_client_ids_for_oidc(crate::protocol_serde::shape_client_ids_for_oidc::de_client_ids_for_oidc(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -170,11 +171,11 @@ pub(crate) fn de_get_application(
                 }
                 "encryptionConfiguration" => {
                     builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens)?,
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value)?,
                     );
                 }
                 "error" => {
-                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens)?);
+                    builder = builder.set_error(crate::protocol_serde::shape_error_detail::de_error_detail(tokens, _value)?);
                 }
                 "iamIdentityProviderArn" => {
                     builder = builder.set_iam_identity_provider_arn(
@@ -199,15 +200,17 @@ pub(crate) fn de_get_application(
                 }
                 "personalizationConfiguration" => {
                     builder = builder.set_personalization_configuration(
-                        crate::protocol_serde::shape_personalization_configuration::de_personalization_configuration(tokens)?,
+                        crate::protocol_serde::shape_personalization_configuration::de_personalization_configuration(tokens, _value)?,
                     );
                 }
                 "qAppsConfiguration" => {
-                    builder = builder.set_q_apps_configuration(crate::protocol_serde::shape_q_apps_configuration::de_q_apps_configuration(tokens)?);
+                    builder = builder.set_q_apps_configuration(crate::protocol_serde::shape_q_apps_configuration::de_q_apps_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "quickSightConfiguration" => {
                     builder = builder.set_quick_sight_configuration(
-                        crate::protocol_serde::shape_quick_sight_configuration::de_quick_sight_configuration(tokens)?,
+                        crate::protocol_serde::shape_quick_sight_configuration::de_quick_sight_configuration(tokens, _value)?,
                     );
                 }
                 "roleArn" => {

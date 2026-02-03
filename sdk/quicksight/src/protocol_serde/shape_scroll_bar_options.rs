@@ -17,6 +17,7 @@ pub fn ser_scroll_bar_options(
 
 pub(crate) fn de_scroll_bar_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScrollBarOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "VisibleRange" => {
-                            builder =
-                                builder.set_visible_range(crate::protocol_serde::shape_visible_range_options::de_visible_range_options(tokens)?);
+                            builder = builder.set_visible_range(crate::protocol_serde::shape_visible_range_options::de_visible_range_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

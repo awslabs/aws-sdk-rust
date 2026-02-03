@@ -26,6 +26,7 @@ pub fn ser_port_probe_detail(
 
 pub(crate) fn de_port_probe_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PortProbeDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,16 +42,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LocalPortDetails" => {
                             builder = builder.set_local_port_details(
-                                crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens)?,
+                                crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens, _value)?,
                             );
                         }
                         "LocalIpDetails" => {
-                            builder = builder
-                                .set_local_ip_details(crate::protocol_serde::shape_action_local_ip_details::de_action_local_ip_details(tokens)?);
+                            builder = builder.set_local_ip_details(crate::protocol_serde::shape_action_local_ip_details::de_action_local_ip_details(
+                                tokens, _value,
+                            )?);
                         }
                         "RemoteIpDetails" => {
                             builder = builder.set_remote_ip_details(
-                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens)?,
+                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

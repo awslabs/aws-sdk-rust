@@ -98,13 +98,13 @@ pub fn ser_associate_virtual_interface_input(
 }
 
 pub(crate) fn de_associate_virtual_interface(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -249,11 +249,11 @@ pub(crate) fn de_associate_virtual_interface(
                 }
                 "routeFilterPrefixes" => {
                     builder = builder.set_route_filter_prefixes(crate::protocol_serde::shape_route_filter_prefix_list::de_route_filter_prefix_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "bgpPeers" => {
-                    builder = builder.set_bgp_peers(crate::protocol_serde::shape_bgp_peer_list::de_bgp_peer_list(tokens)?);
+                    builder = builder.set_bgp_peers(crate::protocol_serde::shape_bgp_peer_list::de_bgp_peer_list(tokens, _value)?);
                 }
                 "region" => {
                     builder = builder.set_region(
@@ -277,7 +277,7 @@ pub(crate) fn de_associate_virtual_interface(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "siteLinkEnabled" => {
                     builder = builder.set_site_link_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

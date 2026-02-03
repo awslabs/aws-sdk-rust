@@ -140,13 +140,13 @@ pub fn de_describe_test_set_discrepancy_report_http_response(
 }
 
 pub(crate) fn de_describe_test_set_discrepancy_report(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,7 +160,7 @@ pub(crate) fn de_describe_test_set_discrepancy_report(
                     )?);
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "lastUpdatedDataTime" => {
                     builder = builder.set_last_updated_data_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -171,7 +171,7 @@ pub(crate) fn de_describe_test_set_discrepancy_report(
                 "target" => {
                     builder = builder.set_target(
                         crate::protocol_serde::shape_test_set_discrepancy_report_resource_target::de_test_set_discrepancy_report_resource_target(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
@@ -198,7 +198,7 @@ pub(crate) fn de_describe_test_set_discrepancy_report(
                 }
                 "testSetDiscrepancyTopErrors" => {
                     builder = builder.set_test_set_discrepancy_top_errors(
-                        crate::protocol_serde::shape_test_set_discrepancy_errors::de_test_set_discrepancy_errors(tokens)?,
+                        crate::protocol_serde::shape_test_set_discrepancy_errors::de_test_set_discrepancy_errors(tokens, _value)?,
                     );
                 }
                 "testSetId" => {

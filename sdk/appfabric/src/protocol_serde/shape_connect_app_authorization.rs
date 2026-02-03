@@ -142,13 +142,13 @@ pub fn ser_connect_app_authorization_input(
 }
 
 pub(crate) fn de_connect_app_authorization(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,7 +157,7 @@ pub(crate) fn de_connect_app_authorization(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appAuthorizationSummary" => {
                     builder = builder.set_app_authorization_summary(
-                        crate::protocol_serde::shape_app_authorization_summary::de_app_authorization_summary(tokens)?,
+                        crate::protocol_serde::shape_app_authorization_summary::de_app_authorization_summary(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

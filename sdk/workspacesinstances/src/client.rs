@@ -151,7 +151,7 @@ mod create_workspace_instance;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_workspacesinstances::Error> {
 /// # let client: aws_sdk_workspacesinstances::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_volume()
 ///     .customize()

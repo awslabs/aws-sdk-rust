@@ -134,13 +134,13 @@ pub fn de_list_firewall_domain_lists_http_response(
 }
 
 pub(crate) fn de_list_firewall_domain_lists(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_firewall_domain_lists::builders::ListFirewallDomainListsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,8 +148,9 @@ pub(crate) fn de_list_firewall_domain_lists(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "firewallDomainLists" => {
-                    builder =
-                        builder.set_firewall_domain_lists(crate::protocol_serde::shape_firewall_domain_lists::de_firewall_domain_lists(tokens)?);
+                    builder = builder.set_firewall_domain_lists(crate::protocol_serde::shape_firewall_domain_lists::de_firewall_domain_lists(
+                        tokens, _value,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

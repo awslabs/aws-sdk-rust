@@ -153,7 +153,7 @@ mod create_whats_app_message_template_media;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_socialmessaging::Error> {
 /// # let client: aws_sdk_socialmessaging::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_whats_app_business_account()
 ///     .customize()

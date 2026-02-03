@@ -68,6 +68,7 @@ pub fn ser_prores_settings(
 
 pub(crate) fn de_prores_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProresSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -156,7 +157,7 @@ where
                         }
                         "perFrameMetrics" => {
                             builder = builder.set_per_frame_metrics(
-                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens)?,
+                                crate::protocol_serde::shape_list_of_frame_metric_type::de_list_of_frame_metric_type(tokens, _value)?,
                             );
                         }
                         "scanTypeConversionMode" => {

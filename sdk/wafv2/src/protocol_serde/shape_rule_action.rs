@@ -38,6 +38,7 @@ pub fn ser_rule_action(
 
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,19 +53,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Block" => {
-                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens)?);
+                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens, _value)?);
                         }
                         "Allow" => {
-                            builder = builder.set_allow(crate::protocol_serde::shape_allow_action::de_allow_action(tokens)?);
+                            builder = builder.set_allow(crate::protocol_serde::shape_allow_action::de_allow_action(tokens, _value)?);
                         }
                         "Count" => {
-                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens)?);
+                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens, _value)?);
                         }
                         "Captcha" => {
-                            builder = builder.set_captcha(crate::protocol_serde::shape_captcha_action::de_captcha_action(tokens)?);
+                            builder = builder.set_captcha(crate::protocol_serde::shape_captcha_action::de_captcha_action(tokens, _value)?);
                         }
                         "Challenge" => {
-                            builder = builder.set_challenge(crate::protocol_serde::shape_challenge_action::de_challenge_action(tokens)?);
+                            builder = builder.set_challenge(crate::protocol_serde::shape_challenge_action::de_challenge_action(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

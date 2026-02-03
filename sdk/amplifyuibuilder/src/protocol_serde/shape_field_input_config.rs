@@ -71,6 +71,7 @@ pub fn ser_field_input_config(
 
 pub(crate) fn de_field_input_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldInputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -129,7 +130,7 @@ where
                             );
                         }
                         "valueMappings" => {
-                            builder = builder.set_value_mappings(crate::protocol_serde::shape_value_mappings::de_value_mappings(tokens)?);
+                            builder = builder.set_value_mappings(crate::protocol_serde::shape_value_mappings::de_value_mappings(tokens, _value)?);
                         }
                         "name" => {
                             builder = builder.set_name(
@@ -164,7 +165,7 @@ where
                         }
                         "fileUploaderConfig" => {
                             builder = builder.set_file_uploader_config(
-                                crate::protocol_serde::shape_file_uploader_field_config::de_file_uploader_field_config(tokens)?,
+                                crate::protocol_serde::shape_file_uploader_field_config::de_file_uploader_field_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_tooltip_options(
 
 pub(crate) fn de_tooltip_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TooltipOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,8 +49,8 @@ where
                             );
                         }
                         "FieldBasedTooltip" => {
-                            builder =
-                                builder.set_field_based_tooltip(crate::protocol_serde::shape_field_based_tooltip::de_field_based_tooltip(tokens)?);
+                            builder = builder
+                                .set_field_based_tooltip(crate::protocol_serde::shape_field_based_tooltip::de_field_based_tooltip(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

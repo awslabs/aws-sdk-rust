@@ -140,13 +140,13 @@ pub fn ser_admin_get_user_input(
 }
 
 pub(crate) fn de_admin_get_user(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::admin_get_user::builders::AdminGetUserOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::admin_get_user::builders::AdminGetUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,7 @@ pub(crate) fn de_admin_get_user(
                     );
                 }
                 "UserAttributes" => {
-                    builder = builder.set_user_attributes(crate::protocol_serde::shape_attribute_list_type::de_attribute_list_type(tokens)?);
+                    builder = builder.set_user_attributes(crate::protocol_serde::shape_attribute_list_type::de_attribute_list_type(tokens, _value)?);
                 }
                 "UserCreateDate" => {
                     builder = builder.set_user_create_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -186,7 +186,9 @@ pub(crate) fn de_admin_get_user(
                     );
                 }
                 "MFAOptions" => {
-                    builder = builder.set_mfa_options(crate::protocol_serde::shape_mfa_option_list_type::de_mfa_option_list_type(tokens)?);
+                    builder = builder.set_mfa_options(crate::protocol_serde::shape_mfa_option_list_type::de_mfa_option_list_type(
+                        tokens, _value,
+                    )?);
                 }
                 "PreferredMfaSetting" => {
                     builder = builder.set_preferred_mfa_setting(
@@ -197,7 +199,7 @@ pub(crate) fn de_admin_get_user(
                 }
                 "UserMFASettingList" => {
                     builder = builder.set_user_mfa_setting_list(
-                        crate::protocol_serde::shape_user_mfa_setting_list_type::de_user_mfa_setting_list_type(tokens)?,
+                        crate::protocol_serde::shape_user_mfa_setting_list_type::de_user_mfa_setting_list_type(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

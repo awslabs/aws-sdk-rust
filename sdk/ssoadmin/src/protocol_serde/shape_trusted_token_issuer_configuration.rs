@@ -21,6 +21,7 @@ pub fn ser_trusted_token_issuer_configuration(
 
 pub(crate) fn de_trusted_token_issuer_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrustedTokenIssuerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "OidcJwtConfiguration" => Some(crate::types::TrustedTokenIssuerConfiguration::OidcJwtConfiguration(
-                            crate::protocol_serde::shape_oidc_jwt_configuration::de_oidc_jwt_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_oidc_jwt_configuration::de_oidc_jwt_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OidcJwtConfiguration' cannot be null")
                             })?,
                         )),

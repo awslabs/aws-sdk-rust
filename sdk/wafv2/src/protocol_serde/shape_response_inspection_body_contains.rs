@@ -26,6 +26,7 @@ pub fn ser_response_inspection_body_contains(
 
 pub(crate) fn de_response_inspection_body_contains<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseInspectionBodyContains>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SuccessStrings" => {
                             builder = builder.set_success_strings(
-                                    crate::protocol_serde::shape_response_inspection_body_contains_success_strings::de_response_inspection_body_contains_success_strings(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_body_contains_success_strings::de_response_inspection_body_contains_success_strings(tokens, _value)?
                                 );
                         }
                         "FailureStrings" => {
                             builder = builder.set_failure_strings(
-                                    crate::protocol_serde::shape_response_inspection_body_contains_failure_strings::de_response_inspection_body_contains_failure_strings(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_body_contains_failure_strings::de_response_inspection_body_contains_failure_strings(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

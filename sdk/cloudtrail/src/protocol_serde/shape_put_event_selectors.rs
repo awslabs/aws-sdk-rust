@@ -244,13 +244,13 @@ pub fn ser_put_event_selectors_input(
 }
 
 pub(crate) fn de_put_event_selectors(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -265,11 +265,11 @@ pub(crate) fn de_put_event_selectors(
                     );
                 }
                 "EventSelectors" => {
-                    builder = builder.set_event_selectors(crate::protocol_serde::shape_event_selectors::de_event_selectors(tokens)?);
+                    builder = builder.set_event_selectors(crate::protocol_serde::shape_event_selectors::de_event_selectors(tokens, _value)?);
                 }
                 "AdvancedEventSelectors" => {
                     builder = builder.set_advanced_event_selectors(
-                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens)?,
+                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

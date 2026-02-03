@@ -23,6 +23,7 @@ pub fn ser_llm_as_a_judge_evaluator_config(
 
 pub(crate) fn de_llm_as_a_judge_evaluator_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LlmAsAJudgeEvaluatorConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,11 +45,12 @@ where
                             );
                         }
                         "ratingScale" => {
-                            builder = builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens)?);
+                            builder = builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens, _value)?);
                         }
                         "modelConfig" => {
-                            builder =
-                                builder.set_model_config(crate::protocol_serde::shape_evaluator_model_config::de_evaluator_model_config(tokens)?);
+                            builder = builder.set_model_config(crate::protocol_serde::shape_evaluator_model_config::de_evaluator_model_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

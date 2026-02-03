@@ -23,6 +23,7 @@ pub fn ser_antenna_uplink_config(
 
 pub(crate) fn de_antenna_uplink_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AntennaUplinkConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,12 @@ where
                             builder = builder.set_transmit_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "spectrumConfig" => {
-                            builder =
-                                builder.set_spectrum_config(crate::protocol_serde::shape_uplink_spectrum_config::de_uplink_spectrum_config(tokens)?);
+                            builder = builder.set_spectrum_config(crate::protocol_serde::shape_uplink_spectrum_config::de_uplink_spectrum_config(
+                                tokens, _value,
+                            )?);
                         }
                         "targetEirp" => {
-                            builder = builder.set_target_eirp(crate::protocol_serde::shape_eirp::de_eirp(tokens)?);
+                            builder = builder.set_target_eirp(crate::protocol_serde::shape_eirp::de_eirp(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -78,13 +78,13 @@ pub fn ser_list_workgroups_input(
 }
 
 pub(crate) fn de_list_workgroups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_list_workgroups(
                     );
                 }
                 "workgroups" => {
-                    builder = builder.set_workgroups(crate::protocol_serde::shape_workgroup_list::de_workgroup_list(tokens)?);
+                    builder = builder.set_workgroups(crate::protocol_serde::shape_workgroup_list::de_workgroup_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

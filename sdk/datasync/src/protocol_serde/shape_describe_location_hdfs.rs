@@ -84,13 +84,13 @@ pub fn ser_describe_location_hdfs_input(
 }
 
 pub(crate) fn de_describe_location_hdfs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -112,7 +112,7 @@ pub(crate) fn de_describe_location_hdfs(
                     );
                 }
                 "NameNodes" => {
-                    builder = builder.set_name_nodes(crate::protocol_serde::shape_hdfs_name_node_list::de_hdfs_name_node_list(tokens)?);
+                    builder = builder.set_name_nodes(crate::protocol_serde::shape_hdfs_name_node_list::de_hdfs_name_node_list(tokens, _value)?);
                 }
                 "BlockSize" => {
                     builder = builder.set_block_size(
@@ -136,7 +136,7 @@ pub(crate) fn de_describe_location_hdfs(
                     );
                 }
                 "QopConfiguration" => {
-                    builder = builder.set_qop_configuration(crate::protocol_serde::shape_qop_configuration::de_qop_configuration(tokens)?);
+                    builder = builder.set_qop_configuration(crate::protocol_serde::shape_qop_configuration::de_qop_configuration(tokens, _value)?);
                 }
                 "AuthenticationType" => {
                     builder = builder.set_authentication_type(
@@ -160,7 +160,7 @@ pub(crate) fn de_describe_location_hdfs(
                     );
                 }
                 "AgentArns" => {
-                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens)?);
+                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

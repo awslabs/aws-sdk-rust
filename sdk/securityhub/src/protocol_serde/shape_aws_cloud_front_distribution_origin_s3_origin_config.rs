@@ -11,6 +11,7 @@ pub fn ser_aws_cloud_front_distribution_origin_s3_origin_config(
 
 pub(crate) fn de_aws_cloud_front_distribution_origin_s3_origin_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCloudFrontDistributionOriginS3OriginConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

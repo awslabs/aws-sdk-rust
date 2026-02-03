@@ -122,6 +122,7 @@ pub fn ser_aws_ec2_vpn_connection_options_tunnel_options_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_options_tunnel_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -146,7 +147,9 @@ where
                             );
                         }
                         "IkeVersions" => {
-                            builder = builder.set_ike_versions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_ike_versions(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "OutsideIpAddress" => {
                             builder = builder.set_outside_ip_address(
@@ -156,16 +159,17 @@ where
                             );
                         }
                         "Phase1DhGroupNumbers" => {
-                            builder = builder.set_phase1_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
+                            builder =
+                                builder.set_phase1_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
                         }
                         "Phase1EncryptionAlgorithms" => {
                             builder = builder.set_phase1_encryption_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "Phase1IntegrityAlgorithms" => {
                             builder = builder.set_phase1_integrity_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "Phase1LifetimeSeconds" => {
@@ -176,16 +180,17 @@ where
                             );
                         }
                         "Phase2DhGroupNumbers" => {
-                            builder = builder.set_phase2_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?);
+                            builder =
+                                builder.set_phase2_dh_group_numbers(crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?);
                         }
                         "Phase2EncryptionAlgorithms" => {
                             builder = builder.set_phase2_encryption_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "Phase2IntegrityAlgorithms" => {
                             builder = builder.set_phase2_integrity_algorithms(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "Phase2LifetimeSeconds" => {

@@ -35,6 +35,7 @@ pub fn ser_mongo_db_atlas_configuration(
 
 pub(crate) fn de_mongo_db_atlas_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MongoDbAtlasConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,7 +86,7 @@ where
                         }
                         "fieldMapping" => {
                             builder = builder.set_field_mapping(
-                                crate::protocol_serde::shape_mongo_db_atlas_field_mapping::de_mongo_db_atlas_field_mapping(tokens)?,
+                                crate::protocol_serde::shape_mongo_db_atlas_field_mapping::de_mongo_db_atlas_field_mapping(tokens, _value)?,
                             );
                         }
                         "endpointServiceName" => {

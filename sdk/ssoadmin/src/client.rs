@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::operation::attach_customer_managed_policy_reference_to_permission_set) operation has
-/// a [`Client::attach_customer_managed_policy_reference_to_permission_set`], function which returns a builder for that operation.
+/// For example, the [`AddRegion`](crate::operation::add_region) operation has
+/// a [`Client::add_region`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.attach_customer_managed_policy_reference_to_permission_set()
+/// let result = client.add_region()
 ///     .instance_arn("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod add_region;
+
 mod attach_customer_managed_policy_reference_to_permission_set;
 
 mod attach_managed_policy_to_permission_set;
@@ -163,9 +165,9 @@ mod create_trusted_token_issuer;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ssoadmin::Error> {
 /// # let client: aws_sdk_ssoadmin::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.attach_customer_managed_policy_reference_to_permission_set()
+/// let result = client.add_region()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -223,6 +225,8 @@ mod describe_permission_set;
 
 mod describe_permission_set_provisioning_status;
 
+mod describe_region;
+
 mod describe_trusted_token_issuer;
 
 mod detach_customer_managed_policy_reference_from_permission_set;
@@ -279,6 +283,8 @@ mod list_permission_sets;
 
 mod list_permission_sets_provisioned_to_account;
 
+mod list_regions;
+
 mod list_tags_for_resource;
 
 mod list_trusted_token_issuers;
@@ -298,6 +304,8 @@ mod put_application_session_configuration;
 mod put_inline_policy_to_permission_set;
 
 mod put_permissions_boundary_to_permission_set;
+
+mod remove_region;
 
 mod tag_resource;
 

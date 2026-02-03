@@ -81,13 +81,13 @@ pub fn de_describe_organization_configuration_http_response(
 }
 
 pub(crate) fn de_describe_organization_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -106,13 +106,13 @@ pub(crate) fn de_describe_organization_configuration(
                 }
                 "dataSources" => {
                     builder = builder.set_data_sources(
-                            crate::protocol_serde::shape_organization_data_source_configurations_result::de_organization_data_source_configurations_result(tokens)?
+                            crate::protocol_serde::shape_organization_data_source_configurations_result::de_organization_data_source_configurations_result(tokens, _value)?
                         );
                 }
                 "features" => {
                     builder = builder.set_features(
                         crate::protocol_serde::shape_organization_features_configurations_results::de_organization_features_configurations_results(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

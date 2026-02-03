@@ -159,7 +159,7 @@ mod create_vpc_ingress_connection;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_apprunner::Error> {
 /// # let client: aws_sdk_apprunner::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_custom_domain()
 ///     .customize()

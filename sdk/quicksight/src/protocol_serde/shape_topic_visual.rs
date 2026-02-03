@@ -32,6 +32,7 @@ pub fn ser_topic_visual(
 
 pub(crate) fn de_topic_visual<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicVisual>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,10 +61,10 @@ where
                             );
                         }
                         "Ir" => {
-                            builder = builder.set_ir(crate::protocol_serde::shape_topic_ir::de_topic_ir(tokens)?);
+                            builder = builder.set_ir(crate::protocol_serde::shape_topic_ir::de_topic_ir(tokens, _value)?);
                         }
                         "SupportingVisuals" => {
-                            builder = builder.set_supporting_visuals(crate::protocol_serde::shape_topic_visuals::de_topic_visuals(tokens)?);
+                            builder = builder.set_supporting_visuals(crate::protocol_serde::shape_topic_visuals::de_topic_visuals(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

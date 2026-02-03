@@ -23,6 +23,7 @@ pub fn ser_snapshot_file_sheet_selection(
 
 pub(crate) fn de_snapshot_file_sheet_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SnapshotFileSheetSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                         }
                         "VisualIds" => {
                             builder = builder.set_visual_ids(
-                                    crate::protocol_serde::shape_snapshot_file_sheet_selection_visual_id_list::de_snapshot_file_sheet_selection_visual_id_list(tokens)?
+                                    crate::protocol_serde::shape_snapshot_file_sheet_selection_visual_id_list::de_snapshot_file_sheet_selection_visual_id_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

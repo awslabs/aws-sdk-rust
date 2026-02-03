@@ -213,7 +213,7 @@ mod create_workspace;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_amp::Error> {
 /// # let client: aws_sdk_amp::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_alert_manager_definition()
 ///     .customize()

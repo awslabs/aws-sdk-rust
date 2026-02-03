@@ -23,6 +23,7 @@ pub fn ser_create_backend_auth_password_policy_config(
 
 pub(crate) fn de_create_backend_auth_password_policy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateBackendAuthPasswordPolicyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         "additionalConstraints" => {
                             builder = builder.set_additional_constraints(
                                 crate::protocol_serde::shape_list_of_additional_constraints_element::de_list_of_additional_constraints_element(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

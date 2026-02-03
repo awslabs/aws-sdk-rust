@@ -50,6 +50,7 @@ pub fn ser_sheet_image(
 
 pub(crate) fn de_sheet_image<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetImage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,16 +72,16 @@ where
                             );
                         }
                         "Source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_sheet_image_source::de_sheet_image_source(tokens)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_sheet_image_source::de_sheet_image_source(tokens, _value)?);
                         }
                         "Scaling" => {
                             builder = builder.set_scaling(
-                                crate::protocol_serde::shape_sheet_image_scaling_configuration::de_sheet_image_scaling_configuration(tokens)?,
+                                crate::protocol_serde::shape_sheet_image_scaling_configuration::de_sheet_image_scaling_configuration(tokens, _value)?,
                             );
                         }
                         "Tooltip" => {
                             builder = builder.set_tooltip(
-                                crate::protocol_serde::shape_sheet_image_tooltip_configuration::de_sheet_image_tooltip_configuration(tokens)?,
+                                crate::protocol_serde::shape_sheet_image_tooltip_configuration::de_sheet_image_tooltip_configuration(tokens, _value)?,
                             );
                         }
                         "ImageContentAltText" => {
@@ -92,12 +93,12 @@ where
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(crate::protocol_serde::shape_image_interaction_options::de_image_interaction_options(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Actions" => {
                             builder = builder.set_actions(crate::protocol_serde::shape_image_custom_action_list::de_image_custom_action_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

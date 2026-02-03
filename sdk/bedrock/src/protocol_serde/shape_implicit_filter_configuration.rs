@@ -23,6 +23,7 @@ pub fn ser_implicit_filter_configuration(
 
 pub(crate) fn de_implicit_filter_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImplicitFilterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "metadataAttributes" => {
                             builder = builder.set_metadata_attributes(
-                                crate::protocol_serde::shape_metadata_attribute_schema_list::de_metadata_attribute_schema_list(tokens)?,
+                                crate::protocol_serde::shape_metadata_attribute_schema_list::de_metadata_attribute_schema_list(tokens, _value)?,
                             );
                         }
                         "modelArn" => {

@@ -17,6 +17,7 @@ pub fn ser_pipe_enrichment_parameters(
 
 pub(crate) fn de_pipe_enrichment_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeEnrichmentParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "HttpParameters" => {
                             builder = builder.set_http_parameters(
-                                crate::protocol_serde::shape_pipe_enrichment_http_parameters::de_pipe_enrichment_http_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_enrichment_http_parameters::de_pipe_enrichment_http_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

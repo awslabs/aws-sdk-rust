@@ -38,6 +38,7 @@ pub fn ser_aws_step_function_state_machine_details(
 
 pub(crate) fn de_aws_step_function_state_machine_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsStepFunctionStateMachineDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                         }
                         "LoggingConfiguration" => {
                             builder = builder.set_logging_configuration(
-                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_details::de_aws_step_function_state_machine_logging_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_details::de_aws_step_function_state_machine_logging_configuration_details(tokens, _value)?
                                 );
                         }
                         "Name" => {
@@ -93,7 +94,7 @@ where
                         }
                         "TracingConfiguration" => {
                             builder = builder.set_tracing_configuration(
-                                    crate::protocol_serde::shape_aws_step_function_state_machine_tracing_configuration_details::de_aws_step_function_state_machine_tracing_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_step_function_state_machine_tracing_configuration_details::de_aws_step_function_state_machine_tracing_configuration_details(tokens, _value)?
                                 );
                         }
                         "Type" => {

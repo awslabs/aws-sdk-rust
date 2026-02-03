@@ -20,6 +20,7 @@ pub fn ser_composited_video_artifacts_configuration(
 
 pub(crate) fn de_composited_video_artifacts_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CompositedVideoArtifactsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "GridViewConfiguration" => {
                             builder = builder.set_grid_view_configuration(
-                                crate::protocol_serde::shape_grid_view_configuration::de_grid_view_configuration(tokens)?,
+                                crate::protocol_serde::shape_grid_view_configuration::de_grid_view_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

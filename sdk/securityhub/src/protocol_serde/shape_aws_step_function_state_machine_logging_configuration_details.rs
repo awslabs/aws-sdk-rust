@@ -26,6 +26,7 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_details(
 
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Destinations" => {
                             builder = builder.set_destinations(
-                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_destinations_list::de_aws_step_function_state_machine_logging_configuration_destinations_list(tokens)?
+                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_destinations_list::de_aws_step_function_state_machine_logging_configuration_destinations_list(tokens, _value)?
                                 );
                         }
                         "IncludeExecutionData" => {

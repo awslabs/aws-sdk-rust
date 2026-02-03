@@ -20,6 +20,7 @@ pub fn ser_event_trigger_dimension(
 
 pub(crate) fn de_event_trigger_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventTriggerDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ObjectAttributes" => {
-                            builder = builder.set_object_attributes(crate::protocol_serde::shape_object_attributes::de_object_attributes(tokens)?);
+                            builder =
+                                builder.set_object_attributes(crate::protocol_serde::shape_object_attributes::de_object_attributes(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

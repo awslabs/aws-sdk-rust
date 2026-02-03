@@ -32,6 +32,7 @@ pub fn ser_social_provider_settings(
 
 pub(crate) fn de_social_provider_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SocialProviderSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,22 +48,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Facebook" => {
                             builder = builder.set_facebook(
-                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Google" => {
                             builder = builder.set_google(
-                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LoginWithAmazon" => {
                             builder = builder.set_login_with_amazon(
-                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(tokens)?,
+                                crate::protocol_serde::shape_backend_auth_social_provider_config::de_backend_auth_social_provider_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "SignInWithApple" => {
                             builder = builder.set_sign_in_with_apple(
-                                crate::protocol_serde::shape_backend_auth_apple_provider_config::de_backend_auth_apple_provider_config(tokens)?,
+                                crate::protocol_serde::shape_backend_auth_apple_provider_config::de_backend_auth_apple_provider_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

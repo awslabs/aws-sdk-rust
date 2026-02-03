@@ -118,10 +118,10 @@ pub fn de_get_entity_http_response(
 }
 
 pub(crate) fn de_get_entity(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_entity::builders::GetEntityOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_entity::builders::GetEntityOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_get_entity(
                     );
                 }
                 "components" => {
-                    builder = builder.set_components(crate::protocol_serde::shape_components_map::de_components_map(tokens)?);
+                    builder = builder.set_components(crate::protocol_serde::shape_components_map::de_components_map(tokens, _value)?);
                 }
                 "creationDateTime" => {
                     builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -179,7 +179,7 @@ pub(crate) fn de_get_entity(
                     );
                 }
                 "status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens, _value)?);
                 }
                 "syncSource" => {
                     builder = builder.set_sync_source(

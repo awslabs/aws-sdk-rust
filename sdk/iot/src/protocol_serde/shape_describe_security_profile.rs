@@ -108,13 +108,13 @@ pub fn de_describe_security_profile_http_response(
 }
 
 pub(crate) fn de_describe_security_profile(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,19 +123,19 @@ pub(crate) fn de_describe_security_profile(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "additionalMetricsToRetain" => {
                     builder = builder.set_additional_metrics_to_retain(
-                        crate::protocol_serde::shape_additional_metrics_to_retain_list::de_additional_metrics_to_retain_list(tokens)?,
+                        crate::protocol_serde::shape_additional_metrics_to_retain_list::de_additional_metrics_to_retain_list(tokens, _value)?,
                     );
                 }
                 "additionalMetricsToRetainV2" => {
                     builder = builder.set_additional_metrics_to_retain_v2(
-                        crate::protocol_serde::shape_additional_metrics_to_retain_v2_list::de_additional_metrics_to_retain_v2_list(tokens)?,
+                        crate::protocol_serde::shape_additional_metrics_to_retain_v2_list::de_additional_metrics_to_retain_v2_list(tokens, _value)?,
                     );
                 }
                 "alertTargets" => {
-                    builder = builder.set_alert_targets(crate::protocol_serde::shape_alert_targets::de_alert_targets(tokens)?);
+                    builder = builder.set_alert_targets(crate::protocol_serde::shape_alert_targets::de_alert_targets(tokens, _value)?);
                 }
                 "behaviors" => {
-                    builder = builder.set_behaviors(crate::protocol_serde::shape_behaviors::de_behaviors(tokens)?);
+                    builder = builder.set_behaviors(crate::protocol_serde::shape_behaviors::de_behaviors(tokens, _value)?);
                 }
                 "creationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -150,8 +150,9 @@ pub(crate) fn de_describe_security_profile(
                     )?);
                 }
                 "metricsExportConfig" => {
-                    builder =
-                        builder.set_metrics_export_config(crate::protocol_serde::shape_metrics_export_config::de_metrics_export_config(tokens)?);
+                    builder = builder.set_metrics_export_config(crate::protocol_serde::shape_metrics_export_config::de_metrics_export_config(
+                        tokens, _value,
+                    )?);
                 }
                 "securityProfileArn" => {
                     builder = builder.set_security_profile_arn(

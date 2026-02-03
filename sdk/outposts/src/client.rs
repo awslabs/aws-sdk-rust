@@ -155,7 +155,7 @@ mod create_site;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_outposts::Error> {
 /// # let client: aws_sdk_outposts::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_capacity_task()
 ///     .customize()

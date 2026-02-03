@@ -41,6 +41,7 @@ pub fn ser_container_health_check(
 
 pub(crate) fn de_container_health_check<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContainerHealthCheck>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,8 +56,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Command" => {
-                            builder = builder
-                                .set_command(crate::protocol_serde::shape_container_command_string_list::de_container_command_string_list(tokens)?);
+                            builder = builder.set_command(
+                                crate::protocol_serde::shape_container_command_string_list::de_container_command_string_list(tokens, _value)?,
+                            );
                         }
                         "Interval" => {
                             builder = builder.set_interval(

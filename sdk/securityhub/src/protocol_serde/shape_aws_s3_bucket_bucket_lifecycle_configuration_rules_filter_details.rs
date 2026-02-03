@@ -14,6 +14,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details(
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Predicate" => {
                             builder = builder.set_predicate(
-                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::de_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

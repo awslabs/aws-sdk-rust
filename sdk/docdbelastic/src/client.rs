@@ -153,7 +153,7 @@ mod create_cluster_snapshot;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_docdbelastic::Error> {
 /// # let client: aws_sdk_docdbelastic::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.apply_pending_maintenance_action()
 ///     .customize()

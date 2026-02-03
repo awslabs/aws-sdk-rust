@@ -23,6 +23,7 @@ pub fn ser_trained_model_exports_configuration_policy(
 
 pub(crate) fn de_trained_model_exports_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainedModelExportsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "maxSize" => {
                             builder = builder.set_max_size(
-                                crate::protocol_serde::shape_trained_model_exports_max_size::de_trained_model_exports_max_size(tokens)?,
+                                crate::protocol_serde::shape_trained_model_exports_max_size::de_trained_model_exports_max_size(tokens, _value)?,
                             );
                         }
                         "filesToExport" => {
                             builder = builder.set_files_to_export(
-                                crate::protocol_serde::shape_trained_model_export_file_type_list::de_trained_model_export_file_type_list(tokens)?,
+                                crate::protocol_serde::shape_trained_model_export_file_type_list::de_trained_model_export_file_type_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

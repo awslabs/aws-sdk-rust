@@ -44,6 +44,7 @@ pub fn ser_aws_cloud_front_distribution_origin_custom_origin_config(
 
 pub(crate) fn de_aws_cloud_front_distribution_origin_custom_origin_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -97,7 +98,7 @@ where
                         }
                         "OriginSslProtocols" => {
                             builder = builder.set_origin_ssl_protocols(
-                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_ssl_protocols::de_aws_cloud_front_distribution_origin_ssl_protocols(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_front_distribution_origin_ssl_protocols::de_aws_cloud_front_distribution_origin_ssl_protocols(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

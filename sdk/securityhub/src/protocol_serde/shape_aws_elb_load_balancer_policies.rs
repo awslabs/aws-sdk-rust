@@ -41,6 +41,7 @@ pub fn ser_aws_elb_load_balancer_policies(
 
 pub(crate) fn de_aws_elb_load_balancer_policies<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerPolicies>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,17 +58,19 @@ where
                         "AppCookieStickinessPolicies" => {
                             builder = builder.set_app_cookie_stickiness_policies(
                                 crate::protocol_serde::shape_aws_elb_app_cookie_stickiness_policies::de_aws_elb_app_cookie_stickiness_policies(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "LbCookieStickinessPolicies" => {
                             builder = builder.set_lb_cookie_stickiness_policies(
-                                crate::protocol_serde::shape_aws_elb_lb_cookie_stickiness_policies::de_aws_elb_lb_cookie_stickiness_policies(tokens)?,
+                                crate::protocol_serde::shape_aws_elb_lb_cookie_stickiness_policies::de_aws_elb_lb_cookie_stickiness_policies(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "OtherPolicies" => {
-                            builder = builder.set_other_policies(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_other_policies(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

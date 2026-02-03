@@ -56,6 +56,7 @@ pub fn ser_radius_settings(
 
 pub(crate) fn de_radius_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RadiusSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,10 +71,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RadiusServers" => {
-                            builder = builder.set_radius_servers(crate::protocol_serde::shape_servers::de_servers(tokens)?);
+                            builder = builder.set_radius_servers(crate::protocol_serde::shape_servers::de_servers(tokens, _value)?);
                         }
                         "RadiusServersIpv6" => {
-                            builder = builder.set_radius_servers_ipv6(crate::protocol_serde::shape_servers::de_servers(tokens)?);
+                            builder = builder.set_radius_servers_ipv6(crate::protocol_serde::shape_servers::de_servers(tokens, _value)?);
                         }
                         "RadiusPort" => {
                             builder = builder.set_radius_port(

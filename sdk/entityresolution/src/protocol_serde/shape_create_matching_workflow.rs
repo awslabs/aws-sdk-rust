@@ -150,13 +150,13 @@ pub fn ser_create_matching_workflow_input(
 }
 
 pub(crate) fn de_create_matching_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_matching_workflow::builders::CreateMatchingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,18 +171,23 @@ pub(crate) fn de_create_matching_workflow(
                     );
                 }
                 "incrementalRunConfig" => {
-                    builder =
-                        builder.set_incremental_run_config(crate::protocol_serde::shape_incremental_run_config::de_incremental_run_config(tokens)?);
+                    builder = builder.set_incremental_run_config(crate::protocol_serde::shape_incremental_run_config::de_incremental_run_config(
+                        tokens, _value,
+                    )?);
                 }
                 "inputSourceConfig" => {
-                    builder = builder.set_input_source_config(crate::protocol_serde::shape_input_source_config::de_input_source_config(tokens)?);
+                    builder =
+                        builder.set_input_source_config(crate::protocol_serde::shape_input_source_config::de_input_source_config(tokens, _value)?);
                 }
                 "outputSourceConfig" => {
-                    builder = builder.set_output_source_config(crate::protocol_serde::shape_output_source_config::de_output_source_config(tokens)?);
+                    builder = builder.set_output_source_config(crate::protocol_serde::shape_output_source_config::de_output_source_config(
+                        tokens, _value,
+                    )?);
                 }
                 "resolutionTechniques" => {
-                    builder =
-                        builder.set_resolution_techniques(crate::protocol_serde::shape_resolution_techniques::de_resolution_techniques(tokens)?);
+                    builder = builder.set_resolution_techniques(crate::protocol_serde::shape_resolution_techniques::de_resolution_techniques(
+                        tokens, _value,
+                    )?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

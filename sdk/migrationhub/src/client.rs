@@ -153,7 +153,7 @@ mod create_progress_update_stream;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_migrationhub::Error> {
 /// # let client: aws_sdk_migrationhub::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_created_artifact()
 ///     .customize()

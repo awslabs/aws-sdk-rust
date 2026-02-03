@@ -32,6 +32,7 @@ pub fn ser_fairshare_policy(
 
 pub(crate) fn de_fairshare_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FairsharePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,8 +61,9 @@ where
                             );
                         }
                         "shareDistribution" => {
-                            builder =
-                                builder.set_share_distribution(crate::protocol_serde::shape_share_attributes_list::de_share_attributes_list(tokens)?);
+                            builder = builder.set_share_distribution(crate::protocol_serde::shape_share_attributes_list::de_share_attributes_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

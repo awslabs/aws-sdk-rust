@@ -17,6 +17,7 @@ pub fn ser_credential_provider_configuration(
 
 pub(crate) fn de_credential_provider_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CredentialProviderConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,8 @@ where
                             );
                         }
                         "credentialProvider" => {
-                            builder =
-                                builder.set_credential_provider(crate::protocol_serde::shape_credential_provider::de_credential_provider(tokens)?);
+                            builder = builder
+                                .set_credential_provider(crate::protocol_serde::shape_credential_provider::de_credential_provider(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -29,6 +29,7 @@ pub fn ser_content_source_configuration(
 
 pub(crate) fn de_content_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContentSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSourceIds" => {
-                            builder = builder.set_data_source_ids(crate::protocol_serde::shape_data_source_id_list::de_data_source_id_list(tokens)?);
+                            builder = builder
+                                .set_data_source_ids(crate::protocol_serde::shape_data_source_id_list::de_data_source_id_list(tokens, _value)?);
                         }
                         "FaqIds" => {
-                            builder = builder.set_faq_ids(crate::protocol_serde::shape_faq_ids_list::de_faq_ids_list(tokens)?);
+                            builder = builder.set_faq_ids(crate::protocol_serde::shape_faq_ids_list::de_faq_ids_list(tokens, _value)?);
                         }
                         "DirectPutContent" => {
                             builder = builder.set_direct_put_content(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

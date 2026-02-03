@@ -26,6 +26,7 @@ pub fn ser_whats_app_channel_subtype_config(
 
 pub(crate) fn de_whats_app_channel_subtype_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WhatsAppChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,12 +45,13 @@ where
                                 .set_capacity(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "outboundMode" => {
-                            builder =
-                                builder.set_outbound_mode(crate::protocol_serde::shape_whats_app_outbound_mode::de_whats_app_outbound_mode(tokens)?);
+                            builder = builder.set_outbound_mode(crate::protocol_serde::shape_whats_app_outbound_mode::de_whats_app_outbound_mode(
+                                tokens, _value,
+                            )?);
                         }
                         "defaultOutboundConfig" => {
                             builder = builder.set_default_outbound_config(
-                                crate::protocol_serde::shape_whats_app_outbound_config::de_whats_app_outbound_config(tokens)?,
+                                crate::protocol_serde::shape_whats_app_outbound_config::de_whats_app_outbound_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

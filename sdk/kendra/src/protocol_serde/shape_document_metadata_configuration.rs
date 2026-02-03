@@ -26,6 +26,7 @@ pub fn ser_document_metadata_configuration(
 
 pub(crate) fn de_document_metadata_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentMetadataConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,10 +55,10 @@ where
                             );
                         }
                         "Relevance" => {
-                            builder = builder.set_relevance(crate::protocol_serde::shape_relevance::de_relevance(tokens)?);
+                            builder = builder.set_relevance(crate::protocol_serde::shape_relevance::de_relevance(tokens, _value)?);
                         }
                         "Search" => {
-                            builder = builder.set_search(crate::protocol_serde::shape_search::de_search(tokens)?);
+                            builder = builder.set_search(crate::protocol_serde::shape_search::de_search(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

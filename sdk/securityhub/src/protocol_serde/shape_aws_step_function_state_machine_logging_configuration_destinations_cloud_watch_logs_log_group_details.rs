@@ -11,6 +11,7 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_destinations_cl
 
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

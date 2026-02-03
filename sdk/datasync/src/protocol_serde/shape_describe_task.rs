@@ -78,13 +78,13 @@ pub fn ser_describe_task_input(
 }
 
 pub(crate) fn de_describe_task(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_task::builders::DescribeTaskOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_task::builders::DescribeTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,22 +142,22 @@ pub(crate) fn de_describe_task(
                 }
                 "SourceNetworkInterfaceArns" => {
                     builder = builder.set_source_network_interface_arns(
-                        crate::protocol_serde::shape_source_network_interface_arns::de_source_network_interface_arns(tokens)?,
+                        crate::protocol_serde::shape_source_network_interface_arns::de_source_network_interface_arns(tokens, _value)?,
                     );
                 }
                 "DestinationNetworkInterfaceArns" => {
                     builder = builder.set_destination_network_interface_arns(
-                        crate::protocol_serde::shape_destination_network_interface_arns::de_destination_network_interface_arns(tokens)?,
+                        crate::protocol_serde::shape_destination_network_interface_arns::de_destination_network_interface_arns(tokens, _value)?,
                     );
                 }
                 "Options" => {
-                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens)?);
+                    builder = builder.set_options(crate::protocol_serde::shape_options::de_options(tokens, _value)?);
                 }
                 "Excludes" => {
-                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                    builder = builder.set_excludes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                 }
                 "Schedule" => {
-                    builder = builder.set_schedule(crate::protocol_serde::shape_task_schedule::de_task_schedule(tokens)?);
+                    builder = builder.set_schedule(crate::protocol_serde::shape_task_schedule::de_task_schedule(tokens, _value)?);
                 }
                 "ErrorCode" => {
                     builder = builder.set_error_code(
@@ -180,16 +180,18 @@ pub(crate) fn de_describe_task(
                     )?);
                 }
                 "Includes" => {
-                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
+                    builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens, _value)?);
                 }
                 "ManifestConfig" => {
-                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens)?);
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens, _value)?);
                 }
                 "TaskReportConfig" => {
-                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
+                    builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens, _value)?);
                 }
                 "ScheduleDetails" => {
-                    builder = builder.set_schedule_details(crate::protocol_serde::shape_task_schedule_details::de_task_schedule_details(tokens)?);
+                    builder = builder.set_schedule_details(crate::protocol_serde::shape_task_schedule_details::de_task_schedule_details(
+                        tokens, _value,
+                    )?);
                 }
                 "TaskMode" => {
                     builder = builder.set_task_mode(

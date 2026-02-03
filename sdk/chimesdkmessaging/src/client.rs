@@ -161,7 +161,7 @@ mod create_channel_moderator;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_chimesdkmessaging::Error> {
 /// # let client: aws_sdk_chimesdkmessaging::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_channel_flow()
 ///     .customize()

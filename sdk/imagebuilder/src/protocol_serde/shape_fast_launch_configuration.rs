@@ -32,6 +32,7 @@ pub fn ser_fast_launch_configuration(
 
 pub(crate) fn de_fast_launch_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FastLaunchConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,9 @@ where
                             }
                             "snapshotConfiguration" => {
                                 builder = builder.set_snapshot_configuration(
-                                    crate::protocol_serde::shape_fast_launch_snapshot_configuration::de_fast_launch_snapshot_configuration(tokens)?,
+                                    crate::protocol_serde::shape_fast_launch_snapshot_configuration::de_fast_launch_snapshot_configuration(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             "maxParallelLaunches" => {
@@ -63,7 +66,7 @@ where
                             }
                             "launchTemplate" => {
                                 builder = builder.set_launch_template(
-                                    crate::protocol_serde::shape_fast_launch_launch_template_specification::de_fast_launch_launch_template_specification(tokens)?
+                                    crate::protocol_serde::shape_fast_launch_launch_template_specification::de_fast_launch_launch_template_specification(tokens, _value)?
                                 );
                             }
                             "accountId" => {

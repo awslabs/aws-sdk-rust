@@ -17,6 +17,7 @@ pub fn ser_evaluation_dataset(
 
 pub(crate) fn de_evaluation_dataset<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationDataset>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "datasetLocation" => {
                             builder = builder.set_dataset_location(
-                                crate::protocol_serde::shape_evaluation_dataset_location::de_evaluation_dataset_location(tokens)?,
+                                crate::protocol_serde::shape_evaluation_dataset_location::de_evaluation_dataset_location(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

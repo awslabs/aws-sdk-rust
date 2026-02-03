@@ -141,13 +141,13 @@ pub fn de_copy_image_set_http_response(
 }
 
 pub(crate) fn de_copy_image_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,12 +163,12 @@ pub(crate) fn de_copy_image_set(
                 }
                 "destinationImageSetProperties" => {
                     builder = builder.set_destination_image_set_properties(
-                        crate::protocol_serde::shape_copy_destination_image_set_properties::de_copy_destination_image_set_properties(tokens)?,
+                        crate::protocol_serde::shape_copy_destination_image_set_properties::de_copy_destination_image_set_properties(tokens, _value)?,
                     );
                 }
                 "sourceImageSetProperties" => {
                     builder = builder.set_source_image_set_properties(
-                        crate::protocol_serde::shape_copy_source_image_set_properties::de_copy_source_image_set_properties(tokens)?,
+                        crate::protocol_serde::shape_copy_source_image_set_properties::de_copy_source_image_set_properties(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

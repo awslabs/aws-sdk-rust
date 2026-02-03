@@ -20,6 +20,7 @@ pub fn ser_vdm_options(
 
 pub(crate) fn de_vdm_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VdmOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DashboardOptions" => {
-                            builder = builder.set_dashboard_options(crate::protocol_serde::shape_dashboard_options::de_dashboard_options(tokens)?);
+                            builder =
+                                builder.set_dashboard_options(crate::protocol_serde::shape_dashboard_options::de_dashboard_options(tokens, _value)?);
                         }
                         "GuardianOptions" => {
-                            builder = builder.set_guardian_options(crate::protocol_serde::shape_guardian_options::de_guardian_options(tokens)?);
+                            builder =
+                                builder.set_guardian_options(crate::protocol_serde::shape_guardian_options::de_guardian_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

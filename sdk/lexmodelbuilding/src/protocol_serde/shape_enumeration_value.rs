@@ -20,6 +20,7 @@ pub fn ser_enumeration_value(
 
 pub(crate) fn de_enumeration_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EnumerationValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "synonyms" => {
-                            builder = builder.set_synonyms(crate::protocol_serde::shape_synonym_list::de_synonym_list(tokens)?);
+                            builder = builder.set_synonyms(crate::protocol_serde::shape_synonym_list::de_synonym_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

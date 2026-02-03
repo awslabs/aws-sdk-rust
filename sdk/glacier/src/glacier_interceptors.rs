@@ -11,7 +11,7 @@ use std::fmt;
 use std::marker::PhantomData;
 
 use bytes::Bytes;
-use http::header::HeaderValue;
+use http_1x::header::HeaderValue;
 use ring::digest::{Context, Digest, SHA256};
 
 use aws_runtime::auth::SigV4OperationSigningConfig;

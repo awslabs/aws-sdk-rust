@@ -115,13 +115,13 @@ pub fn de_get_multicast_group_http_response(
 }
 
 pub(crate) fn de_get_multicast_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_multicast_group::builders::GetMulticastGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_multicast_group::builders::GetMulticastGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -156,7 +156,9 @@ pub(crate) fn de_get_multicast_group(
                     );
                 }
                 "LoRaWAN" => {
-                    builder = builder.set_lo_ra_wan(crate::protocol_serde::shape_lo_ra_wan_multicast_get::de_lo_ra_wan_multicast_get(tokens)?);
+                    builder = builder.set_lo_ra_wan(crate::protocol_serde::shape_lo_ra_wan_multicast_get::de_lo_ra_wan_multicast_get(
+                        tokens, _value,
+                    )?);
                 }
                 "Name" => {
                     builder = builder.set_name(

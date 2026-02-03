@@ -23,6 +23,7 @@ pub fn ser_destination_configuration(
 
 pub(crate) fn de_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "channel" => {
                             builder = builder.set_channel(
-                                crate::protocol_serde::shape_channel_destination_configuration::de_channel_destination_configuration(tokens)?,
+                                crate::protocol_serde::shape_channel_destination_configuration::de_channel_destination_configuration(tokens, _value)?,
                             );
                         }
                         "s3" => {
-                            builder =
-                                builder.set_s3(crate::protocol_serde::shape_s3_destination_configuration::de_s3_destination_configuration(tokens)?);
+                            builder = builder
+                                .set_s3(crate::protocol_serde::shape_s3_destination_configuration::de_s3_destination_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

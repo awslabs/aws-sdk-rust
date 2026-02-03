@@ -26,6 +26,7 @@ pub fn ser_geospatial_layer_definition(
 
 pub(crate) fn de_geospatial_layer_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialLayerDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,15 +41,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PointLayer" => {
-                            builder =
-                                builder.set_point_layer(crate::protocol_serde::shape_geospatial_point_layer::de_geospatial_point_layer(tokens)?);
+                            builder = builder.set_point_layer(crate::protocol_serde::shape_geospatial_point_layer::de_geospatial_point_layer(
+                                tokens, _value,
+                            )?);
                         }
                         "LineLayer" => {
-                            builder = builder.set_line_layer(crate::protocol_serde::shape_geospatial_line_layer::de_geospatial_line_layer(tokens)?);
+                            builder = builder.set_line_layer(crate::protocol_serde::shape_geospatial_line_layer::de_geospatial_line_layer(
+                                tokens, _value,
+                            )?);
                         }
                         "PolygonLayer" => {
                             builder = builder.set_polygon_layer(crate::protocol_serde::shape_geospatial_polygon_layer::de_geospatial_polygon_layer(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

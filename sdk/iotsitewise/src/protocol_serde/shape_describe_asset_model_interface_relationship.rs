@@ -126,13 +126,13 @@ pub fn de_describe_asset_model_interface_relationship_http_response(
 }
 
 pub(crate) fn de_describe_asset_model_interface_relationship(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_model_interface_relationship::builders::DescribeAssetModelInterfaceRelationshipOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_model_interface_relationship::builders::DescribeAssetModelInterfaceRelationshipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_describe_asset_model_interface_relationship(
                     );
                 }
                 "hierarchyMappings" => {
-                    builder = builder.set_hierarchy_mappings(crate::protocol_serde::shape_hierarchy_mappings::de_hierarchy_mappings(tokens)?);
+                    builder = builder.set_hierarchy_mappings(crate::protocol_serde::shape_hierarchy_mappings::de_hierarchy_mappings(tokens, _value)?);
                 }
                 "interfaceAssetModelId" => {
                     builder = builder.set_interface_asset_model_id(
@@ -157,7 +157,7 @@ pub(crate) fn de_describe_asset_model_interface_relationship(
                     );
                 }
                 "propertyMappings" => {
-                    builder = builder.set_property_mappings(crate::protocol_serde::shape_property_mappings::de_property_mappings(tokens)?);
+                    builder = builder.set_property_mappings(crate::protocol_serde::shape_property_mappings::de_property_mappings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -108,13 +108,13 @@ pub fn ser_get_ml_transform_input(
 }
 
 pub(crate) fn de_get_ml_transform(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ml_transform::builders::GetMlTransformOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_ml_transform::builders::GetMlTransformOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,13 +162,15 @@ pub(crate) fn de_get_ml_transform(
                     )?);
                 }
                 "InputRecordTables" => {
-                    builder = builder.set_input_record_tables(crate::protocol_serde::shape_glue_tables::de_glue_tables(tokens)?);
+                    builder = builder.set_input_record_tables(crate::protocol_serde::shape_glue_tables::de_glue_tables(tokens, _value)?);
                 }
                 "Parameters" => {
-                    builder = builder.set_parameters(crate::protocol_serde::shape_transform_parameters::de_transform_parameters(tokens)?);
+                    builder = builder.set_parameters(crate::protocol_serde::shape_transform_parameters::de_transform_parameters(
+                        tokens, _value,
+                    )?);
                 }
                 "EvaluationMetrics" => {
-                    builder = builder.set_evaluation_metrics(crate::protocol_serde::shape_evaluation_metrics::de_evaluation_metrics(tokens)?);
+                    builder = builder.set_evaluation_metrics(crate::protocol_serde::shape_evaluation_metrics::de_evaluation_metrics(tokens, _value)?);
                 }
                 "LabelCount" => {
                     builder = builder.set_label_count(
@@ -178,7 +180,7 @@ pub(crate) fn de_get_ml_transform(
                     );
                 }
                 "Schema" => {
-                    builder = builder.set_schema(crate::protocol_serde::shape_transform_schema::de_transform_schema(tokens)?);
+                    builder = builder.set_schema(crate::protocol_serde::shape_transform_schema::de_transform_schema(tokens, _value)?);
                 }
                 "Role" => {
                     builder = builder.set_role(
@@ -227,7 +229,9 @@ pub(crate) fn de_get_ml_transform(
                     );
                 }
                 "TransformEncryption" => {
-                    builder = builder.set_transform_encryption(crate::protocol_serde::shape_transform_encryption::de_transform_encryption(tokens)?);
+                    builder = builder.set_transform_encryption(crate::protocol_serde::shape_transform_encryption::de_transform_encryption(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -17,6 +17,7 @@ pub fn ser_cascading_control_source(
 
 pub(crate) fn de_cascading_control_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CascadingControlSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "ColumnToMatch" => {
-                            builder = builder.set_column_to_match(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder =
+                                builder.set_column_to_match(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

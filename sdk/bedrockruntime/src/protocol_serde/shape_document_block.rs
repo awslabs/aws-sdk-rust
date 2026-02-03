@@ -29,6 +29,7 @@ pub fn ser_document_block(
 
 pub(crate) fn de_document_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,7 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_document_source::de_document_source(tokens)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_document_source::de_document_source(tokens, _value)?);
                         }
                         "context" => {
                             builder = builder.set_context(
@@ -67,7 +68,7 @@ where
                             );
                         }
                         "citations" => {
-                            builder = builder.set_citations(crate::protocol_serde::shape_citations_config::de_citations_config(tokens)?);
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations_config::de_citations_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

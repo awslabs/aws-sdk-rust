@@ -38,6 +38,7 @@ pub fn ser_date_time_parameter_declaration(
 
 pub(crate) fn de_date_time_parameter_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DateTimeParameterDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                             }
                             "DefaultValues" => {
                                 builder = builder.set_default_values(
-                                    crate::protocol_serde::shape_date_time_default_values::de_date_time_default_values(tokens)?,
+                                    crate::protocol_serde::shape_date_time_default_values::de_date_time_default_values(tokens, _value)?,
                                 );
                             }
                             "TimeGranularity" => {
@@ -73,12 +74,12 @@ where
                             }
                             "ValueWhenUnset" => {
                                 builder = builder.set_value_when_unset(
-                                    crate::protocol_serde::shape_date_time_value_when_unset_configuration::de_date_time_value_when_unset_configuration(tokens)?
+                                    crate::protocol_serde::shape_date_time_value_when_unset_configuration::de_date_time_value_when_unset_configuration(tokens, _value)?
                                 );
                             }
                             "MappedDataSetParameters" => {
                                 builder = builder.set_mapped_data_set_parameters(
-                                    crate::protocol_serde::shape_mapped_data_set_parameters::de_mapped_data_set_parameters(tokens)?,
+                                    crate::protocol_serde::shape_mapped_data_set_parameters::de_mapped_data_set_parameters(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

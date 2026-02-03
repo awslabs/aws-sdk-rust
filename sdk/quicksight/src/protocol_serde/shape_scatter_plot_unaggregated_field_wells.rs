@@ -68,6 +68,7 @@ pub fn ser_scatter_plot_unaggregated_field_wells(
 
 pub(crate) fn de_scatter_plot_unaggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ScatterPlotUnaggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,19 +83,27 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "XAxis" => {
-                            builder = builder.set_x_axis(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_x_axis(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         "YAxis" => {
-                            builder = builder.set_y_axis(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_y_axis(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Size" => {
-                            builder = builder.set_size(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?);
+                            builder = builder.set_size(crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens, _value)?);
                         }
                         "Category" => {
-                            builder = builder.set_category(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_category(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Label" => {
-                            builder = builder.set_label(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?);
+                            builder = builder.set_label(crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

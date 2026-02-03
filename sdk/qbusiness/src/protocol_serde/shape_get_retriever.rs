@@ -108,13 +108,13 @@ pub fn de_get_retriever_http_response(
 }
 
 pub(crate) fn de_get_retriever(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_retriever::builders::GetRetrieverOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_retriever::builders::GetRetrieverOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,7 +129,9 @@ pub(crate) fn de_get_retriever(
                     );
                 }
                 "configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_retriever_configuration::de_retriever_configuration(tokens)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_retriever_configuration::de_retriever_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

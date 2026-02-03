@@ -26,6 +26,7 @@ pub fn ser_processing_output(
 
 pub(crate) fn de_processing_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProcessingOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,11 +48,13 @@ where
                             );
                         }
                         "S3Output" => {
-                            builder = builder.set_s3_output(crate::protocol_serde::shape_processing_s3_output::de_processing_s3_output(tokens)?);
+                            builder = builder.set_s3_output(crate::protocol_serde::shape_processing_s3_output::de_processing_s3_output(
+                                tokens, _value,
+                            )?);
                         }
                         "FeatureStoreOutput" => {
                             builder = builder.set_feature_store_output(
-                                crate::protocol_serde::shape_processing_feature_store_output::de_processing_feature_store_output(tokens)?,
+                                crate::protocol_serde::shape_processing_feature_store_output::de_processing_feature_store_output(tokens, _value)?,
                             );
                         }
                         "AppManaged" => {

@@ -26,6 +26,7 @@ pub fn ser_pipeline_output_config(
 
 pub(crate) fn de_pipeline_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipelineOutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "Permissions" => {
-                            builder = builder.set_permissions(crate::protocol_serde::shape_permissions::de_permissions(tokens)?);
+                            builder = builder.set_permissions(crate::protocol_serde::shape_permissions::de_permissions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,7 @@ pub fn ser_kpi_conditional_formatting_option(
 
 pub(crate) fn de_kpi_conditional_formatting_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiConditionalFormattingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,26 +52,26 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "PrimaryValue" => {
                                 builder = builder.set_primary_value(
-                                    crate::protocol_serde::shape_kpi_primary_value_conditional_formatting::de_kpi_primary_value_conditional_formatting(tokens)?
+                                    crate::protocol_serde::shape_kpi_primary_value_conditional_formatting::de_kpi_primary_value_conditional_formatting(tokens, _value)?
                                 );
                             }
                             "ProgressBar" => {
                                 builder = builder.set_progress_bar(
                                     crate::protocol_serde::shape_kpi_progress_bar_conditional_formatting::de_kpi_progress_bar_conditional_formatting(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "ActualValue" => {
                                 builder = builder.set_actual_value(
                                     crate::protocol_serde::shape_kpi_actual_value_conditional_formatting::de_kpi_actual_value_conditional_formatting(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "ComparisonValue" => {
                                 builder = builder.set_comparison_value(
-                                    crate::protocol_serde::shape_kpi_comparison_value_conditional_formatting::de_kpi_comparison_value_conditional_formatting(tokens)?
+                                    crate::protocol_serde::shape_kpi_comparison_value_conditional_formatting::de_kpi_comparison_value_conditional_formatting(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

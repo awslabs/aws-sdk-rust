@@ -26,6 +26,7 @@ pub fn ser_tcp_flag_field(
 
 pub(crate) fn de_tcp_flag_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TcpFlagField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Flags" => {
-                            builder = builder.set_flags(crate::protocol_serde::shape_flags::de_flags(tokens)?);
+                            builder = builder.set_flags(crate::protocol_serde::shape_flags::de_flags(tokens, _value)?);
                         }
                         "Masks" => {
-                            builder = builder.set_masks(crate::protocol_serde::shape_flags::de_flags(tokens)?);
+                            builder = builder.set_masks(crate::protocol_serde::shape_flags::de_flags(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

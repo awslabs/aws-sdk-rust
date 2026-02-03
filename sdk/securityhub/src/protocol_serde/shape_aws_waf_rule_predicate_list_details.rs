@@ -17,6 +17,7 @@ pub fn ser_aws_waf_rule_predicate_list_details(
 
 pub(crate) fn de_aws_waf_rule_predicate_list_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafRulePredicateListDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

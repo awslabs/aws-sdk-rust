@@ -104,13 +104,13 @@ pub fn de_describe_managed_job_template_http_response(
 }
 
 pub(crate) fn de_describe_managed_job_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_managed_job_template::builders::DescribeManagedJobTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,10 +132,11 @@ pub(crate) fn de_describe_managed_job_template(
                     );
                 }
                 "documentParameters" => {
-                    builder = builder.set_document_parameters(crate::protocol_serde::shape_document_parameters::de_document_parameters(tokens)?);
+                    builder =
+                        builder.set_document_parameters(crate::protocol_serde::shape_document_parameters::de_document_parameters(tokens, _value)?);
                 }
                 "environments" => {
-                    builder = builder.set_environments(crate::protocol_serde::shape_environments::de_environments(tokens)?);
+                    builder = builder.set_environments(crate::protocol_serde::shape_environments::de_environments(tokens, _value)?);
                 }
                 "templateArn" => {
                     builder = builder.set_template_arn(

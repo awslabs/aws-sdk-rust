@@ -26,16 +26,16 @@ zeroize = "1.7.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.7"
+version = "1.2.11"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.3.6"
+version = "1.4.3"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-auth"]
-version = "1.10.0"
+version = "1.11.3"
 
 [dev-dependencies]
 async-trait = "0.1.74"
@@ -43,7 +43,7 @@ async-trait = "0.1.74"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.10.0"
+version = "1.11.3"
 
 [dev-dependencies.tokio]
 version = "1.23.1"

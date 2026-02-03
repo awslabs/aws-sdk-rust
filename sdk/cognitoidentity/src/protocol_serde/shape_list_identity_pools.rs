@@ -125,13 +125,13 @@ pub fn ser_list_identity_pools_input(
 }
 
 pub(crate) fn de_list_identity_pools(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_identity_pools::builders::ListIdentityPoolsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_identity_pools::builders::ListIdentityPoolsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,7 @@ pub(crate) fn de_list_identity_pools(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "IdentityPools" => {
-                    builder = builder.set_identity_pools(crate::protocol_serde::shape_identity_pools_list::de_identity_pools_list(tokens)?);
+                    builder = builder.set_identity_pools(crate::protocol_serde::shape_identity_pools_list::de_identity_pools_list(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

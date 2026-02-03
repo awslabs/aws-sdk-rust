@@ -27,7 +27,7 @@ features = ["alloc", "half"]
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.3.6"
+version = "1.4.3"
 
 [dev-dependencies]
 criterion = "0.5.1"

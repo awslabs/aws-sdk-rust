@@ -105,13 +105,13 @@ pub fn de_describe_asset_composite_model_http_response(
 }
 
 pub(crate) fn de_describe_asset_composite_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_composite_model::builders::DescribeAssetCompositeModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_composite_model::builders::DescribeAssetCompositeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,7 +119,7 @@ pub(crate) fn de_describe_asset_composite_model(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "actionDefinitions" => {
-                    builder = builder.set_action_definitions(crate::protocol_serde::shape_action_definitions::de_action_definitions(tokens)?);
+                    builder = builder.set_action_definitions(crate::protocol_serde::shape_action_definitions::de_action_definitions(tokens, _value)?);
                 }
                 "assetCompositeModelDescription" => {
                     builder = builder.set_asset_composite_model_description(
@@ -151,16 +151,16 @@ pub(crate) fn de_describe_asset_composite_model(
                 }
                 "assetCompositeModelPath" => {
                     builder = builder.set_asset_composite_model_path(
-                        crate::protocol_serde::shape_asset_composite_model_path::de_asset_composite_model_path(tokens)?,
+                        crate::protocol_serde::shape_asset_composite_model_path::de_asset_composite_model_path(tokens, _value)?,
                     );
                 }
                 "assetCompositeModelProperties" => {
-                    builder =
-                        builder.set_asset_composite_model_properties(crate::protocol_serde::shape_asset_properties::de_asset_properties(tokens)?);
+                    builder = builder
+                        .set_asset_composite_model_properties(crate::protocol_serde::shape_asset_properties::de_asset_properties(tokens, _value)?);
                 }
                 "assetCompositeModelSummaries" => {
                     builder = builder.set_asset_composite_model_summaries(
-                        crate::protocol_serde::shape_asset_composite_model_summaries::de_asset_composite_model_summaries(tokens)?,
+                        crate::protocol_serde::shape_asset_composite_model_summaries::de_asset_composite_model_summaries(tokens, _value)?,
                     );
                 }
                 "assetCompositeModelType" => {

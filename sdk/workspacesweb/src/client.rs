@@ -181,7 +181,7 @@ mod create_user_settings;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_workspacesweb::Error> {
 /// # let client: aws_sdk_workspacesweb::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_browser_settings()
 ///     .customize()

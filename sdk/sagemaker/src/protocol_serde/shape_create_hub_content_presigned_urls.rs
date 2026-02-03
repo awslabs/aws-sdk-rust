@@ -46,13 +46,13 @@ pub fn ser_create_hub_content_presigned_urls_input(
 }
 
 pub(crate) fn de_create_hub_content_presigned_urls(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -60,8 +60,9 @@ pub(crate) fn de_create_hub_content_presigned_urls(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AuthorizedUrlConfigs" => {
-                    builder =
-                        builder.set_authorized_url_configs(crate::protocol_serde::shape_authorized_url_configs::de_authorized_url_configs(tokens)?);
+                    builder = builder.set_authorized_url_configs(crate::protocol_serde::shape_authorized_url_configs::de_authorized_url_configs(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

@@ -39,6 +39,7 @@ pub fn ser_message_template_content_provider(
 
 pub(crate) fn de_message_template_content_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageTemplateContentProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,21 +69,25 @@ where
                     }
                     variant = match key.as_ref() {
                         "email" => Some(crate::types::MessageTemplateContentProvider::Email(
-                            crate::protocol_serde::shape_email_message_template_content::de_email_message_template_content(tokens)?
+                            crate::protocol_serde::shape_email_message_template_content::de_email_message_template_content(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'email' cannot be null"))?,
                         )),
                         "sms" => Some(crate::types::MessageTemplateContentProvider::Sms(
-                            crate::protocol_serde::shape_sms_message_template_content::de_sms_message_template_content(tokens)?
+                            crate::protocol_serde::shape_sms_message_template_content::de_sms_message_template_content(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sms' cannot be null"))?,
                         )),
-                        "whatsApp" => Some(crate::types::MessageTemplateContentProvider::WhatsApp(
-                            crate::protocol_serde::shape_whats_app_message_template_content::de_whats_app_message_template_content(tokens)?
+                        "whatsApp" => {
+                            Some(crate::types::MessageTemplateContentProvider::WhatsApp(
+                                crate::protocol_serde::shape_whats_app_message_template_content::de_whats_app_message_template_content(
+                                    tokens, _value,
+                                )?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'whatsApp' cannot be null")
                                 })?,
-                        )),
+                            ))
+                        }
                         "push" => Some(crate::types::MessageTemplateContentProvider::Push(
-                            crate::protocol_serde::shape_push_message_template_content::de_push_message_template_content(tokens)?
+                            crate::protocol_serde::shape_push_message_template_content::de_push_message_template_content(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'push' cannot be null"))?,
                         )),
                         _ => {

@@ -14,6 +14,7 @@ pub fn ser_asset_model_property_path_segment(
 
 pub(crate) fn de_asset_model_property_path_segment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetModelPropertyPathSegment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

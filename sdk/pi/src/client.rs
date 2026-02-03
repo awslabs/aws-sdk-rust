@@ -147,7 +147,7 @@ mod create_performance_analysis_report;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_pi::Error> {
 /// # let client: aws_sdk_pi::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_performance_analysis_report()
 ///     .customize()

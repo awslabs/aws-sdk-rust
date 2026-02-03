@@ -59,6 +59,7 @@ pub fn ser_output(
 
 pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,16 +75,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptions" => {
                             builder = builder.set_audio_descriptions(
-                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens, _value)?,
                             );
                         }
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
-                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens, _value)?,
                             );
                         }
                         "containerSettings" => {
-                            builder = builder.set_container_settings(crate::protocol_serde::shape_container_settings::de_container_settings(tokens)?);
+                            builder = builder
+                                .set_container_settings(crate::protocol_serde::shape_container_settings::de_container_settings(tokens, _value)?);
                         }
                         "extension" => {
                             builder = builder.set_extension(
@@ -100,7 +102,7 @@ where
                             );
                         }
                         "outputSettings" => {
-                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens)?);
+                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens, _value)?);
                         }
                         "preset" => {
                             builder = builder.set_preset(
@@ -110,7 +112,8 @@ where
                             );
                         }
                         "videoDescription" => {
-                            builder = builder.set_video_description(crate::protocol_serde::shape_video_description::de_video_description(tokens)?);
+                            builder =
+                                builder.set_video_description(crate::protocol_serde::shape_video_description::de_video_description(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -21,6 +21,7 @@ pub fn ser_prompt_inference_configuration(
 
 pub(crate) fn de_prompt_inference_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PromptInferenceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,8 +51,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "text" => Some(crate::types::PromptInferenceConfiguration::Text(
-                            crate::protocol_serde::shape_prompt_model_inference_configuration::de_prompt_model_inference_configuration(tokens)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
+                            crate::protocol_serde::shape_prompt_model_inference_configuration::de_prompt_model_inference_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

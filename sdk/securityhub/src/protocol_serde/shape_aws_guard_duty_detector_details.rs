@@ -41,6 +41,7 @@ pub fn ser_aws_guard_duty_detector_details(
 
 pub(crate) fn de_aws_guard_duty_detector_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsGuardDutyDetectorDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSources" => {
                             builder = builder.set_data_sources(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_details::de_aws_guard_duty_detector_data_sources_details(tokens)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_details::de_aws_guard_duty_detector_data_sources_details(tokens, _value)?
                                 );
                         }
                         "Features" => {
                             builder = builder.set_features(
-                                crate::protocol_serde::shape_aws_guard_duty_detector_features_list::de_aws_guard_duty_detector_features_list(tokens)?,
+                                crate::protocol_serde::shape_aws_guard_duty_detector_features_list::de_aws_guard_duty_detector_features_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "FindingPublishingFrequency" => {

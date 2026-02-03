@@ -39,6 +39,7 @@ pub fn ser_evaluation_answer_data(
 
 pub(crate) fn de_evaluation_answer_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationAnswerData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,7 +83,7 @@ where
                         )),
                         "StringValues" => Some(crate::types::EvaluationAnswerData::StringValues(
                             crate::protocol_serde::shape_evaluation_answer_data_string_value_list::de_evaluation_answer_data_string_value_list(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringValues' cannot be null")

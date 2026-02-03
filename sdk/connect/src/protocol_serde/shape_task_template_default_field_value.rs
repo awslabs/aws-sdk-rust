@@ -17,6 +17,7 @@ pub fn ser_task_template_default_field_value(
 
 pub(crate) fn de_task_template_default_field_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskTemplateDefaultFieldValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,8 +32,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Id" => {
-                            builder = builder
-                                .set_id(crate::protocol_serde::shape_task_template_field_identifier::de_task_template_field_identifier(tokens)?);
+                            builder = builder.set_id(
+                                crate::protocol_serde::shape_task_template_field_identifier::de_task_template_field_identifier(tokens, _value)?,
+                            );
                         }
                         "DefaultValue" => {
                             builder = builder.set_default_value(

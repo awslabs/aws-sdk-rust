@@ -14,6 +14,7 @@ pub fn ser_metric_window(
 
 pub(crate) fn de_metric_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MetricWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tumbling" => {
-                            builder = builder.set_tumbling(crate::protocol_serde::shape_tumbling_window::de_tumbling_window(tokens)?);
+                            builder = builder.set_tumbling(crate::protocol_serde::shape_tumbling_window::de_tumbling_window(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

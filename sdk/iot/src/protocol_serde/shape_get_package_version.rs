@@ -100,13 +100,13 @@ pub fn de_get_package_version_http_response(
 }
 
 pub(crate) fn de_get_package_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_package_version::builders::GetPackageVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_package_version::builders::GetPackageVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,11 +115,11 @@ pub(crate) fn de_get_package_version(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "artifact" => {
                     builder = builder.set_artifact(crate::protocol_serde::shape_package_version_artifact::de_package_version_artifact(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_resource_attributes::de_resource_attributes(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_resource_attributes::de_resource_attributes(tokens, _value)?);
                 }
                 "creationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -169,7 +169,7 @@ pub(crate) fn de_get_package_version(
                     );
                 }
                 "sbom" => {
-                    builder = builder.set_sbom(crate::protocol_serde::shape_sbom::de_sbom(tokens)?);
+                    builder = builder.set_sbom(crate::protocol_serde::shape_sbom::de_sbom(tokens, _value)?);
                 }
                 "sbomValidationStatus" => {
                     builder = builder.set_sbom_validation_status(

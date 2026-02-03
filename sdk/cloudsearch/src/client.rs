@@ -149,7 +149,7 @@ mod create_domain;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudsearch::Error> {
 /// # let client: aws_sdk_cloudsearch::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.build_suggesters()
 ///     .customize()

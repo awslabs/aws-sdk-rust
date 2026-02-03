@@ -151,7 +151,7 @@ mod create_cost_category_definition;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_costexplorer::Error> {
 /// # let client: aws_sdk_costexplorer::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_anomaly_monitor()
 ///     .customize()

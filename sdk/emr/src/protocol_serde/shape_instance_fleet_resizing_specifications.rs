@@ -20,6 +20,7 @@ pub fn ser_instance_fleet_resizing_specifications(
 
 pub(crate) fn de_instance_fleet_resizing_specifications<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceFleetResizingSpecifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SpotResizeSpecification" => {
                             builder = builder.set_spot_resize_specification(
-                                crate::protocol_serde::shape_spot_resizing_specification::de_spot_resizing_specification(tokens)?,
+                                crate::protocol_serde::shape_spot_resizing_specification::de_spot_resizing_specification(tokens, _value)?,
                             );
                         }
                         "OnDemandResizeSpecification" => {
                             builder = builder.set_on_demand_resize_specification(
-                                crate::protocol_serde::shape_on_demand_resizing_specification::de_on_demand_resizing_specification(tokens)?,
+                                crate::protocol_serde::shape_on_demand_resizing_specification::de_on_demand_resizing_specification(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

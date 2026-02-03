@@ -22,6 +22,7 @@ pub fn ser_domain_deliverability_tracking_option(
 
 pub(crate) fn de_domain_deliverability_tracking_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DomainDeliverabilityTrackingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                         }
                         "InboxPlacementTrackingOption" => {
                             builder = builder.set_inbox_placement_tracking_option(
-                                crate::protocol_serde::shape_inbox_placement_tracking_option::de_inbox_placement_tracking_option(tokens)?,
+                                crate::protocol_serde::shape_inbox_placement_tracking_option::de_inbox_placement_tracking_option(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

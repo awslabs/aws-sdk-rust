@@ -26,6 +26,7 @@ pub fn ser_document_standard_output_configuration(
 
 pub(crate) fn de_document_standard_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentStandardOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,17 +41,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "extraction" => {
-                            builder = builder
-                                .set_extraction(crate::protocol_serde::shape_document_standard_extraction::de_document_standard_extraction(tokens)?);
+                            builder = builder.set_extraction(
+                                crate::protocol_serde::shape_document_standard_extraction::de_document_standard_extraction(tokens, _value)?,
+                            );
                         }
                         "generativeField" => {
                             builder = builder.set_generative_field(
-                                crate::protocol_serde::shape_document_standard_generative_field::de_document_standard_generative_field(tokens)?,
+                                crate::protocol_serde::shape_document_standard_generative_field::de_document_standard_generative_field(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "outputFormat" => {
-                            builder =
-                                builder.set_output_format(crate::protocol_serde::shape_document_output_format::de_document_output_format(tokens)?);
+                            builder = builder.set_output_format(crate::protocol_serde::shape_document_output_format::de_document_output_format(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -26,6 +26,7 @@ pub fn ser_parametric_monitoring_configuration(
 
 pub(crate) fn de_parametric_monitoring_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParametricMonitoringConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,13 +49,13 @@ where
                         }
                         "cloudWatchMonitoringConfiguration" => {
                             builder = builder.set_cloud_watch_monitoring_configuration(
-                                    crate::protocol_serde::shape_parametric_cloud_watch_monitoring_configuration::de_parametric_cloud_watch_monitoring_configuration(tokens)?
+                                    crate::protocol_serde::shape_parametric_cloud_watch_monitoring_configuration::de_parametric_cloud_watch_monitoring_configuration(tokens, _value)?
                                 );
                         }
                         "s3MonitoringConfiguration" => {
                             builder = builder.set_s3_monitoring_configuration(
                                 crate::protocol_serde::shape_parametric_s3_monitoring_configuration::de_parametric_s3_monitoring_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

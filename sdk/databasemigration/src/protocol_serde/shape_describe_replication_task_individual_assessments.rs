@@ -79,13 +79,13 @@ pub fn ser_describe_replication_task_individual_assessments_input(
 }
 
 pub(crate) fn de_describe_replication_task_individual_assessments(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,7 +102,7 @@ pub(crate) fn de_describe_replication_task_individual_assessments(
                 "ReplicationTaskIndividualAssessments" => {
                     builder = builder.set_replication_task_individual_assessments(
                         crate::protocol_serde::shape_replication_task_individual_assessment_list::de_replication_task_individual_assessment_list(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

@@ -36,6 +36,7 @@ pub fn ser_metric_transformation(
 
 pub(crate) fn de_metric_transformation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MetricTransformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,7 +77,7 @@ where
                             );
                         }
                         "dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions::de_dimensions(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions::de_dimensions(tokens, _value)?);
                         }
                         "unit" => {
                             builder = builder.set_unit(

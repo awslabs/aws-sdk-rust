@@ -147,7 +147,7 @@ mod add_notification_channel;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_devopsguru::Error> {
 /// # let client: aws_sdk_devopsguru::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_notification_channel()
 ///     .customize()

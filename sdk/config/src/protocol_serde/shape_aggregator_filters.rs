@@ -20,6 +20,7 @@ pub fn ser_aggregator_filters(
 
 pub(crate) fn de_aggregator_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AggregatorFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ResourceType" => {
                             builder = builder.set_resource_type(
-                                crate::protocol_serde::shape_aggregator_filter_resource_type::de_aggregator_filter_resource_type(tokens)?,
+                                crate::protocol_serde::shape_aggregator_filter_resource_type::de_aggregator_filter_resource_type(tokens, _value)?,
                             );
                         }
                         "ServicePrincipal" => {
                             builder = builder.set_service_principal(
-                                crate::protocol_serde::shape_aggregator_filter_service_principal::de_aggregator_filter_service_principal(tokens)?,
+                                crate::protocol_serde::shape_aggregator_filter_service_principal::de_aggregator_filter_service_principal(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

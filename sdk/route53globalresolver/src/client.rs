@@ -165,7 +165,7 @@ mod create_global_resolver;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53globalresolver::Error> {
 /// # let client: aws_sdk_route53globalresolver::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_hosted_zone()
 ///     .customize()

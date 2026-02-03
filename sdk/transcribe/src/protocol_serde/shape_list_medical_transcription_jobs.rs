@@ -101,13 +101,13 @@ pub fn ser_list_medical_transcription_jobs_input(
 }
 
 pub(crate) fn de_list_medical_transcription_jobs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_list_medical_transcription_jobs(
                 }
                 "MedicalTranscriptionJobSummaries" => {
                     builder = builder.set_medical_transcription_job_summaries(
-                        crate::protocol_serde::shape_medical_transcription_job_summaries::de_medical_transcription_job_summaries(tokens)?,
+                        crate::protocol_serde::shape_medical_transcription_job_summaries::de_medical_transcription_job_summaries(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

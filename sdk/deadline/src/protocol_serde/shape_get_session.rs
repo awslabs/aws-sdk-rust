@@ -121,11 +121,11 @@ pub fn de_get_session_http_response(
 }
 
 pub(crate) fn de_get_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_session::builders::GetSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_get_session(
                 }
                 "hostProperties" => {
                     builder = builder.set_host_properties(crate::protocol_serde::shape_host_properties_response::de_host_properties_response(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "lifecycleStatus" => {
@@ -158,7 +158,7 @@ pub(crate) fn de_get_session(
                     );
                 }
                 "log" => {
-                    builder = builder.set_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
+                    builder = builder.set_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -201,7 +201,7 @@ pub(crate) fn de_get_session(
                     );
                 }
                 "workerLog" => {
-                    builder = builder.set_worker_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens)?);
+                    builder = builder.set_worker_log(crate::protocol_serde::shape_log_configuration::de_log_configuration(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

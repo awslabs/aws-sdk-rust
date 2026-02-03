@@ -38,6 +38,7 @@ pub fn ser_file_source_settings(
 
 pub(crate) fn de_file_source_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FileSourceSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,7 +78,7 @@ where
                         }
                         "framerate" => {
                             builder = builder.set_framerate(crate::protocol_serde::shape_caption_source_framerate::de_caption_source_framerate(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "sourceFile" => {

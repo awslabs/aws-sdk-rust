@@ -215,13 +215,13 @@ pub fn ser_put_profile_outbound_request_batch_input(
 }
 
 pub(crate) fn de_put_profile_outbound_request_batch(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_profile_outbound_request_batch::builders::PutProfileOutboundRequestBatchOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_profile_outbound_request_batch::builders::PutProfileOutboundRequestBatchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -230,12 +230,14 @@ pub(crate) fn de_put_profile_outbound_request_batch(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failedRequests" => {
                     builder = builder.set_failed_requests(
-                        crate::protocol_serde::shape_failed_profile_outbound_request_list::de_failed_profile_outbound_request_list(tokens)?,
+                        crate::protocol_serde::shape_failed_profile_outbound_request_list::de_failed_profile_outbound_request_list(tokens, _value)?,
                     );
                 }
                 "successfulRequests" => {
                     builder = builder.set_successful_requests(
-                        crate::protocol_serde::shape_successful_profile_outbound_request_list::de_successful_profile_outbound_request_list(tokens)?,
+                        crate::protocol_serde::shape_successful_profile_outbound_request_list::de_successful_profile_outbound_request_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

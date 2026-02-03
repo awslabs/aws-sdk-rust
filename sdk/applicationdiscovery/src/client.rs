@@ -155,7 +155,7 @@ mod create_tags;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_applicationdiscovery::Error> {
 /// # let client: aws_sdk_applicationdiscovery::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_configuration_items_to_application()
 ///     .customize()

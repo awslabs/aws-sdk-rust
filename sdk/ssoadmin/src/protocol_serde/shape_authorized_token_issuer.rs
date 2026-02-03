@@ -20,6 +20,7 @@ pub fn ser_authorized_token_issuer(
 
 pub(crate) fn de_authorized_token_issuer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AuthorizedTokenIssuer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "AuthorizedAudiences" => {
-                            builder = builder
-                                .set_authorized_audiences(crate::protocol_serde::shape_token_issuer_audiences::de_token_issuer_audiences(tokens)?);
+                            builder = builder.set_authorized_audiences(
+                                crate::protocol_serde::shape_token_issuer_audiences::de_token_issuer_audiences(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

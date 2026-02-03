@@ -114,13 +114,13 @@ pub fn ser_put_pipeline_definition_input(
 }
 
 pub(crate) fn de_put_pipeline_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,10 +128,11 @@ pub(crate) fn de_put_pipeline_definition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "validationErrors" => {
-                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens)?);
+                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens, _value)?);
                 }
                 "validationWarnings" => {
-                    builder = builder.set_validation_warnings(crate::protocol_serde::shape_validation_warnings::de_validation_warnings(tokens)?);
+                    builder =
+                        builder.set_validation_warnings(crate::protocol_serde::shape_validation_warnings::de_validation_warnings(tokens, _value)?);
                 }
                 "errored" => {
                     builder = builder.set_errored(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

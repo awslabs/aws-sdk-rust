@@ -65,6 +65,7 @@ pub fn ser_time_series_forecasting_job_config(
 
 pub(crate) fn de_time_series_forecasting_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesForecastingJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -87,7 +88,7 @@ where
                         }
                         "CompletionCriteria" => {
                             builder = builder.set_completion_criteria(
-                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens)?,
+                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens, _value)?,
                             );
                         }
                         "ForecastFrequency" => {
@@ -105,22 +106,24 @@ where
                             );
                         }
                         "ForecastQuantiles" => {
-                            builder = builder.set_forecast_quantiles(crate::protocol_serde::shape_forecast_quantiles::de_forecast_quantiles(tokens)?);
+                            builder = builder
+                                .set_forecast_quantiles(crate::protocol_serde::shape_forecast_quantiles::de_forecast_quantiles(tokens, _value)?);
                         }
                         "Transformations" => {
                             builder = builder.set_transformations(
-                                crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens)?,
+                                crate::protocol_serde::shape_time_series_transformations::de_time_series_transformations(tokens, _value)?,
                             );
                         }
                         "TimeSeriesConfig" => {
-                            builder = builder.set_time_series_config(crate::protocol_serde::shape_time_series_config::de_time_series_config(tokens)?);
+                            builder = builder
+                                .set_time_series_config(crate::protocol_serde::shape_time_series_config::de_time_series_config(tokens, _value)?);
                         }
                         "HolidayConfig" => {
-                            builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(tokens)?);
+                            builder = builder.set_holiday_config(crate::protocol_serde::shape_holiday_config::de_holiday_config(tokens, _value)?);
                         }
                         "CandidateGenerationConfig" => {
                             builder = builder.set_candidate_generation_config(
-                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens)?,
+                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

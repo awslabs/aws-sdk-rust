@@ -14,6 +14,7 @@ pub fn ser_predictive_scaling_predefined_scaling_metric_specification(
 
 pub(crate) fn de_predictive_scaling_predefined_scaling_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::PredictiveScalingPredefinedScalingMetricSpecification>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

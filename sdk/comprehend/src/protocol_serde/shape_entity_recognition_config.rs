@@ -20,6 +20,7 @@ pub fn ser_entity_recognition_config(
 
 pub(crate) fn de_entity_recognition_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EntityRecognitionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EntityTypes" => {
-                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens)?);
+                            builder = builder.set_entity_types(crate::protocol_serde::shape_entity_types_list::de_entity_types_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

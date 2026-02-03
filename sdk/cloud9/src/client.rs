@@ -149,7 +149,7 @@ mod create_environment_membership;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloud9::Error> {
 /// # let client: aws_sdk_cloud9::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_environment_ec2()
 ///     .customize()

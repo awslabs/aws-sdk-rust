@@ -121,13 +121,13 @@ pub fn de_get_id_mapping_workflow_http_response(
 }
 
 pub(crate) fn de_get_id_mapping_workflow(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,22 +148,27 @@ pub(crate) fn de_get_id_mapping_workflow(
                     );
                 }
                 "idMappingTechniques" => {
-                    builder =
-                        builder.set_id_mapping_techniques(crate::protocol_serde::shape_id_mapping_techniques::de_id_mapping_techniques(tokens)?);
+                    builder = builder.set_id_mapping_techniques(crate::protocol_serde::shape_id_mapping_techniques::de_id_mapping_techniques(
+                        tokens, _value,
+                    )?);
                 }
                 "incrementalRunConfig" => {
                     builder = builder.set_incremental_run_config(
-                        crate::protocol_serde::shape_id_mapping_incremental_run_config::de_id_mapping_incremental_run_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_incremental_run_config::de_id_mapping_incremental_run_config(tokens, _value)?,
                     );
                 }
                 "inputSourceConfig" => {
                     builder = builder.set_input_source_config(
-                        crate::protocol_serde::shape_id_mapping_workflow_input_source_config::de_id_mapping_workflow_input_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_workflow_input_source_config::de_id_mapping_workflow_input_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "outputSourceConfig" => {
                     builder = builder.set_output_source_config(
-                        crate::protocol_serde::shape_id_mapping_workflow_output_source_config::de_id_mapping_workflow_output_source_config(tokens)?,
+                        crate::protocol_serde::shape_id_mapping_workflow_output_source_config::de_id_mapping_workflow_output_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "roleArn" => {
@@ -174,7 +179,7 @@ pub(crate) fn de_get_id_mapping_workflow(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

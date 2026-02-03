@@ -41,6 +41,7 @@ pub fn ser_crl_configuration(
 
 pub(crate) fn de_crl_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CrlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -87,7 +88,7 @@ where
                         }
                         "CrlDistributionPointExtensionConfiguration" => {
                             builder = builder.set_crl_distribution_point_extension_configuration(
-                                    crate::protocol_serde::shape_crl_distribution_point_extension_configuration::de_crl_distribution_point_extension_configuration(tokens)?
+                                    crate::protocol_serde::shape_crl_distribution_point_extension_configuration::de_crl_distribution_point_extension_configuration(tokens, _value)?
                                 );
                         }
                         "CrlType" => {

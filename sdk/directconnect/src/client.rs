@@ -195,7 +195,7 @@ mod create_transit_virtual_interface;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_directconnect::Error> {
 /// # let client: aws_sdk_directconnect::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_direct_connect_gateway_association_proposal()
 ///     .customize()

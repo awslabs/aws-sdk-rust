@@ -123,13 +123,13 @@ pub fn ser_delete_file_system_input(
 }
 
 pub(crate) fn de_delete_file_system(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,17 +152,17 @@ pub(crate) fn de_delete_file_system(
                 }
                 "WindowsResponse" => {
                     builder = builder.set_windows_response(
-                        crate::protocol_serde::shape_delete_file_system_windows_response::de_delete_file_system_windows_response(tokens)?,
+                        crate::protocol_serde::shape_delete_file_system_windows_response::de_delete_file_system_windows_response(tokens, _value)?,
                     );
                 }
                 "LustreResponse" => {
                     builder = builder.set_lustre_response(
-                        crate::protocol_serde::shape_delete_file_system_lustre_response::de_delete_file_system_lustre_response(tokens)?,
+                        crate::protocol_serde::shape_delete_file_system_lustre_response::de_delete_file_system_lustre_response(tokens, _value)?,
                     );
                 }
                 "OpenZFSResponse" => {
                     builder = builder.set_open_zfs_response(
-                        crate::protocol_serde::shape_delete_file_system_open_zfs_response::de_delete_file_system_open_zfs_response(tokens)?,
+                        crate::protocol_serde::shape_delete_file_system_open_zfs_response::de_delete_file_system_open_zfs_response(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

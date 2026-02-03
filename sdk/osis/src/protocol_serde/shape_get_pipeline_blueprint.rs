@@ -119,13 +119,13 @@ pub fn de_get_pipeline_blueprint_http_response(
 }
 
 pub(crate) fn de_get_pipeline_blueprint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_pipeline_blueprint(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Blueprint" => {
-                    builder = builder.set_blueprint(crate::protocol_serde::shape_pipeline_blueprint::de_pipeline_blueprint(tokens)?);
+                    builder = builder.set_blueprint(crate::protocol_serde::shape_pipeline_blueprint::de_pipeline_blueprint(tokens, _value)?);
                 }
                 "Format" => {
                     builder = builder.set_format(

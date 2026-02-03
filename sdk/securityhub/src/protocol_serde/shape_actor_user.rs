@@ -26,6 +26,7 @@ pub fn ser_actor_user(
 
 pub(crate) fn de_actor_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActorUser>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "Account" => {
-                            builder = builder.set_account(crate::protocol_serde::shape_user_account::de_user_account(tokens)?);
+                            builder = builder.set_account(crate::protocol_serde::shape_user_account::de_user_account(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

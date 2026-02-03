@@ -436,13 +436,13 @@ pub fn ser_admin_respond_to_auth_challenge_input(
 }
 
 pub(crate) fn de_admin_respond_to_auth_challenge(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::admin_respond_to_auth_challenge::builders::AdminRespondToAuthChallengeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -465,12 +465,12 @@ pub(crate) fn de_admin_respond_to_auth_challenge(
                 }
                 "ChallengeParameters" => {
                     builder = builder.set_challenge_parameters(crate::protocol_serde::shape_challenge_parameters_type::de_challenge_parameters_type(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "AuthenticationResult" => {
                     builder = builder.set_authentication_result(
-                        crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens)?,
+                        crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_recommendation_job_vpc_config(
 
 pub(crate) fn de_recommendation_job_vpc_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecommendationJobVpcConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,20 +39,21 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "SecurityGroupIds" => {
-                            builder = builder.set_security_group_ids(
-                                crate::protocol_serde::shape_recommendation_job_vpc_security_group_ids::de_recommendation_job_vpc_security_group_ids(
-                                    tokens,
-                                )?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SecurityGroupIds" => {
+                                builder = builder.set_security_group_ids(
+                                    crate::protocol_serde::shape_recommendation_job_vpc_security_group_ids::de_recommendation_job_vpc_security_group_ids(tokens, _value)?
+                                );
+                            }
+                            "Subnets" => {
+                                builder = builder.set_subnets(
+                                    crate::protocol_serde::shape_recommendation_job_vpc_subnets::de_recommendation_job_vpc_subnets(tokens, _value)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "Subnets" => {
-                            builder = builder
-                                .set_subnets(crate::protocol_serde::shape_recommendation_job_vpc_subnets::de_recommendation_job_vpc_subnets(tokens)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

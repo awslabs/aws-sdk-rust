@@ -44,6 +44,7 @@ pub fn ser_data_cells_filter(
 
 pub(crate) fn de_data_cells_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataCellsFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,13 +87,13 @@ where
                             );
                         }
                         "RowFilter" => {
-                            builder = builder.set_row_filter(crate::protocol_serde::shape_row_filter::de_row_filter(tokens)?);
+                            builder = builder.set_row_filter(crate::protocol_serde::shape_row_filter::de_row_filter(tokens, _value)?);
                         }
                         "ColumnNames" => {
-                            builder = builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens)?);
+                            builder = builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens, _value)?);
                         }
                         "ColumnWildcard" => {
-                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens)?);
+                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens, _value)?);
                         }
                         "VersionId" => {
                             builder = builder.set_version_id(

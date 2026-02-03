@@ -23,6 +23,7 @@ pub fn ser_hyper_parameter_tuning_job_warm_start_config(
 
 pub(crate) fn de_hyper_parameter_tuning_job_warm_start_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HyperParameterTuningJobWarmStartConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ParentHyperParameterTuningJobs" => {
                             builder = builder.set_parent_hyper_parameter_tuning_jobs(
-                                crate::protocol_serde::shape_parent_hyper_parameter_tuning_jobs::de_parent_hyper_parameter_tuning_jobs(tokens)?,
+                                crate::protocol_serde::shape_parent_hyper_parameter_tuning_jobs::de_parent_hyper_parameter_tuning_jobs(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "WarmStartType" => {

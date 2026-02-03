@@ -112,13 +112,13 @@ pub fn de_get_device_position_http_response(
 }
 
 pub(crate) fn de_get_device_position(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_device_position::builders::GetDevicePositionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,7 @@ pub(crate) fn de_get_device_position(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Accuracy" => {
-                    builder = builder.set_accuracy(crate::protocol_serde::shape_positional_accuracy::de_positional_accuracy(tokens)?);
+                    builder = builder.set_accuracy(crate::protocol_serde::shape_positional_accuracy::de_positional_accuracy(tokens, _value)?);
                 }
                 "DeviceId" => {
                     builder = builder.set_device_id(
@@ -136,10 +136,12 @@ pub(crate) fn de_get_device_position(
                     );
                 }
                 "Position" => {
-                    builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens)?);
+                    builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens, _value)?);
                 }
                 "PositionProperties" => {
-                    builder = builder.set_position_properties(crate::protocol_serde::shape_position_property_map::de_position_property_map(tokens)?);
+                    builder = builder.set_position_properties(crate::protocol_serde::shape_position_property_map::de_position_property_map(
+                        tokens, _value,
+                    )?);
                 }
                 "ReceivedTime" => {
                     builder = builder.set_received_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

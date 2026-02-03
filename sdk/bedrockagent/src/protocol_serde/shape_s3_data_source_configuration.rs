@@ -23,6 +23,7 @@ pub fn ser_s3_data_source_configuration(
 
 pub(crate) fn de_s3_data_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DataSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "inclusionPrefixes" => {
-                            builder = builder.set_inclusion_prefixes(crate::protocol_serde::shape_s3_prefixes::de_s3_prefixes(tokens)?);
+                            builder = builder.set_inclusion_prefixes(crate::protocol_serde::shape_s3_prefixes::de_s3_prefixes(tokens, _value)?);
                         }
                         "bucketOwnerAccountId" => {
                             builder = builder.set_bucket_owner_account_id(

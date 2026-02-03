@@ -12,5 +12,8 @@ pub fn ser_describe_stream_consumer_input_input(
     if let Some(var_3) = &input.consumer_arn {
         object.key("ConsumerARN").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.stream_id {
+        object.key("StreamId").string(var_4.as_str());
+    }
     Ok(())
 }

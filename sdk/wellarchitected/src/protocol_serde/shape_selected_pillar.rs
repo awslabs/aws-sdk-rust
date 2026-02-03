@@ -20,6 +20,7 @@ pub fn ser_selected_pillar(
 
 pub(crate) fn de_selected_pillar<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SelectedPillar>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "SelectedQuestionIds" => {
-                            builder = builder
-                                .set_selected_question_ids(crate::protocol_serde::shape_selected_question_ids::de_selected_question_ids(tokens)?);
+                            builder = builder.set_selected_question_ids(
+                                crate::protocol_serde::shape_selected_question_ids::de_selected_question_ids(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

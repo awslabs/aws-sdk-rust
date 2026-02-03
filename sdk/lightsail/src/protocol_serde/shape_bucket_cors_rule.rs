@@ -53,6 +53,7 @@ pub fn ser_bucket_cors_rule(
 
 pub(crate) fn de_bucket_cors_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BucketCorsRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,22 +76,22 @@ where
                         }
                         "allowedMethods" => {
                             builder = builder.set_allowed_methods(
-                                crate::protocol_serde::shape_bucket_cors_allowed_methods::de_bucket_cors_allowed_methods(tokens)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_methods::de_bucket_cors_allowed_methods(tokens, _value)?,
                             );
                         }
                         "allowedOrigins" => {
                             builder = builder.set_allowed_origins(
-                                crate::protocol_serde::shape_bucket_cors_allowed_origins::de_bucket_cors_allowed_origins(tokens)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_origins::de_bucket_cors_allowed_origins(tokens, _value)?,
                             );
                         }
                         "allowedHeaders" => {
                             builder = builder.set_allowed_headers(
-                                crate::protocol_serde::shape_bucket_cors_allowed_headers::de_bucket_cors_allowed_headers(tokens)?,
+                                crate::protocol_serde::shape_bucket_cors_allowed_headers::de_bucket_cors_allowed_headers(tokens, _value)?,
                             );
                         }
                         "exposeHeaders" => {
                             builder = builder.set_expose_headers(
-                                crate::protocol_serde::shape_bucket_cors_expose_headers::de_bucket_cors_expose_headers(tokens)?,
+                                crate::protocol_serde::shape_bucket_cors_expose_headers::de_bucket_cors_expose_headers(tokens, _value)?,
                             );
                         }
                         "maxAgeSeconds" => {

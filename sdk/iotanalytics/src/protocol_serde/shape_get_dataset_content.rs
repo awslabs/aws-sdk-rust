@@ -116,13 +116,13 @@ pub fn de_get_dataset_content_http_response(
 }
 
 pub(crate) fn de_get_dataset_content(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,10 +130,12 @@ pub(crate) fn de_get_dataset_content(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "entries" => {
-                    builder = builder.set_entries(crate::protocol_serde::shape_dataset_entries::de_dataset_entries(tokens)?);
+                    builder = builder.set_entries(crate::protocol_serde::shape_dataset_entries::de_dataset_entries(tokens, _value)?);
                 }
                 "status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_dataset_content_status::de_dataset_content_status(tokens)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_dataset_content_status::de_dataset_content_status(
+                        tokens, _value,
+                    )?);
                 }
                 "timestamp" => {
                     builder = builder.set_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

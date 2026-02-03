@@ -134,13 +134,13 @@ pub fn ser_register_account_input(
 }
 
 pub(crate) fn de_register_account(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::register_account::builders::RegisterAccountOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::register_account::builders::RegisterAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,10 +155,12 @@ pub(crate) fn de_register_account(
                     );
                 }
                 "timestreamResources" => {
-                    builder = builder.set_timestream_resources(crate::protocol_serde::shape_timestream_resources::de_timestream_resources(tokens)?);
+                    builder = builder.set_timestream_resources(crate::protocol_serde::shape_timestream_resources::de_timestream_resources(
+                        tokens, _value,
+                    )?);
                 }
                 "iamResources" => {
-                    builder = builder.set_iam_resources(crate::protocol_serde::shape_iam_resources::de_iam_resources(tokens)?);
+                    builder = builder.set_iam_resources(crate::protocol_serde::shape_iam_resources::de_iam_resources(tokens, _value)?);
                 }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

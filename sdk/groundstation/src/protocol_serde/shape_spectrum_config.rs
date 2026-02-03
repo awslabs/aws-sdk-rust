@@ -23,6 +23,7 @@ pub fn ser_spectrum_config(
 
 pub(crate) fn de_spectrum_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SpectrumConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,10 +38,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "centerFrequency" => {
-                            builder = builder.set_center_frequency(crate::protocol_serde::shape_frequency::de_frequency(tokens)?);
+                            builder = builder.set_center_frequency(crate::protocol_serde::shape_frequency::de_frequency(tokens, _value)?);
                         }
                         "bandwidth" => {
-                            builder = builder.set_bandwidth(crate::protocol_serde::shape_frequency_bandwidth::de_frequency_bandwidth(tokens)?);
+                            builder =
+                                builder.set_bandwidth(crate::protocol_serde::shape_frequency_bandwidth::de_frequency_bandwidth(tokens, _value)?);
                         }
                         "polarization" => {
                             builder = builder.set_polarization(

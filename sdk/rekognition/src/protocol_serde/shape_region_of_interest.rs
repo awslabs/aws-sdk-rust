@@ -26,6 +26,7 @@ pub fn ser_region_of_interest(
 
 pub(crate) fn de_region_of_interest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RegionOfInterest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BoundingBox" => {
-                            builder = builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens)?);
+                            builder = builder.set_bounding_box(crate::protocol_serde::shape_bounding_box::de_bounding_box(tokens, _value)?);
                         }
                         "Polygon" => {
-                            builder = builder.set_polygon(crate::protocol_serde::shape_polygon::de_polygon(tokens)?);
+                            builder = builder.set_polygon(crate::protocol_serde::shape_polygon::de_polygon(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

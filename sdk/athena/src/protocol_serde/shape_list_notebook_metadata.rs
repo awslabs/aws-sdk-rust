@@ -99,13 +99,13 @@ pub fn ser_list_notebook_metadata_input(
 }
 
 pub(crate) fn de_list_notebook_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_notebook_metadata::builders::ListNotebookMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_notebook_metadata::builders::ListNotebookMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,8 +120,9 @@ pub(crate) fn de_list_notebook_metadata(
                     );
                 }
                 "NotebookMetadataList" => {
-                    builder =
-                        builder.set_notebook_metadata_list(crate::protocol_serde::shape_notebook_metadata_array::de_notebook_metadata_array(tokens)?);
+                    builder = builder.set_notebook_metadata_list(crate::protocol_serde::shape_notebook_metadata_array::de_notebook_metadata_array(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

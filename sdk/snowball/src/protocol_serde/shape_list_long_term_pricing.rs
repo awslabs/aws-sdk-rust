@@ -84,13 +84,13 @@ pub fn ser_list_long_term_pricing_input(
 }
 
 pub(crate) fn de_list_long_term_pricing(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_long_term_pricing::builders::ListLongTermPricingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_list_long_term_pricing(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "LongTermPricingEntries" => {
                     builder = builder.set_long_term_pricing_entries(
-                        crate::protocol_serde::shape_long_term_pricing_entry_list::de_long_term_pricing_entry_list(tokens)?,
+                        crate::protocol_serde::shape_long_term_pricing_entry_list::de_long_term_pricing_entry_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

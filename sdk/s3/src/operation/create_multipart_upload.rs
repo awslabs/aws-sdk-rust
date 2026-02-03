@@ -225,15 +225,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMultip
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_create_multipart_upload::ser_create_multipart_upload_headers(input, builder)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");
@@ -333,7 +333,7 @@ mod create_multipart_upload_test {
         let http_request = request_receiver.expect_request();
         let expected_query_params = &["uploads"];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
-        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
         ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
         ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
     }

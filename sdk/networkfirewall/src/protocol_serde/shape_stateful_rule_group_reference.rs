@@ -26,6 +26,7 @@ pub fn ser_stateful_rule_group_reference(
 
 pub(crate) fn de_stateful_rule_group_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StatefulRuleGroupReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,8 +55,9 @@ where
                             );
                         }
                         "Override" => {
-                            builder = builder
-                                .set_override(crate::protocol_serde::shape_stateful_rule_group_override::de_stateful_rule_group_override(tokens)?);
+                            builder = builder.set_override(
+                                crate::protocol_serde::shape_stateful_rule_group_override::de_stateful_rule_group_override(tokens, _value)?,
+                            );
                         }
                         "DeepThreatInspection" => {
                             builder = builder.set_deep_threat_inspection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

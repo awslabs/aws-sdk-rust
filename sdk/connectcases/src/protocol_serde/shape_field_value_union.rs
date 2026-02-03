@@ -36,6 +36,7 @@ pub fn ser_field_value_union(
 
 pub(crate) fn de_field_value_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldValueUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -85,7 +86,7 @@ where
                             })?,
                         )),
                         "emptyValue" => Some(crate::types::FieldValueUnion::EmptyValue(
-                            crate::protocol_serde::shape_empty_field_value::de_empty_field_value(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_empty_field_value::de_empty_field_value(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emptyValue' cannot be null")
                             })?,
                         )),

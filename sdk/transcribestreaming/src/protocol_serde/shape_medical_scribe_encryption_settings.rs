@@ -21,6 +21,7 @@ pub fn ser_medical_scribe_encryption_settings(
 
 pub(crate) fn de_medical_scribe_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MedicalScribeEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KmsEncryptionContext" => {
                             builder = builder.set_kms_encryption_context(
-                                crate::protocol_serde::shape_kms_encryption_context_map::de_kms_encryption_context_map(tokens)?,
+                                crate::protocol_serde::shape_kms_encryption_context_map::de_kms_encryption_context_map(tokens, _value)?,
                             );
                         }
                         "KmsKeyId" => {

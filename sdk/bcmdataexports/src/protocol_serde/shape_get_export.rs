@@ -104,10 +104,10 @@ pub fn ser_get_export_input(
 }
 
 pub(crate) fn de_get_export(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_export::builders::GetExportOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_export::builders::GetExportOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,10 +115,10 @@ pub(crate) fn de_get_export(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Export" => {
-                    builder = builder.set_export(crate::protocol_serde::shape_export::de_export(tokens)?);
+                    builder = builder.set_export(crate::protocol_serde::shape_export::de_export(tokens, _value)?);
                 }
                 "ExportStatus" => {
-                    builder = builder.set_export_status(crate::protocol_serde::shape_export_status::de_export_status(tokens)?);
+                    builder = builder.set_export_status(crate::protocol_serde::shape_export_status::de_export_status(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

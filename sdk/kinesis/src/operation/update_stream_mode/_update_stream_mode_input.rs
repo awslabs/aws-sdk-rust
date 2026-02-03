@@ -5,6 +5,8 @@
 pub struct UpdateStreamModeInput {
     /// <p>Specifies the ARN of the data stream whose capacity mode you want to update.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>The target warm throughput in MB/s that the stream should be scaled to handle. This represents the throughput capacity that will be immediately available for write operations. This field is only valid when the stream mode is being updated to on-demand.</p>
@@ -14,6 +16,10 @@ impl UpdateStreamModeInput {
     /// <p>Specifies the ARN of the data stream whose capacity mode you want to update.</p>
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
     }
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(&self) -> ::std::option::Option<&crate::types::StreamModeDetails> {
@@ -36,6 +42,7 @@ impl UpdateStreamModeInput {
 #[non_exhaustive]
 pub struct UpdateStreamModeInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     pub(crate) warm_throughput_mibps: ::std::option::Option<i32>,
 }
@@ -54,6 +61,20 @@ impl UpdateStreamModeInputBuilder {
     /// <p>Specifies the ARN of the data stream whose capacity mode you want to update.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     /// This field is required.
@@ -90,6 +111,7 @@ impl UpdateStreamModeInputBuilder {
     ) -> ::std::result::Result<crate::operation::update_stream_mode::UpdateStreamModeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stream_mode::UpdateStreamModeInput {
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
             stream_mode_details: self.stream_mode_details,
             warm_throughput_mibps: self.warm_throughput_mibps,
         })

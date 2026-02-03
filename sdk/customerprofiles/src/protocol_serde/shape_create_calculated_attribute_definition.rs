@@ -145,13 +145,13 @@ pub fn ser_create_calculated_attribute_definition_input(
 }
 
 pub(crate) fn de_create_calculated_attribute_definition(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_calculated_attribute_definition::builders::CreateCalculatedAttributeDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,7 @@ pub(crate) fn de_create_calculated_attribute_definition(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AttributeDetails" => {
-                    builder = builder.set_attribute_details(crate::protocol_serde::shape_attribute_details::de_attribute_details(tokens)?);
+                    builder = builder.set_attribute_details(crate::protocol_serde::shape_attribute_details::de_attribute_details(tokens, _value)?);
                 }
                 "CalculatedAttributeName" => {
                     builder = builder.set_calculated_attribute_name(
@@ -169,7 +169,7 @@ pub(crate) fn de_create_calculated_attribute_definition(
                     );
                 }
                 "Conditions" => {
-                    builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens)?);
+                    builder = builder.set_conditions(crate::protocol_serde::shape_conditions::de_conditions(tokens, _value)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -192,7 +192,7 @@ pub(crate) fn de_create_calculated_attribute_definition(
                     );
                 }
                 "Filter" => {
-                    builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens)?);
+                    builder = builder.set_filter(crate::protocol_serde::shape_filter::de_filter(tokens, _value)?);
                 }
                 "LastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -201,7 +201,7 @@ pub(crate) fn de_create_calculated_attribute_definition(
                     )?);
                 }
                 "Readiness" => {
-                    builder = builder.set_readiness(crate::protocol_serde::shape_readiness::de_readiness(tokens)?);
+                    builder = builder.set_readiness(crate::protocol_serde::shape_readiness::de_readiness(tokens, _value)?);
                 }
                 "Statistic" => {
                     builder = builder.set_statistic(
@@ -218,7 +218,7 @@ pub(crate) fn de_create_calculated_attribute_definition(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "UseHistoricalData" => {
                     builder = builder.set_use_historical_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

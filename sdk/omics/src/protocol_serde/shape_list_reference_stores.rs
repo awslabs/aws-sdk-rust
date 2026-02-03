@@ -126,13 +126,13 @@ pub fn ser_list_reference_stores_input(
 }
 
 pub(crate) fn de_list_reference_stores(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,7 +148,7 @@ pub(crate) fn de_list_reference_stores(
                 }
                 "referenceStores" => {
                     builder = builder.set_reference_stores(crate::protocol_serde::shape_reference_store_detail_list::de_reference_store_detail_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

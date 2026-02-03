@@ -178,7 +178,7 @@ mod create_resource;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudcontrol::Error> {
 /// # let client: aws_sdk_cloudcontrol::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_resource_request()
 ///     .customize()

@@ -140,13 +140,13 @@ pub fn ser_release_sender_id_input(
 }
 
 pub(crate) fn de_release_sender_id(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::release_sender_id::builders::ReleaseSenderIdOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::release_sender_id::builders::ReleaseSenderIdOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_release_sender_id(
                     );
                 }
                 "MessageTypes" => {
-                    builder = builder.set_message_types(crate::protocol_serde::shape_message_type_list::de_message_type_list(tokens)?);
+                    builder = builder.set_message_types(crate::protocol_serde::shape_message_type_list::de_message_type_list(tokens, _value)?);
                 }
                 "MonthlyLeasingPrice" => {
                     builder = builder.set_monthly_leasing_price(

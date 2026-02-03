@@ -23,6 +23,7 @@ pub fn ser_redis_enterprise_cloud_configuration(
 
 pub(crate) fn de_redis_enterprise_cloud_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedisEnterpriseCloudConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,9 @@ where
                         }
                         "fieldMapping" => {
                             builder = builder.set_field_mapping(
-                                crate::protocol_serde::shape_redis_enterprise_cloud_field_mapping::de_redis_enterprise_cloud_field_mapping(tokens)?,
+                                crate::protocol_serde::shape_redis_enterprise_cloud_field_mapping::de_redis_enterprise_cloud_field_mapping(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

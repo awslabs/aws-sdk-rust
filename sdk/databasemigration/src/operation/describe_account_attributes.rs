@@ -198,17 +198,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAcco
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::describe_account_attributes::DescribeAccountAttributesInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = _header_serialization_settings.set_default_header(
                 builder,
-                ::http::header::HeaderName::from_static("x-amz-target"),
+                ::http_1x::header::HeaderName::from_static("x-amz-target"),
                 "AmazonDMSv20160101.DescribeAccountAttributes",
             );
             builder

@@ -20,6 +20,7 @@ pub fn ser_table_conditional_formatting_option(
 
 pub(crate) fn de_table_conditional_formatting_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableConditionalFormattingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Cell" => {
                             builder = builder.set_cell(
-                                crate::protocol_serde::shape_table_cell_conditional_formatting::de_table_cell_conditional_formatting(tokens)?,
+                                crate::protocol_serde::shape_table_cell_conditional_formatting::de_table_cell_conditional_formatting(tokens, _value)?,
                             );
                         }
                         "Row" => {
-                            builder = builder
-                                .set_row(crate::protocol_serde::shape_table_row_conditional_formatting::de_table_row_conditional_formatting(tokens)?);
+                            builder = builder.set_row(
+                                crate::protocol_serde::shape_table_row_conditional_formatting::de_table_row_conditional_formatting(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

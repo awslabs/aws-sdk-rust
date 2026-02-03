@@ -73,40 +73,41 @@ pub fn ser_batch_replace_cluster_nodes_input(
 }
 
 pub(crate) fn de_batch_replace_cluster_nodes(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_replace_cluster_nodes::builders::BatchReplaceClusterNodesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_replace_cluster_nodes::builders::BatchReplaceClusterNodesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "Successful" => {
-                    builder = builder.set_successful(crate::protocol_serde::shape_cluster_node_ids::de_cluster_node_ids(tokens)?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Successful" => {
+                        builder = builder.set_successful(crate::protocol_serde::shape_cluster_node_ids::de_cluster_node_ids(tokens, _value)?);
+                    }
+                    "Failed" => {
+                        builder = builder.set_failed(
+                            crate::protocol_serde::shape_batch_replace_cluster_nodes_errors::de_batch_replace_cluster_nodes_errors(tokens, _value)?,
+                        );
+                    }
+                    "FailedNodeLogicalIds" => {
+                        builder = builder.set_failed_node_logical_ids(
+                            crate::protocol_serde::shape_batch_replace_cluster_node_logical_ids_errors::de_batch_replace_cluster_node_logical_ids_errors(tokens, _value)?
+                        );
+                    }
+                    "SuccessfulNodeLogicalIds" => {
+                        builder = builder.set_successful_node_logical_ids(
+                            crate::protocol_serde::shape_cluster_node_logical_id_list::de_cluster_node_logical_id_list(tokens, _value)?,
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "Failed" => {
-                    builder = builder
-                        .set_failed(crate::protocol_serde::shape_batch_replace_cluster_nodes_errors::de_batch_replace_cluster_nodes_errors(tokens)?);
-                }
-                "FailedNodeLogicalIds" => {
-                    builder = builder.set_failed_node_logical_ids(
-                        crate::protocol_serde::shape_batch_replace_cluster_node_logical_ids_errors::de_batch_replace_cluster_node_logical_ids_errors(
-                            tokens,
-                        )?,
-                    );
-                }
-                "SuccessfulNodeLogicalIds" => {
-                    builder = builder.set_successful_node_logical_ids(
-                        crate::protocol_serde::shape_cluster_node_logical_id_list::de_cluster_node_logical_id_list(tokens)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

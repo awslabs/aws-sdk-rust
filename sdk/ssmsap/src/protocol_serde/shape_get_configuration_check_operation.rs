@@ -86,13 +86,13 @@ pub fn ser_get_configuration_check_operation_input(
 }
 
 pub(crate) fn de_get_configuration_check_operation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_configuration_check_operation::builders::GetConfigurationCheckOperationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_configuration_check_operation::builders::GetConfigurationCheckOperationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -101,7 +101,7 @@ pub(crate) fn de_get_configuration_check_operation(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConfigurationCheckOperation" => {
                     builder = builder.set_configuration_check_operation(
-                        crate::protocol_serde::shape_configuration_check_operation::de_configuration_check_operation(tokens)?,
+                        crate::protocol_serde::shape_configuration_check_operation::de_configuration_check_operation(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

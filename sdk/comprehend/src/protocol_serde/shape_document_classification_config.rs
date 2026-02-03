@@ -20,6 +20,7 @@ pub fn ser_document_classification_config(
 
 pub(crate) fn de_document_classification_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentClassificationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "Labels" => {
-                            builder = builder.set_labels(crate::protocol_serde::shape_labels_list::de_labels_list(tokens)?);
+                            builder = builder.set_labels(crate::protocol_serde::shape_labels_list::de_labels_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

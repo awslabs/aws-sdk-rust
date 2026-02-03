@@ -69,13 +69,13 @@ pub fn ser_describe_transform_job_input(
 }
 
 pub(crate) fn de_describe_transform_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -125,7 +125,8 @@ pub(crate) fn de_describe_transform_job(
                     );
                 }
                 "ModelClientConfig" => {
-                    builder = builder.set_model_client_config(crate::protocol_serde::shape_model_client_config::de_model_client_config(tokens)?);
+                    builder =
+                        builder.set_model_client_config(crate::protocol_serde::shape_model_client_config::de_model_client_config(tokens, _value)?);
                 }
                 "MaxPayloadInMB" => {
                     builder = builder.set_max_payload_in_mb(
@@ -143,22 +144,23 @@ pub(crate) fn de_describe_transform_job(
                 }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_transform_environment_map::de_transform_environment_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "TransformInput" => {
-                    builder = builder.set_transform_input(crate::protocol_serde::shape_transform_input::de_transform_input(tokens)?);
+                    builder = builder.set_transform_input(crate::protocol_serde::shape_transform_input::de_transform_input(tokens, _value)?);
                 }
                 "TransformOutput" => {
-                    builder = builder.set_transform_output(crate::protocol_serde::shape_transform_output::de_transform_output(tokens)?);
+                    builder = builder.set_transform_output(crate::protocol_serde::shape_transform_output::de_transform_output(tokens, _value)?);
                 }
                 "DataCaptureConfig" => {
                     builder = builder.set_data_capture_config(crate::protocol_serde::shape_batch_data_capture_config::de_batch_data_capture_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "TransformResources" => {
-                    builder = builder.set_transform_resources(crate::protocol_serde::shape_transform_resources::de_transform_resources(tokens)?);
+                    builder =
+                        builder.set_transform_resources(crate::protocol_serde::shape_transform_resources::de_transform_resources(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -193,10 +195,10 @@ pub(crate) fn de_describe_transform_job(
                     );
                 }
                 "DataProcessing" => {
-                    builder = builder.set_data_processing(crate::protocol_serde::shape_data_processing::de_data_processing(tokens)?);
+                    builder = builder.set_data_processing(crate::protocol_serde::shape_data_processing::de_data_processing(tokens, _value)?);
                 }
                 "ExperimentConfig" => {
-                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens)?);
+                    builder = builder.set_experiment_config(crate::protocol_serde::shape_experiment_config::de_experiment_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

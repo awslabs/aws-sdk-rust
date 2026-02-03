@@ -42,6 +42,7 @@ pub fn ser_document_attribute_boosting_configuration(
 
 pub(crate) fn de_document_attribute_boosting_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentAttributeBoostingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,25 +73,25 @@ where
                     variant = match key.as_ref() {
                             "numberConfiguration" => {
                                 Some(crate::types::DocumentAttributeBoostingConfiguration::NumberConfiguration(
-                                    crate::protocol_serde::shape_number_attribute_boosting_configuration::de_number_attribute_boosting_configuration(tokens)?
+                                    crate::protocol_serde::shape_number_attribute_boosting_configuration::de_number_attribute_boosting_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'numberConfiguration' cannot be null"))?
                                 ))
                             }
                             "stringConfiguration" => {
                                 Some(crate::types::DocumentAttributeBoostingConfiguration::StringConfiguration(
-                                    crate::protocol_serde::shape_string_attribute_boosting_configuration::de_string_attribute_boosting_configuration(tokens)?
+                                    crate::protocol_serde::shape_string_attribute_boosting_configuration::de_string_attribute_boosting_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringConfiguration' cannot be null"))?
                                 ))
                             }
                             "dateConfiguration" => {
                                 Some(crate::types::DocumentAttributeBoostingConfiguration::DateConfiguration(
-                                    crate::protocol_serde::shape_date_attribute_boosting_configuration::de_date_attribute_boosting_configuration(tokens)?
+                                    crate::protocol_serde::shape_date_attribute_boosting_configuration::de_date_attribute_boosting_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dateConfiguration' cannot be null"))?
                                 ))
                             }
                             "stringListConfiguration" => {
                                 Some(crate::types::DocumentAttributeBoostingConfiguration::StringListConfiguration(
-                                    crate::protocol_serde::shape_string_list_attribute_boosting_configuration::de_string_list_attribute_boosting_configuration(tokens)?
+                                    crate::protocol_serde::shape_string_list_attribute_boosting_configuration::de_string_list_attribute_boosting_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringListConfiguration' cannot be null"))?
                                 ))
                             }

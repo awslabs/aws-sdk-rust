@@ -23,6 +23,7 @@ pub fn ser_upsert_redshift_target_options(
 
 pub(crate) fn de_upsert_redshift_target_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UpsertRedshiftTargetOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,9 @@ where
                         }
                         "UpsertKeys" => {
                             builder = builder.set_upsert_keys(
-                                crate::protocol_serde::shape_enclosed_in_string_properties_min_one::de_enclosed_in_string_properties_min_one(tokens)?,
+                                crate::protocol_serde::shape_enclosed_in_string_properties_min_one::de_enclosed_in_string_properties_min_one(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -230,13 +230,13 @@ pub fn ser_list_effective_policy_validation_errors_input(
 }
 
 pub(crate) fn de_list_effective_policy_validation_errors(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_effective_policy_validation_errors::builders::ListEffectivePolicyValidationErrorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_effective_policy_validation_errors::builders::ListEffectivePolicyValidationErrorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -279,7 +279,7 @@ pub(crate) fn de_list_effective_policy_validation_errors(
                 }
                 "EffectivePolicyValidationErrors" => {
                     builder = builder.set_effective_policy_validation_errors(
-                        crate::protocol_serde::shape_effective_policy_validation_errors::de_effective_policy_validation_errors(tokens)?,
+                        crate::protocol_serde::shape_effective_policy_validation_errors::de_effective_policy_validation_errors(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

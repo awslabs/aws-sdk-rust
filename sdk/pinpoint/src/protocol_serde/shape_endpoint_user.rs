@@ -27,6 +27,7 @@ pub fn ser_endpoint_user(
 
 pub(crate) fn de_endpoint_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EndpointUser>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserAttributes" => {
-                            builder =
-                                builder.set_user_attributes(crate::protocol_serde::shape_map_of_list_of_string::de_map_of_list_of_string(tokens)?);
+                            builder = builder.set_user_attributes(crate::protocol_serde::shape_map_of_list_of_string::de_map_of_list_of_string(
+                                tokens, _value,
+                            )?);
                         }
                         "UserId" => {
                             builder = builder.set_user_id(

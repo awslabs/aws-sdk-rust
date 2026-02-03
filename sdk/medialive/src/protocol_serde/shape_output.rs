@@ -38,6 +38,7 @@ pub fn ser_output(
 
 pub(crate) fn de_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Output>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,10 +53,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptionNames" => {
-                            builder = builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder =
+                                builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "captionDescriptionNames" => {
-                            builder = builder.set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder
+                                .set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         "outputName" => {
                             builder = builder.set_output_name(
@@ -65,7 +68,7 @@ where
                             );
                         }
                         "outputSettings" => {
-                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens)?);
+                            builder = builder.set_output_settings(crate::protocol_serde::shape_output_settings::de_output_settings(tokens, _value)?);
                         }
                         "videoDescriptionName" => {
                             builder = builder.set_video_description_name(

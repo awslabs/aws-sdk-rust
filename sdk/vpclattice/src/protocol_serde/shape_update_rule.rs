@@ -159,11 +159,11 @@ pub fn ser_update_rule_input(
 }
 
 pub(crate) fn de_update_rule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_rule::builders::UpdateRuleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::update_rule::builders::UpdateRuleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_update_rule(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "action" => {
-                    builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens)?);
+                    builder = builder.set_action(crate::protocol_serde::shape_rule_action::de_rule_action(tokens, _value)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -191,7 +191,7 @@ pub(crate) fn de_update_rule(
                     builder = builder.set_is_default(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "match" => {
-                    builder = builder.set_match(crate::protocol_serde::shape_rule_match::de_rule_match(tokens)?);
+                    builder = builder.set_match(crate::protocol_serde::shape_rule_match::de_rule_match(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(

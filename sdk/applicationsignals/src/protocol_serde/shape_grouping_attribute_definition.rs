@@ -23,6 +23,7 @@ pub fn ser_grouping_attribute_definition(
 
 pub(crate) fn de_grouping_attribute_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GroupingAttributeDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "GroupingSourceKeys" => {
                             builder = builder.set_grouping_source_keys(
-                                crate::protocol_serde::shape_grouping_source_key_string_list::de_grouping_source_key_string_list(tokens)?,
+                                crate::protocol_serde::shape_grouping_source_key_string_list::de_grouping_source_key_string_list(tokens, _value)?,
                             );
                         }
                         "DefaultGroupingValue" => {

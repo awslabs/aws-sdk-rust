@@ -105,13 +105,13 @@ pub fn de_get_backup_plan_http_response(
 }
 
 pub(crate) fn de_get_backup_plan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_backup_plan::builders::GetBackupPlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_backup_plan::builders::GetBackupPlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,11 +120,11 @@ pub(crate) fn de_get_backup_plan(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdvancedBackupSettings" => {
                     builder = builder.set_advanced_backup_settings(
-                        crate::protocol_serde::shape_advanced_backup_settings::de_advanced_backup_settings(tokens)?,
+                        crate::protocol_serde::shape_advanced_backup_settings::de_advanced_backup_settings(tokens, _value)?,
                     );
                 }
                 "BackupPlan" => {
-                    builder = builder.set_backup_plan(crate::protocol_serde::shape_backup_plan::de_backup_plan(tokens)?);
+                    builder = builder.set_backup_plan(crate::protocol_serde::shape_backup_plan::de_backup_plan(tokens, _value)?);
                 }
                 "BackupPlanArn" => {
                     builder = builder.set_backup_plan_arn(
@@ -166,8 +166,9 @@ pub(crate) fn de_get_backup_plan(
                     )?);
                 }
                 "ScheduledRunsPreview" => {
-                    builder =
-                        builder.set_scheduled_runs_preview(crate::protocol_serde::shape_scheduled_runs_preview::de_scheduled_runs_preview(tokens)?);
+                    builder = builder.set_scheduled_runs_preview(crate::protocol_serde::shape_scheduled_runs_preview::de_scheduled_runs_preview(
+                        tokens, _value,
+                    )?);
                 }
                 "VersionId" => {
                     builder = builder.set_version_id(

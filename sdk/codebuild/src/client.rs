@@ -171,7 +171,7 @@ mod create_webhook;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_codebuild::Error> {
 /// # let client: aws_sdk_codebuild::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_delete_builds()
 ///     .customize()

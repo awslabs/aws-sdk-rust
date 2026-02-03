@@ -115,13 +115,13 @@ pub fn de_describe_bot_recommendation_http_response(
 }
 
 pub(crate) fn de_describe_bot_recommendation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_bot_recommendation::builders::DescribeBotRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_describe_bot_recommendation(
                 }
                 "botRecommendationResults" => {
                     builder = builder.set_bot_recommendation_results(
-                        crate::protocol_serde::shape_bot_recommendation_results::de_bot_recommendation_results(tokens)?,
+                        crate::protocol_serde::shape_bot_recommendation_results::de_bot_recommendation_results(tokens, _value)?,
                     );
                 }
                 "botRecommendationStatus" => {
@@ -168,10 +168,10 @@ pub(crate) fn de_describe_bot_recommendation(
                     )?);
                 }
                 "encryptionSetting" => {
-                    builder = builder.set_encryption_setting(crate::protocol_serde::shape_encryption_setting::de_encryption_setting(tokens)?);
+                    builder = builder.set_encryption_setting(crate::protocol_serde::shape_encryption_setting::de_encryption_setting(tokens, _value)?);
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "lastUpdatedDateTime" => {
                     builder = builder.set_last_updated_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -188,7 +188,7 @@ pub(crate) fn de_describe_bot_recommendation(
                 }
                 "transcriptSourceSetting" => {
                     builder = builder.set_transcript_source_setting(
-                        crate::protocol_serde::shape_transcript_source_setting::de_transcript_source_setting(tokens)?,
+                        crate::protocol_serde::shape_transcript_source_setting::de_transcript_source_setting(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_thing_type_properties(
 
 pub(crate) fn de_thing_type_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ThingTypeProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,13 @@ where
                             );
                         }
                         "searchableAttributes" => {
-                            builder = builder
-                                .set_searchable_attributes(crate::protocol_serde::shape_searchable_attributes::de_searchable_attributes(tokens)?);
+                            builder = builder.set_searchable_attributes(
+                                crate::protocol_serde::shape_searchable_attributes::de_searchable_attributes(tokens, _value)?,
+                            );
                         }
                         "mqtt5Configuration" => {
-                            builder =
-                                builder.set_mqtt5_configuration(crate::protocol_serde::shape_mqtt5_configuration::de_mqtt5_configuration(tokens)?);
+                            builder = builder
+                                .set_mqtt5_configuration(crate::protocol_serde::shape_mqtt5_configuration::de_mqtt5_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -140,13 +140,13 @@ pub fn ser_get_code_security_integration_input(
 }
 
 pub(crate) fn de_get_code_security_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_code_security_integration::builders::GetCodeSecurityIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_code_security_integration::builders::GetCodeSecurityIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -201,7 +201,7 @@ pub(crate) fn de_get_code_security_integration(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

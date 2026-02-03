@@ -117,13 +117,13 @@ pub fn ser_update_key_registration_input(
 }
 
 pub(crate) fn de_update_key_registration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_key_registration::builders::UpdateKeyRegistrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_key_registration::builders::UpdateKeyRegistrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,7 +132,7 @@ pub(crate) fn de_update_key_registration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "FailedKeyRegistration" => {
                     builder = builder.set_failed_key_registration(
-                        crate::protocol_serde::shape_failed_key_registration_entries::de_failed_key_registration_entries(tokens)?,
+                        crate::protocol_serde::shape_failed_key_registration_entries::de_failed_key_registration_entries(tokens, _value)?,
                     );
                 }
                 "RequestId" => {
@@ -144,7 +144,7 @@ pub(crate) fn de_update_key_registration(
                 }
                 "SuccessfulKeyRegistration" => {
                     builder = builder.set_successful_key_registration(
-                        crate::protocol_serde::shape_successful_key_registration_entries::de_successful_key_registration_entries(tokens)?,
+                        crate::protocol_serde::shape_successful_key_registration_entries::de_successful_key_registration_entries(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

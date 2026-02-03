@@ -23,6 +23,7 @@ pub fn ser_proxy_rule_condition(
 
 pub(crate) fn de_proxy_rule_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProxyRuleCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                         }
                         "ConditionValues" => {
                             builder = builder.set_condition_values(
-                                crate::protocol_serde::shape_proxy_condition_value_list::de_proxy_condition_value_list(tokens)?,
+                                crate::protocol_serde::shape_proxy_condition_value_list::de_proxy_condition_value_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

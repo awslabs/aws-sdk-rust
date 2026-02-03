@@ -20,6 +20,7 @@ pub fn ser_s3_bucket_definition_for_job(
 
 pub(crate) fn de_s3_bucket_definition_for_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3BucketDefinitionForJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "buckets" => {
-                            builder = builder.set_buckets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                            builder = builder.set_buckets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -20,6 +20,7 @@ pub fn ser_image_repository(
 
 pub(crate) fn de_image_repository<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageRepository>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,8 @@ where
                             );
                         }
                         "ImageConfiguration" => {
-                            builder =
-                                builder.set_image_configuration(crate::protocol_serde::shape_image_configuration::de_image_configuration(tokens)?);
+                            builder = builder
+                                .set_image_configuration(crate::protocol_serde::shape_image_configuration::de_image_configuration(tokens, _value)?);
                         }
                         "ImageRepositoryType" => {
                             builder = builder.set_image_repository_type(

@@ -146,13 +146,13 @@ pub fn ser_create_bot_version_input(
 }
 
 pub(crate) fn de_create_bot_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_bot_version::builders::CreateBotVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,7 +160,7 @@ pub(crate) fn de_create_bot_version(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "abortStatement" => {
-                    builder = builder.set_abort_statement(crate::protocol_serde::shape_statement::de_statement(tokens)?);
+                    builder = builder.set_abort_statement(crate::protocol_serde::shape_statement::de_statement(tokens, _value)?);
                 }
                 "checksum" => {
                     builder = builder.set_checksum(
@@ -173,7 +173,7 @@ pub(crate) fn de_create_bot_version(
                     builder = builder.set_child_directed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "clarificationPrompt" => {
-                    builder = builder.set_clarification_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens)?);
+                    builder = builder.set_clarification_prompt(crate::protocol_serde::shape_prompt::de_prompt(tokens, _value)?);
                 }
                 "createdDate" => {
                     builder = builder.set_created_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -209,7 +209,7 @@ pub(crate) fn de_create_bot_version(
                     );
                 }
                 "intents" => {
-                    builder = builder.set_intents(crate::protocol_serde::shape_intent_list::de_intent_list(tokens)?);
+                    builder = builder.set_intents(crate::protocol_serde::shape_intent_list::de_intent_list(tokens, _value)?);
                 }
                 "lastUpdatedDate" => {
                     builder = builder.set_last_updated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

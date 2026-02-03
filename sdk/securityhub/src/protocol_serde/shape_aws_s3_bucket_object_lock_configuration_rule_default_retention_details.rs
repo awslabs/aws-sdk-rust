@@ -23,6 +23,7 @@ pub fn ser_aws_s3_bucket_object_lock_configuration_rule_default_retention_detail
 
 pub(crate) fn de_aws_s3_bucket_object_lock_configuration_rule_default_retention_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

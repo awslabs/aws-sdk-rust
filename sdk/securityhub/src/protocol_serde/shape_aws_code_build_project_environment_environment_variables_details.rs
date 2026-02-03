@@ -17,6 +17,7 @@ pub fn ser_aws_code_build_project_environment_environment_variables_details(
 
 pub(crate) fn de_aws_code_build_project_environment_environment_variables_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -96,13 +96,13 @@ pub fn ser_associate_eip_to_vlan_input(
 }
 
 pub(crate) fn de_associate_eip_to_vlan(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::associate_eip_to_vlan::builders::AssociateEipToVlanOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::associate_eip_to_vlan::builders::AssociateEipToVlanOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -110,7 +110,7 @@ pub(crate) fn de_associate_eip_to_vlan(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "vlan" => {
-                    builder = builder.set_vlan(crate::protocol_serde::shape_vlan::de_vlan(tokens)?);
+                    builder = builder.set_vlan(crate::protocol_serde::shape_vlan::de_vlan(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

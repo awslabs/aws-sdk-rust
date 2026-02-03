@@ -50,6 +50,7 @@ pub fn ser_aws_rds_db_security_group_details(
 
 pub(crate) fn de_aws_rds_db_security_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbSecurityGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,12 +87,14 @@ where
                         }
                         "Ec2SecurityGroups" => {
                             builder = builder.set_ec2_security_groups(
-                                    crate::protocol_serde::shape_aws_rds_db_security_group_ec2_security_groups::de_aws_rds_db_security_group_ec2_security_groups(tokens)?
+                                    crate::protocol_serde::shape_aws_rds_db_security_group_ec2_security_groups::de_aws_rds_db_security_group_ec2_security_groups(tokens, _value)?
                                 );
                         }
                         "IpRanges" => {
                             builder = builder.set_ip_ranges(
-                                crate::protocol_serde::shape_aws_rds_db_security_group_ip_ranges::de_aws_rds_db_security_group_ip_ranges(tokens)?,
+                                crate::protocol_serde::shape_aws_rds_db_security_group_ip_ranges::de_aws_rds_db_security_group_ip_ranges(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "OwnerId" => {

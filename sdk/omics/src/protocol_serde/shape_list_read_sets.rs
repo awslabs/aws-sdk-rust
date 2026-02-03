@@ -134,13 +134,13 @@ pub fn ser_list_read_sets_input(
 }
 
 pub(crate) fn de_list_read_sets(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_list_read_sets(
                     );
                 }
                 "readSets" => {
-                    builder = builder.set_read_sets(crate::protocol_serde::shape_read_set_list::de_read_set_list(tokens)?);
+                    builder = builder.set_read_sets(crate::protocol_serde::shape_read_set_list::de_read_set_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

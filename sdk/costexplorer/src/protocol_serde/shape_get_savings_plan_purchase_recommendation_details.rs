@@ -95,13 +95,13 @@ pub fn ser_get_savings_plan_purchase_recommendation_details_input(
 }
 
 pub(crate) fn de_get_savings_plan_purchase_recommendation_details(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_savings_plan_purchase_recommendation_details::builders::GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,7 @@ pub(crate) fn de_get_savings_plan_purchase_recommendation_details(
                 }
                 "RecommendationDetailData" => {
                     builder = builder.set_recommendation_detail_data(
-                        crate::protocol_serde::shape_recommendation_detail_data::de_recommendation_detail_data(tokens)?,
+                        crate::protocol_serde::shape_recommendation_detail_data::de_recommendation_detail_data(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

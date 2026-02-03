@@ -37,6 +37,7 @@ pub fn ser_physical_table(
 
 pub(crate) fn de_physical_table<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PhysicalTable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,22 +67,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "RelationalTable" => Some(crate::types::PhysicalTable::RelationalTable(
-                            crate::protocol_serde::shape_relational_table::de_relational_table(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_relational_table::de_relational_table(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RelationalTable' cannot be null")
                             })?,
                         )),
                         "CustomSql" => Some(crate::types::PhysicalTable::CustomSql(
-                            crate::protocol_serde::shape_custom_sql::de_custom_sql(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_custom_sql::de_custom_sql(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomSql' cannot be null")
                             })?,
                         )),
                         "S3Source" => Some(crate::types::PhysicalTable::S3Source(
-                            crate::protocol_serde::shape_s3_source::de_s3_source(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_source::de_s3_source(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3Source' cannot be null")
                             })?,
                         )),
                         "SaaSTable" => Some(crate::types::PhysicalTable::SaaSTable(
-                            crate::protocol_serde::shape_saa_s_table::de_saa_s_table(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_saa_s_table::de_saa_s_table(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SaaSTable' cannot be null")
                             })?,
                         )),

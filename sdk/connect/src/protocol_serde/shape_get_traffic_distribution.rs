@@ -123,13 +123,13 @@ pub fn de_get_traffic_distribution_http_response(
 }
 
 pub(crate) fn de_get_traffic_distribution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_get_traffic_distribution(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AgentConfig" => {
-                    builder = builder.set_agent_config(crate::protocol_serde::shape_agent_config::de_agent_config(tokens)?);
+                    builder = builder.set_agent_config(crate::protocol_serde::shape_agent_config::de_agent_config(tokens, _value)?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -154,10 +154,10 @@ pub(crate) fn de_get_traffic_distribution(
                     );
                 }
                 "SignInConfig" => {
-                    builder = builder.set_sign_in_config(crate::protocol_serde::shape_sign_in_config::de_sign_in_config(tokens)?);
+                    builder = builder.set_sign_in_config(crate::protocol_serde::shape_sign_in_config::de_sign_in_config(tokens, _value)?);
                 }
                 "TelephonyConfig" => {
-                    builder = builder.set_telephony_config(crate::protocol_serde::shape_telephony_config::de_telephony_config(tokens)?);
+                    builder = builder.set_telephony_config(crate::protocol_serde::shape_telephony_config::de_telephony_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

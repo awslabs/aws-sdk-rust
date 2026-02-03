@@ -21,6 +21,7 @@ pub fn ser_aws_backup_backup_plan_advanced_backup_settings_details(
 
 pub(crate) fn de_aws_backup_backup_plan_advanced_backup_settings_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BackupOptions" => {
-                            builder = builder.set_backup_options(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_backup_options(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "ResourceType" => {
                             builder = builder.set_resource_type(

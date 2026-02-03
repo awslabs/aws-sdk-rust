@@ -26,6 +26,7 @@ pub fn ser_aws_job_exponential_rollout_rate(
 
 pub(crate) fn de_aws_job_exponential_rollout_rate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsJobExponentialRolloutRate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                         }
                         "rateIncreaseCriteria" => {
                             builder = builder.set_rate_increase_criteria(
-                                crate::protocol_serde::shape_aws_job_rate_increase_criteria::de_aws_job_rate_increase_criteria(tokens)?,
+                                crate::protocol_serde::shape_aws_job_rate_increase_criteria::de_aws_job_rate_increase_criteria(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

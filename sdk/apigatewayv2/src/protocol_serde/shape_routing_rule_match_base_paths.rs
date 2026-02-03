@@ -17,6 +17,7 @@ pub fn ser_routing_rule_match_base_paths(
 
 pub(crate) fn de_routing_rule_match_base_paths<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RoutingRuleMatchBasePaths>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "anyOf" => {
-                            builder = builder.set_any_of(crate::protocol_serde::shape_list_of_selection_key::de_list_of_selection_key(tokens)?);
+                            builder = builder.set_any_of(crate::protocol_serde::shape_list_of_selection_key::de_list_of_selection_key(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

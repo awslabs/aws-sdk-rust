@@ -98,13 +98,13 @@ pub fn de_delete_backend_http_response(
 }
 
 pub(crate) fn de_delete_backend(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_backend::builders::DeleteBackendOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_backend::builders::DeleteBackendOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

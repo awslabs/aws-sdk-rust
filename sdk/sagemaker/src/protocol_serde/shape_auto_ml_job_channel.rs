@@ -23,6 +23,7 @@ pub fn ser_auto_ml_job_channel(
 
 pub(crate) fn de_auto_ml_job_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoMlJobChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,8 @@ where
                             );
                         }
                         "DataSource" => {
-                            builder = builder.set_data_source(crate::protocol_serde::shape_auto_ml_data_source::de_auto_ml_data_source(tokens)?);
+                            builder =
+                                builder.set_data_source(crate::protocol_serde::shape_auto_ml_data_source::de_auto_ml_data_source(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

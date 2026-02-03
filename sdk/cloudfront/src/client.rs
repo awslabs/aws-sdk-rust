@@ -259,7 +259,7 @@ mod create_vpc_origin;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudfront::Error> {
 /// # let client: aws_sdk_cloudfront::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_alias()
 ///     .customize()

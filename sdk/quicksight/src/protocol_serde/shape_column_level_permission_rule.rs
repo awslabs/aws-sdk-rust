@@ -26,6 +26,7 @@ pub fn ser_column_level_permission_rule(
 
 pub(crate) fn de_column_level_permission_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnLevelPermissionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Principals" => {
-                            builder = builder.set_principals(crate::protocol_serde::shape_principal_list::de_principal_list(tokens)?);
+                            builder = builder.set_principals(crate::protocol_serde::shape_principal_list::de_principal_list(tokens, _value)?);
                         }
                         "ColumnNames" => {
                             builder = builder.set_column_names(
-                                    crate::protocol_serde::shape_column_level_permission_rule_column_name_list::de_column_level_permission_rule_column_name_list(tokens)?
+                                    crate::protocol_serde::shape_column_level_permission_rule_column_name_list::de_column_level_permission_rule_column_name_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

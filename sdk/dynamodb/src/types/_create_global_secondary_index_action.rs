@@ -6,7 +6,7 @@
 pub struct CreateGlobalSecondaryIndexAction {
     /// <p>The name of the global secondary index to be created.</p>
     pub index_name: ::std::string::String,
-    /// <p>The key schema for the global secondary index.</p>
+    /// <p>The key schema for the global secondary index. Global secondary index supports up to 4 partition and up to 4 sort keys.</p>
     pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
     pub projection: ::std::option::Option<crate::types::Projection>,
@@ -24,7 +24,7 @@ impl CreateGlobalSecondaryIndexAction {
         use std::ops::Deref;
         self.index_name.deref()
     }
-    /// <p>The key schema for the global secondary index.</p>
+    /// <p>The key schema for the global secondary index. Global secondary index supports up to 4 partition and up to 4 sort keys.</p>
     pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
         use std::ops::Deref;
         self.key_schema.deref()
@@ -85,19 +85,19 @@ impl CreateGlobalSecondaryIndexActionBuilder {
     ///
     /// To override the contents of this collection use [`set_key_schema`](Self::set_key_schema).
     ///
-    /// <p>The key schema for the global secondary index.</p>
+    /// <p>The key schema for the global secondary index. Global secondary index supports up to 4 partition and up to 4 sort keys.</p>
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
         v.push(input);
         self.key_schema = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The key schema for the global secondary index.</p>
+    /// <p>The key schema for the global secondary index. Global secondary index supports up to 4 partition and up to 4 sort keys.</p>
     pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
         self.key_schema = input;
         self
     }
-    /// <p>The key schema for the global secondary index.</p>
+    /// <p>The key schema for the global secondary index. Global secondary index supports up to 4 partition and up to 4 sort keys.</p>
     pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
         &self.key_schema
     }

@@ -175,7 +175,7 @@ mod create_privacy_budget_template;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cleanrooms::Error> {
 /// # let client: aws_sdk_cleanrooms::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_collaboration_analysis_template()
 ///     .customize()

@@ -98,6 +98,7 @@ pub fn ser_pipe_target_ecs_task_parameters(
 
 pub(crate) fn de_pipe_target_ecs_task_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeTargetEcsTaskParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -133,8 +134,9 @@ where
                             );
                         }
                         "NetworkConfiguration" => {
-                            builder = builder
-                                .set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
+                            builder = builder.set_network_configuration(
+                                crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens, _value)?,
+                            );
                         }
                         "PlatformVersion" => {
                             builder = builder.set_platform_version(
@@ -152,7 +154,7 @@ where
                         }
                         "CapacityProviderStrategy" => {
                             builder = builder.set_capacity_provider_strategy(
-                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens)?,
+                                crate::protocol_serde::shape_capacity_provider_strategy::de_capacity_provider_strategy(tokens, _value)?,
                             );
                         }
                         "EnableECSManagedTags" => {
@@ -162,12 +164,14 @@ where
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "PlacementConstraints" => {
-                            builder = builder
-                                .set_placement_constraints(crate::protocol_serde::shape_placement_constraints::de_placement_constraints(tokens)?);
+                            builder = builder.set_placement_constraints(
+                                crate::protocol_serde::shape_placement_constraints::de_placement_constraints(tokens, _value)?,
+                            );
                         }
                         "PlacementStrategy" => {
-                            builder =
-                                builder.set_placement_strategy(crate::protocol_serde::shape_placement_strategies::de_placement_strategies(tokens)?);
+                            builder = builder.set_placement_strategy(crate::protocol_serde::shape_placement_strategies::de_placement_strategies(
+                                tokens, _value,
+                            )?);
                         }
                         "PropagateTags" => {
                             builder = builder.set_propagate_tags(
@@ -184,10 +188,10 @@ where
                             );
                         }
                         "Overrides" => {
-                            builder = builder.set_overrides(crate::protocol_serde::shape_ecs_task_override::de_ecs_task_override(tokens)?);
+                            builder = builder.set_overrides(crate::protocol_serde::shape_ecs_task_override::de_ecs_task_override(tokens, _value)?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

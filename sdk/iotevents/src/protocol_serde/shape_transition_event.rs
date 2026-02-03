@@ -29,6 +29,7 @@ pub fn ser_transition_event(
 
 pub(crate) fn de_transition_event<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TransitionEvent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,7 @@ where
                             );
                         }
                         "actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_actions::de_actions(tokens)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_actions::de_actions(tokens, _value)?);
                         }
                         "nextState" => {
                             builder = builder.set_next_state(

@@ -27,6 +27,7 @@ pub fn ser_credential_provider(
 
 pub(crate) fn de_credential_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CredentialProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,16 @@ where
                     }
                     variant = match key.as_ref() {
                         "oauthCredentialProvider" => Some(crate::types::CredentialProvider::OauthCredentialProvider(
-                            crate::protocol_serde::shape_o_auth_credential_provider::de_o_auth_credential_provider(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oauthCredentialProvider' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_o_auth_credential_provider::de_o_auth_credential_provider(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'oauthCredentialProvider' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "apiKeyCredentialProvider" => Some(crate::types::CredentialProvider::ApiKeyCredentialProvider(
-                            crate::protocol_serde::shape_gateway_api_key_credential_provider::de_gateway_api_key_credential_provider(tokens)?
+                            crate::protocol_serde::shape_gateway_api_key_credential_provider::de_gateway_api_key_credential_provider(tokens, _value)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'apiKeyCredentialProvider' cannot be null",

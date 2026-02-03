@@ -87,6 +87,7 @@ pub fn ser_aws_open_search_service_domain_details(
 
 pub(crate) fn de_aws_open_search_service_domain_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsOpenSearchServiceDomainDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -144,45 +145,45 @@ where
                         }
                         "EncryptionAtRestOptions" => {
                             builder = builder.set_encryption_at_rest_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_encryption_at_rest_options_details::de_aws_open_search_service_domain_encryption_at_rest_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_encryption_at_rest_options_details::de_aws_open_search_service_domain_encryption_at_rest_options_details(tokens, _value)?
                                 );
                         }
                         "NodeToNodeEncryptionOptions" => {
                             builder = builder.set_node_to_node_encryption_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_node_to_node_encryption_options_details::de_aws_open_search_service_domain_node_to_node_encryption_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_node_to_node_encryption_options_details::de_aws_open_search_service_domain_node_to_node_encryption_options_details(tokens, _value)?
                                 );
                         }
                         "ServiceSoftwareOptions" => {
                             builder = builder.set_service_software_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_service_software_options_details::de_aws_open_search_service_domain_service_software_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_service_software_options_details::de_aws_open_search_service_domain_service_software_options_details(tokens, _value)?
                                 );
                         }
                         "ClusterConfig" => {
                             builder = builder.set_cluster_config(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_cluster_config_details::de_aws_open_search_service_domain_cluster_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_cluster_config_details::de_aws_open_search_service_domain_cluster_config_details(tokens, _value)?
                                 );
                         }
                         "DomainEndpointOptions" => {
                             builder = builder.set_domain_endpoint_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_domain_endpoint_options_details::de_aws_open_search_service_domain_domain_endpoint_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_domain_endpoint_options_details::de_aws_open_search_service_domain_domain_endpoint_options_details(tokens, _value)?
                                 );
                         }
                         "VpcOptions" => {
                             builder = builder.set_vpc_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_vpc_options_details::de_aws_open_search_service_domain_vpc_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_vpc_options_details::de_aws_open_search_service_domain_vpc_options_details(tokens, _value)?
                                 );
                         }
                         "LogPublishingOptions" => {
                             builder = builder.set_log_publishing_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_options_details::de_aws_open_search_service_domain_log_publishing_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_log_publishing_options_details::de_aws_open_search_service_domain_log_publishing_options_details(tokens, _value)?
                                 );
                         }
                         "DomainEndpoints" => {
-                            builder = builder.set_domain_endpoints(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_domain_endpoints(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "AdvancedSecurityOptions" => {
                             builder = builder.set_advanced_security_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_advanced_security_options_details::de_aws_open_search_service_domain_advanced_security_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_advanced_security_options_details::de_aws_open_search_service_domain_advanced_security_options_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

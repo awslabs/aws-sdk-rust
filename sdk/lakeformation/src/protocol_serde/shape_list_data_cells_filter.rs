@@ -114,13 +114,13 @@ pub fn ser_list_data_cells_filter_input(
 }
 
 pub(crate) fn de_list_data_cells_filter(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_data_cells_filter::builders::ListDataCellsFilterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_data_cells_filter::builders::ListDataCellsFilterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -128,7 +128,9 @@ pub(crate) fn de_list_data_cells_filter(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DataCellsFilters" => {
-                    builder = builder.set_data_cells_filters(crate::protocol_serde::shape_data_cells_filter_list::de_data_cells_filter_list(tokens)?);
+                    builder = builder.set_data_cells_filters(crate::protocol_serde::shape_data_cells_filter_list::de_data_cells_filter_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

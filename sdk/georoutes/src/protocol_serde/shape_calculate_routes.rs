@@ -113,13 +113,13 @@ pub fn ser_calculate_routes_input(
 }
 
 pub(crate) fn de_calculate_routes(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::calculate_routes::builders::CalculateRoutesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::calculate_routes::builders::CalculateRoutesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -135,11 +135,11 @@ pub(crate) fn de_calculate_routes(
                 }
                 "Notices" => {
                     builder = builder.set_notices(crate::protocol_serde::shape_route_response_notice_list::de_route_response_notice_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "Routes" => {
-                    builder = builder.set_routes(crate::protocol_serde::shape_route_list::de_route_list(tokens)?);
+                    builder = builder.set_routes(crate::protocol_serde::shape_route_list::de_route_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

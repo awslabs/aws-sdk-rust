@@ -38,6 +38,7 @@ pub fn ser_webhook_definition(
 
 pub(crate) fn de_webhook_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WebhookDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,7 +74,7 @@ where
                             );
                         }
                         "filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_webhook_filters::de_webhook_filters(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_webhook_filters::de_webhook_filters(tokens, _value)?);
                         }
                         "authentication" => {
                             builder = builder.set_authentication(
@@ -84,7 +85,7 @@ where
                         }
                         "authenticationConfiguration" => {
                             builder = builder.set_authentication_configuration(
-                                crate::protocol_serde::shape_webhook_auth_configuration::de_webhook_auth_configuration(tokens)?,
+                                crate::protocol_serde::shape_webhook_auth_configuration::de_webhook_auth_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

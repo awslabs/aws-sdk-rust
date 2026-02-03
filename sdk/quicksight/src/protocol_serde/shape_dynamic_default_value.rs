@@ -26,6 +26,7 @@ pub fn ser_dynamic_default_value(
 
 pub(crate) fn de_dynamic_default_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DynamicDefaultValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserNameColumn" => {
-                            builder = builder.set_user_name_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder =
+                                builder.set_user_name_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "GroupNameColumn" => {
-                            builder = builder.set_group_name_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder =
+                                builder.set_group_name_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "DefaultValueColumn" => {
-                            builder = builder.set_default_value_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder
+                                .set_default_value_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

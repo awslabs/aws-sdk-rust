@@ -134,13 +134,13 @@ pub fn ser_get_aws_opportunity_summary_input(
 }
 
 pub(crate) fn de_get_aws_opportunity_summary(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_aws_opportunity_summary::builders::GetAwsOpportunitySummaryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_aws_opportunity_summary::builders::GetAwsOpportunitySummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -177,17 +177,17 @@ pub(crate) fn de_get_aws_opportunity_summary(
                 }
                 "LifeCycle" => {
                     builder = builder.set_life_cycle(crate::protocol_serde::shape_aws_opportunity_life_cycle::de_aws_opportunity_life_cycle(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "OpportunityTeam" => {
                     builder = builder.set_opportunity_team(
-                        crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(tokens)?,
+                        crate::protocol_serde::shape_aws_opportunity_team_members_list::de_aws_opportunity_team_members_list(tokens, _value)?,
                     );
                 }
                 "Insights" => {
                     builder = builder.set_insights(crate::protocol_serde::shape_aws_opportunity_insights::de_aws_opportunity_insights(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "InvolvementTypeChangeReason" => {
@@ -199,16 +199,18 @@ pub(crate) fn de_get_aws_opportunity_summary(
                 }
                 "RelatedEntityIds" => {
                     builder = builder.set_related_entity_ids(
-                        crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(tokens)?,
+                        crate::protocol_serde::shape_aws_opportunity_related_entities::de_aws_opportunity_related_entities(tokens, _value)?,
                     );
                 }
                 "Customer" => {
                     builder = builder.set_customer(crate::protocol_serde::shape_aws_opportunity_customer::de_aws_opportunity_customer(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "Project" => {
-                    builder = builder.set_project(crate::protocol_serde::shape_aws_opportunity_project::de_aws_opportunity_project(tokens)?);
+                    builder = builder.set_project(crate::protocol_serde::shape_aws_opportunity_project::de_aws_opportunity_project(
+                        tokens, _value,
+                    )?);
                 }
                 "Catalog" => {
                     builder = builder.set_catalog(

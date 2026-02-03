@@ -14,6 +14,7 @@ pub fn ser_plugin_visual_sort_configuration(
 
 pub(crate) fn de_plugin_visual_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PluginVisualSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PluginVisualTableQuerySort" => {
                             builder = builder.set_plugin_visual_table_query_sort(
-                                crate::protocol_serde::shape_plugin_visual_table_query_sort::de_plugin_visual_table_query_sort(tokens)?,
+                                crate::protocol_serde::shape_plugin_visual_table_query_sort::de_plugin_visual_table_query_sort(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

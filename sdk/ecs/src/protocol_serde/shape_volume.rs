@@ -41,6 +41,7 @@ pub fn ser_volume(
 
 pub(crate) fn de_volume<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Volume>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,21 +63,23 @@ where
                             );
                         }
                         "host" => {
-                            builder = builder.set_host(crate::protocol_serde::shape_host_volume_properties::de_host_volume_properties(tokens)?);
+                            builder = builder.set_host(crate::protocol_serde::shape_host_volume_properties::de_host_volume_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "dockerVolumeConfiguration" => {
                             builder = builder.set_docker_volume_configuration(
-                                crate::protocol_serde::shape_docker_volume_configuration::de_docker_volume_configuration(tokens)?,
+                                crate::protocol_serde::shape_docker_volume_configuration::de_docker_volume_configuration(tokens, _value)?,
                             );
                         }
                         "efsVolumeConfiguration" => {
                             builder = builder.set_efs_volume_configuration(
-                                crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens)?,
+                                crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens, _value)?,
                             );
                         }
                         "fsxWindowsFileServerVolumeConfiguration" => {
                             builder = builder.set_fsx_windows_file_server_volume_configuration(
-                                    crate::protocol_serde::shape_f_sx_windows_file_server_volume_configuration::de_f_sx_windows_file_server_volume_configuration(tokens)?
+                                    crate::protocol_serde::shape_f_sx_windows_file_server_volume_configuration::de_f_sx_windows_file_server_volume_configuration(tokens, _value)?
                                 );
                         }
                         "configuredAtLaunch" => {

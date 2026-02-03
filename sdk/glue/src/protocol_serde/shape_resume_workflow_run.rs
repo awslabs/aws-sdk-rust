@@ -146,13 +146,13 @@ pub fn ser_resume_workflow_run_input(
 }
 
 pub(crate) fn de_resume_workflow_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,7 @@ pub(crate) fn de_resume_workflow_run(
                     );
                 }
                 "NodeIds" => {
-                    builder = builder.set_node_ids(crate::protocol_serde::shape_node_id_list::de_node_id_list(tokens)?);
+                    builder = builder.set_node_ids(crate::protocol_serde::shape_node_id_list::de_node_id_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

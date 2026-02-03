@@ -17,6 +17,7 @@ pub fn ser_wait_activity(
 
 pub(crate) fn de_wait_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WaitActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "WaitTime" => {
-                            builder = builder.set_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens)?);
+                            builder = builder.set_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

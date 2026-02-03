@@ -123,13 +123,13 @@ pub fn de_get_ota_task_configuration_http_response(
 }
 
 pub(crate) fn de_get_ota_task_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ota_task_configuration::builders::GetOtaTaskConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_ota_task_configuration::builders::GetOtaTaskConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,7 +157,7 @@ pub(crate) fn de_get_ota_task_configuration(
                     );
                 }
                 "PushConfig" => {
-                    builder = builder.set_push_config(crate::protocol_serde::shape_push_config::de_push_config(tokens)?);
+                    builder = builder.set_push_config(crate::protocol_serde::shape_push_config::de_push_config(tokens, _value)?);
                 }
                 "TaskConfigurationId" => {
                     builder = builder.set_task_configuration_id(

@@ -94,13 +94,13 @@ pub fn ser_describe_replication_instance_task_logs_input(
 }
 
 pub(crate) fn de_describe_replication_instance_task_logs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -116,7 +116,7 @@ pub(crate) fn de_describe_replication_instance_task_logs(
                 }
                 "ReplicationInstanceTaskLogs" => {
                     builder = builder.set_replication_instance_task_logs(
-                        crate::protocol_serde::shape_replication_instance_task_logs_list::de_replication_instance_task_logs_list(tokens)?,
+                        crate::protocol_serde::shape_replication_instance_task_logs_list::de_replication_instance_task_logs_list(tokens, _value)?,
                     );
                 }
                 "Marker" => {

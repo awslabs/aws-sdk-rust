@@ -45,6 +45,7 @@ pub fn ser_rule(
 
 pub(crate) fn de_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Rule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,14 +77,15 @@ where
                             );
                         }
                         "SubstitutionMap" => {
-                            builder = builder.set_substitution_map(crate::protocol_serde::shape_values_map::de_values_map(tokens)?);
+                            builder = builder.set_substitution_map(crate::protocol_serde::shape_values_map::de_values_map(tokens, _value)?);
                         }
                         "Threshold" => {
-                            builder = builder.set_threshold(crate::protocol_serde::shape_threshold::de_threshold(tokens)?);
+                            builder = builder.set_threshold(crate::protocol_serde::shape_threshold::de_threshold(tokens, _value)?);
                         }
                         "ColumnSelectors" => {
-                            builder =
-                                builder.set_column_selectors(crate::protocol_serde::shape_column_selector_list::de_column_selector_list(tokens)?);
+                            builder = builder.set_column_selectors(crate::protocol_serde::shape_column_selector_list::de_column_selector_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

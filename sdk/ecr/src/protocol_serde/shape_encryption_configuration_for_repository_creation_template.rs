@@ -14,6 +14,7 @@ pub fn ser_encryption_configuration_for_repository_creation_template(
 
 pub(crate) fn de_encryption_configuration_for_repository_creation_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::EncryptionConfigurationForRepositoryCreationTemplate>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

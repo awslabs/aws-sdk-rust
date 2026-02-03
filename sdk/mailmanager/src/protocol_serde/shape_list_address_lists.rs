@@ -95,13 +95,13 @@ pub fn ser_list_address_lists_input(
 }
 
 pub(crate) fn de_list_address_lists(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_address_lists::builders::ListAddressListsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_address_lists::builders::ListAddressListsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,7 +109,7 @@ pub(crate) fn de_list_address_lists(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AddressLists" => {
-                    builder = builder.set_address_lists(crate::protocol_serde::shape_address_lists::de_address_lists(tokens)?);
+                    builder = builder.set_address_lists(crate::protocol_serde::shape_address_lists::de_address_lists(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

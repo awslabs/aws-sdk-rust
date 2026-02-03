@@ -38,6 +38,7 @@ pub fn ser_free_form_layout_configuration(
 
 pub(crate) fn de_free_form_layout_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FreeFormLayoutConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,16 +53,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Elements" => {
-                            builder = builder
-                                .set_elements(crate::protocol_serde::shape_free_from_layout_element_list::de_free_from_layout_element_list(tokens)?);
+                            builder = builder.set_elements(
+                                crate::protocol_serde::shape_free_from_layout_element_list::de_free_from_layout_element_list(tokens, _value)?,
+                            );
                         }
                         "CanvasSizeOptions" => {
                             builder = builder.set_canvas_size_options(
-                                crate::protocol_serde::shape_free_form_layout_canvas_size_options::de_free_form_layout_canvas_size_options(tokens)?,
+                                crate::protocol_serde::shape_free_form_layout_canvas_size_options::de_free_form_layout_canvas_size_options(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "Groups" => {
-                            builder = builder.set_groups(crate::protocol_serde::shape_sheet_layout_group_list::de_sheet_layout_group_list(tokens)?);
+                            builder = builder.set_groups(crate::protocol_serde::shape_sheet_layout_group_list::de_sheet_layout_group_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

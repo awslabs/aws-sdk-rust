@@ -35,6 +35,7 @@ pub fn ser_monitoring_configuration(
 
 pub(crate) fn de_monitoring_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoringConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "managedLogs" => {
-                            builder = builder.set_managed_logs(crate::protocol_serde::shape_managed_logs::de_managed_logs(tokens)?);
+                            builder = builder.set_managed_logs(crate::protocol_serde::shape_managed_logs::de_managed_logs(tokens, _value)?);
                         }
                         "persistentAppUI" => {
                             builder = builder.set_persistent_app_ui(
@@ -60,17 +61,21 @@ where
                         }
                         "cloudWatchMonitoringConfiguration" => {
                             builder = builder.set_cloud_watch_monitoring_configuration(
-                                crate::protocol_serde::shape_cloud_watch_monitoring_configuration::de_cloud_watch_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_cloud_watch_monitoring_configuration::de_cloud_watch_monitoring_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "s3MonitoringConfiguration" => {
                             builder = builder.set_s3_monitoring_configuration(
-                                crate::protocol_serde::shape_s3_monitoring_configuration::de_s3_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_monitoring_configuration::de_s3_monitoring_configuration(tokens, _value)?,
                             );
                         }
                         "containerLogRotationConfiguration" => {
                             builder = builder.set_container_log_rotation_configuration(
-                                crate::protocol_serde::shape_container_log_rotation_configuration::de_container_log_rotation_configuration(tokens)?,
+                                crate::protocol_serde::shape_container_log_rotation_configuration::de_container_log_rotation_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -21,6 +21,7 @@ pub fn ser_codegen_job_render_config(
 
 pub(crate) fn de_codegen_job_render_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodegenJobRenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "react" => Some(crate::types::CodegenJobRenderConfig::React(
-                            crate::protocol_serde::shape_react_start_codegen_job_data::de_react_start_codegen_job_data(tokens)?
+                            crate::protocol_serde::shape_react_start_codegen_job_data::de_react_start_codegen_job_data(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'react' cannot be null"))?,
                         )),
                         _ => {

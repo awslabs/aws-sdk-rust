@@ -66,6 +66,7 @@ pub fn ser_parameter_value(
 
 pub(crate) fn de_parameter_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParameterValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -103,7 +104,7 @@ where
                                 })?,
                         )),
                         "IntegerList" => Some(crate::types::ParameterValue::IntegerList(
-                            crate::protocol_serde::shape_integer_list::de_integer_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_integer_list::de_integer_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IntegerList' cannot be null")
                             })?,
                         )),
@@ -123,7 +124,7 @@ where
                                 })?,
                         )),
                         "StringList" => Some(crate::types::ParameterValue::StringList(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringList' cannot be null")
                             })?,
                         )),
@@ -139,7 +140,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Enum' cannot be null"))?,
                         )),
                         "EnumList" => Some(crate::types::ParameterValue::EnumList(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EnumList' cannot be null")
                             })?,
                         )),

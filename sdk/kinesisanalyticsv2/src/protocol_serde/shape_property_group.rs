@@ -21,6 +21,7 @@ pub fn ser_property_group(
 
 pub(crate) fn de_property_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PropertyGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                             );
                         }
                         "PropertyMap" => {
-                            builder = builder.set_property_map(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                            builder = builder.set_property_map(crate::protocol_serde::shape_property_map::de_property_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

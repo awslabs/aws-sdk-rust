@@ -26,6 +26,7 @@ pub fn ser_share_rule(
 
 pub(crate) fn de_share_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ShareRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TargetAccounts" => {
                             builder = builder.set_target_accounts(
-                                crate::protocol_serde::shape_share_target_account_list::de_share_target_account_list(tokens)?,
+                                crate::protocol_serde::shape_share_target_account_list::de_share_target_account_list(tokens, _value)?,
                             );
                         }
                         "UnshareInterval" => {

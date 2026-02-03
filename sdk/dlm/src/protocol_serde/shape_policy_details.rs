@@ -119,6 +119,7 @@ pub fn ser_policy_details(
 
 pub(crate) fn de_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -141,27 +142,28 @@ where
                         }
                         "ResourceTypes" => {
                             builder = builder.set_resource_types(
-                                crate::protocol_serde::shape_resource_type_values_list::de_resource_type_values_list(tokens)?,
+                                crate::protocol_serde::shape_resource_type_values_list::de_resource_type_values_list(tokens, _value)?,
                             );
                         }
                         "ResourceLocations" => {
-                            builder = builder
-                                .set_resource_locations(crate::protocol_serde::shape_resource_location_list::de_resource_location_list(tokens)?);
+                            builder = builder.set_resource_locations(crate::protocol_serde::shape_resource_location_list::de_resource_location_list(
+                                tokens, _value,
+                            )?);
                         }
                         "TargetTags" => {
-                            builder = builder.set_target_tags(crate::protocol_serde::shape_target_tag_list::de_target_tag_list(tokens)?);
+                            builder = builder.set_target_tags(crate::protocol_serde::shape_target_tag_list::de_target_tag_list(tokens, _value)?);
                         }
                         "Schedules" => {
-                            builder = builder.set_schedules(crate::protocol_serde::shape_schedule_list::de_schedule_list(tokens)?);
+                            builder = builder.set_schedules(crate::protocol_serde::shape_schedule_list::de_schedule_list(tokens, _value)?);
                         }
                         "Parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens, _value)?);
                         }
                         "EventSource" => {
-                            builder = builder.set_event_source(crate::protocol_serde::shape_event_source::de_event_source(tokens)?);
+                            builder = builder.set_event_source(crate::protocol_serde::shape_event_source::de_event_source(tokens, _value)?);
                         }
                         "Actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape_action_list::de_action_list(tokens)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_action_list::de_action_list(tokens, _value)?);
                         }
                         "PolicyLanguage" => {
                             builder = builder.set_policy_language(
@@ -196,14 +198,14 @@ where
                         }
                         "CrossRegionCopyTargets" => {
                             builder = builder.set_cross_region_copy_targets(
-                                crate::protocol_serde::shape_cross_region_copy_target_list::de_cross_region_copy_target_list(tokens)?,
+                                crate::protocol_serde::shape_cross_region_copy_target_list::de_cross_region_copy_target_list(tokens, _value)?,
                             );
                         }
                         "ExtendDeletion" => {
                             builder = builder.set_extend_deletion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Exclusions" => {
-                            builder = builder.set_exclusions(crate::protocol_serde::shape_exclusions::de_exclusions(tokens)?);
+                            builder = builder.set_exclusions(crate::protocol_serde::shape_exclusions::de_exclusions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

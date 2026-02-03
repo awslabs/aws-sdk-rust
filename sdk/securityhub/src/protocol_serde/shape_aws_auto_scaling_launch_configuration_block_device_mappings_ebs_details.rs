@@ -32,6 +32,7 @@ pub fn ser_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_detai
 
 pub(crate) fn de_aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -38,6 +38,7 @@ pub fn ser_suite_definition_configuration(
 
 pub(crate) fn de_suite_definition_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SuiteDefinitionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,9 @@ where
                             );
                         }
                         "devices" => {
-                            builder = builder.set_devices(crate::protocol_serde::shape_device_under_test_list::de_device_under_test_list(tokens)?);
+                            builder = builder.set_devices(crate::protocol_serde::shape_device_under_test_list::de_device_under_test_list(
+                                tokens, _value,
+                            )?);
                         }
                         "intendedForQualification" => {
                             builder =

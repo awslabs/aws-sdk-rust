@@ -103,11 +103,11 @@ pub fn de_get_sdk_types_http_response(
 }
 
 pub(crate) fn de_get_sdk_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sdk_types::builders::GetSdkTypesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_sdk_types::builders::GetSdkTypesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,7 +115,7 @@ pub(crate) fn de_get_sdk_types(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "item" => {
-                    builder = builder.set_items(crate::protocol_serde::shape_list_of_sdk_type::de_list_of_sdk_type(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_sdk_type::de_list_of_sdk_type(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

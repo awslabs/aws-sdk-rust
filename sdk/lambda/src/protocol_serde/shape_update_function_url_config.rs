@@ -147,13 +147,13 @@ pub fn ser_update_function_url_config_input(
 }
 
 pub(crate) fn de_update_function_url_config(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_update_function_url_config(
                     );
                 }
                 "Cors" => {
-                    builder = builder.set_cors(crate::protocol_serde::shape_cors::de_cors(tokens)?);
+                    builder = builder.set_cors(crate::protocol_serde::shape_cors::de_cors(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(

@@ -20,6 +20,7 @@ pub fn ser_ota_task_execution_rollout_config(
 
 pub(crate) fn de_ota_task_execution_rollout_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OtaTaskExecutionRolloutConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ExponentialRolloutRate" => {
                             builder = builder.set_exponential_rollout_rate(
-                                crate::protocol_serde::shape_exponential_rollout_rate::de_exponential_rollout_rate(tokens)?,
+                                crate::protocol_serde::shape_exponential_rollout_rate::de_exponential_rollout_rate(tokens, _value)?,
                             );
                         }
                         "MaximumPerMinute" => {

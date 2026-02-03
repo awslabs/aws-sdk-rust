@@ -127,13 +127,13 @@ pub fn de_get_graphql_api_environment_variables_http_response(
 }
 
 pub(crate) fn de_get_graphql_api_environment_variables(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_graphql_api_environment_variables::builders::GetGraphqlApiEnvironmentVariablesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_graphql_api_environment_variables::builders::GetGraphqlApiEnvironmentVariablesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,7 @@ pub(crate) fn de_get_graphql_api_environment_variables(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "environmentVariables" => {
                     builder = builder.set_environment_variables(crate::protocol_serde::shape_environment_variable_map::de_environment_variable_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

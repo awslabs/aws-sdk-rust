@@ -29,6 +29,7 @@ pub fn ser_filters_operation(
 
 pub(crate) fn de_filters_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FiltersOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,12 +52,13 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "FilterOperations" => {
-                            builder =
-                                builder.set_filter_operations(crate::protocol_serde::shape_filter_operation_list::de_filter_operation_list(tokens)?);
+                            builder = builder.set_filter_operations(crate::protocol_serde::shape_filter_operation_list::de_filter_operation_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

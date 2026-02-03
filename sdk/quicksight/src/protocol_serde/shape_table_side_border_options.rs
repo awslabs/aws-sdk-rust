@@ -44,6 +44,7 @@ pub fn ser_table_side_border_options(
 
 pub(crate) fn de_table_side_border_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableSideBorderOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,23 +59,34 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InnerVertical" => {
-                            builder = builder.set_inner_vertical(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_inner_vertical(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "InnerHorizontal" => {
-                            builder =
-                                builder.set_inner_horizontal(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_inner_horizontal(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "Left" => {
-                            builder = builder.set_left(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_left(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "Right" => {
-                            builder = builder.set_right(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_right(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "Top" => {
-                            builder = builder.set_top(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_top(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         "Bottom" => {
-                            builder = builder.set_bottom(crate::protocol_serde::shape_table_border_options::de_table_border_options(tokens)?);
+                            builder = builder.set_bottom(crate::protocol_serde::shape_table_border_options::de_table_border_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

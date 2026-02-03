@@ -14,6 +14,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_extra_hosts_details(
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_extra_hosts_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

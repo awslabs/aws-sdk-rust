@@ -29,6 +29,7 @@ pub fn ser_operand_two(
 
 pub(crate) fn de_operand_two<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OperandTwo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -78,7 +79,7 @@ where
                                 })?,
                         )),
                         "emptyValue" => Some(crate::types::OperandTwo::EmptyValue(
-                            crate::protocol_serde::shape_empty_operand_value::de_empty_operand_value(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_empty_operand_value::de_empty_operand_value(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'emptyValue' cannot be null")
                             })?,
                         )),

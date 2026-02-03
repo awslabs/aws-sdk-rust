@@ -38,6 +38,7 @@ pub fn ser_instance_launch_template(
 
 pub(crate) fn de_instance_launch_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceLaunchTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,14 +62,14 @@ where
                         "networkConfiguration" => {
                             builder = builder.set_network_configuration(
                                 crate::protocol_serde::shape_managed_instances_network_configuration::de_managed_instances_network_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "storageConfiguration" => {
                             builder = builder.set_storage_configuration(
                                 crate::protocol_serde::shape_managed_instances_storage_configuration::de_managed_instances_storage_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -91,7 +92,7 @@ where
                         }
                         "instanceRequirements" => {
                             builder = builder.set_instance_requirements(
-                                crate::protocol_serde::shape_instance_requirements_request::de_instance_requirements_request(tokens)?,
+                                crate::protocol_serde::shape_instance_requirements_request::de_instance_requirements_request(tokens, _value)?,
                             );
                         }
                         "fipsEnabled" => {

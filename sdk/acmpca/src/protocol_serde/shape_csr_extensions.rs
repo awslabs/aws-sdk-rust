@@ -26,6 +26,7 @@ pub fn ser_csr_extensions(
 
 pub(crate) fn de_csr_extensions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CsrExtensions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KeyUsage" => {
-                            builder = builder.set_key_usage(crate::protocol_serde::shape_key_usage::de_key_usage(tokens)?);
+                            builder = builder.set_key_usage(crate::protocol_serde::shape_key_usage::de_key_usage(tokens, _value)?);
                         }
                         "SubjectInformationAccess" => {
                             builder = builder.set_subject_information_access(
-                                crate::protocol_serde::shape_access_description_list::de_access_description_list(tokens)?,
+                                crate::protocol_serde::shape_access_description_list::de_access_description_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

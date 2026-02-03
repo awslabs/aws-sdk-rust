@@ -147,7 +147,7 @@ mod create_landing_zone;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_controltower::Error> {
 /// # let client: aws_sdk_controltower::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_landing_zone()
 ///     .customize()

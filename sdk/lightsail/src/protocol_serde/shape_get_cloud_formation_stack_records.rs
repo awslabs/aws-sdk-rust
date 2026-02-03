@@ -189,13 +189,13 @@ pub fn ser_get_cloud_formation_stack_records_input(
 }
 
 pub(crate) fn de_get_cloud_formation_stack_records(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -204,7 +204,7 @@ pub(crate) fn de_get_cloud_formation_stack_records(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cloudFormationStackRecords" => {
                     builder = builder.set_cloud_formation_stack_records(
-                        crate::protocol_serde::shape_cloud_formation_stack_record_list::de_cloud_formation_stack_record_list(tokens)?,
+                        crate::protocol_serde::shape_cloud_formation_stack_record_list::de_cloud_formation_stack_record_list(tokens, _value)?,
                     );
                 }
                 "nextPageToken" => {

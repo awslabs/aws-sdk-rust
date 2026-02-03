@@ -68,6 +68,7 @@ pub fn ser_topic_ir(
 
 pub(crate) fn de_topic_ir<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicIr>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,25 +83,30 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_topic_ir_metric_list::de_topic_ir_metric_list(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_topic_ir_metric_list::de_topic_ir_metric_list(
+                                tokens, _value,
+                            )?);
                         }
                         "GroupByList" => {
-                            builder =
-                                builder.set_group_by_list(crate::protocol_serde::shape_topic_ir_group_by_list::de_topic_ir_group_by_list(tokens)?);
+                            builder = builder.set_group_by_list(crate::protocol_serde::shape_topic_ir_group_by_list::de_topic_ir_group_by_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_topic_ir_filter_list::de_topic_ir_filter_list(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_topic_ir_filter_list::de_topic_ir_filter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Sort" => {
-                            builder = builder.set_sort(crate::protocol_serde::shape_topic_sort_clause::de_topic_sort_clause(tokens)?);
+                            builder = builder.set_sort(crate::protocol_serde::shape_topic_sort_clause::de_topic_sort_clause(tokens, _value)?);
                         }
                         "ContributionAnalysis" => {
                             builder = builder.set_contribution_analysis(
-                                crate::protocol_serde::shape_topic_ir_contribution_analysis::de_topic_ir_contribution_analysis(tokens)?,
+                                crate::protocol_serde::shape_topic_ir_contribution_analysis::de_topic_ir_contribution_analysis(tokens, _value)?,
                             );
                         }
                         "Visual" => {
-                            builder = builder.set_visual(crate::protocol_serde::shape_visual_options::de_visual_options(tokens)?);
+                            builder = builder.set_visual(crate::protocol_serde::shape_visual_options::de_visual_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

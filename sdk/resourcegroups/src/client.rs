@@ -149,7 +149,7 @@ mod create_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_resourcegroups::Error> {
 /// # let client: aws_sdk_resourcegroups::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_tag_sync_task()
 ///     .customize()

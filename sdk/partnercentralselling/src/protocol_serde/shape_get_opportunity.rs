@@ -124,13 +124,13 @@ pub fn ser_get_opportunity_input(
 }
 
 pub(crate) fn de_get_opportunity(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_opportunity::builders::GetOpportunityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_opportunity::builders::GetOpportunityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,8 +145,9 @@ pub(crate) fn de_get_opportunity(
                     );
                 }
                 "PrimaryNeedsFromAws" => {
-                    builder =
-                        builder.set_primary_needs_from_aws(crate::protocol_serde::shape_primary_needs_from_aws::de_primary_needs_from_aws(tokens)?);
+                    builder = builder.set_primary_needs_from_aws(crate::protocol_serde::shape_primary_needs_from_aws::de_primary_needs_from_aws(
+                        tokens, _value,
+                    )?);
                 }
                 "NationalSecurity" => {
                     builder = builder.set_national_security(
@@ -163,10 +164,10 @@ pub(crate) fn de_get_opportunity(
                     );
                 }
                 "Customer" => {
-                    builder = builder.set_customer(crate::protocol_serde::shape_customer::de_customer(tokens)?);
+                    builder = builder.set_customer(crate::protocol_serde::shape_customer::de_customer(tokens, _value)?);
                 }
                 "Project" => {
-                    builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens)?);
+                    builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens, _value)?);
                 }
                 "OpportunityType" => {
                     builder = builder.set_opportunity_type(
@@ -176,10 +177,10 @@ pub(crate) fn de_get_opportunity(
                     );
                 }
                 "Marketing" => {
-                    builder = builder.set_marketing(crate::protocol_serde::shape_marketing::de_marketing(tokens)?);
+                    builder = builder.set_marketing(crate::protocol_serde::shape_marketing::de_marketing(tokens, _value)?);
                 }
                 "SoftwareRevenue" => {
-                    builder = builder.set_software_revenue(crate::protocol_serde::shape_software_revenue::de_software_revenue(tokens)?);
+                    builder = builder.set_software_revenue(crate::protocol_serde::shape_software_revenue::de_software_revenue(tokens, _value)?);
                 }
                 "Id" => {
                     builder = builder.set_id(
@@ -209,15 +210,15 @@ pub(crate) fn de_get_opportunity(
                 }
                 "RelatedEntityIdentifiers" => {
                     builder = builder.set_related_entity_identifiers(
-                        crate::protocol_serde::shape_related_entity_identifiers::de_related_entity_identifiers(tokens)?,
+                        crate::protocol_serde::shape_related_entity_identifiers::de_related_entity_identifiers(tokens, _value)?,
                     );
                 }
                 "LifeCycle" => {
-                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens)?);
+                    builder = builder.set_life_cycle(crate::protocol_serde::shape_life_cycle::de_life_cycle(tokens, _value)?);
                 }
                 "OpportunityTeam" => {
                     builder = builder.set_opportunity_team(
-                        crate::protocol_serde::shape_partner_opportunity_team_members_list::de_partner_opportunity_team_members_list(tokens)?,
+                        crate::protocol_serde::shape_partner_opportunity_team_members_list::de_partner_opportunity_team_members_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

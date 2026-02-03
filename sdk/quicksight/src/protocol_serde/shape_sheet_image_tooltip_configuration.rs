@@ -17,6 +17,7 @@ pub fn ser_sheet_image_tooltip_configuration(
 
 pub(crate) fn de_sheet_image_tooltip_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SheetImageTooltipConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TooltipText" => {
                             builder = builder.set_tooltip_text(crate::protocol_serde::shape_sheet_image_tooltip_text::de_sheet_image_tooltip_text(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Visibility" => {

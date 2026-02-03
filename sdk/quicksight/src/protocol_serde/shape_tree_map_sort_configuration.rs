@@ -26,6 +26,7 @@ pub fn ser_tree_map_sort_configuration(
 
 pub(crate) fn de_tree_map_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TreeMapSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TreeMapSort" => {
-                            builder =
-                                builder.set_tree_map_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
+                            builder = builder.set_tree_map_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(
+                                tokens, _value,
+                            )?);
                         }
                         "TreeMapGroupItemsLimitConfiguration" => {
                             builder = builder.set_tree_map_group_items_limit_configuration(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

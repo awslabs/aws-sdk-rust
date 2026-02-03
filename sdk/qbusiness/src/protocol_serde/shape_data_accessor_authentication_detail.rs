@@ -29,6 +29,7 @@ pub fn ser_data_accessor_authentication_detail(
 
 pub(crate) fn de_data_accessor_authentication_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataAccessorAuthenticationDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,12 +52,12 @@ where
                         }
                         "authenticationConfiguration" => {
                             builder = builder.set_authentication_configuration(
-                                    crate::protocol_serde::shape_data_accessor_authentication_configuration::de_data_accessor_authentication_configuration(tokens)?
+                                    crate::protocol_serde::shape_data_accessor_authentication_configuration::de_data_accessor_authentication_configuration(tokens, _value)?
                                 );
                         }
                         "externalIds" => {
                             builder = builder.set_external_ids(
-                                crate::protocol_serde::shape_data_accessor_external_ids::de_data_accessor_external_ids(tokens)?,
+                                crate::protocol_serde::shape_data_accessor_external_ids::de_data_accessor_external_ids(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

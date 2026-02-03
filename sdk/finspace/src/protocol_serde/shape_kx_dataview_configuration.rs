@@ -29,6 +29,7 @@ pub fn ser_kx_dataview_configuration(
 
 pub(crate) fn de_kx_dataview_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KxDataviewConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,7 +67,7 @@ where
                         "segmentConfigurations" => {
                             builder = builder.set_segment_configurations(
                                 crate::protocol_serde::shape_kx_dataview_segment_configuration_list::de_kx_dataview_segment_configuration_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

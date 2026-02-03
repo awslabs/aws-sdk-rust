@@ -108,5 +108,11 @@ pub fn ser_create_table_input_input(
         crate::protocol_serde::shape_on_demand_throughput::ser_on_demand_throughput(&mut object_35, var_34)?;
         object_35.finish();
     }
+    if let Some(var_36) = &input.global_table_source_arn {
+        object.key("GlobalTableSourceArn").string(var_36.as_str());
+    }
+    if let Some(var_37) = &input.global_table_settings_replication_mode {
+        object.key("GlobalTableSettingsReplicationMode").string(var_37.as_str());
+    }
     Ok(())
 }

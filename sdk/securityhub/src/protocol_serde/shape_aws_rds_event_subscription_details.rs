@@ -50,6 +50,7 @@ pub fn ser_aws_rds_event_subscription_details(
 
 pub(crate) fn de_aws_rds_event_subscription_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsEventSubscriptionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,8 +82,9 @@ where
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "EventCategoriesList" => {
-                            builder = builder
-                                .set_event_categories_list(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_event_categories_list(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "EventSubscriptionArn" => {
                             builder = builder.set_event_subscription_arn(
@@ -99,8 +101,9 @@ where
                             );
                         }
                         "SourceIdsList" => {
-                            builder =
-                                builder.set_source_ids_list(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_source_ids_list(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SourceType" => {
                             builder = builder.set_source_type(

@@ -33,6 +33,7 @@ pub fn ser_custom_file_system_config(
 
 pub(crate) fn de_custom_file_system_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomFileSystemConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,21 +63,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "EFSFileSystemConfig" => Some(crate::types::CustomFileSystemConfig::EfsFileSystemConfig(
-                            crate::protocol_serde::shape_efs_file_system_config::de_efs_file_system_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_efs_file_system_config::de_efs_file_system_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EFSFileSystemConfig' cannot be null")
                             })?,
                         )),
                         "FSxLustreFileSystemConfig" => Some(crate::types::CustomFileSystemConfig::FSxLustreFileSystemConfig(
-                            crate::protocol_serde::shape_f_sx_lustre_file_system_config::de_f_sx_lustre_file_system_config(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_f_sx_lustre_file_system_config::de_f_sx_lustre_file_system_config(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'FSxLustreFileSystemConfig' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "S3FileSystemConfig" => Some(crate::types::CustomFileSystemConfig::S3FileSystemConfig(
-                            crate::protocol_serde::shape_s3_file_system_config::de_s3_file_system_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_file_system_config::de_s3_file_system_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3FileSystemConfig' cannot be null")
                             })?,
                         )),

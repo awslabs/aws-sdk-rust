@@ -17,6 +17,7 @@ pub fn ser_null_value_field(
 
 pub(crate) fn de_null_value_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NullValueField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "Datatype" => {
-                            builder = builder.set_datatype(crate::protocol_serde::shape_datatype::de_datatype(tokens)?);
+                            builder = builder.set_datatype(crate::protocol_serde::shape_datatype::de_datatype(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

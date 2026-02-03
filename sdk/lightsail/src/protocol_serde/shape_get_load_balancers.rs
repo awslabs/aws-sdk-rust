@@ -174,13 +174,13 @@ pub fn ser_get_load_balancers_input(
 }
 
 pub(crate) fn de_get_load_balancers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_load_balancers::builders::GetLoadBalancersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_load_balancers::builders::GetLoadBalancersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -188,7 +188,7 @@ pub(crate) fn de_get_load_balancers(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "loadBalancers" => {
-                    builder = builder.set_load_balancers(crate::protocol_serde::shape_load_balancer_list::de_load_balancer_list(tokens)?);
+                    builder = builder.set_load_balancers(crate::protocol_serde::shape_load_balancer_list::de_load_balancer_list(tokens, _value)?);
                 }
                 "nextPageToken" => {
                     builder = builder.set_next_page_token(

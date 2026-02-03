@@ -24,6 +24,7 @@ pub fn ser_open_x_json_ser_de(
 
 pub(crate) fn de_open_x_json_ser_de<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenXJsonSerDe>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                         }
                         "ColumnToJsonKeyMappings" => {
                             builder = builder.set_column_to_json_key_mappings(
-                                crate::protocol_serde::shape_column_to_json_key_mappings::de_column_to_json_key_mappings(tokens)?,
+                                crate::protocol_serde::shape_column_to_json_key_mappings::de_column_to_json_key_mappings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

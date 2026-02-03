@@ -26,6 +26,7 @@ pub fn ser_facet_attribute(
 
 pub(crate) fn de_facet_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FacetAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,12 +49,12 @@ where
                         }
                         "AttributeDefinition" => {
                             builder = builder.set_attribute_definition(
-                                crate::protocol_serde::shape_facet_attribute_definition::de_facet_attribute_definition(tokens)?,
+                                crate::protocol_serde::shape_facet_attribute_definition::de_facet_attribute_definition(tokens, _value)?,
                             );
                         }
                         "AttributeReference" => {
                             builder = builder.set_attribute_reference(
-                                crate::protocol_serde::shape_facet_attribute_reference::de_facet_attribute_reference(tokens)?,
+                                crate::protocol_serde::shape_facet_attribute_reference::de_facet_attribute_reference(tokens, _value)?,
                             );
                         }
                         "RequiredBehavior" => {

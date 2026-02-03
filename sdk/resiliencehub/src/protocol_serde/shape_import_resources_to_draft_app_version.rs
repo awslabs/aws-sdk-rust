@@ -180,13 +180,13 @@ pub fn ser_import_resources_to_draft_app_version_input(
 }
 
 pub(crate) fn de_import_resources_to_draft_app_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -208,10 +208,10 @@ pub(crate) fn de_import_resources_to_draft_app_version(
                     );
                 }
                 "eksSources" => {
-                    builder = builder.set_eks_sources(crate::protocol_serde::shape_eks_source_list::de_eks_source_list(tokens)?);
+                    builder = builder.set_eks_sources(crate::protocol_serde::shape_eks_source_list::de_eks_source_list(tokens, _value)?);
                 }
                 "sourceArns" => {
-                    builder = builder.set_source_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                    builder = builder.set_source_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(
@@ -221,7 +221,9 @@ pub(crate) fn de_import_resources_to_draft_app_version(
                     );
                 }
                 "terraformSources" => {
-                    builder = builder.set_terraform_sources(crate::protocol_serde::shape_terraform_source_list::de_terraform_source_list(tokens)?);
+                    builder = builder.set_terraform_sources(crate::protocol_serde::shape_terraform_source_list::de_terraform_source_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

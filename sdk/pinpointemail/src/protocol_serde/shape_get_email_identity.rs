@@ -83,13 +83,13 @@ pub fn de_get_email_identity_http_response(
 }
 
 pub(crate) fn de_get_email_identity(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_email_identity::builders::GetEmailIdentityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,7 +97,7 @@ pub(crate) fn de_get_email_identity(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DkimAttributes" => {
-                    builder = builder.set_dkim_attributes(crate::protocol_serde::shape_dkim_attributes::de_dkim_attributes(tokens)?);
+                    builder = builder.set_dkim_attributes(crate::protocol_serde::shape_dkim_attributes::de_dkim_attributes(tokens, _value)?);
                 }
                 "FeedbackForwardingStatus" => {
                     builder = builder.set_feedback_forwarding_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -110,10 +110,12 @@ pub(crate) fn de_get_email_identity(
                     );
                 }
                 "MailFromAttributes" => {
-                    builder = builder.set_mail_from_attributes(crate::protocol_serde::shape_mail_from_attributes::de_mail_from_attributes(tokens)?);
+                    builder = builder.set_mail_from_attributes(crate::protocol_serde::shape_mail_from_attributes::de_mail_from_attributes(
+                        tokens, _value,
+                    )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "VerifiedForSendingStatus" => {
                     builder = builder.set_verified_for_sending_status(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

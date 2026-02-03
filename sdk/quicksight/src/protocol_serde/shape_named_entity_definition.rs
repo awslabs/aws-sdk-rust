@@ -26,6 +26,7 @@ pub fn ser_named_entity_definition(
 
 pub(crate) fn de_named_entity_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NamedEntityDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,8 +69,9 @@ where
                             );
                         }
                         "Metric" => {
-                            builder = builder
-                                .set_metric(crate::protocol_serde::shape_named_entity_definition_metric::de_named_entity_definition_metric(tokens)?);
+                            builder = builder.set_metric(
+                                crate::protocol_serde::shape_named_entity_definition_metric::de_named_entity_definition_metric(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

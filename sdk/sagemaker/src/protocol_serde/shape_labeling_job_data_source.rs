@@ -20,6 +20,7 @@ pub fn ser_labeling_job_data_source(
 
 pub(crate) fn de_labeling_job_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LabelingJobDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3DataSource" => {
                             builder = builder.set_s3_data_source(
-                                crate::protocol_serde::shape_labeling_job_s3_data_source::de_labeling_job_s3_data_source(tokens)?,
+                                crate::protocol_serde::shape_labeling_job_s3_data_source::de_labeling_job_s3_data_source(tokens, _value)?,
                             );
                         }
                         "SnsDataSource" => {
                             builder = builder.set_sns_data_source(
-                                crate::protocol_serde::shape_labeling_job_sns_data_source::de_labeling_job_sns_data_source(tokens)?,
+                                crate::protocol_serde::shape_labeling_job_sns_data_source::de_labeling_job_sns_data_source(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

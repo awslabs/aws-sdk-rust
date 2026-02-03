@@ -14,6 +14,7 @@ pub fn ser_tag_criterion_pair_for_job(
 
 pub(crate) fn de_tag_criterion_pair_for_job<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TagCriterionPairForJob>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

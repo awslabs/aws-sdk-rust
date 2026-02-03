@@ -94,11 +94,11 @@ pub fn de_get_schedule_http_response(
 }
 
 pub(crate) fn de_get_schedule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_schedule::builders::GetScheduleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_schedule::builders::GetScheduleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,7 +139,9 @@ pub(crate) fn de_get_schedule(
                     )?);
                 }
                 "FlexibleTimeWindow" => {
-                    builder = builder.set_flexible_time_window(crate::protocol_serde::shape_flexible_time_window::de_flexible_time_window(tokens)?);
+                    builder = builder.set_flexible_time_window(crate::protocol_serde::shape_flexible_time_window::de_flexible_time_window(
+                        tokens, _value,
+                    )?);
                 }
                 "GroupName" => {
                     builder = builder.set_group_name(
@@ -196,7 +198,7 @@ pub(crate) fn de_get_schedule(
                     );
                 }
                 "Target" => {
-                    builder = builder.set_target(crate::protocol_serde::shape_target::de_target(tokens)?);
+                    builder = builder.set_target(crate::protocol_serde::shape_target::de_target(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

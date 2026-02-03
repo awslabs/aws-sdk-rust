@@ -84,13 +84,13 @@ pub fn ser_describe_location_fsx_open_zfs_input(
 }
 
 pub(crate) fn de_describe_location_fsx_open_zfs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -113,11 +113,11 @@ pub(crate) fn de_describe_location_fsx_open_zfs(
                 }
                 "SecurityGroupArns" => {
                     builder = builder.set_security_group_arns(
-                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens)?,
+                        crate::protocol_serde::shape_ec2_security_group_arn_list::de_ec2_security_group_arn_list(tokens, _value)?,
                     );
                 }
                 "Protocol" => {
-                    builder = builder.set_protocol(crate::protocol_serde::shape_fsx_protocol::de_fsx_protocol(tokens)?);
+                    builder = builder.set_protocol(crate::protocol_serde::shape_fsx_protocol::de_fsx_protocol(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

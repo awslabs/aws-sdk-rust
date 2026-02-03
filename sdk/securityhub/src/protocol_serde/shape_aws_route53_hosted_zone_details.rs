@@ -41,6 +41,7 @@ pub fn ser_aws_route53_hosted_zone_details(
 
 pub(crate) fn de_aws_route53_hosted_zone_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRoute53HostedZoneDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,23 +59,25 @@ where
                             "HostedZone" => {
                                 builder = builder.set_hosted_zone(
                                     crate::protocol_serde::shape_aws_route53_hosted_zone_object_details::de_aws_route53_hosted_zone_object_details(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "Vpcs" => {
                                 builder = builder.set_vpcs(
-                                    crate::protocol_serde::shape_aws_route53_hosted_zone_vpcs_list::de_aws_route53_hosted_zone_vpcs_list(tokens)?,
+                                    crate::protocol_serde::shape_aws_route53_hosted_zone_vpcs_list::de_aws_route53_hosted_zone_vpcs_list(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             "NameServers" => {
                                 builder = builder.set_name_servers(
-                                    crate::protocol_serde::shape_aws_route53_hosted_zone_name_servers_list::de_aws_route53_hosted_zone_name_servers_list(tokens)?
+                                    crate::protocol_serde::shape_aws_route53_hosted_zone_name_servers_list::de_aws_route53_hosted_zone_name_servers_list(tokens, _value)?
                                 );
                             }
                             "QueryLoggingConfig" => {
                                 builder = builder.set_query_logging_config(
-                                    crate::protocol_serde::shape_aws_route53_query_logging_config_details::de_aws_route53_query_logging_config_details(tokens)?
+                                    crate::protocol_serde::shape_aws_route53_query_logging_config_details::de_aws_route53_query_logging_config_details(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

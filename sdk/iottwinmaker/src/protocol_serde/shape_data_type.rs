@@ -38,6 +38,7 @@ pub fn ser_data_type(
 
 pub(crate) fn de_data_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,10 +60,10 @@ where
                             );
                         }
                         "nestedType" => {
-                            builder = builder.set_nested_type(crate::protocol_serde::shape_data_type::de_data_type(tokens)?.map(Box::new));
+                            builder = builder.set_nested_type(crate::protocol_serde::shape_data_type::de_data_type(tokens, _value)?.map(Box::new));
                         }
                         "allowedValues" => {
-                            builder = builder.set_allowed_values(crate::protocol_serde::shape_data_value_list::de_data_value_list(tokens)?);
+                            builder = builder.set_allowed_values(crate::protocol_serde::shape_data_value_list::de_data_value_list(tokens, _value)?);
                         }
                         "unitOfMeasure" => {
                             builder = builder.set_unit_of_measure(
@@ -72,7 +73,7 @@ where
                             );
                         }
                         "relationship" => {
-                            builder = builder.set_relationship(crate::protocol_serde::shape_relationship::de_relationship(tokens)?);
+                            builder = builder.set_relationship(crate::protocol_serde::shape_relationship::de_relationship(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

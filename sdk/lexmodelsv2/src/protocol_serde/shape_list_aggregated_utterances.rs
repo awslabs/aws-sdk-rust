@@ -126,13 +126,13 @@ pub fn ser_list_aggregated_utterances_input(
 }
 
 pub(crate) fn de_list_aggregated_utterances(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,12 +141,12 @@ pub(crate) fn de_list_aggregated_utterances(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "aggregatedUtterancesSummaries" => {
                     builder = builder.set_aggregated_utterances_summaries(
-                        crate::protocol_serde::shape_aggregated_utterances_summary_list::de_aggregated_utterances_summary_list(tokens)?,
+                        crate::protocol_serde::shape_aggregated_utterances_summary_list::de_aggregated_utterances_summary_list(tokens, _value)?,
                     );
                 }
                 "aggregationDuration" => {
                     builder = builder.set_aggregation_duration(
-                        crate::protocol_serde::shape_utterance_aggregation_duration::de_utterance_aggregation_duration(tokens)?,
+                        crate::protocol_serde::shape_utterance_aggregation_duration::de_utterance_aggregation_duration(tokens, _value)?,
                     );
                 }
                 "aggregationLastRefreshedDateTime" => {

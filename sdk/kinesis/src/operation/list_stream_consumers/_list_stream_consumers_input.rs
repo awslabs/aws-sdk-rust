@@ -16,6 +16,8 @@ pub struct ListStreamConsumersInput {
     /// <p>Specify this input parameter to distinguish data streams that have the same name. For example, if you create a data stream and then delete it, and you later create another data stream with the same name, you can use this input parameter to specify which of the two streams you want to list the consumers for.</p>
     /// <p>You can't specify this parameter if you specify the NextToken parameter.</p>
     pub stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamConsumersInput {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -39,6 +41,10 @@ impl ListStreamConsumersInput {
     pub fn stream_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stream_creation_timestamp.as_ref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl ListStreamConsumersInput {
     /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
@@ -55,6 +61,7 @@ pub struct ListStreamConsumersInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) stream_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListStreamConsumersInputBuilder {
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -129,6 +136,20 @@ impl ListStreamConsumersInputBuilder {
     pub fn get_stream_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.stream_creation_timestamp
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
     pub fn build(
         self,
@@ -139,6 +160,7 @@ impl ListStreamConsumersInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             stream_creation_timestamp: self.stream_creation_timestamp,
+            stream_id: self.stream_id,
         })
     }
 }

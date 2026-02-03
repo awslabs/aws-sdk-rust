@@ -132,9 +132,9 @@ impl ProviderChain {
                 {
                     let _ = login_session_arn;
                     Err(ProfileFileError::FeatureNotEnabled {
-                        feature: "login".into(),
+                        feature: "credentials-login".into(),
                         message: Some(
-                            "In order to use an active login session, the `login` feature must be enabled."
+                            "In order to use an active login session, the `credentials-login` feature must be enabled."
                                 .into(),
                         ),
                     })?

@@ -323,11 +323,7 @@ impl<'a> JsonTokenIterator<'a> {
             offset,
             value: if floating {
                 Number::Float(
-                    f64::from_str(number_str)
-                        .map_err(|_| self.error_at(start, InvalidNumber))
-                        .and_then(|f| {
-                            must_be_finite(f).map_err(|_| self.error_at(start, InvalidNumber))
-                        })?,
+                    f64::from_str(number_str).map_err(|_| self.error_at(start, InvalidNumber))?,
                 )
             } else if negative {
                 // If the negative value overflows, then stuff it into an f64
@@ -506,14 +502,6 @@ impl<'a> Iterator for JsonTokenIterator<'a> {
     }
 }
 
-fn must_be_finite(f: f64) -> Result<f64, ()> {
-    if f.is_finite() {
-        Ok(f)
-    } else {
-        Err(())
-    }
-}
-
 fn must_not_be_finite(f: f64) -> Result<f64, ()> {
     if !f.is_finite() {
         Ok(f)
@@ -670,6 +658,41 @@ mod tests {
             Number::Float(-18446744073709551615.0),
             b"-18446744073709551615",
         );
+    }
+
+    #[test]
+    fn out_of_range_floats_produce_infinity() {
+        // Values exceeding f64::MAX should tokenize as infinity
+        // The consumer layer (token.rs) will convert to NaN for BigInteger/BigDecimal
+        let expect_infinity = |input, should_be_positive| {
+            let token = json_token_iter(input).next().unwrap().unwrap();
+            if let Token::ValueNumber {
+                value: Number::Float(f),
+                ..
+            } = token
+            {
+                assert!(
+                    f.is_infinite(),
+                    "Expected infinity for out-of-range value, got {}",
+                    f
+                );
+                if should_be_positive {
+                    assert!(f.is_sign_positive(), "Expected positive infinity");
+                } else {
+                    assert!(f.is_sign_negative(), "Expected negative infinity");
+                }
+            } else {
+                panic!("Expected Float token, got {:?}", token);
+            }
+        };
+
+        // Values > f64::MAX
+        expect_infinity(b"1.8e308", true);
+        expect_infinity(b"9.9e999", true);
+
+        // Negative values < -f64::MAX
+        expect_infinity(b"-1.8e308", false);
+        expect_infinity(b"-9.9e999", false);
     }
 
     // These cases actually shouldn't parse according to the spec, but it's easier

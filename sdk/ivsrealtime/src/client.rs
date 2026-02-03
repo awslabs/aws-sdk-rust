@@ -155,7 +155,7 @@ mod create_storage_configuration;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_ivsrealtime::Error> {
 /// # let client: aws_sdk_ivsrealtime::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_encoder_configuration()
 ///     .customize()

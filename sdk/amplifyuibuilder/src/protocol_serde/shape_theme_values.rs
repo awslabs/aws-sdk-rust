@@ -17,6 +17,7 @@ pub fn ser_theme_values(
 
 pub(crate) fn de_theme_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ThemeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_theme_value::de_theme_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_theme_value::de_theme_value(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

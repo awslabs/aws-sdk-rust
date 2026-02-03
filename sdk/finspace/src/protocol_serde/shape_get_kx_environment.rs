@@ -113,13 +113,13 @@ pub fn de_get_kx_environment_http_response(
 }
 
 pub(crate) fn de_get_kx_environment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_kx_environment::builders::GetKxEnvironmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_kx_environment::builders::GetKxEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,8 +127,9 @@ pub(crate) fn de_get_kx_environment(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "availabilityZoneIds" => {
-                    builder =
-                        builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(tokens)?);
+                    builder = builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(
+                        tokens, _value,
+                    )?);
                 }
                 "awsAccountId" => {
                     builder = builder.set_aws_account_id(
@@ -152,7 +153,7 @@ pub(crate) fn de_get_kx_environment(
                 }
                 "customDNSConfiguration" => {
                     builder = builder.set_custom_dns_configuration(
-                        crate::protocol_serde::shape_custom_dns_configuration::de_custom_dns_configuration(tokens)?,
+                        crate::protocol_serde::shape_custom_dns_configuration::de_custom_dns_configuration(tokens, _value)?,
                     );
                 }
                 "dedicatedServiceAccountId" => {
@@ -227,7 +228,7 @@ pub(crate) fn de_get_kx_environment(
                 }
                 "transitGatewayConfiguration" => {
                     builder = builder.set_transit_gateway_configuration(
-                        crate::protocol_serde::shape_transit_gateway_configuration::de_transit_gateway_configuration(tokens)?,
+                        crate::protocol_serde::shape_transit_gateway_configuration::de_transit_gateway_configuration(tokens, _value)?,
                     );
                 }
                 "updateTimestamp" => {

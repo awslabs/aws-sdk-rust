@@ -92,6 +92,7 @@ pub fn ser_aws_sage_maker_notebook_instance_details(
 
 pub(crate) fn de_aws_sage_maker_notebook_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsSageMakerNotebookInstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -106,12 +107,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AcceleratorTypes" => {
-                            builder =
-                                builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_accelerator_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AdditionalCodeRepositories" => {
                             builder = builder.set_additional_code_repositories(
-                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?,
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
                             );
                         }
                         "DefaultCodeRepository" => {
@@ -137,7 +139,7 @@ where
                         }
                         "InstanceMetadataServiceConfiguration" => {
                             builder = builder.set_instance_metadata_service_configuration(
-                                    crate::protocol_serde::shape_aws_sage_maker_notebook_instance_metadata_service_configuration_details::de_aws_sage_maker_notebook_instance_metadata_service_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_sage_maker_notebook_instance_metadata_service_configuration_details::de_aws_sage_maker_notebook_instance_metadata_service_configuration_details(tokens, _value)?
                                 );
                         }
                         "InstanceType" => {
@@ -211,8 +213,9 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder =
-                                builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SubnetId" => {
                             builder = builder.set_subnet_id(

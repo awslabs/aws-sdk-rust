@@ -47,6 +47,7 @@ pub fn ser_codegen_generic_data_relationship_type(
 
 pub(crate) fn de_codegen_generic_data_relationship_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodegenGenericDataRelationshipType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,7 +77,7 @@ where
                         }
                         "relatedModelFields" => {
                             builder = builder.set_related_model_fields(
-                                crate::protocol_serde::shape_related_model_fields_list::de_related_model_fields_list(tokens)?,
+                                crate::protocol_serde::shape_related_model_fields_list::de_related_model_fields_list(tokens, _value)?,
                             );
                         }
                         "canUnlinkAssociatedModel" => {
@@ -105,8 +106,9 @@ where
                             );
                         }
                         "associatedFields" => {
-                            builder = builder
-                                .set_associated_fields(crate::protocol_serde::shape_associated_fields_list::de_associated_fields_list(tokens)?);
+                            builder = builder.set_associated_fields(crate::protocol_serde::shape_associated_fields_list::de_associated_fields_list(
+                                tokens, _value,
+                            )?);
                         }
                         "isHasManyIndex" => {
                             builder = builder.set_is_has_many_index(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

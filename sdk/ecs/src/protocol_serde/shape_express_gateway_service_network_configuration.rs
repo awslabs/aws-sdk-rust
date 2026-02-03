@@ -26,6 +26,7 @@ pub fn ser_express_gateway_service_network_configuration(
 
 pub(crate) fn de_express_gateway_service_network_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExpressGatewayServiceNetworkConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "securityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "subnets" => {
-                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_subnets(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -290,13 +290,13 @@ pub fn ser_manage_sparql_statistics_input(
 }
 
 pub(crate) fn de_manage_sparql_statistics(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::manage_sparql_statistics::builders::ManageSparqlStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -305,7 +305,7 @@ pub(crate) fn de_manage_sparql_statistics(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "payload" => {
                     builder = builder.set_payload(crate::protocol_serde::shape_refresh_statistics_id_map::de_refresh_statistics_id_map(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "status" => {

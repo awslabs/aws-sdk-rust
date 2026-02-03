@@ -48,6 +48,7 @@ pub fn ser_semantic_type(
 
 pub(crate) fn de_semantic_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SemanticType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,7 +77,7 @@ where
                             );
                         }
                         "TypeParameters" => {
-                            builder = builder.set_type_parameters(crate::protocol_serde::shape_type_parameters::de_type_parameters(tokens)?);
+                            builder = builder.set_type_parameters(crate::protocol_serde::shape_type_parameters::de_type_parameters(tokens, _value)?);
                         }
                         "TruthyCellValue" => {
                             builder = builder.set_truthy_cell_value(
@@ -87,7 +88,7 @@ where
                         }
                         "TruthyCellValueSynonyms" => {
                             builder = builder.set_truthy_cell_value_synonyms(
-                                crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(tokens)?,
+                                crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(tokens, _value)?,
                             );
                         }
                         "FalseyCellValue" => {
@@ -99,7 +100,7 @@ where
                         }
                         "FalseyCellValueSynonyms" => {
                             builder = builder.set_falsey_cell_value_synonyms(
-                                crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(tokens)?,
+                                crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -32,6 +32,7 @@ pub fn ser_send_notification_action_definition(
 
 pub(crate) fn de_send_notification_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SendNotificationActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,12 +76,12 @@ where
                         }
                         "Recipient" => {
                             builder = builder.set_recipient(
-                                crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens)?,
+                                crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens, _value)?,
                             );
                         }
                         "Exclusion" => {
                             builder = builder.set_exclusion(
-                                crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens)?,
+                                crate::protocol_serde::shape_notification_recipient_type::de_notification_recipient_type(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

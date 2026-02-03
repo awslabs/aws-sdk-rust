@@ -24,6 +24,7 @@ pub fn ser_message_template_source_configuration(
 
 pub(crate) fn de_message_template_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageTemplateSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                             "whatsApp" => {
                                 Some(crate::types::MessageTemplateSourceConfiguration::WhatsApp(
-                                    crate::protocol_serde::shape_whats_app_message_template_source_configuration::de_whats_app_message_template_source_configuration(tokens)?
+                                    crate::protocol_serde::shape_whats_app_message_template_source_configuration::de_whats_app_message_template_source_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'whatsApp' cannot be null"))?
                                 ))
                             }

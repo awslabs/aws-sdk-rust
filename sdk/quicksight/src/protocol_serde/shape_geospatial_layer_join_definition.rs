@@ -23,6 +23,7 @@ pub fn ser_geospatial_layer_join_definition(
 
 pub(crate) fn de_geospatial_layer_join_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialLayerJoinDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,11 +45,13 @@ where
                             );
                         }
                         "DatasetKeyField" => {
-                            builder = builder.set_dataset_key_field(crate::protocol_serde::shape_unaggregated_field::de_unaggregated_field(tokens)?);
+                            builder = builder
+                                .set_dataset_key_field(crate::protocol_serde::shape_unaggregated_field::de_unaggregated_field(tokens, _value)?);
                         }
                         "ColorField" => {
-                            builder = builder
-                                .set_color_field(crate::protocol_serde::shape_geospatial_layer_color_field::de_geospatial_layer_color_field(tokens)?);
+                            builder = builder.set_color_field(
+                                crate::protocol_serde::shape_geospatial_layer_color_field::de_geospatial_layer_color_field(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

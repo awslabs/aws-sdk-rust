@@ -47,6 +47,7 @@ pub fn ser_spark_sql(
 
 pub(crate) fn de_spark_sql<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SparkSql>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_many_inputs::de_many_inputs(tokens, _value)?);
                         }
                         "SqlQuery" => {
                             builder = builder.set_sql_query(
@@ -78,10 +79,10 @@ where
                             );
                         }
                         "SqlAliases" => {
-                            builder = builder.set_sql_aliases(crate::protocol_serde::shape_sql_aliases::de_sql_aliases(tokens)?);
+                            builder = builder.set_sql_aliases(crate::protocol_serde::shape_sql_aliases::de_sql_aliases(tokens, _value)?);
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

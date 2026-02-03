@@ -20,6 +20,7 @@ pub fn ser_pager_duty_configuration(
 
 pub(crate) fn de_pager_duty_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PagerDutyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "pagerDutyIncidentConfiguration" => {
                             builder = builder.set_pager_duty_incident_configuration(
-                                crate::protocol_serde::shape_pager_duty_incident_configuration::de_pager_duty_incident_configuration(tokens)?,
+                                crate::protocol_serde::shape_pager_duty_incident_configuration::de_pager_duty_incident_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

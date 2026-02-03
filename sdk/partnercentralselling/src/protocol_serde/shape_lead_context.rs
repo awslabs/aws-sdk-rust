@@ -29,6 +29,7 @@ pub fn ser_lead_context(
 
 pub(crate) fn de_lead_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LeadContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,12 @@ where
                             );
                         }
                         "Customer" => {
-                            builder = builder.set_customer(crate::protocol_serde::shape_lead_customer::de_lead_customer(tokens)?);
+                            builder = builder.set_customer(crate::protocol_serde::shape_lead_customer::de_lead_customer(tokens, _value)?);
                         }
                         "Interactions" => {
-                            builder = builder.set_interactions(crate::protocol_serde::shape_lead_interaction_list::de_lead_interaction_list(tokens)?);
+                            builder = builder.set_interactions(crate::protocol_serde::shape_lead_interaction_list::de_lead_interaction_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

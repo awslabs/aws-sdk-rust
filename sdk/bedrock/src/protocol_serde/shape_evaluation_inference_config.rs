@@ -39,6 +39,7 @@ pub fn ser_evaluation_inference_config(
 
 pub(crate) fn de_evaluation_inference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationInferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,12 +69,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "models" => Some(crate::types::EvaluationInferenceConfig::Models(
-                            crate::protocol_serde::shape_evaluation_model_configs::de_evaluation_model_configs(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_evaluation_model_configs::de_evaluation_model_configs(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'models' cannot be null")
                             })?,
                         )),
                         "ragConfigs" => Some(crate::types::EvaluationInferenceConfig::RagConfigs(
-                            crate::protocol_serde::shape_rag_configs::de_rag_configs(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rag_configs::de_rag_configs(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ragConfigs' cannot be null")
                             })?,
                         )),

@@ -20,6 +20,7 @@ pub fn ser_logical_table_source(
 
 pub(crate) fn de_logical_table_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogicalTableSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "JoinInstruction" => {
-                            builder = builder.set_join_instruction(crate::protocol_serde::shape_join_instruction::de_join_instruction(tokens)?);
+                            builder =
+                                builder.set_join_instruction(crate::protocol_serde::shape_join_instruction::de_join_instruction(tokens, _value)?);
                         }
                         "PhysicalTableId" => {
                             builder = builder.set_physical_table_id(

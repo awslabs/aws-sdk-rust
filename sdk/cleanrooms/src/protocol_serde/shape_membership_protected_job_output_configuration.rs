@@ -24,6 +24,7 @@ pub fn ser_membership_protected_job_output_configuration(
 
 pub(crate) fn de_membership_protected_job_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MembershipProtectedJobOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                         "s3" => Some(crate::types::MembershipProtectedJobOutputConfiguration::S3(
                             crate::protocol_serde::shape_protected_job_s3_output_configuration_input::de_protected_job_s3_output_configuration_input(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),

@@ -29,6 +29,7 @@ pub fn ser_esam_settings(
 
 pub(crate) fn de_esam_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EsamSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "manifestConfirmConditionNotification" => {
                             builder = builder.set_manifest_confirm_condition_notification(
-                                    crate::protocol_serde::shape_esam_manifest_confirm_condition_notification::de_esam_manifest_confirm_condition_notification(tokens)?
+                                    crate::protocol_serde::shape_esam_manifest_confirm_condition_notification::de_esam_manifest_confirm_condition_notification(tokens, _value)?
                                 );
                         }
                         "responseSignalPreroll" => {
@@ -56,7 +57,9 @@ where
                         }
                         "signalProcessingNotification" => {
                             builder = builder.set_signal_processing_notification(
-                                crate::protocol_serde::shape_esam_signal_processing_notification::de_esam_signal_processing_notification(tokens)?,
+                                crate::protocol_serde::shape_esam_signal_processing_notification::de_esam_signal_processing_notification(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

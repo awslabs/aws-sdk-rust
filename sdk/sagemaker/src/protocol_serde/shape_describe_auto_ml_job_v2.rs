@@ -69,13 +69,13 @@ pub fn ser_describe_auto_ml_job_v2_input(
 }
 
 pub(crate) fn de_describe_auto_ml_job_v2(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2OutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,12 +98,12 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                 }
                 "AutoMLJobInputDataConfig" => {
                     builder = builder.set_auto_ml_job_input_data_config(
-                        crate::protocol_serde::shape_auto_ml_job_input_data_config::de_auto_ml_job_input_data_config(tokens)?,
+                        crate::protocol_serde::shape_auto_ml_job_input_data_config::de_auto_ml_job_input_data_config(tokens, _value)?,
                     );
                 }
                 "OutputDataConfig" => {
                     builder = builder.set_output_data_config(crate::protocol_serde::shape_auto_ml_output_data_config::de_auto_ml_output_data_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "RoleArn" => {
@@ -114,12 +114,13 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                     );
                 }
                 "AutoMLJobObjective" => {
-                    builder =
-                        builder.set_auto_ml_job_objective(crate::protocol_serde::shape_auto_ml_job_objective::de_auto_ml_job_objective(tokens)?);
+                    builder = builder.set_auto_ml_job_objective(crate::protocol_serde::shape_auto_ml_job_objective::de_auto_ml_job_objective(
+                        tokens, _value,
+                    )?);
                 }
                 "AutoMLProblemTypeConfig" => {
                     builder = builder.set_auto_ml_problem_type_config(
-                        crate::protocol_serde::shape_auto_ml_problem_type_config::de_auto_ml_problem_type_config(tokens)?,
+                        crate::protocol_serde::shape_auto_ml_problem_type_config::de_auto_ml_problem_type_config(tokens, _value)?,
                     );
                 }
                 "AutoMLProblemTypeConfigName" => {
@@ -156,11 +157,11 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                 }
                 "PartialFailureReasons" => {
                     builder = builder.set_partial_failure_reasons(
-                        crate::protocol_serde::shape_auto_ml_partial_failure_reasons::de_auto_ml_partial_failure_reasons(tokens)?,
+                        crate::protocol_serde::shape_auto_ml_partial_failure_reasons::de_auto_ml_partial_failure_reasons(tokens, _value)?,
                     );
                 }
                 "BestCandidate" => {
-                    builder = builder.set_best_candidate(crate::protocol_serde::shape_auto_ml_candidate::de_auto_ml_candidate(tokens)?);
+                    builder = builder.set_best_candidate(crate::protocol_serde::shape_auto_ml_candidate::de_auto_ml_candidate(tokens, _value)?);
                 }
                 "AutoMLJobStatus" => {
                     builder = builder.set_auto_ml_job_status(
@@ -177,31 +178,37 @@ pub(crate) fn de_describe_auto_ml_job_v2(
                     );
                 }
                 "AutoMLJobArtifacts" => {
-                    builder =
-                        builder.set_auto_ml_job_artifacts(crate::protocol_serde::shape_auto_ml_job_artifacts::de_auto_ml_job_artifacts(tokens)?);
+                    builder = builder.set_auto_ml_job_artifacts(crate::protocol_serde::shape_auto_ml_job_artifacts::de_auto_ml_job_artifacts(
+                        tokens, _value,
+                    )?);
                 }
                 "ResolvedAttributes" => {
                     builder = builder.set_resolved_attributes(
-                        crate::protocol_serde::shape_auto_ml_resolved_attributes::de_auto_ml_resolved_attributes(tokens)?,
+                        crate::protocol_serde::shape_auto_ml_resolved_attributes::de_auto_ml_resolved_attributes(tokens, _value)?,
                     );
                 }
                 "ModelDeployConfig" => {
-                    builder = builder.set_model_deploy_config(crate::protocol_serde::shape_model_deploy_config::de_model_deploy_config(tokens)?);
+                    builder =
+                        builder.set_model_deploy_config(crate::protocol_serde::shape_model_deploy_config::de_model_deploy_config(tokens, _value)?);
                 }
                 "ModelDeployResult" => {
-                    builder = builder.set_model_deploy_result(crate::protocol_serde::shape_model_deploy_result::de_model_deploy_result(tokens)?);
+                    builder =
+                        builder.set_model_deploy_result(crate::protocol_serde::shape_model_deploy_result::de_model_deploy_result(tokens, _value)?);
                 }
                 "DataSplitConfig" => {
                     builder = builder.set_data_split_config(crate::protocol_serde::shape_auto_ml_data_split_config::de_auto_ml_data_split_config(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "SecurityConfig" => {
-                    builder = builder.set_security_config(crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?);
+                    builder = builder.set_security_config(crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(
+                        tokens, _value,
+                    )?);
                 }
                 "AutoMLComputeConfig" => {
-                    builder =
-                        builder.set_auto_ml_compute_config(crate::protocol_serde::shape_auto_ml_compute_config::de_auto_ml_compute_config(tokens)?);
+                    builder = builder.set_auto_ml_compute_config(crate::protocol_serde::shape_auto_ml_compute_config::de_auto_ml_compute_config(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

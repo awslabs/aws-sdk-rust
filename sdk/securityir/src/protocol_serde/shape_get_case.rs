@@ -176,10 +176,10 @@ pub fn de_get_case_http_response(
 }
 
 pub(crate) fn de_get_case(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_case::builders::GetCaseOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_case::builders::GetCaseOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -200,10 +200,12 @@ pub(crate) fn de_get_case(
                     );
                 }
                 "caseAttachments" => {
-                    builder = builder.set_case_attachments(crate::protocol_serde::shape_case_attachments_list::de_case_attachments_list(tokens)?);
+                    builder = builder.set_case_attachments(crate::protocol_serde::shape_case_attachments_list::de_case_attachments_list(
+                        tokens, _value,
+                    )?);
                 }
                 "caseMetadata" => {
-                    builder = builder.set_case_metadata(crate::protocol_serde::shape_case_metadata::de_case_metadata(tokens)?);
+                    builder = builder.set_case_metadata(crate::protocol_serde::shape_case_metadata::de_case_metadata(tokens, _value)?);
                 }
                 "caseStatus" => {
                     builder = builder.set_case_status(
@@ -246,15 +248,17 @@ pub(crate) fn de_get_case(
                     );
                 }
                 "impactedAccounts" => {
-                    builder = builder.set_impacted_accounts(crate::protocol_serde::shape_impacted_accounts::de_impacted_accounts(tokens)?);
+                    builder = builder.set_impacted_accounts(crate::protocol_serde::shape_impacted_accounts::de_impacted_accounts(tokens, _value)?);
                 }
                 "impactedAwsRegions" => {
                     builder = builder.set_impacted_aws_regions(crate::protocol_serde::shape_impacted_aws_region_list::de_impacted_aws_region_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "impactedServices" => {
-                    builder = builder.set_impacted_services(crate::protocol_serde::shape_impacted_services_list::de_impacted_services_list(tokens)?);
+                    builder = builder.set_impacted_services(crate::protocol_serde::shape_impacted_services_list::de_impacted_services_list(
+                        tokens, _value,
+                    )?);
                 }
                 "lastUpdatedDate" => {
                     builder = builder.set_last_updated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -283,8 +287,9 @@ pub(crate) fn de_get_case(
                     );
                 }
                 "threatActorIpAddresses" => {
-                    builder =
-                        builder.set_threat_actor_ip_addresses(crate::protocol_serde::shape_threat_actor_ip_list::de_threat_actor_ip_list(tokens)?);
+                    builder = builder.set_threat_actor_ip_addresses(crate::protocol_serde::shape_threat_actor_ip_list::de_threat_actor_ip_list(
+                        tokens, _value,
+                    )?);
                 }
                 "title" => {
                     builder = builder.set_title(
@@ -294,7 +299,7 @@ pub(crate) fn de_get_case(
                     );
                 }
                 "watchers" => {
-                    builder = builder.set_watchers(crate::protocol_serde::shape_watchers::de_watchers(tokens)?);
+                    builder = builder.set_watchers(crate::protocol_serde::shape_watchers::de_watchers(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

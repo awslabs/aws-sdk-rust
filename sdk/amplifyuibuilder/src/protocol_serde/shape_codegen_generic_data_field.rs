@@ -29,6 +29,7 @@ pub fn ser_codegen_generic_data_field(
 
 pub(crate) fn de_codegen_generic_data_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodegenGenericDataField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,7 +69,7 @@ where
                         "relationship" => {
                             builder = builder.set_relationship(
                                 crate::protocol_serde::shape_codegen_generic_data_relationship_type::de_codegen_generic_data_relationship_type(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

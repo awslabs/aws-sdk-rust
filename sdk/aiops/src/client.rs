@@ -147,7 +147,7 @@ mod create_investigation_group;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_aiops::Error> {
 /// # let client: aws_sdk_aiops::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_investigation_group()
 ///     .customize()

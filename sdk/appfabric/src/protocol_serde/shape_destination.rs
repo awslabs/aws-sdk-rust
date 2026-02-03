@@ -23,6 +23,7 @@ pub fn ser_destination(
 
 pub(crate) fn de_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Destination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,12 +53,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3Bucket" => Some(crate::types::Destination::S3Bucket(
-                            crate::protocol_serde::shape_s3_bucket::de_s3_bucket(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_bucket::de_s3_bucket(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Bucket' cannot be null")
                             })?,
                         )),
                         "firehoseStream" => Some(crate::types::Destination::FirehoseStream(
-                            crate::protocol_serde::shape_firehose_stream::de_firehose_stream(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_firehose_stream::de_firehose_stream(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'firehoseStream' cannot be null")
                             })?,
                         )),

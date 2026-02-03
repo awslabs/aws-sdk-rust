@@ -65,13 +65,13 @@ pub fn ser_describe_endpoints_input(
 }
 
 pub(crate) fn de_describe_endpoints(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -86,7 +86,7 @@ pub(crate) fn de_describe_endpoints(
                     );
                 }
                 "Endpoints" => {
-                    builder = builder.set_endpoints(crate::protocol_serde::shape_endpoint_list::de_endpoint_list(tokens)?);
+                    builder = builder.set_endpoints(crate::protocol_serde::shape_endpoint_list::de_endpoint_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

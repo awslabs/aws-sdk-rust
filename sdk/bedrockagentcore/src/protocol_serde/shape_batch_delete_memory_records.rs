@@ -152,13 +152,13 @@ pub fn ser_batch_delete_memory_records_input(
 }
 
 pub(crate) fn de_batch_delete_memory_records(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_delete_memory_records::builders::BatchDeleteMemoryRecordsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_delete_memory_records::builders::BatchDeleteMemoryRecordsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,12 +167,12 @@ pub(crate) fn de_batch_delete_memory_records(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failedRecords" => {
                     builder = builder.set_failed_records(crate::protocol_serde::shape_memory_records_output_list::de_memory_records_output_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "successfulRecords" => {
                     builder = builder.set_successful_records(crate::protocol_serde::shape_memory_records_output_list::de_memory_records_output_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_s3_machine_learning_model_resource_data(
 
 pub(crate) fn de_s3_machine_learning_model_resource_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3MachineLearningModelResourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "OwnerSetting" => {
                             builder = builder.set_owner_setting(
-                                crate::protocol_serde::shape_resource_download_owner_setting::de_resource_download_owner_setting(tokens)?,
+                                crate::protocol_serde::shape_resource_download_owner_setting::de_resource_download_owner_setting(tokens, _value)?,
                             );
                         }
                         "S3Uri" => {

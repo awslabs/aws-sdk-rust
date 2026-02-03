@@ -151,7 +151,7 @@ mod create_procurement_portal_preference;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_invoicing::Error> {
 /// # let client: aws_sdk_invoicing::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_invoice_profile()
 ///     .customize()

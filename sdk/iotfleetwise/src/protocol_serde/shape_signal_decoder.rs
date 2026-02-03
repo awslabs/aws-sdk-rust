@@ -41,6 +41,7 @@ pub fn ser_signal_decoder(
 
 pub(crate) fn de_signal_decoder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SignalDecoder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,17 +77,18 @@ where
                             );
                         }
                         "canSignal" => {
-                            builder = builder.set_can_signal(crate::protocol_serde::shape_can_signal::de_can_signal(tokens)?);
+                            builder = builder.set_can_signal(crate::protocol_serde::shape_can_signal::de_can_signal(tokens, _value)?);
                         }
                         "obdSignal" => {
-                            builder = builder.set_obd_signal(crate::protocol_serde::shape_obd_signal::de_obd_signal(tokens)?);
+                            builder = builder.set_obd_signal(crate::protocol_serde::shape_obd_signal::de_obd_signal(tokens, _value)?);
                         }
                         "messageSignal" => {
-                            builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(tokens)?);
+                            builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(tokens, _value)?);
                         }
                         "customDecodingSignal" => {
-                            builder = builder
-                                .set_custom_decoding_signal(crate::protocol_serde::shape_custom_decoding_signal::de_custom_decoding_signal(tokens)?);
+                            builder = builder.set_custom_decoding_signal(
+                                crate::protocol_serde::shape_custom_decoding_signal::de_custom_decoding_signal(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

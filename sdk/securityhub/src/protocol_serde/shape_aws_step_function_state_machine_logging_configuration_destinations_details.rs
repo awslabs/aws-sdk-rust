@@ -14,6 +14,7 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_destinations_de
 
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_destinations_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CloudWatchLogsLogGroup" => {
                             builder = builder.set_cloud_watch_logs_log_group(
-                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details::de_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details(tokens)?
+                                    crate::protocol_serde::shape_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details::de_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

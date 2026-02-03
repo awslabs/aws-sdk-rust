@@ -116,13 +116,13 @@ pub fn ser_create_collection_group_input(
 }
 
 pub(crate) fn de_create_collection_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_collection_group::builders::CreateCollectionGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_collection_group::builders::CreateCollectionGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,7 +131,7 @@ pub(crate) fn de_create_collection_group(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "createCollectionGroupDetail" => {
                     builder = builder.set_create_collection_group_detail(
-                        crate::protocol_serde::shape_create_collection_group_detail::de_create_collection_group_detail(tokens)?,
+                        crate::protocol_serde::shape_create_collection_group_detail::de_create_collection_group_detail(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

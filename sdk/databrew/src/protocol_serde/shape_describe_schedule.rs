@@ -70,13 +70,13 @@ pub fn de_describe_schedule_http_response(
 }
 
 pub(crate) fn de_describe_schedule(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_schedule::builders::DescribeScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -104,7 +104,7 @@ pub(crate) fn de_describe_schedule(
                     );
                 }
                 "JobNames" => {
-                    builder = builder.set_job_names(crate::protocol_serde::shape_job_name_list::de_job_name_list(tokens)?);
+                    builder = builder.set_job_names(crate::protocol_serde::shape_job_name_list::de_job_name_list(tokens, _value)?);
                 }
                 "LastModifiedBy" => {
                     builder = builder.set_last_modified_by(
@@ -134,7 +134,7 @@ pub(crate) fn de_describe_schedule(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

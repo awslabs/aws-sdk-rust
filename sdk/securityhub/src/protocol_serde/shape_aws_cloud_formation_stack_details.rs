@@ -86,6 +86,7 @@ pub fn ser_aws_cloud_formation_stack_details(
 
 pub(crate) fn de_aws_cloud_formation_stack_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCloudFormationStackDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,7 +101,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Capabilities" => {
-                            builder = builder.set_capabilities(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_capabilities(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "CreationTime" => {
                             builder = builder.set_creation_time(
@@ -121,7 +124,7 @@ where
                         }
                         "DriftInformation" => {
                             builder = builder.set_drift_information(
-                                    crate::protocol_serde::shape_aws_cloud_formation_stack_drift_information_details::de_aws_cloud_formation_stack_drift_information_details(tokens)?
+                                    crate::protocol_serde::shape_aws_cloud_formation_stack_drift_information_details::de_aws_cloud_formation_stack_drift_information_details(tokens, _value)?
                                 );
                         }
                         "EnableTerminationProtection" => {
@@ -136,13 +139,14 @@ where
                             );
                         }
                         "NotificationArns" => {
-                            builder =
-                                builder.set_notification_arns(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_notification_arns(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Outputs" => {
                             builder = builder.set_outputs(
                                 crate::protocol_serde::shape_aws_cloud_formation_stack_outputs_list::de_aws_cloud_formation_stack_outputs_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

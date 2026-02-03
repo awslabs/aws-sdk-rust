@@ -29,6 +29,7 @@ pub fn ser_lf_tag_policy_resource(
 
 pub(crate) fn de_lf_tag_policy_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LfTagPolicyResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,7 @@ where
                             );
                         }
                         "Expression" => {
-                            builder = builder.set_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         "ExpressionName" => {
                             builder = builder.set_expression_name(

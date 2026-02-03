@@ -159,13 +159,13 @@ pub fn ser_register_oidc_config_test_input(
 }
 
 pub(crate) fn de_register_oidc_config_test(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::register_oidc_config_test::builders::RegisterOidcConfigTestOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::register_oidc_config_test::builders::RegisterOidcConfigTestOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -187,7 +187,7 @@ pub(crate) fn de_register_oidc_config_test(
                     );
                 }
                 "grantTypesSupported" => {
-                    builder = builder.set_grant_types_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_grant_types_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "issuer" => {
                     builder = builder.set_issuer(
@@ -207,7 +207,7 @@ pub(crate) fn de_register_oidc_config_test(
                     builder = builder.set_microsoft_multi_refresh_token(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "responseTypesSupported" => {
-                    builder = builder.set_response_types_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_response_types_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "revocationEndpoint" => {
                     builder = builder.set_revocation_endpoint(
@@ -217,7 +217,7 @@ pub(crate) fn de_register_oidc_config_test(
                     );
                 }
                 "scopesSupported" => {
-                    builder = builder.set_scopes_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_scopes_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "tokenEndpoint" => {
                     builder = builder.set_token_endpoint(
@@ -227,7 +227,8 @@ pub(crate) fn de_register_oidc_config_test(
                     );
                 }
                 "tokenEndpointAuthMethodsSupported" => {
-                    builder = builder.set_token_endpoint_auth_methods_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder =
+                        builder.set_token_endpoint_auth_methods_supported(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "userinfoEndpoint" => {
                     builder = builder.set_userinfo_endpoint(

@@ -35,6 +35,7 @@ pub fn ser_pipe_source_managed_streaming_kafka_parameters(
 
 pub(crate) fn de_pipe_source_managed_streaming_kafka_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeSourceManagedStreamingKafkaParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,8 +85,9 @@ where
                             );
                         }
                         "Credentials" => {
-                            builder =
-                                builder.set_credentials(crate::protocol_serde::shape_msk_access_credentials::de_msk_access_credentials(tokens)?);
+                            builder = builder.set_credentials(crate::protocol_serde::shape_msk_access_credentials::de_msk_access_credentials(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

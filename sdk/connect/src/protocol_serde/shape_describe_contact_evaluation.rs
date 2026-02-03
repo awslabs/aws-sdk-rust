@@ -108,13 +108,13 @@ pub fn de_describe_contact_evaluation_http_response(
 }
 
 pub(crate) fn de_describe_contact_evaluation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,10 +122,12 @@ pub(crate) fn de_describe_contact_evaluation(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Evaluation" => {
-                    builder = builder.set_evaluation(crate::protocol_serde::shape_evaluation::de_evaluation(tokens)?);
+                    builder = builder.set_evaluation(crate::protocol_serde::shape_evaluation::de_evaluation(tokens, _value)?);
                 }
                 "EvaluationForm" => {
-                    builder = builder.set_evaluation_form(crate::protocol_serde::shape_evaluation_form_content::de_evaluation_form_content(tokens)?);
+                    builder = builder.set_evaluation_form(crate::protocol_serde::shape_evaluation_form_content::de_evaluation_form_content(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

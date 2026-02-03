@@ -29,6 +29,7 @@ pub fn ser_dataset_definition(
 
 pub(crate) fn de_dataset_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,12 +45,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AthenaDatasetDefinition" => {
                             builder = builder.set_athena_dataset_definition(
-                                crate::protocol_serde::shape_athena_dataset_definition::de_athena_dataset_definition(tokens)?,
+                                crate::protocol_serde::shape_athena_dataset_definition::de_athena_dataset_definition(tokens, _value)?,
                             );
                         }
                         "RedshiftDatasetDefinition" => {
                             builder = builder.set_redshift_dataset_definition(
-                                crate::protocol_serde::shape_redshift_dataset_definition::de_redshift_dataset_definition(tokens)?,
+                                crate::protocol_serde::shape_redshift_dataset_definition::de_redshift_dataset_definition(tokens, _value)?,
                             );
                         }
                         "LocalPath" => {

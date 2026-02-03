@@ -29,6 +29,7 @@ pub fn ser_schema_definition(
 
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_column_list::de_column_list(tokens, _value)?);
                         }
                         "primaryKeyColumns" => {
-                            builder = builder.set_primary_key_columns(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens)?);
+                            builder =
+                                builder.set_primary_key_columns(crate::protocol_serde::shape_column_name_list::de_column_name_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

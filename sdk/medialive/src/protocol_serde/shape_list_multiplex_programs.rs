@@ -150,13 +150,13 @@ pub fn de_list_multiplex_programs_http_response(
 }
 
 pub(crate) fn de_list_multiplex_programs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,7 +165,7 @@ pub(crate) fn de_list_multiplex_programs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "multiplexPrograms" => {
                     builder = builder.set_multiplex_programs(
-                        crate::protocol_serde::shape_list_of_multiplex_program_summary::de_list_of_multiplex_program_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_multiplex_program_summary::de_list_of_multiplex_program_summary(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

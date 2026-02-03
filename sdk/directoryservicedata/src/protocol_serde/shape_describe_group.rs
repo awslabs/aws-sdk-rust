@@ -143,13 +143,13 @@ pub fn ser_describe_group_input(
 }
 
 pub(crate) fn de_describe_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_group::builders::DescribeGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_group::builders::DescribeGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,7 +185,7 @@ pub(crate) fn de_describe_group(
                     );
                 }
                 "OtherAttributes" => {
-                    builder = builder.set_other_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens)?);
+                    builder = builder.set_other_attributes(crate::protocol_serde::shape_attributes::de_attributes(tokens, _value)?);
                 }
                 "Realm" => {
                     builder = builder.set_realm(

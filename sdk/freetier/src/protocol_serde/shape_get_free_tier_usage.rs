@@ -94,13 +94,13 @@ pub fn ser_get_free_tier_usage_input(
 }
 
 pub(crate) fn de_get_free_tier_usage(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_free_tier_usage::builders::GetFreeTierUsageOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_free_tier_usage::builders::GetFreeTierUsageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_get_free_tier_usage(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "freeTierUsages" => {
-                    builder = builder.set_free_tier_usages(crate::protocol_serde::shape_free_tier_usages::de_free_tier_usages(tokens)?);
+                    builder = builder.set_free_tier_usages(crate::protocol_serde::shape_free_tier_usages::de_free_tier_usages(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

@@ -69,13 +69,13 @@ pub fn ser_list_trial_components_input(
 }
 
 pub(crate) fn de_list_trial_components(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_trial_components::builders::ListTrialComponentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -84,7 +84,7 @@ pub(crate) fn de_list_trial_components(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TrialComponentSummaries" => {
                     builder = builder.set_trial_component_summaries(
-                        crate::protocol_serde::shape_trial_component_summaries::de_trial_component_summaries(tokens)?,
+                        crate::protocol_serde::shape_trial_component_summaries::de_trial_component_summaries(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

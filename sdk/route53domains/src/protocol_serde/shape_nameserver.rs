@@ -20,6 +20,7 @@ pub fn ser_nameserver(
 
 pub(crate) fn de_nameserver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Nameserver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "GlueIps" => {
-                            builder = builder.set_glue_ips(crate::protocol_serde::shape_glue_ip_list::de_glue_ip_list(tokens)?);
+                            builder = builder.set_glue_ips(crate::protocol_serde::shape_glue_ip_list::de_glue_ip_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

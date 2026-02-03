@@ -20,6 +20,7 @@ pub fn ser_rule_group_variables(
 
 pub(crate) fn de_rule_group_variables<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RuleGroupVariables>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,13 +36,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IpSets" => {
                             builder = builder.set_ip_sets(
-                                crate::protocol_serde::shape_rule_group_variables_ip_sets_details::de_rule_group_variables_ip_sets_details(tokens)?,
+                                crate::protocol_serde::shape_rule_group_variables_ip_sets_details::de_rule_group_variables_ip_sets_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "PortSets" => {
                             builder = builder.set_port_sets(
                                 crate::protocol_serde::shape_rule_group_variables_port_sets_details::de_rule_group_variables_port_sets_details(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

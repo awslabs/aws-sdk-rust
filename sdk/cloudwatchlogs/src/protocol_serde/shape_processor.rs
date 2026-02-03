@@ -146,6 +146,7 @@ pub fn ser_processor(
 
 pub(crate) fn de_processor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Processor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -160,74 +161,78 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "addKeys" => {
-                            builder = builder.set_add_keys(crate::protocol_serde::shape_add_keys::de_add_keys(tokens)?);
+                            builder = builder.set_add_keys(crate::protocol_serde::shape_add_keys::de_add_keys(tokens, _value)?);
                         }
                         "copyValue" => {
-                            builder = builder.set_copy_value(crate::protocol_serde::shape_copy_value::de_copy_value(tokens)?);
+                            builder = builder.set_copy_value(crate::protocol_serde::shape_copy_value::de_copy_value(tokens, _value)?);
                         }
                         "csv" => {
-                            builder = builder.set_csv(crate::protocol_serde::shape_csv::de_csv(tokens)?);
+                            builder = builder.set_csv(crate::protocol_serde::shape_csv::de_csv(tokens, _value)?);
                         }
                         "dateTimeConverter" => {
-                            builder =
-                                builder.set_date_time_converter(crate::protocol_serde::shape_date_time_converter::de_date_time_converter(tokens)?);
+                            builder = builder
+                                .set_date_time_converter(crate::protocol_serde::shape_date_time_converter::de_date_time_converter(tokens, _value)?);
                         }
                         "deleteKeys" => {
-                            builder = builder.set_delete_keys(crate::protocol_serde::shape_delete_keys::de_delete_keys(tokens)?);
+                            builder = builder.set_delete_keys(crate::protocol_serde::shape_delete_keys::de_delete_keys(tokens, _value)?);
                         }
                         "grok" => {
-                            builder = builder.set_grok(crate::protocol_serde::shape_grok::de_grok(tokens)?);
+                            builder = builder.set_grok(crate::protocol_serde::shape_grok::de_grok(tokens, _value)?);
                         }
                         "listToMap" => {
-                            builder = builder.set_list_to_map(crate::protocol_serde::shape_list_to_map::de_list_to_map(tokens)?);
+                            builder = builder.set_list_to_map(crate::protocol_serde::shape_list_to_map::de_list_to_map(tokens, _value)?);
                         }
                         "lowerCaseString" => {
-                            builder = builder.set_lower_case_string(crate::protocol_serde::shape_lower_case_string::de_lower_case_string(tokens)?);
+                            builder =
+                                builder.set_lower_case_string(crate::protocol_serde::shape_lower_case_string::de_lower_case_string(tokens, _value)?);
                         }
                         "moveKeys" => {
-                            builder = builder.set_move_keys(crate::protocol_serde::shape_move_keys::de_move_keys(tokens)?);
+                            builder = builder.set_move_keys(crate::protocol_serde::shape_move_keys::de_move_keys(tokens, _value)?);
                         }
                         "parseCloudfront" => {
-                            builder = builder.set_parse_cloudfront(crate::protocol_serde::shape_parse_cloudfront::de_parse_cloudfront(tokens)?);
+                            builder =
+                                builder.set_parse_cloudfront(crate::protocol_serde::shape_parse_cloudfront::de_parse_cloudfront(tokens, _value)?);
                         }
                         "parseJSON" => {
-                            builder = builder.set_parse_json(crate::protocol_serde::shape_parse_json::de_parse_json(tokens)?);
+                            builder = builder.set_parse_json(crate::protocol_serde::shape_parse_json::de_parse_json(tokens, _value)?);
                         }
                         "parseKeyValue" => {
-                            builder = builder.set_parse_key_value(crate::protocol_serde::shape_parse_key_value::de_parse_key_value(tokens)?);
+                            builder = builder.set_parse_key_value(crate::protocol_serde::shape_parse_key_value::de_parse_key_value(tokens, _value)?);
                         }
                         "parseRoute53" => {
-                            builder = builder.set_parse_route53(crate::protocol_serde::shape_parse_route53::de_parse_route53(tokens)?);
+                            builder = builder.set_parse_route53(crate::protocol_serde::shape_parse_route53::de_parse_route53(tokens, _value)?);
                         }
                         "parseToOCSF" => {
-                            builder = builder.set_parse_to_ocsf(crate::protocol_serde::shape_parse_to_ocsf::de_parse_to_ocsf(tokens)?);
+                            builder = builder.set_parse_to_ocsf(crate::protocol_serde::shape_parse_to_ocsf::de_parse_to_ocsf(tokens, _value)?);
                         }
                         "parsePostgres" => {
-                            builder = builder.set_parse_postgres(crate::protocol_serde::shape_parse_postgres::de_parse_postgres(tokens)?);
+                            builder = builder.set_parse_postgres(crate::protocol_serde::shape_parse_postgres::de_parse_postgres(tokens, _value)?);
                         }
                         "parseVPC" => {
-                            builder = builder.set_parse_vpc(crate::protocol_serde::shape_parse_vpc::de_parse_vpc(tokens)?);
+                            builder = builder.set_parse_vpc(crate::protocol_serde::shape_parse_vpc::de_parse_vpc(tokens, _value)?);
                         }
                         "parseWAF" => {
-                            builder = builder.set_parse_waf(crate::protocol_serde::shape_parse_waf::de_parse_waf(tokens)?);
+                            builder = builder.set_parse_waf(crate::protocol_serde::shape_parse_waf::de_parse_waf(tokens, _value)?);
                         }
                         "renameKeys" => {
-                            builder = builder.set_rename_keys(crate::protocol_serde::shape_rename_keys::de_rename_keys(tokens)?);
+                            builder = builder.set_rename_keys(crate::protocol_serde::shape_rename_keys::de_rename_keys(tokens, _value)?);
                         }
                         "splitString" => {
-                            builder = builder.set_split_string(crate::protocol_serde::shape_split_string::de_split_string(tokens)?);
+                            builder = builder.set_split_string(crate::protocol_serde::shape_split_string::de_split_string(tokens, _value)?);
                         }
                         "substituteString" => {
-                            builder = builder.set_substitute_string(crate::protocol_serde::shape_substitute_string::de_substitute_string(tokens)?);
+                            builder =
+                                builder.set_substitute_string(crate::protocol_serde::shape_substitute_string::de_substitute_string(tokens, _value)?);
                         }
                         "trimString" => {
-                            builder = builder.set_trim_string(crate::protocol_serde::shape_trim_string::de_trim_string(tokens)?);
+                            builder = builder.set_trim_string(crate::protocol_serde::shape_trim_string::de_trim_string(tokens, _value)?);
                         }
                         "typeConverter" => {
-                            builder = builder.set_type_converter(crate::protocol_serde::shape_type_converter::de_type_converter(tokens)?);
+                            builder = builder.set_type_converter(crate::protocol_serde::shape_type_converter::de_type_converter(tokens, _value)?);
                         }
                         "upperCaseString" => {
-                            builder = builder.set_upper_case_string(crate::protocol_serde::shape_upper_case_string::de_upper_case_string(tokens)?);
+                            builder =
+                                builder.set_upper_case_string(crate::protocol_serde::shape_upper_case_string::de_upper_case_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

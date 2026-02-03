@@ -20,6 +20,7 @@ pub fn ser_vpc_connectivity_client_authentication(
 
 pub(crate) fn de_vpc_connectivity_client_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VpcConnectivityClientAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sasl" => {
-                            builder = builder.set_sasl(crate::protocol_serde::shape_vpc_connectivity_sasl::de_vpc_connectivity_sasl(tokens)?);
+                            builder = builder.set_sasl(crate::protocol_serde::shape_vpc_connectivity_sasl::de_vpc_connectivity_sasl(
+                                tokens, _value,
+                            )?);
                         }
                         "tls" => {
-                            builder = builder.set_tls(crate::protocol_serde::shape_vpc_connectivity_tls::de_vpc_connectivity_tls(tokens)?);
+                            builder = builder.set_tls(crate::protocol_serde::shape_vpc_connectivity_tls::de_vpc_connectivity_tls(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -68,6 +68,7 @@ pub fn ser_aws_ec2_vpn_connection_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2VpnConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -133,19 +134,21 @@ where
                             }
                             "VgwTelemetry" => {
                                 builder = builder.set_vgw_telemetry(
-                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_vgw_telemetry_list::de_aws_ec2_vpn_connection_vgw_telemetry_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_vgw_telemetry_list::de_aws_ec2_vpn_connection_vgw_telemetry_list(tokens, _value)?
                                 );
                             }
                             "Options" => {
                                 builder = builder.set_options(
                                     crate::protocol_serde::shape_aws_ec2_vpn_connection_options_details::de_aws_ec2_vpn_connection_options_details(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "Routes" => {
                                 builder = builder.set_routes(
-                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_list::de_aws_ec2_vpn_connection_routes_list(tokens)?,
+                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_routes_list::de_aws_ec2_vpn_connection_routes_list(
+                                        tokens, _value,
+                                    )?,
                                 );
                             }
                             "TransitGatewayId" => {

@@ -297,6 +297,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_details(
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -314,7 +315,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Cpu" => {
                             builder = builder.set_cpu(
@@ -325,37 +328,43 @@ where
                         }
                         "DependsOn" => {
                             builder = builder.set_depends_on(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_depends_on_list::de_aws_ecs_task_definition_container_definitions_depends_on_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_depends_on_list::de_aws_ecs_task_definition_container_definitions_depends_on_list(tokens, _value)?
                                 );
                         }
                         "DisableNetworking" => {
                             builder = builder.set_disable_networking(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "DnsSearchDomains" => {
-                            builder =
-                                builder.set_dns_search_domains(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_dns_search_domains(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "DnsServers" => {
-                            builder = builder.set_dns_servers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_dns_servers(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "DockerLabels" => {
-                            builder = builder.set_docker_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_docker_labels(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "DockerSecurityOptions" => {
-                            builder = builder
-                                .set_docker_security_options(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_docker_security_options(
+                                crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens, _value)?,
+                            );
                         }
                         "EntryPoint" => {
-                            builder = builder.set_entry_point(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_entry_point(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_list::de_aws_ecs_task_definition_container_definitions_environment_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_list::de_aws_ecs_task_definition_container_definitions_environment_list(tokens, _value)?
                                 );
                         }
                         "EnvironmentFiles" => {
                             builder = builder.set_environment_files(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_files_list::de_aws_ecs_task_definition_container_definitions_environment_files_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_environment_files_list::de_aws_ecs_task_definition_container_definitions_environment_files_list(tokens, _value)?
                                 );
                         }
                         "Essential" => {
@@ -363,17 +372,17 @@ where
                         }
                         "ExtraHosts" => {
                             builder = builder.set_extra_hosts(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_extra_hosts_list::de_aws_ecs_task_definition_container_definitions_extra_hosts_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_extra_hosts_list::de_aws_ecs_task_definition_container_definitions_extra_hosts_list(tokens, _value)?
                                 );
                         }
                         "FirelensConfiguration" => {
                             builder = builder.set_firelens_configuration(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_firelens_configuration_details::de_aws_ecs_task_definition_container_definitions_firelens_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_firelens_configuration_details::de_aws_ecs_task_definition_container_definitions_firelens_configuration_details(tokens, _value)?
                                 );
                         }
                         "HealthCheck" => {
                             builder = builder.set_health_check(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_health_check_details::de_aws_ecs_task_definition_container_definitions_health_check_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_health_check_details::de_aws_ecs_task_definition_container_definitions_health_check_details(tokens, _value)?
                                 );
                         }
                         "Hostname" => {
@@ -394,16 +403,18 @@ where
                             builder = builder.set_interactive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Links" => {
-                            builder = builder.set_links(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_links(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "LinuxParameters" => {
                             builder = builder.set_linux_parameters(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_details::de_aws_ecs_task_definition_container_definitions_linux_parameters_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_details::de_aws_ecs_task_definition_container_definitions_linux_parameters_details(tokens, _value)?
                                 );
                         }
                         "LogConfiguration" => {
                             builder = builder.set_log_configuration(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_details::de_aws_ecs_task_definition_container_definitions_log_configuration_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_log_configuration_details::de_aws_ecs_task_definition_container_definitions_log_configuration_details(tokens, _value)?
                                 );
                         }
                         "Memory" => {
@@ -422,7 +433,7 @@ where
                         }
                         "MountPoints" => {
                             builder = builder.set_mount_points(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_mount_points_list::de_aws_ecs_task_definition_container_definitions_mount_points_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_mount_points_list::de_aws_ecs_task_definition_container_definitions_mount_points_list(tokens, _value)?
                                 );
                         }
                         "Name" => {
@@ -434,7 +445,7 @@ where
                         }
                         "PortMappings" => {
                             builder = builder.set_port_mappings(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_port_mappings_list::de_aws_ecs_task_definition_container_definitions_port_mappings_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_port_mappings_list::de_aws_ecs_task_definition_container_definitions_port_mappings_list(tokens, _value)?
                                 );
                         }
                         "Privileged" => {
@@ -449,17 +460,17 @@ where
                         }
                         "RepositoryCredentials" => {
                             builder = builder.set_repository_credentials(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_repository_credentials_details::de_aws_ecs_task_definition_container_definitions_repository_credentials_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_repository_credentials_details::de_aws_ecs_task_definition_container_definitions_repository_credentials_details(tokens, _value)?
                                 );
                         }
                         "ResourceRequirements" => {
                             builder = builder.set_resource_requirements(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_resource_requirements_list::de_aws_ecs_task_definition_container_definitions_resource_requirements_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_resource_requirements_list::de_aws_ecs_task_definition_container_definitions_resource_requirements_list(tokens, _value)?
                                 );
                         }
                         "Secrets" => {
                             builder = builder.set_secrets(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_secrets_list::de_aws_ecs_task_definition_container_definitions_secrets_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_secrets_list::de_aws_ecs_task_definition_container_definitions_secrets_list(tokens, _value)?
                                 );
                         }
                         "StartTimeout" => {
@@ -478,12 +489,12 @@ where
                         }
                         "SystemControls" => {
                             builder = builder.set_system_controls(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_system_controls_list::de_aws_ecs_task_definition_container_definitions_system_controls_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_system_controls_list::de_aws_ecs_task_definition_container_definitions_system_controls_list(tokens, _value)?
                                 );
                         }
                         "Ulimits" => {
                             builder = builder.set_ulimits(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_ulimits_list::de_aws_ecs_task_definition_container_definitions_ulimits_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_ulimits_list::de_aws_ecs_task_definition_container_definitions_ulimits_list(tokens, _value)?
                                 );
                         }
                         "User" => {
@@ -495,7 +506,7 @@ where
                         }
                         "VolumesFrom" => {
                             builder = builder.set_volumes_from(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_volumes_from_list::de_aws_ecs_task_definition_container_definitions_volumes_from_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_volumes_from_list::de_aws_ecs_task_definition_container_definitions_volumes_from_list(tokens, _value)?
                                 );
                         }
                         "WorkingDirectory" => {

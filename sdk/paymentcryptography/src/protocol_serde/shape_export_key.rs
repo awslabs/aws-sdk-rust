@@ -154,10 +154,10 @@ pub fn ser_export_key_input(
 }
 
 pub(crate) fn de_export_key(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::export_key::builders::ExportKeyOutputBuilder,
 ) -> ::std::result::Result<crate::operation::export_key::builders::ExportKeyOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,7 +165,7 @@ pub(crate) fn de_export_key(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WrappedKey" => {
-                    builder = builder.set_wrapped_key(crate::protocol_serde::shape_wrapped_key::de_wrapped_key(tokens)?);
+                    builder = builder.set_wrapped_key(crate::protocol_serde::shape_wrapped_key::de_wrapped_key(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

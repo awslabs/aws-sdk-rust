@@ -44,6 +44,7 @@ pub fn ser_asset_model_property(
 
 pub(crate) fn de_asset_model_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetModelProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,11 +101,11 @@ where
                             );
                         }
                         "type" => {
-                            builder = builder.set_type(crate::protocol_serde::shape_property_type::de_property_type(tokens)?);
+                            builder = builder.set_type(crate::protocol_serde::shape_property_type::de_property_type(tokens, _value)?);
                         }
                         "path" => {
                             builder = builder.set_path(crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

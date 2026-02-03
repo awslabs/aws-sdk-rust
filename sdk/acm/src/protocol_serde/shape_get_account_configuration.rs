@@ -84,13 +84,13 @@ pub fn ser_get_account_configuration_input(
 }
 
 pub(crate) fn de_get_account_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_account_configuration::builders::GetAccountConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_get_account_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ExpiryEvents" => {
                     builder = builder.set_expiry_events(crate::protocol_serde::shape_expiry_events_configuration::de_expiry_events_configuration(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_network_access_configuration(
 
 pub(crate) fn de_network_access_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkAccessConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "prefixListIds" => {
-                            builder = builder.set_prefix_list_ids(crate::protocol_serde::shape_prefix_list_ids::de_prefix_list_ids(tokens)?);
+                            builder = builder.set_prefix_list_ids(crate::protocol_serde::shape_prefix_list_ids::de_prefix_list_ids(tokens, _value)?);
                         }
                         "vpceIds" => {
-                            builder = builder.set_vpce_ids(crate::protocol_serde::shape_vpce_ids::de_vpce_ids(tokens)?);
+                            builder = builder.set_vpce_ids(crate::protocol_serde::shape_vpce_ids::de_vpce_ids(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -114,13 +114,13 @@ pub fn ser_list_unique_problems_input(
 }
 
 pub(crate) fn de_list_unique_problems(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_unique_problems::builders::ListUniqueProblemsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,7 +129,9 @@ pub(crate) fn de_list_unique_problems(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "uniqueProblems" => {
                     builder = builder.set_unique_problems(
-                        crate::protocol_serde::shape_unique_problems_by_execution_result_map::de_unique_problems_by_execution_result_map(tokens)?,
+                        crate::protocol_serde::shape_unique_problems_by_execution_result_map::de_unique_problems_by_execution_result_map(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "nextToken" => {

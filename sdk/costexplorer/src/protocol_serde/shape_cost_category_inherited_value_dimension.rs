@@ -14,6 +14,7 @@ pub fn ser_cost_category_inherited_value_dimension(
 
 pub(crate) fn de_cost_category_inherited_value_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CostCategoryInheritedValueDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

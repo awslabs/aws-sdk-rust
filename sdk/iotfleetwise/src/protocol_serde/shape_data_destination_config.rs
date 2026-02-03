@@ -33,6 +33,7 @@ pub fn ser_data_destination_config(
 
 pub(crate) fn de_data_destination_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataDestinationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,17 +63,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "s3Config" => Some(crate::types::DataDestinationConfig::S3Config(
-                            crate::protocol_serde::shape_s3_config::de_s3_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_config::de_s3_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Config' cannot be null")
                             })?,
                         )),
                         "timestreamConfig" => Some(crate::types::DataDestinationConfig::TimestreamConfig(
-                            crate::protocol_serde::shape_timestream_config::de_timestream_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_timestream_config::de_timestream_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'timestreamConfig' cannot be null")
                             })?,
                         )),
                         "mqttTopicConfig" => Some(crate::types::DataDestinationConfig::MqttTopicConfig(
-                            crate::protocol_serde::shape_mqtt_topic_config::de_mqtt_topic_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_mqtt_topic_config::de_mqtt_topic_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mqttTopicConfig' cannot be null")
                             })?,
                         )),

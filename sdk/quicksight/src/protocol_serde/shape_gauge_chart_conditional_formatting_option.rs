@@ -23,6 +23,7 @@ pub fn ser_gauge_chart_conditional_formatting_option(
 
 pub(crate) fn de_gauge_chart_conditional_formatting_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GaugeChartConditionalFormattingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,13 +39,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PrimaryValue" => {
                             builder = builder.set_primary_value(
-                                    crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::de_gauge_chart_primary_value_conditional_formatting(tokens)?
+                                    crate::protocol_serde::shape_gauge_chart_primary_value_conditional_formatting::de_gauge_chart_primary_value_conditional_formatting(tokens, _value)?
                                 );
                         }
                         "Arc" => {
                             builder = builder.set_arc(
                                 crate::protocol_serde::shape_gauge_chart_arc_conditional_formatting::de_gauge_chart_arc_conditional_formatting(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -128,13 +128,13 @@ pub fn ser_list_targeted_sentiment_detection_jobs_input(
 }
 
 pub(crate) fn de_list_targeted_sentiment_detection_jobs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_targeted_sentiment_detection_jobs::builders::ListTargetedSentimentDetectionJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,7 +143,7 @@ pub(crate) fn de_list_targeted_sentiment_detection_jobs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TargetedSentimentDetectionJobPropertiesList" => {
                     builder = builder.set_targeted_sentiment_detection_job_properties_list(
-                            crate::protocol_serde::shape_targeted_sentiment_detection_job_properties_list::de_targeted_sentiment_detection_job_properties_list(tokens)?
+                            crate::protocol_serde::shape_targeted_sentiment_detection_job_properties_list::de_targeted_sentiment_detection_job_properties_list(tokens, _value)?
                         );
                 }
                 "NextToken" => {

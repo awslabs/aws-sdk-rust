@@ -20,6 +20,7 @@ pub fn ser_motion_image_insertion_offset(
 
 pub(crate) fn de_motion_image_insertion_offset<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MotionImageInsertionOffset>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

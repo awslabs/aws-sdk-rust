@@ -153,7 +153,7 @@ mod create_benefit_application;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_partnercentralbenefits::Error> {
 /// # let client: aws_sdk_partnercentralbenefits::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.amend_benefit_application()
 ///     .customize()

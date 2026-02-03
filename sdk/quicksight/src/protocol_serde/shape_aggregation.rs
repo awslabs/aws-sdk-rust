@@ -20,6 +20,7 @@ pub fn ser_aggregation(
 
 pub(crate) fn de_aggregation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Aggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AggregationFunction" => {
                             builder = builder.set_aggregation_function(
-                                crate::protocol_serde::shape_data_prep_aggregation_function::de_data_prep_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_data_prep_aggregation_function::de_data_prep_aggregation_function(tokens, _value)?,
                             );
                         }
                         "NewColumnName" => {

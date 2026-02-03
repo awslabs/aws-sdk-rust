@@ -23,6 +23,7 @@ pub fn ser_aws_rds_db_subnet_group_subnet(
 
 pub(crate) fn de_aws_rds_db_subnet_group_subnet<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRdsDbSubnetGroupSubnet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "SubnetAvailabilityZone" => {
                             builder = builder.set_subnet_availability_zone(
-                                    crate::protocol_serde::shape_aws_rds_db_subnet_group_subnet_availability_zone::de_aws_rds_db_subnet_group_subnet_availability_zone(tokens)?
+                                    crate::protocol_serde::shape_aws_rds_db_subnet_group_subnet_availability_zone::de_aws_rds_db_subnet_group_subnet_availability_zone(tokens, _value)?
                                 );
                         }
                         "SubnetStatus" => {

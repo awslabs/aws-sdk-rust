@@ -155,7 +155,7 @@ mod create_source_network;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_drs::Error> {
 /// # let client: aws_sdk_drs::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_source_network_stack()
 ///     .customize()

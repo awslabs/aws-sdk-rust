@@ -20,6 +20,7 @@ pub fn ser_field_to_protect(
 
 pub(crate) fn de_field_to_protect<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldToProtect>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,9 @@ where
                             );
                         }
                         "FieldKeys" => {
-                            builder = builder.set_field_keys(crate::protocol_serde::shape_field_to_protect_keys::de_field_to_protect_keys(tokens)?);
+                            builder = builder.set_field_keys(crate::protocol_serde::shape_field_to_protect_keys::de_field_to_protect_keys(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

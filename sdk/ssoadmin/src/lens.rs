@@ -179,6 +179,16 @@ pub(crate) fn reflens_list_permission_sets_provisioned_to_account_output_output_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_regions_output_output_next_token(
+    input: &crate::operation::list_regions::ListRegionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tags_for_resource_output_output_next_token(
     input: &crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -322,6 +332,13 @@ pub(crate) fn lens_list_permission_sets_provisioned_to_account_output_output_per
     input: crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.permission_sets?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_regions_output_output_regions(
+    input: crate::operation::list_regions::ListRegionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>> {
+    let input = input.regions?;
     ::std::option::Option::Some(input)
 }
 

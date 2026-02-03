@@ -23,6 +23,7 @@ pub fn ser_hls_playlist_settings(
 
 pub(crate) fn de_hls_playlist_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HlsPlaylistSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "AdMarkupType" => {
-                            builder = builder.set_ad_markup_type(crate::protocol_serde::shape_ad_markup_types::de_ad_markup_types(tokens)?);
+                            builder = builder.set_ad_markup_type(crate::protocol_serde::shape_ad_markup_types::de_ad_markup_types(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

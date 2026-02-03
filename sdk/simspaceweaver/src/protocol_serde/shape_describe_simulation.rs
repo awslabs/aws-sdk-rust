@@ -104,13 +104,13 @@ pub fn de_describe_simulation_http_response(
 }
 
 pub(crate) fn de_describe_simulation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,12 +145,14 @@ pub(crate) fn de_describe_simulation(
                     );
                 }
                 "LiveSimulationState" => {
-                    builder =
-                        builder.set_live_simulation_state(crate::protocol_serde::shape_live_simulation_state::de_live_simulation_state(tokens)?);
+                    builder = builder.set_live_simulation_state(crate::protocol_serde::shape_live_simulation_state::de_live_simulation_state(
+                        tokens, _value,
+                    )?);
                 }
                 "LoggingConfiguration" => {
-                    builder =
-                        builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(tokens)?);
+                    builder = builder.set_logging_configuration(crate::protocol_serde::shape_logging_configuration::de_logging_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "MaximumDuration" => {
                     builder = builder.set_maximum_duration(
@@ -181,10 +183,10 @@ pub(crate) fn de_describe_simulation(
                     );
                 }
                 "SchemaS3Location" => {
-                    builder = builder.set_schema_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                    builder = builder.set_schema_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                 }
                 "SnapshotS3Location" => {
-                    builder = builder.set_snapshot_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                    builder = builder.set_snapshot_s3_location(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                 }
                 "StartError" => {
                     builder = builder.set_start_error(

@@ -122,13 +122,13 @@ pub fn ser_get_identity_source_input(
 }
 
 pub(crate) fn de_get_identity_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,9 @@ pub(crate) fn de_get_identity_source(
                     )?);
                 }
                 "details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_identity_source_details::de_identity_source_details(tokens)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_identity_source_details::de_identity_source_details(
+                        tokens, _value,
+                    )?);
                 }
                 "identitySourceId" => {
                     builder = builder.set_identity_source_id(
@@ -172,7 +174,9 @@ pub(crate) fn de_get_identity_source(
                     );
                 }
                 "configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_detail::de_configuration_detail(tokens)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_detail::de_configuration_detail(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

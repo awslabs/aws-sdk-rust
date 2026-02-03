@@ -29,6 +29,7 @@ pub fn ser_account_aggregation_source(
 
 pub(crate) fn de_account_aggregation_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AccountAggregationSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         "AccountIds" => {
                             builder = builder.set_account_ids(
                                 crate::protocol_serde::shape_account_aggregation_source_account_list::de_account_aggregation_source_account_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
@@ -53,8 +54,9 @@ where
                             builder = builder.set_all_aws_regions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "AwsRegions" => {
-                            builder =
-                                builder.set_aws_regions(crate::protocol_serde::shape_aggregator_region_list::de_aggregator_region_list(tokens)?);
+                            builder = builder.set_aws_regions(crate::protocol_serde::shape_aggregator_region_list::de_aggregator_region_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

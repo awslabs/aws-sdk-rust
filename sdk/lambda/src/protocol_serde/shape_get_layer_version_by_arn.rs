@@ -114,13 +114,13 @@ pub fn de_get_layer_version_by_arn_http_response(
 }
 
 pub(crate) fn de_get_layer_version_by_arn(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,15 +129,16 @@ pub(crate) fn de_get_layer_version_by_arn(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CompatibleArchitectures" => {
                     builder = builder.set_compatible_architectures(
-                        crate::protocol_serde::shape_compatible_architectures::de_compatible_architectures(tokens)?,
+                        crate::protocol_serde::shape_compatible_architectures::de_compatible_architectures(tokens, _value)?,
                     );
                 }
                 "CompatibleRuntimes" => {
-                    builder = builder.set_compatible_runtimes(crate::protocol_serde::shape_compatible_runtimes::de_compatible_runtimes(tokens)?);
+                    builder =
+                        builder.set_compatible_runtimes(crate::protocol_serde::shape_compatible_runtimes::de_compatible_runtimes(tokens, _value)?);
                 }
                 "Content" => {
-                    builder =
-                        builder.set_content(crate::protocol_serde::shape_layer_version_content_output::de_layer_version_content_output(tokens)?);
+                    builder = builder
+                        .set_content(crate::protocol_serde::shape_layer_version_content_output::de_layer_version_content_output(tokens, _value)?);
                 }
                 "CreatedDate" => {
                     builder = builder.set_created_date(

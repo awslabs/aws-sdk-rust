@@ -149,13 +149,13 @@ pub fn ser_describe_stream_processor_input(
 }
 
 pub(crate) fn de_describe_stream_processor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_stream_processor::builders::DescribeStreamProcessorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_stream_processor::builders::DescribeStreamProcessorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -203,10 +203,14 @@ pub(crate) fn de_describe_stream_processor(
                     )?);
                 }
                 "Input" => {
-                    builder = builder.set_input(crate::protocol_serde::shape_stream_processor_input::de_stream_processor_input(tokens)?);
+                    builder = builder.set_input(crate::protocol_serde::shape_stream_processor_input::de_stream_processor_input(
+                        tokens, _value,
+                    )?);
                 }
                 "Output" => {
-                    builder = builder.set_output(crate::protocol_serde::shape_stream_processor_output::de_stream_processor_output(tokens)?);
+                    builder = builder.set_output(crate::protocol_serde::shape_stream_processor_output::de_stream_processor_output(
+                        tokens, _value,
+                    )?);
                 }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
@@ -217,12 +221,12 @@ pub(crate) fn de_describe_stream_processor(
                 }
                 "Settings" => {
                     builder = builder.set_settings(crate::protocol_serde::shape_stream_processor_settings::de_stream_processor_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NotificationChannel" => {
                     builder = builder.set_notification_channel(
-                        crate::protocol_serde::shape_stream_processor_notification_channel::de_stream_processor_notification_channel(tokens)?,
+                        crate::protocol_serde::shape_stream_processor_notification_channel::de_stream_processor_notification_channel(tokens, _value)?,
                     );
                 }
                 "KmsKeyId" => {
@@ -233,11 +237,14 @@ pub(crate) fn de_describe_stream_processor(
                     );
                 }
                 "RegionsOfInterest" => {
-                    builder = builder.set_regions_of_interest(crate::protocol_serde::shape_regions_of_interest::de_regions_of_interest(tokens)?);
+                    builder =
+                        builder.set_regions_of_interest(crate::protocol_serde::shape_regions_of_interest::de_regions_of_interest(tokens, _value)?);
                 }
                 "DataSharingPreference" => {
                     builder = builder.set_data_sharing_preference(
-                        crate::protocol_serde::shape_stream_processor_data_sharing_preference::de_stream_processor_data_sharing_preference(tokens)?,
+                        crate::protocol_serde::shape_stream_processor_data_sharing_preference::de_stream_processor_data_sharing_preference(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

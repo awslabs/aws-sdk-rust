@@ -151,7 +151,7 @@ mod create_secret;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_secretsmanager::Error> {
 /// # let client: aws_sdk_secretsmanager::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_secret_value()
 ///     .customize()

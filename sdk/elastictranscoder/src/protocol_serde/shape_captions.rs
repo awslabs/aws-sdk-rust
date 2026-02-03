@@ -35,6 +35,7 @@ pub fn ser_captions(
 
 pub(crate) fn de_captions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Captions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,10 +57,10 @@ where
                             );
                         }
                         "CaptionSources" => {
-                            builder = builder.set_caption_sources(crate::protocol_serde::shape_caption_sources::de_caption_sources(tokens)?);
+                            builder = builder.set_caption_sources(crate::protocol_serde::shape_caption_sources::de_caption_sources(tokens, _value)?);
                         }
                         "CaptionFormats" => {
-                            builder = builder.set_caption_formats(crate::protocol_serde::shape_caption_formats::de_caption_formats(tokens)?);
+                            builder = builder.set_caption_formats(crate::protocol_serde::shape_caption_formats::de_caption_formats(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

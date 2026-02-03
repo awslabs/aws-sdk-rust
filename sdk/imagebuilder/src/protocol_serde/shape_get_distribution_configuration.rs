@@ -142,13 +142,13 @@ pub fn de_get_distribution_configuration_http_response(
 }
 
 pub(crate) fn de_get_distribution_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -157,7 +157,7 @@ pub(crate) fn de_get_distribution_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "distributionConfiguration" => {
                     builder = builder.set_distribution_configuration(
-                        crate::protocol_serde::shape_distribution_configuration::de_distribution_configuration(tokens)?,
+                        crate::protocol_serde::shape_distribution_configuration::de_distribution_configuration(tokens, _value)?,
                     );
                 }
                 "requestId" => {

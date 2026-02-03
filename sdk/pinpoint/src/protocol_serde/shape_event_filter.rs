@@ -17,6 +17,7 @@ pub fn ser_event_filter(
 
 pub(crate) fn de_event_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EventFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Dimensions" => {
-                            builder = builder.set_dimensions(crate::protocol_serde::shape_event_dimensions::de_event_dimensions(tokens)?);
+                            builder = builder.set_dimensions(crate::protocol_serde::shape_event_dimensions::de_event_dimensions(tokens, _value)?);
                         }
                         "FilterType" => {
                             builder = builder.set_filter_type(

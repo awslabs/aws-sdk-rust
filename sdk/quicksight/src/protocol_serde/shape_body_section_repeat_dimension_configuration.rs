@@ -23,6 +23,7 @@ pub fn ser_body_section_repeat_dimension_configuration(
 
 pub(crate) fn de_body_section_repeat_dimension_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BodySectionRepeatDimensionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DynamicCategoryDimensionConfiguration" => {
                             builder = builder.set_dynamic_category_dimension_configuration(
-                                    crate::protocol_serde::shape_body_section_dynamic_category_dimension_configuration::de_body_section_dynamic_category_dimension_configuration(tokens)?
+                                    crate::protocol_serde::shape_body_section_dynamic_category_dimension_configuration::de_body_section_dynamic_category_dimension_configuration(tokens, _value)?
                                 );
                         }
                         "DynamicNumericDimensionConfiguration" => {
                             builder = builder.set_dynamic_numeric_dimension_configuration(
-                                    crate::protocol_serde::shape_body_section_dynamic_numeric_dimension_configuration::de_body_section_dynamic_numeric_dimension_configuration(tokens)?
+                                    crate::protocol_serde::shape_body_section_dynamic_numeric_dimension_configuration::de_body_section_dynamic_numeric_dimension_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

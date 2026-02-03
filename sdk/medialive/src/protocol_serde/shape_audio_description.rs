@@ -65,6 +65,7 @@ pub fn ser_audio_description(
 
 pub(crate) fn de_audio_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -80,7 +81,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioNormalizationSettings" => {
                             builder = builder.set_audio_normalization_settings(
-                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens)?,
+                                crate::protocol_serde::shape_audio_normalization_settings::de_audio_normalization_settings(tokens, _value)?,
                             );
                         }
                         "audioSelectorName" => {
@@ -106,11 +107,13 @@ where
                         }
                         "audioWatermarkingSettings" => {
                             builder = builder.set_audio_watermarking_settings(
-                                crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens)?,
+                                crate::protocol_serde::shape_audio_watermark_settings::de_audio_watermark_settings(tokens, _value)?,
                             );
                         }
                         "codecSettings" => {
-                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(tokens)?);
+                            builder = builder.set_codec_settings(crate::protocol_serde::shape_audio_codec_settings::de_audio_codec_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "languageCode" => {
                             builder = builder.set_language_code(
@@ -137,7 +140,7 @@ where
                             );
                         }
                         "remixSettings" => {
-                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens)?);
+                            builder = builder.set_remix_settings(crate::protocol_serde::shape_remix_settings::de_remix_settings(tokens, _value)?);
                         }
                         "streamName" => {
                             builder = builder.set_stream_name(
@@ -147,8 +150,9 @@ where
                             );
                         }
                         "audioDashRoles" => {
-                            builder = builder
-                                .set_audio_dash_roles(crate::protocol_serde::shape_list_of_dash_role_audio::de_list_of_dash_role_audio(tokens)?);
+                            builder = builder.set_audio_dash_roles(crate::protocol_serde::shape_list_of_dash_role_audio::de_list_of_dash_role_audio(
+                                tokens, _value,
+                            )?);
                         }
                         "dvbDashAccessibility" => {
                             builder = builder.set_dvb_dash_accessibility(

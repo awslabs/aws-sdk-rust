@@ -134,13 +134,13 @@ pub fn de_get_automation_rule_v2_http_response(
 }
 
 pub(crate) fn de_get_automation_rule_v2(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_automation_rule_v2::builders::GetAutomationRuleV2OutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_automation_rule_v2::builders::GetAutomationRuleV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -148,8 +148,9 @@ pub(crate) fn de_get_automation_rule_v2(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Actions" => {
-                    builder = builder
-                        .set_actions(crate::protocol_serde::shape_automation_rules_action_list_v2::de_automation_rules_action_list_v2(tokens)?);
+                    builder = builder.set_actions(
+                        crate::protocol_serde::shape_automation_rules_action_list_v2::de_automation_rules_action_list_v2(tokens, _value)?,
+                    );
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -158,7 +159,7 @@ pub(crate) fn de_get_automation_rule_v2(
                     )?);
                 }
                 "Criteria" => {
-                    builder = builder.set_criteria(crate::protocol_serde::shape_criteria::de_criteria(tokens)?);
+                    builder = builder.set_criteria(crate::protocol_serde::shape_criteria::de_criteria(tokens, _value)?);
                 }
                 "Description" => {
                     builder = builder.set_description(

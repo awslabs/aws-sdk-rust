@@ -103,13 +103,13 @@ pub fn ser_validate_security_profile_behaviors_input(
 }
 
 pub(crate) fn de_validate_security_profile_behaviors(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,7 +120,7 @@ pub(crate) fn de_validate_security_profile_behaviors(
                     builder = builder.set_valid(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "validationErrors" => {
-                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens)?);
+                    builder = builder.set_validation_errors(crate::protocol_serde::shape_validation_errors::de_validation_errors(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

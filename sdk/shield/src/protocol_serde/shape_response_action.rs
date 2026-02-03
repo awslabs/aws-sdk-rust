@@ -20,6 +20,7 @@ pub fn ser_response_action(
 
 pub(crate) fn de_response_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Block" => {
-                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens)?);
+                            builder = builder.set_block(crate::protocol_serde::shape_block_action::de_block_action(tokens, _value)?);
                         }
                         "Count" => {
-                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens)?);
+                            builder = builder.set_count(crate::protocol_serde::shape_count_action::de_count_action(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

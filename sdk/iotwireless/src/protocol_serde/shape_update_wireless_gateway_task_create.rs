@@ -20,6 +20,7 @@ pub fn ser_update_wireless_gateway_task_create(
 
 pub(crate) fn de_update_wireless_gateway_task_create<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UpdateWirelessGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,9 @@ where
                         }
                         "LoRaWAN" => {
                             builder = builder.set_lo_ra_wan(
-                                crate::protocol_serde::shape_lo_ra_wan_update_gateway_task_create::de_lo_ra_wan_update_gateway_task_create(tokens)?,
+                                crate::protocol_serde::shape_lo_ra_wan_update_gateway_task_create::de_lo_ra_wan_update_gateway_task_create(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

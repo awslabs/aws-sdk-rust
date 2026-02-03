@@ -69,6 +69,7 @@ pub fn ser_monitoring_job_definition(
 
 pub(crate) fn de_monitoring_job_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoringJobDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,38 +85,40 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "BaselineConfig" => {
                             builder = builder.set_baseline_config(
-                                crate::protocol_serde::shape_monitoring_baseline_config::de_monitoring_baseline_config(tokens)?,
+                                crate::protocol_serde::shape_monitoring_baseline_config::de_monitoring_baseline_config(tokens, _value)?,
                             );
                         }
                         "MonitoringInputs" => {
-                            builder = builder.set_monitoring_inputs(crate::protocol_serde::shape_monitoring_inputs::de_monitoring_inputs(tokens)?);
+                            builder =
+                                builder.set_monitoring_inputs(crate::protocol_serde::shape_monitoring_inputs::de_monitoring_inputs(tokens, _value)?);
                         }
                         "MonitoringOutputConfig" => {
                             builder = builder.set_monitoring_output_config(
-                                crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens)?,
+                                crate::protocol_serde::shape_monitoring_output_config::de_monitoring_output_config(tokens, _value)?,
                             );
                         }
                         "MonitoringResources" => {
-                            builder =
-                                builder.set_monitoring_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(tokens)?);
+                            builder = builder.set_monitoring_resources(crate::protocol_serde::shape_monitoring_resources::de_monitoring_resources(
+                                tokens, _value,
+                            )?);
                         }
                         "MonitoringAppSpecification" => {
                             builder = builder.set_monitoring_app_specification(
-                                crate::protocol_serde::shape_monitoring_app_specification::de_monitoring_app_specification(tokens)?,
+                                crate::protocol_serde::shape_monitoring_app_specification::de_monitoring_app_specification(tokens, _value)?,
                             );
                         }
                         "StoppingCondition" => {
                             builder = builder.set_stopping_condition(
-                                crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens)?,
+                                crate::protocol_serde::shape_monitoring_stopping_condition::de_monitoring_stopping_condition(tokens, _value)?,
                             );
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens)?,
+                                crate::protocol_serde::shape_monitoring_environment_map::de_monitoring_environment_map(tokens, _value)?,
                             );
                         }
                         "NetworkConfig" => {
-                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens)?);
+                            builder = builder.set_network_config(crate::protocol_serde::shape_network_config::de_network_config(tokens, _value)?);
                         }
                         "RoleArn" => {
                             builder = builder.set_role_arn(

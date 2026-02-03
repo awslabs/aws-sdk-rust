@@ -84,13 +84,13 @@ pub fn ser_describe_explainability_input(
 }
 
 pub(crate) fn de_describe_explainability(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_explainability::builders::DescribeExplainabilityOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_explainability::builders::DescribeExplainabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,17 +119,18 @@ pub(crate) fn de_describe_explainability(
                     );
                 }
                 "ExplainabilityConfig" => {
-                    builder =
-                        builder.set_explainability_config(crate::protocol_serde::shape_explainability_config::de_explainability_config(tokens)?);
+                    builder = builder.set_explainability_config(crate::protocol_serde::shape_explainability_config::de_explainability_config(
+                        tokens, _value,
+                    )?);
                 }
                 "EnableVisualization" => {
                     builder = builder.set_enable_visualization(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                 }
                 "Schema" => {
-                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens)?);
+                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value)?);
                 }
                 "StartDateTime" => {
                     builder = builder.set_start_date_time(

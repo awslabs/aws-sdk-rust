@@ -26,6 +26,7 @@ pub fn ser_code_repository(
 
 pub(crate) fn de_code_repository<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeRepository>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,11 +48,12 @@ where
                             );
                         }
                         "SourceCodeVersion" => {
-                            builder =
-                                builder.set_source_code_version(crate::protocol_serde::shape_source_code_version::de_source_code_version(tokens)?);
+                            builder = builder
+                                .set_source_code_version(crate::protocol_serde::shape_source_code_version::de_source_code_version(tokens, _value)?);
                         }
                         "CodeConfiguration" => {
-                            builder = builder.set_code_configuration(crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens)?);
+                            builder = builder
+                                .set_code_configuration(crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens, _value)?);
                         }
                         "SourceDirectory" => {
                             builder = builder.set_source_directory(

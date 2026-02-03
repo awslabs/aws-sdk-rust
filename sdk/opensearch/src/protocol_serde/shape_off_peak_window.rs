@@ -14,6 +14,7 @@ pub fn ser_off_peak_window(
 
 pub(crate) fn de_off_peak_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OffPeakWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "WindowStartTime" => {
-                            builder = builder.set_window_start_time(crate::protocol_serde::shape_window_start_time::de_window_start_time(tokens)?);
+                            builder =
+                                builder.set_window_start_time(crate::protocol_serde::shape_window_start_time::de_window_start_time(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

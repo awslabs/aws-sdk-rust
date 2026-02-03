@@ -52,6 +52,7 @@ pub fn ser_keys_and_attributes(
 
 pub(crate) fn de_keys_and_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KeysAndAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,11 +67,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_key_list::de_key_list(tokens)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_key_list::de_key_list(tokens, _value)?);
                         }
                         "AttributesToGet" => {
-                            builder =
-                                builder.set_attributes_to_get(crate::protocol_serde::shape_attribute_name_list::de_attribute_name_list(tokens)?);
+                            builder = builder
+                                .set_attributes_to_get(crate::protocol_serde::shape_attribute_name_list::de_attribute_name_list(tokens, _value)?);
                         }
                         "ConsistentRead" => {
                             builder = builder.set_consistent_read(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -84,7 +85,7 @@ where
                         }
                         "ExpressionAttributeNames" => {
                             builder = builder.set_expression_attribute_names(
-                                crate::protocol_serde::shape_expression_attribute_name_map::de_expression_attribute_name_map(tokens)?,
+                                crate::protocol_serde::shape_expression_attribute_name_map::de_expression_attribute_name_map(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

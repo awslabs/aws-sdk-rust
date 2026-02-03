@@ -142,13 +142,13 @@ pub fn ser_add_application_vpc_configuration_input(
 }
 
 pub(crate) fn de_add_application_vpc_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_application_vpc_configuration::builders::AddApplicationVpcConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_add_application_vpc_configuration(
                 }
                 "VpcConfigurationDescription" => {
                     builder = builder.set_vpc_configuration_description(
-                        crate::protocol_serde::shape_vpc_configuration_description::de_vpc_configuration_description(tokens)?,
+                        crate::protocol_serde::shape_vpc_configuration_description::de_vpc_configuration_description(tokens, _value)?,
                     );
                 }
                 "OperationId" => {

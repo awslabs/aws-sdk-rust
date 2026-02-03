@@ -35,6 +35,7 @@ pub fn ser_component_condition_property(
 
 pub(crate) fn de_component_condition_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentConditionProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,10 +78,12 @@ where
                             );
                         }
                         "then" => {
-                            builder = builder.set_then(crate::protocol_serde::shape_component_property::de_component_property(tokens)?.map(Box::new));
+                            builder = builder
+                                .set_then(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?.map(Box::new));
                         }
                         "else" => {
-                            builder = builder.set_else(crate::protocol_serde::shape_component_property::de_component_property(tokens)?.map(Box::new));
+                            builder = builder
+                                .set_else(crate::protocol_serde::shape_component_property::de_component_property(tokens, _value)?.map(Box::new));
                         }
                         "operandType" => {
                             builder = builder.set_operand_type(

@@ -148,13 +148,13 @@ pub fn ser_reset_distribution_cache_input(
 }
 
 pub(crate) fn de_reset_distribution_cache(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_reset_distribution_cache(
                     )?);
                 }
                 "operation" => {
-                    builder = builder.set_operation(crate::protocol_serde::shape_operation::de_operation(tokens)?);
+                    builder = builder.set_operation(crate::protocol_serde::shape_operation::de_operation(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

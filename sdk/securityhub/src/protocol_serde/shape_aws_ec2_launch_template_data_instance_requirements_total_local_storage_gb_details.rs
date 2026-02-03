@@ -20,6 +20,7 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_total_local_storag
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

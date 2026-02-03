@@ -94,13 +94,13 @@ pub fn de_describe_broker_instance_options_http_response(
 }
 
 pub(crate) fn de_describe_broker_instance_options(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,7 +109,7 @@ pub(crate) fn de_describe_broker_instance_options(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "brokerInstanceOptions" => {
                     builder = builder.set_broker_instance_options(
-                        crate::protocol_serde::shape_list_of_broker_instance_option::de_list_of_broker_instance_option(tokens)?,
+                        crate::protocol_serde::shape_list_of_broker_instance_option::de_list_of_broker_instance_option(tokens, _value)?,
                     );
                 }
                 "maxResults" => {

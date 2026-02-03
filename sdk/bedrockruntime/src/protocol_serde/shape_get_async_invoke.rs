@@ -100,13 +100,13 @@ pub fn de_get_async_invoke_http_response(
 }
 
 pub(crate) fn de_get_async_invoke(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_async_invoke::builders::GetAsyncInvokeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -155,7 +155,7 @@ pub(crate) fn de_get_async_invoke(
                 }
                 "outputDataConfig" => {
                     builder = builder.set_output_data_config(
-                        crate::protocol_serde::shape_async_invoke_output_data_config::de_async_invoke_output_data_config(tokens)?,
+                        crate::protocol_serde::shape_async_invoke_output_data_config::de_async_invoke_output_data_config(tokens, _value)?,
                     );
                 }
                 "status" => {

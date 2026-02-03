@@ -41,6 +41,7 @@ pub fn ser_backend_api_resource_config(
 
 pub(crate) fn de_backend_api_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BackendApiResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "additionalAuthTypes" => {
                             builder = builder.set_additional_auth_types(
-                                crate::protocol_serde::shape_list_of_backend_api_auth_type::de_list_of_backend_api_auth_type(tokens)?,
+                                crate::protocol_serde::shape_list_of_backend_api_auth_type::de_list_of_backend_api_auth_type(tokens, _value)?,
                             );
                         }
                         "apiName" => {
@@ -68,12 +69,13 @@ where
                         }
                         "conflictResolution" => {
                             builder = builder.set_conflict_resolution(
-                                crate::protocol_serde::shape_backend_api_conflict_resolution::de_backend_api_conflict_resolution(tokens)?,
+                                crate::protocol_serde::shape_backend_api_conflict_resolution::de_backend_api_conflict_resolution(tokens, _value)?,
                             );
                         }
                         "defaultAuthType" => {
-                            builder =
-                                builder.set_default_auth_type(crate::protocol_serde::shape_backend_api_auth_type::de_backend_api_auth_type(tokens)?);
+                            builder = builder.set_default_auth_type(crate::protocol_serde::shape_backend_api_auth_type::de_backend_api_auth_type(
+                                tokens, _value,
+                            )?);
                         }
                         "service" => {
                             builder = builder.set_service(

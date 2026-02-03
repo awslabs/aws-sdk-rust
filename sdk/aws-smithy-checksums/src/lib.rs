@@ -377,7 +377,7 @@ mod tests {
     use crate::ChecksumAlgorithm;
 
     use aws_smithy_types::base64;
-    use http::HeaderValue;
+    use http_1x::HeaderValue;
     use pretty_assertions::assert_eq;
     use std::fmt::Write;
 

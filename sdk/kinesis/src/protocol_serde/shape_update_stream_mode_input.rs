@@ -6,16 +6,19 @@ pub fn ser_update_stream_mode_input_input(
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.stream_mode_details {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("StreamModeDetails").start_object();
-        crate::protocol_serde::shape_stream_mode_details::ser_stream_mode_details(&mut object_3, var_2)?;
-        object_3.finish();
+    if let Some(var_2) = &input.stream_id {
+        object.key("StreamId").string(var_2.as_str());
     }
-    if let Some(var_4) = &input.warm_throughput_mibps {
+    if let Some(var_3) = &input.stream_mode_details {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("StreamModeDetails").start_object();
+        crate::protocol_serde::shape_stream_mode_details::ser_stream_mode_details(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.warm_throughput_mibps {
         object.key("WarmThroughputMiBps").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

@@ -46,13 +46,13 @@ pub fn ser_list_cluster_scheduler_configs_input(
 }
 
 pub(crate) fn de_list_cluster_scheduler_configs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_cluster_scheduler_configs::builders::ListClusterSchedulerConfigsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_cluster_scheduler_configs::builders::ListClusterSchedulerConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -61,7 +61,7 @@ pub(crate) fn de_list_cluster_scheduler_configs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ClusterSchedulerConfigSummaries" => {
                     builder = builder.set_cluster_scheduler_config_summaries(
-                        crate::protocol_serde::shape_cluster_scheduler_config_summary_list::de_cluster_scheduler_config_summary_list(tokens)?,
+                        crate::protocol_serde::shape_cluster_scheduler_config_summary_list::de_cluster_scheduler_config_summary_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

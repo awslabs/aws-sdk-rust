@@ -74,6 +74,7 @@ pub fn ser_distribution(
 
 pub(crate) fn de_distribution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Distribution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,37 +97,41 @@ where
                         }
                         "amiDistributionConfiguration" => {
                             builder = builder.set_ami_distribution_configuration(
-                                crate::protocol_serde::shape_ami_distribution_configuration::de_ami_distribution_configuration(tokens)?,
+                                crate::protocol_serde::shape_ami_distribution_configuration::de_ami_distribution_configuration(tokens, _value)?,
                             );
                         }
                         "containerDistributionConfiguration" => {
                             builder = builder.set_container_distribution_configuration(
-                                crate::protocol_serde::shape_container_distribution_configuration::de_container_distribution_configuration(tokens)?,
+                                crate::protocol_serde::shape_container_distribution_configuration::de_container_distribution_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "licenseConfigurationArns" => {
                             builder = builder.set_license_configuration_arns(
-                                crate::protocol_serde::shape_license_configuration_arn_list::de_license_configuration_arn_list(tokens)?,
+                                crate::protocol_serde::shape_license_configuration_arn_list::de_license_configuration_arn_list(tokens, _value)?,
                             );
                         }
                         "launchTemplateConfigurations" => {
                             builder = builder.set_launch_template_configurations(
-                                crate::protocol_serde::shape_launch_template_configuration_list::de_launch_template_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_launch_template_configuration_list::de_launch_template_configuration_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "s3ExportConfiguration" => {
                             builder = builder.set_s3_export_configuration(
-                                crate::protocol_serde::shape_s3_export_configuration::de_s3_export_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_export_configuration::de_s3_export_configuration(tokens, _value)?,
                             );
                         }
                         "fastLaunchConfigurations" => {
                             builder = builder.set_fast_launch_configurations(
-                                crate::protocol_serde::shape_fast_launch_configuration_list::de_fast_launch_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_fast_launch_configuration_list::de_fast_launch_configuration_list(tokens, _value)?,
                             );
                         }
                         "ssmParameterConfigurations" => {
                             builder = builder.set_ssm_parameter_configurations(
-                                crate::protocol_serde::shape_ssm_parameter_configuration_list::de_ssm_parameter_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_ssm_parameter_configuration_list::de_ssm_parameter_configuration_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

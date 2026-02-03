@@ -160,13 +160,13 @@ pub fn ser_get_cost_categories_input(
 }
 
 pub(crate) fn de_get_cost_categories(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -182,12 +182,12 @@ pub(crate) fn de_get_cost_categories(
                 }
                 "CostCategoryNames" => {
                     builder = builder.set_cost_category_names(crate::protocol_serde::shape_cost_category_names_list::de_cost_category_names_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "CostCategoryValues" => {
                     builder = builder.set_cost_category_values(crate::protocol_serde::shape_cost_category_values_list::de_cost_category_values_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "ReturnSize" => {

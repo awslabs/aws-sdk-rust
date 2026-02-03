@@ -23,6 +23,7 @@ pub fn ser_model_package_validation_specification(
 
 pub(crate) fn de_model_package_validation_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelPackageValidationSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ValidationProfiles" => {
                             builder = builder.set_validation_profiles(
-                                crate::protocol_serde::shape_model_package_validation_profiles::de_model_package_validation_profiles(tokens)?,
+                                crate::protocol_serde::shape_model_package_validation_profiles::de_model_package_validation_profiles(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -29,6 +29,7 @@ pub fn ser_source_flow_config(
 
 pub(crate) fn de_source_flow_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceFlowConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,12 +66,12 @@ where
                         }
                         "sourceConnectorProperties" => {
                             builder = builder.set_source_connector_properties(
-                                crate::protocol_serde::shape_source_connector_properties::de_source_connector_properties(tokens)?,
+                                crate::protocol_serde::shape_source_connector_properties::de_source_connector_properties(tokens, _value)?,
                             );
                         }
                         "incrementalPullConfig" => {
                             builder = builder.set_incremental_pull_config(
-                                crate::protocol_serde::shape_incremental_pull_config::de_incremental_pull_config(tokens)?,
+                                crate::protocol_serde::shape_incremental_pull_config::de_incremental_pull_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

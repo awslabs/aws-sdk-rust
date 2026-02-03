@@ -26,6 +26,7 @@ pub fn ser_failover_config(
 
 pub(crate) fn de_failover_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FailoverConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "sourcePriority" => {
-                            builder = builder.set_source_priority(crate::protocol_serde::shape_source_priority::de_source_priority(tokens)?);
+                            builder = builder.set_source_priority(crate::protocol_serde::shape_source_priority::de_source_priority(tokens, _value)?);
                         }
                         "state" => {
                             builder = builder.set_state(

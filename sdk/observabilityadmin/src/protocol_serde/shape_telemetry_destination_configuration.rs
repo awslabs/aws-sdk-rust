@@ -50,6 +50,7 @@ pub fn ser_telemetry_destination_configuration(
 
 pub(crate) fn de_telemetry_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelemetryDestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,25 +87,29 @@ where
                         }
                         "VPCFlowLogParameters" => {
                             builder = builder.set_vpc_flow_log_parameters(
-                                crate::protocol_serde::shape_vpc_flow_log_parameters::de_vpc_flow_log_parameters(tokens)?,
+                                crate::protocol_serde::shape_vpc_flow_log_parameters::de_vpc_flow_log_parameters(tokens, _value)?,
                             );
                         }
                         "CloudtrailParameters" => {
-                            builder = builder
-                                .set_cloudtrail_parameters(crate::protocol_serde::shape_cloudtrail_parameters::de_cloudtrail_parameters(tokens)?);
+                            builder = builder.set_cloudtrail_parameters(
+                                crate::protocol_serde::shape_cloudtrail_parameters::de_cloudtrail_parameters(tokens, _value)?,
+                            );
                         }
                         "ELBLoadBalancerLoggingParameters" => {
                             builder = builder.set_elb_load_balancer_logging_parameters(
-                                crate::protocol_serde::shape_elb_load_balancer_logging_parameters::de_elb_load_balancer_logging_parameters(tokens)?,
+                                crate::protocol_serde::shape_elb_load_balancer_logging_parameters::de_elb_load_balancer_logging_parameters(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "WAFLoggingParameters" => {
-                            builder = builder
-                                .set_waf_logging_parameters(crate::protocol_serde::shape_waf_logging_parameters::de_waf_logging_parameters(tokens)?);
+                            builder = builder.set_waf_logging_parameters(
+                                crate::protocol_serde::shape_waf_logging_parameters::de_waf_logging_parameters(tokens, _value)?,
+                            );
                         }
                         "LogDeliveryParameters" => {
                             builder = builder.set_log_delivery_parameters(
-                                crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens)?,
+                                crate::protocol_serde::shape_log_delivery_parameters::de_log_delivery_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

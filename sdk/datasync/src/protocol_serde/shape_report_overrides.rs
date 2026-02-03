@@ -32,6 +32,7 @@ pub fn ser_report_overrides(
 
 pub(crate) fn de_report_overrides<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReportOverrides>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,16 +47,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Transferred" => {
-                            builder = builder.set_transferred(crate::protocol_serde::shape_report_override::de_report_override(tokens)?);
+                            builder = builder.set_transferred(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
                         }
                         "Verified" => {
-                            builder = builder.set_verified(crate::protocol_serde::shape_report_override::de_report_override(tokens)?);
+                            builder = builder.set_verified(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
                         }
                         "Deleted" => {
-                            builder = builder.set_deleted(crate::protocol_serde::shape_report_override::de_report_override(tokens)?);
+                            builder = builder.set_deleted(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
                         }
                         "Skipped" => {
-                            builder = builder.set_skipped(crate::protocol_serde::shape_report_override::de_report_override(tokens)?);
+                            builder = builder.set_skipped(crate::protocol_serde::shape_report_override::de_report_override(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

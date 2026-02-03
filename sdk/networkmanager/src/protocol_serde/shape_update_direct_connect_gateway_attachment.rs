@@ -176,13 +176,13 @@ pub fn ser_update_direct_connect_gateway_attachment_input(
 }
 
 pub(crate) fn de_update_direct_connect_gateway_attachment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_direct_connect_gateway_attachment::builders::UpdateDirectConnectGatewayAttachmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_direct_connect_gateway_attachment::builders::UpdateDirectConnectGatewayAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -191,7 +191,7 @@ pub(crate) fn de_update_direct_connect_gateway_attachment(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DirectConnectGatewayAttachment" => {
                     builder = builder.set_direct_connect_gateway_attachment(
-                        crate::protocol_serde::shape_direct_connect_gateway_attachment::de_direct_connect_gateway_attachment(tokens)?,
+                        crate::protocol_serde::shape_direct_connect_gateway_attachment::de_direct_connect_gateway_attachment(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

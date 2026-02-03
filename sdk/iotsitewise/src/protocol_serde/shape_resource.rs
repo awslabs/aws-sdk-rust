@@ -20,6 +20,7 @@ pub fn ser_resource(
 
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "portal" => {
-                            builder = builder.set_portal(crate::protocol_serde::shape_portal_resource::de_portal_resource(tokens)?);
+                            builder = builder.set_portal(crate::protocol_serde::shape_portal_resource::de_portal_resource(tokens, _value)?);
                         }
                         "project" => {
-                            builder = builder.set_project(crate::protocol_serde::shape_project_resource::de_project_resource(tokens)?);
+                            builder = builder.set_project(crate::protocol_serde::shape_project_resource::de_project_resource(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

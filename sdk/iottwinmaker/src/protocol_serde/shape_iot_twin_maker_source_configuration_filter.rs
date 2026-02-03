@@ -27,6 +27,7 @@ pub fn ser_iot_twin_maker_source_configuration_filter(
 
 pub(crate) fn de_iot_twin_maker_source_configuration_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IotTwinMakerSourceConfigurationFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "filterByComponentType" => Some(crate::types::IotTwinMakerSourceConfigurationFilter::FilterByComponentType(
-                            crate::protocol_serde::shape_filter_by_component_type::de_filter_by_component_type(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_by_component_type::de_filter_by_component_type(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'filterByComponentType' cannot be null")
                             })?,
                         )),
                         "filterByEntity" => Some(crate::types::IotTwinMakerSourceConfigurationFilter::FilterByEntity(
-                            crate::protocol_serde::shape_filter_by_entity::de_filter_by_entity(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_by_entity::de_filter_by_entity(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'filterByEntity' cannot be null")
                             })?,
                         )),

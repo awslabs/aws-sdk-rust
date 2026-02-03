@@ -14,6 +14,7 @@ pub fn ser_measurement(
 
 pub(crate) fn de_measurement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Measurement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "processingConfig" => {
                             builder = builder.set_processing_config(
-                                crate::protocol_serde::shape_measurement_processing_config::de_measurement_processing_config(tokens)?,
+                                crate::protocol_serde::shape_measurement_processing_config::de_measurement_processing_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

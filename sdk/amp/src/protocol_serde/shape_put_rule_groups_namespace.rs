@@ -175,13 +175,13 @@ pub fn ser_put_rule_groups_namespace_input(
 }
 
 pub(crate) fn de_put_rule_groups_namespace(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -203,10 +203,11 @@ pub(crate) fn de_put_rule_groups_namespace(
                     );
                 }
                 "status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_rule_groups_namespace_status::de_rule_groups_namespace_status(tokens)?);
+                    builder = builder
+                        .set_status(crate::protocol_serde::shape_rule_groups_namespace_status::de_rule_groups_namespace_status(tokens, _value)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

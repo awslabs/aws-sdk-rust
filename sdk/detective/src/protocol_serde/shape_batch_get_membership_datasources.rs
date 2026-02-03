@@ -119,13 +119,13 @@ pub fn ser_batch_get_membership_datasources_input(
 }
 
 pub(crate) fn de_batch_get_membership_datasources(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_membership_datasources::builders::BatchGetMembershipDatasourcesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,11 +134,13 @@ pub(crate) fn de_batch_get_membership_datasources(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MembershipDatasources" => {
                     builder = builder.set_membership_datasources(
-                        crate::protocol_serde::shape_membership_datasources_list::de_membership_datasources_list(tokens)?,
+                        crate::protocol_serde::shape_membership_datasources_list::de_membership_datasources_list(tokens, _value)?,
                     );
                 }
                 "UnprocessedGraphs" => {
-                    builder = builder.set_unprocessed_graphs(crate::protocol_serde::shape_unprocessed_graph_list::de_unprocessed_graph_list(tokens)?);
+                    builder = builder.set_unprocessed_graphs(crate::protocol_serde::shape_unprocessed_graph_list::de_unprocessed_graph_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

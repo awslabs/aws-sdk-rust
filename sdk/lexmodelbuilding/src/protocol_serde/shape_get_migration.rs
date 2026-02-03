@@ -103,13 +103,13 @@ pub fn de_get_migration_http_response(
 }
 
 pub(crate) fn de_get_migration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_migration::builders::GetMigrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_migration::builders::GetMigrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,7 @@ pub(crate) fn de_get_migration(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "alerts" => {
-                    builder = builder.set_alerts(crate::protocol_serde::shape_migration_alerts::de_migration_alerts(tokens)?);
+                    builder = builder.set_alerts(crate::protocol_serde::shape_migration_alerts::de_migration_alerts(tokens, _value)?);
                 }
                 "migrationId" => {
                     builder = builder.set_migration_id(

@@ -21,6 +21,7 @@ pub fn ser_mobile_device_management(
 
 pub(crate) fn de_mobile_device_management<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MobileDeviceManagement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "Intune" => Some(crate::types::MobileDeviceManagement::Intune(
-                            crate::protocol_serde::shape_intune_configuration::de_intune_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_intune_configuration::de_intune_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Intune' cannot be null")
                             })?,
                         )),

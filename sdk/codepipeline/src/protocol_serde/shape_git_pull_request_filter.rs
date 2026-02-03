@@ -29,6 +29,7 @@ pub fn ser_git_pull_request_filter(
 
 pub(crate) fn de_git_pull_request_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GitPullRequestFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,17 +45,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "events" => {
                             builder = builder.set_events(
-                                crate::protocol_serde::shape_git_pull_request_event_type_list::de_git_pull_request_event_type_list(tokens)?,
+                                crate::protocol_serde::shape_git_pull_request_event_type_list::de_git_pull_request_event_type_list(tokens, _value)?,
                             );
                         }
                         "branches" => {
                             builder = builder.set_branches(crate::protocol_serde::shape_git_branch_filter_criteria::de_git_branch_filter_criteria(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "filePaths" => {
                             builder = builder.set_file_paths(
-                                crate::protocol_serde::shape_git_file_path_filter_criteria::de_git_file_path_filter_criteria(tokens)?,
+                                crate::protocol_serde::shape_git_file_path_filter_criteria::de_git_file_path_filter_criteria(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

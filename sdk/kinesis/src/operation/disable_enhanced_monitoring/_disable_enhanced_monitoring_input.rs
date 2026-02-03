@@ -30,6 +30,8 @@ pub struct DisableEnhancedMonitoringInput {
     pub shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableEnhancedMonitoringInput {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
@@ -66,6 +68,10 @@ impl DisableEnhancedMonitoringInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl DisableEnhancedMonitoringInput {
     /// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput).
@@ -81,6 +87,7 @@ pub struct DisableEnhancedMonitoringInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) shard_level_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableEnhancedMonitoringInputBuilder {
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
@@ -191,6 +198,20 @@ impl DisableEnhancedMonitoringInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`DisableEnhancedMonitoringInput`](crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput).
     pub fn build(
         self,
@@ -202,6 +223,7 @@ impl DisableEnhancedMonitoringInputBuilder {
             stream_name: self.stream_name,
             shard_level_metrics: self.shard_level_metrics,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

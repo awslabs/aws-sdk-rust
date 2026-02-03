@@ -14,6 +14,7 @@ pub fn ser_aws_s3_bucket_object_lock_configuration_rule_details(
 
 pub(crate) fn de_aws_s3_bucket_object_lock_configuration_rule_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultRetention" => {
                             builder = builder.set_default_retention(
-                                    crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration_rule_default_retention_details::de_aws_s3_bucket_object_lock_configuration_rule_default_retention_details(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration_rule_default_retention_details::de_aws_s3_bucket_object_lock_configuration_rule_default_retention_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

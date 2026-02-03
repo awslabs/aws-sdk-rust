@@ -42,6 +42,7 @@ pub fn ser_schema_definition(
 
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,13 +64,14 @@ where
                             );
                         }
                         "properties" => {
-                            builder = builder.set_properties(crate::protocol_serde::shape_schema_properties::de_schema_properties(tokens)?);
+                            builder = builder.set_properties(crate::protocol_serde::shape_schema_properties::de_schema_properties(tokens, _value)?);
                         }
                         "required" => {
-                            builder = builder.set_required(crate::protocol_serde::shape_required_properties::de_required_properties(tokens)?);
+                            builder = builder.set_required(crate::protocol_serde::shape_required_properties::de_required_properties(tokens, _value)?);
                         }
                         "items" => {
-                            builder = builder.set_items(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens)?.map(Box::new));
+                            builder = builder
+                                .set_items(crate::protocol_serde::shape_schema_definition::de_schema_definition(tokens, _value)?.map(Box::new));
                         }
                         "description" => {
                             builder = builder.set_description(

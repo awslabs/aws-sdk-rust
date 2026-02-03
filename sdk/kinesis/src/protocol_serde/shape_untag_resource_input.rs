@@ -15,5 +15,8 @@ pub fn ser_untag_resource_input_input(
     if let Some(var_4) = &input.resource_arn {
         object.key("ResourceARN").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.stream_id {
+        object.key("StreamId").string(var_5.as_str());
+    }
     Ok(())
 }

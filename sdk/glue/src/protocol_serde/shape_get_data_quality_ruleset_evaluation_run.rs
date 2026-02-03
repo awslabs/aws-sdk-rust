@@ -128,13 +128,13 @@ pub fn ser_get_data_quality_ruleset_evaluation_run_input(
 }
 
 pub(crate) fn de_get_data_quality_ruleset_evaluation_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,7 @@ pub(crate) fn de_get_data_quality_ruleset_evaluation_run(
                     );
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                 }
                 "Role" => {
                     builder = builder.set_role(
@@ -174,7 +174,7 @@ pub(crate) fn de_get_data_quality_ruleset_evaluation_run(
                 }
                 "AdditionalRunOptions" => {
                     builder = builder.set_additional_run_options(
-                            crate::protocol_serde::shape_data_quality_evaluation_run_additional_run_options::de_data_quality_evaluation_run_additional_run_options(tokens)?
+                            crate::protocol_serde::shape_data_quality_evaluation_run_additional_run_options::de_data_quality_evaluation_run_additional_run_options(tokens, _value)?
                         );
                 }
                 "Status" => {
@@ -217,15 +217,15 @@ pub(crate) fn de_get_data_quality_ruleset_evaluation_run(
                     );
                 }
                 "RulesetNames" => {
-                    builder = builder.set_ruleset_names(crate::protocol_serde::shape_ruleset_names::de_ruleset_names(tokens)?);
+                    builder = builder.set_ruleset_names(crate::protocol_serde::shape_ruleset_names::de_ruleset_names(tokens, _value)?);
                 }
                 "ResultIds" => {
                     builder = builder.set_result_ids(crate::protocol_serde::shape_data_quality_result_id_list::de_data_quality_result_id_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "AdditionalDataSources" => {
-                    builder = builder.set_additional_data_sources(crate::protocol_serde::shape_data_source_map::de_data_source_map(tokens)?);
+                    builder = builder.set_additional_data_sources(crate::protocol_serde::shape_data_source_map::de_data_source_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

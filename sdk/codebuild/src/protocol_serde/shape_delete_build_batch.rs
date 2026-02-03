@@ -63,13 +63,13 @@ pub fn ser_delete_build_batch_input(
 }
 
 pub(crate) fn de_delete_build_batch(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -84,10 +84,10 @@ pub(crate) fn de_delete_build_batch(
                     );
                 }
                 "buildsDeleted" => {
-                    builder = builder.set_builds_deleted(crate::protocol_serde::shape_build_ids::de_build_ids(tokens)?);
+                    builder = builder.set_builds_deleted(crate::protocol_serde::shape_build_ids::de_build_ids(tokens, _value)?);
                 }
                 "buildsNotDeleted" => {
-                    builder = builder.set_builds_not_deleted(crate::protocol_serde::shape_builds_not_deleted::de_builds_not_deleted(tokens)?);
+                    builder = builder.set_builds_not_deleted(crate::protocol_serde::shape_builds_not_deleted::de_builds_not_deleted(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

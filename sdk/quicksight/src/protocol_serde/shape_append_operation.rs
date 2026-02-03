@@ -35,6 +35,7 @@ pub fn ser_append_operation(
 
 pub(crate) fn de_append_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AppendOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,17 +58,18 @@ where
                         }
                         "FirstSource" => {
                             builder = builder.set_first_source(
-                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens)?,
+                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens, _value)?,
                             );
                         }
                         "SecondSource" => {
                             builder = builder.set_second_source(
-                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens)?,
+                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens, _value)?,
                             );
                         }
                         "AppendedColumns" => {
-                            builder =
-                                builder.set_appended_columns(crate::protocol_serde::shape_appended_column_list::de_appended_column_list(tokens)?);
+                            builder = builder.set_appended_columns(crate::protocol_serde::shape_appended_column_list::de_appended_column_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

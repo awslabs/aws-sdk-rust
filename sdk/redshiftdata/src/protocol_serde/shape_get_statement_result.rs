@@ -99,13 +99,13 @@ pub fn ser_get_statement_result_input(
 }
 
 pub(crate) fn de_get_statement_result(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -113,10 +113,12 @@ pub(crate) fn de_get_statement_result(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Records" => {
-                    builder = builder.set_records(crate::protocol_serde::shape_sql_records::de_sql_records(tokens)?);
+                    builder = builder.set_records(crate::protocol_serde::shape_sql_records::de_sql_records(tokens, _value)?);
                 }
                 "ColumnMetadata" => {
-                    builder = builder.set_column_metadata(crate::protocol_serde::shape_column_metadata_list::de_column_metadata_list(tokens)?);
+                    builder = builder.set_column_metadata(crate::protocol_serde::shape_column_metadata_list::de_column_metadata_list(
+                        tokens, _value,
+                    )?);
                 }
                 "TotalNumRows" => {
                     builder = builder.set_total_num_rows(

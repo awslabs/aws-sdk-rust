@@ -20,6 +20,7 @@ pub fn ser_dataset_content_delivery_destination(
 
 pub(crate) fn de_dataset_content_delivery_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetContentDeliveryDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "iotEventsDestinationConfiguration" => {
                             builder = builder.set_iot_events_destination_configuration(
-                                crate::protocol_serde::shape_iot_events_destination_configuration::de_iot_events_destination_configuration(tokens)?,
+                                crate::protocol_serde::shape_iot_events_destination_configuration::de_iot_events_destination_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "s3DestinationConfiguration" => {
                             builder = builder.set_s3_destination_configuration(
-                                crate::protocol_serde::shape_s3_destination_configuration::de_s3_destination_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_destination_configuration::de_s3_destination_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

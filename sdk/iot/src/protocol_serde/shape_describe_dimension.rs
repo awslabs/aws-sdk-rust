@@ -100,13 +100,13 @@ pub fn de_describe_dimension_http_response(
 }
 
 pub(crate) fn de_describe_dimension(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_dimension::builders::DescribeDimensionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_dimension::builders::DescribeDimensionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,9 @@ pub(crate) fn de_describe_dimension(
                     );
                 }
                 "stringValues" => {
-                    builder = builder.set_string_values(crate::protocol_serde::shape_dimension_string_values::de_dimension_string_values(tokens)?);
+                    builder = builder.set_string_values(crate::protocol_serde::shape_dimension_string_values::de_dimension_string_values(
+                        tokens, _value,
+                    )?);
                 }
                 "type" => {
                     builder = builder.set_type(

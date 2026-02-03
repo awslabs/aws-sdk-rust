@@ -33,6 +33,7 @@ pub fn ser_log_configuration(
 
 pub(crate) fn de_log_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,11 +55,12 @@ where
                             );
                         }
                         "options" => {
-                            builder = builder
-                                .set_options(crate::protocol_serde::shape_log_configuration_options_map::de_log_configuration_options_map(tokens)?);
+                            builder = builder.set_options(
+                                crate::protocol_serde::shape_log_configuration_options_map::de_log_configuration_options_map(tokens, _value)?,
+                            );
                         }
                         "secretOptions" => {
-                            builder = builder.set_secret_options(crate::protocol_serde::shape_secret_list::de_secret_list(tokens)?);
+                            builder = builder.set_secret_options(crate::protocol_serde::shape_secret_list::de_secret_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

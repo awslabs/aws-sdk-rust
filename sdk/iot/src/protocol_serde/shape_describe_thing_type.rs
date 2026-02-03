@@ -131,13 +131,13 @@ pub fn de_describe_thing_type_http_response(
 }
 
 pub(crate) fn de_describe_thing_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_thing_type::builders::DescribeThingTypeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_thing_type::builders::DescribeThingTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,8 @@ pub(crate) fn de_describe_thing_type(
                     );
                 }
                 "thingTypeMetadata" => {
-                    builder = builder.set_thing_type_metadata(crate::protocol_serde::shape_thing_type_metadata::de_thing_type_metadata(tokens)?);
+                    builder =
+                        builder.set_thing_type_metadata(crate::protocol_serde::shape_thing_type_metadata::de_thing_type_metadata(tokens, _value)?);
                 }
                 "thingTypeName" => {
                     builder = builder.set_thing_type_name(
@@ -169,8 +170,9 @@ pub(crate) fn de_describe_thing_type(
                     );
                 }
                 "thingTypeProperties" => {
-                    builder =
-                        builder.set_thing_type_properties(crate::protocol_serde::shape_thing_type_properties::de_thing_type_properties(tokens)?);
+                    builder = builder.set_thing_type_properties(crate::protocol_serde::shape_thing_type_properties::de_thing_type_properties(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

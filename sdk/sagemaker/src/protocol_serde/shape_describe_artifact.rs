@@ -63,13 +63,13 @@ pub fn ser_describe_artifact_input(
 }
 
 pub(crate) fn de_describe_artifact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_artifact::builders::DescribeArtifactOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_artifact::builders::DescribeArtifactOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -91,7 +91,7 @@ pub(crate) fn de_describe_artifact(
                     );
                 }
                 "Source" => {
-                    builder = builder.set_source(crate::protocol_serde::shape_artifact_source::de_artifact_source(tokens)?);
+                    builder = builder.set_source(crate::protocol_serde::shape_artifact_source::de_artifact_source(tokens, _value)?);
                 }
                 "ArtifactType" => {
                     builder = builder.set_artifact_type(
@@ -102,7 +102,7 @@ pub(crate) fn de_describe_artifact(
                 }
                 "Properties" => {
                     builder = builder.set_properties(crate::protocol_serde::shape_lineage_entity_parameters::de_lineage_entity_parameters(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "CreationTime" => {
@@ -112,7 +112,7 @@ pub(crate) fn de_describe_artifact(
                     )?);
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "LastModifiedTime" => {
                     builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -121,10 +121,11 @@ pub(crate) fn de_describe_artifact(
                     )?);
                 }
                 "LastModifiedBy" => {
-                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens)?);
+                    builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
                 "MetadataProperties" => {
-                    builder = builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens)?);
+                    builder =
+                        builder.set_metadata_properties(crate::protocol_serde::shape_metadata_properties::de_metadata_properties(tokens, _value)?);
                 }
                 "LineageGroupArn" => {
                     builder = builder.set_lineage_group_arn(

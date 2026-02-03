@@ -21,6 +21,7 @@ pub fn ser_content_association_contents(
 
 pub(crate) fn de_content_association_contents<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContentAssociationContents>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,12 +51,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "amazonConnectGuideAssociation" => Some(crate::types::ContentAssociationContents::AmazonConnectGuideAssociation(
-                            crate::protocol_serde::shape_amazon_connect_guide_association_data::de_amazon_connect_guide_association_data(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'amazonConnectGuideAssociation' cannot be null",
-                                    )
-                                })?,
+                            crate::protocol_serde::shape_amazon_connect_guide_association_data::de_amazon_connect_guide_association_data(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'amazonConnectGuideAssociation' cannot be null",
+                                )
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

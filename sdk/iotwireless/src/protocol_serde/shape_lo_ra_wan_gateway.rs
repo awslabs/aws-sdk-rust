@@ -62,6 +62,7 @@ pub fn ser_lo_ra_wan_gateway(
 
 pub(crate) fn de_lo_ra_wan_gateway<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoRaWanGateway>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -90,16 +91,17 @@ where
                             );
                         }
                         "JoinEuiFilters" => {
-                            builder = builder.set_join_eui_filters(crate::protocol_serde::shape_join_eui_filters::de_join_eui_filters(tokens)?);
+                            builder =
+                                builder.set_join_eui_filters(crate::protocol_serde::shape_join_eui_filters::de_join_eui_filters(tokens, _value)?);
                         }
                         "NetIdFilters" => {
-                            builder = builder.set_net_id_filters(crate::protocol_serde::shape_net_id_filters::de_net_id_filters(tokens)?);
+                            builder = builder.set_net_id_filters(crate::protocol_serde::shape_net_id_filters::de_net_id_filters(tokens, _value)?);
                         }
                         "SubBands" => {
-                            builder = builder.set_sub_bands(crate::protocol_serde::shape_sub_bands::de_sub_bands(tokens)?);
+                            builder = builder.set_sub_bands(crate::protocol_serde::shape_sub_bands::de_sub_bands(tokens, _value)?);
                         }
                         "Beaconing" => {
-                            builder = builder.set_beaconing(crate::protocol_serde::shape_beaconing::de_beaconing(tokens)?);
+                            builder = builder.set_beaconing(crate::protocol_serde::shape_beaconing::de_beaconing(tokens, _value)?);
                         }
                         "MaxEirp" => {
                             builder = builder

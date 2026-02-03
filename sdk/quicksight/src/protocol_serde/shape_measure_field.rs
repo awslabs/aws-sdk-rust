@@ -32,6 +32,7 @@ pub fn ser_measure_field(
 
 pub(crate) fn de_measure_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MeasureField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,20 +48,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NumericalMeasureField" => {
                             builder = builder.set_numerical_measure_field(
-                                crate::protocol_serde::shape_numerical_measure_field::de_numerical_measure_field(tokens)?,
+                                crate::protocol_serde::shape_numerical_measure_field::de_numerical_measure_field(tokens, _value)?,
                             );
                         }
                         "CategoricalMeasureField" => {
                             builder = builder.set_categorical_measure_field(
-                                crate::protocol_serde::shape_categorical_measure_field::de_categorical_measure_field(tokens)?,
+                                crate::protocol_serde::shape_categorical_measure_field::de_categorical_measure_field(tokens, _value)?,
                             );
                         }
                         "DateMeasureField" => {
-                            builder = builder.set_date_measure_field(crate::protocol_serde::shape_date_measure_field::de_date_measure_field(tokens)?);
+                            builder = builder
+                                .set_date_measure_field(crate::protocol_serde::shape_date_measure_field::de_date_measure_field(tokens, _value)?);
                         }
                         "CalculatedMeasureField" => {
                             builder = builder.set_calculated_measure_field(
-                                crate::protocol_serde::shape_calculated_measure_field::de_calculated_measure_field(tokens)?,
+                                crate::protocol_serde::shape_calculated_measure_field::de_calculated_measure_field(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

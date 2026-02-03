@@ -27,6 +27,7 @@ pub fn ser_fleet_configuration(
 
 pub(crate) fn de_fleet_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FleetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,16 +57,20 @@ where
                     }
                     variant = match key.as_ref() {
                         "customerManaged" => Some(crate::types::FleetConfiguration::CustomerManaged(
-                            crate::protocol_serde::shape_customer_managed_fleet_configuration::de_customer_managed_fleet_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customerManaged' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_customer_managed_fleet_configuration::de_customer_managed_fleet_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customerManaged' cannot be null")
+                            })?,
                         )),
                         "serviceManagedEc2" => Some(crate::types::FleetConfiguration::ServiceManagedEc2(
-                            crate::protocol_serde::shape_service_managed_ec2_fleet_configuration::de_service_managed_ec2_fleet_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'serviceManagedEc2' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_service_managed_ec2_fleet_configuration::de_service_managed_ec2_fleet_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'serviceManagedEc2' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -219,13 +219,13 @@ pub fn ser_create_function_input(
 }
 
 pub(crate) fn de_create_function(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_function::builders::CreateFunctionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_function::builders::CreateFunctionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -233,11 +233,11 @@ pub(crate) fn de_create_function(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Architectures" => {
-                    builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(tokens)?);
+                    builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(tokens, _value)?);
                 }
                 "CapacityProviderConfig" => {
                     builder = builder.set_capacity_provider_config(
-                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens)?,
+                        crate::protocol_serde::shape_capacity_provider_config::de_capacity_provider_config(tokens, _value)?,
                     );
                 }
                 "CodeSha256" => {
@@ -262,7 +262,7 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "DeadLetterConfig" => {
-                    builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens)?);
+                    builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens, _value)?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -272,17 +272,20 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "DurableConfig" => {
-                    builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens)?);
+                    builder = builder.set_durable_config(crate::protocol_serde::shape_durable_config::de_durable_config(tokens, _value)?);
                 }
                 "Environment" => {
-                    builder = builder.set_environment(crate::protocol_serde::shape_environment_response::de_environment_response(tokens)?);
+                    builder = builder.set_environment(crate::protocol_serde::shape_environment_response::de_environment_response(
+                        tokens, _value,
+                    )?);
                 }
                 "EphemeralStorage" => {
-                    builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);
+                    builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens, _value)?);
                 }
                 "FileSystemConfigs" => {
-                    builder =
-                        builder.set_file_system_configs(crate::protocol_serde::shape_file_system_config_list::de_file_system_config_list(tokens)?);
+                    builder = builder.set_file_system_configs(crate::protocol_serde::shape_file_system_config_list::de_file_system_config_list(
+                        tokens, _value,
+                    )?);
                 }
                 "FunctionArn" => {
                     builder = builder.set_function_arn(
@@ -306,8 +309,9 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "ImageConfigResponse" => {
-                    builder =
-                        builder.set_image_config_response(crate::protocol_serde::shape_image_config_response::de_image_config_response(tokens)?);
+                    builder = builder.set_image_config_response(crate::protocol_serde::shape_image_config_response::de_image_config_response(
+                        tokens, _value,
+                    )?);
                 }
                 "KMSKeyArn" => {
                     builder = builder.set_kms_key_arn(
@@ -345,10 +349,12 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "Layers" => {
-                    builder = builder.set_layers(crate::protocol_serde::shape_layers_reference_list::de_layers_reference_list(tokens)?);
+                    builder = builder.set_layers(crate::protocol_serde::shape_layers_reference_list::de_layers_reference_list(
+                        tokens, _value,
+                    )?);
                 }
                 "LoggingConfig" => {
-                    builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens)?);
+                    builder = builder.set_logging_config(crate::protocol_serde::shape_logging_config::de_logging_config(tokens, _value)?);
                 }
                 "MasterArn" => {
                     builder = builder.set_master_arn(
@@ -393,8 +399,9 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "RuntimeVersionConfig" => {
-                    builder =
-                        builder.set_runtime_version_config(crate::protocol_serde::shape_runtime_version_config::de_runtime_version_config(tokens)?);
+                    builder = builder.set_runtime_version_config(crate::protocol_serde::shape_runtime_version_config::de_runtime_version_config(
+                        tokens, _value,
+                    )?);
                 }
                 "SigningJobArn" => {
                     builder = builder.set_signing_job_arn(
@@ -411,7 +418,7 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "SnapStart" => {
-                    builder = builder.set_snap_start(crate::protocol_serde::shape_snap_start_response::de_snap_start_response(tokens)?);
+                    builder = builder.set_snap_start(crate::protocol_serde::shape_snap_start_response::de_snap_start_response(tokens, _value)?);
                 }
                 "State" => {
                     builder = builder.set_state(
@@ -435,7 +442,7 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "TenancyConfig" => {
-                    builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens)?);
+                    builder = builder.set_tenancy_config(crate::protocol_serde::shape_tenancy_config::de_tenancy_config(tokens, _value)?);
                 }
                 "Timeout" => {
                     builder = builder.set_timeout(
@@ -445,7 +452,9 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "TracingConfig" => {
-                    builder = builder.set_tracing_config(crate::protocol_serde::shape_tracing_config_response::de_tracing_config_response(tokens)?);
+                    builder = builder.set_tracing_config(crate::protocol_serde::shape_tracing_config_response::de_tracing_config_response(
+                        tokens, _value,
+                    )?);
                 }
                 "Version" => {
                     builder = builder.set_version(
@@ -455,7 +464,7 @@ pub(crate) fn de_create_function(
                     );
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

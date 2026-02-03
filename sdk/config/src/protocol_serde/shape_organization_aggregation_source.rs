@@ -23,6 +23,7 @@ pub fn ser_organization_aggregation_source(
 
 pub(crate) fn de_organization_aggregation_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OrganizationAggregationSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "AwsRegions" => {
-                            builder =
-                                builder.set_aws_regions(crate::protocol_serde::shape_aggregator_region_list::de_aggregator_region_list(tokens)?);
+                            builder = builder.set_aws_regions(crate::protocol_serde::shape_aggregator_region_list::de_aggregator_region_list(
+                                tokens, _value,
+                            )?);
                         }
                         "AllAwsRegions" => {
                             builder = builder.set_all_aws_regions(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

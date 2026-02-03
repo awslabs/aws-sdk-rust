@@ -23,6 +23,7 @@ pub fn ser_instance_placement_config(
 
 pub(crate) fn de_instance_placement_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstancePlacementConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                         }
                         "PlacementSpecifications" => {
                             builder = builder.set_placement_specifications(
-                                crate::protocol_serde::shape_placement_specifications::de_placement_specifications(tokens)?,
+                                crate::protocol_serde::shape_placement_specifications::de_placement_specifications(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -38,6 +38,7 @@ pub fn ser_command_parameter_value_comparison_operand(
 
 pub(crate) fn de_command_parameter_value_comparison_operand<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CommandParameterValueComparisonOperand>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,9 @@ where
                         }
                         "numbers" => {
                             builder = builder.set_numbers(
-                                crate::protocol_serde::shape_command_parameter_value_string_list::de_command_parameter_value_string_list(tokens)?,
+                                crate::protocol_serde::shape_command_parameter_value_string_list::de_command_parameter_value_string_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "string" => {
@@ -72,12 +75,16 @@ where
                         }
                         "strings" => {
                             builder = builder.set_strings(
-                                crate::protocol_serde::shape_command_parameter_value_string_list::de_command_parameter_value_string_list(tokens)?,
+                                crate::protocol_serde::shape_command_parameter_value_string_list::de_command_parameter_value_string_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "numberRange" => {
                             builder = builder.set_number_range(
-                                crate::protocol_serde::shape_command_parameter_value_number_range::de_command_parameter_value_number_range(tokens)?,
+                                crate::protocol_serde::shape_command_parameter_value_number_range::de_command_parameter_value_number_range(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

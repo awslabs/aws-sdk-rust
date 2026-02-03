@@ -149,13 +149,13 @@ pub fn ser_add_stream_group_locations_input(
 }
 
 pub(crate) fn de_add_stream_group_locations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_stream_group_locations::builders::AddStreamGroupLocationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_stream_group_locations::builders::AddStreamGroupLocationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,7 +170,7 @@ pub(crate) fn de_add_stream_group_locations(
                     );
                 }
                 "Locations" => {
-                    builder = builder.set_locations(crate::protocol_serde::shape_location_states::de_location_states(tokens)?);
+                    builder = builder.set_locations(crate::protocol_serde::shape_location_states::de_location_states(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

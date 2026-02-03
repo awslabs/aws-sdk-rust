@@ -112,11 +112,11 @@ pub fn ser_stop_import_input(
 }
 
 pub(crate) fn de_stop_import(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::stop_import::builders::StopImportOutputBuilder,
 ) -> ::std::result::Result<crate::operation::stop_import::builders::StopImportOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,10 +131,10 @@ pub(crate) fn de_stop_import(
                     );
                 }
                 "ImportSource" => {
-                    builder = builder.set_import_source(crate::protocol_serde::shape_import_source::de_import_source(tokens)?);
+                    builder = builder.set_import_source(crate::protocol_serde::shape_import_source::de_import_source(tokens, _value)?);
                 }
                 "Destinations" => {
-                    builder = builder.set_destinations(crate::protocol_serde::shape_import_destinations::de_import_destinations(tokens)?);
+                    builder = builder.set_destinations(crate::protocol_serde::shape_import_destinations::de_import_destinations(tokens, _value)?);
                 }
                 "ImportStatus" => {
                     builder = builder.set_import_status(
@@ -168,7 +168,7 @@ pub(crate) fn de_stop_import(
                     )?);
                 }
                 "ImportStatistics" => {
-                    builder = builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(tokens)?);
+                    builder = builder.set_import_statistics(crate::protocol_serde::shape_import_statistics::de_import_statistics(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

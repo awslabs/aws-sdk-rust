@@ -33,6 +33,7 @@ pub fn ser_virtual_gateway_listener_tls_validation_context_trust(
 
 pub(crate) fn de_virtual_gateway_listener_tls_validation_context_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -66,13 +67,13 @@ where
                     variant = match key.as_ref() {
                             "file" => {
                                 Some(crate::types::VirtualGatewayListenerTlsValidationContextTrust::File(
-                                    crate::protocol_serde::shape_virtual_gateway_tls_validation_context_file_trust::de_virtual_gateway_tls_validation_context_file_trust(tokens)?
+                                    crate::protocol_serde::shape_virtual_gateway_tls_validation_context_file_trust::de_virtual_gateway_tls_validation_context_file_trust(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?
                                 ))
                             }
                             "sds" => {
                                 Some(crate::types::VirtualGatewayListenerTlsValidationContextTrust::Sds(
-                                    crate::protocol_serde::shape_virtual_gateway_tls_validation_context_sds_trust::de_virtual_gateway_tls_validation_context_sds_trust(tokens)?
+                                    crate::protocol_serde::shape_virtual_gateway_tls_validation_context_sds_trust::de_virtual_gateway_tls_validation_context_sds_trust(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?
                                 ))
                             }

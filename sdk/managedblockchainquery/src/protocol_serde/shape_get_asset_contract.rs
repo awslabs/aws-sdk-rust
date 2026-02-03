@@ -151,13 +151,13 @@ pub fn ser_get_asset_contract_input(
 }
 
 pub(crate) fn de_get_asset_contract(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,7 +165,8 @@ pub(crate) fn de_get_asset_contract(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "contractIdentifier" => {
-                    builder = builder.set_contract_identifier(crate::protocol_serde::shape_contract_identifier::de_contract_identifier(tokens)?);
+                    builder =
+                        builder.set_contract_identifier(crate::protocol_serde::shape_contract_identifier::de_contract_identifier(tokens, _value)?);
                 }
                 "deployerAddress" => {
                     builder = builder.set_deployer_address(
@@ -175,7 +176,7 @@ pub(crate) fn de_get_asset_contract(
                     );
                 }
                 "metadata" => {
-                    builder = builder.set_metadata(crate::protocol_serde::shape_contract_metadata::de_contract_metadata(tokens)?);
+                    builder = builder.set_metadata(crate::protocol_serde::shape_contract_metadata::de_contract_metadata(tokens, _value)?);
                 }
                 "tokenStandard" => {
                     builder = builder.set_token_standard(

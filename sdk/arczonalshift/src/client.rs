@@ -151,7 +151,7 @@ mod create_practice_run_configuration;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_arczonalshift::Error> {
 /// # let client: aws_sdk_arczonalshift::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_practice_run()
 ///     .customize()

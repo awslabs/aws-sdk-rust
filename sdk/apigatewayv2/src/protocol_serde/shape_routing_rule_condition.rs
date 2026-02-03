@@ -20,6 +20,7 @@ pub fn ser_routing_rule_condition(
 
 pub(crate) fn de_routing_rule_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RoutingRuleCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "matchBasePaths" => {
                             builder = builder.set_match_base_paths(
-                                crate::protocol_serde::shape_routing_rule_match_base_paths::de_routing_rule_match_base_paths(tokens)?,
+                                crate::protocol_serde::shape_routing_rule_match_base_paths::de_routing_rule_match_base_paths(tokens, _value)?,
                             );
                         }
                         "matchHeaders" => {
                             builder = builder.set_match_headers(
-                                crate::protocol_serde::shape_routing_rule_match_headers::de_routing_rule_match_headers(tokens)?,
+                                crate::protocol_serde::shape_routing_rule_match_headers::de_routing_rule_match_headers(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

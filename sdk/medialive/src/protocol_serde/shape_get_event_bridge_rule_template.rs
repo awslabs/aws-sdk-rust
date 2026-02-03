@@ -124,13 +124,13 @@ pub fn de_get_event_bridge_rule_template_http_response(
 }
 
 pub(crate) fn de_get_event_bridge_rule_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_bridge_rule_template::builders::GetEventBridgeRuleTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_bridge_rule_template::builders::GetEventBridgeRuleTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,7 +159,9 @@ pub(crate) fn de_get_event_bridge_rule_template(
                 }
                 "eventTargets" => {
                     builder = builder.set_event_targets(
-                        crate::protocol_serde::shape_list_of_event_bridge_rule_template_target::de_list_of_event_bridge_rule_template_target(tokens)?,
+                        crate::protocol_serde::shape_list_of_event_bridge_rule_template_target::de_list_of_event_bridge_rule_template_target(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "eventType" => {
@@ -197,7 +199,7 @@ pub(crate) fn de_get_event_bridge_rule_template(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

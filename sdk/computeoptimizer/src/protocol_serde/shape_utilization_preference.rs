@@ -17,6 +17,7 @@ pub fn ser_utilization_preference(
 
 pub(crate) fn de_utilization_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UtilizationPreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "metricParameters" => {
                             builder = builder.set_metric_parameters(
-                                crate::protocol_serde::shape_customizable_metric_parameters::de_customizable_metric_parameters(tokens)?,
+                                crate::protocol_serde::shape_customizable_metric_parameters::de_customizable_metric_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

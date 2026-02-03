@@ -71,6 +71,7 @@ pub fn ser_validation(
 
 pub(crate) fn de_validation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Validation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -139,7 +140,7 @@ where
                             );
                         }
                         "Enum" => {
-                            builder = builder.set_enum(crate::protocol_serde::shape_validation_enum::de_validation_enum(tokens)?);
+                            builder = builder.set_enum(crate::protocol_serde::shape_validation_enum::de_validation_enum(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

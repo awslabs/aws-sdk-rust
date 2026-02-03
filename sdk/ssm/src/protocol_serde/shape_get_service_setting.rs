@@ -80,13 +80,13 @@ pub fn ser_get_service_setting_input(
 }
 
 pub(crate) fn de_get_service_setting(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -94,7 +94,7 @@ pub(crate) fn de_get_service_setting(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ServiceSetting" => {
-                    builder = builder.set_service_setting(crate::protocol_serde::shape_service_setting::de_service_setting(tokens)?);
+                    builder = builder.set_service_setting(crate::protocol_serde::shape_service_setting::de_service_setting(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

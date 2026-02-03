@@ -26,6 +26,7 @@ pub fn ser_delta_target(
 
 pub(crate) fn de_delta_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeltaTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DeltaTables" => {
-                            builder = builder.set_delta_tables(crate::protocol_serde::shape_path_list::de_path_list(tokens)?);
+                            builder = builder.set_delta_tables(crate::protocol_serde::shape_path_list::de_path_list(tokens, _value)?);
                         }
                         "ConnectionName" => {
                             builder = builder.set_connection_name(

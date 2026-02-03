@@ -126,13 +126,13 @@ pub fn ser_list_system_versions_input(
 }
 
 pub(crate) fn de_list_system_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_system_versions::builders::ListSystemVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_system_versions::builders::ListSystemVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,7 +147,7 @@ pub(crate) fn de_list_system_versions(
                     );
                 }
                 "systemVersions" => {
-                    builder = builder.set_system_versions(crate::protocol_serde::shape_system_version_list::de_system_version_list(tokens)?);
+                    builder = builder.set_system_versions(crate::protocol_serde::shape_system_version_list::de_system_version_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

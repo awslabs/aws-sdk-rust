@@ -35,6 +35,7 @@ pub fn ser_historical_usage_entity(
 
 pub(crate) fn de_historical_usage_entity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HistoricalUsageEntity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,10 +85,10 @@ where
                             );
                         }
                         "billInterval" => {
-                            builder = builder.set_bill_interval(crate::protocol_serde::shape_bill_interval::de_bill_interval(tokens)?);
+                            builder = builder.set_bill_interval(crate::protocol_serde::shape_bill_interval::de_bill_interval(tokens, _value)?);
                         }
                         "filterExpression" => {
-                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_filter_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

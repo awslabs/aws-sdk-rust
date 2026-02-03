@@ -32,6 +32,7 @@ pub fn ser_workspace_theme_palette(
 
 pub(crate) fn de_workspace_theme_palette<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceThemePalette>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,16 +47,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Header" => {
-                            builder = builder.set_header(crate::protocol_serde::shape_palette_header::de_palette_header(tokens)?);
+                            builder = builder.set_header(crate::protocol_serde::shape_palette_header::de_palette_header(tokens, _value)?);
                         }
                         "Navigation" => {
-                            builder = builder.set_navigation(crate::protocol_serde::shape_palette_navigation::de_palette_navigation(tokens)?);
+                            builder = builder.set_navigation(crate::protocol_serde::shape_palette_navigation::de_palette_navigation(tokens, _value)?);
                         }
                         "Canvas" => {
-                            builder = builder.set_canvas(crate::protocol_serde::shape_palette_canvas::de_palette_canvas(tokens)?);
+                            builder = builder.set_canvas(crate::protocol_serde::shape_palette_canvas::de_palette_canvas(tokens, _value)?);
                         }
                         "Primary" => {
-                            builder = builder.set_primary(crate::protocol_serde::shape_palette_primary::de_palette_primary(tokens)?);
+                            builder = builder.set_primary(crate::protocol_serde::shape_palette_primary::de_palette_primary(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

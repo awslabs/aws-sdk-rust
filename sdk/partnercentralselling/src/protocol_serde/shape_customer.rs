@@ -26,6 +26,7 @@ pub fn ser_customer(
 
 pub(crate) fn de_customer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Customer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Account" => {
-                            builder = builder.set_account(crate::protocol_serde::shape_account::de_account(tokens)?);
+                            builder = builder.set_account(crate::protocol_serde::shape_account::de_account(tokens, _value)?);
                         }
                         "Contacts" => {
-                            builder = builder.set_contacts(crate::protocol_serde::shape_customer_contacts_list::de_customer_contacts_list(tokens)?);
+                            builder = builder.set_contacts(crate::protocol_serde::shape_customer_contacts_list::de_customer_contacts_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

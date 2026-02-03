@@ -121,13 +121,13 @@ pub fn de_get_model_invocation_job_http_response(
 }
 
 pub(crate) fn de_get_model_invocation_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_model_invocation_job::builders::GetModelInvocationJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_model_invocation_job::builders::GetModelInvocationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,9 @@ pub(crate) fn de_get_model_invocation_job(
                 }
                 "inputDataConfig" => {
                     builder = builder.set_input_data_config(
-                        crate::protocol_serde::shape_model_invocation_job_input_data_config::de_model_invocation_job_input_data_config(tokens)?,
+                        crate::protocol_serde::shape_model_invocation_job_input_data_config::de_model_invocation_job_input_data_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "jobArn" => {
@@ -194,7 +196,9 @@ pub(crate) fn de_get_model_invocation_job(
                 }
                 "outputDataConfig" => {
                     builder = builder.set_output_data_config(
-                        crate::protocol_serde::shape_model_invocation_job_output_data_config::de_model_invocation_job_output_data_config(tokens)?,
+                        crate::protocol_serde::shape_model_invocation_job_output_data_config::de_model_invocation_job_output_data_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "roleArn" => {
@@ -225,7 +229,7 @@ pub(crate) fn de_get_model_invocation_job(
                     );
                 }
                 "vpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

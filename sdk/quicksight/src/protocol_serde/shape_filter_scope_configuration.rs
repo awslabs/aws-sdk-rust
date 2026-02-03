@@ -23,6 +23,7 @@ pub fn ser_filter_scope_configuration(
 
 pub(crate) fn de_filter_scope_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterScopeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedSheets" => {
                             builder = builder.set_selected_sheets(
-                                    crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens)?
+                                    crate::protocol_serde::shape_selected_sheets_filter_scope_configuration::de_selected_sheets_filter_scope_configuration(tokens, _value)?
                                 );
                         }
                         "AllSheets" => {
                             builder = builder.set_all_sheets(
-                                crate::protocol_serde::shape_all_sheets_filter_scope_configuration::de_all_sheets_filter_scope_configuration(tokens)?,
+                                crate::protocol_serde::shape_all_sheets_filter_scope_configuration::de_all_sheets_filter_scope_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

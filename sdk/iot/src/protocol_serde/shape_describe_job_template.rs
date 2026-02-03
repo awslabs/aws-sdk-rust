@@ -104,13 +104,13 @@ pub fn de_describe_job_template_http_response(
 }
 
 pub(crate) fn de_describe_job_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,7 +118,7 @@ pub(crate) fn de_describe_job_template(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "abortConfig" => {
-                    builder = builder.set_abort_config(crate::protocol_serde::shape_abort_config::de_abort_config(tokens)?);
+                    builder = builder.set_abort_config(crate::protocol_serde::shape_abort_config::de_abort_config(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -135,7 +135,7 @@ pub(crate) fn de_describe_job_template(
                 }
                 "destinationPackageVersions" => {
                     builder = builder.set_destination_package_versions(
-                        crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens)?,
+                        crate::protocol_serde::shape_destination_package_versions::de_destination_package_versions(tokens, _value)?,
                     );
                 }
                 "document" => {
@@ -154,12 +154,12 @@ pub(crate) fn de_describe_job_template(
                 }
                 "jobExecutionsRetryConfig" => {
                     builder = builder.set_job_executions_retry_config(
-                        crate::protocol_serde::shape_job_executions_retry_config::de_job_executions_retry_config(tokens)?,
+                        crate::protocol_serde::shape_job_executions_retry_config::de_job_executions_retry_config(tokens, _value)?,
                     );
                 }
                 "jobExecutionsRolloutConfig" => {
                     builder = builder.set_job_executions_rollout_config(
-                        crate::protocol_serde::shape_job_executions_rollout_config::de_job_executions_rollout_config(tokens)?,
+                        crate::protocol_serde::shape_job_executions_rollout_config::de_job_executions_rollout_config(tokens, _value)?,
                     );
                 }
                 "jobTemplateArn" => {
@@ -177,13 +177,16 @@ pub(crate) fn de_describe_job_template(
                     );
                 }
                 "maintenanceWindows" => {
-                    builder = builder.set_maintenance_windows(crate::protocol_serde::shape_maintenance_windows::de_maintenance_windows(tokens)?);
+                    builder =
+                        builder.set_maintenance_windows(crate::protocol_serde::shape_maintenance_windows::de_maintenance_windows(tokens, _value)?);
                 }
                 "presignedUrlConfig" => {
-                    builder = builder.set_presigned_url_config(crate::protocol_serde::shape_presigned_url_config::de_presigned_url_config(tokens)?);
+                    builder = builder.set_presigned_url_config(crate::protocol_serde::shape_presigned_url_config::de_presigned_url_config(
+                        tokens, _value,
+                    )?);
                 }
                 "timeoutConfig" => {
-                    builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens)?);
+                    builder = builder.set_timeout_config(crate::protocol_serde::shape_timeout_config::de_timeout_config(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

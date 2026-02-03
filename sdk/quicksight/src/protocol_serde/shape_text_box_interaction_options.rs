@@ -14,6 +14,7 @@ pub fn ser_text_box_interaction_options(
 
 pub(crate) fn de_text_box_interaction_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextBoxInteractionOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TextBoxMenuOption" => {
-                            builder =
-                                builder.set_text_box_menu_option(crate::protocol_serde::shape_text_box_menu_option::de_text_box_menu_option(tokens)?);
+                            builder = builder.set_text_box_menu_option(crate::protocol_serde::shape_text_box_menu_option::de_text_box_menu_option(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

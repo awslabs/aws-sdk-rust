@@ -23,6 +23,7 @@ pub fn ser_log_redaction_configuration(
 
 pub(crate) fn de_log_redaction_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogRedactionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,11 +38,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "entitiesToRedact" => {
-                            builder = builder.set_entities_to_redact(crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens)?);
+                            builder =
+                                builder.set_entities_to_redact(crate::protocol_serde::shape_entity_type_list::de_entity_type_list(tokens, _value)?);
                         }
                         "customEntityConfig" => {
-                            builder =
-                                builder.set_custom_entity_config(crate::protocol_serde::shape_custom_entity_config::de_custom_entity_config(tokens)?);
+                            builder = builder.set_custom_entity_config(crate::protocol_serde::shape_custom_entity_config::de_custom_entity_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

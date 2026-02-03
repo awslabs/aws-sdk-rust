@@ -21,6 +21,7 @@ pub fn ser_telemetry_sink_data(
 
 pub(crate) fn de_telemetry_sink_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelemetrySinkData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "kinesisDataStreamData" => Some(crate::types::TelemetrySinkData::KinesisDataStreamData(
-                            crate::protocol_serde::shape_kinesis_data_stream_data::de_kinesis_data_stream_data(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_kinesis_data_stream_data::de_kinesis_data_stream_data(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'kinesisDataStreamData' cannot be null")
                             })?,
                         )),

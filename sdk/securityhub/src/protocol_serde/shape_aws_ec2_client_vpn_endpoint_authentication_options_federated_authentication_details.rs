@@ -14,6 +14,7 @@ pub fn ser_aws_ec2_client_vpn_endpoint_authentication_options_federated_authenti
 
 pub(crate) fn de_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

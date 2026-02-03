@@ -139,13 +139,13 @@ pub fn ser_get_lifecycle_policy_preview_input(
 }
 
 pub(crate) fn de_get_lifecycle_policy_preview(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -189,12 +189,13 @@ pub(crate) fn de_get_lifecycle_policy_preview(
                 }
                 "previewResults" => {
                     builder = builder.set_preview_results(
-                        crate::protocol_serde::shape_lifecycle_policy_preview_result_list::de_lifecycle_policy_preview_result_list(tokens)?,
+                        crate::protocol_serde::shape_lifecycle_policy_preview_result_list::de_lifecycle_policy_preview_result_list(tokens, _value)?,
                     );
                 }
                 "summary" => {
-                    builder = builder
-                        .set_summary(crate::protocol_serde::shape_lifecycle_policy_preview_summary::de_lifecycle_policy_preview_summary(tokens)?);
+                    builder = builder.set_summary(
+                        crate::protocol_serde::shape_lifecycle_policy_preview_summary::de_lifecycle_policy_preview_summary(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

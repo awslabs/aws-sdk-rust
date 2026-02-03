@@ -105,13 +105,13 @@ pub fn de_get_legal_hold_http_response(
 }
 
 pub(crate) fn de_get_legal_hold(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_legal_hold::builders::GetLegalHoldOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_legal_hold::builders::GetLegalHoldOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,7 +160,7 @@ pub(crate) fn de_get_legal_hold(
                 }
                 "RecoveryPointSelection" => {
                     builder = builder.set_recovery_point_selection(
-                        crate::protocol_serde::shape_recovery_point_selection::de_recovery_point_selection(tokens)?,
+                        crate::protocol_serde::shape_recovery_point_selection::de_recovery_point_selection(tokens, _value)?,
                     );
                 }
                 "RetainRecordUntil" => {

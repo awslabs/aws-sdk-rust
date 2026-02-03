@@ -32,6 +32,7 @@ pub fn ser_conditional_formatting_custom_icon_condition(
 
 pub(crate) fn de_conditional_formatting_custom_icon_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConditionalFormattingCustomIconCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                         }
                         "IconOptions" => {
                             builder = builder.set_icon_options(
-                                    crate::protocol_serde::shape_conditional_formatting_custom_icon_options::de_conditional_formatting_custom_icon_options(tokens)?
+                                    crate::protocol_serde::shape_conditional_formatting_custom_icon_options::de_conditional_formatting_custom_icon_options(tokens, _value)?
                                 );
                         }
                         "Color" => {
@@ -66,7 +67,7 @@ where
                         }
                         "DisplayConfiguration" => {
                             builder = builder.set_display_configuration(
-                                    crate::protocol_serde::shape_conditional_formatting_icon_display_configuration::de_conditional_formatting_icon_display_configuration(tokens)?
+                                    crate::protocol_serde::shape_conditional_formatting_icon_display_configuration::de_conditional_formatting_icon_display_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

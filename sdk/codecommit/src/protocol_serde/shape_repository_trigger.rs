@@ -35,6 +35,7 @@ pub fn ser_repository_trigger(
 
 pub(crate) fn de_repository_trigger<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RepositoryTrigger>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,11 +71,12 @@ where
                             );
                         }
                         "branches" => {
-                            builder = builder.set_branches(crate::protocol_serde::shape_branch_name_list::de_branch_name_list(tokens)?);
+                            builder = builder.set_branches(crate::protocol_serde::shape_branch_name_list::de_branch_name_list(tokens, _value)?);
                         }
                         "events" => {
-                            builder = builder
-                                .set_events(crate::protocol_serde::shape_repository_trigger_event_list::de_repository_trigger_event_list(tokens)?);
+                            builder = builder.set_events(
+                                crate::protocol_serde::shape_repository_trigger_event_list::de_repository_trigger_event_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

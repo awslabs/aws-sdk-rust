@@ -85,13 +85,13 @@ pub fn de_get_email_template_http_response(
 }
 
 pub(crate) fn de_get_email_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_email_template::builders::GetEmailTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,10 +99,12 @@ pub(crate) fn de_get_email_template(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
                 }
                 "TemplateContent" => {
-                    builder = builder.set_template_content(crate::protocol_serde::shape_email_template_content::de_email_template_content(tokens)?);
+                    builder = builder.set_template_content(crate::protocol_serde::shape_email_template_content::de_email_template_content(
+                        tokens, _value,
+                    )?);
                 }
                 "TemplateName" => {
                     builder = builder.set_template_name(

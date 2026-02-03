@@ -35,6 +35,7 @@ pub fn ser_rating_scale(
 
 pub(crate) fn de_rating_scale<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RatingScale>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,14 +65,15 @@ where
                     }
                     variant = match key.as_ref() {
                         "numerical" => Some(crate::types::RatingScale::Numerical(
-                            crate::protocol_serde::shape_numerical_scale_definitions::de_numerical_scale_definitions(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'numerical' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_numerical_scale_definitions::de_numerical_scale_definitions(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'numerical' cannot be null"),
+                            )?,
                         )),
                         "categorical" => Some(crate::types::RatingScale::Categorical(
-                            crate::protocol_serde::shape_categorical_scale_definitions::de_categorical_scale_definitions(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'categorical' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_categorical_scale_definitions::de_categorical_scale_definitions(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'categorical' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

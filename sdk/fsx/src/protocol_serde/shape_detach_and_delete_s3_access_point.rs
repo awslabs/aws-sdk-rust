@@ -137,13 +137,13 @@ pub fn ser_detach_and_delete_s3_access_point_input(
 }
 
 pub(crate) fn de_detach_and_delete_s3_access_point(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::detach_and_delete_s3_access_point::builders::DetachAndDeleteS3AccessPointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::detach_and_delete_s3_access_point::builders::DetachAndDeleteS3AccessPointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

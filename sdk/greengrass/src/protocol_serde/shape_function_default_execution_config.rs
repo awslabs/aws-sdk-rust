@@ -17,6 +17,7 @@ pub fn ser_function_default_execution_config(
 
 pub(crate) fn de_function_default_execution_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunctionDefaultExecutionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,9 @@ where
                             );
                         }
                         "RunAs" => {
-                            builder = builder.set_run_as(crate::protocol_serde::shape_function_run_as_config::de_function_run_as_config(tokens)?);
+                            builder = builder.set_run_as(crate::protocol_serde::shape_function_run_as_config::de_function_run_as_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

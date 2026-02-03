@@ -59,6 +59,7 @@ pub fn ser_aws_dms_replication_instance_details(
 
 pub(crate) fn de_aws_dms_replication_instance_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsDmsReplicationInstanceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -133,12 +134,12 @@ where
                         }
                         "ReplicationSubnetGroup" => {
                             builder = builder.set_replication_subnet_group(
-                                    crate::protocol_serde::shape_aws_dms_replication_instance_replication_subnet_group_details::de_aws_dms_replication_instance_replication_subnet_group_details(tokens)?
+                                    crate::protocol_serde::shape_aws_dms_replication_instance_replication_subnet_group_details::de_aws_dms_replication_instance_replication_subnet_group_details(tokens, _value)?
                                 );
                         }
                         "VpcSecurityGroups" => {
                             builder = builder.set_vpc_security_groups(
-                                    crate::protocol_serde::shape_aws_dms_replication_instance_vpc_security_groups_list::de_aws_dms_replication_instance_vpc_security_groups_list(tokens)?
+                                    crate::protocol_serde::shape_aws_dms_replication_instance_vpc_security_groups_list::de_aws_dms_replication_instance_vpc_security_groups_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

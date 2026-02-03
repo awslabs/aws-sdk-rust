@@ -29,6 +29,7 @@ pub fn ser_x12_code_list_validation_rule(
 
 pub(crate) fn de_x12_code_list_validation_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::X12CodeListValidationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,10 @@ where
                             );
                         }
                         "codesToAdd" => {
-                            builder = builder.set_codes_to_add(crate::protocol_serde::shape_code_list::de_code_list(tokens)?);
+                            builder = builder.set_codes_to_add(crate::protocol_serde::shape_code_list::de_code_list(tokens, _value)?);
                         }
                         "codesToRemove" => {
-                            builder = builder.set_codes_to_remove(crate::protocol_serde::shape_code_list::de_code_list(tokens)?);
+                            builder = builder.set_codes_to_remove(crate::protocol_serde::shape_code_list::de_code_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

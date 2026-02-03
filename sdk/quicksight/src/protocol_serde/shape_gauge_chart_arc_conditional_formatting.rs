@@ -14,6 +14,7 @@ pub fn ser_gauge_chart_arc_conditional_formatting(
 
 pub(crate) fn de_gauge_chart_arc_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GaugeChartArcConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ForegroundColor" => {
                             builder = builder.set_foreground_color(
-                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens)?,
+                                crate::protocol_serde::shape_conditional_formatting_color::de_conditional_formatting_color(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

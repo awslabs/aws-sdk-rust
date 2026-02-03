@@ -38,6 +38,7 @@ pub fn ser_transcript_filter(
 
 pub(crate) fn de_transcript_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TranscriptFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,12 +60,12 @@ where
                             );
                         }
                         "AbsoluteTimeRange" => {
-                            builder =
-                                builder.set_absolute_time_range(crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens)?);
+                            builder = builder
+                                .set_absolute_time_range(crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens, _value)?);
                         }
                         "RelativeTimeRange" => {
-                            builder =
-                                builder.set_relative_time_range(crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens)?);
+                            builder = builder
+                                .set_relative_time_range(crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens, _value)?);
                         }
                         "ParticipantRole" => {
                             builder = builder.set_participant_role(
@@ -77,7 +78,7 @@ where
                             builder = builder.set_negate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_string_target_list::de_string_target_list(tokens)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_string_target_list::de_string_target_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

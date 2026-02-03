@@ -35,6 +35,7 @@ pub fn ser_monitoring_configuration(
 
 pub(crate) fn de_monitoring_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoringConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,22 +51,24 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "s3MonitoringConfiguration" => {
                             builder = builder.set_s3_monitoring_configuration(
-                                crate::protocol_serde::shape_s3_monitoring_configuration::de_s3_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_monitoring_configuration::de_s3_monitoring_configuration(tokens, _value)?,
                             );
                         }
                         "managedPersistenceMonitoringConfiguration" => {
                             builder = builder.set_managed_persistence_monitoring_configuration(
-                                    crate::protocol_serde::shape_managed_persistence_monitoring_configuration::de_managed_persistence_monitoring_configuration(tokens)?
+                                    crate::protocol_serde::shape_managed_persistence_monitoring_configuration::de_managed_persistence_monitoring_configuration(tokens, _value)?
                                 );
                         }
                         "cloudWatchLoggingConfiguration" => {
                             builder = builder.set_cloud_watch_logging_configuration(
-                                crate::protocol_serde::shape_cloud_watch_logging_configuration::de_cloud_watch_logging_configuration(tokens)?,
+                                crate::protocol_serde::shape_cloud_watch_logging_configuration::de_cloud_watch_logging_configuration(tokens, _value)?,
                             );
                         }
                         "prometheusMonitoringConfiguration" => {
                             builder = builder.set_prometheus_monitoring_configuration(
-                                crate::protocol_serde::shape_prometheus_monitoring_configuration::de_prometheus_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_prometheus_monitoring_configuration::de_prometheus_monitoring_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

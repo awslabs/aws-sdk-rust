@@ -157,7 +157,7 @@ mod create_segment;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_evidently::Error> {
 /// # let client: aws_sdk_evidently::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_evaluate_feature()
 ///     .customize()

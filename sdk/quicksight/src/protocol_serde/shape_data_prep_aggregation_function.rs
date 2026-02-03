@@ -20,6 +20,7 @@ pub fn ser_data_prep_aggregation_function(
 
 pub(crate) fn de_data_prep_aggregation_function<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPrepAggregationFunction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,12 +36,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SimpleAggregation" => {
                             builder = builder.set_simple_aggregation(
-                                crate::protocol_serde::shape_data_prep_simple_aggregation_function::de_data_prep_simple_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_data_prep_simple_aggregation_function::de_data_prep_simple_aggregation_function(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ListAggregation" => {
                             builder = builder.set_list_aggregation(
-                                crate::protocol_serde::shape_data_prep_list_aggregation_function::de_data_prep_list_aggregation_function(tokens)?,
+                                crate::protocol_serde::shape_data_prep_list_aggregation_function::de_data_prep_list_aggregation_function(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

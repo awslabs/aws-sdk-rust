@@ -14,6 +14,7 @@ pub fn ser_partner_watermarking(
 
 pub(crate) fn de_partner_watermarking<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PartnerWatermarking>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "nexguardFileMarkerSettings" => {
                             builder = builder.set_nexguard_file_marker_settings(
-                                crate::protocol_serde::shape_nex_guard_file_marker_settings::de_nex_guard_file_marker_settings(tokens)?,
+                                crate::protocol_serde::shape_nex_guard_file_marker_settings::de_nex_guard_file_marker_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

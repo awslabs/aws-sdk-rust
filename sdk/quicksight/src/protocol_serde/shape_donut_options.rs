@@ -20,6 +20,7 @@ pub fn ser_donut_options(
 
 pub(crate) fn de_donut_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DonutOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ArcOptions" => {
-                            builder = builder.set_arc_options(crate::protocol_serde::shape_arc_options::de_arc_options(tokens)?);
+                            builder = builder.set_arc_options(crate::protocol_serde::shape_arc_options::de_arc_options(tokens, _value)?);
                         }
                         "DonutCenterOptions" => {
-                            builder =
-                                builder.set_donut_center_options(crate::protocol_serde::shape_donut_center_options::de_donut_center_options(tokens)?);
+                            builder = builder.set_donut_center_options(crate::protocol_serde::shape_donut_center_options::de_donut_center_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

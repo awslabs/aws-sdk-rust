@@ -14,6 +14,7 @@ pub fn ser_auth_config(
 
 pub(crate) fn de_auth_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AuthConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "oAuth" => {
-                            builder = builder.set_o_auth(crate::protocol_serde::shape_o_auth_config::de_o_auth_config(tokens)?);
+                            builder = builder.set_o_auth(crate::protocol_serde::shape_o_auth_config::de_o_auth_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

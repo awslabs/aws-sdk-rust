@@ -17,6 +17,7 @@ pub fn ser_sql_injection_match_tuple(
 
 pub(crate) fn de_sql_injection_match_tuple<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SqlInjectionMatchTuple>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldToMatch" => {
-                            builder = builder.set_field_to_match(crate::protocol_serde::shape_field_to_match::de_field_to_match(tokens)?);
+                            builder = builder.set_field_to_match(crate::protocol_serde::shape_field_to_match::de_field_to_match(tokens, _value)?);
                         }
                         "TextTransformation" => {
                             builder = builder.set_text_transformation(

@@ -26,6 +26,7 @@ pub fn ser_message_group(
 
 pub(crate) fn de_message_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "message" => {
-                            builder = builder.set_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "variations" => {
-                            builder =
-                                builder.set_variations(crate::protocol_serde::shape_message_variations_list::de_message_variations_list(tokens)?);
+                            builder = builder.set_variations(crate::protocol_serde::shape_message_variations_list::de_message_variations_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

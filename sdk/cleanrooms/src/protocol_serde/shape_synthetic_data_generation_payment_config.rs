@@ -11,6 +11,7 @@ pub fn ser_synthetic_data_generation_payment_config(
 
 pub(crate) fn de_synthetic_data_generation_payment_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SyntheticDataGenerationPaymentConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

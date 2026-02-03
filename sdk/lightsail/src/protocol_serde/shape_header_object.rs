@@ -20,6 +20,7 @@ pub fn ser_header_object(
 
 pub(crate) fn de_header_object<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HeaderObject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,8 @@ where
                             );
                         }
                         "headersAllowList" => {
-                            builder =
-                                builder.set_headers_allow_list(crate::protocol_serde::shape_header_forward_list::de_header_forward_list(tokens)?);
+                            builder = builder
+                                .set_headers_allow_list(crate::protocol_serde::shape_header_forward_list::de_header_forward_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

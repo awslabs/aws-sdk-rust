@@ -253,12 +253,12 @@ pub fn de_head_object_http_response(
 
 pub fn ser_head_object_headers(
     input: &crate::operation::head_object::HeadObjectInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.if_match {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_match",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -269,7 +269,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_3) = &input.if_modified_since {
         let formatted_4 = inner_3.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_modified_since",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -280,7 +280,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_5) = &input.if_none_match {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_none_match",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -291,7 +291,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_7) = &input.if_unmodified_since {
         let formatted_8 = inner_7.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "if_unmodified_since",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -302,7 +302,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_9) = &input.range {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "range",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -313,7 +313,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_11) = &input.sse_customer_algorithm {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_algorithm",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -324,7 +324,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_13) = &input.sse_customer_key {
         let formatted_14 = inner_13.as_str();
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -335,7 +335,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_15) = &input.sse_customer_key_md5 {
         let formatted_16 = inner_15.as_str();
         let header_value = formatted_16;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key_md5",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -346,7 +346,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_17) = &input.request_payer {
         let formatted_18 = inner_17.as_str();
         let header_value = formatted_18;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_payer",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -357,7 +357,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_19) = &input.expected_bucket_owner {
         let formatted_20 = inner_19.as_str();
         let header_value = formatted_20;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expected_bucket_owner",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -368,7 +368,7 @@ pub fn ser_head_object_headers(
     if let ::std::option::Option::Some(inner_21) = &input.checksum_mode {
         let formatted_22 = inner_21.as_str();
         let header_value = formatted_22;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_mode",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

@@ -21,6 +21,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_firelens_configuration_
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_firelens_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Options" => {
-                            builder = builder.set_options(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_options(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Type" => {
                             builder = builder.set_type(

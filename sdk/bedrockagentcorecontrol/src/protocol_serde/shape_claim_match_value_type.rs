@@ -27,6 +27,7 @@ pub fn ser_claim_match_value_type(
 
 pub(crate) fn de_claim_match_value_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClaimMatchValueType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,7 +65,7 @@ where
                                 })?,
                         )),
                         "matchValueStringList" => Some(crate::types::ClaimMatchValueType::MatchValueStringList(
-                            crate::protocol_serde::shape_match_value_string_list::de_match_value_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_match_value_string_list::de_match_value_string_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'matchValueStringList' cannot be null")
                             })?,
                         )),

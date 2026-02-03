@@ -19,6 +19,7 @@ pub fn ser_configuration(
 
 pub(crate) fn de_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Configuration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "connectConfiguration" => Some(crate::types::Configuration::ConnectConfiguration(
-                            crate::protocol_serde::shape_connect_configuration::de_connect_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_connect_configuration::de_connect_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'connectConfiguration' cannot be null")
                             })?,
                         )),

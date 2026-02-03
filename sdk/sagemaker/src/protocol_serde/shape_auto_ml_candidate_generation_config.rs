@@ -23,6 +23,7 @@ pub fn ser_auto_ml_candidate_generation_config(
 
 pub(crate) fn de_auto_ml_candidate_generation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoMlCandidateGenerationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "AlgorithmsConfig" => {
                             builder = builder.set_algorithms_config(
-                                crate::protocol_serde::shape_auto_ml_algorithms_config::de_auto_ml_algorithms_config(tokens)?,
+                                crate::protocol_serde::shape_auto_ml_algorithms_config::de_auto_ml_algorithms_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -26,6 +26,7 @@ pub fn ser_function_definition_version(
 
 pub(crate) fn de_function_definition_version<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunctionDefinitionVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DefaultConfig" => {
-                            builder =
-                                builder.set_default_config(crate::protocol_serde::shape_function_default_config::de_function_default_config(tokens)?);
+                            builder = builder.set_default_config(crate::protocol_serde::shape_function_default_config::de_function_default_config(
+                                tokens, _value,
+                            )?);
                         }
                         "Functions" => {
-                            builder = builder.set_functions(crate::protocol_serde::shape_list_of_function::de_list_of_function(tokens)?);
+                            builder = builder.set_functions(crate::protocol_serde::shape_list_of_function::de_list_of_function(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

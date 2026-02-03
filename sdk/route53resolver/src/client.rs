@@ -167,7 +167,7 @@ mod create_resolver_rule;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53resolver::Error> {
 /// # let client: aws_sdk_route53resolver::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_firewall_rule_group()
 ///     .customize()

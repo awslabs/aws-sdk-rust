@@ -148,13 +148,13 @@ pub fn de_get_automated_reasoning_policy_next_scenario_http_response(
 }
 
 pub(crate) fn de_get_automated_reasoning_policy_next_scenario(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_automated_reasoning_policy_next_scenario::builders::GetAutomatedReasoningPolicyNextScenarioOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_automated_reasoning_policy_next_scenario::builders::GetAutomatedReasoningPolicyNextScenarioOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,7 +170,7 @@ pub(crate) fn de_get_automated_reasoning_policy_next_scenario(
                 }
                 "scenario" => {
                     builder = builder.set_scenario(
-                        crate::protocol_serde::shape_automated_reasoning_policy_scenario::de_automated_reasoning_policy_scenario(tokens)?,
+                        crate::protocol_serde::shape_automated_reasoning_policy_scenario::de_automated_reasoning_policy_scenario(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

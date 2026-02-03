@@ -23,6 +23,7 @@ pub fn ser_shadow_mode_config(
 
 pub(crate) fn de_shadow_mode_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ShadowModeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ShadowModelVariants" => {
                             builder = builder.set_shadow_model_variants(
-                                crate::protocol_serde::shape_shadow_model_variant_config_list::de_shadow_model_variant_config_list(tokens)?,
+                                crate::protocol_serde::shape_shadow_model_variant_config_list::de_shadow_model_variant_config_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

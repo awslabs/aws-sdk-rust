@@ -55,6 +55,7 @@ pub fn ser_component_child(
 
 pub(crate) fn de_component_child<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentChild>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,13 +84,17 @@ where
                             );
                         }
                         "properties" => {
-                            builder = builder.set_properties(crate::protocol_serde::shape_component_properties::de_component_properties(tokens)?);
+                            builder = builder.set_properties(crate::protocol_serde::shape_component_properties::de_component_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "children" => {
-                            builder = builder.set_children(crate::protocol_serde::shape_component_child_list::de_component_child_list(tokens)?);
+                            builder = builder.set_children(crate::protocol_serde::shape_component_child_list::de_component_child_list(
+                                tokens, _value,
+                            )?);
                         }
                         "events" => {
-                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(tokens)?);
+                            builder = builder.set_events(crate::protocol_serde::shape_component_events::de_component_events(tokens, _value)?);
                         }
                         "sourceId" => {
                             builder = builder.set_source_id(

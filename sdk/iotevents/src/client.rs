@@ -151,7 +151,7 @@ mod create_input;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_iotevents::Error> {
 /// # let client: aws_sdk_iotevents::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_alarm_model()
 ///     .customize()

@@ -120,13 +120,13 @@ pub fn ser_get_address_list_import_job_input(
 }
 
 pub(crate) fn de_get_address_list_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_address_list_import_job::builders::GetAddressListImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_address_list_import_job::builders::GetAddressListImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -176,7 +176,7 @@ pub(crate) fn de_get_address_list_import_job(
                     );
                 }
                 "ImportDataFormat" => {
-                    builder = builder.set_import_data_format(crate::protocol_serde::shape_import_data_format::de_import_data_format(tokens)?);
+                    builder = builder.set_import_data_format(crate::protocol_serde::shape_import_data_format::de_import_data_format(tokens, _value)?);
                 }
                 "AddressListId" => {
                     builder = builder.set_address_list_id(

@@ -33,6 +33,7 @@ pub fn ser_evaluation_form_item_enablement_condition_operand(
 
 pub(crate) fn de_evaluation_form_item_enablement_condition_operand<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormItemEnablementConditionOperand>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,13 +65,13 @@ where
                         variant = match key.as_ref() {
                             "Expression" => {
                                 Some(crate::types::EvaluationFormItemEnablementConditionOperand::Expression(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_expression::de_evaluation_form_item_enablement_expression(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_expression::de_evaluation_form_item_enablement_expression(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Expression' cannot be null"))?
                                 ))
                             }
                             "Condition" => {
                                 Some(crate::types::EvaluationFormItemEnablementConditionOperand::Condition(
-                                    crate::protocol_serde::shape_evaluation_form_item_enablement_condition::de_evaluation_form_item_enablement_condition(tokens)?
+                                    crate::protocol_serde::shape_evaluation_form_item_enablement_condition::de_evaluation_form_item_enablement_condition(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Condition' cannot be null"))?
                                 ))
                             }

@@ -78,13 +78,13 @@ pub fn ser_describe_dataset_input(
 }
 
 pub(crate) fn de_describe_dataset(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,10 +127,10 @@ pub(crate) fn de_describe_dataset(
                     );
                 }
                 "Schema" => {
-                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens)?);
+                    builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value)?);
                 }
                 "EncryptionConfig" => {
-                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens)?);
+                    builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens, _value)?);
                 }
                 "Status" => {
                     builder = builder.set_status(

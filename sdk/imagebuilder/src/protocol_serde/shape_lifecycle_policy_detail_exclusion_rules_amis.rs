@@ -45,6 +45,7 @@ pub fn ser_lifecycle_policy_detail_exclusion_rules_amis(
 
 pub(crate) fn de_lifecycle_policy_detail_exclusion_rules_amis<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,18 +63,18 @@ where
                             builder = builder.set_is_public(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "sharedAccounts" => {
-                            builder = builder.set_shared_accounts(crate::protocol_serde::shape_account_list::de_account_list(tokens)?);
+                            builder = builder.set_shared_accounts(crate::protocol_serde::shape_account_list::de_account_list(tokens, _value)?);
                         }
                         "lastLaunched" => {
                             builder = builder.set_last_launched(
-                                    crate::protocol_serde::shape_lifecycle_policy_detail_exclusion_rules_amis_last_launched::de_lifecycle_policy_detail_exclusion_rules_amis_last_launched(tokens)?
+                                    crate::protocol_serde::shape_lifecycle_policy_detail_exclusion_rules_amis_last_launched::de_lifecycle_policy_detail_exclusion_rules_amis_last_launched(tokens, _value)?
                                 );
                         }
                         "tagMap" => {
-                            builder = builder.set_tag_map(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                            builder = builder.set_tag_map(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

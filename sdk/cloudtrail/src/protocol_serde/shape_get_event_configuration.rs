@@ -260,13 +260,13 @@ pub fn ser_get_event_configuration_input(
 }
 
 pub(crate) fn de_get_event_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_configuration::builders::GetEventConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_configuration::builders::GetEventConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -295,12 +295,13 @@ pub(crate) fn de_get_event_configuration(
                     );
                 }
                 "ContextKeySelectors" => {
-                    builder =
-                        builder.set_context_key_selectors(crate::protocol_serde::shape_context_key_selectors::de_context_key_selectors(tokens)?);
+                    builder = builder.set_context_key_selectors(crate::protocol_serde::shape_context_key_selectors::de_context_key_selectors(
+                        tokens, _value,
+                    )?);
                 }
                 "AggregationConfigurations" => {
                     builder = builder.set_aggregation_configurations(
-                        crate::protocol_serde::shape_aggregation_configurations::de_aggregation_configurations(tokens)?,
+                        crate::protocol_serde::shape_aggregation_configurations::de_aggregation_configurations(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

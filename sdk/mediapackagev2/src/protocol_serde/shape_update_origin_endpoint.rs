@@ -155,12 +155,12 @@ pub fn de_update_origin_endpoint_http_response(
 
 pub fn ser_update_origin_endpoint_headers(
     input: &crate::operation::update_origin_endpoint::UpdateOriginEndpointInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.e_tag {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "e_tag",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -182,13 +182,13 @@ pub fn ser_update_origin_endpoint_input(
 }
 
 pub(crate) fn de_update_origin_endpoint(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -230,7 +230,7 @@ pub(crate) fn de_update_origin_endpoint(
                     )?);
                 }
                 "DashManifests" => {
-                    builder = builder.set_dash_manifests(crate::protocol_serde::shape_get_dash_manifests::de_get_dash_manifests(tokens)?);
+                    builder = builder.set_dash_manifests(crate::protocol_serde::shape_get_dash_manifests::de_get_dash_manifests(tokens, _value)?);
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -248,15 +248,15 @@ pub(crate) fn de_update_origin_endpoint(
                 }
                 "ForceEndpointErrorConfiguration" => {
                     builder = builder.set_force_endpoint_error_configuration(
-                        crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(tokens)?,
+                        crate::protocol_serde::shape_force_endpoint_error_configuration::de_force_endpoint_error_configuration(tokens, _value)?,
                     );
                 }
                 "HlsManifests" => {
-                    builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(tokens)?);
+                    builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(tokens, _value)?);
                 }
                 "LowLatencyHlsManifests" => {
                     builder = builder.set_low_latency_hls_manifests(
-                        crate::protocol_serde::shape_get_low_latency_hls_manifests::de_get_low_latency_hls_manifests(tokens)?,
+                        crate::protocol_serde::shape_get_low_latency_hls_manifests::de_get_low_latency_hls_manifests(tokens, _value)?,
                     );
                 }
                 "ModifiedAt" => {
@@ -266,7 +266,7 @@ pub(crate) fn de_update_origin_endpoint(
                     )?);
                 }
                 "MssManifests" => {
-                    builder = builder.set_mss_manifests(crate::protocol_serde::shape_get_mss_manifests::de_get_mss_manifests(tokens)?);
+                    builder = builder.set_mss_manifests(crate::protocol_serde::shape_get_mss_manifests::de_get_mss_manifests(tokens, _value)?);
                 }
                 "OriginEndpointName" => {
                     builder = builder.set_origin_endpoint_name(
@@ -276,7 +276,7 @@ pub(crate) fn de_update_origin_endpoint(
                     );
                 }
                 "Segment" => {
-                    builder = builder.set_segment(crate::protocol_serde::shape_segment::de_segment(tokens)?);
+                    builder = builder.set_segment(crate::protocol_serde::shape_segment::de_segment(tokens, _value)?);
                 }
                 "StartoverWindowSeconds" => {
                     builder = builder.set_startover_window_seconds(
@@ -286,7 +286,7 @@ pub(crate) fn de_update_origin_endpoint(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

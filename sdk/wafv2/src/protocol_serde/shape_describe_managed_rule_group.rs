@@ -161,13 +161,13 @@ pub fn ser_describe_managed_rule_group_input(
 }
 
 pub(crate) fn de_describe_managed_rule_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -196,7 +196,7 @@ pub(crate) fn de_describe_managed_rule_group(
                     );
                 }
                 "Rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape_rule_summaries::de_rule_summaries(tokens)?);
+                    builder = builder.set_rules(crate::protocol_serde::shape_rule_summaries::de_rule_summaries(tokens, _value)?);
                 }
                 "LabelNamespace" => {
                     builder = builder.set_label_namespace(
@@ -206,10 +206,10 @@ pub(crate) fn de_describe_managed_rule_group(
                     );
                 }
                 "AvailableLabels" => {
-                    builder = builder.set_available_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens)?);
+                    builder = builder.set_available_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens, _value)?);
                 }
                 "ConsumedLabels" => {
-                    builder = builder.set_consumed_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens)?);
+                    builder = builder.set_consumed_labels(crate::protocol_serde::shape_label_summaries::de_label_summaries(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

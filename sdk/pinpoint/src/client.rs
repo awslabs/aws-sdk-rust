@@ -169,7 +169,7 @@ mod create_voice_template;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_pinpoint::Error> {
 /// # let client: aws_sdk_pinpoint::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_app()
 ///     .customize()

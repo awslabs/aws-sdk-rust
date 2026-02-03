@@ -48,13 +48,13 @@ pub fn ser_describe_subscribed_workteam_input(
 }
 
 pub(crate) fn de_describe_subscribed_workteam(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -62,7 +62,8 @@ pub(crate) fn de_describe_subscribed_workteam(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SubscribedWorkteam" => {
-                    builder = builder.set_subscribed_workteam(crate::protocol_serde::shape_subscribed_workteam::de_subscribed_workteam(tokens)?);
+                    builder =
+                        builder.set_subscribed_workteam(crate::protocol_serde::shape_subscribed_workteam::de_subscribed_workteam(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

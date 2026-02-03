@@ -14,6 +14,7 @@ pub fn ser_suppression_validation_options(
 
 pub(crate) fn de_suppression_validation_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SuppressionValidationOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ConditionThreshold" => {
                             builder = builder.set_condition_threshold(
-                                crate::protocol_serde::shape_suppression_condition_threshold::de_suppression_condition_threshold(tokens)?,
+                                crate::protocol_serde::shape_suppression_condition_threshold::de_suppression_condition_threshold(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

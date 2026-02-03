@@ -202,7 +202,7 @@ mod create_studio_session_mapping;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_emr::Error> {
 /// # let client: aws_sdk_emr::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_instance_fleet()
 ///     .customize()

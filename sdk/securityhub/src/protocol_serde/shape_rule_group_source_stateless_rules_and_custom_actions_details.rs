@@ -38,6 +38,7 @@ pub fn ser_rule_group_source_stateless_rules_and_custom_actions_details(
 
 pub(crate) fn de_rule_group_source_stateless_rules_and_custom_actions_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -56,13 +57,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CustomActions" => {
                             builder = builder.set_custom_actions(
-                                crate::protocol_serde::shape_rule_group_source_custom_actions_list::de_rule_group_source_custom_actions_list(tokens)?,
+                                crate::protocol_serde::shape_rule_group_source_custom_actions_list::de_rule_group_source_custom_actions_list(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "StatelessRules" => {
                             builder = builder.set_stateless_rules(
                                 crate::protocol_serde::shape_rule_group_source_stateless_rules_list::de_rule_group_source_stateless_rules_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

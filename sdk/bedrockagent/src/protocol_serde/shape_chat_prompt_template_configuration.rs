@@ -50,6 +50,7 @@ pub fn ser_chat_prompt_template_configuration(
 
 pub(crate) fn de_chat_prompt_template_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChatPromptTemplateConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,18 +65,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "messages" => {
-                            builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens)?);
+                            builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens, _value)?);
                         }
                         "system" => {
-                            builder = builder.set_system(crate::protocol_serde::shape_system_content_blocks::de_system_content_blocks(tokens)?);
+                            builder = builder.set_system(crate::protocol_serde::shape_system_content_blocks::de_system_content_blocks(
+                                tokens, _value,
+                            )?);
                         }
                         "inputVariables" => {
                             builder = builder.set_input_variables(
-                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens)?,
+                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens, _value)?,
                             );
                         }
                         "toolConfiguration" => {
-                            builder = builder.set_tool_configuration(crate::protocol_serde::shape_tool_configuration::de_tool_configuration(tokens)?);
+                            builder = builder
+                                .set_tool_configuration(crate::protocol_serde::shape_tool_configuration::de_tool_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

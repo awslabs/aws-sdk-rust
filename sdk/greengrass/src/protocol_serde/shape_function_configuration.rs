@@ -41,6 +41,7 @@ pub fn ser_function_configuration(
 
 pub(crate) fn de_function_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FunctionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,7 +64,9 @@ where
                         }
                         "Environment" => {
                             builder = builder.set_environment(
-                                crate::protocol_serde::shape_function_configuration_environment::de_function_configuration_environment(tokens)?,
+                                crate::protocol_serde::shape_function_configuration_environment::de_function_configuration_environment(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "ExecArgs" => {

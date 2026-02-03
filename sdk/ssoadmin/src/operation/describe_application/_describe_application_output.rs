@@ -21,6 +21,8 @@ pub struct DescribeApplicationOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date the application was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub created_from: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutput {
@@ -60,6 +62,10 @@ impl DescribeApplicationOutput {
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn created_from(&self) -> ::std::option::Option<&str> {
+        self.created_from.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +92,7 @@ pub struct DescribeApplicationOutputBuilder {
     pub(crate) portal_options: ::std::option::Option<crate::types::PortalOptions>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_from: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutputBuilder {
@@ -215,6 +222,20 @@ impl DescribeApplicationOutputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_date
     }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn created_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_from = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn set_created_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_from = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the application was created in IAM Identity Center.</p>
+    pub fn get_created_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_from
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -236,6 +257,7 @@ impl DescribeApplicationOutputBuilder {
             portal_options: self.portal_options,
             description: self.description,
             created_date: self.created_date,
+            created_from: self.created_from,
             _request_id: self._request_id,
         }
     }

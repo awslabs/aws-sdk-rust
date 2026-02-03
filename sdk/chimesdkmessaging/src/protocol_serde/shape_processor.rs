@@ -26,6 +26,7 @@ pub fn ser_processor(
 
 pub(crate) fn de_processor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Processor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,8 +48,9 @@ where
                             );
                         }
                         "Configuration" => {
-                            builder =
-                                builder.set_configuration(crate::protocol_serde::shape_processor_configuration::de_processor_configuration(tokens)?);
+                            builder = builder.set_configuration(crate::protocol_serde::shape_processor_configuration::de_processor_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "ExecutionOrder" => {
                             builder = builder.set_execution_order(

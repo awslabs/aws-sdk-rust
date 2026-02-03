@@ -23,6 +23,7 @@ pub fn ser_audio_only_hls_settings(
 
 pub(crate) fn de_audio_only_hls_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioOnlyHlsSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "audioOnlyImage" => {
-                            builder = builder.set_audio_only_image(crate::protocol_serde::shape_input_location::de_input_location(tokens)?);
+                            builder = builder.set_audio_only_image(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
                         }
                         "audioTrackType" => {
                             builder = builder.set_audio_track_type(

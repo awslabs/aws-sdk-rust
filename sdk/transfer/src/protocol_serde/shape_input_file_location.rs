@@ -20,6 +20,7 @@ pub fn ser_input_file_location(
 
 pub(crate) fn de_input_file_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputFileLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3FileLocation" => {
-                            builder =
-                                builder.set_s3_file_location(crate::protocol_serde::shape_s3_input_file_location::de_s3_input_file_location(tokens)?);
+                            builder = builder.set_s3_file_location(crate::protocol_serde::shape_s3_input_file_location::de_s3_input_file_location(
+                                tokens, _value,
+                            )?);
                         }
                         "EfsFileLocation" => {
-                            builder = builder.set_efs_file_location(crate::protocol_serde::shape_efs_file_location::de_efs_file_location(tokens)?);
+                            builder =
+                                builder.set_efs_file_location(crate::protocol_serde::shape_efs_file_location::de_efs_file_location(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

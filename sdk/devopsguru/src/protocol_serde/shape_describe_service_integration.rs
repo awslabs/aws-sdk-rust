@@ -128,13 +128,13 @@ pub fn de_describe_service_integration_http_response(
 }
 
 pub(crate) fn de_describe_service_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_service_integration::builders::DescribeServiceIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_service_integration::builders::DescribeServiceIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,7 +143,7 @@ pub(crate) fn de_describe_service_integration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ServiceIntegration" => {
                     builder = builder.set_service_integration(
-                        crate::protocol_serde::shape_service_integration_config::de_service_integration_config(tokens)?,
+                        crate::protocol_serde::shape_service_integration_config::de_service_integration_config(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

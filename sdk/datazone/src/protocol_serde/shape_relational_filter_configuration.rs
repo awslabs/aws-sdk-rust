@@ -26,6 +26,7 @@ pub fn ser_relational_filter_configuration(
 
 pub(crate) fn de_relational_filter_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RelationalFilterConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,8 @@ where
                             );
                         }
                         "filterExpressions" => {
-                            builder = builder.set_filter_expressions(crate::protocol_serde::shape_filter_expressions::de_filter_expressions(tokens)?);
+                            builder = builder
+                                .set_filter_expressions(crate::protocol_serde::shape_filter_expressions::de_filter_expressions(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -126,13 +126,13 @@ pub fn ser_verify_device_position_input(
 }
 
 pub(crate) fn de_verify_device_position(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -154,7 +154,7 @@ pub(crate) fn de_verify_device_position(
                     );
                 }
                 "InferredState" => {
-                    builder = builder.set_inferred_state(crate::protocol_serde::shape_inferred_state::de_inferred_state(tokens)?);
+                    builder = builder.set_inferred_state(crate::protocol_serde::shape_inferred_state::de_inferred_state(tokens, _value)?);
                 }
                 "ReceivedTime" => {
                     builder = builder.set_received_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

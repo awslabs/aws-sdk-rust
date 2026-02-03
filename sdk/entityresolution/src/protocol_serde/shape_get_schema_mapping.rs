@@ -115,13 +115,13 @@ pub fn de_get_schema_mapping_http_response(
 }
 
 pub(crate) fn de_get_schema_mapping(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,8 +145,9 @@ pub(crate) fn de_get_schema_mapping(
                     builder = builder.set_has_workflows(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "mappedInputFields" => {
-                    builder =
-                        builder.set_mapped_input_fields(crate::protocol_serde::shape_schema_input_attributes::de_schema_input_attributes(tokens)?);
+                    builder = builder.set_mapped_input_fields(crate::protocol_serde::shape_schema_input_attributes::de_schema_input_attributes(
+                        tokens, _value,
+                    )?);
                 }
                 "schemaArn" => {
                     builder = builder.set_schema_arn(
@@ -163,7 +164,7 @@ pub(crate) fn de_get_schema_mapping(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

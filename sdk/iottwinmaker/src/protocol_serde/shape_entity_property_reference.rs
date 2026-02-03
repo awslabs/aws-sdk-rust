@@ -30,6 +30,7 @@ pub fn ser_entity_property_reference(
 
 pub(crate) fn de_entity_property_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EntityPropertyReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,8 +59,9 @@ where
                             );
                         }
                         "externalIdProperty" => {
-                            builder =
-                                builder.set_external_id_property(crate::protocol_serde::shape_external_id_property::de_external_id_property(tokens)?);
+                            builder = builder.set_external_id_property(crate::protocol_serde::shape_external_id_property::de_external_id_property(
+                                tokens, _value,
+                            )?);
                         }
                         "entityId" => {
                             builder = builder.set_entity_id(

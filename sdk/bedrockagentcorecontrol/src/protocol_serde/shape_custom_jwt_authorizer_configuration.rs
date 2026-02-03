@@ -50,6 +50,7 @@ pub fn ser_custom_jwt_authorizer_configuration(
 
 pub(crate) fn de_custom_jwt_authorizer_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomJwtAuthorizerConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,19 +72,22 @@ where
                             );
                         }
                         "allowedAudience" => {
-                            builder =
-                                builder.set_allowed_audience(crate::protocol_serde::shape_allowed_audience_list::de_allowed_audience_list(tokens)?);
+                            builder = builder.set_allowed_audience(crate::protocol_serde::shape_allowed_audience_list::de_allowed_audience_list(
+                                tokens, _value,
+                            )?);
                         }
                         "allowedClients" => {
-                            builder =
-                                builder.set_allowed_clients(crate::protocol_serde::shape_allowed_clients_list::de_allowed_clients_list(tokens)?);
+                            builder = builder.set_allowed_clients(crate::protocol_serde::shape_allowed_clients_list::de_allowed_clients_list(
+                                tokens, _value,
+                            )?);
                         }
                         "allowedScopes" => {
-                            builder = builder.set_allowed_scopes(crate::protocol_serde::shape_allowed_scopes_type::de_allowed_scopes_type(tokens)?);
+                            builder =
+                                builder.set_allowed_scopes(crate::protocol_serde::shape_allowed_scopes_type::de_allowed_scopes_type(tokens, _value)?);
                         }
                         "customClaims" => {
                             builder = builder.set_custom_claims(
-                                crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(tokens)?,
+                                crate::protocol_serde::shape_custom_claim_validations_type::de_custom_claim_validations_type(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

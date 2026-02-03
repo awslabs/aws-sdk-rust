@@ -44,6 +44,7 @@ pub fn ser_flow_node(
 
 pub(crate) fn de_flow_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,14 +73,15 @@ where
                             );
                         }
                         "configuration" => {
-                            builder =
-                                builder.set_configuration(crate::protocol_serde::shape_flow_node_configuration::de_flow_node_configuration(tokens)?);
+                            builder = builder.set_configuration(crate::protocol_serde::shape_flow_node_configuration::de_flow_node_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_flow_node_inputs::de_flow_node_inputs(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_flow_node_inputs::de_flow_node_inputs(tokens, _value)?);
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_flow_node_outputs::de_flow_node_outputs(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_flow_node_outputs::de_flow_node_outputs(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

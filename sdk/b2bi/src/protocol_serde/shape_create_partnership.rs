@@ -153,13 +153,13 @@ pub fn ser_create_partnership_input(
 }
 
 pub(crate) fn de_create_partnership(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_partnership::builders::CreatePartnershipOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_partnership::builders::CreatePartnershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -210,11 +210,11 @@ pub(crate) fn de_create_partnership(
                 }
                 "capabilities" => {
                     builder = builder.set_capabilities(crate::protocol_serde::shape_partnership_capabilities::de_partnership_capabilities(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "capabilityOptions" => {
-                    builder = builder.set_capability_options(crate::protocol_serde::shape_capability_options::de_capability_options(tokens)?);
+                    builder = builder.set_capability_options(crate::protocol_serde::shape_capability_options::de_capability_options(tokens, _value)?);
                 }
                 "tradingPartnerId" => {
                     builder = builder.set_trading_partner_id(

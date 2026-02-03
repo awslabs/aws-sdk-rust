@@ -312,12 +312,12 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
 
 pub fn ser_start_call_analytics_stream_transcription_headers(
     input: &crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.language_code {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "language_code",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -329,7 +329,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_3);
         let formatted_4 = encoder.encode();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "media_sample_rate_hertz",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -340,7 +340,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_5) = &input.media_encoding {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "media_encoding",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -351,7 +351,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_7) = &input.vocabulary_name {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "vocabulary_name",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -362,7 +362,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_9) = &input.session_id {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "session_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -373,7 +373,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_11) = &input.vocabulary_filter_name {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "vocabulary_filter_name",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -384,7 +384,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_13) = &input.vocabulary_filter_method {
         let formatted_14 = inner_13.as_str();
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "vocabulary_filter_method",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -395,7 +395,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_15) = &input.language_model_name {
         let formatted_16 = inner_15.as_str();
         let header_value = formatted_16;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "language_model_name",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -407,7 +407,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
         let formatted_18 = encoder.encode();
         let header_value = formatted_18;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "identify_language",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -418,7 +418,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_19) = &input.language_options {
         let formatted_20 = inner_19.as_str();
         let header_value = formatted_20;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "language_options",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -429,7 +429,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_21) = &input.preferred_language {
         let formatted_22 = inner_21.as_str();
         let header_value = formatted_22;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "preferred_language",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -440,7 +440,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_23) = &input.vocabulary_names {
         let formatted_24 = inner_23.as_str();
         let header_value = formatted_24;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "vocabulary_names",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -451,7 +451,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_25) = &input.vocabulary_filter_names {
         let formatted_26 = inner_25.as_str();
         let header_value = formatted_26;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "vocabulary_filter_names",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -463,7 +463,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_27);
         let formatted_28 = encoder.encode();
         let header_value = formatted_28;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "enable_partial_results_stabilization",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -474,7 +474,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_29) = &input.partial_results_stability {
         let formatted_30 = inner_29.as_str();
         let header_value = formatted_30;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "partial_results_stability",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -485,7 +485,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_31) = &input.content_identification_type {
         let formatted_32 = inner_31.as_str();
         let header_value = formatted_32;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_identification_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -496,7 +496,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_33) = &input.content_redaction_type {
         let formatted_34 = inner_33.as_str();
         let header_value = formatted_34;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_redaction_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -507,7 +507,7 @@ pub fn ser_start_call_analytics_stream_transcription_headers(
     if let ::std::option::Option::Some(inner_35) = &input.pii_entity_types {
         let formatted_36 = inner_35.as_str();
         let header_value = formatted_36;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "pii_entity_types",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

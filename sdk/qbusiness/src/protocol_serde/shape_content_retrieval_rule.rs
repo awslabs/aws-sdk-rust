@@ -20,6 +20,7 @@ pub fn ser_content_retrieval_rule(
 
 pub(crate) fn de_content_retrieval_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContentRetrievalRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,8 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eligibleDataSources" => {
-                            builder = builder
-                                .set_eligible_data_sources(crate::protocol_serde::shape_eligible_data_sources::de_eligible_data_sources(tokens)?);
+                            builder = builder.set_eligible_data_sources(
+                                crate::protocol_serde::shape_eligible_data_sources::de_eligible_data_sources(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -68,11 +68,11 @@ pub fn de_get_account_http_response(
 }
 
 pub(crate) fn de_get_account(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_account::builders::GetAccountOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_account::builders::GetAccountOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -84,7 +84,7 @@ pub(crate) fn de_get_account(
                         builder.set_dedicated_ip_auto_warmup_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Details" => {
-                    builder = builder.set_details(crate::protocol_serde::shape_account_details::de_account_details(tokens)?);
+                    builder = builder.set_details(crate::protocol_serde::shape_account_details::de_account_details(tokens, _value)?);
                 }
                 "EnforcementStatus" => {
                     builder = builder.set_enforcement_status(
@@ -97,17 +97,18 @@ pub(crate) fn de_get_account(
                     builder = builder.set_production_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SendQuota" => {
-                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens)?);
+                    builder = builder.set_send_quota(crate::protocol_serde::shape_send_quota::de_send_quota(tokens, _value)?);
                 }
                 "SendingEnabled" => {
                     builder = builder.set_sending_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "SuppressionAttributes" => {
-                    builder =
-                        builder.set_suppression_attributes(crate::protocol_serde::shape_suppression_attributes::de_suppression_attributes(tokens)?);
+                    builder = builder.set_suppression_attributes(crate::protocol_serde::shape_suppression_attributes::de_suppression_attributes(
+                        tokens, _value,
+                    )?);
                 }
                 "VdmAttributes" => {
-                    builder = builder.set_vdm_attributes(crate::protocol_serde::shape_vdm_attributes::de_vdm_attributes(tokens)?);
+                    builder = builder.set_vdm_attributes(crate::protocol_serde::shape_vdm_attributes::de_vdm_attributes(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

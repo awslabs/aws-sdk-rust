@@ -23,6 +23,7 @@ pub fn ser_keyword_match_configuration(
 
 pub(crate) fn de_keyword_match_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KeywordMatchConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,9 @@ where
                             );
                         }
                         "Keywords" => {
-                            builder = builder.set_keywords(crate::protocol_serde::shape_keyword_match_word_list::de_keyword_match_word_list(tokens)?);
+                            builder = builder.set_keywords(crate::protocol_serde::shape_keyword_match_word_list::de_keyword_match_word_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Negate" => {
                             builder = builder.set_negate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

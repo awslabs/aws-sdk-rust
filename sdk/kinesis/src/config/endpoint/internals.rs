@@ -21,6 +21,8 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
     #[allow(unused_variables)]
+    let stream_id = &_params.stream_id;
+    #[allow(unused_variables)]
     let stream_arn = &_params.stream_arn;
     #[allow(unused_variables)]
     let operation_type = &_params.operation_type;
@@ -28,6 +30,520 @@ pub(super) fn resolve_endpoint(
     let consumer_arn = &_params.consumer_arn;
     #[allow(unused_variables)]
     let resource_arn = &_params.resource_arn;
+    #[allow(unused_variables)]
+    if let Some(stream_id) = stream_id {
+        #[allow(unused_variables)]
+        if let Some(stream_id_delimiter_value) =
+            crate::endpoint_lib::substring::substring(stream_id.as_ref() as &str, 20, 21, false, _diagnostic_collector)
+        {
+            if (stream_id_delimiter_value.as_ref() as &str) == ("-") {
+                #[allow(unused_variables)]
+                if let Some(stream_id_delimiter_reversed_value) =
+                    crate::endpoint_lib::substring::substring(stream_id.as_ref() as &str, 3, 4, true, _diagnostic_collector)
+                {
+                    if (stream_id_delimiter_reversed_value.as_ref() as &str) == ("-") {
+                        #[allow(unused_variables)]
+                        if let Some(stream_id_prefix_value) =
+                            crate::endpoint_lib::substring::substring(stream_id.as_ref() as &str, 0, 20, false, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(stream_id_suffix_value) =
+                                crate::endpoint_lib::substring::substring(stream_id.as_ref() as &str, 21, 24, false, _diagnostic_collector)
+                            {
+                                #[allow(unused_variables)]
+                                if let Some(region) = region {
+                                    #[allow(unused_variables)]
+                                    if let Some(partition_result) =
+                                        partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector)
+                                    {
+                                        if !((partition_result.name()) == ("aws-iso")) {
+                                            if !((partition_result.name()) == ("aws-iso-b")) {
+                                                #[allow(unused_variables)]
+                                                if let Some(operation_type) = operation_type {
+                                                    #[allow(unused_variables)]
+                                                    if let Some(endpoint) = endpoint {
+                                                        #[allow(unused_variables)]
+                                                        if let Some(https_custom_endpoint_delimiter_value) = crate::endpoint_lib::substring::substring(
+                                                            endpoint.as_ref() as &str,
+                                                            15,
+                                                            16,
+                                                            false,
+                                                            _diagnostic_collector,
+                                                        ) {
+                                                            if (https_custom_endpoint_delimiter_value.as_ref() as &str) == ("-") {
+                                                                #[allow(unused_variables)]
+                                                                if let Some(https_endpoint_delimiter_value) =
+                                                                    crate::endpoint_lib::substring::substring(
+                                                                        endpoint.as_ref() as &str,
+                                                                        20,
+                                                                        21,
+                                                                        false,
+                                                                        _diagnostic_collector,
+                                                                    )
+                                                                {
+                                                                    if (https_endpoint_delimiter_value.as_ref() as &str) == (".") {
+                                                                        #[allow(unused_variables)]
+                                                                        if let Some(https_custom_endpoint_suffix_value) =
+                                                                            crate::endpoint_lib::substring::substring(
+                                                                                endpoint.as_ref() as &str,
+                                                                                15,
+                                                                                20,
+                                                                                false,
+                                                                                _diagnostic_collector,
+                                                                            )
+                                                                        {
+                                                                            if (*use_fips) == (true) {
+                                                                                if (*use_dual_stack) == (true) {
+                                                                                    if (partition_result.supports_fips()) == (true) {
+                                                                                        if (partition_result.supports_dual_stack()) == (true) {
+                                                                                            return Ok(
+                                                                                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                                    .url({
+                                                                                                        let mut out = String::new();
+                                                                                                        out.push_str("https://");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &stream_id_prefix_value.as_ref() as &str,
+                                                                                                        );
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &stream_id_suffix_value.as_ref() as &str,
+                                                                                                        );
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+out.push_str(&operation_type.as_ref() as &str);
+                                                                                                        out.push_str("-kinesis");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &https_custom_endpoint_suffix_value
+                                                                                                                .as_ref()
+                                                                                                                as &str,
+                                                                                                        );
+                                                                                                        out.push_str("-fips.");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(&region.as_ref() as &str);
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &partition_result.dual_stack_dns_suffix(),
+                                                                                                        );
+                                                                                                        out
+                                                                                                    })
+                                                                                                    .build(),
+                                                                                            );
+                                                                                        }
+                                                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled, but this partition does not support DualStack."
+.to_string()));
+                                                                                    }
+                                                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS is enabled, but this partition does not support FIPS."
+.to_string()));
+                                                                                }
+                                                                            }
+                                                                            if (*use_fips) == (true) {
+                                                                                if (partition_result.supports_fips()) == (true) {
+                                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                        .url({
+                                                                                            let mut out = String::new();
+                                                                                            out.push_str("https://");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                                                            out.push_str("-kinesis");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(
+                                                                                                &https_custom_endpoint_suffix_value.as_ref() as &str,
+                                                                                            );
+                                                                                            out.push_str("-fips.");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&region.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&partition_result.dns_suffix());
+                                                                                            out
+                                                                                        })
+                                                                                        .build());
+                                                                                }
+                                                                                return Err(
+                                                                                    ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                                        "FIPS is enabled but this partition does not support FIPS"
+                                                                                            .to_string(),
+                                                                                    ),
+                                                                                );
+                                                                            }
+                                                                            if (*use_dual_stack) == (true) {
+                                                                                if (partition_result.supports_dual_stack()) == (true) {
+                                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                        .url({
+                                                                                            let mut out = String::new();
+                                                                                            out.push_str("https://");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                                                            out.push_str("-kinesis");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(
+                                                                                                &https_custom_endpoint_suffix_value.as_ref() as &str,
+                                                                                            );
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&region.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                                            out
+                                                                                        })
+                                                                                        .build());
+                                                                                }
+                                                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled but this partition does not support DualStack"
+.to_string()));
+                                                                            }
+                                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                .url({
+                                                                                    let mut out = String::new();
+                                                                                    out.push_str("https://");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&operation_type.as_ref() as &str);
+                                                                                    out.push_str("-kinesis");
+                                                                                    #[allow(clippy::needless_borrow)]
+out.push_str(&https_custom_endpoint_suffix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&region.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&partition_result.dns_suffix());
+                                                                                    out
+                                                                                })
+                                                                                .build());
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    #[allow(unused_variables)]
+                                                    if let Some(endpoint) = endpoint {
+                                                        #[allow(unused_variables)]
+                                                        if let Some(plain_custom_endpoint_delimiter_value) = crate::endpoint_lib::substring::substring(
+                                                            endpoint.as_ref() as &str,
+                                                            7,
+                                                            8,
+                                                            false,
+                                                            _diagnostic_collector,
+                                                        ) {
+                                                            if (plain_custom_endpoint_delimiter_value.as_ref() as &str) == ("-") {
+                                                                #[allow(unused_variables)]
+                                                                if let Some(plain_endpoint_delimiter_value) =
+                                                                    crate::endpoint_lib::substring::substring(
+                                                                        endpoint.as_ref() as &str,
+                                                                        12,
+                                                                        13,
+                                                                        false,
+                                                                        _diagnostic_collector,
+                                                                    )
+                                                                {
+                                                                    if (plain_endpoint_delimiter_value.as_ref() as &str) == (".") {
+                                                                        #[allow(unused_variables)]
+                                                                        if let Some(plain_custom_endpoint_suffix_value) =
+                                                                            crate::endpoint_lib::substring::substring(
+                                                                                endpoint.as_ref() as &str,
+                                                                                7,
+                                                                                12,
+                                                                                false,
+                                                                                _diagnostic_collector,
+                                                                            )
+                                                                        {
+                                                                            if (*use_fips) == (true) {
+                                                                                if (*use_dual_stack) == (true) {
+                                                                                    if (partition_result.supports_fips()) == (true) {
+                                                                                        if (partition_result.supports_dual_stack()) == (true) {
+                                                                                            return Ok(
+                                                                                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                                    .url({
+                                                                                                        let mut out = String::new();
+                                                                                                        out.push_str("https://");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &stream_id_prefix_value.as_ref() as &str,
+                                                                                                        );
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &stream_id_suffix_value.as_ref() as &str,
+                                                                                                        );
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+out.push_str(&operation_type.as_ref() as &str);
+                                                                                                        out.push_str("-kinesis");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &plain_custom_endpoint_suffix_value
+                                                                                                                .as_ref()
+                                                                                                                as &str,
+                                                                                                        );
+                                                                                                        out.push_str("-fips.");
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(&region.as_ref() as &str);
+                                                                                                        out.push('.');
+                                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                                        out.push_str(
+                                                                                                            &partition_result.dual_stack_dns_suffix(),
+                                                                                                        );
+                                                                                                        out
+                                                                                                    })
+                                                                                                    .build(),
+                                                                                            );
+                                                                                        }
+                                                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled, but this partition does not support DualStack."
+.to_string()));
+                                                                                    }
+                                                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS is enabled, but this partition does not support FIPS."
+.to_string()));
+                                                                                }
+                                                                            }
+                                                                            if (*use_fips) == (true) {
+                                                                                if (partition_result.supports_fips()) == (true) {
+                                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                        .url({
+                                                                                            let mut out = String::new();
+                                                                                            out.push_str("https://");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                                                            out.push_str("-kinesis");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(
+                                                                                                &plain_custom_endpoint_suffix_value.as_ref() as &str,
+                                                                                            );
+                                                                                            out.push_str("-fips.");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&region.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&partition_result.dns_suffix());
+                                                                                            out
+                                                                                        })
+                                                                                        .build());
+                                                                                }
+                                                                                return Err(
+                                                                                    ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                                        "FIPS is enabled but this partition does not support FIPS"
+                                                                                            .to_string(),
+                                                                                    ),
+                                                                                );
+                                                                            }
+                                                                            if (*use_dual_stack) == (true) {
+                                                                                if (partition_result.supports_dual_stack()) == (true) {
+                                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                        .url({
+                                                                                            let mut out = String::new();
+                                                                                            out.push_str("https://");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                                                            out.push_str("-kinesis");
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(
+                                                                                                &plain_custom_endpoint_suffix_value.as_ref() as &str,
+                                                                                            );
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&region.as_ref() as &str);
+                                                                                            out.push('.');
+                                                                                            #[allow(clippy::needless_borrow)]
+                                                                                            out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                                            out
+                                                                                        })
+                                                                                        .build());
+                                                                                }
+                                                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled but this partition does not support DualStack"
+.to_string()));
+                                                                            }
+                                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                .url({
+                                                                                    let mut out = String::new();
+                                                                                    out.push_str("https://");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&operation_type.as_ref() as &str);
+                                                                                    out.push_str("-kinesis");
+                                                                                    #[allow(clippy::needless_borrow)]
+out.push_str(&plain_custom_endpoint_suffix_value.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&region.as_ref() as &str);
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&partition_result.dns_suffix());
+                                                                                    out
+                                                                                })
+                                                                                .build());
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    if (*use_fips) == (true) {
+                                                        if (*use_dual_stack) == (true) {
+                                                            if (partition_result.supports_fips()) == (true) {
+                                                                if (partition_result.supports_dual_stack()) == (true) {
+                                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                        .url({
+                                                                            let mut out = String::new();
+                                                                            out.push_str("https://");
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                            out.push('.');
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                            out.push('.');
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                                            out.push_str("-kinesis-fips.");
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&region.as_ref() as &str);
+                                                                            out.push('.');
+                                                                            #[allow(clippy::needless_borrow)]
+                                                                            out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                            out
+                                                                        })
+                                                                        .build());
+                                                                }
+                                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                    "DualStack is enabled, but this partition does not support DualStack."
+                                                                        .to_string(),
+                                                                ));
+                                                            }
+                                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                "FIPS is enabled, but this partition does not support FIPS.".to_string(),
+                                                            ));
+                                                        }
+                                                    }
+                                                    if (*use_fips) == (true) {
+                                                        if (partition_result.supports_fips()) == (true) {
+                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                .url({
+                                                                    let mut out = String::new();
+                                                                    out.push_str("https://");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&operation_type.as_ref() as &str);
+                                                                    out.push_str("-kinesis-fips.");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&region.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&partition_result.dns_suffix());
+                                                                    out
+                                                                })
+                                                                .build());
+                                                        }
+                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                            "FIPS is enabled but this partition does not support FIPS".to_string(),
+                                                        ));
+                                                    }
+                                                    if (*use_dual_stack) == (true) {
+                                                        if (partition_result.supports_dual_stack()) == (true) {
+                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                .url({
+                                                                    let mut out = String::new();
+                                                                    out.push_str("https://");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&operation_type.as_ref() as &str);
+                                                                    out.push_str("-kinesis.");
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&region.as_ref() as &str);
+                                                                    out.push('.');
+                                                                    #[allow(clippy::needless_borrow)]
+                                                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                    out
+                                                                })
+                                                                .build());
+                                                        }
+                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                            "DualStack is enabled but this partition does not support DualStack".to_string(),
+                                                        ));
+                                                    }
+                                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                        .url({
+                                                            let mut out = String::new();
+                                                            out.push_str("https://");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&stream_id_prefix_value.as_ref() as &str);
+                                                            out.push('.');
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&stream_id_suffix_value.as_ref() as &str);
+                                                            out.push('.');
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&operation_type.as_ref() as &str);
+                                                            out.push_str("-kinesis.");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&region.as_ref() as &str);
+                                                            out.push('.');
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&partition_result.dns_suffix());
+                                                            out
+                                                        })
+                                                        .build());
+                                                }
+                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                    "Operation Type is not set. Please contact service team for resolution.".to_string(),
+                                                ));
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     #[allow(unused_variables)]
     if let Some(stream_arn) = stream_arn {
         if !(endpoint.is_some()) {

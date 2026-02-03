@@ -14,6 +14,7 @@ pub fn ser_failover_condition(
 
 pub(crate) fn de_failover_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FailoverCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "failoverConditionSettings" => {
                             builder = builder.set_failover_condition_settings(
-                                crate::protocol_serde::shape_failover_condition_settings::de_failover_condition_settings(tokens)?,
+                                crate::protocol_serde::shape_failover_condition_settings::de_failover_condition_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

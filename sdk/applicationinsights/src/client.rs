@@ -153,7 +153,7 @@ mod create_log_pattern;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_applicationinsights::Error> {
 /// # let client: aws_sdk_applicationinsights::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_workload()
 ///     .customize()

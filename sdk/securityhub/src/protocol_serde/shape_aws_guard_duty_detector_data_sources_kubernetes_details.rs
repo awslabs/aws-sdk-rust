@@ -14,6 +14,7 @@ pub fn ser_aws_guard_duty_detector_data_sources_kubernetes_details(
 
 pub(crate) fn de_aws_guard_duty_detector_data_sources_kubernetes_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AuditLogs" => {
                             builder = builder.set_audit_logs(
-                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details::de_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details(tokens)?
+                                    crate::protocol_serde::shape_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details::de_aws_guard_duty_detector_data_sources_kubernetes_audit_logs_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

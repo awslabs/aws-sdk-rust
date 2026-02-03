@@ -20,6 +20,7 @@ pub fn ser_geocode_preference(
 
 pub(crate) fn de_geocode_preference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeocodePreference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RequestKey" => {
-                            builder = builder.set_request_key(crate::protocol_serde::shape_geocoder_hierarchy::de_geocoder_hierarchy(tokens)?);
+                            builder =
+                                builder.set_request_key(crate::protocol_serde::shape_geocoder_hierarchy::de_geocoder_hierarchy(tokens, _value)?);
                         }
                         "Preference" => {
                             builder = builder.set_preference(crate::protocol_serde::shape_geocode_preference_value::de_geocode_preference_value(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

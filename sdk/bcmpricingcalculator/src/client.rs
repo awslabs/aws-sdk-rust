@@ -169,7 +169,7 @@ mod create_workload_estimate;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bcmpricingcalculator::Error> {
 /// # let client: aws_sdk_bcmpricingcalculator::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_bill_scenario_commitment_modification()
 ///     .customize()

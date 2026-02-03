@@ -29,6 +29,7 @@ pub fn ser_device_selection_config(
 
 pub(crate) fn de_device_selection_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DeviceSelectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,7 +58,7 @@ where
                             );
                         }
                         "DeviceNames" => {
-                            builder = builder.set_device_names(crate::protocol_serde::shape_device_names::de_device_names(tokens)?);
+                            builder = builder.set_device_names(crate::protocol_serde::shape_device_names::de_device_names(tokens, _value)?);
                         }
                         "DeviceNameContains" => {
                             builder = builder.set_device_name_contains(

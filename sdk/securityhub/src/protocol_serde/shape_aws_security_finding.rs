@@ -268,6 +268,7 @@ pub fn ser_aws_security_finding(
 
 pub(crate) fn de_aws_security_finding<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsSecurityFinding>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -338,7 +339,7 @@ where
                             );
                         }
                         "Types" => {
-                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens)?);
+                            builder = builder.set_types(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value)?);
                         }
                         "FirstObservedAt" => {
                             builder = builder.set_first_observed_at(
@@ -369,7 +370,7 @@ where
                             );
                         }
                         "Severity" => {
-                            builder = builder.set_severity(crate::protocol_serde::shape_severity::de_severity(tokens)?);
+                            builder = builder.set_severity(crate::protocol_serde::shape_severity::de_severity(tokens, _value)?);
                         }
                         "Confidence" => {
                             builder = builder.set_confidence(
@@ -400,7 +401,7 @@ where
                             );
                         }
                         "Remediation" => {
-                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens)?);
+                            builder = builder.set_remediation(crate::protocol_serde::shape_remediation::de_remediation(tokens, _value)?);
                         }
                         "SourceUrl" => {
                             builder = builder.set_source_url(
@@ -410,36 +411,36 @@ where
                             );
                         }
                         "ProductFields" => {
-                            builder = builder.set_product_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_product_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "UserDefinedFields" => {
-                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                            builder = builder.set_user_defined_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                         }
                         "Malware" => {
-                            builder = builder.set_malware(crate::protocol_serde::shape_malware_list::de_malware_list(tokens)?);
+                            builder = builder.set_malware(crate::protocol_serde::shape_malware_list::de_malware_list(tokens, _value)?);
                         }
                         "Network" => {
-                            builder = builder.set_network(crate::protocol_serde::shape_network::de_network(tokens)?);
+                            builder = builder.set_network(crate::protocol_serde::shape_network::de_network(tokens, _value)?);
                         }
                         "NetworkPath" => {
-                            builder = builder.set_network_path(crate::protocol_serde::shape_network_path_list::de_network_path_list(tokens)?);
+                            builder = builder.set_network_path(crate::protocol_serde::shape_network_path_list::de_network_path_list(tokens, _value)?);
                         }
                         "Process" => {
-                            builder = builder.set_process(crate::protocol_serde::shape_process_details::de_process_details(tokens)?);
+                            builder = builder.set_process(crate::protocol_serde::shape_process_details::de_process_details(tokens, _value)?);
                         }
                         "Threats" => {
-                            builder = builder.set_threats(crate::protocol_serde::shape_threat_list::de_threat_list(tokens)?);
+                            builder = builder.set_threats(crate::protocol_serde::shape_threat_list::de_threat_list(tokens, _value)?);
                         }
                         "ThreatIntelIndicators" => {
                             builder = builder.set_threat_intel_indicators(
-                                crate::protocol_serde::shape_threat_intel_indicator_list::de_threat_intel_indicator_list(tokens)?,
+                                crate::protocol_serde::shape_threat_intel_indicator_list::de_threat_intel_indicator_list(tokens, _value)?,
                             );
                         }
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value)?);
                         }
                         "Compliance" => {
-                            builder = builder.set_compliance(crate::protocol_serde::shape_compliance::de_compliance(tokens)?);
+                            builder = builder.set_compliance(crate::protocol_serde::shape_compliance::de_compliance(tokens, _value)?);
                         }
                         "VerificationState" => {
                             builder = builder.set_verification_state(
@@ -456,7 +457,7 @@ where
                             );
                         }
                         "Workflow" => {
-                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow::de_workflow(tokens)?);
+                            builder = builder.set_workflow(crate::protocol_serde::shape_workflow::de_workflow(tokens, _value)?);
                         }
                         "RecordState" => {
                             builder = builder.set_record_state(
@@ -466,31 +467,34 @@ where
                             );
                         }
                         "RelatedFindings" => {
-                            builder =
-                                builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(tokens)?);
+                            builder = builder.set_related_findings(crate::protocol_serde::shape_related_finding_list::de_related_finding_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Note" => {
-                            builder = builder.set_note(crate::protocol_serde::shape_note::de_note(tokens)?);
+                            builder = builder.set_note(crate::protocol_serde::shape_note::de_note(tokens, _value)?);
                         }
                         "Vulnerabilities" => {
-                            builder = builder.set_vulnerabilities(crate::protocol_serde::shape_vulnerability_list::de_vulnerability_list(tokens)?);
+                            builder =
+                                builder.set_vulnerabilities(crate::protocol_serde::shape_vulnerability_list::de_vulnerability_list(tokens, _value)?);
                         }
                         "PatchSummary" => {
-                            builder = builder.set_patch_summary(crate::protocol_serde::shape_patch_summary::de_patch_summary(tokens)?);
+                            builder = builder.set_patch_summary(crate::protocol_serde::shape_patch_summary::de_patch_summary(tokens, _value)?);
                         }
                         "Action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
                         }
                         "FindingProviderFields" => {
                             builder = builder.set_finding_provider_fields(
-                                crate::protocol_serde::shape_finding_provider_fields::de_finding_provider_fields(tokens)?,
+                                crate::protocol_serde::shape_finding_provider_fields::de_finding_provider_fields(tokens, _value)?,
                             );
                         }
                         "Sample" => {
                             builder = builder.set_sample(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "GeneratorDetails" => {
-                            builder = builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(tokens)?);
+                            builder =
+                                builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(tokens, _value)?);
                         }
                         "ProcessedAt" => {
                             builder = builder.set_processed_at(
@@ -507,7 +511,7 @@ where
                             );
                         }
                         "Detection" => {
-                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens)?);
+                            builder = builder.set_detection(crate::protocol_serde::shape_detection::de_detection(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

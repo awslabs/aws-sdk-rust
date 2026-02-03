@@ -116,13 +116,13 @@ pub fn ser_install_to_remote_access_session_input(
 }
 
 pub(crate) fn de_install_to_remote_access_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_install_to_remote_access_session(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appUpload" => {
-                    builder = builder.set_app_upload(crate::protocol_serde::shape_upload::de_upload(tokens)?);
+                    builder = builder.set_app_upload(crate::protocol_serde::shape_upload::de_upload(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

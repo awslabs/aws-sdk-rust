@@ -147,13 +147,13 @@ pub fn de_get_sensitive_data_occurrences_http_response(
 }
 
 pub(crate) fn de_get_sensitive_data_occurrences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -169,7 +169,7 @@ pub(crate) fn de_get_sensitive_data_occurrences(
                 }
                 "sensitiveDataOccurrences" => {
                     builder = builder.set_sensitive_data_occurrences(
-                        crate::protocol_serde::shape_sensitive_data_occurrences::de_sensitive_data_occurrences(tokens)?,
+                        crate::protocol_serde::shape_sensitive_data_occurrences::de_sensitive_data_occurrences(tokens, _value)?,
                     );
                 }
                 "status" => {

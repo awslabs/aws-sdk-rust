@@ -26,6 +26,7 @@ pub fn ser_processing_input(
 
 pub(crate) fn de_processing_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProcessingInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,11 @@ where
                             builder = builder.set_app_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "S3Input" => {
-                            builder = builder.set_s3_input(crate::protocol_serde::shape_processing_s3_input::de_processing_s3_input(tokens)?);
+                            builder = builder.set_s3_input(crate::protocol_serde::shape_processing_s3_input::de_processing_s3_input(tokens, _value)?);
                         }
                         "DatasetDefinition" => {
-                            builder = builder.set_dataset_definition(crate::protocol_serde::shape_dataset_definition::de_dataset_definition(tokens)?);
+                            builder = builder
+                                .set_dataset_definition(crate::protocol_serde::shape_dataset_definition::de_dataset_definition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

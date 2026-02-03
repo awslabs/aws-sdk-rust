@@ -247,7 +247,7 @@ mod create_usage_limit;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_redshift::Error> {
 /// # let client: aws_sdk_redshift::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_reserved_node_exchange()
 ///     .customize()

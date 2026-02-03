@@ -14,6 +14,7 @@ pub fn ser_node_log_publishing_configuration(
 
 pub(crate) fn de_node_log_publishing_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NodeLogPublishingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "Fabric" => {
                                 builder = builder.set_fabric(
-                                    crate::protocol_serde::shape_node_fabric_log_publishing_configuration::de_node_fabric_log_publishing_configuration(tokens)?
+                                    crate::protocol_serde::shape_node_fabric_log_publishing_configuration::de_node_fabric_log_publishing_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

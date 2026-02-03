@@ -35,6 +35,7 @@ pub fn ser_evaluation_form_section(
 
 pub(crate) fn de_evaluation_form_section<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluationFormSection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,7 +72,7 @@ where
                         }
                         "Items" => {
                             builder = builder.set_items(crate::protocol_serde::shape_evaluation_form_items_list::de_evaluation_form_items_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Weight" => {

@@ -96,13 +96,13 @@ pub fn de_describe_portal_http_response(
 }
 
 pub(crate) fn de_describe_portal(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_portal::builders::DescribePortalOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_portal::builders::DescribePortalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -110,7 +110,7 @@ pub(crate) fn de_describe_portal(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "alarms" => {
-                    builder = builder.set_alarms(crate::protocol_serde::shape_alarms::de_alarms(tokens)?);
+                    builder = builder.set_alarms(crate::protocol_serde::shape_alarms::de_alarms(tokens, _value)?);
                 }
                 "notificationSenderEmail" => {
                     builder = builder.set_notification_sender_email(
@@ -174,7 +174,7 @@ pub(crate) fn de_describe_portal(
                     )?);
                 }
                 "portalLogoImageLocation" => {
-                    builder = builder.set_portal_logo_image_location(crate::protocol_serde::shape_image_location::de_image_location(tokens)?);
+                    builder = builder.set_portal_logo_image_location(crate::protocol_serde::shape_image_location::de_image_location(tokens, _value)?);
                 }
                 "portalName" => {
                     builder = builder.set_portal_name(
@@ -191,7 +191,7 @@ pub(crate) fn de_describe_portal(
                     );
                 }
                 "portalStatus" => {
-                    builder = builder.set_portal_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens)?);
+                    builder = builder.set_portal_status(crate::protocol_serde::shape_portal_status::de_portal_status(tokens, _value)?);
                 }
                 "portalType" => {
                     builder = builder.set_portal_type(
@@ -202,7 +202,7 @@ pub(crate) fn de_describe_portal(
                 }
                 "portalTypeConfiguration" => {
                     builder = builder.set_portal_type_configuration(
-                        crate::protocol_serde::shape_portal_type_configuration::de_portal_type_configuration(tokens)?,
+                        crate::protocol_serde::shape_portal_type_configuration::de_portal_type_configuration(tokens, _value)?,
                     );
                 }
                 "roleArn" => {

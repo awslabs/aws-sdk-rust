@@ -171,13 +171,13 @@ pub fn ser_create_kx_volume_input(
 }
 
 pub(crate) fn de_create_kx_volume(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_kx_volume::builders::CreateKxVolumeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_kx_volume::builders::CreateKxVolumeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,8 +185,9 @@ pub(crate) fn de_create_kx_volume(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "availabilityZoneIds" => {
-                    builder =
-                        builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(tokens)?);
+                    builder = builder.set_availability_zone_ids(crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(
+                        tokens, _value,
+                    )?);
                 }
                 "azMode" => {
                     builder = builder.set_az_mode(
@@ -216,7 +217,9 @@ pub(crate) fn de_create_kx_volume(
                     );
                 }
                 "nas1Configuration" => {
-                    builder = builder.set_nas1_configuration(crate::protocol_serde::shape_kx_nas1_configuration::de_kx_nas1_configuration(tokens)?);
+                    builder = builder.set_nas1_configuration(crate::protocol_serde::shape_kx_nas1_configuration::de_kx_nas1_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

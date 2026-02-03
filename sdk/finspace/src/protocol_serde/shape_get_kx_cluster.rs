@@ -143,13 +143,13 @@ pub fn de_get_kx_cluster_http_response(
 }
 
 pub(crate) fn de_get_kx_cluster(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_kx_cluster::builders::GetKxClusterOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_kx_cluster::builders::GetKxClusterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,7 +158,7 @@ pub(crate) fn de_get_kx_cluster(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "autoScalingConfiguration" => {
                     builder = builder.set_auto_scaling_configuration(
-                        crate::protocol_serde::shape_auto_scaling_configuration::de_auto_scaling_configuration(tokens)?,
+                        crate::protocol_serde::shape_auto_scaling_configuration::de_auto_scaling_configuration(tokens, _value)?,
                     );
                 }
                 "availabilityZoneId" => {
@@ -177,12 +177,13 @@ pub(crate) fn de_get_kx_cluster(
                 }
                 "cacheStorageConfigurations" => {
                     builder = builder.set_cache_storage_configurations(
-                        crate::protocol_serde::shape_kx_cache_storage_configurations::de_kx_cache_storage_configurations(tokens)?,
+                        crate::protocol_serde::shape_kx_cache_storage_configurations::de_kx_cache_storage_configurations(tokens, _value)?,
                     );
                 }
                 "capacityConfiguration" => {
-                    builder =
-                        builder.set_capacity_configuration(crate::protocol_serde::shape_capacity_configuration::de_capacity_configuration(tokens)?);
+                    builder = builder.set_capacity_configuration(crate::protocol_serde::shape_capacity_configuration::de_capacity_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "clusterDescription" => {
                     builder = builder.set_cluster_description(
@@ -206,11 +207,11 @@ pub(crate) fn de_get_kx_cluster(
                     );
                 }
                 "code" => {
-                    builder = builder.set_code(crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens)?);
+                    builder = builder.set_code(crate::protocol_serde::shape_code_configuration::de_code_configuration(tokens, _value)?);
                 }
                 "commandLineArguments" => {
                     builder = builder.set_command_line_arguments(
-                        crate::protocol_serde::shape_kx_command_line_arguments::de_kx_command_line_arguments(tokens)?,
+                        crate::protocol_serde::shape_kx_command_line_arguments::de_kx_command_line_arguments(tokens, _value)?,
                     );
                 }
                 "createdTimestamp" => {
@@ -221,7 +222,7 @@ pub(crate) fn de_get_kx_cluster(
                 }
                 "databases" => {
                     builder = builder.set_databases(crate::protocol_serde::shape_kx_database_configurations::de_kx_database_configurations(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "executionRole" => {
@@ -253,12 +254,12 @@ pub(crate) fn de_get_kx_cluster(
                 }
                 "savedownStorageConfiguration" => {
                     builder = builder.set_savedown_storage_configuration(
-                        crate::protocol_serde::shape_kx_savedown_storage_configuration::de_kx_savedown_storage_configuration(tokens)?,
+                        crate::protocol_serde::shape_kx_savedown_storage_configuration::de_kx_savedown_storage_configuration(tokens, _value)?,
                     );
                 }
                 "scalingGroupConfiguration" => {
                     builder = builder.set_scaling_group_configuration(
-                        crate::protocol_serde::shape_kx_scaling_group_configuration::de_kx_scaling_group_configuration(tokens)?,
+                        crate::protocol_serde::shape_kx_scaling_group_configuration::de_kx_scaling_group_configuration(tokens, _value)?,
                     );
                 }
                 "status" => {
@@ -277,14 +278,14 @@ pub(crate) fn de_get_kx_cluster(
                 }
                 "tickerplantLogConfiguration" => {
                     builder = builder.set_tickerplant_log_configuration(
-                        crate::protocol_serde::shape_tickerplant_log_configuration::de_tickerplant_log_configuration(tokens)?,
+                        crate::protocol_serde::shape_tickerplant_log_configuration::de_tickerplant_log_configuration(tokens, _value)?,
                     );
                 }
                 "volumes" => {
-                    builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
+                    builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
                 }
                 "vpcConfiguration" => {
-                    builder = builder.set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?);
+                    builder = builder.set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

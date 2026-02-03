@@ -144,13 +144,13 @@ pub fn de_describe_input_http_response(
 }
 
 pub(crate) fn de_describe_input(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_input::builders::DescribeInputOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_input::builders::DescribeInputOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -165,11 +165,11 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "attachedChannels" => {
-                    builder = builder.set_attached_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_attached_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "destinations" => {
                     builder = builder.set_destinations(crate::protocol_serde::shape_list_of_input_destination::de_list_of_input_destination(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "id" => {
@@ -187,8 +187,9 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "inputDevices" => {
-                    builder = builder
-                        .set_input_devices(crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(tokens)?);
+                    builder = builder.set_input_devices(
+                        crate::protocol_serde::shape_list_of_input_device_settings::de_list_of_input_device_settings(tokens, _value)?,
+                    );
                 }
                 "inputNetworkLocation" => {
                     builder = builder.set_input_network_location(
@@ -198,7 +199,7 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "inputPartnerIds" => {
-                    builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_input_partner_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "inputSourceType" => {
                     builder = builder.set_input_source_type(
@@ -209,11 +210,11 @@ pub(crate) fn de_describe_input(
                 }
                 "mediaConnectFlows" => {
                     builder = builder.set_media_connect_flows(
-                        crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens)?,
+                        crate::protocol_serde::shape_list_of_media_connect_flow::de_list_of_media_connect_flow(tokens, _value)?,
                     );
                 }
                 "multicastSettings" => {
-                    builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens)?);
+                    builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -230,24 +231,28 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "routerSettings" => {
-                    builder = builder.set_router_settings(crate::protocol_serde::shape_router_input_settings::de_router_input_settings(tokens)?);
+                    builder = builder.set_router_settings(crate::protocol_serde::shape_router_input_settings::de_router_input_settings(
+                        tokens, _value,
+                    )?);
                 }
                 "sdiSources" => {
-                    builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens)?);
+                    builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens, _value)?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "smpte2110ReceiverGroupSettings" => {
                     builder = builder.set_smpte2110_receiver_group_settings(
-                        crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(tokens)?,
+                        crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(tokens, _value)?,
                     );
                 }
                 "sources" => {
-                    builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(tokens)?);
+                    builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(
+                        tokens, _value,
+                    )?);
                 }
                 "srtSettings" => {
-                    builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens)?);
+                    builder = builder.set_srt_settings(crate::protocol_serde::shape_srt_settings::de_srt_settings(tokens, _value)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -257,7 +262,7 @@ pub(crate) fn de_describe_input(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value)?);
                 }
                 "type" => {
                     builder = builder.set_type(

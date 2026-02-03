@@ -147,7 +147,7 @@ mod batch_meter_usage;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_marketplacemetering::Error> {
 /// # let client: aws_sdk_marketplacemetering::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_meter_usage()
 ///     .customize()

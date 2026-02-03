@@ -24,6 +24,7 @@ pub fn ser_add_attributes_activity(
 
 pub(crate) fn de_add_attributes_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AddAttributesActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,9 @@ where
                             );
                         }
                         "attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attribute_name_mapping::de_attribute_name_mapping(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attribute_name_mapping::de_attribute_name_mapping(
+                                tokens, _value,
+                            )?);
                         }
                         "next" => {
                             builder = builder.set_next(

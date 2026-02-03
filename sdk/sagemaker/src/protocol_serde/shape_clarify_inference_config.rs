@@ -71,6 +71,7 @@ pub fn ser_clarify_inference_config(
 
 pub(crate) fn de_clarify_inference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClarifyInferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -141,16 +142,19 @@ where
                             );
                         }
                         "LabelHeaders" => {
-                            builder =
-                                builder.set_label_headers(crate::protocol_serde::shape_clarify_label_headers::de_clarify_label_headers(tokens)?);
+                            builder = builder.set_label_headers(crate::protocol_serde::shape_clarify_label_headers::de_clarify_label_headers(
+                                tokens, _value,
+                            )?);
                         }
                         "FeatureHeaders" => {
-                            builder = builder
-                                .set_feature_headers(crate::protocol_serde::shape_clarify_feature_headers::de_clarify_feature_headers(tokens)?);
+                            builder = builder.set_feature_headers(crate::protocol_serde::shape_clarify_feature_headers::de_clarify_feature_headers(
+                                tokens, _value,
+                            )?);
                         }
                         "FeatureTypes" => {
-                            builder =
-                                builder.set_feature_types(crate::protocol_serde::shape_clarify_feature_types::de_clarify_feature_types(tokens)?);
+                            builder = builder.set_feature_types(crate::protocol_serde::shape_clarify_feature_types::de_clarify_feature_types(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

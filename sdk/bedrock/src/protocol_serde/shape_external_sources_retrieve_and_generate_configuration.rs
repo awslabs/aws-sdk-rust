@@ -29,6 +29,7 @@ pub fn ser_external_sources_retrieve_and_generate_configuration(
 
 pub(crate) fn de_external_sources_retrieve_and_generate_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -54,11 +55,11 @@ where
                                 );
                             }
                             "sources" => {
-                                builder = builder.set_sources(crate::protocol_serde::shape_external_sources::de_external_sources(tokens)?);
+                                builder = builder.set_sources(crate::protocol_serde::shape_external_sources::de_external_sources(tokens, _value)?);
                             }
                             "generationConfiguration" => {
                                 builder = builder.set_generation_configuration(
-                                    crate::protocol_serde::shape_external_sources_generation_configuration::de_external_sources_generation_configuration(tokens)?
+                                    crate::protocol_serde::shape_external_sources_generation_configuration::de_external_sources_generation_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

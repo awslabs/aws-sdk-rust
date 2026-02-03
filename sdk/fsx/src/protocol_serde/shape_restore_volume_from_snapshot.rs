@@ -103,13 +103,13 @@ pub fn ser_restore_volume_from_snapshot_input(
 }
 
 pub(crate) fn de_restore_volume_from_snapshot(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,8 +131,9 @@ pub(crate) fn de_restore_volume_from_snapshot(
                     );
                 }
                 "AdministrativeActions" => {
-                    builder =
-                        builder.set_administrative_actions(crate::protocol_serde::shape_administrative_actions::de_administrative_actions(tokens)?);
+                    builder = builder.set_administrative_actions(crate::protocol_serde::shape_administrative_actions::de_administrative_actions(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

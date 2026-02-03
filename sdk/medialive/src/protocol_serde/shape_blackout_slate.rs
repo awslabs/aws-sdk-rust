@@ -29,6 +29,7 @@ pub fn ser_blackout_slate(
 
 pub(crate) fn de_blackout_slate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BlackoutSlate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,7 +44,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "blackoutSlateImage" => {
-                            builder = builder.set_blackout_slate_image(crate::protocol_serde::shape_input_location::de_input_location(tokens)?);
+                            builder =
+                                builder.set_blackout_slate_image(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
                         }
                         "networkEndBlackout" => {
                             builder = builder.set_network_end_blackout(
@@ -53,7 +55,8 @@ where
                             );
                         }
                         "networkEndBlackoutImage" => {
-                            builder = builder.set_network_end_blackout_image(crate::protocol_serde::shape_input_location::de_input_location(tokens)?);
+                            builder = builder
+                                .set_network_end_blackout_image(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
                         }
                         "networkId" => {
                             builder = builder.set_network_id(

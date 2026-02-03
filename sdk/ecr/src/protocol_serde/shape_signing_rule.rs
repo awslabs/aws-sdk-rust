@@ -23,6 +23,7 @@ pub fn ser_signing_rule(
 
 pub(crate) fn de_signing_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SigningRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "repositoryFilters" => {
                             builder = builder.set_repository_filters(
-                                crate::protocol_serde::shape_signing_repository_filter_list::de_signing_repository_filter_list(tokens)?,
+                                crate::protocol_serde::shape_signing_repository_filter_list::de_signing_repository_filter_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

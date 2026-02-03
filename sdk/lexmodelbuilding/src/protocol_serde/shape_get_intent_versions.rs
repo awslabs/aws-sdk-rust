@@ -107,13 +107,13 @@ pub fn de_get_intent_versions_http_response(
 }
 
 pub(crate) fn de_get_intent_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_intent_versions::builders::GetIntentVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_intent_versions::builders::GetIntentVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,9 @@ pub(crate) fn de_get_intent_versions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "intents" => {
-                    builder = builder.set_intents(crate::protocol_serde::shape_intent_metadata_list::de_intent_metadata_list(tokens)?);
+                    builder = builder.set_intents(crate::protocol_serde::shape_intent_metadata_list::de_intent_metadata_list(
+                        tokens, _value,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

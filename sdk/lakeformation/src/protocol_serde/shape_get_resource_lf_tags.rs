@@ -144,13 +144,13 @@ pub fn ser_get_resource_lf_tags_input(
 }
 
 pub(crate) fn de_get_resource_lf_tags(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,13 +158,14 @@ pub(crate) fn de_get_resource_lf_tags(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "LFTagOnDatabase" => {
-                    builder = builder.set_lf_tag_on_database(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens)?);
+                    builder = builder.set_lf_tag_on_database(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens, _value)?);
                 }
                 "LFTagsOnColumns" => {
-                    builder = builder.set_lf_tags_on_columns(crate::protocol_serde::shape_column_lf_tags_list::de_column_lf_tags_list(tokens)?);
+                    builder =
+                        builder.set_lf_tags_on_columns(crate::protocol_serde::shape_column_lf_tags_list::de_column_lf_tags_list(tokens, _value)?);
                 }
                 "LFTagsOnTable" => {
-                    builder = builder.set_lf_tags_on_table(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens)?);
+                    builder = builder.set_lf_tags_on_table(crate::protocol_serde::shape_lf_tags_list::de_lf_tags_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

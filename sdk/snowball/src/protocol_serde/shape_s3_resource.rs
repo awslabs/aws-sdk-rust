@@ -29,6 +29,7 @@ pub fn ser_s3_resource(
 
 pub(crate) fn de_s3_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,11 @@ where
                             );
                         }
                         "KeyRange" => {
-                            builder = builder.set_key_range(crate::protocol_serde::shape_key_range::de_key_range(tokens)?);
+                            builder = builder.set_key_range(crate::protocol_serde::shape_key_range::de_key_range(tokens, _value)?);
                         }
                         "TargetOnDeviceServices" => {
                             builder = builder.set_target_on_device_services(
-                                crate::protocol_serde::shape_target_on_device_service_list::de_target_on_device_service_list(tokens)?,
+                                crate::protocol_serde::shape_target_on_device_service_list::de_target_on_device_service_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

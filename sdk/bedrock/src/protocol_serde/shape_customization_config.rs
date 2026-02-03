@@ -27,6 +27,7 @@ pub fn ser_customization_config(
 
 pub(crate) fn de_customization_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomizationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "distillationConfig" => Some(crate::types::CustomizationConfig::DistillationConfig(
-                            crate::protocol_serde::shape_distillation_config::de_distillation_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_distillation_config::de_distillation_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'distillationConfig' cannot be null")
                             })?,
                         )),
                         "rftConfig" => Some(crate::types::CustomizationConfig::RftConfig(
-                            crate::protocol_serde::shape_rft_config::de_rft_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_rft_config::de_rft_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rftConfig' cannot be null")
                             })?,
                         )),

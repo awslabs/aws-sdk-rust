@@ -14,6 +14,7 @@ pub fn ser_recipient_detail(
 
 pub(crate) fn de_recipient_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecipientDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ssoIdentity" => {
-                            builder = builder.set_sso_identity(crate::protocol_serde::shape_sso_identity::de_sso_identity(tokens)?);
+                            builder = builder.set_sso_identity(crate::protocol_serde::shape_sso_identity::de_sso_identity(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -123,13 +123,13 @@ pub fn de_describe_bot_alias_http_response(
 }
 
 pub(crate) fn de_describe_bot_alias(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_bot_alias::builders::DescribeBotAliasOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_bot_alias::builders::DescribeBotAliasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,7 +138,7 @@ pub(crate) fn de_describe_bot_alias(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "botAliasHistoryEvents" => {
                     builder = builder.set_bot_alias_history_events(
-                        crate::protocol_serde::shape_bot_alias_history_events_list::de_bot_alias_history_events_list(tokens)?,
+                        crate::protocol_serde::shape_bot_alias_history_events_list::de_bot_alias_history_events_list(tokens, _value)?,
                     );
                 }
                 "botAliasId" => {
@@ -150,7 +150,7 @@ pub(crate) fn de_describe_bot_alias(
                 }
                 "botAliasLocaleSettings" => {
                     builder = builder.set_bot_alias_locale_settings(
-                        crate::protocol_serde::shape_bot_alias_locale_settings_map::de_bot_alias_locale_settings_map(tokens)?,
+                        crate::protocol_serde::shape_bot_alias_locale_settings_map::de_bot_alias_locale_settings_map(tokens, _value)?,
                     );
                 }
                 "botAliasName" => {
@@ -183,7 +183,7 @@ pub(crate) fn de_describe_bot_alias(
                 }
                 "conversationLogSettings" => {
                     builder = builder.set_conversation_log_settings(
-                        crate::protocol_serde::shape_conversation_log_settings::de_conversation_log_settings(tokens)?,
+                        crate::protocol_serde::shape_conversation_log_settings::de_conversation_log_settings(tokens, _value)?,
                     );
                 }
                 "creationDateTime" => {
@@ -206,11 +206,12 @@ pub(crate) fn de_describe_bot_alias(
                     )?);
                 }
                 "parentBotNetworks" => {
-                    builder = builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens)?);
+                    builder =
+                        builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens, _value)?);
                 }
                 "sentimentAnalysisSettings" => {
                     builder = builder.set_sentiment_analysis_settings(
-                        crate::protocol_serde::shape_sentiment_analysis_settings::de_sentiment_analysis_settings(tokens)?,
+                        crate::protocol_serde::shape_sentiment_analysis_settings::de_sentiment_analysis_settings(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

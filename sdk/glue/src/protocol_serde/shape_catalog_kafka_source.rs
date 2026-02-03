@@ -38,6 +38,7 @@ pub fn ser_catalog_kafka_source(
 
 pub(crate) fn de_catalog_kafka_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CatalogKafkaSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,12 +85,12 @@ where
                         }
                         "StreamingOptions" => {
                             builder = builder.set_streaming_options(
-                                crate::protocol_serde::shape_kafka_streaming_source_options::de_kafka_streaming_source_options(tokens)?,
+                                crate::protocol_serde::shape_kafka_streaming_source_options::de_kafka_streaming_source_options(tokens, _value)?,
                             );
                         }
                         "DataPreviewOptions" => {
                             builder = builder.set_data_preview_options(
-                                crate::protocol_serde::shape_streaming_data_preview_options::de_streaming_data_preview_options(tokens)?,
+                                crate::protocol_serde::shape_streaming_data_preview_options::de_streaming_data_preview_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

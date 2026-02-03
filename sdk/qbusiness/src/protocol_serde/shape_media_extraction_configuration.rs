@@ -26,6 +26,7 @@ pub fn ser_media_extraction_configuration(
 
 pub(crate) fn de_media_extraction_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MediaExtractionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,17 +42,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "imageExtractionConfiguration" => {
                             builder = builder.set_image_extraction_configuration(
-                                crate::protocol_serde::shape_image_extraction_configuration::de_image_extraction_configuration(tokens)?,
+                                crate::protocol_serde::shape_image_extraction_configuration::de_image_extraction_configuration(tokens, _value)?,
                             );
                         }
                         "audioExtractionConfiguration" => {
                             builder = builder.set_audio_extraction_configuration(
-                                crate::protocol_serde::shape_audio_extraction_configuration::de_audio_extraction_configuration(tokens)?,
+                                crate::protocol_serde::shape_audio_extraction_configuration::de_audio_extraction_configuration(tokens, _value)?,
                             );
                         }
                         "videoExtractionConfiguration" => {
                             builder = builder.set_video_extraction_configuration(
-                                crate::protocol_serde::shape_video_extraction_configuration::de_video_extraction_configuration(tokens)?,
+                                crate::protocol_serde::shape_video_extraction_configuration::de_video_extraction_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

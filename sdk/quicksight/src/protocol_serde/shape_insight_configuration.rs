@@ -32,6 +32,7 @@ pub fn ser_insight_configuration(
 
 pub(crate) fn de_insight_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InsightConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,16 +47,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Computations" => {
-                            builder = builder.set_computations(crate::protocol_serde::shape_computation_list::de_computation_list(tokens)?);
+                            builder = builder.set_computations(crate::protocol_serde::shape_computation_list::de_computation_list(tokens, _value)?);
                         }
                         "CustomNarrative" => {
                             builder = builder.set_custom_narrative(
-                                crate::protocol_serde::shape_custom_narrative_options::de_custom_narrative_options(tokens)?,
+                                crate::protocol_serde::shape_custom_narrative_options::de_custom_narrative_options(tokens, _value)?,
                             );
                         }
                         "Interactions" => {
                             builder = builder.set_interactions(
-                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

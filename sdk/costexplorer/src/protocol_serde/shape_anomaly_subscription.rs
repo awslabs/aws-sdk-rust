@@ -53,6 +53,7 @@ pub fn ser_anomaly_subscription(
 
 pub(crate) fn de_anomaly_subscription<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnomalySubscription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -81,10 +82,11 @@ where
                             );
                         }
                         "MonitorArnList" => {
-                            builder = builder.set_monitor_arn_list(crate::protocol_serde::shape_monitor_arn_list::de_monitor_arn_list(tokens)?);
+                            builder =
+                                builder.set_monitor_arn_list(crate::protocol_serde::shape_monitor_arn_list::de_monitor_arn_list(tokens, _value)?);
                         }
                         "Subscribers" => {
-                            builder = builder.set_subscribers(crate::protocol_serde::shape_subscribers::de_subscribers(tokens)?);
+                            builder = builder.set_subscribers(crate::protocol_serde::shape_subscribers::de_subscribers(tokens, _value)?);
                         }
                         "Threshold" => {
                             builder = builder.set_threshold(
@@ -106,7 +108,7 @@ where
                             );
                         }
                         "ThresholdExpression" => {
-                            builder = builder.set_threshold_expression(crate::protocol_serde::shape_expression::de_expression(tokens)?);
+                            builder = builder.set_threshold_expression(crate::protocol_serde::shape_expression::de_expression(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

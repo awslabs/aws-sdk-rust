@@ -153,7 +153,7 @@ mod create_app_monitor;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_rum::Error> {
 /// # let client: aws_sdk_rum::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_rum_metric_definitions()
 ///     .customize()

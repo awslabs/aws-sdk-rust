@@ -95,11 +95,11 @@ pub fn ser_list_streams_input(
 }
 
 pub(crate) fn de_list_streams(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_streams::builders::ListStreamsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_streams::builders::ListStreamsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -107,7 +107,7 @@ pub(crate) fn de_list_streams(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "StreamNames" => {
-                    builder = builder.set_stream_names(crate::protocol_serde::shape_stream_name_list::de_stream_name_list(tokens)?);
+                    builder = builder.set_stream_names(crate::protocol_serde::shape_stream_name_list::de_stream_name_list(tokens, _value)?);
                 }
                 "HasMoreStreams" => {
                     builder = builder.set_has_more_streams(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -120,7 +120,7 @@ pub(crate) fn de_list_streams(
                     );
                 }
                 "StreamSummaries" => {
-                    builder = builder.set_stream_summaries(crate::protocol_serde::shape_stream_summary_list::de_stream_summary_list(tokens)?);
+                    builder = builder.set_stream_summaries(crate::protocol_serde::shape_stream_summary_list::de_stream_summary_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -36,6 +36,7 @@ pub fn ser_datastore_storage(
 
 pub(crate) fn de_datastore_storage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatastoreStorage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,19 +68,19 @@ where
                         variant = match key.as_ref() {
                             "serviceManagedS3" => {
                                 Some(crate::types::DatastoreStorage::ServiceManagedS3(
-                                    crate::protocol_serde::shape_service_managed_datastore_s3_storage::de_service_managed_datastore_s3_storage(tokens)?
+                                    crate::protocol_serde::shape_service_managed_datastore_s3_storage::de_service_managed_datastore_s3_storage(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'serviceManagedS3' cannot be null"))?
                                 ))
                             }
                             "customerManagedS3" => {
                                 Some(crate::types::DatastoreStorage::CustomerManagedS3(
-                                    crate::protocol_serde::shape_customer_managed_datastore_s3_storage::de_customer_managed_datastore_s3_storage(tokens)?
+                                    crate::protocol_serde::shape_customer_managed_datastore_s3_storage::de_customer_managed_datastore_s3_storage(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'customerManagedS3' cannot be null"))?
                                 ))
                             }
                             "iotSiteWiseMultiLayerStorage" => {
                                 Some(crate::types::DatastoreStorage::IotSiteWiseMultiLayerStorage(
-                                    crate::protocol_serde::shape_datastore_iot_site_wise_multi_layer_storage::de_datastore_iot_site_wise_multi_layer_storage(tokens)?
+                                    crate::protocol_serde::shape_datastore_iot_site_wise_multi_layer_storage::de_datastore_iot_site_wise_multi_layer_storage(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iotSiteWiseMultiLayerStorage' cannot be null"))?
                                 ))
                             }

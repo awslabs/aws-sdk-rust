@@ -17,6 +17,7 @@ pub fn ser_trained_model_inference_max_output_size(
 
 pub(crate) fn de_trained_model_inference_max_output_size<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainedModelInferenceMaxOutputSize>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

@@ -63,11 +63,11 @@ pub fn ser_describe_hub_input(
 }
 
 pub(crate) fn de_describe_hub(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_hub::builders::DescribeHubOutputBuilder,
 ) -> ::std::result::Result<crate::operation::describe_hub::builders::DescribeHubOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -103,11 +103,14 @@ pub(crate) fn de_describe_hub(
                     );
                 }
                 "HubSearchKeywords" => {
-                    builder =
-                        builder.set_hub_search_keywords(crate::protocol_serde::shape_hub_search_keyword_list::de_hub_search_keyword_list(tokens)?);
+                    builder = builder.set_hub_search_keywords(crate::protocol_serde::shape_hub_search_keyword_list::de_hub_search_keyword_list(
+                        tokens, _value,
+                    )?);
                 }
                 "S3StorageConfig" => {
-                    builder = builder.set_s3_storage_config(crate::protocol_serde::shape_hub_s3_storage_config::de_hub_s3_storage_config(tokens)?);
+                    builder = builder.set_s3_storage_config(crate::protocol_serde::shape_hub_s3_storage_config::de_hub_s3_storage_config(
+                        tokens, _value,
+                    )?);
                 }
                 "HubStatus" => {
                     builder = builder.set_hub_status(

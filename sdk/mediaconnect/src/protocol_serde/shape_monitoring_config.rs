@@ -38,6 +38,7 @@ pub fn ser_monitoring_config(
 
 pub(crate) fn de_monitoring_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MonitoringConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                         }
                         "audioMonitoringSettings" => {
                             builder = builder.set_audio_monitoring_settings(
-                                crate::protocol_serde::shape_list_of_audio_monitoring_setting::de_list_of_audio_monitoring_setting(tokens)?,
+                                crate::protocol_serde::shape_list_of_audio_monitoring_setting::de_list_of_audio_monitoring_setting(tokens, _value)?,
                             );
                         }
                         "contentQualityAnalysisState" => {
@@ -72,7 +73,7 @@ where
                         }
                         "videoMonitoringSettings" => {
                             builder = builder.set_video_monitoring_settings(
-                                crate::protocol_serde::shape_list_of_video_monitoring_setting::de_list_of_video_monitoring_setting(tokens)?,
+                                crate::protocol_serde::shape_list_of_video_monitoring_setting::de_list_of_video_monitoring_setting(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

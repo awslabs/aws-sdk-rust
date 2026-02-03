@@ -50,6 +50,7 @@ pub fn ser_job_input(
 
 pub(crate) fn de_job_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JobInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -106,17 +107,17 @@ where
                             );
                         }
                         "Encryption" => {
-                            builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens)?);
+                            builder = builder.set_encryption(crate::protocol_serde::shape_encryption::de_encryption(tokens, _value)?);
                         }
                         "TimeSpan" => {
-                            builder = builder.set_time_span(crate::protocol_serde::shape_time_span::de_time_span(tokens)?);
+                            builder = builder.set_time_span(crate::protocol_serde::shape_time_span::de_time_span(tokens, _value)?);
                         }
                         "InputCaptions" => {
-                            builder = builder.set_input_captions(crate::protocol_serde::shape_input_captions::de_input_captions(tokens)?);
+                            builder = builder.set_input_captions(crate::protocol_serde::shape_input_captions::de_input_captions(tokens, _value)?);
                         }
                         "DetectedProperties" => {
-                            builder =
-                                builder.set_detected_properties(crate::protocol_serde::shape_detected_properties::de_detected_properties(tokens)?);
+                            builder = builder
+                                .set_detected_properties(crate::protocol_serde::shape_detected_properties::de_detected_properties(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

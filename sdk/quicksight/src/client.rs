@@ -201,7 +201,7 @@ mod create_vpc_connection;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_quicksight::Error> {
 /// # let client: aws_sdk_quicksight::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_create_topic_reviewed_answer()
 ///     .customize()

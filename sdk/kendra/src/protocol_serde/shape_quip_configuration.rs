@@ -92,6 +92,7 @@ pub fn ser_quip_configuration(
 
 pub(crate) fn de_quip_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::QuipConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -130,42 +131,42 @@ where
                                 builder = builder.set_crawl_attachments(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             "FolderIds" => {
-                                builder = builder.set_folder_ids(crate::protocol_serde::shape_folder_id_list::de_folder_id_list(tokens)?);
+                                builder = builder.set_folder_ids(crate::protocol_serde::shape_folder_id_list::de_folder_id_list(tokens, _value)?);
                             }
                             "ThreadFieldMappings" => {
                                 builder = builder.set_thread_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "MessageFieldMappings" => {
                                 builder = builder.set_message_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "AttachmentFieldMappings" => {
                                 builder = builder.set_attachment_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExclusionPatterns" => {
                                 builder = builder.set_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

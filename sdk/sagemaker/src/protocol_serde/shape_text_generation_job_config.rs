@@ -33,6 +33,7 @@ pub fn ser_text_generation_job_config(
 
 pub(crate) fn de_text_generation_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextGenerationJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CompletionCriteria" => {
                             builder = builder.set_completion_criteria(
-                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens)?,
+                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens, _value)?,
                             );
                         }
                         "BaseModelName" => {
@@ -60,12 +61,12 @@ where
                         }
                         "TextGenerationHyperParameters" => {
                             builder = builder.set_text_generation_hyper_parameters(
-                                crate::protocol_serde::shape_text_generation_hyper_parameters::de_text_generation_hyper_parameters(tokens)?,
+                                crate::protocol_serde::shape_text_generation_hyper_parameters::de_text_generation_hyper_parameters(tokens, _value)?,
                             );
                         }
                         "ModelAccessConfig" => {
-                            builder =
-                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
+                            builder = builder
+                                .set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -32,6 +32,7 @@ pub fn ser_virtual_gateway_listener(
 
 pub(crate) fn de_virtual_gateway_listener<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayListener>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,21 +48,23 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "healthCheck" => {
                             builder = builder.set_health_check(
-                                crate::protocol_serde::shape_virtual_gateway_health_check_policy::de_virtual_gateway_health_check_policy(tokens)?,
+                                crate::protocol_serde::shape_virtual_gateway_health_check_policy::de_virtual_gateway_health_check_policy(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "portMapping" => {
                             builder = builder.set_port_mapping(
-                                crate::protocol_serde::shape_virtual_gateway_port_mapping::de_virtual_gateway_port_mapping(tokens)?,
+                                crate::protocol_serde::shape_virtual_gateway_port_mapping::de_virtual_gateway_port_mapping(tokens, _value)?,
                             );
                         }
                         "tls" => {
-                            builder =
-                                builder.set_tls(crate::protocol_serde::shape_virtual_gateway_listener_tls::de_virtual_gateway_listener_tls(tokens)?);
+                            builder = builder
+                                .set_tls(crate::protocol_serde::shape_virtual_gateway_listener_tls::de_virtual_gateway_listener_tls(tokens, _value)?);
                         }
                         "connectionPool" => {
                             builder = builder.set_connection_pool(
-                                crate::protocol_serde::shape_virtual_gateway_connection_pool::de_virtual_gateway_connection_pool(tokens)?,
+                                crate::protocol_serde::shape_virtual_gateway_connection_pool::de_virtual_gateway_connection_pool(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

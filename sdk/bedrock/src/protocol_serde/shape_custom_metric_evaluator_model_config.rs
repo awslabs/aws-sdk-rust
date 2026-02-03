@@ -20,6 +20,7 @@ pub fn ser_custom_metric_evaluator_model_config(
 
 pub(crate) fn de_custom_metric_evaluator_model_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomMetricEvaluatorModelConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -36,7 +37,7 @@ where
                         "bedrockEvaluatorModels" => {
                             builder = builder.set_bedrock_evaluator_models(
                                 crate::protocol_serde::shape_custom_metric_bedrock_evaluator_models::de_custom_metric_bedrock_evaluator_models(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

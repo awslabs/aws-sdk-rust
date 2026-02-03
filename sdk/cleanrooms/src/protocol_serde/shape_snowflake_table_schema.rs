@@ -27,6 +27,7 @@ pub fn ser_snowflake_table_schema(
 
 pub(crate) fn de_snowflake_table_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SnowflakeTableSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "v1" => Some(crate::types::SnowflakeTableSchema::V1(
-                            crate::protocol_serde::shape_snowflake_table_schema_list::de_snowflake_table_schema_list(tokens)?
+                            crate::protocol_serde::shape_snowflake_table_schema_list::de_snowflake_table_schema_list(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?,
                         )),
                         _ => {

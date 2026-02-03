@@ -124,13 +124,13 @@ pub fn de_get_connection_http_response(
 }
 
 pub(crate) fn de_get_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_connection::builders::GetConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -138,8 +138,9 @@ pub(crate) fn de_get_connection(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "connectionCredentials" => {
-                    builder =
-                        builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(tokens)?);
+                    builder = builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(
+                        tokens, _value,
+                    )?);
                 }
                 "connectionId" => {
                     builder = builder.set_connection_id(
@@ -191,7 +192,7 @@ pub(crate) fn de_get_connection(
                     );
                 }
                 "physicalEndpoints" => {
-                    builder = builder.set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(tokens)?);
+                    builder = builder.set_physical_endpoints(crate::protocol_serde::shape_physical_endpoints::de_physical_endpoints(tokens, _value)?);
                 }
                 "projectId" => {
                     builder = builder.set_project_id(
@@ -201,7 +202,8 @@ pub(crate) fn de_get_connection(
                     );
                 }
                 "props" => {
-                    builder = builder.set_props(crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(tokens)?);
+                    builder = builder
+                        .set_props(crate::protocol_serde::shape_connection_properties_output::de_connection_properties_output(tokens, _value)?);
                 }
                 "scope" => {
                     builder = builder.set_scope(

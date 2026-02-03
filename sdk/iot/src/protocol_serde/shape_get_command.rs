@@ -98,11 +98,11 @@ pub fn de_get_command_http_response(
 }
 
 pub(crate) fn de_get_command(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_command::builders::GetCommandOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_command::builders::GetCommandOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,8 +153,9 @@ pub(crate) fn de_get_command(
                     )?);
                 }
                 "mandatoryParameters" => {
-                    builder =
-                        builder.set_mandatory_parameters(crate::protocol_serde::shape_command_parameter_list::de_command_parameter_list(tokens)?);
+                    builder = builder.set_mandatory_parameters(crate::protocol_serde::shape_command_parameter_list::de_command_parameter_list(
+                        tokens, _value,
+                    )?);
                 }
                 "namespace" => {
                     builder = builder.set_namespace(
@@ -164,7 +165,7 @@ pub(crate) fn de_get_command(
                     );
                 }
                 "payload" => {
-                    builder = builder.set_payload(crate::protocol_serde::shape_command_payload::de_command_payload(tokens)?);
+                    builder = builder.set_payload(crate::protocol_serde::shape_command_payload::de_command_payload(tokens, _value)?);
                 }
                 "payloadTemplate" => {
                     builder = builder.set_payload_template(
@@ -177,7 +178,9 @@ pub(crate) fn de_get_command(
                     builder = builder.set_pending_deletion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "preprocessor" => {
-                    builder = builder.set_preprocessor(crate::protocol_serde::shape_command_preprocessor::de_command_preprocessor(tokens)?);
+                    builder = builder.set_preprocessor(crate::protocol_serde::shape_command_preprocessor::de_command_preprocessor(
+                        tokens, _value,
+                    )?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

@@ -83,13 +83,13 @@ pub fn de_get_satellite_http_response(
 }
 
 pub(crate) fn de_get_satellite(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_satellite::builders::GetSatelliteOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_satellite::builders::GetSatelliteOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,10 +97,13 @@ pub(crate) fn de_get_satellite(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "currentEphemeris" => {
-                    builder = builder.set_current_ephemeris(crate::protocol_serde::shape_ephemeris_meta_data::de_ephemeris_meta_data(tokens)?);
+                    builder =
+                        builder.set_current_ephemeris(crate::protocol_serde::shape_ephemeris_meta_data::de_ephemeris_meta_data(tokens, _value)?);
                 }
                 "groundStations" => {
-                    builder = builder.set_ground_stations(crate::protocol_serde::shape_ground_station_id_list::de_ground_station_id_list(tokens)?);
+                    builder = builder.set_ground_stations(crate::protocol_serde::shape_ground_station_id_list::de_ground_station_id_list(
+                        tokens, _value,
+                    )?);
                 }
                 "noradSatelliteID" => {
                     builder = builder.set_norad_satellite_id(

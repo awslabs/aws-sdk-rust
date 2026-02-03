@@ -124,13 +124,13 @@ pub fn de_describe_provisioning_template_http_response(
 }
 
 pub(crate) fn de_describe_provisioning_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,8 @@ pub(crate) fn de_describe_provisioning_template(
                     )?);
                 }
                 "preProvisioningHook" => {
-                    builder = builder.set_pre_provisioning_hook(crate::protocol_serde::shape_provisioning_hook::de_provisioning_hook(tokens)?);
+                    builder =
+                        builder.set_pre_provisioning_hook(crate::protocol_serde::shape_provisioning_hook::de_provisioning_hook(tokens, _value)?);
                 }
                 "provisioningRoleArn" => {
                     builder = builder.set_provisioning_role_arn(

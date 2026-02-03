@@ -140,13 +140,13 @@ pub fn de_remove_flow_vpc_interface_http_response(
 }
 
 pub(crate) fn de_remove_flow_vpc_interface(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,8 @@ pub(crate) fn de_remove_flow_vpc_interface(
                     );
                 }
                 "nonDeletedNetworkInterfaceIds" => {
-                    builder = builder.set_non_deleted_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder
+                        .set_non_deleted_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "vpcInterfaceName" => {
                     builder = builder.set_vpc_interface_name(

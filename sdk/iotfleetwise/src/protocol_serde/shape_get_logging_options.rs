@@ -88,13 +88,13 @@ pub fn ser_get_logging_options_input(
 }
 
 pub(crate) fn de_get_logging_options(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -103,7 +103,7 @@ pub(crate) fn de_get_logging_options(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cloudWatchLogDelivery" => {
                     builder = builder.set_cloud_watch_log_delivery(
-                        crate::protocol_serde::shape_cloud_watch_log_delivery_options::de_cloud_watch_log_delivery_options(tokens)?,
+                        crate::protocol_serde::shape_cloud_watch_log_delivery_options::de_cloud_watch_log_delivery_options(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -17,6 +17,7 @@ pub fn ser_thing_group_properties(
 
 pub(crate) fn de_thing_group_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ThingGroupProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "attributePayload" => {
-                            builder = builder.set_attribute_payload(crate::protocol_serde::shape_attribute_payload::de_attribute_payload(tokens)?);
+                            builder =
+                                builder.set_attribute_payload(crate::protocol_serde::shape_attribute_payload::de_attribute_payload(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

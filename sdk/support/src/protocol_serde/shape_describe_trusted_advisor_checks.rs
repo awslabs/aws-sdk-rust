@@ -86,13 +86,13 @@ pub fn ser_describe_trusted_advisor_checks_input(
 }
 
 pub(crate) fn de_describe_trusted_advisor_checks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_trusted_advisor_checks::builders::DescribeTrustedAdvisorChecksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -101,7 +101,7 @@ pub(crate) fn de_describe_trusted_advisor_checks(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "checks" => {
                     builder = builder.set_checks(crate::protocol_serde::shape_trusted_advisor_check_list::de_trusted_advisor_check_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -23,6 +23,7 @@ pub fn ser_aws_ec2_vpn_connection_options_details(
 
 pub(crate) fn de_aws_ec2_vpn_connection_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2VpnConnectionOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                         }
                         "TunnelOptions" => {
                             builder = builder.set_tunnel_options(
-                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_options_tunnel_options_list::de_aws_ec2_vpn_connection_options_tunnel_options_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_vpn_connection_options_tunnel_options_list::de_aws_ec2_vpn_connection_options_tunnel_options_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

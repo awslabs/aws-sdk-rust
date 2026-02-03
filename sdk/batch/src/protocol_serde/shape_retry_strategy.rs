@@ -26,6 +26,7 @@ pub fn ser_retry_strategy(
 
 pub(crate) fn de_retry_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetryStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,8 +48,9 @@ where
                             );
                         }
                         "evaluateOnExit" => {
-                            builder =
-                                builder.set_evaluate_on_exit(crate::protocol_serde::shape_evaluate_on_exit_list::de_evaluate_on_exit_list(tokens)?);
+                            builder = builder.set_evaluate_on_exit(crate::protocol_serde::shape_evaluate_on_exit_list::de_evaluate_on_exit_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

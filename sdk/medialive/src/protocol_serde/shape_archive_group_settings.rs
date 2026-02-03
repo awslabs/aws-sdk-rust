@@ -26,6 +26,7 @@ pub fn ser_archive_group_settings(
 
 pub(crate) fn de_archive_group_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArchiveGroupSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "archiveCdnSettings" => {
-                            builder =
-                                builder.set_archive_cdn_settings(crate::protocol_serde::shape_archive_cdn_settings::de_archive_cdn_settings(tokens)?);
+                            builder = builder.set_archive_cdn_settings(crate::protocol_serde::shape_archive_cdn_settings::de_archive_cdn_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                            builder =
+                                builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens, _value)?);
                         }
                         "rolloverInterval" => {
                             builder = builder.set_rollover_interval(

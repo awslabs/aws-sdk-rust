@@ -42,6 +42,7 @@ pub fn ser_ota_update_file(
 
 pub(crate) fn de_ota_update_file<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OtaUpdateFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,13 +78,13 @@ where
                             );
                         }
                         "fileLocation" => {
-                            builder = builder.set_file_location(crate::protocol_serde::shape_file_location::de_file_location(tokens)?);
+                            builder = builder.set_file_location(crate::protocol_serde::shape_file_location::de_file_location(tokens, _value)?);
                         }
                         "codeSigning" => {
-                            builder = builder.set_code_signing(crate::protocol_serde::shape_code_signing::de_code_signing(tokens)?);
+                            builder = builder.set_code_signing(crate::protocol_serde::shape_code_signing::de_code_signing(tokens, _value)?);
                         }
                         "attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes_map::de_attributes_map(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attributes_map::de_attributes_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

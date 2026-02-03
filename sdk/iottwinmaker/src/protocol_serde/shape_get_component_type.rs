@@ -115,13 +115,13 @@ pub fn de_get_component_type_http_response(
 }
 
 pub(crate) fn de_get_component_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,7 +151,7 @@ pub(crate) fn de_get_component_type(
                 }
                 "compositeComponentTypes" => {
                     builder = builder.set_composite_component_types(
-                        crate::protocol_serde::shape_composite_component_types_response::de_composite_component_types_response(tokens)?,
+                        crate::protocol_serde::shape_composite_component_types_response::de_composite_component_types_response(tokens, _value)?,
                     );
                 }
                 "creationDateTime" => {
@@ -168,10 +168,10 @@ pub(crate) fn de_get_component_type(
                     );
                 }
                 "extendsFrom" => {
-                    builder = builder.set_extends_from(crate::protocol_serde::shape_extends_from::de_extends_from(tokens)?);
+                    builder = builder.set_extends_from(crate::protocol_serde::shape_extends_from::de_extends_from(tokens, _value)?);
                 }
                 "functions" => {
-                    builder = builder.set_functions(crate::protocol_serde::shape_functions_response::de_functions_response(tokens)?);
+                    builder = builder.set_functions(crate::protocol_serde::shape_functions_response::de_functions_response(tokens, _value)?);
                 }
                 "isAbstract" => {
                     builder = builder.set_is_abstract(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -184,16 +184,16 @@ pub(crate) fn de_get_component_type(
                 }
                 "propertyDefinitions" => {
                     builder = builder.set_property_definitions(
-                        crate::protocol_serde::shape_property_definitions_response::de_property_definitions_response(tokens)?,
+                        crate::protocol_serde::shape_property_definitions_response::de_property_definitions_response(tokens, _value)?,
                     );
                 }
                 "propertyGroups" => {
                     builder = builder.set_property_groups(crate::protocol_serde::shape_property_groups_response::de_property_groups_response(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "status" => {
-                    builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens)?);
+                    builder = builder.set_status(crate::protocol_serde::shape_status::de_status(tokens, _value)?);
                 }
                 "syncSource" => {
                     builder = builder.set_sync_source(

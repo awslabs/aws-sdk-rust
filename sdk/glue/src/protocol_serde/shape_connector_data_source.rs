@@ -36,6 +36,7 @@ pub fn ser_connector_data_source(
 
 pub(crate) fn de_connector_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConnectorDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,10 +65,10 @@ where
                             );
                         }
                         "Data" => {
-                            builder = builder.set_data(crate::protocol_serde::shape_connector_options::de_connector_options(tokens)?);
+                            builder = builder.set_data(crate::protocol_serde::shape_connector_options::de_connector_options(tokens, _value)?);
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

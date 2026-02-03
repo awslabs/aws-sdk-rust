@@ -93,32 +93,32 @@ pub fn ser_batch_stop_job_run_input(
 }
 
 pub(crate) fn de_batch_stop_job_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_stop_job_run::builders::BatchStopJobRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "SuccessfulSubmissions" => {
-                        builder = builder.set_successful_submissions(
-                            crate::protocol_serde::shape_batch_stop_job_run_successful_submission_list::de_batch_stop_job_run_successful_submission_list(tokens)?
-                        );
-                    }
-                    "Errors" => {
-                        builder =
-                            builder.set_errors(crate::protocol_serde::shape_batch_stop_job_run_error_list::de_batch_stop_job_run_error_list(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "SuccessfulSubmissions" => {
+                    builder = builder.set_successful_submissions(
+                        crate::protocol_serde::shape_batch_stop_job_run_successful_submission_list::de_batch_stop_job_run_successful_submission_list(
+                            tokens, _value,
+                        )?,
+                    );
                 }
-            }
+                "Errors" => {
+                    builder = builder
+                        .set_errors(crate::protocol_serde::shape_batch_stop_job_run_error_list::de_batch_stop_job_run_error_list(tokens, _value)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

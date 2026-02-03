@@ -105,13 +105,13 @@ pub fn ser_list_state_machine_versions_input(
 }
 
 pub(crate) fn de_list_state_machine_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_state_machine_versions::builders::ListStateMachineVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -120,7 +120,7 @@ pub(crate) fn de_list_state_machine_versions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "stateMachineVersions" => {
                     builder = builder.set_state_machine_versions(
-                        crate::protocol_serde::shape_state_machine_version_list::de_state_machine_version_list(tokens)?,
+                        crate::protocol_serde::shape_state_machine_version_list::de_state_machine_version_list(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

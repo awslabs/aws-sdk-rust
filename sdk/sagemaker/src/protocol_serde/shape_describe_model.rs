@@ -40,13 +40,13 @@ pub fn ser_describe_model_input(
 }
 
 pub(crate) fn de_describe_model(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_model::builders::DescribeModelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_model::builders::DescribeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -61,16 +61,18 @@ pub(crate) fn de_describe_model(
                     );
                 }
                 "PrimaryContainer" => {
-                    builder = builder.set_primary_container(crate::protocol_serde::shape_container_definition::de_container_definition(tokens)?);
+                    builder = builder.set_primary_container(crate::protocol_serde::shape_container_definition::de_container_definition(
+                        tokens, _value,
+                    )?);
                 }
                 "Containers" => {
                     builder = builder.set_containers(crate::protocol_serde::shape_container_definition_list::de_container_definition_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "InferenceExecutionConfig" => {
                     builder = builder.set_inference_execution_config(
-                        crate::protocol_serde::shape_inference_execution_config::de_inference_execution_config(tokens)?,
+                        crate::protocol_serde::shape_inference_execution_config::de_inference_execution_config(tokens, _value)?,
                     );
                 }
                 "ExecutionRoleArn" => {
@@ -81,7 +83,7 @@ pub(crate) fn de_describe_model(
                     );
                 }
                 "VpcConfig" => {
-                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -101,7 +103,7 @@ pub(crate) fn de_describe_model(
                 }
                 "DeploymentRecommendation" => {
                     builder = builder.set_deployment_recommendation(
-                        crate::protocol_serde::shape_deployment_recommendation::de_deployment_recommendation(tokens)?,
+                        crate::protocol_serde::shape_deployment_recommendation::de_deployment_recommendation(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

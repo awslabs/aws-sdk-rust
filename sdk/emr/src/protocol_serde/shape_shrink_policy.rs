@@ -20,6 +20,7 @@ pub fn ser_shrink_policy(
 
 pub(crate) fn de_shrink_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ShrinkPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "InstanceResizePolicy" => {
-                            builder = builder
-                                .set_instance_resize_policy(crate::protocol_serde::shape_instance_resize_policy::de_instance_resize_policy(tokens)?);
+                            builder = builder.set_instance_resize_policy(
+                                crate::protocol_serde::shape_instance_resize_policy::de_instance_resize_policy(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

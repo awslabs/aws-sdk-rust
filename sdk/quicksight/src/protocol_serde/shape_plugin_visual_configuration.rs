@@ -32,6 +32,7 @@ pub fn ser_plugin_visual_configuration(
 
 pub(crate) fn de_plugin_visual_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PluginVisualConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,16 +48,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FieldWells" => {
                             builder = builder.set_field_wells(crate::protocol_serde::shape_plugin_visual_field_wells::de_plugin_visual_field_wells(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "VisualOptions" => {
-                            builder =
-                                builder.set_visual_options(crate::protocol_serde::shape_plugin_visual_options::de_plugin_visual_options(tokens)?);
+                            builder = builder.set_visual_options(crate::protocol_serde::shape_plugin_visual_options::de_plugin_visual_options(
+                                tokens, _value,
+                            )?);
                         }
                         "SortConfiguration" => {
                             builder = builder.set_sort_configuration(
-                                crate::protocol_serde::shape_plugin_visual_sort_configuration::de_plugin_visual_sort_configuration(tokens)?,
+                                crate::protocol_serde::shape_plugin_visual_sort_configuration::de_plugin_visual_sort_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

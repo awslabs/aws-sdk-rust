@@ -24,6 +24,7 @@ pub fn ser_association_configuration_data(
 
 pub(crate) fn de_association_configuration_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssociationConfigurationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                     variant = match key.as_ref() {
                             "knowledgeBaseAssociationConfigurationData" => {
                                 Some(crate::types::AssociationConfigurationData::KnowledgeBaseAssociationConfigurationData(
-                                    crate::protocol_serde::shape_knowledge_base_association_configuration_data::de_knowledge_base_association_configuration_data(tokens)?
+                                    crate::protocol_serde::shape_knowledge_base_association_configuration_data::de_knowledge_base_association_configuration_data(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'knowledgeBaseAssociationConfigurationData' cannot be null"))?
                                 ))
                             }

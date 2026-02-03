@@ -26,6 +26,7 @@ pub fn ser_srt_listener_router_output_configuration(
 
 pub(crate) fn de_srt_listener_router_output_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SrtListenerRouterOutputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "encryptionConfiguration" => {
                             builder = builder.set_encryption_configuration(
-                                crate::protocol_serde::shape_srt_encryption_configuration::de_srt_encryption_configuration(tokens)?,
+                                crate::protocol_serde::shape_srt_encryption_configuration::de_srt_encryption_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

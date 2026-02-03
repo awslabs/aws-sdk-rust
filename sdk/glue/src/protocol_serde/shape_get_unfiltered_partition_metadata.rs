@@ -196,13 +196,13 @@ pub fn ser_get_unfiltered_partition_metadata_input(
 }
 
 pub(crate) fn de_get_unfiltered_partition_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -210,10 +210,10 @@ pub(crate) fn de_get_unfiltered_partition_metadata(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Partition" => {
-                    builder = builder.set_partition(crate::protocol_serde::shape_partition::de_partition(tokens)?);
+                    builder = builder.set_partition(crate::protocol_serde::shape_partition::de_partition(tokens, _value)?);
                 }
                 "AuthorizedColumns" => {
-                    builder = builder.set_authorized_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens)?);
+                    builder = builder.set_authorized_columns(crate::protocol_serde::shape_name_string_list::de_name_string_list(tokens, _value)?);
                 }
                 "IsRegisteredWithLakeFormation" => {
                     builder =

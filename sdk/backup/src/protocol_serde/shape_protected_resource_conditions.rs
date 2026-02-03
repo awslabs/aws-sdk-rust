@@ -32,6 +32,7 @@ pub fn ser_protected_resource_conditions(
 
 pub(crate) fn de_protected_resource_conditions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProtectedResourceConditions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "StringEquals" => {
-                            builder = builder.set_string_equals(crate::protocol_serde::shape_key_value_list::de_key_value_list(tokens)?);
+                            builder = builder.set_string_equals(crate::protocol_serde::shape_key_value_list::de_key_value_list(tokens, _value)?);
                         }
                         "StringNotEquals" => {
-                            builder = builder.set_string_not_equals(crate::protocol_serde::shape_key_value_list::de_key_value_list(tokens)?);
+                            builder = builder.set_string_not_equals(crate::protocol_serde::shape_key_value_list::de_key_value_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

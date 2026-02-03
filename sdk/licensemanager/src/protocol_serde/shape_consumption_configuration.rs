@@ -23,6 +23,7 @@ pub fn ser_consumption_configuration(
 
 pub(crate) fn de_consumption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConsumptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,13 @@ where
                         }
                         "ProvisionalConfiguration" => {
                             builder = builder.set_provisional_configuration(
-                                crate::protocol_serde::shape_provisional_configuration::de_provisional_configuration(tokens)?,
+                                crate::protocol_serde::shape_provisional_configuration::de_provisional_configuration(tokens, _value)?,
                             );
                         }
                         "BorrowConfiguration" => {
-                            builder =
-                                builder.set_borrow_configuration(crate::protocol_serde::shape_borrow_configuration::de_borrow_configuration(tokens)?);
+                            builder = builder.set_borrow_configuration(crate::protocol_serde::shape_borrow_configuration::de_borrow_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

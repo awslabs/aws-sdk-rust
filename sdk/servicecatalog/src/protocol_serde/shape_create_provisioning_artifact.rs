@@ -102,13 +102,13 @@ pub fn ser_create_provisioning_artifact_input(
 }
 
 pub(crate) fn de_create_provisioning_artifact(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,12 +117,12 @@ pub(crate) fn de_create_provisioning_artifact(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisioningArtifactDetail" => {
                     builder = builder.set_provisioning_artifact_detail(
-                        crate::protocol_serde::shape_provisioning_artifact_detail::de_provisioning_artifact_detail(tokens)?,
+                        crate::protocol_serde::shape_provisioning_artifact_detail::de_provisioning_artifact_detail(tokens, _value)?,
                     );
                 }
                 "Info" => {
                     builder = builder.set_info(crate::protocol_serde::shape_provisioning_artifact_info::de_provisioning_artifact_info(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "Status" => {

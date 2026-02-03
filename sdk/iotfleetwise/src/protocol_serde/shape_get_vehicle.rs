@@ -118,11 +118,11 @@ pub fn ser_get_vehicle_input(
 }
 
 pub(crate) fn de_get_vehicle(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_vehicle::builders::GetVehicleOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_vehicle::builders::GetVehicleOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,11 +158,11 @@ pub(crate) fn de_get_vehicle(
                     );
                 }
                 "attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_attributes_map::de_attributes_map(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_attributes_map::de_attributes_map(tokens, _value)?);
                 }
                 "stateTemplates" => {
                     builder = builder.set_state_templates(crate::protocol_serde::shape_state_template_associations::de_state_template_associations(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "creationTime" => {

@@ -20,6 +20,7 @@ pub fn ser_asset_bundle_import_job_data_source_credentials(
 
 pub(crate) fn de_asset_bundle_import_job_data_source_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobDataSourceCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CredentialPair" => {
                             builder = builder.set_credential_pair(
-                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_credential_pair::de_asset_bundle_import_job_data_source_credential_pair(tokens)?
+                                    crate::protocol_serde::shape_asset_bundle_import_job_data_source_credential_pair::de_asset_bundle_import_job_data_source_credential_pair(tokens, _value)?
                                 );
                         }
                         "SecretArn" => {

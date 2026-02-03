@@ -29,6 +29,7 @@ pub fn ser_text_prompt_template_configuration(
 
 pub(crate) fn de_text_prompt_template_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TextPromptTemplateConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,11 @@ where
                             );
                         }
                         "cachePoint" => {
-                            builder = builder.set_cache_point(crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens)?);
+                            builder = builder.set_cache_point(crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value)?);
                         }
                         "inputVariables" => {
                             builder = builder.set_input_variables(
-                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens)?,
+                                crate::protocol_serde::shape_prompt_input_variables_list::de_prompt_input_variables_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

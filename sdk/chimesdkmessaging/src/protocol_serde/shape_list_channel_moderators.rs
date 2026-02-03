@@ -137,12 +137,12 @@ pub fn de_list_channel_moderators_http_response(
 
 pub fn ser_list_channel_moderators_headers(
     input: &crate::operation::list_channel_moderators::ListChannelModeratorsInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.chime_bearer {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "chime_bearer",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -154,13 +154,13 @@ pub fn ser_list_channel_moderators_headers(
 }
 
 pub(crate) fn de_list_channel_moderators(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -176,7 +176,7 @@ pub(crate) fn de_list_channel_moderators(
                 }
                 "ChannelModerators" => {
                     builder = builder.set_channel_moderators(
-                        crate::protocol_serde::shape_channel_moderator_summary_list::de_channel_moderator_summary_list(tokens)?,
+                        crate::protocol_serde::shape_channel_moderator_summary_list::de_channel_moderator_summary_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

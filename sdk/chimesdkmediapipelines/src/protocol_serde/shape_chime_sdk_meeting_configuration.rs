@@ -20,6 +20,7 @@ pub fn ser_chime_sdk_meeting_configuration(
 
 pub(crate) fn de_chime_sdk_meeting_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChimeSdkMeetingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,12 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SourceConfiguration" => {
-                            builder =
-                                builder.set_source_configuration(crate::protocol_serde::shape_source_configuration::de_source_configuration(tokens)?);
+                            builder = builder.set_source_configuration(crate::protocol_serde::shape_source_configuration::de_source_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "ArtifactsConfiguration" => {
                             builder = builder.set_artifacts_configuration(
-                                crate::protocol_serde::shape_artifacts_configuration::de_artifacts_configuration(tokens)?,
+                                crate::protocol_serde::shape_artifacts_configuration::de_artifacts_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

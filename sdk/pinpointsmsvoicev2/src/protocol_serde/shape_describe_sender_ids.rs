@@ -125,13 +125,13 @@ pub fn ser_describe_sender_ids_input(
 }
 
 pub(crate) fn de_describe_sender_ids(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_sender_ids::builders::DescribeSenderIdsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_sender_ids::builders::DescribeSenderIdsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_describe_sender_ids(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SenderIds" => {
                     builder = builder.set_sender_ids(crate::protocol_serde::shape_sender_id_information_list::de_sender_id_information_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NextToken" => {

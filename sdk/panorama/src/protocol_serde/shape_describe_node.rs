@@ -115,13 +115,13 @@ pub fn de_describe_node_http_response(
 }
 
 pub(crate) fn de_describe_node(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_node::builders::DescribeNodeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_node::builders::DescribeNodeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -176,7 +176,7 @@ pub(crate) fn de_describe_node(
                     );
                 }
                 "NodeInterface" => {
-                    builder = builder.set_node_interface(crate::protocol_serde::shape_node_interface::de_node_interface(tokens)?);
+                    builder = builder.set_node_interface(crate::protocol_serde::shape_node_interface::de_node_interface(tokens, _value)?);
                 }
                 "OwnerAccount" => {
                     builder = builder.set_owner_account(

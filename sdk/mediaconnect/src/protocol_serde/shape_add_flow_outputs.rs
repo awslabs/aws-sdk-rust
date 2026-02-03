@@ -156,13 +156,13 @@ pub fn ser_add_flow_outputs_input(
 }
 
 pub(crate) fn de_add_flow_outputs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_flow_outputs::builders::AddFlowOutputsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_flow_outputs::builders::AddFlowOutputsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -177,7 +177,7 @@ pub(crate) fn de_add_flow_outputs(
                     );
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

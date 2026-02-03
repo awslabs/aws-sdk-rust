@@ -152,13 +152,13 @@ pub fn ser_list_media_analysis_jobs_input(
 }
 
 pub(crate) fn de_list_media_analysis_jobs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,7 +174,7 @@ pub(crate) fn de_list_media_analysis_jobs(
                 }
                 "MediaAnalysisJobs" => {
                     builder = builder.set_media_analysis_jobs(
-                        crate::protocol_serde::shape_media_analysis_job_descriptions::de_media_analysis_job_descriptions(tokens)?,
+                        crate::protocol_serde::shape_media_analysis_job_descriptions::de_media_analysis_job_descriptions(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

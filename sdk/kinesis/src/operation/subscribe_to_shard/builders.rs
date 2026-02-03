@@ -162,6 +162,20 @@ impl SubscribeToShardFluentBuilder {
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_consumer_arn()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.stream_id(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_stream_id(input);
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
+    }
     /// <p>The ID of the shard you want to subscribe to. To see a list of all the shards for a given stream, use <code>ListShards</code>.</p>
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shard_id(input.into());

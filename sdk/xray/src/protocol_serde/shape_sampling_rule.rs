@@ -72,6 +72,7 @@ pub fn ser_sampling_rule(
 
 pub(crate) fn de_sampling_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SamplingRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -168,11 +169,11 @@ where
                             );
                         }
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_attribute_map::de_attribute_map(tokens, _value)?);
                         }
                         "SamplingRateBoost" => {
-                            builder =
-                                builder.set_sampling_rate_boost(crate::protocol_serde::shape_sampling_rate_boost::de_sampling_rate_boost(tokens)?);
+                            builder = builder
+                                .set_sampling_rate_boost(crate::protocol_serde::shape_sampling_rate_boost::de_sampling_rate_boost(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

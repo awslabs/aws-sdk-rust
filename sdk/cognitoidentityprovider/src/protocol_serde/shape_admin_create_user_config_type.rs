@@ -23,6 +23,7 @@ pub fn ser_admin_create_user_config_type(
 
 pub(crate) fn de_admin_create_user_config_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdminCreateUserConfigType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,8 +49,9 @@ where
                             );
                         }
                         "InviteMessageTemplate" => {
-                            builder = builder
-                                .set_invite_message_template(crate::protocol_serde::shape_message_template_type::de_message_template_type(tokens)?);
+                            builder = builder.set_invite_message_template(
+                                crate::protocol_serde::shape_message_template_type::de_message_template_type(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

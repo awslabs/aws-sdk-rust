@@ -32,6 +32,7 @@ pub fn ser_sankey_diagram_sort_configuration(
 
 pub(crate) fn de_sankey_diagram_sort_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SankeyDiagramSortConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,17 +47,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "WeightSort" => {
-                            builder =
-                                builder.set_weight_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(tokens)?);
+                            builder = builder.set_weight_sort(crate::protocol_serde::shape_field_sort_options_list::de_field_sort_options_list(
+                                tokens, _value,
+                            )?);
                         }
                         "SourceItemsLimit" => {
                             builder = builder.set_source_items_limit(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
                             );
                         }
                         "DestinationItemsLimit" => {
                             builder = builder.set_destination_items_limit(
-                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens)?,
+                                crate::protocol_serde::shape_items_limit_configuration::de_items_limit_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

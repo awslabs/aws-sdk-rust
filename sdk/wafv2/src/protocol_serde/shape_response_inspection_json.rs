@@ -29,6 +29,7 @@ pub fn ser_response_inspection_json(
 
 pub(crate) fn de_response_inspection_json<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseInspectionJson>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,14 +53,14 @@ where
                         "SuccessValues" => {
                             builder = builder.set_success_values(
                                 crate::protocol_serde::shape_response_inspection_json_success_values::de_response_inspection_json_success_values(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "FailureValues" => {
                             builder = builder.set_failure_values(
                                 crate::protocol_serde::shape_response_inspection_json_failure_values::de_response_inspection_json_failure_values(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -32,6 +32,7 @@ pub fn ser_batch_restrictions(
 
 pub(crate) fn de_batch_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,11 +54,12 @@ where
                             );
                         }
                         "computeTypesAllowed" => {
-                            builder = builder
-                                .set_compute_types_allowed(crate::protocol_serde::shape_compute_types_allowed::de_compute_types_allowed(tokens)?);
+                            builder = builder.set_compute_types_allowed(
+                                crate::protocol_serde::shape_compute_types_allowed::de_compute_types_allowed(tokens, _value)?,
+                            );
                         }
                         "fleetsAllowed" => {
-                            builder = builder.set_fleets_allowed(crate::protocol_serde::shape_fleets_allowed::de_fleets_allowed(tokens)?);
+                            builder = builder.set_fleets_allowed(crate::protocol_serde::shape_fleets_allowed::de_fleets_allowed(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

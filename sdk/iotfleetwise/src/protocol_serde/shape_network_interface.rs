@@ -38,6 +38,7 @@ pub fn ser_network_interface(
 
 pub(crate) fn de_network_interface<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkInterface>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -66,17 +67,18 @@ where
                             );
                         }
                         "canInterface" => {
-                            builder = builder.set_can_interface(crate::protocol_serde::shape_can_interface::de_can_interface(tokens)?);
+                            builder = builder.set_can_interface(crate::protocol_serde::shape_can_interface::de_can_interface(tokens, _value)?);
                         }
                         "obdInterface" => {
-                            builder = builder.set_obd_interface(crate::protocol_serde::shape_obd_interface::de_obd_interface(tokens)?);
+                            builder = builder.set_obd_interface(crate::protocol_serde::shape_obd_interface::de_obd_interface(tokens, _value)?);
                         }
                         "vehicleMiddleware" => {
-                            builder = builder.set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(tokens)?);
+                            builder = builder
+                                .set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(tokens, _value)?);
                         }
                         "customDecodingInterface" => {
                             builder = builder.set_custom_decoding_interface(
-                                crate::protocol_serde::shape_custom_decoding_interface::de_custom_decoding_interface(tokens)?,
+                                crate::protocol_serde::shape_custom_decoding_interface::de_custom_decoding_interface(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

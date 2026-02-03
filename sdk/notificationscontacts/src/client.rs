@@ -149,7 +149,7 @@ mod create_email_contact;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_notificationscontacts::Error> {
 /// # let client: aws_sdk_notificationscontacts::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.activate_email_contact()
 ///     .customize()

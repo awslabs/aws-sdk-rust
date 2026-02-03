@@ -20,6 +20,7 @@ pub fn ser_fsx_protocol(
 
 pub(crate) fn de_fsx_protocol<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FsxProtocol>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NFS" => {
-                            builder = builder.set_nfs(crate::protocol_serde::shape_fsx_protocol_nfs::de_fsx_protocol_nfs(tokens)?);
+                            builder = builder.set_nfs(crate::protocol_serde::shape_fsx_protocol_nfs::de_fsx_protocol_nfs(tokens, _value)?);
                         }
                         "SMB" => {
-                            builder = builder.set_smb(crate::protocol_serde::shape_fsx_protocol_smb::de_fsx_protocol_smb(tokens)?);
+                            builder = builder.set_smb(crate::protocol_serde::shape_fsx_protocol_smb::de_fsx_protocol_smb(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

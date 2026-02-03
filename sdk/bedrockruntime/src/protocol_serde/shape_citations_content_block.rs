@@ -32,6 +32,7 @@ pub fn ser_citations_content_block(
 
 pub(crate) fn de_citations_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CitationsContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,11 +48,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "content" => {
                             builder = builder.set_content(
-                                crate::protocol_serde::shape_citation_generated_content_list::de_citation_generated_content_list(tokens)?,
+                                crate::protocol_serde::shape_citation_generated_content_list::de_citation_generated_content_list(tokens, _value)?,
                             );
                         }
                         "citations" => {
-                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens)?);
+                            builder = builder.set_citations(crate::protocol_serde::shape_citations::de_citations(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

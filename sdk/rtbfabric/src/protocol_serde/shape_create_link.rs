@@ -151,11 +151,11 @@ pub fn ser_create_link_input(
 }
 
 pub(crate) fn de_create_link(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_link::builders::CreateLinkOutputBuilder,
 ) -> ::std::result::Result<crate::operation::create_link::builders::CreateLinkOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_create_link(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "attributes" => {
-                    builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens)?);
+                    builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -187,7 +187,7 @@ pub(crate) fn de_create_link(
                 }
                 "flowModules" => {
                     builder = builder.set_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "gatewayId" => {
@@ -213,7 +213,7 @@ pub(crate) fn de_create_link(
                 }
                 "pendingFlowModules" => {
                     builder = builder.set_pending_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "status" => {

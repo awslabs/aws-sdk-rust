@@ -23,6 +23,7 @@ pub fn ser_async_inference_output_config(
 
 pub(crate) fn de_async_inference_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AsyncInferenceOutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,9 @@ where
                         }
                         "NotificationConfig" => {
                             builder = builder.set_notification_config(
-                                crate::protocol_serde::shape_async_inference_notification_config::de_async_inference_notification_config(tokens)?,
+                                crate::protocol_serde::shape_async_inference_notification_config::de_async_inference_notification_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "S3FailurePath" => {

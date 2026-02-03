@@ -151,7 +151,7 @@ mod create_web_login_token;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mwaa::Error> {
 /// # let client: aws_sdk_mwaa::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_cli_token()
 ///     .customize()

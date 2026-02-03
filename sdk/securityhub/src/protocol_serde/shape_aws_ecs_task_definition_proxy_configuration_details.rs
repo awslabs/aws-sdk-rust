@@ -26,6 +26,7 @@ pub fn ser_aws_ecs_task_definition_proxy_configuration_details(
 
 pub(crate) fn de_aws_ecs_task_definition_proxy_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                         }
                         "ProxyConfigurationProperties" => {
                             builder = builder.set_proxy_configuration_properties(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_list::de_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_list::de_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_list(tokens, _value)?
                                 );
                         }
                         "Type" => {

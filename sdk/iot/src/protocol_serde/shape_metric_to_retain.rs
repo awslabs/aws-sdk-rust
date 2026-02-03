@@ -20,6 +20,7 @@ pub fn ser_metric_to_retain(
 
 pub(crate) fn de_metric_to_retain<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MetricToRetain>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,8 @@ where
                             );
                         }
                         "metricDimension" => {
-                            builder = builder.set_metric_dimension(crate::protocol_serde::shape_metric_dimension::de_metric_dimension(tokens)?);
+                            builder =
+                                builder.set_metric_dimension(crate::protocol_serde::shape_metric_dimension::de_metric_dimension(tokens, _value)?);
                         }
                         "exportMetric" => {
                             builder = builder.set_export_metric(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

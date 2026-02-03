@@ -23,6 +23,7 @@ pub fn ser_task_config(
 
 pub(crate) fn de_task_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TaskConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "DocumentClassificationConfig" => {
                             builder = builder.set_document_classification_config(
-                                crate::protocol_serde::shape_document_classification_config::de_document_classification_config(tokens)?,
+                                crate::protocol_serde::shape_document_classification_config::de_document_classification_config(tokens, _value)?,
                             );
                         }
                         "EntityRecognitionConfig" => {
                             builder = builder.set_entity_recognition_config(
-                                crate::protocol_serde::shape_entity_recognition_config::de_entity_recognition_config(tokens)?,
+                                crate::protocol_serde::shape_entity_recognition_config::de_entity_recognition_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

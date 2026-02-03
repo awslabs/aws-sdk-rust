@@ -26,6 +26,7 @@ pub fn ser_step_config(
 
 pub(crate) fn de_step_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StepConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,12 +55,13 @@ where
                             );
                         }
                         "HadoopJarStep" => {
-                            builder =
-                                builder.set_hadoop_jar_step(crate::protocol_serde::shape_hadoop_jar_step_config::de_hadoop_jar_step_config(tokens)?);
+                            builder = builder.set_hadoop_jar_step(crate::protocol_serde::shape_hadoop_jar_step_config::de_hadoop_jar_step_config(
+                                tokens, _value,
+                            )?);
                         }
                         "StepMonitoringConfiguration" => {
                             builder = builder.set_step_monitoring_configuration(
-                                crate::protocol_serde::shape_step_monitoring_configuration::de_step_monitoring_configuration(tokens)?,
+                                crate::protocol_serde::shape_step_monitoring_configuration::de_step_monitoring_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

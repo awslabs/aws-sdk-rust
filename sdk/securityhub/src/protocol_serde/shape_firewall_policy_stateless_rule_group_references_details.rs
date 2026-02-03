@@ -17,6 +17,7 @@ pub fn ser_firewall_policy_stateless_rule_group_references_details(
 
 pub(crate) fn de_firewall_policy_stateless_rule_group_references_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

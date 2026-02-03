@@ -176,13 +176,13 @@ pub fn ser_put_retention_settings_input(
 }
 
 pub(crate) fn de_put_retention_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_retention_settings::builders::PutRetentionSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_retention_settings::builders::PutRetentionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -196,7 +196,7 @@ pub(crate) fn de_put_retention_settings(
                     )?);
                 }
                 "RetentionSettings" => {
-                    builder = builder.set_retention_settings(crate::protocol_serde::shape_retention_settings::de_retention_settings(tokens)?);
+                    builder = builder.set_retention_settings(crate::protocol_serde::shape_retention_settings::de_retention_settings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

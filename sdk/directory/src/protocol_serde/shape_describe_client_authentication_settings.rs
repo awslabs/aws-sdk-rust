@@ -168,13 +168,13 @@ pub fn ser_describe_client_authentication_settings_input(
 }
 
 pub(crate) fn de_describe_client_authentication_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -183,7 +183,7 @@ pub(crate) fn de_describe_client_authentication_settings(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ClientAuthenticationSettingsInfo" => {
                     builder = builder.set_client_authentication_settings_info(
-                        crate::protocol_serde::shape_client_authentication_settings_info::de_client_authentication_settings_info(tokens)?,
+                        crate::protocol_serde::shape_client_authentication_settings_info::de_client_authentication_settings_info(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

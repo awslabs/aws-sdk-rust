@@ -20,6 +20,7 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_accelerator_count_
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_requirements_accelerator_count_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

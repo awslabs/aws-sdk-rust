@@ -17,6 +17,7 @@ pub fn ser_default_formatting(
 
 pub(crate) fn de_default_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DefaultFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "DisplayFormatOptions" => {
-                            builder = builder
-                                .set_display_format_options(crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens)?);
+                            builder = builder.set_display_format_options(
+                                crate::protocol_serde::shape_display_format_options::de_display_format_options(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

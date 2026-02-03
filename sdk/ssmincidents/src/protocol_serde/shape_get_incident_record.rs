@@ -110,13 +110,13 @@ pub fn de_get_incident_record_http_response(
 }
 
 pub(crate) fn de_get_incident_record(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_incident_record::builders::GetIncidentRecordOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_get_incident_record(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "incidentRecord" => {
-                    builder = builder.set_incident_record(crate::protocol_serde::shape_incident_record::de_incident_record(tokens)?);
+                    builder = builder.set_incident_record(crate::protocol_serde::shape_incident_record::de_incident_record(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

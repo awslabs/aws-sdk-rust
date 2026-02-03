@@ -123,13 +123,13 @@ pub fn ser_delete_volume_input(
 }
 
 pub(crate) fn de_delete_volume(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_volume::builders::DeleteVolumeOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_volume::builders::DeleteVolumeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,8 +151,9 @@ pub(crate) fn de_delete_volume(
                     );
                 }
                 "OntapResponse" => {
-                    builder = builder
-                        .set_ontap_response(crate::protocol_serde::shape_delete_volume_ontap_response::de_delete_volume_ontap_response(tokens)?);
+                    builder = builder.set_ontap_response(
+                        crate::protocol_serde::shape_delete_volume_ontap_response::de_delete_volume_ontap_response(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

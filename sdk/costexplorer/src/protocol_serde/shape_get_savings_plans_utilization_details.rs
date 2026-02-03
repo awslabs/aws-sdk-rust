@@ -111,13 +111,13 @@ pub fn ser_get_savings_plans_utilization_details_input(
 }
 
 pub(crate) fn de_get_savings_plans_utilization_details(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,16 +126,16 @@ pub(crate) fn de_get_savings_plans_utilization_details(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SavingsPlansUtilizationDetails" => {
                     builder = builder.set_savings_plans_utilization_details(
-                        crate::protocol_serde::shape_savings_plans_utilization_details::de_savings_plans_utilization_details(tokens)?,
+                        crate::protocol_serde::shape_savings_plans_utilization_details::de_savings_plans_utilization_details(tokens, _value)?,
                     );
                 }
                 "Total" => {
                     builder = builder.set_total(
-                        crate::protocol_serde::shape_savings_plans_utilization_aggregates::de_savings_plans_utilization_aggregates(tokens)?,
+                        crate::protocol_serde::shape_savings_plans_utilization_aggregates::de_savings_plans_utilization_aggregates(tokens, _value)?,
                     );
                 }
                 "TimePeriod" => {
-                    builder = builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens)?);
+                    builder = builder.set_time_period(crate::protocol_serde::shape_date_interval::de_date_interval(tokens, _value)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

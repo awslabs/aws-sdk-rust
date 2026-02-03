@@ -17,6 +17,7 @@ pub fn ser_data_set_date_comparison_filter_condition(
 
 pub(crate) fn de_data_set_date_comparison_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSetDateComparisonFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "Value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_data_set_date_filter_value::de_data_set_date_filter_value(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

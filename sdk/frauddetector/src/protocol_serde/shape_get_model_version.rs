@@ -118,13 +118,13 @@ pub fn ser_get_model_version_input(
 }
 
 pub(crate) fn de_get_model_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_model_version::builders::GetModelVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_model_version::builders::GetModelVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,15 +160,19 @@ pub(crate) fn de_get_model_version(
                     );
                 }
                 "trainingDataSchema" => {
-                    builder = builder.set_training_data_schema(crate::protocol_serde::shape_training_data_schema::de_training_data_schema(tokens)?);
+                    builder = builder.set_training_data_schema(crate::protocol_serde::shape_training_data_schema::de_training_data_schema(
+                        tokens, _value,
+                    )?);
                 }
                 "externalEventsDetail" => {
-                    builder =
-                        builder.set_external_events_detail(crate::protocol_serde::shape_external_events_detail::de_external_events_detail(tokens)?);
+                    builder = builder.set_external_events_detail(crate::protocol_serde::shape_external_events_detail::de_external_events_detail(
+                        tokens, _value,
+                    )?);
                 }
                 "ingestedEventsDetail" => {
-                    builder =
-                        builder.set_ingested_events_detail(crate::protocol_serde::shape_ingested_events_detail::de_ingested_events_detail(tokens)?);
+                    builder = builder.set_ingested_events_detail(crate::protocol_serde::shape_ingested_events_detail::de_ingested_events_detail(
+                        tokens, _value,
+                    )?);
                 }
                 "status" => {
                     builder = builder.set_status(

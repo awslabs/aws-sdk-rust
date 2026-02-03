@@ -32,6 +32,7 @@ pub fn ser_kms_grant_configuration(
 
 pub(crate) fn de_kms_grant_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KmsGrantConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "operations" => {
                             builder = builder.set_operations(crate::protocol_serde::shape_kms_grant_operations_list::de_kms_grant_operations_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "granteePrincipal" => {
@@ -65,7 +66,9 @@ where
                             );
                         }
                         "constraints" => {
-                            builder = builder.set_constraints(crate::protocol_serde::shape_kms_grant_constraints::de_kms_grant_constraints(tokens)?);
+                            builder = builder.set_constraints(crate::protocol_serde::shape_kms_grant_constraints::de_kms_grant_constraints(
+                                tokens, _value,
+                            )?);
                         }
                         "issuingAccount" => {
                             builder = builder.set_issuing_account(

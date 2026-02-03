@@ -35,6 +35,7 @@ pub fn ser_notify_configuration_type(
 
 pub(crate) fn de_notify_configuration_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NotifyConfigurationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,13 +71,14 @@ where
                             );
                         }
                         "BlockEmail" => {
-                            builder = builder.set_block_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens)?);
+                            builder = builder.set_block_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens, _value)?);
                         }
                         "NoActionEmail" => {
-                            builder = builder.set_no_action_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens)?);
+                            builder =
+                                builder.set_no_action_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens, _value)?);
                         }
                         "MfaEmail" => {
-                            builder = builder.set_mfa_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens)?);
+                            builder = builder.set_mfa_email(crate::protocol_serde::shape_notify_email_type::de_notify_email_type(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

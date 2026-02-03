@@ -80,13 +80,13 @@ pub fn ser_get_traffic_policy_input(
 }
 
 pub(crate) fn de_get_traffic_policy(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_traffic_policy::builders::GetTrafficPolicyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_traffic_policy::builders::GetTrafficPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -115,7 +115,9 @@ pub(crate) fn de_get_traffic_policy(
                     );
                 }
                 "PolicyStatements" => {
-                    builder = builder.set_policy_statements(crate::protocol_serde::shape_policy_statement_list::de_policy_statement_list(tokens)?);
+                    builder = builder.set_policy_statements(crate::protocol_serde::shape_policy_statement_list::de_policy_statement_list(
+                        tokens, _value,
+                    )?);
                 }
                 "MaxMessageSizeBytes" => {
                     builder = builder.set_max_message_size_bytes(

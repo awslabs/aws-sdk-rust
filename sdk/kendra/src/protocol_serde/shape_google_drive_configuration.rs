@@ -68,6 +68,7 @@ pub fn ser_google_drive_configuration(
 
 pub(crate) fn de_google_drive_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GoogleDriveConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,34 +92,34 @@ where
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExclusionPatterns" => {
                                 builder = builder.set_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
                             "ExcludeMimeTypes" => {
                                 builder = builder.set_exclude_mime_types(
-                                    crate::protocol_serde::shape_exclude_mime_types_list::de_exclude_mime_types_list(tokens)?,
+                                    crate::protocol_serde::shape_exclude_mime_types_list::de_exclude_mime_types_list(tokens, _value)?,
                                 );
                             }
                             "ExcludeUserAccounts" => {
                                 builder = builder.set_exclude_user_accounts(
-                                    crate::protocol_serde::shape_exclude_user_accounts_list::de_exclude_user_accounts_list(tokens)?,
+                                    crate::protocol_serde::shape_exclude_user_accounts_list::de_exclude_user_accounts_list(tokens, _value)?,
                                 );
                             }
                             "ExcludeSharedDrives" => {
                                 builder = builder.set_exclude_shared_drives(
-                                    crate::protocol_serde::shape_exclude_shared_drives_list::de_exclude_shared_drives_list(tokens)?,
+                                    crate::protocol_serde::shape_exclude_shared_drives_list::de_exclude_shared_drives_list(tokens, _value)?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

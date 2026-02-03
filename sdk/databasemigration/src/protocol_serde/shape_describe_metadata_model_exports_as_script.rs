@@ -80,13 +80,13 @@ pub fn ser_describe_metadata_model_exports_as_script_input(
 }
 
 pub(crate) fn de_describe_metadata_model_exports_as_script(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_metadata_model_exports_as_script::builders::DescribeMetadataModelExportsAsScriptOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_metadata_model_exports_as_script::builders::DescribeMetadataModelExportsAsScriptOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -101,8 +101,9 @@ pub(crate) fn de_describe_metadata_model_exports_as_script(
                     );
                 }
                 "Requests" => {
-                    builder =
-                        builder.set_requests(crate::protocol_serde::shape_schema_conversion_request_list::de_schema_conversion_request_list(tokens)?);
+                    builder = builder.set_requests(
+                        crate::protocol_serde::shape_schema_conversion_request_list::de_schema_conversion_request_list(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

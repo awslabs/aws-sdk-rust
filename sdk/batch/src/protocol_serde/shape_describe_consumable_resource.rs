@@ -84,13 +84,13 @@ pub fn ser_describe_consumable_resource_input(
 }
 
 pub(crate) fn de_describe_consumable_resource(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_consumable_resource::builders::DescribeConsumableResourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_consumable_resource::builders::DescribeConsumableResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_describe_consumable_resource(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens, _value)?);
                 }
                 "totalQuantity" => {
                     builder = builder.set_total_quantity(

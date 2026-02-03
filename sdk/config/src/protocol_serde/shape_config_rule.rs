@@ -56,6 +56,7 @@ pub fn ser_config_rule(
 
 pub(crate) fn de_config_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ConfigRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -98,10 +99,10 @@ where
                             );
                         }
                         "Scope" => {
-                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens)?);
+                            builder = builder.set_scope(crate::protocol_serde::shape_scope::de_scope(tokens, _value)?);
                         }
                         "Source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_source::de_source(tokens, _value)?);
                         }
                         "InputParameters" => {
                             builder = builder.set_input_parameters(
@@ -132,7 +133,8 @@ where
                             );
                         }
                         "EvaluationModes" => {
-                            builder = builder.set_evaluation_modes(crate::protocol_serde::shape_evaluation_modes::de_evaluation_modes(tokens)?);
+                            builder =
+                                builder.set_evaluation_modes(crate::protocol_serde::shape_evaluation_modes::de_evaluation_modes(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

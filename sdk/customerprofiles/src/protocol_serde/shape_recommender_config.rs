@@ -20,6 +20,7 @@ pub fn ser_recommender_config(
 
 pub(crate) fn de_recommender_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RecommenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "EventsConfig" => {
-                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens)?);
+                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens, _value)?);
                         }
                         "TrainingFrequency" => {
                             builder = builder.set_training_frequency(

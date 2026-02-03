@@ -149,7 +149,7 @@ mod create_application;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_emrserverless::Error> {
 /// # let client: aws_sdk_emrserverless::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_job_run()
 ///     .customize()

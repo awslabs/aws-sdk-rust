@@ -120,13 +120,13 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_response(
 }
 
 pub(crate) fn de_describe_reserved_elasticsearch_instance_offerings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,7 +143,7 @@ pub(crate) fn de_describe_reserved_elasticsearch_instance_offerings(
                     }
                     "ReservedElasticsearchInstanceOfferings" => {
                         builder = builder.set_reserved_elasticsearch_instance_offerings(
-                            crate::protocol_serde::shape_reserved_elasticsearch_instance_offering_list::de_reserved_elasticsearch_instance_offering_list(tokens)?
+                            crate::protocol_serde::shape_reserved_elasticsearch_instance_offering_list::de_reserved_elasticsearch_instance_offering_list(tokens, _value)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

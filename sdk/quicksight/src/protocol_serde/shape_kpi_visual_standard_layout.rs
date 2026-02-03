@@ -11,6 +11,7 @@ pub fn ser_kpi_visual_standard_layout(
 
 pub(crate) fn de_kpi_visual_standard_layout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiVisualStandardLayout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

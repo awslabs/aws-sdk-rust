@@ -26,6 +26,7 @@ pub fn ser_output_config(
 
 pub(crate) fn de_output_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "TargetPlatform" => {
-                            builder = builder.set_target_platform(crate::protocol_serde::shape_target_platform::de_target_platform(tokens)?);
+                            builder = builder.set_target_platform(crate::protocol_serde::shape_target_platform::de_target_platform(tokens, _value)?);
                         }
                         "CompilerOptions" => {
                             builder = builder.set_compiler_options(

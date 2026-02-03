@@ -32,6 +32,7 @@ pub fn ser_target_group_pair_info(
 
 pub(crate) fn de_target_group_pair_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetGroupPairInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,14 +47,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "targetGroups" => {
-                            builder =
-                                builder.set_target_groups(crate::protocol_serde::shape_target_group_info_list::de_target_group_info_list(tokens)?);
+                            builder = builder.set_target_groups(crate::protocol_serde::shape_target_group_info_list::de_target_group_info_list(
+                                tokens, _value,
+                            )?);
                         }
                         "prodTrafficRoute" => {
-                            builder = builder.set_prod_traffic_route(crate::protocol_serde::shape_traffic_route::de_traffic_route(tokens)?);
+                            builder = builder.set_prod_traffic_route(crate::protocol_serde::shape_traffic_route::de_traffic_route(tokens, _value)?);
                         }
                         "testTrafficRoute" => {
-                            builder = builder.set_test_traffic_route(crate::protocol_serde::shape_traffic_route::de_traffic_route(tokens)?);
+                            builder = builder.set_test_traffic_route(crate::protocol_serde::shape_traffic_route::de_traffic_route(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

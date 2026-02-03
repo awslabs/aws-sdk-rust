@@ -23,6 +23,7 @@ pub fn ser_hours_of_operation_override_config(
 
 pub(crate) fn de_hours_of_operation_override_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HoursOfOperationOverrideConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,11 @@ where
                             );
                         }
                         "StartTime" => {
-                            builder = builder.set_start_time(crate::protocol_serde::shape_override_time_slice::de_override_time_slice(tokens)?);
+                            builder =
+                                builder.set_start_time(crate::protocol_serde::shape_override_time_slice::de_override_time_slice(tokens, _value)?);
                         }
                         "EndTime" => {
-                            builder = builder.set_end_time(crate::protocol_serde::shape_override_time_slice::de_override_time_slice(tokens)?);
+                            builder = builder.set_end_time(crate::protocol_serde::shape_override_time_slice::de_override_time_slice(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

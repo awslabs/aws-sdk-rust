@@ -108,13 +108,13 @@ pub fn ser_describe_firewall_input(
 }
 
 pub(crate) fn de_describe_firewall(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_firewall::builders::DescribeFirewallOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_firewall::builders::DescribeFirewallOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -129,10 +129,10 @@ pub(crate) fn de_describe_firewall(
                     );
                 }
                 "Firewall" => {
-                    builder = builder.set_firewall(crate::protocol_serde::shape_firewall::de_firewall(tokens)?);
+                    builder = builder.set_firewall(crate::protocol_serde::shape_firewall::de_firewall(tokens, _value)?);
                 }
                 "FirewallStatus" => {
-                    builder = builder.set_firewall_status(crate::protocol_serde::shape_firewall_status::de_firewall_status(tokens)?);
+                    builder = builder.set_firewall_status(crate::protocol_serde::shape_firewall_status::de_firewall_status(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -38,6 +38,7 @@ pub fn ser_output_group(
 
 pub(crate) fn de_output_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "automatedEncodingSettings" => {
                             builder = builder.set_automated_encoding_settings(
-                                crate::protocol_serde::shape_automated_encoding_settings::de_automated_encoding_settings(tokens)?,
+                                crate::protocol_serde::shape_automated_encoding_settings::de_automated_encoding_settings(tokens, _value)?,
                             );
                         }
                         "customName" => {
@@ -71,11 +72,12 @@ where
                             );
                         }
                         "outputGroupSettings" => {
-                            builder = builder
-                                .set_output_group_settings(crate::protocol_serde::shape_output_group_settings::de_output_group_settings(tokens)?);
+                            builder = builder.set_output_group_settings(
+                                crate::protocol_serde::shape_output_group_settings::de_output_group_settings(tokens, _value)?,
+                            );
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

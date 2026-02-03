@@ -146,13 +146,13 @@ pub fn ser_add_policy_statement_input(
 }
 
 pub(crate) fn de_add_policy_statement(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::add_policy_statement::builders::AddPolicyStatementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::add_policy_statement::builders::AddPolicyStatementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

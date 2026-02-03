@@ -41,6 +41,7 @@ pub fn ser_workflow_step(
 
 pub(crate) fn de_workflow_step<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkflowStep>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,22 +63,25 @@ where
                             );
                         }
                         "CopyStepDetails" => {
-                            builder = builder.set_copy_step_details(crate::protocol_serde::shape_copy_step_details::de_copy_step_details(tokens)?);
+                            builder =
+                                builder.set_copy_step_details(crate::protocol_serde::shape_copy_step_details::de_copy_step_details(tokens, _value)?);
                         }
                         "CustomStepDetails" => {
-                            builder =
-                                builder.set_custom_step_details(crate::protocol_serde::shape_custom_step_details::de_custom_step_details(tokens)?);
+                            builder = builder
+                                .set_custom_step_details(crate::protocol_serde::shape_custom_step_details::de_custom_step_details(tokens, _value)?);
                         }
                         "DeleteStepDetails" => {
-                            builder =
-                                builder.set_delete_step_details(crate::protocol_serde::shape_delete_step_details::de_delete_step_details(tokens)?);
+                            builder = builder
+                                .set_delete_step_details(crate::protocol_serde::shape_delete_step_details::de_delete_step_details(tokens, _value)?);
                         }
                         "TagStepDetails" => {
-                            builder = builder.set_tag_step_details(crate::protocol_serde::shape_tag_step_details::de_tag_step_details(tokens)?);
+                            builder =
+                                builder.set_tag_step_details(crate::protocol_serde::shape_tag_step_details::de_tag_step_details(tokens, _value)?);
                         }
                         "DecryptStepDetails" => {
-                            builder =
-                                builder.set_decrypt_step_details(crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(tokens)?);
+                            builder = builder.set_decrypt_step_details(crate::protocol_serde::shape_decrypt_step_details::de_decrypt_step_details(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

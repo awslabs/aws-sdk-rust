@@ -29,6 +29,7 @@ pub fn ser_multi_conditional_split_activity(
 
 pub(crate) fn de_multi_conditional_split_activity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MultiConditionalSplitActivity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Branches" => {
                             builder = builder.set_branches(
-                                crate::protocol_serde::shape_list_of_multi_conditional_branch::de_list_of_multi_conditional_branch(tokens)?,
+                                crate::protocol_serde::shape_list_of_multi_conditional_branch::de_list_of_multi_conditional_branch(tokens, _value)?,
                             );
                         }
                         "DefaultActivity" => {
@@ -55,7 +56,7 @@ where
                             );
                         }
                         "EvaluationWaitTime" => {
-                            builder = builder.set_evaluation_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens)?);
+                            builder = builder.set_evaluation_wait_time(crate::protocol_serde::shape_wait_time::de_wait_time(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

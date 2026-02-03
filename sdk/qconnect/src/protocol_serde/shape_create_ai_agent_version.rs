@@ -162,13 +162,13 @@ pub fn ser_create_ai_agent_version_input(
 }
 
 pub(crate) fn de_create_ai_agent_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_ai_agent_version::builders::CreateAiAgentVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_ai_agent_version::builders::CreateAiAgentVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -176,7 +176,7 @@ pub(crate) fn de_create_ai_agent_version(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "aiAgent" => {
-                    builder = builder.set_ai_agent(crate::protocol_serde::shape_ai_agent_data::de_ai_agent_data(tokens)?);
+                    builder = builder.set_ai_agent(crate::protocol_serde::shape_ai_agent_data::de_ai_agent_data(tokens, _value)?);
                 }
                 "versionNumber" => {
                     builder = builder.set_version_number(

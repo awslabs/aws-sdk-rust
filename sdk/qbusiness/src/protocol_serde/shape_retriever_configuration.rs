@@ -27,6 +27,7 @@ pub fn ser_retriever_configuration(
 
 pub(crate) fn de_retriever_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetrieverConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,22 @@ where
                     }
                     variant = match key.as_ref() {
                         "nativeIndexConfiguration" => Some(crate::types::RetrieverConfiguration::NativeIndexConfiguration(
-                            crate::protocol_serde::shape_native_index_configuration::de_native_index_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nativeIndexConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_native_index_configuration::de_native_index_configuration(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'nativeIndexConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         "kendraIndexConfiguration" => Some(crate::types::RetrieverConfiguration::KendraIndexConfiguration(
-                            crate::protocol_serde::shape_kendra_index_configuration::de_kendra_index_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'kendraIndexConfiguration' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_kendra_index_configuration::de_kendra_index_configuration(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'kendraIndexConfiguration' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

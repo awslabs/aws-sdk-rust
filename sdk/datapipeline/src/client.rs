@@ -151,7 +151,7 @@ mod create_pipeline;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_datapipeline::Error> {
 /// # let client: aws_sdk_datapipeline::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.activate_pipeline()
 ///     .customize()

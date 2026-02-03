@@ -185,13 +185,13 @@ pub fn ser_export_idle_recommendations_input(
 }
 
 pub(crate) fn de_export_idle_recommendations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::export_idle_recommendations::builders::ExportIdleRecommendationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::export_idle_recommendations::builders::ExportIdleRecommendationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -206,7 +206,7 @@ pub(crate) fn de_export_idle_recommendations(
                     );
                 }
                 "s3Destination" => {
-                    builder = builder.set_s3_destination(crate::protocol_serde::shape_s3_destination::de_s3_destination(tokens)?);
+                    builder = builder.set_s3_destination(crate::protocol_serde::shape_s3_destination::de_s3_destination(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

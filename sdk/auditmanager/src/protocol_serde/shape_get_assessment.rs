@@ -94,13 +94,13 @@ pub fn de_get_assessment_http_response(
 }
 
 pub(crate) fn de_get_assessment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_assessment::builders::GetAssessmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_assessment::builders::GetAssessmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,10 +108,10 @@ pub(crate) fn de_get_assessment(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assessment" => {
-                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens)?);
+                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens, _value)?);
                 }
                 "userRole" => {
-                    builder = builder.set_user_role(crate::protocol_serde::shape_role::de_role(tokens)?);
+                    builder = builder.set_user_role(crate::protocol_serde::shape_role::de_role(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

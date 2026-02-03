@@ -153,7 +153,7 @@ mod create_sol_network_package;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_tnb::Error> {
 /// # let client: aws_sdk_tnb::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_sol_network_operation()
 ///     .customize()

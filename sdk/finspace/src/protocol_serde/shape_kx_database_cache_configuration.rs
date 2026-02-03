@@ -23,6 +23,7 @@ pub fn ser_kx_database_cache_configuration(
 
 pub(crate) fn de_kx_database_cache_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KxDatabaseCacheConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "dbPaths" => {
-                            builder = builder.set_db_paths(crate::protocol_serde::shape_db_paths::de_db_paths(tokens)?);
+                            builder = builder.set_db_paths(crate::protocol_serde::shape_db_paths::de_db_paths(tokens, _value)?);
                         }
                         "dataviewName" => {
                             builder = builder.set_dataview_name(

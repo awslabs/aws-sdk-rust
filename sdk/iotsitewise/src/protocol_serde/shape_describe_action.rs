@@ -96,13 +96,13 @@ pub fn de_describe_action_http_response(
 }
 
 pub(crate) fn de_describe_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_action::builders::DescribeActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_action::builders::DescribeActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_describe_action(
                     );
                 }
                 "actionPayload" => {
-                    builder = builder.set_action_payload(crate::protocol_serde::shape_action_payload::de_action_payload(tokens)?);
+                    builder = builder.set_action_payload(crate::protocol_serde::shape_action_payload::de_action_payload(tokens, _value)?);
                 }
                 "executionTime" => {
                     builder = builder.set_execution_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -133,10 +133,10 @@ pub(crate) fn de_describe_action(
                     )?);
                 }
                 "resolveTo" => {
-                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens)?);
+                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens, _value)?);
                 }
                 "targetResource" => {
-                    builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens)?);
+                    builder = builder.set_target_resource(crate::protocol_serde::shape_target_resource::de_target_resource(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

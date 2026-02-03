@@ -135,13 +135,13 @@ pub fn de_describe_dashboard_permissions_http_response(
 }
 
 pub(crate) fn de_describe_dashboard_permissions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,12 +164,13 @@ pub(crate) fn de_describe_dashboard_permissions(
                 }
                 "LinkSharingConfiguration" => {
                     builder = builder.set_link_sharing_configuration(
-                        crate::protocol_serde::shape_link_sharing_configuration::de_link_sharing_configuration(tokens)?,
+                        crate::protocol_serde::shape_link_sharing_configuration::de_link_sharing_configuration(tokens, _value)?,
                     );
                 }
                 "Permissions" => {
-                    builder = builder
-                        .set_permissions(crate::protocol_serde::shape_update_resource_permission_list::de_update_resource_permission_list(tokens)?);
+                    builder = builder.set_permissions(
+                        crate::protocol_serde::shape_update_resource_permission_list::de_update_resource_permission_list(tokens, _value)?,
+                    );
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

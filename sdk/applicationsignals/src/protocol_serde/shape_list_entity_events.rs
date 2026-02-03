@@ -79,13 +79,13 @@ pub fn ser_list_entity_events_input(
 }
 
 pub(crate) fn de_list_entity_events(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_entity_events::builders::ListEntityEventsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_entity_events::builders::ListEntityEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -93,7 +93,7 @@ pub(crate) fn de_list_entity_events(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ChangeEvents" => {
-                    builder = builder.set_change_events(crate::protocol_serde::shape_change_events::de_change_events(tokens)?);
+                    builder = builder.set_change_events(crate::protocol_serde::shape_change_events::de_change_events(tokens, _value)?);
                 }
                 "EndTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

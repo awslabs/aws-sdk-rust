@@ -26,6 +26,7 @@ pub fn ser_docker_server(
 
 pub(crate) fn de_docker_server<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DockerServer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,10 +48,13 @@ where
                             );
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens)?);
+                            builder = builder
+                                .set_security_group_ids(crate::protocol_serde::shape_security_group_ids::de_security_group_ids(tokens, _value)?);
                         }
                         "status" => {
-                            builder = builder.set_status(crate::protocol_serde::shape_docker_server_status::de_docker_server_status(tokens)?);
+                            builder = builder.set_status(crate::protocol_serde::shape_docker_server_status::de_docker_server_status(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

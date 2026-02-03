@@ -100,6 +100,7 @@ pub fn ser_configuration(
 
 pub(crate) fn de_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Configuration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -129,79 +130,86 @@ where
                     }
                     variant = match key.as_ref() {
                         "ebsSnapshot" => Some(crate::types::Configuration::EbsSnapshot(
-                            crate::protocol_serde::shape_ebs_snapshot_configuration::de_ebs_snapshot_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ebsSnapshot' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ebs_snapshot_configuration::de_ebs_snapshot_configuration(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ebsSnapshot' cannot be null"),
+                            )?,
                         )),
                         "ecrRepository" => Some(crate::types::Configuration::EcrRepository(
-                            crate::protocol_serde::shape_ecr_repository_configuration::de_ecr_repository_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ecrRepository' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ecr_repository_configuration::de_ecr_repository_configuration(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ecrRepository' cannot be null"),
+                            )?,
                         )),
                         "iamRole" => Some(crate::types::Configuration::IamRole(
-                            crate::protocol_serde::shape_iam_role_configuration::de_iam_role_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_iam_role_configuration::de_iam_role_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iamRole' cannot be null")
                             })?,
                         )),
                         "efsFileSystem" => Some(crate::types::Configuration::EfsFileSystem(
-                            crate::protocol_serde::shape_efs_file_system_configuration::de_efs_file_system_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efsFileSystem' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_efs_file_system_configuration::de_efs_file_system_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'efsFileSystem' cannot be null")
+                                })?,
                         )),
                         "kmsKey" => Some(crate::types::Configuration::KmsKey(
-                            crate::protocol_serde::shape_kms_key_configuration::de_kms_key_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_kms_key_configuration::de_kms_key_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'kmsKey' cannot be null")
                             })?,
                         )),
                         "rdsDbClusterSnapshot" => Some(crate::types::Configuration::RdsDbClusterSnapshot(
-                            crate::protocol_serde::shape_rds_db_cluster_snapshot_configuration::de_rds_db_cluster_snapshot_configuration(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbClusterSnapshot' cannot be null")
-                                })?,
+                            crate::protocol_serde::shape_rds_db_cluster_snapshot_configuration::de_rds_db_cluster_snapshot_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbClusterSnapshot' cannot be null")
+                            })?,
                         )),
                         "rdsDbSnapshot" => Some(crate::types::Configuration::RdsDbSnapshot(
-                            crate::protocol_serde::shape_rds_db_snapshot_configuration::de_rds_db_snapshot_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbSnapshot' cannot be null"),
-                            )?,
-                        )),
-                        "secretsManagerSecret" => Some(crate::types::Configuration::SecretsManagerSecret(
-                            crate::protocol_serde::shape_secrets_manager_secret_configuration::de_secrets_manager_secret_configuration(tokens)?
+                            crate::protocol_serde::shape_rds_db_snapshot_configuration::de_rds_db_snapshot_configuration(tokens, _value)?
                                 .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'secretsManagerSecret' cannot be null")
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbSnapshot' cannot be null")
                                 })?,
                         )),
+                        "secretsManagerSecret" => Some(crate::types::Configuration::SecretsManagerSecret(
+                            crate::protocol_serde::shape_secrets_manager_secret_configuration::de_secrets_manager_secret_configuration(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'secretsManagerSecret' cannot be null")
+                            })?,
+                        )),
                         "s3Bucket" => Some(crate::types::Configuration::S3Bucket(
-                            crate::protocol_serde::shape_s3_bucket_configuration::de_s3_bucket_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_bucket_configuration::de_s3_bucket_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Bucket' cannot be null")
                             })?,
                         )),
                         "snsTopic" => Some(crate::types::Configuration::SnsTopic(
-                            crate::protocol_serde::shape_sns_topic_configuration::de_sns_topic_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sns_topic_configuration::de_sns_topic_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'snsTopic' cannot be null")
                             })?,
                         )),
                         "sqsQueue" => Some(crate::types::Configuration::SqsQueue(
-                            crate::protocol_serde::shape_sqs_queue_configuration::de_sqs_queue_configuration(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_sqs_queue_configuration::de_sqs_queue_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sqsQueue' cannot be null")
                             })?,
                         )),
                         "s3ExpressDirectoryBucket" => Some(crate::types::Configuration::S3ExpressDirectoryBucket(
                             crate::protocol_serde::shape_s3_express_directory_bucket_configuration::de_s3_express_directory_bucket_configuration(
-                                tokens,
+                                tokens, _value,
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3ExpressDirectoryBucket' cannot be null")
                             })?,
                         )),
                         "dynamodbStream" => Some(crate::types::Configuration::DynamodbStream(
-                            crate::protocol_serde::shape_dynamodb_stream_configuration::de_dynamodb_stream_configuration(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbStream' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_dynamodb_stream_configuration::de_dynamodb_stream_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbStream' cannot be null")
+                                })?,
                         )),
                         "dynamodbTable" => Some(crate::types::Configuration::DynamodbTable(
-                            crate::protocol_serde::shape_dynamodb_table_configuration::de_dynamodb_table_configuration(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbTable' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_dynamodb_table_configuration::de_dynamodb_table_configuration(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamodbTable' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

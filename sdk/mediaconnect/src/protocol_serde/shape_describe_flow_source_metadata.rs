@@ -142,13 +142,13 @@ pub fn de_describe_flow_source_metadata_http_response(
 }
 
 pub(crate) fn de_describe_flow_source_metadata(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,11 +163,13 @@ pub(crate) fn de_describe_flow_source_metadata(
                     );
                 }
                 "messages" => {
-                    builder = builder.set_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(tokens)?);
+                    builder = builder.set_messages(crate::protocol_serde::shape_list_of_message_detail::de_list_of_message_detail(
+                        tokens, _value,
+                    )?);
                 }
                 "ndiInfo" => {
                     builder = builder.set_ndi_info(crate::protocol_serde::shape_ndi_source_metadata_info::de_ndi_source_metadata_info(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "timestamp" => {
@@ -177,7 +179,9 @@ pub(crate) fn de_describe_flow_source_metadata(
                     )?);
                 }
                 "transportMediaInfo" => {
-                    builder = builder.set_transport_media_info(crate::protocol_serde::shape_transport_media_info::de_transport_media_info(tokens)?);
+                    builder = builder.set_transport_media_info(crate::protocol_serde::shape_transport_media_info::de_transport_media_info(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

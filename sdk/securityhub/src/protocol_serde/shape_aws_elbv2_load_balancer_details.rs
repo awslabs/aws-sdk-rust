@@ -68,6 +68,7 @@ pub fn ser_aws_elbv2_load_balancer_details(
 
 pub(crate) fn de_aws_elbv2_load_balancer_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsElbv2LoadBalancerDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,7 +83,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AvailabilityZones" => {
-                            builder = builder.set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens)?);
+                            builder = builder
+                                .set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens, _value)?);
                         }
                         "CanonicalHostedZoneId" => {
                             builder = builder.set_canonical_hosted_zone_id(
@@ -120,10 +122,10 @@ where
                             );
                         }
                         "SecurityGroups" => {
-                            builder = builder.set_security_groups(crate::protocol_serde::shape_security_groups::de_security_groups(tokens)?);
+                            builder = builder.set_security_groups(crate::protocol_serde::shape_security_groups::de_security_groups(tokens, _value)?);
                         }
                         "State" => {
-                            builder = builder.set_state(crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(tokens)?);
+                            builder = builder.set_state(crate::protocol_serde::shape_load_balancer_state::de_load_balancer_state(tokens, _value)?);
                         }
                         "Type" => {
                             builder = builder.set_type(
@@ -141,7 +143,9 @@ where
                         }
                         "LoadBalancerAttributes" => {
                             builder = builder.set_load_balancer_attributes(
-                                crate::protocol_serde::shape_aws_elbv2_load_balancer_attributes::de_aws_elbv2_load_balancer_attributes(tokens)?,
+                                crate::protocol_serde::shape_aws_elbv2_load_balancer_attributes::de_aws_elbv2_load_balancer_attributes(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

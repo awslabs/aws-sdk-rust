@@ -17,6 +17,7 @@ pub fn ser_tls_validation_context_acm_trust(
 
 pub(crate) fn de_tls_validation_context_acm_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TlsValidationContextAcmTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "certificateAuthorityArns" => {
                             builder = builder.set_certificate_authority_arns(
-                                crate::protocol_serde::shape_certificate_authority_arns::de_certificate_authority_arns(tokens)?,
+                                crate::protocol_serde::shape_certificate_authority_arns::de_certificate_authority_arns(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

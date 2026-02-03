@@ -24,6 +24,7 @@ pub fn ser_system_content_block(
 
 pub(crate) fn de_system_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SystemContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'text' cannot be null"))?,
                         )),
                         "cachePoint" => Some(crate::types::SystemContentBlock::CachePoint(
-                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_cache_point_block::de_cache_point_block(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cachePoint' cannot be null")
                             })?,
                         )),

@@ -85,13 +85,13 @@ pub fn de_describe_ephemeris_http_response(
 }
 
 pub(crate) fn de_describe_ephemeris(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_ephemeris::builders::DescribeEphemerisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -116,7 +116,7 @@ pub(crate) fn de_describe_ephemeris(
                 }
                 "errorReasons" => {
                     builder = builder.set_error_reasons(crate::protocol_serde::shape_ephemeris_error_reason_list::de_ephemeris_error_reason_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "invalidReason" => {
@@ -156,11 +156,11 @@ pub(crate) fn de_describe_ephemeris(
                 }
                 "suppliedData" => {
                     builder = builder.set_supplied_data(crate::protocol_serde::shape_ephemeris_type_description::de_ephemeris_type_description(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

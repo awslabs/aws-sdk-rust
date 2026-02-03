@@ -17,6 +17,7 @@ pub fn ser_site_maps_configuration(
 
 pub(crate) fn de_site_maps_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SiteMapsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SiteMaps" => {
-                            builder = builder.set_site_maps(crate::protocol_serde::shape_site_maps_list::de_site_maps_list(tokens)?);
+                            builder = builder.set_site_maps(crate::protocol_serde::shape_site_maps_list::de_site_maps_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

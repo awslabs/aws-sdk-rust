@@ -41,6 +41,7 @@ pub fn ser_active_directory_settings(
 
 pub(crate) fn de_active_directory_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActiveDirectorySettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,18 +63,19 @@ where
                             );
                         }
                         "DomainIpv4List" => {
-                            builder = builder.set_domain_ipv4_list(crate::protocol_serde::shape_ipv4_list::de_ipv4_list(tokens)?);
+                            builder = builder.set_domain_ipv4_list(crate::protocol_serde::shape_ipv4_list::de_ipv4_list(tokens, _value)?);
                         }
                         "DomainIpv6List" => {
-                            builder = builder.set_domain_ipv6_list(crate::protocol_serde::shape_ipv6_list::de_ipv6_list(tokens)?);
+                            builder = builder.set_domain_ipv6_list(crate::protocol_serde::shape_ipv6_list::de_ipv6_list(tokens, _value)?);
                         }
                         "DomainCredentialsProvider" => {
-                            builder = builder
-                                .set_domain_credentials_provider(crate::protocol_serde::shape_credentials_provider::de_credentials_provider(tokens)?);
+                            builder = builder.set_domain_credentials_provider(
+                                crate::protocol_serde::shape_credentials_provider::de_credentials_provider(tokens, _value)?,
+                            );
                         }
                         "DomainNetworkSettings" => {
                             builder = builder.set_domain_network_settings(
-                                crate::protocol_serde::shape_domain_network_settings::de_domain_network_settings(tokens)?,
+                                crate::protocol_serde::shape_domain_network_settings::de_domain_network_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

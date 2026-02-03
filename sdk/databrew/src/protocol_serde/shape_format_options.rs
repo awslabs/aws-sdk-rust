@@ -26,6 +26,7 @@ pub fn ser_format_options(
 
 pub(crate) fn de_format_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FormatOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Json" => {
-                            builder = builder.set_json(crate::protocol_serde::shape_json_options::de_json_options(tokens)?);
+                            builder = builder.set_json(crate::protocol_serde::shape_json_options::de_json_options(tokens, _value)?);
                         }
                         "Excel" => {
-                            builder = builder.set_excel(crate::protocol_serde::shape_excel_options::de_excel_options(tokens)?);
+                            builder = builder.set_excel(crate::protocol_serde::shape_excel_options::de_excel_options(tokens, _value)?);
                         }
                         "Csv" => {
-                            builder = builder.set_csv(crate::protocol_serde::shape_csv_options::de_csv_options(tokens)?);
+                            builder = builder.set_csv(crate::protocol_serde::shape_csv_options::de_csv_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

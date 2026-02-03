@@ -47,6 +47,7 @@ pub fn ser_global_secondary_index(
 
 pub(crate) fn de_global_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,21 +69,23 @@ where
                             );
                         }
                         "KeySchema" => {
-                            builder = builder.set_key_schema(crate::protocol_serde::shape_key_schema::de_key_schema(tokens)?);
+                            builder = builder.set_key_schema(crate::protocol_serde::shape_key_schema::de_key_schema(tokens, _value)?);
                         }
                         "Projection" => {
-                            builder = builder.set_projection(crate::protocol_serde::shape_projection::de_projection(tokens)?);
+                            builder = builder.set_projection(crate::protocol_serde::shape_projection::de_projection(tokens, _value)?);
                         }
                         "ProvisionedThroughput" => {
-                            builder = builder
-                                .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
+                            builder = builder.set_provisioned_throughput(
+                                crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens, _value)?,
+                            );
                         }
                         "OnDemandThroughput" => {
-                            builder =
-                                builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens)?);
+                            builder = builder.set_on_demand_throughput(crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(
+                                tokens, _value,
+                            )?);
                         }
                         "WarmThroughput" => {
-                            builder = builder.set_warm_throughput(crate::protocol_serde::shape_warm_throughput::de_warm_throughput(tokens)?);
+                            builder = builder.set_warm_throughput(crate::protocol_serde::shape_warm_throughput::de_warm_throughput(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

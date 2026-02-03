@@ -79,11 +79,11 @@ pub fn ser_list_streams_input(
 }
 
 pub(crate) fn de_list_streams(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_streams::builders::ListStreamsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_streams::builders::ListStreamsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,7 +98,7 @@ pub(crate) fn de_list_streams(
                     );
                 }
                 "StreamInfoList" => {
-                    builder = builder.set_stream_info_list(crate::protocol_serde::shape_stream_info_list::de_stream_info_list(tokens)?);
+                    builder = builder.set_stream_info_list(crate::protocol_serde::shape_stream_info_list::de_stream_info_list(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

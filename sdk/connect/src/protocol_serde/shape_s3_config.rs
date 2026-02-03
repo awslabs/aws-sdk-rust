@@ -20,6 +20,7 @@ pub fn ser_s3_config(
 
 pub(crate) fn de_s3_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3Config>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,8 @@ where
                             );
                         }
                         "EncryptionConfig" => {
-                            builder = builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens)?);
+                            builder =
+                                builder.set_encryption_config(crate::protocol_serde::shape_encryption_config::de_encryption_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

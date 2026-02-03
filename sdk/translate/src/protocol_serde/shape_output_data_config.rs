@@ -17,6 +17,7 @@ pub fn ser_output_data_config(
 
 pub(crate) fn de_output_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "EncryptionKey" => {
-                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(tokens)?);
+                            builder = builder.set_encryption_key(crate::protocol_serde::shape_encryption_key::de_encryption_key(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

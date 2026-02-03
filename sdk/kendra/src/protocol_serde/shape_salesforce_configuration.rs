@@ -74,6 +74,7 @@ pub fn ser_salesforce_configuration(
 
 pub(crate) fn de_salesforce_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SalesforceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -104,18 +105,18 @@ where
                             }
                             "StandardObjectConfigurations" => {
                                 builder = builder.set_standard_object_configurations(
-                                    crate::protocol_serde::shape_salesforce_standard_object_configuration_list::de_salesforce_standard_object_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_salesforce_standard_object_configuration_list::de_salesforce_standard_object_configuration_list(tokens, _value)?
                                 );
                             }
                             "KnowledgeArticleConfiguration" => {
                                 builder = builder.set_knowledge_article_configuration(
-                                    crate::protocol_serde::shape_salesforce_knowledge_article_configuration::de_salesforce_knowledge_article_configuration(tokens)?
+                                    crate::protocol_serde::shape_salesforce_knowledge_article_configuration::de_salesforce_knowledge_article_configuration(tokens, _value)?
                                 );
                             }
                             "ChatterFeedConfiguration" => {
                                 builder = builder.set_chatter_feed_configuration(
                                     crate::protocol_serde::shape_salesforce_chatter_feed_configuration::de_salesforce_chatter_feed_configuration(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }
@@ -124,17 +125,17 @@ where
                             }
                             "StandardObjectAttachmentConfiguration" => {
                                 builder = builder.set_standard_object_attachment_configuration(
-                                    crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::de_salesforce_standard_object_attachment_configuration(tokens)?
+                                    crate::protocol_serde::shape_salesforce_standard_object_attachment_configuration::de_salesforce_standard_object_attachment_configuration(tokens, _value)?
                                 );
                             }
                             "IncludeAttachmentFilePatterns" => {
                                 builder = builder.set_include_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExcludeAttachmentFilePatterns" => {
                                 builder = builder.set_exclude_attachment_file_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_performance_configuration(
 
 pub(crate) fn de_performance_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PerformanceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UniqueKeys" => {
-                            builder = builder.set_unique_keys(crate::protocol_serde::shape_unique_key_list::de_unique_key_list(tokens)?);
+                            builder = builder.set_unique_keys(crate::protocol_serde::shape_unique_key_list::de_unique_key_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

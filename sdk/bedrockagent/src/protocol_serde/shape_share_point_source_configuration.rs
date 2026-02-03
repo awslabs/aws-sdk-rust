@@ -32,6 +32,7 @@ pub fn ser_share_point_source_configuration(
 
 pub(crate) fn de_share_point_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SharePointSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,9 @@ where
                             );
                         }
                         "siteUrls" => {
-                            builder = builder.set_site_urls(crate::protocol_serde::shape_share_point_site_urls::de_share_point_site_urls(tokens)?);
+                            builder = builder.set_site_urls(crate::protocol_serde::shape_share_point_site_urls::de_share_point_site_urls(
+                                tokens, _value,
+                            )?);
                         }
                         "hostType" => {
                             builder = builder.set_host_type(

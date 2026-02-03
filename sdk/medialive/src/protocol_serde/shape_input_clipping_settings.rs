@@ -23,6 +23,7 @@ pub fn ser_input_clipping_settings(
 
 pub(crate) fn de_input_clipping_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputClippingSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "startTimecode" => {
-                            builder = builder.set_start_timecode(crate::protocol_serde::shape_start_timecode::de_start_timecode(tokens)?);
+                            builder = builder.set_start_timecode(crate::protocol_serde::shape_start_timecode::de_start_timecode(tokens, _value)?);
                         }
                         "stopTimecode" => {
-                            builder = builder.set_stop_timecode(crate::protocol_serde::shape_stop_timecode::de_stop_timecode(tokens)?);
+                            builder = builder.set_stop_timecode(crate::protocol_serde::shape_stop_timecode::de_stop_timecode(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

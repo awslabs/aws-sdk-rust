@@ -71,6 +71,7 @@ pub fn ser_dataset_metadata(
 
 pub(crate) fn de_dataset_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DatasetMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -106,20 +107,24 @@ where
                             );
                         }
                         "DataAggregation" => {
-                            builder = builder.set_data_aggregation(crate::protocol_serde::shape_data_aggregation::de_data_aggregation(tokens)?);
+                            builder =
+                                builder.set_data_aggregation(crate::protocol_serde::shape_data_aggregation::de_data_aggregation(tokens, _value)?);
                         }
                         "Filters" => {
-                            builder = builder.set_filters(crate::protocol_serde::shape_topic_filters::de_topic_filters(tokens)?);
+                            builder = builder.set_filters(crate::protocol_serde::shape_topic_filters::de_topic_filters(tokens, _value)?);
                         }
                         "Columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_topic_columns::de_topic_columns(tokens)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_topic_columns::de_topic_columns(tokens, _value)?);
                         }
                         "CalculatedFields" => {
-                            builder = builder
-                                .set_calculated_fields(crate::protocol_serde::shape_topic_calculated_fields::de_topic_calculated_fields(tokens)?);
+                            builder = builder.set_calculated_fields(
+                                crate::protocol_serde::shape_topic_calculated_fields::de_topic_calculated_fields(tokens, _value)?,
+                            );
                         }
                         "NamedEntities" => {
-                            builder = builder.set_named_entities(crate::protocol_serde::shape_topic_named_entities::de_topic_named_entities(tokens)?);
+                            builder = builder.set_named_entities(crate::protocol_serde::shape_topic_named_entities::de_topic_named_entities(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

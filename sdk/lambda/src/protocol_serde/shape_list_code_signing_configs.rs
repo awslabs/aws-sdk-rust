@@ -83,13 +83,13 @@ pub fn de_list_code_signing_configs_http_response(
 }
 
 pub(crate) fn de_list_code_signing_configs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,7 +98,7 @@ pub(crate) fn de_list_code_signing_configs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CodeSigningConfigs" => {
                     builder = builder.set_code_signing_configs(crate::protocol_serde::shape_code_signing_config_list::de_code_signing_config_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "NextMarker" => {

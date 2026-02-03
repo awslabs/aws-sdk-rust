@@ -29,6 +29,7 @@ pub fn ser_aws_managed_rules_acfp_rule_set(
 
 pub(crate) fn de_aws_managed_rules_acfp_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsManagedRulesAcfpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,12 +58,13 @@ where
                             );
                         }
                         "RequestInspection" => {
-                            builder = builder
-                                .set_request_inspection(crate::protocol_serde::shape_request_inspection_acfp::de_request_inspection_acfp(tokens)?);
+                            builder = builder.set_request_inspection(
+                                crate::protocol_serde::shape_request_inspection_acfp::de_request_inspection_acfp(tokens, _value)?,
+                            );
                         }
                         "ResponseInspection" => {
-                            builder =
-                                builder.set_response_inspection(crate::protocol_serde::shape_response_inspection::de_response_inspection(tokens)?);
+                            builder = builder
+                                .set_response_inspection(crate::protocol_serde::shape_response_inspection::de_response_inspection(tokens, _value)?);
                         }
                         "EnableRegexInPath" => {
                             builder = builder.set_enable_regex_in_path(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

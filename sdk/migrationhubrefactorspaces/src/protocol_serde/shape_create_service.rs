@@ -154,13 +154,13 @@ pub fn ser_create_service_input(
 }
 
 pub(crate) fn de_create_service(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_service::builders::CreateServiceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_service::builders::CreateServiceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -216,7 +216,9 @@ pub(crate) fn de_create_service(
                     );
                 }
                 "LambdaEndpoint" => {
-                    builder = builder.set_lambda_endpoint(crate::protocol_serde::shape_lambda_endpoint_input::de_lambda_endpoint_input(tokens)?);
+                    builder = builder.set_lambda_endpoint(crate::protocol_serde::shape_lambda_endpoint_input::de_lambda_endpoint_input(
+                        tokens, _value,
+                    )?);
                 }
                 "LastUpdatedTime" => {
                     builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -253,10 +255,10 @@ pub(crate) fn de_create_service(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "UrlEndpoint" => {
-                    builder = builder.set_url_endpoint(crate::protocol_serde::shape_url_endpoint_input::de_url_endpoint_input(tokens)?);
+                    builder = builder.set_url_endpoint(crate::protocol_serde::shape_url_endpoint_input::de_url_endpoint_input(tokens, _value)?);
                 }
                 "VpcId" => {
                     builder = builder.set_vpc_id(

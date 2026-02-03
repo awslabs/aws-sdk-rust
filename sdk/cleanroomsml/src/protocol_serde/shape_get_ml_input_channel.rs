@@ -102,13 +102,13 @@ pub fn de_get_ml_input_channel_http_response(
 }
 
 pub(crate) fn de_get_ml_input_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_ml_input_channel::builders::GetMlInputChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_get_ml_input_channel(
                 }
                 "configuredModelAlgorithmAssociations" => {
                     builder = builder.set_configured_model_algorithm_associations(
-                            crate::protocol_serde::shape_configured_model_algorithm_association_arn_list::de_configured_model_algorithm_association_arn_list(tokens)?
+                            crate::protocol_serde::shape_configured_model_algorithm_association_arn_list::de_configured_model_algorithm_association_arn_list(tokens, _value)?
                         );
                 }
                 "createTime" => {
@@ -141,7 +141,7 @@ pub(crate) fn de_get_ml_input_channel(
                     );
                 }
                 "inputChannel" => {
-                    builder = builder.set_input_channel(crate::protocol_serde::shape_input_channel::de_input_channel(tokens)?);
+                    builder = builder.set_input_channel(crate::protocol_serde::shape_input_channel::de_input_channel(tokens, _value)?);
                 }
                 "kmsKeyArn" => {
                     builder = builder.set_kms_key_arn(
@@ -183,7 +183,7 @@ pub(crate) fn de_get_ml_input_channel(
                     );
                 }
                 "privacyBudgets" => {
-                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens)?);
+                    builder = builder.set_privacy_budgets(crate::protocol_serde::shape_privacy_budgets::de_privacy_budgets(tokens, _value)?);
                 }
                 "protectedQueryIdentifier" => {
                     builder = builder.set_protected_query_identifier(
@@ -211,15 +211,15 @@ pub(crate) fn de_get_ml_input_channel(
                     );
                 }
                 "statusDetails" => {
-                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens)?);
+                    builder = builder.set_status_details(crate::protocol_serde::shape_status_details::de_status_details(tokens, _value)?);
                 }
                 "syntheticDataConfiguration" => {
                     builder = builder.set_synthetic_data_configuration(
-                        crate::protocol_serde::shape_synthetic_data_configuration::de_synthetic_data_configuration(tokens)?,
+                        crate::protocol_serde::shape_synthetic_data_configuration::de_synthetic_data_configuration(tokens, _value)?,
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "updateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

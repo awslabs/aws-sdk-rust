@@ -23,6 +23,7 @@ pub fn ser_media_concurrency(
 
 pub(crate) fn de_media_concurrency<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MediaConcurrency>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,8 +52,9 @@ where
                             );
                         }
                         "CrossChannelBehavior" => {
-                            builder = builder
-                                .set_cross_channel_behavior(crate::protocol_serde::shape_cross_channel_behavior::de_cross_channel_behavior(tokens)?);
+                            builder = builder.set_cross_channel_behavior(
+                                crate::protocol_serde::shape_cross_channel_behavior::de_cross_channel_behavior(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

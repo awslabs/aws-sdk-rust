@@ -11,8 +11,8 @@ use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterce
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
-use http::header::ACCEPT;
-use http::HeaderValue;
+use http_1x::header::ACCEPT;
+use http_1x::HeaderValue;
 
 /// Interceptor that adds an Accept header to API Gateway requests.
 #[derive(Debug, Default)]

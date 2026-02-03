@@ -71,6 +71,7 @@ pub fn ser_s3_direct_target(
 
 pub(crate) fn de_s3_direct_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DirectTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -92,11 +93,12 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "PartitionKeys" => {
-                            builder =
-                                builder.set_partition_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(tokens)?);
+                            builder = builder.set_partition_keys(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Path" => {
                             builder = builder.set_path(
@@ -128,14 +130,15 @@ where
                         }
                         "SchemaChangePolicy" => {
                             builder = builder.set_schema_change_policy(
-                                crate::protocol_serde::shape_direct_schema_change_policy::de_direct_schema_change_policy(tokens)?,
+                                crate::protocol_serde::shape_direct_schema_change_policy::de_direct_schema_change_policy(tokens, _value)?,
                             );
                         }
                         "AutoDataQuality" => {
-                            builder = builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens)?);
+                            builder =
+                                builder.set_auto_data_quality(crate::protocol_serde::shape_auto_data_quality::de_auto_data_quality(tokens, _value)?);
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

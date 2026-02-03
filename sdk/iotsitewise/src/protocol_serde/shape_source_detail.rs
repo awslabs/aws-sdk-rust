@@ -14,6 +14,7 @@ pub fn ser_source_detail(
 
 pub(crate) fn de_source_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "kendra" => {
-                            builder = builder.set_kendra(crate::protocol_serde::shape_kendra_source_detail::de_kendra_source_detail(tokens)?);
+                            builder = builder.set_kendra(crate::protocol_serde::shape_kendra_source_detail::de_kendra_source_detail(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

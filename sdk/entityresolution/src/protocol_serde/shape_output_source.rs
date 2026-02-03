@@ -35,6 +35,7 @@ pub fn ser_output_source(
 
 pub(crate) fn de_output_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OutputSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,14 +64,16 @@ where
                             );
                         }
                         "output" => {
-                            builder = builder.set_output(crate::protocol_serde::shape_output_attributes::de_output_attributes(tokens)?);
+                            builder = builder.set_output(crate::protocol_serde::shape_output_attributes::de_output_attributes(tokens, _value)?);
                         }
                         "applyNormalization" => {
                             builder = builder.set_apply_normalization(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "customerProfilesIntegrationConfig" => {
                             builder = builder.set_customer_profiles_integration_config(
-                                crate::protocol_serde::shape_customer_profiles_integration_config::de_customer_profiles_integration_config(tokens)?,
+                                crate::protocol_serde::shape_customer_profiles_integration_config::de_customer_profiles_integration_config(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -102,13 +102,13 @@ pub fn ser_describe_partner_event_source_input(
 }
 
 pub(crate) fn de_describe_partner_event_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

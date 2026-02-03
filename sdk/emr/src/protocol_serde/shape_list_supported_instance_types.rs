@@ -84,13 +84,13 @@ pub fn ser_list_supported_instance_types_input(
 }
 
 pub(crate) fn de_list_supported_instance_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_list_supported_instance_types(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SupportedInstanceTypes" => {
                     builder = builder.set_supported_instance_types(
-                        crate::protocol_serde::shape_supported_instance_types_list::de_supported_instance_types_list(tokens)?,
+                        crate::protocol_serde::shape_supported_instance_types_list::de_supported_instance_types_list(tokens, _value)?,
                     );
                 }
                 "Marker" => {

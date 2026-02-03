@@ -29,6 +29,7 @@ pub fn ser_table_options(
 
 pub(crate) fn de_table_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,14 +51,14 @@ where
                             );
                         }
                         "HeaderStyle" => {
-                            builder = builder.set_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder.set_header_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "CellStyle" => {
-                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder.set_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "RowAlternateColorOptions" => {
                             builder = builder.set_row_alternate_color_options(
-                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens)?,
+                                crate::protocol_serde::shape_row_alternate_color_options::de_row_alternate_color_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

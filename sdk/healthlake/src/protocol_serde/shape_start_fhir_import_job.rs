@@ -131,13 +131,13 @@ pub fn ser_start_fhir_import_job_input(
 }
 
 pub(crate) fn de_start_fhir_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

@@ -368,13 +368,13 @@ pub fn ser_create_event_data_store_input(
 }
 
 pub(crate) fn de_create_event_data_store(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_event_data_store::builders::CreateEventDataStoreOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_event_data_store::builders::CreateEventDataStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -404,7 +404,7 @@ pub(crate) fn de_create_event_data_store(
                 }
                 "AdvancedEventSelectors" => {
                     builder = builder.set_advanced_event_selectors(
-                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens)?,
+                        crate::protocol_serde::shape_advanced_event_selectors::de_advanced_event_selectors(tokens, _value)?,
                     );
                 }
                 "MultiRegionEnabled" => {
@@ -424,7 +424,7 @@ pub(crate) fn de_create_event_data_store(
                     builder = builder.set_termination_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "TagsList" => {
-                    builder = builder.set_tags_list(crate::protocol_serde::shape_tags_list::de_tags_list(tokens)?);
+                    builder = builder.set_tags_list(crate::protocol_serde::shape_tags_list::de_tags_list(tokens, _value)?);
                 }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

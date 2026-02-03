@@ -154,11 +154,11 @@ pub fn ser_update_node_input(
 }
 
 pub(crate) fn de_update_node(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_node::builders::UpdateNodeOutputBuilder,
 ) -> ::std::result::Result<crate::operation::update_node::builders::UpdateNodeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -173,7 +173,7 @@ pub(crate) fn de_update_node(
                     );
                 }
                 "channelPlacementGroups" => {
-                    builder = builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_channel_placement_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "clusterId" => {
                     builder = builder.set_cluster_id(
@@ -212,7 +212,7 @@ pub(crate) fn de_update_node(
                 }
                 "nodeInterfaceMappings" => {
                     builder = builder.set_node_interface_mappings(
-                        crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(tokens)?,
+                        crate::protocol_serde::shape_list_of_node_interface_mapping::de_list_of_node_interface_mapping(tokens, _value)?,
                     );
                 }
                 "role" => {
@@ -223,7 +223,8 @@ pub(crate) fn de_update_node(
                     );
                 }
                 "sdiSourceMappings" => {
-                    builder = builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens)?);
+                    builder =
+                        builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens, _value)?);
                 }
                 "state" => {
                     builder = builder.set_state(

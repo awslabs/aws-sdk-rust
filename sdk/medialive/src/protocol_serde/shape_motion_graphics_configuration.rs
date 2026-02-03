@@ -17,6 +17,7 @@ pub fn ser_motion_graphics_configuration(
 
 pub(crate) fn de_motion_graphics_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MotionGraphicsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "motionGraphicsSettings" => {
                             builder = builder.set_motion_graphics_settings(
-                                crate::protocol_serde::shape_motion_graphics_settings::de_motion_graphics_settings(tokens)?,
+                                crate::protocol_serde::shape_motion_graphics_settings::de_motion_graphics_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

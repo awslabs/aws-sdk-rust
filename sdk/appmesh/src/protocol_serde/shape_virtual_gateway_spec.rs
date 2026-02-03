@@ -32,6 +32,7 @@ pub fn ser_virtual_gateway_spec(
 
 pub(crate) fn de_virtual_gateway_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewaySpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,16 +48,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "backendDefaults" => {
                             builder = builder.set_backend_defaults(
-                                crate::protocol_serde::shape_virtual_gateway_backend_defaults::de_virtual_gateway_backend_defaults(tokens)?,
+                                crate::protocol_serde::shape_virtual_gateway_backend_defaults::de_virtual_gateway_backend_defaults(tokens, _value)?,
                             );
                         }
                         "listeners" => {
                             builder = builder.set_listeners(crate::protocol_serde::shape_virtual_gateway_listeners::de_virtual_gateway_listeners(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "logging" => {
-                            builder = builder.set_logging(crate::protocol_serde::shape_virtual_gateway_logging::de_virtual_gateway_logging(tokens)?);
+                            builder = builder.set_logging(crate::protocol_serde::shape_virtual_gateway_logging::de_virtual_gateway_logging(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

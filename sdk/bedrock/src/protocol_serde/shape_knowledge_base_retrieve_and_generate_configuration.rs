@@ -32,6 +32,7 @@ pub fn ser_knowledge_base_retrieve_and_generate_configuration(
 
 pub(crate) fn de_knowledge_base_retrieve_and_generate_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,18 +63,18 @@ where
                         "retrievalConfiguration" => {
                             builder = builder.set_retrieval_configuration(
                                 crate::protocol_serde::shape_knowledge_base_retrieval_configuration::de_knowledge_base_retrieval_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "generationConfiguration" => {
                             builder = builder.set_generation_configuration(
-                                crate::protocol_serde::shape_generation_configuration::de_generation_configuration(tokens)?,
+                                crate::protocol_serde::shape_generation_configuration::de_generation_configuration(tokens, _value)?,
                             );
                         }
                         "orchestrationConfiguration" => {
                             builder = builder.set_orchestration_configuration(
-                                crate::protocol_serde::shape_orchestration_configuration::de_orchestration_configuration(tokens)?,
+                                crate::protocol_serde::shape_orchestration_configuration::de_orchestration_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

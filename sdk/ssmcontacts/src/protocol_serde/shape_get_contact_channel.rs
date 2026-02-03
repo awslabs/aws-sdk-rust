@@ -136,13 +136,13 @@ pub fn ser_get_contact_channel_input(
 }
 
 pub(crate) fn de_get_contact_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -178,7 +178,9 @@ pub(crate) fn de_get_contact_channel(
                     );
                 }
                 "DeliveryAddress" => {
-                    builder = builder.set_delivery_address(crate::protocol_serde::shape_contact_channel_address::de_contact_channel_address(tokens)?);
+                    builder = builder.set_delivery_address(crate::protocol_serde::shape_contact_channel_address::de_contact_channel_address(
+                        tokens, _value,
+                    )?);
                 }
                 "ActivationStatus" => {
                     builder = builder.set_activation_status(

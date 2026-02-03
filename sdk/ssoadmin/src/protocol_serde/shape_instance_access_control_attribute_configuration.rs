@@ -20,6 +20,7 @@ pub fn ser_instance_access_control_attribute_configuration(
 
 pub(crate) fn de_instance_access_control_attribute_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceAccessControlAttributeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AccessControlAttributes" => {
                             builder = builder.set_access_control_attributes(
-                                crate::protocol_serde::shape_access_control_attribute_list::de_access_control_attribute_list(tokens)?,
+                                crate::protocol_serde::shape_access_control_attribute_list::de_access_control_attribute_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

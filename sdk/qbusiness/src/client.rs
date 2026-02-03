@@ -181,7 +181,7 @@ mod create_web_experience;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_qbusiness::Error> {
 /// # let client: aws_sdk_qbusiness::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_permission()
 ///     .customize()

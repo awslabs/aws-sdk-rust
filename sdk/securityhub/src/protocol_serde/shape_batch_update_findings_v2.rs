@@ -129,13 +129,13 @@ pub fn ser_batch_update_findings_v2_input(
 }
 
 pub(crate) fn de_batch_update_findings_v2(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_update_findings_v2::builders::BatchUpdateFindingsV2OutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_update_findings_v2::builders::BatchUpdateFindingsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,12 +144,12 @@ pub(crate) fn de_batch_update_findings_v2(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProcessedFindings" => {
                     builder = builder.set_processed_findings(
-                            crate::protocol_serde::shape_batch_update_findings_v2_processed_findings_list::de_batch_update_findings_v2_processed_findings_list(tokens)?
+                            crate::protocol_serde::shape_batch_update_findings_v2_processed_findings_list::de_batch_update_findings_v2_processed_findings_list(tokens, _value)?
                         );
                 }
                 "UnprocessedFindings" => {
                     builder = builder.set_unprocessed_findings(
-                            crate::protocol_serde::shape_batch_update_findings_v2_unprocessed_findings_list::de_batch_update_findings_v2_unprocessed_findings_list(tokens)?
+                            crate::protocol_serde::shape_batch_update_findings_v2_unprocessed_findings_list::de_batch_update_findings_v2_unprocessed_findings_list(tokens, _value)?
                         );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

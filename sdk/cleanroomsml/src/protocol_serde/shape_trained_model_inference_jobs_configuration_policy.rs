@@ -26,6 +26,7 @@ pub fn ser_trained_model_inference_jobs_configuration_policy(
 
 pub(crate) fn de_trained_model_inference_jobs_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TrainedModelInferenceJobsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,13 +42,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "containerLogs" => {
                             builder = builder.set_container_logs(
-                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(tokens)?,
+                                crate::protocol_serde::shape_logs_configuration_policy_list::de_logs_configuration_policy_list(tokens, _value)?,
                             );
                         }
                         "maxOutputSize" => {
                             builder = builder.set_max_output_size(
                                 crate::protocol_serde::shape_trained_model_inference_max_output_size::de_trained_model_inference_max_output_size(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -33,6 +33,7 @@ pub fn ser_router_network_interface_configuration(
 
 pub(crate) fn de_router_network_interface_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RouterNetworkInterfaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,13 +64,13 @@ where
                     variant = match key.as_ref() {
                             "public" => {
                                 Some(crate::types::RouterNetworkInterfaceConfiguration::Public(
-                                    crate::protocol_serde::shape_public_router_network_interface_configuration::de_public_router_network_interface_configuration(tokens)?
+                                    crate::protocol_serde::shape_public_router_network_interface_configuration::de_public_router_network_interface_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Public' cannot be null"))?
                                 ))
                             }
                             "vpc" => {
                                 Some(crate::types::RouterNetworkInterfaceConfiguration::Vpc(
-                                    crate::protocol_serde::shape_vpc_router_network_interface_configuration::de_vpc_router_network_interface_configuration(tokens)?
+                                    crate::protocol_serde::shape_vpc_router_network_interface_configuration::de_vpc_router_network_interface_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Vpc' cannot be null"))?
                                 ))
                             }

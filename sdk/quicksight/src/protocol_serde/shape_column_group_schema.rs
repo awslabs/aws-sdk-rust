@@ -23,6 +23,7 @@ pub fn ser_column_group_schema(
 
 pub(crate) fn de_column_group_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnGroupSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ColumnGroupColumnSchemaList" => {
                             builder = builder.set_column_group_column_schema_list(
-                                crate::protocol_serde::shape_column_group_column_schema_list::de_column_group_column_schema_list(tokens)?,
+                                crate::protocol_serde::shape_column_group_column_schema_list::de_column_group_column_schema_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

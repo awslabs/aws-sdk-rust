@@ -21,7 +21,7 @@ use aws_smithy_runtime_api::{
 };
 use aws_smithy_types::body::SdkBody;
 use bytes::{Bytes, BytesMut};
-use wasi::http::{
+use wasip2::http::{
     outgoing_handler,
     types::{self as wasi_http, OutgoingBody, RequestOptions},
 };

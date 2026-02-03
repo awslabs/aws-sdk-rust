@@ -56,6 +56,7 @@ pub fn ser_algorithm_specification(
 
 pub(crate) fn de_algorithm_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AlgorithmSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,8 +92,9 @@ where
                             );
                         }
                         "MetricDefinitions" => {
-                            builder = builder
-                                .set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(tokens)?);
+                            builder = builder.set_metric_definitions(crate::protocol_serde::shape_metric_definition_list::de_metric_definition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "EnableSageMakerMetricsTimeSeries" => {
                             builder = builder.set_enable_sage_maker_metrics_time_series(::aws_smithy_json::deserialize::token::expect_bool_or_null(
@@ -101,17 +103,18 @@ where
                         }
                         "ContainerEntrypoint" => {
                             builder = builder.set_container_entrypoint(
-                                crate::protocol_serde::shape_training_container_entrypoint::de_training_container_entrypoint(tokens)?,
+                                crate::protocol_serde::shape_training_container_entrypoint::de_training_container_entrypoint(tokens, _value)?,
                             );
                         }
                         "ContainerArguments" => {
                             builder = builder.set_container_arguments(
-                                crate::protocol_serde::shape_training_container_arguments::de_training_container_arguments(tokens)?,
+                                crate::protocol_serde::shape_training_container_arguments::de_training_container_arguments(tokens, _value)?,
                             );
                         }
                         "TrainingImageConfig" => {
-                            builder = builder
-                                .set_training_image_config(crate::protocol_serde::shape_training_image_config::de_training_image_config(tokens)?);
+                            builder = builder.set_training_image_config(
+                                crate::protocol_serde::shape_training_image_config::de_training_image_config(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,7 @@ pub fn ser_schedule(
 
 pub(crate) fn de_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Schedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -64,21 +65,21 @@ where
                     }
                     variant = match key.as_ref() {
                         "oneTime" => Some(crate::types::Schedule::OneTime(
-                            crate::protocol_serde::shape_one_time_schedule::de_one_time_schedule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_one_time_schedule::de_one_time_schedule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oneTime' cannot be null")
                             })?,
                         )),
                         "daily" => Some(crate::types::Schedule::Daily(
-                            crate::protocol_serde::shape_daily_schedule::de_daily_schedule(tokens)?
+                            crate::protocol_serde::shape_daily_schedule::de_daily_schedule(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'daily' cannot be null"))?,
                         )),
                         "weekly" => Some(crate::types::Schedule::Weekly(
-                            crate::protocol_serde::shape_weekly_schedule::de_weekly_schedule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_weekly_schedule::de_weekly_schedule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'weekly' cannot be null")
                             })?,
                         )),
                         "monthly" => Some(crate::types::Schedule::Monthly(
-                            crate::protocol_serde::shape_monthly_schedule::de_monthly_schedule(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_monthly_schedule::de_monthly_schedule(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'monthly' cannot be null")
                             })?,
                         )),

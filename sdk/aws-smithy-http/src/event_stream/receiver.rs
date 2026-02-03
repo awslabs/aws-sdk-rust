@@ -169,18 +169,21 @@ impl<T, E> Receiver<T, E> {
     }
 
     async fn buffer_next_chunk(&mut self) -> Result<(), SdkError<E, RawMessage>> {
-        use http_body_04x::Body;
+        use http_body_util::BodyExt;
 
         if !self.buffer.is_eos() {
             let next_chunk = self
                 .body
-                .data()
+                .frame()
                 .await
                 .transpose()
                 .map_err(|err| SdkError::dispatch_failure(ConnectorError::io(err)))?;
             let buffer = mem::replace(&mut self.buffer, RecvBuf::Empty);
             if let Some(chunk) = next_chunk {
-                self.buffer = buffer.with_partial(chunk);
+                // Ignoring the possibility of trailers here since event_streams don't have them
+                if let Ok(data) = chunk.into_data() {
+                    self.buffer = buffer.with_partial(data);
+                }
             } else {
                 self.buffer = buffer.ended();
             }
@@ -310,7 +313,7 @@ mod tests {
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
     use bytes::Bytes;
-    use hyper::body::Body;
+    use http_body_1x::Frame;
     use std::error::Error as StdError;
     use std::io::{Error as IOError, ErrorKind};
 
@@ -334,6 +337,13 @@ mod tests {
         let message = Message::new(Bytes::copy_from_slice(message.as_bytes()));
         write_message_to(&message, &mut buffer).unwrap();
         buffer.into()
+    }
+
+    fn map_to_frame(stream: Vec<Result<Bytes, IOError>>) -> Vec<Result<Frame<Bytes>, IOError>> {
+        stream
+            .into_iter()
+            .map(|chunk| chunk.map(Frame::data))
+            .collect()
     }
 
     #[derive(Debug)]
@@ -367,10 +377,13 @@ mod tests {
     #[tokio::test]
     async fn receive_success() {
         let chunks: Vec<Result<_, IOError>> =
-            vec![Ok(encode_message("one")), Ok(encode_message("two"))];
+            map_to_frame(vec![Ok(encode_message("one")), Ok(encode_message("two"))]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
+
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
+
         assert_eq!(
             TestMessage("one".into()),
             receiver.recv().await.unwrap().unwrap()
@@ -384,13 +397,14 @@ mod tests {
 
     #[tokio::test]
     async fn receive_last_chunk_empty() {
-        let chunks: Vec<Result<_, IOError>> = vec![
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
             Ok(encode_message("one")),
             Ok(encode_message("two")),
             Ok(Bytes::from_static(&[])),
-        ];
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -405,13 +419,14 @@ mod tests {
 
     #[tokio::test]
     async fn receive_last_chunk_not_full_message() {
-        let chunks: Vec<Result<_, IOError>> = vec![
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
             Ok(encode_message("one")),
             Ok(encode_message("two")),
             Ok(encode_message("three").split_to(10)),
-        ];
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -429,15 +444,16 @@ mod tests {
 
     #[tokio::test]
     async fn receive_last_chunk_has_multiple_messages() {
-        let chunks: Vec<Result<_, IOError>> = vec![
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
             Ok(encode_message("one")),
             Ok(encode_message("two")),
             Ok(Bytes::from(
                 [encode_message("three"), encode_message("four")].concat(),
             )),
-        ];
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -483,14 +499,15 @@ mod tests {
 
             let rt = tokio::runtime::Runtime::new().unwrap();
             rt.block_on(async move {
-                let chunks: Vec<Result<_, IOError>> = vec![
+                let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
                     Ok(Bytes::copy_from_slice(&combined[start..boundary1])),
                     Ok(Bytes::copy_from_slice(&combined[boundary1..boundary2])),
                     Ok(Bytes::copy_from_slice(&combined[boundary2..end])),
-                ];
+                ]);
 
                 let chunk_stream = futures_util::stream::iter(chunks);
-                let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+                let stream_body = http_body_util::StreamBody::new(chunk_stream);
+                let body = SdkBody::from_body_1_x(stream_body);
                 let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
                 for payload in &["one", "two", "three", "four", "five", "six", "seven", "eight"] {
                     assert_eq!(
@@ -505,12 +522,13 @@ mod tests {
 
     #[tokio::test]
     async fn receive_network_failure() {
-        let chunks: Vec<Result<_, IOError>> = vec![
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
             Ok(encode_message("one")),
             Err(IOError::new(ErrorKind::ConnectionReset, FakeError)),
-        ];
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -524,14 +542,15 @@ mod tests {
 
     #[tokio::test]
     async fn receive_message_parse_failure() {
-        let chunks: Vec<Result<_, IOError>> = vec![
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
             Ok(encode_message("one")),
             // A zero length message will be invalid. We need to provide a minimum of 12 bytes
             // for the MessageFrameDecoder to actually start parsing it.
             Ok(Bytes::from_static(&[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])),
-        ];
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert_eq!(
             TestMessage("one".into()),
@@ -545,10 +564,13 @@ mod tests {
 
     #[tokio::test]
     async fn receive_initial_response() {
-        let chunks: Vec<Result<_, IOError>> =
-            vec![Ok(encode_initial_response()), Ok(encode_message("one"))];
+        let chunks: Vec<Result<_, IOError>> = map_to_frame(vec![
+            Ok(encode_initial_response()),
+            Ok(encode_message("one")),
+        ]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert!(receiver
             .try_recv_initial(InitialMessageType::Response)
@@ -564,9 +586,11 @@ mod tests {
     #[tokio::test]
     async fn receive_no_initial_response() {
         let chunks: Vec<Result<_, IOError>> =
-            vec![Ok(encode_message("one")), Ok(encode_message("two"))];
+            map_to_frame(vec![Ok(encode_message("one")), Ok(encode_message("two"))]);
         let chunk_stream = futures_util::stream::iter(chunks);
-        let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
+        let stream_body = http_body_util::StreamBody::new(chunk_stream);
+
+        let body = SdkBody::from_body_1_x(stream_body);
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
         assert!(receiver
             .try_recv_initial(InitialMessageType::Response)

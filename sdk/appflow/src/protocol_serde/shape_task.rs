@@ -39,6 +39,7 @@ pub fn ser_task(
 
 pub(crate) fn de_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Task>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,10 +54,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sourceFields" => {
-                            builder = builder.set_source_fields(crate::protocol_serde::shape_source_fields::de_source_fields(tokens)?);
+                            builder = builder.set_source_fields(crate::protocol_serde::shape_source_fields::de_source_fields(tokens, _value)?);
                         }
                         "connectorOperator" => {
-                            builder = builder.set_connector_operator(crate::protocol_serde::shape_connector_operator::de_connector_operator(tokens)?);
+                            builder = builder
+                                .set_connector_operator(crate::protocol_serde::shape_connector_operator::de_connector_operator(tokens, _value)?);
                         }
                         "destinationField" => {
                             builder = builder.set_destination_field(
@@ -73,7 +75,8 @@ where
                             );
                         }
                         "taskProperties" => {
-                            builder = builder.set_task_properties(crate::protocol_serde::shape_task_properties_map::de_task_properties_map(tokens)?);
+                            builder = builder
+                                .set_task_properties(crate::protocol_serde::shape_task_properties_map::de_task_properties_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -33,6 +33,7 @@ pub fn ser_template_definition(
 
 pub(crate) fn de_template_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TemplateDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,17 +63,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "TemplateV2" => Some(crate::types::TemplateDefinition::TemplateV2(
-                            crate::protocol_serde::shape_template_v2::de_template_v2(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_template_v2::de_template_v2(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TemplateV2' cannot be null")
                             })?,
                         )),
                         "TemplateV3" => Some(crate::types::TemplateDefinition::TemplateV3(
-                            crate::protocol_serde::shape_template_v3::de_template_v3(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_template_v3::de_template_v3(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TemplateV3' cannot be null")
                             })?,
                         )),
                         "TemplateV4" => Some(crate::types::TemplateDefinition::TemplateV4(
-                            crate::protocol_serde::shape_template_v4::de_template_v4(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_template_v4::de_template_v4(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TemplateV4' cannot be null")
                             })?,
                         )),

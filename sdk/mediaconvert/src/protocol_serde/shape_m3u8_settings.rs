@@ -125,6 +125,7 @@ pub fn ser_m3u8_settings(
 
 pub(crate) fn de_m3u8_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::M3u8Settings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -154,7 +155,7 @@ where
                         }
                         "audioPids" => {
                             builder = builder.set_audio_pids(
-                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens, _value)?,
                             );
                         }
                         "audioPtsOffsetDelta" => {

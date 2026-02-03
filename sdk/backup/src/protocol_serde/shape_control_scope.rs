@@ -36,6 +36,7 @@ pub fn ser_control_scope(
 
 pub(crate) fn de_control_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ControlScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,15 +52,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ComplianceResourceIds" => {
                             builder = builder.set_compliance_resource_ids(
-                                crate::protocol_serde::shape_compliance_resource_id_list::de_compliance_resource_id_list(tokens)?,
+                                crate::protocol_serde::shape_compliance_resource_id_list::de_compliance_resource_id_list(tokens, _value)?,
                             );
                         }
                         "ComplianceResourceTypes" => {
-                            builder = builder
-                                .set_compliance_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(tokens)?);
+                            builder = builder.set_compliance_resource_types(crate::protocol_serde::shape_resource_type_list::de_resource_type_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

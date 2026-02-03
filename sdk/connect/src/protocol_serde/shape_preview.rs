@@ -23,6 +23,7 @@ pub fn ser_preview(
 
 pub(crate) fn de_preview<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Preview>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,12 +39,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "PostAcceptTimeoutConfig" => {
                             builder = builder.set_post_accept_timeout_config(
-                                crate::protocol_serde::shape_post_accept_timeout_config::de_post_accept_timeout_config(tokens)?,
+                                crate::protocol_serde::shape_post_accept_timeout_config::de_post_accept_timeout_config(tokens, _value)?,
                             );
                         }
                         "AllowedUserActions" => {
-                            builder =
-                                builder.set_allowed_user_actions(crate::protocol_serde::shape_allowed_user_actions::de_allowed_user_actions(tokens)?);
+                            builder = builder.set_allowed_user_actions(crate::protocol_serde::shape_allowed_user_actions::de_allowed_user_actions(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

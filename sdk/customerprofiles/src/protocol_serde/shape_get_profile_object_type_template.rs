@@ -124,13 +124,13 @@ pub fn de_get_profile_object_type_template_http_response(
 }
 
 pub(crate) fn de_get_profile_object_type_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,10 +141,10 @@ pub(crate) fn de_get_profile_object_type_template(
                     builder = builder.set_allow_profile_creation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Fields" => {
-                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens)?);
+                    builder = builder.set_fields(crate::protocol_serde::shape_field_map::de_field_map(tokens, _value)?);
                 }
                 "Keys" => {
-                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens)?);
+                    builder = builder.set_keys(crate::protocol_serde::shape_key_map::de_key_map(tokens, _value)?);
                 }
                 "SourceLastUpdatedTimestampFormat" => {
                     builder = builder.set_source_last_updated_timestamp_format(

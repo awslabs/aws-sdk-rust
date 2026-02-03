@@ -95,6 +95,7 @@ pub fn ser_slack_configuration(
 
 pub(crate) fn de_slack_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SlackConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -125,12 +126,12 @@ where
                             }
                             "VpcConfiguration" => {
                                 builder = builder.set_vpc_configuration(
-                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens)?,
+                                    crate::protocol_serde::shape_data_source_vpc_configuration::de_data_source_vpc_configuration(tokens, _value)?,
                                 );
                             }
                             "SlackEntityList" => {
-                                builder =
-                                    builder.set_slack_entity_list(crate::protocol_serde::shape_slack_entity_list::de_slack_entity_list(tokens)?);
+                                builder = builder
+                                    .set_slack_entity_list(crate::protocol_serde::shape_slack_entity_list::de_slack_entity_list(tokens, _value)?);
                             }
                             "UseChangeLog" => {
                                 builder = builder.set_use_change_log(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -157,27 +158,28 @@ where
                             }
                             "PrivateChannelFilter" => {
                                 builder = builder.set_private_channel_filter(
-                                    crate::protocol_serde::shape_private_channel_filter::de_private_channel_filter(tokens)?,
+                                    crate::protocol_serde::shape_private_channel_filter::de_private_channel_filter(tokens, _value)?,
                                 );
                             }
                             "PublicChannelFilter" => {
-                                builder = builder
-                                    .set_public_channel_filter(crate::protocol_serde::shape_public_channel_filter::de_public_channel_filter(tokens)?);
+                                builder = builder.set_public_channel_filter(
+                                    crate::protocol_serde::shape_public_channel_filter::de_public_channel_filter(tokens, _value)?,
+                                );
                             }
                             "InclusionPatterns" => {
                                 builder = builder.set_inclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "ExclusionPatterns" => {
                                 builder = builder.set_exclusion_patterns(
-                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens)?
+                                    crate::protocol_serde::shape_data_source_inclusions_exclusions_strings::de_data_source_inclusions_exclusions_strings(tokens, _value)?
                                 );
                             }
                             "FieldMappings" => {
                                 builder = builder.set_field_mappings(
                                     crate::protocol_serde::shape_data_source_to_index_field_mapping_list::de_data_source_to_index_field_mapping_list(
-                                        tokens,
+                                        tokens, _value,
                                     )?,
                                 );
                             }

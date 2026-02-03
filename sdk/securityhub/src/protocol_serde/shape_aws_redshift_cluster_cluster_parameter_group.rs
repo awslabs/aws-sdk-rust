@@ -29,6 +29,7 @@ pub fn ser_aws_redshift_cluster_cluster_parameter_group(
 
 pub(crate) fn de_aws_redshift_cluster_cluster_parameter_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsRedshiftClusterClusterParameterGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClusterParameterStatusList" => {
                             builder = builder.set_cluster_parameter_status_list(
-                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_status_list::de_aws_redshift_cluster_cluster_parameter_status_list(tokens)?
+                                    crate::protocol_serde::shape_aws_redshift_cluster_cluster_parameter_status_list::de_aws_redshift_cluster_cluster_parameter_status_list(tokens, _value)?
                                 );
                         }
                         "ParameterApplyStatus" => {

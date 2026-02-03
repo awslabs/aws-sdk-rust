@@ -160,13 +160,13 @@ pub fn ser_update_event_source_mapping_input(
 }
 
 pub(crate) fn de_update_event_source_mapping(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_event_source_mapping::builders::UpdateEventSourceMappingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_event_source_mapping::builders::UpdateEventSourceMappingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,9 @@ pub(crate) fn de_update_event_source_mapping(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AmazonManagedKafkaEventSourceConfig" => {
                     builder = builder.set_amazon_managed_kafka_event_source_config(
-                        crate::protocol_serde::shape_amazon_managed_kafka_event_source_config::de_amazon_managed_kafka_event_source_config(tokens)?,
+                        crate::protocol_serde::shape_amazon_managed_kafka_event_source_config::de_amazon_managed_kafka_event_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "BatchSize" => {
@@ -189,11 +191,11 @@ pub(crate) fn de_update_event_source_mapping(
                     builder = builder.set_bisect_batch_on_function_error(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "DestinationConfig" => {
-                    builder = builder.set_destination_config(crate::protocol_serde::shape_destination_config::de_destination_config(tokens)?);
+                    builder = builder.set_destination_config(crate::protocol_serde::shape_destination_config::de_destination_config(tokens, _value)?);
                 }
                 "DocumentDBEventSourceConfig" => {
                     builder = builder.set_document_db_event_source_config(
-                        crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens)?,
+                        crate::protocol_serde::shape_document_db_event_source_config::de_document_db_event_source_config(tokens, _value)?,
                     );
                 }
                 "EventSourceArn" => {
@@ -211,11 +213,12 @@ pub(crate) fn de_update_event_source_mapping(
                     );
                 }
                 "FilterCriteria" => {
-                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens)?);
+                    builder = builder.set_filter_criteria(crate::protocol_serde::shape_filter_criteria::de_filter_criteria(tokens, _value)?);
                 }
                 "FilterCriteriaError" => {
-                    builder =
-                        builder.set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(tokens)?);
+                    builder = builder.set_filter_criteria_error(crate::protocol_serde::shape_filter_criteria_error::de_filter_criteria_error(
+                        tokens, _value,
+                    )?);
                 }
                 "FunctionArn" => {
                     builder = builder.set_function_arn(
@@ -226,7 +229,7 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "FunctionResponseTypes" => {
                     builder = builder.set_function_response_types(
-                        crate::protocol_serde::shape_function_response_type_list::de_function_response_type_list(tokens)?,
+                        crate::protocol_serde::shape_function_response_type_list::de_function_response_type_list(tokens, _value)?,
                     );
                 }
                 "KMSKeyArn" => {
@@ -251,7 +254,7 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "LoggingConfig" => {
                     builder = builder.set_logging_config(
-                        crate::protocol_serde::shape_event_source_mapping_logging_config::de_event_source_mapping_logging_config(tokens)?,
+                        crate::protocol_serde::shape_event_source_mapping_logging_config::de_event_source_mapping_logging_config(tokens, _value)?,
                     );
                 }
                 "MaximumBatchingWindowInSeconds" => {
@@ -277,7 +280,7 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "MetricsConfig" => {
                     builder = builder.set_metrics_config(
-                        crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens)?,
+                        crate::protocol_serde::shape_event_source_mapping_metrics_config::de_event_source_mapping_metrics_config(tokens, _value)?,
                     );
                 }
                 "ParallelizationFactor" => {
@@ -289,28 +292,30 @@ pub(crate) fn de_update_event_source_mapping(
                 }
                 "ProvisionedPollerConfig" => {
                     builder = builder.set_provisioned_poller_config(
-                        crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens)?,
+                        crate::protocol_serde::shape_provisioned_poller_config::de_provisioned_poller_config(tokens, _value)?,
                     );
                 }
                 "Queues" => {
-                    builder = builder.set_queues(crate::protocol_serde::shape_queues::de_queues(tokens)?);
+                    builder = builder.set_queues(crate::protocol_serde::shape_queues::de_queues(tokens, _value)?);
                 }
                 "ScalingConfig" => {
-                    builder = builder.set_scaling_config(crate::protocol_serde::shape_scaling_config::de_scaling_config(tokens)?);
+                    builder = builder.set_scaling_config(crate::protocol_serde::shape_scaling_config::de_scaling_config(tokens, _value)?);
                 }
                 "SelfManagedEventSource" => {
                     builder = builder.set_self_managed_event_source(
-                        crate::protocol_serde::shape_self_managed_event_source::de_self_managed_event_source(tokens)?,
+                        crate::protocol_serde::shape_self_managed_event_source::de_self_managed_event_source(tokens, _value)?,
                     );
                 }
                 "SelfManagedKafkaEventSourceConfig" => {
                     builder = builder.set_self_managed_kafka_event_source_config(
-                        crate::protocol_serde::shape_self_managed_kafka_event_source_config::de_self_managed_kafka_event_source_config(tokens)?,
+                        crate::protocol_serde::shape_self_managed_kafka_event_source_config::de_self_managed_kafka_event_source_config(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "SourceAccessConfigurations" => {
                     builder = builder.set_source_access_configurations(
-                        crate::protocol_serde::shape_source_access_configurations::de_source_access_configurations(tokens)?,
+                        crate::protocol_serde::shape_source_access_configurations::de_source_access_configurations(tokens, _value)?,
                     );
                 }
                 "StartingPosition" => {
@@ -341,7 +346,7 @@ pub(crate) fn de_update_event_source_mapping(
                     );
                 }
                 "Topics" => {
-                    builder = builder.set_topics(crate::protocol_serde::shape_topics::de_topics(tokens)?);
+                    builder = builder.set_topics(crate::protocol_serde::shape_topics::de_topics(tokens, _value)?);
                 }
                 "TumblingWindowInSeconds" => {
                     builder = builder.set_tumbling_window_in_seconds(

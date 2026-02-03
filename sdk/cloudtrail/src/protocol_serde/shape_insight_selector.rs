@@ -20,6 +20,7 @@ pub fn ser_insight_selector(
 
 pub(crate) fn de_insight_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InsightSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,9 @@ where
                             );
                         }
                         "EventCategories" => {
-                            builder = builder
-                                .set_event_categories(crate::protocol_serde::shape_source_event_categories::de_source_event_categories(tokens)?);
+                            builder = builder.set_event_categories(crate::protocol_serde::shape_source_event_categories::de_source_event_categories(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -161,7 +161,7 @@ mod create_vod_source;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_mediatailor::Error> {
 /// # let client: aws_sdk_mediatailor::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.configure_logs_for_channel()
 ///     .customize()

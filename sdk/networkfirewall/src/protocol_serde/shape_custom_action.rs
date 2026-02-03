@@ -17,6 +17,7 @@ pub fn ser_custom_action(
 
 pub(crate) fn de_custom_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "ActionDefinition" => {
-                            builder = builder.set_action_definition(crate::protocol_serde::shape_action_definition::de_action_definition(tokens)?);
+                            builder =
+                                builder.set_action_definition(crate::protocol_serde::shape_action_definition::de_action_definition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

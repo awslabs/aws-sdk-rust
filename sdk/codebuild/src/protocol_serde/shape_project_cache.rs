@@ -26,6 +26,7 @@ pub fn ser_project_cache(
 
 pub(crate) fn de_project_cache<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProjectCache>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "modes" => {
-                            builder = builder.set_modes(crate::protocol_serde::shape_project_cache_modes::de_project_cache_modes(tokens)?);
+                            builder = builder.set_modes(crate::protocol_serde::shape_project_cache_modes::de_project_cache_modes(tokens, _value)?);
                         }
                         "cacheNamespace" => {
                             builder = builder.set_cache_namespace(

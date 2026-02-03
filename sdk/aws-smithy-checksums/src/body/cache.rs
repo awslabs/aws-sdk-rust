@@ -5,7 +5,7 @@
 
 //! Checksum caching functionality.
 
-use http::HeaderMap;
+use http_1x::HeaderMap;
 use std::sync::{Arc, Mutex};
 
 /// A cache for storing previously calculated checksums.

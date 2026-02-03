@@ -123,13 +123,13 @@ pub fn de_describe_ip_restriction_http_response(
 }
 
 pub(crate) fn de_describe_ip_restriction(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,8 +147,9 @@ pub(crate) fn de_describe_ip_restriction(
                     builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "IpRestrictionRuleMap" => {
-                    builder = builder
-                        .set_ip_restriction_rule_map(crate::protocol_serde::shape_ip_restriction_rule_map::de_ip_restriction_rule_map(tokens)?);
+                    builder = builder.set_ip_restriction_rule_map(crate::protocol_serde::shape_ip_restriction_rule_map::de_ip_restriction_rule_map(
+                        tokens, _value,
+                    )?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(
@@ -159,12 +160,12 @@ pub(crate) fn de_describe_ip_restriction(
                 }
                 "VpcEndpointIdRestrictionRuleMap" => {
                     builder = builder.set_vpc_endpoint_id_restriction_rule_map(
-                        crate::protocol_serde::shape_vpc_endpoint_id_restriction_rule_map::de_vpc_endpoint_id_restriction_rule_map(tokens)?,
+                        crate::protocol_serde::shape_vpc_endpoint_id_restriction_rule_map::de_vpc_endpoint_id_restriction_rule_map(tokens, _value)?,
                     );
                 }
                 "VpcIdRestrictionRuleMap" => {
                     builder = builder.set_vpc_id_restriction_rule_map(
-                        crate::protocol_serde::shape_vpc_id_restriction_rule_map::de_vpc_id_restriction_rule_map(tokens)?,
+                        crate::protocol_serde::shape_vpc_id_restriction_rule_map::de_vpc_id_restriction_rule_map(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

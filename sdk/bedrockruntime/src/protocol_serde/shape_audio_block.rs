@@ -23,6 +23,7 @@ pub fn ser_audio_block(
 
 pub(crate) fn de_audio_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,10 +45,10 @@ where
                             );
                         }
                         "source" => {
-                            builder = builder.set_source(crate::protocol_serde::shape_audio_source::de_audio_source(tokens)?);
+                            builder = builder.set_source(crate::protocol_serde::shape_audio_source::de_audio_source(tokens, _value)?);
                         }
                         "error" => {
-                            builder = builder.set_error(crate::protocol_serde::shape_error_block::de_error_block(tokens)?);
+                            builder = builder.set_error(crate::protocol_serde::shape_error_block::de_error_block(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -146,13 +146,13 @@ pub fn ser_disassociate_workspace_application_input(
 }
 
 pub(crate) fn de_disassociate_workspace_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disassociate_workspace_application::builders::DisassociateWorkspaceApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disassociate_workspace_application::builders::DisassociateWorkspaceApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -160,8 +160,9 @@ pub(crate) fn de_disassociate_workspace_application(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Association" => {
-                    builder = builder
-                        .set_association(crate::protocol_serde::shape_workspace_resource_association::de_workspace_resource_association(tokens)?);
+                    builder = builder.set_association(
+                        crate::protocol_serde::shape_workspace_resource_association::de_workspace_resource_association(tokens, _value)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

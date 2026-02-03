@@ -161,7 +161,7 @@ mod create_q_app;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_qapps::Error> {
 /// # let client: aws_sdk_qapps::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_library_item_review()
 ///     .customize()

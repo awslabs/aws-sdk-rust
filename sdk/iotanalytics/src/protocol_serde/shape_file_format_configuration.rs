@@ -20,6 +20,7 @@ pub fn ser_file_format_configuration(
 
 pub(crate) fn de_file_format_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FileFormatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "jsonConfiguration" => {
-                            builder = builder.set_json_configuration(crate::protocol_serde::shape_json_configuration::de_json_configuration(tokens)?);
+                            builder = builder
+                                .set_json_configuration(crate::protocol_serde::shape_json_configuration::de_json_configuration(tokens, _value)?);
                         }
                         "parquetConfiguration" => {
-                            builder = builder
-                                .set_parquet_configuration(crate::protocol_serde::shape_parquet_configuration::de_parquet_configuration(tokens)?);
+                            builder = builder.set_parquet_configuration(
+                                crate::protocol_serde::shape_parquet_configuration::de_parquet_configuration(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

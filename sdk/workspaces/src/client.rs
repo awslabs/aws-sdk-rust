@@ -179,7 +179,7 @@ mod create_workspaces_pool;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_workspaces::Error> {
 /// # let client: aws_sdk_workspaces::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_account_link_invitation()
 ///     .customize()

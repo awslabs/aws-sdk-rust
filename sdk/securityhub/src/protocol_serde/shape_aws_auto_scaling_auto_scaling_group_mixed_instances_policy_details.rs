@@ -20,6 +20,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details(
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -38,12 +39,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InstancesDistribution" => {
                             builder = builder.set_instances_distribution(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(tokens, _value)?
                                 );
                         }
                         "LaunchTemplate" => {
                             builder = builder.set_launch_template(
-                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details(tokens)?
+                                    crate::protocol_serde::shape_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

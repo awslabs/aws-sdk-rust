@@ -123,13 +123,13 @@ pub fn ser_describe_index_input(
 }
 
 pub(crate) fn de_describe_index(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_index::builders::DescribeIndexOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_index::builders::DescribeIndexOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -166,7 +166,7 @@ pub(crate) fn de_describe_index(
                 }
                 "ServerSideEncryptionConfiguration" => {
                     builder = builder.set_server_side_encryption_configuration(
-                        crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(tokens)?,
+                        crate::protocol_serde::shape_server_side_encryption_configuration::de_server_side_encryption_configuration(tokens, _value)?,
                     );
                 }
                 "Status" => {
@@ -197,11 +197,11 @@ pub(crate) fn de_describe_index(
                 }
                 "DocumentMetadataConfigurations" => {
                     builder = builder.set_document_metadata_configurations(
-                        crate::protocol_serde::shape_document_metadata_configuration_list::de_document_metadata_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_document_metadata_configuration_list::de_document_metadata_configuration_list(tokens, _value)?,
                     );
                 }
                 "IndexStatistics" => {
-                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(tokens)?);
+                    builder = builder.set_index_statistics(crate::protocol_serde::shape_index_statistics::de_index_statistics(tokens, _value)?);
                 }
                 "ErrorMessage" => {
                     builder = builder.set_error_message(
@@ -211,12 +211,13 @@ pub(crate) fn de_describe_index(
                     );
                 }
                 "CapacityUnits" => {
-                    builder = builder
-                        .set_capacity_units(crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens)?);
+                    builder = builder.set_capacity_units(
+                        crate::protocol_serde::shape_capacity_units_configuration::de_capacity_units_configuration(tokens, _value)?,
+                    );
                 }
                 "UserTokenConfigurations" => {
                     builder = builder.set_user_token_configurations(
-                        crate::protocol_serde::shape_user_token_configuration_list::de_user_token_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_user_token_configuration_list::de_user_token_configuration_list(tokens, _value)?,
                     );
                 }
                 "UserContextPolicy" => {
@@ -228,7 +229,7 @@ pub(crate) fn de_describe_index(
                 }
                 "UserGroupResolutionConfiguration" => {
                     builder = builder.set_user_group_resolution_configuration(
-                        crate::protocol_serde::shape_user_group_resolution_configuration::de_user_group_resolution_configuration(tokens)?,
+                        crate::protocol_serde::shape_user_group_resolution_configuration::de_user_group_resolution_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

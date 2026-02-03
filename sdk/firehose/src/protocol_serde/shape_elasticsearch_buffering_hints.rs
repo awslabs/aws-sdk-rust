@@ -20,6 +20,7 @@ pub fn ser_elasticsearch_buffering_hints(
 
 pub(crate) fn de_elasticsearch_buffering_hints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ElasticsearchBufferingHints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

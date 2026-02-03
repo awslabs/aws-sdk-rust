@@ -23,6 +23,7 @@ pub fn ser_aws_s3_bucket_website_configuration_routing_rule_redirect(
 
 pub(crate) fn de_aws_s3_bucket_website_configuration_routing_rule_redirect<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -20,6 +20,7 @@ pub fn ser_section_based_layout_paper_canvas_size_options(
 
 pub(crate) fn de_section_based_layout_paper_canvas_size_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                             );
                         }
                         "PaperMargin" => {
-                            builder = builder.set_paper_margin(crate::protocol_serde::shape_spacing::de_spacing(tokens)?);
+                            builder = builder.set_paper_margin(crate::protocol_serde::shape_spacing::de_spacing(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

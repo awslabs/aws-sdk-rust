@@ -17,6 +17,7 @@ pub fn ser_table_cell_conditional_formatting(
 
 pub(crate) fn de_table_cell_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableCellConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,9 @@ where
                             );
                         }
                         "TextFormat" => {
-                            builder =
-                                builder.set_text_format(crate::protocol_serde::shape_text_conditional_format::de_text_conditional_format(tokens)?);
+                            builder = builder.set_text_format(crate::protocol_serde::shape_text_conditional_format::de_text_conditional_format(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

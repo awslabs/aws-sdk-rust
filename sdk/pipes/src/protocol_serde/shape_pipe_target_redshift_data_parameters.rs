@@ -32,6 +32,7 @@ pub fn ser_pipe_target_redshift_data_parameters(
 
 pub(crate) fn de_pipe_target_redshift_data_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeTargetRedshiftDataParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -77,7 +78,7 @@ where
                             builder = builder.set_with_event(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Sqls" => {
-                            builder = builder.set_sqls(crate::protocol_serde::shape_sqls::de_sqls(tokens)?);
+                            builder = builder.set_sqls(crate::protocol_serde::shape_sqls::de_sqls(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

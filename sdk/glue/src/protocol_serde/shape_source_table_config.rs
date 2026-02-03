@@ -32,6 +32,7 @@ pub fn ser_source_table_config(
 
 pub(crate) fn de_source_table_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceTableConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Fields" => {
                             builder = builder.set_fields(crate::protocol_serde::shape_source_table_fields_list::de_source_table_fields_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "FilterPredicate" => {
@@ -58,7 +59,7 @@ where
                             );
                         }
                         "PrimaryKey" => {
-                            builder = builder.set_primary_key(crate::protocol_serde::shape_primary_key_list::de_primary_key_list(tokens)?);
+                            builder = builder.set_primary_key(crate::protocol_serde::shape_primary_key_list::de_primary_key_list(tokens, _value)?);
                         }
                         "RecordUpdateField" => {
                             builder = builder.set_record_update_field(

@@ -151,7 +151,7 @@ mod calculate_routes;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_georoutes::Error> {
 /// # let client: aws_sdk_georoutes::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.calculate_isolines()
 ///     .customize()

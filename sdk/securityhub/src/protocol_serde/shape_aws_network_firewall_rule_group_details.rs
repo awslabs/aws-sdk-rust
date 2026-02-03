@@ -35,6 +35,7 @@ pub fn ser_aws_network_firewall_rule_group_details(
 
 pub(crate) fn de_aws_network_firewall_rule_group_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsNetworkFirewallRuleGroupDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,7 +64,7 @@ where
                             );
                         }
                         "RuleGroup" => {
-                            builder = builder.set_rule_group(crate::protocol_serde::shape_rule_group_details::de_rule_group_details(tokens)?);
+                            builder = builder.set_rule_group(crate::protocol_serde::shape_rule_group_details::de_rule_group_details(tokens, _value)?);
                         }
                         "RuleGroupArn" => {
                             builder = builder.set_rule_group_arn(

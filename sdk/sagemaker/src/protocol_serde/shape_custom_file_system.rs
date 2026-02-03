@@ -33,6 +33,7 @@ pub fn ser_custom_file_system(
 
 pub(crate) fn de_custom_file_system<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomFileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -62,17 +63,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "EFSFileSystem" => Some(crate::types::CustomFileSystem::EfsFileSystem(
-                            crate::protocol_serde::shape_efs_file_system::de_efs_file_system(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_efs_file_system::de_efs_file_system(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EFSFileSystem' cannot be null")
                             })?,
                         )),
                         "FSxLustreFileSystem" => Some(crate::types::CustomFileSystem::FSxLustreFileSystem(
-                            crate::protocol_serde::shape_f_sx_lustre_file_system::de_f_sx_lustre_file_system(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_f_sx_lustre_file_system::de_f_sx_lustre_file_system(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FSxLustreFileSystem' cannot be null")
                             })?,
                         )),
                         "S3FileSystem" => Some(crate::types::CustomFileSystem::S3FileSystem(
-                            crate::protocol_serde::shape_s3_file_system::de_s3_file_system(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_file_system::de_s3_file_system(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'S3FileSystem' cannot be null")
                             })?,
                         )),

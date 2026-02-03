@@ -117,13 +117,13 @@ pub fn de_get_chat_response_configuration_http_response(
 }
 
 pub(crate) fn de_get_chat_response_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_chat_response_configuration::builders::GetChatResponseConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_chat_response_configuration::builders::GetChatResponseConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -159,12 +159,12 @@ pub(crate) fn de_get_chat_response_configuration(
                 }
                 "inUseConfiguration" => {
                     builder = builder.set_in_use_configuration(
-                        crate::protocol_serde::shape_chat_response_configuration_detail::de_chat_response_configuration_detail(tokens)?,
+                        crate::protocol_serde::shape_chat_response_configuration_detail::de_chat_response_configuration_detail(tokens, _value)?,
                     );
                 }
                 "lastUpdateConfiguration" => {
                     builder = builder.set_last_update_configuration(
-                        crate::protocol_serde::shape_chat_response_configuration_detail::de_chat_response_configuration_detail(tokens)?,
+                        crate::protocol_serde::shape_chat_response_configuration_detail::de_chat_response_configuration_detail(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

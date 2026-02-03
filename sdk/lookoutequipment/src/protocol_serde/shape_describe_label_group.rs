@@ -124,13 +124,13 @@ pub fn ser_describe_label_group_input(
 }
 
 pub(crate) fn de_describe_label_group(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_label_group::builders::DescribeLabelGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -152,7 +152,7 @@ pub(crate) fn de_describe_label_group(
                     );
                 }
                 "FaultCodes" => {
-                    builder = builder.set_fault_codes(crate::protocol_serde::shape_fault_codes::de_fault_codes(tokens)?);
+                    builder = builder.set_fault_codes(crate::protocol_serde::shape_fault_codes::de_fault_codes(tokens, _value)?);
                 }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

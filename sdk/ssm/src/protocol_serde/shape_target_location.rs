@@ -73,6 +73,7 @@ pub fn ser_target_location(
 
 pub(crate) fn de_target_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -87,10 +88,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Accounts" => {
-                            builder = builder.set_accounts(crate::protocol_serde::shape_accounts::de_accounts(tokens)?);
+                            builder = builder.set_accounts(crate::protocol_serde::shape_accounts::de_accounts(tokens, _value)?);
                         }
                         "Regions" => {
-                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens)?);
+                            builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value)?);
                         }
                         "TargetLocationMaxConcurrency" => {
                             builder = builder.set_target_location_max_concurrency(
@@ -115,7 +116,7 @@ where
                         }
                         "TargetLocationAlarmConfiguration" => {
                             builder = builder.set_target_location_alarm_configuration(
-                                crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens)?,
+                                crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value)?,
                             );
                         }
                         "IncludeChildOrganizationUnits" => {
@@ -123,10 +124,11 @@ where
                                 .set_include_child_organization_units(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ExcludeAccounts" => {
-                            builder = builder.set_exclude_accounts(crate::protocol_serde::shape_exclude_accounts::de_exclude_accounts(tokens)?);
+                            builder =
+                                builder.set_exclude_accounts(crate::protocol_serde::shape_exclude_accounts::de_exclude_accounts(tokens, _value)?);
                         }
                         "Targets" => {
-                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens)?);
+                            builder = builder.set_targets(crate::protocol_serde::shape_targets::de_targets(tokens, _value)?);
                         }
                         "TargetsMaxConcurrency" => {
                             builder = builder.set_targets_max_concurrency(

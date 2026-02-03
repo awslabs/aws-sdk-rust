@@ -121,11 +121,11 @@ pub fn de_describe_job_http_response(
 }
 
 pub(crate) fn de_describe_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
 ) -> ::std::result::Result<crate::operation::describe_job::builders::DescribeJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -179,7 +179,7 @@ pub(crate) fn de_describe_job(
                 }
                 "InventoryRetrievalParameters" => {
                     builder = builder.set_inventory_retrieval_parameters(
-                        crate::protocol_serde::shape_inventory_retrieval_job_description::de_inventory_retrieval_job_description(tokens)?,
+                        crate::protocol_serde::shape_inventory_retrieval_job_description::de_inventory_retrieval_job_description(tokens, _value)?,
                     );
                 }
                 "InventorySizeInBytes" => {
@@ -211,7 +211,7 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "OutputLocation" => {
-                    builder = builder.set_output_location(crate::protocol_serde::shape_output_location::de_output_location(tokens)?);
+                    builder = builder.set_output_location(crate::protocol_serde::shape_output_location::de_output_location(tokens, _value)?);
                 }
                 "RetrievalByteRange" => {
                     builder = builder.set_retrieval_byte_range(
@@ -235,7 +235,7 @@ pub(crate) fn de_describe_job(
                     );
                 }
                 "SelectParameters" => {
-                    builder = builder.set_select_parameters(crate::protocol_serde::shape_select_parameters::de_select_parameters(tokens)?);
+                    builder = builder.set_select_parameters(crate::protocol_serde::shape_select_parameters::de_select_parameters(tokens, _value)?);
                 }
                 "StatusCode" => {
                     builder = builder.set_status_code(

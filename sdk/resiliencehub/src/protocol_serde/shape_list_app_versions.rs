@@ -110,13 +110,13 @@ pub fn ser_list_app_versions_input(
 }
 
 pub(crate) fn de_list_app_versions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -124,7 +124,7 @@ pub(crate) fn de_list_app_versions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appVersions" => {
-                    builder = builder.set_app_versions(crate::protocol_serde::shape_app_version_list::de_app_version_list(tokens)?);
+                    builder = builder.set_app_versions(crate::protocol_serde::shape_app_version_list::de_app_version_list(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

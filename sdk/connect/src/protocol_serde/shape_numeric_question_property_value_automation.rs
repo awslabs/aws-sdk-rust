@@ -11,6 +11,7 @@ pub fn ser_numeric_question_property_value_automation(
 
 pub(crate) fn de_numeric_question_property_value_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NumericQuestionPropertyValueAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

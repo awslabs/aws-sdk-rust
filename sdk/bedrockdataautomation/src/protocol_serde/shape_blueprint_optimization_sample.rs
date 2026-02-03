@@ -20,6 +20,7 @@ pub fn ser_blueprint_optimization_sample(
 
 pub(crate) fn de_blueprint_optimization_sample<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BlueprintOptimizationSample>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "assetS3Object" => {
-                            builder = builder.set_asset_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
+                            builder = builder.set_asset_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
                         }
                         "groundTruthS3Object" => {
-                            builder = builder.set_ground_truth_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
+                            builder = builder.set_ground_truth_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

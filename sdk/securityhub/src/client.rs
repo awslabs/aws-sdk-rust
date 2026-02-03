@@ -193,7 +193,7 @@ mod create_ticket_v2;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_securityhub::Error> {
 /// # let client: aws_sdk_securityhub::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_administrator_invitation()
 ///     .customize()

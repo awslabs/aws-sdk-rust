@@ -44,6 +44,7 @@ pub fn ser_parameter_control(
 
 pub(crate) fn de_parameter_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ParameterControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,29 +60,34 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DateTimePicker" => {
                             builder = builder.set_date_time_picker(
-                                crate::protocol_serde::shape_parameter_date_time_picker_control::de_parameter_date_time_picker_control(tokens)?,
+                                crate::protocol_serde::shape_parameter_date_time_picker_control::de_parameter_date_time_picker_control(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "List" => {
-                            builder = builder.set_list(crate::protocol_serde::shape_parameter_list_control::de_parameter_list_control(tokens)?);
+                            builder = builder.set_list(crate::protocol_serde::shape_parameter_list_control::de_parameter_list_control(
+                                tokens, _value,
+                            )?);
                         }
                         "Dropdown" => {
                             builder = builder.set_dropdown(crate::protocol_serde::shape_parameter_drop_down_control::de_parameter_drop_down_control(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "TextField" => {
-                            builder = builder
-                                .set_text_field(crate::protocol_serde::shape_parameter_text_field_control::de_parameter_text_field_control(tokens)?);
+                            builder = builder.set_text_field(
+                                crate::protocol_serde::shape_parameter_text_field_control::de_parameter_text_field_control(tokens, _value)?,
+                            );
                         }
                         "TextArea" => {
                             builder = builder.set_text_area(
-                                crate::protocol_serde::shape_parameter_text_area_control::de_parameter_text_area_control(tokens)?,
+                                crate::protocol_serde::shape_parameter_text_area_control::de_parameter_text_area_control(tokens, _value)?,
                             );
                         }
                         "Slider" => {
                             builder = builder.set_slider(crate::protocol_serde::shape_parameter_slider_control::de_parameter_slider_control(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

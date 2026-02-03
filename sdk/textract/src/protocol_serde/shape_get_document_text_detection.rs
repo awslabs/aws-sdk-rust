@@ -179,13 +179,13 @@ pub fn ser_get_document_text_detection_input(
 }
 
 pub(crate) fn de_get_document_text_detection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -193,7 +193,7 @@ pub(crate) fn de_get_document_text_detection(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
                 }
                 "JobStatus" => {
                     builder = builder.set_job_status(
@@ -210,10 +210,10 @@ pub(crate) fn de_get_document_text_detection(
                     );
                 }
                 "Blocks" => {
-                    builder = builder.set_blocks(crate::protocol_serde::shape_block_list::de_block_list(tokens)?);
+                    builder = builder.set_blocks(crate::protocol_serde::shape_block_list::de_block_list(tokens, _value)?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value)?);
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(

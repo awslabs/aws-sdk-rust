@@ -42,6 +42,7 @@ pub fn ser_slot(
 
 pub(crate) fn de_slot<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Slot>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_value::de_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_value::de_value(tokens, _value)?);
                         }
                         "shape" => {
                             builder = builder.set_shape(
@@ -66,10 +67,10 @@ where
                             );
                         }
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_values::de_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_values::de_values(tokens, _value)?);
                         }
                         "subSlots" => {
-                            builder = builder.set_sub_slots(crate::protocol_serde::shape_slots::de_slots(tokens)?);
+                            builder = builder.set_sub_slots(crate::protocol_serde::shape_slots::de_slots(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

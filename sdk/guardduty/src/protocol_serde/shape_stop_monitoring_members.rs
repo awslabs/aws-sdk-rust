@@ -85,13 +85,13 @@ pub fn ser_stop_monitoring_members_input(
 }
 
 pub(crate) fn de_stop_monitoring_members(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::stop_monitoring_members::builders::StopMonitoringMembersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::stop_monitoring_members::builders::StopMonitoringMembersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,9 @@ pub(crate) fn de_stop_monitoring_members(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "unprocessedAccounts" => {
-                    builder = builder.set_unprocessed_accounts(crate::protocol_serde::shape_unprocessed_accounts::de_unprocessed_accounts(tokens)?);
+                    builder = builder.set_unprocessed_accounts(crate::protocol_serde::shape_unprocessed_accounts::de_unprocessed_accounts(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

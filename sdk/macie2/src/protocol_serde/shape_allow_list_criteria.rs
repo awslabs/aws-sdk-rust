@@ -17,6 +17,7 @@ pub fn ser_allow_list_criteria(
 
 pub(crate) fn de_allow_list_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AllowListCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "s3WordsList" => {
-                            builder = builder.set_s3_words_list(crate::protocol_serde::shape_s3_words_list::de_s3_words_list(tokens)?);
+                            builder = builder.set_s3_words_list(crate::protocol_serde::shape_s3_words_list::de_s3_words_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

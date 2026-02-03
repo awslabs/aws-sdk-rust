@@ -147,7 +147,7 @@ mod create_home_region_control;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_migrationhubconfig::Error> {
 /// # let client: aws_sdk_migrationhubconfig::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_home_region_control()
 ///     .customize()

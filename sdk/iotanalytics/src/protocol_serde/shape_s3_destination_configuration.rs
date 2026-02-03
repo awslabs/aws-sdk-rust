@@ -23,6 +23,7 @@ pub fn ser_s3_destination_configuration(
 
 pub(crate) fn de_s3_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,8 @@ where
                             );
                         }
                         "glueConfiguration" => {
-                            builder = builder.set_glue_configuration(crate::protocol_serde::shape_glue_configuration::de_glue_configuration(tokens)?);
+                            builder = builder
+                                .set_glue_configuration(crate::protocol_serde::shape_glue_configuration::de_glue_configuration(tokens, _value)?);
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(

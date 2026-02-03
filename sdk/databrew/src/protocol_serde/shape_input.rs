@@ -32,6 +32,7 @@ pub fn ser_input(
 
 pub(crate) fn de_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Input>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,20 +47,20 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3InputDefinition" => {
-                            builder = builder.set_s3_input_definition(crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?);
+                            builder = builder.set_s3_input_definition(crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?);
                         }
                         "DataCatalogInputDefinition" => {
                             builder = builder.set_data_catalog_input_definition(
-                                crate::protocol_serde::shape_data_catalog_input_definition::de_data_catalog_input_definition(tokens)?,
+                                crate::protocol_serde::shape_data_catalog_input_definition::de_data_catalog_input_definition(tokens, _value)?,
                             );
                         }
                         "DatabaseInputDefinition" => {
                             builder = builder.set_database_input_definition(
-                                crate::protocol_serde::shape_database_input_definition::de_database_input_definition(tokens)?,
+                                crate::protocol_serde::shape_database_input_definition::de_database_input_definition(tokens, _value)?,
                             );
                         }
                         "Metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

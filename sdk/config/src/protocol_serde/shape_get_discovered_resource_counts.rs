@@ -102,13 +102,13 @@ pub fn ser_get_discovered_resource_counts_input(
 }
 
 pub(crate) fn de_get_discovered_resource_counts(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,7 +123,7 @@ pub(crate) fn de_get_discovered_resource_counts(
                     );
                 }
                 "resourceCounts" => {
-                    builder = builder.set_resource_counts(crate::protocol_serde::shape_resource_counts::de_resource_counts(tokens)?);
+                    builder = builder.set_resource_counts(crate::protocol_serde::shape_resource_counts::de_resource_counts(tokens, _value)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

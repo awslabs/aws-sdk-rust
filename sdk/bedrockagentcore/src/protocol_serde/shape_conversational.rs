@@ -17,6 +17,7 @@ pub fn ser_conversational(
 
 pub(crate) fn de_conversational<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Conversational>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "content" => {
-                            builder = builder.set_content(crate::protocol_serde::shape_content::de_content(tokens)?);
+                            builder = builder.set_content(crate::protocol_serde::shape_content::de_content(tokens, _value)?);
                         }
                         "role" => {
                             builder = builder.set_role(

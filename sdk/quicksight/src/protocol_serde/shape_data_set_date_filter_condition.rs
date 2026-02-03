@@ -23,6 +23,7 @@ pub fn ser_data_set_date_filter_condition(
 
 pub(crate) fn de_data_set_date_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSetDateFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,28 +36,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "ColumnName" => {
-                            builder = builder.set_column_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "ColumnName" => {
+                                builder = builder.set_column_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "ComparisonFilterCondition" => {
+                                builder = builder.set_comparison_filter_condition(
+                                    crate::protocol_serde::shape_data_set_date_comparison_filter_condition::de_data_set_date_comparison_filter_condition(tokens, _value)?
+                                );
+                            }
+                            "RangeFilterCondition" => {
+                                builder = builder.set_range_filter_condition(
+                                    crate::protocol_serde::shape_data_set_date_range_filter_condition::de_data_set_date_range_filter_condition(
+                                        tokens, _value,
+                                    )?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "ComparisonFilterCondition" => {
-                            builder = builder.set_comparison_filter_condition(
-                                crate::protocol_serde::shape_data_set_date_comparison_filter_condition::de_data_set_date_comparison_filter_condition(
-                                    tokens,
-                                )?,
-                            );
-                        }
-                        "RangeFilterCondition" => {
-                            builder = builder.set_range_filter_condition(
-                                crate::protocol_serde::shape_data_set_date_range_filter_condition::de_data_set_date_range_filter_condition(tokens)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

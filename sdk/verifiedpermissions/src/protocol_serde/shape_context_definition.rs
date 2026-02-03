@@ -31,6 +31,7 @@ pub fn ser_context_definition(
 
 pub(crate) fn de_context_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContextDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -60,7 +61,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "contextMap" => Some(crate::types::ContextDefinition::ContextMap(
-                            crate::protocol_serde::shape_context_map::de_context_map(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_context_map::de_context_map(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contextMap' cannot be null")
                             })?,
                         )),

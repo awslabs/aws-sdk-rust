@@ -149,7 +149,7 @@ mod create_pipeline_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_osis::Error> {
 /// # let client: aws_sdk_osis::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.create_pipeline()
 ///     .customize()

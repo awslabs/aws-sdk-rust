@@ -20,6 +20,7 @@ pub fn ser_auth_info(
 
 pub(crate) fn de_auth_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AuthInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape_resources::de_resources(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_resources::de_resources(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

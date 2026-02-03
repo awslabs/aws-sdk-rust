@@ -68,6 +68,7 @@ pub fn ser_s3_item_filter(
 
 pub(crate) fn de_s3_item_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3ItemFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -82,19 +83,26 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ObjectKeys" => {
-                            builder = builder.set_object_keys(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(tokens)?);
+                            builder = builder.set_object_keys(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "Sizes" => {
-                            builder = builder.set_sizes(crate::protocol_serde::shape_long_condition_list::de_long_condition_list(tokens)?);
+                            builder = builder.set_sizes(crate::protocol_serde::shape_long_condition_list::de_long_condition_list(tokens, _value)?);
                         }
                         "CreationTimes" => {
-                            builder = builder.set_creation_times(crate::protocol_serde::shape_time_condition_list::de_time_condition_list(tokens)?);
+                            builder =
+                                builder.set_creation_times(crate::protocol_serde::shape_time_condition_list::de_time_condition_list(tokens, _value)?);
                         }
                         "VersionIds" => {
-                            builder = builder.set_version_ids(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(tokens)?);
+                            builder = builder.set_version_ids(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(
+                                tokens, _value,
+                            )?);
                         }
                         "ETags" => {
-                            builder = builder.set_e_tags(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(tokens)?);
+                            builder = builder.set_e_tags(crate::protocol_serde::shape_string_condition_list::de_string_condition_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

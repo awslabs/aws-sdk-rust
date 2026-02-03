@@ -50,6 +50,7 @@ pub fn ser_codegen_job_generic_data_schema(
 
 pub(crate) fn de_codegen_job_generic_data_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodegenJobGenericDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -72,17 +73,17 @@ where
                         }
                         "models" => {
                             builder = builder.set_models(crate::protocol_serde::shape_codegen_generic_data_models::de_codegen_generic_data_models(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "enums" => {
                             builder = builder.set_enums(crate::protocol_serde::shape_codegen_generic_data_enums::de_codegen_generic_data_enums(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "nonModels" => {
                             builder = builder.set_non_models(
-                                crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(tokens)?,
+                                crate::protocol_serde::shape_codegen_generic_data_non_models::de_codegen_generic_data_non_models(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

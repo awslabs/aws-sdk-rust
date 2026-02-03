@@ -20,6 +20,7 @@ pub fn ser_context_key_selector(
 
 pub(crate) fn de_context_key_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContextKeySelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,9 @@ where
                             );
                         }
                         "Equals" => {
-                            builder = builder.set_equals(crate::protocol_serde::shape_operator_target_list::de_operator_target_list(tokens)?);
+                            builder = builder.set_equals(crate::protocol_serde::shape_operator_target_list::de_operator_target_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

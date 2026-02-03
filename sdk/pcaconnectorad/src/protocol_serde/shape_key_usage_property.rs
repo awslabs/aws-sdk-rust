@@ -24,6 +24,7 @@ pub fn ser_key_usage_property(
 
 pub(crate) fn de_key_usage_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KeyUsageProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                                 })?,
                         )),
                         "PropertyFlags" => Some(crate::types::KeyUsageProperty::PropertyFlags(
-                            crate::protocol_serde::shape_key_usage_property_flags::de_key_usage_property_flags(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_key_usage_property_flags::de_key_usage_property_flags(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PropertyFlags' cannot be null")
                             })?,
                         )),

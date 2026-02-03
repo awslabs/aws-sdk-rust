@@ -78,13 +78,13 @@ pub fn de_describe_account_audit_configuration_http_response(
 }
 
 pub(crate) fn de_describe_account_audit_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -93,12 +93,14 @@ pub(crate) fn de_describe_account_audit_configuration(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "auditCheckConfigurations" => {
                     builder = builder.set_audit_check_configurations(
-                        crate::protocol_serde::shape_audit_check_configurations::de_audit_check_configurations(tokens)?,
+                        crate::protocol_serde::shape_audit_check_configurations::de_audit_check_configurations(tokens, _value)?,
                     );
                 }
                 "auditNotificationTargetConfigurations" => {
                     builder = builder.set_audit_notification_target_configurations(
-                        crate::protocol_serde::shape_audit_notification_target_configurations::de_audit_notification_target_configurations(tokens)?,
+                        crate::protocol_serde::shape_audit_notification_target_configurations::de_audit_notification_target_configurations(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "roleArn" => {

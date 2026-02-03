@@ -26,6 +26,7 @@ pub fn ser_users_and_groups(
 
 pub(crate) fn de_users_and_groups<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UsersAndGroups>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,10 +41,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "userIds" => {
-                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_ids::de_user_ids(tokens)?);
+                            builder = builder.set_user_ids(crate::protocol_serde::shape_user_ids::de_user_ids(tokens, _value)?);
                         }
                         "userGroups" => {
-                            builder = builder.set_user_groups(crate::protocol_serde::shape_user_groups::de_user_groups(tokens)?);
+                            builder = builder.set_user_groups(crate::protocol_serde::shape_user_groups::de_user_groups(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

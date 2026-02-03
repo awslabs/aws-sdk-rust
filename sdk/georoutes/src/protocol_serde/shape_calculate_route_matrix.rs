@@ -119,13 +119,13 @@ pub fn ser_calculate_route_matrix_input(
 }
 
 pub(crate) fn de_calculate_route_matrix(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,10 +140,12 @@ pub(crate) fn de_calculate_route_matrix(
                     );
                 }
                 "RouteMatrix" => {
-                    builder = builder.set_route_matrix(crate::protocol_serde::shape_route_matrix::de_route_matrix(tokens)?);
+                    builder = builder.set_route_matrix(crate::protocol_serde::shape_route_matrix::de_route_matrix(tokens, _value)?);
                 }
                 "RoutingBoundary" => {
-                    builder = builder.set_routing_boundary(crate::protocol_serde::shape_route_matrix_boundary::de_route_matrix_boundary(tokens)?);
+                    builder = builder.set_routing_boundary(crate::protocol_serde::shape_route_matrix_boundary::de_route_matrix_boundary(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

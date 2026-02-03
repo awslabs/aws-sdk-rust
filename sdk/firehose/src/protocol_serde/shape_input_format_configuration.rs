@@ -14,6 +14,7 @@ pub fn ser_input_format_configuration(
 
 pub(crate) fn de_input_format_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputFormatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Deserializer" => {
-                            builder = builder.set_deserializer(crate::protocol_serde::shape_deserializer::de_deserializer(tokens)?);
+                            builder = builder.set_deserializer(crate::protocol_serde::shape_deserializer::de_deserializer(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

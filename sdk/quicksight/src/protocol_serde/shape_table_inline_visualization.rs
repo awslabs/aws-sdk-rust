@@ -14,6 +14,7 @@ pub fn ser_table_inline_visualization(
 
 pub(crate) fn de_table_inline_visualization<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableInlineVisualization>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataBars" => {
-                            builder = builder.set_data_bars(crate::protocol_serde::shape_data_bars_options::de_data_bars_options(tokens)?);
+                            builder = builder.set_data_bars(crate::protocol_serde::shape_data_bars_options::de_data_bars_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

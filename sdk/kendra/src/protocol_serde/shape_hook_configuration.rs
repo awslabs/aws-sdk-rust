@@ -20,6 +20,7 @@ pub fn ser_hook_configuration(
 
 pub(crate) fn de_hook_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HookConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InvocationCondition" => {
                             builder = builder.set_invocation_condition(
-                                crate::protocol_serde::shape_document_attribute_condition::de_document_attribute_condition(tokens)?,
+                                crate::protocol_serde::shape_document_attribute_condition::de_document_attribute_condition(tokens, _value)?,
                             );
                         }
                         "LambdaArn" => {

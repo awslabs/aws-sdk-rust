@@ -132,13 +132,13 @@ pub fn de_get_global_settings_http_response(
 }
 
 pub(crate) fn de_get_global_settings(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -147,12 +147,12 @@ pub(crate) fn de_get_global_settings(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "BusinessCalling" => {
                     builder = builder.set_business_calling(crate::protocol_serde::shape_business_calling_settings::de_business_calling_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "VoiceConnector" => {
                     builder = builder.set_voice_connector(crate::protocol_serde::shape_voice_connector_settings::de_voice_connector_settings(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

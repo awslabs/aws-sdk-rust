@@ -123,13 +123,13 @@ pub fn ser_get_invoice_unit_input(
 }
 
 pub(crate) fn de_get_invoice_unit(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_invoice_unit::builders::GetInvoiceUnitOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_invoice_unit::builders::GetInvoiceUnitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,7 +168,7 @@ pub(crate) fn de_get_invoice_unit(
                     builder = builder.set_tax_inheritance_disabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "Rule" => {
-                    builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(tokens)?);
+                    builder = builder.set_rule(crate::protocol_serde::shape_invoice_unit_rule::de_invoice_unit_rule(tokens, _value)?);
                 }
                 "LastModified" => {
                     builder = builder.set_last_modified(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

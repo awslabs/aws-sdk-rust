@@ -12,6 +12,8 @@ pub struct MergeShardsInput {
     pub adjacent_shard_to_merge: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl MergeShardsInput {
     /// <p>The name of the stream for the merge.</p>
@@ -30,6 +32,10 @@ impl MergeShardsInput {
     pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
+        self.stream_id.as_deref()
+    }
 }
 impl MergeShardsInput {
     /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
@@ -46,6 +52,7 @@ pub struct MergeShardsInputBuilder {
     pub(crate) shard_to_merge: ::std::option::Option<::std::string::String>,
     pub(crate) adjacent_shard_to_merge: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
 }
 impl MergeShardsInputBuilder {
     /// <p>The name of the stream for the merge.</p>
@@ -106,6 +113,20 @@ impl MergeShardsInputBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stream_id = input;
+        self
+    }
+    /// <p>Not Implemented. Reserved for future use.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// Consumes the builder and constructs a [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_shards::MergeShardsInput {
@@ -113,6 +134,7 @@ impl MergeShardsInputBuilder {
             shard_to_merge: self.shard_to_merge,
             adjacent_shard_to_merge: self.adjacent_shard_to_merge,
             stream_arn: self.stream_arn,
+            stream_id: self.stream_id,
         })
     }
 }

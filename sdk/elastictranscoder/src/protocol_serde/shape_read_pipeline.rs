@@ -109,13 +109,13 @@ pub fn de_read_pipeline_http_response(
 }
 
 pub(crate) fn de_read_pipeline(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::read_pipeline::builders::ReadPipelineOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::read_pipeline::builders::ReadPipelineOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,10 +123,10 @@ pub(crate) fn de_read_pipeline(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Pipeline" => {
-                    builder = builder.set_pipeline(crate::protocol_serde::shape_pipeline::de_pipeline(tokens)?);
+                    builder = builder.set_pipeline(crate::protocol_serde::shape_pipeline::de_pipeline(tokens, _value)?);
                 }
                 "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens)?);
+                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

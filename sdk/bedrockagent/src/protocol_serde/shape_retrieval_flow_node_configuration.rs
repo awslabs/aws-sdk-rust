@@ -14,6 +14,7 @@ pub fn ser_retrieval_flow_node_configuration(
 
 pub(crate) fn de_retrieval_flow_node_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RetrievalFlowNodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "serviceConfiguration" => {
                                 builder = builder.set_service_configuration(
-                                    crate::protocol_serde::shape_retrieval_flow_node_service_configuration::de_retrieval_flow_node_service_configuration(tokens)?
+                                    crate::protocol_serde::shape_retrieval_flow_node_service_configuration::de_retrieval_flow_node_service_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

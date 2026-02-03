@@ -62,6 +62,7 @@ pub fn ser_additional_inference_specification_definition(
 
 pub(crate) fn de_additional_inference_specification_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdditionalInferenceSpecificationDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -92,26 +93,28 @@ where
                         "Containers" => {
                             builder = builder.set_containers(
                                 crate::protocol_serde::shape_model_package_container_definition_list::de_model_package_container_definition_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "SupportedTransformInstanceTypes" => {
                             builder = builder.set_supported_transform_instance_types(
-                                crate::protocol_serde::shape_transform_instance_types::de_transform_instance_types(tokens)?,
+                                crate::protocol_serde::shape_transform_instance_types::de_transform_instance_types(tokens, _value)?,
                             );
                         }
                         "SupportedRealtimeInferenceInstanceTypes" => {
                             builder = builder.set_supported_realtime_inference_instance_types(
-                                crate::protocol_serde::shape_realtime_inference_instance_types::de_realtime_inference_instance_types(tokens)?,
+                                crate::protocol_serde::shape_realtime_inference_instance_types::de_realtime_inference_instance_types(tokens, _value)?,
                             );
                         }
                         "SupportedContentTypes" => {
-                            builder = builder.set_supported_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens)?);
+                            builder =
+                                builder.set_supported_content_types(crate::protocol_serde::shape_content_types::de_content_types(tokens, _value)?);
                         }
                         "SupportedResponseMIMETypes" => {
-                            builder = builder
-                                .set_supported_response_mime_types(crate::protocol_serde::shape_response_mime_types::de_response_mime_types(tokens)?);
+                            builder = builder.set_supported_response_mime_types(
+                                crate::protocol_serde::shape_response_mime_types::de_response_mime_types(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

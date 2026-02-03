@@ -29,6 +29,7 @@ pub fn ser_line_chart_default_series_settings(
 
 pub(crate) fn de_line_chart_default_series_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LineChartDefaultSeriesSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,16 +52,16 @@ where
                         }
                         "LineStyleSettings" => {
                             builder = builder.set_line_style_settings(
-                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(tokens)?,
+                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(tokens, _value)?,
                             );
                         }
                         "MarkerStyleSettings" => {
                             builder = builder.set_marker_style_settings(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
                             );
                         }
                         "DecalSettings" => {
-                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens)?);
+                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -14,6 +14,7 @@ pub fn ser_release_configuration(
 
 pub(crate) fn de_release_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReleaseConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DurationSinceLastAccess" => {
                             builder = builder.set_duration_since_last_access(
-                                crate::protocol_serde::shape_duration_since_last_access::de_duration_since_last_access(tokens)?,
+                                crate::protocol_serde::shape_duration_since_last_access::de_duration_since_last_access(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

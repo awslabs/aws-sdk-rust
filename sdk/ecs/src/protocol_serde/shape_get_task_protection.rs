@@ -156,13 +156,13 @@ pub fn ser_get_task_protection_input(
 }
 
 pub(crate) fn de_get_task_protection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,10 +170,10 @@ pub(crate) fn de_get_task_protection(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "protectedTasks" => {
-                    builder = builder.set_protected_tasks(crate::protocol_serde::shape_protected_tasks::de_protected_tasks(tokens)?);
+                    builder = builder.set_protected_tasks(crate::protocol_serde::shape_protected_tasks::de_protected_tasks(tokens, _value)?);
                 }
                 "failures" => {
-                    builder = builder.set_failures(crate::protocol_serde::shape_failures::de_failures(tokens)?);
+                    builder = builder.set_failures(crate::protocol_serde::shape_failures::de_failures(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -41,6 +41,7 @@ pub fn ser_resource_data_container(
 
 pub(crate) fn de_resource_data_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceDataContainer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,29 +57,31 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LocalDeviceResourceData" => {
                             builder = builder.set_local_device_resource_data(
-                                crate::protocol_serde::shape_local_device_resource_data::de_local_device_resource_data(tokens)?,
+                                crate::protocol_serde::shape_local_device_resource_data::de_local_device_resource_data(tokens, _value)?,
                             );
                         }
                         "LocalVolumeResourceData" => {
                             builder = builder.set_local_volume_resource_data(
-                                crate::protocol_serde::shape_local_volume_resource_data::de_local_volume_resource_data(tokens)?,
+                                crate::protocol_serde::shape_local_volume_resource_data::de_local_volume_resource_data(tokens, _value)?,
                             );
                         }
                         "S3MachineLearningModelResourceData" => {
                             builder = builder.set_s3_machine_learning_model_resource_data(
                                 crate::protocol_serde::shape_s3_machine_learning_model_resource_data::de_s3_machine_learning_model_resource_data(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "SageMakerMachineLearningModelResourceData" => {
                             builder = builder.set_sage_maker_machine_learning_model_resource_data(
-                                    crate::protocol_serde::shape_sage_maker_machine_learning_model_resource_data::de_sage_maker_machine_learning_model_resource_data(tokens)?
+                                    crate::protocol_serde::shape_sage_maker_machine_learning_model_resource_data::de_sage_maker_machine_learning_model_resource_data(tokens, _value)?
                                 );
                         }
                         "SecretsManagerSecretResourceData" => {
                             builder = builder.set_secrets_manager_secret_resource_data(
-                                crate::protocol_serde::shape_secrets_manager_secret_resource_data::de_secrets_manager_secret_resource_data(tokens)?,
+                                crate::protocol_serde::shape_secrets_manager_secret_resource_data::de_secrets_manager_secret_resource_data(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

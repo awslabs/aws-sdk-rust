@@ -20,6 +20,7 @@ pub fn ser_open_zfs_nfs_export(
 
 pub(crate) fn de_open_zfs_nfs_export<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenZfsNfsExport>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ClientConfigurations" => {
                             builder = builder.set_client_configurations(
-                                crate::protocol_serde::shape_open_zfs_client_configurations::de_open_zfs_client_configurations(tokens)?,
+                                crate::protocol_serde::shape_open_zfs_client_configurations::de_open_zfs_client_configurations(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

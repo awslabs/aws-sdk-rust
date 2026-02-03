@@ -29,6 +29,7 @@ pub fn ser_memory_configuration(
 
 pub(crate) fn de_memory_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MemoryConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,8 +44,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enabledMemoryTypes" => {
-                            builder =
-                                builder.set_enabled_memory_types(crate::protocol_serde::shape_enabled_memory_types::de_enabled_memory_types(tokens)?);
+                            builder = builder.set_enabled_memory_types(crate::protocol_serde::shape_enabled_memory_types::de_enabled_memory_types(
+                                tokens, _value,
+                            )?);
                         }
                         "storageDays" => {
                             builder = builder.set_storage_days(
@@ -55,7 +57,7 @@ where
                         }
                         "sessionSummaryConfiguration" => {
                             builder = builder.set_session_summary_configuration(
-                                crate::protocol_serde::shape_session_summary_configuration::de_session_summary_configuration(tokens)?,
+                                crate::protocol_serde::shape_session_summary_configuration::de_session_summary_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

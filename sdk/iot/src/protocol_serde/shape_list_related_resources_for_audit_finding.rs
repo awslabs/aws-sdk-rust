@@ -119,13 +119,13 @@ pub fn de_list_related_resources_for_audit_finding_http_response(
 }
 
 pub(crate) fn de_list_related_resources_for_audit_finding(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -140,7 +140,7 @@ pub(crate) fn de_list_related_resources_for_audit_finding(
                     );
                 }
                 "relatedResources" => {
-                    builder = builder.set_related_resources(crate::protocol_serde::shape_related_resources::de_related_resources(tokens)?);
+                    builder = builder.set_related_resources(crate::protocol_serde::shape_related_resources::de_related_resources(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

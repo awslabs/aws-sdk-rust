@@ -116,13 +116,13 @@ pub fn de_get_variant_import_job_http_response(
 }
 
 pub(crate) fn de_get_variant_import_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_variant_import_job::builders::GetVariantImportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_variant_import_job::builders::GetVariantImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,9 @@ pub(crate) fn de_get_variant_import_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "annotationFields" => {
-                    builder = builder.set_annotation_fields(crate::protocol_serde::shape_annotation_field_map::de_annotation_field_map(tokens)?);
+                    builder = builder.set_annotation_fields(crate::protocol_serde::shape_annotation_field_map::de_annotation_field_map(
+                        tokens, _value,
+                    )?);
                 }
                 "completionTime" => {
                     builder = builder.set_completion_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -160,7 +162,7 @@ pub(crate) fn de_get_variant_import_job(
                 }
                 "items" => {
                     builder = builder.set_items(crate::protocol_serde::shape_variant_import_item_details::de_variant_import_item_details(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "roleArn" => {

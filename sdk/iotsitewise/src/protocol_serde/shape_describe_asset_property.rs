@@ -102,13 +102,13 @@ pub fn de_describe_asset_property_http_response(
 }
 
 pub(crate) fn de_describe_asset_property(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,11 +144,11 @@ pub(crate) fn de_describe_asset_property(
                     );
                 }
                 "assetProperty" => {
-                    builder = builder.set_asset_property(crate::protocol_serde::shape_property::de_property(tokens)?);
+                    builder = builder.set_asset_property(crate::protocol_serde::shape_property::de_property(tokens, _value)?);
                 }
                 "compositeModel" => {
                     builder = builder.set_composite_model(crate::protocol_serde::shape_composite_model_property::de_composite_model_property(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

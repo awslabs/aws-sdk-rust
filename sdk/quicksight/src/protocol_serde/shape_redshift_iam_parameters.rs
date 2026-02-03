@@ -26,6 +26,7 @@ pub fn ser_redshift_iam_parameters(
 
 pub(crate) fn de_redshift_iam_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedshiftIamParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,8 @@ where
                             );
                         }
                         "DatabaseGroups" => {
-                            builder = builder.set_database_groups(crate::protocol_serde::shape_database_group_list::de_database_group_list(tokens)?);
+                            builder = builder
+                                .set_database_groups(crate::protocol_serde::shape_database_group_list::de_database_group_list(tokens, _value)?);
                         }
                         "AutoCreateDatabaseUser" => {
                             builder =

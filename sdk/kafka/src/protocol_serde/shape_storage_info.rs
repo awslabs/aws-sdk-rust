@@ -14,6 +14,7 @@ pub fn ser_storage_info(
 
 pub(crate) fn de_storage_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StorageInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ebsStorageInfo" => {
-                            builder = builder.set_ebs_storage_info(crate::protocol_serde::shape_ebs_storage_info::de_ebs_storage_info(tokens)?);
+                            builder =
+                                builder.set_ebs_storage_info(crate::protocol_serde::shape_ebs_storage_info::de_ebs_storage_info(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

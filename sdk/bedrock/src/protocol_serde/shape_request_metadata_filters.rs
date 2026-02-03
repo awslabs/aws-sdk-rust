@@ -59,6 +59,7 @@ pub fn ser_request_metadata_filters(
 
 pub(crate) fn de_request_metadata_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RequestMetadataFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,22 +89,23 @@ where
                     }
                     variant = match key.as_ref() {
                         "equals" => Some(crate::types::RequestMetadataFilters::Equals(
-                            crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'equals' cannot be null")
                             })?,
                         )),
                         "notEquals" => Some(crate::types::RequestMetadataFilters::NotEquals(
-                            crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_request_metadata_map::de_request_metadata_map(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEquals' cannot be null")
                             })?,
                         )),
                         "andAll" => Some(crate::types::RequestMetadataFilters::AndAll(
-                            crate::protocol_serde::shape_request_metadata_filters_list::de_request_metadata_filters_list(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andAll' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_request_metadata_filters_list::de_request_metadata_filters_list(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andAll' cannot be null")
+                                })?,
                         )),
                         "orAll" => Some(crate::types::RequestMetadataFilters::OrAll(
-                            crate::protocol_serde::shape_request_metadata_filters_list::de_request_metadata_filters_list(tokens)?
+                            crate::protocol_serde::shape_request_metadata_filters_list::de_request_metadata_filters_list(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orAll' cannot be null"))?,
                         )),
                         _ => {

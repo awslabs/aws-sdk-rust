@@ -45,7 +45,13 @@ impl http_body_0_4::Body for SdkBody {
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
     ) -> Poll<Result<Option<http::HeaderMap<http::HeaderValue>>, Self::Error>> {
-        self.poll_next_trailers(cx)
+        let polled = self.poll_next_trailers(cx);
+        match polled {
+            Poll::Ready(Ok(Some(headers))) => Poll::Ready(Ok(Some(convert_headers_1x_0x(headers)))),
+            Poll::Ready(Ok(None)) => Poll::Ready(Ok(None)),
+            Poll::Ready(Err(err)) => Poll::Ready(Err(err)),
+            Poll::Pending => Poll::Pending,
+        }
     }
 
     fn is_end_stream(&self) -> bool {
@@ -61,6 +67,35 @@ impl http_body_0_4::Body for SdkBody {
         }
         result
     }
+}
+
+pub(crate) fn convert_headers_1x_0x(input: http_1x::HeaderMap) -> http::HeaderMap {
+    let mut map = http::HeaderMap::with_capacity(input.capacity());
+    let mut mem: Option<http_1x::HeaderName> = None;
+    for (k, v) in input.into_iter() {
+        let name = k.or_else(|| mem.clone()).unwrap();
+        map.append(
+            http::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
+            http::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
+        );
+        mem = Some(name);
+    }
+    map
+}
+
+#[allow(dead_code)]
+pub(crate) fn convert_headers_0x_1x(input: http::HeaderMap) -> http_1x::HeaderMap {
+    let mut map = http_1x::HeaderMap::with_capacity(input.capacity());
+    let mut mem: Option<http::HeaderName> = None;
+    for (k, v) in input.into_iter() {
+        let name = k.or_else(|| mem.clone()).unwrap();
+        map.append(
+            http_1x::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
+            http_1x::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
+        );
+        mem = Some(name);
+    }
+    map
 }
 
 #[cfg(test)]

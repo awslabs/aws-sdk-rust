@@ -20,6 +20,7 @@ pub fn ser_aws_s3_bucket_notification_configuration_s3_key_filter(
 
 pub(crate) fn de_aws_s3_bucket_notification_configuration_s3_key_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -38,7 +39,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FilterRules" => {
                             builder = builder.set_filter_rules(
-                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_s3_key_filter_rules::de_aws_s3_bucket_notification_configuration_s3_key_filter_rules(tokens)?
+                                    crate::protocol_serde::shape_aws_s3_bucket_notification_configuration_s3_key_filter_rules::de_aws_s3_bucket_notification_configuration_s3_key_filter_rules(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

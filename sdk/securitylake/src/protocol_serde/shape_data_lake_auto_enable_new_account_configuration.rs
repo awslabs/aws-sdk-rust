@@ -23,6 +23,7 @@ pub fn ser_data_lake_auto_enable_new_account_configuration(
 
 pub(crate) fn de_data_lake_auto_enable_new_account_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataLakeAutoEnableNewAccountConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "sources" => {
-                            builder = builder
-                                .set_sources(crate::protocol_serde::shape_aws_log_source_resource_list::de_aws_log_source_resource_list(tokens)?);
+                            builder = builder.set_sources(
+                                crate::protocol_serde::shape_aws_log_source_resource_list::de_aws_log_source_resource_list(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

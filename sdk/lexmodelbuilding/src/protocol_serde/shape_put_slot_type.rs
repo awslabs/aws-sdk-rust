@@ -129,11 +129,11 @@ pub fn ser_put_slot_type_input(
 }
 
 pub(crate) fn de_put_slot_type(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_slot_type::builders::PutSlotTypeOutputBuilder,
 ) -> ::std::result::Result<crate::operation::put_slot_type::builders::PutSlotTypeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -164,7 +164,7 @@ pub(crate) fn de_put_slot_type(
                     );
                 }
                 "enumerationValues" => {
-                    builder = builder.set_enumeration_values(crate::protocol_serde::shape_enumeration_values::de_enumeration_values(tokens)?);
+                    builder = builder.set_enumeration_values(crate::protocol_serde::shape_enumeration_values::de_enumeration_values(tokens, _value)?);
                 }
                 "lastUpdatedDate" => {
                     builder = builder.set_last_updated_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -188,7 +188,7 @@ pub(crate) fn de_put_slot_type(
                 }
                 "slotTypeConfigurations" => {
                     builder = builder.set_slot_type_configurations(
-                        crate::protocol_serde::shape_slot_type_configurations::de_slot_type_configurations(tokens)?,
+                        crate::protocol_serde::shape_slot_type_configurations::de_slot_type_configurations(tokens, _value)?,
                     );
                 }
                 "valueSelectionStrategy" => {

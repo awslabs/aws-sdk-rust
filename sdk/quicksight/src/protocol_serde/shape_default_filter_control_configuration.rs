@@ -17,6 +17,7 @@ pub fn ser_default_filter_control_configuration(
 
 pub(crate) fn de_default_filter_control_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DefaultFilterControlConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "ControlOptions" => {
                             builder = builder.set_control_options(
-                                crate::protocol_serde::shape_default_filter_control_options::de_default_filter_control_options(tokens)?,
+                                crate::protocol_serde::shape_default_filter_control_options::de_default_filter_control_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

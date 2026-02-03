@@ -14,6 +14,7 @@ pub fn ser_grid_layout_canvas_size_options(
 
 pub(crate) fn de_grid_layout_canvas_size_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GridLayoutCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "ScreenCanvasSizeOptions" => {
                             builder = builder.set_screen_canvas_size_options(
                                 crate::protocol_serde::shape_grid_layout_screen_canvas_size_options::de_grid_layout_screen_canvas_size_options(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -17,6 +17,7 @@ pub fn ser_labels_input_configuration(
 
 pub(crate) fn de_labels_input_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LabelsInputConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3InputConfiguration" => {
                             builder = builder.set_s3_input_configuration(
-                                crate::protocol_serde::shape_labels_s3_input_configuration::de_labels_s3_input_configuration(tokens)?,
+                                crate::protocol_serde::shape_labels_s3_input_configuration::de_labels_s3_input_configuration(tokens, _value)?,
                             );
                         }
                         "LabelGroupName" => {

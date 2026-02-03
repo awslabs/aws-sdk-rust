@@ -131,6 +131,7 @@ pub fn ser_aws_certificate_manager_certificate_details(
 
 pub(crate) fn de_aws_certificate_manager_certificate_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsCertificateManagerCertificateDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -167,12 +168,12 @@ where
                         }
                         "DomainValidationOptions" => {
                             builder = builder.set_domain_validation_options(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_domain_validation_options::de_aws_certificate_manager_certificate_domain_validation_options(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_domain_validation_options::de_aws_certificate_manager_certificate_domain_validation_options(tokens, _value)?
                                 );
                         }
                         "ExtendedKeyUsages" => {
                             builder = builder.set_extended_key_usages(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_extended_key_usages::de_aws_certificate_manager_certificate_extended_key_usages(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_extended_key_usages::de_aws_certificate_manager_certificate_extended_key_usages(tokens, _value)?
                                 );
                         }
                         "FailureReason" => {
@@ -190,7 +191,7 @@ where
                             );
                         }
                         "InUseBy" => {
-                            builder = builder.set_in_use_by(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_in_use_by(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "IssuedAt" => {
                             builder = builder.set_issued_at(
@@ -215,7 +216,7 @@ where
                         }
                         "KeyUsages" => {
                             builder = builder.set_key_usages(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_key_usages::de_aws_certificate_manager_certificate_key_usages(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_key_usages::de_aws_certificate_manager_certificate_key_usages(tokens, _value)?
                                 );
                         }
                         "NotAfter" => {
@@ -234,7 +235,7 @@ where
                         }
                         "Options" => {
                             builder = builder.set_options(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_options::de_aws_certificate_manager_certificate_options(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_options::de_aws_certificate_manager_certificate_options(tokens, _value)?
                                 );
                         }
                         "RenewalEligibility" => {
@@ -246,7 +247,7 @@ where
                         }
                         "RenewalSummary" => {
                             builder = builder.set_renewal_summary(
-                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_renewal_summary::de_aws_certificate_manager_certificate_renewal_summary(tokens)?
+                                    crate::protocol_serde::shape_aws_certificate_manager_certificate_renewal_summary::de_aws_certificate_manager_certificate_renewal_summary(tokens, _value)?
                                 );
                         }
                         "Serial" => {
@@ -278,7 +279,8 @@ where
                             );
                         }
                         "SubjectAlternativeNames" => {
-                            builder = builder.set_subject_alternative_names(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder =
+                                builder.set_subject_alternative_names(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "Type" => {
                             builder = builder.set_type(

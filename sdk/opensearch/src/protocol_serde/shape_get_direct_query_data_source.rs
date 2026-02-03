@@ -123,13 +123,13 @@ pub fn de_get_direct_query_data_source_http_response(
 }
 
 pub(crate) fn de_get_direct_query_data_source(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_direct_query_data_source::builders::GetDirectQueryDataSourceOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_direct_query_data_source::builders::GetDirectQueryDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -151,8 +151,9 @@ pub(crate) fn de_get_direct_query_data_source(
                     );
                 }
                 "DataSourceType" => {
-                    builder = builder
-                        .set_data_source_type(crate::protocol_serde::shape_direct_query_data_source_type::de_direct_query_data_source_type(tokens)?);
+                    builder = builder.set_data_source_type(
+                        crate::protocol_serde::shape_direct_query_data_source_type::de_direct_query_data_source_type(tokens, _value)?,
+                    );
                 }
                 "Description" => {
                     builder = builder.set_description(
@@ -163,7 +164,7 @@ pub(crate) fn de_get_direct_query_data_source(
                 }
                 "OpenSearchArns" => {
                     builder = builder.set_open_search_arns(
-                        crate::protocol_serde::shape_direct_query_open_search_arn_list::de_direct_query_open_search_arn_list(tokens)?,
+                        crate::protocol_serde::shape_direct_query_open_search_arn_list::de_direct_query_open_search_arn_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

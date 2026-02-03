@@ -17,6 +17,7 @@ pub fn ser_sign_in_policy_type(
 
 pub(crate) fn de_sign_in_policy_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SignInPolicyType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AllowedFirstAuthFactors" => {
                             builder = builder.set_allowed_first_auth_factors(
-                                crate::protocol_serde::shape_allowed_first_auth_factors_list_type::de_allowed_first_auth_factors_list_type(tokens)?,
+                                crate::protocol_serde::shape_allowed_first_auth_factors_list_type::de_allowed_first_auth_factors_list_type(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -44,6 +44,7 @@ pub fn ser_tree_map_aggregated_field_wells(
 
 pub(crate) fn de_tree_map_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TreeMapAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,17 +59,18 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Groups" => {
-                            builder = builder
-                                .set_groups(crate::protocol_serde::shape_tree_map_dimension_field_list::de_tree_map_dimension_field_list(tokens)?);
+                            builder = builder.set_groups(
+                                crate::protocol_serde::shape_tree_map_dimension_field_list::de_tree_map_dimension_field_list(tokens, _value)?,
+                            );
                         }
                         "Sizes" => {
                             builder = builder.set_sizes(crate::protocol_serde::shape_tree_map_measure_field_list::de_tree_map_measure_field_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Colors" => {
                             builder = builder.set_colors(crate::protocol_serde::shape_tree_map_measure_field_list::de_tree_map_measure_field_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

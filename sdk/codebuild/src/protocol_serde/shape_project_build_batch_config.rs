@@ -29,6 +29,7 @@ pub fn ser_project_build_batch_config(
 
 pub(crate) fn de_project_build_batch_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProjectBuildBatchConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,8 @@ where
                             builder = builder.set_combine_artifacts(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "restrictions" => {
-                            builder = builder.set_restrictions(crate::protocol_serde::shape_batch_restrictions::de_batch_restrictions(tokens)?);
+                            builder =
+                                builder.set_restrictions(crate::protocol_serde::shape_batch_restrictions::de_batch_restrictions(tokens, _value)?);
                         }
                         "timeoutInMins" => {
                             builder = builder.set_timeout_in_mins(

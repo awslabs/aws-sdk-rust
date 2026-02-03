@@ -21,6 +21,7 @@ pub fn ser_evaluator_config(
 
 pub(crate) fn de_evaluator_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluatorConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,10 @@ where
                     }
                     variant = match key.as_ref() {
                         "llmAsAJudge" => Some(crate::types::EvaluatorConfig::LlmAsAJudge(
-                            crate::protocol_serde::shape_llm_as_a_judge_evaluator_config::de_llm_as_a_judge_evaluator_config(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'llmAsAJudge' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_llm_as_a_judge_evaluator_config::de_llm_as_a_judge_evaluator_config(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'llmAsAJudge' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

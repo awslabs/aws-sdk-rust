@@ -20,6 +20,7 @@ pub fn ser_placement_type(
 
 pub(crate) fn de_placement_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PlacementType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                         }
                         "AvailabilityZones" => {
                             builder = builder.set_availability_zones(
-                                crate::protocol_serde::shape_xml_string_max_len256_list::de_xml_string_max_len256_list(tokens)?,
+                                crate::protocol_serde::shape_xml_string_max_len256_list::de_xml_string_max_len256_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

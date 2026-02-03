@@ -38,6 +38,7 @@ pub fn ser_custom_document_enrichment_configuration(
 
 pub(crate) fn de_custom_document_enrichment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomDocumentEnrichmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,17 +54,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "InlineConfigurations" => {
                             builder = builder.set_inline_configurations(
-                                    crate::protocol_serde::shape_inline_custom_document_enrichment_configuration_list::de_inline_custom_document_enrichment_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_inline_custom_document_enrichment_configuration_list::de_inline_custom_document_enrichment_configuration_list(tokens, _value)?
                                 );
                         }
                         "PreExtractionHookConfiguration" => {
                             builder = builder.set_pre_extraction_hook_configuration(
-                                crate::protocol_serde::shape_hook_configuration::de_hook_configuration(tokens)?,
+                                crate::protocol_serde::shape_hook_configuration::de_hook_configuration(tokens, _value)?,
                             );
                         }
                         "PostExtractionHookConfiguration" => {
                             builder = builder.set_post_extraction_hook_configuration(
-                                crate::protocol_serde::shape_hook_configuration::de_hook_configuration(tokens)?,
+                                crate::protocol_serde::shape_hook_configuration::de_hook_configuration(tokens, _value)?,
                             );
                         }
                         "RoleArn" => {

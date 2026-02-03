@@ -156,13 +156,13 @@ pub fn ser_batch_put_document_input(
 }
 
 pub(crate) fn de_batch_put_document(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_put_document::builders::BatchPutDocumentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_put_document::builders::BatchPutDocumentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -172,7 +172,7 @@ pub(crate) fn de_batch_put_document(
                 match key.to_unescaped()?.as_ref() {
                     "FailedDocuments" => {
                         builder = builder.set_failed_documents(
-                            crate::protocol_serde::shape_batch_put_document_response_failed_documents::de_batch_put_document_response_failed_documents(tokens)?
+                            crate::protocol_serde::shape_batch_put_document_response_failed_documents::de_batch_put_document_response_failed_documents(tokens, _value)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

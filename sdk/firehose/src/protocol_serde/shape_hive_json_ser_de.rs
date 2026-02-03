@@ -17,6 +17,7 @@ pub fn ser_hive_json_ser_de(
 
 pub(crate) fn de_hive_json_ser_de<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HiveJsonSerDe>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "TimestampFormats" => {
                             builder = builder.set_timestamp_formats(
-                                crate::protocol_serde::shape_list_of_non_empty_strings::de_list_of_non_empty_strings(tokens)?,
+                                crate::protocol_serde::shape_list_of_non_empty_strings::de_list_of_non_empty_strings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

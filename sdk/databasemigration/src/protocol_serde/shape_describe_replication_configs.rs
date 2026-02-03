@@ -69,13 +69,13 @@ pub fn ser_describe_replication_configs_input(
 }
 
 pub(crate) fn de_describe_replication_configs(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_replication_configs::builders::DescribeReplicationConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -90,8 +90,9 @@ pub(crate) fn de_describe_replication_configs(
                     );
                 }
                 "ReplicationConfigs" => {
-                    builder =
-                        builder.set_replication_configs(crate::protocol_serde::shape_replication_config_list::de_replication_config_list(tokens)?);
+                    builder = builder.set_replication_configs(crate::protocol_serde::shape_replication_config_list::de_replication_config_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

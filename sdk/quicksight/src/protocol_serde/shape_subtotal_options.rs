@@ -59,6 +59,7 @@ pub fn ser_subtotal_options(
 
 pub(crate) fn de_subtotal_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SubtotalOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,23 +97,26 @@ where
                         "FieldLevelOptions" => {
                             builder = builder.set_field_level_options(
                                 crate::protocol_serde::shape_pivot_table_field_subtotal_options_list::de_pivot_table_field_subtotal_options_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "TotalCellStyle" => {
-                            builder = builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_total_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "ValueCellStyle" => {
-                            builder = builder.set_value_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder =
+                                builder.set_value_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "MetricHeaderCellStyle" => {
-                            builder =
-                                builder.set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens)?);
+                            builder = builder
+                                .set_metric_header_cell_style(crate::protocol_serde::shape_table_cell_style::de_table_cell_style(tokens, _value)?);
                         }
                         "StyleTargets" => {
-                            builder =
-                                builder.set_style_targets(crate::protocol_serde::shape_table_style_target_list::de_table_style_target_list(tokens)?);
+                            builder = builder.set_style_targets(crate::protocol_serde::shape_table_style_target_list::de_table_style_target_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

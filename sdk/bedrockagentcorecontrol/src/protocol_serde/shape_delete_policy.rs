@@ -129,13 +129,13 @@ pub fn de_delete_policy_http_response(
 }
 
 pub(crate) fn de_delete_policy(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_policy::builders::DeletePolicyOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_policy::builders::DeletePolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -149,7 +149,7 @@ pub(crate) fn de_delete_policy(
                     )?);
                 }
                 "definition" => {
-                    builder = builder.set_definition(crate::protocol_serde::shape_policy_definition::de_policy_definition(tokens)?);
+                    builder = builder.set_definition(crate::protocol_serde::shape_policy_definition::de_policy_definition(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -194,7 +194,9 @@ pub(crate) fn de_delete_policy(
                     );
                 }
                 "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(tokens)?);
+                    builder = builder.set_status_reasons(crate::protocol_serde::shape_policy_status_reasons::de_policy_status_reasons(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

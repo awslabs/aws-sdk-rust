@@ -47,6 +47,7 @@ pub fn ser_data_prep_configuration(
 
 pub(crate) fn de_data_prep_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataPrepConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,14 +62,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SourceTableMap" => {
-                            builder = builder.set_source_table_map(crate::protocol_serde::shape_source_table_map::de_source_table_map(tokens)?);
+                            builder =
+                                builder.set_source_table_map(crate::protocol_serde::shape_source_table_map::de_source_table_map(tokens, _value)?);
                         }
                         "TransformStepMap" => {
-                            builder = builder.set_transform_step_map(crate::protocol_serde::shape_transform_step_map::de_transform_step_map(tokens)?);
+                            builder = builder
+                                .set_transform_step_map(crate::protocol_serde::shape_transform_step_map::de_transform_step_map(tokens, _value)?);
                         }
                         "DestinationTableMap" => {
-                            builder = builder
-                                .set_destination_table_map(crate::protocol_serde::shape_destination_table_map::de_destination_table_map(tokens)?);
+                            builder = builder.set_destination_table_map(
+                                crate::protocol_serde::shape_destination_table_map::de_destination_table_map(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

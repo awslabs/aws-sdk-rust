@@ -244,99 +244,103 @@ pub fn ser_create_integration_input(
 }
 
 pub(crate) fn de_create_integration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_integration::builders::CreateIntegrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_integration::builders::CreateIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "SourceArn" => {
-                        builder = builder.set_source_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "TargetArn" => {
-                        builder = builder.set_target_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "IntegrationName" => {
-                        builder = builder.set_integration_name(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "Description" => {
-                        builder = builder.set_description(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "IntegrationArn" => {
-                        builder = builder.set_integration_arn(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "KmsKeyId" => {
-                        builder = builder.set_kms_key_id(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "AdditionalEncryptionContext" => {
-                        builder = builder.set_additional_encryption_context(
-                            crate::protocol_serde::shape_integration_additional_encryption_context_map::de_integration_additional_encryption_context_map(tokens)?
-                        );
-                    }
-                    "Tags" => {
-                        builder = builder.set_tags(crate::protocol_serde::shape_integration_tags_list::de_integration_tags_list(tokens)?);
-                    }
-                    "Status" => {
-                        builder = builder.set_status(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| crate::types::IntegrationStatus::from(u.as_ref())))
-                                .transpose()?,
-                        );
-                    }
-                    "CreateTime" => {
-                        builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                            tokens.next(),
-                            ::aws_smithy_types::date_time::Format::EpochSeconds,
-                        )?);
-                    }
-                    "Errors" => {
-                        builder = builder.set_errors(crate::protocol_serde::shape_integration_error_list::de_integration_error_list(tokens)?);
-                    }
-                    "DataFilter" => {
-                        builder = builder.set_data_filter(
-                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                .transpose()?,
-                        );
-                    }
-                    "IntegrationConfig" => {
-                        builder = builder.set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "SourceArn" => {
+                    builder = builder.set_source_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
-            }
+                "TargetArn" => {
+                    builder = builder.set_target_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IntegrationName" => {
+                    builder = builder.set_integration_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "Description" => {
+                    builder = builder.set_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IntegrationArn" => {
+                    builder = builder.set_integration_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "KmsKeyId" => {
+                    builder = builder.set_kms_key_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "AdditionalEncryptionContext" => {
+                    builder = builder.set_additional_encryption_context(
+                        crate::protocol_serde::shape_integration_additional_encryption_context_map::de_integration_additional_encryption_context_map(
+                            tokens, _value,
+                        )?,
+                    );
+                }
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_integration_tags_list::de_integration_tags_list(
+                        tokens, _value,
+                    )?);
+                }
+                "Status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IntegrationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "CreateTime" => {
+                    builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "Errors" => {
+                    builder = builder.set_errors(crate::protocol_serde::shape_integration_error_list::de_integration_error_list(
+                        tokens, _value,
+                    )?);
+                }
+                "DataFilter" => {
+                    builder = builder.set_data_filter(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IntegrationConfig" => {
+                    builder = builder.set_integration_config(crate::protocol_serde::shape_integration_config::de_integration_config(tokens, _value)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

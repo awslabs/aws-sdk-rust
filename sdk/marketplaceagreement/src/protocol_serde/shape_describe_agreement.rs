@@ -125,13 +125,13 @@ pub fn ser_describe_agreement_input(
 }
 
 pub(crate) fn de_describe_agreement(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,10 +146,10 @@ pub(crate) fn de_describe_agreement(
                     );
                 }
                 "acceptor" => {
-                    builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens)?);
+                    builder = builder.set_acceptor(crate::protocol_serde::shape_acceptor::de_acceptor(tokens, _value)?);
                 }
                 "proposer" => {
-                    builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens)?);
+                    builder = builder.set_proposer(crate::protocol_serde::shape_proposer::de_proposer(tokens, _value)?);
                 }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -177,10 +177,10 @@ pub(crate) fn de_describe_agreement(
                     );
                 }
                 "estimatedCharges" => {
-                    builder = builder.set_estimated_charges(crate::protocol_serde::shape_estimated_charges::de_estimated_charges(tokens)?);
+                    builder = builder.set_estimated_charges(crate::protocol_serde::shape_estimated_charges::de_estimated_charges(tokens, _value)?);
                 }
                 "proposalSummary" => {
-                    builder = builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(tokens)?);
+                    builder = builder.set_proposal_summary(crate::protocol_serde::shape_proposal_summary::de_proposal_summary(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

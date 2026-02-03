@@ -135,13 +135,13 @@ pub fn de_delete_gateway_target_http_response(
 }
 
 pub(crate) fn de_delete_gateway_target(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_gateway_target::builders::DeleteGatewayTargetOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_gateway_target::builders::DeleteGatewayTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -163,7 +163,7 @@ pub(crate) fn de_delete_gateway_target(
                     );
                 }
                 "statusReasons" => {
-                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens)?);
+                    builder = builder.set_status_reasons(crate::protocol_serde::shape_status_reasons::de_status_reasons(tokens, _value)?);
                 }
                 "targetId" => {
                     builder = builder.set_target_id(

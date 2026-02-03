@@ -14,6 +14,7 @@ pub fn ser_stateless_custom_action_definition(
 
 pub(crate) fn de_stateless_custom_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StatelessCustomActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -30,7 +31,7 @@ where
                         "PublishMetricAction" => {
                             builder = builder.set_publish_metric_action(
                                 crate::protocol_serde::shape_stateless_custom_publish_metric_action::de_stateless_custom_publish_metric_action(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

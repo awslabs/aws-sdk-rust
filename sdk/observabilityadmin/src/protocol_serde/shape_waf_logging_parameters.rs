@@ -29,6 +29,7 @@ pub fn ser_waf_logging_parameters(
 
 pub(crate) fn de_waf_logging_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WafLoggingParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,10 +44,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RedactedFields" => {
-                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(tokens)?);
+                            builder = builder.set_redacted_fields(crate::protocol_serde::shape_redacted_fields::de_redacted_fields(tokens, _value)?);
                         }
                         "LoggingFilter" => {
-                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(tokens)?);
+                            builder = builder.set_logging_filter(crate::protocol_serde::shape_logging_filter::de_logging_filter(tokens, _value)?);
                         }
                         "LogType" => {
                             builder = builder.set_log_type(

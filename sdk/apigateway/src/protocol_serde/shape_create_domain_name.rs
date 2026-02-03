@@ -137,13 +137,13 @@ pub fn ser_create_domain_name_input(
 }
 
 pub(crate) fn de_create_domain_name(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_domain_name::builders::CreateDomainNameOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_domain_name::builders::CreateDomainNameOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -227,8 +227,9 @@ pub(crate) fn de_create_domain_name(
                     );
                 }
                 "endpointConfiguration" => {
-                    builder =
-                        builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(tokens)?);
+                    builder = builder.set_endpoint_configuration(crate::protocol_serde::shape_endpoint_configuration::de_endpoint_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "managementPolicy" => {
                     builder = builder.set_management_policy(
@@ -239,7 +240,7 @@ pub(crate) fn de_create_domain_name(
                 }
                 "mutualTlsAuthentication" => {
                     builder = builder.set_mutual_tls_authentication(
-                        crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens)?,
+                        crate::protocol_serde::shape_mutual_tls_authentication::de_mutual_tls_authentication(tokens, _value)?,
                     );
                 }
                 "ownershipVerificationCertificateArn" => {
@@ -299,7 +300,9 @@ pub(crate) fn de_create_domain_name(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

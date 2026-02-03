@@ -210,13 +210,13 @@ pub fn ser_get_effective_recommendation_preferences_input(
 }
 
 pub(crate) fn de_get_effective_recommendation_preferences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -232,7 +232,7 @@ pub(crate) fn de_get_effective_recommendation_preferences(
                 }
                 "externalMetricsPreference" => {
                     builder = builder.set_external_metrics_preference(
-                        crate::protocol_serde::shape_external_metrics_preference::de_external_metrics_preference(tokens)?,
+                        crate::protocol_serde::shape_external_metrics_preference::de_external_metrics_preference(tokens, _value)?,
                     );
                 }
                 "lookBackPeriod" => {
@@ -243,12 +243,13 @@ pub(crate) fn de_get_effective_recommendation_preferences(
                     );
                 }
                 "utilizationPreferences" => {
-                    builder = builder
-                        .set_utilization_preferences(crate::protocol_serde::shape_utilization_preferences::de_utilization_preferences(tokens)?);
+                    builder = builder.set_utilization_preferences(crate::protocol_serde::shape_utilization_preferences::de_utilization_preferences(
+                        tokens, _value,
+                    )?);
                 }
                 "preferredResources" => {
                     builder = builder.set_preferred_resources(
-                        crate::protocol_serde::shape_effective_preferred_resources::de_effective_preferred_resources(tokens)?,
+                        crate::protocol_serde::shape_effective_preferred_resources::de_effective_preferred_resources(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

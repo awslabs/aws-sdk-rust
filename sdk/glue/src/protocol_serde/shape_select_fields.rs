@@ -35,6 +35,7 @@ pub fn ser_select_fields(
 
 pub(crate) fn de_select_fields<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SelectFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,10 +57,12 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "Paths" => {
-                            builder = builder.set_paths(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(tokens)?);
+                            builder = builder.set_paths(crate::protocol_serde::shape_glue_studio_path_list::de_glue_studio_path_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

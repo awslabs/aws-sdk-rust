@@ -17,6 +17,7 @@ pub fn ser_item_identifier(
 
 pub(crate) fn de_item_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ItemIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_item_value::de_item_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_item_value::de_item_value(tokens, _value)?);
                         }
                         "type" => {
                             builder = builder.set_type(

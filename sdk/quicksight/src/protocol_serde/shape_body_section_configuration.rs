@@ -35,6 +35,7 @@ pub fn ser_body_section_configuration(
 
 pub(crate) fn de_body_section_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BodySectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,19 +57,21 @@ where
                             );
                         }
                         "Content" => {
-                            builder = builder.set_content(crate::protocol_serde::shape_body_section_content::de_body_section_content(tokens)?);
+                            builder = builder.set_content(crate::protocol_serde::shape_body_section_content::de_body_section_content(
+                                tokens, _value,
+                            )?);
                         }
                         "Style" => {
-                            builder = builder.set_style(crate::protocol_serde::shape_section_style::de_section_style(tokens)?);
+                            builder = builder.set_style(crate::protocol_serde::shape_section_style::de_section_style(tokens, _value)?);
                         }
                         "PageBreakConfiguration" => {
                             builder = builder.set_page_break_configuration(
-                                crate::protocol_serde::shape_section_page_break_configuration::de_section_page_break_configuration(tokens)?,
+                                crate::protocol_serde::shape_section_page_break_configuration::de_section_page_break_configuration(tokens, _value)?,
                             );
                         }
                         "RepeatConfiguration" => {
                             builder = builder.set_repeat_configuration(
-                                crate::protocol_serde::shape_body_section_repeat_configuration::de_body_section_repeat_configuration(tokens)?,
+                                crate::protocol_serde::shape_body_section_repeat_configuration::de_body_section_repeat_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

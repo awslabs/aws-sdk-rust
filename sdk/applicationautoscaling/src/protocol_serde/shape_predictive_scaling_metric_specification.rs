@@ -59,6 +59,7 @@ pub fn ser_predictive_scaling_metric_specification(
 
 pub(crate) fn de_predictive_scaling_metric_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PredictiveScalingMetricSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -79,32 +80,32 @@ where
                         }
                         "PredefinedMetricPairSpecification" => {
                             builder = builder.set_predefined_metric_pair_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair_specification::de_predictive_scaling_predefined_metric_pair_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_metric_pair_specification::de_predictive_scaling_predefined_metric_pair_specification(tokens, _value)?
                                 );
                         }
                         "PredefinedScalingMetricSpecification" => {
                             builder = builder.set_predefined_scaling_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric_specification::de_predictive_scaling_predefined_scaling_metric_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_scaling_metric_specification::de_predictive_scaling_predefined_scaling_metric_specification(tokens, _value)?
                                 );
                         }
                         "PredefinedLoadMetricSpecification" => {
                             builder = builder.set_predefined_load_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_predefined_load_metric_specification::de_predictive_scaling_predefined_load_metric_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_predefined_load_metric_specification::de_predictive_scaling_predefined_load_metric_specification(tokens, _value)?
                                 );
                         }
                         "CustomizedScalingMetricSpecification" => {
                             builder = builder.set_customized_scaling_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
                                 );
                         }
                         "CustomizedLoadMetricSpecification" => {
                             builder = builder.set_customized_load_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
                                 );
                         }
                         "CustomizedCapacityMetricSpecification" => {
                             builder = builder.set_customized_capacity_metric_specification(
-                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens)?
+                                    crate::protocol_serde::shape_predictive_scaling_customized_metric_specification::de_predictive_scaling_customized_metric_specification(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

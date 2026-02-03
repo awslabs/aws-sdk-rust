@@ -364,13 +364,13 @@ pub fn de_get_open_cypher_query_status_http_response(
 }
 
 pub(crate) fn de_get_open_cypher_query_status(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_open_cypher_query_status::builders::GetOpenCypherQueryStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -378,7 +378,7 @@ pub(crate) fn de_get_open_cypher_query_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "queryEvalStats" => {
-                    builder = builder.set_query_eval_stats(crate::protocol_serde::shape_query_eval_stats::de_query_eval_stats(tokens)?);
+                    builder = builder.set_query_eval_stats(crate::protocol_serde::shape_query_eval_stats::de_query_eval_stats(tokens, _value)?);
                 }
                 "queryId" => {
                     builder = builder.set_query_id(

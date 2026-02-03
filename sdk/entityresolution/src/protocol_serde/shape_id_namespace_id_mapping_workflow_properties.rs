@@ -23,6 +23,7 @@ pub fn ser_id_namespace_id_mapping_workflow_properties(
 
 pub(crate) fn de_id_namespace_id_mapping_workflow_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IdNamespaceIdMappingWorkflowProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,12 +46,12 @@ where
                         }
                         "ruleBasedProperties" => {
                             builder = builder.set_rule_based_properties(
-                                crate::protocol_serde::shape_namespace_rule_based_properties::de_namespace_rule_based_properties(tokens)?,
+                                crate::protocol_serde::shape_namespace_rule_based_properties::de_namespace_rule_based_properties(tokens, _value)?,
                             );
                         }
                         "providerProperties" => {
                             builder = builder.set_provider_properties(
-                                crate::protocol_serde::shape_namespace_provider_properties::de_namespace_provider_properties(tokens)?,
+                                crate::protocol_serde::shape_namespace_provider_properties::de_namespace_provider_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

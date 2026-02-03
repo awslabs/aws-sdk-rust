@@ -157,7 +157,7 @@ mod create_application;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_kinesisanalytics::Error> {
 /// # let client: aws_sdk_kinesisanalytics::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_application_cloud_watch_logging_option()
 ///     .customize()

@@ -17,6 +17,7 @@ pub fn ser_input_channel(
 
 pub(crate) fn de_input_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InputChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dataSource" => {
                             builder = builder.set_data_source(crate::protocol_serde::shape_input_channel_data_source::de_input_channel_data_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "roleArn" => {

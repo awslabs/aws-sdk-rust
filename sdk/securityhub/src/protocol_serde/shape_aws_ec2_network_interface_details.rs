@@ -68,6 +68,7 @@ pub fn ser_aws_ec2_network_interface_details(
 
 pub(crate) fn de_aws_ec2_network_interface_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsEc2NetworkInterfaceDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,7 +84,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Attachment" => {
                             builder = builder.set_attachment(
-                                crate::protocol_serde::shape_aws_ec2_network_interface_attachment::de_aws_ec2_network_interface_attachment(tokens)?,
+                                crate::protocol_serde::shape_aws_ec2_network_interface_attachment::de_aws_ec2_network_interface_attachment(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "NetworkInterfaceId" => {
@@ -95,7 +98,7 @@ where
                         }
                         "SecurityGroups" => {
                             builder = builder.set_security_groups(
-                                    crate::protocol_serde::shape_aws_ec2_network_interface_security_group_list::de_aws_ec2_network_interface_security_group_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_network_interface_security_group_list::de_aws_ec2_network_interface_security_group_list(tokens, _value)?
                                 );
                         }
                         "SourceDestCheck" => {
@@ -103,12 +106,12 @@ where
                         }
                         "IpV6Addresses" => {
                             builder = builder.set_ipv6_addresses(
-                                    crate::protocol_serde::shape_aws_ec2_network_interface_ipv6_address_list::de_aws_ec2_network_interface_ipv6_address_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_network_interface_ipv6_address_list::de_aws_ec2_network_interface_ipv6_address_list(tokens, _value)?
                                 );
                         }
                         "PrivateIpAddresses" => {
                             builder = builder.set_private_ip_addresses(
-                                    crate::protocol_serde::shape_aws_ec2_network_interface_private_ip_address_list::de_aws_ec2_network_interface_private_ip_address_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ec2_network_interface_private_ip_address_list::de_aws_ec2_network_interface_private_ip_address_list(tokens, _value)?
                                 );
                         }
                         "PublicDnsName" => {

@@ -111,10 +111,10 @@ pub fn ser_get_ip_set_input(
 }
 
 pub(crate) fn de_get_ip_set(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_ip_set::builders::GetIpSetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_ip_set::builders::GetIpSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -122,7 +122,7 @@ pub(crate) fn de_get_ip_set(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "IPSet" => {
-                    builder = builder.set_ip_set(crate::protocol_serde::shape_ip_set::de_ip_set(tokens)?);
+                    builder = builder.set_ip_set(crate::protocol_serde::shape_ip_set::de_ip_set(tokens, _value)?);
                 }
                 "LockToken" => {
                     builder = builder.set_lock_token(

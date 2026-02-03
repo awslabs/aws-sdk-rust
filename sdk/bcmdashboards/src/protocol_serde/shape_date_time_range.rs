@@ -20,6 +20,7 @@ pub fn ser_date_time_range(
 
 pub(crate) fn de_date_time_range<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DateTimeRange>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "startTime" => {
-                            builder = builder.set_start_time(crate::protocol_serde::shape_date_time_value::de_date_time_value(tokens)?);
+                            builder = builder.set_start_time(crate::protocol_serde::shape_date_time_value::de_date_time_value(tokens, _value)?);
                         }
                         "endTime" => {
-                            builder = builder.set_end_time(crate::protocol_serde::shape_date_time_value::de_date_time_value(tokens)?);
+                            builder = builder.set_end_time(crate::protocol_serde::shape_date_time_value::de_date_time_value(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

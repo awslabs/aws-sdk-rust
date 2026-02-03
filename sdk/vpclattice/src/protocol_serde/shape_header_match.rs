@@ -20,6 +20,7 @@ pub fn ser_header_match(
 
 pub(crate) fn de_header_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HeaderMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "match" => {
-                            builder = builder.set_match(crate::protocol_serde::shape_header_match_type::de_header_match_type(tokens)?);
+                            builder = builder.set_match(crate::protocol_serde::shape_header_match_type::de_header_match_type(tokens, _value)?);
                         }
                         "caseSensitive" => {
                             builder = builder.set_case_sensitive(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

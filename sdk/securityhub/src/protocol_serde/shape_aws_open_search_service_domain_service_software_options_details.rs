@@ -32,6 +32,7 @@ pub fn ser_aws_open_search_service_domain_service_software_options_details(
 
 pub(crate) fn de_aws_open_search_service_domain_service_software_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

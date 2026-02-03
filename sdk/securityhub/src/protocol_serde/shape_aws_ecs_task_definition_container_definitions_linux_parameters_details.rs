@@ -59,6 +59,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_linux_parameters_detail
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_linux_parameters_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -77,12 +78,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Capabilities" => {
                             builder = builder.set_capabilities(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::de_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::de_aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details(tokens, _value)?
                                 );
                         }
                         "Devices" => {
                             builder = builder.set_devices(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_devices_list::de_aws_ecs_task_definition_container_definitions_linux_parameters_devices_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_devices_list::de_aws_ecs_task_definition_container_definitions_linux_parameters_devices_list(tokens, _value)?
                                 );
                         }
                         "InitProcessEnabled" => {
@@ -111,7 +112,7 @@ where
                         }
                         "Tmpfs" => {
                             builder = builder.set_tmpfs(
-                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_list::de_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_list(tokens)?
+                                    crate::protocol_serde::shape_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_list::de_aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

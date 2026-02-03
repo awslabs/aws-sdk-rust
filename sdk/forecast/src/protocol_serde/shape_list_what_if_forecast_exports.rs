@@ -84,13 +84,13 @@ pub fn ser_list_what_if_forecast_exports_input(
 }
 
 pub(crate) fn de_list_what_if_forecast_exports(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -99,7 +99,7 @@ pub(crate) fn de_list_what_if_forecast_exports(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "WhatIfForecastExports" => {
                     builder = builder.set_what_if_forecast_exports(
-                        crate::protocol_serde::shape_what_if_forecast_exports::de_what_if_forecast_exports(tokens)?,
+                        crate::protocol_serde::shape_what_if_forecast_exports::de_what_if_forecast_exports(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

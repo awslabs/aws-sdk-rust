@@ -149,13 +149,13 @@ pub fn de_list_kx_scaling_groups_http_response(
 }
 
 pub(crate) fn de_list_kx_scaling_groups(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_kx_scaling_groups::builders::ListKxScalingGroupsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_kx_scaling_groups::builders::ListKxScalingGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -170,7 +170,9 @@ pub(crate) fn de_list_kx_scaling_groups(
                     );
                 }
                 "scalingGroups" => {
-                    builder = builder.set_scaling_groups(crate::protocol_serde::shape_kx_scaling_group_list::de_kx_scaling_group_list(tokens)?);
+                    builder = builder.set_scaling_groups(crate::protocol_serde::shape_kx_scaling_group_list::de_kx_scaling_group_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

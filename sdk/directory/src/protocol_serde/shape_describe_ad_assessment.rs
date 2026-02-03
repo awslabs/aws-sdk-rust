@@ -131,13 +131,13 @@ pub fn ser_describe_ad_assessment_input(
 }
 
 pub(crate) fn de_describe_ad_assessment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_ad_assessment::builders::DescribeAdAssessmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_ad_assessment::builders::DescribeAdAssessmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -145,10 +145,10 @@ pub(crate) fn de_describe_ad_assessment(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Assessment" => {
-                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens)?);
+                    builder = builder.set_assessment(crate::protocol_serde::shape_assessment::de_assessment(tokens, _value)?);
                 }
                 "AssessmentReports" => {
-                    builder = builder.set_assessment_reports(crate::protocol_serde::shape_assessment_reports::de_assessment_reports(tokens)?);
+                    builder = builder.set_assessment_reports(crate::protocol_serde::shape_assessment_reports::de_assessment_reports(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

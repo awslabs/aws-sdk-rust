@@ -170,13 +170,13 @@ pub fn ser_generate_bot_element_input(
 }
 
 pub(crate) fn de_generate_bot_element(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::generate_bot_element::builders::GenerateBotElementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::generate_bot_element::builders::GenerateBotElementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -212,7 +212,9 @@ pub(crate) fn de_generate_bot_element(
                     );
                 }
                 "sampleUtterances" => {
-                    builder = builder.set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(tokens)?);
+                    builder = builder.set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

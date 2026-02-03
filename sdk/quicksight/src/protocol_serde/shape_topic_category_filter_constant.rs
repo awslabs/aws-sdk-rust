@@ -20,6 +20,7 @@ pub fn ser_topic_category_filter_constant(
 
 pub(crate) fn de_topic_category_filter_constant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicCategoryFilterConstant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,8 +49,8 @@ where
                             );
                         }
                         "CollectiveConstant" => {
-                            builder =
-                                builder.set_collective_constant(crate::protocol_serde::shape_collective_constant::de_collective_constant(tokens)?);
+                            builder = builder
+                                .set_collective_constant(crate::protocol_serde::shape_collective_constant::de_collective_constant(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

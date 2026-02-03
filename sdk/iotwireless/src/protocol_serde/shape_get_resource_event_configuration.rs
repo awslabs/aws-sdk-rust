@@ -124,49 +124,49 @@ pub fn de_get_resource_event_configuration_http_response(
 }
 
 pub(crate) fn de_get_resource_event_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                match key.to_unescaped()?.as_ref() {
-                    "ConnectionStatus" => {
-                        builder = builder.set_connection_status(
-                            crate::protocol_serde::shape_connection_status_event_configuration::de_connection_status_event_configuration(tokens)?,
-                        );
-                    }
-                    "DeviceRegistrationState" => {
-                        builder = builder.set_device_registration_state(
-                            crate::protocol_serde::shape_device_registration_state_event_configuration::de_device_registration_state_event_configuration(tokens)?
-                        );
-                    }
-                    "Join" => {
-                        builder = builder.set_join(crate::protocol_serde::shape_join_event_configuration::de_join_event_configuration(
-                            tokens,
-                        )?);
-                    }
-                    "MessageDeliveryStatus" => {
-                        builder = builder.set_message_delivery_status(
-                            crate::protocol_serde::shape_message_delivery_status_event_configuration::de_message_delivery_status_event_configuration(
-                                tokens,
-                            )?,
-                        );
-                    }
-                    "Proximity" => {
-                        builder = builder
-                            .set_proximity(crate::protocol_serde::shape_proximity_event_configuration::de_proximity_event_configuration(tokens)?);
-                    }
-                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ConnectionStatus" => {
+                    builder = builder.set_connection_status(
+                        crate::protocol_serde::shape_connection_status_event_configuration::de_connection_status_event_configuration(tokens, _value)?,
+                    );
                 }
-            }
+                "DeviceRegistrationState" => {
+                    builder = builder.set_device_registration_state(
+                        crate::protocol_serde::shape_device_registration_state_event_configuration::de_device_registration_state_event_configuration(
+                            tokens, _value,
+                        )?,
+                    );
+                }
+                "Join" => {
+                    builder = builder.set_join(crate::protocol_serde::shape_join_event_configuration::de_join_event_configuration(
+                        tokens, _value,
+                    )?);
+                }
+                "MessageDeliveryStatus" => {
+                    builder = builder.set_message_delivery_status(
+                        crate::protocol_serde::shape_message_delivery_status_event_configuration::de_message_delivery_status_event_configuration(
+                            tokens, _value,
+                        )?,
+                    );
+                }
+                "Proximity" => {
+                    builder = builder
+                        .set_proximity(crate::protocol_serde::shape_proximity_event_configuration::de_proximity_event_configuration(tokens, _value)?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

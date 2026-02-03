@@ -20,6 +20,7 @@ pub fn ser_predictive_scaling_metric_stat(
 
 pub(crate) fn de_predictive_scaling_metric_stat<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PredictiveScalingMetricStat>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Metric" => {
                             builder = builder.set_metric(crate::protocol_serde::shape_predictive_scaling_metric::de_predictive_scaling_metric(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Stat" => {

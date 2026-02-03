@@ -71,6 +71,7 @@ pub fn ser_eks_container(
 
 pub(crate) fn de_eks_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EksContainer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -106,29 +107,33 @@ where
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "args" => {
-                            builder = builder.set_args(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_args(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "env" => {
                             builder = builder.set_env(
-                                crate::protocol_serde::shape_eks_container_environment_variables::de_eks_container_environment_variables(tokens)?,
+                                crate::protocol_serde::shape_eks_container_environment_variables::de_eks_container_environment_variables(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "resources" => {
                             builder = builder.set_resources(
-                                crate::protocol_serde::shape_eks_container_resource_requirements::de_eks_container_resource_requirements(tokens)?,
+                                crate::protocol_serde::shape_eks_container_resource_requirements::de_eks_container_resource_requirements(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "volumeMounts" => {
                             builder = builder.set_volume_mounts(
-                                crate::protocol_serde::shape_eks_container_volume_mounts::de_eks_container_volume_mounts(tokens)?,
+                                crate::protocol_serde::shape_eks_container_volume_mounts::de_eks_container_volume_mounts(tokens, _value)?,
                             );
                         }
                         "securityContext" => {
                             builder = builder.set_security_context(
-                                crate::protocol_serde::shape_eks_container_security_context::de_eks_container_security_context(tokens)?,
+                                crate::protocol_serde::shape_eks_container_security_context::de_eks_container_security_context(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

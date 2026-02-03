@@ -45,6 +45,7 @@ pub fn ser_segment_attribute_value(
 
 pub(crate) fn de_segment_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SegmentAttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,7 +68,7 @@ where
                         }
                         "ValueMap" => {
                             builder = builder.set_value_map(
-                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens)?,
+                                crate::protocol_serde::shape_segment_attribute_value_map::de_segment_attribute_value_map(tokens, _value)?,
                             );
                         }
                         "ValueInteger" => {
@@ -78,8 +79,9 @@ where
                             );
                         }
                         "ValueList" => {
-                            builder = builder
-                                .set_value_list(crate::protocol_serde::shape_segment_attribute_value_list::de_segment_attribute_value_list(tokens)?);
+                            builder = builder.set_value_list(
+                                crate::protocol_serde::shape_segment_attribute_value_list::de_segment_attribute_value_list(tokens, _value)?,
+                            );
                         }
                         "ValueArn" => {
                             builder = builder.set_value_arn(

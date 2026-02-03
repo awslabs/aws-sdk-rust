@@ -69,13 +69,13 @@ pub fn ser_export_metadata_model_assessment_input(
 }
 
 pub(crate) fn de_export_metadata_model_assessment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -85,12 +85,12 @@ pub(crate) fn de_export_metadata_model_assessment(
                 match key.to_unescaped()?.as_ref() {
                     "PdfReport" => {
                         builder = builder.set_pdf_report(
-                            crate::protocol_serde::shape_export_metadata_model_assessment_result_entry::de_export_metadata_model_assessment_result_entry(tokens)?
+                            crate::protocol_serde::shape_export_metadata_model_assessment_result_entry::de_export_metadata_model_assessment_result_entry(tokens, _value)?
                         );
                     }
                     "CsvReport" => {
                         builder = builder.set_csv_report(
-                            crate::protocol_serde::shape_export_metadata_model_assessment_result_entry::de_export_metadata_model_assessment_result_entry(tokens)?
+                            crate::protocol_serde::shape_export_metadata_model_assessment_result_entry::de_export_metadata_model_assessment_result_entry(tokens, _value)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

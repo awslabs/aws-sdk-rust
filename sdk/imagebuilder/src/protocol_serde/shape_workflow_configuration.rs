@@ -29,6 +29,7 @@ pub fn ser_workflow_configuration(
 
 pub(crate) fn de_workflow_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkflowConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,8 +51,9 @@ where
                             );
                         }
                         "parameters" => {
-                            builder =
-                                builder.set_parameters(crate::protocol_serde::shape_workflow_parameter_list::de_workflow_parameter_list(tokens)?);
+                            builder = builder.set_parameters(crate::protocol_serde::shape_workflow_parameter_list::de_workflow_parameter_list(
+                                tokens, _value,
+                            )?);
                         }
                         "parallelGroup" => {
                             builder = builder.set_parallel_group(

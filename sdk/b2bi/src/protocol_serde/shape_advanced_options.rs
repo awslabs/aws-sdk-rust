@@ -14,6 +14,7 @@ pub fn ser_advanced_options(
 
 pub(crate) fn de_advanced_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdvancedOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "x12" => {
-                            builder = builder.set_x12(crate::protocol_serde::shape_x12_advanced_options::de_x12_advanced_options(tokens)?);
+                            builder = builder.set_x12(crate::protocol_serde::shape_x12_advanced_options::de_x12_advanced_options(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

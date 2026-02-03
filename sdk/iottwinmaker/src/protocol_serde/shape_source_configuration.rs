@@ -29,6 +29,7 @@ pub fn ser_source_configuration(
 
 pub(crate) fn de_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,17 +51,22 @@ where
                             );
                         }
                         "s3Configuration" => {
-                            builder = builder
-                                .set_s3_configuration(crate::protocol_serde::shape_s3_source_configuration::de_s3_source_configuration(tokens)?);
+                            builder = builder.set_s3_configuration(crate::protocol_serde::shape_s3_source_configuration::de_s3_source_configuration(
+                                tokens, _value,
+                            )?);
                         }
                         "iotSiteWiseConfiguration" => {
                             builder = builder.set_iot_site_wise_configuration(
-                                crate::protocol_serde::shape_iot_site_wise_source_configuration::de_iot_site_wise_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_iot_site_wise_source_configuration::de_iot_site_wise_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "iotTwinMakerConfiguration" => {
                             builder = builder.set_iot_twin_maker_configuration(
-                                crate::protocol_serde::shape_iot_twin_maker_source_configuration::de_iot_twin_maker_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_iot_twin_maker_source_configuration::de_iot_twin_maker_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

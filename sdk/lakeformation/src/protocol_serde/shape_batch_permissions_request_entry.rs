@@ -47,6 +47,7 @@ pub fn ser_batch_permissions_request_entry(
 
 pub(crate) fn de_batch_permissions_request_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchPermissionsRequestEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,20 +69,21 @@ where
                             );
                         }
                         "Principal" => {
-                            builder = builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens)?);
+                            builder =
+                                builder.set_principal(crate::protocol_serde::shape_data_lake_principal::de_data_lake_principal(tokens, _value)?);
                         }
                         "Resource" => {
-                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens)?);
+                            builder = builder.set_resource(crate::protocol_serde::shape_resource::de_resource(tokens, _value)?);
                         }
                         "Permissions" => {
-                            builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                            builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens, _value)?);
                         }
                         "Condition" => {
-                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens, _value)?);
                         }
                         "PermissionsWithGrantOption" => {
-                            builder =
-                                builder.set_permissions_with_grant_option(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                            builder = builder
+                                .set_permissions_with_grant_option(crate::protocol_serde::shape_permission_list::de_permission_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -88,13 +88,13 @@ pub fn ser_describe_location_azure_blob_input(
 }
 
 pub(crate) fn de_describe_location_azure_blob(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_location_azure_blob::builders::DescribeLocationAzureBlobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_describe_location_azure_blob(
                     );
                 }
                 "AgentArns" => {
-                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens)?);
+                    builder = builder.set_agent_arns(crate::protocol_serde::shape_agent_arn_list::de_agent_arn_list(tokens, _value)?);
                 }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -146,14 +146,17 @@ pub(crate) fn de_describe_location_azure_blob(
                     )?);
                 }
                 "ManagedSecretConfig" => {
-                    builder =
-                        builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens)?);
+                    builder = builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(
+                        tokens, _value,
+                    )?);
                 }
                 "CmkSecretConfig" => {
-                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens)?);
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
                 }
                 "CustomSecretConfig" => {
-                    builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(tokens)?);
+                    builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

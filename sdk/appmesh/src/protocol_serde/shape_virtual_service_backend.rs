@@ -17,6 +17,7 @@ pub fn ser_virtual_service_backend(
 
 pub(crate) fn de_virtual_service_backend<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualServiceBackend>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "clientPolicy" => {
-                            builder = builder.set_client_policy(crate::protocol_serde::shape_client_policy::de_client_policy(tokens)?);
+                            builder = builder.set_client_policy(crate::protocol_serde::shape_client_policy::de_client_policy(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

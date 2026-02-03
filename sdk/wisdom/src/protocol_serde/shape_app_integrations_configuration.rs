@@ -20,6 +20,7 @@ pub fn ser_app_integrations_configuration(
 
 pub(crate) fn de_app_integrations_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AppIntegrationsConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,8 @@ where
                             );
                         }
                         "objectFields" => {
-                            builder = builder.set_object_fields(crate::protocol_serde::shape_object_fields_list::de_object_fields_list(tokens)?);
+                            builder =
+                                builder.set_object_fields(crate::protocol_serde::shape_object_fields_list::de_object_fields_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

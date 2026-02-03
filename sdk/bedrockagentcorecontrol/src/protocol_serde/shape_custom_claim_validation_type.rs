@@ -22,6 +22,7 @@ pub fn ser_custom_claim_validation_type(
 
 pub(crate) fn de_custom_claim_validation_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomClaimValidationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,7 +52,9 @@ where
                         }
                         "authorizingClaimMatchValue" => {
                             builder = builder.set_authorizing_claim_match_value(
-                                crate::protocol_serde::shape_authorizing_claim_match_value_type::de_authorizing_claim_match_value_type(tokens)?,
+                                crate::protocol_serde::shape_authorizing_claim_match_value_type::de_authorizing_claim_match_value_type(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

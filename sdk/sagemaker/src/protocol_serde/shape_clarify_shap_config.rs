@@ -35,6 +35,7 @@ pub fn ser_clarify_shap_config(
 
 pub(crate) fn de_clarify_shap_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClarifyShapConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ShapBaselineConfig" => {
                             builder = builder.set_shap_baseline_config(
-                                crate::protocol_serde::shape_clarify_shap_baseline_config::de_clarify_shap_baseline_config(tokens)?,
+                                crate::protocol_serde::shape_clarify_shap_baseline_config::de_clarify_shap_baseline_config(tokens, _value)?,
                             );
                         }
                         "NumberOfSamples" => {
@@ -71,7 +72,8 @@ where
                             );
                         }
                         "TextConfig" => {
-                            builder = builder.set_text_config(crate::protocol_serde::shape_clarify_text_config::de_clarify_text_config(tokens)?);
+                            builder =
+                                builder.set_text_config(crate::protocol_serde::shape_clarify_text_config::de_clarify_text_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

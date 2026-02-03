@@ -103,13 +103,13 @@ pub fn ser_list_available_resource_dimensions_input(
 }
 
 pub(crate) fn de_list_available_resource_dimensions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -117,7 +117,9 @@ pub(crate) fn de_list_available_resource_dimensions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "MetricDimensions" => {
-                    builder = builder.set_metric_dimensions(crate::protocol_serde::shape_metric_dimensions_list::de_metric_dimensions_list(tokens)?);
+                    builder = builder.set_metric_dimensions(crate::protocol_serde::shape_metric_dimensions_list::de_metric_dimensions_list(
+                        tokens, _value,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

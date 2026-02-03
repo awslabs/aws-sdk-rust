@@ -14,6 +14,7 @@ pub fn ser_aws_elasticsearch_domain_log_publishing_options_log_config(
 
 pub(crate) fn de_aws_elasticsearch_domain_log_publishing_options_log_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

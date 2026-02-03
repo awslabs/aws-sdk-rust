@@ -17,6 +17,7 @@ pub fn ser_avail_blanking(
 
 pub(crate) fn de_avail_blanking<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AvailBlanking>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,7 +32,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "availBlankingImage" => {
-                            builder = builder.set_avail_blanking_image(crate::protocol_serde::shape_input_location::de_input_location(tokens)?);
+                            builder =
+                                builder.set_avail_blanking_image(crate::protocol_serde::shape_input_location::de_input_location(tokens, _value)?);
                         }
                         "state" => {
                             builder = builder.set_state(

@@ -17,6 +17,7 @@ pub fn ser_virtual_gateway_file_access_log(
 
 pub(crate) fn de_virtual_gateway_file_access_log<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VirtualGatewayFileAccessLog>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "format" => {
-                            builder = builder.set_format(crate::protocol_serde::shape_logging_format::de_logging_format(tokens)?);
+                            builder = builder.set_format(crate::protocol_serde::shape_logging_format::de_logging_format(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

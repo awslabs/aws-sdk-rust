@@ -139,11 +139,11 @@ pub fn ser_search_faces_input(
 }
 
 pub(crate) fn de_search_faces(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::search_faces::builders::SearchFacesOutputBuilder,
 ) -> ::std::result::Result<crate::operation::search_faces::builders::SearchFacesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,7 +158,7 @@ pub(crate) fn de_search_faces(
                     );
                 }
                 "FaceMatches" => {
-                    builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(tokens)?);
+                    builder = builder.set_face_matches(crate::protocol_serde::shape_face_match_list::de_face_match_list(tokens, _value)?);
                 }
                 "FaceModelVersion" => {
                     builder = builder.set_face_model_version(

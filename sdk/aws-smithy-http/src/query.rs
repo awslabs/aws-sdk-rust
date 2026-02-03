@@ -65,7 +65,7 @@ impl<'a> Writer<'a> {
 #[cfg(test)]
 mod test {
     use crate::query::{fmt_string, Writer};
-    use http_02x::Uri;
+    use http_1x::Uri;
     use proptest::proptest;
 
     #[test]

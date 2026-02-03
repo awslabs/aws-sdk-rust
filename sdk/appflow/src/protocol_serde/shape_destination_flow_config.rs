@@ -23,6 +23,7 @@ pub fn ser_destination_flow_config(
 
 pub(crate) fn de_destination_flow_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DestinationFlowConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                         }
                         "destinationConnectorProperties" => {
                             builder = builder.set_destination_connector_properties(
-                                crate::protocol_serde::shape_destination_connector_properties::de_destination_connector_properties(tokens)?,
+                                crate::protocol_serde::shape_destination_connector_properties::de_destination_connector_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

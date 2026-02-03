@@ -17,6 +17,7 @@ pub fn ser_aws_ec2_launch_template_data_elastic_inference_accelerator_set_detail
 
 pub(crate) fn de_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

@@ -89,13 +89,13 @@ pub fn ser_count_pending_activity_tasks_input(
 }
 
 pub(crate) fn de_count_pending_activity_tasks(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

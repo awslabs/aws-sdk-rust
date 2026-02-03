@@ -27,6 +27,7 @@ pub fn ser_client_tls_certificate(
 
 pub(crate) fn de_client_tls_certificate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClientTlsCertificate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,11 @@ where
                     }
                     variant = match key.as_ref() {
                         "file" => Some(crate::types::ClientTlsCertificate::File(
-                            crate::protocol_serde::shape_listener_tls_file_certificate::de_listener_tls_file_certificate(tokens)?
+                            crate::protocol_serde::shape_listener_tls_file_certificate::de_listener_tls_file_certificate(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'file' cannot be null"))?,
                         )),
                         "sds" => Some(crate::types::ClientTlsCertificate::Sds(
-                            crate::protocol_serde::shape_listener_tls_sds_certificate::de_listener_tls_sds_certificate(tokens)?
+                            crate::protocol_serde::shape_listener_tls_sds_certificate::de_listener_tls_sds_certificate(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sds' cannot be null"))?,
                         )),
                         _ => {

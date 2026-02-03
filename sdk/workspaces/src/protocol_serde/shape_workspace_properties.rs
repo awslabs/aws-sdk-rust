@@ -50,6 +50,7 @@ pub fn ser_workspace_properties(
 
 pub(crate) fn de_workspace_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::WorkspaceProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -99,7 +100,7 @@ where
                             );
                         }
                         "Protocols" => {
-                            builder = builder.set_protocols(crate::protocol_serde::shape_protocol_list::de_protocol_list(tokens)?);
+                            builder = builder.set_protocols(crate::protocol_serde::shape_protocol_list::de_protocol_list(tokens, _value)?);
                         }
                         "OperatingSystemName" => {
                             builder = builder.set_operating_system_name(
@@ -110,7 +111,7 @@ where
                         }
                         "GlobalAccelerator" => {
                             builder = builder.set_global_accelerator(
-                                crate::protocol_serde::shape_global_accelerator_for_work_space::de_global_accelerator_for_work_space(tokens)?,
+                                crate::protocol_serde::shape_global_accelerator_for_work_space::de_global_accelerator_for_work_space(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

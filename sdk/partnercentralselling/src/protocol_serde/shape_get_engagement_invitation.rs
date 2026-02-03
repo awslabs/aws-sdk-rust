@@ -134,13 +134,13 @@ pub fn ser_get_engagement_invitation_input(
 }
 
 pub(crate) fn de_get_engagement_invitation(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_engagement_invitation::builders::GetEngagementInvitationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_engagement_invitation::builders::GetEngagementInvitationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -216,7 +216,7 @@ pub(crate) fn de_get_engagement_invitation(
                     );
                 }
                 "Receiver" => {
-                    builder = builder.set_receiver(crate::protocol_serde::shape_receiver::de_receiver(tokens)?);
+                    builder = builder.set_receiver(crate::protocol_serde::shape_receiver::de_receiver(tokens, _value)?);
                 }
                 "Catalog" => {
                     builder = builder.set_catalog(
@@ -233,7 +233,7 @@ pub(crate) fn de_get_engagement_invitation(
                     );
                 }
                 "Payload" => {
-                    builder = builder.set_payload(crate::protocol_serde::shape_payload::de_payload(tokens)?);
+                    builder = builder.set_payload(crate::protocol_serde::shape_payload::de_payload(tokens, _value)?);
                 }
                 "InvitationMessage" => {
                     builder = builder.set_invitation_message(
@@ -251,7 +251,7 @@ pub(crate) fn de_get_engagement_invitation(
                 }
                 "ExistingMembers" => {
                     builder = builder.set_existing_members(crate::protocol_serde::shape_engagement_member_summaries::de_engagement_member_summaries(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

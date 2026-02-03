@@ -118,13 +118,13 @@ pub fn de_list_received_data_grants_http_response(
 }
 
 pub(crate) fn de_list_received_data_grants(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_received_data_grants::builders::ListReceivedDataGrantsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_received_data_grants::builders::ListReceivedDataGrantsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,7 +134,7 @@ pub(crate) fn de_list_received_data_grants(
                 "DataGrantSummaries" => {
                     builder = builder.set_data_grant_summaries(
                         crate::protocol_serde::shape_list_of_received_data_grant_summaries_entry::de_list_of_received_data_grant_summaries_entry(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }

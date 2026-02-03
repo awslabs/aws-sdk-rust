@@ -227,6 +227,7 @@ pub fn ser_m2ts_settings(
 
 pub(crate) fn de_m2ts_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::M2tsSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -263,7 +264,7 @@ where
                         }
                         "audioPids" => {
                             builder = builder.set_audio_pids(
-                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens, _value)?,
                             );
                         }
                         "audioPtsOffsetDelta" => {
@@ -295,18 +296,21 @@ where
                             );
                         }
                         "dvbNitSettings" => {
-                            builder = builder.set_dvb_nit_settings(crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(tokens)?);
+                            builder =
+                                builder.set_dvb_nit_settings(crate::protocol_serde::shape_dvb_nit_settings::de_dvb_nit_settings(tokens, _value)?);
                         }
                         "dvbSdtSettings" => {
-                            builder = builder.set_dvb_sdt_settings(crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(tokens)?);
+                            builder =
+                                builder.set_dvb_sdt_settings(crate::protocol_serde::shape_dvb_sdt_settings::de_dvb_sdt_settings(tokens, _value)?);
                         }
                         "dvbSubPids" => {
                             builder = builder.set_dvb_sub_pids(
-                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens, _value)?,
                             );
                         }
                         "dvbTdtSettings" => {
-                            builder = builder.set_dvb_tdt_settings(crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(tokens)?);
+                            builder =
+                                builder.set_dvb_tdt_settings(crate::protocol_serde::shape_dvb_tdt_settings::de_dvb_tdt_settings(tokens, _value)?);
                         }
                         "dvbTeletextPid" => {
                             builder = builder.set_dvb_teletext_pid(
@@ -459,7 +463,7 @@ where
                             );
                         }
                         "scte35Esam" => {
-                            builder = builder.set_scte35_esam(crate::protocol_serde::shape_m2ts_scte35_esam::de_m2ts_scte35_esam(tokens)?);
+                            builder = builder.set_scte35_esam(crate::protocol_serde::shape_m2ts_scte35_esam::de_m2ts_scte35_esam(tokens, _value)?);
                         }
                         "scte35Pid" => {
                             builder = builder.set_scte35_pid(

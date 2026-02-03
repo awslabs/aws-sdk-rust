@@ -44,6 +44,16 @@ pub struct ReplicaDescription {
     pub replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details of the table class.</p>
     pub replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
+    /// <p>Indicates one of the settings synchronization modes for the global table replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table replica is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table replica is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl ReplicaDescription {
     /// <p>The name of the Region.</p>
@@ -110,6 +120,18 @@ impl ReplicaDescription {
     pub fn replica_table_class_summary(&self) -> ::std::option::Option<&crate::types::TableClassSummary> {
         self.replica_table_class_summary.as_ref()
     }
+    /// <p>Indicates one of the settings synchronization modes for the global table replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table replica is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table replica is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
+        self.global_table_settings_replication_mode.as_ref()
+    }
 }
 impl ReplicaDescription {
     /// Creates a new builder-style object to manufacture [`ReplicaDescription`](crate::types::ReplicaDescription).
@@ -133,6 +155,7 @@ pub struct ReplicaDescriptionBuilder {
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
     pub(crate) replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
+    pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl ReplicaDescriptionBuilder {
     /// <p>The name of the Region.</p>
@@ -352,6 +375,47 @@ impl ReplicaDescriptionBuilder {
     pub fn get_replica_table_class_summary(&self) -> &::std::option::Option<crate::types::TableClassSummary> {
         &self.replica_table_class_summary
     }
+    /// <p>Indicates one of the settings synchronization modes for the global table replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table replica is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table replica is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.global_table_settings_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates one of the settings synchronization modes for the global table replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table replica is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table replica is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.global_table_settings_replication_mode = input;
+        self
+    }
+    /// <p>Indicates one of the settings synchronization modes for the global table replica:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Indicates that the settings synchronization mode for the global table replica is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Indicates that the settings synchronization mode for the global table replica is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLED_WITH_OVERRIDES</code>: This mode is set by default for a same account global table. Indicates that certain global table settings can be overridden.</p></li>
+    /// </ul>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        &self.global_table_settings_replication_mode
+    }
     /// Consumes the builder and constructs a [`ReplicaDescription`](crate::types::ReplicaDescription).
     pub fn build(self) -> crate::types::ReplicaDescription {
         crate::types::ReplicaDescription {
@@ -366,6 +430,7 @@ impl ReplicaDescriptionBuilder {
             global_secondary_indexes: self.global_secondary_indexes,
             replica_inaccessible_date_time: self.replica_inaccessible_date_time,
             replica_table_class_summary: self.replica_table_class_summary,
+            global_table_settings_replication_mode: self.global_table_settings_replication_mode,
         }
     }
 }

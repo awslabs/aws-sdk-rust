@@ -29,6 +29,7 @@ pub fn ser_real_time_alert_rule(
 
 pub(crate) fn de_real_time_alert_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RealTimeAlertRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,17 @@ where
                         }
                         "KeywordMatchConfiguration" => {
                             builder = builder.set_keyword_match_configuration(
-                                crate::protocol_serde::shape_keyword_match_configuration::de_keyword_match_configuration(tokens)?,
+                                crate::protocol_serde::shape_keyword_match_configuration::de_keyword_match_configuration(tokens, _value)?,
                             );
                         }
                         "SentimentConfiguration" => {
                             builder = builder.set_sentiment_configuration(
-                                crate::protocol_serde::shape_sentiment_configuration::de_sentiment_configuration(tokens)?,
+                                crate::protocol_serde::shape_sentiment_configuration::de_sentiment_configuration(tokens, _value)?,
                             );
                         }
                         "IssueDetectionConfiguration" => {
                             builder = builder.set_issue_detection_configuration(
-                                crate::protocol_serde::shape_issue_detection_configuration::de_issue_detection_configuration(tokens)?,
+                                crate::protocol_serde::shape_issue_detection_configuration::de_issue_detection_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

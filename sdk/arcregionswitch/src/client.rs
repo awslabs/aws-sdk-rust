@@ -185,7 +185,7 @@ mod create_plan;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_arcregionswitch::Error> {
 /// # let client: aws_sdk_arcregionswitch::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.approve_plan_execution_step()
 ///     .customize()

@@ -89,6 +89,7 @@ pub fn ser_pipe_target_parameters(
 
 pub(crate) fn de_pipe_target_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeTargetParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -112,65 +113,71 @@ where
                         "LambdaFunctionParameters" => {
                             builder = builder.set_lambda_function_parameters(
                                 crate::protocol_serde::shape_pipe_target_lambda_function_parameters::de_pipe_target_lambda_function_parameters(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "StepFunctionStateMachineParameters" => {
                             builder = builder.set_step_function_state_machine_parameters(
-                                crate::protocol_serde::shape_pipe_target_state_machine_parameters::de_pipe_target_state_machine_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_state_machine_parameters::de_pipe_target_state_machine_parameters(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "KinesisStreamParameters" => {
                             builder = builder.set_kinesis_stream_parameters(
-                                crate::protocol_serde::shape_pipe_target_kinesis_stream_parameters::de_pipe_target_kinesis_stream_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_kinesis_stream_parameters::de_pipe_target_kinesis_stream_parameters(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "EcsTaskParameters" => {
                             builder = builder.set_ecs_task_parameters(
-                                crate::protocol_serde::shape_pipe_target_ecs_task_parameters::de_pipe_target_ecs_task_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_ecs_task_parameters::de_pipe_target_ecs_task_parameters(tokens, _value)?,
                             );
                         }
                         "BatchJobParameters" => {
                             builder = builder.set_batch_job_parameters(
-                                crate::protocol_serde::shape_pipe_target_batch_job_parameters::de_pipe_target_batch_job_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_batch_job_parameters::de_pipe_target_batch_job_parameters(tokens, _value)?,
                             );
                         }
                         "SqsQueueParameters" => {
                             builder = builder.set_sqs_queue_parameters(
-                                crate::protocol_serde::shape_pipe_target_sqs_queue_parameters::de_pipe_target_sqs_queue_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_sqs_queue_parameters::de_pipe_target_sqs_queue_parameters(tokens, _value)?,
                             );
                         }
                         "HttpParameters" => {
                             builder = builder.set_http_parameters(
-                                crate::protocol_serde::shape_pipe_target_http_parameters::de_pipe_target_http_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_http_parameters::de_pipe_target_http_parameters(tokens, _value)?,
                             );
                         }
                         "RedshiftDataParameters" => {
                             builder = builder.set_redshift_data_parameters(
-                                crate::protocol_serde::shape_pipe_target_redshift_data_parameters::de_pipe_target_redshift_data_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_redshift_data_parameters::de_pipe_target_redshift_data_parameters(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "SageMakerPipelineParameters" => {
                             builder = builder.set_sage_maker_pipeline_parameters(
-                                    crate::protocol_serde::shape_pipe_target_sage_maker_pipeline_parameters::de_pipe_target_sage_maker_pipeline_parameters(tokens)?
+                                    crate::protocol_serde::shape_pipe_target_sage_maker_pipeline_parameters::de_pipe_target_sage_maker_pipeline_parameters(tokens, _value)?
                                 );
                         }
                         "EventBridgeEventBusParameters" => {
                             builder = builder.set_event_bridge_event_bus_parameters(
-                                    crate::protocol_serde::shape_pipe_target_event_bridge_event_bus_parameters::de_pipe_target_event_bridge_event_bus_parameters(tokens)?
+                                    crate::protocol_serde::shape_pipe_target_event_bridge_event_bus_parameters::de_pipe_target_event_bridge_event_bus_parameters(tokens, _value)?
                                 );
                         }
                         "CloudWatchLogsParameters" => {
                             builder = builder.set_cloud_watch_logs_parameters(
                                 crate::protocol_serde::shape_pipe_target_cloud_watch_logs_parameters::de_pipe_target_cloud_watch_logs_parameters(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "TimestreamParameters" => {
                             builder = builder.set_timestream_parameters(
-                                crate::protocol_serde::shape_pipe_target_timestream_parameters::de_pipe_target_timestream_parameters(tokens)?,
+                                crate::protocol_serde::shape_pipe_target_timestream_parameters::de_pipe_target_timestream_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

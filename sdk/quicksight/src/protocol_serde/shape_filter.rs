@@ -56,6 +56,7 @@ pub fn ser_filter(
 
 pub(crate) fn de_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Filter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,33 +71,38 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CategoryFilter" => {
-                            builder = builder.set_category_filter(crate::protocol_serde::shape_category_filter::de_category_filter(tokens)?);
+                            builder = builder.set_category_filter(crate::protocol_serde::shape_category_filter::de_category_filter(tokens, _value)?);
                         }
                         "NumericRangeFilter" => {
-                            builder =
-                                builder.set_numeric_range_filter(crate::protocol_serde::shape_numeric_range_filter::de_numeric_range_filter(tokens)?);
+                            builder = builder.set_numeric_range_filter(crate::protocol_serde::shape_numeric_range_filter::de_numeric_range_filter(
+                                tokens, _value,
+                            )?);
                         }
                         "NumericEqualityFilter" => {
                             builder = builder.set_numeric_equality_filter(
-                                crate::protocol_serde::shape_numeric_equality_filter::de_numeric_equality_filter(tokens)?,
+                                crate::protocol_serde::shape_numeric_equality_filter::de_numeric_equality_filter(tokens, _value)?,
                             );
                         }
                         "TimeEqualityFilter" => {
-                            builder =
-                                builder.set_time_equality_filter(crate::protocol_serde::shape_time_equality_filter::de_time_equality_filter(tokens)?);
+                            builder = builder.set_time_equality_filter(crate::protocol_serde::shape_time_equality_filter::de_time_equality_filter(
+                                tokens, _value,
+                            )?);
                         }
                         "TimeRangeFilter" => {
-                            builder = builder.set_time_range_filter(crate::protocol_serde::shape_time_range_filter::de_time_range_filter(tokens)?);
+                            builder =
+                                builder.set_time_range_filter(crate::protocol_serde::shape_time_range_filter::de_time_range_filter(tokens, _value)?);
                         }
                         "RelativeDatesFilter" => {
-                            builder = builder
-                                .set_relative_dates_filter(crate::protocol_serde::shape_relative_dates_filter::de_relative_dates_filter(tokens)?);
+                            builder = builder.set_relative_dates_filter(
+                                crate::protocol_serde::shape_relative_dates_filter::de_relative_dates_filter(tokens, _value)?,
+                            );
                         }
                         "TopBottomFilter" => {
-                            builder = builder.set_top_bottom_filter(crate::protocol_serde::shape_top_bottom_filter::de_top_bottom_filter(tokens)?);
+                            builder =
+                                builder.set_top_bottom_filter(crate::protocol_serde::shape_top_bottom_filter::de_top_bottom_filter(tokens, _value)?);
                         }
                         "NestedFilter" => {
-                            builder = builder.set_nested_filter(crate::protocol_serde::shape_nested_filter::de_nested_filter(tokens)?);
+                            builder = builder.set_nested_filter(crate::protocol_serde::shape_nested_filter::de_nested_filter(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

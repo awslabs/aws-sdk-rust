@@ -62,6 +62,7 @@ pub fn ser_resource(
 
 pub(crate) fn de_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Resource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,38 +77,40 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Catalog" => {
-                            builder = builder.set_catalog(crate::protocol_serde::shape_catalog_resource::de_catalog_resource(tokens)?);
+                            builder = builder.set_catalog(crate::protocol_serde::shape_catalog_resource::de_catalog_resource(tokens, _value)?);
                         }
                         "Database" => {
-                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(tokens)?);
+                            builder = builder.set_database(crate::protocol_serde::shape_database_resource::de_database_resource(tokens, _value)?);
                         }
                         "Table" => {
-                            builder = builder.set_table(crate::protocol_serde::shape_table_resource::de_table_resource(tokens)?);
+                            builder = builder.set_table(crate::protocol_serde::shape_table_resource::de_table_resource(tokens, _value)?);
                         }
                         "TableWithColumns" => {
                             builder = builder.set_table_with_columns(
-                                crate::protocol_serde::shape_table_with_columns_resource::de_table_with_columns_resource(tokens)?,
+                                crate::protocol_serde::shape_table_with_columns_resource::de_table_with_columns_resource(tokens, _value)?,
                             );
                         }
                         "DataLocation" => {
-                            builder =
-                                builder.set_data_location(crate::protocol_serde::shape_data_location_resource::de_data_location_resource(tokens)?);
+                            builder = builder.set_data_location(crate::protocol_serde::shape_data_location_resource::de_data_location_resource(
+                                tokens, _value,
+                            )?);
                         }
                         "DataCellsFilter" => {
                             builder = builder.set_data_cells_filter(
-                                crate::protocol_serde::shape_data_cells_filter_resource::de_data_cells_filter_resource(tokens)?,
+                                crate::protocol_serde::shape_data_cells_filter_resource::de_data_cells_filter_resource(tokens, _value)?,
                             );
                         }
                         "LFTag" => {
-                            builder = builder.set_lf_tag(crate::protocol_serde::shape_lf_tag_key_resource::de_lf_tag_key_resource(tokens)?);
+                            builder = builder.set_lf_tag(crate::protocol_serde::shape_lf_tag_key_resource::de_lf_tag_key_resource(tokens, _value)?);
                         }
                         "LFTagPolicy" => {
-                            builder =
-                                builder.set_lf_tag_policy(crate::protocol_serde::shape_lf_tag_policy_resource::de_lf_tag_policy_resource(tokens)?);
+                            builder = builder.set_lf_tag_policy(crate::protocol_serde::shape_lf_tag_policy_resource::de_lf_tag_policy_resource(
+                                tokens, _value,
+                            )?);
                         }
                         "LFTagExpression" => {
                             builder = builder.set_lf_tag_expression(
-                                crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens)?,
+                                crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

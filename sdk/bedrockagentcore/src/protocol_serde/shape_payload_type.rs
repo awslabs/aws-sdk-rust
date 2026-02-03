@@ -20,6 +20,7 @@ pub fn ser_payload_type(
 
 pub(crate) fn de_payload_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PayloadType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "conversational" => Some(crate::types::PayloadType::Conversational(
-                            crate::protocol_serde::shape_conversational::de_conversational(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_conversational::de_conversational(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conversational' cannot be null")
                             })?,
                         )),

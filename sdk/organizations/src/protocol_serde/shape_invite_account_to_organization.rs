@@ -253,13 +253,13 @@ pub fn ser_invite_account_to_organization_input(
 }
 
 pub(crate) fn de_invite_account_to_organization(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -267,7 +267,7 @@ pub(crate) fn de_invite_account_to_organization(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Handshake" => {
-                    builder = builder.set_handshake(crate::protocol_serde::shape_handshake::de_handshake(tokens)?);
+                    builder = builder.set_handshake(crate::protocol_serde::shape_handshake::de_handshake(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

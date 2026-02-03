@@ -131,13 +131,13 @@ pub fn de_describe_computation_model_execution_summary_http_response(
 }
 
 pub(crate) fn de_describe_computation_model_execution_summary(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_computation_model_execution_summary::builders::DescribeComputationModelExecutionSummaryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_computation_model_execution_summary::builders::DescribeComputationModelExecutionSummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,7 +146,7 @@ pub(crate) fn de_describe_computation_model_execution_summary(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "computationModelExecutionSummary" => {
                     builder = builder.set_computation_model_execution_summary(
-                        crate::protocol_serde::shape_computation_model_execution_summary::de_computation_model_execution_summary(tokens)?,
+                        crate::protocol_serde::shape_computation_model_execution_summary::de_computation_model_execution_summary(tokens, _value)?,
                     );
                 }
                 "computationModelId" => {
@@ -157,7 +157,7 @@ pub(crate) fn de_describe_computation_model_execution_summary(
                     );
                 }
                 "resolveTo" => {
-                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens)?);
+                    builder = builder.set_resolve_to(crate::protocol_serde::shape_resolve_to::de_resolve_to(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

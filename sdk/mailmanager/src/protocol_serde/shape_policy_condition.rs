@@ -45,6 +45,7 @@ pub fn ser_policy_condition(
 
 pub(crate) fn de_policy_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PolicyCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,29 +75,30 @@ where
                     }
                     variant = match key.as_ref() {
                         "StringExpression" => Some(crate::types::PolicyCondition::StringExpression(
-                            crate::protocol_serde::shape_ingress_string_expression::de_ingress_string_expression(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringExpression' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ingress_string_expression::de_ingress_string_expression(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'StringExpression' cannot be null"),
+                            )?,
                         )),
                         "IpExpression" => Some(crate::types::PolicyCondition::IpExpression(
-                            crate::protocol_serde::shape_ingress_ipv4_expression::de_ingress_ipv4_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ingress_ipv4_expression::de_ingress_ipv4_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IpExpression' cannot be null")
                             })?,
                         )),
                         "Ipv6Expression" => Some(crate::types::PolicyCondition::Ipv6Expression(
-                            crate::protocol_serde::shape_ingress_ipv6_expression::de_ingress_ipv6_expression(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_ingress_ipv6_expression::de_ingress_ipv6_expression(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Ipv6Expression' cannot be null")
                             })?,
                         )),
                         "TlsExpression" => Some(crate::types::PolicyCondition::TlsExpression(
-                            crate::protocol_serde::shape_ingress_tls_protocol_expression::de_ingress_tls_protocol_expression(tokens)?.ok_or_else(
-                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TlsExpression' cannot be null"),
-                            )?,
+                            crate::protocol_serde::shape_ingress_tls_protocol_expression::de_ingress_tls_protocol_expression(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TlsExpression' cannot be null")
+                                })?,
                         )),
                         "BooleanExpression" => Some(crate::types::PolicyCondition::BooleanExpression(
-                            crate::protocol_serde::shape_ingress_boolean_expression::de_ingress_boolean_expression(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanExpression' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_ingress_boolean_expression::de_ingress_boolean_expression(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BooleanExpression' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

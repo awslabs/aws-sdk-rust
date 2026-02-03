@@ -20,6 +20,7 @@ pub fn ser_aws_open_search_service_domain_advanced_security_options_details(
 
 pub(crate) fn de_aws_open_search_service_domain_advanced_security_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -45,7 +46,7 @@ where
                         }
                         "MasterUserOptions" => {
                             builder = builder.set_master_user_options(
-                                    crate::protocol_serde::shape_aws_open_search_service_domain_master_user_options_details::de_aws_open_search_service_domain_master_user_options_details(tokens)?
+                                    crate::protocol_serde::shape_aws_open_search_service_domain_master_user_options_details::de_aws_open_search_service_domain_master_user_options_details(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

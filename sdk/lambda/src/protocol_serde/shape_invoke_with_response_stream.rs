@@ -594,12 +594,12 @@ pub fn de_invoke_with_response_stream_http_error(
 
 pub fn ser_invoke_with_response_stream_headers(
     input: &crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.invocation_type {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "invocation_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -610,7 +610,7 @@ pub fn ser_invoke_with_response_stream_headers(
     if let ::std::option::Option::Some(inner_3) = &input.log_type {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "log_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -621,7 +621,7 @@ pub fn ser_invoke_with_response_stream_headers(
     if let ::std::option::Option::Some(inner_5) = &input.client_context {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "client_context",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -632,7 +632,7 @@ pub fn ser_invoke_with_response_stream_headers(
     if let ::std::option::Option::Some(inner_7) = &input.tenant_id {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "tenant_id",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

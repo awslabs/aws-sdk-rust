@@ -167,7 +167,7 @@ mod create_lf_tag_expression;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_lakeformation::Error> {
 /// # let client: aws_sdk_lakeformation::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_lf_tags_to_resource()
 ///     .customize()

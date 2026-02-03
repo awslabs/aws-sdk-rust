@@ -20,6 +20,7 @@ pub fn ser_section(
 
 pub(crate) fn de_section<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Section>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "productRestEndpointPageArns" => {
                             builder = builder.set_product_rest_endpoint_page_arns(
-                                crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(tokens)?,
+                                crate::protocol_serde::shape_list_of_string_min20_max2048::de_list_of_string_min20_max2048(tokens, _value)?,
                             );
                         }
                         "sectionName" => {

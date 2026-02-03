@@ -62,6 +62,7 @@ pub fn ser_orc_ser_de(
 
 pub(crate) fn de_orc_ser_de<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OrcSerDe>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -113,7 +114,7 @@ where
                         }
                         "BloomFilterColumns" => {
                             builder = builder.set_bloom_filter_columns(
-                                    crate::protocol_serde::shape_list_of_non_empty_strings_without_whitespace::de_list_of_non_empty_strings_without_whitespace(tokens)?
+                                    crate::protocol_serde::shape_list_of_non_empty_strings_without_whitespace::de_list_of_non_empty_strings_without_whitespace(tokens, _value)?
                                 );
                         }
                         "BloomFilterFalsePositiveProbability" => {

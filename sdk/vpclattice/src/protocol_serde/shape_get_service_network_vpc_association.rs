@@ -135,13 +135,13 @@ pub fn de_get_service_network_vpc_association_http_response(
 }
 
 pub(crate) fn de_get_service_network_vpc_association(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -169,7 +169,7 @@ pub(crate) fn de_get_service_network_vpc_association(
                     );
                 }
                 "dnsOptions" => {
-                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens)?);
+                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens, _value)?);
                 }
                 "failureCode" => {
                     builder = builder.set_failure_code(
@@ -202,7 +202,8 @@ pub(crate) fn de_get_service_network_vpc_association(
                     builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
-                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?);
+                    builder =
+                        builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);
                 }
                 "serviceNetworkArn" => {
                     builder = builder.set_service_network_arn(

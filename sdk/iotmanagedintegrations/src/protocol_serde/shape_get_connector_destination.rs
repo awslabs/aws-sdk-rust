@@ -123,13 +123,13 @@ pub fn de_get_connector_destination_http_response(
 }
 
 pub(crate) fn de_get_connector_destination(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_connector_destination::builders::GetConnectorDestinationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_connector_destination::builders::GetConnectorDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -137,7 +137,7 @@ pub(crate) fn de_get_connector_destination(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AuthConfig" => {
-                    builder = builder.set_auth_config(crate::protocol_serde::shape_auth_config::de_auth_config(tokens)?);
+                    builder = builder.set_auth_config(crate::protocol_serde::shape_auth_config::de_auth_config(tokens, _value)?);
                 }
                 "AuthType" => {
                     builder = builder.set_auth_type(
@@ -182,7 +182,7 @@ pub(crate) fn de_get_connector_destination(
                     );
                 }
                 "SecretsManager" => {
-                    builder = builder.set_secrets_manager(crate::protocol_serde::shape_secrets_manager::de_secrets_manager(tokens)?);
+                    builder = builder.set_secrets_manager(crate::protocol_serde::shape_secrets_manager::de_secrets_manager(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

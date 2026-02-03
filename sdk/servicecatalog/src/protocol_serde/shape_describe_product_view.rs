@@ -84,13 +84,13 @@ pub fn ser_describe_product_view_input(
 }
 
 pub(crate) fn de_describe_product_view(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_product_view::builders::DescribeProductViewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -98,11 +98,14 @@ pub(crate) fn de_describe_product_view(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProductViewSummary" => {
-                    builder = builder.set_product_view_summary(crate::protocol_serde::shape_product_view_summary::de_product_view_summary(tokens)?);
+                    builder = builder.set_product_view_summary(crate::protocol_serde::shape_product_view_summary::de_product_view_summary(
+                        tokens, _value,
+                    )?);
                 }
                 "ProvisioningArtifacts" => {
-                    builder =
-                        builder.set_provisioning_artifacts(crate::protocol_serde::shape_provisioning_artifacts::de_provisioning_artifacts(tokens)?);
+                    builder = builder.set_provisioning_artifacts(crate::protocol_serde::shape_provisioning_artifacts::de_provisioning_artifacts(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -104,13 +104,13 @@ pub fn ser_list_workload_deployment_patterns_input(
 }
 
 pub(crate) fn de_list_workload_deployment_patterns(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_workload_deployment_patterns::builders::ListWorkloadDeploymentPatternsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -127,7 +127,7 @@ pub(crate) fn de_list_workload_deployment_patterns(
                     }
                     "workloadDeploymentPatterns" => {
                         builder = builder.set_workload_deployment_patterns(
-                            crate::protocol_serde::shape_workload_deployment_pattern_data_summary_list::de_workload_deployment_pattern_data_summary_list(tokens)?
+                            crate::protocol_serde::shape_workload_deployment_pattern_data_summary_list::de_workload_deployment_pattern_data_summary_list(tokens, _value)?
                         );
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_caption_selector(
 
 pub(crate) fn de_caption_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptionSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "selectorSettings" => {
                             builder = builder.set_selector_settings(
-                                crate::protocol_serde::shape_caption_selector_settings::de_caption_selector_settings(tokens)?,
+                                crate::protocol_serde::shape_caption_selector_settings::de_caption_selector_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

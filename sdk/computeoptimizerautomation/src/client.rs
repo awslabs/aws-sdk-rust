@@ -149,7 +149,7 @@ mod create_automation_rule;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_computeoptimizerautomation::Error> {
 /// # let client: aws_sdk_computeoptimizerautomation::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_accounts()
 ///     .customize()

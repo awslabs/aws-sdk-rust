@@ -108,13 +108,13 @@ pub fn de_get_template_step_http_response(
 }
 
 pub(crate) fn de_get_template_step(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_template_step::builders::GetTemplateStepOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_template_step::builders::GetTemplateStepOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,13 +150,13 @@ pub(crate) fn de_get_template_step(
                     );
                 }
                 "next" => {
-                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_next(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape_step_output_list::de_step_output_list(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_step_output_list::de_step_output_list(tokens, _value)?);
                 }
                 "previous" => {
-                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                    builder = builder.set_previous(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                 }
                 "stepActionType" => {
                     builder = builder.set_step_action_type(
@@ -167,7 +167,7 @@ pub(crate) fn de_get_template_step(
                 }
                 "stepAutomationConfiguration" => {
                     builder = builder.set_step_automation_configuration(
-                        crate::protocol_serde::shape_step_automation_configuration::de_step_automation_configuration(tokens)?,
+                        crate::protocol_serde::shape_step_automation_configuration::de_step_automation_configuration(tokens, _value)?,
                     );
                 }
                 "stepGroupId" => {

@@ -23,6 +23,7 @@ pub fn ser_notification_config(
 
 pub(crate) fn de_notification_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NotificationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "NotificationEvents" => {
-                            builder = builder
-                                .set_notification_events(crate::protocol_serde::shape_notification_event_list::de_notification_event_list(tokens)?);
+                            builder = builder.set_notification_events(
+                                crate::protocol_serde::shape_notification_event_list::de_notification_event_list(tokens, _value)?,
+                            );
                         }
                         "NotificationType" => {
                             builder = builder.set_notification_type(

@@ -38,6 +38,7 @@ pub fn ser_tabular_job_config(
 
 pub(crate) fn de_tabular_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TabularJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,12 +54,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CandidateGenerationConfig" => {
                             builder = builder.set_candidate_generation_config(
-                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens)?,
+                                crate::protocol_serde::shape_candidate_generation_config::de_candidate_generation_config(tokens, _value)?,
                             );
                         }
                         "CompletionCriteria" => {
                             builder = builder.set_completion_criteria(
-                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens)?,
+                                crate::protocol_serde::shape_auto_ml_job_completion_criteria::de_auto_ml_job_completion_criteria(tokens, _value)?,
                             );
                         }
                         "FeatureSpecificationS3Uri" => {

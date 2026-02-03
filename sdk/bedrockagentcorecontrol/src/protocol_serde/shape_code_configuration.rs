@@ -26,6 +26,7 @@ pub fn ser_code_configuration(
 
 pub(crate) fn de_code_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CodeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "code" => {
-                            builder = builder.set_code(crate::protocol_serde::shape_code::de_code(tokens)?);
+                            builder = builder.set_code(crate::protocol_serde::shape_code::de_code(tokens, _value)?);
                         }
                         "runtime" => {
                             builder = builder.set_runtime(
@@ -50,7 +51,7 @@ where
                             );
                         }
                         "entryPoint" => {
-                            builder = builder.set_entry_point(crate::protocol_serde::shape_entry_points::de_entry_points(tokens)?);
+                            builder = builder.set_entry_point(crate::protocol_serde::shape_entry_points::de_entry_points(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

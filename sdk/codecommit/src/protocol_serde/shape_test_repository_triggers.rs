@@ -426,13 +426,13 @@ pub fn ser_test_repository_triggers_input(
 }
 
 pub(crate) fn de_test_repository_triggers(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::test_repository_triggers::builders::TestRepositoryTriggersOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::test_repository_triggers::builders::TestRepositoryTriggersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -441,12 +441,14 @@ pub(crate) fn de_test_repository_triggers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "successfulExecutions" => {
                     builder = builder.set_successful_executions(
-                        crate::protocol_serde::shape_repository_trigger_name_list::de_repository_trigger_name_list(tokens)?,
+                        crate::protocol_serde::shape_repository_trigger_name_list::de_repository_trigger_name_list(tokens, _value)?,
                     );
                 }
                 "failedExecutions" => {
                     builder = builder.set_failed_executions(
-                        crate::protocol_serde::shape_repository_trigger_execution_failure_list::de_repository_trigger_execution_failure_list(tokens)?,
+                        crate::protocol_serde::shape_repository_trigger_execution_failure_list::de_repository_trigger_execution_failure_list(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

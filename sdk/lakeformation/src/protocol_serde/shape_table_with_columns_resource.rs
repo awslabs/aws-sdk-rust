@@ -32,6 +32,7 @@ pub fn ser_table_with_columns_resource(
 
 pub(crate) fn de_table_with_columns_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TableWithColumnsResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -67,10 +68,10 @@ where
                             );
                         }
                         "ColumnNames" => {
-                            builder = builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens)?);
+                            builder = builder.set_column_names(crate::protocol_serde::shape_column_names::de_column_names(tokens, _value)?);
                         }
                         "ColumnWildcard" => {
-                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens)?);
+                            builder = builder.set_column_wildcard(crate::protocol_serde::shape_column_wildcard::de_column_wildcard(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

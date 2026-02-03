@@ -189,13 +189,13 @@ pub fn ser_create_service_network_vpc_association_input(
 }
 
 pub(crate) fn de_create_service_network_vpc_association(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -217,7 +217,7 @@ pub(crate) fn de_create_service_network_vpc_association(
                     );
                 }
                 "dnsOptions" => {
-                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens)?);
+                    builder = builder.set_dns_options(crate::protocol_serde::shape_dns_options::de_dns_options(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -230,7 +230,8 @@ pub(crate) fn de_create_service_network_vpc_association(
                     builder = builder.set_private_dns_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "securityGroupIds" => {
-                    builder = builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens)?);
+                    builder =
+                        builder.set_security_group_ids(crate::protocol_serde::shape_security_group_list::de_security_group_list(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

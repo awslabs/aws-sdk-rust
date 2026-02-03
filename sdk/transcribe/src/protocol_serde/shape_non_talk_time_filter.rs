@@ -29,6 +29,7 @@ pub fn ser_non_talk_time_filter(
 
 pub(crate) fn de_non_talk_time_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NonTalkTimeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,12 +51,12 @@ where
                             );
                         }
                         "AbsoluteTimeRange" => {
-                            builder =
-                                builder.set_absolute_time_range(crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens)?);
+                            builder = builder
+                                .set_absolute_time_range(crate::protocol_serde::shape_absolute_time_range::de_absolute_time_range(tokens, _value)?);
                         }
                         "RelativeTimeRange" => {
-                            builder =
-                                builder.set_relative_time_range(crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens)?);
+                            builder = builder
+                                .set_relative_time_range(crate::protocol_serde::shape_relative_time_range::de_relative_time_range(tokens, _value)?);
                         }
                         "Negate" => {
                             builder = builder.set_negate(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

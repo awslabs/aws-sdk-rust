@@ -100,11 +100,11 @@ pub fn de_get_monitor_http_response(
 }
 
 pub(crate) fn de_get_monitor(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_monitor::builders::GetMonitorOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_monitor::builders::GetMonitorOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -118,11 +118,13 @@ pub(crate) fn de_get_monitor(
                     )?);
                 }
                 "HealthEventsConfig" => {
-                    builder = builder.set_health_events_config(crate::protocol_serde::shape_health_events_config::de_health_events_config(tokens)?);
+                    builder = builder.set_health_events_config(crate::protocol_serde::shape_health_events_config::de_health_events_config(
+                        tokens, _value,
+                    )?);
                 }
                 "InternetMeasurementsLogDelivery" => {
                     builder = builder.set_internet_measurements_log_delivery(
-                        crate::protocol_serde::shape_internet_measurements_log_delivery::de_internet_measurements_log_delivery(tokens)?,
+                        crate::protocol_serde::shape_internet_measurements_log_delivery::de_internet_measurements_log_delivery(tokens, _value)?,
                     );
                 }
                 "MaxCityNetworksToMonitor" => {
@@ -167,7 +169,7 @@ pub(crate) fn de_get_monitor(
                     );
                 }
                 "Resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_arns::de_set_of_arns(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_arns::de_set_of_arns(tokens, _value)?);
                 }
                 "Status" => {
                     builder = builder.set_status(
@@ -177,7 +179,7 @@ pub(crate) fn de_get_monitor(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "TrafficPercentageToMonitor" => {
                     builder = builder.set_traffic_percentage_to_monitor(

@@ -65,6 +65,7 @@ pub fn ser_express_gateway_container(
 
 pub(crate) fn de_express_gateway_container<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExpressGatewayContainer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -94,24 +95,26 @@ where
                         }
                         "awsLogsConfiguration" => {
                             builder = builder.set_aws_logs_configuration(
-                                    crate::protocol_serde::shape_express_gateway_service_aws_logs_configuration::de_express_gateway_service_aws_logs_configuration(tokens)?
+                                    crate::protocol_serde::shape_express_gateway_service_aws_logs_configuration::de_express_gateway_service_aws_logs_configuration(tokens, _value)?
                                 );
                         }
                         "repositoryCredentials" => {
                             builder = builder.set_repository_credentials(
                                 crate::protocol_serde::shape_express_gateway_repository_credentials::de_express_gateway_repository_credentials(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }
                         "command" => {
-                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_command(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "environment" => {
-                            builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens)?);
+                            builder = builder.set_environment(crate::protocol_serde::shape_environment_variables::de_environment_variables(
+                                tokens, _value,
+                            )?);
                         }
                         "secrets" => {
-                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens)?);
+                            builder = builder.set_secrets(crate::protocol_serde::shape_secret_list::de_secret_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

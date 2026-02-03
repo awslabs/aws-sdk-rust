@@ -17,6 +17,7 @@ pub fn ser_telemetry_sink_config(
 
 pub(crate) fn de_telemetry_sink_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TelemetrySinkConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,8 +39,8 @@ where
                             );
                         }
                         "telemetrySinkData" => {
-                            builder =
-                                builder.set_telemetry_sink_data(crate::protocol_serde::shape_telemetry_sink_data::de_telemetry_sink_data(tokens)?);
+                            builder = builder
+                                .set_telemetry_sink_data(crate::protocol_serde::shape_telemetry_sink_data::de_telemetry_sink_data(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -108,11 +108,11 @@ pub fn ser_update_route_input(
 }
 
 pub(crate) fn de_update_route(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_route::builders::UpdateRouteOutputBuilder,
 ) -> ::std::result::Result<crate::operation::update_route::builders::UpdateRouteOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -126,7 +126,9 @@ pub(crate) fn de_update_route(
                     builder = builder.set_api_key_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "authorizationScopes" => {
-                    builder = builder.set_authorization_scopes(crate::protocol_serde::shape_authorization_scopes::de_authorization_scopes(tokens)?);
+                    builder = builder.set_authorization_scopes(crate::protocol_serde::shape_authorization_scopes::de_authorization_scopes(
+                        tokens, _value,
+                    )?);
                 }
                 "authorizationType" => {
                     builder = builder.set_authorization_type(
@@ -157,10 +159,10 @@ pub(crate) fn de_update_route(
                     );
                 }
                 "requestModels" => {
-                    builder = builder.set_request_models(crate::protocol_serde::shape_route_models::de_route_models(tokens)?);
+                    builder = builder.set_request_models(crate::protocol_serde::shape_route_models::de_route_models(tokens, _value)?);
                 }
                 "requestParameters" => {
-                    builder = builder.set_request_parameters(crate::protocol_serde::shape_route_parameters::de_route_parameters(tokens)?);
+                    builder = builder.set_request_parameters(crate::protocol_serde::shape_route_parameters::de_route_parameters(tokens, _value)?);
                 }
                 "routeId" => {
                     builder = builder.set_route_id(

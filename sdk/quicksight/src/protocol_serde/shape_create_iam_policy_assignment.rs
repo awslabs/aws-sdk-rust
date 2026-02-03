@@ -172,13 +172,13 @@ pub fn ser_create_iam_policy_assignment_input(
 }
 
 pub(crate) fn de_create_iam_policy_assignment(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAssignmentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAssignmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -207,7 +207,7 @@ pub(crate) fn de_create_iam_policy_assignment(
                     );
                 }
                 "Identities" => {
-                    builder = builder.set_identities(crate::protocol_serde::shape_identity_map::de_identity_map(tokens)?);
+                    builder = builder.set_identities(crate::protocol_serde::shape_identity_map::de_identity_map(tokens, _value)?);
                 }
                 "PolicyArn" => {
                     builder = builder.set_policy_arn(

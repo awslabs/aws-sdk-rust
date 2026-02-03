@@ -35,6 +35,7 @@ pub fn ser_reference_line_label_configuration(
 
 pub(crate) fn de_reference_line_label_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReferenceLineLabelConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,17 @@ where
                         match key.to_unescaped()?.as_ref() {
                             "ValueLabelConfiguration" => {
                                 builder = builder.set_value_label_configuration(
-                                    crate::protocol_serde::shape_reference_line_value_label_configuration::de_reference_line_value_label_configuration(tokens)?
+                                    crate::protocol_serde::shape_reference_line_value_label_configuration::de_reference_line_value_label_configuration(tokens, _value)?
                                 );
                             }
                             "CustomLabelConfiguration" => {
                                 builder = builder.set_custom_label_configuration(
-                                    crate::protocol_serde::shape_reference_line_custom_label_configuration::de_reference_line_custom_label_configuration(tokens)?
+                                    crate::protocol_serde::shape_reference_line_custom_label_configuration::de_reference_line_custom_label_configuration(tokens, _value)?
                                 );
                             }
                             "FontConfiguration" => {
-                                builder =
-                                    builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                                builder = builder
+                                    .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
                             }
                             "FontColor" => {
                                 builder = builder.set_font_color(

@@ -27,6 +27,7 @@ pub fn ser_area_of_interest_geometry(
 
 pub(crate) fn de_area_of_interest_geometry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AreaOfInterestGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,14 +57,14 @@ where
                     }
                     variant = match key.as_ref() {
                         "PolygonGeometry" => Some(crate::types::AreaOfInterestGeometry::PolygonGeometry(
-                            crate::protocol_serde::shape_polygon_geometry_input::de_polygon_geometry_input(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_polygon_geometry_input::de_polygon_geometry_input(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PolygonGeometry' cannot be null")
                             })?,
                         )),
                         "MultiPolygonGeometry" => Some(crate::types::AreaOfInterestGeometry::MultiPolygonGeometry(
-                            crate::protocol_serde::shape_multi_polygon_geometry_input::de_multi_polygon_geometry_input(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiPolygonGeometry' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_multi_polygon_geometry_input::de_multi_polygon_geometry_input(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MultiPolygonGeometry' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

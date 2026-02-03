@@ -26,6 +26,7 @@ pub fn ser_filter_text_area_control(
 
 pub(crate) fn de_filter_text_area_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FilterTextAreaControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,7 +70,7 @@ where
                         }
                         "DisplayOptions" => {
                             builder = builder.set_display_options(
-                                crate::protocol_serde::shape_text_area_control_display_options::de_text_area_control_display_options(tokens)?,
+                                crate::protocol_serde::shape_text_area_control_display_options::de_text_area_control_display_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

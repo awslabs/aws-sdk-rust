@@ -143,13 +143,13 @@ pub fn de_delete_asset_model_interface_relationship_http_response(
 }
 
 pub(crate) fn de_delete_asset_model_interface_relationship(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::delete_asset_model_interface_relationship::builders::DeleteAssetModelInterfaceRelationshipOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::delete_asset_model_interface_relationship::builders::DeleteAssetModelInterfaceRelationshipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -171,7 +171,7 @@ pub(crate) fn de_delete_asset_model_interface_relationship(
                     );
                 }
                 "assetModelStatus" => {
-                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens)?);
+                    builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens, _value)?);
                 }
                 "interfaceAssetModelId" => {
                     builder = builder.set_interface_asset_model_id(

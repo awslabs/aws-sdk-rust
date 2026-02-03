@@ -29,6 +29,7 @@ pub fn ser_slot_value_override(
 
 pub(crate) fn de_slot_value_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SlotValueOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,10 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_slot_value::de_slot_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_slot_value::de_slot_value(tokens, _value)?);
                         }
                         "values" => {
-                            builder = builder.set_values(crate::protocol_serde::shape_slot_values::de_slot_values(tokens)?);
+                            builder = builder.set_values(crate::protocol_serde::shape_slot_values::de_slot_values(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -130,13 +130,13 @@ pub fn ser_batch_get_free_trial_info_input(
 }
 
 pub(crate) fn de_batch_get_free_trial_info(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,12 +144,12 @@ pub(crate) fn de_batch_get_free_trial_info(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "accounts" => {
-                    builder =
-                        builder.set_accounts(crate::protocol_serde::shape_free_trial_account_info_list::de_free_trial_account_info_list(tokens)?);
+                    builder = builder
+                        .set_accounts(crate::protocol_serde::shape_free_trial_account_info_list::de_free_trial_account_info_list(tokens, _value)?);
                 }
                 "failedAccounts" => {
                     builder = builder.set_failed_accounts(crate::protocol_serde::shape_free_trial_info_error_list::de_free_trial_info_error_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

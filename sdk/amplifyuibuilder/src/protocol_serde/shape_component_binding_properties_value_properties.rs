@@ -41,6 +41,7 @@ pub fn ser_component_binding_properties_value_properties(
 
 pub(crate) fn de_component_binding_properties_value_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentBindingPropertiesValueProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,7 +70,7 @@ where
                             );
                         }
                         "predicates" => {
-                            builder = builder.set_predicates(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens)?);
+                            builder = builder.set_predicates(crate::protocol_serde::shape_predicate_list::de_predicate_list(tokens, _value)?);
                         }
                         "userAttribute" => {
                             builder = builder.set_user_attribute(

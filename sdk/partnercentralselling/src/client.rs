@@ -163,7 +163,7 @@ mod create_resource_snapshot_job;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_partnercentralselling::Error> {
 /// # let client: aws_sdk_partnercentralselling::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_engagement_invitation()
 ///     .customize()

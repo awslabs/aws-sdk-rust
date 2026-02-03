@@ -186,7 +186,7 @@ mod create_mission_profile;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_groundstation::Error> {
 /// # let client: aws_sdk_groundstation::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_contact()
 ///     .customize()

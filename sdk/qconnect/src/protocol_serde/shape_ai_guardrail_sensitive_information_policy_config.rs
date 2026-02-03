@@ -32,6 +32,7 @@ pub fn ser_ai_guardrail_sensitive_information_policy_config(
 
 pub(crate) fn de_ai_guardrail_sensitive_information_policy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AiGuardrailSensitiveInformationPolicyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "piiEntitiesConfig" => {
                             builder = builder.set_pii_entities_config(
-                                crate::protocol_serde::shape_guardrail_pii_entities_config::de_guardrail_pii_entities_config(tokens)?,
+                                crate::protocol_serde::shape_guardrail_pii_entities_config::de_guardrail_pii_entities_config(tokens, _value)?,
                             );
                         }
                         "regexesConfig" => {
                             builder = builder.set_regexes_config(crate::protocol_serde::shape_guardrail_regexes_config::de_guardrail_regexes_config(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

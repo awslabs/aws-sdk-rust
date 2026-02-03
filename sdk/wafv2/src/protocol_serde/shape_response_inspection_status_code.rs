@@ -32,6 +32,7 @@ pub fn ser_response_inspection_status_code(
 
 pub(crate) fn de_response_inspection_status_code<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseInspectionStatusCode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,12 +48,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SuccessCodes" => {
                             builder = builder.set_success_codes(
-                                    crate::protocol_serde::shape_response_inspection_status_code_success_codes::de_response_inspection_status_code_success_codes(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_status_code_success_codes::de_response_inspection_status_code_success_codes(tokens, _value)?
                                 );
                         }
                         "FailureCodes" => {
                             builder = builder.set_failure_codes(
-                                    crate::protocol_serde::shape_response_inspection_status_code_failure_codes::de_response_inspection_status_code_failure_codes(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_status_code_failure_codes::de_response_inspection_status_code_failure_codes(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

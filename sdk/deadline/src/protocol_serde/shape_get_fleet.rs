@@ -121,10 +121,10 @@ pub fn de_get_fleet_http_response(
 }
 
 pub(crate) fn de_get_fleet(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_fleet::builders::GetFleetOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_fleet::builders::GetFleetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -139,10 +139,10 @@ pub(crate) fn de_get_fleet(
                     );
                 }
                 "capabilities" => {
-                    builder = builder.set_capabilities(crate::protocol_serde::shape_fleet_capabilities::de_fleet_capabilities(tokens)?);
+                    builder = builder.set_capabilities(crate::protocol_serde::shape_fleet_capabilities::de_fleet_capabilities(tokens, _value)?);
                 }
                 "configuration" => {
-                    builder = builder.set_configuration(crate::protocol_serde::shape_fleet_configuration::de_fleet_configuration(tokens)?);
+                    builder = builder.set_configuration(crate::protocol_serde::shape_fleet_configuration::de_fleet_configuration(tokens, _value)?);
                 }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -186,7 +186,7 @@ pub(crate) fn de_get_fleet(
                     );
                 }
                 "hostConfiguration" => {
-                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(tokens)?);
+                    builder = builder.set_host_configuration(crate::protocol_serde::shape_host_configuration::de_host_configuration(tokens, _value)?);
                 }
                 "maxWorkerCount" => {
                     builder = builder.set_max_worker_count(

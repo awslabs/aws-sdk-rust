@@ -73,13 +73,13 @@ pub fn ser_scan_provisioned_products_input(
 }
 
 pub(crate) fn de_scan_provisioned_products(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -88,7 +88,7 @@ pub(crate) fn de_scan_provisioned_products(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisionedProducts" => {
                     builder = builder.set_provisioned_products(
-                        crate::protocol_serde::shape_provisioned_product_details::de_provisioned_product_details(tokens)?,
+                        crate::protocol_serde::shape_provisioned_product_details::de_provisioned_product_details(tokens, _value)?,
                     );
                 }
                 "NextPageToken" => {

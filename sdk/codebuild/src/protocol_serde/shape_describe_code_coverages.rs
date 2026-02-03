@@ -69,13 +69,13 @@ pub fn ser_describe_code_coverages_input(
 }
 
 pub(crate) fn de_describe_code_coverages(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -90,7 +90,7 @@ pub(crate) fn de_describe_code_coverages(
                     );
                 }
                 "codeCoverages" => {
-                    builder = builder.set_code_coverages(crate::protocol_serde::shape_code_coverages::de_code_coverages(tokens)?);
+                    builder = builder.set_code_coverages(crate::protocol_serde::shape_code_coverages::de_code_coverages(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

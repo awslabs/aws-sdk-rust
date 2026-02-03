@@ -17,6 +17,7 @@ pub fn ser_on_demand_provisioning_specification(
 
 pub(crate) fn de_on_demand_provisioning_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OnDemandProvisioningSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,7 +44,7 @@ where
                         "CapacityReservationOptions" => {
                             builder = builder.set_capacity_reservation_options(
                                 crate::protocol_serde::shape_on_demand_capacity_reservation_options::de_on_demand_capacity_reservation_options(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

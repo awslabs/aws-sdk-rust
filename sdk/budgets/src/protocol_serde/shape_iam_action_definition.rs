@@ -38,6 +38,7 @@ pub fn ser_iam_action_definition(
 
 pub(crate) fn de_iam_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IamActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,13 +60,13 @@ where
                             );
                         }
                         "Roles" => {
-                            builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens)?);
+                            builder = builder.set_roles(crate::protocol_serde::shape_roles::de_roles(tokens, _value)?);
                         }
                         "Groups" => {
-                            builder = builder.set_groups(crate::protocol_serde::shape_groups::de_groups(tokens)?);
+                            builder = builder.set_groups(crate::protocol_serde::shape_groups::de_groups(tokens, _value)?);
                         }
                         "Users" => {
-                            builder = builder.set_users(crate::protocol_serde::shape_users::de_users(tokens)?);
+                            builder = builder.set_users(crate::protocol_serde::shape_users::de_users(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

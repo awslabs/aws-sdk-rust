@@ -27,6 +27,7 @@ pub fn ser_s3_express_directory_bucket_configuration(
 
 pub(crate) fn de_s3_express_directory_bucket_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3ExpressDirectoryBucketConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -49,7 +50,7 @@ where
                         }
                         "accessPoints" => {
                             builder = builder.set_access_points(
-                                    crate::protocol_serde::shape_s3_express_directory_access_point_configurations_map::de_s3_express_directory_access_point_configurations_map(tokens)?
+                                    crate::protocol_serde::shape_s3_express_directory_access_point_configurations_map::de_s3_express_directory_access_point_configurations_map(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

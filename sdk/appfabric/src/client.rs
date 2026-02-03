@@ -157,7 +157,7 @@ mod create_ingestion_destination;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_appfabric::Error> {
 /// # let client: aws_sdk_appfabric::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_user_access_tasks()
 ///     .customize()

@@ -35,6 +35,7 @@ pub fn ser_aws_waf_regional_web_acl_rules_list_details(
 
 pub(crate) fn de_aws_waf_regional_web_acl_rules_list_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsWafRegionalWebAclRulesListDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,12 +51,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Action" => {
                             builder = builder.set_action(
-                                    crate::protocol_serde::shape_aws_waf_regional_web_acl_rules_list_action_details::de_aws_waf_regional_web_acl_rules_list_action_details(tokens)?
+                                    crate::protocol_serde::shape_aws_waf_regional_web_acl_rules_list_action_details::de_aws_waf_regional_web_acl_rules_list_action_details(tokens, _value)?
                                 );
                         }
                         "OverrideAction" => {
                             builder = builder.set_override_action(
-                                    crate::protocol_serde::shape_aws_waf_regional_web_acl_rules_list_override_action_details::de_aws_waf_regional_web_acl_rules_list_override_action_details(tokens)?
+                                    crate::protocol_serde::shape_aws_waf_regional_web_acl_rules_list_override_action_details::de_aws_waf_regional_web_acl_rules_list_override_action_details(tokens, _value)?
                                 );
                         }
                         "Priority" => {

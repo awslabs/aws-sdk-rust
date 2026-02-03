@@ -114,41 +114,43 @@ pub fn ser_render_message_template_input(
 }
 
 pub(crate) fn de_render_message_template(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "attachments" => {
-                    builder = builder
-                        .set_attachments(crate::protocol_serde::shape_message_template_attachment_list::de_message_template_attachment_list(tokens)?);
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "attachments" => {
+                        builder = builder.set_attachments(
+                            crate::protocol_serde::shape_message_template_attachment_list::de_message_template_attachment_list(tokens, _value)?,
+                        );
+                    }
+                    "attributesNotInterpolated" => {
+                        builder = builder.set_attributes_not_interpolated(
+                            crate::protocol_serde::shape_message_template_attribute_key_list::de_message_template_attribute_key_list(tokens, _value)?,
+                        );
+                    }
+                    "content" => {
+                        builder = builder.set_content(
+                            crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(tokens, _value)?,
+                        );
+                    }
+                    "sourceConfigurationSummary" => {
+                        builder = builder.set_source_configuration_summary(
+                            crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(tokens, _value)?
+                        );
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "attributesNotInterpolated" => {
-                    builder = builder.set_attributes_not_interpolated(
-                        crate::protocol_serde::shape_message_template_attribute_key_list::de_message_template_attribute_key_list(tokens)?,
-                    );
-                }
-                "content" => {
-                    builder = builder
-                        .set_content(crate::protocol_serde::shape_message_template_content_provider::de_message_template_content_provider(tokens)?);
-                }
-                "sourceConfigurationSummary" => {
-                    builder = builder.set_source_configuration_summary(
-                        crate::protocol_serde::shape_message_template_source_configuration_summary::de_message_template_source_configuration_summary(
-                            tokens,
-                        )?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

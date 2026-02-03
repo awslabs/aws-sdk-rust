@@ -23,6 +23,7 @@ pub fn ser_vector_data(
 
 pub(crate) fn de_vector_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VectorData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,7 +53,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "float32" => Some(crate::types::VectorData::Float32(
-                            crate::protocol_serde::shape_float32_vector_data::de_float32_vector_data(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_float32_vector_data::de_float32_vector_data(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'float32' cannot be null")
                             })?,
                         )),

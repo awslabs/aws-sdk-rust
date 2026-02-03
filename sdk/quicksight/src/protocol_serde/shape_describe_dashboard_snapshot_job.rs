@@ -129,13 +129,13 @@ pub fn de_describe_dashboard_snapshot_job_http_response(
 }
 
 pub(crate) fn de_describe_dashboard_snapshot_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_dashboard_snapshot_job::builders::DescribeDashboardSnapshotJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -190,8 +190,9 @@ pub(crate) fn de_describe_dashboard_snapshot_job(
                     );
                 }
                 "SnapshotConfiguration" => {
-                    builder =
-                        builder.set_snapshot_configuration(crate::protocol_serde::shape_snapshot_configuration::de_snapshot_configuration(tokens)?);
+                    builder = builder.set_snapshot_configuration(crate::protocol_serde::shape_snapshot_configuration::de_snapshot_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "SnapshotJobId" => {
                     builder = builder.set_snapshot_job_id(
@@ -209,7 +210,7 @@ pub(crate) fn de_describe_dashboard_snapshot_job(
                 }
                 "UserConfiguration" => {
                     builder = builder.set_user_configuration(
-                        crate::protocol_serde::shape_snapshot_user_configuration_redacted::de_snapshot_user_configuration_redacted(tokens)?,
+                        crate::protocol_serde::shape_snapshot_user_configuration_redacted::de_snapshot_user_configuration_redacted(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

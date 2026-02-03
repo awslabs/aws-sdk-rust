@@ -26,6 +26,7 @@ pub fn ser_on_premises_tag_set(
 
 pub(crate) fn de_on_premises_tag_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OnPremisesTagSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "onPremisesTagSetList" => {
                             builder = builder.set_on_premises_tag_set_list(
-                                crate::protocol_serde::shape_on_premises_tag_set_list::de_on_premises_tag_set_list(tokens)?,
+                                crate::protocol_serde::shape_on_premises_tag_set_list::de_on_premises_tag_set_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

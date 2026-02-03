@@ -151,7 +151,7 @@ mod create_profile;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_route53profiles::Error> {
 /// # let client: aws_sdk_route53profiles::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.associate_profile()
 ///     .customize()

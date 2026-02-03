@@ -35,6 +35,7 @@ pub fn ser_srt_output_settings(
 
 pub(crate) fn de_srt_output_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SrtOutputSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,11 +57,13 @@ where
                             );
                         }
                         "containerSettings" => {
-                            builder = builder
-                                .set_container_settings(crate::protocol_serde::shape_udp_container_settings::de_udp_container_settings(tokens)?);
+                            builder = builder.set_container_settings(crate::protocol_serde::shape_udp_container_settings::de_udp_container_settings(
+                                tokens, _value,
+                            )?);
                         }
                         "destination" => {
-                            builder = builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens)?);
+                            builder =
+                                builder.set_destination(crate::protocol_serde::shape_output_location_ref::de_output_location_ref(tokens, _value)?);
                         }
                         "encryptionType" => {
                             builder = builder.set_encryption_type(

@@ -26,6 +26,7 @@ pub fn ser_proxy_configuration(
 
 pub(crate) fn de_proxy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProxyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -55,7 +56,7 @@ where
                         }
                         "properties" => {
                             builder = builder.set_properties(
-                                crate::protocol_serde::shape_proxy_configuration_properties::de_proxy_configuration_properties(tokens)?,
+                                crate::protocol_serde::shape_proxy_configuration_properties::de_proxy_configuration_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

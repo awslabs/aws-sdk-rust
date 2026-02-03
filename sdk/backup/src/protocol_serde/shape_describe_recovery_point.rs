@@ -111,13 +111,13 @@ pub fn de_describe_recovery_point_http_response(
 }
 
 pub(crate) fn de_describe_recovery_point(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_recovery_point::builders::DescribeRecoveryPointOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_recovery_point::builders::DescribeRecoveryPointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -146,7 +146,9 @@ pub(crate) fn de_describe_recovery_point(
                     );
                 }
                 "CalculatedLifecycle" => {
-                    builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(tokens)?);
+                    builder = builder.set_calculated_lifecycle(crate::protocol_serde::shape_calculated_lifecycle::de_calculated_lifecycle(
+                        tokens, _value,
+                    )?);
                 }
                 "CompletionDate" => {
                     builder = builder.set_completion_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -162,7 +164,9 @@ pub(crate) fn de_describe_recovery_point(
                     );
                 }
                 "CreatedBy" => {
-                    builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(tokens)?);
+                    builder = builder.set_created_by(crate::protocol_serde::shape_recovery_point_creator::de_recovery_point_creator(
+                        tokens, _value,
+                    )?);
                 }
                 "CreationDate" => {
                     builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -224,7 +228,7 @@ pub(crate) fn de_describe_recovery_point(
                     )?);
                 }
                 "Lifecycle" => {
-                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens)?);
+                    builder = builder.set_lifecycle(crate::protocol_serde::shape_lifecycle::de_lifecycle(tokens, _value)?);
                 }
                 "ParentRecoveryPointArn" => {
                     builder = builder.set_parent_recovery_point_arn(
@@ -262,7 +266,7 @@ pub(crate) fn de_describe_recovery_point(
                     );
                 }
                 "ScanResults" => {
-                    builder = builder.set_scan_results(crate::protocol_serde::shape_scan_results::de_scan_results(tokens)?);
+                    builder = builder.set_scan_results(crate::protocol_serde::shape_scan_results::de_scan_results(tokens, _value)?);
                 }
                 "SourceBackupVaultArn" => {
                     builder = builder.set_source_backup_vault_arn(

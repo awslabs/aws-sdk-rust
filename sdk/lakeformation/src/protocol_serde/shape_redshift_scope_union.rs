@@ -21,6 +21,7 @@ pub fn ser_redshift_scope_union(
 
 pub(crate) fn de_redshift_scope_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RedshiftScopeUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,7 +51,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "RedshiftConnect" => Some(crate::types::RedshiftScopeUnion::RedshiftConnect(
-                            crate::protocol_serde::shape_redshift_connect::de_redshift_connect(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_redshift_connect::de_redshift_connect(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RedshiftConnect' cannot be null")
                             })?,
                         )),

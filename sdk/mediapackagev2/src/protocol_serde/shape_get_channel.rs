@@ -115,11 +115,11 @@ pub fn de_get_channel_http_response(
 }
 
 pub(crate) fn de_get_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_channel::builders::GetChannelOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_channel::builders::GetChannelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -168,11 +168,13 @@ pub(crate) fn de_get_channel(
                     );
                 }
                 "IngestEndpoints" => {
-                    builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(tokens)?);
+                    builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(
+                        tokens, _value,
+                    )?);
                 }
                 "InputSwitchConfiguration" => {
                     builder = builder.set_input_switch_configuration(
-                        crate::protocol_serde::shape_input_switch_configuration::de_input_switch_configuration(tokens)?,
+                        crate::protocol_serde::shape_input_switch_configuration::de_input_switch_configuration(tokens, _value)?,
                     );
                 }
                 "InputType" => {
@@ -190,7 +192,7 @@ pub(crate) fn de_get_channel(
                 }
                 "OutputHeaderConfiguration" => {
                     builder = builder.set_output_header_configuration(
-                        crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens)?,
+                        crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens, _value)?,
                     );
                 }
                 "ResetAt" => {
@@ -200,7 +202,7 @@ pub(crate) fn de_get_channel(
                     )?);
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

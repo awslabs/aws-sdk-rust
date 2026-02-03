@@ -23,6 +23,7 @@ pub fn ser_featurization(
 
 pub(crate) fn de_featurization<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Featurization>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "FeaturizationPipeline" => {
-                            builder = builder
-                                .set_featurization_pipeline(crate::protocol_serde::shape_featurization_pipeline::de_featurization_pipeline(tokens)?);
+                            builder = builder.set_featurization_pipeline(
+                                crate::protocol_serde::shape_featurization_pipeline::de_featurization_pipeline(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

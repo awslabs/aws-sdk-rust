@@ -27,6 +27,7 @@ pub fn ser_api_stage(
 
 pub(crate) fn de_api_stage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApiStage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,9 @@ where
                         }
                         "throttle" => {
                             builder = builder.set_throttle(
-                                crate::protocol_serde::shape_map_of_api_stage_throttle_settings::de_map_of_api_stage_throttle_settings(tokens)?,
+                                crate::protocol_serde::shape_map_of_api_stage_throttle_settings::de_map_of_api_stage_throttle_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -116,13 +116,13 @@ pub fn de_get_browser_session_http_response(
 }
 
 pub(crate) fn de_get_browser_session(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_browser_session::builders::GetBrowserSessionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_browser_session::builders::GetBrowserSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -143,7 +143,7 @@ pub(crate) fn de_get_browser_session(
                     )?);
                 }
                 "extensions" => {
-                    builder = builder.set_extensions(crate::protocol_serde::shape_browser_extensions::de_browser_extensions(tokens)?);
+                    builder = builder.set_extensions(crate::protocol_serde::shape_browser_extensions::de_browser_extensions(tokens, _value)?);
                 }
                 "lastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -187,10 +187,12 @@ pub(crate) fn de_get_browser_session(
                     );
                 }
                 "streams" => {
-                    builder = builder.set_streams(crate::protocol_serde::shape_browser_session_stream::de_browser_session_stream(tokens)?);
+                    builder = builder.set_streams(crate::protocol_serde::shape_browser_session_stream::de_browser_session_stream(
+                        tokens, _value,
+                    )?);
                 }
                 "viewPort" => {
-                    builder = builder.set_view_port(crate::protocol_serde::shape_view_port::de_view_port(tokens)?);
+                    builder = builder.set_view_port(crate::protocol_serde::shape_view_port::de_view_port(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

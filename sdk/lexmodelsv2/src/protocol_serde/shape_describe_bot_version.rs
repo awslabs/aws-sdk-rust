@@ -129,13 +129,13 @@ pub fn de_describe_bot_version_http_response(
 }
 
 pub(crate) fn de_describe_bot_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_bot_version::builders::DescribeBotVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_bot_version::builders::DescribeBotVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -150,7 +150,7 @@ pub(crate) fn de_describe_bot_version(
                     );
                 }
                 "botMembers" => {
-                    builder = builder.set_bot_members(crate::protocol_serde::shape_bot_members::de_bot_members(tokens)?);
+                    builder = builder.set_bot_members(crate::protocol_serde::shape_bot_members::de_bot_members(tokens, _value)?);
                 }
                 "botName" => {
                     builder = builder.set_bot_name(
@@ -187,7 +187,7 @@ pub(crate) fn de_describe_bot_version(
                     )?);
                 }
                 "dataPrivacy" => {
-                    builder = builder.set_data_privacy(crate::protocol_serde::shape_data_privacy::de_data_privacy(tokens)?);
+                    builder = builder.set_data_privacy(crate::protocol_serde::shape_data_privacy::de_data_privacy(tokens, _value)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -197,7 +197,7 @@ pub(crate) fn de_describe_bot_version(
                     );
                 }
                 "failureReasons" => {
-                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens, _value)?);
                 }
                 "idleSessionTTLInSeconds" => {
                     builder = builder.set_idle_session_ttl_in_seconds(
@@ -207,7 +207,8 @@ pub(crate) fn de_describe_bot_version(
                     );
                 }
                 "parentBotNetworks" => {
-                    builder = builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens)?);
+                    builder =
+                        builder.set_parent_bot_networks(crate::protocol_serde::shape_parent_bot_networks::de_parent_bot_networks(tokens, _value)?);
                 }
                 "roleArn" => {
                     builder = builder.set_role_arn(

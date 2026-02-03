@@ -154,13 +154,13 @@ pub fn ser_create_network_input(
 }
 
 pub(crate) fn de_create_network(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_network::builders::CreateNetworkOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_network::builders::CreateNetworkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,7 @@ pub(crate) fn de_create_network(
                     );
                 }
                 "associatedClusterIds" => {
-                    builder = builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
+                    builder = builder.set_associated_cluster_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                 }
                 "id" => {
                     builder = builder.set_id(
@@ -185,7 +185,7 @@ pub(crate) fn de_create_network(
                     );
                 }
                 "ipPools" => {
-                    builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(tokens)?);
+                    builder = builder.set_ip_pools(crate::protocol_serde::shape_list_of_ip_pool::de_list_of_ip_pool(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(
@@ -195,7 +195,7 @@ pub(crate) fn de_create_network(
                     );
                 }
                 "routes" => {
-                    builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens)?);
+                    builder = builder.set_routes(crate::protocol_serde::shape_list_of_route::de_list_of_route(tokens, _value)?);
                 }
                 "state" => {
                     builder = builder.set_state(

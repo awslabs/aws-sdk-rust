@@ -35,6 +35,7 @@ pub fn ser_network_connection_action(
 
 pub(crate) fn de_network_connection_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NetworkConnectionAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,17 +58,17 @@ where
                         }
                         "RemoteIpDetails" => {
                             builder = builder.set_remote_ip_details(
-                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens)?,
+                                crate::protocol_serde::shape_action_remote_ip_details::de_action_remote_ip_details(tokens, _value)?,
                             );
                         }
                         "RemotePortDetails" => {
                             builder = builder.set_remote_port_details(
-                                crate::protocol_serde::shape_action_remote_port_details::de_action_remote_port_details(tokens)?,
+                                crate::protocol_serde::shape_action_remote_port_details::de_action_remote_port_details(tokens, _value)?,
                             );
                         }
                         "LocalPortDetails" => {
                             builder = builder.set_local_port_details(
-                                crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens)?,
+                                crate::protocol_serde::shape_action_local_port_details::de_action_local_port_details(tokens, _value)?,
                             );
                         }
                         "Protocol" => {

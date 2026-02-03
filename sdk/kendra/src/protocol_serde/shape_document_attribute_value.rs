@@ -31,6 +31,7 @@ pub fn ser_document_attribute_value(
 
 pub(crate) fn de_document_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DocumentAttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,9 @@ where
                         }
                         "StringListValue" => {
                             builder = builder.set_string_list_value(
-                                crate::protocol_serde::shape_document_attribute_string_list_value::de_document_attribute_string_list_value(tokens)?,
+                                crate::protocol_serde::shape_document_attribute_string_list_value::de_document_attribute_string_list_value(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "LongValue" => {

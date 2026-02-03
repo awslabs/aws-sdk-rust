@@ -171,12 +171,12 @@ pub fn de_invoke_endpoint_with_bidirectional_stream_http_error(
 
 pub fn ser_invoke_endpoint_with_bidirectional_stream_headers(
     input: &crate::operation::invoke_endpoint_with_bidirectional_stream::InvokeEndpointWithBidirectionalStreamInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.target_variant {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "target_variant",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -187,7 +187,7 @@ pub fn ser_invoke_endpoint_with_bidirectional_stream_headers(
     if let ::std::option::Option::Some(inner_3) = &input.model_invocation_path {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "model_invocation_path",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -198,7 +198,7 @@ pub fn ser_invoke_endpoint_with_bidirectional_stream_headers(
     if let ::std::option::Option::Some(inner_5) = &input.model_query_string {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "model_query_string",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),

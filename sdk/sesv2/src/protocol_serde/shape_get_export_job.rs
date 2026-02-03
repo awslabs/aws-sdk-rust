@@ -83,13 +83,13 @@ pub fn de_get_export_job_http_response(
 }
 
 pub(crate) fn de_get_export_job(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_export_job::builders::GetExportJobOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_export_job::builders::GetExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -109,10 +109,10 @@ pub(crate) fn de_get_export_job(
                     )?);
                 }
                 "ExportDataSource" => {
-                    builder = builder.set_export_data_source(crate::protocol_serde::shape_export_data_source::de_export_data_source(tokens)?);
+                    builder = builder.set_export_data_source(crate::protocol_serde::shape_export_data_source::de_export_data_source(tokens, _value)?);
                 }
                 "ExportDestination" => {
-                    builder = builder.set_export_destination(crate::protocol_serde::shape_export_destination::de_export_destination(tokens)?);
+                    builder = builder.set_export_destination(crate::protocol_serde::shape_export_destination::de_export_destination(tokens, _value)?);
                 }
                 "ExportSourceType" => {
                     builder = builder.set_export_source_type(
@@ -122,7 +122,7 @@ pub(crate) fn de_get_export_job(
                     );
                 }
                 "FailureInfo" => {
-                    builder = builder.set_failure_info(crate::protocol_serde::shape_failure_info::de_failure_info(tokens)?);
+                    builder = builder.set_failure_info(crate::protocol_serde::shape_failure_info::de_failure_info(tokens, _value)?);
                 }
                 "JobId" => {
                     builder = builder.set_job_id(
@@ -139,7 +139,7 @@ pub(crate) fn de_get_export_job(
                     );
                 }
                 "Statistics" => {
-                    builder = builder.set_statistics(crate::protocol_serde::shape_export_statistics::de_export_statistics(tokens)?);
+                    builder = builder.set_statistics(crate::protocol_serde::shape_export_statistics::de_export_statistics(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

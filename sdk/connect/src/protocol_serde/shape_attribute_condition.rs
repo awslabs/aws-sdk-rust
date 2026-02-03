@@ -35,6 +35,7 @@ pub fn ser_attribute_condition(
 
 pub(crate) fn de_attribute_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AttributeCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,10 +69,10 @@ where
                             );
                         }
                         "Range" => {
-                            builder = builder.set_range(crate::protocol_serde::shape_range::de_range(tokens)?);
+                            builder = builder.set_range(crate::protocol_serde::shape_range::de_range(tokens, _value)?);
                         }
                         "MatchCriteria" => {
-                            builder = builder.set_match_criteria(crate::protocol_serde::shape_match_criteria::de_match_criteria(tokens)?);
+                            builder = builder.set_match_criteria(crate::protocol_serde::shape_match_criteria::de_match_criteria(tokens, _value)?);
                         }
                         "ComparisonOperator" => {
                             builder = builder.set_comparison_operator(

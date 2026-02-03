@@ -23,6 +23,7 @@ pub fn ser_field_to_match(
 
 pub(crate) fn de_field_to_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FieldToMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SingleHeader" => {
-                            builder = builder.set_single_header(crate::protocol_serde::shape_single_header::de_single_header(tokens)?);
+                            builder = builder.set_single_header(crate::protocol_serde::shape_single_header::de_single_header(tokens, _value)?);
                         }
                         "UriPath" => {
                             builder = builder.set_uri_path(

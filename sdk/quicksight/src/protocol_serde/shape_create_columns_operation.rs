@@ -29,6 +29,7 @@ pub fn ser_create_columns_operation(
 
 pub(crate) fn de_create_columns_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CreateColumnsOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,11 +52,13 @@ where
                         }
                         "Source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Columns" => {
-                            builder = builder.set_columns(crate::protocol_serde::shape_calculated_column_list::de_calculated_column_list(tokens)?);
+                            builder = builder.set_columns(crate::protocol_serde::shape_calculated_column_list::de_calculated_column_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

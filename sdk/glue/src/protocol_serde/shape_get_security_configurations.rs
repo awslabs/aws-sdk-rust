@@ -118,13 +118,13 @@ pub fn ser_get_security_configurations_input(
 }
 
 pub(crate) fn de_get_security_configurations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_security_configurations::builders::GetSecurityConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_get_security_configurations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SecurityConfigurations" => {
                     builder = builder.set_security_configurations(
-                        crate::protocol_serde::shape_security_configuration_list::de_security_configuration_list(tokens)?,
+                        crate::protocol_serde::shape_security_configuration_list::de_security_configuration_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

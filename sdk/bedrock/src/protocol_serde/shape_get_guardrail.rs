@@ -115,13 +115,13 @@ pub fn de_get_guardrail_http_response(
 }
 
 pub(crate) fn de_get_guardrail(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_guardrail::builders::GetGuardrailOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_guardrail::builders::GetGuardrailOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -130,7 +130,7 @@ pub(crate) fn de_get_guardrail(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "automatedReasoningPolicy" => {
                     builder = builder.set_automated_reasoning_policy(
-                        crate::protocol_serde::shape_guardrail_automated_reasoning_policy::de_guardrail_automated_reasoning_policy(tokens)?,
+                        crate::protocol_serde::shape_guardrail_automated_reasoning_policy::de_guardrail_automated_reasoning_policy(tokens, _value)?,
                     );
                 }
                 "blockedInputMessaging" => {
@@ -149,12 +149,12 @@ pub(crate) fn de_get_guardrail(
                 }
                 "contentPolicy" => {
                     builder = builder.set_content_policy(crate::protocol_serde::shape_guardrail_content_policy::de_guardrail_content_policy(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "contextualGroundingPolicy" => {
                     builder = builder.set_contextual_grounding_policy(
-                        crate::protocol_serde::shape_guardrail_contextual_grounding_policy::de_guardrail_contextual_grounding_policy(tokens)?,
+                        crate::protocol_serde::shape_guardrail_contextual_grounding_policy::de_guardrail_contextual_grounding_policy(tokens, _value)?,
                     );
                 }
                 "createdAt" => {
@@ -165,7 +165,7 @@ pub(crate) fn de_get_guardrail(
                 }
                 "crossRegionDetails" => {
                     builder = builder.set_cross_region_details(
-                        crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens)?,
+                        crate::protocol_serde::shape_guardrail_cross_region_details::de_guardrail_cross_region_details(tokens, _value)?,
                     );
                 }
                 "description" => {
@@ -177,7 +177,7 @@ pub(crate) fn de_get_guardrail(
                 }
                 "failureRecommendations" => {
                     builder = builder.set_failure_recommendations(
-                        crate::protocol_serde::shape_guardrail_failure_recommendations::de_guardrail_failure_recommendations(tokens)?,
+                        crate::protocol_serde::shape_guardrail_failure_recommendations::de_guardrail_failure_recommendations(tokens, _value)?,
                     );
                 }
                 "guardrailArn" => {
@@ -210,7 +210,9 @@ pub(crate) fn de_get_guardrail(
                 }
                 "sensitiveInformationPolicy" => {
                     builder = builder.set_sensitive_information_policy(
-                        crate::protocol_serde::shape_guardrail_sensitive_information_policy::de_guardrail_sensitive_information_policy(tokens)?,
+                        crate::protocol_serde::shape_guardrail_sensitive_information_policy::de_guardrail_sensitive_information_policy(
+                            tokens, _value,
+                        )?,
                     );
                 }
                 "status" => {
@@ -222,11 +224,13 @@ pub(crate) fn de_get_guardrail(
                 }
                 "statusReasons" => {
                     builder = builder.set_status_reasons(crate::protocol_serde::shape_guardrail_status_reasons::de_guardrail_status_reasons(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "topicPolicy" => {
-                    builder = builder.set_topic_policy(crate::protocol_serde::shape_guardrail_topic_policy::de_guardrail_topic_policy(tokens)?);
+                    builder = builder.set_topic_policy(crate::protocol_serde::shape_guardrail_topic_policy::de_guardrail_topic_policy(
+                        tokens, _value,
+                    )?);
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -242,7 +246,9 @@ pub(crate) fn de_get_guardrail(
                     );
                 }
                 "wordPolicy" => {
-                    builder = builder.set_word_policy(crate::protocol_serde::shape_guardrail_word_policy::de_guardrail_word_policy(tokens)?);
+                    builder = builder.set_word_policy(crate::protocol_serde::shape_guardrail_word_policy::de_guardrail_word_policy(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

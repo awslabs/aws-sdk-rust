@@ -62,6 +62,7 @@ pub fn ser_message_configuration(
 
 pub(crate) fn de_message_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MessageConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,34 +77,39 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ADMMessage" => {
-                            builder = builder.set_adm_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_adm_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "APNSMessage" => {
-                            builder = builder.set_apns_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_apns_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "BaiduMessage" => {
-                            builder = builder.set_baidu_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_baidu_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "CustomMessage" => {
-                            builder =
-                                builder.set_custom_message(crate::protocol_serde::shape_campaign_custom_message::de_campaign_custom_message(tokens)?);
+                            builder = builder.set_custom_message(crate::protocol_serde::shape_campaign_custom_message::de_campaign_custom_message(
+                                tokens, _value,
+                            )?);
                         }
                         "DefaultMessage" => {
-                            builder = builder.set_default_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_default_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "EmailMessage" => {
-                            builder =
-                                builder.set_email_message(crate::protocol_serde::shape_campaign_email_message::de_campaign_email_message(tokens)?);
+                            builder = builder.set_email_message(crate::protocol_serde::shape_campaign_email_message::de_campaign_email_message(
+                                tokens, _value,
+                            )?);
                         }
                         "GCMMessage" => {
-                            builder = builder.set_gcm_message(crate::protocol_serde::shape_message::de_message(tokens)?);
+                            builder = builder.set_gcm_message(crate::protocol_serde::shape_message::de_message(tokens, _value)?);
                         }
                         "SMSMessage" => {
-                            builder = builder.set_sms_message(crate::protocol_serde::shape_campaign_sms_message::de_campaign_sms_message(tokens)?);
+                            builder = builder.set_sms_message(crate::protocol_serde::shape_campaign_sms_message::de_campaign_sms_message(
+                                tokens, _value,
+                            )?);
                         }
                         "InAppMessage" => {
-                            builder =
-                                builder.set_in_app_message(crate::protocol_serde::shape_campaign_in_app_message::de_campaign_in_app_message(tokens)?);
+                            builder = builder.set_in_app_message(crate::protocol_serde::shape_campaign_in_app_message::de_campaign_in_app_message(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

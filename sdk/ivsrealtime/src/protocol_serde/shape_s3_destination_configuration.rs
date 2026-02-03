@@ -38,6 +38,7 @@ pub fn ser_s3_destination_configuration(
 
 pub(crate) fn de_s3_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::S3DestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,17 +62,17 @@ where
                             }
                             "encoderConfigurationArns" => {
                                 builder = builder.set_encoder_configuration_arns(
-                                    crate::protocol_serde::shape_encoder_configuration_arn_list::de_encoder_configuration_arn_list(tokens)?,
+                                    crate::protocol_serde::shape_encoder_configuration_arn_list::de_encoder_configuration_arn_list(tokens, _value)?,
                                 );
                             }
                             "recordingConfiguration" => {
                                 builder = builder.set_recording_configuration(
-                                    crate::protocol_serde::shape_recording_configuration::de_recording_configuration(tokens)?,
+                                    crate::protocol_serde::shape_recording_configuration::de_recording_configuration(tokens, _value)?,
                                 );
                             }
                             "thumbnailConfigurations" => {
                                 builder = builder.set_thumbnail_configurations(
-                                    crate::protocol_serde::shape_composition_thumbnail_configuration_list::de_composition_thumbnail_configuration_list(tokens)?
+                                    crate::protocol_serde::shape_composition_thumbnail_configuration_list::de_composition_thumbnail_configuration_list(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

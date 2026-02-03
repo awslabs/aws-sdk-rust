@@ -109,13 +109,13 @@ pub fn ser_disassociate_resource_types_input(
 }
 
 pub(crate) fn de_disassociate_resource_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::disassociate_resource_types::builders::DisassociateResourceTypesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::disassociate_resource_types::builders::DisassociateResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,8 +123,9 @@ pub(crate) fn de_disassociate_resource_types(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ConfigurationRecorder" => {
-                    builder =
-                        builder.set_configuration_recorder(crate::protocol_serde::shape_configuration_recorder::de_configuration_recorder(tokens)?);
+                    builder = builder.set_configuration_recorder(crate::protocol_serde::shape_configuration_recorder::de_configuration_recorder(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

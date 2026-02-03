@@ -20,6 +20,7 @@ pub fn ser_security_control_parameter(
 
 pub(crate) fn de_security_control_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SecurityControlParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,7 @@ where
                             );
                         }
                         "Value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_type_list::de_type_list(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_type_list::de_type_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

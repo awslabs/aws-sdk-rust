@@ -55,6 +55,7 @@ pub fn ser_pipe_source_kinesis_stream_parameters(
 
 pub(crate) fn de_pipe_source_kinesis_stream_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipeSourceKinesisStreamParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -76,7 +77,8 @@ where
                             );
                         }
                         "DeadLetterConfig" => {
-                            builder = builder.set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens)?);
+                            builder = builder
+                                .set_dead_letter_config(crate::protocol_serde::shape_dead_letter_config::de_dead_letter_config(tokens, _value)?);
                         }
                         "OnPartialBatchItemFailure" => {
                             builder = builder.set_on_partial_batch_item_failure(

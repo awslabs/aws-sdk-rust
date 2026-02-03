@@ -245,7 +245,7 @@ mod create_stack_set;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudformation::Error> {
 /// # let client: aws_sdk_cloudformation::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.activate_organizations_access()
 ///     .customize()

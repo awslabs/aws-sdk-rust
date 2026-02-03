@@ -26,6 +26,7 @@ pub fn ser_video_selector(
 
 pub(crate) fn de_video_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,9 @@ where
                         }
                         "colorSpaceSettings" => {
                             builder = builder.set_color_space_settings(
-                                crate::protocol_serde::shape_video_selector_color_space_settings::de_video_selector_color_space_settings(tokens)?,
+                                crate::protocol_serde::shape_video_selector_color_space_settings::de_video_selector_color_space_settings(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "colorSpaceUsage" => {
@@ -59,8 +62,9 @@ where
                             );
                         }
                         "selectorSettings" => {
-                            builder = builder
-                                .set_selector_settings(crate::protocol_serde::shape_video_selector_settings::de_video_selector_settings(tokens)?);
+                            builder = builder.set_selector_settings(
+                                crate::protocol_serde::shape_video_selector_settings::de_video_selector_settings(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

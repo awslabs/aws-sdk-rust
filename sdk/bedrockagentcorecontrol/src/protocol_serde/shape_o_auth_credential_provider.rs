@@ -36,6 +36,7 @@ pub fn ser_o_auth_credential_provider(
 
 pub(crate) fn de_o_auth_credential_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OAuthCredentialProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,11 +58,11 @@ where
                             );
                         }
                         "scopes" => {
-                            builder = builder.set_scopes(crate::protocol_serde::shape_o_auth_scopes::de_o_auth_scopes(tokens)?);
+                            builder = builder.set_scopes(crate::protocol_serde::shape_o_auth_scopes::de_o_auth_scopes(tokens, _value)?);
                         }
                         "customParameters" => {
                             builder = builder.set_custom_parameters(
-                                crate::protocol_serde::shape_o_auth_custom_parameters::de_o_auth_custom_parameters(tokens)?,
+                                crate::protocol_serde::shape_o_auth_custom_parameters::de_o_auth_custom_parameters(tokens, _value)?,
                             );
                         }
                         "grantType" => {

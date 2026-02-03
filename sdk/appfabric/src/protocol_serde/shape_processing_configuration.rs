@@ -21,6 +21,7 @@ pub fn ser_processing_configuration(
 
 pub(crate) fn de_processing_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProcessingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,18 +49,21 @@ where
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.as_ref() {
-                        "auditLog" => Some(crate::types::ProcessingConfiguration::AuditLog(
-                            crate::protocol_serde::shape_audit_log_processing_configuration::de_audit_log_processing_configuration(tokens)?
+                    variant =
+                        match key.as_ref() {
+                            "auditLog" => Some(crate::types::ProcessingConfiguration::AuditLog(
+                                crate::protocol_serde::shape_audit_log_processing_configuration::de_audit_log_processing_configuration(
+                                    tokens, _value,
+                                )?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'auditLog' cannot be null")
                                 })?,
-                        )),
-                        _ => {
-                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::types::ProcessingConfiguration::Unknown)
-                        }
-                    };
+                            )),
+                            _ => {
+                                ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                Some(crate::types::ProcessingConfiguration::Unknown)
+                            }
+                        };
                 }
                 other => {
                     return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(

@@ -32,6 +32,7 @@ pub fn ser_featurization_config(
 
 pub(crate) fn de_featurization_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FeaturizationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,11 +54,11 @@ where
                             );
                         }
                         "ForecastDimensions" => {
-                            builder =
-                                builder.set_forecast_dimensions(crate::protocol_serde::shape_forecast_dimensions::de_forecast_dimensions(tokens)?);
+                            builder = builder
+                                .set_forecast_dimensions(crate::protocol_serde::shape_forecast_dimensions::de_forecast_dimensions(tokens, _value)?);
                         }
                         "Featurizations" => {
-                            builder = builder.set_featurizations(crate::protocol_serde::shape_featurizations::de_featurizations(tokens)?);
+                            builder = builder.set_featurizations(crate::protocol_serde::shape_featurizations::de_featurizations(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

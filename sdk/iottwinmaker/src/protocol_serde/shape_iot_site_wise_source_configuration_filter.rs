@@ -27,6 +27,7 @@ pub fn ser_iot_site_wise_source_configuration_filter(
 
 pub(crate) fn de_iot_site_wise_source_configuration_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IotSiteWiseSourceConfigurationFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "filterByAssetModel" => Some(crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAssetModel(
-                            crate::protocol_serde::shape_filter_by_asset_model::de_filter_by_asset_model(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_by_asset_model::de_filter_by_asset_model(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'filterByAssetModel' cannot be null")
                             })?,
                         )),
                         "filterByAsset" => Some(crate::types::IotSiteWiseSourceConfigurationFilter::FilterByAsset(
-                            crate::protocol_serde::shape_filter_by_asset::de_filter_by_asset(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_filter_by_asset::de_filter_by_asset(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'filterByAsset' cannot be null")
                             })?,
                         )),

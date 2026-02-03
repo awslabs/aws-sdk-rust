@@ -26,6 +26,7 @@ pub fn ser_batch_is_authorized_with_token_input_item(
 
 pub(crate) fn de_batch_is_authorized_with_token_input_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BatchIsAuthorizedWithTokenInputItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,13 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "action" => {
-                            builder = builder.set_action(crate::protocol_serde::shape_action_identifier::de_action_identifier(tokens)?);
+                            builder = builder.set_action(crate::protocol_serde::shape_action_identifier::de_action_identifier(tokens, _value)?);
                         }
                         "resource" => {
-                            builder = builder.set_resource(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens)?);
+                            builder = builder.set_resource(crate::protocol_serde::shape_entity_identifier::de_entity_identifier(tokens, _value)?);
                         }
                         "context" => {
-                            builder = builder.set_context(crate::protocol_serde::shape_context_definition::de_context_definition(tokens)?);
+                            builder = builder.set_context(crate::protocol_serde::shape_context_definition::de_context_definition(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

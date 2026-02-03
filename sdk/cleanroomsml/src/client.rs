@@ -163,7 +163,7 @@ mod create_training_dataset;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cleanroomsml::Error> {
 /// # let client: aws_sdk_cleanroomsml::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_trained_model()
 ///     .customize()

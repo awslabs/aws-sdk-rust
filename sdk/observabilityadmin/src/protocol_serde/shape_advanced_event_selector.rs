@@ -23,6 +23,7 @@ pub fn ser_advanced_event_selector(
 
 pub(crate) fn de_advanced_event_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AdvancedEventSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "FieldSelectors" => {
-                            builder = builder.set_field_selectors(crate::protocol_serde::shape_field_selectors::de_field_selectors(tokens)?);
+                            builder = builder.set_field_selectors(crate::protocol_serde::shape_field_selectors::de_field_selectors(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

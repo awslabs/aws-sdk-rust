@@ -26,6 +26,7 @@ pub fn ser_license_rule_statement(
 
 pub(crate) fn de_license_rule_statement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LicenseRuleStatement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,14 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AndRuleStatement" => {
-                            builder = builder.set_and_rule_statement(crate::protocol_serde::shape_and_rule_statement::de_and_rule_statement(tokens)?);
+                            builder = builder
+                                .set_and_rule_statement(crate::protocol_serde::shape_and_rule_statement::de_and_rule_statement(tokens, _value)?);
                         }
                         "OrRuleStatement" => {
-                            builder = builder.set_or_rule_statement(crate::protocol_serde::shape_or_rule_statement::de_or_rule_statement(tokens)?);
+                            builder =
+                                builder.set_or_rule_statement(crate::protocol_serde::shape_or_rule_statement::de_or_rule_statement(tokens, _value)?);
                         }
                         "MatchingRuleStatement" => {
                             builder = builder.set_matching_rule_statement(
-                                crate::protocol_serde::shape_matching_rule_statement::de_matching_rule_statement(tokens)?,
+                                crate::protocol_serde::shape_matching_rule_statement::de_matching_rule_statement(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

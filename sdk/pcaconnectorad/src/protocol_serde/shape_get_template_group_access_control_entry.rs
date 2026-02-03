@@ -127,13 +127,13 @@ pub fn de_get_template_group_access_control_entry_http_response(
 }
 
 pub(crate) fn de_get_template_group_access_control_entry(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_template_group_access_control_entry::builders::GetTemplateGroupAccessControlEntryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_template_group_access_control_entry::builders::GetTemplateGroupAccessControlEntryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -141,7 +141,9 @@ pub(crate) fn de_get_template_group_access_control_entry(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AccessControlEntry" => {
-                    builder = builder.set_access_control_entry(crate::protocol_serde::shape_access_control_entry::de_access_control_entry(tokens)?);
+                    builder = builder.set_access_control_entry(crate::protocol_serde::shape_access_control_entry::de_access_control_entry(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

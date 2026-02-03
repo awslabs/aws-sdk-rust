@@ -233,14 +233,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChangedB
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::list_changed_blocks::ListChangedBlocksInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from("");
@@ -302,7 +302,7 @@ mod list_changed_blocks_test {
             .set_message(::std::option::Option::Some("1 validation error detected".to_owned()))
             .build();
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
-            ::http::response::Builder::new()
+            ::http_1x::response::Builder::new()
                 .header("content-length", "77")
                 .header("content-type", "application/json")
                 .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -362,7 +362,7 @@ mod list_changed_blocks_test {
             ))
             .build();
         let mut http_response = ::aws_smithy_runtime_api::http::Response::try_from(
-            ::http::response::Builder::new()
+            ::http_1x::response::Builder::new()
                 .header("content-length", "77")
                 .header("content-type", "application/json")
                 .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")

@@ -38,6 +38,7 @@ pub fn ser_communication_time_config(
 
 pub(crate) fn de_communication_time_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CommunicationTimeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,20 +53,21 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "localTimeZoneConfig" => {
-                            builder = builder
-                                .set_local_time_zone_config(crate::protocol_serde::shape_local_time_zone_config::de_local_time_zone_config(tokens)?);
+                            builder = builder.set_local_time_zone_config(
+                                crate::protocol_serde::shape_local_time_zone_config::de_local_time_zone_config(tokens, _value)?,
+                            );
                         }
                         "telephony" => {
-                            builder = builder.set_telephony(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
+                            builder = builder.set_telephony(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
                         }
                         "sms" => {
-                            builder = builder.set_sms(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
+                            builder = builder.set_sms(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
                         }
                         "email" => {
-                            builder = builder.set_email(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
+                            builder = builder.set_email(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
                         }
                         "whatsApp" => {
-                            builder = builder.set_whats_app(crate::protocol_serde::shape_time_window::de_time_window(tokens)?);
+                            builder = builder.set_whats_app(crate::protocol_serde::shape_time_window::de_time_window(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

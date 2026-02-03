@@ -128,13 +128,13 @@ pub fn de_get_application_http_response(
 }
 
 pub(crate) fn de_get_application(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_application::builders::GetApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -142,7 +142,7 @@ pub(crate) fn de_get_application(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "appConfigs" => {
-                    builder = builder.set_app_configs(crate::protocol_serde::shape_app_configs::de_app_configs(tokens)?);
+                    builder = builder.set_app_configs(crate::protocol_serde::shape_app_configs::de_app_configs(tokens, _value)?);
                 }
                 "arn" => {
                     builder = builder.set_arn(
@@ -158,7 +158,7 @@ pub(crate) fn de_get_application(
                     )?);
                 }
                 "dataSources" => {
-                    builder = builder.set_data_sources(crate::protocol_serde::shape_data_sources::de_data_sources(tokens)?);
+                    builder = builder.set_data_sources(crate::protocol_serde::shape_data_sources::de_data_sources(tokens, _value)?);
                 }
                 "endpoint" => {
                     builder = builder.set_endpoint(
@@ -169,7 +169,7 @@ pub(crate) fn de_get_application(
                 }
                 "iamIdentityCenterOptions" => {
                     builder = builder.set_iam_identity_center_options(
-                        crate::protocol_serde::shape_iam_identity_center_options::de_iam_identity_center_options(tokens)?,
+                        crate::protocol_serde::shape_iam_identity_center_options::de_iam_identity_center_options(tokens, _value)?,
                     );
                 }
                 "id" => {

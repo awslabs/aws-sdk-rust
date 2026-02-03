@@ -38,6 +38,7 @@ pub fn ser_component_data_configuration(
 
 pub(crate) fn de_component_data_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentDataConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,13 +60,13 @@ where
                             );
                         }
                         "sort" => {
-                            builder = builder.set_sort(crate::protocol_serde::shape_sort_property_list::de_sort_property_list(tokens)?);
+                            builder = builder.set_sort(crate::protocol_serde::shape_sort_property_list::de_sort_property_list(tokens, _value)?);
                         }
                         "predicate" => {
-                            builder = builder.set_predicate(crate::protocol_serde::shape_predicate::de_predicate(tokens)?);
+                            builder = builder.set_predicate(crate::protocol_serde::shape_predicate::de_predicate(tokens, _value)?);
                         }
                         "identifiers" => {
-                            builder = builder.set_identifiers(crate::protocol_serde::shape_identifier_list::de_identifier_list(tokens)?);
+                            builder = builder.set_identifiers(crate::protocol_serde::shape_identifier_list::de_identifier_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

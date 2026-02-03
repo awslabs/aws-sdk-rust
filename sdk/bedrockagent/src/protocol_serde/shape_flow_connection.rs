@@ -26,6 +26,7 @@ pub fn ser_flow_connection(
 
 pub(crate) fn de_flow_connection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::FlowConnection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,7 +70,7 @@ where
                         }
                         "configuration" => {
                             builder = builder.set_configuration(
-                                crate::protocol_serde::shape_flow_connection_configuration::de_flow_connection_configuration(tokens)?,
+                                crate::protocol_serde::shape_flow_connection_configuration::de_flow_connection_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

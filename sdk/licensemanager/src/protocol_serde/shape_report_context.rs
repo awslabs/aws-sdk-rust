@@ -36,6 +36,7 @@ pub fn ser_report_context(
 
 pub(crate) fn de_report_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ReportContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,10 +51,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "licenseConfigurationArns" => {
-                            builder = builder.set_license_configuration_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                            builder = builder.set_license_configuration_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                         }
                         "licenseAssetGroupArns" => {
-                            builder = builder.set_license_asset_group_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens)?);
+                            builder = builder.set_license_asset_group_arns(crate::protocol_serde::shape_arn_list::de_arn_list(tokens, _value)?);
                         }
                         "reportStartDate" => {
                             builder = builder.set_report_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

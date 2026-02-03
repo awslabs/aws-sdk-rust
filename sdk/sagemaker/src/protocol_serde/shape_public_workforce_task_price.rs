@@ -14,6 +14,7 @@ pub fn ser_public_workforce_task_price(
 
 pub(crate) fn de_public_workforce_task_price<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PublicWorkforceTaskPrice>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,7 +29,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AmountInUsd" => {
-                            builder = builder.set_amount_in_usd(crate::protocol_serde::shape_usd::de_usd(tokens)?);
+                            builder = builder.set_amount_in_usd(crate::protocol_serde::shape_usd::de_usd(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

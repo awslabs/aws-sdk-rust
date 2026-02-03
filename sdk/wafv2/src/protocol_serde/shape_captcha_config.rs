@@ -14,6 +14,7 @@ pub fn ser_captcha_config(
 
 pub(crate) fn de_captcha_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CaptchaConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -28,8 +29,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ImmunityTimeProperty" => {
-                            builder = builder
-                                .set_immunity_time_property(crate::protocol_serde::shape_immunity_time_property::de_immunity_time_property(tokens)?);
+                            builder = builder.set_immunity_time_property(
+                                crate::protocol_serde::shape_immunity_time_property::de_immunity_time_property(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

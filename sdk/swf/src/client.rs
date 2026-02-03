@@ -153,7 +153,7 @@ mod count_pending_decision_tasks;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_swf::Error> {
 /// # let client: aws_sdk_swf::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.count_closed_workflow_executions()
 ///     .customize()

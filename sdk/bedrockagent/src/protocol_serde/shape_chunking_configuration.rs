@@ -29,6 +29,7 @@ pub fn ser_chunking_configuration(
 
 pub(crate) fn de_chunking_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ChunkingConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -51,17 +52,19 @@ where
                         }
                         "fixedSizeChunkingConfiguration" => {
                             builder = builder.set_fixed_size_chunking_configuration(
-                                crate::protocol_serde::shape_fixed_size_chunking_configuration::de_fixed_size_chunking_configuration(tokens)?,
+                                crate::protocol_serde::shape_fixed_size_chunking_configuration::de_fixed_size_chunking_configuration(tokens, _value)?,
                             );
                         }
                         "hierarchicalChunkingConfiguration" => {
                             builder = builder.set_hierarchical_chunking_configuration(
-                                crate::protocol_serde::shape_hierarchical_chunking_configuration::de_hierarchical_chunking_configuration(tokens)?,
+                                crate::protocol_serde::shape_hierarchical_chunking_configuration::de_hierarchical_chunking_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "semanticChunkingConfiguration" => {
                             builder = builder.set_semantic_chunking_configuration(
-                                crate::protocol_serde::shape_semantic_chunking_configuration::de_semantic_chunking_configuration(tokens)?,
+                                crate::protocol_serde::shape_semantic_chunking_configuration::de_semantic_chunking_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

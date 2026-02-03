@@ -23,6 +23,7 @@ pub fn ser_refresh_frequency(
 
 pub(crate) fn de_refresh_frequency<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RefreshFrequency>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "RefreshOnDay" => {
                             builder = builder.set_refresh_on_day(
-                                crate::protocol_serde::shape_schedule_refresh_on_entity::de_schedule_refresh_on_entity(tokens)?,
+                                crate::protocol_serde::shape_schedule_refresh_on_entity::de_schedule_refresh_on_entity(tokens, _value)?,
                             );
                         }
                         "Timezone" => {

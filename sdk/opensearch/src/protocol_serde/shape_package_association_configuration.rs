@@ -14,6 +14,7 @@ pub fn ser_package_association_configuration(
 
 pub(crate) fn de_package_association_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PackageAssociationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "KeyStoreAccessOption" => {
                             builder = builder.set_key_store_access_option(
-                                crate::protocol_serde::shape_key_store_access_option::de_key_store_access_option(tokens)?,
+                                crate::protocol_serde::shape_key_store_access_option::de_key_store_access_option(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

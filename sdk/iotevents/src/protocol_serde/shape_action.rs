@@ -86,6 +86,7 @@ pub fn ser_action(
 
 pub(crate) fn de_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Action>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -100,47 +101,53 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "setVariable" => {
-                            builder = builder.set_set_variable(crate::protocol_serde::shape_set_variable_action::de_set_variable_action(tokens)?);
+                            builder =
+                                builder.set_set_variable(crate::protocol_serde::shape_set_variable_action::de_set_variable_action(tokens, _value)?);
                         }
                         "sns" => {
                             builder = builder.set_sns(crate::protocol_serde::shape_sns_topic_publish_action::de_sns_topic_publish_action(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "iotTopicPublish" => {
                             builder = builder.set_iot_topic_publish(
-                                crate::protocol_serde::shape_iot_topic_publish_action::de_iot_topic_publish_action(tokens)?,
+                                crate::protocol_serde::shape_iot_topic_publish_action::de_iot_topic_publish_action(tokens, _value)?,
                             );
                         }
                         "setTimer" => {
-                            builder = builder.set_set_timer(crate::protocol_serde::shape_set_timer_action::de_set_timer_action(tokens)?);
+                            builder = builder.set_set_timer(crate::protocol_serde::shape_set_timer_action::de_set_timer_action(tokens, _value)?);
                         }
                         "clearTimer" => {
-                            builder = builder.set_clear_timer(crate::protocol_serde::shape_clear_timer_action::de_clear_timer_action(tokens)?);
+                            builder =
+                                builder.set_clear_timer(crate::protocol_serde::shape_clear_timer_action::de_clear_timer_action(tokens, _value)?);
                         }
                         "resetTimer" => {
-                            builder = builder.set_reset_timer(crate::protocol_serde::shape_reset_timer_action::de_reset_timer_action(tokens)?);
+                            builder =
+                                builder.set_reset_timer(crate::protocol_serde::shape_reset_timer_action::de_reset_timer_action(tokens, _value)?);
                         }
                         "lambda" => {
-                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_action::de_lambda_action(tokens)?);
+                            builder = builder.set_lambda(crate::protocol_serde::shape_lambda_action::de_lambda_action(tokens, _value)?);
                         }
                         "iotEvents" => {
-                            builder = builder.set_iot_events(crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens)?);
+                            builder = builder.set_iot_events(crate::protocol_serde::shape_iot_events_action::de_iot_events_action(tokens, _value)?);
                         }
                         "sqs" => {
-                            builder = builder.set_sqs(crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens)?);
+                            builder = builder.set_sqs(crate::protocol_serde::shape_sqs_action::de_sqs_action(tokens, _value)?);
                         }
                         "firehose" => {
-                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens)?);
+                            builder = builder.set_firehose(crate::protocol_serde::shape_firehose_action::de_firehose_action(tokens, _value)?);
                         }
                         "dynamoDB" => {
-                            builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens)?);
+                            builder = builder.set_dynamo_db(crate::protocol_serde::shape_dynamo_db_action::de_dynamo_db_action(tokens, _value)?);
                         }
                         "dynamoDBv2" => {
-                            builder = builder.set_dynamo_dbv2(crate::protocol_serde::shape_dynamo_dbv2_action::de_dynamo_dbv2_action(tokens)?);
+                            builder =
+                                builder.set_dynamo_dbv2(crate::protocol_serde::shape_dynamo_dbv2_action::de_dynamo_dbv2_action(tokens, _value)?);
                         }
                         "iotSiteWise" => {
-                            builder = builder.set_iot_site_wise(crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(tokens)?);
+                            builder = builder.set_iot_site_wise(crate::protocol_serde::shape_iot_site_wise_action::de_iot_site_wise_action(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -78,11 +78,11 @@ pub fn ser_list_studios_input(
 }
 
 pub(crate) fn de_list_studios(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_studios::builders::ListStudiosOutputBuilder,
 ) -> ::std::result::Result<crate::operation::list_studios::builders::ListStudiosOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -90,7 +90,7 @@ pub(crate) fn de_list_studios(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Studios" => {
-                    builder = builder.set_studios(crate::protocol_serde::shape_studio_summary_list::de_studio_summary_list(tokens)?);
+                    builder = builder.set_studios(crate::protocol_serde::shape_studio_summary_list::de_studio_summary_list(tokens, _value)?);
                 }
                 "Marker" => {
                     builder = builder.set_marker(

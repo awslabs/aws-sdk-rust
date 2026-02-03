@@ -44,6 +44,7 @@ pub fn ser_node_range_property(
 
 pub(crate) fn de_node_range_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NodeRangeProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -65,20 +66,22 @@ where
                             );
                         }
                         "container" => {
-                            builder = builder.set_container(crate::protocol_serde::shape_container_properties::de_container_properties(tokens)?);
+                            builder = builder.set_container(crate::protocol_serde::shape_container_properties::de_container_properties(
+                                tokens, _value,
+                            )?);
                         }
                         "instanceTypes" => {
-                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_instance_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "ecsProperties" => {
-                            builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(tokens)?);
+                            builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(tokens, _value)?);
                         }
                         "eksProperties" => {
-                            builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(tokens)?);
+                            builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(tokens, _value)?);
                         }
                         "consumableResourceProperties" => {
                             builder = builder.set_consumable_resource_properties(
-                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(tokens)?,
+                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

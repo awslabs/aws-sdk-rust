@@ -20,6 +20,7 @@ pub fn ser_io_t_job_abort_config(
 
 pub(crate) fn de_io_t_job_abort_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::IoTJobAbortConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "criteriaList" => {
                             builder = builder.set_criteria_list(
-                                crate::protocol_serde::shape_io_t_job_abort_criteria_list::de_io_t_job_abort_criteria_list(tokens)?,
+                                crate::protocol_serde::shape_io_t_job_abort_criteria_list::de_io_t_job_abort_criteria_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

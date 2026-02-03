@@ -28,6 +28,7 @@ pub fn ser_exclusion_window(
 
 pub(crate) fn de_exclusion_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ExclusionWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -42,7 +43,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Window" => {
-                            builder = builder.set_window(crate::protocol_serde::shape_window::de_window(tokens)?);
+                            builder = builder.set_window(crate::protocol_serde::shape_window::de_window(tokens, _value)?);
                         }
                         "StartTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
@@ -51,7 +52,7 @@ where
                             )?);
                         }
                         "RecurrenceRule" => {
-                            builder = builder.set_recurrence_rule(crate::protocol_serde::shape_recurrence_rule::de_recurrence_rule(tokens)?);
+                            builder = builder.set_recurrence_rule(crate::protocol_serde::shape_recurrence_rule::de_recurrence_rule(tokens, _value)?);
                         }
                         "Reason" => {
                             builder = builder.set_reason(

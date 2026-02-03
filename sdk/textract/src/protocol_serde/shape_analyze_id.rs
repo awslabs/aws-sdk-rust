@@ -185,10 +185,10 @@ pub fn ser_analyze_id_input(
 }
 
 pub(crate) fn de_analyze_id(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::analyze_id::builders::AnalyzeIdOutputBuilder,
 ) -> ::std::result::Result<crate::operation::analyze_id::builders::AnalyzeIdOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -196,10 +196,12 @@ pub(crate) fn de_analyze_id(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "IdentityDocuments" => {
-                    builder = builder.set_identity_documents(crate::protocol_serde::shape_identity_document_list::de_identity_document_list(tokens)?);
+                    builder = builder.set_identity_documents(crate::protocol_serde::shape_identity_document_list::de_identity_document_list(
+                        tokens, _value,
+                    )?);
                 }
                 "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens)?);
+                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(tokens, _value)?);
                 }
                 "AnalyzeIDModelVersion" => {
                     builder = builder.set_analyze_id_model_version(

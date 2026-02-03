@@ -113,13 +113,13 @@ pub fn de_describe_key_registration_http_response(
 }
 
 pub(crate) fn de_describe_key_registration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_key_registration::builders::DescribeKeyRegistrationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_key_registration::builders::DescribeKeyRegistrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -134,10 +134,10 @@ pub(crate) fn de_describe_key_registration(
                     );
                 }
                 "KeyRegistration" => {
-                    builder = builder.set_key_registration(crate::protocol_serde::shape_key_registration::de_key_registration(tokens)?);
+                    builder = builder.set_key_registration(crate::protocol_serde::shape_key_registration::de_key_registration(tokens, _value)?);
                 }
                 "QDataKey" => {
-                    builder = builder.set_q_data_key(crate::protocol_serde::shape_q_data_key::de_q_data_key(tokens)?);
+                    builder = builder.set_q_data_key(crate::protocol_serde::shape_q_data_key::de_q_data_key(tokens, _value)?);
                 }
                 "RequestId" => {
                     builder = builder.set_request_id(

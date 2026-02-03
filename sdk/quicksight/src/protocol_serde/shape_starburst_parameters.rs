@@ -35,6 +35,7 @@ pub fn ser_starburst_parameters(
 
 pub(crate) fn de_starburst_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::StarburstParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -91,7 +92,8 @@ where
                             );
                         }
                         "OAuthParameters" => {
-                            builder = builder.set_o_auth_parameters(crate::protocol_serde::shape_o_auth_parameters::de_o_auth_parameters(tokens)?);
+                            builder =
+                                builder.set_o_auth_parameters(crate::protocol_serde::shape_o_auth_parameters::de_o_auth_parameters(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

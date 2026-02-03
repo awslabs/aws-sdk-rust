@@ -163,23 +163,11 @@ impl FromStr for CompressionAlgorithm {
 }
 
 impl CompressionAlgorithm {
-    #[cfg(feature = "http-body-0-4-x")]
-    /// Return the `HttpChecksum` implementor for this algorithm.
-    pub fn into_impl_http_body_0_4_x(
-        self,
-        options: &CompressionOptions,
-    ) -> Box<dyn http::http_body_0_4_x::CompressRequest> {
-        match self {
-            Self::Gzip => Box::new(gzip::Gzip::from(options)),
-        }
-    }
-
-    #[cfg(feature = "http-body-1-x")]
     /// Return the `HttpChecksum` implementor for this algorithm.
     pub fn into_impl_http_body_1_x(
         self,
         options: &CompressionOptions,
-    ) -> Box<dyn http::http_body_1_x::CompressRequest> {
+    ) -> Box<dyn http::CompressRequest> {
         match self {
             Self::Gzip => Box::new(gzip::Gzip::from(options)),
         }

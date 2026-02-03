@@ -41,6 +41,7 @@ pub fn ser_compute_quota_resource_config(
 
 pub(crate) fn de_compute_quota_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComputeQuotaResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,7 +87,7 @@ where
                         }
                         "AcceleratorPartition" => {
                             builder = builder.set_accelerator_partition(
-                                crate::protocol_serde::shape_accelerator_partition_config::de_accelerator_partition_config(tokens)?,
+                                crate::protocol_serde::shape_accelerator_partition_config::de_accelerator_partition_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

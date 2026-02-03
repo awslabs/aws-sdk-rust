@@ -39,6 +39,7 @@ pub fn ser_configured_table_association_analysis_rule_policy_v1(
 
 pub(crate) fn de_configured_table_association_analysis_rule_policy_v1<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
@@ -72,19 +73,19 @@ where
                     variant = match key.as_ref() {
                             "list" => {
                                 Some(crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1::List(
-                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_list::de_configured_table_association_analysis_rule_list(tokens)?
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_list::de_configured_table_association_analysis_rule_list(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'list' cannot be null"))?
                                 ))
                             }
                             "aggregation" => {
                                 Some(crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1::Aggregation(
-                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_aggregation::de_configured_table_association_analysis_rule_aggregation(tokens)?
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_aggregation::de_configured_table_association_analysis_rule_aggregation(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'aggregation' cannot be null"))?
                                 ))
                             }
                             "custom" => {
                                 Some(crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1::Custom(
-                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_custom::de_configured_table_association_analysis_rule_custom(tokens)?
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_custom::de_configured_table_association_analysis_rule_custom(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'custom' cannot be null"))?
                                 ))
                             }

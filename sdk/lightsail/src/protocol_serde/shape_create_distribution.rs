@@ -144,13 +144,13 @@ pub fn ser_create_distribution_input(
 }
 
 pub(crate) fn de_create_distribution(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_distribution::builders::CreateDistributionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_distribution::builders::CreateDistributionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -158,10 +158,12 @@ pub(crate) fn de_create_distribution(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "distribution" => {
-                    builder = builder.set_distribution(crate::protocol_serde::shape_lightsail_distribution::de_lightsail_distribution(tokens)?);
+                    builder = builder.set_distribution(crate::protocol_serde::shape_lightsail_distribution::de_lightsail_distribution(
+                        tokens, _value,
+                    )?);
                 }
                 "operation" => {
-                    builder = builder.set_operation(crate::protocol_serde::shape_operation::de_operation(tokens)?);
+                    builder = builder.set_operation(crate::protocol_serde::shape_operation::de_operation(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

@@ -17,6 +17,7 @@ pub fn ser_model_explainability_baseline_config(
 
 pub(crate) fn de_model_explainability_baseline_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ModelExplainabilityBaselineConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -39,7 +40,7 @@ where
                         }
                         "ConstraintsResource" => {
                             builder = builder.set_constraints_resource(
-                                crate::protocol_serde::shape_monitoring_constraints_resource::de_monitoring_constraints_resource(tokens)?,
+                                crate::protocol_serde::shape_monitoring_constraints_resource::de_monitoring_constraints_resource(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

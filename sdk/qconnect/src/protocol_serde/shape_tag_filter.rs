@@ -41,6 +41,7 @@ pub fn ser_tag_filter(
 
 pub(crate) fn de_tag_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TagFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -70,17 +71,17 @@ where
                     }
                     variant = match key.as_ref() {
                         "tagCondition" => Some(crate::types::TagFilter::TagCondition(
-                            crate::protocol_serde::shape_tag_condition::de_tag_condition(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tag_condition::de_tag_condition(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tagCondition' cannot be null")
                             })?,
                         )),
                         "andConditions" => Some(crate::types::TagFilter::AndConditions(
-                            crate::protocol_serde::shape_and_conditions::de_and_conditions(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_and_conditions::de_and_conditions(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andConditions' cannot be null")
                             })?,
                         )),
                         "orConditions" => Some(crate::types::TagFilter::OrConditions(
-                            crate::protocol_serde::shape_or_conditions::de_or_conditions(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_or_conditions::de_or_conditions(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orConditions' cannot be null")
                             })?,
                         )),

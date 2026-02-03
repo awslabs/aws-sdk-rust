@@ -21,6 +21,7 @@ pub fn ser_put_request(
 
 pub(crate) fn de_put_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PutRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,8 +36,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Item" => {
-                            builder =
-                                builder.set_item(crate::protocol_serde::shape_put_item_input_attribute_map::de_put_item_input_attribute_map(tokens)?);
+                            builder = builder.set_item(
+                                crate::protocol_serde::shape_put_item_input_attribute_map::de_put_item_input_attribute_map(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

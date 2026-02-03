@@ -35,6 +35,7 @@ pub fn ser_component_variant(
 
 pub(crate) fn de_component_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComponentVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,11 +51,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "variantValues" => {
                             builder = builder.set_variant_values(crate::protocol_serde::shape_component_variant_values::de_component_variant_values(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "overrides" => {
-                            builder = builder.set_overrides(crate::protocol_serde::shape_component_overrides::de_component_overrides(tokens)?);
+                            builder =
+                                builder.set_overrides(crate::protocol_serde::shape_component_overrides::de_component_overrides(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

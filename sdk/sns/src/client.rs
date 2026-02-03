@@ -159,7 +159,7 @@ mod create_topic;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_sns::Error> {
 /// # let client: aws_sdk_sns::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_permission()
 ///     .customize()

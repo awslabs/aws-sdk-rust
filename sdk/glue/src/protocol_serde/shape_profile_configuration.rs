@@ -34,6 +34,7 @@ pub fn ser_profile_configuration(
 
 pub(crate) fn de_profile_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ProfileConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,11 +49,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SessionConfiguration" => {
-                            builder =
-                                builder.set_session_configuration(crate::protocol_serde::shape_configuration_map::de_configuration_map(tokens)?);
+                            builder = builder
+                                .set_session_configuration(crate::protocol_serde::shape_configuration_map::de_configuration_map(tokens, _value)?);
                         }
                         "JobConfiguration" => {
-                            builder = builder.set_job_configuration(crate::protocol_serde::shape_configuration_map::de_configuration_map(tokens)?);
+                            builder =
+                                builder.set_job_configuration(crate::protocol_serde::shape_configuration_map::de_configuration_map(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

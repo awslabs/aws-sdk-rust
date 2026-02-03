@@ -50,6 +50,7 @@ pub fn ser_cache_settings(
 
 pub(crate) fn de_cache_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CacheSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -99,14 +100,15 @@ where
                             );
                         }
                         "forwardedCookies" => {
-                            builder = builder.set_forwarded_cookies(crate::protocol_serde::shape_cookie_object::de_cookie_object(tokens)?);
+                            builder = builder.set_forwarded_cookies(crate::protocol_serde::shape_cookie_object::de_cookie_object(tokens, _value)?);
                         }
                         "forwardedHeaders" => {
-                            builder = builder.set_forwarded_headers(crate::protocol_serde::shape_header_object::de_header_object(tokens)?);
+                            builder = builder.set_forwarded_headers(crate::protocol_serde::shape_header_object::de_header_object(tokens, _value)?);
                         }
                         "forwardedQueryStrings" => {
-                            builder = builder
-                                .set_forwarded_query_strings(crate::protocol_serde::shape_query_string_object::de_query_string_object(tokens)?);
+                            builder = builder.set_forwarded_query_strings(crate::protocol_serde::shape_query_string_object::de_query_string_object(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

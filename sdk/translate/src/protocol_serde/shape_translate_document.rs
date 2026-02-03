@@ -161,13 +161,13 @@ pub fn ser_translate_document_input(
 }
 
 pub(crate) fn de_translate_document(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::translate_document::builders::TranslateDocumentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::translate_document::builders::TranslateDocumentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -175,7 +175,8 @@ pub(crate) fn de_translate_document(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TranslatedDocument" => {
-                    builder = builder.set_translated_document(crate::protocol_serde::shape_translated_document::de_translated_document(tokens)?);
+                    builder =
+                        builder.set_translated_document(crate::protocol_serde::shape_translated_document::de_translated_document(tokens, _value)?);
                 }
                 "SourceLanguageCode" => {
                     builder = builder.set_source_language_code(
@@ -193,11 +194,13 @@ pub(crate) fn de_translate_document(
                 }
                 "AppliedTerminologies" => {
                     builder = builder.set_applied_terminologies(crate::protocol_serde::shape_applied_terminology_list::de_applied_terminology_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "AppliedSettings" => {
-                    builder = builder.set_applied_settings(crate::protocol_serde::shape_translation_settings::de_translation_settings(tokens)?);
+                    builder = builder.set_applied_settings(crate::protocol_serde::shape_translation_settings::de_translation_settings(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

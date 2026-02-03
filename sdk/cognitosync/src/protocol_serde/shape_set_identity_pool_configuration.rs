@@ -152,13 +152,13 @@ pub fn ser_set_identity_pool_configuration_input(
 }
 
 pub(crate) fn de_set_identity_pool_configuration(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::set_identity_pool_configuration::builders::SetIdentityPoolConfigurationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::set_identity_pool_configuration::builders::SetIdentityPoolConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -166,7 +166,7 @@ pub(crate) fn de_set_identity_pool_configuration(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CognitoStreams" => {
-                    builder = builder.set_cognito_streams(crate::protocol_serde::shape_cognito_streams::de_cognito_streams(tokens)?);
+                    builder = builder.set_cognito_streams(crate::protocol_serde::shape_cognito_streams::de_cognito_streams(tokens, _value)?);
                 }
                 "IdentityPoolId" => {
                     builder = builder.set_identity_pool_id(
@@ -176,7 +176,7 @@ pub(crate) fn de_set_identity_pool_configuration(
                     );
                 }
                 "PushSync" => {
-                    builder = builder.set_push_sync(crate::protocol_serde::shape_push_sync::de_push_sync(tokens)?);
+                    builder = builder.set_push_sync(crate::protocol_serde::shape_push_sync::de_push_sync(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

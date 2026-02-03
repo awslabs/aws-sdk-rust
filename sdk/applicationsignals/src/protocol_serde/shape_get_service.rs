@@ -79,11 +79,11 @@ pub fn ser_get_service_input(
 }
 
 pub(crate) fn de_get_service(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_service::builders::GetServiceOutputBuilder,
 ) -> ::std::result::Result<crate::operation::get_service::builders::GetServiceOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -97,10 +97,12 @@ pub(crate) fn de_get_service(
                     )?);
                 }
                 "LogGroupReferences" => {
-                    builder = builder.set_log_group_references(crate::protocol_serde::shape_log_group_references::de_log_group_references(tokens)?);
+                    builder = builder.set_log_group_references(crate::protocol_serde::shape_log_group_references::de_log_group_references(
+                        tokens, _value,
+                    )?);
                 }
                 "Service" => {
-                    builder = builder.set_service(crate::protocol_serde::shape_service::de_service(tokens)?);
+                    builder = builder.set_service(crate::protocol_serde::shape_service::de_service(tokens, _value)?);
                 }
                 "StartTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

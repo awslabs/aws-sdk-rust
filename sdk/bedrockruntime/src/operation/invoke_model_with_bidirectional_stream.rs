@@ -223,14 +223,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeModelW
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamInput,
-                builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+                builder: ::http_1x::request::Builder,
+            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/vnd.amazon.eventstream");
+            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder =
+                _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/vnd.amazon.eventstream");
             builder
         };
         let body = ::aws_smithy_types::body::SdkBody::from({
@@ -238,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeModelW
             let marshaller = crate::event_stream_serde::InvokeModelWithBidirectionalStreamInputMarshaller::new();
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
-            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(input.body.into_body_stream(
+            ::aws_smithy_types::body::SdkBody::from_body_1_x(::http_body_util::StreamBody::new(input.body.into_body_stream(
                 marshaller,
                 error_marshaller,
                 signer,
@@ -246,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeModelW
         });
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
         }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

@@ -17,6 +17,7 @@ pub fn ser_topic_range_filter_constant(
 
 pub(crate) fn de_topic_range_filter_constant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TopicRangeFilterConstant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,7 @@ where
                             );
                         }
                         "RangeConstant" => {
-                            builder = builder.set_range_constant(crate::protocol_serde::shape_range_constant::de_range_constant(tokens)?);
+                            builder = builder.set_range_constant(crate::protocol_serde::shape_range_constant::de_range_constant(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -35,6 +35,7 @@ pub fn ser_grpc_gateway_route_match(
 
 pub(crate) fn de_grpc_gateway_route_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GrpcGatewayRouteMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,12 +57,13 @@ where
                             );
                         }
                         "hostname" => {
-                            builder = builder
-                                .set_hostname(crate::protocol_serde::shape_gateway_route_hostname_match::de_gateway_route_hostname_match(tokens)?);
+                            builder = builder.set_hostname(
+                                crate::protocol_serde::shape_gateway_route_hostname_match::de_gateway_route_hostname_match(tokens, _value)?,
+                            );
                         }
                         "metadata" => {
                             builder = builder.set_metadata(
-                                crate::protocol_serde::shape_grpc_gateway_route_metadata_list::de_grpc_gateway_route_metadata_list(tokens)?,
+                                crate::protocol_serde::shape_grpc_gateway_route_metadata_list::de_grpc_gateway_route_metadata_list(tokens, _value)?,
                             );
                         }
                         "port" => {

@@ -59,6 +59,7 @@ pub fn ser_artifacts_concatenation_configuration(
 
 pub(crate) fn de_artifacts_concatenation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ArtifactsConcatenationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -71,46 +72,48 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "Audio" => {
-                                builder = builder.set_audio(
-                                    crate::protocol_serde::shape_audio_concatenation_configuration::de_audio_concatenation_configuration(tokens)?,
-                                );
-                            }
-                            "Video" => {
-                                builder = builder.set_video(
-                                    crate::protocol_serde::shape_video_concatenation_configuration::de_video_concatenation_configuration(tokens)?,
-                                );
-                            }
-                            "Content" => {
-                                builder = builder.set_content(
-                                    crate::protocol_serde::shape_content_concatenation_configuration::de_content_concatenation_configuration(tokens)?,
-                                );
-                            }
-                            "DataChannel" => {
-                                builder = builder.set_data_channel(
-                                    crate::protocol_serde::shape_data_channel_concatenation_configuration::de_data_channel_concatenation_configuration(tokens)?
-                                );
-                            }
-                            "TranscriptionMessages" => {
-                                builder = builder.set_transcription_messages(
-                                    crate::protocol_serde::shape_transcription_messages_concatenation_configuration::de_transcription_messages_concatenation_configuration(tokens)?
-                                );
-                            }
-                            "MeetingEvents" => {
-                                builder = builder.set_meeting_events(
-                                    crate::protocol_serde::shape_meeting_events_concatenation_configuration::de_meeting_events_concatenation_configuration(tokens)?
-                                );
-                            }
-                            "CompositedVideo" => {
-                                builder = builder.set_composited_video(
-                                    crate::protocol_serde::shape_composited_video_concatenation_configuration::de_composited_video_concatenation_configuration(tokens)?
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Audio" => {
+                            builder = builder.set_audio(
+                                crate::protocol_serde::shape_audio_concatenation_configuration::de_audio_concatenation_configuration(tokens, _value)?,
+                            );
                         }
-                    }
+                        "Video" => {
+                            builder = builder.set_video(
+                                crate::protocol_serde::shape_video_concatenation_configuration::de_video_concatenation_configuration(tokens, _value)?,
+                            );
+                        }
+                        "Content" => {
+                            builder = builder.set_content(
+                                crate::protocol_serde::shape_content_concatenation_configuration::de_content_concatenation_configuration(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "DataChannel" => {
+                            builder = builder.set_data_channel(
+                                crate::protocol_serde::shape_data_channel_concatenation_configuration::de_data_channel_concatenation_configuration(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "TranscriptionMessages" => {
+                            builder = builder.set_transcription_messages(
+                                    crate::protocol_serde::shape_transcription_messages_concatenation_configuration::de_transcription_messages_concatenation_configuration(tokens, _value)?
+                                );
+                        }
+                        "MeetingEvents" => {
+                            builder = builder.set_meeting_events(
+                                    crate::protocol_serde::shape_meeting_events_concatenation_configuration::de_meeting_events_concatenation_configuration(tokens, _value)?
+                                );
+                        }
+                        "CompositedVideo" => {
+                            builder = builder.set_composited_video(
+                                    crate::protocol_serde::shape_composited_video_concatenation_configuration::de_composited_video_concatenation_configuration(tokens, _value)?
+                                );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

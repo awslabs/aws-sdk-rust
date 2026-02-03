@@ -14,6 +14,7 @@ pub fn ser_scte35_descriptor(
 
 pub(crate) fn de_scte35_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Scte35Descriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "scte35DescriptorSettings" => {
                             builder = builder.set_scte35_descriptor_settings(
-                                crate::protocol_serde::shape_scte35_descriptor_settings::de_scte35_descriptor_settings(tokens)?,
+                                crate::protocol_serde::shape_scte35_descriptor_settings::de_scte35_descriptor_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

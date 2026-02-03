@@ -14,6 +14,7 @@ pub fn ser_geospatial_null_data_settings(
 
 pub(crate) fn de_geospatial_null_data_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialNullDataSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -29,7 +30,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SymbolStyle" => {
                             builder = builder.set_symbol_style(
-                                crate::protocol_serde::shape_geospatial_null_symbol_style::de_geospatial_null_symbol_style(tokens)?,
+                                crate::protocol_serde::shape_geospatial_null_symbol_style::de_geospatial_null_symbol_style(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

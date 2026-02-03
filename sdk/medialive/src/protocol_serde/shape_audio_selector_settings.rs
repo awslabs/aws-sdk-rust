@@ -32,6 +32,7 @@ pub fn ser_audio_selector_settings(
 
 pub(crate) fn de_audio_selector_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AudioSelectorSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,21 +48,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioHlsRenditionSelection" => {
                             builder = builder.set_audio_hls_rendition_selection(
-                                crate::protocol_serde::shape_audio_hls_rendition_selection::de_audio_hls_rendition_selection(tokens)?,
+                                crate::protocol_serde::shape_audio_hls_rendition_selection::de_audio_hls_rendition_selection(tokens, _value)?,
                             );
                         }
                         "audioLanguageSelection" => {
                             builder = builder.set_audio_language_selection(
-                                crate::protocol_serde::shape_audio_language_selection::de_audio_language_selection(tokens)?,
+                                crate::protocol_serde::shape_audio_language_selection::de_audio_language_selection(tokens, _value)?,
                             );
                         }
                         "audioPidSelection" => {
-                            builder =
-                                builder.set_audio_pid_selection(crate::protocol_serde::shape_audio_pid_selection::de_audio_pid_selection(tokens)?);
+                            builder = builder
+                                .set_audio_pid_selection(crate::protocol_serde::shape_audio_pid_selection::de_audio_pid_selection(tokens, _value)?);
                         }
                         "audioTrackSelection" => {
-                            builder = builder
-                                .set_audio_track_selection(crate::protocol_serde::shape_audio_track_selection::de_audio_track_selection(tokens)?);
+                            builder = builder.set_audio_track_selection(
+                                crate::protocol_serde::shape_audio_track_selection::de_audio_track_selection(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

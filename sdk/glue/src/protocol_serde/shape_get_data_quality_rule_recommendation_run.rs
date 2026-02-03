@@ -132,13 +132,13 @@ pub fn ser_get_data_quality_rule_recommendation_run_input(
 }
 
 pub(crate) fn de_get_data_quality_rule_recommendation_run(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -153,7 +153,7 @@ pub(crate) fn de_get_data_quality_rule_recommendation_run(
                     );
                 }
                 "DataSource" => {
-                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                    builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                 }
                 "Role" => {
                     builder = builder.set_role(

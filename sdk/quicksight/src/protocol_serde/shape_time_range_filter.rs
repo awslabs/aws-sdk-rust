@@ -53,6 +53,7 @@ pub fn ser_time_range_filter(
 
 pub(crate) fn de_time_range_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeRangeFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,7 +75,7 @@ where
                             );
                         }
                         "Column" => {
-                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?);
+                            builder = builder.set_column(crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens, _value)?);
                         }
                         "IncludeMinimum" => {
                             builder = builder.set_include_minimum(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -83,12 +84,14 @@ where
                             builder = builder.set_include_maximum(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "RangeMinimumValue" => {
-                            builder = builder
-                                .set_range_minimum_value(crate::protocol_serde::shape_time_range_filter_value::de_time_range_filter_value(tokens)?);
+                            builder = builder.set_range_minimum_value(
+                                crate::protocol_serde::shape_time_range_filter_value::de_time_range_filter_value(tokens, _value)?,
+                            );
                         }
                         "RangeMaximumValue" => {
-                            builder = builder
-                                .set_range_maximum_value(crate::protocol_serde::shape_time_range_filter_value::de_time_range_filter_value(tokens)?);
+                            builder = builder.set_range_maximum_value(
+                                crate::protocol_serde::shape_time_range_filter_value::de_time_range_filter_value(tokens, _value)?,
+                            );
                         }
                         "NullOption" => {
                             builder = builder.set_null_option(
@@ -99,7 +102,7 @@ where
                         }
                         "ExcludePeriodConfiguration" => {
                             builder = builder.set_exclude_period_configuration(
-                                crate::protocol_serde::shape_exclude_period_configuration::de_exclude_period_configuration(tokens)?,
+                                crate::protocol_serde::shape_exclude_period_configuration::de_exclude_period_configuration(tokens, _value)?,
                             );
                         }
                         "TimeGranularity" => {
@@ -111,7 +114,9 @@ where
                         }
                         "DefaultFilterControlConfiguration" => {
                             builder = builder.set_default_filter_control_configuration(
-                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(tokens)?,
+                                crate::protocol_serde::shape_default_filter_control_configuration::de_default_filter_control_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

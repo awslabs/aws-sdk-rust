@@ -26,6 +26,7 @@ pub fn ser_definition(
 
 pub(crate) fn de_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Definition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,16 +41,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "IamActionDefinition" => {
-                            builder = builder
-                                .set_iam_action_definition(crate::protocol_serde::shape_iam_action_definition::de_iam_action_definition(tokens)?);
+                            builder = builder.set_iam_action_definition(
+                                crate::protocol_serde::shape_iam_action_definition::de_iam_action_definition(tokens, _value)?,
+                            );
                         }
                         "ScpActionDefinition" => {
-                            builder = builder
-                                .set_scp_action_definition(crate::protocol_serde::shape_scp_action_definition::de_scp_action_definition(tokens)?);
+                            builder = builder.set_scp_action_definition(
+                                crate::protocol_serde::shape_scp_action_definition::de_scp_action_definition(tokens, _value)?,
+                            );
                         }
                         "SsmActionDefinition" => {
-                            builder = builder
-                                .set_ssm_action_definition(crate::protocol_serde::shape_ssm_action_definition::de_ssm_action_definition(tokens)?);
+                            builder = builder.set_ssm_action_definition(
+                                crate::protocol_serde::shape_ssm_action_definition::de_ssm_action_definition(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

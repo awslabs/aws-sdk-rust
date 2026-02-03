@@ -357,13 +357,13 @@ pub fn ser_update_user_attributes_input(
 }
 
 pub(crate) fn de_update_user_attributes(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_user_attributes::builders::UpdateUserAttributesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_user_attributes::builders::UpdateUserAttributesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -372,7 +372,7 @@ pub(crate) fn de_update_user_attributes(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CodeDeliveryDetailsList" => {
                     builder = builder.set_code_delivery_details_list(
-                        crate::protocol_serde::shape_code_delivery_details_list_type::de_code_delivery_details_list_type(tokens)?,
+                        crate::protocol_serde::shape_code_delivery_details_list_type::de_code_delivery_details_list_type(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

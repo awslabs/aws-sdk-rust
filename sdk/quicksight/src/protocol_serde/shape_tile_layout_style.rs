@@ -20,6 +20,7 @@ pub fn ser_tile_layout_style(
 
 pub(crate) fn de_tile_layout_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TileLayoutStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Gutter" => {
-                            builder = builder.set_gutter(crate::protocol_serde::shape_gutter_style::de_gutter_style(tokens)?);
+                            builder = builder.set_gutter(crate::protocol_serde::shape_gutter_style::de_gutter_style(tokens, _value)?);
                         }
                         "Margin" => {
-                            builder = builder.set_margin(crate::protocol_serde::shape_margin_style::de_margin_style(tokens)?);
+                            builder = builder.set_margin(crate::protocol_serde::shape_margin_style::de_margin_style(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

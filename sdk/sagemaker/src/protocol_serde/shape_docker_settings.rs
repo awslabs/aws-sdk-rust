@@ -23,6 +23,7 @@ pub fn ser_docker_settings(
 
 pub(crate) fn de_docker_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DockerSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "VpcOnlyTrustedAccounts" => {
                             builder = builder.set_vpc_only_trusted_accounts(
-                                crate::protocol_serde::shape_vpc_only_trusted_accounts::de_vpc_only_trusted_accounts(tokens)?,
+                                crate::protocol_serde::shape_vpc_only_trusted_accounts::de_vpc_only_trusted_accounts(tokens, _value)?,
                             );
                         }
                         "RootlessDocker" => {

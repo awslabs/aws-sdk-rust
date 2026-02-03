@@ -45,7 +45,6 @@ pub use aws_smithy_types::{
     body::SdkBody, error::display::DisplayErrorContext, timeout::TimeoutConfig,
 };
 pub use bytes::Bytes;
-pub use http_body_04x::Body;
 pub use pin_utils::pin_mut;
 pub use std::{
     collections::VecDeque,
@@ -91,29 +90,22 @@ struct ChannelBody {
     receiver: tokio::sync::mpsc::Receiver<Bytes>,
 }
 
-impl Body for ChannelBody {
+impl http_body_1x::Body for ChannelBody {
     type Data = Bytes;
     type Error = Infallible;
 
-    fn poll_data(
+    fn poll_frame(
         mut self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Option<Result<Self::Data, Self::Error>>> {
+    ) -> Poll<Option<Result<http_body_1x::Frame<Self::Data>, Self::Error>>> {
         match self.receiver.poll_recv(cx) {
-            Poll::Ready(value) => Poll::Ready(value.map(Ok)),
+            Poll::Ready(value) => Poll::Ready(value.map(|b| Ok(http_body_1x::Frame::data(b)))),
             Poll::Pending => Poll::Pending,
         }
-    }
-
-    fn poll_trailers(
-        self: Pin<&mut Self>,
-        _cx: &mut Context<'_>,
-    ) -> Poll<Result<Option<http_02x::HeaderMap>, Self::Error>> {
-        unreachable!()
     }
 }
 
 pub fn channel_body() -> (SdkBody, tokio::sync::mpsc::Sender<Bytes>) {
     let (sender, receiver) = tokio::sync::mpsc::channel(1000);
-    (SdkBody::from_body_0_4(ChannelBody { receiver }), sender)
+    (SdkBody::from_body_1_x(ChannelBody { receiver }), sender)
 }

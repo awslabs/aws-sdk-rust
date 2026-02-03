@@ -24,6 +24,7 @@ pub fn ser_user_policy_grant_principal(
 
 pub(crate) fn de_user_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::UserPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                                 })?,
                         )),
                         "allUsersGrantFilter" => Some(crate::types::UserPolicyGrantPrincipal::AllUsersGrantFilter(
-                            crate::protocol_serde::shape_all_users_grant_filter::de_all_users_grant_filter(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_all_users_grant_filter::de_all_users_grant_filter(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'allUsersGrantFilter' cannot be null")
                             })?,
                         )),

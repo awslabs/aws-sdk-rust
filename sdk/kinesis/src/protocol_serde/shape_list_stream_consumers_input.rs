@@ -20,5 +20,8 @@ pub fn ser_list_stream_consumers_input_input(
             .key("StreamCreationTimestamp")
             .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_5) = &input.stream_id {
+        object.key("StreamId").string(var_5.as_str());
+    }
     Ok(())
 }

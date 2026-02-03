@@ -17,6 +17,7 @@ pub fn ser_column_tag(
 
 pub(crate) fn de_column_tag<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ColumnTag>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "ColumnDescription" => {
-                            builder = builder.set_column_description(crate::protocol_serde::shape_column_description::de_column_description(tokens)?);
+                            builder = builder
+                                .set_column_description(crate::protocol_serde::shape_column_description::de_column_description(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

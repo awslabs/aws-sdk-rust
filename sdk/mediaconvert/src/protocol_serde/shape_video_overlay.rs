@@ -47,6 +47,7 @@ pub fn ser_video_overlay(
 
 pub(crate) fn de_video_overlay<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoOverlay>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -61,7 +62,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "crop" => {
-                            builder = builder.set_crop(crate::protocol_serde::shape_video_overlay_crop::de_video_overlay_crop(tokens)?);
+                            builder = builder.set_crop(crate::protocol_serde::shape_video_overlay_crop::de_video_overlay_crop(tokens, _value)?);
                         }
                         "endTimecode" => {
                             builder = builder.set_end_timecode(
@@ -71,11 +72,12 @@ where
                             );
                         }
                         "initialPosition" => {
-                            builder =
-                                builder.set_initial_position(crate::protocol_serde::shape_video_overlay_position::de_video_overlay_position(tokens)?);
+                            builder = builder.set_initial_position(crate::protocol_serde::shape_video_overlay_position::de_video_overlay_position(
+                                tokens, _value,
+                            )?);
                         }
                         "input" => {
-                            builder = builder.set_input(crate::protocol_serde::shape_video_overlay_input::de_video_overlay_input(tokens)?);
+                            builder = builder.set_input(crate::protocol_serde::shape_video_overlay_input::de_video_overlay_input(tokens, _value)?);
                         }
                         "playback" => {
                             builder = builder.set_playback(
@@ -93,7 +95,7 @@ where
                         }
                         "transitions" => {
                             builder = builder.set_transitions(
-                                crate::protocol_serde::shape_list_of_video_overlay_transition::de_list_of_video_overlay_transition(tokens)?,
+                                crate::protocol_serde::shape_list_of_video_overlay_transition::de_list_of_video_overlay_transition(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

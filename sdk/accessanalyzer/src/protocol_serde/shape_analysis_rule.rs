@@ -20,6 +20,7 @@ pub fn ser_analysis_rule(
 
 pub(crate) fn de_analysis_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AnalysisRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,7 +36,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "exclusions" => {
                             builder = builder.set_exclusions(
-                                crate::protocol_serde::shape_analysis_rule_criteria_list::de_analysis_rule_criteria_list(tokens)?,
+                                crate::protocol_serde::shape_analysis_rule_criteria_list::de_analysis_rule_criteria_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

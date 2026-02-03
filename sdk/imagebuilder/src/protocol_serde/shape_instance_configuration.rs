@@ -23,6 +23,7 @@ pub fn ser_instance_configuration(
 
 pub(crate) fn de_instance_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::InstanceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "blockDeviceMappings" => {
                             builder = builder.set_block_device_mappings(
-                                crate::protocol_serde::shape_instance_block_device_mappings::de_instance_block_device_mappings(tokens)?,
+                                crate::protocol_serde::shape_instance_block_device_mappings::de_instance_block_device_mappings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

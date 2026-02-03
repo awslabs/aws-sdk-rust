@@ -32,6 +32,7 @@ pub fn ser_identity(
 
 pub(crate) fn de_identity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Identity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,16 +47,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "user" => {
-                            builder = builder.set_user(crate::protocol_serde::shape_user_identity::de_user_identity(tokens)?);
+                            builder = builder.set_user(crate::protocol_serde::shape_user_identity::de_user_identity(tokens, _value)?);
                         }
                         "group" => {
-                            builder = builder.set_group(crate::protocol_serde::shape_group_identity::de_group_identity(tokens)?);
+                            builder = builder.set_group(crate::protocol_serde::shape_group_identity::de_group_identity(tokens, _value)?);
                         }
                         "iamUser" => {
-                            builder = builder.set_iam_user(crate::protocol_serde::shape_iam_user_identity::de_iam_user_identity(tokens)?);
+                            builder = builder.set_iam_user(crate::protocol_serde::shape_iam_user_identity::de_iam_user_identity(tokens, _value)?);
                         }
                         "iamRole" => {
-                            builder = builder.set_iam_role(crate::protocol_serde::shape_iam_role_identity::de_iam_role_identity(tokens)?);
+                            builder = builder.set_iam_role(crate::protocol_serde::shape_iam_role_identity::de_iam_role_identity(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

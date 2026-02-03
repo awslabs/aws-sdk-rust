@@ -59,6 +59,7 @@ pub fn ser_kpi_options(
 
 pub(crate) fn de_kpi_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::KpiOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -73,18 +74,22 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ProgressBar" => {
-                            builder = builder.set_progress_bar(crate::protocol_serde::shape_progress_bar_options::de_progress_bar_options(tokens)?);
+                            builder = builder.set_progress_bar(crate::protocol_serde::shape_progress_bar_options::de_progress_bar_options(
+                                tokens, _value,
+                            )?);
                         }
                         "TrendArrows" => {
-                            builder = builder.set_trend_arrows(crate::protocol_serde::shape_trend_arrow_options::de_trend_arrow_options(tokens)?);
+                            builder =
+                                builder.set_trend_arrows(crate::protocol_serde::shape_trend_arrow_options::de_trend_arrow_options(tokens, _value)?);
                         }
                         "SecondaryValue" => {
-                            builder = builder
-                                .set_secondary_value(crate::protocol_serde::shape_secondary_value_options::de_secondary_value_options(tokens)?);
+                            builder = builder.set_secondary_value(crate::protocol_serde::shape_secondary_value_options::de_secondary_value_options(
+                                tokens, _value,
+                            )?);
                         }
                         "Comparison" => {
                             builder = builder.set_comparison(crate::protocol_serde::shape_comparison_configuration::de_comparison_configuration(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "PrimaryValueDisplayType" => {
@@ -96,20 +101,22 @@ where
                         }
                         "PrimaryValueFontConfiguration" => {
                             builder = builder.set_primary_value_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
                             );
                         }
                         "SecondaryValueFontConfiguration" => {
                             builder = builder.set_secondary_value_font_configuration(
-                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?,
+                                crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?,
                             );
                         }
                         "Sparkline" => {
-                            builder = builder.set_sparkline(crate::protocol_serde::shape_kpi_sparkline_options::de_kpi_sparkline_options(tokens)?);
+                            builder = builder.set_sparkline(crate::protocol_serde::shape_kpi_sparkline_options::de_kpi_sparkline_options(
+                                tokens, _value,
+                            )?);
                         }
                         "VisualLayoutOptions" => {
                             builder = builder.set_visual_layout_options(
-                                crate::protocol_serde::shape_kpi_visual_layout_options::de_kpi_visual_layout_options(tokens)?,
+                                crate::protocol_serde::shape_kpi_visual_layout_options::de_kpi_visual_layout_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

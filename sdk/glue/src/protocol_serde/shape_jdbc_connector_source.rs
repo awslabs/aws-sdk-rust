@@ -44,6 +44,7 @@ pub fn ser_jdbc_connector_source(
 
 pub(crate) fn de_jdbc_connector_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JdbcConnectorSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -86,8 +87,9 @@ where
                             );
                         }
                         "AdditionalOptions" => {
-                            builder = builder
-                                .set_additional_options(crate::protocol_serde::shape_jdbc_connector_options::de_jdbc_connector_options(tokens)?);
+                            builder = builder.set_additional_options(crate::protocol_serde::shape_jdbc_connector_options::de_jdbc_connector_options(
+                                tokens, _value,
+                            )?);
                         }
                         "ConnectionTable" => {
                             builder = builder.set_connection_table(
@@ -104,7 +106,7 @@ where
                             );
                         }
                         "OutputSchemas" => {
-                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens)?);
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_glue_schemas::de_glue_schemas(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

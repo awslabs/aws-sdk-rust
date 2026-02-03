@@ -118,13 +118,13 @@ pub fn ser_stop_game_session_placement_input(
 }
 
 pub(crate) fn de_stop_game_session_placement(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,8 +132,9 @@ pub(crate) fn de_stop_game_session_placement(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "GameSessionPlacement" => {
-                    builder =
-                        builder.set_game_session_placement(crate::protocol_serde::shape_game_session_placement::de_game_session_placement(tokens)?);
+                    builder = builder.set_game_session_placement(crate::protocol_serde::shape_game_session_placement::de_game_session_placement(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

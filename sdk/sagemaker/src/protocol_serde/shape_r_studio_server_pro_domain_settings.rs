@@ -23,6 +23,7 @@ pub fn ser_r_studio_server_pro_domain_settings(
 
 pub(crate) fn de_r_studio_server_pro_domain_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RStudioServerProDomainSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,8 @@ where
                             );
                         }
                         "DefaultResourceSpec" => {
-                            builder = builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                            builder =
+                                builder.set_default_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

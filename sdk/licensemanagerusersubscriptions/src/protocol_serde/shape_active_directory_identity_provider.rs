@@ -23,6 +23,7 @@ pub fn ser_active_directory_identity_provider(
 
 pub(crate) fn de_active_directory_identity_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ActiveDirectoryIdentityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "ActiveDirectorySettings" => {
                             builder = builder.set_active_directory_settings(
-                                crate::protocol_serde::shape_active_directory_settings::de_active_directory_settings(tokens)?,
+                                crate::protocol_serde::shape_active_directory_settings::de_active_directory_settings(tokens, _value)?,
                             );
                         }
                         "ActiveDirectoryType" => {

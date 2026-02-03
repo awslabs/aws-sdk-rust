@@ -11,6 +11,7 @@ pub fn ser_service_connect_test_traffic_header_match_rules(
 
 pub(crate) fn de_service_connect_test_traffic_header_match_rules<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ServiceConnectTestTrafficHeaderMatchRules>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

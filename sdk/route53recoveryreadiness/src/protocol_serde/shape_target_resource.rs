@@ -20,6 +20,7 @@ pub fn ser_target_resource(
 
 pub(crate) fn de_target_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TargetResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "nLBResource" => {
-                            builder = builder.set_nlb_resource(crate::protocol_serde::shape_nlb_resource::de_nlb_resource(tokens)?);
+                            builder = builder.set_nlb_resource(crate::protocol_serde::shape_nlb_resource::de_nlb_resource(tokens, _value)?);
                         }
                         "r53Resource" => {
-                            builder = builder.set_r53_resource(crate::protocol_serde::shape_r53_resource_record::de_r53_resource_record(tokens)?);
+                            builder =
+                                builder.set_r53_resource(crate::protocol_serde::shape_r53_resource_record::de_r53_resource_record(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

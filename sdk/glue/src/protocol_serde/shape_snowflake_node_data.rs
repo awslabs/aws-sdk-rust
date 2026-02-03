@@ -102,6 +102,7 @@ pub fn ser_snowflake_node_data(
 
 pub(crate) fn de_snowflake_node_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SnowflakeNodeData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -123,7 +124,7 @@ where
                             );
                         }
                         "Connection" => {
-                            builder = builder.set_connection(crate::protocol_serde::shape_option::de_option(tokens)?);
+                            builder = builder.set_connection(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
                         }
                         "Schema" => {
                             builder = builder.set_schema(
@@ -154,10 +155,11 @@ where
                             );
                         }
                         "IamRole" => {
-                            builder = builder.set_iam_role(crate::protocol_serde::shape_option::de_option(tokens)?);
+                            builder = builder.set_iam_role(crate::protocol_serde::shape_option::de_option(tokens, _value)?);
                         }
                         "AdditionalOptions" => {
-                            builder = builder.set_additional_options(crate::protocol_serde::shape_additional_options::de_additional_options(tokens)?);
+                            builder = builder
+                                .set_additional_options(crate::protocol_serde::shape_additional_options::de_additional_options(tokens, _value)?);
                         }
                         "SampleQuery" => {
                             builder = builder.set_sample_query(
@@ -226,13 +228,13 @@ where
                             );
                         }
                         "SelectedColumns" => {
-                            builder = builder.set_selected_columns(crate::protocol_serde::shape_option_list::de_option_list(tokens)?);
+                            builder = builder.set_selected_columns(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value)?);
                         }
                         "AutoPushdown" => {
                             builder = builder.set_auto_pushdown(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "TableSchema" => {
-                            builder = builder.set_table_schema(crate::protocol_serde::shape_option_list::de_option_list(tokens)?);
+                            builder = builder.set_table_schema(crate::protocol_serde::shape_option_list::de_option_list(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

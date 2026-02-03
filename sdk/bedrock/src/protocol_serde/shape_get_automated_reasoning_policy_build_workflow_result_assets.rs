@@ -121,8 +121,8 @@ pub fn de_get_automated_reasoning_policy_build_workflow_result_assets_http_respo
     })
 }
 
-pub(crate) fn de_get_automated_reasoning_policy_build_workflow_result_assets(value: &[u8], mut builder: crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::builders::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutputBuilder) -> ::std::result::Result<crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::builders::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+pub(crate) fn de_get_automated_reasoning_policy_build_workflow_result_assets(_value: &[u8], mut builder: crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::builders::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutputBuilder) -> ::std::result::Result<crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::builders::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,7 +131,7 @@ pub(crate) fn de_get_automated_reasoning_policy_build_workflow_result_assets(val
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "buildWorkflowAssets" => {
                     builder = builder.set_build_workflow_assets(
-                            crate::protocol_serde::shape_automated_reasoning_policy_build_result_assets::de_automated_reasoning_policy_build_result_assets(tokens)?
+                            crate::protocol_serde::shape_automated_reasoning_policy_build_result_assets::de_automated_reasoning_policy_build_result_assets(tokens, _value)?
                         );
                 }
                 "buildWorkflowId" => {

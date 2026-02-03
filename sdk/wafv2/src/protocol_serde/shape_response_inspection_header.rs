@@ -29,6 +29,7 @@ pub fn ser_response_inspection_header(
 
 pub(crate) fn de_response_inspection_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResponseInspectionHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -52,12 +53,12 @@ where
                             }
                             "SuccessValues" => {
                                 builder = builder.set_success_values(
-                                    crate::protocol_serde::shape_response_inspection_header_success_values::de_response_inspection_header_success_values(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_header_success_values::de_response_inspection_header_success_values(tokens, _value)?
                                 );
                             }
                             "FailureValues" => {
                                 builder = builder.set_failure_values(
-                                    crate::protocol_serde::shape_response_inspection_header_failure_values::de_response_inspection_header_failure_values(tokens)?
+                                    crate::protocol_serde::shape_response_inspection_header_failure_values::de_response_inspection_header_failure_values(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

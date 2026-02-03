@@ -147,13 +147,13 @@ pub fn de_get_customer_gateway_associations_http_response(
 }
 
 pub(crate) fn de_get_customer_gateway_associations(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -162,7 +162,7 @@ pub(crate) fn de_get_customer_gateway_associations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "CustomerGatewayAssociations" => {
                     builder = builder.set_customer_gateway_associations(
-                        crate::protocol_serde::shape_customer_gateway_association_list::de_customer_gateway_association_list(tokens)?,
+                        crate::protocol_serde::shape_customer_gateway_association_list::de_customer_gateway_association_list(tokens, _value)?,
                     );
                 }
                 "NextToken" => {

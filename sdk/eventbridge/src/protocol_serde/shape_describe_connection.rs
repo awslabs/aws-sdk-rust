@@ -84,13 +84,13 @@ pub fn ser_describe_connection_input(
 }
 
 pub(crate) fn de_describe_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_connection::builders::DescribeConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_connection::builders::DescribeConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,7 +121,7 @@ pub(crate) fn de_describe_connection(
                 "InvocationConnectivityParameters" => {
                     builder = builder.set_invocation_connectivity_parameters(
                         crate::protocol_serde::shape_describe_connection_connectivity_parameters::de_describe_connection_connectivity_parameters(
-                            tokens,
+                            tokens, _value,
                         )?,
                     );
                 }
@@ -162,7 +162,7 @@ pub(crate) fn de_describe_connection(
                 }
                 "AuthParameters" => {
                     builder = builder.set_auth_parameters(
-                        crate::protocol_serde::shape_connection_auth_response_parameters::de_connection_auth_response_parameters(tokens)?,
+                        crate::protocol_serde::shape_connection_auth_response_parameters::de_connection_auth_response_parameters(tokens, _value)?,
                     );
                 }
                 "CreationTime" => {

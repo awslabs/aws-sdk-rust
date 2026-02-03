@@ -116,13 +116,13 @@ pub fn de_describe_place_index_http_response(
 }
 
 pub(crate) fn de_describe_place_index(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -144,7 +144,7 @@ pub(crate) fn de_describe_place_index(
                 }
                 "DataSourceConfiguration" => {
                     builder = builder.set_data_source_configuration(
-                        crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(tokens)?,
+                        crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(tokens, _value)?,
                     );
                 }
                 "Description" => {
@@ -176,7 +176,7 @@ pub(crate) fn de_describe_place_index(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                 }
                 "UpdateTime" => {
                     builder = builder.set_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

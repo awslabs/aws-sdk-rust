@@ -17,6 +17,7 @@ pub fn ser_collaboration_change_specification(
 
 pub(crate) fn de_collaboration_change_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CollaborationChangeSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -32,7 +33,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "autoApprovedChangeTypes" => {
                             builder = builder.set_auto_approved_change_types(
-                                crate::protocol_serde::shape_auto_approved_change_type_list::de_auto_approved_change_type_list(tokens)?,
+                                crate::protocol_serde::shape_auto_approved_change_type_list::de_auto_approved_change_type_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

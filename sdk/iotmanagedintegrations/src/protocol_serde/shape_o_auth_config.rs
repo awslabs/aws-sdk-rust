@@ -31,6 +31,7 @@ pub fn ser_o_auth_config(
 
 pub(crate) fn de_o_auth_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OAuthConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,7 +85,7 @@ where
                         }
                         "proactiveRefreshTokenRenewal" => {
                             builder = builder.set_proactive_refresh_token_renewal(
-                                crate::protocol_serde::shape_proactive_refresh_token_renewal::de_proactive_refresh_token_renewal(tokens)?,
+                                crate::protocol_serde::shape_proactive_refresh_token_renewal::de_proactive_refresh_token_renewal(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -153,7 +153,7 @@ mod create_luna_client;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_cloudhsm::Error> {
 /// # let client: aws_sdk_cloudhsm::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.add_tags_to_resource()
 ///     .customize()

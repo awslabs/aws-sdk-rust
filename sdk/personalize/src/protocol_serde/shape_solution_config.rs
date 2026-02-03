@@ -67,6 +67,7 @@ pub fn ser_solution_config(
 
 pub(crate) fn de_solution_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SolutionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -88,34 +89,37 @@ where
                             );
                         }
                         "hpoConfig" => {
-                            builder = builder.set_hpo_config(crate::protocol_serde::shape_hpo_config::de_hpo_config(tokens)?);
+                            builder = builder.set_hpo_config(crate::protocol_serde::shape_hpo_config::de_hpo_config(tokens, _value)?);
                         }
                         "algorithmHyperParameters" => {
-                            builder =
-                                builder.set_algorithm_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                            builder = builder
+                                .set_algorithm_hyper_parameters(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens, _value)?);
                         }
                         "featureTransformationParameters" => {
                             builder = builder.set_feature_transformation_parameters(
-                                crate::protocol_serde::shape_feature_transformation_parameters::de_feature_transformation_parameters(tokens)?,
+                                crate::protocol_serde::shape_feature_transformation_parameters::de_feature_transformation_parameters(tokens, _value)?,
                             );
                         }
                         "autoMLConfig" => {
-                            builder = builder.set_auto_ml_config(crate::protocol_serde::shape_auto_ml_config::de_auto_ml_config(tokens)?);
+                            builder = builder.set_auto_ml_config(crate::protocol_serde::shape_auto_ml_config::de_auto_ml_config(tokens, _value)?);
                         }
                         "eventsConfig" => {
-                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens)?);
+                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens, _value)?);
                         }
                         "optimizationObjective" => {
-                            builder = builder
-                                .set_optimization_objective(crate::protocol_serde::shape_optimization_objective::de_optimization_objective(tokens)?);
+                            builder = builder.set_optimization_objective(
+                                crate::protocol_serde::shape_optimization_objective::de_optimization_objective(tokens, _value)?,
+                            );
                         }
                         "trainingDataConfig" => {
-                            builder =
-                                builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                            builder = builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(
+                                tokens, _value,
+                            )?);
                         }
                         "autoTrainingConfig" => {
-                            builder =
-                                builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(tokens)?);
+                            builder = builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

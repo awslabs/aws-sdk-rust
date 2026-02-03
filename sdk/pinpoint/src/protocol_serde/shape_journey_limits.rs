@@ -41,6 +41,7 @@ pub fn ser_journey_limits(
 
 pub(crate) fn de_journey_limits<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JourneyLimits>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -83,8 +84,9 @@ where
                             );
                         }
                         "TimeframeCap" => {
-                            builder =
-                                builder.set_timeframe_cap(crate::protocol_serde::shape_journey_timeframe_cap::de_journey_timeframe_cap(tokens)?);
+                            builder = builder.set_timeframe_cap(crate::protocol_serde::shape_journey_timeframe_cap::de_journey_timeframe_cap(
+                                tokens, _value,
+                            )?);
                         }
                         "TotalCap" => {
                             builder = builder.set_total_cap(

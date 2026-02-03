@@ -44,6 +44,7 @@ pub fn ser_aws_amazon_mq_broker_ldap_server_metadata_details(
 
 pub(crate) fn de_aws_amazon_mq_broker_ldap_server_metadata_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,7 +59,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Hosts" => {
-                            builder = builder.set_hosts(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
+                            builder = builder.set_hosts(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value)?);
                         }
                         "RoleBase" => {
                             builder = builder.set_role_base(

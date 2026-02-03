@@ -45,6 +45,7 @@ pub fn ser_auto_ml_problem_type_config(
 
 pub(crate) fn de_auto_ml_problem_type_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AutoMlProblemTypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -74,40 +75,42 @@ where
                     }
                     variant = match key.as_ref() {
                         "ImageClassificationJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig(
-                            crate::protocol_serde::shape_image_classification_job_config::de_image_classification_job_config(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_image_classification_job_config::de_image_classification_job_config(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'ImageClassificationJobConfig' cannot be null",
                                     )
-                                },
-                            )?,
+                                })?,
                         )),
                         "TextClassificationJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig(
-                            crate::protocol_serde::shape_text_classification_job_config::de_text_classification_job_config(tokens)?.ok_or_else(
-                                || {
+                            crate::protocol_serde::shape_text_classification_job_config::de_text_classification_job_config(tokens, _value)?
+                                .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                         "value for 'TextClassificationJobConfig' cannot be null",
                                     )
-                                },
-                            )?,
-                        )),
-                        "TimeSeriesForecastingJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig(
-                            crate::protocol_serde::shape_time_series_forecasting_job_config::de_time_series_forecasting_job_config(tokens)?
-                                .ok_or_else(|| {
-                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
-                                        "value for 'TimeSeriesForecastingJobConfig' cannot be null",
-                                    )
                                 })?,
                         )),
+                        "TimeSeriesForecastingJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TimeSeriesForecastingJobConfig(
+                            crate::protocol_serde::shape_time_series_forecasting_job_config::de_time_series_forecasting_job_config(tokens, _value)?
+                                .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'TimeSeriesForecastingJobConfig' cannot be null",
+                                )
+                            })?,
+                        )),
                         "TabularJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TabularJobConfig(
-                            crate::protocol_serde::shape_tabular_job_config::de_tabular_job_config(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_tabular_job_config::de_tabular_job_config(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TabularJobConfig' cannot be null")
                             })?,
                         )),
                         "TextGenerationJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::TextGenerationJobConfig(
-                            crate::protocol_serde::shape_text_generation_job_config::de_text_generation_job_config(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TextGenerationJobConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_text_generation_job_config::de_text_generation_job_config(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'TextGenerationJobConfig' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

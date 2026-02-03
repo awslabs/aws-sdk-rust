@@ -26,6 +26,7 @@ pub fn ser_lex_configuration(
 
 pub(crate) fn de_lex_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LexConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,7 +48,7 @@ where
                             );
                         }
                         "InvokedBy" => {
-                            builder = builder.set_invoked_by(crate::protocol_serde::shape_invoked_by::de_invoked_by(tokens)?);
+                            builder = builder.set_invoked_by(crate::protocol_serde::shape_invoked_by::de_invoked_by(tokens, _value)?);
                         }
                         "LexBotAliasArn" => {
                             builder = builder.set_lex_bot_alias_arn(

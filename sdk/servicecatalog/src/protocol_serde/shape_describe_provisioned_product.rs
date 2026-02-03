@@ -87,13 +87,13 @@ pub fn ser_describe_provisioned_product_input(
 }
 
 pub(crate) fn de_describe_provisioned_product(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -102,12 +102,13 @@ pub(crate) fn de_describe_provisioned_product(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ProvisionedProductDetail" => {
                     builder = builder.set_provisioned_product_detail(
-                        crate::protocol_serde::shape_provisioned_product_detail::de_provisioned_product_detail(tokens)?,
+                        crate::protocol_serde::shape_provisioned_product_detail::de_provisioned_product_detail(tokens, _value)?,
                     );
                 }
                 "CloudWatchDashboards" => {
-                    builder =
-                        builder.set_cloud_watch_dashboards(crate::protocol_serde::shape_cloud_watch_dashboards::de_cloud_watch_dashboards(tokens)?);
+                    builder = builder.set_cloud_watch_dashboards(crate::protocol_serde::shape_cloud_watch_dashboards::de_cloud_watch_dashboards(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

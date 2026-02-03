@@ -153,13 +153,13 @@ pub fn ser_check_no_public_access_input(
 }
 
 pub(crate) fn de_check_no_public_access(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::check_no_public_access::builders::CheckNoPublicAccessOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::check_no_public_access::builders::CheckNoPublicAccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,7 +174,7 @@ pub(crate) fn de_check_no_public_access(
                     );
                 }
                 "reasons" => {
-                    builder = builder.set_reasons(crate::protocol_serde::shape_reason_summary_list::de_reason_summary_list(tokens)?);
+                    builder = builder.set_reasons(crate::protocol_serde::shape_reason_summary_list::de_reason_summary_list(tokens, _value)?);
                 }
                 "result" => {
                     builder = builder.set_result(

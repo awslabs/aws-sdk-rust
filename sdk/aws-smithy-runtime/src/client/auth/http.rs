@@ -105,7 +105,7 @@ impl Sign for ApiKeySigner {
                 let mut query = QueryWriter::new_from_string(request.uri())?;
                 query.insert(&self.name, api_key.token());
                 request
-                    .set_uri(query.build_uri())
+                    .set_uri(query.build_uri().to_string())
                     .expect("query writer returns a valid URI")
             }
         }
@@ -162,8 +162,8 @@ impl Sign for BasicAuthSigner {
             .data::<Login>()
             .ok_or("HTTP basic auth requires a `Login` identity")?;
         request.headers_mut().insert(
-            http_02x::header::AUTHORIZATION,
-            http_02x::HeaderValue::from_str(&format!(
+            http_1x::header::AUTHORIZATION,
+            http_1x::HeaderValue::from_str(&format!(
                 "Basic {}",
                 encode(format!("{}:{}", login.user(), login.password()))
             ))
@@ -221,10 +221,10 @@ impl Sign for BearerAuthSigner {
             .data::<Token>()
             .ok_or("HTTP bearer auth requires a `Token` identity")?;
         request.headers_mut().insert(
-            http_02x::header::AUTHORIZATION,
-            http_02x::HeaderValue::from_str(&format!("Bearer {}", token.token())).map_err(
-                |_| "Bearer token contains characters that can't be included in a HTTP header",
-            )?,
+            http_1x::header::AUTHORIZATION,
+            http_1x::HeaderValue::from_str(&format!("Bearer {}", token.token())).map_err(|_| {
+                "Bearer token contains characters that can't be included in a HTTP header"
+            })?,
         );
         Ok(())
     }
@@ -297,7 +297,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request: HttpRequest = http_02x::Request::builder()
+        let mut request: HttpRequest = http_1x::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap()
@@ -329,7 +329,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request: HttpRequest = http_02x::Request::builder()
+        let mut request: HttpRequest = http_1x::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap()
@@ -357,7 +357,7 @@ mod tests {
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let config_bag = ConfigBag::base();
         let identity = Identity::new(Login::new("Aladdin", "open sesame", None), None);
-        let mut request = http_02x::Request::builder()
+        let mut request = http_1x::Request::builder()
             .body(SdkBody::empty())
             .unwrap()
             .try_into()
@@ -385,7 +385,7 @@ mod tests {
         let config_bag = ConfigBag::base();
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http_02x::Request::builder()
+        let mut request = http_1x::Request::builder()
             .body(SdkBody::empty())
             .unwrap()
             .try_into()
@@ -412,7 +412,7 @@ mod tests {
         let config_bag = ConfigBag::base();
         let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
         let identity = Identity::new(Token::new("some-token", None), None);
-        let mut request = http_02x::Request::builder()
+        let mut request = http_1x::Request::builder()
             .header("Authorization", "wrong")
             .body(SdkBody::empty())
             .unwrap()

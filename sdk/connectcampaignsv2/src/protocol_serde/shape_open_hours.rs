@@ -30,6 +30,7 @@ pub fn ser_open_hours(
 
 pub(crate) fn de_open_hours<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::OpenHours>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "dailyHours" => Some(crate::types::OpenHours::DailyHours(
-                            crate::protocol_serde::shape_daily_hours::de_daily_hours(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_daily_hours::de_daily_hours(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dailyHours' cannot be null")
                             })?,
                         )),

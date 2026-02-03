@@ -118,13 +118,13 @@ pub fn ser_describe_pull_through_cache_rules_input(
 }
 
 pub(crate) fn de_describe_pull_through_cache_rules(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_pull_through_cache_rules::builders::DescribePullThroughCacheRulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -133,7 +133,7 @@ pub(crate) fn de_describe_pull_through_cache_rules(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "pullThroughCacheRules" => {
                     builder = builder.set_pull_through_cache_rules(
-                        crate::protocol_serde::shape_pull_through_cache_rule_list::de_pull_through_cache_rule_list(tokens)?,
+                        crate::protocol_serde::shape_pull_through_cache_rule_list::de_pull_through_cache_rule_list(tokens, _value)?,
                     );
                 }
                 "nextToken" => {

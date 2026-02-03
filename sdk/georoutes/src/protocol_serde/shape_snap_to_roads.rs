@@ -111,11 +111,11 @@ pub fn ser_snap_to_roads_input(
 }
 
 pub(crate) fn de_snap_to_roads(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::snap_to_roads::builders::SnapToRoadsOutputBuilder,
 ) -> ::std::result::Result<crate::operation::snap_to_roads::builders::SnapToRoadsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
 {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -123,11 +123,13 @@ pub(crate) fn de_snap_to_roads(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Notices" => {
-                    builder = builder.set_notices(crate::protocol_serde::shape_road_snap_notice_list::de_road_snap_notice_list(tokens)?);
+                    builder = builder.set_notices(crate::protocol_serde::shape_road_snap_notice_list::de_road_snap_notice_list(
+                        tokens, _value,
+                    )?);
                 }
                 "SnappedGeometry" => {
                     builder = builder.set_snapped_geometry(crate::protocol_serde::shape_road_snap_snapped_geometry::de_road_snap_snapped_geometry(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "SnappedGeometryFormat" => {
@@ -139,7 +141,7 @@ pub(crate) fn de_snap_to_roads(
                 }
                 "SnappedTracePoints" => {
                     builder = builder.set_snapped_trace_points(
-                        crate::protocol_serde::shape_road_snap_snapped_trace_point_list::de_road_snap_snapped_trace_point_list(tokens)?,
+                        crate::protocol_serde::shape_road_snap_snapped_trace_point_list::de_road_snap_snapped_trace_point_list(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

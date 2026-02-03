@@ -23,6 +23,7 @@ pub fn ser_content_body(
 
 pub(crate) fn de_content_body<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ContentBody>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,7 +45,7 @@ where
                             );
                         }
                         "images" => {
-                            builder = builder.set_images(crate::protocol_serde::shape_image_inputs::de_image_inputs(tokens)?);
+                            builder = builder.set_images(crate::protocol_serde::shape_image_inputs::de_image_inputs(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

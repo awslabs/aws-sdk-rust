@@ -94,13 +94,13 @@ pub fn de_get_event_action_http_response(
 }
 
 pub(crate) fn de_get_event_action(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_event_action::builders::GetEventActionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_event_action::builders::GetEventActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_get_event_action(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Action" => {
-                    builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens)?);
+                    builder = builder.set_action(crate::protocol_serde::shape_action::de_action(tokens, _value)?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(
@@ -124,7 +124,7 @@ pub(crate) fn de_get_event_action(
                     )?);
                 }
                 "Event" => {
-                    builder = builder.set_event(crate::protocol_serde::shape_event::de_event(tokens)?);
+                    builder = builder.set_event(crate::protocol_serde::shape_event::de_event(tokens, _value)?);
                 }
                 "Id" => {
                     builder = builder.set_id(
@@ -134,7 +134,7 @@ pub(crate) fn de_get_event_action(
                     );
                 }
                 "Tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
                 }
                 "UpdatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

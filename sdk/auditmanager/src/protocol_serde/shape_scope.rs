@@ -32,6 +32,7 @@ pub fn ser_scope(
 
 pub(crate) fn de_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Scope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -46,10 +47,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "awsAccounts" => {
-                            builder = builder.set_aws_accounts(crate::protocol_serde::shape_aws_accounts::de_aws_accounts(tokens)?);
+                            builder = builder.set_aws_accounts(crate::protocol_serde::shape_aws_accounts::de_aws_accounts(tokens, _value)?);
                         }
                         "awsServices" => {
-                            builder = builder.set_aws_services(crate::protocol_serde::shape_aws_services::de_aws_services(tokens)?);
+                            builder = builder.set_aws_services(crate::protocol_serde::shape_aws_services::de_aws_services(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

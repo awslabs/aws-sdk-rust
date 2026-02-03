@@ -116,12 +116,12 @@ pub fn de_create_multipart_upload_http_response(
 
 pub fn ser_create_multipart_upload_headers(
     input: &crate::operation::create_multipart_upload::CreateMultipartUploadInput,
-    mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    mut builder: ::http_1x::request::Builder,
+) -> std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.acl {
         let formatted_2 = inner_1.as_str();
         let header_value = formatted_2;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "acl",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -132,7 +132,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_3) = &input.cache_control {
         let formatted_4 = inner_3.as_str();
         let header_value = formatted_4;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "cache_control",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -143,7 +143,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_5) = &input.content_disposition {
         let formatted_6 = inner_5.as_str();
         let header_value = formatted_6;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_disposition",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -154,7 +154,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_7) = &input.content_encoding {
         let formatted_8 = inner_7.as_str();
         let header_value = formatted_8;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_encoding",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -165,7 +165,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_9) = &input.content_language {
         let formatted_10 = inner_9.as_str();
         let header_value = formatted_10;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_language",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -176,7 +176,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_11) = &input.content_type {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "content_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -187,7 +187,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_13) = &input.expires {
         let formatted_14 = inner_13.fmt(::aws_smithy_types::date_time::Format::HttpDate)?;
         let header_value = formatted_14;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expires",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -198,7 +198,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_15) = &input.grant_full_control {
         let formatted_16 = inner_15.as_str();
         let header_value = formatted_16;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "grant_full_control",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -209,7 +209,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_17) = &input.grant_read {
         let formatted_18 = inner_17.as_str();
         let header_value = formatted_18;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "grant_read",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -220,7 +220,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_19) = &input.grant_read_acp {
         let formatted_20 = inner_19.as_str();
         let header_value = formatted_20;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "grant_read_acp",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -231,7 +231,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_21) = &input.grant_write_acp {
         let formatted_22 = inner_21.as_str();
         let header_value = formatted_22;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "grant_write_acp",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -242,7 +242,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_23) = &input.server_side_encryption {
         let formatted_24 = inner_23.as_str();
         let header_value = formatted_24;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "server_side_encryption",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -253,7 +253,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_25) = &input.storage_class {
         let formatted_26 = inner_25.as_str();
         let header_value = formatted_26;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "storage_class",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -264,7 +264,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_27) = &input.website_redirect_location {
         let formatted_28 = inner_27.as_str();
         let header_value = formatted_28;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "website_redirect_location",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -275,7 +275,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_29) = &input.sse_customer_algorithm {
         let formatted_30 = inner_29.as_str();
         let header_value = formatted_30;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_algorithm",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -286,7 +286,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_31) = &input.sse_customer_key {
         let formatted_32 = inner_31.as_str();
         let header_value = formatted_32;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -297,7 +297,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_33) = &input.sse_customer_key_md5 {
         let formatted_34 = inner_33.as_str();
         let header_value = formatted_34;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "sse_customer_key_md5",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -308,7 +308,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_35) = &input.ssekms_key_id {
         let formatted_36 = inner_35.as_str();
         let header_value = formatted_36;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "ssekms_key_id",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -319,7 +319,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_37) = &input.ssekms_encryption_context {
         let formatted_38 = inner_37.as_str();
         let header_value = formatted_38;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "ssekms_encryption_context",
                 format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
@@ -331,7 +331,7 @@ pub fn ser_create_multipart_upload_headers(
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_39);
         let formatted_40 = encoder.encode();
         let header_value = formatted_40;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "bucket_key_enabled",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -342,7 +342,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_41) = &input.request_payer {
         let formatted_42 = inner_41.as_str();
         let header_value = formatted_42;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_payer",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -353,7 +353,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_43) = &input.tagging {
         let formatted_44 = inner_43.as_str();
         let header_value = formatted_44;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "tagging",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -364,7 +364,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_45) = &input.object_lock_mode {
         let formatted_46 = inner_45.as_str();
         let header_value = formatted_46;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_mode",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -375,7 +375,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_47) = &input.object_lock_retain_until_date {
         let formatted_48 = inner_47.fmt(::aws_smithy_types::date_time::Format::DateTime)?;
         let header_value = formatted_48;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_retain_until_date",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -386,7 +386,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_49) = &input.object_lock_legal_hold_status {
         let formatted_50 = inner_49.as_str();
         let header_value = formatted_50;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "object_lock_legal_hold_status",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -397,7 +397,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_51) = &input.expected_bucket_owner {
         let formatted_52 = inner_51.as_str();
         let header_value = formatted_52;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "expected_bucket_owner",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -408,7 +408,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_53) = &input.checksum_algorithm {
         let formatted_54 = inner_53.as_str();
         let header_value = formatted_54;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_algorithm",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -419,7 +419,7 @@ pub fn ser_create_multipart_upload_headers(
     if let ::std::option::Option::Some(inner_55) = &input.checksum_type {
         let formatted_56 = inner_55.as_str();
         let header_value = formatted_56;
-        let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "checksum_type",
                 format!("`{}` cannot be used as a header value: {}", &header_value, err),
@@ -431,14 +431,14 @@ pub fn ser_create_multipart_upload_headers(
         {
             for (k, v) in inner_57 {
                 use std::str::FromStr;
-                let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(|err| {
+                let header_name = ::http_1x::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k)).map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "metadata",
                         format!("`{k}` cannot be used as a header name: {err}"),
                     )
                 })?;
                 let header_value = v.as_str();
-                let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
                     ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "metadata",
                         format!("`{v}` cannot be used as a header value: {err}"),

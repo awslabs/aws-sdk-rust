@@ -110,6 +110,7 @@ pub fn ser_condition(
 
 pub(crate) fn de_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::Condition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -124,10 +125,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eq" => {
-                            builder = builder.set_eq(crate::protocol_serde::shape_eq::de_eq(tokens)?);
+                            builder = builder.set_eq(crate::protocol_serde::shape_eq::de_eq(tokens, _value)?);
                         }
                         "neq" => {
-                            builder = builder.set_neq(crate::protocol_serde::shape_neq::de_neq(tokens)?);
+                            builder = builder.set_neq(crate::protocol_serde::shape_neq::de_neq(tokens, _value)?);
                         }
                         "gt" => {
                             builder = builder.set_gt(
@@ -158,10 +159,10 @@ where
                             );
                         }
                         "equals" => {
-                            builder = builder.set_equals(crate::protocol_serde::shape_equals::de_equals(tokens)?);
+                            builder = builder.set_equals(crate::protocol_serde::shape_equals::de_equals(tokens, _value)?);
                         }
                         "notEquals" => {
-                            builder = builder.set_not_equals(crate::protocol_serde::shape_not_equals::de_not_equals(tokens)?);
+                            builder = builder.set_not_equals(crate::protocol_serde::shape_not_equals::de_not_equals(tokens, _value)?);
                         }
                         "greaterThan" => {
                             builder = builder.set_greater_than(
@@ -192,10 +193,10 @@ where
                             );
                         }
                         "matches" => {
-                            builder = builder.set_matches(crate::protocol_serde::shape_matches::de_matches(tokens)?);
+                            builder = builder.set_matches(crate::protocol_serde::shape_matches::de_matches(tokens, _value)?);
                         }
                         "notMatches" => {
-                            builder = builder.set_not_matches(crate::protocol_serde::shape_not_matches::de_not_matches(tokens)?);
+                            builder = builder.set_not_matches(crate::protocol_serde::shape_not_matches::de_not_matches(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

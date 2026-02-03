@@ -20,6 +20,7 @@ pub fn ser_geospatial_line_symbol_style(
 
 pub(crate) fn de_geospatial_line_symbol_style<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::GeospatialLineSymbolStyle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,10 +35,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "FillColor" => {
-                            builder = builder.set_fill_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(tokens)?);
+                            builder = builder.set_fill_color(crate::protocol_serde::shape_geospatial_color::de_geospatial_color(tokens, _value)?);
                         }
                         "LineWidth" => {
-                            builder = builder.set_line_width(crate::protocol_serde::shape_geospatial_line_width::de_geospatial_line_width(tokens)?);
+                            builder = builder.set_line_width(crate::protocol_serde::shape_geospatial_line_width::de_geospatial_line_width(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

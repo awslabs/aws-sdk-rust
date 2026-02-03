@@ -94,13 +94,13 @@ pub fn ser_put_destination_input(
 }
 
 pub(crate) fn de_put_destination(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::put_destination::builders::PutDestinationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::put_destination::builders::PutDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -108,7 +108,7 @@ pub(crate) fn de_put_destination(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "destination" => {
-                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens)?);
+                    builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

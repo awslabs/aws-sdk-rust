@@ -41,6 +41,7 @@ pub fn ser_join_operation(
 
 pub(crate) fn de_join_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::JoinOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,12 +64,12 @@ where
                         }
                         "LeftOperand" => {
                             builder = builder.set_left_operand(
-                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens)?,
+                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens, _value)?,
                             );
                         }
                         "RightOperand" => {
                             builder = builder.set_right_operand(
-                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens)?,
+                                crate::protocol_serde::shape_transform_operation_source::de_transform_operation_source(tokens, _value)?,
                             );
                         }
                         "Type" => {
@@ -87,12 +88,12 @@ where
                         }
                         "LeftOperandProperties" => {
                             builder = builder.set_left_operand_properties(
-                                crate::protocol_serde::shape_join_operand_properties::de_join_operand_properties(tokens)?,
+                                crate::protocol_serde::shape_join_operand_properties::de_join_operand_properties(tokens, _value)?,
                             );
                         }
                         "RightOperandProperties" => {
                             builder = builder.set_right_operand_properties(
-                                crate::protocol_serde::shape_join_operand_properties::de_join_operand_properties(tokens)?,
+                                crate::protocol_serde::shape_join_operand_properties::de_join_operand_properties(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

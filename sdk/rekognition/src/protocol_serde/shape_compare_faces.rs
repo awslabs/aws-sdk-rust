@@ -170,13 +170,13 @@ pub fn ser_compare_faces_input(
 }
 
 pub(crate) fn de_compare_faces(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::compare_faces::builders::CompareFacesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::compare_faces::builders::CompareFacesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -185,17 +185,17 @@ pub(crate) fn de_compare_faces(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "SourceImageFace" => {
                     builder = builder.set_source_image_face(crate::protocol_serde::shape_compared_source_image_face::de_compared_source_image_face(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "FaceMatches" => {
                     builder = builder.set_face_matches(crate::protocol_serde::shape_compare_faces_match_list::de_compare_faces_match_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "UnmatchedFaces" => {
                     builder = builder.set_unmatched_faces(crate::protocol_serde::shape_compare_faces_unmatch_list::de_compare_faces_unmatch_list(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "SourceImageOrientationCorrection" => {

@@ -17,6 +17,7 @@ pub fn ser_authorizing_claim_match_value_type(
 
 pub(crate) fn de_authorizing_claim_match_value_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AuthorizingClaimMatchValueType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -31,8 +32,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "claimMatchValue" => {
-                            builder = builder
-                                .set_claim_match_value(crate::protocol_serde::shape_claim_match_value_type::de_claim_match_value_type(tokens)?);
+                            builder = builder.set_claim_match_value(crate::protocol_serde::shape_claim_match_value_type::de_claim_match_value_type(
+                                tokens, _value,
+                            )?);
                         }
                         "claimMatchOperator" => {
                             builder = builder.set_claim_match_operator(

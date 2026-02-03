@@ -47,6 +47,7 @@ pub fn ser_aws_api_gateway_rest_api_details(
 
 pub(crate) fn de_aws_api_gateway_rest_api_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::AwsApiGatewayRestApiDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -96,8 +97,9 @@ where
                             );
                         }
                         "BinaryMediaTypes" => {
-                            builder =
-                                builder.set_binary_media_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
+                            builder = builder.set_binary_media_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(
+                                tokens, _value,
+                            )?);
                         }
                         "MinimumCompressionSize" => {
                             builder = builder.set_minimum_compression_size(
@@ -116,7 +118,7 @@ where
                         "EndpointConfiguration" => {
                             builder = builder.set_endpoint_configuration(
                                 crate::protocol_serde::shape_aws_api_gateway_endpoint_configuration::de_aws_api_gateway_endpoint_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

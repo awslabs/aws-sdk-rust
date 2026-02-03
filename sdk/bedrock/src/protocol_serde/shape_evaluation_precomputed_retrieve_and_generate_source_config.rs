@@ -11,6 +11,7 @@ pub fn ser_evaluation_precomputed_retrieve_and_generate_source_config(
 
 pub(crate) fn de_evaluation_precomputed_retrieve_and_generate_source_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<
     Option<crate::types::EvaluationPrecomputedRetrieveAndGenerateSourceConfig>,
     ::aws_smithy_json::deserialize::error::DeserializeError,

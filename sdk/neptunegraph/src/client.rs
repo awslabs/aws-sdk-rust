@@ -242,7 +242,7 @@ mod create_private_graph_endpoint;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_neptunegraph::Error> {
 /// # let client: aws_sdk_neptunegraph::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.cancel_export_task()
 ///     .customize()

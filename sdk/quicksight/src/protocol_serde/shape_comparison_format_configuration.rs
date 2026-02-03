@@ -20,6 +20,7 @@ pub fn ser_comparison_format_configuration(
 
 pub(crate) fn de_comparison_format_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComparisonFormatConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -35,13 +36,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "NumberDisplayFormatConfiguration" => {
                             builder = builder.set_number_display_format_configuration(
-                                crate::protocol_serde::shape_number_display_format_configuration::de_number_display_format_configuration(tokens)?,
+                                crate::protocol_serde::shape_number_display_format_configuration::de_number_display_format_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "PercentageDisplayFormatConfiguration" => {
                             builder = builder.set_percentage_display_format_configuration(
                                 crate::protocol_serde::shape_percentage_display_format_configuration::de_percentage_display_format_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

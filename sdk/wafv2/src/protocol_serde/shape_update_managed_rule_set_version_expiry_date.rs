@@ -163,13 +163,13 @@ pub fn ser_update_managed_rule_set_version_expiry_date_input(
 }
 
 pub(crate) fn de_update_managed_rule_set_version_expiry_date(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_managed_rule_set_version_expiry_date::builders::UpdateManagedRuleSetVersionExpiryDateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {

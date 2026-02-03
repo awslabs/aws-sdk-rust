@@ -21,6 +21,7 @@ pub fn ser_cluster_instance_storage_config(
 
 pub(crate) fn de_cluster_instance_storage_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ClusterInstanceStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -50,9 +51,9 @@ where
                     }
                     variant = match key.as_ref() {
                         "EbsVolumeConfig" => Some(crate::types::ClusterInstanceStorageConfig::EbsVolumeConfig(
-                            crate::protocol_serde::shape_cluster_ebs_volume_config::de_cluster_ebs_volume_config(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EbsVolumeConfig' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_cluster_ebs_volume_config::de_cluster_ebs_volume_config(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EbsVolumeConfig' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

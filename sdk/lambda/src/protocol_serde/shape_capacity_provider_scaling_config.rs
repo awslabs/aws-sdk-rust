@@ -29,6 +29,7 @@ pub fn ser_capacity_provider_scaling_config(
 
 pub(crate) fn de_capacity_provider_scaling_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CapacityProviderScalingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                         "ScalingPolicies" => {
                             builder = builder.set_scaling_policies(
                                 crate::protocol_serde::shape_capacity_provider_scaling_policies_list::de_capacity_provider_scaling_policies_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

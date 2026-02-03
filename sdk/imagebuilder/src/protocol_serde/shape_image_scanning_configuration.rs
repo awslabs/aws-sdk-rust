@@ -17,6 +17,7 @@ pub fn ser_image_scanning_configuration(
 
 pub(crate) fn de_image_scanning_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ImageScanningConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,7 +35,8 @@ where
                             builder = builder.set_image_scanning_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ecrConfiguration" => {
-                            builder = builder.set_ecr_configuration(crate::protocol_serde::shape_ecr_configuration::de_ecr_configuration(tokens)?);
+                            builder =
+                                builder.set_ecr_configuration(crate::protocol_serde::shape_ecr_configuration::de_ecr_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

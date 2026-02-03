@@ -23,6 +23,7 @@ pub fn ser_detector_model_definition(
 
 pub(crate) fn de_detector_model_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DetectorModelDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,7 +38,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "states" => {
-                            builder = builder.set_states(crate::protocol_serde::shape_states::de_states(tokens)?);
+                            builder = builder.set_states(crate::protocol_serde::shape_states::de_states(tokens, _value)?);
                         }
                         "initialStateName" => {
                             builder = builder.set_initial_state_name(

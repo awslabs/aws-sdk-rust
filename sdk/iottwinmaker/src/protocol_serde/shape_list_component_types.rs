@@ -116,13 +116,13 @@ pub fn ser_list_component_types_input(
 }
 
 pub(crate) fn de_list_component_types(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -131,7 +131,7 @@ pub(crate) fn de_list_component_types(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "componentTypeSummaries" => {
                     builder = builder.set_component_type_summaries(
-                        crate::protocol_serde::shape_component_type_summaries::de_component_type_summaries(tokens)?,
+                        crate::protocol_serde::shape_component_type_summaries::de_component_type_summaries(tokens, _value)?,
                     );
                 }
                 "maxResults" => {

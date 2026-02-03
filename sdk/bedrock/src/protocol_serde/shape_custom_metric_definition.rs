@@ -26,6 +26,7 @@ pub fn ser_custom_metric_definition(
 
 pub(crate) fn de_custom_metric_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomMetricDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -54,7 +55,7 @@ where
                             );
                         }
                         "ratingScale" => {
-                            builder = builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens)?);
+                            builder = builder.set_rating_scale(crate::protocol_serde::shape_rating_scale::de_rating_scale(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

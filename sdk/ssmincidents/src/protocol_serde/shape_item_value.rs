@@ -26,6 +26,7 @@ pub fn ser_item_value(
 
 pub(crate) fn de_item_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ItemValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -75,9 +76,13 @@ where
                                 })?,
                         )),
                         "pagerDutyIncidentDetail" => Some(crate::types::ItemValue::PagerDutyIncidentDetail(
-                            crate::protocol_serde::shape_pager_duty_incident_detail::de_pager_duty_incident_detail(tokens)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerDutyIncidentDetail' cannot be null")
-                            })?,
+                            crate::protocol_serde::shape_pager_duty_incident_detail::de_pager_duty_incident_detail(tokens, _value)?.ok_or_else(
+                                || {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'pagerDutyIncidentDetail' cannot be null",
+                                    )
+                                },
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

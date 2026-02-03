@@ -183,7 +183,7 @@ mod create_vpc_attachment;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_networkmanager::Error> {
 /// # let client: aws_sdk_networkmanager::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.accept_attachment()
 ///     .customize()

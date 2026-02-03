@@ -138,13 +138,13 @@ pub fn ser_create_application_version_input(
 }
 
 pub(crate) fn de_create_application_version(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,11 +167,12 @@ pub(crate) fn de_create_application_version(
                 }
                 "parameterDefinitions" => {
                     builder = builder.set_parameter_definitions(
-                        crate::protocol_serde::shape_list_of_parameter_definition::de_list_of_parameter_definition(tokens)?,
+                        crate::protocol_serde::shape_list_of_parameter_definition::de_list_of_parameter_definition(tokens, _value)?,
                     );
                 }
                 "requiredCapabilities" => {
-                    builder = builder.set_required_capabilities(crate::protocol_serde::shape_list_of_capability::de_list_of_capability(tokens)?);
+                    builder =
+                        builder.set_required_capabilities(crate::protocol_serde::shape_list_of_capability::de_list_of_capability(tokens, _value)?);
                 }
                 "resourcesSupported" => {
                     builder = builder.set_resources_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

@@ -93,13 +93,13 @@ pub fn ser_describe_hapg_input(
 }
 
 pub(crate) fn de_describe_hapg(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_hapg::builders::DescribeHapgOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_hapg::builders::DescribeHapgOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -121,13 +121,13 @@ pub(crate) fn de_describe_hapg(
                     );
                 }
                 "HsmsLastActionFailed" => {
-                    builder = builder.set_hsms_last_action_failed(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens)?);
+                    builder = builder.set_hsms_last_action_failed(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
                 }
                 "HsmsPendingDeletion" => {
-                    builder = builder.set_hsms_pending_deletion(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens)?);
+                    builder = builder.set_hsms_pending_deletion(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
                 }
                 "HsmsPendingRegistration" => {
-                    builder = builder.set_hsms_pending_registration(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens)?);
+                    builder = builder.set_hsms_pending_registration(crate::protocol_serde::shape_hsm_list::de_hsm_list(tokens, _value)?);
                 }
                 "Label" => {
                     builder = builder.set_label(
@@ -144,8 +144,9 @@ pub(crate) fn de_describe_hapg(
                     );
                 }
                 "PartitionSerialList" => {
-                    builder =
-                        builder.set_partition_serial_list(crate::protocol_serde::shape_partition_serial_list::de_partition_serial_list(tokens)?);
+                    builder = builder.set_partition_serial_list(crate::protocol_serde::shape_partition_serial_list::de_partition_serial_list(
+                        tokens, _value,
+                    )?);
                 }
                 "State" => {
                     builder = builder.set_state(

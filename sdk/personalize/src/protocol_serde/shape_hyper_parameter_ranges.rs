@@ -44,6 +44,7 @@ pub fn ser_hyper_parameter_ranges(
 
 pub(crate) fn de_hyper_parameter_ranges<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::HyperParameterRanges>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,17 +60,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "integerHyperParameterRanges" => {
                             builder = builder.set_integer_hyper_parameter_ranges(
-                                crate::protocol_serde::shape_integer_hyper_parameter_ranges::de_integer_hyper_parameter_ranges(tokens)?,
+                                crate::protocol_serde::shape_integer_hyper_parameter_ranges::de_integer_hyper_parameter_ranges(tokens, _value)?,
                             );
                         }
                         "continuousHyperParameterRanges" => {
                             builder = builder.set_continuous_hyper_parameter_ranges(
-                                crate::protocol_serde::shape_continuous_hyper_parameter_ranges::de_continuous_hyper_parameter_ranges(tokens)?,
+                                crate::protocol_serde::shape_continuous_hyper_parameter_ranges::de_continuous_hyper_parameter_ranges(tokens, _value)?,
                             );
                         }
                         "categoricalHyperParameterRanges" => {
                             builder = builder.set_categorical_hyper_parameter_ranges(
-                                crate::protocol_serde::shape_categorical_hyper_parameter_ranges::de_categorical_hyper_parameter_ranges(tokens)?,
+                                crate::protocol_serde::shape_categorical_hyper_parameter_ranges::de_categorical_hyper_parameter_ranges(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

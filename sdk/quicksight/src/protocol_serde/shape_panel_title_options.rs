@@ -20,6 +20,7 @@ pub fn ser_panel_title_options(
 
 pub(crate) fn de_panel_title_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PanelTitleOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,7 +42,8 @@ where
                             );
                         }
                         "FontConfiguration" => {
-                            builder = builder.set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens)?);
+                            builder = builder
+                                .set_font_configuration(crate::protocol_serde::shape_font_configuration::de_font_configuration(tokens, _value)?);
                         }
                         "HorizontalTextAlignment" => {
                             builder = builder.set_horizontal_text_alignment(

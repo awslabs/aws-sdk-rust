@@ -44,6 +44,7 @@ pub fn ser_pivot_table_aggregated_field_wells(
 
 pub(crate) fn de_pivot_table_aggregated_field_wells<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PivotTableAggregatedFieldWells>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,17 +60,17 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Rows" => {
                             builder = builder.set_rows(crate::protocol_serde::shape_pivot_table_dimension_list::de_pivot_table_dimension_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Columns" => {
                             builder = builder.set_columns(crate::protocol_serde::shape_pivot_table_dimension_list::de_pivot_table_dimension_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         "Values" => {
                             builder = builder.set_values(crate::protocol_serde::shape_pivot_measure_field_list::de_pivot_measure_field_list(
-                                tokens,
+                                tokens, _value,
                             )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

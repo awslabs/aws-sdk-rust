@@ -62,7 +62,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-ivschat = "1.93.0"
+aws-sdk-ivschat = "1.94.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

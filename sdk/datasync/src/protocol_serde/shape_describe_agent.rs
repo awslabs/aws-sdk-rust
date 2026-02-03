@@ -78,13 +78,13 @@ pub fn ser_describe_agent_input(
 }
 
 pub(crate) fn de_describe_agent(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_agent::builders::DescribeAgentOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_agent::builders::DescribeAgentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -132,10 +132,11 @@ pub(crate) fn de_describe_agent(
                     );
                 }
                 "PrivateLinkConfig" => {
-                    builder = builder.set_private_link_config(crate::protocol_serde::shape_private_link_config::de_private_link_config(tokens)?);
+                    builder =
+                        builder.set_private_link_config(crate::protocol_serde::shape_private_link_config::de_private_link_config(tokens, _value)?);
                 }
                 "Platform" => {
-                    builder = builder.set_platform(crate::protocol_serde::shape_platform::de_platform(tokens)?);
+                    builder = builder.set_platform(crate::protocol_serde::shape_platform::de_platform(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

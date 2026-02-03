@@ -26,6 +26,7 @@ pub fn ser_line_series_axis_display_options(
 
 pub(crate) fn de_line_series_axis_display_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LineSeriesAxisDisplayOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,11 +41,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AxisOptions" => {
-                            builder = builder.set_axis_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(tokens)?);
+                            builder = builder.set_axis_options(crate::protocol_serde::shape_axis_display_options::de_axis_display_options(
+                                tokens, _value,
+                            )?);
                         }
                         "MissingDataConfigurations" => {
                             builder = builder.set_missing_data_configurations(
-                                crate::protocol_serde::shape_missing_data_configuration_list::de_missing_data_configuration_list(tokens)?,
+                                crate::protocol_serde::shape_missing_data_configuration_list::de_missing_data_configuration_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

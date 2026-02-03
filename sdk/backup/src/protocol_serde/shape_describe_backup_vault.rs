@@ -111,13 +111,13 @@ pub fn de_describe_backup_vault_http_response(
 }
 
 pub(crate) fn de_describe_backup_vault(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_backup_vault::builders::DescribeBackupVaultOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_backup_vault::builders::DescribeBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -167,7 +167,7 @@ pub(crate) fn de_describe_backup_vault(
                 }
                 "LatestMpaApprovalTeamUpdate" => {
                     builder = builder.set_latest_mpa_approval_team_update(
-                        crate::protocol_serde::shape_latest_mpa_approval_team_update::de_latest_mpa_approval_team_update(tokens)?,
+                        crate::protocol_serde::shape_latest_mpa_approval_team_update::de_latest_mpa_approval_team_update(tokens, _value)?,
                     );
                 }
                 "LockDate" => {

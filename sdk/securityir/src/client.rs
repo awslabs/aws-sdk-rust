@@ -157,7 +157,7 @@ mod create_membership;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_securityir::Error> {
 /// # let client: aws_sdk_securityir::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_member_account_details()
 ///     .customize()

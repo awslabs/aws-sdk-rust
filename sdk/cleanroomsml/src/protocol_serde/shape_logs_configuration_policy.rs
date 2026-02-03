@@ -29,6 +29,7 @@ pub fn ser_logs_configuration_policy(
 
 pub(crate) fn de_logs_configuration_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LogsConfigurationPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -43,7 +44,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedAccountIds" => {
-                            builder = builder.set_allowed_account_ids(crate::protocol_serde::shape_account_id_list::de_account_id_list(tokens)?);
+                            builder =
+                                builder.set_allowed_account_ids(crate::protocol_serde::shape_account_id_list::de_account_id_list(tokens, _value)?);
                         }
                         "filterPattern" => {
                             builder = builder.set_filter_pattern(
@@ -61,7 +63,7 @@ where
                         }
                         "logRedactionConfiguration" => {
                             builder = builder.set_log_redaction_configuration(
-                                crate::protocol_serde::shape_log_redaction_configuration::de_log_redaction_configuration(tokens)?,
+                                crate::protocol_serde::shape_log_redaction_configuration::de_log_redaction_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

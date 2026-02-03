@@ -20,6 +20,7 @@ pub fn ser_customer_projects_context(
 
 pub(crate) fn de_customer_projects_context<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomerProjectsContext>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -34,11 +35,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Customer" => {
-                            builder = builder.set_customer(crate::protocol_serde::shape_engagement_customer::de_engagement_customer(tokens)?);
+                            builder = builder.set_customer(crate::protocol_serde::shape_engagement_customer::de_engagement_customer(tokens, _value)?);
                         }
                         "Project" => {
                             builder = builder.set_project(
-                                crate::protocol_serde::shape_engagement_customer_project_details::de_engagement_customer_project_details(tokens)?,
+                                crate::protocol_serde::shape_engagement_customer_project_details::de_engagement_customer_project_details(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

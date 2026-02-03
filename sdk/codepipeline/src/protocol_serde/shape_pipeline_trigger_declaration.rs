@@ -17,6 +17,7 @@ pub fn ser_pipeline_trigger_declaration(
 
 pub(crate) fn de_pipeline_trigger_declaration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PipelineTriggerDeclaration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -38,7 +39,8 @@ where
                             );
                         }
                         "gitConfiguration" => {
-                            builder = builder.set_git_configuration(crate::protocol_serde::shape_git_configuration::de_git_configuration(tokens)?);
+                            builder =
+                                builder.set_git_configuration(crate::protocol_serde::shape_git_configuration::de_git_configuration(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

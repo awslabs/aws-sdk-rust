@@ -147,13 +147,13 @@ pub fn de_describe_connector_http_response(
 }
 
 pub(crate) fn de_describe_connector(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_connector::builders::DescribeConnectorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -161,7 +161,9 @@ pub(crate) fn de_describe_connector(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "capacity" => {
-                    builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(tokens)?);
+                    builder = builder.set_capacity(crate::protocol_serde::shape_capacity_description::de_capacity_description(
+                        tokens, _value,
+                    )?);
                 }
                 "connectorArn" => {
                     builder = builder.set_connector_arn(
@@ -171,8 +173,9 @@ pub(crate) fn de_describe_connector(
                     );
                 }
                 "connectorConfiguration" => {
-                    builder = builder
-                        .set_connector_configuration(crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens)?);
+                    builder = builder.set_connector_configuration(crate::protocol_serde::shape_connector_configuration::de_connector_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 "connectorDescription" => {
                     builder = builder.set_connector_description(
@@ -210,17 +213,17 @@ pub(crate) fn de_describe_connector(
                 }
                 "kafkaCluster" => {
                     builder = builder.set_kafka_cluster(crate::protocol_serde::shape_kafka_cluster_description::de_kafka_cluster_description(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "kafkaClusterClientAuthentication" => {
                     builder = builder.set_kafka_cluster_client_authentication(
-                            crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens)?
+                            crate::protocol_serde::shape_kafka_cluster_client_authentication_description::de_kafka_cluster_client_authentication_description(tokens, _value)?
                         );
                 }
                 "kafkaClusterEncryptionInTransit" => {
                     builder = builder.set_kafka_cluster_encryption_in_transit(
-                            crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens)?
+                            crate::protocol_serde::shape_kafka_cluster_encryption_in_transit_description::de_kafka_cluster_encryption_in_transit_description(tokens, _value)?
                         );
                 }
                 "kafkaConnectVersion" => {
@@ -232,7 +235,7 @@ pub(crate) fn de_describe_connector(
                 }
                 "logDelivery" => {
                     builder = builder.set_log_delivery(crate::protocol_serde::shape_log_delivery_description::de_log_delivery_description(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "networkType" => {
@@ -244,7 +247,7 @@ pub(crate) fn de_describe_connector(
                 }
                 "plugins" => {
                     builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
-                        tokens,
+                        tokens, _value,
                     )?);
                 }
                 "serviceExecutionRoleArn" => {
@@ -255,11 +258,11 @@ pub(crate) fn de_describe_connector(
                     );
                 }
                 "stateDescription" => {
-                    builder = builder.set_state_description(crate::protocol_serde::shape_state_description::de_state_description(tokens)?);
+                    builder = builder.set_state_description(crate::protocol_serde::shape_state_description::de_state_description(tokens, _value)?);
                 }
                 "workerConfiguration" => {
                     builder = builder.set_worker_configuration(
-                        crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens)?,
+                        crate::protocol_serde::shape_worker_configuration_description::de_worker_configuration_description(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

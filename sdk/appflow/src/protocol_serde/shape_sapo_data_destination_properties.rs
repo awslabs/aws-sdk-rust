@@ -35,6 +35,7 @@ pub fn ser_sapo_data_destination_properties(
 
 pub(crate) fn de_sapo_data_destination_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::SapoDataDestinationProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -57,15 +58,17 @@ where
                         }
                         "successResponseHandlingConfig" => {
                             builder = builder.set_success_response_handling_config(
-                                crate::protocol_serde::shape_success_response_handling_config::de_success_response_handling_config(tokens)?,
+                                crate::protocol_serde::shape_success_response_handling_config::de_success_response_handling_config(tokens, _value)?,
                             );
                         }
                         "idFieldNames" => {
-                            builder = builder.set_id_field_names(crate::protocol_serde::shape_id_field_name_list::de_id_field_name_list(tokens)?);
+                            builder =
+                                builder.set_id_field_names(crate::protocol_serde::shape_id_field_name_list::de_id_field_name_list(tokens, _value)?);
                         }
                         "errorHandlingConfig" => {
-                            builder = builder
-                                .set_error_handling_config(crate::protocol_serde::shape_error_handling_config::de_error_handling_config(tokens)?);
+                            builder = builder.set_error_handling_config(
+                                crate::protocol_serde::shape_error_handling_config::de_error_handling_config(tokens, _value)?,
+                            );
                         }
                         "writeOperationType" => {
                             builder = builder.set_write_operation_type(

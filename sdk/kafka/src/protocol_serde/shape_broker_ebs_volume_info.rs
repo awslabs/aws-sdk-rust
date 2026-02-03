@@ -23,6 +23,7 @@ pub fn ser_broker_ebs_volume_info(
 
 pub(crate) fn de_broker_ebs_volume_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::BrokerEbsVolumeInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -44,8 +45,9 @@ where
                             );
                         }
                         "provisionedThroughput" => {
-                            builder = builder
-                                .set_provisioned_throughput(crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens)?);
+                            builder = builder.set_provisioned_throughput(
+                                crate::protocol_serde::shape_provisioned_throughput::de_provisioned_throughput(tokens, _value)?,
+                            );
                         }
                         "volumeSizeGB" => {
                             builder = builder.set_volume_size_gb(

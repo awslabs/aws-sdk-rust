@@ -104,13 +104,13 @@ pub fn de_remove_notification_channel_http_response(
 }
 
 pub(crate) fn de_remove_notification_channel(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::remove_notification_channel::builders::RemoveNotificationChannelOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::remove_notification_channel::builders::RemoveNotificationChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -119,7 +119,7 @@ pub(crate) fn de_remove_notification_channel(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "notificationConfiguration" => {
                     builder = builder.set_notification_configuration(
-                        crate::protocol_serde::shape_notification_configuration::de_notification_configuration(tokens)?,
+                        crate::protocol_serde::shape_notification_configuration::de_notification_configuration(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -20,6 +20,7 @@ pub fn ser_local_volume_resource_data(
 
 pub(crate) fn de_local_volume_resource_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LocalVolumeResourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,8 +42,8 @@ where
                             );
                         }
                         "GroupOwnerSetting" => {
-                            builder =
-                                builder.set_group_owner_setting(crate::protocol_serde::shape_group_owner_setting::de_group_owner_setting(tokens)?);
+                            builder = builder
+                                .set_group_owner_setting(crate::protocol_serde::shape_group_owner_setting::de_group_owner_setting(tokens, _value)?);
                         }
                         "SourcePath" => {
                             builder = builder.set_source_path(

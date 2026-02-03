@@ -160,13 +160,13 @@ pub fn ser_recognize_text_input(
 }
 
 pub(crate) fn de_recognize_text(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::recognize_text::builders::RecognizeTextOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::recognize_text::builders::RecognizeTextOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -174,17 +174,18 @@ pub(crate) fn de_recognize_text(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "interpretations" => {
-                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(tokens)?);
+                    builder = builder.set_interpretations(crate::protocol_serde::shape_interpretations::de_interpretations(tokens, _value)?);
                 }
                 "messages" => {
-                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens)?);
+                    builder = builder.set_messages(crate::protocol_serde::shape_messages::de_messages(tokens, _value)?);
                 }
                 "recognizedBotMember" => {
-                    builder =
-                        builder.set_recognized_bot_member(crate::protocol_serde::shape_recognized_bot_member::de_recognized_bot_member(tokens)?);
+                    builder = builder.set_recognized_bot_member(crate::protocol_serde::shape_recognized_bot_member::de_recognized_bot_member(
+                        tokens, _value,
+                    )?);
                 }
                 "requestAttributes" => {
-                    builder = builder.set_request_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                    builder = builder.set_request_attributes(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value)?);
                 }
                 "sessionId" => {
                     builder = builder.set_session_id(
@@ -194,7 +195,7 @@ pub(crate) fn de_recognize_text(
                     );
                 }
                 "sessionState" => {
-                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens)?);
+                    builder = builder.set_session_state(crate::protocol_serde::shape_session_state::de_session_state(tokens, _value)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

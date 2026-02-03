@@ -41,6 +41,7 @@ pub fn ser_data_source_configuration(
 
 pub(crate) fn de_data_source_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::DataSourceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -63,27 +64,33 @@ where
                         }
                         "s3Configuration" => {
                             builder = builder.set_s3_configuration(
-                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_s3_data_source_configuration::de_s3_data_source_configuration(tokens, _value)?,
                             );
                         }
                         "webConfiguration" => {
                             builder = builder.set_web_configuration(
-                                crate::protocol_serde::shape_web_data_source_configuration::de_web_data_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_web_data_source_configuration::de_web_data_source_configuration(tokens, _value)?,
                             );
                         }
                         "confluenceConfiguration" => {
                             builder = builder.set_confluence_configuration(
-                                crate::protocol_serde::shape_confluence_data_source_configuration::de_confluence_data_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_confluence_data_source_configuration::de_confluence_data_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "salesforceConfiguration" => {
                             builder = builder.set_salesforce_configuration(
-                                crate::protocol_serde::shape_salesforce_data_source_configuration::de_salesforce_data_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_salesforce_data_source_configuration::de_salesforce_data_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         "sharePointConfiguration" => {
                             builder = builder.set_share_point_configuration(
-                                crate::protocol_serde::shape_share_point_data_source_configuration::de_share_point_data_source_configuration(tokens)?,
+                                crate::protocol_serde::shape_share_point_data_source_configuration::de_share_point_data_source_configuration(
+                                    tokens, _value,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

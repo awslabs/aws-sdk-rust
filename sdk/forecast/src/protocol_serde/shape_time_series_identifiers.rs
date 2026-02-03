@@ -23,6 +23,7 @@ pub fn ser_time_series_identifiers(
 
 pub(crate) fn de_time_series_identifiers<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::TimeSeriesIdentifiers>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -37,10 +38,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSource" => {
-                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens)?);
+                            builder = builder.set_data_source(crate::protocol_serde::shape_data_source::de_data_source(tokens, _value)?);
                         }
                         "Schema" => {
-                            builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens)?);
+                            builder = builder.set_schema(crate::protocol_serde::shape_schema::de_schema(tokens, _value)?);
                         }
                         "Format" => {
                             builder = builder.set_format(

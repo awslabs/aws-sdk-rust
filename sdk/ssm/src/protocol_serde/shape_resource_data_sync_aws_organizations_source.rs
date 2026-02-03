@@ -26,6 +26,7 @@ pub fn ser_resource_data_sync_aws_organizations_source(
 
 pub(crate) fn de_resource_data_sync_aws_organizations_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ResourceDataSyncAwsOrganizationsSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -48,7 +49,7 @@ where
                         }
                         "OrganizationalUnits" => {
                             builder = builder.set_organizational_units(
-                                    crate::protocol_serde::shape_resource_data_sync_organizational_unit_list::de_resource_data_sync_organizational_unit_list(tokens)?
+                                    crate::protocol_serde::shape_resource_data_sync_organizational_unit_list::de_resource_data_sync_organizational_unit_list(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

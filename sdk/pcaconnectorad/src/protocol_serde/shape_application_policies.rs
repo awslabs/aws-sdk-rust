@@ -23,6 +23,7 @@ pub fn ser_application_policies(
 
 pub(crate) fn de_application_policies<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ApplicationPolicies>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,7 +41,9 @@ where
                             builder = builder.set_critical(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "Policies" => {
-                            builder = builder.set_policies(crate::protocol_serde::shape_application_policy_list::de_application_policy_list(tokens)?);
+                            builder = builder.set_policies(crate::protocol_serde::shape_application_policy_list::de_application_policy_list(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

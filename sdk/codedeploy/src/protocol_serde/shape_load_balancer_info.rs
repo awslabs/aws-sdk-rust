@@ -44,6 +44,7 @@ pub fn ser_load_balancer_info(
 
 pub(crate) fn de_load_balancer_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::LoadBalancerInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -58,15 +59,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "elbInfoList" => {
-                            builder = builder.set_elb_info_list(crate::protocol_serde::shape_elb_info_list::de_elb_info_list(tokens)?);
+                            builder = builder.set_elb_info_list(crate::protocol_serde::shape_elb_info_list::de_elb_info_list(tokens, _value)?);
                         }
                         "targetGroupInfoList" => {
-                            builder = builder
-                                .set_target_group_info_list(crate::protocol_serde::shape_target_group_info_list::de_target_group_info_list(tokens)?);
+                            builder = builder.set_target_group_info_list(
+                                crate::protocol_serde::shape_target_group_info_list::de_target_group_info_list(tokens, _value)?,
+                            );
                         }
                         "targetGroupPairInfoList" => {
                             builder = builder.set_target_group_pair_info_list(
-                                crate::protocol_serde::shape_target_group_pair_info_list::de_target_group_pair_info_list(tokens)?,
+                                crate::protocol_serde::shape_target_group_pair_info_list::de_target_group_pair_info_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

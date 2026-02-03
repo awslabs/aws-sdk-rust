@@ -41,6 +41,7 @@ pub fn ser_command_parameter(
 
 pub(crate) fn de_command_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CommandParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -69,16 +70,19 @@ where
                             );
                         }
                         "value" => {
-                            builder = builder.set_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(tokens)?);
+                            builder = builder.set_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(
+                                tokens, _value,
+                            )?);
                         }
                         "defaultValue" => {
-                            builder =
-                                builder.set_default_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(tokens)?);
+                            builder = builder.set_default_value(crate::protocol_serde::shape_command_parameter_value::de_command_parameter_value(
+                                tokens, _value,
+                            )?);
                         }
                         "valueConditions" => {
                             builder = builder.set_value_conditions(
                                 crate::protocol_serde::shape_command_parameter_value_condition_list::de_command_parameter_value_condition_list(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

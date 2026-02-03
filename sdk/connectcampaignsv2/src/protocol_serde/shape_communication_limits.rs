@@ -27,6 +27,7 @@ pub fn ser_communication_limits(
 
 pub(crate) fn de_communication_limits<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CommunicationLimits>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -56,7 +57,7 @@ where
                     }
                     variant = match key.as_ref() {
                         "communicationLimitsList" => Some(crate::types::CommunicationLimits::CommunicationLimitsList(
-                            crate::protocol_serde::shape_communication_limit_list::de_communication_limit_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_communication_limit_list::de_communication_limit_list(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'communicationLimitsList' cannot be null")
                             })?,
                         )),

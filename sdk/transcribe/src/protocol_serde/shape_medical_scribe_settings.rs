@@ -35,6 +35,7 @@ pub fn ser_medical_scribe_settings(
 
 pub(crate) fn de_medical_scribe_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::MedicalScribeSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -84,7 +85,7 @@ where
                         }
                         "ClinicalNoteGenerationSettings" => {
                             builder = builder.set_clinical_note_generation_settings(
-                                crate::protocol_serde::shape_clinical_note_generation_settings::de_clinical_note_generation_settings(tokens)?,
+                                crate::protocol_serde::shape_clinical_note_generation_settings::de_clinical_note_generation_settings(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

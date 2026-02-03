@@ -20,6 +20,7 @@ pub fn ser_video_source(
 
 pub(crate) fn de_video_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::VideoSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -53,7 +54,7 @@ where
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bytes' cannot be null"))?,
                         )),
                         "s3Location" => Some(crate::types::VideoSource::S3Location(
-                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Location' cannot be null")
                             })?,
                         )),

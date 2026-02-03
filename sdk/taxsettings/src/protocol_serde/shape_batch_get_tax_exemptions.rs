@@ -96,13 +96,13 @@ pub fn ser_batch_get_tax_exemptions_input(
 }
 
 pub(crate) fn de_batch_get_tax_exemptions(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::batch_get_tax_exemptions::builders::BatchGetTaxExemptionsOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::batch_get_tax_exemptions::builders::BatchGetTaxExemptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -110,11 +110,11 @@ pub(crate) fn de_batch_get_tax_exemptions(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failedAccounts" => {
-                    builder = builder.set_failed_accounts(crate::protocol_serde::shape_account_ids::de_account_ids(tokens)?);
+                    builder = builder.set_failed_accounts(crate::protocol_serde::shape_account_ids::de_account_ids(tokens, _value)?);
                 }
                 "taxExemptionDetailsMap" => {
                     builder = builder.set_tax_exemption_details_map(
-                        crate::protocol_serde::shape_tax_exemption_details_map::de_tax_exemption_details_map(tokens)?,
+                        crate::protocol_serde::shape_tax_exemption_details_map::de_tax_exemption_details_map(tokens, _value)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

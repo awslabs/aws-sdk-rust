@@ -26,6 +26,7 @@ pub fn ser_plugin_visual_table_query_sort(
 
 pub(crate) fn de_plugin_visual_table_query_sort<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PluginVisualTableQuerySort>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -40,12 +41,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "RowSort" => {
-                            builder = builder.set_row_sort(crate::protocol_serde::shape_row_sort_list::de_row_sort_list(tokens)?);
+                            builder = builder.set_row_sort(crate::protocol_serde::shape_row_sort_list::de_row_sort_list(tokens, _value)?);
                         }
                         "ItemsLimitConfiguration" => {
                             builder = builder.set_items_limit_configuration(
                                 crate::protocol_serde::shape_plugin_visual_items_limit_configuration::de_plugin_visual_items_limit_configuration(
-                                    tokens,
+                                    tokens, _value,
                                 )?,
                             );
                         }

@@ -258,6 +258,7 @@ async fn user_polls_pending_followed_by_data_for_every_bin_in_throughput_logs() 
 use download_test_tools::*;
 mod download_test_tools {
     use crate::stalled_stream_common::*;
+    use http_body_1x::Body;
     use tokio::sync::mpsc::Receiver;
 
     fn response(body: SdkBody) -> HttpResponse {
@@ -342,7 +343,7 @@ mod download_test_tools {
     /// Simulate a client eagerly consuming all the data sent to it from the server.
     pub async fn eagerly_consume(body: SdkBody) -> Result<(), BoxError> {
         pin_mut!(body);
-        while let Some(result) = poll_fn(|cx| body.as_mut().poll_data(cx)).await {
+        while let Some(result) = poll_fn(|cx| body.as_mut().poll_frame(cx)).await {
             if let Err(err) = result {
                 return Err(err);
             } else {
@@ -358,7 +359,7 @@ mod download_test_tools {
     /// the next piece of data.
     pub async fn slowly_consume(time: TickAdvanceTime, body: SdkBody) -> Result<(), BoxError> {
         pin_mut!(body);
-        while let Some(result) = poll_fn(|cx| body.as_mut().poll_data(cx)).await {
+        while let Some(result) = poll_fn(|cx| body.as_mut().poll_frame(cx)).await {
             if let Err(err) = result {
                 return Err(err);
             } else {
@@ -374,7 +375,7 @@ mod download_test_tools {
         // Wait to start polling until a signal has been received
         let _ = rx.recv().await;
         pin_mut!(body);
-        while let Some(result) = poll_fn(|cx| body.as_mut().poll_data(cx)).await {
+        while let Some(result) = poll_fn(|cx| body.as_mut().poll_frame(cx)).await {
             if let Err(err) = result {
                 return Err(err);
             } else {

@@ -39,6 +39,7 @@ pub fn ser_reranking_metadata_selective_mode_configuration(
 
 pub(crate) fn de_reranking_metadata_selective_mode_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::RerankingMetadataSelectiveModeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -68,12 +69,12 @@ where
                     }
                     variant = match key.as_ref() {
                         "fieldsToInclude" => Some(crate::types::RerankingMetadataSelectiveModeConfiguration::FieldsToInclude(
-                            crate::protocol_serde::shape_fields_for_reranking::de_fields_for_reranking(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_fields_for_reranking::de_fields_for_reranking(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fieldsToInclude' cannot be null")
                             })?,
                         )),
                         "fieldsToExclude" => Some(crate::types::RerankingMetadataSelectiveModeConfiguration::FieldsToExclude(
-                            crate::protocol_serde::shape_fields_for_reranking::de_fields_for_reranking(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_fields_for_reranking::de_fields_for_reranking(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fieldsToExclude' cannot be null")
                             })?,
                         )),

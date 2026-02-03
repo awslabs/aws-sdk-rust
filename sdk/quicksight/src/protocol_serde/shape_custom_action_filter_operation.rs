@@ -26,6 +26,7 @@ pub fn ser_custom_action_filter_operation(
 
 pub(crate) fn de_custom_action_filter_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CustomActionFilterOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -41,12 +42,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "SelectedFieldsConfiguration" => {
                             builder = builder.set_selected_fields_configuration(
-                                    crate::protocol_serde::shape_filter_operation_selected_fields_configuration::de_filter_operation_selected_fields_configuration(tokens)?
+                                    crate::protocol_serde::shape_filter_operation_selected_fields_configuration::de_filter_operation_selected_fields_configuration(tokens, _value)?
                                 );
                         }
                         "TargetVisualsConfiguration" => {
                             builder = builder.set_target_visuals_configuration(
-                                    crate::protocol_serde::shape_filter_operation_target_visuals_configuration::de_filter_operation_target_visuals_configuration(tokens)?
+                                    crate::protocol_serde::shape_filter_operation_target_visuals_configuration::de_filter_operation_target_visuals_configuration(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

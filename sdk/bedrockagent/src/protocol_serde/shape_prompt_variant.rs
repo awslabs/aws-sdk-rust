@@ -50,6 +50,7 @@ pub fn ser_prompt_variant(
 
 pub(crate) fn de_prompt_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::PromptVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -79,7 +80,7 @@ where
                         }
                         "templateConfiguration" => {
                             builder = builder.set_template_configuration(
-                                crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_template_configuration::de_prompt_template_configuration(tokens, _value)?,
                             );
                         }
                         "modelId" => {
@@ -91,19 +92,22 @@ where
                         }
                         "inferenceConfiguration" => {
                             builder = builder.set_inference_configuration(
-                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens)?,
+                                crate::protocol_serde::shape_prompt_inference_configuration::de_prompt_inference_configuration(tokens, _value)?,
                             );
                         }
                         "metadata" => {
-                            builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(tokens)?);
+                            builder = builder.set_metadata(crate::protocol_serde::shape_prompt_metadata_list::de_prompt_metadata_list(
+                                tokens, _value,
+                            )?);
                         }
                         "additionalModelRequestFields" => {
                             builder =
                                 builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         "genAiResource" => {
-                            builder =
-                                builder.set_gen_ai_resource(crate::protocol_serde::shape_prompt_gen_ai_resource::de_prompt_gen_ai_resource(tokens)?);
+                            builder = builder.set_gen_ai_resource(crate::protocol_serde::shape_prompt_gen_ai_resource::de_prompt_gen_ai_resource(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

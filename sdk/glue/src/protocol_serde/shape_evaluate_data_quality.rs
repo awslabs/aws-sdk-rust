@@ -38,6 +38,7 @@ pub fn ser_evaluate_data_quality(
 
 pub(crate) fn de_evaluate_data_quality<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::EvaluateDataQuality>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -59,7 +60,7 @@ where
                             );
                         }
                         "Inputs" => {
-                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens)?);
+                            builder = builder.set_inputs(crate::protocol_serde::shape_one_input::de_one_input(tokens, _value)?);
                         }
                         "Ruleset" => {
                             builder = builder.set_ruleset(
@@ -77,12 +78,12 @@ where
                         }
                         "PublishingOptions" => {
                             builder = builder.set_publishing_options(
-                                crate::protocol_serde::shape_dq_results_publishing_options::de_dq_results_publishing_options(tokens)?,
+                                crate::protocol_serde::shape_dq_results_publishing_options::de_dq_results_publishing_options(tokens, _value)?,
                             );
                         }
                         "StopJobOnFailureOptions" => {
                             builder = builder.set_stop_job_on_failure_options(
-                                crate::protocol_serde::shape_dq_stop_job_on_failure_options::de_dq_stop_job_on_failure_options(tokens)?,
+                                crate::protocol_serde::shape_dq_stop_job_on_failure_options::de_dq_stop_job_on_failure_options(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

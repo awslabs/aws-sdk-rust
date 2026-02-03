@@ -83,13 +83,13 @@ pub fn de_get_connection_http_response(
 }
 
 pub(crate) fn de_get_connection(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::get_connection::builders::GetConnectionOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_connection::builders::GetConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
@@ -103,7 +103,7 @@ pub(crate) fn de_get_connection(
                     )?);
                 }
                 "identity" => {
-                    builder = builder.set_identity(crate::protocol_serde::shape_identity::de_identity(tokens)?);
+                    builder = builder.set_identity(crate::protocol_serde::shape_identity::de_identity(tokens, _value)?);
                 }
                 "lastActiveAt" => {
                     builder = builder.set_last_active_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

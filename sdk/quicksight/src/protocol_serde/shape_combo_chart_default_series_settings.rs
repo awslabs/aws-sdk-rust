@@ -32,6 +32,7 @@ pub fn ser_combo_chart_default_series_settings(
 
 pub(crate) fn de_combo_chart_default_series_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::ComboChartDefaultSeriesSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -47,19 +48,19 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LineStyleSettings" => {
                             builder = builder.set_line_style_settings(
-                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(tokens)?,
+                                crate::protocol_serde::shape_line_chart_line_style_settings::de_line_chart_line_style_settings(tokens, _value)?,
                             );
                         }
                         "MarkerStyleSettings" => {
                             builder = builder.set_marker_style_settings(
-                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens)?,
+                                crate::protocol_serde::shape_line_chart_marker_style_settings::de_line_chart_marker_style_settings(tokens, _value)?,
                             );
                         }
                         "DecalSettings" => {
-                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens)?);
+                            builder = builder.set_decal_settings(crate::protocol_serde::shape_decal_settings::de_decal_settings(tokens, _value)?);
                         }
                         "BorderSettings" => {
-                            builder = builder.set_border_settings(crate::protocol_serde::shape_border_settings::de_border_settings(tokens)?);
+                            builder = builder.set_border_settings(crate::protocol_serde::shape_border_settings::de_border_settings(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

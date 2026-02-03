@@ -20,6 +20,7 @@ pub fn ser_command_parameter_value_condition(
 
 pub(crate) fn de_command_parameter_value_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::CommandParameterValueCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
@@ -45,7 +46,7 @@ where
                         }
                         "operand" => {
                             builder = builder.set_operand(
-                                    crate::protocol_serde::shape_command_parameter_value_comparison_operand::de_command_parameter_value_comparison_operand(tokens)?
+                                    crate::protocol_serde::shape_command_parameter_value_comparison_operand::de_command_parameter_value_comparison_operand(tokens, _value)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

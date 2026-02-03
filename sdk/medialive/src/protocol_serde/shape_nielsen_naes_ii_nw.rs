@@ -20,6 +20,7 @@ pub fn ser_nielsen_naes_ii_nw(
 
 pub(crate) fn de_nielsen_naes_ii_nw<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
+    _value: &'a [u8],
 ) -> ::std::result::Result<Option<crate::types::NielsenNaesIiNw>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,

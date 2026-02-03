@@ -147,7 +147,7 @@ mod batch_get_record;
 /// ```ignore
 /// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_sagemakerfeaturestoreruntime::Error> {
 /// # let client: aws_sdk_sagemakerfeaturestoreruntime::Client = unimplemented!();
-/// use ::http::header::{HeaderName, HeaderValue};
+/// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
 /// let result = client.batch_get_record()
 ///     .customize()
