@@ -285,6 +285,8 @@ pub use crate::types::_vpc_origin_config::VpcOriginConfig;
 
 pub use crate::types::_custom_origin_config::CustomOriginConfig;
 
+pub use crate::types::_origin_mtls_config::OriginMtlsConfig;
+
 pub use crate::types::_ip_address_type::IpAddressType;
 
 pub use crate::types::_s3_origin_config::S3OriginConfig;
@@ -814,6 +816,8 @@ mod _origin_group_members;
 mod _origin_group_selection_criteria;
 
 mod _origin_groups;
+
+mod _origin_mtls_config;
 
 mod _origin_protocol_policy;
 

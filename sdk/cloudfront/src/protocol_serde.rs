@@ -1595,6 +1595,8 @@ pub(crate) mod shape_origin_custom_header;
 
 pub(crate) mod shape_origin_group_member;
 
+pub(crate) mod shape_origin_mtls_config;
+
 pub(crate) mod shape_path_list;
 
 pub(crate) mod shape_query_arg_profile_list;

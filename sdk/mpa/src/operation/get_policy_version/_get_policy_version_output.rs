@@ -4,13 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyVersionOutput {
     /// <p>A <code>PolicyVersion</code> object. Contains details for the version of the policy. Policies define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub policy_version: ::std::option::Option<crate::types::PolicyVersion>,
     _request_id: Option<String>,
 }
 impl GetPolicyVersionOutput {
     /// <p>A <code>PolicyVersion</code> object. Contains details for the version of the policy. Policies define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn policy_version(&self) -> ::std::option::Option<&crate::types::PolicyVersion> {
         self.policy_version.as_ref()
     }
@@ -36,20 +34,17 @@ pub struct GetPolicyVersionOutputBuilder {
 }
 impl GetPolicyVersionOutputBuilder {
     /// <p>A <code>PolicyVersion</code> object. Contains details for the version of the policy. Policies define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     /// This field is required.
     pub fn policy_version(mut self, input: crate::types::PolicyVersion) -> Self {
         self.policy_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>PolicyVersion</code> object. Contains details for the version of the policy. Policies define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn set_policy_version(mut self, input: ::std::option::Option<crate::types::PolicyVersion>) -> Self {
         self.policy_version = input;
         self
     }
     /// <p>A <code>PolicyVersion</code> object. Contains details for the version of the policy. Policies define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn get_policy_version(&self) -> &::std::option::Option<crate::types::PolicyVersion> {
         &self.policy_version
     }

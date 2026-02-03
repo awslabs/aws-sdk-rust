@@ -2460,6 +2460,15 @@ pub(crate) fn vpc_origin_config_correct_errors(
     builder
 }
 
+pub(crate) fn origin_mtls_config_correct_errors(
+    mut builder: crate::types::builders::OriginMtlsConfigBuilder,
+) -> crate::types::builders::OriginMtlsConfigBuilder {
+    if builder.client_certificate_arn.is_none() {
+        builder.client_certificate_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn status_codes_correct_errors(mut builder: crate::types::builders::StatusCodesBuilder) -> crate::types::builders::StatusCodesBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())

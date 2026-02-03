@@ -29,6 +29,8 @@ pub struct CustomOriginConfig {
     pub origin_keepalive_timeout: ::std::option::Option<i32>,
     /// <p>Specifies which IP protocol CloudFront uses when connecting to your origin. If your origin uses both IPv4 and IPv6 protocols, you can choose <code>dualstack</code> to help optimize reliability.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
+    pub origin_mtls_config: ::std::option::Option<crate::types::OriginMtlsConfig>,
 }
 impl CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -70,6 +72,10 @@ impl CustomOriginConfig {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
+    pub fn origin_mtls_config(&self) -> ::std::option::Option<&crate::types::OriginMtlsConfig> {
+        self.origin_mtls_config.as_ref()
+    }
 }
 impl CustomOriginConfig {
     /// Creates a new builder-style object to manufacture [`CustomOriginConfig`](crate::types::CustomOriginConfig).
@@ -89,6 +95,7 @@ pub struct CustomOriginConfigBuilder {
     pub(crate) origin_read_timeout: ::std::option::Option<i32>,
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) origin_mtls_config: ::std::option::Option<crate::types::OriginMtlsConfig>,
 }
 impl CustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -225,6 +232,20 @@ impl CustomOriginConfigBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
+    /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
+    pub fn origin_mtls_config(mut self, input: crate::types::OriginMtlsConfig) -> Self {
+        self.origin_mtls_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
+    pub fn set_origin_mtls_config(mut self, input: ::std::option::Option<crate::types::OriginMtlsConfig>) -> Self {
+        self.origin_mtls_config = input;
+        self
+    }
+    /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
+    pub fn get_origin_mtls_config(&self) -> &::std::option::Option<crate::types::OriginMtlsConfig> {
+        &self.origin_mtls_config
+    }
     /// Consumes the builder and constructs a [`CustomOriginConfig`](crate::types::CustomOriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`http_port`](crate::types::builders::CustomOriginConfigBuilder::http_port)
@@ -254,6 +275,7 @@ impl CustomOriginConfigBuilder {
             origin_read_timeout: self.origin_read_timeout,
             origin_keepalive_timeout: self.origin_keepalive_timeout,
             ip_address_type: self.ip_address_type,
+            origin_mtls_config: self.origin_mtls_config,
         })
     }
 }

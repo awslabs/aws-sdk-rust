@@ -42,5 +42,15 @@ pub fn ser_create_online_evaluation_config_input_input(
         crate::protocol_serde::shape_rule::ser_rule(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16.as_str()).string(value_17.as_str());
+            }
+        }
+        object_15.finish();
+    }
     Ok(())
 }

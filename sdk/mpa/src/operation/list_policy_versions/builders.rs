@@ -23,7 +23,6 @@ impl crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBu
 /// Fluent builder constructing a request to `ListPolicyVersions`.
 ///
 /// <p>Returns a list of the versions for policies. Policies define the permissions for team resources.</p>
-/// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

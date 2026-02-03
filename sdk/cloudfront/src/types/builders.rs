@@ -223,6 +223,8 @@ pub use crate::types::_vpc_origin_config::VpcOriginConfigBuilder;
 
 pub use crate::types::_custom_origin_config::CustomOriginConfigBuilder;
 
+pub use crate::types::_origin_mtls_config::OriginMtlsConfigBuilder;
+
 pub use crate::types::_s3_origin_config::S3OriginConfigBuilder;
 
 pub use crate::types::_custom_headers::CustomHeadersBuilder;

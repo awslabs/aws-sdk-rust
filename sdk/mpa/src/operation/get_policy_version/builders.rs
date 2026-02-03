@@ -23,7 +23,6 @@ impl crate::operation::get_policy_version::builders::GetPolicyVersionInputBuilde
 /// Fluent builder constructing a request to `GetPolicyVersion`.
 ///
 /// <p>Returns details for the version of a policy. Policies define the permissions for team resources.</p>
-/// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPolicyVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

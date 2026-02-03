@@ -19,6 +19,8 @@ pub struct CreateOnlineEvaluationConfigInput {
     pub evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable the online evaluation configuration immediately upon creation. If true, evaluation begins automatically.</p>
     pub enable_on_create: ::std::option::Option<bool>,
+    /// <p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOnlineEvaluationConfigInput {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -55,6 +57,10 @@ impl CreateOnlineEvaluationConfigInput {
     pub fn enable_on_create(&self) -> ::std::option::Option<bool> {
         self.enable_on_create
     }
+    /// <p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateOnlineEvaluationConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +73,7 @@ impl ::std::fmt::Debug for CreateOnlineEvaluationConfigInput {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("enable_on_create", &self.enable_on_create);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -89,6 +96,7 @@ pub struct CreateOnlineEvaluationConfigInputBuilder {
     pub(crate) evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
     pub(crate) evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_on_create: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOnlineEvaluationConfigInputBuilder {
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -214,6 +222,26 @@ impl CreateOnlineEvaluationConfigInputBuilder {
     pub fn get_enable_on_create(&self) -> &::std::option::Option<bool> {
         &self.enable_on_create
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateOnlineEvaluationConfigInput`](crate::operation::create_online_evaluation_config::CreateOnlineEvaluationConfigInput).
     pub fn build(
         self,
@@ -230,6 +258,7 @@ impl CreateOnlineEvaluationConfigInputBuilder {
             evaluators: self.evaluators,
             evaluation_execution_role_arn: self.evaluation_execution_role_arn,
             enable_on_create: self.enable_on_create,
+            tags: self.tags,
         })
     }
 }
@@ -244,6 +273,7 @@ impl ::std::fmt::Debug for CreateOnlineEvaluationConfigInputBuilder {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("enable_on_create", &self.enable_on_create);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

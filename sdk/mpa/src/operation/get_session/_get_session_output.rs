@@ -49,6 +49,8 @@ pub struct GetSessionOutput {
     pub action_completion_strategy: ::std::option::Option<crate::types::ActionCompletionStrategy>,
     /// <p>An array of <code>GetSessionResponseApproverResponse</code> objects. Contains details for approver responses in the session.</p>
     pub approver_responses: ::std::option::Option<::std::vec::Vec<crate::types::GetSessionResponseApproverResponse>>,
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub additional_security_requirements: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
     _request_id: Option<String>,
 }
 impl GetSessionOutput {
@@ -146,6 +148,12 @@ impl GetSessionOutput {
     pub fn approver_responses(&self) -> &[crate::types::GetSessionResponseApproverResponse] {
         self.approver_responses.as_deref().unwrap_or_default()
     }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_security_requirements.is_none()`.
+    pub fn additional_security_requirements(&self) -> &[crate::types::AdditionalSecurityRequirement] {
+        self.additional_security_requirements.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetSessionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -173,6 +181,7 @@ impl ::std::fmt::Debug for GetSessionOutput {
         formatter.field("requester_comment", &"*** Sensitive Data Redacted ***");
         formatter.field("action_completion_strategy", &self.action_completion_strategy);
         formatter.field("approver_responses", &self.approver_responses);
+        formatter.field("additional_security_requirements", &self.additional_security_requirements);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -216,6 +225,7 @@ pub struct GetSessionOutputBuilder {
     pub(crate) requester_comment: ::std::option::Option<::std::string::String>,
     pub(crate) action_completion_strategy: ::std::option::Option<crate::types::ActionCompletionStrategy>,
     pub(crate) approver_responses: ::std::option::Option<::std::vec::Vec<crate::types::GetSessionResponseApproverResponse>>,
+    pub(crate) additional_security_requirements: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
     _request_id: Option<String>,
 }
 impl GetSessionOutputBuilder {
@@ -553,6 +563,29 @@ impl GetSessionOutputBuilder {
     pub fn get_approver_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSessionResponseApproverResponse>> {
         &self.approver_responses
     }
+    /// Appends an item to `additional_security_requirements`.
+    ///
+    /// To override the contents of this collection use [`set_additional_security_requirements`](Self::set_additional_security_requirements).
+    ///
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn additional_security_requirements(mut self, input: crate::types::AdditionalSecurityRequirement) -> Self {
+        let mut v = self.additional_security_requirements.unwrap_or_default();
+        v.push(input);
+        self.additional_security_requirements = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn set_additional_security_requirements(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>>,
+    ) -> Self {
+        self.additional_security_requirements = input;
+        self
+    }
+    /// <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
+    pub fn get_additional_security_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalSecurityRequirement>> {
+        &self.additional_security_requirements
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -588,6 +621,7 @@ impl GetSessionOutputBuilder {
             requester_comment: self.requester_comment,
             action_completion_strategy: self.action_completion_strategy,
             approver_responses: self.approver_responses,
+            additional_security_requirements: self.additional_security_requirements,
             _request_id: self._request_id,
         }
     }
@@ -618,6 +652,7 @@ impl ::std::fmt::Debug for GetSessionOutputBuilder {
         formatter.field("requester_comment", &"*** Sensitive Data Redacted ***");
         formatter.field("action_completion_strategy", &self.action_completion_strategy);
         formatter.field("approver_responses", &self.approver_responses);
+        formatter.field("additional_security_requirements", &self.additional_security_requirements);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

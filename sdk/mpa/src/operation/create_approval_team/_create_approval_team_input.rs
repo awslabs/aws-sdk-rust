@@ -16,7 +16,6 @@ pub struct CreateApprovalTeamInput {
     /// <p>Description for the team.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyReference>>,
     /// <p>Name of the team.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -47,7 +46,6 @@ impl CreateApprovalTeamInput {
         self.description.as_deref()
     }
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
     pub fn policies(&self) -> &[crate::types::PolicyReference] {
@@ -176,7 +174,6 @@ impl CreateApprovalTeamInputBuilder {
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn policies(mut self, input: crate::types::PolicyReference) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
@@ -184,13 +181,11 @@ impl CreateApprovalTeamInputBuilder {
         self
     }
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyReference>>) -> Self {
         self.policies = input;
         self
     }
     /// <p>An array of <code>PolicyReference</code> objects. Contains a list of policies that define the permissions for team resources.</p>
-    /// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyReference>> {
         &self.policies
     }

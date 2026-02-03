@@ -107,6 +107,8 @@ pub(crate) mod shape_update_approval_team_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_additional_security_requirements;
+
 pub(crate) mod shape_approval_strategy;
 
 pub(crate) mod shape_approval_strategy_response;
@@ -171,4 +173,8 @@ pub(crate) mod shape_policy_version_summary;
 
 pub(crate) mod shape_identity_source_parameters_for_list;
 
+pub(crate) mod shape_mfa_methods;
+
 pub(crate) mod shape_iam_identity_center_for_list;
+
+pub(crate) mod shape_mfa_method;

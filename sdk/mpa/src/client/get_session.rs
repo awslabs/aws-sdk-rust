@@ -28,6 +28,7 @@ impl super::Client {
     ///   - [`requester_comment(Option<String>)`](crate::operation::get_session::GetSessionOutput::requester_comment): <p>Message from the account that made the operation request</p>
     ///   - [`action_completion_strategy(Option<ActionCompletionStrategy>)`](crate::operation::get_session::GetSessionOutput::action_completion_strategy): <p>Strategy for executing the protected operation. <code>AUTO_COMPLETION_UPON_APPROVAL</code> means the operation is automatically executed using the requester's permissions, if approved.</p>
     ///   - [`approver_responses(Option<Vec::<GetSessionResponseApproverResponse>>)`](crate::operation::get_session::GetSessionOutput::approver_responses): <p>An array of <code>GetSessionResponseApproverResponse</code> objects. Contains details for approver responses in the session.</p>
+    ///   - [`additional_security_requirements(Option<Vec::<AdditionalSecurityRequirement>>)`](crate::operation::get_session::GetSessionOutput::additional_security_requirements): <p>A list of <code>AdditionalSecurityRequirement</code> applied to the session.</p>
     /// - On failure, responds with [`SdkError<GetSessionError>`](crate::operation::get_session::GetSessionError)
     pub fn get_session(&self) -> crate::operation::get_session::builders::GetSessionFluentBuilder {
         crate::operation::get_session::builders::GetSessionFluentBuilder::new(self.handle.clone())

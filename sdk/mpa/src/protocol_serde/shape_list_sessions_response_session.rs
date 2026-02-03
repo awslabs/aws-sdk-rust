@@ -130,6 +130,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AdditionalSecurityRequirements" => {
+                            builder = builder.set_additional_security_requirements(
+                                crate::protocol_serde::shape_additional_security_requirements::de_additional_security_requirements(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

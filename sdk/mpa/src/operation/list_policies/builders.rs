@@ -23,7 +23,6 @@ impl crate::operation::list_policies::builders::ListPoliciesInputBuilder {
 /// Fluent builder constructing a request to `ListPolicies`.
 ///
 /// <p>Returns a list of policies. Policies define the permissions for team resources.</p>
-/// <p>The protected operation for a service integration might require specific permissions. For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How other services work with Multi-party approval</a> in the <i>Multi-party approval User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
