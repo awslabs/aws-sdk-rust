@@ -201,6 +201,8 @@ pub(crate) mod shape_domain_summary_list;
 
 pub(crate) mod shape_event_bridge_configuration;
 
+pub(crate) mod shape_field_attributes;
+
 pub(crate) mod shape_field_identifier;
 
 pub(crate) mod shape_field_option;
@@ -322,6 +324,8 @@ pub(crate) mod shape_sla_input_content;
 pub(crate) mod shape_tag_filter;
 
 pub(crate) mod shape_template_summary;
+
+pub(crate) mod shape_text_attributes;
 
 pub(crate) mod shape_audit_event_field_list;
 

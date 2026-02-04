@@ -15,5 +15,11 @@ pub fn ser_srt_settings_request(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.srt_listener_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("srtListenerSettings").start_object();
+        crate::protocol_serde::shape_srt_listener_settings_request::ser_srt_listener_settings_request(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

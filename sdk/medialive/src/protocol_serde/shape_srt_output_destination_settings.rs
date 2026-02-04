@@ -12,6 +12,15 @@ pub fn ser_srt_output_destination_settings(
     if let Some(var_3) = &input.url {
         object.key("url").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.connection_mode {
+        object.key("connectionMode").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.listener_port {
+        object.key("listenerPort").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
     Ok(())
 }
 
@@ -49,6 +58,20 @@ where
                             builder = builder.set_url(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "connectionMode" => {
+                            builder = builder.set_connection_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "listenerPort" => {
+                            builder = builder.set_listener_port(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

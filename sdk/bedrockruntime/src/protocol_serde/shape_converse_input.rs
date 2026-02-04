@@ -39,58 +39,64 @@ pub fn ser_converse_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_13) = &input.performance_config {
+    if let Some(var_13) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("performanceConfig").start_object();
-        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_14, var_13)?;
+        let mut object_14 = object.key("outputConfig").start_object();
+        crate::protocol_serde::shape_output_config::ser_output_config(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.prompt_variables {
+    if let Some(var_15) = &input.performance_config {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("promptVariables").start_object();
-        for (key_17, value_18) in var_15 {
-            {
-                #[allow(unused_mut)]
-                let mut object_19 = object_16.key(key_17.as_str()).start_object();
-                crate::protocol_serde::shape_prompt_variable_values::ser_prompt_variable_values(&mut object_19, value_18)?;
-                object_19.finish();
-            }
-        }
+        let mut object_16 = object.key("performanceConfig").start_object();
+        crate::protocol_serde::shape_performance_configuration::ser_performance_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_20) = &input.request_metadata {
+    if let Some(var_17) = &input.prompt_variables {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("requestMetadata").start_object();
-        for (key_22, value_23) in var_20 {
-            {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
-            }
-        }
-        object_21.finish();
-    }
-    if let Some(var_24) = &input.service_tier {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("serviceTier").start_object();
-        crate::protocol_serde::shape_service_tier::ser_service_tier(&mut object_25, var_24)?;
-        object_25.finish();
-    }
-    if let Some(var_26) = &input.system {
-        let mut array_27 = object.key("system").start_array();
-        for item_28 in var_26 {
+        let mut object_18 = object.key("promptVariables").start_object();
+        for (key_19, value_20) in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_29, item_28)?;
-                object_29.finish();
+                let mut object_21 = object_18.key(key_19.as_str()).start_object();
+                crate::protocol_serde::shape_prompt_variable_values::ser_prompt_variable_values(&mut object_21, value_20)?;
+                object_21.finish();
             }
         }
-        array_27.finish();
+        object_18.finish();
     }
-    if let Some(var_30) = &input.tool_config {
+    if let Some(var_22) = &input.request_metadata {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("toolConfig").start_object();
-        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_31, var_30)?;
-        object_31.finish();
+        let mut object_23 = object.key("requestMetadata").start_object();
+        for (key_24, value_25) in var_22 {
+            {
+                object_23.key(key_24.as_str()).string(value_25.as_str());
+            }
+        }
+        object_23.finish();
+    }
+    if let Some(var_26) = &input.service_tier {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("serviceTier").start_object();
+        crate::protocol_serde::shape_service_tier::ser_service_tier(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.system {
+        let mut array_29 = object.key("system").start_array();
+        for item_30 in var_28 {
+            {
+                #[allow(unused_mut)]
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_system_content_block::ser_system_content_block(&mut object_31, item_30)?;
+                object_31.finish();
+            }
+        }
+        array_29.finish();
+    }
+    if let Some(var_32) = &input.tool_config {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("toolConfig").start_object();
+        crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_33, var_32)?;
+        object_33.finish();
     }
     Ok(())
 }

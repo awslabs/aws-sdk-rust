@@ -165,11 +165,15 @@ pub use crate::types::_input_network_location::InputNetworkLocation;
 
 pub use crate::types::_srt_settings::SrtSettings;
 
+pub use crate::types::_srt_listener_settings::SrtListenerSettings;
+
+pub use crate::types::_srt_listener_decryption::SrtListenerDecryption;
+
+pub use crate::types::_algorithm::Algorithm;
+
 pub use crate::types::_srt_caller_source::SrtCallerSource;
 
 pub use crate::types::_srt_caller_decryption::SrtCallerDecryption;
-
-pub use crate::types::_algorithm::Algorithm;
 
 pub use crate::types::_input_type::InputType;
 
@@ -198,6 +202,10 @@ pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdat
 pub use crate::types::_multicast_source_update_request::MulticastSourceUpdateRequest;
 
 pub use crate::types::_srt_settings_request::SrtSettingsRequest;
+
+pub use crate::types::_srt_listener_settings_request::SrtListenerSettingsRequest;
+
+pub use crate::types::_srt_listener_decryption_request::SrtListenerDecryptionRequest;
 
 pub use crate::types::_srt_caller_source_request::SrtCallerSourceRequest;
 
@@ -1133,6 +1141,8 @@ pub use crate::types::_output_destination::OutputDestination;
 
 pub use crate::types::_srt_output_destination_settings::SrtOutputDestinationSettings;
 
+pub use crate::types::_connection_mode::ConnectionMode;
+
 pub use crate::types::_output_destination_settings::OutputDestinationSettings;
 
 pub use crate::types::_multiplex_program_channel_destination_settings::MultiplexProgramChannelDestinationSettings;
@@ -1616,6 +1626,8 @@ mod _color_correction_settings;
 mod _color_space;
 
 mod _color_space_passthrough_settings;
+
+mod _connection_mode;
 
 mod _content_type;
 
@@ -2586,6 +2598,14 @@ mod _srt_caller_source_request;
 mod _srt_encryption_type;
 
 mod _srt_group_settings;
+
+mod _srt_listener_decryption;
+
+mod _srt_listener_decryption_request;
+
+mod _srt_listener_settings;
+
+mod _srt_listener_settings_request;
 
 mod _srt_output_destination_settings;
 

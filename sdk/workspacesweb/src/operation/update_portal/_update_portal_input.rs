@@ -15,6 +15,8 @@ pub struct UpdatePortalInput {
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The maximum number of concurrent sessions for the portal.</p>
     pub max_concurrent_sessions: ::std::option::Option<i32>,
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub portal_custom_domain: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePortalInput {
     /// <p>The ARN of the web portal.</p>
@@ -39,6 +41,10 @@ impl UpdatePortalInput {
     pub fn max_concurrent_sessions(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_sessions
     }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn portal_custom_domain(&self) -> ::std::option::Option<&str> {
+        self.portal_custom_domain.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdatePortalInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +54,7 @@ impl ::std::fmt::Debug for UpdatePortalInput {
         formatter.field("authentication_type", &self.authentication_type);
         formatter.field("instance_type", &self.instance_type);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
+        formatter.field("portal_custom_domain", &self.portal_custom_domain);
         formatter.finish()
     }
 }
@@ -67,6 +74,7 @@ pub struct UpdatePortalInputBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
+    pub(crate) portal_custom_domain: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePortalInputBuilder {
     /// <p>The ARN of the web portal.</p>
@@ -146,6 +154,20 @@ impl UpdatePortalInputBuilder {
     pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_sessions
     }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn portal_custom_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.portal_custom_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn set_portal_custom_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.portal_custom_domain = input;
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn get_portal_custom_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_custom_domain
+    }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
     pub fn build(
         self,
@@ -156,6 +178,7 @@ impl UpdatePortalInputBuilder {
             authentication_type: self.authentication_type,
             instance_type: self.instance_type,
             max_concurrent_sessions: self.max_concurrent_sessions,
+            portal_custom_domain: self.portal_custom_domain,
         })
     }
 }
@@ -167,6 +190,7 @@ impl ::std::fmt::Debug for UpdatePortalInputBuilder {
         formatter.field("authentication_type", &self.authentication_type);
         formatter.field("instance_type", &self.instance_type);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
+        formatter.field("portal_custom_domain", &self.portal_custom_domain);
         formatter.finish()
     }
 }

@@ -44,6 +44,8 @@ pub struct ConverseStreamInput {
     pub performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
     /// <p>Specifies the processing tier configuration used for serving the request.</p>
     pub service_tier: ::std::option::Option<crate::types::ServiceTier>,
+    /// <p>Output configuration for a model response.</p>
+    pub output_config: ::std::option::Option<crate::types::OutputConfig>,
 }
 impl ConverseStreamInput {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -117,6 +119,10 @@ impl ConverseStreamInput {
     pub fn service_tier(&self) -> ::std::option::Option<&crate::types::ServiceTier> {
         self.service_tier.as_ref()
     }
+    /// <p>Output configuration for a model response.</p>
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+        self.output_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ConverseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -133,6 +139,7 @@ impl ::std::fmt::Debug for ConverseStreamInput {
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
         formatter.field("service_tier", &self.service_tier);
+        formatter.field("output_config", &self.output_config);
         formatter.finish()
     }
 }
@@ -159,6 +166,7 @@ pub struct ConverseStreamInputBuilder {
     pub(crate) request_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) performance_config: ::std::option::Option<crate::types::PerformanceConfiguration>,
     pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTier>,
+    pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
 }
 impl ConverseStreamInputBuilder {
     /// <p>Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:</p>
@@ -423,6 +431,20 @@ impl ConverseStreamInputBuilder {
     pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
         &self.service_tier
     }
+    /// <p>Output configuration for a model response.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.output_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Output configuration for a model response.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input;
+        self
+    }
+    /// <p>Output configuration for a model response.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// Consumes the builder and constructs a [`ConverseStreamInput`](crate::operation::converse_stream::ConverseStreamInput).
     pub fn build(
         self,
@@ -440,6 +462,7 @@ impl ConverseStreamInputBuilder {
             request_metadata: self.request_metadata,
             performance_config: self.performance_config,
             service_tier: self.service_tier,
+            output_config: self.output_config,
         })
     }
 }
@@ -458,6 +481,7 @@ impl ::std::fmt::Debug for ConverseStreamInputBuilder {
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("performance_config", &self.performance_config);
         formatter.field("service_tier", &self.service_tier);
+        formatter.field("output_config", &self.output_config);
         formatter.finish()
     }
 }

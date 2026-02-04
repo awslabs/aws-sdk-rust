@@ -48,6 +48,8 @@ pub struct Portal {
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The maximum number of concurrent sessions for the portal.</p>
     pub max_concurrent_sessions: ::std::option::Option<i32>,
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub portal_custom_domain: ::std::option::Option<::std::string::String>,
 }
 impl Portal {
     /// <p>The ARN of the web portal.</p>
@@ -137,6 +139,10 @@ impl Portal {
     pub fn max_concurrent_sessions(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_sessions
     }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn portal_custom_domain(&self) -> ::std::option::Option<&str> {
+        self.portal_custom_domain.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Portal {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -162,6 +168,7 @@ impl ::std::fmt::Debug for Portal {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("instance_type", &self.instance_type);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
+        formatter.field("portal_custom_domain", &self.portal_custom_domain);
         formatter.finish()
     }
 }
@@ -197,6 +204,7 @@ pub struct PortalBuilder {
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
     pub(crate) max_concurrent_sessions: ::std::option::Option<i32>,
+    pub(crate) portal_custom_domain: ::std::option::Option<::std::string::String>,
 }
 impl PortalBuilder {
     /// <p>The ARN of the web portal.</p>
@@ -515,6 +523,20 @@ impl PortalBuilder {
     pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_sessions
     }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn portal_custom_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.portal_custom_domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn set_portal_custom_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.portal_custom_domain = input;
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn get_portal_custom_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_custom_domain
+    }
     /// Consumes the builder and constructs a [`Portal`](crate::types::Portal).
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::types::builders::PortalBuilder::portal_arn)
@@ -546,6 +568,7 @@ impl PortalBuilder {
             additional_encryption_context: self.additional_encryption_context,
             instance_type: self.instance_type,
             max_concurrent_sessions: self.max_concurrent_sessions,
+            portal_custom_domain: self.portal_custom_domain,
         })
     }
 }
@@ -573,6 +596,7 @@ impl ::std::fmt::Debug for PortalBuilder {
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("instance_type", &self.instance_type);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
+        formatter.field("portal_custom_domain", &self.portal_custom_domain);
         formatter.finish()
     }
 }

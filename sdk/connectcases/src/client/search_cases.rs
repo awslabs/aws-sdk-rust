@@ -14,6 +14,7 @@ impl super::Client {
     /// - On success, responds with [`SearchCasesOutput`](crate::operation::search_cases::SearchCasesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_cases::SearchCasesOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
     ///   - [`cases(Vec::<Option<SearchCasesResponseItem>>)`](crate::operation::search_cases::SearchCasesOutput::cases): <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
+    ///   - [`total_count(i64)`](crate::operation::search_cases::SearchCasesOutput::total_count): <p>The total number of cases that matched the search criteria.</p>
     /// - On failure, responds with [`SdkError<SearchCasesError>`](crate::operation::search_cases::SearchCasesError)
     pub fn search_cases(&self) -> crate::operation::search_cases::builders::SearchCasesFluentBuilder {
         crate::operation::search_cases::builders::SearchCasesFluentBuilder::new(self.handle.clone())

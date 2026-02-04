@@ -164,4 +164,18 @@ impl UpdateFieldFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(mut self, input: crate::types::FieldAttributes) -> Self {
+        self.inner = self.inner.attributes(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::FieldAttributes>) -> Self {
+        self.inner = self.inner.set_attributes(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::FieldAttributes> {
+        self.inner.get_attributes()
+    }
 }

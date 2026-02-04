@@ -47,6 +47,9 @@ where
                                 crate::protocol_serde::shape_list_of_input_whitelist_rule::de_list_of_input_whitelist_rule(tokens, _value)?,
                             );
                         }
+                        "channels" => {
+                            builder = builder.set_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

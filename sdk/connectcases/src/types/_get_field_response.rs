@@ -24,6 +24,8 @@ pub struct GetFieldResponse {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp at which the resource was created or last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Union of field attributes.</p>
+    pub attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
@@ -69,6 +71,10 @@ impl GetFieldResponse {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::FieldAttributes> {
+        self.attributes.as_ref()
+    }
 }
 impl GetFieldResponse {
     /// Creates a new builder-style object to manufacture [`GetFieldResponse`](crate::types::GetFieldResponse).
@@ -91,6 +97,7 @@ pub struct GetFieldResponseBuilder {
     pub(crate) deleted: ::std::option::Option<bool>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
@@ -249,6 +256,20 @@ impl GetFieldResponseBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(mut self, input: crate::types::FieldAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::FieldAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::FieldAttributes> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::GetFieldResponseBuilder::field_id)
@@ -293,6 +314,7 @@ impl GetFieldResponseBuilder {
             deleted: self.deleted.unwrap_or_default(),
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
+            attributes: self.attributes,
         })
     }
 }

@@ -248,4 +248,18 @@ impl CreatePortalFluentBuilder {
     pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_concurrent_sessions()
     }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn portal_custom_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.portal_custom_domain(input.into());
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn set_portal_custom_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_portal_custom_domain(input);
+        self
+    }
+    /// <p>The custom domain of the web portal that users access in order to start streaming sessions.</p>
+    pub fn get_portal_custom_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_custom_domain()
+    }
 }

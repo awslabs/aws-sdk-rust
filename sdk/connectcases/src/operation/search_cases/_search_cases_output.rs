@@ -7,6 +7,8 @@ pub struct SearchCasesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of case documents where each case contains the properties <code>CaseId</code> and <code>Fields</code> where each field is a complex union structure.</p>
     pub cases: ::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>,
+    /// <p>The total number of cases that matched the search criteria.</p>
+    pub total_count: i64,
     _request_id: Option<String>,
 }
 impl SearchCasesOutput {
@@ -18,6 +20,10 @@ impl SearchCasesOutput {
     pub fn cases(&self) -> &[::std::option::Option<crate::types::SearchCasesResponseItem>] {
         use std::ops::Deref;
         self.cases.deref()
+    }
+    /// <p>The total number of cases that matched the search criteria.</p>
+    pub fn total_count(&self) -> i64 {
+        self.total_count
     }
 }
 impl ::aws_types::request_id::RequestId for SearchCasesOutput {
@@ -38,6 +44,7 @@ impl SearchCasesOutput {
 pub struct SearchCasesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) cases: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>>,
+    pub(crate) total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl SearchCasesOutputBuilder {
@@ -75,6 +82,20 @@ impl SearchCasesOutputBuilder {
     pub fn get_cases(&self) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::SearchCasesResponseItem>>> {
         &self.cases
     }
+    /// <p>The total number of cases that matched the search criteria.</p>
+    pub fn total_count(mut self, input: i64) -> Self {
+        self.total_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of cases that matched the search criteria.</p>
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.total_count = input;
+        self
+    }
+    /// <p>The total number of cases that matched the search criteria.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -96,6 +117,7 @@ impl SearchCasesOutputBuilder {
                     "cases was not specified but it is required when building SearchCasesOutput",
                 )
             })?,
+            total_count: self.total_count.unwrap_or_default(),
             _request_id: self._request_id,
         })
     }

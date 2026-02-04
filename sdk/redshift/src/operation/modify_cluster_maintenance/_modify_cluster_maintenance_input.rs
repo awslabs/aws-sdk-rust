@@ -13,7 +13,7 @@ pub struct ModifyClusterMaintenanceInput {
     pub defer_maintenance_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
     pub defer_maintenance_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub defer_maintenance_duration: ::std::option::Option<i32>,
 }
 impl ModifyClusterMaintenanceInput {
@@ -37,7 +37,7 @@ impl ModifyClusterMaintenanceInput {
     pub fn defer_maintenance_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn defer_maintenance_duration(&self) -> ::std::option::Option<i32> {
         self.defer_maintenance_duration
     }
@@ -132,17 +132,17 @@ impl ModifyClusterMaintenanceInputBuilder {
     pub fn get_defer_maintenance_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.defer_maintenance_end_time
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn defer_maintenance_duration(mut self, input: i32) -> Self {
         self.defer_maintenance_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn set_defer_maintenance_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.defer_maintenance_duration = input;
         self
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn get_defer_maintenance_duration(&self) -> &::std::option::Option<i32> {
         &self.defer_maintenance_duration
     }

@@ -14,6 +14,8 @@ pub struct FieldSummary {
     pub r#type: crate::types::FieldType,
     /// <p>The namespace of a field.</p>
     pub namespace: crate::types::FieldNamespace,
+    /// <p>Union of field attributes.</p>
+    pub attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl FieldSummary {
     /// <p>The unique identifier of a field.</p>
@@ -39,6 +41,10 @@ impl FieldSummary {
     pub fn namespace(&self) -> &crate::types::FieldNamespace {
         &self.namespace
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::FieldAttributes> {
+        self.attributes.as_ref()
+    }
 }
 impl FieldSummary {
     /// Creates a new builder-style object to manufacture [`FieldSummary`](crate::types::FieldSummary).
@@ -56,6 +62,7 @@ pub struct FieldSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
     pub(crate) namespace: ::std::option::Option<crate::types::FieldNamespace>,
+    pub(crate) attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl FieldSummaryBuilder {
     /// <p>The unique identifier of a field.</p>
@@ -133,6 +140,20 @@ impl FieldSummaryBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<crate::types::FieldNamespace> {
         &self.namespace
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(mut self, input: crate::types::FieldAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::FieldAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::FieldAttributes> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`FieldSummary`](crate::types::FieldSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FieldSummaryBuilder::field_id)
@@ -172,6 +193,7 @@ impl FieldSummaryBuilder {
                     "namespace was not specified but it is required when building FieldSummary",
                 )
             })?,
+            attributes: self.attributes,
         })
     }
 }

@@ -794,6 +794,15 @@ pub(crate) fn sla_content_correct_errors(mut builder: crate::types::builders::Sl
     builder
 }
 
+pub(crate) fn text_attributes_correct_errors(
+    mut builder: crate::types::builders::TextAttributesBuilder,
+) -> crate::types::builders::TextAttributesBuilder {
+    if builder.is_multiline.is_none() {
+        builder.is_multiline = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn field_identifier_correct_errors(
     mut builder: crate::types::builders::FieldIdentifierBuilder,
 ) -> crate::types::builders::FieldIdentifierBuilder {

@@ -174,6 +174,9 @@ pub(crate) fn de_describe_input_security_group(
                             .transpose()?,
                     );
                 }
+                "channels" => {
+                    builder = builder.set_channels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

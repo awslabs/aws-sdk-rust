@@ -314,4 +314,23 @@ impl UpdateChannelFluentBuilder {
     pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::LinkedChannelSettings> {
         self.inner.get_linked_channel_settings()
     }
+    ///
+    /// Appends an item to `ChannelSecurityGroups`.
+    ///
+    /// To override the contents of this collection use [`set_channel_security_groups`](Self::set_channel_security_groups).
+    ///
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn channel_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.channel_security_groups(input.into());
+        self
+    }
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn set_channel_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_channel_security_groups(input);
+        self
+    }
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn get_channel_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_channel_security_groups()
+    }
 }

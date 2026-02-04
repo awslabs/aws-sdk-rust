@@ -781,6 +781,10 @@ pub(crate) mod shape_smpte2110_receiver_group;
 
 pub(crate) mod shape_srt_caller_source_request;
 
+pub(crate) mod shape_srt_listener_settings;
+
+pub(crate) mod shape_srt_listener_settings_request;
+
 pub(crate) mod shape_srt_output_destination_settings;
 
 pub(crate) mod shape_thumbnail_configuration;
@@ -868,6 +872,10 @@ pub(crate) mod shape_smpte2110_receiver_group_sdp_settings;
 pub(crate) mod shape_srt_caller_decryption_request;
 
 pub(crate) mod shape_srt_caller_source;
+
+pub(crate) mod shape_srt_listener_decryption;
+
+pub(crate) mod shape_srt_listener_decryption_request;
 
 pub(crate) mod shape_video_codec_settings;
 

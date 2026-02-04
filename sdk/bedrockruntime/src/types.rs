@@ -291,6 +291,16 @@ pub use crate::types::_tool_use_block_start::ToolUseBlockStart;
 
 pub use crate::types::_message_start_event::MessageStartEvent;
 
+pub use crate::types::_output_config::OutputConfig;
+
+pub use crate::types::_output_format::OutputFormat;
+
+pub use crate::types::_output_format_structure::OutputFormatStructure;
+
+pub use crate::types::_json_schema_definition::JsonSchemaDefinition;
+
+pub use crate::types::_output_format_type::OutputFormatType;
+
 pub use crate::types::_prompt_variable_values::PromptVariableValues;
 
 pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfiguration;
@@ -597,11 +607,21 @@ mod _invoke_model_with_bidirectional_stream_input;
 
 mod _invoke_model_with_bidirectional_stream_output;
 
+mod _json_schema_definition;
+
 mod _message;
 
 mod _message_start_event;
 
 mod _message_stop_event;
+
+mod _output_config;
+
+mod _output_format;
+
+mod _output_format_structure;
+
+mod _output_format_type;
 
 mod _payload_part;
 

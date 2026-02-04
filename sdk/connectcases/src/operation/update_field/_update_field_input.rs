@@ -11,6 +11,8 @@ pub struct UpdateFieldInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a field.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Union of field attributes.</p>
+    pub attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl UpdateFieldInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -29,6 +31,10 @@ impl UpdateFieldInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::FieldAttributes> {
+        self.attributes.as_ref()
+    }
 }
 impl UpdateFieldInput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
@@ -45,6 +51,7 @@ pub struct UpdateFieldInputBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl UpdateFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -105,6 +112,20 @@ impl UpdateFieldInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(mut self, input: crate::types::FieldAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::FieldAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::FieldAttributes> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_field::UpdateFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_field::UpdateFieldInput {
@@ -112,6 +133,7 @@ impl UpdateFieldInputBuilder {
             field_id: self.field_id,
             name: self.name,
             description: self.description,
+            attributes: self.attributes,
         })
     }
 }

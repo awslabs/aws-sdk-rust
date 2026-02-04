@@ -10,6 +10,10 @@ pub struct SrtOutputDestinationSettings {
     pub stream_id: ::std::option::Option<::std::string::String>,
     /// A URL specifying a destination
     pub url: ::std::option::Option<::std::string::String>,
+    /// Specifies the mode the output should use for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+    pub connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
+    /// Port number for listener mode connections (required when connectionMode is LISTENER, must not be provided when connectionMode is CALLER).
+    pub listener_port: ::std::option::Option<i32>,
 }
 impl SrtOutputDestinationSettings {
     /// Arn used to extract the password from Secrets Manager
@@ -23,6 +27,14 @@ impl SrtOutputDestinationSettings {
     /// A URL specifying a destination
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
+    }
+    /// Specifies the mode the output should use for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+    pub fn connection_mode(&self) -> ::std::option::Option<&crate::types::ConnectionMode> {
+        self.connection_mode.as_ref()
+    }
+    /// Port number for listener mode connections (required when connectionMode is LISTENER, must not be provided when connectionMode is CALLER).
+    pub fn listener_port(&self) -> ::std::option::Option<i32> {
+        self.listener_port
     }
 }
 impl SrtOutputDestinationSettings {
@@ -39,6 +51,8 @@ pub struct SrtOutputDestinationSettingsBuilder {
     pub(crate) encryption_passphrase_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_mode: ::std::option::Option<crate::types::ConnectionMode>,
+    pub(crate) listener_port: ::std::option::Option<i32>,
 }
 impl SrtOutputDestinationSettingsBuilder {
     /// Arn used to extract the password from Secrets Manager
@@ -83,12 +97,42 @@ impl SrtOutputDestinationSettingsBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
+    /// Specifies the mode the output should use for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+    pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
+        self.connection_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies the mode the output should use for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+    pub fn set_connection_mode(mut self, input: ::std::option::Option<crate::types::ConnectionMode>) -> Self {
+        self.connection_mode = input;
+        self
+    }
+    /// Specifies the mode the output should use for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
+    }
+    /// Port number for listener mode connections (required when connectionMode is LISTENER, must not be provided when connectionMode is CALLER).
+    pub fn listener_port(mut self, input: i32) -> Self {
+        self.listener_port = ::std::option::Option::Some(input);
+        self
+    }
+    /// Port number for listener mode connections (required when connectionMode is LISTENER, must not be provided when connectionMode is CALLER).
+    pub fn set_listener_port(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.listener_port = input;
+        self
+    }
+    /// Port number for listener mode connections (required when connectionMode is LISTENER, must not be provided when connectionMode is CALLER).
+    pub fn get_listener_port(&self) -> &::std::option::Option<i32> {
+        &self.listener_port
+    }
     /// Consumes the builder and constructs a [`SrtOutputDestinationSettings`](crate::types::SrtOutputDestinationSettings).
     pub fn build(self) -> crate::types::SrtOutputDestinationSettings {
         crate::types::SrtOutputDestinationSettings {
             encryption_passphrase_secret_arn: self.encryption_passphrase_secret_arn,
             stream_id: self.stream_id,
             url: self.url,
+            connection_mode: self.connection_mode,
+            listener_port: self.listener_port,
         }
     }
 }

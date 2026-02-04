@@ -10,6 +10,8 @@ pub struct NodeInterfaceMapping {
     pub network_interface_mode: ::std::option::Option<crate::types::NetworkInterfaceMode>,
     /// The name of the physical interface on the hardware that will be running Elemental anywhere.
     pub physical_interface_name: ::std::option::Option<::std::string::String>,
+    /// The IP addresses associated with the physical interface on the node hardware.
+    pub physical_interface_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeInterfaceMapping {
     /// A uniform logical interface name to address in a MediaLive channel configuration.
@@ -23,6 +25,12 @@ impl NodeInterfaceMapping {
     /// The name of the physical interface on the hardware that will be running Elemental anywhere.
     pub fn physical_interface_name(&self) -> ::std::option::Option<&str> {
         self.physical_interface_name.as_deref()
+    }
+    /// The IP addresses associated with the physical interface on the node hardware.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.physical_interface_ip_addresses.is_none()`.
+    pub fn physical_interface_ip_addresses(&self) -> &[::std::string::String] {
+        self.physical_interface_ip_addresses.as_deref().unwrap_or_default()
     }
 }
 impl NodeInterfaceMapping {
@@ -39,6 +47,7 @@ pub struct NodeInterfaceMappingBuilder {
     pub(crate) logical_interface_name: ::std::option::Option<::std::string::String>,
     pub(crate) network_interface_mode: ::std::option::Option<crate::types::NetworkInterfaceMode>,
     pub(crate) physical_interface_name: ::std::option::Option<::std::string::String>,
+    pub(crate) physical_interface_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NodeInterfaceMappingBuilder {
     /// A uniform logical interface name to address in a MediaLive channel configuration.
@@ -83,12 +92,33 @@ impl NodeInterfaceMappingBuilder {
     pub fn get_physical_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.physical_interface_name
     }
+    /// Appends an item to `physical_interface_ip_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_physical_interface_ip_addresses`](Self::set_physical_interface_ip_addresses).
+    ///
+    /// The IP addresses associated with the physical interface on the node hardware.
+    pub fn physical_interface_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.physical_interface_ip_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.physical_interface_ip_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// The IP addresses associated with the physical interface on the node hardware.
+    pub fn set_physical_interface_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.physical_interface_ip_addresses = input;
+        self
+    }
+    /// The IP addresses associated with the physical interface on the node hardware.
+    pub fn get_physical_interface_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.physical_interface_ip_addresses
+    }
     /// Consumes the builder and constructs a [`NodeInterfaceMapping`](crate::types::NodeInterfaceMapping).
     pub fn build(self) -> crate::types::NodeInterfaceMapping {
         crate::types::NodeInterfaceMapping {
             logical_interface_name: self.logical_interface_name,
             network_interface_mode: self.network_interface_mode,
             physical_interface_name: self.physical_interface_name,
+            physical_interface_ip_addresses: self.physical_interface_ip_addresses,
         }
     }
 }

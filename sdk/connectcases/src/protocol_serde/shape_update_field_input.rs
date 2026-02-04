@@ -3,11 +3,17 @@ pub fn ser_update_field_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_field::UpdateFieldInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.attributes {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("attributes").start_object();
+        crate::protocol_serde::shape_field_attributes::ser_field_attributes(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
     Ok(())
 }

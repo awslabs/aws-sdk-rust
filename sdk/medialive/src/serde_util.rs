@@ -363,6 +363,18 @@ pub(crate) fn output_group_correct_errors(mut builder: crate::types::builders::O
     builder
 }
 
+pub(crate) fn srt_listener_decryption_correct_errors(
+    mut builder: crate::types::builders::SrtListenerDecryptionBuilder,
+) -> crate::types::builders::SrtListenerDecryptionBuilder {
+    if builder.algorithm.is_none() {
+        builder.algorithm = "no value was set".parse::<crate::types::Algorithm>().ok()
+    }
+    if builder.passphrase_secret_arn.is_none() {
+        builder.passphrase_secret_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn video_description_correct_errors(
     mut builder: crate::types::builders::VideoDescriptionBuilder,
 ) -> crate::types::builders::VideoDescriptionBuilder {

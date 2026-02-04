@@ -32,6 +32,8 @@ pub struct UpdateChannelInput {
     pub anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
     /// The linked channel settings for the channel.
     pub linked_channel_settings: ::std::option::Option<crate::types::LinkedChannelSettings>,
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -94,6 +96,12 @@ impl UpdateChannelInput {
     pub fn linked_channel_settings(&self) -> ::std::option::Option<&crate::types::LinkedChannelSettings> {
         self.linked_channel_settings.as_ref()
     }
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel_security_groups.is_none()`.
+    pub fn channel_security_groups(&self) -> &[::std::string::String] {
+        self.channel_security_groups.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -120,6 +128,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) anywhere_settings: ::std::option::Option<crate::types::AnywhereSettings>,
     pub(crate) linked_channel_settings: ::std::option::Option<crate::types::LinkedChannelSettings>,
+    pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -331,6 +340,26 @@ impl UpdateChannelInputBuilder {
     pub fn get_linked_channel_settings(&self) -> &::std::option::Option<crate::types::LinkedChannelSettings> {
         &self.linked_channel_settings
     }
+    /// Appends an item to `channel_security_groups`.
+    ///
+    /// To override the contents of this collection use [`set_channel_security_groups`](Self::set_channel_security_groups).
+    ///
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn channel_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.channel_security_groups.unwrap_or_default();
+        v.push(input.into());
+        self.channel_security_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn set_channel_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.channel_security_groups = input;
+        self
+    }
+    /// A list of IDs for all the Input Security Groups attached to the channel.
+    pub fn get_channel_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channel_security_groups
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -350,6 +379,7 @@ impl UpdateChannelInputBuilder {
             dry_run: self.dry_run,
             anywhere_settings: self.anywhere_settings,
             linked_channel_settings: self.linked_channel_settings,
+            channel_security_groups: self.channel_security_groups,
         })
     }
 }

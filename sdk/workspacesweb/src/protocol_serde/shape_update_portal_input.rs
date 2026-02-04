@@ -18,5 +18,8 @@ pub fn ser_update_portal_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.portal_custom_domain {
+        object.key("portalCustomDomain").string(var_5.as_str());
+    }
     Ok(())
 }

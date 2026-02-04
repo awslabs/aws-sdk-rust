@@ -23,6 +23,8 @@ pub use crate::types::_field_error::FieldErrorBuilder;
 
 pub use crate::types::_get_field_response::GetFieldResponseBuilder;
 
+pub use crate::types::_text_attributes::TextAttributesBuilder;
+
 pub use crate::types::_field_identifier::FieldIdentifierBuilder;
 
 pub use crate::types::_field_option::FieldOptionBuilder;

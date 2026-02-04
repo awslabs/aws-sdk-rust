@@ -16,6 +16,8 @@ pub struct DescribeInputSecurityGroupOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// Whitelist rules and their sync status
     pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
+    /// The list of channels currently using this Input Security Group as their channel security group.
+    pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputSecurityGroupOutput {
@@ -47,6 +49,12 @@ impl DescribeInputSecurityGroupOutput {
     pub fn whitelist_rules(&self) -> &[crate::types::InputWhitelistRule] {
         self.whitelist_rules.as_deref().unwrap_or_default()
     }
+    /// The list of channels currently using this Input Security Group as their channel security group.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
+    pub fn channels(&self) -> &[::std::string::String] {
+        self.channels.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInputSecurityGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -70,6 +78,7 @@ pub struct DescribeInputSecurityGroupOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::InputSecurityGroupState>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputSecurityGroupOutputBuilder {
@@ -175,6 +184,26 @@ impl DescribeInputSecurityGroupOutputBuilder {
     pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRule>> {
         &self.whitelist_rules
     }
+    /// Appends an item to `channels`.
+    ///
+    /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+    ///
+    /// The list of channels currently using this Input Security Group as their channel security group.
+    pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.channels.unwrap_or_default();
+        v.push(input.into());
+        self.channels = ::std::option::Option::Some(v);
+        self
+    }
+    /// The list of channels currently using this Input Security Group as their channel security group.
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.channels = input;
+        self
+    }
+    /// The list of channels currently using this Input Security Group as their channel security group.
+    pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channels
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -193,6 +222,7 @@ impl DescribeInputSecurityGroupOutputBuilder {
             state: self.state,
             tags: self.tags,
             whitelist_rules: self.whitelist_rules,
+            channels: self.channels,
             _request_id: self._request_id,
         }
     }

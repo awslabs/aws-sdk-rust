@@ -178,17 +178,17 @@ impl ModifyClusterMaintenanceFluentBuilder {
     pub fn get_defer_maintenance_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_defer_maintenance_end_time()
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn defer_maintenance_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.defer_maintenance_duration(input);
         self
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn set_defer_maintenance_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_defer_maintenance_duration(input);
         self
     }
-    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 60 days or less.</p>
     pub fn get_defer_maintenance_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_defer_maintenance_duration()
     }

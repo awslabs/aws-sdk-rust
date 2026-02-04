@@ -11,6 +11,8 @@ pub struct CreateFieldInput {
     pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>The description of the field.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Union of field attributes.</p>
+    pub attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl CreateFieldInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -29,6 +31,10 @@ impl CreateFieldInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::FieldAttributes> {
+        self.attributes.as_ref()
+    }
 }
 impl CreateFieldInput {
     /// Creates a new builder-style object to manufacture [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
@@ -45,6 +51,7 @@ pub struct CreateFieldInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<crate::types::FieldAttributes>,
 }
 impl CreateFieldInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -106,6 +113,20 @@ impl CreateFieldInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Union of field attributes.</p>
+    pub fn attributes(mut self, input: crate::types::FieldAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::FieldAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Union of field attributes.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::FieldAttributes> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldInput {
@@ -113,6 +134,7 @@ impl CreateFieldInputBuilder {
             name: self.name,
             r#type: self.r#type,
             description: self.description,
+            attributes: self.attributes,
         })
     }
 }

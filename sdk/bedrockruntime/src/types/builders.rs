@@ -177,6 +177,12 @@ pub use crate::types::_tool_use_block_start::ToolUseBlockStartBuilder;
 
 pub use crate::types::_message_start_event::MessageStartEventBuilder;
 
+pub use crate::types::_output_config::OutputConfigBuilder;
+
+pub use crate::types::_output_format::OutputFormatBuilder;
+
+pub use crate::types::_json_schema_definition::JsonSchemaDefinitionBuilder;
+
 pub use crate::types::_guardrail_stream_configuration::GuardrailStreamConfigurationBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;

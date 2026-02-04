@@ -31,6 +31,10 @@ pub use crate::types::_field_error::FieldError;
 
 pub use crate::types::_get_field_response::GetFieldResponse;
 
+pub use crate::types::_field_attributes::FieldAttributes;
+
+pub use crate::types::_text_attributes::TextAttributes;
+
 pub use crate::types::_field_namespace::FieldNamespace;
 
 pub use crate::types::_field_type::FieldType;
@@ -247,6 +251,8 @@ mod _event_bridge_configuration;
 
 mod _event_included_data;
 
+mod _field_attributes;
+
 mod _field_error;
 
 mod _field_filter;
@@ -356,6 +362,8 @@ mod _template_rule;
 mod _template_status;
 
 mod _template_summary;
+
+mod _text_attributes;
 
 mod _user_union;
 

@@ -87,6 +87,10 @@ pub use crate::types::_multicast_source::MulticastSourceBuilder;
 
 pub use crate::types::_srt_settings::SrtSettingsBuilder;
 
+pub use crate::types::_srt_listener_settings::SrtListenerSettingsBuilder;
+
+pub use crate::types::_srt_listener_decryption::SrtListenerDecryptionBuilder;
+
 pub use crate::types::_srt_caller_source::SrtCallerSourceBuilder;
 
 pub use crate::types::_srt_caller_decryption::SrtCallerDecryptionBuilder;
@@ -110,6 +114,10 @@ pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdat
 pub use crate::types::_multicast_source_update_request::MulticastSourceUpdateRequestBuilder;
 
 pub use crate::types::_srt_settings_request::SrtSettingsRequestBuilder;
+
+pub use crate::types::_srt_listener_settings_request::SrtListenerSettingsRequestBuilder;
+
+pub use crate::types::_srt_listener_decryption_request::SrtListenerDecryptionRequestBuilder;
 
 pub use crate::types::_srt_caller_source_request::SrtCallerSourceRequestBuilder;
 

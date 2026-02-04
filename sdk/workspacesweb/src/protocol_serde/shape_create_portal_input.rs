@@ -34,17 +34,20 @@ pub fn ser_create_portal_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.portal_custom_domain {
+        object.key("portalCustomDomain").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
     Ok(())
 }

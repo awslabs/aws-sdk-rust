@@ -24,6 +24,7 @@
 ///     InputType::Sdi => { /* ... */ },
 ///     InputType::Smpte2110ReceiverGroup => { /* ... */ },
 ///     InputType::SrtCaller => { /* ... */ },
+///     InputType::SrtListener => { /* ... */ },
 ///     InputType::TsFile => { /* ... */ },
 ///     InputType::UdpPush => { /* ... */ },
 ///     InputType::UrlPull => { /* ... */ },
@@ -80,6 +81,8 @@ pub enum InputType {
     #[allow(missing_docs)] // documentation missing in model
     SrtCaller,
     #[allow(missing_docs)] // documentation missing in model
+    SrtListener,
+    #[allow(missing_docs)] // documentation missing in model
     TsFile,
     #[allow(missing_docs)] // documentation missing in model
     UdpPush,
@@ -104,6 +107,7 @@ impl ::std::convert::From<&str> for InputType {
             "SDI" => InputType::Sdi,
             "SMPTE_2110_RECEIVER_GROUP" => InputType::Smpte2110ReceiverGroup,
             "SRT_CALLER" => InputType::SrtCaller,
+            "SRT_LISTENER" => InputType::SrtListener,
             "TS_FILE" => InputType::TsFile,
             "UDP_PUSH" => InputType::UdpPush,
             "URL_PULL" => InputType::UrlPull,
@@ -134,6 +138,7 @@ impl InputType {
             InputType::Sdi => "SDI",
             InputType::Smpte2110ReceiverGroup => "SMPTE_2110_RECEIVER_GROUP",
             InputType::SrtCaller => "SRT_CALLER",
+            InputType::SrtListener => "SRT_LISTENER",
             InputType::TsFile => "TS_FILE",
             InputType::UdpPush => "UDP_PUSH",
             InputType::UrlPull => "URL_PULL",
@@ -155,6 +160,7 @@ impl InputType {
             "SDI",
             "SMPTE_2110_RECEIVER_GROUP",
             "SRT_CALLER",
+            "SRT_LISTENER",
             "TS_FILE",
             "UDP_PUSH",
             "URL_PULL",
@@ -193,6 +199,7 @@ impl ::std::fmt::Display for InputType {
             InputType::Sdi => write!(f, "SDI"),
             InputType::Smpte2110ReceiverGroup => write!(f, "SMPTE_2110_RECEIVER_GROUP"),
             InputType::SrtCaller => write!(f, "SRT_CALLER"),
+            InputType::SrtListener => write!(f, "SRT_LISTENER"),
             InputType::TsFile => write!(f, "TS_FILE"),
             InputType::UdpPush => write!(f, "UDP_PUSH"),
             InputType::UrlPull => write!(f, "URL_PULL"),

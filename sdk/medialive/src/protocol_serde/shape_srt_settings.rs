@@ -20,6 +20,11 @@ where
                                 crate::protocol_serde::shape_list_of_srt_caller_source::de_list_of_srt_caller_source(tokens, _value)?,
                             );
                         }
+                        "srtListenerSettings" => {
+                            builder = builder.set_srt_listener_settings(
+                                crate::protocol_serde::shape_srt_listener_settings::de_srt_listener_settings(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

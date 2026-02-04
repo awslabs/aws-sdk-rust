@@ -135,6 +135,8 @@ pub(crate) mod shape_inference_configuration;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_output_config;
+
 pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_prompt_variable_values;
@@ -193,6 +195,8 @@ pub(crate) mod shape_message_start_event;
 
 pub(crate) mod shape_message_stop_event;
 
+pub(crate) mod shape_output_format;
+
 pub(crate) mod shape_payload_part;
 
 pub(crate) mod shape_prompt_router_trace;
@@ -244,6 +248,8 @@ pub(crate) mod shape_guardrail_word_policy_assessment;
 pub(crate) mod shape_image_block;
 
 pub(crate) mod shape_model_outputs;
+
+pub(crate) mod shape_output_format_structure;
 
 pub(crate) mod shape_reasoning_content_block;
 
@@ -302,6 +308,8 @@ pub(crate) mod shape_guardrail_regex_filter_list;
 pub(crate) mod shape_guardrail_topic_list;
 
 pub(crate) mod shape_image_source;
+
+pub(crate) mod shape_json_schema_definition;
 
 pub(crate) mod shape_reasoning_text_block;
 

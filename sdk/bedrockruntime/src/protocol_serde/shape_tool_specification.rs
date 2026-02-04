@@ -15,5 +15,8 @@ pub fn ser_tool_specification(
         crate::protocol_serde::shape_tool_input_schema::ser_tool_input_schema(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.strict {
+        object.key("strict").boolean(*var_4);
+    }
     Ok(())
 }

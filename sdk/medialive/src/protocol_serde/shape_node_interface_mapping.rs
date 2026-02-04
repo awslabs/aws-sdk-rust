@@ -12,6 +12,15 @@ pub fn ser_node_interface_mapping(
     if let Some(var_3) = &input.physical_interface_name {
         object.key("physicalInterfaceName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.physical_interface_ip_addresses {
+        let mut array_5 = object.key("physicalInterfaceIpAddresses").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +60,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "physicalInterfaceIpAddresses" => {
+                            builder = builder
+                                .set_physical_interface_ip_addresses(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

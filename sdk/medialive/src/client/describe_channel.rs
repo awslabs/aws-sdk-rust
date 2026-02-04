@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`anywhere_settings(Option<DescribeAnywhereSettings>)`](crate::operation::describe_channel::DescribeChannelOutput::anywhere_settings): Anywhere settings for this channel.
     ///   - [`channel_engine_version(Option<ChannelEngineVersionResponse>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_engine_version): Requested engine version for this channel.
     ///   - [`linked_channel_settings(Option<DescribeLinkedChannelSettings>)`](crate::operation::describe_channel::DescribeChannelOutput::linked_channel_settings): Linked Channel Settings for this channel.
+    ///   - [`channel_security_groups(Option<Vec::<String>>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_security_groups): A list of IDs for all the Input Security Groups attached to the channel.
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
         crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())

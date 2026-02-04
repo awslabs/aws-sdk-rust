@@ -50,6 +50,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "attributes" => {
+                            builder = builder.set_attributes(crate::protocol_serde::shape_field_attributes::de_field_attributes(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

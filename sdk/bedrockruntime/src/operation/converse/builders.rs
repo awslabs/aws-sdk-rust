@@ -364,4 +364,18 @@ impl ConverseFluentBuilder {
     pub fn get_service_tier(&self) -> &::std::option::Option<crate::types::ServiceTier> {
         self.inner.get_service_tier()
     }
+    /// <p>Output configuration for a model response.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.inner = self.inner.output_config(input);
+        self
+    }
+    /// <p>Output configuration for a model response.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.inner = self.inner.set_output_config(input);
+        self
+    }
+    /// <p>Output configuration for a model response.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
+    }
 }

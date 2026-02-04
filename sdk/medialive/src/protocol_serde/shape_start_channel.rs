@@ -201,6 +201,9 @@ pub(crate) fn de_start_channel(
                         crate::protocol_serde::shape_channel_engine_version_response::de_channel_engine_version_response(tokens, _value)?,
                     );
                 }
+                "channelSecurityGroups" => {
+                    builder = builder.set_channel_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                }
                 "destinations" => {
                     builder = builder.set_destinations(crate::protocol_serde::shape_list_of_output_destination::de_list_of_output_destination(
                         tokens, _value,

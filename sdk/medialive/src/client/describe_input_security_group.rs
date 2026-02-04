@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`state(Option<InputSecurityGroupState>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::state): The current state of the Input Security Group.
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::tags): A collection of key-value pairs.
     ///   - [`whitelist_rules(Option<Vec::<InputWhitelistRule>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::whitelist_rules): Whitelist rules and their sync status
+    ///   - [`channels(Option<Vec::<String>>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::channels): The list of channels currently using this Input Security Group as their channel security group.
     /// - On failure, responds with [`SdkError<DescribeInputSecurityGroupError>`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupError)
     pub fn describe_input_security_group(
         &self,
