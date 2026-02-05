@@ -150,17 +150,17 @@ impl StartImportTaskFluentBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source()
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.inner = self.inner.format(input);
         self
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         self.inner.get_format()
     }

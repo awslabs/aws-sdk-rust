@@ -22,7 +22,9 @@ impl crate::operation::list_pending_invitation_resources::builders::ListPendingI
 }
 /// Fluent builder constructing a request to `ListPendingInvitationResources`.
 ///
-/// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>
+/// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p><note>
+/// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a paginated operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -75,6 +75,8 @@ pub(crate) mod shape_list_resource_types;
 
 pub(crate) mod shape_list_resources;
 
+pub(crate) mod shape_list_source_associations;
+
 pub(crate) mod shape_promote_permission_created_from_policy;
 
 pub(crate) mod shape_promote_resource_share_created_from_policy;
@@ -159,6 +161,8 @@ pub(crate) mod shape_list_resource_types_input;
 
 pub(crate) mod shape_list_resources_input;
 
+pub(crate) mod shape_list_source_associations_input;
+
 pub(crate) mod shape_malformed_arn_exception;
 
 pub(crate) mod shape_malformed_policy_template_exception;
@@ -215,6 +219,8 @@ pub(crate) mod shape_update_resource_share_input;
 
 pub(crate) mod shape_associated_permission_list;
 
+pub(crate) mod shape_associated_source_list;
+
 pub(crate) mod shape_policy_list;
 
 pub(crate) mod shape_principal_list;
@@ -248,6 +254,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_filter;
 
 pub(crate) mod shape_associated_permission;
+
+pub(crate) mod shape_associated_source;
 
 pub(crate) mod shape_principal;
 

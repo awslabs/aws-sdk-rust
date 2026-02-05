@@ -13,11 +13,13 @@ pub struct StartBrowserSessionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub view_port: ::std::option::Option<crate::types::ViewPort>,
     /// <p>A list of browser extensions to load into the browser session.</p>
     pub extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartBrowserSessionInput {
@@ -41,7 +43,7 @@ impl StartBrowserSessionInput {
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.session_timeout_seconds
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn view_port(&self) -> ::std::option::Option<&crate::types::ViewPort> {
         self.view_port.as_ref()
     }
@@ -51,7 +53,11 @@ impl StartBrowserSessionInput {
     pub fn extensions(&self) -> &[crate::types::BrowserExtension] {
         self.extensions.as_deref().unwrap_or_default()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::BrowserProfileConfiguration> {
+        self.profile_configuration.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -74,6 +80,7 @@ pub struct StartBrowserSessionInputBuilder {
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) view_port: ::std::option::Option<crate::types::ViewPort>,
     pub(crate) extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
+    pub(crate) profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartBrowserSessionInputBuilder {
@@ -148,17 +155,17 @@ impl StartBrowserSessionInputBuilder {
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_seconds
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn view_port(mut self, input: crate::types::ViewPort) -> Self {
         self.view_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn set_view_port(mut self, input: ::std::option::Option<crate::types::ViewPort>) -> Self {
         self.view_port = input;
         self
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn get_view_port(&self) -> &::std::option::Option<crate::types::ViewPort> {
         &self.view_port
     }
@@ -182,17 +189,31 @@ impl StartBrowserSessionInputBuilder {
     pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
         &self.extensions
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn profile_configuration(mut self, input: crate::types::BrowserProfileConfiguration) -> Self {
+        self.profile_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn set_profile_configuration(mut self, input: ::std::option::Option<crate::types::BrowserProfileConfiguration>) -> Self {
+        self.profile_configuration = input;
+        self
+    }
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::BrowserProfileConfiguration> {
+        &self.profile_configuration
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -209,6 +230,7 @@ impl StartBrowserSessionInputBuilder {
             session_timeout_seconds: self.session_timeout_seconds,
             view_port: self.view_port,
             extensions: self.extensions,
+            profile_configuration: self.profile_configuration,
             client_token: self.client_token,
         })
     }

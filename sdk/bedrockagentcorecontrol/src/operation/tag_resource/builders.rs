@@ -23,7 +23,7 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p><note>
-/// <p>This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter tool, and Gateway.</p>
+/// <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

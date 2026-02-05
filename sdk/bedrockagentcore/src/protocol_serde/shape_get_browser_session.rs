@@ -158,6 +158,11 @@ pub(crate) fn de_get_browser_session(
                             .transpose()?,
                     );
                 }
+                "profileConfiguration" => {
+                    builder = builder.set_profile_configuration(
+                        crate::protocol_serde::shape_browser_profile_configuration::de_browser_profile_configuration(tokens, _value)?,
+                    );
+                }
                 "sessionId" => {
                     builder = builder.set_session_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

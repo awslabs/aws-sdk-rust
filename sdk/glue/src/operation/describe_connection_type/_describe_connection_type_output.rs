@@ -26,6 +26,8 @@ pub struct DescribeConnectionTypeOutput {
     pub python_connection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>>,
     /// <p>Connection properties specific to the Spark compute environment.</p>
     pub spark_connection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>>,
+    /// <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
+    pub rest_configuration: ::std::option::Option<crate::types::RestConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionTypeOutput {
@@ -77,6 +79,10 @@ impl DescribeConnectionTypeOutput {
     pub fn spark_connection_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Property>> {
         self.spark_connection_properties.as_ref()
     }
+    /// <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
+    pub fn rest_configuration(&self) -> ::std::option::Option<&crate::types::RestConfiguration> {
+        self.rest_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectionTypeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -106,6 +112,7 @@ pub struct DescribeConnectionTypeOutputBuilder {
     pub(crate) athena_connection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>>,
     pub(crate) python_connection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>>,
     pub(crate) spark_connection_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>>,
+    pub(crate) rest_configuration: ::std::option::Option<crate::types::RestConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionTypeOutputBuilder {
@@ -340,6 +347,20 @@ impl DescribeConnectionTypeOutputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Property>> {
         &self.spark_connection_properties
     }
+    /// <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
+    pub fn rest_configuration(mut self, input: crate::types::RestConfiguration) -> Self {
+        self.rest_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
+    pub fn set_rest_configuration(mut self, input: ::std::option::Option<crate::types::RestConfiguration>) -> Self {
+        self.rest_configuration = input;
+        self
+    }
+    /// <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
+    pub fn get_rest_configuration(&self) -> &::std::option::Option<crate::types::RestConfiguration> {
+        &self.rest_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -363,6 +384,7 @@ impl DescribeConnectionTypeOutputBuilder {
             athena_connection_properties: self.athena_connection_properties,
             python_connection_properties: self.python_connection_properties,
             spark_connection_properties: self.spark_connection_properties,
+            rest_configuration: self.rest_configuration,
             _request_id: self._request_id,
         }
     }

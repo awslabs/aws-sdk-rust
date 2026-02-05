@@ -85,6 +85,9 @@ pub mod list_sessions;
 /// Types for the `RetrieveMemoryRecords` operation.
 pub mod retrieve_memory_records;
 
+/// Types for the `SaveBrowserSessionProfile` operation.
+pub mod save_browser_session_profile;
+
 /// Types for the `StartBrowserSession` operation.
 pub mod start_browser_session;
 

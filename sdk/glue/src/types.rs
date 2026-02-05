@@ -621,6 +621,58 @@ pub use crate::types::_metadata_key_value_pair::MetadataKeyValuePair;
 
 pub use crate::types::_schema_version_status::SchemaVersionStatus;
 
+pub use crate::types::_rest_configuration::RestConfiguration;
+
+pub use crate::types::_entity_configuration::EntityConfiguration;
+
+pub use crate::types::_field_definition::FieldDefinition;
+
+pub use crate::types::_field_data_type::FieldDataType;
+
+pub use crate::types::_source_configuration::SourceConfiguration;
+
+pub use crate::types::_pagination_configuration::PaginationConfiguration;
+
+pub use crate::types::_offset_configuration::OffsetConfiguration;
+
+pub use crate::types::_extracted_parameter::ExtractedParameter;
+
+pub use crate::types::_response_extraction_mapping::ResponseExtractionMapping;
+
+pub use crate::types::_property_location::PropertyLocation;
+
+pub use crate::types::_cursor_configuration::CursorConfiguration;
+
+pub use crate::types::_response_configuration::ResponseConfiguration;
+
+pub use crate::types::_connector_property::ConnectorProperty;
+
+pub use crate::types::_property_type::PropertyType;
+
+pub use crate::types::_http_method::HttpMethod;
+
+pub use crate::types::_connector_authentication_configuration::ConnectorAuthenticationConfiguration;
+
+pub use crate::types::_custom_authentication_properties::CustomAuthenticationProperties;
+
+pub use crate::types::_basic_authentication_properties::BasicAuthenticationProperties;
+
+pub use crate::types::_connector_o_auth2_properties::ConnectorOAuth2Properties;
+
+pub use crate::types::_connector_authorization_code_properties::ConnectorAuthorizationCodeProperties;
+
+pub use crate::types::_content_type::ContentType;
+
+pub use crate::types::_jwt_bearer_properties::JwtBearerProperties;
+
+pub use crate::types::_client_credentials_properties::ClientCredentialsProperties;
+
+pub use crate::types::_connector_o_auth2_grant_type::ConnectorOAuth2GrantType;
+
+pub use crate::types::_connection_properties_configuration::ConnectionPropertiesConfiguration;
+
+pub use crate::types::_integration_type::IntegrationType;
+
 pub use crate::types::_metadata_info::MetadataInfo;
 
 pub use crate::types::_other_metadata_value_list_item::OtherMetadataValueListItem;
@@ -1021,13 +1073,9 @@ pub use crate::types::_field::Field;
 
 pub use crate::types::_field_filter_operator::FieldFilterOperator;
 
-pub use crate::types::_field_data_type::FieldDataType;
-
 pub use crate::types::_property::Property;
 
 pub use crate::types::_allowed_value::AllowedValue;
-
-pub use crate::types::_property_type::PropertyType;
 
 pub use crate::types::_compute_environment_configuration::ComputeEnvironmentConfiguration;
 
@@ -1129,6 +1177,8 @@ mod _backfill_error_code;
 
 mod _basic_authentication_credentials;
 
+mod _basic_authentication_properties;
+
 mod _basic_catalog_target;
 
 mod _batch_get_table_optimizer_entry;
@@ -1192,6 +1242,8 @@ mod _catalog_source;
 mod _catalog_target;
 
 mod _classifier;
+
+mod _client_credentials_properties;
 
 mod _cloud_watch_encryption;
 
@@ -1261,6 +1313,8 @@ mod _connection_input;
 
 mod _connection_password_encryption;
 
+mod _connection_properties_configuration;
+
 mod _connection_property_key;
 
 mod _connection_status;
@@ -1273,9 +1327,21 @@ mod _connection_type_variant;
 
 mod _connections_list;
 
+mod _connector_authentication_configuration;
+
+mod _connector_authorization_code_properties;
+
 mod _connector_data_source;
 
 mod _connector_data_target;
+
+mod _connector_o_auth2_grant_type;
+
+mod _connector_o_auth2_properties;
+
+mod _connector_property;
+
+mod _content_type;
 
 mod _crawl;
 
@@ -1314,6 +1380,10 @@ mod _csv_classifier;
 mod _csv_header_option;
 
 mod _csv_serde_option;
+
+mod _cursor_configuration;
+
+mod _custom_authentication_properties;
 
 mod _custom_code;
 
@@ -1453,6 +1523,8 @@ mod _encryption_configuration;
 
 mod _entity;
 
+mod _entity_configuration;
+
 mod _error_detail;
 
 mod _error_details;
@@ -1477,6 +1549,8 @@ mod _exist_condition;
 
 mod _export_labels_task_run_properties;
 
+mod _extracted_parameter;
+
 mod _federated_catalog;
 
 mod _federated_database;
@@ -1488,6 +1562,8 @@ mod _federation_source_error_code;
 mod _field;
 
 mod _field_data_type;
+
+mod _field_definition;
 
 mod _field_filter_operator;
 
@@ -1536,6 +1612,8 @@ mod _governed_catalog_target;
 mod _grok_classifier;
 
 mod _group_filters;
+
+mod _http_method;
 
 mod _hudi_target;
 
@@ -1611,6 +1689,8 @@ mod _integration_resource_property_filter;
 
 mod _integration_status;
 
+mod _integration_type;
+
 mod _jdbc_connection_type;
 
 mod _jdbc_connector_options;
@@ -1652,6 +1732,8 @@ mod _join_column;
 mod _join_type;
 
 mod _json_classifier;
+
+mod _jwt_bearer_properties;
 
 mod _kafka_streaming_source_options;
 
@@ -1739,6 +1821,8 @@ mod _o_auth2_properties;
 
 mod _o_auth2_properties_input;
 
+mod _offset_configuration;
+
 mod _open_table_format_input;
 
 mod _option;
@@ -1754,6 +1838,8 @@ mod _orphan_file_deletion_configuration;
 mod _orphan_file_deletion_metrics;
 
 mod _other_metadata_value_list_item;
+
+mod _pagination_configuration;
 
 mod _param_type;
 
@@ -1799,6 +1885,8 @@ mod _profile_configuration;
 
 mod _property;
 
+mod _property_location;
+
 mod _property_predicate;
 
 mod _property_type;
@@ -1842,6 +1930,12 @@ mod _resource_state;
 mod _resource_type;
 
 mod _resource_uri;
+
+mod _response_configuration;
+
+mod _response_extraction_mapping;
+
+mod _rest_configuration;
 
 mod _retention_configuration;
 
@@ -1964,6 +2058,8 @@ mod _sort;
 mod _sort_criterion;
 
 mod _sort_direction_type;
+
+mod _source_configuration;
 
 mod _source_control_auth_strategy;
 

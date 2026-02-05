@@ -9,7 +9,7 @@ pub struct CreatePrivateGraphEndpointOutput {
     pub subnet_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Status of the private graph endpoint.</p>
     pub status: crate::types::PrivateGraphEndpointStatus,
-    /// <p>Endpoint ID of the prviate grpah endpoint.</p>
+    /// <p>Endpoint ID of the private graph endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl CreatePrivateGraphEndpointOutput {
     pub fn status(&self) -> &crate::types::PrivateGraphEndpointStatus {
         &self.status
     }
-    /// <p>Endpoint ID of the prviate grpah endpoint.</p>
+    /// <p>Endpoint ID of the private graph endpoint.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
@@ -106,17 +106,17 @@ impl CreatePrivateGraphEndpointOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PrivateGraphEndpointStatus> {
         &self.status
     }
-    /// <p>Endpoint ID of the prviate grpah endpoint.</p>
+    /// <p>Endpoint ID of the private graph endpoint.</p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Endpoint ID of the prviate grpah endpoint.</p>
+    /// <p>Endpoint ID of the private graph endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
-    /// <p>Endpoint ID of the prviate grpah endpoint.</p>
+    /// <p>Endpoint ID of the private graph endpoint.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }

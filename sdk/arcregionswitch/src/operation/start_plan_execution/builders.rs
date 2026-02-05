@@ -137,31 +137,31 @@ impl StartPlanExecutionFluentBuilder {
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_region()
     }
-    /// <p>The action to perform. Valid values are ACTIVATE (to shift traffic to the target Region) or DEACTIVATE (to shift traffic away from the target Region).</p>
+    /// <p>The action to perform. Valid values are <code>activate</code> (to shift traffic to the target Region) or <code>deactivate</code> (to shift traffic away from the target Region).</p>
     pub fn action(mut self, input: crate::types::ExecutionAction) -> Self {
         self.inner = self.inner.action(input);
         self
     }
-    /// <p>The action to perform. Valid values are ACTIVATE (to shift traffic to the target Region) or DEACTIVATE (to shift traffic away from the target Region).</p>
+    /// <p>The action to perform. Valid values are <code>activate</code> (to shift traffic to the target Region) or <code>deactivate</code> (to shift traffic away from the target Region).</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ExecutionAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
-    /// <p>The action to perform. Valid values are ACTIVATE (to shift traffic to the target Region) or DEACTIVATE (to shift traffic away from the target Region).</p>
+    /// <p>The action to perform. Valid values are <code>activate</code> (to shift traffic to the target Region) or <code>deactivate</code> (to shift traffic away from the target Region).</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ExecutionAction> {
         self.inner.get_action()
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for starting the execution in graceful mode, or <code>ungraceful</code>, for starting the execution in ungraceful mode.</p>
     pub fn mode(mut self, input: crate::types::ExecutionMode) -> Self {
         self.inner = self.inner.mode(input);
         self
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for starting the execution in graceful mode, or <code>ungraceful</code>, for starting the execution in ungraceful mode.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for starting the execution in graceful mode, or <code>ungraceful</code>, for starting the execution in ungraceful mode.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
         self.inner.get_mode()
     }

@@ -6,7 +6,7 @@
 pub struct TriggerCondition {
     /// <p>The name of the CloudWatch alarm associated with the condition.</p>
     pub associated_alarm_name: ::std::string::String,
-    /// <p>The condition that must be met. Valid values include ALARM and OK.</p>
+    /// <p>The condition that must be met. Valid values include <code>green</code> and <code>red</code>.</p>
     pub condition: crate::types::AlarmCondition,
 }
 impl TriggerCondition {
@@ -15,7 +15,7 @@ impl TriggerCondition {
         use std::ops::Deref;
         self.associated_alarm_name.deref()
     }
-    /// <p>The condition that must be met. Valid values include ALARM and OK.</p>
+    /// <p>The condition that must be met. Valid values include <code>green</code> and <code>red</code>.</p>
     pub fn condition(&self) -> &crate::types::AlarmCondition {
         &self.condition
     }
@@ -50,18 +50,18 @@ impl TriggerConditionBuilder {
     pub fn get_associated_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_alarm_name
     }
-    /// <p>The condition that must be met. Valid values include ALARM and OK.</p>
+    /// <p>The condition that must be met. Valid values include <code>green</code> and <code>red</code>.</p>
     /// This field is required.
     pub fn condition(mut self, input: crate::types::AlarmCondition) -> Self {
         self.condition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The condition that must be met. Valid values include ALARM and OK.</p>
+    /// <p>The condition that must be met. Valid values include <code>green</code> and <code>red</code>.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::AlarmCondition>) -> Self {
         self.condition = input;
         self
     }
-    /// <p>The condition that must be met. Valid values include ALARM and OK.</p>
+    /// <p>The condition that must be met. Valid values include <code>green</code> and <code>red</code>.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::AlarmCondition> {
         &self.condition
     }

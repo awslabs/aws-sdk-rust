@@ -93,6 +93,8 @@ pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
+pub use crate::types::_browser_profile_configuration::BrowserProfileConfiguration;
+
 pub use crate::types::_browser_extension::BrowserExtension;
 
 pub use crate::types::_resource_location::ResourceLocation;
@@ -148,6 +150,8 @@ mod _branch;
 mod _branch_filter;
 
 mod _browser_extension;
+
+mod _browser_profile_configuration;
 
 mod _browser_session_status;
 

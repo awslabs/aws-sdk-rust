@@ -290,7 +290,7 @@ pub enum PromoteResourceShareCreatedFromPolicyError {
     MissingRequiredParameterException(crate::types::error::MissingRequiredParameterException),
     /// <p>The operation failed because the requested operation isn't permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>The operation failed because it would exceed the limit for resource shares for your account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
+    /// <p>The operation failed because it would exceed the limit for resource shares for your account. You can associate up to 100 resources per call. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
     ResourceShareLimitExceededException(crate::types::error::ResourceShareLimitExceededException),
     /// <p>The operation failed because the service could not respond to the request due to an internal problem. Try again later.</p>
     ServerInternalException(crate::types::error::ServerInternalException),

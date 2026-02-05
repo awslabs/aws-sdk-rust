@@ -397,6 +397,10 @@ pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInput;
 
 pub use crate::types::_browser_summary::BrowserSummary;
 
+pub use crate::types::_browser_profile_status::BrowserProfileStatus;
+
+pub use crate::types::_browser_profile_summary::BrowserProfileSummary;
+
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItem;
 
 pub use crate::types::_agent_runtime::AgentRuntime;
@@ -474,6 +478,10 @@ mod _bedrock_evaluator_model_config;
 mod _browser_network_configuration;
 
 mod _browser_network_mode;
+
+mod _browser_profile_status;
+
+mod _browser_profile_summary;
 
 mod _browser_signing_config_input;
 

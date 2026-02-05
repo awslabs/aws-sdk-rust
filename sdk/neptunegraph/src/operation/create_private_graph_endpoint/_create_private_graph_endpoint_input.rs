@@ -9,7 +9,7 @@ pub struct CreatePrivateGraphEndpointInput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreatePrivateGraphEndpointInput {
@@ -27,7 +27,7 @@ impl CreatePrivateGraphEndpointInput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
@@ -104,19 +104,19 @@ impl CreatePrivateGraphEndpointInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }

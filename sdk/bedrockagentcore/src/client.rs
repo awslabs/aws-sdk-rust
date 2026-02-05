@@ -219,6 +219,8 @@ mod list_sessions;
 
 mod retrieve_memory_records;
 
+mod save_browser_session_profile;
+
 mod start_browser_session;
 
 mod start_code_interpreter_session;

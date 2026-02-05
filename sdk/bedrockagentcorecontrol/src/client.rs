@@ -198,6 +198,8 @@ mod create_api_key_credential_provider;
 
 mod create_browser;
 
+mod create_browser_profile;
+
 mod create_code_interpreter;
 
 mod create_evaluator;
@@ -253,6 +255,8 @@ mod delete_api_key_credential_provider;
 
 mod delete_browser;
 
+mod delete_browser_profile;
+
 mod delete_code_interpreter;
 
 mod delete_evaluator;
@@ -282,6 +286,8 @@ mod get_agent_runtime_endpoint;
 mod get_api_key_credential_provider;
 
 mod get_browser;
+
+mod get_browser_profile;
 
 mod get_code_interpreter;
 
@@ -316,6 +322,8 @@ mod list_agent_runtime_versions;
 mod list_agent_runtimes;
 
 mod list_api_key_credential_providers;
+
+mod list_browser_profiles;
 
 mod list_browsers;
 

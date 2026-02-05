@@ -9,7 +9,7 @@ pub struct StartImportTaskInput {
     pub fail_on_error: ::std::option::Option<bool>,
     /// <p>A URL identifying the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The parquet type of the import task.</p>
     pub parquet_type: ::std::option::Option<crate::types::ParquetType>,
@@ -33,7 +33,7 @@ impl StartImportTaskInput {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
@@ -118,17 +118,17 @@ impl StartImportTaskInputBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
     }
-    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load format.</p>
+    /// <p>Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format or OPENCYPHER, which identifies the openCypher load format.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
     }

@@ -49,6 +49,20 @@ where
                             builder =
                                 builder.set_data_operation_scopes(crate::protocol_serde::shape_data_operations::de_data_operations(tokens, _value)?);
                         }
+                        "KeyOverride" => {
+                            builder = builder.set_key_override(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "PropertyLocation" => {
+                            builder = builder.set_property_location(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PropertyLocation::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

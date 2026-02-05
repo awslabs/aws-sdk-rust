@@ -8,7 +8,7 @@ pub struct Trigger {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for a trigger.</p>
     pub target_region: ::std::string::String,
-    /// <p>The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action to perform when the trigger fires. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub action: crate::types::WorkflowTargetAction,
     /// <p>The conditions that must be met for the trigger to fire.</p>
     pub conditions: ::std::vec::Vec<crate::types::TriggerCondition>,
@@ -25,7 +25,7 @@ impl Trigger {
         use std::ops::Deref;
         self.target_region.deref()
     }
-    /// <p>The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action to perform when the trigger fires. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn action(&self) -> &crate::types::WorkflowTargetAction {
         &self.action
     }
@@ -86,18 +86,18 @@ impl TriggerBuilder {
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_region
     }
-    /// <p>The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action to perform when the trigger fires. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::WorkflowTargetAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action to perform when the trigger fires. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WorkflowTargetAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action to perform when the trigger fires. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action to perform when the trigger fires. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::WorkflowTargetAction> {
         &self.action
     }

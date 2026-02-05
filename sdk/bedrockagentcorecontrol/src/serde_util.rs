@@ -107,6 +107,24 @@ pub(crate) fn create_browser_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_browser_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_browser_profile::builders::CreateBrowserProfileOutputBuilder,
+) -> crate::operation::create_browser_profile::builders::CreateBrowserProfileOutputBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.profile_arn.is_none() {
+        builder.profile_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserProfileStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_code_interpreter_output_output_correct_errors(
     mut builder: crate::operation::create_code_interpreter::builders::CreateCodeInterpreterOutputBuilder,
 ) -> crate::operation::create_code_interpreter::builders::CreateCodeInterpreterOutputBuilder {
@@ -340,6 +358,24 @@ pub(crate) fn delete_browser_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::BrowserStatus>().ok()
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn delete_browser_profile_output_output_correct_errors(
+    mut builder: crate::operation::delete_browser_profile::builders::DeleteBrowserProfileOutputBuilder,
+) -> crate::operation::delete_browser_profile::builders::DeleteBrowserProfileOutputBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.profile_arn.is_none() {
+        builder.profile_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserProfileStatus>().ok()
     }
     if builder.last_updated_at.is_none() {
         builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -601,6 +637,30 @@ pub(crate) fn get_browser_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::BrowserStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_browser_profile_output_output_correct_errors(
+    mut builder: crate::operation::get_browser_profile::builders::GetBrowserProfileOutputBuilder,
+) -> crate::operation::get_browser_profile::builders::GetBrowserProfileOutputBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.profile_arn.is_none() {
+        builder.profile_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserProfileStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -973,6 +1033,15 @@ pub(crate) fn list_api_key_credential_providers_output_output_correct_errors(
 ) -> crate::operation::list_api_key_credential_providers::builders::ListApiKeyCredentialProvidersOutputBuilder {
     if builder.credential_providers.is_none() {
         builder.credential_providers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_browser_profiles_output_output_correct_errors(
+    mut builder: crate::operation::list_browser_profiles::builders::ListBrowserProfilesOutputBuilder,
+) -> crate::operation::list_browser_profiles::builders::ListBrowserProfilesOutputBuilder {
+    if builder.profile_summaries.is_none() {
+        builder.profile_summaries = Some(Default::default())
     }
     builder
 }
@@ -1641,6 +1710,30 @@ pub(crate) fn atlassian_oauth2_provider_config_output_correct_errors(
 ) -> crate::types::builders::AtlassianOauth2ProviderConfigOutputBuilder {
     if builder.oauth_discovery.is_none() {
         builder.oauth_discovery = Some(crate::types::Oauth2Discovery::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn browser_profile_summary_correct_errors(
+    mut builder: crate::types::builders::BrowserProfileSummaryBuilder,
+) -> crate::types::builders::BrowserProfileSummaryBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.profile_arn.is_none() {
+        builder.profile_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserProfileStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

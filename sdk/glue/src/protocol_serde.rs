@@ -141,6 +141,8 @@ pub(crate) mod shape_delete_column_statistics_task_settings;
 
 pub(crate) mod shape_delete_connection;
 
+pub(crate) mod shape_delete_connection_type;
+
 pub(crate) mod shape_delete_crawler;
 
 pub(crate) mod shape_delete_custom_entity_type;
@@ -429,6 +431,8 @@ pub(crate) mod shape_put_workflow_run_properties;
 
 pub(crate) mod shape_query_schema_version_metadata;
 
+pub(crate) mod shape_register_connection_type;
+
 pub(crate) mod shape_register_schema_version;
 
 pub(crate) mod shape_remove_schema_version_metadata;
@@ -698,6 +702,8 @@ pub(crate) mod shape_delete_column_statistics_for_table_input;
 pub(crate) mod shape_delete_column_statistics_task_settings_input;
 
 pub(crate) mod shape_delete_connection_input;
+
+pub(crate) mod shape_delete_connection_type_input;
 
 pub(crate) mod shape_delete_crawler_input;
 
@@ -1035,6 +1041,8 @@ pub(crate) mod shape_put_workflow_run_properties_input;
 
 pub(crate) mod shape_query_schema_version_metadata_input;
 
+pub(crate) mod shape_register_connection_type_input;
+
 pub(crate) mod shape_register_schema_version_input;
 
 pub(crate) mod shape_remove_schema_version_metadata_input;
@@ -1259,9 +1267,13 @@ pub(crate) mod shape_connection_input;
 
 pub(crate) mod shape_connection_list;
 
+pub(crate) mod shape_connection_properties_configuration;
+
 pub(crate) mod shape_connection_type_list;
 
 pub(crate) mod shape_connections_list;
+
+pub(crate) mod shape_connector_authentication_configuration;
 
 pub(crate) mod shape_context_words;
 
@@ -1475,6 +1487,8 @@ pub(crate) mod shape_registry_id;
 
 pub(crate) mod shape_registry_list_definition;
 
+pub(crate) mod shape_rest_configuration;
+
 pub(crate) mod shape_ruleset_names;
 
 pub(crate) mod shape_schema_change_policy;
@@ -1633,6 +1647,8 @@ pub(crate) mod shape_authentication_configuration_input;
 
 pub(crate) mod shape_authentication_types;
 
+pub(crate) mod shape_basic_authentication_properties;
+
 pub(crate) mod shape_basic_catalog_target;
 
 pub(crate) mod shape_batch_get_table_optimizer_error;
@@ -1711,11 +1727,17 @@ pub(crate) mod shape_connector_data_source;
 
 pub(crate) mod shape_connector_data_target;
 
+pub(crate) mod shape_connector_o_auth2_properties;
+
+pub(crate) mod shape_connector_property;
+
 pub(crate) mod shape_crawler_history;
 
 pub(crate) mod shape_crawler_metrics;
 
 pub(crate) mod shape_csv_classifier;
+
+pub(crate) mod shape_custom_authentication_properties;
 
 pub(crate) mod shape_custom_code;
 
@@ -1770,6 +1792,10 @@ pub(crate) mod shape_dynamo_dbelt_connector_source;
 pub(crate) mod shape_encryption_at_rest;
 
 pub(crate) mod shape_entity;
+
+pub(crate) mod shape_entity_configuration;
+
+pub(crate) mod shape_entity_configuration_map;
 
 pub(crate) mod shape_error_detail;
 
@@ -1987,6 +2013,8 @@ pub(crate) mod shape_snowflake_source;
 
 pub(crate) mod shape_snowflake_target;
 
+pub(crate) mod shape_source_configuration;
+
 pub(crate) mod shape_source_table_fields_list;
 
 pub(crate) mod shape_spark_connector_source;
@@ -2069,6 +2097,8 @@ pub(crate) mod shape_catalog_schema_change_policy;
 
 pub(crate) mod shape_catalog_target_list;
 
+pub(crate) mod shape_client_credentials_properties;
+
 pub(crate) mod shape_code_gen_node_args;
 
 pub(crate) mod shape_column_importance_list;
@@ -2082,6 +2112,10 @@ pub(crate) mod shape_confusion_matrix;
 pub(crate) mod shape_connection_string_list;
 
 pub(crate) mod shape_connection_type_variant_list;
+
+pub(crate) mod shape_connector_authorization_code_properties;
+
+pub(crate) mod shape_connector_property_list;
 
 pub(crate) mod shape_create_iceberg_table_input;
 
@@ -2123,6 +2157,8 @@ pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_evaluated_metrics_map;
 
+pub(crate) mod shape_field_definition;
+
 pub(crate) mod shape_field_filter_operators_list;
 
 pub(crate) mod shape_filter_expression;
@@ -2152,6 +2188,8 @@ pub(crate) mod shape_jdbc_connector_options;
 pub(crate) mod shape_jdbc_target_list;
 
 pub(crate) mod shape_join_column;
+
+pub(crate) mod shape_jwt_bearer_properties;
 
 pub(crate) mod shape_kafka_streaming_source_options;
 
@@ -2191,6 +2229,8 @@ pub(crate) mod shape_orphan_file_deletion_metrics;
 
 pub(crate) mod shape_other_metadata_value_list;
 
+pub(crate) mod shape_pagination_configuration;
+
 pub(crate) mod shape_predecessor;
 
 pub(crate) mod shape_property_name_overrides;
@@ -2202,6 +2242,8 @@ pub(crate) mod shape_recipe_reference;
 pub(crate) mod shape_recipe_step;
 
 pub(crate) mod shape_reference_datasets_list;
+
+pub(crate) mod shape_response_configuration;
 
 pub(crate) mod shape_retention_metrics;
 
@@ -2275,6 +2317,8 @@ pub(crate) mod shape_condition_expression;
 
 pub(crate) mod shape_connection_type_variant;
 
+pub(crate) mod shape_cursor_configuration;
+
 pub(crate) mod shape_data_quality_metric_values;
 
 pub(crate) mod shape_datatype;
@@ -2282,6 +2326,8 @@ pub(crate) mod shape_datatype;
 pub(crate) mod shape_decimal_number;
 
 pub(crate) mod shape_edge;
+
+pub(crate) mod shape_field_definition_map;
 
 pub(crate) mod shape_filter_value;
 
@@ -2312,6 +2358,8 @@ pub(crate) mod shape_node;
 pub(crate) mod shape_o_auth2_client_application;
 
 pub(crate) mod shape_o_auth2_credentials;
+
+pub(crate) mod shape_offset_configuration;
 
 pub(crate) mod shape_option;
 
@@ -2344,6 +2392,8 @@ pub(crate) mod shape_dqdl_aliases;
 pub(crate) mod shape_enable_additional_metadata;
 
 pub(crate) mod shape_enclosed_in_string_properties;
+
+pub(crate) mod shape_extracted_parameter;
 
 pub(crate) mod shape_filter_expressions;
 
@@ -2400,6 +2450,8 @@ pub(crate) mod shape_jdbc_data_type_mapping;
 pub(crate) mod shape_limited_string_list;
 
 pub(crate) mod shape_option_list;
+
+pub(crate) mod shape_response_extraction_mapping;
 
 pub(crate) mod shape_condition_expression_list;
 

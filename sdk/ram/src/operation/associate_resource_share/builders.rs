@@ -22,7 +22,7 @@ impl crate::operation::associate_resource_share::builders::AssociateResourceShar
 }
 /// Fluent builder constructing a request to `AssociateResourceShare`.
 ///
-/// <p>Adds the specified list of principals and list of resources to a resource share. Principals that already have access to this resource share immediately receive access to the added resources. Newly added principals immediately receive access to the resources shared in this resource share.</p>
+/// <p>Adds the specified list of principals, resources, and source constraints to a resource share. Principals that already have access to this resource share immediately receive access to the added resources. Newly added principals immediately receive access to the resources shared in this resource share.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResourceShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,6 +160,8 @@ impl AssociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -181,6 +183,8 @@ impl AssociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -202,6 +206,8 @@ impl AssociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -233,17 +239,17 @@ impl AssociateResourceShareFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) that limit when service principals can access resources in this resource share. When a service principal attempts to access a shared resource, validation is performed to ensure the request originates from one of the specified sources. This helps prevent confused deputy attacks by applying constraints on where service principals can access resources from.</p>
     pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sources(input.into());
         self
     }
-    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) that limit when service principals can access resources in this resource share. When a service principal attempts to access a shared resource, validation is performed to ensure the request originates from one of the specified sources. This helps prevent confused deputy attacks by applying constraints on where service principals can access resources from.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// <p>Specifies from which source accounts the service principal has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) that limit when service principals can access resources in this resource share. When a service principal attempts to access a shared resource, validation is performed to ensure the request originates from one of the specified sources. This helps prevent confused deputy attacks by applying constraints on where service principals can access resources from.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sources()
     }

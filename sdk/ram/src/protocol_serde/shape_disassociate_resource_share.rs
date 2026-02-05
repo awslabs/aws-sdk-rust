@@ -180,6 +180,20 @@ pub fn de_disassociate_resource_share_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::disassociate_resource_share::DisassociateResourceShareError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::disassociate_resource_share::DisassociateResourceShareError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::disassociate_resource_share::DisassociateResourceShareError::unhandled)?
+            };
+            tmp
+        }),
         "UnknownResourceException" => crate::operation::disassociate_resource_share::DisassociateResourceShareError::UnknownResourceException({
             #[allow(unused_mut)]
             let mut tmp = {

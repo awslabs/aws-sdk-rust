@@ -37,6 +37,22 @@ pub fn de_promote_permission_created_from_policy_http_error(
                 tmp
             })
         }
+        "InvalidPolicyException" => {
+            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::InvalidPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidPolicyExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_policy_exception::de_invalid_policy_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::invalid_policy_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::unhandled)?
+                };
+                tmp
+            })
+        }
         "MalformedArnException" => {
             crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::MalformedArnException({
                 #[allow(unused_mut)]

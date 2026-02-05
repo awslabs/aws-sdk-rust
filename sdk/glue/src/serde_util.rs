@@ -528,6 +528,15 @@ pub(crate) fn column_statistics_data_correct_errors(
     builder
 }
 
+pub(crate) fn response_configuration_correct_errors(
+    mut builder: crate::types::builders::ResponseConfigurationBuilder,
+) -> crate::types::builders::ResponseConfigurationBuilder {
+    if builder.result_path.is_none() {
+        builder.result_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn aggregate_correct_errors(mut builder: crate::types::builders::AggregateBuilder) -> crate::types::builders::AggregateBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -773,6 +782,33 @@ pub(crate) fn connector_data_target_correct_errors(
     }
     if builder.data.is_none() {
         builder.data = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn connector_property_correct_errors(
+    mut builder: crate::types::builders::ConnectorPropertyBuilder,
+) -> crate::types::builders::ConnectorPropertyBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
+    }
+    if builder.property_type.is_none() {
+        builder.property_type = "no value was set".parse::<crate::types::PropertyType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn cursor_configuration_correct_errors(
+    mut builder: crate::types::builders::CursorConfigurationBuilder,
+) -> crate::types::builders::CursorConfigurationBuilder {
+    if builder.next_page.is_none() {
+        builder.next_page = {
+            let builder = crate::types::builders::ExtractedParameterBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -1204,6 +1240,24 @@ pub(crate) fn my_sql_catalog_target_correct_errors(
     }
     if builder.table.is_none() {
         builder.table = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn offset_configuration_correct_errors(
+    mut builder: crate::types::builders::OffsetConfigurationBuilder,
+) -> crate::types::builders::OffsetConfigurationBuilder {
+    if builder.offset_parameter.is_none() {
+        builder.offset_parameter = {
+            let builder = crate::types::builders::ExtractedParameterBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.limit_parameter.is_none() {
+        builder.limit_parameter = {
+            let builder = crate::types::builders::ExtractedParameterBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -1895,6 +1949,18 @@ pub(crate) fn decimal_number_correct_errors(
     }
     if builder.scale.is_none() {
         builder.scale = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_definition_correct_errors(
+    mut builder: crate::types::builders::FieldDefinitionBuilder,
+) -> crate::types::builders::FieldDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.field_data_type.is_none() {
+        builder.field_data_type = "no value was set".parse::<crate::types::FieldDataType>().ok()
     }
     builder
 }

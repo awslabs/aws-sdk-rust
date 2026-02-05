@@ -15,6 +15,8 @@ pub struct StartFileTransferInput {
     pub local_directory_path: ::std::option::Option<::std::string::String>,
     /// <p>For an outbound transfer, the <code>RemoteDirectoryPath</code> specifies the destination for one or more files that are transferred to the partner's SFTP server. If you don't specify a <code>RemoteDirectoryPath</code>, the destination for transferred files is the SFTP user's home directory.</p>
     pub remote_directory_path: ::std::option::Option<::std::string::String>,
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub custom_http_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
 impl StartFileTransferInput {
     /// <p>The unique identifier for the connector.</p>
@@ -43,6 +45,12 @@ impl StartFileTransferInput {
     pub fn remote_directory_path(&self) -> ::std::option::Option<&str> {
         self.remote_directory_path.as_deref()
     }
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_http_headers.is_none()`.
+    pub fn custom_http_headers(&self) -> &[crate::types::CustomHttpHeader] {
+        self.custom_http_headers.as_deref().unwrap_or_default()
+    }
 }
 impl StartFileTransferInput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
@@ -60,6 +68,7 @@ pub struct StartFileTransferInputBuilder {
     pub(crate) retrieve_file_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) local_directory_path: ::std::option::Option<::std::string::String>,
     pub(crate) remote_directory_path: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_http_headers: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>,
 }
 impl StartFileTransferInputBuilder {
     /// <p>The unique identifier for the connector.</p>
@@ -151,6 +160,26 @@ impl StartFileTransferInputBuilder {
     pub fn get_remote_directory_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_directory_path
     }
+    /// Appends an item to `custom_http_headers`.
+    ///
+    /// To override the contents of this collection use [`set_custom_http_headers`](Self::set_custom_http_headers).
+    ///
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn custom_http_headers(mut self, input: crate::types::CustomHttpHeader) -> Self {
+        let mut v = self.custom_http_headers.unwrap_or_default();
+        v.push(input);
+        self.custom_http_headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn set_custom_http_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>) -> Self {
+        self.custom_http_headers = input;
+        self
+    }
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn get_custom_http_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+        &self.custom_http_headers
+    }
     /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
     pub fn build(
         self,
@@ -161,6 +190,7 @@ impl StartFileTransferInputBuilder {
             retrieve_file_paths: self.retrieve_file_paths,
             local_directory_path: self.local_directory_path,
             remote_directory_path: self.remote_directory_path,
+            custom_http_headers: self.custom_http_headers,
         })
     }
 }

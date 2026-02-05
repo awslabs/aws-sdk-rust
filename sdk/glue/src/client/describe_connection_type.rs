@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`athena_connection_properties(Option<HashMap::<String, Property>>)`](crate::operation::describe_connection_type::DescribeConnectionTypeOutput::athena_connection_properties): <p>Connection properties specific to the Athena compute environment.</p>
     ///   - [`python_connection_properties(Option<HashMap::<String, Property>>)`](crate::operation::describe_connection_type::DescribeConnectionTypeOutput::python_connection_properties): <p>Connection properties specific to the Python compute environment.</p>
     ///   - [`spark_connection_properties(Option<HashMap::<String, Property>>)`](crate::operation::describe_connection_type::DescribeConnectionTypeOutput::spark_connection_properties): <p>Connection properties specific to the Spark compute environment.</p>
+    ///   - [`rest_configuration(Option<RestConfiguration>)`](crate::operation::describe_connection_type::DescribeConnectionTypeOutput::rest_configuration): <p>HTTP request and response configuration, validation endpoint, and entity configurations for REST based data source.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionTypeError>`](crate::operation::describe_connection_type::DescribeConnectionTypeError)
     pub fn describe_connection_type(&self) -> crate::operation::describe_connection_type::builders::DescribeConnectionTypeFluentBuilder {
         crate::operation::describe_connection_type::builders::DescribeConnectionTypeFluentBuilder::new(self.handle.clone())

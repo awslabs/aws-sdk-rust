@@ -22,7 +22,7 @@ impl crate::operation::create_private_graph_endpoint::builders::CreatePrivateGra
 }
 /// Fluent builder constructing a request to `CreatePrivateGraphEndpoint`.
 ///
-/// <p>Create a private graph endpoint to allow private access from to the graph from within a VPC. You can attach security groups to the private graph endpoint.</p><note>
+/// <p>Create a private graph endpoint to allow private access to the graph from within a VPC. You can attach security groups to the private graph endpoint.</p><note>
 /// <p>VPC endpoint charges apply.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -162,17 +162,17 @@ impl CreatePrivateGraphEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
-    /// <p>Security groups to be attached to the private graph endpoint..</p>
+    /// <p>Security groups to be attached to the private graph endpoint.</p>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }

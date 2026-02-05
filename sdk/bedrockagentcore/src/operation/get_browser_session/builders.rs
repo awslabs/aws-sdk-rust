@@ -22,7 +22,7 @@ impl crate::operation::get_browser_session::builders::GetBrowserSessionInputBuil
 }
 /// Fluent builder constructing a request to `GetBrowserSession`.
 ///
-/// <p>Retrieves detailed information about a specific browser session in Amazon Bedrock. This operation returns the session's configuration, current status, associated streams, and metadata.</p>
+/// <p>Retrieves detailed information about a specific browser session in Amazon Bedrock AgentCore. This operation returns the session's configuration, current status, associated streams, and metadata.</p>
 /// <p>To get a browser session, you must specify both the browser identifier and the session ID. The response includes information about the session's viewport configuration, timeout settings, and stream endpoints.</p>
 /// <p>The following operations are related to <code>GetBrowserSession</code>:</p>
 /// <ul>

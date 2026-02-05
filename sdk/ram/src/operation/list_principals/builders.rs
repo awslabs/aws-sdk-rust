@@ -22,7 +22,9 @@ impl crate::operation::list_principals::builders::ListPrincipalsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListPrincipals`.
 ///
-/// <p>Lists the principals that you are sharing resources with or that are sharing resources with you.</p>
+/// <p>Lists the principals that you are sharing resources with or that are sharing resources with you.</p><note>
+/// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a paginated operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPrincipalsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -178,6 +180,8 @@ impl ListPrincipalsFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -198,6 +202,8 @@ impl ListPrincipalsFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -218,6 +224,8 @@ impl ListPrincipalsFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>

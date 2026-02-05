@@ -111,6 +111,9 @@ pub fn ser_av1_settings(
     if let Some(var_25) = &input.timecode_insertion {
         object.key("timecodeInsertion").string(var_25.as_str());
     }
+    if let Some(var_26) = &input.bit_depth {
+        object.key("bitDepth").string(var_26.as_str());
+    }
     Ok(())
 }
 
@@ -281,6 +284,13 @@ where
                             builder = builder.set_timecode_insertion(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1TimecodeInsertionBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "bitDepth" => {
+                            builder = builder.set_bit_depth(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1BitDepth::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

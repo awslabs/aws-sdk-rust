@@ -18,11 +18,11 @@ pub struct AbbreviatedExecution {
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the plan execution was ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful executions, or <code>ungraceful</code>, for ungraceful executions.</p>
     pub mode: crate::types::ExecutionMode,
     /// <p>The plan execution state. Provides the state of a plan execution, for example, In Progress or Paused by Operator.</p>
     pub execution_state: crate::types::ExecutionState,
-    /// <p>The plan execution action. Valid values are <code>Activate</code>, to activate an Amazon Web Services Region, or <code>Deactivate</code>, to deactivate a Region.</p>
+    /// <p>The plan execution action. Valid values are <code>activate</code>, to activate an Amazon Web Services Region, or <code>deactivate</code>, to deactivate a Region.</p>
     pub execution_action: crate::types::ExecutionAction,
     /// <p>The Amazon Web Services Region for a plan execution.</p>
     pub execution_region: ::std::string::String,
@@ -60,7 +60,7 @@ impl AbbreviatedExecution {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful executions, or <code>ungraceful</code>, for ungraceful executions.</p>
     pub fn mode(&self) -> &crate::types::ExecutionMode {
         &self.mode
     }
@@ -68,7 +68,7 @@ impl AbbreviatedExecution {
     pub fn execution_state(&self) -> &crate::types::ExecutionState {
         &self.execution_state
     }
-    /// <p>The plan execution action. Valid values are <code>Activate</code>, to activate an Amazon Web Services Region, or <code>Deactivate</code>, to deactivate a Region.</p>
+    /// <p>The plan execution action. Valid values are <code>activate</code>, to activate an Amazon Web Services Region, or <code>deactivate</code>, to deactivate a Region.</p>
     pub fn execution_action(&self) -> &crate::types::ExecutionAction {
         &self.execution_action
     }
@@ -208,18 +208,18 @@ impl AbbreviatedExecutionBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful executions, or <code>ungraceful</code>, for ungraceful executions.</p>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::ExecutionMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful executions, or <code>ungraceful</code>, for ungraceful executions.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The plan execution mode. Valid values are <code>Practice</code>, for testing without making actual changes, or <code>Recovery</code>, for actual traffic shifting and application recovery.</p>
+    /// <p>The plan execution mode. Valid values are <code>graceful</code>, for graceful executions, or <code>ungraceful</code>, for ungraceful executions.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
         &self.mode
     }
@@ -238,18 +238,18 @@ impl AbbreviatedExecutionBuilder {
     pub fn get_execution_state(&self) -> &::std::option::Option<crate::types::ExecutionState> {
         &self.execution_state
     }
-    /// <p>The plan execution action. Valid values are <code>Activate</code>, to activate an Amazon Web Services Region, or <code>Deactivate</code>, to deactivate a Region.</p>
+    /// <p>The plan execution action. Valid values are <code>activate</code>, to activate an Amazon Web Services Region, or <code>deactivate</code>, to deactivate a Region.</p>
     /// This field is required.
     pub fn execution_action(mut self, input: crate::types::ExecutionAction) -> Self {
         self.execution_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The plan execution action. Valid values are <code>Activate</code>, to activate an Amazon Web Services Region, or <code>Deactivate</code>, to deactivate a Region.</p>
+    /// <p>The plan execution action. Valid values are <code>activate</code>, to activate an Amazon Web Services Region, or <code>deactivate</code>, to deactivate a Region.</p>
     pub fn set_execution_action(mut self, input: ::std::option::Option<crate::types::ExecutionAction>) -> Self {
         self.execution_action = input;
         self
     }
-    /// <p>The plan execution action. Valid values are <code>Activate</code>, to activate an Amazon Web Services Region, or <code>Deactivate</code>, to deactivate a Region.</p>
+    /// <p>The plan execution action. Valid values are <code>activate</code>, to activate an Amazon Web Services Region, or <code>deactivate</code>, to deactivate a Region.</p>
     pub fn get_execution_action(&self) -> &::std::option::Option<crate::types::ExecutionAction> {
         &self.execution_action
     }

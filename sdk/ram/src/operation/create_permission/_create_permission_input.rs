@@ -6,7 +6,7 @@ pub struct CreatePermissionInput {
     /// <p>Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:Subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation. This value must match the display name of the resource (available in <code>ListResourceTypes</code>).</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
     /// <ul>
@@ -32,7 +32,7 @@ impl CreatePermissionInput {
         self.name.as_deref()
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:Subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation. This value must match the display name of the resource (available in <code>ListResourceTypes</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -96,20 +96,20 @@ impl CreatePermissionInputBuilder {
         &self.name
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:Subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation. This value must match the display name of the resource (available in <code>ListResourceTypes</code>).</p>
     /// This field is required.
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:Subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation. This value must match the display name of the resource (available in <code>ListResourceTypes</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
-    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
+    /// <p>The format is <code> <i><service-code></service-code></i>:<i><resource-type></resource-type></i> </code> and is case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:Subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation. This value must match the display name of the resource (available in <code>ListResourceTypes</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

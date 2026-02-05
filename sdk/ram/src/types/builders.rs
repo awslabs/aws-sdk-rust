@@ -11,6 +11,8 @@ pub use crate::types::_resource_share_association::ResourceShareAssociationBuild
 
 pub use crate::types::_resource_share_permission_summary::ResourceSharePermissionSummaryBuilder;
 
+pub use crate::types::_associated_source::AssociatedSourceBuilder;
+
 pub use crate::types::_service_name_and_resource_type::ServiceNameAndResourceTypeBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;

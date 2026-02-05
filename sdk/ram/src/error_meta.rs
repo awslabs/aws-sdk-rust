@@ -43,7 +43,7 @@ pub enum Error {
     ResourceShareInvitationArnNotFoundException(crate::types::error::ResourceShareInvitationArnNotFoundException),
     /// <p>The operation failed because the specified invitation is past its expiration date and time.</p>
     ResourceShareInvitationExpiredException(crate::types::error::ResourceShareInvitationExpiredException),
-    /// <p>The operation failed because it would exceed the limit for resource shares for your account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
+    /// <p>The operation failed because it would exceed the limit for resource shares for your account. You can associate up to 100 resources per call. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
     ResourceShareLimitExceededException(crate::types::error::ResourceShareLimitExceededException),
     /// <p>The operation failed because the service could not respond to the request due to an internal problem. Try again later.</p>
     ServerInternalException(crate::types::error::ServerInternalException),
@@ -445,6 +445,7 @@ impl From<crate::operation::create_resource_share::CreateResourceShareError> for
             crate::operation::create_resource_share::CreateResourceShareError::TagPolicyViolationException(inner) => {
                 Error::TagPolicyViolationException(inner)
             }
+            crate::operation::create_resource_share::CreateResourceShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_resource_share::CreateResourceShareError::UnknownResourceException(inner) => {
                 Error::UnknownResourceException(inner)
             }
@@ -575,6 +576,7 @@ impl From<crate::operation::delete_resource_share::DeleteResourceShareError> for
             crate::operation::delete_resource_share::DeleteResourceShareError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::operation::delete_resource_share::DeleteResourceShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_resource_share::DeleteResourceShareError::UnknownResourceException(inner) => {
                 Error::UnknownResourceException(inner)
             }
@@ -628,6 +630,9 @@ impl From<crate::operation::disassociate_resource_share::DisassociateResourceSha
             }
             crate::operation::disassociate_resource_share::DisassociateResourceShareError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::disassociate_resource_share::DisassociateResourceShareError::UnknownResourceException(inner) => {
                 Error::UnknownResourceException(inner)
@@ -1270,6 +1275,47 @@ impl From<crate::operation::list_resource_types::ListResourceTypesError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_source_associations::ListSourceAssociationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_source_associations::ListSourceAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_source_associations::ListSourceAssociationsError> for Error {
+    fn from(err: crate::operation::list_source_associations::ListSourceAssociationsError) -> Self {
+        match err {
+            crate::operation::list_source_associations::ListSourceAssociationsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::MalformedArnException(inner) => {
+                Error::MalformedArnException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::ServerInternalException(inner) => {
+                Error::ServerInternalException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::UnknownResourceException(inner) => {
+                Error::UnknownResourceException(inner)
+            }
+            crate::operation::list_source_associations::ListSourceAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1300,6 +1346,9 @@ impl From<crate::operation::promote_permission_created_from_policy::PromotePermi
         match err {
             crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::InvalidPolicyException(inner) => {
+                Error::InvalidPolicyException(inner)
             }
             crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError::MalformedArnException(inner) => {
                 Error::MalformedArnException(inner)

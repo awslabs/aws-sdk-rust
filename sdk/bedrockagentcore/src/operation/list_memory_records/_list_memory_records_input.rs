@@ -5,7 +5,7 @@
 pub struct ListMemoryRecordsInput {
     /// <p>The identifier of the AgentCore Memory resource for which to list memory records.</p>
     pub memory_id: ::std::option::Option<::std::string::String>,
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl ListMemoryRecordsInput {
     pub fn memory_id(&self) -> ::std::option::Option<&str> {
         self.memory_id.as_deref()
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -69,18 +69,18 @@ impl ListMemoryRecordsInputBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_id
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The namespace to filter memory records by. If specified, only memory records in this namespace are returned.</p>
+    /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

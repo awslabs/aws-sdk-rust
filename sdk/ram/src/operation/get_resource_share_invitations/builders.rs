@@ -22,7 +22,9 @@ impl crate::operation::get_resource_share_invitations::builders::GetResourceShar
 }
 /// Fluent builder constructing a request to `GetResourceShareInvitations`.
 ///
-/// <p>Retrieves details about invitations that you have received for resource shares.</p>
+/// <p>Retrieves details about invitations that you have received for resource shares.</p><note>
+/// <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value when calling a paginated operation. These operations can occasionally return an empty set of results even when there are more results available. The <code>NextToken</code> response parameter value is <code>null</code> <i>only</i> when there are no more results to display.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceShareInvitationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

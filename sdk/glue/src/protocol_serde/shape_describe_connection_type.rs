@@ -179,6 +179,9 @@ pub(crate) fn de_describe_connection_type(
                     builder =
                         builder.set_spark_connection_properties(crate::protocol_serde::shape_properties_map::de_properties_map(tokens, _value)?);
                 }
+                "RestConfiguration" => {
+                    builder = builder.set_rest_configuration(crate::protocol_serde::shape_rest_configuration::de_rest_configuration(tokens, _value)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

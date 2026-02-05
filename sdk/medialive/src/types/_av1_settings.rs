@@ -50,6 +50,8 @@ pub struct Av1Settings {
     pub temporal_aq: ::std::option::Option<crate::types::Av1TemporalAq>,
     /// Controls how MediaLive inserts timecodes into the video output encode. DISABLED: Do not insert timecodes. METADATA_OBU: Include timecodes. MediaLive inserts timecode metadata based on the timecode from the source specified in the Timecode Config property. The timecode metadata is a metadata OBU (Open Bitstream Unit) of type METADATA_TYPE_TIMECODE, in accordance with https://aomediacodec.github.io/av1-spec/#metadata-timecode-syntax.
     pub timecode_insertion: ::std::option::Option<crate::types::Av1TimecodeInsertionBehavior>,
+    /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+    pub bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
 }
 impl Av1Settings {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -144,6 +146,10 @@ impl Av1Settings {
     pub fn timecode_insertion(&self) -> ::std::option::Option<&crate::types::Av1TimecodeInsertionBehavior> {
         self.timecode_insertion.as_ref()
     }
+    /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+    pub fn bit_depth(&self) -> ::std::option::Option<&crate::types::Av1BitDepth> {
+        self.bit_depth.as_ref()
+    }
 }
 impl Av1Settings {
     /// Creates a new builder-style object to manufacture [`Av1Settings`](crate::types::Av1Settings).
@@ -179,6 +185,7 @@ pub struct Av1SettingsBuilder {
     pub(crate) spatial_aq: ::std::option::Option<crate::types::Av1SpatialAq>,
     pub(crate) temporal_aq: ::std::option::Option<crate::types::Av1TemporalAq>,
     pub(crate) timecode_insertion: ::std::option::Option<crate::types::Av1TimecodeInsertionBehavior>,
+    pub(crate) bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
 }
 impl Av1SettingsBuilder {
     /// Configures whether MediaLive will write AFD values into the video. AUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid). FIXED: the AFD value will be the value configured in the fixedAfd parameter. NONE: MediaLive won't write AFD into the video
@@ -505,6 +512,20 @@ impl Av1SettingsBuilder {
     pub fn get_timecode_insertion(&self) -> &::std::option::Option<crate::types::Av1TimecodeInsertionBehavior> {
         &self.timecode_insertion
     }
+    /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+    pub fn bit_depth(mut self, input: crate::types::Av1BitDepth) -> Self {
+        self.bit_depth = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+    pub fn set_bit_depth(mut self, input: ::std::option::Option<crate::types::Av1BitDepth>) -> Self {
+        self.bit_depth = input;
+        self
+    }
+    /// Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+    pub fn get_bit_depth(&self) -> &::std::option::Option<crate::types::Av1BitDepth> {
+        &self.bit_depth
+    }
     /// Consumes the builder and constructs a [`Av1Settings`](crate::types::Av1Settings).
     pub fn build(self) -> crate::types::Av1Settings {
         crate::types::Av1Settings {
@@ -531,6 +552,7 @@ impl Av1SettingsBuilder {
             spatial_aq: self.spatial_aq,
             temporal_aq: self.temporal_aq,
             timecode_insertion: self.timecode_insertion,
+            bit_depth: self.bit_depth,
         }
     }
 }

@@ -14,6 +14,7 @@
 /// match fielddatatype {
 ///     FieldDataType::Array => { /* ... */ },
 ///     FieldDataType::Bigint => { /* ... */ },
+///     FieldDataType::Binary => { /* ... */ },
 ///     FieldDataType::Boolean => { /* ... */ },
 ///     FieldDataType::Byte => { /* ... */ },
 ///     FieldDataType::Date => { /* ... */ },
@@ -28,6 +29,7 @@
 ///     FieldDataType::String => { /* ... */ },
 ///     FieldDataType::Struct => { /* ... */ },
 ///     FieldDataType::Timestamp => { /* ... */ },
+///     FieldDataType::Union => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +63,8 @@ pub enum FieldDataType {
     #[allow(missing_docs)] // documentation missing in model
     Bigint,
     #[allow(missing_docs)] // documentation missing in model
+    Binary,
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
     #[allow(missing_docs)] // documentation missing in model
     Byte,
@@ -88,6 +92,8 @@ pub enum FieldDataType {
     Struct,
     #[allow(missing_docs)] // documentation missing in model
     Timestamp,
+    #[allow(missing_docs)] // documentation missing in model
+    Union,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -97,6 +103,7 @@ impl ::std::convert::From<&str> for FieldDataType {
         match s {
             "ARRAY" => FieldDataType::Array,
             "BIGINT" => FieldDataType::Bigint,
+            "BINARY" => FieldDataType::Binary,
             "BOOLEAN" => FieldDataType::Boolean,
             "BYTE" => FieldDataType::Byte,
             "DATE" => FieldDataType::Date,
@@ -111,6 +118,7 @@ impl ::std::convert::From<&str> for FieldDataType {
             "STRING" => FieldDataType::String,
             "STRUCT" => FieldDataType::Struct,
             "TIMESTAMP" => FieldDataType::Timestamp,
+            "UNION" => FieldDataType::Union,
             other => FieldDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -128,6 +136,7 @@ impl FieldDataType {
         match self {
             FieldDataType::Array => "ARRAY",
             FieldDataType::Bigint => "BIGINT",
+            FieldDataType::Binary => "BINARY",
             FieldDataType::Boolean => "BOOLEAN",
             FieldDataType::Byte => "BYTE",
             FieldDataType::Date => "DATE",
@@ -142,6 +151,7 @@ impl FieldDataType {
             FieldDataType::String => "STRING",
             FieldDataType::Struct => "STRUCT",
             FieldDataType::Timestamp => "TIMESTAMP",
+            FieldDataType::Union => "UNION",
             FieldDataType::Unknown(value) => value.as_str(),
         }
     }
@@ -150,6 +160,7 @@ impl FieldDataType {
         &[
             "ARRAY",
             "BIGINT",
+            "BINARY",
             "BOOLEAN",
             "BYTE",
             "DATE",
@@ -164,6 +175,7 @@ impl FieldDataType {
             "STRING",
             "STRUCT",
             "TIMESTAMP",
+            "UNION",
         ]
     }
 }
@@ -189,6 +201,7 @@ impl ::std::fmt::Display for FieldDataType {
         match self {
             FieldDataType::Array => write!(f, "ARRAY"),
             FieldDataType::Bigint => write!(f, "BIGINT"),
+            FieldDataType::Binary => write!(f, "BINARY"),
             FieldDataType::Boolean => write!(f, "BOOLEAN"),
             FieldDataType::Byte => write!(f, "BYTE"),
             FieldDataType::Date => write!(f, "DATE"),
@@ -203,6 +216,7 @@ impl ::std::fmt::Display for FieldDataType {
             FieldDataType::String => write!(f, "STRING"),
             FieldDataType::Struct => write!(f, "STRUCT"),
             FieldDataType::Timestamp => write!(f, "TIMESTAMP"),
+            FieldDataType::Union => write!(f, "UNION"),
             FieldDataType::Unknown(value) => write!(f, "{value}"),
         }
     }

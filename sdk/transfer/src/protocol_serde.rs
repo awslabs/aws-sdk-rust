@@ -341,6 +341,8 @@ pub(crate) mod shape_connector_file_transfer_results;
 
 pub(crate) mod shape_custom_directories_type;
 
+pub(crate) mod shape_custom_http_header;
+
 pub(crate) mod shape_described_access;
 
 pub(crate) mod shape_described_agreement;
@@ -426,6 +428,8 @@ pub(crate) mod shape_web_app_units;
 pub(crate) mod shape_workflow_details;
 
 pub(crate) mod shape_workflow_step;
+
+pub(crate) mod shape_as2_async_mdn_connector_config;
 
 pub(crate) mod shape_certificate_ids;
 
@@ -542,6 +546,8 @@ pub(crate) mod shape_ssh_public_key;
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_user_details;
+
+pub(crate) mod shape_as2_async_mdn_server_ids;
 
 pub(crate) mod shape_execution_step_result;
 

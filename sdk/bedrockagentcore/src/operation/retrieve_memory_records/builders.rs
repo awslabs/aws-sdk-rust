@@ -129,17 +129,17 @@ impl RetrieveMemoryRecordsFluentBuilder {
     pub fn get_memory_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_id()
     }
-    /// <p>The namespace to filter memory records by.</p>
+    /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The namespace to filter memory records by.</p>
+    /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The namespace to filter memory records by.</p>
+    /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

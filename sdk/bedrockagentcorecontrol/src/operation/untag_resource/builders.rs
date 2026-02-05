@@ -23,7 +23,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes the specified tags from the specified resource.</p><note>
-/// <p>This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter tool, and Gateway.</p>
+/// <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {

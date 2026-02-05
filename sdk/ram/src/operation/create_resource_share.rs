@@ -269,7 +269,7 @@ pub enum CreateResourceShareError {
     MalformedArnException(crate::types::error::MalformedArnException),
     /// <p>The operation failed because the requested operation isn't permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>The operation failed because it would exceed the limit for resource shares for your account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
+    /// <p>The operation failed because it would exceed the limit for resource shares for your account. You can associate up to 100 resources per call. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
     ResourceShareLimitExceededException(crate::types::error::ResourceShareLimitExceededException),
     /// <p>The operation failed because the service could not respond to the request due to an internal problem. Try again later.</p>
     ServerInternalException(crate::types::error::ServerInternalException),
@@ -279,6 +279,8 @@ pub enum CreateResourceShareError {
     TagLimitExceededException(crate::types::error::TagLimitExceededException),
     /// <p>The operation failed because the specified tag key is a reserved word and can't be used.</p>
     TagPolicyViolationException(crate::types::error::TagPolicyViolationException),
+    /// <p>The operation failed because it exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The operation failed because a specified resource couldn't be found.</p>
     UnknownResourceException(crate::types::error::UnknownResourceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -325,6 +327,7 @@ impl CreateResourceShareError {
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TagLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TagPolicyViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnknownResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -373,6 +376,10 @@ impl CreateResourceShareError {
     pub fn is_tag_policy_violation_exception(&self) -> bool {
         matches!(self, Self::TagPolicyViolationException(_))
     }
+    /// Returns `true` if the error kind is `CreateResourceShareError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `CreateResourceShareError::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(self, Self::UnknownResourceException(_))
@@ -392,6 +399,7 @@ impl ::std::error::Error for CreateResourceShareError {
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::TagLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::TagPolicyViolationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnknownResourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -411,6 +419,7 @@ impl ::std::fmt::Display for CreateResourceShareError {
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::TagLimitExceededException(_inner) => _inner.fmt(f),
             Self::TagPolicyViolationException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnknownResourceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -444,6 +453,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateResourc
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagPolicyViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnknownResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

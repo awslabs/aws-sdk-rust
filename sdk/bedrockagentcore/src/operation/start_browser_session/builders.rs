@@ -22,7 +22,7 @@ impl crate::operation::start_browser_session::builders::StartBrowserSessionInput
 }
 /// Fluent builder constructing a request to `StartBrowserSession`.
 ///
-/// <p>Creates and initializes a browser session in Amazon Bedrock. The session enables agents to navigate and interact with web content, extract information from websites, and perform web-based tasks as part of their response generation.</p>
+/// <p>Creates and initializes a browser session in Amazon Bedrock AgentCore. The session enables agents to navigate and interact with web content, extract information from websites, and perform web-based tasks as part of their response generation.</p>
 /// <p>To create a session, you must specify a browser identifier and a name. You can also configure the viewport dimensions to control the visible area of web content. The session remains active until it times out or you explicitly stop it using the <code>StopBrowserSession</code> operation.</p>
 /// <p>The following operations are related to <code>StartBrowserSession</code>:</p>
 /// <ul>
@@ -30,6 +30,8 @@ impl crate::operation::start_browser_session::builders::StartBrowserSessionInput
 /// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_UpdateBrowserStream.html">UpdateBrowserStream</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_SaveBrowserSessionProfile.html">SaveBrowserSessionProfile</a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a></p></li>
 /// </ul>
@@ -188,17 +190,17 @@ impl StartBrowserSessionFluentBuilder {
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_timeout_seconds()
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn view_port(mut self, input: crate::types::ViewPort) -> Self {
         self.inner = self.inner.view_port(input);
         self
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn set_view_port(mut self, input: ::std::option::Option<crate::types::ViewPort>) -> Self {
         self.inner = self.inner.set_view_port(input);
         self
     }
-    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock uses a default viewport size.</p>
+    /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub fn get_view_port(&self) -> &::std::option::Option<crate::types::ViewPort> {
         self.inner.get_view_port()
     }
@@ -221,17 +223,31 @@ impl StartBrowserSessionFluentBuilder {
     pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
         self.inner.get_extensions()
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn profile_configuration(mut self, input: crate::types::BrowserProfileConfiguration) -> Self {
+        self.inner = self.inner.profile_configuration(input);
+        self
+    }
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn set_profile_configuration(mut self, input: ::std::option::Option<crate::types::BrowserProfileConfiguration>) -> Self {
+        self.inner = self.inner.set_profile_configuration(input);
+        self
+    }
+    /// <p>The browser profile configuration to use for this session. A browser profile contains persistent data such as cookies and local storage that can be reused across multiple browser sessions. If specified, the session initializes with the profile's stored data, enabling continuity for tasks that require authentication or personalized settings.</p>
+    pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::BrowserProfileConfiguration> {
+        self.inner.get_profile_configuration()
+    }
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

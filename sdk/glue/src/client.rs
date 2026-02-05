@@ -281,6 +281,8 @@ mod delete_column_statistics_task_settings;
 
 mod delete_connection;
 
+mod delete_connection_type;
+
 mod delete_crawler;
 
 mod delete_custom_entity_type;
@@ -568,6 +570,8 @@ mod put_schema_version_metadata;
 mod put_workflow_run_properties;
 
 mod query_schema_version_metadata;
+
+mod register_connection_type;
 
 mod register_schema_version;
 

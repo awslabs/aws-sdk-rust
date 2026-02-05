@@ -23,9 +23,9 @@ pub struct InvokeAgentRuntimeInput {
     pub trace_state: ::std::option::Option<::std::string::String>,
     /// <p>Additional context information for distributed tracing.</p>
     pub baggage: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.</p>
     pub agent_runtime_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default version of the agent runtime.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account for the agent runtime resource.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -73,11 +73,11 @@ impl InvokeAgentRuntimeInput {
     pub fn baggage(&self) -> ::std::option::Option<&str> {
         self.baggage.as_deref()
     }
-    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.</p>
     pub fn agent_runtime_arn(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_arn.as_deref()
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default version of the agent runtime.</p>
     pub fn qualifier(&self) -> ::std::option::Option<&str> {
         self.qualifier.as_deref()
     }
@@ -277,32 +277,32 @@ impl InvokeAgentRuntimeInputBuilder {
     pub fn get_baggage(&self) -> &::std::option::Option<::std::string::String> {
         &self.baggage
     }
-    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.</p>
     /// This field is required.
     pub fn agent_runtime_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_runtime_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.</p>
     pub fn set_agent_runtime_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_runtime_arn = input;
         self
     }
-    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock.</p>
+    /// <p>The Amazon Web Services Resource Name (ARN) of the agent runtime to invoke. The ARN uniquely identifies the agent runtime resource in Amazon Bedrock AgentCore.</p>
     pub fn get_agent_runtime_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_arn
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default version of the agent runtime.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default version of the agent runtime.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualifier = input;
         self
     }
-    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock uses the default version of the agent runtime.</p>
+    /// <p>The qualifier to use for the agent runtime. This can be a version number or an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default version of the agent runtime.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }

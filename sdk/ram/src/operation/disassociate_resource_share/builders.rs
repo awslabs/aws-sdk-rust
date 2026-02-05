@@ -22,7 +22,7 @@ impl crate::operation::disassociate_resource_share::builders::DisassociateResour
 }
 /// Fluent builder constructing a request to `DisassociateResourceShare`.
 ///
-/// <p>Removes the specified principals or resources from participating in the specified resource share.</p>
+/// <p>Removes the specified principals, resources, or source constraints from participating in the specified resource share.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResourceShareFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -159,6 +159,8 @@ impl DisassociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -179,6 +181,8 @@ impl DisassociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -199,6 +203,8 @@ impl DisassociateResourceShareFluentBuilder {
     /// <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></p></li>
     /// <li>
     /// <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></p></li>
+    /// <li>
+    /// <p>A service principal name, for example: <code>service-id.amazonaws.com</code></p></li>
     /// </ul><note>
     /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
@@ -230,17 +236,17 @@ impl DisassociateResourceShareFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) to remove from the resource share. This enables granular management of source constraints while maintaining service principal associations. At least one source must remain when service principals are present.</p>
     pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sources(input.into());
         self
     }
-    /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) to remove from the resource share. This enables granular management of source constraints while maintaining service principal associations. At least one source must remain when service principals are present.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
+    /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) to remove from the resource share. This enables granular management of source constraints while maintaining service principal associations. At least one source must remain when service principals are present.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sources()
     }

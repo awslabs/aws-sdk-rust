@@ -247,6 +247,8 @@ pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInputBu
 
 pub use crate::types::_browser_summary::BrowserSummaryBuilder;
 
+pub use crate::types::_browser_profile_summary::BrowserProfileSummaryBuilder;
+
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItemBuilder;
 
 pub use crate::types::_agent_runtime::AgentRuntimeBuilder;

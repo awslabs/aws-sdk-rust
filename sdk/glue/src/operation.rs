@@ -178,6 +178,9 @@ pub mod delete_column_statistics_task_settings;
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
 
+/// Types for the `DeleteConnectionType` operation.
+pub mod delete_connection_type;
+
 /// Types for the `DeleteCrawler` operation.
 pub mod delete_crawler;
 
@@ -609,6 +612,9 @@ pub mod put_workflow_run_properties;
 
 /// Types for the `QuerySchemaVersionMetadata` operation.
 pub mod query_schema_version_metadata;
+
+/// Types for the `RegisterConnectionType` operation.
+pub mod register_connection_type;
 
 /// Types for the `RegisterSchemaVersion` operation.
 pub mod register_schema_version;

@@ -17,6 +17,9 @@
 ///     ResourceShareAssociationStatus::Disassociated => { /* ... */ },
 ///     ResourceShareAssociationStatus::Disassociating => { /* ... */ },
 ///     ResourceShareAssociationStatus::Failed => { /* ... */ },
+///     ResourceShareAssociationStatus::Restoring => { /* ... */ },
+///     ResourceShareAssociationStatus::Suspended => { /* ... */ },
+///     ResourceShareAssociationStatus::Suspending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +58,12 @@ pub enum ResourceShareAssociationStatus {
     Disassociating,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Restoring,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspended,
+    #[allow(missing_docs)] // documentation missing in model
+    Suspending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +76,9 @@ impl ::std::convert::From<&str> for ResourceShareAssociationStatus {
             "DISASSOCIATED" => ResourceShareAssociationStatus::Disassociated,
             "DISASSOCIATING" => ResourceShareAssociationStatus::Disassociating,
             "FAILED" => ResourceShareAssociationStatus::Failed,
+            "RESTORING" => ResourceShareAssociationStatus::Restoring,
+            "SUSPENDED" => ResourceShareAssociationStatus::Suspended,
+            "SUSPENDING" => ResourceShareAssociationStatus::Suspending,
             other => ResourceShareAssociationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +99,24 @@ impl ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Disassociated => "DISASSOCIATED",
             ResourceShareAssociationStatus::Disassociating => "DISASSOCIATING",
             ResourceShareAssociationStatus::Failed => "FAILED",
+            ResourceShareAssociationStatus::Restoring => "RESTORING",
+            ResourceShareAssociationStatus::Suspended => "SUSPENDED",
+            ResourceShareAssociationStatus::Suspending => "SUSPENDING",
             ResourceShareAssociationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASSOCIATED", "ASSOCIATING", "DISASSOCIATED", "DISASSOCIATING", "FAILED"]
+        &[
+            "ASSOCIATED",
+            "ASSOCIATING",
+            "DISASSOCIATED",
+            "DISASSOCIATING",
+            "FAILED",
+            "RESTORING",
+            "SUSPENDED",
+            "SUSPENDING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceShareAssociationStatus {
@@ -120,6 +144,9 @@ impl ::std::fmt::Display for ResourceShareAssociationStatus {
             ResourceShareAssociationStatus::Disassociated => write!(f, "DISASSOCIATED"),
             ResourceShareAssociationStatus::Disassociating => write!(f, "DISASSOCIATING"),
             ResourceShareAssociationStatus::Failed => write!(f, "FAILED"),
+            ResourceShareAssociationStatus::Restoring => write!(f, "RESTORING"),
+            ResourceShareAssociationStatus::Suspended => write!(f, "SUSPENDED"),
+            ResourceShareAssociationStatus::Suspending => write!(f, "SUSPENDING"),
             ResourceShareAssociationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

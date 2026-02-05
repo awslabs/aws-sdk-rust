@@ -15,6 +15,8 @@ pub struct GetBrowserSessionOutput {
     pub view_port: ::std::option::Option<crate::types::ViewPort>,
     /// <p>The list of browser extensions that are configured in the browser session.</p>
     pub extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
+    /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
+    pub profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
     /// <p>The timeout period for the browser session in seconds.</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The current status of the browser session. Possible values include ACTIVE, STOPPING, and STOPPED.</p>
@@ -55,6 +57,10 @@ impl GetBrowserSessionOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extensions.is_none()`.
     pub fn extensions(&self) -> &[crate::types::BrowserExtension] {
         self.extensions.as_deref().unwrap_or_default()
+    }
+    /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
+    pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::BrowserProfileConfiguration> {
+        self.profile_configuration.as_ref()
     }
     /// <p>The timeout period for the browser session in seconds.</p>
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
@@ -99,6 +105,7 @@ pub struct GetBrowserSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) view_port: ::std::option::Option<crate::types::ViewPort>,
     pub(crate) extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
+    pub(crate) profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserSessionStatus>,
     pub(crate) streams: ::std::option::Option<crate::types::BrowserSessionStream>,
@@ -199,6 +206,20 @@ impl GetBrowserSessionOutputBuilder {
     /// <p>The list of browser extensions that are configured in the browser session.</p>
     pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
         &self.extensions
+    }
+    /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
+    pub fn profile_configuration(mut self, input: crate::types::BrowserProfileConfiguration) -> Self {
+        self.profile_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
+    pub fn set_profile_configuration(mut self, input: ::std::option::Option<crate::types::BrowserProfileConfiguration>) -> Self {
+        self.profile_configuration = input;
+        self
+    }
+    /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
+    pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::BrowserProfileConfiguration> {
+        &self.profile_configuration
     }
     /// <p>The timeout period for the browser session in seconds.</p>
     pub fn session_timeout_seconds(mut self, input: i32) -> Self {
@@ -309,6 +330,7 @@ impl GetBrowserSessionOutputBuilder {
             })?,
             view_port: self.view_port,
             extensions: self.extensions,
+            profile_configuration: self.profile_configuration,
             session_timeout_seconds: self.session_timeout_seconds,
             status: self.status,
             streams: self.streams,

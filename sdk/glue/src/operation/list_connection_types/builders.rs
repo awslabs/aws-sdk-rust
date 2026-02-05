@@ -22,7 +22,8 @@ impl crate::operation::list_connection_types::builders::ListConnectionTypesInput
 }
 /// Fluent builder constructing a request to `ListConnectionTypes`.
 ///
-/// <p>The <code>ListConnectionTypes</code> API provides a discovery mechanism to learn available connection types in Glue. The response contains a list of connection types with high-level details of what is supported for each connection type. The connection types listed are the set of supported options for the <code>ConnectionType</code> value in the <code>CreateConnection</code> API.</p>
+/// <p>The <code>ListConnectionTypes</code> API provides a discovery mechanism to learn available connection types in Glue. The response contains a list of connection types with high-level details of what is supported for each connection type, including both built-in connection types and custom connection types registered via <code>RegisterConnectionType</code>. The connection types listed are the set of supported options for the <code>ConnectionType</code> value in the <code>CreateConnection</code> API.</p>
+/// <p>See also: <code>DescribeConnectionType</code>, <code>RegisterConnectionType</code>, <code>DeleteConnectionType</code></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectionTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

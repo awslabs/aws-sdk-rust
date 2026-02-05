@@ -27,6 +27,8 @@ pub use crate::types::_permission_feature_set::PermissionFeatureSet;
 
 pub use crate::types::_permission_type::PermissionType;
 
+pub use crate::types::_associated_source::AssociatedSource;
+
 pub use crate::types::_service_name_and_resource_type::ServiceNameAndResourceType;
 
 pub use crate::types::_resource_region_scope::ResourceRegionScope;
@@ -52,6 +54,8 @@ pub use crate::types::_resource_share_permission_detail::ResourceSharePermission
 pub use crate::types::_permission_status::PermissionStatus;
 
 mod _associated_permission;
+
+mod _associated_source;
 
 mod _permission_feature_set;
 

@@ -81,6 +81,8 @@ pub(crate) mod shape_list_sessions;
 
 pub(crate) mod shape_retrieve_memory_records;
 
+pub(crate) mod shape_save_browser_session_profile;
+
 pub(crate) mod shape_start_browser_session;
 
 pub(crate) mod shape_start_code_interpreter_session;
@@ -165,6 +167,8 @@ pub(crate) mod shape_retryable_conflict_exception;
 
 pub(crate) mod shape_runtime_client_error;
 
+pub(crate) mod shape_save_browser_session_profile_input;
+
 pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -208,6 +212,8 @@ pub(crate) mod shape_branch;
 pub(crate) mod shape_browser_extension;
 
 pub(crate) mod shape_browser_extensions;
+
+pub(crate) mod shape_browser_profile_configuration;
 
 pub(crate) mod shape_browser_session_stream;
 

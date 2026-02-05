@@ -10,7 +10,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateBrowserStreamOutput`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput) with field(s):
     ///   - [`browser_identifier(String)`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput::browser_identifier): <p>The identifier of the browser.</p>
     ///   - [`session_id(String)`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput::session_id): <p>The identifier of the browser session.</p>
-    ///   - [`streams(Option<BrowserSessionStream>)`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput::streams): <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    ///   - [`streams(Option<BrowserSessionStream>)`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput::streams): <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::update_browser_stream::UpdateBrowserStreamOutput::updated_at): <p>The time at which the browser stream was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateBrowserStreamError>`](crate::operation::update_browser_stream::UpdateBrowserStreamError)
     pub fn update_browser_stream(&self) -> crate::operation::update_browser_stream::builders::UpdateBrowserStreamFluentBuilder {

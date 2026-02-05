@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_api_key_credential_providers_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_browser_profiles_output_output_next_token(
+    input: &crate::operation::list_browser_profiles::ListBrowserProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_browsers_output_output_next_token(
     input: &crate::operation::list_browsers::ListBrowsersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -194,6 +204,13 @@ pub(crate) fn lens_list_api_key_credential_providers_output_output_credential_pr
     input: crate::operation::list_api_key_credential_providers::ListApiKeyCredentialProvidersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApiKeyCredentialProviderItem>> {
     let input = input.credential_providers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_browser_profiles_output_output_profile_summaries(
+    input: crate::operation::list_browser_profiles::ListBrowserProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BrowserProfileSummary>> {
+    let input = input.profile_summaries;
     ::std::option::Option::Some(input)
 }
 

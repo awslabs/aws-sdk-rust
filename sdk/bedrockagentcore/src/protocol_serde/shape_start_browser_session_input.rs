@@ -21,17 +21,23 @@ pub fn ser_start_browser_session_input_input(
     if let Some(var_6) = &input.name {
         object.key("name").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.session_timeout_seconds {
+    if let Some(var_7) = &input.profile_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("profileConfiguration").start_object();
+        crate::protocol_serde::shape_browser_profile_configuration::ser_browser_profile_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.session_timeout_seconds {
         object.key("sessionTimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_8) = &input.view_port {
+    if let Some(var_10) = &input.view_port {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("viewPort").start_object();
-        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("viewPort").start_object();
+        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

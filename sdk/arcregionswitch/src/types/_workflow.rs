@@ -6,7 +6,7 @@
 pub struct Workflow {
     /// <p>The steps that make up the workflow.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
-    /// <p>The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action that the workflow performs. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub workflow_target_action: crate::types::WorkflowTargetAction,
     /// <p>The Amazon Web Services Region that the workflow targets.</p>
     pub workflow_target_region: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl Workflow {
     pub fn steps(&self) -> &[crate::types::Step] {
         self.steps.as_deref().unwrap_or_default()
     }
-    /// <p>The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action that the workflow performs. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn workflow_target_action(&self) -> &crate::types::WorkflowTargetAction {
         &self.workflow_target_action
     }
@@ -70,18 +70,18 @@ impl WorkflowBuilder {
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
         &self.steps
     }
-    /// <p>The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action that the workflow performs. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     /// This field is required.
     pub fn workflow_target_action(mut self, input: crate::types::WorkflowTargetAction) -> Self {
         self.workflow_target_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action that the workflow performs. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn set_workflow_target_action(mut self, input: ::std::option::Option<crate::types::WorkflowTargetAction>) -> Self {
         self.workflow_target_action = input;
         self
     }
-    /// <p>The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.</p>
+    /// <p>The action that the workflow performs. Valid values include <code>activate</code> and <code>deactivate</code>.</p>
     pub fn get_workflow_target_action(&self) -> &::std::option::Option<crate::types::WorkflowTargetAction> {
         &self.workflow_target_action
     }

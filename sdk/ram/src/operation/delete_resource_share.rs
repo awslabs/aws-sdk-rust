@@ -291,6 +291,8 @@ pub enum DeleteResourceShareError {
     ServerInternalException(crate::types::error::ServerInternalException),
     /// <p>The operation failed because the service isn't available. Try again later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The operation failed because it exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The operation failed because a specified resource couldn't be found.</p>
     UnknownResourceException(crate::types::error::UnknownResourceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -334,6 +336,7 @@ impl DeleteResourceShareError {
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerInternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnknownResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -370,6 +373,10 @@ impl DeleteResourceShareError {
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
     }
+    /// Returns `true` if the error kind is `DeleteResourceShareError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `DeleteResourceShareError::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(self, Self::UnknownResourceException(_))
@@ -386,6 +393,7 @@ impl ::std::error::Error for DeleteResourceShareError {
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerInternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnknownResourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -402,6 +410,7 @@ impl ::std::fmt::Display for DeleteResourceShareError {
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::ServerInternalException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnknownResourceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -432,6 +441,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteResourc
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerInternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnknownResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

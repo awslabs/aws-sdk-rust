@@ -33,6 +33,12 @@ pub fn ser_as2_connector_config(
     if let Some(var_10) = &input.preserve_content_type {
         object.key("PreserveContentType").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.async_mdn_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("AsyncMdnConfig").start_object();
+        crate::protocol_serde::shape_as2_async_mdn_connector_config::ser_as2_async_mdn_connector_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -120,6 +126,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::PreserveContentType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "AsyncMdnConfig" => {
+                            builder = builder.set_async_mdn_config(
+                                crate::protocol_serde::shape_as2_async_mdn_connector_config::de_as2_async_mdn_connector_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -31,6 +31,8 @@ pub(crate) mod shape_create_api_key_credential_provider;
 
 pub(crate) mod shape_create_browser;
 
+pub(crate) mod shape_create_browser_profile;
+
 pub(crate) mod shape_create_code_interpreter;
 
 pub(crate) mod shape_create_evaluator;
@@ -58,6 +60,8 @@ pub(crate) mod shape_delete_agent_runtime_endpoint;
 pub(crate) mod shape_delete_api_key_credential_provider;
 
 pub(crate) mod shape_delete_browser;
+
+pub(crate) mod shape_delete_browser_profile;
 
 pub(crate) mod shape_delete_code_interpreter;
 
@@ -88,6 +92,8 @@ pub(crate) mod shape_get_agent_runtime_endpoint;
 pub(crate) mod shape_get_api_key_credential_provider;
 
 pub(crate) mod shape_get_browser;
+
+pub(crate) mod shape_get_browser_profile;
 
 pub(crate) mod shape_get_code_interpreter;
 
@@ -122,6 +128,8 @@ pub(crate) mod shape_list_agent_runtime_versions;
 pub(crate) mod shape_list_agent_runtimes;
 
 pub(crate) mod shape_list_api_key_credential_providers;
+
+pub(crate) mod shape_list_browser_profiles;
 
 pub(crate) mod shape_list_browsers;
 
@@ -208,6 +216,8 @@ pub(crate) mod shape_create_agent_runtime_input;
 pub(crate) mod shape_create_api_key_credential_provider_input;
 
 pub(crate) mod shape_create_browser_input;
+
+pub(crate) mod shape_create_browser_profile_input;
 
 pub(crate) mod shape_create_code_interpreter_input;
 
@@ -318,6 +328,8 @@ pub(crate) mod shape_api_key_credential_providers;
 pub(crate) mod shape_authorizer_configuration;
 
 pub(crate) mod shape_browser_network_configuration;
+
+pub(crate) mod shape_browser_profile_summaries;
 
 pub(crate) mod shape_browser_signing_config_input;
 
@@ -440,6 +452,8 @@ pub(crate) mod shape_api_key_credential_provider_item;
 pub(crate) mod shape_atlassian_oauth2_provider_config_input;
 
 pub(crate) mod shape_atlassian_oauth2_provider_config_output;
+
+pub(crate) mod shape_browser_profile_summary;
 
 pub(crate) mod shape_browser_summary;
 

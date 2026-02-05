@@ -407,6 +407,8 @@ pub use crate::types::_video_codec_settings::VideoCodecSettings;
 
 pub use crate::types::_av1_settings::Av1Settings;
 
+pub use crate::types::_av1_bit_depth::Av1BitDepth;
+
 pub use crate::types::_av1_timecode_insertion_behavior::Av1TimecodeInsertionBehavior;
 
 pub use crate::types::_av1_temporal_aq::Av1TemporalAq;
@@ -1468,6 +1470,8 @@ mod _audio_watermark_settings;
 mod _authentication_scheme;
 
 mod _automatic_input_failover_settings;
+
+mod _av1_bit_depth;
 
 mod _av1_color_space_settings;
 

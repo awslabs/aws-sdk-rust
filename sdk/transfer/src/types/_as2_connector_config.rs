@@ -2,7 +2,7 @@
 
 /// <p>Contains the details for an AS2 connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub local_profile_id: ::std::option::Option<::std::string::String>,
@@ -52,6 +52,8 @@ pub struct As2ConnectorConfig {
     pub basic_auth_secret_id: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated with objects in S3 instead of having the content type mapped based on the file extension. This parameter is enabled by default when you create an AS2 connector from the console, but disabled by default when you create an AS2 connector by calling the API directly.</p>
     pub preserve_content_type: ::std::option::Option<crate::types::PreserveContentType>,
+    /// <p>Configuration settings for asynchronous Message Disposition Notification (MDN) responses. This allows you to configure where asynchronous MDN responses should be sent and which servers should handle them.</p>
+    pub async_mdn_config: ::std::option::Option<crate::types::As2AsyncMdnConnectorConfig>,
 }
 impl As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
@@ -122,6 +124,27 @@ impl As2ConnectorConfig {
     pub fn preserve_content_type(&self) -> ::std::option::Option<&crate::types::PreserveContentType> {
         self.preserve_content_type.as_ref()
     }
+    /// <p>Configuration settings for asynchronous Message Disposition Notification (MDN) responses. This allows you to configure where asynchronous MDN responses should be sent and which servers should handle them.</p>
+    pub fn async_mdn_config(&self) -> ::std::option::Option<&crate::types::As2AsyncMdnConnectorConfig> {
+        self.async_mdn_config.as_ref()
+    }
+}
+impl ::std::fmt::Debug for As2ConnectorConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("As2ConnectorConfig");
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("message_subject", &"*** Sensitive Data Redacted ***");
+        formatter.field("compression", &self.compression);
+        formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("mdn_signing_algorithm", &self.mdn_signing_algorithm);
+        formatter.field("mdn_response", &self.mdn_response);
+        formatter.field("basic_auth_secret_id", &self.basic_auth_secret_id);
+        formatter.field("preserve_content_type", &self.preserve_content_type);
+        formatter.field("async_mdn_config", &self.async_mdn_config);
+        formatter.finish()
+    }
 }
 impl As2ConnectorConfig {
     /// Creates a new builder-style object to manufacture [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
@@ -131,7 +154,7 @@ impl As2ConnectorConfig {
 }
 
 /// A builder for [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct As2ConnectorConfigBuilder {
     pub(crate) local_profile_id: ::std::option::Option<::std::string::String>,
@@ -144,6 +167,7 @@ pub struct As2ConnectorConfigBuilder {
     pub(crate) mdn_response: ::std::option::Option<crate::types::MdnResponse>,
     pub(crate) basic_auth_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) preserve_content_type: ::std::option::Option<crate::types::PreserveContentType>,
+    pub(crate) async_mdn_config: ::std::option::Option<crate::types::As2AsyncMdnConnectorConfig>,
 }
 impl As2ConnectorConfigBuilder {
     /// <p>A unique identifier for the AS2 local profile.</p>
@@ -370,6 +394,20 @@ impl As2ConnectorConfigBuilder {
     pub fn get_preserve_content_type(&self) -> &::std::option::Option<crate::types::PreserveContentType> {
         &self.preserve_content_type
     }
+    /// <p>Configuration settings for asynchronous Message Disposition Notification (MDN) responses. This allows you to configure where asynchronous MDN responses should be sent and which servers should handle them.</p>
+    pub fn async_mdn_config(mut self, input: crate::types::As2AsyncMdnConnectorConfig) -> Self {
+        self.async_mdn_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for asynchronous Message Disposition Notification (MDN) responses. This allows you to configure where asynchronous MDN responses should be sent and which servers should handle them.</p>
+    pub fn set_async_mdn_config(mut self, input: ::std::option::Option<crate::types::As2AsyncMdnConnectorConfig>) -> Self {
+        self.async_mdn_config = input;
+        self
+    }
+    /// <p>Configuration settings for asynchronous Message Disposition Notification (MDN) responses. This allows you to configure where asynchronous MDN responses should be sent and which servers should handle them.</p>
+    pub fn get_async_mdn_config(&self) -> &::std::option::Option<crate::types::As2AsyncMdnConnectorConfig> {
+        &self.async_mdn_config
+    }
     /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
     pub fn build(self) -> crate::types::As2ConnectorConfig {
         crate::types::As2ConnectorConfig {
@@ -383,6 +421,24 @@ impl As2ConnectorConfigBuilder {
             mdn_response: self.mdn_response,
             basic_auth_secret_id: self.basic_auth_secret_id,
             preserve_content_type: self.preserve_content_type,
+            async_mdn_config: self.async_mdn_config,
         }
+    }
+}
+impl ::std::fmt::Debug for As2ConnectorConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("As2ConnectorConfigBuilder");
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("message_subject", &"*** Sensitive Data Redacted ***");
+        formatter.field("compression", &self.compression);
+        formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("mdn_signing_algorithm", &self.mdn_signing_algorithm);
+        formatter.field("mdn_response", &self.mdn_response);
+        formatter.field("basic_auth_secret_id", &self.basic_auth_secret_id);
+        formatter.field("preserve_content_type", &self.preserve_content_type);
+        formatter.field("async_mdn_config", &self.async_mdn_config);
+        formatter.finish()
     }
 }

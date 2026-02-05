@@ -79,6 +79,8 @@ pub use crate::types::_sftp_connector_config::SftpConnectorConfigBuilder;
 
 pub use crate::types::_as2_connector_config::As2ConnectorConfigBuilder;
 
+pub use crate::types::_as2_async_mdn_connector_config::As2AsyncMdnConnectorConfigBuilder;
+
 pub use crate::types::_described_connector::DescribedConnectorBuilder;
 
 pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfigBuilder;
@@ -98,6 +100,8 @@ pub use crate::types::_described_agreement::DescribedAgreementBuilder;
 pub use crate::types::_listed_agreement::ListedAgreementBuilder;
 
 pub use crate::types::_sftp_connector_connection_details::SftpConnectorConnectionDetailsBuilder;
+
+pub use crate::types::_custom_http_header::CustomHttpHeaderBuilder;
 
 pub use crate::types::_listed_host_key::ListedHostKeyBuilder;
 

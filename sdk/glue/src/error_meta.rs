@@ -2243,6 +2243,39 @@ impl From<crate::operation::delete_connection::DeleteConnectionError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_type::DeleteConnectionTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection_type::DeleteConnectionTypeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connection_type::DeleteConnectionTypeError> for Error {
+    fn from(err: crate::operation::delete_connection_type::DeleteConnectionTypeError) -> Self {
+        match err {
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_connection_type::DeleteConnectionTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_crawler::DeleteCrawlerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6836,6 +6869,45 @@ impl From<crate::operation::query_schema_version_metadata::QuerySchemaVersionMet
                 Error::InvalidInputException(inner)
             }
             crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_connection_type::RegisterConnectionTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_connection_type::RegisterConnectionTypeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_connection_type::RegisterConnectionTypeError> for Error {
+    fn from(err: crate::operation::register_connection_type::RegisterConnectionTypeError) -> Self {
+        match err {
+            crate::operation::register_connection_type::RegisterConnectionTypeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_connection_type::RegisterConnectionTypeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::register_connection_type::RegisterConnectionTypeError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::register_connection_type::RegisterConnectionTypeError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::register_connection_type::RegisterConnectionTypeError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::register_connection_type::RegisterConnectionTypeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::register_connection_type::RegisterConnectionTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

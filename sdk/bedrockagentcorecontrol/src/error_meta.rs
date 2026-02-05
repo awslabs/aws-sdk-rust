@@ -262,6 +262,37 @@ impl From<crate::operation::create_browser::CreateBrowserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_browser_profile::CreateBrowserProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_browser_profile::CreateBrowserProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_browser_profile::CreateBrowserProfileError> for Error {
+    fn from(err: crate::operation::create_browser_profile::CreateBrowserProfileError) -> Self {
+        match err {
+            crate::operation::create_browser_profile::CreateBrowserProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_browser_profile::CreateBrowserProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_browser_profile::CreateBrowserProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_browser_profile::CreateBrowserProfileError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_browser_profile::CreateBrowserProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_browser_profile::CreateBrowserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_browser_profile::CreateBrowserProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_interpreter::CreateCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -762,6 +793,37 @@ impl From<crate::operation::delete_browser::DeleteBrowserError> for Error {
             crate::operation::delete_browser::DeleteBrowserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_browser::DeleteBrowserError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_browser::DeleteBrowserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_browser_profile::DeleteBrowserProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_browser_profile::DeleteBrowserProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_browser_profile::DeleteBrowserProfileError> for Error {
+    fn from(err: crate::operation::delete_browser_profile::DeleteBrowserProfileError) -> Self {
+        match err {
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_browser_profile::DeleteBrowserProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1271,6 +1333,34 @@ impl From<crate::operation::get_browser::GetBrowserError> for Error {
             crate::operation::get_browser::GetBrowserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_browser::GetBrowserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_browser::GetBrowserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_browser_profile::GetBrowserProfileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_browser_profile::GetBrowserProfileError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_browser_profile::GetBrowserProfileError> for Error {
+    fn from(err: crate::operation::get_browser_profile::GetBrowserProfileError) -> Self {
+        match err {
+            crate::operation::get_browser_profile::GetBrowserProfileError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_browser_profile::GetBrowserProfileError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_browser_profile::GetBrowserProfileError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_browser_profile::GetBrowserProfileError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_browser_profile::GetBrowserProfileError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_browser_profile::GetBrowserProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1811,6 +1901,33 @@ impl From<crate::operation::list_api_key_credential_providers::ListApiKeyCredent
                 Error::ValidationException(inner)
             }
             crate::operation::list_api_key_credential_providers::ListApiKeyCredentialProvidersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_browser_profiles::ListBrowserProfilesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_browser_profiles::ListBrowserProfilesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_browser_profiles::ListBrowserProfilesError> for Error {
+    fn from(err: crate::operation::list_browser_profiles::ListBrowserProfilesError) -> Self {
+        match err {
+            crate::operation::list_browser_profiles::ListBrowserProfilesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_browser_profiles::ListBrowserProfilesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_browser_profiles::ListBrowserProfilesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_browser_profiles::ListBrowserProfilesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_browser_profiles::ListBrowserProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

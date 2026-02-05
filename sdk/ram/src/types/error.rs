@@ -37,23 +37,23 @@ pub use crate::types::error::_resource_share_limit_exceeded_exception::ResourceS
 
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionException;
 
+pub use crate::types::error::_invalid_policy_exception::InvalidPolicyException;
+
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
 pub use crate::types::error::_invalid_resource_type_exception::InvalidResourceTypeException;
 
 pub use crate::types::error::_invalid_max_results_exception::InvalidMaxResultsException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_permission_versions_limit_exceeded_exception::PermissionVersionsLimitExceededException;
 
 pub use crate::types::error::_malformed_policy_template_exception::MalformedPolicyTemplateException;
 
-pub use crate::types::error::_invalid_policy_exception::InvalidPolicyException;
-
 pub use crate::types::error::_permission_limit_exceeded_exception::PermissionLimitExceededException;
 
 pub use crate::types::error::_permission_already_exists_exception::PermissionAlreadyExistsException;
-
-pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 mod _idempotent_parameter_mismatch_exception;
 

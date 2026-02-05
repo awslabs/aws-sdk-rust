@@ -215,6 +215,8 @@ mod list_resource_types;
 
 mod list_resources;
 
+mod list_source_associations;
+
 mod promote_permission_created_from_policy;
 
 mod promote_resource_share_created_from_policy;

@@ -14,6 +14,7 @@
 /// match resourceshareassociationtype {
 ///     ResourceShareAssociationType::Principal => { /* ... */ },
 ///     ResourceShareAssociationType::Resource => { /* ... */ },
+///     ResourceShareAssociationType::Source => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ResourceShareAssociationType {
     Principal,
     #[allow(missing_docs)] // documentation missing in model
     Resource,
+    #[allow(missing_docs)] // documentation missing in model
+    Source,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ResourceShareAssociationType {
         match s {
             "PRINCIPAL" => ResourceShareAssociationType::Principal,
             "RESOURCE" => ResourceShareAssociationType::Resource,
+            "SOURCE" => ResourceShareAssociationType::Source,
             other => ResourceShareAssociationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ResourceShareAssociationType {
         match self {
             ResourceShareAssociationType::Principal => "PRINCIPAL",
             ResourceShareAssociationType::Resource => "RESOURCE",
+            ResourceShareAssociationType::Source => "SOURCE",
             ResourceShareAssociationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRINCIPAL", "RESOURCE"]
+        &["PRINCIPAL", "RESOURCE", "SOURCE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceShareAssociationType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ResourceShareAssociationType {
         match self {
             ResourceShareAssociationType::Principal => write!(f, "PRINCIPAL"),
             ResourceShareAssociationType::Resource => write!(f, "RESOURCE"),
+            ResourceShareAssociationType::Source => write!(f, "SOURCE"),
             ResourceShareAssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }

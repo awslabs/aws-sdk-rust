@@ -79,6 +79,9 @@ pub mod list_resource_types;
 /// Types for the `ListResources` operation.
 pub mod list_resources;
 
+/// Types for the `ListSourceAssociations` operation.
+pub mod list_source_associations;
+
 /// Types for the `PromotePermissionCreatedFromPolicy` operation.
 pub mod promote_permission_created_from_policy;
 

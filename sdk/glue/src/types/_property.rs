@@ -18,6 +18,10 @@ pub struct Property {
     pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::AllowedValue>>,
     /// <p>Indicates which data operations are applicable to the property.</p>
     pub data_operation_scopes: ::std::option::Option<::std::vec::Vec<crate::types::DataOperation>>,
+    /// <p>A key name to use when sending this property in API requests, if different from the display name.</p>
+    pub key_override: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies where this property should be included in REST requests, such as in headers, query parameters, or request body.</p>
+    pub property_location: ::std::option::Option<crate::types::PropertyLocation>,
 }
 impl Property {
     /// <p>The name of the property.</p>
@@ -55,6 +59,14 @@ impl Property {
     pub fn data_operation_scopes(&self) -> &[crate::types::DataOperation] {
         self.data_operation_scopes.as_deref().unwrap_or_default()
     }
+    /// <p>A key name to use when sending this property in API requests, if different from the display name.</p>
+    pub fn key_override(&self) -> ::std::option::Option<&str> {
+        self.key_override.as_deref()
+    }
+    /// <p>Specifies where this property should be included in REST requests, such as in headers, query parameters, or request body.</p>
+    pub fn property_location(&self) -> ::std::option::Option<&crate::types::PropertyLocation> {
+        self.property_location.as_ref()
+    }
 }
 impl Property {
     /// Creates a new builder-style object to manufacture [`Property`](crate::types::Property).
@@ -74,6 +86,8 @@ pub struct PropertyBuilder {
     pub(crate) property_types: ::std::option::Option<::std::vec::Vec<crate::types::PropertyType>>,
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::AllowedValue>>,
     pub(crate) data_operation_scopes: ::std::option::Option<::std::vec::Vec<crate::types::DataOperation>>,
+    pub(crate) key_override: ::std::option::Option<::std::string::String>,
+    pub(crate) property_location: ::std::option::Option<crate::types::PropertyLocation>,
 }
 impl PropertyBuilder {
     /// <p>The name of the property.</p>
@@ -195,6 +209,34 @@ impl PropertyBuilder {
     pub fn get_data_operation_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataOperation>> {
         &self.data_operation_scopes
     }
+    /// <p>A key name to use when sending this property in API requests, if different from the display name.</p>
+    pub fn key_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_override = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A key name to use when sending this property in API requests, if different from the display name.</p>
+    pub fn set_key_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.key_override = input;
+        self
+    }
+    /// <p>A key name to use when sending this property in API requests, if different from the display name.</p>
+    pub fn get_key_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_override
+    }
+    /// <p>Specifies where this property should be included in REST requests, such as in headers, query parameters, or request body.</p>
+    pub fn property_location(mut self, input: crate::types::PropertyLocation) -> Self {
+        self.property_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies where this property should be included in REST requests, such as in headers, query parameters, or request body.</p>
+    pub fn set_property_location(mut self, input: ::std::option::Option<crate::types::PropertyLocation>) -> Self {
+        self.property_location = input;
+        self
+    }
+    /// <p>Specifies where this property should be included in REST requests, such as in headers, query parameters, or request body.</p>
+    pub fn get_property_location(&self) -> &::std::option::Option<crate::types::PropertyLocation> {
+        &self.property_location
+    }
     /// Consumes the builder and constructs a [`Property`](crate::types::Property).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PropertyBuilder::name)
@@ -224,6 +266,8 @@ impl PropertyBuilder {
             property_types: self.property_types.unwrap_or_default(),
             allowed_values: self.allowed_values,
             data_operation_scopes: self.data_operation_scopes,
+            key_override: self.key_override,
+            property_location: self.property_location,
         })
     }
 }

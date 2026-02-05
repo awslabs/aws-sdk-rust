@@ -302,6 +302,24 @@ pub(crate) fn retrieve_memory_records_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn save_browser_session_profile_output_output_correct_errors(
+    mut builder: crate::operation::save_browser_session_profile::builders::SaveBrowserSessionProfileOutputBuilder,
+) -> crate::operation::save_browser_session_profile::builders::SaveBrowserSessionProfileOutputBuilder {
+    if builder.profile_identifier.is_none() {
+        builder.profile_identifier = Some(Default::default())
+    }
+    if builder.browser_identifier.is_none() {
+        builder.browser_identifier = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn start_browser_session_output_output_correct_errors(
     mut builder: crate::operation::start_browser_session::builders::StartBrowserSessionOutputBuilder,
 ) -> crate::operation::start_browser_session::builders::StartBrowserSessionOutputBuilder {
@@ -441,6 +459,15 @@ pub(crate) fn browser_session_stream_correct_errors(
             let builder = crate::types::builders::AutomationStreamBuilder::default();
             crate::serde_util::automation_stream_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn browser_profile_configuration_correct_errors(
+    mut builder: crate::types::builders::BrowserProfileConfigurationBuilder,
+) -> crate::types::builders::BrowserProfileConfigurationBuilder {
+    if builder.profile_identifier.is_none() {
+        builder.profile_identifier = Some(Default::default())
     }
     builder
 }

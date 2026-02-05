@@ -7,7 +7,7 @@ pub struct UpdateBrowserStreamOutput {
     pub browser_identifier: ::std::string::String,
     /// <p>The identifier of the browser session.</p>
     pub session_id: ::std::string::String,
-    /// <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    /// <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     pub streams: ::std::option::Option<crate::types::BrowserSessionStream>,
     /// <p>The time at which the browser stream was updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
@@ -24,7 +24,7 @@ impl UpdateBrowserStreamOutput {
         use std::ops::Deref;
         self.session_id.deref()
     }
-    /// <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    /// <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     pub fn streams(&self) -> ::std::option::Option<&crate::types::BrowserSessionStream> {
         self.streams.as_ref()
     }
@@ -86,18 +86,18 @@ impl UpdateBrowserStreamOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    /// <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     /// This field is required.
     pub fn streams(mut self, input: crate::types::BrowserSessionStream) -> Self {
         self.streams = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    /// <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     pub fn set_streams(mut self, input: ::std::option::Option<crate::types::BrowserSessionStream>) -> Self {
         self.streams = input;
         self
     }
-    /// <p>The collection of streams associated with a browser session in Amazon Bedrock. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
+    /// <p>The collection of streams associated with a browser session in Amazon Bedrock AgentCore. These streams provide different ways to interact with and observe the browser session, including programmatic control and visual representation of the browser content.</p>
     pub fn get_streams(&self) -> &::std::option::Option<crate::types::BrowserSessionStream> {
         &self.streams
     }

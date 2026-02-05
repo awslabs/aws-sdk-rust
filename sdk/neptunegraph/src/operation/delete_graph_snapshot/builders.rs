@@ -22,7 +22,7 @@ impl crate::operation::delete_graph_snapshot::builders::DeleteGraphSnapshotInput
 }
 /// Fluent builder constructing a request to `DeleteGraphSnapshot`.
 ///
-/// <p>Deletes the specifed graph snapshot.</p>
+/// <p>Deletes the specified graph snapshot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGraphSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -469,6 +469,44 @@ pub use crate::types::_job_bookmark_entry::JobBookmarkEntryBuilder;
 
 pub use crate::types::_metadata_key_value_pair::MetadataKeyValuePairBuilder;
 
+pub use crate::types::_rest_configuration::RestConfigurationBuilder;
+
+pub use crate::types::_entity_configuration::EntityConfigurationBuilder;
+
+pub use crate::types::_field_definition::FieldDefinitionBuilder;
+
+pub use crate::types::_source_configuration::SourceConfigurationBuilder;
+
+pub use crate::types::_pagination_configuration::PaginationConfigurationBuilder;
+
+pub use crate::types::_offset_configuration::OffsetConfigurationBuilder;
+
+pub use crate::types::_extracted_parameter::ExtractedParameterBuilder;
+
+pub use crate::types::_response_extraction_mapping::ResponseExtractionMappingBuilder;
+
+pub use crate::types::_cursor_configuration::CursorConfigurationBuilder;
+
+pub use crate::types::_response_configuration::ResponseConfigurationBuilder;
+
+pub use crate::types::_connector_property::ConnectorPropertyBuilder;
+
+pub use crate::types::_connector_authentication_configuration::ConnectorAuthenticationConfigurationBuilder;
+
+pub use crate::types::_custom_authentication_properties::CustomAuthenticationPropertiesBuilder;
+
+pub use crate::types::_basic_authentication_properties::BasicAuthenticationPropertiesBuilder;
+
+pub use crate::types::_connector_o_auth2_properties::ConnectorOAuth2PropertiesBuilder;
+
+pub use crate::types::_connector_authorization_code_properties::ConnectorAuthorizationCodePropertiesBuilder;
+
+pub use crate::types::_jwt_bearer_properties::JwtBearerPropertiesBuilder;
+
+pub use crate::types::_client_credentials_properties::ClientCredentialsPropertiesBuilder;
+
+pub use crate::types::_connection_properties_configuration::ConnectionPropertiesConfigurationBuilder;
+
 pub use crate::types::_metadata_info::MetadataInfoBuilder;
 
 pub use crate::types::_other_metadata_value_list_item::OtherMetadataValueListItemBuilder;

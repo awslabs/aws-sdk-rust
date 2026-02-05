@@ -269,12 +269,14 @@ pub enum DisassociateResourceShareError {
     MalformedArnException(crate::types::error::MalformedArnException),
     /// <p>The operation failed because the requested operation isn't permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
-    /// <p>The operation failed because it would exceed the limit for resource shares for your account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
+    /// <p>The operation failed because it would exceed the limit for resource shares for your account. You can associate up to 100 resources per call. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas console</a>.</p>
     ResourceShareLimitExceededException(crate::types::error::ResourceShareLimitExceededException),
     /// <p>The operation failed because the service could not respond to the request due to an internal problem. Try again later.</p>
     ServerInternalException(crate::types::error::ServerInternalException),
     /// <p>The operation failed because the service isn't available. Try again later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The operation failed because it exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The operation failed because a specified resource couldn't be found.</p>
     UnknownResourceException(crate::types::error::UnknownResourceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -319,6 +321,7 @@ impl DisassociateResourceShareError {
             Self::ResourceShareLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerInternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnknownResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -359,6 +362,10 @@ impl DisassociateResourceShareError {
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(self, Self::ServiceUnavailableException(_))
     }
+    /// Returns `true` if the error kind is `DisassociateResourceShareError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `DisassociateResourceShareError::UnknownResourceException`.
     pub fn is_unknown_resource_exception(&self) -> bool {
         matches!(self, Self::UnknownResourceException(_))
@@ -376,6 +383,7 @@ impl ::std::error::Error for DisassociateResourceShareError {
             Self::ResourceShareLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerInternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnknownResourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -393,6 +401,7 @@ impl ::std::fmt::Display for DisassociateResourceShareError {
             Self::ResourceShareLimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerInternalException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::UnknownResourceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -424,6 +433,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DisassociateR
             Self::ResourceShareLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerInternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnknownResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

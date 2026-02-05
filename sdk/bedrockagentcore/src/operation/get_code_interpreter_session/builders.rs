@@ -22,7 +22,7 @@ impl crate::operation::get_code_interpreter_session::builders::GetCodeInterprete
 }
 /// Fluent builder constructing a request to `GetCodeInterpreterSession`.
 ///
-/// <p>Retrieves detailed information about a specific code interpreter session in Amazon Bedrock. This operation returns the session's configuration, current status, and metadata.</p>
+/// <p>Retrieves detailed information about a specific code interpreter session in Amazon Bedrock AgentCore. This operation returns the session's configuration, current status, and metadata.</p>
 /// <p>To get a code interpreter session, you must specify both the code interpreter identifier and the session ID. The response includes information about the session's timeout settings and current status.</p>
 /// <p>The following operations are related to <code>GetCodeInterpreterSession</code>:</p>
 /// <ul>

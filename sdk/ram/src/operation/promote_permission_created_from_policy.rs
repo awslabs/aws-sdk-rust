@@ -269,6 +269,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PromotePermis
 pub enum PromotePermissionCreatedFromPolicyError {
     /// <p>The operation failed because a parameter you specified isn't valid.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The operation failed because a policy you specified isn't valid.</p>
+    InvalidPolicyException(crate::types::error::InvalidPolicyException),
     /// <p>The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> has a format that isn't valid.</p>
     MalformedArnException(crate::types::error::MalformedArnException),
     /// <p>The operation failed because a required input parameter is missing.</p>
@@ -315,6 +317,7 @@ impl PromotePermissionCreatedFromPolicyError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MalformedArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MissingRequiredParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -327,6 +330,10 @@ impl PromotePermissionCreatedFromPolicyError {
     /// Returns `true` if the error kind is `PromotePermissionCreatedFromPolicyError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `PromotePermissionCreatedFromPolicyError::InvalidPolicyException`.
+    pub fn is_invalid_policy_exception(&self) -> bool {
+        matches!(self, Self::InvalidPolicyException(_))
     }
     /// Returns `true` if the error kind is `PromotePermissionCreatedFromPolicyError::MalformedArnException`.
     pub fn is_malformed_arn_exception(&self) -> bool {
@@ -357,6 +364,7 @@ impl ::std::error::Error for PromotePermissionCreatedFromPolicyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidPolicyException(_inner) => ::std::option::Option::Some(_inner),
             Self::MalformedArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::MissingRequiredParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
@@ -371,6 +379,7 @@ impl ::std::fmt::Display for PromotePermissionCreatedFromPolicyError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::InvalidPolicyException(_inner) => _inner.fmt(f),
             Self::MalformedArnException(_inner) => _inner.fmt(f),
             Self::MissingRequiredParameterException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -399,6 +408,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PromotePermis
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MalformedArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MissingRequiredParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

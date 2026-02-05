@@ -217,17 +217,20 @@ impl StartQueryExecutionFluentBuilder {
     pub fn get_result_reuse_configuration(&self) -> &::std::option::Option<crate::types::ResultReuseConfiguration> {
         self.inner.get_result_reuse_configuration()
     }
-    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    /// <p>The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).</p>
+    /// <p>To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup containing <code>EngineConfiguration</code> should have the following values: The name of the <code>Classifications</code> should be <code>athena-query-engine-properties</code>, with the only allowed properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
     pub fn engine_configuration(mut self, input: crate::types::EngineConfiguration) -> Self {
         self.inner = self.inner.engine_configuration(input);
         self
     }
-    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    /// <p>The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).</p>
+    /// <p>To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup containing <code>EngineConfiguration</code> should have the following values: The name of the <code>Classifications</code> should be <code>athena-query-engine-properties</code>, with the only allowed properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
     pub fn set_engine_configuration(mut self, input: ::std::option::Option<crate::types::EngineConfiguration>) -> Self {
         self.inner = self.inner.set_engine_configuration(input);
         self
     }
-    /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
+    /// <p>The engine configuration for the workgroup, which includes the minimum/maximum number of Data Processing Units (DPU) that queries should use when running in provisioned capacity. If not specified, Athena uses default values (Default value for min is 4 and for max is Minimum of 124 and allocated DPUs).</p>
+    /// <p>To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup containing <code>EngineConfiguration</code> should have the following values: The name of the <code>Classifications</code> should be <code>athena-query-engine-properties</code>, with the only allowed properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
     pub fn get_engine_configuration(&self) -> &::std::option::Option<crate::types::EngineConfiguration> {
         self.inner.get_engine_configuration()
     }

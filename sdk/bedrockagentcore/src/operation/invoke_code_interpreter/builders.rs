@@ -22,7 +22,7 @@ impl crate::operation::invoke_code_interpreter::builders::InvokeCodeInterpreterI
 }
 /// Fluent builder constructing a request to `InvokeCodeInterpreter`.
 ///
-/// <p>Executes code within an active code interpreter session in Amazon Bedrock. This operation processes the provided code, runs it in a secure environment, and returns the execution results including output, errors, and generated visualizations.</p>
+/// <p>Executes code within an active code interpreter session in Amazon Bedrock AgentCore. This operation processes the provided code, runs it in a secure environment, and returns the execution results including output, errors, and generated visualizations.</p>
 /// <p>To execute code, you must specify the code interpreter identifier, session ID, and the code to run in the arguments parameter. The operation returns a stream containing the execution results, which can include text output, error messages, and data visualizations.</p>
 /// <p>This operation is subject to request rate limiting based on your account's service quotas.</p>
 /// <p>The following operations are related to <code>InvokeCodeInterpreter</code>:</p>

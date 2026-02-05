@@ -13,6 +13,9 @@ pub mod create_api_key_credential_provider;
 /// Types for the `CreateBrowser` operation.
 pub mod create_browser;
 
+/// Types for the `CreateBrowserProfile` operation.
+pub mod create_browser_profile;
+
 /// Types for the `CreateCodeInterpreter` operation.
 pub mod create_code_interpreter;
 
@@ -54,6 +57,9 @@ pub mod delete_api_key_credential_provider;
 
 /// Types for the `DeleteBrowser` operation.
 pub mod delete_browser;
+
+/// Types for the `DeleteBrowserProfile` operation.
+pub mod delete_browser_profile;
 
 /// Types for the `DeleteCodeInterpreter` operation.
 pub mod delete_code_interpreter;
@@ -99,6 +105,9 @@ pub mod get_api_key_credential_provider;
 
 /// Types for the `GetBrowser` operation.
 pub mod get_browser;
+
+/// Types for the `GetBrowserProfile` operation.
+pub mod get_browser_profile;
 
 /// Types for the `GetCodeInterpreter` operation.
 pub mod get_code_interpreter;
@@ -150,6 +159,9 @@ pub mod list_agent_runtimes;
 
 /// Types for the `ListApiKeyCredentialProviders` operation.
 pub mod list_api_key_credential_providers;
+
+/// Types for the `ListBrowserProfiles` operation.
+pub mod list_browser_profiles;
 
 /// Types for the `ListBrowsers` operation.
 pub mod list_browsers;

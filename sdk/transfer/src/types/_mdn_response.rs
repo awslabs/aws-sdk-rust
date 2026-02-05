@@ -12,6 +12,7 @@
 /// ```text
 /// # let mdnresponse = unimplemented!();
 /// match mdnresponse {
+///     MdnResponse::Async => { /* ... */ },
 ///     MdnResponse::None => { /* ... */ },
 ///     MdnResponse::Sync => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum MdnResponse {
     #[allow(missing_docs)] // documentation missing in model
+    Async,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Sync,
@@ -53,6 +56,7 @@ pub enum MdnResponse {
 impl ::std::convert::From<&str> for MdnResponse {
     fn from(s: &str) -> Self {
         match s {
+            "ASYNC" => MdnResponse::Async,
             "NONE" => MdnResponse::None,
             "SYNC" => MdnResponse::Sync,
             other => MdnResponse::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl MdnResponse {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MdnResponse::Async => "ASYNC",
             MdnResponse::None => "NONE",
             MdnResponse::Sync => "SYNC",
             MdnResponse::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl MdnResponse {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "SYNC"]
+        &["ASYNC", "NONE", "SYNC"]
     }
 }
 impl ::std::convert::AsRef<str> for MdnResponse {
@@ -100,6 +105,7 @@ impl MdnResponse {
 impl ::std::fmt::Display for MdnResponse {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MdnResponse::Async => write!(f, "ASYNC"),
             MdnResponse::None => write!(f, "NONE"),
             MdnResponse::Sync => write!(f, "SYNC"),
             MdnResponse::Unknown(value) => write!(f, "{value}"),

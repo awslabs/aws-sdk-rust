@@ -206,4 +206,23 @@ impl StartFileTransferFluentBuilder {
     pub fn get_remote_directory_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_directory_path()
     }
+    ///
+    /// Appends an item to `CustomHttpHeaders`.
+    ///
+    /// To override the contents of this collection use [`set_custom_http_headers`](Self::set_custom_http_headers).
+    ///
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn custom_http_headers(mut self, input: crate::types::CustomHttpHeader) -> Self {
+        self.inner = self.inner.custom_http_headers(input);
+        self
+    }
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn set_custom_http_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>>) -> Self {
+        self.inner = self.inner.set_custom_http_headers(input);
+        self
+    }
+    /// <p>An array of key-value pairs that represent custom HTTP headers to include in AS2 messages. These headers are added to the AS2 message when sending files to your trading partner.</p>
+    pub fn get_custom_http_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+        self.inner.get_custom_http_headers()
+    }
 }

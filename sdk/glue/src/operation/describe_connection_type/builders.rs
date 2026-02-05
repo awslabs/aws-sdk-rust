@@ -22,7 +22,8 @@ impl crate::operation::describe_connection_type::builders::DescribeConnectionTyp
 }
 /// Fluent builder constructing a request to `DescribeConnectionType`.
 ///
-/// <p>The <code>DescribeConnectionType</code> API provides full details of the supported options for a given connection type in Glue.</p>
+/// <p>The <code>DescribeConnectionType</code> API provides full details of the supported options for a given connection type in Glue. The response includes authentication configuration details that show supported authentication types and properties, and RestConfiguration for custom REST-based connection types registered via <code>RegisterConnectionType</code>.</p>
+/// <p>See also: <code>ListConnectionTypes</code>, <code>RegisterConnectionType</code>, <code>DeleteConnectionType</code></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConnectionTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -133,6 +133,8 @@ pub use crate::types::_sftp_connector_config::SftpConnectorConfig;
 
 pub use crate::types::_as2_connector_config::As2ConnectorConfig;
 
+pub use crate::types::_as2_async_mdn_connector_config::As2AsyncMdnConnectorConfig;
+
 pub use crate::types::_preserve_content_type::PreserveContentType;
 
 pub use crate::types::_mdn_response::MdnResponse;
@@ -185,6 +187,8 @@ pub use crate::types::_listed_agreement::ListedAgreement;
 
 pub use crate::types::_sftp_connector_connection_details::SftpConnectorConnectionDetails;
 
+pub use crate::types::_custom_http_header::CustomHttpHeader;
+
 pub use crate::types::_custom_step_status::CustomStepStatus;
 
 pub use crate::types::_listed_host_key::ListedHostKey;
@@ -231,6 +235,8 @@ pub use crate::types::_described_access::DescribedAccess;
 
 mod _agreement_status_type;
 
+mod _as2_async_mdn_connector_config;
+
 mod _as2_connector_config;
 
 mod _as2_transport;
@@ -256,6 +262,8 @@ mod _connector_vpc_lattice_egress_config;
 mod _copy_step_details;
 
 mod _custom_directories_type;
+
+mod _custom_http_header;
 
 mod _custom_step_details;
 
