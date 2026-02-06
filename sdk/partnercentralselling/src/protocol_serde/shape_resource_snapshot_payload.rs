@@ -35,6 +35,14 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OpportunitySummary' cannot be null")
                             })?,
                         )),
+                        "AwsOpportunitySummaryFullView" => Some(crate::types::ResourceSnapshotPayload::AwsOpportunitySummaryFullView(
+                            crate::protocol_serde::shape_aws_opportunity_summary_full_view::de_aws_opportunity_summary_full_view(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'AwsOpportunitySummaryFullView' cannot be null",
+                                    )
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ResourceSnapshotPayload::Unknown)

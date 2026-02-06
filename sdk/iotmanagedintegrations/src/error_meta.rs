@@ -2787,6 +2787,9 @@ impl From<crate::operation::start_account_association_refresh::StartAccountAssoc
             crate::operation::start_account_association_refresh::StartAccountAssociationRefreshError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::start_account_association_refresh::StartAccountAssociationRefreshError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::start_account_association_refresh::StartAccountAssociationRefreshError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

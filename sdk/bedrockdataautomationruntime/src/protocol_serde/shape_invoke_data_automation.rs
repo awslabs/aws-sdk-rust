@@ -145,6 +145,11 @@ pub(crate) fn de_invoke_data_automation(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "outputConfiguration" => {
+                    builder = builder.set_output_configuration(crate::protocol_serde::shape_output_configuration::de_output_configuration(
+                        tokens, _value,
+                    )?);
+                }
                 "semanticModality" => {
                     builder = builder.set_semantic_modality(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

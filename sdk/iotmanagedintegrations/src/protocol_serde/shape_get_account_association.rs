@@ -192,6 +192,11 @@ pub(crate) fn de_get_account_association(
                             .transpose()?,
                     );
                 }
+                "GeneralAuthorization" => {
+                    builder = builder.set_general_authorization(
+                        crate::protocol_serde::shape_general_authorization_name::de_general_authorization_name(tokens, _value)?,
+                    );
+                }
                 "Name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

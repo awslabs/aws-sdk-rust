@@ -23,6 +23,8 @@ pub struct GetResourceSnapshotOutput {
     pub revision: ::std::option::Option<i32>,
     /// <p>Represents the payload of a resource snapshot. This structure is designed to accommodate different types of resource snapshots, currently supporting opportunity summaries.</p>
     pub payload: ::std::option::Option<crate::types::ResourceSnapshotPayload>,
+    /// <p>Target member accounts associated with the resource snapshot.</p>
+    pub target_member_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetResourceSnapshotOutput {
@@ -67,6 +69,12 @@ impl GetResourceSnapshotOutput {
     pub fn payload(&self) -> ::std::option::Option<&crate::types::ResourceSnapshotPayload> {
         self.payload.as_ref()
     }
+    /// <p>Target member accounts associated with the resource snapshot.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_member_accounts.is_none()`.
+    pub fn target_member_accounts(&self) -> &[::std::string::String] {
+        self.target_member_accounts.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetResourceSnapshotOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -81,6 +89,7 @@ impl ::std::fmt::Debug for GetResourceSnapshotOutput {
         formatter.field("resource_snapshot_template_name", &self.resource_snapshot_template_name);
         formatter.field("revision", &self.revision);
         formatter.field("payload", &self.payload);
+        formatter.field("target_member_accounts", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -111,6 +120,7 @@ pub struct GetResourceSnapshotOutputBuilder {
     pub(crate) resource_snapshot_template_name: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<i32>,
     pub(crate) payload: ::std::option::Option<crate::types::ResourceSnapshotPayload>,
+    pub(crate) target_member_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetResourceSnapshotOutputBuilder {
@@ -255,6 +265,26 @@ impl GetResourceSnapshotOutputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::ResourceSnapshotPayload> {
         &self.payload
     }
+    /// Appends an item to `target_member_accounts`.
+    ///
+    /// To override the contents of this collection use [`set_target_member_accounts`](Self::set_target_member_accounts).
+    ///
+    /// <p>Target member accounts associated with the resource snapshot.</p>
+    pub fn target_member_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.target_member_accounts.unwrap_or_default();
+        v.push(input.into());
+        self.target_member_accounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Target member accounts associated with the resource snapshot.</p>
+    pub fn set_target_member_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_member_accounts = input;
+        self
+    }
+    /// <p>Target member accounts associated with the resource snapshot.</p>
+    pub fn get_target_member_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_member_accounts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -287,6 +317,7 @@ impl GetResourceSnapshotOutputBuilder {
             resource_snapshot_template_name: self.resource_snapshot_template_name,
             revision: self.revision,
             payload: self.payload,
+            target_member_accounts: self.target_member_accounts,
             _request_id: self._request_id,
         })
     }
@@ -304,6 +335,7 @@ impl ::std::fmt::Debug for GetResourceSnapshotOutputBuilder {
         formatter.field("resource_snapshot_template_name", &self.resource_snapshot_template_name);
         formatter.field("revision", &self.revision);
         formatter.field("payload", &self.payload);
+        formatter.field("target_member_accounts", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

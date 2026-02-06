@@ -14,6 +14,7 @@
 /// match authmaterialtype {
 ///     AuthMaterialType::CustomProtocolQrBarCode => { /* ... */ },
 ///     AuthMaterialType::DiscoveredDevice => { /* ... */ },
+///     AuthMaterialType::PreOnboardedCloud => { /* ... */ },
 ///     AuthMaterialType::WifiSetupQrBarCode => { /* ... */ },
 ///     AuthMaterialType::ZigbeeQrBarCode => { /* ... */ },
 ///     AuthMaterialType::ZwaveQrBarCode => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AuthMaterialType {
     #[allow(missing_docs)] // documentation missing in model
     DiscoveredDevice,
     #[allow(missing_docs)] // documentation missing in model
+    PreOnboardedCloud,
+    #[allow(missing_docs)] // documentation missing in model
     WifiSetupQrBarCode,
     #[allow(missing_docs)] // documentation missing in model
     ZigbeeQrBarCode,
@@ -64,6 +67,7 @@ impl ::std::convert::From<&str> for AuthMaterialType {
         match s {
             "CUSTOM_PROTOCOL_QR_BAR_CODE" => AuthMaterialType::CustomProtocolQrBarCode,
             "DISCOVERED_DEVICE" => AuthMaterialType::DiscoveredDevice,
+            "PRE_ONBOARDED_CLOUD" => AuthMaterialType::PreOnboardedCloud,
             "WIFI_SETUP_QR_BAR_CODE" => AuthMaterialType::WifiSetupQrBarCode,
             "ZIGBEE_QR_BAR_CODE" => AuthMaterialType::ZigbeeQrBarCode,
             "ZWAVE_QR_BAR_CODE" => AuthMaterialType::ZwaveQrBarCode,
@@ -84,6 +88,7 @@ impl AuthMaterialType {
         match self {
             AuthMaterialType::CustomProtocolQrBarCode => "CUSTOM_PROTOCOL_QR_BAR_CODE",
             AuthMaterialType::DiscoveredDevice => "DISCOVERED_DEVICE",
+            AuthMaterialType::PreOnboardedCloud => "PRE_ONBOARDED_CLOUD",
             AuthMaterialType::WifiSetupQrBarCode => "WIFI_SETUP_QR_BAR_CODE",
             AuthMaterialType::ZigbeeQrBarCode => "ZIGBEE_QR_BAR_CODE",
             AuthMaterialType::ZwaveQrBarCode => "ZWAVE_QR_BAR_CODE",
@@ -95,6 +100,7 @@ impl AuthMaterialType {
         &[
             "CUSTOM_PROTOCOL_QR_BAR_CODE",
             "DISCOVERED_DEVICE",
+            "PRE_ONBOARDED_CLOUD",
             "WIFI_SETUP_QR_BAR_CODE",
             "ZIGBEE_QR_BAR_CODE",
             "ZWAVE_QR_BAR_CODE",
@@ -123,6 +129,7 @@ impl ::std::fmt::Display for AuthMaterialType {
         match self {
             AuthMaterialType::CustomProtocolQrBarCode => write!(f, "CUSTOM_PROTOCOL_QR_BAR_CODE"),
             AuthMaterialType::DiscoveredDevice => write!(f, "DISCOVERED_DEVICE"),
+            AuthMaterialType::PreOnboardedCloud => write!(f, "PRE_ONBOARDED_CLOUD"),
             AuthMaterialType::WifiSetupQrBarCode => write!(f, "WIFI_SETUP_QR_BAR_CODE"),
             AuthMaterialType::ZigbeeQrBarCode => write!(f, "ZIGBEE_QR_BAR_CODE"),
             AuthMaterialType::ZwaveQrBarCode => write!(f, "ZWAVE_QR_BAR_CODE"),

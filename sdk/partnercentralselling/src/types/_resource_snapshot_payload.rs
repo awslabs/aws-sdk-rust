@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ResourceSnapshotPayload {
+    /// <p>Provides a comprehensive view of AwsOpportunitySummaryFullView template.</p>
+    AwsOpportunitySummaryFullView(crate::types::AwsOpportunitySummaryFullView),
     /// <p>An object that contains an <code>opportunity</code>'s subset of fields.</p>
     OpportunitySummary(crate::types::OpportunitySummaryView),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum ResourceSnapshotPayload {
     Unknown,
 }
 impl ResourceSnapshotPayload {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AwsOpportunitySummaryFullView`](crate::types::ResourceSnapshotPayload::AwsOpportunitySummaryFullView), extracting the inner [`AwsOpportunitySummaryFullView`](crate::types::AwsOpportunitySummaryFullView).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_aws_opportunity_summary_full_view(&self) -> ::std::result::Result<&crate::types::AwsOpportunitySummaryFullView, &Self> {
+        if let ResourceSnapshotPayload::AwsOpportunitySummaryFullView(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AwsOpportunitySummaryFullView`](crate::types::ResourceSnapshotPayload::AwsOpportunitySummaryFullView).
+    pub fn is_aws_opportunity_summary_full_view(&self) -> bool {
+        self.as_aws_opportunity_summary_full_view().is_ok()
+    }
     /// Tries to convert the enum instance into [`OpportunitySummary`](crate::types::ResourceSnapshotPayload::OpportunitySummary), extracting the inner [`OpportunitySummaryView`](crate::types::OpportunitySummaryView).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_opportunity_summary(&self) -> ::std::result::Result<&crate::types::OpportunitySummaryView, &Self> {

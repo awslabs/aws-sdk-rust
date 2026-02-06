@@ -8,7 +8,7 @@ pub struct AwsOpportunityInsights {
     pub next_best_actions: ::std::option::Option<::std::string::String>,
     /// <p>Represents a score assigned by AWS to indicate the level of engagement and potential success for the opportunity. This score helps partners prioritize their efforts.</p>
     pub engagement_score: ::std::option::Option<crate::types::EngagementScore>,
-    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub aws_products_spend_insights_by_source: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>,
 }
 impl AwsOpportunityInsights {
@@ -20,7 +20,7 @@ impl AwsOpportunityInsights {
     pub fn engagement_score(&self) -> ::std::option::Option<&crate::types::EngagementScore> {
         self.engagement_score.as_ref()
     }
-    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub fn aws_products_spend_insights_by_source(&self) -> ::std::option::Option<&crate::types::AwsProductsSpendInsightsBySource> {
         self.aws_products_spend_insights_by_source.as_ref()
     }
@@ -69,17 +69,17 @@ impl AwsOpportunityInsightsBuilder {
     pub fn get_engagement_score(&self) -> &::std::option::Option<crate::types::EngagementScore> {
         &self.engagement_score
     }
-    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub fn aws_products_spend_insights_by_source(mut self, input: crate::types::AwsProductsSpendInsightsBySource) -> Self {
         self.aws_products_spend_insights_by_source = ::std::option::Option::Some(input);
         self
     }
-    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub fn set_aws_products_spend_insights_by_source(mut self, input: ::std::option::Option<crate::types::AwsProductsSpendInsightsBySource>) -> Self {
         self.aws_products_spend_insights_by_source = input;
         self
     }
-    /// Source-separated spend insights that provide independent analysis for AWS predictions and partner estimates
+    /// <p>Source-separated spend insights that provide independent analysis for AWS recommendations and partner estimates.</p>
     pub fn get_aws_products_spend_insights_by_source(&self) -> &::std::option::Option<crate::types::AwsProductsSpendInsightsBySource> {
         &self.aws_products_spend_insights_by_source
     }

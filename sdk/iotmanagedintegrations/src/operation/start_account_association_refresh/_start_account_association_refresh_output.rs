@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartAccountAssociationRefreshOutput {
-    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub o_auth_authorization_url: ::std::string::String,
     _request_id: Option<String>,
 }
 impl StartAccountAssociationRefreshOutput {
-    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn o_auth_authorization_url(&self) -> &str {
         use std::ops::Deref;
         self.o_auth_authorization_url.deref()
@@ -42,18 +42,18 @@ pub struct StartAccountAssociationRefreshOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartAccountAssociationRefreshOutputBuilder {
-    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     /// This field is required.
     pub fn o_auth_authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.o_auth_authorization_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn set_o_auth_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.o_auth_authorization_url = input;
         self
     }
-    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL with all required parameters to perform end-user authentication during the refresh process. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn get_o_auth_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.o_auth_authorization_url
     }
@@ -67,25 +67,11 @@ impl StartAccountAssociationRefreshOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`StartAccountAssociationRefreshOutput`](crate::operation::start_account_association_refresh::StartAccountAssociationRefreshOutput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`o_auth_authorization_url`](crate::operation::start_account_association_refresh::builders::StartAccountAssociationRefreshOutputBuilder::o_auth_authorization_url)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_account_association_refresh::StartAccountAssociationRefreshOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(
-            crate::operation::start_account_association_refresh::StartAccountAssociationRefreshOutput {
-                o_auth_authorization_url: self.o_auth_authorization_url.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "o_auth_authorization_url",
-                        "o_auth_authorization_url was not specified but it is required when building StartAccountAssociationRefreshOutput",
-                    )
-                })?,
-                _request_id: self._request_id,
-            },
-        )
+    pub fn build(self) -> crate::operation::start_account_association_refresh::StartAccountAssociationRefreshOutput {
+        crate::operation::start_account_association_refresh::StartAccountAssociationRefreshOutput {
+            o_auth_authorization_url: self.o_auth_authorization_url.unwrap_or_default(),
+            _request_id: self._request_id,
+        }
     }
 }
 impl ::std::fmt::Debug for StartAccountAssociationRefreshOutputBuilder {

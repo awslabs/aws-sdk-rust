@@ -18,37 +18,46 @@ pub fn ser_start_device_discovery_input_input(
     if let Some(var_5) = &input.connector_association_identifier {
         object.key("ConnectorAssociationIdentifier").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.controller_identifier {
-        object.key("ControllerIdentifier").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.custom_protocol_detail {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("CustomProtocolDetail").start_object();
-        for (key_9, value_10) in var_7 {
+    if let Some(var_6) = &input.connector_device_id_list {
+        let mut array_7 = object.key("ConnectorDeviceIdList").start_array();
+        for item_8 in var_6 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        object_8.finish();
+        array_7.finish();
     }
-    if let Some(var_11) = &input.discovery_type {
-        object.key("DiscoveryType").string(var_11.as_str());
+    if let Some(var_9) = &input.controller_identifier {
+        object.key("ControllerIdentifier").string(var_9.as_str());
     }
-    if let Some(var_12) = &input.end_device_identifier {
-        object.key("EndDeviceIdentifier").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.protocol {
-        object.key("Protocol").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_10) = &input.custom_protocol_detail {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("Tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_11 = object.key("CustomProtocolDetail").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_15.finish();
+        object_11.finish();
+    }
+    if let Some(var_14) = &input.discovery_type {
+        object.key("DiscoveryType").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.end_device_identifier {
+        object.key("EndDeviceIdentifier").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.protocol {
+        object.key("Protocol").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
     Ok(())
 }

@@ -25,6 +25,8 @@ pub struct StartDeviceDiscoveryInput {
     /// <p>A set of key/value pairs that are used to manage the device discovery request.</p>
     #[deprecated(note = "Tags have been deprecated from this api", since = "06-25-2025")]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub connector_device_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
     /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
     /// </note>
@@ -75,6 +77,12 @@ impl StartDeviceDiscoveryInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Used as a filter for PLA discoveries.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_device_id_list.is_none()`.
+    pub fn connector_device_id_list(&self) -> &[::std::string::String] {
+        self.connector_device_id_list.as_deref().unwrap_or_default()
+    }
     /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
     /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
     /// </note>
@@ -100,6 +108,7 @@ impl ::std::fmt::Debug for StartDeviceDiscoveryInput {
         formatter.field("authentication_material_type", &self.authentication_material_type);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_device_id_list", &"*** Sensitive Data Redacted ***");
         formatter.field("protocol", &self.protocol);
         formatter.field("end_device_identifier", &self.end_device_identifier);
         formatter.finish()
@@ -125,6 +134,7 @@ pub struct StartDeviceDiscoveryInputBuilder {
     pub(crate) authentication_material_type: ::std::option::Option<crate::types::DiscoveryAuthMaterialType>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) connector_device_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) protocol: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) end_device_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -287,6 +297,26 @@ impl StartDeviceDiscoveryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `connector_device_id_list`.
+    ///
+    /// To override the contents of this collection use [`set_connector_device_id_list`](Self::set_connector_device_id_list).
+    ///
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn connector_device_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.connector_device_id_list.unwrap_or_default();
+        v.push(input.into());
+        self.connector_device_id_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn set_connector_device_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connector_device_id_list = input;
+        self
+    }
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn get_connector_device_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connector_device_id_list
+    }
     /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
     /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
     /// </note>
@@ -342,6 +372,7 @@ impl StartDeviceDiscoveryInputBuilder {
             authentication_material_type: self.authentication_material_type,
             client_token: self.client_token,
             tags: self.tags,
+            connector_device_id_list: self.connector_device_id_list,
             protocol: self.protocol,
             end_device_identifier: self.end_device_identifier,
         })
@@ -359,6 +390,7 @@ impl ::std::fmt::Debug for StartDeviceDiscoveryInputBuilder {
         formatter.field("authentication_material_type", &self.authentication_material_type);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_device_id_list", &"*** Sensitive Data Redacted ***");
         formatter.field("protocol", &self.protocol);
         formatter.field("end_device_identifier", &self.end_device_identifier);
         formatter.finish()

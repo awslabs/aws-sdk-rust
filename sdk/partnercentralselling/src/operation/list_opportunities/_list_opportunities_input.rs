@@ -22,6 +22,8 @@ pub struct ListOpportunitiesInput {
     pub life_cycle_review_status: ::std::option::Option<::std::vec::Vec<crate::types::ReviewStatus>>,
     /// <p>Filters the opportunities based on the customer's company name. This allows partners to search for opportunities associated with a specific customer by matching the provided company name string.</p>
     pub customer_company_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub created_date: ::std::option::Option<crate::types::CreatedDateFilter>,
 }
 impl ListOpportunitiesInput {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -69,6 +71,10 @@ impl ListOpportunitiesInput {
     pub fn customer_company_name(&self) -> &[::std::string::String] {
         self.customer_company_name.as_deref().unwrap_or_default()
     }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn created_date(&self) -> ::std::option::Option<&crate::types::CreatedDateFilter> {
+        self.created_date.as_ref()
+    }
 }
 impl ListOpportunitiesInput {
     /// Creates a new builder-style object to manufacture [`ListOpportunitiesInput`](crate::operation::list_opportunities::ListOpportunitiesInput).
@@ -90,6 +96,7 @@ pub struct ListOpportunitiesInputBuilder {
     pub(crate) life_cycle_stage: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     pub(crate) life_cycle_review_status: ::std::option::Option<::std::vec::Vec<crate::types::ReviewStatus>>,
     pub(crate) customer_company_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) created_date: ::std::option::Option<crate::types::CreatedDateFilter>,
 }
 impl ListOpportunitiesInputBuilder {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -246,6 +253,20 @@ impl ListOpportunitiesInputBuilder {
     pub fn get_customer_company_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.customer_company_name
     }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn created_date(mut self, input: crate::types::CreatedDateFilter) -> Self {
+        self.created_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn set_created_date(mut self, input: ::std::option::Option<crate::types::CreatedDateFilter>) -> Self {
+        self.created_date = input;
+        self
+    }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<crate::types::CreatedDateFilter> {
+        &self.created_date
+    }
     /// Consumes the builder and constructs a [`ListOpportunitiesInput`](crate::operation::list_opportunities::ListOpportunitiesInput).
     pub fn build(
         self,
@@ -260,6 +281,7 @@ impl ListOpportunitiesInputBuilder {
             life_cycle_stage: self.life_cycle_stage,
             life_cycle_review_status: self.life_cycle_review_status,
             customer_company_name: self.customer_company_name,
+            created_date: self.created_date,
         })
     }
 }

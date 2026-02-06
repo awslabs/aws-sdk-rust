@@ -12,18 +12,24 @@ pub fn ser_create_account_association_input_input(
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_4) = &input.general_authorization {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("Tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_5 = object.key("GeneralAuthorization").start_object();
+        crate::protocol_serde::shape_general_authorization_name::ser_general_authorization_name(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.name {
+        object.key("Name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_6.finish();
+        object_8.finish();
     }
     Ok(())
 }

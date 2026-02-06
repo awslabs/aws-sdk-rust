@@ -105,6 +105,8 @@ pub use crate::types::_capability_action::CapabilityAction;
 
 pub use crate::types::_managed_thing_association::ManagedThingAssociation;
 
+pub use crate::types::_managed_thing_association_status::ManagedThingAssociationStatus;
+
 pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_configuration_status::ConfigurationStatus;
@@ -139,6 +141,10 @@ pub use crate::types::_secrets_manager::SecretsManager;
 
 pub use crate::types::_auth_config_update::AuthConfigUpdate;
 
+pub use crate::types::_general_authorization_update::GeneralAuthorizationUpdate;
+
+pub use crate::types::_auth_material::AuthMaterial;
+
 pub use crate::types::_o_auth_update::OAuthUpdate;
 
 pub use crate::types::_proactive_refresh_token_renewal::ProactiveRefreshTokenRenewal;
@@ -162,6 +168,8 @@ pub use crate::types::_endpoint_config::EndpointConfig;
 pub use crate::types::_lambda_config::LambdaConfig;
 
 pub use crate::types::_connector_item::ConnectorItem;
+
+pub use crate::types::_general_authorization_name::GeneralAuthorizationName;
 
 pub use crate::types::_association_state::AssociationState;
 
@@ -196,6 +204,8 @@ mod _association_state;
 mod _auth_config;
 
 mod _auth_config_update;
+
+mod _auth_material;
 
 mod _auth_material_type;
 
@@ -263,6 +273,10 @@ mod _event_type;
 
 mod _exponential_rollout_rate;
 
+mod _general_authorization_name;
+
+mod _general_authorization_update;
+
 mod _hub_network_mode;
 
 mod _lambda_config;
@@ -270,6 +284,8 @@ mod _lambda_config;
 mod _log_level;
 
 mod _managed_thing_association;
+
+mod _managed_thing_association_status;
 
 mod _managed_thing_schema_list_item;
 

@@ -5,9 +5,6 @@ pub(crate) fn invoke_data_automation_output_output_correct_errors(
     if builder.semantic_modality.is_none() {
         builder.semantic_modality = "no value was set".parse::<crate::types::SemanticModality>().ok()
     }
-    if builder.output_segments.is_none() {
-        builder.output_segments = Some(Default::default())
-    }
     builder
 }
 

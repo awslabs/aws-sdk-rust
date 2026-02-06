@@ -17,10 +17,12 @@ pub struct GetAccountAssociationOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account association.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub o_auth_authorization_url: ::std::string::String,
     /// <p>A set of key/value pairs that are used to manage the account association.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub general_authorization: ::std::option::Option<crate::types::GeneralAuthorizationName>,
     _request_id: Option<String>,
 }
 impl GetAccountAssociationOutput {
@@ -53,7 +55,7 @@ impl GetAccountAssociationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn o_auth_authorization_url(&self) -> &str {
         use std::ops::Deref;
         self.o_auth_authorization_url.deref()
@@ -61,6 +63,10 @@ impl GetAccountAssociationOutput {
     /// <p>A set of key/value pairs that are used to manage the account association.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn general_authorization(&self) -> ::std::option::Option<&crate::types::GeneralAuthorizationName> {
+        self.general_authorization.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetAccountAssociationOutput {
@@ -75,6 +81,7 @@ impl ::std::fmt::Debug for GetAccountAssociationOutput {
         formatter.field("arn", &self.arn);
         formatter.field("o_auth_authorization_url", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("general_authorization", &self.general_authorization);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -104,6 +111,7 @@ pub struct GetAccountAssociationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) o_auth_authorization_url: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) general_authorization: ::std::option::Option<crate::types::GeneralAuthorizationName>,
     _request_id: Option<String>,
 }
 impl GetAccountAssociationOutputBuilder {
@@ -207,18 +215,18 @@ impl GetAccountAssociationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     /// This field is required.
     pub fn o_auth_authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.o_auth_authorization_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn set_o_auth_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.o_auth_authorization_url = input;
         self
     }
-    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn get_o_auth_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.o_auth_authorization_url
     }
@@ -242,6 +250,20 @@ impl GetAccountAssociationOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn general_authorization(mut self, input: crate::types::GeneralAuthorizationName) -> Self {
+        self.general_authorization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn set_general_authorization(mut self, input: ::std::option::Option<crate::types::GeneralAuthorizationName>) -> Self {
+        self.general_authorization = input;
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn get_general_authorization(&self) -> &::std::option::Option<crate::types::GeneralAuthorizationName> {
+        &self.general_authorization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -255,7 +277,6 @@ impl GetAccountAssociationOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_association_id`](crate::operation::get_account_association::builders::GetAccountAssociationOutputBuilder::account_association_id)
     /// - [`association_state`](crate::operation::get_account_association::builders::GetAccountAssociationOutputBuilder::association_state)
-    /// - [`o_auth_authorization_url`](crate::operation::get_account_association::builders::GetAccountAssociationOutputBuilder::o_auth_authorization_url)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_account_association::GetAccountAssociationOutput, ::aws_smithy_types::error::operation::BuildError>
@@ -278,13 +299,9 @@ impl GetAccountAssociationOutputBuilder {
             name: self.name,
             description: self.description,
             arn: self.arn,
-            o_auth_authorization_url: self.o_auth_authorization_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "o_auth_authorization_url",
-                    "o_auth_authorization_url was not specified but it is required when building GetAccountAssociationOutput",
-                )
-            })?,
+            o_auth_authorization_url: self.o_auth_authorization_url.unwrap_or_default(),
             tags: self.tags,
+            general_authorization: self.general_authorization,
             _request_id: self._request_id,
         })
     }
@@ -301,6 +318,7 @@ impl ::std::fmt::Debug for GetAccountAssociationOutputBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("o_auth_authorization_url", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("general_authorization", &self.general_authorization);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

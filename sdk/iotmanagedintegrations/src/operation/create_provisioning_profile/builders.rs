@@ -136,6 +136,20 @@ impl CreateProvisioningProfileFluentBuilder {
     pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate()
     }
+    /// <p>The claim certificate.</p>
+    pub fn claim_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.claim_certificate(input.into());
+        self
+    }
+    /// <p>The claim certificate.</p>
+    pub fn set_claim_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_claim_certificate(input);
+        self
+    }
+    /// <p>The claim certificate.</p>
+    pub fn get_claim_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_claim_certificate()
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

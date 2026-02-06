@@ -9,7 +9,7 @@ pub struct CreateManagedThingInput {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the credential for the managed thing.</p>
     pub credential_locker_id: ::std::option::Option<::std::string::String>,
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub authentication_material: ::std::option::Option<::std::string::String>,
     /// <p>The type of authentication material used for device connectivity setup requests.</p>
     pub authentication_material_type: ::std::option::Option<crate::types::AuthMaterialType>,
@@ -53,7 +53,7 @@ impl CreateManagedThingInput {
     pub fn credential_locker_id(&self) -> ::std::option::Option<&str> {
         self.credential_locker_id.as_deref()
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn authentication_material(&self) -> ::std::option::Option<&str> {
         self.authentication_material.as_deref()
     }
@@ -210,18 +210,18 @@ impl CreateManagedThingInputBuilder {
     pub fn get_credential_locker_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_locker_id
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     /// This field is required.
     pub fn authentication_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.authentication_material = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn set_authentication_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.authentication_material = input;
         self
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn get_authentication_material(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_material
     }

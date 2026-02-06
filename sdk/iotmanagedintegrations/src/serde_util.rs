@@ -232,6 +232,19 @@ pub(crate) fn state_endpoint_correct_errors(
     builder
 }
 
+pub(crate) fn auth_material_correct_errors(mut builder: crate::types::builders::AuthMaterialBuilder) -> crate::types::builders::AuthMaterialBuilder {
+    if builder.secrets_manager.is_none() {
+        builder.secrets_manager = {
+            let builder = crate::types::builders::SecretsManagerBuilder::default();
+            crate::serde_util::secrets_manager_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.auth_material_name.is_none() {
+        builder.auth_material_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn capability_report_endpoint_correct_errors(
     mut builder: crate::types::builders::CapabilityReportEndpointBuilder,
 ) -> crate::types::builders::CapabilityReportEndpointBuilder {

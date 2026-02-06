@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`resource_snapshot_template_name(Option<String>)`](crate::operation::get_resource_snapshot::GetResourceSnapshotOutput::resource_snapshot_template_name): <p>The name of the view used for this snapshot. This is the same as the template name.</p>
     ///   - [`revision(Option<i32>)`](crate::operation::get_resource_snapshot::GetResourceSnapshotOutput::revision): <p>The revision number of this snapshot. This is a positive integer that is sequential and unique within the context of a resource view.</p>
     ///   - [`payload(Option<ResourceSnapshotPayload>)`](crate::operation::get_resource_snapshot::GetResourceSnapshotOutput::payload): <p>Represents the payload of a resource snapshot. This structure is designed to accommodate different types of resource snapshots, currently supporting opportunity summaries.</p>
+    ///   - [`target_member_accounts(Option<Vec::<String>>)`](crate::operation::get_resource_snapshot::GetResourceSnapshotOutput::target_member_accounts): <p>Target member accounts associated with the resource snapshot.</p>
     /// - On failure, responds with [`SdkError<GetResourceSnapshotError>`](crate::operation::get_resource_snapshot::GetResourceSnapshotError)
     pub fn get_resource_snapshot(&self) -> crate::operation::get_resource_snapshot::builders::GetResourceSnapshotFluentBuilder {
         crate::operation::get_resource_snapshot::builders::GetResourceSnapshotFluentBuilder::new(self.handle.clone())

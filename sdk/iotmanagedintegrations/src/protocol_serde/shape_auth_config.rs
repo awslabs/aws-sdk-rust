@@ -9,6 +9,18 @@ pub fn ser_auth_config(
         crate::protocol_serde::shape_o_auth_config::ser_o_auth_config(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.general_authorization {
+        let mut array_4 = object.key("GeneralAuthorization").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_auth_material::ser_auth_material(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +42,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "oAuth" => {
                             builder = builder.set_o_auth(crate::protocol_serde::shape_o_auth_config::de_o_auth_config(tokens, _value)?);
+                        }
+                        "GeneralAuthorization" => {
+                            builder =
+                                builder.set_general_authorization(crate::protocol_serde::shape_auth_materials::de_auth_materials(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -6,11 +6,19 @@
 pub struct AuthConfig {
     /// <p>The OAuth configuration settings used for authentication with the third-party service.</p>
     pub o_auth: ::std::option::Option<crate::types::OAuthConfig>,
+    /// <p>The authorization materials for General Authorization.</p>
+    pub general_authorization: ::std::option::Option<::std::vec::Vec<crate::types::AuthMaterial>>,
 }
 impl AuthConfig {
     /// <p>The OAuth configuration settings used for authentication with the third-party service.</p>
     pub fn o_auth(&self) -> ::std::option::Option<&crate::types::OAuthConfig> {
         self.o_auth.as_ref()
+    }
+    /// <p>The authorization materials for General Authorization.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.general_authorization.is_none()`.
+    pub fn general_authorization(&self) -> &[crate::types::AuthMaterial] {
+        self.general_authorization.as_deref().unwrap_or_default()
     }
 }
 impl AuthConfig {
@@ -25,6 +33,7 @@ impl AuthConfig {
 #[non_exhaustive]
 pub struct AuthConfigBuilder {
     pub(crate) o_auth: ::std::option::Option<crate::types::OAuthConfig>,
+    pub(crate) general_authorization: ::std::option::Option<::std::vec::Vec<crate::types::AuthMaterial>>,
 }
 impl AuthConfigBuilder {
     /// <p>The OAuth configuration settings used for authentication with the third-party service.</p>
@@ -41,8 +50,31 @@ impl AuthConfigBuilder {
     pub fn get_o_auth(&self) -> &::std::option::Option<crate::types::OAuthConfig> {
         &self.o_auth
     }
+    /// Appends an item to `general_authorization`.
+    ///
+    /// To override the contents of this collection use [`set_general_authorization`](Self::set_general_authorization).
+    ///
+    /// <p>The authorization materials for General Authorization.</p>
+    pub fn general_authorization(mut self, input: crate::types::AuthMaterial) -> Self {
+        let mut v = self.general_authorization.unwrap_or_default();
+        v.push(input);
+        self.general_authorization = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The authorization materials for General Authorization.</p>
+    pub fn set_general_authorization(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthMaterial>>) -> Self {
+        self.general_authorization = input;
+        self
+    }
+    /// <p>The authorization materials for General Authorization.</p>
+    pub fn get_general_authorization(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthMaterial>> {
+        &self.general_authorization
+    }
     /// Consumes the builder and constructs a [`AuthConfig`](crate::types::AuthConfig).
     pub fn build(self) -> crate::types::AuthConfig {
-        crate::types::AuthConfig { o_auth: self.o_auth }
+        crate::types::AuthConfig {
+            o_auth: self.o_auth,
+            general_authorization: self.general_authorization,
+        }
     }
 }

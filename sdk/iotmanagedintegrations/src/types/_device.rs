@@ -48,7 +48,7 @@ impl ::std::fmt::Debug for Device {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Device");
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("connector_device_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_device_name", &self.connector_device_name);
         formatter.field("capability_report", &self.capability_report);
         formatter.field("capability_schemas", &self.capability_schemas);
         formatter.field("device_metadata", &self.device_metadata);
@@ -179,7 +179,7 @@ impl ::std::fmt::Debug for DeviceBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceBuilder");
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("connector_device_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_device_name", &self.connector_device_name);
         formatter.field("capability_report", &self.capability_report);
         formatter.field("capability_schemas", &self.capability_schemas);
         formatter.field("device_metadata", &self.device_metadata);

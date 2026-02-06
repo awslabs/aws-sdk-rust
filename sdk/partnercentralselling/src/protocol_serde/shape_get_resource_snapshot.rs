@@ -210,6 +210,11 @@ pub(crate) fn de_get_resource_snapshot(
                         tokens, _value,
                     )?);
                 }
+                "TargetMemberAccounts" => {
+                    builder = builder.set_target_member_accounts(
+                        crate::protocol_serde::shape_aws_account_id_or_alias_list::de_aws_account_id_or_alias_list(tokens, _value)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

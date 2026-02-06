@@ -150,17 +150,17 @@ impl CreateManagedThingFluentBuilder {
     pub fn get_credential_locker_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_credential_locker_id()
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn authentication_material(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.authentication_material(input.into());
         self
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn set_authentication_material(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_material(input);
         self
     }
-    /// <p>The authentication material defining the device connectivity setup requests. The authentication materials used are the device bar code.</p>
+    /// <p>The authentication material defining the device connectivity setup requests. The authorization materials used are the device bar code.</p>
     pub fn get_authentication_material(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_authentication_material()
     }

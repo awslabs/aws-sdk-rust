@@ -183,4 +183,18 @@ impl CreateAccountAssociationFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn general_authorization(mut self, input: crate::types::GeneralAuthorizationName) -> Self {
+        self.inner = self.inner.general_authorization(input);
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn set_general_authorization(mut self, input: ::std::option::Option<crate::types::GeneralAuthorizationName>) -> Self {
+        self.inner = self.inner.set_general_authorization(input);
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn get_general_authorization(&self) -> &::std::option::Option<crate::types::GeneralAuthorizationName> {
+        self.inner.get_general_authorization()
+    }
 }

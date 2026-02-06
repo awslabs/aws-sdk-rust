@@ -309,6 +309,8 @@ pub(crate) mod shape_endpoint_config;
 
 pub(crate) mod shape_event_log_configuration_list_definition;
 
+pub(crate) mod shape_general_authorization_name;
+
 pub(crate) mod shape_managed_thing_association_list;
 
 pub(crate) mod shape_managed_thing_list_definition;
@@ -353,6 +355,10 @@ pub(crate) mod shape_wi_fi_simple_setup_configuration;
 
 pub(crate) mod shape_account_association_item;
 
+pub(crate) mod shape_auth_material;
+
+pub(crate) mod shape_auth_materials;
+
 pub(crate) mod shape_capability_report_endpoint;
 
 pub(crate) mod shape_capability_report_endpoints;
@@ -374,6 +380,8 @@ pub(crate) mod shape_device_discovery_summary;
 pub(crate) mod shape_discovered_device_summary;
 
 pub(crate) mod shape_event_log_configuration_summary;
+
+pub(crate) mod shape_general_authorization_update;
 
 pub(crate) mod shape_lambda_config;
 

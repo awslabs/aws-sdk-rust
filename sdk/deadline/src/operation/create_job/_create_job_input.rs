@@ -37,6 +37,8 @@ pub struct CreateJobInput {
     pub name_override: ::std::option::Option<::std::string::String>,
     /// <p>A custom description to override the job description derived from the job template.</p>
     pub description_override: ::std::option::Option<::std::string::String>,
+    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateJobInput {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -105,6 +107,10 @@ impl CreateJobInput {
     pub fn description_override(&self) -> ::std::option::Option<&str> {
         self.description_override.as_deref()
     }
+    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -125,6 +131,7 @@ impl ::std::fmt::Debug for CreateJobInput {
         formatter.field("source_job_id", &self.source_job_id);
         formatter.field("name_override", &self.name_override);
         formatter.field("description_override", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -155,6 +162,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) source_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) name_override: ::std::option::Option<::std::string::String>,
     pub(crate) description_override: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateJobInputBuilder {
     /// <p>The farm ID of the farm to connect to the job.</p>
@@ -399,6 +407,26 @@ impl CreateJobInputBuilder {
     pub fn get_description_override(&self) -> &::std::option::Option<::std::string::String> {
         &self.description_override
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags to add to your job. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
@@ -418,6 +446,7 @@ impl CreateJobInputBuilder {
             source_job_id: self.source_job_id,
             name_override: self.name_override,
             description_override: self.description_override,
+            tags: self.tags,
         })
     }
 }
@@ -440,6 +469,7 @@ impl ::std::fmt::Debug for CreateJobInputBuilder {
         formatter.field("source_job_id", &self.source_job_id);
         formatter.field("name_override", &self.name_override);
         formatter.field("description_override", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

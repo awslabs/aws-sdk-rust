@@ -215,6 +215,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_assignee_contact;
 
+pub(crate) mod shape_aws_account_id_or_alias_list;
+
 pub(crate) mod shape_aws_opportunity_customer;
 
 pub(crate) mod shape_aws_opportunity_insights;
@@ -230,6 +232,8 @@ pub(crate) mod shape_aws_opportunity_team_members_list;
 pub(crate) mod shape_aws_submission;
 
 pub(crate) mod shape_contact;
+
+pub(crate) mod shape_created_date_filter;
 
 pub(crate) mod shape_customer;
 
@@ -316,6 +320,8 @@ pub(crate) mod shape_apn_programs;
 pub(crate) mod shape_aws_marketplace_offer_identifiers;
 
 pub(crate) mod shape_aws_marketplace_offer_set_identifiers;
+
+pub(crate) mod shape_aws_opportunity_summary_full_view;
 
 pub(crate) mod shape_aws_product_identifiers;
 

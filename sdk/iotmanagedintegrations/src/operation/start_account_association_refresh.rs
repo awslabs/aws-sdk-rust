@@ -275,6 +275,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartAccountA
 pub enum StartAccountAssociationRefreshError {
     /// <p>User is not authorized.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>There is a conflict with the request.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -319,6 +321,7 @@ impl StartAccountAssociationRefreshError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -330,6 +333,10 @@ impl StartAccountAssociationRefreshError {
     /// Returns `true` if the error kind is `StartAccountAssociationRefreshError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `StartAccountAssociationRefreshError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartAccountAssociationRefreshError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -356,6 +363,7 @@ impl ::std::error::Error for StartAccountAssociationRefreshError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
@@ -369,6 +377,7 @@ impl ::std::fmt::Display for StartAccountAssociationRefreshError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
@@ -396,6 +405,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartAccountA
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -106,8 +106,8 @@ impl ::std::fmt::Debug for SendConnectorEventInput {
         formatter.field("connector_id", &self.connector_id);
         formatter.field("user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("operation", &self.operation);
-        formatter.field("operation_version", &"*** Sensitive Data Redacted ***");
-        formatter.field("status_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_version", &self.operation_version);
+        formatter.field("status_code", &self.status_code);
         formatter.field("message", &"*** Sensitive Data Redacted ***");
         formatter.field("device_discovery_id", &self.device_discovery_id);
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");
@@ -368,8 +368,8 @@ impl ::std::fmt::Debug for SendConnectorEventInputBuilder {
         formatter.field("connector_id", &self.connector_id);
         formatter.field("user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("operation", &self.operation);
-        formatter.field("operation_version", &"*** Sensitive Data Redacted ***");
-        formatter.field("status_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("operation_version", &self.operation_version);
+        formatter.field("status_code", &self.status_code);
         formatter.field("message", &"*** Sensitive Data Redacted ***");
         formatter.field("device_discovery_id", &self.device_discovery_id);
         formatter.field("connector_device_id", &"*** Sensitive Data Redacted ***");

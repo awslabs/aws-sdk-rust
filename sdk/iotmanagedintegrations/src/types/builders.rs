@@ -83,6 +83,10 @@ pub use crate::types::_secrets_manager::SecretsManagerBuilder;
 
 pub use crate::types::_auth_config_update::AuthConfigUpdateBuilder;
 
+pub use crate::types::_general_authorization_update::GeneralAuthorizationUpdateBuilder;
+
+pub use crate::types::_auth_material::AuthMaterialBuilder;
+
 pub use crate::types::_o_auth_update::OAuthUpdateBuilder;
 
 pub use crate::types::_proactive_refresh_token_renewal::ProactiveRefreshTokenRenewalBuilder;
@@ -98,6 +102,8 @@ pub use crate::types::_endpoint_config::EndpointConfigBuilder;
 pub use crate::types::_lambda_config::LambdaConfigBuilder;
 
 pub use crate::types::_connector_item::ConnectorItemBuilder;
+
+pub use crate::types::_general_authorization_name::GeneralAuthorizationNameBuilder;
 
 pub use crate::types::_account_association_item::AccountAssociationItemBuilder;
 

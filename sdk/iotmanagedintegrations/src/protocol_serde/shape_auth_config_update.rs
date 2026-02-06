@@ -9,5 +9,11 @@ pub fn ser_auth_config_update(
         crate::protocol_serde::shape_o_auth_update::ser_o_auth_update(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.general_authorization_update {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("GeneralAuthorizationUpdate").start_object();
+        crate::protocol_serde::shape_general_authorization_update::ser_general_authorization_update(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

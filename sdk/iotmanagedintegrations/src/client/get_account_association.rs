@@ -12,8 +12,9 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_account_association::GetAccountAssociationOutput::name): <p>The name of the account association.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_account_association::GetAccountAssociationOutput::description): <p>The description of the account association.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_account_association::GetAccountAssociationOutput::arn): <p>The Amazon Resource Name (ARN) of the account association.</p>
-    ///   - [`o_auth_authorization_url(String)`](crate::operation::get_account_association::GetAccountAssociationOutput::o_auth_authorization_url): <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    ///   - [`o_auth_authorization_url(String)`](crate::operation::get_account_association::GetAccountAssociationOutput::o_auth_authorization_url): <p>Third party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_account_association::GetAccountAssociationOutput::tags): <p>A set of key/value pairs that are used to manage the account association.</p>
+    ///   - [`general_authorization(Option<GeneralAuthorizationName>)`](crate::operation::get_account_association::GetAccountAssociationOutput::general_authorization): <p>The General Authorization reference by authorization material name.</p>
     /// - On failure, responds with [`SdkError<GetAccountAssociationError>`](crate::operation::get_account_association::GetAccountAssociationError)
     pub fn get_account_association(&self) -> crate::operation::get_account_association::builders::GetAccountAssociationFluentBuilder {
         crate::operation::get_account_association::builders::GetAccountAssociationFluentBuilder::new(self.handle.clone())

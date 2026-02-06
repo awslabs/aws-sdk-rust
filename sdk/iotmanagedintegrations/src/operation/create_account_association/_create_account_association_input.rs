@@ -13,6 +13,8 @@ pub struct CreateAccountAssociationInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that are used to manage the account association.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub general_authorization: ::std::option::Option<crate::types::GeneralAuthorizationName>,
 }
 impl CreateAccountAssociationInput {
     /// <p>An idempotency token. If you retry a request that completed successfully initially using the same client token and parameters, then the retry attempt will succeed without performing any further actions.</p>
@@ -35,6 +37,10 @@ impl CreateAccountAssociationInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn general_authorization(&self) -> ::std::option::Option<&crate::types::GeneralAuthorizationName> {
+        self.general_authorization.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAccountAssociationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -44,6 +50,7 @@ impl ::std::fmt::Debug for CreateAccountAssociationInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("general_authorization", &self.general_authorization);
         formatter.finish()
     }
 }
@@ -63,6 +70,7 @@ pub struct CreateAccountAssociationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) general_authorization: ::std::option::Option<crate::types::GeneralAuthorizationName>,
 }
 impl CreateAccountAssociationInputBuilder {
     /// <p>An idempotency token. If you retry a request that completed successfully initially using the same client token and parameters, then the retry attempt will succeed without performing any further actions.</p>
@@ -142,6 +150,20 @@ impl CreateAccountAssociationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn general_authorization(mut self, input: crate::types::GeneralAuthorizationName) -> Self {
+        self.general_authorization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn set_general_authorization(mut self, input: ::std::option::Option<crate::types::GeneralAuthorizationName>) -> Self {
+        self.general_authorization = input;
+        self
+    }
+    /// <p>The General Authorization reference by authorization material name.</p>
+    pub fn get_general_authorization(&self) -> &::std::option::Option<crate::types::GeneralAuthorizationName> {
+        &self.general_authorization
+    }
     /// Consumes the builder and constructs a [`CreateAccountAssociationInput`](crate::operation::create_account_association::CreateAccountAssociationInput).
     pub fn build(
         self,
@@ -155,6 +177,7 @@ impl CreateAccountAssociationInputBuilder {
             name: self.name,
             description: self.description,
             tags: self.tags,
+            general_authorization: self.general_authorization,
         })
     }
 }
@@ -166,6 +189,7 @@ impl ::std::fmt::Debug for CreateAccountAssociationInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("general_authorization", &self.general_authorization);
         formatter.finish()
     }
 }

@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeDataAutomationOutput {
+    /// Output configuration
+    pub output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
     /// Detected semantic modality
     pub semantic_modality: crate::types::SemanticModality,
     /// List of outputs for each logical sub-doc
@@ -11,6 +13,10 @@ pub struct InvokeDataAutomationOutput {
     _request_id: Option<String>,
 }
 impl InvokeDataAutomationOutput {
+    /// Output configuration
+    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::OutputConfiguration> {
+        self.output_configuration.as_ref()
+    }
     /// Detected semantic modality
     pub fn semantic_modality(&self) -> &crate::types::SemanticModality {
         &self.semantic_modality
@@ -37,11 +43,26 @@ impl InvokeDataAutomationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct InvokeDataAutomationOutputBuilder {
+    pub(crate) output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
     pub(crate) semantic_modality: ::std::option::Option<crate::types::SemanticModality>,
     pub(crate) output_segments: ::std::option::Option<::std::vec::Vec<crate::types::OutputSegment>>,
     _request_id: Option<String>,
 }
 impl InvokeDataAutomationOutputBuilder {
+    /// Output configuration
+    pub fn output_configuration(mut self, input: crate::types::OutputConfiguration) -> Self {
+        self.output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Output configuration
+    pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::OutputConfiguration>) -> Self {
+        self.output_configuration = input;
+        self
+    }
+    /// Output configuration
+    pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::OutputConfiguration> {
+        &self.output_configuration
+    }
     /// Detected semantic modality
     /// This field is required.
     pub fn semantic_modality(mut self, input: crate::types::SemanticModality) -> Self {
@@ -89,24 +110,19 @@ impl InvokeDataAutomationOutputBuilder {
     /// Consumes the builder and constructs a [`InvokeDataAutomationOutput`](crate::operation::invoke_data_automation::InvokeDataAutomationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`semantic_modality`](crate::operation::invoke_data_automation::builders::InvokeDataAutomationOutputBuilder::semantic_modality)
-    /// - [`output_segments`](crate::operation::invoke_data_automation::builders::InvokeDataAutomationOutputBuilder::output_segments)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::invoke_data_automation::InvokeDataAutomationOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::invoke_data_automation::InvokeDataAutomationOutput {
+            output_configuration: self.output_configuration,
             semantic_modality: self.semantic_modality.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "semantic_modality",
                     "semantic_modality was not specified but it is required when building InvokeDataAutomationOutput",
                 )
             })?,
-            output_segments: self.output_segments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_segments",
-                    "output_segments was not specified but it is required when building InvokeDataAutomationOutput",
-                )
-            })?,
+            output_segments: self.output_segments.unwrap_or_default(),
             _request_id: self._request_id,
         })
     }

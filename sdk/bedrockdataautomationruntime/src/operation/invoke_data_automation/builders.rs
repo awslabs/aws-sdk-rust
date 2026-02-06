@@ -183,4 +183,18 @@ impl InvokeDataAutomationFluentBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
+    /// Output configuration.
+    pub fn output_configuration(mut self, input: crate::types::OutputConfiguration) -> Self {
+        self.inner = self.inner.output_configuration(input);
+        self
+    }
+    /// Output configuration.
+    pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::OutputConfiguration>) -> Self {
+        self.inner = self.inner.set_output_configuration(input);
+        self
+    }
+    /// Output configuration.
+    pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::OutputConfiguration> {
+        self.inner.get_output_configuration()
+    }
 }

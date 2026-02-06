@@ -8,6 +8,8 @@ pub struct ManagedThingAssociation {
     pub managed_thing_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the account association in the association.</p>
     pub account_association_id: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the registration between the managed thing and the account association. Indicates whether the device is pre-associated or fully associated with the account association.</p>
+    pub managed_thing_association_status: ::std::option::Option<crate::types::ManagedThingAssociationStatus>,
 }
 impl ManagedThingAssociation {
     /// <p>The identifier of the managed thing in the association.</p>
@@ -17,6 +19,10 @@ impl ManagedThingAssociation {
     /// <p>The identifier of the account association in the association.</p>
     pub fn account_association_id(&self) -> ::std::option::Option<&str> {
         self.account_association_id.as_deref()
+    }
+    /// <p>The status of the registration between the managed thing and the account association. Indicates whether the device is pre-associated or fully associated with the account association.</p>
+    pub fn managed_thing_association_status(&self) -> ::std::option::Option<&crate::types::ManagedThingAssociationStatus> {
+        self.managed_thing_association_status.as_ref()
     }
 }
 impl ManagedThingAssociation {
@@ -32,6 +38,7 @@ impl ManagedThingAssociation {
 pub struct ManagedThingAssociationBuilder {
     pub(crate) managed_thing_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_thing_association_status: ::std::option::Option<crate::types::ManagedThingAssociationStatus>,
 }
 impl ManagedThingAssociationBuilder {
     /// <p>The identifier of the managed thing in the association.</p>
@@ -62,11 +69,26 @@ impl ManagedThingAssociationBuilder {
     pub fn get_account_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_association_id
     }
+    /// <p>The status of the registration between the managed thing and the account association. Indicates whether the device is pre-associated or fully associated with the account association.</p>
+    pub fn managed_thing_association_status(mut self, input: crate::types::ManagedThingAssociationStatus) -> Self {
+        self.managed_thing_association_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the registration between the managed thing and the account association. Indicates whether the device is pre-associated or fully associated with the account association.</p>
+    pub fn set_managed_thing_association_status(mut self, input: ::std::option::Option<crate::types::ManagedThingAssociationStatus>) -> Self {
+        self.managed_thing_association_status = input;
+        self
+    }
+    /// <p>The status of the registration between the managed thing and the account association. Indicates whether the device is pre-associated or fully associated with the account association.</p>
+    pub fn get_managed_thing_association_status(&self) -> &::std::option::Option<crate::types::ManagedThingAssociationStatus> {
+        &self.managed_thing_association_status
+    }
     /// Consumes the builder and constructs a [`ManagedThingAssociation`](crate::types::ManagedThingAssociation).
     pub fn build(self) -> crate::types::ManagedThingAssociation {
         crate::types::ManagedThingAssociation {
             managed_thing_id: self.managed_thing_id,
             account_association_id: self.account_association_id,
+            managed_thing_association_status: self.managed_thing_association_status,
         }
     }
 }

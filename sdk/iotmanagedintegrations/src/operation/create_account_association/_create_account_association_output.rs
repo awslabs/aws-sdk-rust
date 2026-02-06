@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAccountAssociationOutput {
-    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub o_auth_authorization_url: ::std::string::String,
     /// <p>The identifier for the account association request.</p>
     pub account_association_id: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct CreateAccountAssociationOutput {
     _request_id: Option<String>,
 }
 impl CreateAccountAssociationOutput {
-    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn o_auth_authorization_url(&self) -> &str {
         use std::ops::Deref;
         self.o_auth_authorization_url.deref()
@@ -67,18 +67,18 @@ pub struct CreateAccountAssociationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAccountAssociationOutputBuilder {
-    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     /// This field is required.
     pub fn o_auth_authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.o_auth_authorization_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn set_o_auth_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.o_auth_authorization_url = input;
         self
     }
-    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication.</p>
+    /// <p>Third-party IoT platform OAuth authorization server URL backed with all the required parameters to perform end-user authentication. This field will be empty when using General Authorization flows that do not require OAuth.</p>
     pub fn get_o_auth_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.o_auth_authorization_url
     }
@@ -137,7 +137,6 @@ impl CreateAccountAssociationOutputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateAccountAssociationOutput`](crate::operation::create_account_association::CreateAccountAssociationOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`o_auth_authorization_url`](crate::operation::create_account_association::builders::CreateAccountAssociationOutputBuilder::o_auth_authorization_url)
     /// - [`account_association_id`](crate::operation::create_account_association::builders::CreateAccountAssociationOutputBuilder::account_association_id)
     /// - [`association_state`](crate::operation::create_account_association::builders::CreateAccountAssociationOutputBuilder::association_state)
     pub fn build(
@@ -147,12 +146,7 @@ impl CreateAccountAssociationOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_account_association::CreateAccountAssociationOutput {
-            o_auth_authorization_url: self.o_auth_authorization_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "o_auth_authorization_url",
-                    "o_auth_authorization_url was not specified but it is required when building CreateAccountAssociationOutput",
-                )
-            })?,
+            o_auth_authorization_url: self.o_auth_authorization_url.unwrap_or_default(),
             account_association_id: self.account_association_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_association_id",

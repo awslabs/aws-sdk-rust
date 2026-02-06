@@ -35,13 +35,11 @@ pub use crate::types::_engagement_resource_association_summary::EngagementResour
 
 pub use crate::types::_resource_snapshot_payload::ResourceSnapshotPayload;
 
-pub use crate::types::_opportunity_summary_view::OpportunitySummaryView;
+pub use crate::types::_aws_opportunity_summary_full_view::AwsOpportunitySummaryFullView;
 
-pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiers;
+pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
 
-pub use crate::types::_project_view::ProjectView;
-
-pub use crate::types::_sales_activity::SalesActivity;
+pub use crate::types::_aws_partition::AwsPartition;
 
 pub use crate::types::_expected_customer_spend::ExpectedCustomerSpend;
 
@@ -49,49 +47,9 @@ pub use crate::types::_payment_frequency::PaymentFrequency;
 
 pub use crate::types::_currency_code::CurrencyCode;
 
-pub use crate::types::_delivery_model::DeliveryModel;
-
-pub use crate::types::_customer::Customer;
+pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_contact::Contact;
-
-pub use crate::types::_account::Account;
-
-pub use crate::types::_address::Address;
-
-pub use crate::types::_country_code::CountryCode;
-
-pub use crate::types::_industry::Industry;
-
-pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
-
-pub use crate::types::_life_cycle_for_view::LifeCycleForView;
-
-pub use crate::types::_stage::Stage;
-
-pub use crate::types::_review_status::ReviewStatus;
-
-pub use crate::types::_opportunity_type::OpportunityType;
-
-pub use crate::types::_reason_code::ReasonCode;
-
-pub use crate::types::_task_status::TaskStatus;
-
-pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummary;
-
-pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
-
-pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
-
-pub use crate::types::_visibility::Visibility;
-
-pub use crate::types::_sales_involvement_type::SalesInvolvementType;
-
-pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
-
-pub use crate::types::_aws_partition::AwsPartition;
-
-pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_aws_opportunity_related_entities::AwsOpportunityRelatedEntities;
 
@@ -121,7 +79,51 @@ pub use crate::types::_aws_opportunity_stage::AwsOpportunityStage;
 
 pub use crate::types::_aws_closed_lost_reason::AwsClosedLostReason;
 
+pub use crate::types::_visibility::Visibility;
+
+pub use crate::types::_sales_involvement_type::SalesInvolvementType;
+
 pub use crate::types::_opportunity_origin::OpportunityOrigin;
+
+pub use crate::types::_opportunity_summary_view::OpportunitySummaryView;
+
+pub use crate::types::_related_entity_identifiers::RelatedEntityIdentifiers;
+
+pub use crate::types::_project_view::ProjectView;
+
+pub use crate::types::_sales_activity::SalesActivity;
+
+pub use crate::types::_delivery_model::DeliveryModel;
+
+pub use crate::types::_customer::Customer;
+
+pub use crate::types::_account::Account;
+
+pub use crate::types::_address::Address;
+
+pub use crate::types::_country_code::CountryCode;
+
+pub use crate::types::_industry::Industry;
+
+pub use crate::types::_primary_need_from_aws::PrimaryNeedFromAws;
+
+pub use crate::types::_life_cycle_for_view::LifeCycleForView;
+
+pub use crate::types::_stage::Stage;
+
+pub use crate::types::_review_status::ReviewStatus;
+
+pub use crate::types::_opportunity_type::OpportunityType;
+
+pub use crate::types::_reason_code::ReasonCode;
+
+pub use crate::types::_task_status::TaskStatus;
+
+pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummary;
+
+pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
+
+pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
 
 pub use crate::types::_related_entity_type::RelatedEntityType;
 
@@ -164,6 +166,8 @@ pub use crate::types::_account_summary::AccountSummary;
 pub use crate::types::_address_summary::AddressSummary;
 
 pub use crate::types::_life_cycle_summary::LifeCycleSummary;
+
+pub use crate::types::_created_date_filter::CreatedDateFilter;
 
 pub use crate::types::_last_modified_date::LastModifiedDate;
 
@@ -279,6 +283,8 @@ mod _aws_opportunity_related_entities;
 
 mod _aws_opportunity_stage;
 
+mod _aws_opportunity_summary_full_view;
+
 mod _aws_partition;
 
 mod _aws_product_details;
@@ -302,6 +308,8 @@ mod _competitor_name;
 mod _contact;
 
 mod _country_code;
+
+mod _created_date_filter;
 
 mod _currency_code;
 

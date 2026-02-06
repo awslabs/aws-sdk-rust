@@ -14,6 +14,8 @@ pub struct InvokeDataAutomationInput {
     pub data_automation_profile_arn: ::std::option::Option<::std::string::String>,
     /// Encryption configuration.
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// Output configuration.
+    pub output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
 }
 impl InvokeDataAutomationInput {
     /// Input configuration.
@@ -38,6 +40,10 @@ impl InvokeDataAutomationInput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// Output configuration.
+    pub fn output_configuration(&self) -> ::std::option::Option<&crate::types::OutputConfiguration> {
+        self.output_configuration.as_ref()
+    }
 }
 impl InvokeDataAutomationInput {
     /// Creates a new builder-style object to manufacture [`InvokeDataAutomationInput`](crate::operation::invoke_data_automation::InvokeDataAutomationInput).
@@ -55,6 +61,7 @@ pub struct InvokeDataAutomationInputBuilder {
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
     pub(crate) data_automation_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) output_configuration: ::std::option::Option<crate::types::OutputConfiguration>,
 }
 impl InvokeDataAutomationInputBuilder {
     /// Input configuration.
@@ -135,6 +142,20 @@ impl InvokeDataAutomationInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Output configuration.
+    pub fn output_configuration(mut self, input: crate::types::OutputConfiguration) -> Self {
+        self.output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Output configuration.
+    pub fn set_output_configuration(mut self, input: ::std::option::Option<crate::types::OutputConfiguration>) -> Self {
+        self.output_configuration = input;
+        self
+    }
+    /// Output configuration.
+    pub fn get_output_configuration(&self) -> &::std::option::Option<crate::types::OutputConfiguration> {
+        &self.output_configuration
+    }
     /// Consumes the builder and constructs a [`InvokeDataAutomationInput`](crate::operation::invoke_data_automation::InvokeDataAutomationInput).
     pub fn build(
         self,
@@ -146,6 +167,7 @@ impl InvokeDataAutomationInputBuilder {
             blueprints: self.blueprints,
             data_automation_profile_arn: self.data_automation_profile_arn,
             encryption_configuration: self.encryption_configuration,
+            output_configuration: self.output_configuration,
         })
     }
 }

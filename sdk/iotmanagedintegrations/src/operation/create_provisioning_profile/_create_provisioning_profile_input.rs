@@ -7,6 +7,8 @@ pub struct CreateProvisioningProfileInput {
     pub provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     /// <p>The id of the certificate authority (CA) certificate.</p>
     pub ca_certificate: ::std::option::Option<::std::string::String>,
+    /// <p>The claim certificate.</p>
+    pub claim_certificate: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An idempotency token. If you retry a request that completed successfully initially using the same client token and parameters, then the retry attempt will succeed without performing any further actions.</p>
@@ -22,6 +24,10 @@ impl CreateProvisioningProfileInput {
     /// <p>The id of the certificate authority (CA) certificate.</p>
     pub fn ca_certificate(&self) -> ::std::option::Option<&str> {
         self.ca_certificate.as_deref()
+    }
+    /// <p>The claim certificate.</p>
+    pub fn claim_certificate(&self) -> ::std::option::Option<&str> {
+        self.claim_certificate.as_deref()
     }
     /// <p>The name of the provisioning template.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -41,6 +47,7 @@ impl ::std::fmt::Debug for CreateProvisioningProfileInput {
         let mut formatter = f.debug_struct("CreateProvisioningProfileInput");
         formatter.field("provisioning_type", &self.provisioning_type);
         formatter.field("ca_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("claim_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -60,6 +67,7 @@ impl CreateProvisioningProfileInput {
 pub struct CreateProvisioningProfileInputBuilder {
     pub(crate) provisioning_type: ::std::option::Option<crate::types::ProvisioningType>,
     pub(crate) ca_certificate: ::std::option::Option<::std::string::String>,
+    pub(crate) claim_certificate: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -93,6 +101,20 @@ impl CreateProvisioningProfileInputBuilder {
     /// <p>The id of the certificate authority (CA) certificate.</p>
     pub fn get_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate
+    }
+    /// <p>The claim certificate.</p>
+    pub fn claim_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.claim_certificate = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The claim certificate.</p>
+    pub fn set_claim_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.claim_certificate = input;
+        self
+    }
+    /// <p>The claim certificate.</p>
+    pub fn get_claim_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.claim_certificate
     }
     /// <p>The name of the provisioning template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +174,7 @@ impl CreateProvisioningProfileInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_provisioning_profile::CreateProvisioningProfileInput {
             provisioning_type: self.provisioning_type,
             ca_certificate: self.ca_certificate,
+            claim_certificate: self.claim_certificate,
             name: self.name,
             client_token: self.client_token,
             tags: self.tags,
@@ -163,6 +186,7 @@ impl ::std::fmt::Debug for CreateProvisioningProfileInputBuilder {
         let mut formatter = f.debug_struct("CreateProvisioningProfileInputBuilder");
         formatter.field("provisioning_type", &self.provisioning_type);
         formatter.field("ca_certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("claim_certificate", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");

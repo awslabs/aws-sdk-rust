@@ -36,5 +36,11 @@ pub fn ser_invoke_data_automation_input_input(
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.output_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("outputConfiguration").start_object();
+        crate::protocol_serde::shape_output_configuration::ser_output_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

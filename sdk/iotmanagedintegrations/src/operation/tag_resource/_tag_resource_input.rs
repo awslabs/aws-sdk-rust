@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// The ARN of the resource to which to add tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// A set of key/value pairs that are used to manage the resource
+    /// <p>A set of key/value pairs that are used to manage the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
-    /// The ARN of the resource to which to add tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// A set of key/value pairs that are used to manage the resource
+    /// <p>A set of key/value pairs that are used to manage the resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInputBuilder {
-    /// The ARN of the resource to which to add tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the resource to which to add tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// The ARN of the resource to which to add tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
@@ -60,19 +60,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A set of key/value pairs that are used to manage the resource
+    /// <p>A set of key/value pairs that are used to manage the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// A set of key/value pairs that are used to manage the resource
+    /// <p>A set of key/value pairs that are used to manage the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// A set of key/value pairs that are used to manage the resource
+    /// <p>A set of key/value pairs that are used to manage the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

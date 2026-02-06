@@ -58,14 +58,24 @@ pub fn ser_create_job_input_input(
     if let Some(var_15) = &input.storage_profile_id {
         object.key("storageProfileId").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.target_task_run_status {
-        object.key("targetTaskRunStatus").string(var_16.as_str());
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                object_17.key(key_18.as_str()).string(value_19.as_str());
+            }
+        }
+        object_17.finish();
     }
-    if let Some(var_17) = &input.template {
-        object.key("template").string(var_17.as_str());
+    if let Some(var_20) = &input.target_task_run_status {
+        object.key("targetTaskRunStatus").string(var_20.as_str());
     }
-    if let Some(var_18) = &input.template_type {
-        object.key("templateType").string(var_18.as_str());
+    if let Some(var_21) = &input.template {
+        object.key("template").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.template_type {
+        object.key("templateType").string(var_22.as_str());
     }
     Ok(())
 }

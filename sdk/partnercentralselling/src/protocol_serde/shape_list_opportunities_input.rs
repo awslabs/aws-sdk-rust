@@ -63,5 +63,11 @@ pub fn ser_list_opportunities_input_input(
         }
         array_18.finish();
     }
+    if let Some(var_20) = &input.created_date {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("CreatedDate").start_object();
+        crate::protocol_serde::shape_created_date_filter::ser_created_date_filter(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

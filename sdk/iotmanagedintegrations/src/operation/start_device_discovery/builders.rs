@@ -263,6 +263,25 @@ impl StartDeviceDiscoveryFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `ConnectorDeviceIdList`.
+    ///
+    /// To override the contents of this collection use [`set_connector_device_id_list`](Self::set_connector_device_id_list).
+    ///
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn connector_device_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.connector_device_id_list(input.into());
+        self
+    }
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn set_connector_device_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_connector_device_id_list(input);
+        self
+    }
+    /// <p>Used as a filter for PLA discoveries.</p>
+    pub fn get_connector_device_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_connector_device_id_list()
+    }
     /// <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p><note>
     /// <p>This parameter is only available when the discovery type is CONTROLLER_CAPABILITY_REDISCOVERY.</p>
     /// </note>

@@ -112,7 +112,6 @@ impl CreateConnectorDestinationInputBuilder {
         &self.cloud_connector_id
     }
     /// <p>The authentication type used for the connector destination, which determines how credentials and access are managed.</p>
-    /// This field is required.
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
@@ -142,7 +141,6 @@ impl CreateConnectorDestinationInputBuilder {
         &self.auth_config
     }
     /// <p>The AWS Secrets Manager configuration used to securely store and manage sensitive information for the connector destination.</p>
-    /// This field is required.
     pub fn secrets_manager(mut self, input: crate::types::SecretsManager) -> Self {
         self.secrets_manager = ::std::option::Option::Some(input);
         self

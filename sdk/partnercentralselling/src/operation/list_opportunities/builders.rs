@@ -273,4 +273,18 @@ impl ListOpportunitiesFluentBuilder {
     pub fn get_customer_company_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_customer_company_name()
     }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn created_date(mut self, input: crate::types::CreatedDateFilter) -> Self {
+        self.inner = self.inner.created_date(input);
+        self
+    }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn set_created_date(mut self, input: ::std::option::Option<crate::types::CreatedDateFilter>) -> Self {
+        self.inner = self.inner.set_created_date(input);
+        self
+    }
+    /// <p>Filter opportunities by creation date criteria.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<crate::types::CreatedDateFilter> {
+        self.inner.get_created_date()
+    }
 }

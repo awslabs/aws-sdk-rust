@@ -12,6 +12,7 @@
 /// ```text
 /// # let opportunitysortname = unimplemented!();
 /// match opportunitysortname {
+///     OpportunitySortName::CreatedDate => { /* ... */ },
 ///     OpportunitySortName::CustomerCompanyName => { /* ... */ },
 ///     OpportunitySortName::Identifier => { /* ... */ },
 ///     OpportunitySortName::LastModifieddate => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum OpportunitySortName {
     #[allow(missing_docs)] // documentation missing in model
+    CreatedDate,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerCompanyName,
     #[allow(missing_docs)] // documentation missing in model
     Identifier,
@@ -56,6 +59,7 @@ pub enum OpportunitySortName {
 impl ::std::convert::From<&str> for OpportunitySortName {
     fn from(s: &str) -> Self {
         match s {
+            "CreatedDate" => OpportunitySortName::CreatedDate,
             "CustomerCompanyName" => OpportunitySortName::CustomerCompanyName,
             "Identifier" => OpportunitySortName::Identifier,
             "LastModifiedDate" => OpportunitySortName::LastModifieddate,
@@ -74,6 +78,7 @@ impl OpportunitySortName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OpportunitySortName::CreatedDate => "CreatedDate",
             OpportunitySortName::CustomerCompanyName => "CustomerCompanyName",
             OpportunitySortName::Identifier => "Identifier",
             OpportunitySortName::LastModifieddate => "LastModifiedDate",
@@ -82,7 +87,7 @@ impl OpportunitySortName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CustomerCompanyName", "Identifier", "LastModifiedDate"]
+        &["CreatedDate", "CustomerCompanyName", "Identifier", "LastModifiedDate"]
     }
 }
 impl ::std::convert::AsRef<str> for OpportunitySortName {
@@ -105,6 +110,7 @@ impl OpportunitySortName {
 impl ::std::fmt::Display for OpportunitySortName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OpportunitySortName::CreatedDate => write!(f, "CreatedDate"),
             OpportunitySortName::CustomerCompanyName => write!(f, "CustomerCompanyName"),
             OpportunitySortName::Identifier => write!(f, "Identifier"),
             OpportunitySortName::LastModifieddate => write!(f, "LastModifiedDate"),
