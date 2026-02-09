@@ -2662,6 +2662,10 @@ source_hash = 'ff90532104bcb7a96d6f264e5e0b19147dc6aa23f96900329bdcd0b0a06cb75c'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '3d74eb49fa06e72b14b8696f889f15dc677ba8cf74ae5df9a8cb8595a10c6360'
+
+[release]
+tag = 'release-2026-02-09'
+
 [release.crates]
 aws-sdk-connectcampaignsv2 = '1.48.0'
 aws-sdk-ec2 = '1.208.0'
