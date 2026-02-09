@@ -511,6 +511,14 @@ pub(crate) mod shape_create_route_table;
 
 pub(crate) mod shape_create_route_table_input;
 
+pub(crate) mod shape_create_secondary_network;
+
+pub(crate) mod shape_create_secondary_network_input;
+
+pub(crate) mod shape_create_secondary_subnet;
+
+pub(crate) mod shape_create_secondary_subnet_input;
+
 pub(crate) mod shape_create_security_group;
 
 pub(crate) mod shape_create_security_group_input;
@@ -878,6 +886,14 @@ pub(crate) mod shape_delete_route_server_peer_input;
 pub(crate) mod shape_delete_route_table;
 
 pub(crate) mod shape_delete_route_table_input;
+
+pub(crate) mod shape_delete_secondary_network;
+
+pub(crate) mod shape_delete_secondary_network_input;
+
+pub(crate) mod shape_delete_secondary_subnet;
+
+pub(crate) mod shape_delete_secondary_subnet_input;
 
 pub(crate) mod shape_delete_security_group;
 
@@ -1550,6 +1566,18 @@ pub(crate) mod shape_describe_scheduled_instance_availability_input;
 pub(crate) mod shape_describe_scheduled_instances;
 
 pub(crate) mod shape_describe_scheduled_instances_input;
+
+pub(crate) mod shape_describe_secondary_interfaces;
+
+pub(crate) mod shape_describe_secondary_interfaces_input;
+
+pub(crate) mod shape_describe_secondary_networks;
+
+pub(crate) mod shape_describe_secondary_networks_input;
+
+pub(crate) mod shape_describe_secondary_subnets;
+
+pub(crate) mod shape_describe_secondary_subnets_input;
 
 pub(crate) mod shape_describe_security_group_references;
 
@@ -3165,6 +3193,8 @@ pub(crate) mod shape_instance_requirements_request;
 
 pub(crate) mod shape_instance_requirements_with_metadata_request;
 
+pub(crate) mod shape_instance_secondary_interface_specification_request;
+
 pub(crate) mod shape_instance_specification;
 
 pub(crate) mod shape_integrate_services;
@@ -3631,6 +3661,8 @@ pub(crate) mod shape_instance_metadata_options_response;
 
 pub(crate) mod shape_instance_monitoring_list;
 
+pub(crate) mod shape_instance_secondary_interface_private_ip_address_request;
+
 pub(crate) mod shape_instance_set;
 
 pub(crate) mod shape_instance_state_change_list;
@@ -3772,6 +3804,8 @@ pub(crate) mod shape_launch_template_instance_market_options_request;
 pub(crate) mod shape_launch_template_instance_metadata_options_request;
 
 pub(crate) mod shape_launch_template_instance_network_interface_specification_request;
+
+pub(crate) mod shape_launch_template_instance_secondary_interface_specification_request;
 
 pub(crate) mod shape_launch_template_license_configuration_request;
 
@@ -4010,6 +4044,16 @@ pub(crate) mod shape_scheduled_instances_monitoring;
 pub(crate) mod shape_scheduled_instances_network_interface;
 
 pub(crate) mod shape_scheduled_instances_placement;
+
+pub(crate) mod shape_secondary_interface_list;
+
+pub(crate) mod shape_secondary_network;
+
+pub(crate) mod shape_secondary_network_list;
+
+pub(crate) mod shape_secondary_subnet;
+
+pub(crate) mod shape_secondary_subnet_list;
 
 pub(crate) mod shape_security_group_for_vpc_list;
 
@@ -4627,6 +4671,8 @@ pub(crate) mod shape_launch_template_instance_metadata_options;
 
 pub(crate) mod shape_launch_template_instance_network_interface_specification_list;
 
+pub(crate) mod shape_launch_template_instance_secondary_interface_specification_list;
+
 pub(crate) mod shape_launch_template_license_list;
 
 pub(crate) mod shape_launch_template_network_performance_options;
@@ -4758,6 +4804,14 @@ pub(crate) mod shape_scheduled_instances_ebs;
 pub(crate) mod shape_scheduled_instances_ipv6_address;
 
 pub(crate) mod shape_scheduled_instances_private_ip_address_config;
+
+pub(crate) mod shape_secondary_interface;
+
+pub(crate) mod shape_secondary_interface_private_ip_address_specification_request;
+
+pub(crate) mod shape_secondary_network_ipv4_cidr_block_association_list;
+
+pub(crate) mod shape_secondary_subnet_ipv4_cidr_block_association_list;
 
 pub(crate) mod shape_security_group;
 
@@ -5113,6 +5167,8 @@ pub(crate) mod shape_instance_network_interface_list;
 
 pub(crate) mod shape_instance_network_performance_options;
 
+pub(crate) mod shape_instance_secondary_interface_list;
+
 pub(crate) mod shape_instance_state;
 
 pub(crate) mod shape_instance_status_event_list;
@@ -5158,6 +5214,8 @@ pub(crate) mod shape_launch_template_block_device_mapping;
 pub(crate) mod shape_launch_template_elastic_inference_accelerator_response;
 
 pub(crate) mod shape_launch_template_instance_network_interface_specification;
+
+pub(crate) mod shape_launch_template_instance_secondary_interface_specification;
 
 pub(crate) mod shape_launch_template_license_configuration;
 
@@ -5266,6 +5324,14 @@ pub(crate) mod shape_route_server_route_installation_details;
 pub(crate) mod shape_route_table_association;
 
 pub(crate) mod shape_scheduled_instance_recurrence;
+
+pub(crate) mod shape_secondary_interface_attachment;
+
+pub(crate) mod shape_secondary_interface_ipv4_address_list;
+
+pub(crate) mod shape_secondary_network_ipv4_cidr_block_association;
+
+pub(crate) mod shape_secondary_subnet_ipv4_cidr_block_association;
 
 pub(crate) mod shape_security_group_identifier;
 
@@ -5453,6 +5519,8 @@ pub(crate) mod shape_instance_network_interface;
 
 pub(crate) mod shape_instance_network_interface_specification_list;
 
+pub(crate) mod shape_instance_secondary_interface;
+
 pub(crate) mod shape_instance_status_details_list;
 
 pub(crate) mod shape_ip_address_list;
@@ -5518,6 +5586,10 @@ pub(crate) mod shape_reserved_instances_id;
 pub(crate) mod shape_reserved_instances_modification_result;
 
 pub(crate) mod shape_route_server_route_installation_detail;
+
+pub(crate) mod shape_secondary_interface_ipv4_address;
+
+pub(crate) mod shape_secondary_interface_private_ip_address_specification_list;
 
 pub(crate) mod shape_stale_ip_permission;
 
@@ -5601,6 +5673,10 @@ pub(crate) mod shape_instance_network_interface_attachment;
 
 pub(crate) mod shape_instance_private_ip_address_list;
 
+pub(crate) mod shape_instance_secondary_interface_attachment;
+
+pub(crate) mod shape_instance_secondary_interface_private_ip_address_list;
+
 pub(crate) mod shape_instance_status_details;
 
 pub(crate) mod shape_ip_ranges;
@@ -5645,6 +5721,8 @@ pub(crate) mod shape_protocol_int_list;
 
 pub(crate) mod shape_resource_statement;
 
+pub(crate) mod shape_secondary_interface_private_ip_address_specification;
+
 pub(crate) mod shape_through_resources_statement;
 
 pub(crate) mod shape_user_id_group_pair_set;
@@ -5676,6 +5754,8 @@ pub(crate) mod shape_instance_ipv4_prefix;
 pub(crate) mod shape_instance_ipv6_prefix;
 
 pub(crate) mod shape_instance_private_ip_address;
+
+pub(crate) mod shape_instance_secondary_interface_private_ip_address;
 
 pub(crate) mod shape_ipv4_prefix_list;
 

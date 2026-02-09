@@ -93,6 +93,8 @@ pub struct Instance {
     pub network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptions>,
     /// <p>The service provider that manages the instance.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
+    /// <p>The secondary interfaces for the instance.</p>
+    pub secondary_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterface>>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AMI used to launch the instance.</p>
@@ -320,6 +322,12 @@ impl Instance {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
         self.operator.as_ref()
     }
+    /// <p>The secondary interfaces for the instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_interfaces.is_none()`.
+    pub fn secondary_interfaces(&self) -> &[crate::types::InstanceSecondaryInterface] {
+        self.secondary_interfaces.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
@@ -457,6 +465,7 @@ pub struct InstanceBuilder {
     pub(crate) current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
     pub(crate) network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptions>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
+    pub(crate) secondary_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterface>>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
@@ -1116,6 +1125,26 @@ impl InstanceBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
         &self.operator
     }
+    /// Appends an item to `secondary_interfaces`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_interfaces`](Self::set_secondary_interfaces).
+    ///
+    /// <p>The secondary interfaces for the instance.</p>
+    pub fn secondary_interfaces(mut self, input: crate::types::InstanceSecondaryInterface) -> Self {
+        let mut v = self.secondary_interfaces.unwrap_or_default();
+        v.push(input);
+        self.secondary_interfaces = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The secondary interfaces for the instance.</p>
+    pub fn set_secondary_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterface>>) -> Self {
+        self.secondary_interfaces = input;
+        self
+    }
+    /// <p>The secondary interfaces for the instance.</p>
+    pub fn get_secondary_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterface>> {
+        &self.secondary_interfaces
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -1451,6 +1480,7 @@ impl InstanceBuilder {
             current_instance_boot_mode: self.current_instance_boot_mode,
             network_performance_options: self.network_performance_options,
             operator: self.operator,
+            secondary_interfaces: self.secondary_interfaces,
             instance_id: self.instance_id,
             image_id: self.image_id,
             state: self.state,

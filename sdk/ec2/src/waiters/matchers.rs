@@ -1533,6 +1533,313 @@ pub(crate) fn match_get_password_data_6fefb1345d49c7eeb(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"SecondaryNetworks[].State","expected":"create-complete","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_secondary_networks_b19a53bcb00a34ceb(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondaryNetworkState>> {
+        let _fld_1 = _output.secondary_networks.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondaryNetwork) -> ::std::option::Option<&crate::types::SecondaryNetworkState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "create-complete";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecondaryNetworks[].State","expected":"create-failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_secondary_networks_18097c0c1b61d20cc(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondaryNetworkState>> {
+        let _fld_1 = _output.secondary_networks.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondaryNetwork) -> ::std::option::Option<&crate::types::SecondaryNetworkState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "create-failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InvalidSecondaryNetworkId.NotFound"}
+pub(crate) fn match_describe_secondary_networks_f0d48d7d690458e17(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InvalidSecondaryNetworkId.NotFound";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"SecondaryNetworks[].State","expected":"delete-complete","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_secondary_networks_00f36cbf1cffc8bf9(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondaryNetworkState>> {
+        let _fld_1 = _output.secondary_networks.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondaryNetwork) -> ::std::option::Option<&crate::types::SecondaryNetworkState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "delete-complete";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecondaryNetworks[].State","expected":"delete-failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_secondary_networks_6f3e4517a0b407859(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+        &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondaryNetworkState>> {
+        let _fld_1 = _output.secondary_networks.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondaryNetwork) -> ::std::option::Option<&crate::types::SecondaryNetworkState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "delete-failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecondarySubnets[].State","expected":"create-complete","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_secondary_subnets_41ae3e14ce55093fc(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondarySubnetState>> {
+        let _fld_1 = _output.secondary_subnets.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondarySubnet) -> ::std::option::Option<&crate::types::SecondarySubnetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "create-complete";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SecondarySubnets[].State","expected":"delete-failed","comparator":"anyStringEquals"}}
+pub(crate) fn match_describe_secondary_subnets_f72d080392ec53dd1(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondarySubnetState>> {
+        let _fld_1 = _output.secondary_subnets.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondarySubnet) -> ::std::option::Option<&crate::types::SecondarySubnetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            value.iter().any(|value| {
+                let _tmp_2 = value.as_str();
+                let right = "delete-failed";
+                let _cmp_1 = _tmp_2 == right;
+                _cmp_1
+            })
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"InvalidSecondarySubnetId.NotFound"}
+pub(crate) fn match_describe_secondary_subnets_f0bec91760e0b51d6(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "InvalidSecondarySubnetId.NotFound";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"SecondarySubnets[].State","expected":"delete-complete","comparator":"allStringEquals"}}
+pub(crate) fn match_describe_secondary_subnets_b76a626c21ba1efed(
+    _result: ::std::result::Result<
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+        &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+    ) -> ::std::option::Option<::std::vec::Vec<&'a crate::types::SecondarySubnetState>> {
+        let _fld_1 = _output.secondary_subnets.as_ref()?;
+        let _prj_3 = _fld_1
+            .iter()
+            .flat_map(|v| {
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::SecondarySubnet) -> ::std::option::Option<&crate::types::SecondarySubnetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
+                }
+                map(v)
+            })
+            .collect::<::std::vec::Vec<_>>();
+        ::std::option::Option::Some(_prj_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            !value.is_empty()
+                && value.iter().all(|value| {
+                    let _tmp_2 = value.as_str();
+                    let right = "delete-complete";
+                    let _cmp_1 = _tmp_2 == right;
+                    _cmp_1
+                })
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"length(SecurityGroups[].GroupId) > `0`","expected":"true","comparator":"booleanEquals"}}
 pub(crate) fn match_describe_security_groups_0e75760caea410eed(
     _result: ::std::result::Result<

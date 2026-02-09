@@ -107,6 +107,12 @@ pub use crate::types::_placement::PlacementBuilder;
 
 pub use crate::types::_product_code::ProductCodeBuilder;
 
+pub use crate::types::_instance_secondary_interface::InstanceSecondaryInterfaceBuilder;
+
+pub use crate::types::_instance_secondary_interface_private_ip_address::InstanceSecondaryInterfacePrivateIpAddressBuilder;
+
+pub use crate::types::_instance_secondary_interface_attachment::InstanceSecondaryInterfaceAttachmentBuilder;
+
 pub use crate::types::_operator_response::OperatorResponseBuilder;
 
 pub use crate::types::_instance_network_performance_options::InstanceNetworkPerformanceOptionsBuilder;
@@ -178,6 +184,10 @@ pub use crate::types::_ipv6_prefix_specification_request::Ipv6PrefixSpecificatio
 pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificationRequestBuilder;
 
 pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecificationBuilder;
+
+pub use crate::types::_instance_secondary_interface_specification_request::InstanceSecondaryInterfaceSpecificationRequestBuilder;
+
+pub use crate::types::_instance_secondary_interface_private_ip_address_request::InstanceSecondaryInterfacePrivateIpAddressRequestBuilder;
 
 pub use crate::types::_operator_request::OperatorRequestBuilder;
 
@@ -819,6 +829,10 @@ pub use crate::types::_prefix_list_association::PrefixListAssociationBuilder;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateDataBuilder;
 
+pub use crate::types::_launch_template_instance_secondary_interface_specification::LaunchTemplateInstanceSecondaryInterfaceSpecificationBuilder;
+
+pub use crate::types::_secondary_interface_private_ip_address_specification::SecondaryInterfacePrivateIpAddressSpecificationBuilder;
+
 pub use crate::types::_launch_template_network_performance_options::LaunchTemplateNetworkPerformanceOptionsBuilder;
 
 pub use crate::types::_launch_template_instance_maintenance_options::LaunchTemplateInstanceMaintenanceOptionsBuilder;
@@ -1150,6 +1164,20 @@ pub use crate::types::_security_group_rule::SecurityGroupRuleBuilder;
 pub use crate::types::_referenced_security_group::ReferencedSecurityGroupBuilder;
 
 pub use crate::types::_security_group_reference::SecurityGroupReferenceBuilder;
+
+pub use crate::types::_secondary_subnet::SecondarySubnetBuilder;
+
+pub use crate::types::_secondary_subnet_ipv4_cidr_block_association::SecondarySubnetIpv4CidrBlockAssociationBuilder;
+
+pub use crate::types::_secondary_network::SecondaryNetworkBuilder;
+
+pub use crate::types::_secondary_network_ipv4_cidr_block_association::SecondaryNetworkIpv4CidrBlockAssociationBuilder;
+
+pub use crate::types::_secondary_interface::SecondaryInterfaceBuilder;
+
+pub use crate::types::_secondary_interface_ipv4_address::SecondaryInterfaceIpv4AddressBuilder;
+
+pub use crate::types::_secondary_interface_attachment::SecondaryInterfaceAttachmentBuilder;
 
 pub use crate::types::_slot_start_time_range_request::SlotStartTimeRangeRequestBuilder;
 
@@ -1664,6 +1692,10 @@ pub use crate::types::_validation_warning::ValidationWarningBuilder;
 pub use crate::types::_validation_error::ValidationErrorBuilder;
 
 pub use crate::types::_request_launch_template_data::RequestLaunchTemplateDataBuilder;
+
+pub use crate::types::_launch_template_instance_secondary_interface_specification_request::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestBuilder;
+
+pub use crate::types::_secondary_interface_private_ip_address_specification_request::SecondaryInterfacePrivateIpAddressSpecificationRequestBuilder;
 
 pub use crate::types::_launch_template_network_performance_options_request::LaunchTemplateNetworkPerformanceOptionsRequestBuilder;
 

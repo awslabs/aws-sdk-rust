@@ -17,6 +17,7 @@
 ///     ClusterStatus::Creating => { /* ... */ },
 ///     ClusterStatus::DeleteFailed => { /* ... */ },
 ///     ClusterStatus::Deleting => { /* ... */ },
+///     ClusterStatus::Resuming => { /* ... */ },
 ///     ClusterStatus::Suspended => { /* ... */ },
 ///     ClusterStatus::Suspending => { /* ... */ },
 ///     ClusterStatus::UpdateFailed => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Resuming,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     #[allow(missing_docs)] // documentation missing in model
     Suspending,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for ClusterStatus {
             "CREATING" => ClusterStatus::Creating,
             "DELETE_FAILED" => ClusterStatus::DeleteFailed,
             "DELETING" => ClusterStatus::Deleting,
+            "RESUMING" => ClusterStatus::Resuming,
             "SUSPENDED" => ClusterStatus::Suspended,
             "SUSPENDING" => ClusterStatus::Suspending,
             "UPDATE_FAILED" => ClusterStatus::UpdateFailed,
@@ -103,6 +107,7 @@ impl ClusterStatus {
             ClusterStatus::Creating => "CREATING",
             ClusterStatus::DeleteFailed => "DELETE_FAILED",
             ClusterStatus::Deleting => "DELETING",
+            ClusterStatus::Resuming => "RESUMING",
             ClusterStatus::Suspended => "SUSPENDED",
             ClusterStatus::Suspending => "SUSPENDING",
             ClusterStatus::UpdateFailed => "UPDATE_FAILED",
@@ -118,6 +123,7 @@ impl ClusterStatus {
             "CREATING",
             "DELETE_FAILED",
             "DELETING",
+            "RESUMING",
             "SUSPENDED",
             "SUSPENDING",
             "UPDATE_FAILED",
@@ -150,6 +156,7 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::Creating => write!(f, "CREATING"),
             ClusterStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ClusterStatus::Deleting => write!(f, "DELETING"),
+            ClusterStatus::Resuming => write!(f, "RESUMING"),
             ClusterStatus::Suspended => write!(f, "SUSPENDED"),
             ClusterStatus::Suspending => write!(f, "SUSPENDING"),
             ClusterStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

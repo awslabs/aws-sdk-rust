@@ -30,7 +30,7 @@ pub struct InstanceMetadataOptionsRequest {
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     /// <p>Default: <code>disabled</code></p>
     pub http_protocol_ipv6: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,
-    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
 }
@@ -69,7 +69,7 @@ impl InstanceMetadataOptionsRequest {
     pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&crate::types::InstanceMetadataProtocolState> {
         self.http_protocol_ipv6.as_ref()
     }
-    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn instance_metadata_tags(&self) -> ::std::option::Option<&crate::types::InstanceMetadataTagsState> {
         self.instance_metadata_tags.as_ref()
@@ -203,19 +203,19 @@ impl InstanceMetadataOptionsRequestBuilder {
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<crate::types::InstanceMetadataProtocolState> {
         &self.http_protocol_ipv6
     }
-    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn instance_metadata_tags(mut self, input: crate::types::InstanceMetadataTagsState) -> Self {
         self.instance_metadata_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<crate::types::InstanceMetadataTagsState>) -> Self {
         self.instance_metadata_tags = input;
         self
     }
-    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
+    /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
         &self.instance_metadata_tags

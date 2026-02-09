@@ -34,6 +34,12 @@ pub struct NetworkInfo {
     pub bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
     /// <p>Indicates whether changing the number of ENA queues is supported.</p>
     pub flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
+    /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
+    pub secondary_network_supported: ::std::option::Option<bool>,
+    /// <p>The maximum number of secondary interfaces for the instance type.</p>
+    pub maximum_secondary_network_interfaces: ::std::option::Option<i32>,
+    /// <p>The maximum number of IPv4 addresses per secondary interface.</p>
+    pub ipv4_addresses_per_secondary_interface: ::std::option::Option<i32>,
 }
 impl NetworkInfo {
     /// <p>The network performance.</p>
@@ -100,6 +106,18 @@ impl NetworkInfo {
     pub fn flexible_ena_queues_support(&self) -> ::std::option::Option<&crate::types::FlexibleEnaQueuesSupport> {
         self.flexible_ena_queues_support.as_ref()
     }
+    /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
+    pub fn secondary_network_supported(&self) -> ::std::option::Option<bool> {
+        self.secondary_network_supported
+    }
+    /// <p>The maximum number of secondary interfaces for the instance type.</p>
+    pub fn maximum_secondary_network_interfaces(&self) -> ::std::option::Option<i32> {
+        self.maximum_secondary_network_interfaces
+    }
+    /// <p>The maximum number of IPv4 addresses per secondary interface.</p>
+    pub fn ipv4_addresses_per_secondary_interface(&self) -> ::std::option::Option<i32> {
+        self.ipv4_addresses_per_secondary_interface
+    }
 }
 impl NetworkInfo {
     /// Creates a new builder-style object to manufacture [`NetworkInfo`](crate::types::NetworkInfo).
@@ -127,6 +145,9 @@ pub struct NetworkInfoBuilder {
     pub(crate) ena_srd_supported: ::std::option::Option<bool>,
     pub(crate) bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
     pub(crate) flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
+    pub(crate) secondary_network_supported: ::std::option::Option<bool>,
+    pub(crate) maximum_secondary_network_interfaces: ::std::option::Option<i32>,
+    pub(crate) ipv4_addresses_per_secondary_interface: ::std::option::Option<i32>,
 }
 impl NetworkInfoBuilder {
     /// <p>The network performance.</p>
@@ -351,6 +372,48 @@ impl NetworkInfoBuilder {
     pub fn get_flexible_ena_queues_support(&self) -> &::std::option::Option<crate::types::FlexibleEnaQueuesSupport> {
         &self.flexible_ena_queues_support
     }
+    /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
+    pub fn secondary_network_supported(mut self, input: bool) -> Self {
+        self.secondary_network_supported = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
+    pub fn set_secondary_network_supported(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.secondary_network_supported = input;
+        self
+    }
+    /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
+    pub fn get_secondary_network_supported(&self) -> &::std::option::Option<bool> {
+        &self.secondary_network_supported
+    }
+    /// <p>The maximum number of secondary interfaces for the instance type.</p>
+    pub fn maximum_secondary_network_interfaces(mut self, input: i32) -> Self {
+        self.maximum_secondary_network_interfaces = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of secondary interfaces for the instance type.</p>
+    pub fn set_maximum_secondary_network_interfaces(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_secondary_network_interfaces = input;
+        self
+    }
+    /// <p>The maximum number of secondary interfaces for the instance type.</p>
+    pub fn get_maximum_secondary_network_interfaces(&self) -> &::std::option::Option<i32> {
+        &self.maximum_secondary_network_interfaces
+    }
+    /// <p>The maximum number of IPv4 addresses per secondary interface.</p>
+    pub fn ipv4_addresses_per_secondary_interface(mut self, input: i32) -> Self {
+        self.ipv4_addresses_per_secondary_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of IPv4 addresses per secondary interface.</p>
+    pub fn set_ipv4_addresses_per_secondary_interface(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv4_addresses_per_secondary_interface = input;
+        self
+    }
+    /// <p>The maximum number of IPv4 addresses per secondary interface.</p>
+    pub fn get_ipv4_addresses_per_secondary_interface(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_addresses_per_secondary_interface
+    }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {
         crate::types::NetworkInfo {
@@ -369,6 +432,9 @@ impl NetworkInfoBuilder {
             ena_srd_supported: self.ena_srd_supported,
             bandwidth_weightings: self.bandwidth_weightings,
             flexible_ena_queues_support: self.flexible_ena_queues_support,
+            secondary_network_supported: self.secondary_network_supported,
+            maximum_secondary_network_interfaces: self.maximum_secondary_network_interfaces,
+            ipv4_addresses_per_secondary_interface: self.ipv4_addresses_per_secondary_interface,
         }
     }
 }

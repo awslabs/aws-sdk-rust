@@ -564,4 +564,27 @@ impl StartLoaderJobFluentBuilder {
     pub fn get_user_provided_edge_ids(&self) -> &::std::option::Option<bool> {
         self.inner.get_user_provided_edge_ids()
     }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn edge_only_load(mut self, input: bool) -> Self {
+        self.inner = self.inner.edge_only_load(input);
+        self
+    }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn set_edge_only_load(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_edge_only_load(input);
+        self
+    }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn get_edge_only_load(&self) -> &::std::option::Option<bool> {
+        self.inner.get_edge_only_load()
+    }
 }

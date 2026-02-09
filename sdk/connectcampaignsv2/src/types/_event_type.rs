@@ -16,6 +16,7 @@
 ///     EventType::CampaignOrchestration => { /* ... */ },
 ///     EventType::CampaignSms => { /* ... */ },
 ///     EventType::CampaignTelephony => { /* ... */ },
+///     EventType::CampaignWhatsApp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum EventType {
     CampaignSms,
     #[allow(missing_docs)] // documentation missing in model
     CampaignTelephony,
+    #[allow(missing_docs)] // documentation missing in model
+    CampaignWhatsApp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for EventType {
             "Campaign-Orchestration" => EventType::CampaignOrchestration,
             "Campaign-SMS" => EventType::CampaignSms,
             "Campaign-Telephony" => EventType::CampaignTelephony,
+            "Campaign-WhatsApp" => EventType::CampaignWhatsApp,
             other => EventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,19 @@ impl EventType {
             EventType::CampaignOrchestration => "Campaign-Orchestration",
             EventType::CampaignSms => "Campaign-SMS",
             EventType::CampaignTelephony => "Campaign-Telephony",
+            EventType::CampaignWhatsApp => "Campaign-WhatsApp",
             EventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Campaign-Email", "Campaign-Orchestration", "Campaign-SMS", "Campaign-Telephony"]
+        &[
+            "Campaign-Email",
+            "Campaign-Orchestration",
+            "Campaign-SMS",
+            "Campaign-Telephony",
+            "Campaign-WhatsApp",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EventType {
@@ -114,6 +125,7 @@ impl ::std::fmt::Display for EventType {
             EventType::CampaignOrchestration => write!(f, "Campaign-Orchestration"),
             EventType::CampaignSms => write!(f, "Campaign-SMS"),
             EventType::CampaignTelephony => write!(f, "Campaign-Telephony"),
+            EventType::CampaignWhatsApp => write!(f, "Campaign-WhatsApp"),
             EventType::Unknown(value) => write!(f, "{value}"),
         }
     }

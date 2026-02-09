@@ -251,5 +251,18 @@ pub fn ser_request_launch_template_data(
             scope_89, var_90,
         )?;
     }
+    #[allow(unused_mut)]
+    let mut scope_91 = writer.prefix("SecondaryInterface");
+    if let Some(var_92) = &input.secondary_interfaces {
+        if !var_92.is_empty() {
+            let mut list_94 = scope_91.start_list(true, Some("InstanceSecondaryInterfaceSpecification"));
+            for item_93 in var_92 {
+                #[allow(unused_mut)]
+                let mut entry_95 = list_94.entry();
+                crate::protocol_serde::shape_launch_template_instance_secondary_interface_specification_request::ser_launch_template_instance_secondary_interface_specification_request(entry_95, item_93)?;
+            }
+            list_94.finish();
+        }
+    }
     Ok(())
 }

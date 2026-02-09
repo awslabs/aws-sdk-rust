@@ -251,59 +251,72 @@ pub fn ser_run_instances_input_input_input(
         crate::protocol_serde::shape_operator_request::ser_operator_request(scope_91, var_92)?;
     }
     #[allow(unused_mut)]
-    let mut scope_93 = writer.prefix("DryRun");
-    if let Some(var_94) = &input.dry_run {
-        scope_93.boolean(*var_94);
-    }
-    #[allow(unused_mut)]
-    let mut scope_95 = writer.prefix("DisableApiTermination");
-    if let Some(var_96) = &input.disable_api_termination {
-        scope_95.boolean(*var_96);
-    }
-    #[allow(unused_mut)]
-    let mut scope_97 = writer.prefix("InstanceInitiatedShutdownBehavior");
-    if let Some(var_98) = &input.instance_initiated_shutdown_behavior {
-        scope_97.string(var_98.as_str());
-    }
-    #[allow(unused_mut)]
-    let mut scope_99 = writer.prefix("PrivateIpAddress");
-    if let Some(var_100) = &input.private_ip_address {
-        scope_99.string(var_100);
-    }
-    #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("ClientToken");
-    if let Some(var_102) = &input.client_token {
-        scope_101.string(var_102);
-    }
-    #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("AdditionalInfo");
-    if let Some(var_104) = &input.additional_info {
-        scope_103.string(var_104);
-    }
-    #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("NetworkInterface");
-    if let Some(var_106) = &input.network_interfaces {
-        if !var_106.is_empty() {
-            let mut list_108 = scope_105.start_list(true, Some("item"));
-            for item_107 in var_106 {
+    let mut scope_93 = writer.prefix("SecondaryInterface");
+    if let Some(var_94) = &input.secondary_interfaces {
+        if !var_94.is_empty() {
+            let mut list_96 = scope_93.start_list(true, Some("item"));
+            for item_95 in var_94 {
                 #[allow(unused_mut)]
-                let mut entry_109 = list_108.entry();
-                crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
-                    entry_109, item_107,
-                )?;
+                let mut entry_97 = list_96.entry();
+                crate::protocol_serde::shape_instance_secondary_interface_specification_request::ser_instance_secondary_interface_specification_request(entry_97, item_95)?;
             }
-            list_108.finish();
+            list_96.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("IamInstanceProfile");
-    if let Some(var_111) = &input.iam_instance_profile {
-        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_110, var_111)?;
+    let mut scope_98 = writer.prefix("DryRun");
+    if let Some(var_99) = &input.dry_run {
+        scope_98.boolean(*var_99);
     }
     #[allow(unused_mut)]
-    let mut scope_112 = writer.prefix("EbsOptimized");
-    if let Some(var_113) = &input.ebs_optimized {
-        scope_112.boolean(*var_113);
+    let mut scope_100 = writer.prefix("DisableApiTermination");
+    if let Some(var_101) = &input.disable_api_termination {
+        scope_100.boolean(*var_101);
+    }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("InstanceInitiatedShutdownBehavior");
+    if let Some(var_103) = &input.instance_initiated_shutdown_behavior {
+        scope_102.string(var_103.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_104 = writer.prefix("PrivateIpAddress");
+    if let Some(var_105) = &input.private_ip_address {
+        scope_104.string(var_105);
+    }
+    #[allow(unused_mut)]
+    let mut scope_106 = writer.prefix("ClientToken");
+    if let Some(var_107) = &input.client_token {
+        scope_106.string(var_107);
+    }
+    #[allow(unused_mut)]
+    let mut scope_108 = writer.prefix("AdditionalInfo");
+    if let Some(var_109) = &input.additional_info {
+        scope_108.string(var_109);
+    }
+    #[allow(unused_mut)]
+    let mut scope_110 = writer.prefix("NetworkInterface");
+    if let Some(var_111) = &input.network_interfaces {
+        if !var_111.is_empty() {
+            let mut list_113 = scope_110.start_list(true, Some("item"));
+            for item_112 in var_111 {
+                #[allow(unused_mut)]
+                let mut entry_114 = list_113.entry();
+                crate::protocol_serde::shape_instance_network_interface_specification::ser_instance_network_interface_specification(
+                    entry_114, item_112,
+                )?;
+            }
+            list_113.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_115 = writer.prefix("IamInstanceProfile");
+    if let Some(var_116) = &input.iam_instance_profile {
+        crate::protocol_serde::shape_iam_instance_profile_specification::ser_iam_instance_profile_specification(scope_115, var_116)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_117 = writer.prefix("EbsOptimized");
+    if let Some(var_118) = &input.ebs_optimized {
+        scope_117.boolean(*var_118);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

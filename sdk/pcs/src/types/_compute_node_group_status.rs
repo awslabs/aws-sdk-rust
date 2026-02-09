@@ -18,6 +18,7 @@
 ///     ComputeNodeGroupStatus::Deleted => { /* ... */ },
 ///     ComputeNodeGroupStatus::DeleteFailed => { /* ... */ },
 ///     ComputeNodeGroupStatus::Deleting => { /* ... */ },
+///     ComputeNodeGroupStatus::Resuming => { /* ... */ },
 ///     ComputeNodeGroupStatus::Suspended => { /* ... */ },
 ///     ComputeNodeGroupStatus::Suspending => { /* ... */ },
 ///     ComputeNodeGroupStatus::UpdateFailed => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum ComputeNodeGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Resuming,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     #[allow(missing_docs)] // documentation missing in model
     Suspending,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for ComputeNodeGroupStatus {
             "DELETED" => ComputeNodeGroupStatus::Deleted,
             "DELETE_FAILED" => ComputeNodeGroupStatus::DeleteFailed,
             "DELETING" => ComputeNodeGroupStatus::Deleting,
+            "RESUMING" => ComputeNodeGroupStatus::Resuming,
             "SUSPENDED" => ComputeNodeGroupStatus::Suspended,
             "SUSPENDING" => ComputeNodeGroupStatus::Suspending,
             "UPDATE_FAILED" => ComputeNodeGroupStatus::UpdateFailed,
@@ -108,6 +112,7 @@ impl ComputeNodeGroupStatus {
             ComputeNodeGroupStatus::Deleted => "DELETED",
             ComputeNodeGroupStatus::DeleteFailed => "DELETE_FAILED",
             ComputeNodeGroupStatus::Deleting => "DELETING",
+            ComputeNodeGroupStatus::Resuming => "RESUMING",
             ComputeNodeGroupStatus::Suspended => "SUSPENDED",
             ComputeNodeGroupStatus::Suspending => "SUSPENDING",
             ComputeNodeGroupStatus::UpdateFailed => "UPDATE_FAILED",
@@ -124,6 +129,7 @@ impl ComputeNodeGroupStatus {
             "DELETED",
             "DELETE_FAILED",
             "DELETING",
+            "RESUMING",
             "SUSPENDED",
             "SUSPENDING",
             "UPDATE_FAILED",
@@ -157,6 +163,7 @@ impl ::std::fmt::Display for ComputeNodeGroupStatus {
             ComputeNodeGroupStatus::Deleted => write!(f, "DELETED"),
             ComputeNodeGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ComputeNodeGroupStatus::Deleting => write!(f, "DELETING"),
+            ComputeNodeGroupStatus::Resuming => write!(f, "RESUMING"),
             ComputeNodeGroupStatus::Suspended => write!(f, "SUSPENDED"),
             ComputeNodeGroupStatus::Suspending => write!(f, "SUSPENDING"),
             ComputeNodeGroupStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

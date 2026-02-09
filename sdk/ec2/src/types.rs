@@ -151,6 +151,18 @@ pub use crate::types::_product_code::ProductCode;
 
 pub use crate::types::_product_code_values::ProductCodeValues;
 
+pub use crate::types::_instance_secondary_interface::InstanceSecondaryInterface;
+
+pub use crate::types::_secondary_interface_type::SecondaryInterfaceType;
+
+pub use crate::types::_secondary_interface_status::SecondaryInterfaceStatus;
+
+pub use crate::types::_instance_secondary_interface_private_ip_address::InstanceSecondaryInterfacePrivateIpAddress;
+
+pub use crate::types::_instance_secondary_interface_attachment::InstanceSecondaryInterfaceAttachment;
+
+pub use crate::types::_attachment_status::AttachmentStatus;
+
 pub use crate::types::_operator_response::OperatorResponse;
 
 pub use crate::types::_instance_network_performance_options::InstanceNetworkPerformanceOptions;
@@ -229,8 +241,6 @@ pub use crate::types::_instance_attachment_ena_srd_specification::InstanceAttach
 
 pub use crate::types::_instance_attachment_ena_srd_udp_specification::InstanceAttachmentEnaSrdUdpSpecification;
 
-pub use crate::types::_attachment_status::AttachmentStatus;
-
 pub use crate::types::_elastic_inference_accelerator_association::ElasticInferenceAcceleratorAssociation;
 
 pub use crate::types::_elastic_gpu_association::ElasticGpuAssociation;
@@ -264,6 +274,10 @@ pub use crate::types::_ipv4_prefix_specification_request::Ipv4PrefixSpecificatio
 pub use crate::types::_private_ip_address_specification::PrivateIpAddressSpecification;
 
 pub use crate::types::_shutdown_behavior::ShutdownBehavior;
+
+pub use crate::types::_instance_secondary_interface_specification_request::InstanceSecondaryInterfaceSpecificationRequest;
+
+pub use crate::types::_instance_secondary_interface_private_ip_address_request::InstanceSecondaryInterfacePrivateIpAddressRequest;
 
 pub use crate::types::_operator_request::OperatorRequest;
 
@@ -1249,6 +1263,10 @@ pub use crate::types::_prefix_list_association::PrefixListAssociation;
 
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateData;
 
+pub use crate::types::_launch_template_instance_secondary_interface_specification::LaunchTemplateInstanceSecondaryInterfaceSpecification;
+
+pub use crate::types::_secondary_interface_private_ip_address_specification::SecondaryInterfacePrivateIpAddressSpecification;
+
 pub use crate::types::_launch_template_network_performance_options::LaunchTemplateNetworkPerformanceOptions;
 
 pub use crate::types::_launch_template_instance_maintenance_options::LaunchTemplateInstanceMaintenanceOptions;
@@ -1760,6 +1778,30 @@ pub use crate::types::_security_group_rule::SecurityGroupRule;
 pub use crate::types::_referenced_security_group::ReferencedSecurityGroup;
 
 pub use crate::types::_security_group_reference::SecurityGroupReference;
+
+pub use crate::types::_secondary_subnet::SecondarySubnet;
+
+pub use crate::types::_secondary_subnet_state::SecondarySubnetState;
+
+pub use crate::types::_secondary_subnet_ipv4_cidr_block_association::SecondarySubnetIpv4CidrBlockAssociation;
+
+pub use crate::types::_secondary_subnet_cidr_block_association_state::SecondarySubnetCidrBlockAssociationState;
+
+pub use crate::types::_secondary_network_type::SecondaryNetworkType;
+
+pub use crate::types::_secondary_network::SecondaryNetwork;
+
+pub use crate::types::_secondary_network_ipv4_cidr_block_association::SecondaryNetworkIpv4CidrBlockAssociation;
+
+pub use crate::types::_secondary_network_cidr_block_association_state::SecondaryNetworkCidrBlockAssociationState;
+
+pub use crate::types::_secondary_network_state::SecondaryNetworkState;
+
+pub use crate::types::_secondary_interface::SecondaryInterface;
+
+pub use crate::types::_secondary_interface_ipv4_address::SecondaryInterfaceIpv4Address;
+
+pub use crate::types::_secondary_interface_attachment::SecondaryInterfaceAttachment;
 
 pub use crate::types::_slot_start_time_range_request::SlotStartTimeRangeRequest;
 
@@ -2522,6 +2564,10 @@ pub use crate::types::_validation_warning::ValidationWarning;
 pub use crate::types::_validation_error::ValidationError;
 
 pub use crate::types::_request_launch_template_data::RequestLaunchTemplateData;
+
+pub use crate::types::_launch_template_instance_secondary_interface_specification_request::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest;
+
+pub use crate::types::_secondary_interface_private_ip_address_specification_request::SecondaryInterfacePrivateIpAddressSpecificationRequest;
 
 pub use crate::types::_launch_template_network_performance_options_request::LaunchTemplateNetworkPerformanceOptionsRequest;
 
@@ -3669,6 +3715,16 @@ mod _instance_requirements_request;
 
 mod _instance_requirements_with_metadata_request;
 
+mod _instance_secondary_interface;
+
+mod _instance_secondary_interface_attachment;
+
+mod _instance_secondary_interface_private_ip_address;
+
+mod _instance_secondary_interface_private_ip_address_request;
+
+mod _instance_secondary_interface_specification_request;
+
 mod _instance_specification;
 
 mod _instance_state;
@@ -3992,6 +4048,10 @@ mod _launch_template_instance_metadata_tags_state;
 mod _launch_template_instance_network_interface_specification;
 
 mod _launch_template_instance_network_interface_specification_request;
+
+mod _launch_template_instance_secondary_interface_specification;
+
+mod _launch_template_instance_secondary_interface_specification_request;
 
 mod _launch_template_license_configuration;
 
@@ -4622,6 +4682,38 @@ mod _scheduled_instances_placement;
 mod _scheduled_instances_private_ip_address_config;
 
 mod _scope;
+
+mod _secondary_interface;
+
+mod _secondary_interface_attachment;
+
+mod _secondary_interface_ipv4_address;
+
+mod _secondary_interface_private_ip_address_specification;
+
+mod _secondary_interface_private_ip_address_specification_request;
+
+mod _secondary_interface_status;
+
+mod _secondary_interface_type;
+
+mod _secondary_network;
+
+mod _secondary_network_cidr_block_association_state;
+
+mod _secondary_network_ipv4_cidr_block_association;
+
+mod _secondary_network_state;
+
+mod _secondary_network_type;
+
+mod _secondary_subnet;
+
+mod _secondary_subnet_cidr_block_association_state;
+
+mod _secondary_subnet_ipv4_cidr_block_association;
+
+mod _secondary_subnet_state;
 
 mod _security_group;
 

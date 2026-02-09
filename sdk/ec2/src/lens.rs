@@ -889,6 +889,36 @@ pub(crate) fn reflens_describe_scheduled_instances_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_secondary_interfaces_output_output_next_token(
+    input: &crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_secondary_networks_output_output_next_token(
+    input: &crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_secondary_subnets_output_output_next_token(
+    input: &crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_security_group_rules_output_output_next_token(
     input: &crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2259,6 +2289,27 @@ pub(crate) fn lens_describe_scheduled_instances_output_output_scheduled_instance
     input: crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>> {
     let input = input.scheduled_instance_set?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_secondary_interfaces_output_output_secondary_interfaces(
+    input: crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecondaryInterface>> {
+    let input = input.secondary_interfaces?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_secondary_networks_output_output_secondary_networks(
+    input: crate::operation::describe_secondary_networks::DescribeSecondaryNetworksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecondaryNetwork>> {
+    let input = input.secondary_networks?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_secondary_subnets_output_output_secondary_subnets(
+    input: crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SecondarySubnet>> {
+    let input = input.secondary_subnets?;
     ::std::option::Option::Some(input)
 }
 

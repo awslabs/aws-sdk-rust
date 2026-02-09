@@ -114,6 +114,8 @@ pub struct RunInstancesInput {
     pub network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>,
     /// <p>Reserved for internal use.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub secondary_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether termination protection is enabled for the instance. The default is <code>false</code>, which means that you can terminate the instance using the Amazon EC2 console, command line tools, or API. You can enable termination protection when you launch an instance, while the instance is running, or while the instance is stopped.</p>
@@ -335,6 +337,12 @@ impl RunInstancesInput {
     pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorRequest> {
         self.operator.as_ref()
     }
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_interfaces.is_none()`.
+    pub fn secondary_interfaces(&self) -> &[crate::types::InstanceSecondaryInterfaceSpecificationRequest] {
+        self.secondary_interfaces.as_deref().unwrap_or_default()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -417,6 +425,7 @@ impl ::std::fmt::Debug for RunInstancesInput {
         formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
         formatter.field("network_performance_options", &self.network_performance_options);
         formatter.field("operator", &self.operator);
+        formatter.field("secondary_interfaces", &self.secondary_interfaces);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("disable_api_termination", &self.disable_api_termination);
         formatter.field("instance_initiated_shutdown_behavior", &self.instance_initiated_shutdown_behavior);
@@ -474,6 +483,7 @@ pub struct RunInstancesInputBuilder {
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
     pub(crate) network_performance_options: ::std::option::Option<crate::types::InstanceNetworkPerformanceOptionsRequest>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
+    pub(crate) secondary_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) disable_api_termination: ::std::option::Option<bool>,
     pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
@@ -1143,6 +1153,29 @@ impl RunInstancesInputBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
         &self.operator
     }
+    /// Appends an item to `secondary_interfaces`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_interfaces`](Self::set_secondary_interfaces).
+    ///
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn secondary_interfaces(mut self, input: crate::types::InstanceSecondaryInterfaceSpecificationRequest) -> Self {
+        let mut v = self.secondary_interfaces.unwrap_or_default();
+        v.push(input);
+        self.secondary_interfaces = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn set_secondary_interfaces(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>>,
+    ) -> Self {
+        self.secondary_interfaces = input;
+        self
+    }
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn get_secondary_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>> {
+        &self.secondary_interfaces
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -1335,6 +1368,7 @@ impl RunInstancesInputBuilder {
             enable_primary_ipv6: self.enable_primary_ipv6,
             network_performance_options: self.network_performance_options,
             operator: self.operator,
+            secondary_interfaces: self.secondary_interfaces,
             dry_run: self.dry_run,
             disable_api_termination: self.disable_api_termination,
             instance_initiated_shutdown_behavior: self.instance_initiated_shutdown_behavior,
@@ -1384,6 +1418,7 @@ impl ::std::fmt::Debug for RunInstancesInputBuilder {
         formatter.field("enable_primary_ipv6", &self.enable_primary_ipv6);
         formatter.field("network_performance_options", &self.network_performance_options);
         formatter.field("operator", &self.operator);
+        formatter.field("secondary_interfaces", &self.secondary_interfaces);
         formatter.field("dry_run", &self.dry_run);
         formatter.field("disable_api_termination", &self.disable_api_termination);
         formatter.field("instance_initiated_shutdown_behavior", &self.instance_initiated_shutdown_behavior);

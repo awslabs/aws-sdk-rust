@@ -75,6 +75,9 @@
 ///     ResourceType::RouteServerEndpoint => { /* ... */ },
 ///     ResourceType::RouteServerPeer => { /* ... */ },
 ///     ResourceType::RouteTable => { /* ... */ },
+///     ResourceType::SecondaryInterface => { /* ... */ },
+///     ResourceType::SecondaryNetwork => { /* ... */ },
+///     ResourceType::SecondarySubnet => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
 ///     ResourceType::SecurityGroupRule => { /* ... */ },
 ///     ResourceType::ServiceLinkVirtualInterface => { /* ... */ },
@@ -271,6 +274,12 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RouteTable,
     #[allow(missing_docs)] // documentation missing in model
+    SecondaryInterface,
+    #[allow(missing_docs)] // documentation missing in model
+    SecondaryNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    SecondarySubnet,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroupRule,
@@ -422,6 +431,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "route-server-endpoint" => ResourceType::RouteServerEndpoint,
             "route-server-peer" => ResourceType::RouteServerPeer,
             "route-table" => ResourceType::RouteTable,
+            "secondary-interface" => ResourceType::SecondaryInterface,
+            "secondary-network" => ResourceType::SecondaryNetwork,
+            "secondary-subnet" => ResourceType::SecondarySubnet,
             "security-group" => ResourceType::SecurityGroup,
             "security-group-rule" => ResourceType::SecurityGroupRule,
             "service-link-virtual-interface" => ResourceType::ServiceLinkVirtualInterface,
@@ -541,6 +553,9 @@ impl ResourceType {
             ResourceType::RouteServerEndpoint => "route-server-endpoint",
             ResourceType::RouteServerPeer => "route-server-peer",
             ResourceType::RouteTable => "route-table",
+            ResourceType::SecondaryInterface => "secondary-interface",
+            ResourceType::SecondaryNetwork => "secondary-network",
+            ResourceType::SecondarySubnet => "secondary-subnet",
             ResourceType::SecurityGroup => "security-group",
             ResourceType::SecurityGroupRule => "security-group-rule",
             ResourceType::ServiceLinkVirtualInterface => "service-link-virtual-interface",
@@ -651,6 +666,9 @@ impl ResourceType {
             "route-server-endpoint",
             "route-server-peer",
             "route-table",
+            "secondary-interface",
+            "secondary-network",
+            "secondary-subnet",
             "security-group",
             "security-group-rule",
             "service-link-virtual-interface",
@@ -780,6 +798,9 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::RouteServerEndpoint => write!(f, "route-server-endpoint"),
             ResourceType::RouteServerPeer => write!(f, "route-server-peer"),
             ResourceType::RouteTable => write!(f, "route-table"),
+            ResourceType::SecondaryInterface => write!(f, "secondary-interface"),
+            ResourceType::SecondaryNetwork => write!(f, "secondary-network"),
+            ResourceType::SecondarySubnet => write!(f, "secondary-subnet"),
             ResourceType::SecurityGroup => write!(f, "security-group"),
             ResourceType::SecurityGroupRule => write!(f, "security-group-rule"),
             ResourceType::ServiceLinkVirtualInterface => write!(f, "service-link-virtual-interface"),

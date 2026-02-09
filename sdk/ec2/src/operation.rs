@@ -367,6 +367,12 @@ pub mod create_route_server_peer;
 /// Types for the `CreateRouteTable` operation.
 pub mod create_route_table;
 
+/// Types for the `CreateSecondaryNetwork` operation.
+pub mod create_secondary_network;
+
+/// Types for the `CreateSecondarySubnet` operation.
+pub mod create_secondary_subnet;
+
 /// Types for the `CreateSecurityGroup` operation.
 pub mod create_security_group;
 
@@ -642,6 +648,12 @@ pub mod delete_route_server_peer;
 
 /// Types for the `DeleteRouteTable` operation.
 pub mod delete_route_table;
+
+/// Types for the `DeleteSecondaryNetwork` operation.
+pub mod delete_secondary_network;
+
+/// Types for the `DeleteSecondarySubnet` operation.
+pub mod delete_secondary_subnet;
 
 /// Types for the `DeleteSecurityGroup` operation.
 pub mod delete_security_group;
@@ -1146,6 +1158,15 @@ pub mod describe_scheduled_instance_availability;
 
 /// Types for the `DescribeScheduledInstances` operation.
 pub mod describe_scheduled_instances;
+
+/// Types for the `DescribeSecondaryInterfaces` operation.
+pub mod describe_secondary_interfaces;
+
+/// Types for the `DescribeSecondaryNetworks` operation.
+pub mod describe_secondary_networks;
+
+/// Types for the `DescribeSecondarySubnets` operation.
+pub mod describe_secondary_subnets;
 
 /// Types for the `DescribeSecurityGroupReferences` operation.
 pub mod describe_security_group_references;

@@ -25,6 +25,7 @@
 ///     UpdateType::LoggingUpdate => { /* ... */ },
 ///     UpdateType::RemoteNetworkConfigUpdate => { /* ... */ },
 ///     UpdateType::UpgradePolicyUpdate => { /* ... */ },
+///     UpdateType::VendedLogsUpdate => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
 ///     UpdateType::VpcConfigUpdate => { /* ... */ },
 ///     UpdateType::ZonalShiftConfigUpdate => { /* ... */ },
@@ -83,6 +84,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     UpgradePolicyUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    VendedLogsUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VpcConfigUpdate,
@@ -108,6 +111,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "LoggingUpdate" => UpdateType::LoggingUpdate,
             "RemoteNetworkConfigUpdate" => UpdateType::RemoteNetworkConfigUpdate,
             "UpgradePolicyUpdate" => UpdateType::UpgradePolicyUpdate,
+            "VendedLogsUpdate" => UpdateType::VendedLogsUpdate,
             "VersionUpdate" => UpdateType::VersionUpdate,
             "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
             "ZonalShiftConfigUpdate" => UpdateType::ZonalShiftConfigUpdate,
@@ -139,6 +143,7 @@ impl UpdateType {
             UpdateType::LoggingUpdate => "LoggingUpdate",
             UpdateType::RemoteNetworkConfigUpdate => "RemoteNetworkConfigUpdate",
             UpdateType::UpgradePolicyUpdate => "UpgradePolicyUpdate",
+            UpdateType::VendedLogsUpdate => "VendedLogsUpdate",
             UpdateType::VersionUpdate => "VersionUpdate",
             UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
             UpdateType::ZonalShiftConfigUpdate => "ZonalShiftConfigUpdate",
@@ -161,6 +166,7 @@ impl UpdateType {
             "LoggingUpdate",
             "RemoteNetworkConfigUpdate",
             "UpgradePolicyUpdate",
+            "VendedLogsUpdate",
             "VersionUpdate",
             "VpcConfigUpdate",
             "ZonalShiftConfigUpdate",
@@ -200,6 +206,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::LoggingUpdate => write!(f, "LoggingUpdate"),
             UpdateType::RemoteNetworkConfigUpdate => write!(f, "RemoteNetworkConfigUpdate"),
             UpdateType::UpgradePolicyUpdate => write!(f, "UpgradePolicyUpdate"),
+            UpdateType::VendedLogsUpdate => write!(f, "VendedLogsUpdate"),
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
             UpdateType::ZonalShiftConfigUpdate => write!(f, "ZonalShiftConfigUpdate"),

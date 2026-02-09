@@ -30,6 +30,8 @@ pub struct As2ConnectorConfig {
     /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>ASYNC</code>: The system expects an asynchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
     /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
@@ -95,6 +97,8 @@ impl As2ConnectorConfig {
     }
     /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>ASYNC</code>: The system expects an asynchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
@@ -298,6 +302,8 @@ impl As2ConnectorConfigBuilder {
     /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>ASYNC</code>: The system expects an asynchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
     /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
@@ -309,6 +315,8 @@ impl As2ConnectorConfigBuilder {
     /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
+    /// <p><code>ASYNC</code>: The system expects an asynchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
     /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
@@ -319,6 +327,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>ASYNC</code>: The system expects an asynchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
     /// <li>

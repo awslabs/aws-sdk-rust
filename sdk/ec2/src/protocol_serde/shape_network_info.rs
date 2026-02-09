@@ -213,6 +213,51 @@ pub fn de_network_info(
                 builder = builder.set_flexible_ena_queues_support(var_15);
             }
             ,
+            s if s.matches("secondaryNetworkSupported") /* SecondaryNetworkSupported com.amazonaws.ec2#NetworkInfo$SecondaryNetworkSupported */ =>  {
+                let var_16 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#SecondaryNetworkSupportedFlag`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_secondary_network_supported(var_16);
+            }
+            ,
+            s if s.matches("maximumSecondaryNetworkInterfaces") /* MaximumSecondaryNetworkInterfaces com.amazonaws.ec2#NetworkInfo$MaximumSecondaryNetworkInterfaces */ =>  {
+                let var_17 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#MaximumSecondaryNetworkInterfaces`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_maximum_secondary_network_interfaces(var_17);
+            }
+            ,
+            s if s.matches("ipv4AddressesPerSecondaryInterface") /* Ipv4AddressesPerSecondaryInterface com.amazonaws.ec2#NetworkInfo$Ipv4AddressesPerSecondaryInterface */ =>  {
+                let var_18 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Ipv4AddressesPerSecondaryInterface`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv4_addresses_per_secondary_interface(var_18);
+            }
+            ,
             _ => {}
         }
     }

@@ -3184,6 +3184,52 @@ impl From<crate::operation::create_route_table::CreateRouteTableError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_secondary_network::CreateSecondaryNetworkError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_secondary_network::CreateSecondaryNetworkError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_secondary_network::CreateSecondaryNetworkError> for Error {
+    fn from(err: crate::operation::create_secondary_network::CreateSecondaryNetworkError) -> Self {
+        match err {
+            crate::operation::create_secondary_network::CreateSecondaryNetworkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_secondary_subnet::CreateSecondarySubnetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_secondary_subnet::CreateSecondarySubnetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_secondary_subnet::CreateSecondarySubnetError> for Error {
+    fn from(err: crate::operation::create_secondary_subnet::CreateSecondarySubnetError) -> Self {
+        match err {
+            crate::operation::create_secondary_subnet::CreateSecondarySubnetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_security_group::CreateSecurityGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5577,6 +5623,52 @@ impl From<crate::operation::delete_route_table::DeleteRouteTableError> for Error
     fn from(err: crate::operation::delete_route_table::DeleteRouteTableError) -> Self {
         match err {
             crate::operation::delete_route_table::DeleteRouteTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_secondary_network::DeleteSecondaryNetworkError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_secondary_network::DeleteSecondaryNetworkError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_secondary_network::DeleteSecondaryNetworkError> for Error {
+    fn from(err: crate::operation::delete_secondary_network::DeleteSecondaryNetworkError) -> Self {
+        match err {
+            crate::operation::delete_secondary_network::DeleteSecondaryNetworkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_secondary_subnet::DeleteSecondarySubnetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_secondary_subnet::DeleteSecondarySubnetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_secondary_subnet::DeleteSecondarySubnetError> for Error {
+    fn from(err: crate::operation::delete_secondary_subnet::DeleteSecondarySubnetError) -> Self {
+        match err {
+            crate::operation::delete_secondary_subnet::DeleteSecondarySubnetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10097,6 +10189,78 @@ impl From<crate::operation::describe_scheduled_instances::DescribeScheduledInsta
     fn from(err: crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError) -> Self {
         match err {
             crate::operation::describe_scheduled_instances::DescribeScheduledInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesError> for Error {
+    fn from(err: crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesError) -> Self {
+        match err {
+            crate::operation::describe_secondary_interfaces::DescribeSecondaryInterfacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError> for Error {
+    fn from(err: crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError) -> Self {
+        match err {
+            crate::operation::describe_secondary_networks::DescribeSecondaryNetworksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError> for Error {
+    fn from(err: crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError) -> Self {
+        match err {
+            crate::operation::describe_secondary_subnets::DescribeSecondarySubnetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

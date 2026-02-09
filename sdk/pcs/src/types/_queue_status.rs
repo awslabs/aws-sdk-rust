@@ -17,6 +17,7 @@
 ///     QueueStatus::Creating => { /* ... */ },
 ///     QueueStatus::DeleteFailed => { /* ... */ },
 ///     QueueStatus::Deleting => { /* ... */ },
+///     QueueStatus::Resuming => { /* ... */ },
 ///     QueueStatus::Suspended => { /* ... */ },
 ///     QueueStatus::Suspending => { /* ... */ },
 ///     QueueStatus::UpdateFailed => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum QueueStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Resuming,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     #[allow(missing_docs)] // documentation missing in model
     Suspending,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for QueueStatus {
             "CREATING" => QueueStatus::Creating,
             "DELETE_FAILED" => QueueStatus::DeleteFailed,
             "DELETING" => QueueStatus::Deleting,
+            "RESUMING" => QueueStatus::Resuming,
             "SUSPENDED" => QueueStatus::Suspended,
             "SUSPENDING" => QueueStatus::Suspending,
             "UPDATE_FAILED" => QueueStatus::UpdateFailed,
@@ -103,6 +107,7 @@ impl QueueStatus {
             QueueStatus::Creating => "CREATING",
             QueueStatus::DeleteFailed => "DELETE_FAILED",
             QueueStatus::Deleting => "DELETING",
+            QueueStatus::Resuming => "RESUMING",
             QueueStatus::Suspended => "SUSPENDED",
             QueueStatus::Suspending => "SUSPENDING",
             QueueStatus::UpdateFailed => "UPDATE_FAILED",
@@ -118,6 +123,7 @@ impl QueueStatus {
             "CREATING",
             "DELETE_FAILED",
             "DELETING",
+            "RESUMING",
             "SUSPENDED",
             "SUSPENDING",
             "UPDATE_FAILED",
@@ -150,6 +156,7 @@ impl ::std::fmt::Display for QueueStatus {
             QueueStatus::Creating => write!(f, "CREATING"),
             QueueStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             QueueStatus::Deleting => write!(f, "DELETING"),
+            QueueStatus::Resuming => write!(f, "RESUMING"),
             QueueStatus::Suspended => write!(f, "SUSPENDED"),
             QueueStatus::Suspending => write!(f, "SUSPENDING"),
             QueueStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

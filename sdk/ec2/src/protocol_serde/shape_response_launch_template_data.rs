@@ -375,6 +375,16 @@ pub fn de_response_launch_template_data(
                 builder = builder.set_network_performance_options(var_33);
             }
             ,
+            s if s.matches("secondaryInterfaceSet") /* SecondaryInterfaces com.amazonaws.ec2#ResponseLaunchTemplateData$SecondaryInterfaces */ =>  {
+                let var_34 =
+                    Some(
+                        crate::protocol_serde::shape_launch_template_instance_secondary_interface_specification_list::de_launch_template_instance_secondary_interface_specification_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_secondary_interfaces(var_34);
+            }
+            ,
             _ => {}
         }
     }

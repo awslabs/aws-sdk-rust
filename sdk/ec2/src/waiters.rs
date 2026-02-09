@@ -63,6 +63,18 @@ pub mod network_interface_available;
 /// Supporting types for the `password_data_available` waiter.
 pub mod password_data_available;
 
+/// Supporting types for the `secondary_network_create_complete` waiter.
+pub mod secondary_network_create_complete;
+
+/// Supporting types for the `secondary_network_delete_complete` waiter.
+pub mod secondary_network_delete_complete;
+
+/// Supporting types for the `secondary_subnet_create_complete` waiter.
+pub mod secondary_subnet_create_complete;
+
+/// Supporting types for the `secondary_subnet_delete_complete` waiter.
+pub mod secondary_subnet_delete_complete;
+
 /// Supporting types for the `security_group_exists` waiter.
 pub mod security_group_exists;
 

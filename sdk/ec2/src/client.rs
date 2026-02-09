@@ -184,6 +184,22 @@ pub trait Waiters {
     fn wait_until_nat_gateway_deleted(&self) -> crate::waiters::nat_gateway_deleted::NatGatewayDeletedFluentBuilder;
     /// Wait for `network_interface_available`
     fn wait_until_network_interface_available(&self) -> crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder;
+    /// Wait for `secondary_network_create_complete`
+    fn wait_until_secondary_network_create_complete(
+        &self,
+    ) -> crate::waiters::secondary_network_create_complete::SecondaryNetworkCreateCompleteFluentBuilder;
+    /// Wait for `secondary_network_delete_complete`
+    fn wait_until_secondary_network_delete_complete(
+        &self,
+    ) -> crate::waiters::secondary_network_delete_complete::SecondaryNetworkDeleteCompleteFluentBuilder;
+    /// Wait for `secondary_subnet_create_complete`
+    fn wait_until_secondary_subnet_create_complete(
+        &self,
+    ) -> crate::waiters::secondary_subnet_create_complete::SecondarySubnetCreateCompleteFluentBuilder;
+    /// Wait for `secondary_subnet_delete_complete`
+    fn wait_until_secondary_subnet_delete_complete(
+        &self,
+    ) -> crate::waiters::secondary_subnet_delete_complete::SecondarySubnetDeleteCompleteFluentBuilder;
     /// Wait for `security_group_exists`
     fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder;
     /// Wait for `security_group_vpc_association_associated`
@@ -291,6 +307,26 @@ impl Waiters for Client {
     }
     fn wait_until_network_interface_available(&self) -> crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder {
         crate::waiters::network_interface_available::NetworkInterfaceAvailableFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_secondary_network_create_complete(
+        &self,
+    ) -> crate::waiters::secondary_network_create_complete::SecondaryNetworkCreateCompleteFluentBuilder {
+        crate::waiters::secondary_network_create_complete::SecondaryNetworkCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_secondary_network_delete_complete(
+        &self,
+    ) -> crate::waiters::secondary_network_delete_complete::SecondaryNetworkDeleteCompleteFluentBuilder {
+        crate::waiters::secondary_network_delete_complete::SecondaryNetworkDeleteCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_secondary_subnet_create_complete(
+        &self,
+    ) -> crate::waiters::secondary_subnet_create_complete::SecondarySubnetCreateCompleteFluentBuilder {
+        crate::waiters::secondary_subnet_create_complete::SecondarySubnetCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_secondary_subnet_delete_complete(
+        &self,
+    ) -> crate::waiters::secondary_subnet_delete_complete::SecondarySubnetDeleteCompleteFluentBuilder {
+        crate::waiters::secondary_subnet_delete_complete::SecondarySubnetDeleteCompleteFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_security_group_exists(&self) -> crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder {
         crate::waiters::security_group_exists::SecurityGroupExistsFluentBuilder::new(self.handle.clone())
@@ -611,6 +647,10 @@ mod create_route_server_peer;
 
 mod create_route_table;
 
+mod create_secondary_network;
+
+mod create_secondary_subnet;
+
 mod create_security_group;
 
 mod create_snapshot;
@@ -821,6 +861,10 @@ mod delete_route_server_endpoint;
 mod delete_route_server_peer;
 
 mod delete_route_table;
+
+mod delete_secondary_network;
+
+mod delete_secondary_subnet;
 
 mod delete_security_group;
 
@@ -1157,6 +1201,12 @@ mod describe_route_tables;
 mod describe_scheduled_instance_availability;
 
 mod describe_scheduled_instances;
+
+mod describe_secondary_interfaces;
+
+mod describe_secondary_networks;
+
+mod describe_secondary_subnets;
 
 mod describe_security_group_references;
 

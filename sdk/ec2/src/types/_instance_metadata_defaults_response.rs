@@ -16,7 +16,7 @@ pub struct InstanceMetadataDefaultsResponse {
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Indicates whether the IMDS endpoint for an instance is enabled or disabled. When disabled, the instance metadata can't be accessed.</p>
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
-    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
     /// <p>The entity that manages the IMDS default settings. Possible values include:</p>
     /// <ul>
@@ -48,7 +48,7 @@ impl InstanceMetadataDefaultsResponse {
     pub fn http_endpoint(&self) -> ::std::option::Option<&crate::types::InstanceMetadataEndpointState> {
         self.http_endpoint.as_ref()
     }
-    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_metadata_tags(&self) -> ::std::option::Option<&crate::types::InstanceMetadataTagsState> {
         self.instance_metadata_tags.as_ref()
     }
@@ -146,17 +146,17 @@ impl InstanceMetadataDefaultsResponseBuilder {
     pub fn get_http_endpoint(&self) -> &::std::option::Option<crate::types::InstanceMetadataEndpointState> {
         &self.http_endpoint
     }
-    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_metadata_tags(mut self, input: crate::types::InstanceMetadataTagsState) -> Self {
         self.instance_metadata_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<crate::types::InstanceMetadataTagsState>) -> Self {
         self.instance_metadata_tags = input;
         self
     }
-    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2 instances using instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
         &self.instance_metadata_tags
     }

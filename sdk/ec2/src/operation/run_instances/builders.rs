@@ -775,6 +775,28 @@ impl RunInstancesFluentBuilder {
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorRequest> {
         self.inner.get_operator()
     }
+    ///
+    /// Appends an item to `SecondaryInterfaces`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_interfaces`](Self::set_secondary_interfaces).
+    ///
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn secondary_interfaces(mut self, input: crate::types::InstanceSecondaryInterfaceSpecificationRequest) -> Self {
+        self.inner = self.inner.secondary_interfaces(input);
+        self
+    }
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn set_secondary_interfaces(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>>,
+    ) -> Self {
+        self.inner = self.inner.set_secondary_interfaces(input);
+        self
+    }
+    /// <p>The secondary interfaces to associate with the instance.</p>
+    pub fn get_secondary_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSecondaryInterfaceSpecificationRequest>> {
+        self.inner.get_secondary_interfaces()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

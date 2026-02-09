@@ -144,6 +144,8 @@ pub struct RequestLaunchTemplateData {
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
     /// <p>Contains launch template settings to boost network performance for the type of workload that runs on your instance.</p>
     pub network_performance_options: ::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest>,
+    /// <p>The secondary interfaces to associate with instances launched from the template.</p>
+    pub secondary_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest>>,
 }
 impl RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p><important>
@@ -366,6 +368,12 @@ impl RequestLaunchTemplateData {
     pub fn network_performance_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateNetworkPerformanceOptionsRequest> {
         self.network_performance_options.as_ref()
     }
+    /// <p>The secondary interfaces to associate with instances launched from the template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_interfaces.is_none()`.
+    pub fn secondary_interfaces(&self) -> &[crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest] {
+        self.secondary_interfaces.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RequestLaunchTemplateData {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -403,6 +411,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateData {
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("operator", &self.operator);
         formatter.field("network_performance_options", &self.network_performance_options);
+        formatter.field("secondary_interfaces", &self.secondary_interfaces);
         formatter.finish()
     }
 }
@@ -450,6 +459,8 @@ pub struct RequestLaunchTemplateDataBuilder {
     pub(crate) disable_api_stop: ::std::option::Option<bool>,
     pub(crate) operator: ::std::option::Option<crate::types::OperatorRequest>,
     pub(crate) network_performance_options: ::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest>,
+    pub(crate) secondary_interfaces:
+        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest>>,
 }
 impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the kernel.</p><important>
@@ -1208,6 +1219,31 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_network_performance_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateNetworkPerformanceOptionsRequest> {
         &self.network_performance_options
     }
+    /// Appends an item to `secondary_interfaces`.
+    ///
+    /// To override the contents of this collection use [`set_secondary_interfaces`](Self::set_secondary_interfaces).
+    ///
+    /// <p>The secondary interfaces to associate with instances launched from the template.</p>
+    pub fn secondary_interfaces(mut self, input: crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest) -> Self {
+        let mut v = self.secondary_interfaces.unwrap_or_default();
+        v.push(input);
+        self.secondary_interfaces = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The secondary interfaces to associate with instances launched from the template.</p>
+    pub fn set_secondary_interfaces(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest>>,
+    ) -> Self {
+        self.secondary_interfaces = input;
+        self
+    }
+    /// <p>The secondary interfaces to associate with instances launched from the template.</p>
+    pub fn get_secondary_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest>> {
+        &self.secondary_interfaces
+    }
     /// Consumes the builder and constructs a [`RequestLaunchTemplateData`](crate::types::RequestLaunchTemplateData).
     pub fn build(self) -> crate::types::RequestLaunchTemplateData {
         crate::types::RequestLaunchTemplateData {
@@ -1244,6 +1280,7 @@ impl RequestLaunchTemplateDataBuilder {
             disable_api_stop: self.disable_api_stop,
             operator: self.operator,
             network_performance_options: self.network_performance_options,
+            secondary_interfaces: self.secondary_interfaces,
         }
     }
 }
@@ -1283,6 +1320,7 @@ impl ::std::fmt::Debug for RequestLaunchTemplateDataBuilder {
         formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.field("operator", &self.operator);
         formatter.field("network_performance_options", &self.network_performance_options);
+        formatter.field("secondary_interfaces", &self.secondary_interfaces);
         formatter.finish()
     }
 }

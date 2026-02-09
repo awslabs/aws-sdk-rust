@@ -117,6 +117,11 @@ pub struct StartLoaderJobInput {
     /// <p>When <code>userProvidedEdgeIds</code> is present and set to <code>False</code>, relationship files in the load <b>must not</b> contain an <code>:ID</code> column. Instead, the Neptune loader automatically generates an ID for each relationship.</p>
     /// <p>It's useful to provide relationship IDs explicitly so that the loader can resume loading after error in the CSV data have been fixed, without having to reload any relationships that have already been loaded. If relationship IDs have not been explicitly assigned, the loader cannot resume a failed load if any relationship file has had to be corrected, and must instead reload all the relationships.</p>
     pub user_provided_edge_ids: ::std::option::Option<bool>,
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub edge_only_load: ::std::option::Option<bool>,
 }
 impl StartLoaderJobInput {
     /// <p>The <code>source</code> parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.</p>
@@ -259,6 +264,13 @@ impl StartLoaderJobInput {
     pub fn user_provided_edge_ids(&self) -> ::std::option::Option<bool> {
         self.user_provided_edge_ids
     }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn edge_only_load(&self) -> ::std::option::Option<bool> {
+        self.edge_only_load
+    }
 }
 impl StartLoaderJobInput {
     /// Creates a new builder-style object to manufacture [`StartLoaderJobInput`](crate::operation::start_loader_job::StartLoaderJobInput).
@@ -283,6 +295,7 @@ pub struct StartLoaderJobInputBuilder {
     pub(crate) queue_request: ::std::option::Option<bool>,
     pub(crate) dependencies: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_provided_edge_ids: ::std::option::Option<bool>,
+    pub(crate) edge_only_load: ::std::option::Option<bool>,
 }
 impl StartLoaderJobInputBuilder {
     /// <p>The <code>source</code> parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.</p>
@@ -746,6 +759,29 @@ impl StartLoaderJobInputBuilder {
     pub fn get_user_provided_edge_ids(&self) -> &::std::option::Option<bool> {
         &self.user_provided_edge_ids
     }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn edge_only_load(mut self, input: bool) -> Self {
+        self.edge_only_load = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn set_edge_only_load(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.edge_only_load = input;
+        self
+    }
+    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
+    /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
+    /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+    pub fn get_edge_only_load(&self) -> &::std::option::Option<bool> {
+        &self.edge_only_load
+    }
     /// Consumes the builder and constructs a [`StartLoaderJobInput`](crate::operation::start_loader_job::StartLoaderJobInput).
     pub fn build(
         self,
@@ -763,6 +799,7 @@ impl StartLoaderJobInputBuilder {
             queue_request: self.queue_request,
             dependencies: self.dependencies,
             user_provided_edge_ids: self.user_provided_edge_ids,
+            edge_only_load: self.edge_only_load,
         })
     }
 }
