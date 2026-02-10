@@ -705,6 +705,8 @@ pub(crate) mod shape_update_test_case;
 
 pub(crate) mod shape_update_traffic_distribution;
 
+pub(crate) mod shape_update_user_config;
+
 pub(crate) mod shape_update_user_hierarchy;
 
 pub(crate) mod shape_update_user_hierarchy_group_name;
@@ -1185,6 +1187,8 @@ pub(crate) mod shape_update_test_case_input;
 
 pub(crate) mod shape_update_traffic_distribution_input;
 
+pub(crate) mod shape_update_user_config_input;
+
 pub(crate) mod shape_update_user_hierarchy_group_name_input;
 
 pub(crate) mod shape_update_user_hierarchy_input;
@@ -1214,6 +1218,8 @@ pub(crate) mod shape_update_workspace_theme_input;
 pub(crate) mod shape_update_workspace_visibility_input;
 
 pub(crate) mod shape_user_not_found_exception;
+
+pub(crate) mod shape_after_contact_work_config_per_channel;
 
 pub(crate) mod shape_agent_config;
 
@@ -1262,6 +1268,8 @@ pub(crate) mod shape_attributes_list;
 pub(crate) mod shape_authentication_profile;
 
 pub(crate) mod shape_authentication_profile_summary_list;
+
+pub(crate) mod shape_auto_accept_config;
 
 pub(crate) mod shape_auto_evaluation_configuration;
 
@@ -1559,6 +1567,10 @@ pub(crate) mod shape_permissions_list;
 
 pub(crate) mod shape_persistent_chat;
 
+pub(crate) mod shape_persistent_connection_config;
+
+pub(crate) mod shape_phone_number_config;
+
 pub(crate) mod shape_phone_number_summary_list;
 
 pub(crate) mod shape_predefined_attribute;
@@ -1789,6 +1801,8 @@ pub(crate) mod shape_vocabulary;
 
 pub(crate) mod shape_vocabulary_summary_list;
 
+pub(crate) mod shape_voice_enhancement_config;
+
 pub(crate) mod shape_voice_recording_configuration;
 
 pub(crate) mod shape_workspace;
@@ -1812,6 +1826,10 @@ pub(crate) mod shape_workspace_summary_list;
 pub(crate) mod shape_workspace_theme;
 
 pub(crate) mod shape_additional_email_recipients;
+
+pub(crate) mod shape_after_contact_work_config;
+
+pub(crate) mod shape_after_contact_work_configs;
 
 pub(crate) mod shape_agent_hierarchy_groups;
 
@@ -1840,6 +1858,8 @@ pub(crate) mod shape_attached_file_error;
 pub(crate) mod shape_attendee;
 
 pub(crate) mod shape_authentication_profile_summary;
+
+pub(crate) mod shape_auto_accept_configs;
 
 pub(crate) mod shape_available_number_summary;
 
@@ -2063,6 +2083,10 @@ pub(crate) mod shape_parent_hours_of_operations_list;
 
 pub(crate) mod shape_participant_capabilities;
 
+pub(crate) mod shape_persistent_connection_configs;
+
+pub(crate) mod shape_phone_number_configs;
+
 pub(crate) mod shape_phone_number_quick_connect_config;
 
 pub(crate) mod shape_phone_number_status;
@@ -2216,6 +2240,8 @@ pub(crate) mod shape_view_version_summary;
 pub(crate) mod shape_vocabulary_summary;
 
 pub(crate) mod shape_voice_call_entry_point_parameters;
+
+pub(crate) mod shape_voice_enhancement_configs;
 
 pub(crate) mod shape_wisdom_info;
 

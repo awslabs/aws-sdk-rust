@@ -12771,6 +12771,35 @@ impl From<crate::operation::update_traffic_distribution::UpdateTrafficDistributi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_config::UpdateUserConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_config::UpdateUserConfigError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_user_config::UpdateUserConfigError> for Error {
+    fn from(err: crate::operation::update_user_config::UpdateUserConfigError) -> Self {
+        match err {
+            crate::operation::update_user_config::UpdateUserConfigError::ConditionalOperationFailedException(inner) => {
+                Error::ConditionalOperationFailedException(inner)
+            }
+            crate::operation::update_user_config::UpdateUserConfigError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_user_config::UpdateUserConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_user_config::UpdateUserConfigError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_user_config::UpdateUserConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_user_config::UpdateUserConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_user_config::UpdateUserConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_hierarchy::UpdateUserHierarchyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

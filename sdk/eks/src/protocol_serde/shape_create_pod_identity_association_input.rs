@@ -12,24 +12,27 @@ pub fn ser_create_pod_identity_association_input_input(
     if let Some(var_3) = &input.namespace {
         object.key("namespace").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("roleArn").string(var_4.as_str());
+    if let Some(var_4) = &input.policy {
+        object.key("policy").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.service_account {
-        object.key("serviceAccount").string(var_5.as_str());
+    if let Some(var_5) = &input.role_arn {
+        object.key("roleArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_6) = &input.service_account {
+        object.key("serviceAccount").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.target_role_arn {
-        object.key("targetRoleArn").string(var_10.as_str());
+    if let Some(var_11) = &input.target_role_arn {
+        object.key("targetRoleArn").string(var_11.as_str());
     }
     Ok(())
 }

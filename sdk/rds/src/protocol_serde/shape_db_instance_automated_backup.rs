@@ -344,7 +344,7 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_backup_retention_period(var_25);
             }
             ,
-            s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsArn */ =>  {
+            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBInstanceAutomatedBackup$PreferredBackupWindow */ =>  {
                 let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -354,21 +354,34 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_arn(var_26);
+                builder = builder.set_preferred_backup_window(var_26);
+            }
+            ,
+            s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsArn */ =>  {
+                let var_27 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_instance_automated_backups_arn(var_27);
             }
             ,
             s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsReplications */ =>  {
-                let var_27 =
+                let var_28 =
                     Some(
                         crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_replications(var_27);
+                builder = builder.set_db_instance_automated_backups_replications(var_28);
             }
             ,
             s if s.matches("BackupTarget") /* BackupTarget com.amazonaws.rds#DBInstanceAutomatedBackup$BackupTarget */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -377,11 +390,11 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_backup_target(var_28);
+                builder = builder.set_backup_target(var_29);
             }
             ,
             s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBInstanceAutomatedBackup$MultiTenant */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -392,11 +405,11 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_multi_tenant(var_29);
+                builder = builder.set_multi_tenant(var_30);
             }
             ,
             s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstanceAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
-                let var_30 =
+                let var_31 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -405,21 +418,21 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_30);
+                builder = builder.set_aws_backup_recovery_point_arn(var_31);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstanceAutomatedBackup$TagList */ =>  {
-                let var_31 =
+                let var_32 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_31);
+                builder = builder.set_tag_list(var_32);
             }
             ,
             s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstanceAutomatedBackup$DedicatedLogVolume */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -430,17 +443,17 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_dedicated_log_volume(var_32);
+                builder = builder.set_dedicated_log_volume(var_33);
             }
             ,
             s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstanceAutomatedBackup$AdditionalStorageVolumes */ =>  {
-                let var_33 =
+                let var_34 =
                     Some(
                         crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_additional_storage_volumes(var_33);
+                builder = builder.set_additional_storage_volumes(var_34);
             }
             ,
             _ => {}

@@ -73,6 +73,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AutoAcceptConfigs" => {
+                            builder = builder
+                                .set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(tokens, _value)?);
+                        }
+                        "AfterContactWorkConfigs" => {
+                            builder = builder.set_after_contact_work_configs(
+                                crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(tokens, _value)?,
+                            );
+                        }
+                        "PhoneNumberConfigs" => {
+                            builder = builder.set_phone_number_configs(crate::protocol_serde::shape_phone_number_configs::de_phone_number_configs(
+                                tokens, _value,
+                            )?);
+                        }
+                        "PersistentConnectionConfigs" => {
+                            builder = builder.set_persistent_connection_configs(
+                                crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(tokens, _value)?,
+                            );
+                        }
+                        "VoiceEnhancementConfigs" => {
+                            builder = builder.set_voice_enhancement_configs(
+                                crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

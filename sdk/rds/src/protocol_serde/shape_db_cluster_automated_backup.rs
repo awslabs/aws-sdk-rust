@@ -234,7 +234,7 @@ pub fn de_db_cluster_automated_backup(
                 builder = builder.set_backup_retention_period(var_17);
             }
             ,
-            s if s.matches("EngineMode") /* EngineMode com.amazonaws.rds#DBClusterAutomatedBackup$EngineMode */ =>  {
+            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBClusterAutomatedBackup$PreferredBackupWindow */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -244,21 +244,34 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_engine_mode(var_18);
+                builder = builder.set_preferred_backup_window(var_18);
+            }
+            ,
+            s if s.matches("EngineMode") /* EngineMode com.amazonaws.rds#DBClusterAutomatedBackup$EngineMode */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_engine_mode(var_19);
             }
             ,
             s if s.matches("AvailabilityZones") /* AvailabilityZones com.amazonaws.rds#DBClusterAutomatedBackup$AvailabilityZones */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_availability_zones::de_availability_zones(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zones(var_19);
+                builder = builder.set_availability_zones(var_20);
             }
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBClusterAutomatedBackup$Port */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -269,23 +282,10 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_port(var_20);
+                builder = builder.set_port(var_21);
             }
             ,
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBClusterAutomatedBackup$KmsKeyId */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_21);
-            }
-            ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBClusterAutomatedBackup$StorageType */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -295,25 +295,23 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_22);
+                builder = builder.set_kms_key_id(var_22);
             }
             ,
-            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBClusterAutomatedBackup$Iops */ =>  {
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBClusterAutomatedBackup$StorageType */ =>  {
                 let var_23 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_23);
+                builder = builder.set_storage_type(var_23);
             }
             ,
-            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterAutomatedBackup$StorageThroughput */ =>  {
+            s if s.matches("Iops") /* Iops com.amazonaws.rds#DBClusterAutomatedBackup$Iops */ =>  {
                 let var_24 =
                     Some(
                          {
@@ -325,11 +323,26 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_24);
+                builder = builder.set_iops(var_24);
+            }
+            ,
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterAutomatedBackup$StorageThroughput */ =>  {
+                let var_25 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput(var_25);
             }
             ,
             s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBClusterAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -338,17 +351,17 @@ pub fn de_db_cluster_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_25);
+                builder = builder.set_aws_backup_recovery_point_arn(var_26);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterAutomatedBackup$TagList */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_26);
+                builder = builder.set_tag_list(var_27);
             }
             ,
             _ => {}

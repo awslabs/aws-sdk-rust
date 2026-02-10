@@ -57,6 +57,14 @@ pub use crate::types::_automation_stream::AutomationStreamBuilder;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;
 
+pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
+
+pub use crate::types::_proxy_bypass::ProxyBypassBuilder;
+
+pub use crate::types::_external_proxy::ExternalProxyBuilder;
+
+pub use crate::types::_basic_auth::BasicAuthBuilder;
+
 pub use crate::types::_browser_profile_configuration::BrowserProfileConfigurationBuilder;
 
 pub use crate::types::_browser_extension::BrowserExtensionBuilder;

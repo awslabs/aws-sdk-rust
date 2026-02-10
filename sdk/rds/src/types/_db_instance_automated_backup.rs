@@ -65,6 +65,8 @@ pub struct DbInstanceAutomatedBackup {
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>The retention period for the automated backups.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
     pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
@@ -196,6 +198,10 @@ impl DbInstanceAutomatedBackup {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
     pub fn db_instance_automated_backups_arn(&self) -> ::std::option::Option<&str> {
         self.db_instance_automated_backups_arn.as_deref()
@@ -273,6 +279,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups_replications:
         ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>,
@@ -667,6 +674,20 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_backup_window = input;
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
     pub fn db_instance_automated_backups_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_automated_backups_arn = ::std::option::Option::Some(input.into());
@@ -836,6 +857,7 @@ impl DbInstanceAutomatedBackupBuilder {
             timezone: self.timezone,
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
             db_instance_automated_backups_arn: self.db_instance_automated_backups_arn,
             db_instance_automated_backups_replications: self.db_instance_automated_backups_replications,
             backup_target: self.backup_target,

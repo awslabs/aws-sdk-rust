@@ -255,6 +255,8 @@ pub(crate) mod shape_metadata_value;
 
 pub(crate) mod shape_payload_type;
 
+pub(crate) mod shape_proxy_configuration;
+
 pub(crate) mod shape_search_criteria;
 
 pub(crate) mod shape_session_summary_list;
@@ -309,6 +311,12 @@ pub(crate) mod shape_namespaces_list;
 
 pub(crate) mod shape_payload_type_list;
 
+pub(crate) mod shape_proxies;
+
+pub(crate) mod shape_proxy;
+
+pub(crate) mod shape_proxy_bypass;
+
 pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_session_summary;
@@ -318,6 +326,10 @@ pub(crate) mod shape_validation_exception_field;
 pub(crate) mod shape_content;
 
 pub(crate) mod shape_context;
+
+pub(crate) mod shape_domain_patterns;
+
+pub(crate) mod shape_external_proxy;
 
 pub(crate) mod shape_extraction_job_messages;
 
@@ -333,9 +345,13 @@ pub(crate) mod shape_content_block_list;
 
 pub(crate) mod shape_messages_list;
 
+pub(crate) mod shape_proxy_credentials;
+
 pub(crate) mod shape_span_context;
 
 pub(crate) mod shape_tool_result_structured_content;
+
+pub(crate) mod shape_basic_auth;
 
 pub(crate) mod shape_content_block;
 

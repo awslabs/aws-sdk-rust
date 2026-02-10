@@ -72,6 +72,30 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }
+                        "AutoAcceptConfigs" => {
+                            builder = builder
+                                .set_auto_accept_configs(crate::protocol_serde::shape_auto_accept_configs::de_auto_accept_configs(tokens, _value)?);
+                        }
+                        "AfterContactWorkConfigs" => {
+                            builder = builder.set_after_contact_work_configs(
+                                crate::protocol_serde::shape_after_contact_work_configs::de_after_contact_work_configs(tokens, _value)?,
+                            );
+                        }
+                        "PhoneNumberConfigs" => {
+                            builder = builder.set_phone_number_configs(crate::protocol_serde::shape_phone_number_configs::de_phone_number_configs(
+                                tokens, _value,
+                            )?);
+                        }
+                        "PersistentConnectionConfigs" => {
+                            builder = builder.set_persistent_connection_configs(
+                                crate::protocol_serde::shape_persistent_connection_configs::de_persistent_connection_configs(tokens, _value)?,
+                            );
+                        }
+                        "VoiceEnhancementConfigs" => {
+                            builder = builder.set_voice_enhancement_configs(
+                                crate::protocol_serde::shape_voice_enhancement_configs::de_voice_enhancement_configs(tokens, _value)?,
+                            );
+                        }
                         "LastModifiedTime" => {
                             builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

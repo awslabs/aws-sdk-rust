@@ -42,6 +42,8 @@ pub struct DbClusterAutomatedBackup {
     pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The retention period for the automated backups.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones where instances in the DB cluster can be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
@@ -141,6 +143,10 @@ impl DbClusterAutomatedBackup {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub fn engine_mode(&self) -> ::std::option::Option<&str> {
         self.engine_mode.as_deref()
@@ -217,6 +223,7 @@ pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) port: ::std::option::Option<i32>,
@@ -478,6 +485,20 @@ impl DbClusterAutomatedBackupBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_backup_window = input;
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>The engine mode of the database engine for the automated backup.</p>
     pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_mode = ::std::option::Option::Some(input.into());
@@ -657,6 +678,7 @@ impl DbClusterAutomatedBackupBuilder {
             engine_version: self.engine_version,
             db_cluster_arn: self.db_cluster_arn,
             backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
             engine_mode: self.engine_mode,
             availability_zones: self.availability_zones,
             port: self.port,

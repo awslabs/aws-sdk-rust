@@ -1450,15 +1450,6 @@ pub(crate) fn task_template_field_correct_errors(
     builder
 }
 
-pub(crate) fn user_phone_config_correct_errors(
-    mut builder: crate::types::builders::UserPhoneConfigBuilder,
-) -> crate::types::builders::UserPhoneConfigBuilder {
-    if builder.phone_type.is_none() {
-        builder.phone_type = "no value was set".parse::<crate::types::PhoneType>().ok()
-    }
-    builder
-}
-
 pub(crate) fn user_proficiency_correct_errors(
     mut builder: crate::types::builders::UserProficiencyBuilder,
 ) -> crate::types::builders::UserProficiencyBuilder {
@@ -1494,6 +1485,33 @@ pub(crate) fn vocabulary_summary_correct_errors(
     }
     if builder.last_modified_time.is_none() {
         builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn after_contact_work_config_per_channel_correct_errors(
+    mut builder: crate::types::builders::AfterContactWorkConfigPerChannelBuilder,
+) -> crate::types::builders::AfterContactWorkConfigPerChannelBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    if builder.after_contact_work_config.is_none() {
+        builder.after_contact_work_config = {
+            let builder = crate::types::builders::AfterContactWorkConfigBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn auto_accept_config_correct_errors(
+    mut builder: crate::types::builders::AutoAcceptConfigBuilder,
+) -> crate::types::builders::AutoAcceptConfigBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    if builder.auto_accept.is_none() {
+        builder.auto_accept = Some(Default::default())
     }
     builder
 }
@@ -1606,6 +1624,30 @@ pub(crate) fn media_concurrency_correct_errors(
     }
     if builder.concurrency.is_none() {
         builder.concurrency = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn persistent_connection_config_correct_errors(
+    mut builder: crate::types::builders::PersistentConnectionConfigBuilder,
+) -> crate::types::builders::PersistentConnectionConfigBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    if builder.persistent_connection.is_none() {
+        builder.persistent_connection = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn phone_number_config_correct_errors(
+    mut builder: crate::types::builders::PhoneNumberConfigBuilder,
+) -> crate::types::builders::PhoneNumberConfigBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    if builder.phone_type.is_none() {
+        builder.phone_type = "no value was set".parse::<crate::types::PhoneType>().ok()
     }
     builder
 }
@@ -1756,6 +1798,18 @@ pub(crate) fn user_quick_connect_config_correct_errors(
     }
     if builder.contact_flow_id.is_none() {
         builder.contact_flow_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn voice_enhancement_config_correct_errors(
+    mut builder: crate::types::builders::VoiceEnhancementConfigBuilder,
+) -> crate::types::builders::VoiceEnhancementConfigBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::Channel>().ok()
+    }
+    if builder.voice_enhancement_mode.is_none() {
+        builder.voice_enhancement_mode = "no value was set".parse::<crate::types::VoiceEnhancementMode>().ok()
     }
     builder
 }

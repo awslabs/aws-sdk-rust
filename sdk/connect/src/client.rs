@@ -845,6 +845,8 @@ mod update_test_case;
 
 mod update_traffic_distribution;
 
+mod update_user_config;
+
 mod update_user_hierarchy;
 
 mod update_user_hierarchy_group_name;

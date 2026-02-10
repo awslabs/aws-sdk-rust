@@ -27,17 +27,23 @@ pub fn ser_start_browser_session_input_input(
         crate::protocol_serde::shape_browser_profile_configuration::ser_browser_profile_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.session_timeout_seconds {
+    if let Some(var_9) = &input.proxy_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("proxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.session_timeout_seconds {
         object.key("sessionTimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_10) = &input.view_port {
+    if let Some(var_12) = &input.view_port {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("viewPort").start_object();
-        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("viewPort").start_object();
+        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

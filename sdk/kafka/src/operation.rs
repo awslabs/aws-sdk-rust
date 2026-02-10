@@ -19,6 +19,9 @@ pub mod create_configuration;
 /// Types for the `CreateReplicator` operation.
 pub mod create_replicator;
 
+/// Types for the `CreateTopic` operation.
+pub mod create_topic;
+
 /// Types for the `CreateVpcConnection` operation.
 pub mod create_vpc_connection;
 
@@ -33,6 +36,9 @@ pub mod delete_configuration;
 
 /// Types for the `DeleteReplicator` operation.
 pub mod delete_replicator;
+
+/// Types for the `DeleteTopic` operation.
+pub mod delete_topic;
 
 /// Types for the `DeleteVpcConnection` operation.
 pub mod delete_vpc_connection;
@@ -168,3 +174,6 @@ pub mod update_security;
 
 /// Types for the `UpdateStorage` operation.
 pub mod update_storage;
+
+/// Types for the `UpdateTopic` operation.
+pub mod update_topic;

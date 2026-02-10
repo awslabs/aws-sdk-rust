@@ -243,51 +243,64 @@ pub fn ser_restore_db_instance_from_db_snapshot_input_input_input(
         scope_92.string(var_93);
     }
     #[allow(unused_mut)]
-    let mut scope_94 = writer.prefix("DedicatedLogVolume");
-    if let Some(var_95) = &input.dedicated_log_volume {
-        scope_94.boolean(*var_95);
+    let mut scope_94 = writer.prefix("BackupRetentionPeriod");
+    if let Some(var_95) = &input.backup_retention_period {
+        scope_94.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_95).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_96 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_97) = &input.ca_certificate_identifier {
+    let mut scope_96 = writer.prefix("PreferredBackupWindow");
+    if let Some(var_97) = &input.preferred_backup_window {
         scope_96.string(var_97);
     }
     #[allow(unused_mut)]
-    let mut scope_98 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_99) = &input.engine_lifecycle_support {
-        scope_98.string(var_99);
+    let mut scope_98 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_99) = &input.dedicated_log_volume {
+        scope_98.boolean(*var_99);
     }
     #[allow(unused_mut)]
-    let mut scope_100 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_101) = &input.additional_storage_volumes {
-        let mut list_103 = scope_100.start_list(false, None);
-        for item_102 in var_101 {
+    let mut scope_100 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_101) = &input.ca_certificate_identifier {
+        scope_100.string(var_101);
+    }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_103) = &input.engine_lifecycle_support {
+        scope_102.string(var_103);
+    }
+    #[allow(unused_mut)]
+    let mut scope_104 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_105) = &input.additional_storage_volumes {
+        let mut list_107 = scope_104.start_list(false, None);
+        for item_106 in var_105 {
             #[allow(unused_mut)]
-            let mut entry_104 = list_103.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_104, item_102)?;
+            let mut entry_108 = list_107.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_108, item_106)?;
         }
-        list_103.finish();
+        list_107.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("TagSpecifications");
-    if let Some(var_106) = &input.tag_specifications {
-        let mut list_108 = scope_105.start_list(false, Some("item"));
-        for item_107 in var_106 {
+    let mut scope_109 = writer.prefix("TagSpecifications");
+    if let Some(var_110) = &input.tag_specifications {
+        let mut list_112 = scope_109.start_list(false, Some("item"));
+        for item_111 in var_110 {
             #[allow(unused_mut)]
-            let mut entry_109 = list_108.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_109, item_107)?;
+            let mut entry_113 = list_112.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_113, item_111)?;
         }
-        list_108.finish();
+        list_112.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_111) = &input.manage_master_user_password {
-        scope_110.boolean(*var_111);
+    let mut scope_114 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_115) = &input.manage_master_user_password {
+        scope_114.boolean(*var_115);
     }
     #[allow(unused_mut)]
-    let mut scope_112 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_113) = &input.master_user_secret_kms_key_id {
-        scope_112.string(var_113);
+    let mut scope_116 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_117) = &input.master_user_secret_kms_key_id {
+        scope_116.string(var_117);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -23,6 +23,8 @@ pub struct GetBrowserSessionOutput {
     pub status: ::std::option::Option<crate::types::BrowserSessionStatus>,
     /// <p>The streams associated with this browser session. These include the automation stream and live view stream.</p>
     pub streams: ::std::option::Option<crate::types::BrowserSessionStream>,
+    /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+    pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     /// <p>The artifact containing the session replay information.</p>
     pub session_replay_artifact: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the browser session was last updated.</p>
@@ -74,6 +76,10 @@ impl GetBrowserSessionOutput {
     pub fn streams(&self) -> ::std::option::Option<&crate::types::BrowserSessionStream> {
         self.streams.as_ref()
     }
+    /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+    pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::ProxyConfiguration> {
+        self.proxy_configuration.as_ref()
+    }
     /// <p>The artifact containing the session replay information.</p>
     pub fn session_replay_artifact(&self) -> ::std::option::Option<&str> {
         self.session_replay_artifact.as_deref()
@@ -109,6 +115,7 @@ pub struct GetBrowserSessionOutputBuilder {
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserSessionStatus>,
     pub(crate) streams: ::std::option::Option<crate::types::BrowserSessionStream>,
+    pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     pub(crate) session_replay_artifact: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -263,6 +270,20 @@ impl GetBrowserSessionOutputBuilder {
     pub fn get_streams(&self) -> &::std::option::Option<crate::types::BrowserSessionStream> {
         &self.streams
     }
+    /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+    pub fn proxy_configuration(mut self, input: crate::types::ProxyConfiguration) -> Self {
+        self.proxy_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+    pub fn set_proxy_configuration(mut self, input: ::std::option::Option<crate::types::ProxyConfiguration>) -> Self {
+        self.proxy_configuration = input;
+        self
+    }
+    /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+    pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
+        &self.proxy_configuration
+    }
     /// <p>The artifact containing the session replay information.</p>
     pub fn session_replay_artifact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_replay_artifact = ::std::option::Option::Some(input.into());
@@ -334,6 +355,7 @@ impl GetBrowserSessionOutputBuilder {
             session_timeout_seconds: self.session_timeout_seconds,
             status: self.status,
             streams: self.streams,
+            proxy_configuration: self.proxy_configuration,
             session_replay_artifact: self.session_replay_artifact,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,

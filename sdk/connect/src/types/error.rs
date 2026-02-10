@@ -19,13 +19,13 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
+pub use crate::types::error::_conditional_operation_failed_exception::ConditionalOperationFailedException;
+
 pub use crate::types::error::_invalid_test_case_exception::InvalidTestCaseException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_property_validation_exception::PropertyValidationException;
-
-pub use crate::types::error::_conditional_operation_failed_exception::ConditionalOperationFailedException;
 
 pub use crate::types::error::_idempotency_exception::IdempotencyException;
 

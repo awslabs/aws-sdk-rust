@@ -163,6 +163,10 @@ pub(crate) fn de_get_browser_session(
                         crate::protocol_serde::shape_browser_profile_configuration::de_browser_profile_configuration(tokens, _value)?,
                     );
                 }
+                "proxyConfiguration" => {
+                    builder =
+                        builder.set_proxy_configuration(crate::protocol_serde::shape_proxy_configuration::de_proxy_configuration(tokens, _value)?);
+                }
                 "sessionId" => {
                     builder = builder.set_session_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

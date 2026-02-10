@@ -37,6 +37,18 @@ pub use crate::types::_hierarchy_structure_update::HierarchyStructureUpdateBuild
 
 pub use crate::types::_hierarchy_level_update::HierarchyLevelUpdateBuilder;
 
+pub use crate::types::_voice_enhancement_config::VoiceEnhancementConfigBuilder;
+
+pub use crate::types::_persistent_connection_config::PersistentConnectionConfigBuilder;
+
+pub use crate::types::_phone_number_config::PhoneNumberConfigBuilder;
+
+pub use crate::types::_after_contact_work_config_per_channel::AfterContactWorkConfigPerChannelBuilder;
+
+pub use crate::types::_after_contact_work_config::AfterContactWorkConfigBuilder;
+
+pub use crate::types::_auto_accept_config::AutoAcceptConfigBuilder;
+
 pub use crate::types::_agent_config::AgentConfigBuilder;
 
 pub use crate::types::_distribution::DistributionBuilder;

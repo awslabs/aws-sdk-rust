@@ -39,6 +39,15 @@ pub struct CreatePodIdentityAssociationInput {
     /// <p>The Amazon Resource Name (ARN) of the target IAM role to associate with the service account. This role is assumed by using the EKS Pod Identity association role, then the credentials for this role are injected into the Pod.</p>
     /// <p>When you run applications on Amazon EKS, your application might need to access Amazon Web Services resources from a different role that exists in the same or different Amazon Web Services account. For example, your application running in “Account A” might need to access resources, such as Amazon S3 buckets in “Account B” or within “Account A” itself. You can create a association to access Amazon Web Services resources in “Account B” by creating two IAM roles: a role in “Account A” and a role in “Account B” (which can be the same or different account), each with the necessary trust and permission policies. After you provide these roles in the <i>IAM role</i> and <i>Target IAM role</i> fields, EKS will perform role chaining to ensure your application gets the required permissions. This means Role A will assume Role B, allowing your Pods to securely access resources like S3 buckets in the target account.</p>
     pub target_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    /// <p><b>Important considerations</b></p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Session tags:</b> When using this policy, <code>disableSessionTags</code> must be set to <code>true</code>.</p></li>
+    /// <li>
+    /// <p><b>Target role permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.</p></li>
+    /// </ul>
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl CreatePodIdentityAssociationInput {
     /// <p>The name of the cluster to create the EKS Pod Identity association in.</p>
@@ -93,6 +102,17 @@ impl CreatePodIdentityAssociationInput {
     pub fn target_role_arn(&self) -> ::std::option::Option<&str> {
         self.target_role_arn.as_deref()
     }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    /// <p><b>Important considerations</b></p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Session tags:</b> When using this policy, <code>disableSessionTags</code> must be set to <code>true</code>.</p></li>
+    /// <li>
+    /// <p><b>Target role permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.</p></li>
+    /// </ul>
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl CreatePodIdentityAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreatePodIdentityAssociationInput`](crate::operation::create_pod_identity_association::CreatePodIdentityAssociationInput).
@@ -113,6 +133,7 @@ pub struct CreatePodIdentityAssociationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) disable_session_tags: ::std::option::Option<bool>,
     pub(crate) target_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl CreatePodIdentityAssociationInputBuilder {
     /// <p>The name of the cluster to create the EKS Pod Identity association in.</p>
@@ -297,6 +318,41 @@ impl CreatePodIdentityAssociationInputBuilder {
     pub fn get_target_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_role_arn
     }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    /// <p><b>Important considerations</b></p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Session tags:</b> When using this policy, <code>disableSessionTags</code> must be set to <code>true</code>.</p></li>
+    /// <li>
+    /// <p><b>Target role permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.</p></li>
+    /// </ul>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    /// <p><b>Important considerations</b></p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Session tags:</b> When using this policy, <code>disableSessionTags</code> must be set to <code>true</code>.</p></li>
+    /// <li>
+    /// <p><b>Target role permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.</p></li>
+    /// </ul>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy = input;
+        self
+    }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    /// <p><b>Important considerations</b></p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Session tags:</b> When using this policy, <code>disableSessionTags</code> must be set to <code>true</code>.</p></li>
+    /// <li>
+    /// <p><b>Target role permissions:</b> If you specify both a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to the target role's permissions, not to the initial role used for assuming the target role.</p></li>
+    /// </ul>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`CreatePodIdentityAssociationInput`](crate::operation::create_pod_identity_association::CreatePodIdentityAssociationInput).
     pub fn build(
         self,
@@ -313,6 +369,7 @@ impl CreatePodIdentityAssociationInputBuilder {
             tags: self.tags,
             disable_session_tags: self.disable_session_tags,
             target_role_arn: self.target_role_arn,
+            policy: self.policy,
         })
     }
 }

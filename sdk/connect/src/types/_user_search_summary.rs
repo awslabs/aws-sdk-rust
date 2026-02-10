@@ -24,6 +24,16 @@ pub struct UserSearchSummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of the user.</p>
     pub username: ::std::option::Option<::std::string::String>,
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub auto_accept_configs: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>,
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub after_contact_work_configs: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub phone_number_configs: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>,
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub persistent_connection_configs: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub voice_enhancement_configs: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>,
 }
 impl UserSearchSummary {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -68,6 +78,36 @@ impl UserSearchSummary {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_accept_configs.is_none()`.
+    pub fn auto_accept_configs(&self) -> &[crate::types::AutoAcceptConfig] {
+        self.auto_accept_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.after_contact_work_configs.is_none()`.
+    pub fn after_contact_work_configs(&self) -> &[crate::types::AfterContactWorkConfigPerChannel] {
+        self.after_contact_work_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_configs.is_none()`.
+    pub fn phone_number_configs(&self) -> &[crate::types::PhoneNumberConfig] {
+        self.phone_number_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persistent_connection_configs.is_none()`.
+    pub fn persistent_connection_configs(&self) -> &[crate::types::PersistentConnectionConfig] {
+        self.persistent_connection_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_enhancement_configs.is_none()`.
+    pub fn voice_enhancement_configs(&self) -> &[crate::types::VoiceEnhancementConfig] {
+        self.voice_enhancement_configs.as_deref().unwrap_or_default()
+    }
 }
 impl UserSearchSummary {
     /// Creates a new builder-style object to manufacture [`UserSearchSummary`](crate::types::UserSearchSummary).
@@ -90,6 +130,11 @@ pub struct UserSearchSummaryBuilder {
     pub(crate) security_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_accept_configs: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>,
+    pub(crate) after_contact_work_configs: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    pub(crate) phone_number_configs: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>,
+    pub(crate) persistent_connection_configs: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    pub(crate) voice_enhancement_configs: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>,
 }
 impl UserSearchSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -244,6 +289,112 @@ impl UserSearchSummaryBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
+    /// Appends an item to `auto_accept_configs`.
+    ///
+    /// To override the contents of this collection use [`set_auto_accept_configs`](Self::set_auto_accept_configs).
+    ///
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn auto_accept_configs(mut self, input: crate::types::AutoAcceptConfig) -> Self {
+        let mut v = self.auto_accept_configs.unwrap_or_default();
+        v.push(input);
+        self.auto_accept_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn set_auto_accept_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>) -> Self {
+        self.auto_accept_configs = input;
+        self
+    }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn get_auto_accept_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>> {
+        &self.auto_accept_configs
+    }
+    /// Appends an item to `after_contact_work_configs`.
+    ///
+    /// To override the contents of this collection use [`set_after_contact_work_configs`](Self::set_after_contact_work_configs).
+    ///
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn after_contact_work_configs(mut self, input: crate::types::AfterContactWorkConfigPerChannel) -> Self {
+        let mut v = self.after_contact_work_configs.unwrap_or_default();
+        v.push(input);
+        self.after_contact_work_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn set_after_contact_work_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    ) -> Self {
+        self.after_contact_work_configs = input;
+        self
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn get_after_contact_work_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>> {
+        &self.after_contact_work_configs
+    }
+    /// Appends an item to `phone_number_configs`.
+    ///
+    /// To override the contents of this collection use [`set_phone_number_configs`](Self::set_phone_number_configs).
+    ///
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn phone_number_configs(mut self, input: crate::types::PhoneNumberConfig) -> Self {
+        let mut v = self.phone_number_configs.unwrap_or_default();
+        v.push(input);
+        self.phone_number_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn set_phone_number_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>) -> Self {
+        self.phone_number_configs = input;
+        self
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn get_phone_number_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>> {
+        &self.phone_number_configs
+    }
+    /// Appends an item to `persistent_connection_configs`.
+    ///
+    /// To override the contents of this collection use [`set_persistent_connection_configs`](Self::set_persistent_connection_configs).
+    ///
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn persistent_connection_configs(mut self, input: crate::types::PersistentConnectionConfig) -> Self {
+        let mut v = self.persistent_connection_configs.unwrap_or_default();
+        v.push(input);
+        self.persistent_connection_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn set_persistent_connection_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    ) -> Self {
+        self.persistent_connection_configs = input;
+        self
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn get_persistent_connection_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>> {
+        &self.persistent_connection_configs
+    }
+    /// Appends an item to `voice_enhancement_configs`.
+    ///
+    /// To override the contents of this collection use [`set_voice_enhancement_configs`](Self::set_voice_enhancement_configs).
+    ///
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn voice_enhancement_configs(mut self, input: crate::types::VoiceEnhancementConfig) -> Self {
+        let mut v = self.voice_enhancement_configs.unwrap_or_default();
+        v.push(input);
+        self.voice_enhancement_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn set_voice_enhancement_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>) -> Self {
+        self.voice_enhancement_configs = input;
+        self
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn get_voice_enhancement_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>> {
+        &self.voice_enhancement_configs
+    }
     /// Consumes the builder and constructs a [`UserSearchSummary`](crate::types::UserSearchSummary).
     pub fn build(self) -> crate::types::UserSearchSummary {
         crate::types::UserSearchSummary {
@@ -257,6 +408,11 @@ impl UserSearchSummaryBuilder {
             security_profile_ids: self.security_profile_ids,
             tags: self.tags,
             username: self.username,
+            auto_accept_configs: self.auto_accept_configs,
+            after_contact_work_configs: self.after_contact_work_configs,
+            phone_number_configs: self.phone_number_configs,
+            persistent_connection_configs: self.persistent_connection_configs,
+            voice_enhancement_configs: self.voice_enhancement_configs,
         }
     }
 }

@@ -1024,6 +1024,9 @@ pub mod update_test_case;
 /// Types for the `UpdateTrafficDistribution` operation.
 pub mod update_traffic_distribution;
 
+/// Types for the `UpdateUserConfig` operation.
+pub mod update_user_config;
+
 /// Types for the `UpdateUserHierarchy` operation.
 pub mod update_user_hierarchy;
 

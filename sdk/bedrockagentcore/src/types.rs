@@ -93,6 +93,18 @@ pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
+pub use crate::types::_proxy_configuration::ProxyConfiguration;
+
+pub use crate::types::_proxy_bypass::ProxyBypass;
+
+pub use crate::types::_proxy::Proxy;
+
+pub use crate::types::_external_proxy::ExternalProxy;
+
+pub use crate::types::_proxy_credentials::ProxyCredentials;
+
+pub use crate::types::_basic_auth::BasicAuth;
+
 pub use crate::types::_browser_profile_configuration::BrowserProfileConfiguration;
 
 pub use crate::types::_browser_extension::BrowserExtension;
@@ -145,6 +157,8 @@ mod _automation_stream_status;
 
 mod _automation_stream_update;
 
+mod _basic_auth;
+
 mod _branch;
 
 mod _branch_filter;
@@ -186,6 +200,8 @@ mod _evaluation_target;
 mod _event;
 
 mod _event_metadata_filter_expression;
+
+mod _external_proxy;
 
 mod _extraction_job;
 
@@ -234,6 +250,14 @@ mod _operator_type;
 mod _payload_type;
 
 mod _programming_language;
+
+mod _proxy;
+
+mod _proxy_bypass;
+
+mod _proxy_configuration;
+
+mod _proxy_credentials;
 
 mod _resource_content;
 

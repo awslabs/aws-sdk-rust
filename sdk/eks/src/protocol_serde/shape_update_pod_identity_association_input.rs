@@ -9,11 +9,14 @@ pub fn ser_update_pod_identity_association_input_input(
     if let Some(var_2) = &input.disable_session_tags {
         object.key("disableSessionTags").boolean(*var_2);
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("roleArn").string(var_3.as_str());
+    if let Some(var_3) = &input.policy {
+        object.key("policy").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.target_role_arn {
-        object.key("targetRoleArn").string(var_4.as_str());
+    if let Some(var_4) = &input.role_arn {
+        object.key("roleArn").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.target_role_arn {
+        object.key("targetRoleArn").string(var_5.as_str());
     }
     Ok(())
 }

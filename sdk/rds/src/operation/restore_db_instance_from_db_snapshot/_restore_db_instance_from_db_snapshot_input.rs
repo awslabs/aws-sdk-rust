@@ -277,6 +277,35 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
     /// </ul>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
+    /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// </ul>
+    pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// </ul>
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
@@ -677,6 +706,39 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
+    /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// </ul>
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// </ul>
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
@@ -775,6 +837,8 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInput {
         formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
         formatter.field("allocated_storage", &self.allocated_storage);
         formatter.field("db_cluster_snapshot_identifier", &self.db_cluster_snapshot_identifier);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
@@ -835,6 +899,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -2006,6 +2072,109 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier
     }
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
+    /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// </ul>
+    pub fn backup_retention_period(mut self, input: i32) -> Self {
+        self.backup_retention_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
+    /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// </ul>
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.backup_retention_period = input;
+        self
+    }
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
+    /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
+    /// </note>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// </ul>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// </ul>
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// </ul>
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_backup_window = input;
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
+    /// </ul>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(mut self, input: bool) -> Self {
         self.dedicated_log_volume = ::std::option::Option::Some(input);
@@ -2233,6 +2402,8 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 allocated_storage: self.allocated_storage,
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+                backup_retention_period: self.backup_retention_period,
+                preferred_backup_window: self.preferred_backup_window,
                 dedicated_log_volume: self.dedicated_log_volume,
                 ca_certificate_identifier: self.ca_certificate_identifier,
                 engine_lifecycle_support: self.engine_lifecycle_support,
@@ -2286,6 +2457,8 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromDbSnapshotInputBuilder {
         formatter.field("custom_iam_instance_profile", &self.custom_iam_instance_profile);
         formatter.field("allocated_storage", &self.allocated_storage);
         formatter.field("db_cluster_snapshot_identifier", &self.db_cluster_snapshot_identifier);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);

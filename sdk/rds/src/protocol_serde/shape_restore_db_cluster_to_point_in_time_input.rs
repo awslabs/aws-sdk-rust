@@ -209,20 +209,33 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_78 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_79) = &input.engine_lifecycle_support {
-        scope_78.string(var_79);
+    let mut scope_78 = writer.prefix("BackupRetentionPeriod");
+    if let Some(var_79) = &input.backup_retention_period {
+        scope_78.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_79).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_80 = writer.prefix("TagSpecifications");
-    if let Some(var_81) = &input.tag_specifications {
-        let mut list_83 = scope_80.start_list(false, Some("item"));
-        for item_82 in var_81 {
+    let mut scope_80 = writer.prefix("PreferredBackupWindow");
+    if let Some(var_81) = &input.preferred_backup_window {
+        scope_80.string(var_81);
+    }
+    #[allow(unused_mut)]
+    let mut scope_82 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_83) = &input.engine_lifecycle_support {
+        scope_82.string(var_83);
+    }
+    #[allow(unused_mut)]
+    let mut scope_84 = writer.prefix("TagSpecifications");
+    if let Some(var_85) = &input.tag_specifications {
+        let mut list_87 = scope_84.start_list(false, Some("item"));
+        for item_86 in var_85 {
             #[allow(unused_mut)]
-            let mut entry_84 = list_83.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_84, item_82)?;
+            let mut entry_88 = list_87.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_88, item_86)?;
         }
-        list_83.finish();
+        list_87.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

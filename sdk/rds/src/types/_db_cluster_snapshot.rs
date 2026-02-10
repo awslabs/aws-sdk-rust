@@ -47,6 +47,10 @@ pub struct DbClusterSnapshot {
     pub percent_progress: ::std::option::Option<i32>,
     /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -149,6 +153,14 @@ impl DbClusterSnapshot {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -220,6 +232,8 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) snapshot_type: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<i32>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
@@ -499,6 +513,34 @@ impl DbClusterSnapshotBuilder {
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn backup_retention_period(mut self, input: i32) -> Self {
+        self.backup_retention_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.backup_retention_period = input;
+        self
+    }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_backup_window = input;
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -663,6 +705,8 @@ impl DbClusterSnapshotBuilder {
             snapshot_type: self.snapshot_type,
             percent_progress: self.percent_progress,
             storage_encrypted: self.storage_encrypted,
+            backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
             kms_key_id: self.kms_key_id,
             db_cluster_snapshot_arn: self.db_cluster_snapshot_arn,
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,

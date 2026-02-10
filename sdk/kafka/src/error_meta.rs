@@ -6,19 +6,37 @@ pub enum Error {
     /// <p>Returns information about an error.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>Returns information about an error.</p>
+    ClusterConnectivityException(crate::types::error::ClusterConnectivityException),
+    /// <p>Returns information about an error.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>Returns information about an error.</p>
+    ControllerMovedException(crate::types::error::ControllerMovedException),
     /// <p>Returns information about an error.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>Returns information about an error.</p>
+    GroupSubscribedToTopicException(crate::types::error::GroupSubscribedToTopicException),
+    /// <p>Returns information about an error.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>Returns information about an error.</p>
+    KafkaRequestException(crate::types::error::KafkaRequestException),
+    /// <p>Returns information about an error.</p>
+    KafkaTimeoutException(crate::types::error::KafkaTimeoutException),
+    /// <p>Returns information about an error.</p>
+    NotControllerException(crate::types::error::NotControllerException),
+    /// <p>Returns information about an error.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>Returns information about an error.</p>
+    ReassignmentInProgressException(crate::types::error::ReassignmentInProgressException),
     /// <p>Returns information about an error.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>Returns information about an error.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Returns information about an error.</p>
+    TopicExistsException(crate::types::error::TopicExistsException),
+    /// <p>Returns information about an error.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
+    /// <p>Returns information about an error.</p>
+    UnknownTopicOrPartitionException(crate::types::error::UnknownTopicOrPartitionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -32,13 +50,22 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ClusterConnectivityException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::ControllerMovedException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
+            Error::GroupSubscribedToTopicException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
+            Error::KafkaRequestException(inner) => inner.fmt(f),
+            Error::KafkaTimeoutException(inner) => inner.fmt(f),
+            Error::NotControllerException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ReassignmentInProgressException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
+            Error::TopicExistsException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
+            Error::UnknownTopicOrPartitionException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -61,13 +88,22 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::BadRequestException(inner) => inner.meta(),
+            Self::ClusterConnectivityException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::ControllerMovedException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
+            Self::GroupSubscribedToTopicException(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
+            Self::KafkaRequestException(inner) => inner.meta(),
+            Self::KafkaTimeoutException(inner) => inner.meta(),
+            Self::NotControllerException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
+            Self::ReassignmentInProgressException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::TopicExistsException(inner) => inner.meta(),
             Self::UnauthorizedException(inner) => inner.meta(),
+            Self::UnknownTopicOrPartitionException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -293,6 +329,45 @@ impl From<crate::operation::create_replicator::CreateReplicatorError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic::CreateTopicError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic::CreateTopicError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_topic::CreateTopicError> for Error {
+    fn from(err: crate::operation::create_topic::CreateTopicError) -> Self {
+        match err {
+            crate::operation::create_topic::CreateTopicError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_topic::CreateTopicError::ClusterConnectivityException(inner) => Error::ClusterConnectivityException(inner),
+            crate::operation::create_topic::CreateTopicError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_topic::CreateTopicError::ControllerMovedException(inner) => Error::ControllerMovedException(inner),
+            crate::operation::create_topic::CreateTopicError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_topic::CreateTopicError::GroupSubscribedToTopicException(inner) => Error::GroupSubscribedToTopicException(inner),
+            crate::operation::create_topic::CreateTopicError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_topic::CreateTopicError::KafkaRequestException(inner) => Error::KafkaRequestException(inner),
+            crate::operation::create_topic::CreateTopicError::KafkaTimeoutException(inner) => Error::KafkaTimeoutException(inner),
+            crate::operation::create_topic::CreateTopicError::NotControllerException(inner) => Error::NotControllerException(inner),
+            crate::operation::create_topic::CreateTopicError::ReassignmentInProgressException(inner) => Error::ReassignmentInProgressException(inner),
+            crate::operation::create_topic::CreateTopicError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_topic::CreateTopicError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_topic::CreateTopicError::TopicExistsException(inner) => Error::TopicExistsException(inner),
+            crate::operation::create_topic::CreateTopicError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_topic::CreateTopicError::UnknownTopicOrPartitionException(inner) => {
+                Error::UnknownTopicOrPartitionException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_connection::CreateVpcConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -434,6 +509,41 @@ impl From<crate::operation::delete_replicator::DeleteReplicatorError> for Error 
             crate::operation::delete_replicator::DeleteReplicatorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_replicator::DeleteReplicatorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_replicator::DeleteReplicatorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_topic::DeleteTopicError> for Error {
+    fn from(err: crate::operation::delete_topic::DeleteTopicError) -> Self {
+        match err {
+            crate::operation::delete_topic::DeleteTopicError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_topic::DeleteTopicError::ClusterConnectivityException(inner) => Error::ClusterConnectivityException(inner),
+            crate::operation::delete_topic::DeleteTopicError::ControllerMovedException(inner) => Error::ControllerMovedException(inner),
+            crate::operation::delete_topic::DeleteTopicError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_topic::DeleteTopicError::GroupSubscribedToTopicException(inner) => Error::GroupSubscribedToTopicException(inner),
+            crate::operation::delete_topic::DeleteTopicError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_topic::DeleteTopicError::KafkaRequestException(inner) => Error::KafkaRequestException(inner),
+            crate::operation::delete_topic::DeleteTopicError::KafkaTimeoutException(inner) => Error::KafkaTimeoutException(inner),
+            crate::operation::delete_topic::DeleteTopicError::NotControllerException(inner) => Error::NotControllerException(inner),
+            crate::operation::delete_topic::DeleteTopicError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_topic::DeleteTopicError::ReassignmentInProgressException(inner) => Error::ReassignmentInProgressException(inner),
+            crate::operation::delete_topic::DeleteTopicError::UnknownTopicOrPartitionException(inner) => {
+                Error::UnknownTopicOrPartitionException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1878,17 +1988,63 @@ impl From<crate::operation::update_storage::UpdateStorageError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic::UpdateTopicError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic::UpdateTopicError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_topic::UpdateTopicError> for Error {
+    fn from(err: crate::operation::update_topic::UpdateTopicError) -> Self {
+        match err {
+            crate::operation::update_topic::UpdateTopicError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_topic::UpdateTopicError::ClusterConnectivityException(inner) => Error::ClusterConnectivityException(inner),
+            crate::operation::update_topic::UpdateTopicError::ControllerMovedException(inner) => Error::ControllerMovedException(inner),
+            crate::operation::update_topic::UpdateTopicError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_topic::UpdateTopicError::GroupSubscribedToTopicException(inner) => Error::GroupSubscribedToTopicException(inner),
+            crate::operation::update_topic::UpdateTopicError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_topic::UpdateTopicError::KafkaRequestException(inner) => Error::KafkaRequestException(inner),
+            crate::operation::update_topic::UpdateTopicError::KafkaTimeoutException(inner) => Error::KafkaTimeoutException(inner),
+            crate::operation::update_topic::UpdateTopicError::NotControllerException(inner) => Error::NotControllerException(inner),
+            crate::operation::update_topic::UpdateTopicError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_topic::UpdateTopicError::ReassignmentInProgressException(inner) => Error::ReassignmentInProgressException(inner),
+            crate::operation::update_topic::UpdateTopicError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_topic::UpdateTopicError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_topic::UpdateTopicError::UnknownTopicOrPartitionException(inner) => {
+                Error::UnknownTopicOrPartitionException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::BadRequestException(inner) => inner.source(),
+            Error::ClusterConnectivityException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::ControllerMovedException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
+            Error::GroupSubscribedToTopicException(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
+            Error::KafkaRequestException(inner) => inner.source(),
+            Error::KafkaTimeoutException(inner) => inner.source(),
+            Error::NotControllerException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
+            Error::ReassignmentInProgressException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::TooManyRequestsException(inner) => inner.source(),
+            Error::TopicExistsException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
+            Error::UnknownTopicOrPartitionException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -1897,13 +2053,22 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::BadRequestException(e) => e.request_id(),
+            Self::ClusterConnectivityException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::ControllerMovedException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
+            Self::GroupSubscribedToTopicException(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
+            Self::KafkaRequestException(e) => e.request_id(),
+            Self::KafkaTimeoutException(e) => e.request_id(),
+            Self::NotControllerException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
+            Self::ReassignmentInProgressException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::TooManyRequestsException(e) => e.request_id(),
+            Self::TopicExistsException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),
+            Self::UnknownTopicOrPartitionException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

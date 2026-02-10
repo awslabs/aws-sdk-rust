@@ -22,7 +22,9 @@ impl crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfig
 }
 /// Fluent builder constructing a request to `UpdateUserPhoneConfig`.
 ///
-/// <p>Updates the phone configuration settings for the specified user.</p>
+/// <p>Updates the phone configuration settings for the specified user.</p><note>
+/// <p>We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a> API, which supports additional functionality that is not available in the UpdateUserPhoneConfig API, such as voice enhancement settings and per-channel configuration for auto-accept and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API will always set the same ACW timeouts to all channels the user handles.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserPhoneConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the phone configuration settings for a user.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
     pub phone_type: crate::types::PhoneType,
@@ -41,6 +41,17 @@ impl UserPhoneConfig {
         self.persistent_connection
     }
 }
+impl ::std::fmt::Debug for UserPhoneConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserPhoneConfig");
+        formatter.field("phone_type", &self.phone_type);
+        formatter.field("auto_accept", &self.auto_accept);
+        formatter.field("after_contact_work_time_limit", &self.after_contact_work_time_limit);
+        formatter.field("desk_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("persistent_connection", &self.persistent_connection);
+        formatter.finish()
+    }
+}
 impl UserPhoneConfig {
     /// Creates a new builder-style object to manufacture [`UserPhoneConfig`](crate::types::UserPhoneConfig).
     pub fn builder() -> crate::types::builders::UserPhoneConfigBuilder {
@@ -49,7 +60,7 @@ impl UserPhoneConfig {
 }
 
 /// A builder for [`UserPhoneConfig`](crate::types::UserPhoneConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UserPhoneConfigBuilder {
     pub(crate) phone_type: ::std::option::Option<crate::types::PhoneType>,
@@ -60,7 +71,6 @@ pub struct UserPhoneConfigBuilder {
 }
 impl UserPhoneConfigBuilder {
     /// <p>The phone type.</p>
-    /// This field is required.
     pub fn phone_type(mut self, input: crate::types::PhoneType) -> Self {
         self.phone_type = ::std::option::Option::Some(input);
         self
@@ -137,20 +147,26 @@ impl UserPhoneConfigBuilder {
         &self.persistent_connection
     }
     /// Consumes the builder and constructs a [`UserPhoneConfig`](crate::types::UserPhoneConfig).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`phone_type`](crate::types::builders::UserPhoneConfigBuilder::phone_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserPhoneConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserPhoneConfig {
-            phone_type: self.phone_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "phone_type",
-                    "phone_type was not specified but it is required when building UserPhoneConfig",
-                )
-            })?,
+    pub fn build(self) -> crate::types::UserPhoneConfig {
+        crate::types::UserPhoneConfig {
+            phone_type: self
+                .phone_type
+                .unwrap_or("SOFT_PHONE".parse::<crate::types::PhoneType>().expect("static value validated to member")),
             auto_accept: self.auto_accept.unwrap_or_default(),
             after_contact_work_time_limit: self.after_contact_work_time_limit.unwrap_or_default(),
             desk_phone_number: self.desk_phone_number,
             persistent_connection: self.persistent_connection,
-        })
+        }
+    }
+}
+impl ::std::fmt::Debug for UserPhoneConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserPhoneConfigBuilder");
+        formatter.field("phone_type", &self.phone_type);
+        formatter.field("auto_accept", &self.auto_accept);
+        formatter.field("after_contact_work_time_limit", &self.after_contact_work_time_limit);
+        formatter.field("desk_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("persistent_connection", &self.persistent_connection);
+        formatter.finish()
     }
 }

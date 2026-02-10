@@ -18,7 +18,7 @@ pub struct CreateUserInput {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>The information about the identity of the user.</p>
     pub identity_info: ::std::option::Option<crate::types::UserIdentityInfo>,
-    /// <p>The phone settings for the user.</p>
+    /// <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
     pub phone_config: ::std::option::Option<crate::types::UserPhoneConfig>,
     /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>
     /// <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
@@ -31,6 +31,16 @@ pub struct CreateUserInput {
     pub hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub auto_accept_configs: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>,
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub after_contact_work_configs: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub phone_number_configs: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>,
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub persistent_connection_configs: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub voice_enhancement_configs: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -56,7 +66,7 @@ impl CreateUserInput {
     pub fn identity_info(&self) -> ::std::option::Option<&crate::types::UserIdentityInfo> {
         self.identity_info.as_ref()
     }
-    /// <p>The phone settings for the user.</p>
+    /// <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
     pub fn phone_config(&self) -> ::std::option::Option<&crate::types::UserPhoneConfig> {
         self.phone_config.as_ref()
     }
@@ -83,6 +93,36 @@ impl CreateUserInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_accept_configs.is_none()`.
+    pub fn auto_accept_configs(&self) -> &[crate::types::AutoAcceptConfig] {
+        self.auto_accept_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.after_contact_work_configs.is_none()`.
+    pub fn after_contact_work_configs(&self) -> &[crate::types::AfterContactWorkConfigPerChannel] {
+        self.after_contact_work_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_configs.is_none()`.
+    pub fn phone_number_configs(&self) -> &[crate::types::PhoneNumberConfig] {
+        self.phone_number_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persistent_connection_configs.is_none()`.
+    pub fn persistent_connection_configs(&self) -> &[crate::types::PersistentConnectionConfig] {
+        self.persistent_connection_configs.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.voice_enhancement_configs.is_none()`.
+    pub fn voice_enhancement_configs(&self) -> &[crate::types::VoiceEnhancementConfig] {
+        self.voice_enhancement_configs.as_deref().unwrap_or_default()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -100,6 +140,11 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.field("routing_profile_id", &self.routing_profile_id);
         formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
         formatter.field("instance_id", &self.instance_id);
+        formatter.field("auto_accept_configs", &self.auto_accept_configs);
+        formatter.field("after_contact_work_configs", &self.after_contact_work_configs);
+        formatter.field("phone_number_configs", &self.phone_number_configs);
+        formatter.field("persistent_connection_configs", &self.persistent_connection_configs);
+        formatter.field("voice_enhancement_configs", &self.voice_enhancement_configs);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -124,6 +169,11 @@ pub struct CreateUserInputBuilder {
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_accept_configs: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>,
+    pub(crate) after_contact_work_configs: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    pub(crate) phone_number_configs: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>,
+    pub(crate) persistent_connection_configs: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    pub(crate) voice_enhancement_configs: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateUserInputBuilder {
@@ -197,18 +247,17 @@ impl CreateUserInputBuilder {
     pub fn get_identity_info(&self) -> &::std::option::Option<crate::types::UserIdentityInfo> {
         &self.identity_info
     }
-    /// <p>The phone settings for the user.</p>
-    /// This field is required.
+    /// <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
     pub fn phone_config(mut self, input: crate::types::UserPhoneConfig) -> Self {
         self.phone_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The phone settings for the user.</p>
+    /// <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
     pub fn set_phone_config(mut self, input: ::std::option::Option<crate::types::UserPhoneConfig>) -> Self {
         self.phone_config = input;
         self
     }
-    /// <p>The phone settings for the user.</p>
+    /// <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
     pub fn get_phone_config(&self) -> &::std::option::Option<crate::types::UserPhoneConfig> {
         &self.phone_config
     }
@@ -293,6 +342,112 @@ impl CreateUserInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
+    /// Appends an item to `auto_accept_configs`.
+    ///
+    /// To override the contents of this collection use [`set_auto_accept_configs`](Self::set_auto_accept_configs).
+    ///
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn auto_accept_configs(mut self, input: crate::types::AutoAcceptConfig) -> Self {
+        let mut v = self.auto_accept_configs.unwrap_or_default();
+        v.push(input);
+        self.auto_accept_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn set_auto_accept_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>) -> Self {
+        self.auto_accept_configs = input;
+        self
+    }
+    /// <p>The list of auto-accept configuration settings for each channel.</p>
+    pub fn get_auto_accept_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>> {
+        &self.auto_accept_configs
+    }
+    /// Appends an item to `after_contact_work_configs`.
+    ///
+    /// To override the contents of this collection use [`set_after_contact_work_configs`](Self::set_after_contact_work_configs).
+    ///
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn after_contact_work_configs(mut self, input: crate::types::AfterContactWorkConfigPerChannel) -> Self {
+        let mut v = self.after_contact_work_configs.unwrap_or_default();
+        v.push(input);
+        self.after_contact_work_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn set_after_contact_work_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
+    ) -> Self {
+        self.after_contact_work_configs = input;
+        self
+    }
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+    pub fn get_after_contact_work_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>> {
+        &self.after_contact_work_configs
+    }
+    /// Appends an item to `phone_number_configs`.
+    ///
+    /// To override the contents of this collection use [`set_phone_number_configs`](Self::set_phone_number_configs).
+    ///
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn phone_number_configs(mut self, input: crate::types::PhoneNumberConfig) -> Self {
+        let mut v = self.phone_number_configs.unwrap_or_default();
+        v.push(input);
+        self.phone_number_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn set_phone_number_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>) -> Self {
+        self.phone_number_configs = input;
+        self
+    }
+    /// <p>The list of phone number configuration settings for each channel.</p>
+    pub fn get_phone_number_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>> {
+        &self.phone_number_configs
+    }
+    /// Appends an item to `persistent_connection_configs`.
+    ///
+    /// To override the contents of this collection use [`set_persistent_connection_configs`](Self::set_persistent_connection_configs).
+    ///
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn persistent_connection_configs(mut self, input: crate::types::PersistentConnectionConfig) -> Self {
+        let mut v = self.persistent_connection_configs.unwrap_or_default();
+        v.push(input);
+        self.persistent_connection_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn set_persistent_connection_configs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>>,
+    ) -> Self {
+        self.persistent_connection_configs = input;
+        self
+    }
+    /// <p>The list of persistent connection configuration settings for each channel.</p>
+    pub fn get_persistent_connection_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersistentConnectionConfig>> {
+        &self.persistent_connection_configs
+    }
+    /// Appends an item to `voice_enhancement_configs`.
+    ///
+    /// To override the contents of this collection use [`set_voice_enhancement_configs`](Self::set_voice_enhancement_configs).
+    ///
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn voice_enhancement_configs(mut self, input: crate::types::VoiceEnhancementConfig) -> Self {
+        let mut v = self.voice_enhancement_configs.unwrap_or_default();
+        v.push(input);
+        self.voice_enhancement_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn set_voice_enhancement_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>>) -> Self {
+        self.voice_enhancement_configs = input;
+        self
+    }
+    /// <p>The list of voice enhancement configuration settings for each channel.</p>
+    pub fn get_voice_enhancement_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceEnhancementConfig>> {
+        &self.voice_enhancement_configs
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -325,6 +480,11 @@ impl CreateUserInputBuilder {
             routing_profile_id: self.routing_profile_id,
             hierarchy_group_id: self.hierarchy_group_id,
             instance_id: self.instance_id,
+            auto_accept_configs: self.auto_accept_configs,
+            after_contact_work_configs: self.after_contact_work_configs,
+            phone_number_configs: self.phone_number_configs,
+            persistent_connection_configs: self.persistent_connection_configs,
+            voice_enhancement_configs: self.voice_enhancement_configs,
             tags: self.tags,
         })
     }
@@ -341,6 +501,11 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.field("routing_profile_id", &self.routing_profile_id);
         formatter.field("hierarchy_group_id", &self.hierarchy_group_id);
         formatter.field("instance_id", &self.instance_id);
+        formatter.field("auto_accept_configs", &self.auto_accept_configs);
+        formatter.field("after_contact_work_configs", &self.after_contact_work_configs);
+        formatter.field("phone_number_configs", &self.phone_number_configs);
+        formatter.field("persistent_connection_configs", &self.persistent_connection_configs);
+        formatter.field("voice_enhancement_configs", &self.voice_enhancement_configs);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

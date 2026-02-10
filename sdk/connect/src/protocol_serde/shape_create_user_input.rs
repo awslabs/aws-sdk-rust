@@ -3,51 +3,111 @@ pub fn ser_create_user_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_user::CreateUserInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.directory_user_id {
-        object.key("DirectoryUserId").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.hierarchy_group_id {
-        object.key("HierarchyGroupId").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.identity_info {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("IdentityInfo").start_object();
-        crate::protocol_serde::shape_user_identity_info::ser_user_identity_info(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.password {
-        object.key("Password").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.phone_config {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("PhoneConfig").start_object();
-        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.routing_profile_id {
-        object.key("RoutingProfileId").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.security_profile_ids {
-        let mut array_10 = object.key("SecurityProfileIds").start_array();
-        for item_11 in var_9 {
+    if let Some(var_1) = &input.after_contact_work_configs {
+        let mut array_2 = object.key("AfterContactWorkConfigs").start_array();
+        for item_3 in var_1 {
             {
-                array_10.value().string(item_11.as_str());
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_after_contact_work_config_per_channel::ser_after_contact_work_config_per_channel(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_10.finish();
+        array_2.finish();
     }
-    if let Some(var_12) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+    if let Some(var_5) = &input.auto_accept_configs {
+        let mut array_6 = object.key("AutoAcceptConfigs").start_array();
+        for item_7 in var_5 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_auto_accept_config::ser_auto_accept_config(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        object_13.finish();
+        array_6.finish();
     }
-    if let Some(var_16) = &input.username {
-        object.key("Username").string(var_16.as_str());
+    if let Some(var_9) = &input.directory_user_id {
+        object.key("DirectoryUserId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.hierarchy_group_id {
+        object.key("HierarchyGroupId").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.identity_info {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("IdentityInfo").start_object();
+        crate::protocol_serde::shape_user_identity_info::ser_user_identity_info(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.password {
+        object.key("Password").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.persistent_connection_configs {
+        let mut array_15 = object.key("PersistentConnectionConfigs").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_persistent_connection_config::ser_persistent_connection_config(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.phone_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("PhoneConfig").start_object();
+        crate::protocol_serde::shape_user_phone_config::ser_user_phone_config(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.phone_number_configs {
+        let mut array_21 = object.key("PhoneNumberConfigs").start_array();
+        for item_22 in var_20 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_phone_number_config::ser_phone_number_config(&mut object_23, item_22)?;
+                object_23.finish();
+            }
+        }
+        array_21.finish();
+    }
+    if let Some(var_24) = &input.routing_profile_id {
+        object.key("RoutingProfileId").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.security_profile_ids {
+        let mut array_26 = object.key("SecurityProfileIds").start_array();
+        for item_27 in var_25 {
+            {
+                array_26.value().string(item_27.as_str());
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("Tags").start_object();
+        for (key_30, value_31) in var_28 {
+            {
+                object_29.key(key_30.as_str()).string(value_31.as_str());
+            }
+        }
+        object_29.finish();
+    }
+    if let Some(var_32) = &input.username {
+        object.key("Username").string(var_32.as_str());
+    }
+    if let Some(var_33) = &input.voice_enhancement_configs {
+        let mut array_34 = object.key("VoiceEnhancementConfigs").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_voice_enhancement_config::ser_voice_enhancement_config(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
     }
     Ok(())
 }

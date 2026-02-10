@@ -35,6 +35,8 @@ pub(crate) mod shape_create_configuration;
 
 pub(crate) mod shape_create_replicator;
 
+pub(crate) mod shape_create_topic;
+
 pub(crate) mod shape_create_vpc_connection;
 
 pub(crate) mod shape_delete_cluster;
@@ -44,6 +46,8 @@ pub(crate) mod shape_delete_cluster_policy;
 pub(crate) mod shape_delete_configuration;
 
 pub(crate) mod shape_delete_replicator;
+
+pub(crate) mod shape_delete_topic;
 
 pub(crate) mod shape_delete_vpc_connection;
 
@@ -135,6 +139,8 @@ pub(crate) mod shape_update_security;
 
 pub(crate) mod shape_update_storage;
 
+pub(crate) mod shape_update_topic;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -149,7 +155,11 @@ pub(crate) mod shape_batch_associate_scram_secret_input;
 
 pub(crate) mod shape_batch_disassociate_scram_secret_input;
 
+pub(crate) mod shape_cluster_connectivity_exception;
+
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_controller_moved_exception;
 
 pub(crate) mod shape_create_cluster_input;
 
@@ -159,15 +169,27 @@ pub(crate) mod shape_create_configuration_input;
 
 pub(crate) mod shape_create_replicator_input;
 
+pub(crate) mod shape_create_topic_input;
+
 pub(crate) mod shape_create_vpc_connection_input;
 
 pub(crate) mod shape_forbidden_exception;
 
+pub(crate) mod shape_group_subscribed_to_topic_exception;
+
 pub(crate) mod shape_internal_server_error_exception;
+
+pub(crate) mod shape_kafka_request_exception;
+
+pub(crate) mod shape_kafka_timeout_exception;
+
+pub(crate) mod shape_not_controller_exception;
 
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_put_cluster_policy_input;
+
+pub(crate) mod shape_reassignment_in_progress_exception;
 
 pub(crate) mod shape_reboot_broker_input;
 
@@ -179,7 +201,11 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
 
+pub(crate) mod shape_topic_exists_exception;
+
 pub(crate) mod shape_unauthorized_exception;
+
+pub(crate) mod shape_unknown_topic_or_partition_exception;
 
 pub(crate) mod shape_update_broker_count_input;
 
@@ -204,6 +230,8 @@ pub(crate) mod shape_update_replication_info_input;
 pub(crate) mod shape_update_security_input;
 
 pub(crate) mod shape_update_storage_input;
+
+pub(crate) mod shape_update_topic_input;
 
 pub(crate) mod shape_broker_ebs_volume_info;
 

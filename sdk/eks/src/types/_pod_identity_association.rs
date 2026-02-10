@@ -49,6 +49,8 @@ pub struct PodIdentityAssociation {
     /// <p>The unique identifier for this EKS Pod Identity association for a target IAM role. You put this value in the trust policy of the target role, in a <code>Condition</code> to match the <code>sts.ExternalId</code>. This ensures that the target role can only be assumed by this association. This prevents the <i>confused deputy problem</i>. For more information about the confused deputy problem, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html">The confused deputy problem</a> in the <i>IAM User Guide</i>.</p>
     /// <p>If you want to use the same target role with multiple associations or other roles, use independent statements in the trust policy to allow <code>sts:AssumeRole</code> access from each role.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociation {
     /// <p>The name of the cluster that the association is in.</p>
@@ -122,6 +124,10 @@ impl PodIdentityAssociation {
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
+    }
 }
 impl PodIdentityAssociation {
     /// Creates a new builder-style object to manufacture [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
@@ -147,6 +153,7 @@ pub struct PodIdentityAssociationBuilder {
     pub(crate) disable_session_tags: ::std::option::Option<bool>,
     pub(crate) target_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl PodIdentityAssociationBuilder {
     /// <p>The name of the cluster that the association is in.</p>
@@ -394,6 +401,20 @@ impl PodIdentityAssociationBuilder {
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy = input;
+        self
+    }
+    /// <p>An optional IAM policy in JSON format (as an escaped string) that applies additional restrictions to this pod identity association beyond the IAM policies attached to the IAM role. This policy is applied as the intersection of the role's policies and this policy, allowing you to reduce the permissions that applications in the pods can use. Use this policy to enforce least privilege access while still leveraging a shared IAM role across multiple applications.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`PodIdentityAssociation`](crate::types::PodIdentityAssociation).
     pub fn build(self) -> crate::types::PodIdentityAssociation {
         crate::types::PodIdentityAssociation {
@@ -410,6 +431,7 @@ impl PodIdentityAssociationBuilder {
             disable_session_tags: self.disable_session_tags,
             target_role_arn: self.target_role_arn,
             external_id: self.external_id,
+            policy: self.policy,
         }
     }
 }

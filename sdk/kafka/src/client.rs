@@ -148,6 +148,8 @@ mod create_configuration;
 
 mod create_replicator;
 
+mod create_topic;
+
 mod create_vpc_connection;
 
 /// Operation customization and supporting types.
@@ -184,6 +186,8 @@ mod delete_cluster_policy;
 mod delete_configuration;
 
 mod delete_replicator;
+
+mod delete_topic;
 
 mod delete_vpc_connection;
 
@@ -274,3 +278,5 @@ mod update_replication_info;
 mod update_security;
 
 mod update_storage;
+
+mod update_topic;

@@ -235,85 +235,8 @@ pub fn de_db_cluster_snapshot(
                 builder = builder.set_storage_encrypted(var_17);
             }
             ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBClusterSnapshot$KmsKeyId */ =>  {
+            s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBClusterSnapshot$BackupRetentionPeriod */ =>  {
                 let var_18 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_18);
-            }
-            ,
-            s if s.matches("DBClusterSnapshotArn") /* DBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$DBClusterSnapshotArn */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_db_cluster_snapshot_arn(var_19);
-            }
-            ,
-            s if s.matches("SourceDBClusterSnapshotArn") /* SourceDBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$SourceDBClusterSnapshotArn */ =>  {
-                let var_20 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_source_db_cluster_snapshot_arn(var_20);
-            }
-            ,
-            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBClusterSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_21 =
-                    Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                        }
-                        ?
-                    )
-                ;
-                builder = builder.set_iam_database_authentication_enabled(var_21);
-            }
-            ,
-            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterSnapshot$TagList */ =>  {
-                let var_22 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tag_list(var_22);
-            }
-            ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBClusterSnapshot$StorageType */ =>  {
-                let var_23 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_type(var_23);
-            }
-            ,
-            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterSnapshot$StorageThroughput */ =>  {
-                let var_24 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -324,10 +247,87 @@ pub fn de_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_24);
+                builder = builder.set_backup_retention_period(var_18);
             }
             ,
-            s if s.matches("DbClusterResourceId") /* DbClusterResourceId com.amazonaws.rds#DBClusterSnapshot$DbClusterResourceId */ =>  {
+            s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBClusterSnapshot$PreferredBackupWindow */ =>  {
+                let var_19 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_preferred_backup_window(var_19);
+            }
+            ,
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBClusterSnapshot$KmsKeyId */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_kms_key_id(var_20);
+            }
+            ,
+            s if s.matches("DBClusterSnapshotArn") /* DBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$DBClusterSnapshotArn */ =>  {
+                let var_21 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_cluster_snapshot_arn(var_21);
+            }
+            ,
+            s if s.matches("SourceDBClusterSnapshotArn") /* SourceDBClusterSnapshotArn com.amazonaws.rds#DBClusterSnapshot$SourceDBClusterSnapshotArn */ =>  {
+                let var_22 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_source_db_cluster_snapshot_arn(var_22);
+            }
+            ,
+            s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBClusterSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
+                let var_23 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iam_database_authentication_enabled(var_23);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.rds#DBClusterSnapshot$TagList */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_24);
+            }
+            ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBClusterSnapshot$StorageType */ =>  {
                 let var_25 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -337,11 +337,26 @@ pub fn de_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_cluster_resource_id(var_25);
+                builder = builder.set_storage_type(var_25);
             }
             ,
-            s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBClusterSnapshot$DBSystemId */ =>  {
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterSnapshot$StorageThroughput */ =>  {
                 let var_26 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput(var_26);
+            }
+            ,
+            s if s.matches("DbClusterResourceId") /* DbClusterResourceId com.amazonaws.rds#DBClusterSnapshot$DbClusterResourceId */ =>  {
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -350,7 +365,20 @@ pub fn de_db_cluster_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_db_system_id(var_26);
+                builder = builder.set_db_cluster_resource_id(var_27);
+            }
+            ,
+            s if s.matches("DBSystemId") /* DBSystemId com.amazonaws.rds#DBClusterSnapshot$DBSystemId */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_system_id(var_28);
             }
             ,
             _ => {}

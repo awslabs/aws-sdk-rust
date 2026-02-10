@@ -472,6 +472,15 @@ pub(crate) fn browser_profile_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn proxy_configuration_correct_errors(
+    mut builder: crate::types::builders::ProxyConfigurationBuilder,
+) -> crate::types::builders::ProxyConfigurationBuilder {
+    if builder.proxies.is_none() {
+        builder.proxies = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn view_port_correct_errors(mut builder: crate::types::builders::ViewPortBuilder) -> crate::types::builders::ViewPortBuilder {
     if builder.width.is_none() {
         builder.width = Some(Default::default())
@@ -664,6 +673,18 @@ pub(crate) fn conversational_correct_errors(
     builder
 }
 
+pub(crate) fn external_proxy_correct_errors(
+    mut builder: crate::types::builders::ExternalProxyBuilder,
+) -> crate::types::builders::ExternalProxyBuilder {
+    if builder.server.is_none() {
+        builder.server = Some(Default::default())
+    }
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.bucket.is_none() {
         builder.bucket = Some(Default::default())
@@ -696,6 +717,13 @@ pub(crate) fn message_metadata_correct_errors(
     }
     if builder.message_index.is_none() {
         builder.message_index = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn basic_auth_correct_errors(mut builder: crate::types::builders::BasicAuthBuilder) -> crate::types::builders::BasicAuthBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

@@ -53,6 +53,22 @@ pub use crate::types::_hierarchy_structure_update::HierarchyStructureUpdate;
 
 pub use crate::types::_hierarchy_level_update::HierarchyLevelUpdate;
 
+pub use crate::types::_voice_enhancement_config::VoiceEnhancementConfig;
+
+pub use crate::types::_voice_enhancement_mode::VoiceEnhancementMode;
+
+pub use crate::types::_channel::Channel;
+
+pub use crate::types::_persistent_connection_config::PersistentConnectionConfig;
+
+pub use crate::types::_phone_number_config::PhoneNumberConfig;
+
+pub use crate::types::_after_contact_work_config_per_channel::AfterContactWorkConfigPerChannel;
+
+pub use crate::types::_after_contact_work_config::AfterContactWorkConfig;
+
+pub use crate::types::_auto_accept_config::AutoAcceptConfig;
+
 pub use crate::types::_agent_config::AgentConfig;
 
 pub use crate::types::_distribution::Distribution;
@@ -170,8 +186,6 @@ pub use crate::types::_action_type::ActionType;
 pub use crate::types::_routing_profile_queue_config::RoutingProfileQueueConfig;
 
 pub use crate::types::_routing_profile_queue_reference::RoutingProfileQueueReference;
-
-pub use crate::types::_channel::Channel;
 
 pub use crate::types::_media_concurrency::MediaConcurrency;
 
@@ -1361,6 +1375,10 @@ mod _action_type;
 
 mod _additional_email_recipients;
 
+mod _after_contact_work_config;
+
+mod _after_contact_work_config_per_channel;
+
 mod _agent_availability_timer;
 
 mod _agent_config;
@@ -1450,6 +1468,8 @@ mod _audio_quality_metrics_info;
 mod _authentication_profile;
 
 mod _authentication_profile_summary;
+
+mod _auto_accept_config;
 
 mod _auto_evaluation_configuration;
 
@@ -2199,6 +2219,10 @@ mod _participant_type;
 
 mod _persistent_chat;
 
+mod _persistent_connection_config;
+
+mod _phone_number_config;
+
 mod _phone_number_country_code;
 
 mod _phone_number_quick_connect_config;
@@ -2670,6 +2694,10 @@ mod _vocabulary_state;
 mod _vocabulary_summary;
 
 mod _voice_call_entry_point_parameters;
+
+mod _voice_enhancement_config;
+
+mod _voice_enhancement_mode;
 
 mod _voice_recording_configuration;
 
