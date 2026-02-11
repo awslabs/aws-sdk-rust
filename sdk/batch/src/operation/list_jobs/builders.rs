@@ -32,7 +32,6 @@ impl crate::operation::list_jobs::builders::ListJobsInputBuilder {
 /// <li>
 /// <p>An array job ID to return a list of the children for that job</p></li>
 /// </ul>
-/// <p>You can filter the results by job status with the <code>jobStatus</code> parameter. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -157,21 +156,21 @@ impl ListJobsFluentBuilder {
     pub fn get_multi_node_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_multi_node_job_id()
     }
-    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
     /// <p>Array job parents are updated to <code>PENDING</code> when any child job is updated to <code>RUNNABLE</code> and remain in <code>PENDING</code> status while child jobs are running. To view these jobs, filter by <code>PENDING</code> status until all child jobs reach a terminal state.</p>
     /// </note>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.inner = self.inner.job_status(input);
         self
     }
-    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
     /// <p>Array job parents are updated to <code>PENDING</code> when any child job is updated to <code>RUNNABLE</code> and remain in <code>PENDING</code> status while child jobs are running. To view these jobs, filter by <code>PENDING</code> status until all child jobs reach a terminal state.</p>
     /// </note>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
-    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
     /// <p>Array job parents are updated to <code>PENDING</code> when any child job is updated to <code>RUNNABLE</code> and remain in <code>PENDING</code> status while child jobs are running. To view these jobs, filter by <code>PENDING</code> status until all child jobs reach a terminal state.</p>
     /// </note>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -249,7 +248,9 @@ impl ListJobsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// JOB_NAME
@@ -274,13 +275,21 @@ impl ListJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// SHARE_IDENTIFIER
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
     /// </dd>
     /// </dl>
     pub fn filters(mut self, input: crate::types::KeyValuesPair) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// JOB_NAME
@@ -305,13 +314,21 @@ impl ListJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// SHARE_IDENTIFIER
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
     /// </dd>
     /// </dl>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// </note>
     /// <dl>
     /// <dt>
     /// JOB_NAME
@@ -336,6 +353,12 @@ impl ListJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
+    /// </dd>
+    /// <dt>
+    /// SHARE_IDENTIFIER
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
     /// </dd>
     /// </dl>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>> {

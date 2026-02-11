@@ -84,6 +84,7 @@ impl From<aws_credential_types::Credentials> for Credentials {
 /// Token for use in test cases. These implement Serialize/Deserialize and have a
 /// non-hidden debug implementation.
 #[derive(Deserialize, Debug, Eq, PartialEq)]
+#[allow(dead_code)]
 pub(crate) struct Token {
     pub(crate) token: String,
     pub(crate) expiration: Option<String>,

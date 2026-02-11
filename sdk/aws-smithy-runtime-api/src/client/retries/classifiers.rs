@@ -162,7 +162,7 @@ enum Inner {
 
 impl PartialOrd for RetryClassifierPriority {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        Some(self.as_i8().cmp(&other.as_i8()))
+        Some(self.cmp(other))
     }
 }
 

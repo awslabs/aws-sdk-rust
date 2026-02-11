@@ -13,6 +13,7 @@ use std::vec;
 
 /// A bridge that allows our `ResolveDns` trait to work with Hyper's `Resolver` interface (based on tower)
 #[derive(Clone)]
+#[allow(dead_code)]
 pub(crate) struct HyperUtilResolver<R> {
     pub(crate) resolver: R,
 }

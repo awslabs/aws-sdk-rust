@@ -3,6 +3,12 @@ pub fn ser_schema_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaField,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.id {
+        object.key("id").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+        );
+    }
     {
         object.key("name").string(input.name.as_str());
     }

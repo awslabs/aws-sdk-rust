@@ -31,8 +31,10 @@
 ///     AmiTypes::Custom => { /* ... */ },
 ///     AmiTypes::WindowsCore2019X8664 => { /* ... */ },
 ///     AmiTypes::WindowsCore2022X8664 => { /* ... */ },
+///     AmiTypes::WindowsCore2025X8664 => { /* ... */ },
 ///     AmiTypes::WindowsFull2019X8664 => { /* ... */ },
 ///     AmiTypes::WindowsFull2022X8664 => { /* ... */ },
+///     AmiTypes::WindowsFull2025X8664 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -100,9 +102,13 @@ pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     WindowsCore2022X8664,
     #[allow(missing_docs)] // documentation missing in model
+    WindowsCore2025X8664,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsFull2019X8664,
     #[allow(missing_docs)] // documentation missing in model
     WindowsFull2022X8664,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsFull2025X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -129,8 +135,10 @@ impl ::std::convert::From<&str> for AmiTypes {
             "CUSTOM" => AmiTypes::Custom,
             "WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
             "WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
+            "WINDOWS_CORE_2025_x86_64" => AmiTypes::WindowsCore2025X8664,
             "WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
             "WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
+            "WINDOWS_FULL_2025_x86_64" => AmiTypes::WindowsFull2025X8664,
             other => AmiTypes::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -165,8 +173,10 @@ impl AmiTypes {
             AmiTypes::Custom => "CUSTOM",
             AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
             AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
+            AmiTypes::WindowsCore2025X8664 => "WINDOWS_CORE_2025_x86_64",
             AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
             AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
+            AmiTypes::WindowsFull2025X8664 => "WINDOWS_FULL_2025_x86_64",
             AmiTypes::Unknown(value) => value.as_str(),
         }
     }
@@ -192,8 +202,10 @@ impl AmiTypes {
             "CUSTOM",
             "WINDOWS_CORE_2019_x86_64",
             "WINDOWS_CORE_2022_x86_64",
+            "WINDOWS_CORE_2025_x86_64",
             "WINDOWS_FULL_2019_x86_64",
             "WINDOWS_FULL_2022_x86_64",
+            "WINDOWS_FULL_2025_x86_64",
         ]
     }
 }
@@ -236,8 +248,10 @@ impl ::std::fmt::Display for AmiTypes {
             AmiTypes::Custom => write!(f, "CUSTOM"),
             AmiTypes::WindowsCore2019X8664 => write!(f, "WINDOWS_CORE_2019_x86_64"),
             AmiTypes::WindowsCore2022X8664 => write!(f, "WINDOWS_CORE_2022_x86_64"),
+            AmiTypes::WindowsCore2025X8664 => write!(f, "WINDOWS_CORE_2025_x86_64"),
             AmiTypes::WindowsFull2019X8664 => write!(f, "WINDOWS_FULL_2019_x86_64"),
             AmiTypes::WindowsFull2022X8664 => write!(f, "WINDOWS_FULL_2022_x86_64"),
+            AmiTypes::WindowsFull2025X8664 => write!(f, "WINDOWS_FULL_2025_x86_64"),
             AmiTypes::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -23,11 +23,11 @@ doc-scrape-examples = true
 name = "aws-smithy-http-client"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "HTTP client abstractions for generated smithy clients"
-version = "1.1.9"
+version = "1.1.10"
 license = "Apache-2.0"
 edition = "2021"
 repository = "https://github.com/smithy-lang/smithy-rs"
-rust-version = "1.88"
+rust-version = "1.91"
 [package.metadata.smithy-rs-release-tooling]
 stable = true
 [package.metadata.docs.rs]
@@ -55,21 +55,21 @@ tracing = "0.1.40"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "1.2.11"
+version = "1.2.12"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.11.3"
+version = "1.11.4"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.4.3"
+version = "1.4.4"
 
 [dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 optional = true
-version = "0.63.11"
+version = "0.63.12"
 
 [dependencies.h2]
 version = "0.4.11"
@@ -206,17 +206,17 @@ tokio-rustls = "0.26.2"
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["rt-tokio", "test-util"]
-version = "1.2.11"
+version = "1.2.12"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.11.3"
+version = "1.11.4"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-0-4-x", "test-util"]
-version = "1.4.3"
+version = "1.4.4"
 
 [dev-dependencies.http-body-util]
 version = "0.1.3"

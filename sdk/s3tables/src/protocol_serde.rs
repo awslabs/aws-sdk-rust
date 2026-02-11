@@ -243,15 +243,23 @@ pub(crate) mod shape_table_summary;
 
 pub(crate) mod shape_iceberg_compaction_settings;
 
+pub(crate) mod shape_iceberg_partition_spec;
+
 pub(crate) mod shape_iceberg_schema;
 
 pub(crate) mod shape_iceberg_snapshot_management_settings;
+
+pub(crate) mod shape_iceberg_sort_order;
 
 pub(crate) mod shape_iceberg_unreferenced_file_removal_settings;
 
 pub(crate) mod shape_last_successful_replicated_update;
 
 pub(crate) mod shape_replication_destination;
+
+pub(crate) mod shape_iceberg_partition_field;
+
+pub(crate) mod shape_iceberg_sort_field;
 
 pub(crate) mod shape_replication_destinations;
 

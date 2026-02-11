@@ -5,12 +5,18 @@
 pub struct GetJobQueueSnapshotOutput {
     /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub front_of_queue: ::std::option::Option<crate::types::FrontOfQueueDetail>,
+    /// <p>The job queue's capacity utilization, including total usage and breakdown by fairshare scheduling queue.</p>
+    pub queue_utilization: ::std::option::Option<crate::types::QueueSnapshotUtilizationDetail>,
     _request_id: Option<String>,
 }
 impl GetJobQueueSnapshotOutput {
     /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub fn front_of_queue(&self) -> ::std::option::Option<&crate::types::FrontOfQueueDetail> {
         self.front_of_queue.as_ref()
+    }
+    /// <p>The job queue's capacity utilization, including total usage and breakdown by fairshare scheduling queue.</p>
+    pub fn queue_utilization(&self) -> ::std::option::Option<&crate::types::QueueSnapshotUtilizationDetail> {
+        self.queue_utilization.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetJobQueueSnapshotOutput {
@@ -30,6 +36,7 @@ impl GetJobQueueSnapshotOutput {
 #[non_exhaustive]
 pub struct GetJobQueueSnapshotOutputBuilder {
     pub(crate) front_of_queue: ::std::option::Option<crate::types::FrontOfQueueDetail>,
+    pub(crate) queue_utilization: ::std::option::Option<crate::types::QueueSnapshotUtilizationDetail>,
     _request_id: Option<String>,
 }
 impl GetJobQueueSnapshotOutputBuilder {
@@ -47,6 +54,20 @@ impl GetJobQueueSnapshotOutputBuilder {
     pub fn get_front_of_queue(&self) -> &::std::option::Option<crate::types::FrontOfQueueDetail> {
         &self.front_of_queue
     }
+    /// <p>The job queue's capacity utilization, including total usage and breakdown by fairshare scheduling queue.</p>
+    pub fn queue_utilization(mut self, input: crate::types::QueueSnapshotUtilizationDetail) -> Self {
+        self.queue_utilization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job queue's capacity utilization, including total usage and breakdown by fairshare scheduling queue.</p>
+    pub fn set_queue_utilization(mut self, input: ::std::option::Option<crate::types::QueueSnapshotUtilizationDetail>) -> Self {
+        self.queue_utilization = input;
+        self
+    }
+    /// <p>The job queue's capacity utilization, including total usage and breakdown by fairshare scheduling queue.</p>
+    pub fn get_queue_utilization(&self) -> &::std::option::Option<crate::types::QueueSnapshotUtilizationDetail> {
+        &self.queue_utilization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetJobQueueSnapshotOutputBuilder {
     pub fn build(self) -> crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotOutput {
         crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotOutput {
             front_of_queue: self.front_of_queue,
+            queue_utilization: self.queue_utilization,
             _request_id: self._request_id,
         }
     }

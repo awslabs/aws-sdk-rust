@@ -10,32 +10,75 @@ use std::fmt;
 
 use aws_runtime::{
     auth::PayloadSigningOverride,
-    content_encoding::{header_value::AWS_CHUNKED, AwsChunkedBody, AwsChunkedBodyOptions},
+    content_encoding::{header::X_AMZ_TRAILER_SIGNATURE, header_value::AWS_CHUNKED, AwsChunkedBody, AwsChunkedBodyOptions, DeferredSigner},
 };
 use aws_smithy_runtime_api::{
     box_error::BoxError,
     client::{
         interceptors::{context::BeforeTransmitInterceptorContextMut, Intercept},
         runtime_components::RuntimeComponents,
+        runtime_plugin::RuntimePlugin,
     },
     http::Request,
 };
-use aws_smithy_types::{body::SdkBody, config_bag::ConfigBag, error::operation::BuildError};
+use aws_smithy_types::{
+    body::SdkBody,
+    config_bag::{ConfigBag, FrozenLayer, Layer, Storable, StoreReplace},
+    error::operation::BuildError,
+};
 use http_1x::{header, HeaderValue};
 use http_body_1x::Body;
 
 const X_AMZ_DECODED_CONTENT_LENGTH: &str = "x-amz-decoded-content-length";
+const TRAILER_SEPARATOR: &[u8] = b":";
+const SIGNATURE_VALUE_LENGTH: usize = 64;
+const MIN_CHUNK_SIZE_BYTE: usize = 8192;
+
+/// Chunk size configuration for aws-chunked encoding.
+#[derive(Clone, Copy, Debug)]
+pub(crate) enum ChunkSize {
+    /// Use the specified chunk size in bytes.
+    Configured(usize),
+    /// Disable chunking by using the entire content-length as a single chunk.
+    DisableChunking,
+}
+
+impl Storable for ChunkSize {
+    type Storer = StoreReplace<Self>;
+}
+
+/// Runtime plugin for configuring chunk size.
+#[derive(Debug)]
+pub(crate) struct ChunkSizeRuntimePlugin {
+    chunk_size: ChunkSize,
+}
+
+impl ChunkSizeRuntimePlugin {
+    pub(crate) fn new(chunk_size: ChunkSize) -> Self {
+        Self { chunk_size }
+    }
+}
+
+impl RuntimePlugin for ChunkSizeRuntimePlugin {
+    fn config(&self) -> Option<FrozenLayer> {
+        let mut cfg = Layer::new("chunk_size");
+        cfg.store_put(self.chunk_size);
+        Some(cfg.freeze())
+    }
+}
 
 /// Errors related to constructing aws-chunked encoded HTTP requests.
 #[derive(Debug)]
 enum Error {
     UnsizedRequestBody,
+    ChunkSizeTooSmall { min: usize, actual: usize },
 }
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::UnsizedRequestBody => write!(f, "Only request bodies with a known size can be aws-chunked encoded."),
+            Self::ChunkSizeTooSmall { min, actual } => write!(f, "Chunk size must be at least {min} bytes, but {actual} was provided."),
         }
     }
 }
@@ -73,12 +116,8 @@ impl Intercept for AwsChunkedContentEncodingInterceptor {
             return Err(BuildError::other(Error::UnsizedRequestBody))?;
         };
 
-        let chunked_body_options = if let Some(chunked_body_options) = cfg.get_mut_from_interceptor_state::<AwsChunkedBodyOptions>() {
-            let chunked_body_options = std::mem::take(chunked_body_options);
-            chunked_body_options.with_stream_length(original_body_size)
-        } else {
-            AwsChunkedBodyOptions::default().with_stream_length(original_body_size)
-        };
+        let sign_during_encoding = context.request().uri().starts_with("http:");
+        let chunked_body_options = create_chunked_body_options(sign_during_encoding, original_body_size, cfg).map_err(BuildError::other)?;
 
         let request = context.request_mut();
         // For for aws-chunked encoding, `x-amz-decoded-content-length` must be set to the original body size.
@@ -102,7 +141,15 @@ impl Intercept for AwsChunkedContentEncodingInterceptor {
         );
 
         cfg.interceptor_state().store_put(chunked_body_options);
-        cfg.interceptor_state().store_put(PayloadSigningOverride::StreamingUnsignedPayloadTrailer);
+
+        if sign_during_encoding {
+            let (signer, sender) = DeferredSigner::new();
+            cfg.interceptor_state().store_put(signer);
+            cfg.interceptor_state().store_put(sender);
+            cfg.interceptor_state().store_put(PayloadSigningOverride::StreamingSignedPayloadTrailer);
+        } else {
+            cfg.interceptor_state().store_put(PayloadSigningOverride::StreamingUnsignedPayloadTrailer);
+        }
 
         Ok(())
     }
@@ -126,8 +173,17 @@ impl Intercept for AwsChunkedContentEncodingInterceptor {
                 .get_mut_from_interceptor_state::<AwsChunkedBodyOptions>()
                 .ok_or_else(|| BuildError::other("AwsChunkedBodyOptions missing from config bag"))?;
             let aws_chunked_body_options = std::mem::take(opt);
+            let signer = cfg
+                .get_mut_from_interceptor_state::<DeferredSigner>()
+                .map(|s| std::mem::replace(s, DeferredSigner::empty()));
+
             body.map(move |body| {
                 let body = AwsChunkedBody::new(body, aws_chunked_body_options.clone());
+                let body = if let Some(signer) = &signer {
+                    body.with_signer(signer.clone())
+                } else {
+                    body
+                };
                 SdkBody::from_body_1_x(body)
             })
         };
@@ -149,6 +205,47 @@ fn must_not_use_chunked_encoding(request: &Request, cfg: &ConfigBag) -> bool {
     }
 }
 
+fn create_chunked_body_options(sign_during_encoding: bool, original_body_size: u64, cfg: &mut ConfigBag) -> Result<AwsChunkedBodyOptions, Error> {
+    let mut chunked_body_options = if let Some(chunked_body_options) = cfg.get_mut_from_interceptor_state::<AwsChunkedBodyOptions>() {
+        let chunked_body_options = std::mem::take(chunked_body_options);
+        chunked_body_options.with_stream_length(original_body_size)
+    } else {
+        AwsChunkedBodyOptions::default().with_stream_length(original_body_size)
+    };
+
+    // Check if user specified a ChunkSize via .customize().chunk_size()
+    if let Some(user_chunk_size) = cfg.load::<ChunkSize>() {
+        match user_chunk_size {
+            ChunkSize::Configured(size) => {
+                chunked_body_options = chunked_body_options.with_chunk_size(*size);
+            }
+            ChunkSize::DisableChunking => {
+                chunked_body_options = chunked_body_options.with_chunk_size(original_body_size as usize);
+            }
+        }
+    }
+
+    // Validate chunk size
+    let chunk_size = chunked_body_options.chunk_size();
+    if chunk_size < MIN_CHUNK_SIZE_BYTE {
+        return Err(Error::ChunkSizeTooSmall {
+            min: MIN_CHUNK_SIZE_BYTE,
+            actual: chunk_size,
+        });
+    }
+
+    let chunked_body_options = chunked_body_options.signed_chunked_encoding(sign_during_encoding);
+
+    let chunked_body_options = if sign_during_encoding && !chunked_body_options.is_trailer_empty() {
+        // When signing during aws-chunked encoding, append the length for the trailer signature.
+        chunked_body_options.with_trailer_len((X_AMZ_TRAILER_SIGNATURE.len() + TRAILER_SEPARATOR.len() + SIGNATURE_VALUE_LENGTH) as u64)
+    } else {
+        chunked_body_options
+    };
+
+    Ok(chunked_body_options)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -158,11 +255,11 @@ mod tests {
     use aws_smithy_types::byte_stream::ByteStream;
     use bytes::BytesMut;
     use http_body_util::BodyExt;
+    use std::io::Write;
     use tempfile::NamedTempFile;
 
     #[tokio::test]
     async fn test_aws_chunked_body_is_retryable() {
-        use std::io::Write;
         let mut file = NamedTempFile::new().unwrap();
 
         for i in 0..10000 {
@@ -202,6 +299,35 @@ mod tests {
         let body_str = std::str::from_utf8(&body_data).unwrap();
         let expected = "This is a large file created for testing purposes 9999\r\n0\r\n\r\n";
         assert!(body_str.ends_with(expected), "expected '{body_str}' to end with '{expected}'");
+    }
+
+    #[tokio::test]
+    async fn test_deferred_signer_and_payload_override_when_not_over_tls() {
+        let mut file = NamedTempFile::new().unwrap();
+        file.as_file_mut().write_all(b"test data").unwrap();
+
+        let stream_length = file.as_file().metadata().unwrap().len();
+        let mut request = HttpRequest::new(streaming_body(&file).await);
+        *request.uri_mut() = http_1x::Uri::from_static("http://example.com").into();
+
+        let interceptor = AwsChunkedContentEncodingInterceptor;
+        let mut cfg = ConfigBag::base();
+        cfg.interceptor_state()
+            .store_put(AwsChunkedBodyOptions::default().with_stream_length(stream_length));
+        let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.enter_serialization_phase();
+        let _ = ctx.take_input();
+        ctx.set_request(request);
+        ctx.enter_before_transmit_phase();
+        let mut ctx: BeforeTransmitInterceptorContextMut<'_> = (&mut ctx).into();
+        interceptor.modify_before_signing(&mut ctx, &runtime_components, &mut cfg).unwrap();
+
+        assert!(cfg.load::<DeferredSigner>().is_some());
+        assert!(matches!(
+            cfg.load::<PayloadSigningOverride>(),
+            Some(&PayloadSigningOverride::StreamingSignedPayloadTrailer)
+        ));
     }
 
     #[tokio::test]

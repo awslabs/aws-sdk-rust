@@ -632,12 +632,14 @@ mod tests {
     }
 
     #[derive(Deserialize, Debug, PartialEq, Eq)]
+    #[allow(dead_code)]
     enum TestOutput {
         ProfileChain(Vec<Provider>),
         Error(String),
     }
 
     #[derive(Deserialize, Debug, Eq, PartialEq)]
+    #[allow(dead_code)]
     enum Provider {
         AssumeRole {
             role_arn: String,

@@ -93,8 +93,11 @@ pub enum SignableBody<'a> {
     /// `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
     Precomputed(String),
 
-    /// Set when a streaming body has checksum trailers.
+    /// Set when an unsigned streaming body has checksum trailers.
     StreamingUnsignedPayloadTrailer,
+
+    /// Set when a signed streaming body has checksum trailers.
+    StreamingSignedPayloadTrailer,
 }
 
 /// Formats the value using the given formatter. To print the body data, set the environment variable `LOG_SIGNABLE_BODY=true`.
@@ -116,6 +119,9 @@ impl Debug for SignableBody<'_> {
             Self::Precomputed(arg0) => f.debug_tuple("Precomputed").field(arg0).finish(),
             Self::StreamingUnsignedPayloadTrailer => {
                 write!(f, "StreamingUnsignedPayloadTrailer")
+            }
+            Self::StreamingSignedPayloadTrailer => {
+                write!(f, "StreamingSignedPayloadTrailer")
             }
         }
     }

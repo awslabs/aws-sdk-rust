@@ -5,13 +5,13 @@ harness = false
 
 [package]
 name = "aws-smithy-eventstream"
-version = "0.60.18"
+version = "0.60.19"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "Event stream logic for smithy-rs."
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/smithy-lang/smithy-rs"
-rust-version = "1.88"
+rust-version = "1.91"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
@@ -35,7 +35,7 @@ optional = true
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.4.3"
+version = "1.4.4"
 
 [dependencies.derive_arbitrary]
 version = "1.3"

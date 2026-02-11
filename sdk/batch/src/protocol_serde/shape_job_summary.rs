@@ -36,10 +36,29 @@ where
                                     .transpose()?,
                             );
                         }
+                        "capacityUsage" => {
+                            builder = builder.set_capacity_usage(
+                                crate::protocol_serde::shape_job_capacity_usage_summary_list::de_job_capacity_usage_summary_list(tokens, _value)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "scheduledAt" => {
+                            builder = builder.set_scheduled_at(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "shareIdentifier" => {
+                            builder = builder.set_share_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

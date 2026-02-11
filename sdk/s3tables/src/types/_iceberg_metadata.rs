@@ -6,7 +6,11 @@
 pub struct IcebergMetadata {
     /// <p>The schema for an Iceberg table.</p>
     pub schema: ::std::option::Option<crate::types::IcebergSchema>,
-    /// <p>Contains configuration properties for an Iceberg table.</p>
+    /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+    pub partition_spec: ::std::option::Option<crate::types::IcebergPartitionSpec>,
+    /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+    pub write_order: ::std::option::Option<crate::types::IcebergSortOrder>,
+    /// <p>A map of custom configuration properties for the Iceberg table.</p>
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadata {
@@ -14,7 +18,15 @@ impl IcebergMetadata {
     pub fn schema(&self) -> ::std::option::Option<&crate::types::IcebergSchema> {
         self.schema.as_ref()
     }
-    /// <p>Contains configuration properties for an Iceberg table.</p>
+    /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+    pub fn partition_spec(&self) -> ::std::option::Option<&crate::types::IcebergPartitionSpec> {
+        self.partition_spec.as_ref()
+    }
+    /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+    pub fn write_order(&self) -> ::std::option::Option<&crate::types::IcebergSortOrder> {
+        self.write_order.as_ref()
+    }
+    /// <p>A map of custom configuration properties for the Iceberg table.</p>
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
@@ -31,6 +43,8 @@ impl IcebergMetadata {
 #[non_exhaustive]
 pub struct IcebergMetadataBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::IcebergSchema>,
+    pub(crate) partition_spec: ::std::option::Option<crate::types::IcebergPartitionSpec>,
+    pub(crate) write_order: ::std::option::Option<crate::types::IcebergSortOrder>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadataBuilder {
@@ -49,23 +63,51 @@ impl IcebergMetadataBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::IcebergSchema> {
         &self.schema
     }
+    /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+    pub fn partition_spec(mut self, input: crate::types::IcebergPartitionSpec) -> Self {
+        self.partition_spec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+    pub fn set_partition_spec(mut self, input: ::std::option::Option<crate::types::IcebergPartitionSpec>) -> Self {
+        self.partition_spec = input;
+        self
+    }
+    /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+    pub fn get_partition_spec(&self) -> &::std::option::Option<crate::types::IcebergPartitionSpec> {
+        &self.partition_spec
+    }
+    /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+    pub fn write_order(mut self, input: crate::types::IcebergSortOrder) -> Self {
+        self.write_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+    pub fn set_write_order(mut self, input: ::std::option::Option<crate::types::IcebergSortOrder>) -> Self {
+        self.write_order = input;
+        self
+    }
+    /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+    pub fn get_write_order(&self) -> &::std::option::Option<crate::types::IcebergSortOrder> {
+        &self.write_order
+    }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
-    /// <p>Contains configuration properties for an Iceberg table.</p>
+    /// <p>A map of custom configuration properties for the Iceberg table.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.properties = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Contains configuration properties for an Iceberg table.</p>
+    /// <p>A map of custom configuration properties for the Iceberg table.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.properties = input;
         self
     }
-    /// <p>Contains configuration properties for an Iceberg table.</p>
+    /// <p>A map of custom configuration properties for the Iceberg table.</p>
     pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
@@ -73,6 +115,8 @@ impl IcebergMetadataBuilder {
     pub fn build(self) -> crate::types::IcebergMetadata {
         crate::types::IcebergMetadata {
             schema: self.schema,
+            partition_spec: self.partition_spec,
+            write_order: self.write_order,
             properties: self.properties,
         }
     }

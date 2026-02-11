@@ -329,6 +329,9 @@ pub enum PayloadSigningOverride {
 
     /// Set when a streaming body has checksum trailers.
     StreamingUnsignedPayloadTrailer,
+
+    /// Set when a signed streaming body has checksum trailers
+    StreamingSignedPayloadTrailer,
 }
 
 impl PayloadSigningOverride {
@@ -345,6 +348,7 @@ impl PayloadSigningOverride {
             Self::UnsignedPayload => SignableBody::UnsignedPayload,
             Self::Precomputed(checksum) => SignableBody::Precomputed(checksum),
             Self::StreamingUnsignedPayloadTrailer => SignableBody::StreamingUnsignedPayloadTrailer,
+            Self::StreamingSignedPayloadTrailer => SignableBody::StreamingSignedPayloadTrailer,
         }
     }
 }

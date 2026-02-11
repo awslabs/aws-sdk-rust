@@ -329,7 +329,7 @@ mod test {
                 }
             ));
         }
-        let range = || (i64::MIN..=i64::MAX);
+        let range = || i64::MIN..=i64::MAX;
 
         for val in range().take(1024).chain(range().rev().take(1024)) {
             // if we can actually represent the value

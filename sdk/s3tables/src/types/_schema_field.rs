@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaField {
+    /// <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+    pub id: ::std::option::Option<i32>,
     /// <p>The name of the field.</p>
     pub name: ::std::string::String,
     /// <p>The field type. S3 Tables supports all Apache Iceberg primitive types. For more information, see the <a href="https://iceberg.apache.org/spec/#primitive-types">Apache Iceberg documentation</a>.</p>
@@ -12,6 +14,10 @@ pub struct SchemaField {
     pub required: bool,
 }
 impl SchemaField {
+    /// <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+    pub fn id(&self) -> ::std::option::Option<i32> {
+        self.id
+    }
     /// <p>The name of the field.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -38,11 +44,26 @@ impl SchemaField {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct SchemaFieldBuilder {
+    pub(crate) id: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) required: ::std::option::Option<bool>,
 }
 impl SchemaFieldBuilder {
+    /// <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+    pub fn id(mut self, input: i32) -> Self {
+        self.id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p>The name of the field.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +114,7 @@ impl SchemaFieldBuilder {
     /// - [`r#type`](crate::types::builders::SchemaFieldBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaField {
+            id: self.id,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",

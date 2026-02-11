@@ -102,6 +102,11 @@ pub(crate) fn de_get_job_queue_snapshot(
                         tokens, _value,
                     )?);
                 }
+                "queueUtilization" => {
+                    builder = builder.set_queue_utilization(
+                        crate::protocol_serde::shape_queue_snapshot_utilization_detail::de_queue_snapshot_utilization_detail(tokens, _value)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

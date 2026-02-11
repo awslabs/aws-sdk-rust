@@ -161,7 +161,7 @@ where
         }
     }
 
-    /// Creates a new [`RuleBuilder`]. This is normally constructed with the [`mock!`] macro
+    /// Creates a new [`RuleBuilder`]. This is normally constructed with the [`mock!`](crate::mock!) macro
     #[doc(hidden)]
     pub fn new_from_mock<F, R>(_input_hint: impl Fn() -> I, _output_hint: impl Fn() -> F) -> Self
     where

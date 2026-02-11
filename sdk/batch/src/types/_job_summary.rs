@@ -10,8 +10,14 @@ pub struct JobSummary {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The job name.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
+    /// <p>The configured capacity usage information for this job, including the unit of measure and quantity of resources.</p>
+    pub capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::JobCapacityUsageSummary>>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub created_at: ::std::option::Option<i64>,
+    /// <p>The Unix timestamp (in milliseconds) for when the job was scheduled for execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+    pub scheduled_at: ::std::option::Option<i64>,
+    /// <p>The share identifier for the fairshare scheduling queue that this job is associated with.</p>
+    pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The current status for the job.</p>
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
@@ -44,9 +50,23 @@ impl JobSummary {
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
+    /// <p>The configured capacity usage information for this job, including the unit of measure and quantity of resources.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_usage.is_none()`.
+    pub fn capacity_usage(&self) -> &[crate::types::JobCapacityUsageSummary] {
+        self.capacity_usage.as_deref().unwrap_or_default()
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(&self) -> ::std::option::Option<i64> {
         self.created_at
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was scheduled for execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+    pub fn scheduled_at(&self) -> ::std::option::Option<i64> {
+        self.scheduled_at
+    }
+    /// <p>The share identifier for the fairshare scheduling queue that this job is associated with.</p>
+    pub fn share_identifier(&self) -> ::std::option::Option<&str> {
+        self.share_identifier.as_deref()
     }
     /// <p>The current status for the job.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
@@ -97,7 +117,10 @@ pub struct JobSummaryBuilder {
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::JobCapacityUsageSummary>>,
     pub(crate) created_at: ::std::option::Option<i64>,
+    pub(crate) scheduled_at: ::std::option::Option<i64>,
+    pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -152,6 +175,26 @@ impl JobSummaryBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
+    /// Appends an item to `capacity_usage`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_usage`](Self::set_capacity_usage).
+    ///
+    /// <p>The configured capacity usage information for this job, including the unit of measure and quantity of resources.</p>
+    pub fn capacity_usage(mut self, input: crate::types::JobCapacityUsageSummary) -> Self {
+        let mut v = self.capacity_usage.unwrap_or_default();
+        v.push(input);
+        self.capacity_usage = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configured capacity usage information for this job, including the unit of measure and quantity of resources.</p>
+    pub fn set_capacity_usage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobCapacityUsageSummary>>) -> Self {
+        self.capacity_usage = input;
+        self
+    }
+    /// <p>The configured capacity usage information for this job, including the unit of measure and quantity of resources.</p>
+    pub fn get_capacity_usage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobCapacityUsageSummary>> {
+        &self.capacity_usage
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(mut self, input: i64) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -165,6 +208,34 @@ impl JobSummaryBuilder {
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<i64> {
         &self.created_at
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was scheduled for execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+    pub fn scheduled_at(mut self, input: i64) -> Self {
+        self.scheduled_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was scheduled for execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+    pub fn set_scheduled_at(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.scheduled_at = input;
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was scheduled for execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_scheduled_at(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_at
+    }
+    /// <p>The share identifier for the fairshare scheduling queue that this job is associated with.</p>
+    pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.share_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The share identifier for the fairshare scheduling queue that this job is associated with.</p>
+    pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.share_identifier = input;
+        self
+    }
+    /// <p>The share identifier for the fairshare scheduling queue that this job is associated with.</p>
+    pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_identifier
     }
     /// <p>The current status for the job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -290,7 +361,10 @@ impl JobSummaryBuilder {
             job_arn: self.job_arn,
             job_id: self.job_id,
             job_name: self.job_name,
+            capacity_usage: self.capacity_usage,
             created_at: self.created_at,
+            scheduled_at: self.scheduled_at,
+            share_identifier: self.share_identifier,
             status: self.status,
             status_reason: self.status_reason,
             started_at: self.started_at,

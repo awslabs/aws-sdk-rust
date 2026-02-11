@@ -18,39 +18,39 @@ tracing-fluent-assertions = "0.3.0"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 features = ["test-util", "behavior-version-latest"]
-version = "1.8.13"
+version = "1.8.14"
 
 [dev-dependencies.aws-runtime]
 path = "../../sdk/aws-runtime"
 features = ["test-util"]
-version = "1.6.0"
+version = "1.7.0"
 
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
 features = ["test-util", "behavior-version-latest"]
-version = "1.104.0"
+version = "1.105.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 features = ["test-util", "behavior-version-latest"]
-version = "1.122.0"
+version = "1.123.0"
 
 [dev-dependencies.aws-smithy-observability]
 path = "../../sdk/aws-smithy-observability"
-version = "0.2.4"
+version = "0.2.5"
 
 [dev-dependencies.aws-smithy-observability-otel]
 path = "../../sdk/aws-smithy-observability-otel"
-version = "0.1.8"
+version = "0.1.9"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["client", "test-util"]
-version = "1.10.0"
+version = "1.10.1"
 
 [dev-dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "1.4.3"
+version = "1.4.4"
 
 [dev-dependencies.opentelemetry]
 version = "0.26.0"

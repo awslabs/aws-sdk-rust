@@ -10,9 +10,10 @@ use crate::config_bag::value::Value;
 use crate::config_bag::{ItemIter, Storable, Store, StoreReplace};
 use std::time::Duration;
 
-#[derive(Clone, Debug, PartialEq, Copy)]
+#[derive(Clone, Debug, Default, PartialEq, Copy)]
 enum CanDisable<T> {
     Disabled,
+    #[default]
     Unset,
     Set(T),
 }
@@ -48,12 +49,6 @@ impl<T> CanDisable<T> {
 impl<T> From<T> for CanDisable<T> {
     fn from(value: T) -> Self {
         Self::Set(value)
-    }
-}
-
-impl<T> Default for CanDisable<T> {
-    fn default() -> Self {
-        Self::Unset
     }
 }
 

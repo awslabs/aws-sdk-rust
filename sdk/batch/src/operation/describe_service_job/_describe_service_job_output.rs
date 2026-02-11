@@ -5,6 +5,8 @@
 pub struct DescribeServiceJobOutput {
     /// <p>A list of job attempts associated with the service job.</p>
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobAttemptDetail>>,
+    /// <p>The configured capacity for the service job, such as the number of instances. The number of instances should be the same value as the <code>serviceRequestPayload.InstanceCount</code> field.</p>
+    pub capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageDetail>>,
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub created_at: ::std::option::Option<i64>,
     /// <p>Indicates whether the service job has been terminated.</p>
@@ -21,6 +23,8 @@ pub struct DescribeServiceJobOutput {
     pub latest_attempt: ::std::option::Option<crate::types::LatestServiceJobAttempt>,
     /// <p>The retry strategy to use for failed service jobs that are submitted with this service job.</p>
     pub retry_strategy: ::std::option::Option<crate::types::ServiceJobRetryStrategy>,
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This represents when the service job was dispatched to SageMaker and the service job transitioned to the <code>SCHEDULED</code> state.</p>
+    pub scheduled_at: ::std::option::Option<i64>,
     /// <p>The scheduling priority of the service job.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>The request, in JSON, for the service that the <code>SubmitServiceJob</code> operation is queueing.</p>
@@ -49,6 +53,12 @@ impl DescribeServiceJobOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attempts.is_none()`.
     pub fn attempts(&self) -> &[crate::types::ServiceJobAttemptDetail] {
         self.attempts.as_deref().unwrap_or_default()
+    }
+    /// <p>The configured capacity for the service job, such as the number of instances. The number of instances should be the same value as the <code>serviceRequestPayload.InstanceCount</code> field.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_usage.is_none()`.
+    pub fn capacity_usage(&self) -> &[crate::types::ServiceJobCapacityUsageDetail] {
+        self.capacity_usage.as_deref().unwrap_or_default()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<i64> {
@@ -81,6 +91,10 @@ impl DescribeServiceJobOutput {
     /// <p>The retry strategy to use for failed service jobs that are submitted with this service job.</p>
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::ServiceJobRetryStrategy> {
         self.retry_strategy.as_ref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This represents when the service job was dispatched to SageMaker and the service job transitioned to the <code>SCHEDULED</code> state.</p>
+    pub fn scheduled_at(&self) -> ::std::option::Option<i64> {
+        self.scheduled_at
     }
     /// <p>The scheduling priority of the service job.</p>
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
@@ -140,6 +154,7 @@ impl DescribeServiceJobOutput {
 #[non_exhaustive]
 pub struct DescribeServiceJobOutputBuilder {
     pub(crate) attempts: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobAttemptDetail>>,
+    pub(crate) capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageDetail>>,
     pub(crate) created_at: ::std::option::Option<i64>,
     pub(crate) is_terminated: ::std::option::Option<bool>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -148,6 +163,7 @@ pub struct DescribeServiceJobOutputBuilder {
     pub(crate) job_queue: ::std::option::Option<::std::string::String>,
     pub(crate) latest_attempt: ::std::option::Option<crate::types::LatestServiceJobAttempt>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::ServiceJobRetryStrategy>,
+    pub(crate) scheduled_at: ::std::option::Option<i64>,
     pub(crate) scheduling_priority: ::std::option::Option<i32>,
     pub(crate) service_request_payload: ::std::option::Option<::std::string::String>,
     pub(crate) service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
@@ -180,6 +196,26 @@ impl DescribeServiceJobOutputBuilder {
     /// <p>A list of job attempts associated with the service job.</p>
     pub fn get_attempts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceJobAttemptDetail>> {
         &self.attempts
+    }
+    /// Appends an item to `capacity_usage`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_usage`](Self::set_capacity_usage).
+    ///
+    /// <p>The configured capacity for the service job, such as the number of instances. The number of instances should be the same value as the <code>serviceRequestPayload.InstanceCount</code> field.</p>
+    pub fn capacity_usage(mut self, input: crate::types::ServiceJobCapacityUsageDetail) -> Self {
+        let mut v = self.capacity_usage.unwrap_or_default();
+        v.push(input);
+        self.capacity_usage = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configured capacity for the service job, such as the number of instances. The number of instances should be the same value as the <code>serviceRequestPayload.InstanceCount</code> field.</p>
+    pub fn set_capacity_usage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageDetail>>) -> Self {
+        self.capacity_usage = input;
+        self
+    }
+    /// <p>The configured capacity for the service job, such as the number of instances. The number of instances should be the same value as the <code>serviceRequestPayload.InstanceCount</code> field.</p>
+    pub fn get_capacity_usage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageDetail>> {
+        &self.capacity_usage
     }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub fn created_at(mut self, input: i64) -> Self {
@@ -295,6 +331,20 @@ impl DescribeServiceJobOutputBuilder {
     /// <p>The retry strategy to use for failed service jobs that are submitted with this service job.</p>
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::ServiceJobRetryStrategy> {
         &self.retry_strategy
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This represents when the service job was dispatched to SageMaker and the service job transitioned to the <code>SCHEDULED</code> state.</p>
+    pub fn scheduled_at(mut self, input: i64) -> Self {
+        self.scheduled_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This represents when the service job was dispatched to SageMaker and the service job transitioned to the <code>SCHEDULED</code> state.</p>
+    pub fn set_scheduled_at(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.scheduled_at = input;
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This represents when the service job was dispatched to SageMaker and the service job transitioned to the <code>SCHEDULED</code> state.</p>
+    pub fn get_scheduled_at(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_at
     }
     /// <p>The scheduling priority of the service job.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
@@ -458,6 +508,7 @@ impl DescribeServiceJobOutputBuilder {
     pub fn build(self) -> crate::operation::describe_service_job::DescribeServiceJobOutput {
         crate::operation::describe_service_job::DescribeServiceJobOutput {
             attempts: self.attempts,
+            capacity_usage: self.capacity_usage,
             created_at: self.created_at,
             is_terminated: self.is_terminated,
             job_arn: self.job_arn,
@@ -466,6 +517,7 @@ impl DescribeServiceJobOutputBuilder {
             job_queue: self.job_queue,
             latest_attempt: self.latest_attempt,
             retry_strategy: self.retry_strategy,
+            scheduled_at: self.scheduled_at,
             scheduling_priority: self.scheduling_priority,
             service_request_payload: self.service_request_payload,
             service_job_type: self.service_job_type,

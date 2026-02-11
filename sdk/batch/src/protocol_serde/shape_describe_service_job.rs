@@ -102,6 +102,13 @@ pub(crate) fn de_describe_service_job(
                         tokens, _value,
                     )?);
                 }
+                "capacityUsage" => {
+                    builder = builder.set_capacity_usage(
+                        crate::protocol_serde::shape_service_job_capacity_usage_detail_list::de_service_job_capacity_usage_detail_list(
+                            tokens, _value,
+                        )?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -149,6 +156,13 @@ pub(crate) fn de_describe_service_job(
                     builder = builder.set_retry_strategy(crate::protocol_serde::shape_service_job_retry_strategy::de_service_job_retry_strategy(
                         tokens, _value,
                     )?);
+                }
+                "scheduledAt" => {
+                    builder = builder.set_scheduled_at(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
                 }
                 "schedulingPriority" => {
                     builder = builder.set_scheduling_priority(

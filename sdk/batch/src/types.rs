@@ -185,6 +185,8 @@ pub use crate::types::_service_job_summary::ServiceJobSummary;
 
 pub use crate::types::_service_job_status::ServiceJobStatus;
 
+pub use crate::types::_service_job_capacity_usage_summary::ServiceJobCapacityUsageSummary;
+
 pub use crate::types::_latest_service_job_attempt::LatestServiceJobAttempt;
 
 pub use crate::types::_service_resource_id::ServiceResourceId;
@@ -207,11 +209,25 @@ pub use crate::types::_container_summary::ContainerSummary;
 
 pub use crate::types::_job_status::JobStatus;
 
+pub use crate::types::_job_capacity_usage_summary::JobCapacityUsageSummary;
+
 pub use crate::types::_consumable_resource_summary::ConsumableResourceSummary;
+
+pub use crate::types::_queue_snapshot_utilization_detail::QueueSnapshotUtilizationDetail;
+
+pub use crate::types::_fairshare_utilization_detail::FairshareUtilizationDetail;
+
+pub use crate::types::_fairshare_capacity_utilization::FairshareCapacityUtilization;
+
+pub use crate::types::_fairshare_capacity_usage::FairshareCapacityUsage;
+
+pub use crate::types::_queue_snapshot_capacity_usage::QueueSnapshotCapacityUsage;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetail;
 
 pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummary;
+
+pub use crate::types::_service_job_capacity_usage_detail::ServiceJobCapacityUsageDetail;
 
 pub use crate::types::_service_job_attempt_detail::ServiceJobAttemptDetail;
 
@@ -405,7 +421,13 @@ mod _ephemeral_storage;
 
 mod _evaluate_on_exit;
 
+mod _fairshare_capacity_usage;
+
+mod _fairshare_capacity_utilization;
+
 mod _fairshare_policy;
+
+mod _fairshare_utilization_detail;
 
 mod _fargate_platform_configuration;
 
@@ -420,6 +442,8 @@ mod _front_of_queue_job_summary;
 mod _host;
 
 mod _image_pull_secret;
+
+mod _job_capacity_usage_summary;
 
 mod _job_definition;
 
@@ -489,6 +513,10 @@ mod _orchestration_type;
 
 mod _platform_capability;
 
+mod _queue_snapshot_capacity_usage;
+
+mod _queue_snapshot_utilization_detail;
+
 mod _repository_credentials;
 
 mod _resource_requirement;
@@ -518,6 +546,10 @@ mod _service_environment_status;
 mod _service_environment_type;
 
 mod _service_job_attempt_detail;
+
+mod _service_job_capacity_usage_detail;
+
+mod _service_job_capacity_usage_summary;
 
 mod _service_job_evaluate_on_exit;
 

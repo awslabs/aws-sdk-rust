@@ -25,6 +25,14 @@ pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_iceberg_metadata::IcebergMetadataBuilder;
 
+pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;
+
+pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpecBuilder;
+
+pub use crate::types::_iceberg_partition_field::IcebergPartitionFieldBuilder;
+
 pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
 
 pub use crate::types::_schema_field::SchemaFieldBuilder;

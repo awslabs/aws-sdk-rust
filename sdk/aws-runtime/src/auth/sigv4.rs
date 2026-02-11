@@ -8,11 +8,13 @@ use crate::auth::{
     extract_endpoint_auth_scheme_signing_region, PayloadSigningOverride,
     SigV4OperationSigningConfig, SigV4SessionTokenNameOverride, SigV4SigningError,
 };
+use crate::content_encoding::{DeferredSignerSender, SignChunk};
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
-    sign, SignableBody, SignableRequest, SigningParams, SigningSettings,
+    sign, SignableBody, SignableRequest, SigningError, SigningParams, SigningSettings,
 };
-use aws_sigv4::sign::v4;
+use aws_sigv4::sign::v4::{self, sign_chunk, sign_trailer};
+use aws_smithy_async::time::{SharedTimeSource, StaticTimeSource};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, Sign,
@@ -20,9 +22,11 @@ use aws_smithy_runtime_api::client::auth::{
 use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
+use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::region::SigningRegion;
 use aws_types::SigningName;
+use bytes::Bytes;
 use std::borrow::Cow;
 use std::time::SystemTime;
 
@@ -180,8 +184,21 @@ impl Sign for SigV4Signer {
             Self::settings(&operation_config)
         };
 
-        let signing_params =
-            Self::signing_params(settings, identity, &operation_config, request_time)?;
+        let chunk_signer_sender = config_bag.load::<DeferredSignerSender>();
+
+        // `sender_and_settings` needs to include a cloned `settings` to satisfy Rust's borrow checker
+        let (signing_params, sender_and_settings) = if let Some(signer_sender) = chunk_signer_sender
+        {
+            // Clone settings since we'll need it later for the message signer
+            let signing_params =
+                Self::signing_params(settings.clone(), identity, &operation_config, request_time)?;
+            (signing_params, Some((signer_sender, settings)))
+        } else {
+            // Move settings since we won't need it later
+            let signing_params =
+                Self::signing_params(settings, identity, &operation_config, request_time)?;
+            (signing_params, None)
+        };
 
         let (signing_instructions, _signature) = {
             // A body that is already in memory can be signed directly. A body that is not in memory
@@ -220,16 +237,43 @@ impl Sign for SigV4Signer {
         }
         .into_parts();
 
+        if let Some((signer_sender, settings)) = sender_and_settings {
+            let time_source = StaticTimeSource::new(request_time).into();
+            let region = operation_config
+                .region
+                .clone()
+                .expect("`Self::signing_params` above would have errored, if region was missing");
+            let name = operation_config
+                .name
+                .clone()
+                .expect("`Self::signing_params` above would have errored, if name was missing");
+            signer_sender
+                .send(Box::new(SigV4MessageSigner::new(
+                    _signature.clone(),
+                    identity.clone(),
+                    region,
+                    name,
+                    time_source,
+                    settings,
+                )) as _)
+                .expect("failed to send deferred signer");
+        };
+
         // If this is an event stream operation, set up the event stream signer
         #[cfg(feature = "event-stream")]
         {
+            use crate::auth::sigv4::SigV4MessageSigner;
             use aws_smithy_eventstream::frame::DeferredSignerSender;
-            use event_stream::SigV4MessageSigner;
 
             if let Some(signer_sender) = config_bag.load::<DeferredSignerSender>() {
                 let time_source = runtime_components.time_source().unwrap_or_default();
-                let region = operation_config.region.clone().unwrap();
-                let name = operation_config.name.clone().unwrap();
+                let region = operation_config.region.clone().expect(
+                    "`Self::signing_params` above would have errored, if region was missing",
+                );
+                let name = operation_config
+                    .name
+                    .clone()
+                    .expect("`Self::signing_params` above would have errored, if name was missing");
                 signer_sender
                     .send(Box::new(SigV4MessageSigner::new(
                         _signature,
@@ -237,6 +281,7 @@ impl Sign for SigV4Signer {
                         region,
                         name,
                         time_source,
+                        (),
                     )) as _)
                     .expect("failed to send deferred signer");
             }
@@ -246,80 +291,98 @@ impl Sign for SigV4Signer {
     }
 }
 
-#[cfg(feature = "event-stream")]
-mod event_stream {
-    use aws_sigv4::event_stream::{sign_empty_message, sign_message};
-    use aws_sigv4::sign::v4;
-    use aws_smithy_async::time::SharedTimeSource;
-    use aws_smithy_eventstream::frame::{SignMessage, SignMessageError};
-    use aws_smithy_runtime_api::client::identity::Identity;
-    use aws_smithy_types::event_stream::Message;
-    use aws_types::region::SigningRegion;
-    use aws_types::SigningName;
+#[derive(Debug)]
+pub(crate) struct SigV4MessageSigner<S> {
+    running_signature: String,
+    identity: Identity,
+    signing_region: SigningRegion,
+    signing_name: SigningName,
+    time: SharedTimeSource,
+    signing_settings: S,
+}
 
-    /// Event Stream SigV4 signing implementation.
-    #[derive(Debug)]
-    pub(super) struct SigV4MessageSigner {
-        last_signature: String,
+impl<S> SigV4MessageSigner<S>
+where
+    S: Clone + Default,
+{
+    pub(crate) fn new(
+        running_signature: String,
         identity: Identity,
         signing_region: SigningRegion,
         signing_name: SigningName,
         time: SharedTimeSource,
-    }
-
-    impl SigV4MessageSigner {
-        pub(super) fn new(
-            last_signature: String,
-            identity: Identity,
-            signing_region: SigningRegion,
-            signing_name: SigningName,
-            time: SharedTimeSource,
-        ) -> Self {
-            Self {
-                last_signature,
-                identity,
-                signing_region,
-                signing_name,
-                time,
-            }
-        }
-
-        fn signing_params(&self) -> v4::SigningParams<'_, ()> {
-            let builder = v4::SigningParams::builder()
-                .identity(&self.identity)
-                .region(self.signing_region.as_ref())
-                .name(self.signing_name.as_ref())
-                .time(self.time.now())
-                .settings(());
-            builder.build().unwrap()
+        signing_settings: S,
+    ) -> Self {
+        Self {
+            running_signature,
+            identity,
+            signing_region,
+            signing_name,
+            time,
+            signing_settings,
         }
     }
 
-    impl SignMessage for SigV4MessageSigner {
+    fn signing_params(&self) -> v4::SigningParams<'_, S> {
+        let builder = v4::SigningParams::builder()
+            .identity(&self.identity)
+            .region(self.signing_region.as_ref())
+            .name(self.signing_name.as_ref())
+            .time(self.time.now())
+            .settings(self.signing_settings.clone());
+        builder.build().unwrap()
+    }
+}
+
+impl SignChunk for SigV4MessageSigner<SigningSettings> {
+    fn chunk_signature(&mut self, chunk: &Bytes) -> Result<String, SigningError> {
+        let params = self.signing_params();
+        let (_, signature) = sign_chunk(chunk, &self.running_signature, &params)?.into_parts();
+        self.running_signature = signature.clone();
+        Ok(signature)
+    }
+
+    fn trailer_signature(&mut self, trailing_headers: &Headers) -> Result<String, SigningError> {
+        let params = self.signing_params();
+        let (_, signature) =
+            sign_trailer(trailing_headers, &self.running_signature, &params)?.into_parts();
+        self.running_signature = signature.clone();
+        Ok(signature)
+    }
+}
+
+#[cfg(feature = "event-stream")]
+mod event_stream {
+    use crate::auth::sigv4::SigV4MessageSigner;
+    use aws_sigv4::event_stream::{sign_empty_message, sign_message};
+    use aws_smithy_eventstream::frame::{SignMessage, SignMessageError};
+    use aws_smithy_types::event_stream::Message;
+
+    impl SignMessage for SigV4MessageSigner<()> {
         fn sign(&mut self, message: Message) -> Result<Message, SignMessageError> {
             let (signed_message, signature) = {
                 let params = self.signing_params();
-                sign_message(&message, &self.last_signature, &params)?.into_parts()
+                sign_message(&message, &self.running_signature, &params)?.into_parts()
             };
-            self.last_signature = signature;
+            self.running_signature = signature;
             Ok(signed_message)
         }
 
         fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>> {
             let (signed_message, signature) = {
                 let params = self.signing_params();
-                sign_empty_message(&self.last_signature, &params)
+                sign_empty_message(&self.running_signature, &params)
                     .ok()?
                     .into_parts()
             };
-            self.last_signature = signature;
+            self.running_signature = signature;
             Some(Ok(signed_message))
         }
     }
 
     #[cfg(test)]
     mod tests {
-        use crate::auth::sigv4::event_stream::SigV4MessageSigner;
+        use crate::auth::sigv4::SigV4MessageSigner;
         use aws_credential_types::Credentials;
         use aws_smithy_async::time::SharedTimeSource;
         use aws_smithy_eventstream::frame::SignMessage;
@@ -343,6 +406,7 @@ mod event_stream {
                 SigningRegion::from(region),
                 SigningName::from_static("transcribe"),
                 SharedTimeSource::new(UNIX_EPOCH + Duration::new(1611160427, 0)),
+                (),
             ));
             let mut signatures = Vec::new();
             for _ in 0..5 {

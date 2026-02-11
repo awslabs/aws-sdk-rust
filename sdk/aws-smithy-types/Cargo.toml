@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "1.4.3"
+version = "1.4.4"
 authors = [
     "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
     "Russell Cohen <rcoh@amazon.com>",
@@ -9,7 +9,7 @@ description = "Types for smithy-rs codegen."
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/smithy-lang/smithy-rs"
-rust-version = "1.88"
+rust-version = "1.91"
 
 [features]
 byte-stream-poll-next = []

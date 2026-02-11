@@ -1283,6 +1283,58 @@ impl Builder {
         }
         self
     }
+    /// Sets the chunk size for [`aws-chunked encoding`].
+    ///
+    /// Pass `Some(size)` to use a specific chunk size (minimum 8 KiB).
+    /// Pass `None` to use the content-length as chunk size (no chunking).
+    ///
+    /// The minimum chunk size of 8 KiB is validated when the request is sent.
+    ///
+    /// **Note:** This setting only applies to operations that support aws-chunked encoding
+    /// and has no effect on other operations. If this method is not invoked, a default
+    /// chunk size of 64 KiB is used.
+    ///
+    /// [`aws-chunked encoding`]: https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html
+    ///
+    /// # Example - Custom chunk size
+    /// ```no_run
+    /// # use aws_sdk_s3::{Client, Config};
+    /// # async fn example(client: Client) -> Result<(), Box<dyn std::error::Error>> {
+    /// let config = Config::builder()
+    ///     .aws_chunked_encoding_chunk_size(Some(10240)) // 10 KiB chunks
+    ///     .build();
+    /// let client = Client::from_conf(config);
+    /// # Ok(())
+    /// # }
+    /// ```
+    ///
+    /// # Example - No chunking (buffers entire body in memory)
+    /// ```no_run
+    /// # use aws_sdk_s3::{Client, Config};
+    /// # async fn example(client: Client) -> Result<(), Box<dyn std::error::Error>> {
+    /// let config = Config::builder()
+    ///     .aws_chunked_encoding_chunk_size(None) // Use entire content as one chunk
+    ///     .build();
+    /// let client = Client::from_conf(config);
+    /// # Ok(())
+    /// # }
+    /// ```
+    pub fn aws_chunked_encoding_chunk_size(mut self, chunk_size: ::std::option::Option<usize>) -> Self {
+        self.set_aws_chunked_encoding_chunk_size(::std::option::Option::Some(chunk_size));
+        self
+    }
+
+    /// Sets the chunk size for aws-chunked encoding.
+    pub fn set_aws_chunked_encoding_chunk_size(&mut self, chunk_size: ::std::option::Option<::std::option::Option<usize>>) -> &mut Self {
+        if let ::std::option::Option::Some(chunk_size) = chunk_size {
+            let chunk_size = match chunk_size {
+                ::std::option::Option::Some(size) => crate::aws_chunked::ChunkSize::Configured(size),
+                ::std::option::Option::None => crate::aws_chunked::ChunkSize::DisableChunking,
+            };
+            self.push_runtime_plugin(crate::aws_chunked::ChunkSizeRuntimePlugin::new(chunk_size).into_shared());
+        }
+        self
+    }
     /// Sets the [`behavior major version`](crate::config::BehaviorVersion).
     ///
     /// Over time, new best-practice behaviors are introduced. However, these behaviors might not be backwards

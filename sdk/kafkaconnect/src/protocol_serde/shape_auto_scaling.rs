@@ -33,5 +33,11 @@ pub fn ser_auto_scaling(
         crate::protocol_serde::shape_scale_out_policy::ser_scale_out_policy(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if input.max_autoscaling_task_count != 0 {
+        object.key("maxAutoscalingTaskCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.max_autoscaling_task_count).into()),
+        );
+    }
     Ok(())
 }

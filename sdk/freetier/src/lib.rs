@@ -15,6 +15,7 @@
 #![allow(clippy::deprecated_semver)]
 #![allow(rustdoc::bare_urls)]
 #![allow(rustdoc::redundant_explicit_links)]
+#![allow(rustdoc::broken_intra_doc_links)]
 #![allow(rustdoc::invalid_html_tags)]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
@@ -41,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-freetier = "1.91.0"
+//! aws-sdk-freetier = "1.92.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

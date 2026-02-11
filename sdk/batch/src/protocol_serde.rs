@@ -245,6 +245,8 @@ pub(crate) mod shape_node_overrides;
 
 pub(crate) mod shape_node_properties;
 
+pub(crate) mod shape_queue_snapshot_utilization_detail;
+
 pub(crate) mod shape_retry_strategy;
 
 pub(crate) mod shape_scheduling_policy_detail_list;
@@ -256,6 +258,8 @@ pub(crate) mod shape_service_environment_detail_list;
 pub(crate) mod shape_service_environment_order;
 
 pub(crate) mod shape_service_job_attempt_details;
+
+pub(crate) mod shape_service_job_capacity_usage_detail_list;
 
 pub(crate) mod shape_service_job_retry_strategy;
 
@@ -284,6 +288,8 @@ pub(crate) mod shape_eks_pod_properties_override;
 pub(crate) mod shape_ephemeral_storage;
 
 pub(crate) mod shape_evaluate_on_exit;
+
+pub(crate) mod shape_fairshare_utilization_detail;
 
 pub(crate) mod shape_fargate_platform_configuration;
 
@@ -315,6 +321,8 @@ pub(crate) mod shape_node_property_override;
 
 pub(crate) mod shape_node_range_property;
 
+pub(crate) mod shape_queue_snapshot_capacity_usage_list;
+
 pub(crate) mod shape_repository_credentials;
 
 pub(crate) mod shape_resource_requirement;
@@ -330,6 +338,8 @@ pub(crate) mod shape_secret;
 pub(crate) mod shape_service_environment_detail;
 
 pub(crate) mod shape_service_job_attempt_detail;
+
+pub(crate) mod shape_service_job_capacity_usage_detail;
 
 pub(crate) mod shape_service_job_evaluate_on_exit;
 
@@ -379,11 +389,15 @@ pub(crate) mod shape_eks_properties_detail;
 
 pub(crate) mod shape_eks_volume;
 
+pub(crate) mod shape_fairshare_capacity_utilization_list;
+
 pub(crate) mod shape_front_of_queue_job_summary;
 
 pub(crate) mod shape_host;
 
 pub(crate) mod shape_image_pull_secret;
+
+pub(crate) mod shape_job_capacity_usage_summary_list;
 
 pub(crate) mod shape_job_dependency_list;
 
@@ -399,7 +413,11 @@ pub(crate) mod shape_parameters_map;
 
 pub(crate) mod shape_platform_capability_list;
 
+pub(crate) mod shape_queue_snapshot_capacity_usage;
+
 pub(crate) mod shape_service_environment_orders;
+
+pub(crate) mod shape_service_job_capacity_usage_summary_list;
 
 pub(crate) mod shape_task_container_overrides;
 
@@ -441,7 +459,11 @@ pub(crate) mod shape_environment_variables;
 
 pub(crate) mod shape_evaluate_on_exit_list;
 
+pub(crate) mod shape_fairshare_capacity_utilization;
+
 pub(crate) mod shape_firelens_configuration;
+
+pub(crate) mod shape_job_capacity_usage_summary;
 
 pub(crate) mod shape_list_ecs_task_details;
 
@@ -456,6 +478,8 @@ pub(crate) mod shape_node_range_properties;
 pub(crate) mod shape_resource_requirements;
 
 pub(crate) mod shape_secret_list;
+
+pub(crate) mod shape_service_job_capacity_usage_summary;
 
 pub(crate) mod shape_share_attributes_list;
 
@@ -483,6 +507,8 @@ pub(crate) mod shape_eks_containers;
 
 pub(crate) mod shape_eks_volumes;
 
+pub(crate) mod shape_fairshare_capacity_usage_list;
+
 pub(crate) mod shape_image_pull_secrets;
 
 pub(crate) mod shape_launch_template_specification_override_list;
@@ -504,6 +530,8 @@ pub(crate) mod shape_eks_attempt_container_detail;
 pub(crate) mod shape_eks_container_detail;
 
 pub(crate) mod shape_eks_labels_map;
+
+pub(crate) mod shape_fairshare_capacity_usage;
 
 pub(crate) mod shape_list_task_container_details;
 

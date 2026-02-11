@@ -12,7 +12,7 @@ pub struct ListJobsByConsumableResourceSummary {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job definition.</p>
     pub job_definition_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The fair-share scheduling policy identifier for the job.</p>
+    /// <p>The fair-share scheduling identifier for the job.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job. Can be one of:</p>
     /// <ul>
@@ -60,7 +60,7 @@ impl ListJobsByConsumableResourceSummary {
     pub fn job_definition_arn(&self) -> ::std::option::Option<&str> {
         self.job_definition_arn.as_deref()
     }
-    /// <p>The fair-share scheduling policy identifier for the job.</p>
+    /// <p>The fair-share scheduling identifier for the job.</p>
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
@@ -188,17 +188,17 @@ impl ListJobsByConsumableResourceSummaryBuilder {
     pub fn get_job_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_definition_arn
     }
-    /// <p>The fair-share scheduling policy identifier for the job.</p>
+    /// <p>The fair-share scheduling identifier for the job.</p>
     pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fair-share scheduling policy identifier for the job.</p>
+    /// <p>The fair-share scheduling identifier for the job.</p>
     pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_identifier = input;
         self
     }
-    /// <p>The fair-share scheduling policy identifier for the job.</p>
+    /// <p>The fair-share scheduling identifier for the job.</p>
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }

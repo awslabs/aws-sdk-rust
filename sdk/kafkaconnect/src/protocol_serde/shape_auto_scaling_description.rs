@@ -46,6 +46,13 @@ where
                                 crate::protocol_serde::shape_scale_out_policy_description::de_scale_out_policy_description(tokens, _value)?,
                             );
                         }
+                        "maxAutoscalingTaskCount" => {
+                            builder = builder.set_max_autoscaling_task_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

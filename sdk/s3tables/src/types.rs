@@ -51,6 +51,18 @@ pub use crate::types::_table_metadata::TableMetadata;
 
 pub use crate::types::_iceberg_metadata::IcebergMetadata;
 
+pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
+
+pub use crate::types::_iceberg_sort_field::IcebergSortField;
+
+pub use crate::types::_iceberg_null_order::IcebergNullOrder;
+
+pub use crate::types::_iceberg_sort_direction::IcebergSortDirection;
+
+pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpec;
+
+pub use crate::types::_iceberg_partition_field::IcebergPartitionField;
+
 pub use crate::types::_iceberg_schema::IcebergSchema;
 
 pub use crate::types::_schema_field::SchemaField;
@@ -93,9 +105,21 @@ mod _iceberg_compaction_strategy;
 
 mod _iceberg_metadata;
 
+mod _iceberg_null_order;
+
+mod _iceberg_partition_field;
+
+mod _iceberg_partition_spec;
+
 mod _iceberg_schema;
 
 mod _iceberg_snapshot_management_settings;
+
+mod _iceberg_sort_direction;
+
+mod _iceberg_sort_field;
+
+mod _iceberg_sort_order;
 
 mod _iceberg_unreferenced_file_removal_settings;
 

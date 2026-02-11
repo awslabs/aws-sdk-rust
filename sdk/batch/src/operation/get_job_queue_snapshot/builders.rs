@@ -22,7 +22,7 @@ impl crate::operation::get_job_queue_snapshot::builders::GetJobQueueSnapshotInpu
 }
 /// Fluent builder constructing a request to `GetJobQueueSnapshot`.
 ///
-/// <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a single job queue.</p>
+/// <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a single job queue and includes capacity utilization, including total usage and breakdown by share for fairshare scheduling job queues.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetJobQueueSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

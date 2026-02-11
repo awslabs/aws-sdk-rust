@@ -150,6 +150,7 @@ mod test_serde {
     use serde::{Deserialize, Serialize};
 
     #[derive(Deserialize, Serialize, Debug, PartialEq)]
+    #[allow(dead_code)]
     struct ForTest {
         blob: Blob,
     }

@@ -3,8 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::date_time::format_date;
-use aws_smithy_runtime_api::client::identity::Identity;
+use crate::{
+    date_time::{format_date, format_date_time},
+    http_request::SigningError,
+    SigningOutput,
+};
+use aws_credential_types::Credentials;
+use aws_smithy_runtime_api::{client::identity::Identity, http::Headers};
+use bytes::Bytes;
 use hmac::{digest::FixedOutput, Hmac, Mac};
 use sha2::{Digest, Sha256};
 use std::time::SystemTime;
@@ -80,7 +86,9 @@ pub struct SigningParams<'a, S> {
     pub(crate) settings: S,
 }
 
-const HMAC_256: &str = "AWS4-HMAC-SHA256";
+pub(crate) const HMAC_SHA256: &str = "AWS4-HMAC-SHA256";
+const HMAC_SHA256_PAYLOAD: &str = "AWS4-HMAC-SHA256-PAYLOAD";
+const HMAC_SHA256_TRAILER: &str = "AWS4-HMAC-SHA256-TRAILER";
 
 impl<S> SigningParams<'_, S> {
     /// Returns the region that will be used to sign SigV4 requests
@@ -95,7 +103,7 @@ impl<S> SigningParams<'_, S> {
 
     /// Return the name of the algorithm used to sign requests
     pub fn algorithm(&self) -> &'static str {
-        HMAC_256
+        HMAC_SHA256
     }
 }
 
@@ -189,6 +197,91 @@ pub mod signing_params {
             })
         }
     }
+}
+
+/// Signs `chunk` with the given `running_signature` and `params`.
+///
+/// See [signature calculation details](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html#sigv4-chunked-body-definition).
+pub fn sign_chunk<'a, S>(
+    chunk: &Bytes,
+    running_signature: &'a str,
+    params: &'a SigningParams<'a, S>,
+) -> Result<SigningOutput<()>, SigningError> {
+    let payload_hash = format!("{}\n{}", sha256_hex_string([]), sha256_hex_string(chunk));
+    sign_streaming_payload(
+        HMAC_SHA256_PAYLOAD,
+        running_signature,
+        params,
+        &payload_hash,
+    )
+}
+
+/// Signs trailing headers with the given `running_signature` and `params`.
+///
+/// See [signature calculation details](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming-trailers.html#example-signature-calculations-trailing-header).
+pub fn sign_trailer<'a, S>(
+    headers: &'a Headers,
+    running_signature: &'a str,
+    params: &'a SigningParams<'a, S>,
+) -> Result<SigningOutput<()>, SigningError> {
+    fn canonical_headers(headers: &Headers) -> Vec<u8> {
+        let mut sorted_headers: Vec<_> = headers.iter().collect();
+        sorted_headers.sort_by_key(|(name, _)| name.to_lowercase());
+        let mut buf = Vec::with_capacity(sorted_headers.len());
+        for (name, value) in sorted_headers.iter() {
+            buf.extend_from_slice(name.to_lowercase().as_bytes());
+            buf.extend_from_slice(b":");
+            buf.extend_from_slice(value.trim().as_bytes());
+            buf.extend_from_slice(b"\n");
+        }
+        buf
+    }
+
+    let payload_hash = sha256_hex_string(canonical_headers(headers));
+    sign_streaming_payload(
+        HMAC_SHA256_TRAILER,
+        running_signature,
+        params,
+        &payload_hash,
+    )
+}
+
+fn sign_streaming_payload<'a, S>(
+    algorithm: &str,
+    running_signature: &'a str,
+    params: &'a SigningParams<'a, S>,
+    payload_hash: &str,
+) -> Result<SigningOutput<()>, SigningError> {
+    let creds = params
+        .identity
+        .data::<Credentials>()
+        .expect("identity must contain credentials");
+
+    let signing_key = generate_signing_key(
+        creds.secret_access_key(),
+        params.time,
+        params.region,
+        params.name,
+    );
+
+    let scope = format!(
+        "{}/{}/{}/aws4_request",
+        format_date(params.time),
+        params.region,
+        params.name
+    );
+
+    let string_to_sign = format!(
+        "{}\n{}\n{}\n{}\n{}",
+        algorithm,
+        format_date_time(params.time),
+        scope,
+        running_signature,
+        payload_hash,
+    );
+
+    let signature = calculate_signature(signing_key, string_to_sign.as_bytes());
+    Ok(SigningOutput::new((), signature))
 }
 
 #[cfg(test)]

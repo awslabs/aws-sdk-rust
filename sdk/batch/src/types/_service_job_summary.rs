@@ -6,6 +6,8 @@
 pub struct ServiceJobSummary {
     /// <p>Information about the latest attempt for the service job.</p>
     pub latest_attempt: ::std::option::Option<crate::types::LatestServiceJobAttempt>,
+    /// <p>The capacity usage information for this service job, including the unit of measure and quantity of resources being used.</p>
+    pub capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageSummary>>,
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub created_at: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) of the service job.</p>
@@ -14,6 +16,8 @@ pub struct ServiceJobSummary {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.</p>
+    pub scheduled_at: ::std::option::Option<i64>,
     /// <p>The type of service job. For SageMaker Training jobs, this value is <code>SAGEMAKER_TRAINING</code>.</p>
     pub service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     /// <p>The share identifier for the job.</p>
@@ -32,6 +36,12 @@ impl ServiceJobSummary {
     pub fn latest_attempt(&self) -> ::std::option::Option<&crate::types::LatestServiceJobAttempt> {
         self.latest_attempt.as_ref()
     }
+    /// <p>The capacity usage information for this service job, including the unit of measure and quantity of resources being used.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_usage.is_none()`.
+    pub fn capacity_usage(&self) -> &[crate::types::ServiceJobCapacityUsageSummary] {
+        self.capacity_usage.as_deref().unwrap_or_default()
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<i64> {
         self.created_at
@@ -47,6 +57,10 @@ impl ServiceJobSummary {
     /// <p>The name of the service job.</p>
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.</p>
+    pub fn scheduled_at(&self) -> ::std::option::Option<i64> {
+        self.scheduled_at
     }
     /// <p>The type of service job. For SageMaker Training jobs, this value is <code>SAGEMAKER_TRAINING</code>.</p>
     pub fn service_job_type(&self) -> ::std::option::Option<&crate::types::ServiceJobType> {
@@ -85,10 +99,12 @@ impl ServiceJobSummary {
 #[non_exhaustive]
 pub struct ServiceJobSummaryBuilder {
     pub(crate) latest_attempt: ::std::option::Option<crate::types::LatestServiceJobAttempt>,
+    pub(crate) capacity_usage: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageSummary>>,
     pub(crate) created_at: ::std::option::Option<i64>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scheduled_at: ::std::option::Option<i64>,
     pub(crate) service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceJobStatus>,
@@ -110,6 +126,26 @@ impl ServiceJobSummaryBuilder {
     /// <p>Information about the latest attempt for the service job.</p>
     pub fn get_latest_attempt(&self) -> &::std::option::Option<crate::types::LatestServiceJobAttempt> {
         &self.latest_attempt
+    }
+    /// Appends an item to `capacity_usage`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_usage`](Self::set_capacity_usage).
+    ///
+    /// <p>The capacity usage information for this service job, including the unit of measure and quantity of resources being used.</p>
+    pub fn capacity_usage(mut self, input: crate::types::ServiceJobCapacityUsageSummary) -> Self {
+        let mut v = self.capacity_usage.unwrap_or_default();
+        v.push(input);
+        self.capacity_usage = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The capacity usage information for this service job, including the unit of measure and quantity of resources being used.</p>
+    pub fn set_capacity_usage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageSummary>>) -> Self {
+        self.capacity_usage = input;
+        self
+    }
+    /// <p>The capacity usage information for this service job, including the unit of measure and quantity of resources being used.</p>
+    pub fn get_capacity_usage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceJobCapacityUsageSummary>> {
+        &self.capacity_usage
     }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
     pub fn created_at(mut self, input: i64) -> Self {
@@ -168,6 +204,20 @@ impl ServiceJobSummaryBuilder {
     /// <p>The name of the service job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.</p>
+    pub fn scheduled_at(mut self, input: i64) -> Self {
+        self.scheduled_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.</p>
+    pub fn set_scheduled_at(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.scheduled_at = input;
+        self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for execution.</p>
+    pub fn get_scheduled_at(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_at
     }
     /// <p>The type of service job. For SageMaker Training jobs, this value is <code>SAGEMAKER_TRAINING</code>.</p>
     /// This field is required.
@@ -258,10 +308,12 @@ impl ServiceJobSummaryBuilder {
     pub fn build(self) -> crate::types::ServiceJobSummary {
         crate::types::ServiceJobSummary {
             latest_attempt: self.latest_attempt,
+            capacity_usage: self.capacity_usage,
             created_at: self.created_at,
             job_arn: self.job_arn,
             job_id: self.job_id,
             job_name: self.job_name,
+            scheduled_at: self.scheduled_at,
             service_job_type: self.service_job_type,
             share_identifier: self.share_identifier,
             status: self.status,

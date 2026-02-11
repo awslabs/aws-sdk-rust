@@ -9,15 +9,27 @@ pub fn ser_iceberg_metadata(
         crate::protocol_serde::shape_iceberg_schema::ser_iceberg_schema(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.properties {
+    if let Some(var_3) = &input.partition_spec {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("properties").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_4 = object.key("partitionSpec").start_object();
+        crate::protocol_serde::shape_iceberg_partition_spec::ser_iceberg_partition_spec(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.write_order {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("writeOrder").start_object();
+        crate::protocol_serde::shape_iceberg_sort_order::ser_iceberg_sort_order(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.properties {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("properties").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_4.finish();
+        object_8.finish();
     }
     Ok(())
 }

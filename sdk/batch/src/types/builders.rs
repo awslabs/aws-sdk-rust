@@ -141,6 +141,8 @@ pub use crate::types::_fargate_platform_configuration::FargatePlatformConfigurat
 
 pub use crate::types::_service_job_summary::ServiceJobSummaryBuilder;
 
+pub use crate::types::_service_job_capacity_usage_summary::ServiceJobCapacityUsageSummaryBuilder;
+
 pub use crate::types::_latest_service_job_attempt::LatestServiceJobAttemptBuilder;
 
 pub use crate::types::_service_resource_id::ServiceResourceIdBuilder;
@@ -159,11 +161,25 @@ pub use crate::types::_array_properties_summary::ArrayPropertiesSummaryBuilder;
 
 pub use crate::types::_container_summary::ContainerSummaryBuilder;
 
+pub use crate::types::_job_capacity_usage_summary::JobCapacityUsageSummaryBuilder;
+
 pub use crate::types::_consumable_resource_summary::ConsumableResourceSummaryBuilder;
+
+pub use crate::types::_queue_snapshot_utilization_detail::QueueSnapshotUtilizationDetailBuilder;
+
+pub use crate::types::_fairshare_utilization_detail::FairshareUtilizationDetailBuilder;
+
+pub use crate::types::_fairshare_capacity_utilization::FairshareCapacityUtilizationBuilder;
+
+pub use crate::types::_fairshare_capacity_usage::FairshareCapacityUsageBuilder;
+
+pub use crate::types::_queue_snapshot_capacity_usage::QueueSnapshotCapacityUsageBuilder;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetailBuilder;
 
 pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummaryBuilder;
+
+pub use crate::types::_service_job_capacity_usage_detail::ServiceJobCapacityUsageDetailBuilder;
 
 pub use crate::types::_service_job_attempt_detail::ServiceJobAttemptDetailBuilder;
 
