@@ -25,5 +25,10 @@ pub fn ser_cpu_options_request(
     if let Some(var_6) = &input.amd_sev_snp {
         scope_5.string(var_6.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("NestedVirtualization");
+    if let Some(var_8) = &input.nested_virtualization {
+        scope_7.string(var_8.as_str());
+    }
     Ok(())
 }

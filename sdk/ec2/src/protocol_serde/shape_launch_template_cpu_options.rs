@@ -51,6 +51,20 @@ pub fn de_launch_template_cpu_options(
                 builder = builder.set_amd_sev_snp(var_3);
             }
             ,
+            s if s.matches("nestedVirtualization") /* NestedVirtualization com.amazonaws.ec2#LaunchTemplateCpuOptions$NestedVirtualization */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<crate::types::NestedVirtualizationSpecification, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NestedVirtualizationSpecification::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nested_virtualization(var_4);
+            }
+            ,
             _ => {}
         }
     }

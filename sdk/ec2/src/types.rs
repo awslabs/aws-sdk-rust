@@ -209,6 +209,8 @@ pub use crate::types::_capacity_reservation_preference::CapacityReservationPrefe
 
 pub use crate::types::_cpu_options::CpuOptions;
 
+pub use crate::types::_nested_virtualization_specification::NestedVirtualizationSpecification;
+
 pub use crate::types::_amd_sev_snp_specification::AmdSevSnpSpecification;
 
 pub use crate::types::_virtualization_type::VirtualizationType;
@@ -4244,6 +4246,8 @@ mod _nat_gateway_attached_appliance;
 mod _nat_gateway_state;
 
 mod _native_application_oidc_options;
+
+mod _nested_virtualization_specification;
 
 mod _network_acl;
 

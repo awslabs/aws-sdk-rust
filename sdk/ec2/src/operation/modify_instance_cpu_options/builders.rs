@@ -153,6 +153,20 @@ impl ModifyInstanceCpuOptionsFluentBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         self.inner.get_threads_per_core()
     }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::NestedVirtualizationSpecification) -> Self {
+        self.inner = self.inner.nested_virtualization(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::NestedVirtualizationSpecification>) -> Self {
+        self.inner = self.inner.set_nested_virtualization(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::NestedVirtualizationSpecification> {
+        self.inner.get_nested_virtualization()
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

@@ -101,6 +101,20 @@ pub fn de_modify_instance_cpu_options(
                 builder = builder.set_threads_per_core(var_3);
             }
             ,
+            s if s.matches("nestedVirtualization") /* NestedVirtualization com.amazonaws.ec2.synthetic#ModifyInstanceCpuOptionsOutput$NestedVirtualization */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<crate::types::NestedVirtualizationSpecification, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NestedVirtualizationSpecification::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nested_virtualization(var_4);
+            }
+            ,
             _ => {}
         }
     }

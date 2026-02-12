@@ -9,6 +9,8 @@ pub struct ModifyInstanceCpuOptionsInput {
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads to run for each CPU core.</p>
     pub threads_per_core: ::std::option::Option<i32>,
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -24,6 +26,10 @@ impl ModifyInstanceCpuOptionsInput {
     /// <p>The number of threads to run for each CPU core.</p>
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn nested_virtualization(&self) -> ::std::option::Option<&crate::types::NestedVirtualizationSpecification> {
+        self.nested_virtualization.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -44,6 +50,7 @@ pub struct ModifyInstanceCpuOptionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ModifyInstanceCpuOptionsInputBuilder {
@@ -63,7 +70,6 @@ impl ModifyInstanceCpuOptionsInputBuilder {
         &self.instance_id
     }
     /// <p>The number of CPU cores to activate for the specified instance.</p>
-    /// This field is required.
     pub fn core_count(mut self, input: i32) -> Self {
         self.core_count = ::std::option::Option::Some(input);
         self
@@ -78,7 +84,6 @@ impl ModifyInstanceCpuOptionsInputBuilder {
         &self.core_count
     }
     /// <p>The number of threads to run for each CPU core.</p>
-    /// This field is required.
     pub fn threads_per_core(mut self, input: i32) -> Self {
         self.threads_per_core = ::std::option::Option::Some(input);
         self
@@ -91,6 +96,20 @@ impl ModifyInstanceCpuOptionsInputBuilder {
     /// <p>The number of threads to run for each CPU core.</p>
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::NestedVirtualizationSpecification) -> Self {
+        self.nested_virtualization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::NestedVirtualizationSpecification>) -> Self {
+        self.nested_virtualization = input;
+        self
+    }
+    /// <p>Indicates whether to enable or disable nested virtualization for the instance. When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::NestedVirtualizationSpecification> {
+        &self.nested_virtualization
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -117,6 +136,7 @@ impl ModifyInstanceCpuOptionsInputBuilder {
             instance_id: self.instance_id,
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
+            nested_virtualization: self.nested_virtualization,
             dry_run: self.dry_run,
         })
     }
