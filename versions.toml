@@ -1,7 +1,7 @@
 smithy_rs_revision = '24040039c4116447cb8ab318c0df8be726d577c2'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ["aws-sdk-evidently", "aws-sdk-iotanalytics"]
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.8.14'
