@@ -10,6 +10,8 @@ pub struct CpuOptionsRequest {
     pub threads_per_core: ::std::option::Option<i32>,
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
+    /// <p>Indicates whether to enable the instance for nested virtualization. Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
 }
 impl CpuOptionsRequest {
     /// <p>The number of CPU cores for the instance.</p>
@@ -23,6 +25,10 @@ impl CpuOptionsRequest {
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
+    }
+    /// <p>Indicates whether to enable the instance for nested virtualization. Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn nested_virtualization(&self) -> ::std::option::Option<&crate::types::NestedVirtualizationSpecification> {
+        self.nested_virtualization.as_ref()
     }
 }
 impl CpuOptionsRequest {
@@ -39,6 +45,7 @@ pub struct CpuOptionsRequestBuilder {
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
     pub(crate) amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
+    pub(crate) nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
 }
 impl CpuOptionsRequestBuilder {
     /// <p>The number of CPU cores for the instance.</p>
@@ -83,12 +90,27 @@ impl CpuOptionsRequestBuilder {
     pub fn get_amd_sev_snp(&self) -> &::std::option::Option<crate::types::AmdSevSnpSpecification> {
         &self.amd_sev_snp
     }
+    /// <p>Indicates whether to enable the instance for nested virtualization. Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::NestedVirtualizationSpecification) -> Self {
+        self.nested_virtualization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable the instance for nested virtualization. Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::NestedVirtualizationSpecification>) -> Self {
+        self.nested_virtualization = input;
+        self
+    }
+    /// <p>Indicates whether to enable the instance for nested virtualization. Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::NestedVirtualizationSpecification> {
+        &self.nested_virtualization
+    }
     /// Consumes the builder and constructs a [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
     pub fn build(self) -> crate::types::CpuOptionsRequest {
         crate::types::CpuOptionsRequest {
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
             amd_sev_snp: self.amd_sev_snp,
+            nested_virtualization: self.nested_virtualization,
         }
     }
 }

@@ -27,9 +27,14 @@ pub fn ser_modify_instance_cpu_options_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_7 = writer.prefix("DryRun");
-    if let Some(var_8) = &input.dry_run {
-        scope_7.boolean(*var_8);
+    let mut scope_7 = writer.prefix("NestedVirtualization");
+    if let Some(var_8) = &input.nested_virtualization {
+        scope_7.string(var_8.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("DryRun");
+    if let Some(var_10) = &input.dry_run {
+        scope_9.boolean(*var_10);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

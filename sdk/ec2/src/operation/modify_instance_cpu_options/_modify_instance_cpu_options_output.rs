@@ -9,6 +9,8 @@ pub struct ModifyInstanceCpuOptionsOutput {
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads that are running per CPU core for the specified instance after the update.</p>
     pub threads_per_core: ::std::option::Option<i32>,
+    /// <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+    pub nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceCpuOptionsOutput {
@@ -23,6 +25,10 @@ impl ModifyInstanceCpuOptionsOutput {
     /// <p>The number of threads that are running per CPU core for the specified instance after the update.</p>
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
+    }
+    /// <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+    pub fn nested_virtualization(&self) -> ::std::option::Option<&crate::types::NestedVirtualizationSpecification> {
+        self.nested_virtualization.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceCpuOptionsOutput {
@@ -44,6 +50,7 @@ pub struct ModifyInstanceCpuOptionsOutputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationSpecification>,
     _request_id: Option<String>,
 }
 impl ModifyInstanceCpuOptionsOutputBuilder {
@@ -89,6 +96,20 @@ impl ModifyInstanceCpuOptionsOutputBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
     }
+    /// <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::NestedVirtualizationSpecification) -> Self {
+        self.nested_virtualization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::NestedVirtualizationSpecification>) -> Self {
+        self.nested_virtualization = input;
+        self
+    }
+    /// <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::NestedVirtualizationSpecification> {
+        &self.nested_virtualization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +125,7 @@ impl ModifyInstanceCpuOptionsOutputBuilder {
             instance_id: self.instance_id,
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
+            nested_virtualization: self.nested_virtualization,
             _request_id: self._request_id,
         }
     }
