@@ -2650,6 +2650,10 @@ source_hash = '1a330afb842b2cf0bdf00f7d24cb4eecf4061c45342adad8b04a43d842c11d63'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '55172bf7582711b37ac10895afe8320dcad2e6342d196c92c6b172674dca6a61'
+
+[release]
+tag = 'release-2026-02-13'
+
 [release.crates]
 aws-sdk-cloudwatch = '1.104.0'
 aws-sdk-connect = '1.159.0'
