@@ -21,6 +21,8 @@ pub struct UpdateClusterInput {
     pub cluster_role: ::std::option::Option<::std::string::String>,
     /// <p>Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.</p>
     pub auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
 }
 impl UpdateClusterInput {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -65,6 +67,10 @@ impl UpdateClusterInput {
     pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::ClusterAutoScalingConfig> {
         self.auto_scaling.as_ref()
     }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn orchestrator(&self) -> ::std::option::Option<&crate::types::ClusterOrchestrator> {
+        self.orchestrator.as_ref()
+    }
 }
 impl UpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
@@ -86,6 +92,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) node_provisioning_mode: ::std::option::Option<crate::types::ClusterNodeProvisioningMode>,
     pub(crate) cluster_role: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling: ::std::option::Option<crate::types::ClusterAutoScalingConfig>,
+    pub(crate) orchestrator: ::std::option::Option<crate::types::ClusterOrchestrator>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -238,6 +245,20 @@ impl UpdateClusterInputBuilder {
     pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
         &self.auto_scaling
     }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn orchestrator(mut self, input: crate::types::ClusterOrchestrator) -> Self {
+        self.orchestrator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn set_orchestrator(mut self, input: ::std::option::Option<crate::types::ClusterOrchestrator>) -> Self {
+        self.orchestrator = input;
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
+        &self.orchestrator
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -252,6 +273,7 @@ impl UpdateClusterInputBuilder {
             node_provisioning_mode: self.node_provisioning_mode,
             cluster_role: self.cluster_role,
             auto_scaling: self.auto_scaling,
+            orchestrator: self.orchestrator,
         })
     }
 }

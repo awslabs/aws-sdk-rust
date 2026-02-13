@@ -453,6 +453,12 @@ pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeCo
 
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteriaBuilder;
 
+pub use crate::types::_notification_search_summary::NotificationSearchSummaryBuilder;
+
+pub use crate::types::_notification_search_criteria::NotificationSearchCriteriaBuilder;
+
+pub use crate::types::_notification_search_filter::NotificationSearchFilterBuilder;
+
 pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 
 pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifierBuilder;
@@ -593,6 +599,8 @@ pub use crate::types::_view_summary::ViewSummaryBuilder;
 
 pub use crate::types::_user_summary::UserSummaryBuilder;
 
+pub use crate::types::_user_notification_summary::UserNotificationSummaryBuilder;
+
 pub use crate::types::_use_case::UseCaseBuilder;
 
 pub use crate::types::_traffic_distribution_group_user_summary::TrafficDistributionGroupUserSummaryBuilder;
@@ -660,6 +668,8 @@ pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummaryB
 pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummaryBuilder;
 
 pub use crate::types::_phone_number_summary::PhoneNumberSummaryBuilder;
+
+pub use crate::types::_notification::NotificationBuilder;
 
 pub use crate::types::_lex_bot::LexBotBuilder;
 

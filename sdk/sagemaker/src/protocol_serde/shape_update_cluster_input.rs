@@ -63,5 +63,11 @@ pub fn ser_update_cluster_input_input(
         crate::protocol_serde::shape_cluster_auto_scaling_config::ser_cluster_auto_scaling_config(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.orchestrator {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("Orchestrator").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator::ser_cluster_orchestrator(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

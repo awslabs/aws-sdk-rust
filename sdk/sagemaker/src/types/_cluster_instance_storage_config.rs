@@ -6,6 +6,10 @@
 pub enum ClusterInstanceStorageConfig {
     /// <p>Defines the configuration for attaching additional Amazon Elastic Block Store (EBS) volumes to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to <code>/opt/sagemaker</code>.</p>
     EbsVolumeConfig(crate::types::ClusterEbsVolumeConfig),
+    /// <p>Defines the configuration for attaching an Amazon FSx for Lustre file system to the instances in the SageMaker HyperPod cluster instance group.</p>
+    FsxLustreConfig(crate::types::ClusterFsxLustreConfig),
+    /// <p>Defines the configuration for attaching an Amazon FSx for OpenZFS file system to the instances in the SageMaker HyperPod cluster instance group.</p>
+    FsxOpenZfsConfig(crate::types::ClusterFsxOpenZfsConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,6 @@ pub enum ClusterInstanceStorageConfig {
     Unknown,
 }
 impl ClusterInstanceStorageConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EbsVolumeConfig`](crate::types::ClusterInstanceStorageConfig::EbsVolumeConfig), extracting the inner [`ClusterEbsVolumeConfig`](crate::types::ClusterEbsVolumeConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ebs_volume_config(&self) -> ::std::result::Result<&crate::types::ClusterEbsVolumeConfig, &Self> {
@@ -30,6 +33,32 @@ impl ClusterInstanceStorageConfig {
     /// Returns true if this is a [`EbsVolumeConfig`](crate::types::ClusterInstanceStorageConfig::EbsVolumeConfig).
     pub fn is_ebs_volume_config(&self) -> bool {
         self.as_ebs_volume_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FsxLustreConfig`](crate::types::ClusterInstanceStorageConfig::FsxLustreConfig), extracting the inner [`ClusterFsxLustreConfig`](crate::types::ClusterFsxLustreConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_fsx_lustre_config(&self) -> ::std::result::Result<&crate::types::ClusterFsxLustreConfig, &Self> {
+        if let ClusterInstanceStorageConfig::FsxLustreConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FsxLustreConfig`](crate::types::ClusterInstanceStorageConfig::FsxLustreConfig).
+    pub fn is_fsx_lustre_config(&self) -> bool {
+        self.as_fsx_lustre_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FsxOpenZfsConfig`](crate::types::ClusterInstanceStorageConfig::FsxOpenZfsConfig), extracting the inner [`ClusterFsxOpenZfsConfig`](crate::types::ClusterFsxOpenZfsConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_fsx_open_zfs_config(&self) -> ::std::result::Result<&crate::types::ClusterFsxOpenZfsConfig, &Self> {
+        if let ClusterInstanceStorageConfig::FsxOpenZfsConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FsxOpenZfsConfig`](crate::types::ClusterInstanceStorageConfig::FsxOpenZfsConfig).
+    pub fn is_fsx_open_zfs_config(&self) -> bool {
+        self.as_fsx_open_zfs_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

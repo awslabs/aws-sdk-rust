@@ -10,6 +10,18 @@ pub fn ser_cluster_instance_storage_config(
             crate::protocol_serde::shape_cluster_ebs_volume_config::ser_cluster_ebs_volume_config(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ClusterInstanceStorageConfig::FsxLustreConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_12.key("FsxLustreConfig").start_object();
+            crate::protocol_serde::shape_cluster_fsx_lustre_config::ser_cluster_fsx_lustre_config(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::ClusterInstanceStorageConfig::FsxOpenZfsConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_12.key("FsxOpenZfsConfig").start_object();
+            crate::protocol_serde::shape_cluster_fsx_open_zfs_config::ser_cluster_fsx_open_zfs_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::ClusterInstanceStorageConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ClusterInstanceStorageConfig",
@@ -53,6 +65,16 @@ where
                         "EbsVolumeConfig" => Some(crate::types::ClusterInstanceStorageConfig::EbsVolumeConfig(
                             crate::protocol_serde::shape_cluster_ebs_volume_config::de_cluster_ebs_volume_config(tokens, _value)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'EbsVolumeConfig' cannot be null"),
+                            )?,
+                        )),
+                        "FsxLustreConfig" => Some(crate::types::ClusterInstanceStorageConfig::FsxLustreConfig(
+                            crate::protocol_serde::shape_cluster_fsx_lustre_config::de_cluster_fsx_lustre_config(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FsxLustreConfig' cannot be null"),
+                            )?,
+                        )),
+                        "FsxOpenZfsConfig" => Some(crate::types::ClusterInstanceStorageConfig::FsxOpenZfsConfig(
+                            crate::protocol_serde::shape_cluster_fsx_open_zfs_config::de_cluster_fsx_open_zfs_config(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'FsxOpenZfsConfig' cannot be null"),
                             )?,
                         )),
                         _ => {

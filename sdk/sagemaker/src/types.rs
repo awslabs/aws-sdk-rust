@@ -465,6 +465,14 @@ pub use crate::types::_fair_share::FairShare;
 
 pub use crate::types::_priority_class::PriorityClass;
 
+pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
+
+pub use crate::types::_cluster_orchestrator_slurm_config::ClusterOrchestratorSlurmConfig;
+
+pub use crate::types::_cluster_slurm_config_strategy::ClusterSlurmConfigStrategy;
+
+pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
+
 pub use crate::types::_cluster_auto_scaling_config::ClusterAutoScalingConfig;
 
 pub use crate::types::_cluster_auto_scaler_type::ClusterAutoScalerType;
@@ -491,6 +499,10 @@ pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 
 pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
 
+pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfig;
+
+pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfig;
+
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
@@ -500,6 +512,10 @@ pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirement
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptions;
 
 pub use crate::types::_cluster_spot_options::ClusterSpotOptions;
+
+pub use crate::types::_cluster_slurm_config::ClusterSlurmConfig;
+
+pub use crate::types::_cluster_slurm_node_type::ClusterSlurmNodeType;
 
 pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfig;
 
@@ -1945,10 +1961,6 @@ pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingCon
 
 pub use crate::types::_cluster_auto_scaling_status::ClusterAutoScalingStatus;
 
-pub use crate::types::_cluster_orchestrator::ClusterOrchestrator;
-
-pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfig;
-
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetails;
 
 pub use crate::types::_environment_config_details::EnvironmentConfigDetails;
@@ -1956,6 +1968,8 @@ pub use crate::types::_environment_config_details::EnvironmentConfigDetails;
 pub use crate::types::_instance_group_status::InstanceGroupStatus;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
+
+pub use crate::types::_cluster_slurm_config_details::ClusterSlurmConfigDetails;
 
 pub use crate::types::_software_update_status::SoftwareUpdateStatus;
 
@@ -2479,6 +2493,10 @@ mod _cluster_event_resource_type;
 
 mod _cluster_event_summary;
 
+mod _cluster_fsx_lustre_config;
+
+mod _cluster_fsx_open_zfs_config;
+
 mod _cluster_instance_group_details;
 
 mod _cluster_instance_group_specification;
@@ -2521,11 +2539,21 @@ mod _cluster_orchestrator;
 
 mod _cluster_orchestrator_eks_config;
 
+mod _cluster_orchestrator_slurm_config;
+
 mod _cluster_restricted_instance_group_details;
 
 mod _cluster_restricted_instance_group_specification;
 
 mod _cluster_scheduler_config_summary;
+
+mod _cluster_slurm_config;
+
+mod _cluster_slurm_config_details;
+
+mod _cluster_slurm_config_strategy;
+
+mod _cluster_slurm_node_type;
 
 mod _cluster_sort_by;
 

@@ -13,6 +13,7 @@
 /// # let runtime = unimplemented!();
 /// match runtime {
 ///     Runtime::Dotnetcore31 => { /* ... */ },
+///     Runtime::Dotnet10 => { /* ... */ },
 ///     Runtime::Dotnet6 => { /* ... */ },
 ///     Runtime::Dotnet7 => { /* ... */ },
 ///     Runtime::Go1X => { /* ... */ },
@@ -25,6 +26,7 @@
 ///     Runtime::Nodejs14X => { /* ... */ },
 ///     Runtime::Nodejs16X => { /* ... */ },
 ///     Runtime::Nodejs18X => { /* ... */ },
+///     Runtime::Nodejs24X => { /* ... */ },
 ///     Runtime::Python310 => { /* ... */ },
 ///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
@@ -64,6 +66,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Dotnetcore31,
     #[allow(missing_docs)] // documentation missing in model
+    Dotnet10,
+    #[allow(missing_docs)] // documentation missing in model
     Dotnet6,
     #[allow(missing_docs)] // documentation missing in model
     Dotnet7,
@@ -88,6 +92,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs18X,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs24X,
+    #[allow(missing_docs)] // documentation missing in model
     Python310,
     #[allow(missing_docs)] // documentation missing in model
     Python311,
@@ -111,6 +117,7 @@ impl ::std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
             "DOTNETCORE_3_1" => Runtime::Dotnetcore31,
+            "DOTNET_10" => Runtime::Dotnet10,
             "DOTNET_6" => Runtime::Dotnet6,
             "DOTNET_7" => Runtime::Dotnet7,
             "GO_1_X" => Runtime::Go1X,
@@ -123,6 +130,7 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_14_X" => Runtime::Nodejs14X,
             "NODEJS_16_X" => Runtime::Nodejs16X,
             "NODEJS_18_X" => Runtime::Nodejs18X,
+            "NODEJS_24_X" => Runtime::Nodejs24X,
             "PYTHON_3_10" => Runtime::Python310,
             "PYTHON_3_11" => Runtime::Python311,
             "PYTHON_3_7" => Runtime::Python37,
@@ -147,6 +155,7 @@ impl Runtime {
     pub fn as_str(&self) -> &str {
         match self {
             Runtime::Dotnetcore31 => "DOTNETCORE_3_1",
+            Runtime::Dotnet10 => "DOTNET_10",
             Runtime::Dotnet6 => "DOTNET_6",
             Runtime::Dotnet7 => "DOTNET_7",
             Runtime::Go1X => "GO_1_X",
@@ -159,6 +168,7 @@ impl Runtime {
             Runtime::Nodejs14X => "NODEJS_14_X",
             Runtime::Nodejs16X => "NODEJS_16_X",
             Runtime::Nodejs18X => "NODEJS_18_X",
+            Runtime::Nodejs24X => "NODEJS_24_X",
             Runtime::Python310 => "PYTHON_3_10",
             Runtime::Python311 => "PYTHON_3_11",
             Runtime::Python37 => "PYTHON_3_7",
@@ -174,6 +184,7 @@ impl Runtime {
     pub const fn values() -> &'static [&'static str] {
         &[
             "DOTNETCORE_3_1",
+            "DOTNET_10",
             "DOTNET_6",
             "DOTNET_7",
             "GO_1_X",
@@ -186,6 +197,7 @@ impl Runtime {
             "NODEJS_14_X",
             "NODEJS_16_X",
             "NODEJS_18_X",
+            "NODEJS_24_X",
             "PYTHON_3_10",
             "PYTHON_3_11",
             "PYTHON_3_7",
@@ -218,6 +230,7 @@ impl ::std::fmt::Display for Runtime {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Runtime::Dotnetcore31 => write!(f, "DOTNETCORE_3_1"),
+            Runtime::Dotnet10 => write!(f, "DOTNET_10"),
             Runtime::Dotnet6 => write!(f, "DOTNET_6"),
             Runtime::Dotnet7 => write!(f, "DOTNET_7"),
             Runtime::Go1X => write!(f, "GO_1_X"),
@@ -230,6 +243,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs14X => write!(f, "NODEJS_14_X"),
             Runtime::Nodejs16X => write!(f, "NODEJS_16_X"),
             Runtime::Nodejs18X => write!(f, "NODEJS_18_X"),
+            Runtime::Nodejs24X => write!(f, "NODEJS_24_X"),
             Runtime::Python310 => write!(f, "PYTHON_3_10"),
             Runtime::Python311 => write!(f, "PYTHON_3_11"),
             Runtime::Python37 => write!(f, "PYTHON_3_7"),

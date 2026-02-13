@@ -6,6 +6,8 @@
 pub struct Region {
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub opt_in_status: ::std::option::Option<::std::string::String>,
+    /// <p>The geography information for the Region. The geography is returned as a list.</p>
+    pub geography: ::std::option::Option<::std::vec::Vec<crate::types::RegionGeography>>,
     /// <p>The name of the Region.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The Region service endpoint.</p>
@@ -15,6 +17,12 @@ impl Region {
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(&self) -> ::std::option::Option<&str> {
         self.opt_in_status.as_deref()
+    }
+    /// <p>The geography information for the Region. The geography is returned as a list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geography.is_none()`.
+    pub fn geography(&self) -> &[crate::types::RegionGeography] {
+        self.geography.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Region.</p>
     pub fn region_name(&self) -> ::std::option::Option<&str> {
@@ -37,6 +45,7 @@ impl Region {
 #[non_exhaustive]
 pub struct RegionBuilder {
     pub(crate) opt_in_status: ::std::option::Option<::std::string::String>,
+    pub(crate) geography: ::std::option::Option<::std::vec::Vec<crate::types::RegionGeography>>,
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }
@@ -54,6 +63,26 @@ impl RegionBuilder {
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub fn get_opt_in_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_in_status
+    }
+    /// Appends an item to `geography`.
+    ///
+    /// To override the contents of this collection use [`set_geography`](Self::set_geography).
+    ///
+    /// <p>The geography information for the Region. The geography is returned as a list.</p>
+    pub fn geography(mut self, input: crate::types::RegionGeography) -> Self {
+        let mut v = self.geography.unwrap_or_default();
+        v.push(input);
+        self.geography = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The geography information for the Region. The geography is returned as a list.</p>
+    pub fn set_geography(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionGeography>>) -> Self {
+        self.geography = input;
+        self
+    }
+    /// <p>The geography information for the Region. The geography is returned as a list.</p>
+    pub fn get_geography(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionGeography>> {
+        &self.geography
     }
     /// <p>The name of the Region.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +116,7 @@ impl RegionBuilder {
     pub fn build(self) -> crate::types::Region {
         crate::types::Region {
             opt_in_status: self.opt_in_status,
+            geography: self.geography,
             region_name: self.region_name,
             endpoint: self.endpoint,
         }

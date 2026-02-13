@@ -6,11 +6,17 @@
 pub struct ClusterOrchestrator {
     /// <p>The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.</p>
     pub eks: ::std::option::Option<crate::types::ClusterOrchestratorEksConfig>,
+    /// <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+    pub slurm: ::std::option::Option<crate::types::ClusterOrchestratorSlurmConfig>,
 }
 impl ClusterOrchestrator {
     /// <p>The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.</p>
     pub fn eks(&self) -> ::std::option::Option<&crate::types::ClusterOrchestratorEksConfig> {
         self.eks.as_ref()
+    }
+    /// <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+    pub fn slurm(&self) -> ::std::option::Option<&crate::types::ClusterOrchestratorSlurmConfig> {
+        self.slurm.as_ref()
     }
 }
 impl ClusterOrchestrator {
@@ -25,6 +31,7 @@ impl ClusterOrchestrator {
 #[non_exhaustive]
 pub struct ClusterOrchestratorBuilder {
     pub(crate) eks: ::std::option::Option<crate::types::ClusterOrchestratorEksConfig>,
+    pub(crate) slurm: ::std::option::Option<crate::types::ClusterOrchestratorSlurmConfig>,
 }
 impl ClusterOrchestratorBuilder {
     /// <p>The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.</p>
@@ -41,8 +48,25 @@ impl ClusterOrchestratorBuilder {
     pub fn get_eks(&self) -> &::std::option::Option<crate::types::ClusterOrchestratorEksConfig> {
         &self.eks
     }
+    /// <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+    pub fn slurm(mut self, input: crate::types::ClusterOrchestratorSlurmConfig) -> Self {
+        self.slurm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+    pub fn set_slurm(mut self, input: ::std::option::Option<crate::types::ClusterOrchestratorSlurmConfig>) -> Self {
+        self.slurm = input;
+        self
+    }
+    /// <p>The Slurm orchestrator configuration for the SageMaker HyperPod cluster.</p>
+    pub fn get_slurm(&self) -> &::std::option::Option<crate::types::ClusterOrchestratorSlurmConfig> {
+        &self.slurm
+    }
     /// Consumes the builder and constructs a [`ClusterOrchestrator`](crate::types::ClusterOrchestrator).
     pub fn build(self) -> crate::types::ClusterOrchestrator {
-        crate::types::ClusterOrchestrator { eks: self.eks }
+        crate::types::ClusterOrchestrator {
+            eks: self.eks,
+            slurm: self.slurm,
+        }
     }
 }

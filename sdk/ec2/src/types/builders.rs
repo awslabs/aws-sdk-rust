@@ -1229,6 +1229,8 @@ pub use crate::types::_replace_root_volume_task::ReplaceRootVolumeTaskBuilder;
 
 pub use crate::types::_region::RegionBuilder;
 
+pub use crate::types::_region_geography::RegionGeographyBuilder;
+
 pub use crate::types::_public_ipv4_pool::PublicIpv4PoolBuilder;
 
 pub use crate::types::_principal_id_format::PrincipalIdFormatBuilder;
@@ -1586,6 +1588,10 @@ pub use crate::types::_s3_storage::S3StorageBuilder;
 pub use crate::types::_subscription::SubscriptionBuilder;
 
 pub use crate::types::_availability_zone::AvailabilityZoneBuilder;
+
+pub use crate::types::_availability_zone_sub_geography::AvailabilityZoneSubGeographyBuilder;
+
+pub use crate::types::_availability_zone_geography::AvailabilityZoneGeographyBuilder;
 
 pub use crate::types::_availability_zone_message::AvailabilityZoneMessageBuilder;
 

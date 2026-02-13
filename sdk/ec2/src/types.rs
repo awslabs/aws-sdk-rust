@@ -1883,6 +1883,8 @@ pub use crate::types::_replace_root_volume_task_state::ReplaceRootVolumeTaskStat
 
 pub use crate::types::_region::Region;
 
+pub use crate::types::_region_geography::RegionGeography;
+
 pub use crate::types::_public_ipv4_pool::PublicIpv4Pool;
 
 pub use crate::types::_principal_id_format::PrincipalIdFormat;
@@ -2437,6 +2439,10 @@ pub use crate::types::_availability_zone::AvailabilityZone;
 
 pub use crate::types::_availability_zone_state::AvailabilityZoneState;
 
+pub use crate::types::_availability_zone_sub_geography::AvailabilityZoneSubGeography;
+
+pub use crate::types::_availability_zone_geography::AvailabilityZoneGeography;
+
 pub use crate::types::_availability_zone_message::AvailabilityZoneMessage;
 
 pub use crate::types::_availability_zone_opt_in_status::AvailabilityZoneOptInStatus;
@@ -2825,11 +2831,15 @@ mod _availability_zone;
 
 mod _availability_zone_address;
 
+mod _availability_zone_geography;
+
 mod _availability_zone_message;
 
 mod _availability_zone_opt_in_status;
 
 mod _availability_zone_state;
+
+mod _availability_zone_sub_geography;
 
 mod _available_capacity;
 
@@ -4494,6 +4504,8 @@ mod _recurring_charge_frequency;
 mod _referenced_security_group;
 
 mod _region;
+
+mod _region_geography;
 
 mod _regional_summary;
 

@@ -87,7 +87,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Identity and Access Management | [aws-sdk-iam](https://crates.io/crates/aws-sdk-iam) ([docs](https://docs.rs/aws-sdk-iam)) |
 | AWS Invoicing | [aws-sdk-invoicing](https://crates.io/crates/aws-sdk-invoicing) ([docs](https://docs.rs/aws-sdk-invoicing)) |
 | AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) |
-| AWS IoT Analytics | [aws-sdk-iotanalytics](https://crates.io/crates/aws-sdk-iotanalytics) ([docs](https://docs.rs/aws-sdk-iotanalytics)) |
 | AWS IoT Core Device Advisor | [aws-sdk-iotdeviceadvisor](https://crates.io/crates/aws-sdk-iotdeviceadvisor) ([docs](https://docs.rs/aws-sdk-iotdeviceadvisor)) |
 | AWS IoT Data Plane | [aws-sdk-iotdataplane](https://crates.io/crates/aws-sdk-iotdataplane) ([docs](https://docs.rs/aws-sdk-iotdataplane)) |
 | AWS IoT Events | [aws-sdk-iotevents](https://crates.io/crates/aws-sdk-iotevents) ([docs](https://docs.rs/aws-sdk-iotevents)) |
@@ -211,7 +210,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CloudWatch Application Insights | [aws-sdk-applicationinsights](https://crates.io/crates/aws-sdk-applicationinsights) ([docs](https://docs.rs/aws-sdk-applicationinsights)) |
 | Amazon CloudWatch Application Signals | [aws-sdk-applicationsignals](https://crates.io/crates/aws-sdk-applicationsignals) ([docs](https://docs.rs/aws-sdk-applicationsignals)) |
 | Amazon CloudWatch Events | [aws-sdk-cloudwatchevents](https://crates.io/crates/aws-sdk-cloudwatchevents) ([docs](https://docs.rs/aws-sdk-cloudwatchevents)) |
-| Amazon CloudWatch Evidently | [aws-sdk-evidently](https://crates.io/crates/aws-sdk-evidently) ([docs](https://docs.rs/aws-sdk-evidently)) |
 | Amazon CloudWatch Internet Monitor | [aws-sdk-internetmonitor](https://crates.io/crates/aws-sdk-internetmonitor) ([docs](https://docs.rs/aws-sdk-internetmonitor)) |
 | Amazon CloudWatch Logs | [aws-sdk-cloudwatchlogs](https://crates.io/crates/aws-sdk-cloudwatchlogs) ([docs](https://docs.rs/aws-sdk-cloudwatchlogs)) |
 | Amazon CloudWatch Network Monitor | [aws-sdk-networkmonitor](https://crates.io/crates/aws-sdk-networkmonitor) ([docs](https://docs.rs/aws-sdk-networkmonitor)) |

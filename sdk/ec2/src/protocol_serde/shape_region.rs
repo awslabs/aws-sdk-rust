@@ -20,20 +20,17 @@ pub fn de_region(
                 builder = builder.set_opt_in_status(var_1);
             }
             ,
-            s if s.matches("regionName") /* RegionName com.amazonaws.ec2#Region$RegionName */ =>  {
+            s if s.matches("geographySet") /* Geography com.amazonaws.ec2#Region$Geography */ =>  {
                 let var_2 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_region_geography_list::de_region_geography_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_region_name(var_2);
+                builder = builder.set_geography(var_2);
             }
             ,
-            s if s.matches("regionEndpoint") /* Endpoint com.amazonaws.ec2#Region$Endpoint */ =>  {
+            s if s.matches("regionName") /* RegionName com.amazonaws.ec2#Region$RegionName */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -43,7 +40,20 @@ pub fn de_region(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_3);
+                builder = builder.set_region_name(var_3);
+            }
+            ,
+            s if s.matches("regionEndpoint") /* Endpoint com.amazonaws.ec2#Region$Endpoint */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_endpoint(var_4);
             }
             ,
             _ => {}

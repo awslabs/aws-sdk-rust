@@ -80,6 +80,8 @@ pub struct ClusterInstanceGroupDetails {
     pub software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
     /// <p>The configuration to use when updating the AMI versions.</p>
     pub active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    /// <p>The Slurm configuration for the instance group.</p>
+    pub slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfigDetails>,
 }
 impl ClusterInstanceGroupDetails {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -208,6 +210,10 @@ impl ClusterInstanceGroupDetails {
     pub fn active_software_update_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.active_software_update_config.as_ref()
     }
+    /// <p>The Slurm configuration for the instance group.</p>
+    pub fn slurm_config(&self) -> ::std::option::Option<&crate::types::ClusterSlurmConfigDetails> {
+        self.slurm_config.as_ref()
+    }
 }
 impl ClusterInstanceGroupDetails {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
@@ -243,6 +249,7 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) target_state_count: ::std::option::Option<i32>,
     pub(crate) software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
     pub(crate) active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    pub(crate) slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfigDetails>,
 }
 impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -678,6 +685,20 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_active_software_update_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.active_software_update_config
     }
+    /// <p>The Slurm configuration for the instance group.</p>
+    pub fn slurm_config(mut self, input: crate::types::ClusterSlurmConfigDetails) -> Self {
+        self.slurm_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Slurm configuration for the instance group.</p>
+    pub fn set_slurm_config(mut self, input: ::std::option::Option<crate::types::ClusterSlurmConfigDetails>) -> Self {
+        self.slurm_config = input;
+        self
+    }
+    /// <p>The Slurm configuration for the instance group.</p>
+    pub fn get_slurm_config(&self) -> &::std::option::Option<crate::types::ClusterSlurmConfigDetails> {
+        &self.slurm_config
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
     pub fn build(self) -> crate::types::ClusterInstanceGroupDetails {
         crate::types::ClusterInstanceGroupDetails {
@@ -704,6 +725,7 @@ impl ClusterInstanceGroupDetailsBuilder {
             target_state_count: self.target_state_count,
             software_update_status: self.software_update_status,
             active_software_update_config: self.active_software_update_config,
+            slurm_config: self.slurm_config,
         }
     }
 }

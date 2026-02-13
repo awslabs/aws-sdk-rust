@@ -115,6 +115,8 @@ pub(crate) mod shape_create_instance;
 
 pub(crate) mod shape_create_integration_association;
 
+pub(crate) mod shape_create_notification;
+
 pub(crate) mod shape_create_participant;
 
 pub(crate) mod shape_create_persistent_contact_association;
@@ -189,6 +191,8 @@ pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_delete_integration_association;
 
+pub(crate) mod shape_delete_notification;
+
 pub(crate) mod shape_delete_predefined_attribute;
 
 pub(crate) mod shape_delete_prompt;
@@ -260,6 +264,8 @@ pub(crate) mod shape_describe_instance;
 pub(crate) mod shape_describe_instance_attribute;
 
 pub(crate) mod shape_describe_instance_storage_config;
+
+pub(crate) mod shape_describe_notification;
 
 pub(crate) mod shape_describe_phone_number;
 
@@ -427,6 +433,8 @@ pub(crate) mod shape_list_lambda_functions;
 
 pub(crate) mod shape_list_lex_bots;
 
+pub(crate) mod shape_list_notifications;
+
 pub(crate) mod shape_list_phone_numbers;
 
 pub(crate) mod shape_list_phone_numbers_v2;
@@ -479,6 +487,8 @@ pub(crate) mod shape_list_use_cases;
 
 pub(crate) mod shape_list_user_hierarchy_groups;
 
+pub(crate) mod shape_list_user_notifications;
+
 pub(crate) mod shape_list_user_proficiencies;
 
 pub(crate) mod shape_list_users;
@@ -528,6 +538,8 @@ pub(crate) mod shape_search_evaluation_forms;
 pub(crate) mod shape_search_hours_of_operation_overrides;
 
 pub(crate) mod shape_search_hours_of_operations;
+
+pub(crate) mod shape_search_notifications;
 
 pub(crate) mod shape_search_predefined_attributes;
 
@@ -657,6 +669,8 @@ pub(crate) mod shape_update_instance_attribute;
 
 pub(crate) mod shape_update_instance_storage_config;
 
+pub(crate) mod shape_update_notification_content;
+
 pub(crate) mod shape_update_participant_authentication;
 
 pub(crate) mod shape_update_participant_role_config;
@@ -714,6 +728,8 @@ pub(crate) mod shape_update_user_hierarchy_group_name;
 pub(crate) mod shape_update_user_hierarchy_structure;
 
 pub(crate) mod shape_update_user_identity_info;
+
+pub(crate) mod shape_update_user_notification_status;
 
 pub(crate) mod shape_update_user_phone_config;
 
@@ -842,6 +858,8 @@ pub(crate) mod shape_create_hours_of_operation_override_input;
 pub(crate) mod shape_create_instance_input;
 
 pub(crate) mod shape_create_integration_association_input;
+
+pub(crate) mod shape_create_notification_input;
 
 pub(crate) mod shape_create_participant_input;
 
@@ -1009,6 +1027,8 @@ pub(crate) mod shape_search_hours_of_operation_overrides_input;
 
 pub(crate) mod shape_search_hours_of_operations_input;
 
+pub(crate) mod shape_search_notifications_input;
+
 pub(crate) mod shape_search_predefined_attributes_input;
 
 pub(crate) mod shape_search_prompts_input;
@@ -1139,6 +1159,8 @@ pub(crate) mod shape_update_instance_attribute_input;
 
 pub(crate) mod shape_update_instance_storage_config_input;
 
+pub(crate) mod shape_update_notification_content_input;
+
 pub(crate) mod shape_update_participant_authentication_input;
 
 pub(crate) mod shape_update_participant_role_config_input;
@@ -1196,6 +1218,8 @@ pub(crate) mod shape_update_user_hierarchy_input;
 pub(crate) mod shape_update_user_hierarchy_structure_input;
 
 pub(crate) mod shape_update_user_identity_info_input;
+
+pub(crate) mod shape_update_user_notification_status_input;
 
 pub(crate) mod shape_update_user_phone_config_input;
 
@@ -1539,6 +1563,16 @@ pub(crate) mod shape_metric_v2;
 
 pub(crate) mod shape_new_session_details;
 
+pub(crate) mod shape_notification;
+
+pub(crate) mod shape_notification_search_criteria;
+
+pub(crate) mod shape_notification_search_filter;
+
+pub(crate) mod shape_notification_search_summary_list;
+
+pub(crate) mod shape_notification_summary_list;
+
 pub(crate) mod shape_observation_summary;
 
 pub(crate) mod shape_origins_list;
@@ -1764,6 +1798,8 @@ pub(crate) mod shape_user_hierarchy_group_search_filter;
 pub(crate) mod shape_user_identity_info;
 
 pub(crate) mod shape_user_info;
+
+pub(crate) mod shape_user_notification_summary_list;
 
 pub(crate) mod shape_user_phone_config;
 
@@ -2071,6 +2107,10 @@ pub(crate) mod shape_name_criteria;
 
 pub(crate) mod shape_next_contacts;
 
+pub(crate) mod shape_notification_content;
+
+pub(crate) mod shape_notification_search_summary;
+
 pub(crate) mod shape_number_condition;
 
 pub(crate) mod shape_outbound_raw_message;
@@ -2120,6 +2160,8 @@ pub(crate) mod shape_read_only_field_info;
 pub(crate) mod shape_read_only_task_template_fields;
 
 pub(crate) mod shape_realtime_contact_analysis_segment;
+
+pub(crate) mod shape_recipient_list;
 
 pub(crate) mod shape_record_primary_value;
 
@@ -2222,6 +2264,8 @@ pub(crate) mod shape_url_metadata_signed_headers;
 pub(crate) mod shape_use_case;
 
 pub(crate) mod shape_user_data;
+
+pub(crate) mod shape_user_notification_summary;
 
 pub(crate) mod shape_user_quick_connect_config;
 

@@ -107,6 +107,18 @@ pub(crate) fn create_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_notification_output_output_correct_errors(
+    mut builder: crate::operation::create_notification::builders::CreateNotificationOutputBuilder,
+) -> crate::operation::create_notification::builders::CreateNotificationOutputBuilder {
+    if builder.notification_id.is_none() {
+        builder.notification_id = Some(Default::default())
+    }
+    if builder.notification_arn.is_none() {
+        builder.notification_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_push_notification_registration_output_output_correct_errors(
     mut builder: crate::operation::create_push_notification_registration::builders::CreatePushNotificationRegistrationOutputBuilder,
 ) -> crate::operation::create_push_notification_registration::builders::CreatePushNotificationRegistrationOutputBuilder {
@@ -272,6 +284,18 @@ pub(crate) fn describe_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_notification_output_output_correct_errors(
+    mut builder: crate::operation::describe_notification::builders::DescribeNotificationOutputBuilder,
+) -> crate::operation::describe_notification::builders::DescribeNotificationOutputBuilder {
+    if builder.notification.is_none() {
+        builder.notification = {
+            let builder = crate::types::builders::NotificationBuilder::default();
+            crate::serde_util::notification_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_rule_output_output_correct_errors(
     mut builder: crate::operation::describe_rule::builders::DescribeRuleOutputBuilder,
 ) -> crate::operation::describe_rule::builders::DescribeRuleOutputBuilder {
@@ -409,6 +433,15 @@ pub(crate) fn list_evaluation_forms_output_output_correct_errors(
 ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder {
     if builder.evaluation_form_summary_list.is_none() {
         builder.evaluation_form_summary_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_notifications_output_output_correct_errors(
+    mut builder: crate::operation::list_notifications::builders::ListNotificationsOutputBuilder,
+) -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
+    if builder.notification_summary_list.is_none() {
+        builder.notification_summary_list = Some(Default::default())
     }
     builder
 }
@@ -681,6 +714,19 @@ pub(crate) fn evaluation_form_correct_errors(
     }
     if builder.last_modified_by.is_none() {
         builder.last_modified_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn notification_correct_errors(mut builder: crate::types::builders::NotificationBuilder) -> crate::types::builders::NotificationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

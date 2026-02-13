@@ -5669,6 +5669,15 @@ pub(crate) fn clarify_shap_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_slurm_config_details_correct_errors(
+    mut builder: crate::types::builders::ClusterSlurmConfigDetailsBuilder,
+) -> crate::types::builders::ClusterSlurmConfigDetailsBuilder {
+    if builder.node_type.is_none() {
+        builder.node_type = "no value was set".parse::<crate::types::ClusterSlurmNodeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn compute_quota_resource_config_correct_errors(
     mut builder: crate::types::builders::ComputeQuotaResourceConfigBuilder,
 ) -> crate::types::builders::ComputeQuotaResourceConfigBuilder {
@@ -6275,6 +6284,27 @@ pub(crate) fn clarify_text_config_correct_errors(
     }
     if builder.granularity.is_none() {
         builder.granularity = "no value was set".parse::<crate::types::ClarifyTextGranularity>().ok()
+    }
+    builder
+}
+
+pub(crate) fn cluster_fsx_lustre_config_correct_errors(
+    mut builder: crate::types::builders::ClusterFsxLustreConfigBuilder,
+) -> crate::types::builders::ClusterFsxLustreConfigBuilder {
+    if builder.dns_name.is_none() {
+        builder.dns_name = Some(Default::default())
+    }
+    if builder.mount_name.is_none() {
+        builder.mount_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cluster_fsx_open_zfs_config_correct_errors(
+    mut builder: crate::types::builders::ClusterFsxOpenZfsConfigBuilder,
+) -> crate::types::builders::ClusterFsxOpenZfsConfigBuilder {
+    if builder.dns_name.is_none() {
+        builder.dns_name = Some(Default::default())
     }
     builder
 }

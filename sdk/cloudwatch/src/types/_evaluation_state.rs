@@ -12,6 +12,8 @@
 /// ```text
 /// # let evaluationstate = unimplemented!();
 /// match evaluationstate {
+///     EvaluationState::EvaluationError => { /* ... */ },
+///     EvaluationState::EvaluationFailure => { /* ... */ },
 ///     EvaluationState::PartialData => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +44,10 @@
 )]
 pub enum EvaluationState {
     #[allow(missing_docs)] // documentation missing in model
+    EvaluationError,
+    #[allow(missing_docs)] // documentation missing in model
+    EvaluationFailure,
+    #[allow(missing_docs)] // documentation missing in model
     PartialData,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +56,8 @@ pub enum EvaluationState {
 impl ::std::convert::From<&str> for EvaluationState {
     fn from(s: &str) -> Self {
         match s {
+            "EVALUATION_ERROR" => EvaluationState::EvaluationError,
+            "EVALUATION_FAILURE" => EvaluationState::EvaluationFailure,
             "PARTIAL_DATA" => EvaluationState::PartialData,
             other => EvaluationState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +74,15 @@ impl EvaluationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationState::EvaluationError => "EVALUATION_ERROR",
+            EvaluationState::EvaluationFailure => "EVALUATION_FAILURE",
             EvaluationState::PartialData => "PARTIAL_DATA",
             EvaluationState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PARTIAL_DATA"]
+        &["EVALUATION_ERROR", "EVALUATION_FAILURE", "PARTIAL_DATA"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationState {
@@ -95,6 +105,8 @@ impl EvaluationState {
 impl ::std::fmt::Display for EvaluationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationState::EvaluationError => write!(f, "EVALUATION_ERROR"),
+            EvaluationState::EvaluationFailure => write!(f, "EVALUATION_FAILURE"),
             EvaluationState::PartialData => write!(f, "PARTIAL_DATA"),
             EvaluationState::Unknown(value) => write!(f, "{value}"),
         }

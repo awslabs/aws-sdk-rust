@@ -5019,7 +5019,11 @@ pub(crate) mod shape_associated_target_network_set;
 
 pub(crate) mod shape_attachment_ena_srd_udp_specification;
 
+pub(crate) mod shape_availability_zone_geography_list;
+
 pub(crate) mod shape_availability_zone_message_list;
+
+pub(crate) mod shape_availability_zone_sub_geography_list;
 
 pub(crate) mod shape_available_capacity;
 
@@ -5305,6 +5309,8 @@ pub(crate) mod shape_recurring_charges_list;
 
 pub(crate) mod shape_referenced_security_group;
 
+pub(crate) mod shape_region_geography_list;
+
 pub(crate) mod shape_regional_summary_list;
 
 pub(crate) mod shape_reserved_instances_modification_result_list;
@@ -5441,7 +5447,11 @@ pub(crate) mod shape_architecture_type_list;
 
 pub(crate) mod shape_associated_target_network;
 
+pub(crate) mod shape_availability_zone_geography;
+
 pub(crate) mod shape_availability_zone_message;
+
+pub(crate) mod shape_availability_zone_sub_geography;
 
 pub(crate) mod shape_available_instance_capacity_list;
 
@@ -5578,6 +5588,8 @@ pub(crate) mod shape_private_dns_details;
 pub(crate) mod shape_private_ip_address_specification_list;
 
 pub(crate) mod shape_recurring_charge;
+
+pub(crate) mod shape_region_geography;
 
 pub(crate) mod shape_regional_summary;
 

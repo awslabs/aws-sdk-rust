@@ -47,6 +47,8 @@ pub use crate::types::_user_phone_config::UserPhoneConfig;
 
 pub use crate::types::_phone_type::PhoneType;
 
+pub use crate::types::_notification_status::NotificationStatus;
+
 pub use crate::types::_user_identity_info::UserIdentityInfo;
 
 pub use crate::types::_hierarchy_structure_update::HierarchyStructureUpdate;
@@ -230,6 +232,8 @@ pub use crate::types::_participant_timer_action::ParticipantTimerAction;
 pub use crate::types::_participant_timer_type::ParticipantTimerType;
 
 pub use crate::types::_timer_eligible_participant_roles::TimerEligibleParticipantRoles;
+
+pub use crate::types::_locale_code::LocaleCode;
 
 pub use crate::types::_instance_storage_config::InstanceStorageConfig;
 
@@ -663,6 +667,14 @@ pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeCo
 
 pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteria;
 
+pub use crate::types::_notification_search_summary::NotificationSearchSummary;
+
+pub use crate::types::_notification_priority::NotificationPriority;
+
+pub use crate::types::_notification_search_criteria::NotificationSearchCriteria;
+
+pub use crate::types::_notification_search_filter::NotificationSearchFilter;
+
 pub use crate::types::_hours_of_operation::HoursOfOperation;
 
 pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifier;
@@ -855,6 +867,10 @@ pub use crate::types::_view_summary::ViewSummary;
 
 pub use crate::types::_user_summary::UserSummary;
 
+pub use crate::types::_user_notification_summary::UserNotificationSummary;
+
+pub use crate::types::_notification_source::NotificationSource;
+
 pub use crate::types::_use_case::UseCase;
 
 pub use crate::types::_use_case_type::UseCaseType;
@@ -952,6 +968,8 @@ pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummary;
 pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummary;
 
 pub use crate::types::_phone_number_summary::PhoneNumberSummary;
+
+pub use crate::types::_notification::Notification;
 
 pub use crate::types::_lex_bot::LexBot;
 
@@ -1327,6 +1345,8 @@ pub use crate::types::_participant_token_credentials::ParticipantTokenCredential
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
 
+pub use crate::types::_configurable_notification_priority::ConfigurableNotificationPriority;
+
 pub use crate::types::_parent_hours_of_operation_config::ParentHoursOfOperationConfig;
 
 pub use crate::types::_initiate_as::InitiateAs;
@@ -1530,6 +1550,8 @@ mod _common_attribute_and_condition;
 mod _comparison;
 
 mod _condition;
+
+mod _configurable_notification_priority;
 
 mod _connection_data;
 
@@ -2089,6 +2111,8 @@ mod _list_flow_association_resource_type;
 
 mod _list_phone_numbers_summary;
 
+mod _locale_code;
+
 mod _match_criteria;
 
 mod _media_concurrency;
@@ -2133,11 +2157,25 @@ mod _next_contact_metadata;
 
 mod _next_contact_type;
 
+mod _notification;
+
 mod _notification_content_type;
 
 mod _notification_delivery_type;
 
+mod _notification_priority;
+
 mod _notification_recipient_type;
+
+mod _notification_search_criteria;
+
+mod _notification_search_filter;
+
+mod _notification_search_summary;
+
+mod _notification_source;
+
+mod _notification_status;
 
 mod _number_comparison_type;
 
@@ -2640,6 +2678,8 @@ mod _user_identity_info;
 mod _user_identity_info_lite;
 
 mod _user_info;
+
+mod _user_notification_summary;
 
 mod _user_phone_config;
 

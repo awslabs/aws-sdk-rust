@@ -329,6 +329,12 @@ pub use crate::types::_scheduler_config::SchedulerConfigBuilder;
 
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
+pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
+
+pub use crate::types::_cluster_orchestrator_slurm_config::ClusterOrchestratorSlurmConfigBuilder;
+
+pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
+
 pub use crate::types::_cluster_auto_scaling_config::ClusterAutoScalingConfigBuilder;
 
 pub use crate::types::_cluster_tiered_storage_config::ClusterTieredStorageConfigBuilder;
@@ -341,6 +347,10 @@ pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfigBuilder;
 
+pub use crate::types::_cluster_fsx_open_zfs_config::ClusterFsxOpenZfsConfigBuilder;
+
+pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfigBuilder;
+
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
 
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
@@ -350,6 +360,8 @@ pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirement
 pub use crate::types::_cluster_on_demand_options::ClusterOnDemandOptionsBuilder;
 
 pub use crate::types::_cluster_spot_options::ClusterSpotOptionsBuilder;
+
+pub use crate::types::_cluster_slurm_config::ClusterSlurmConfigBuilder;
 
 pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfigBuilder;
 
@@ -1285,15 +1297,13 @@ pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
 
 pub use crate::types::_cluster_auto_scaling_config_output::ClusterAutoScalingConfigOutputBuilder;
 
-pub use crate::types::_cluster_orchestrator::ClusterOrchestratorBuilder;
-
-pub use crate::types::_cluster_orchestrator_eks_config::ClusterOrchestratorEksConfigBuilder;
-
 pub use crate::types::_cluster_restricted_instance_group_details::ClusterRestrictedInstanceGroupDetailsBuilder;
 
 pub use crate::types::_environment_config_details::EnvironmentConfigDetailsBuilder;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
+
+pub use crate::types::_cluster_slurm_config_details::ClusterSlurmConfigDetailsBuilder;
 
 pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetailsBuilder;
 

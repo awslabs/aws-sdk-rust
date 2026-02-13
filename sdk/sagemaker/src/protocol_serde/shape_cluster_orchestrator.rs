@@ -9,6 +9,12 @@ pub fn ser_cluster_orchestrator(
         crate::protocol_serde::shape_cluster_orchestrator_eks_config::ser_cluster_orchestrator_eks_config(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.slurm {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Slurm").start_object();
+        crate::protocol_serde::shape_cluster_orchestrator_slurm_config::ser_cluster_orchestrator_slurm_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -31,6 +37,11 @@ where
                         "Eks" => {
                             builder = builder.set_eks(
                                 crate::protocol_serde::shape_cluster_orchestrator_eks_config::de_cluster_orchestrator_eks_config(tokens, _value)?,
+                            );
+                        }
+                        "Slurm" => {
+                            builder = builder.set_slurm(
+                                crate::protocol_serde::shape_cluster_orchestrator_slurm_config::de_cluster_orchestrator_slurm_config(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

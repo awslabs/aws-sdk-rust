@@ -148,8 +148,28 @@ pub fn de_availability_zone(
                 builder = builder.set_group_long_name(var_11);
             }
             ,
-            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
+            s if s.matches("geographySet") /* Geography com.amazonaws.ec2#AvailabilityZone$Geography */ =>  {
                 let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_availability_zone_geography_list::de_availability_zone_geography_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_geography(var_12);
+            }
+            ,
+            s if s.matches("subGeographySet") /* SubGeography com.amazonaws.ec2#AvailabilityZone$SubGeography */ =>  {
+                let var_13 =
+                    Some(
+                        crate::protocol_serde::shape_availability_zone_sub_geography_list::de_availability_zone_sub_geography_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_sub_geography(var_13);
+            }
+            ,
+            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
+                let var_14 =
                     Some(
                         Result::<crate::types::AvailabilityZoneState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AvailabilityZoneState::from(
@@ -159,7 +179,7 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_12);
+                builder = builder.set_state(var_14);
             }
             ,
             _ => {}

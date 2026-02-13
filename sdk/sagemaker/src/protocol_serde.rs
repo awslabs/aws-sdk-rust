@@ -2475,9 +2475,13 @@ pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_orchestrator_eks_config;
 
+pub(crate) mod shape_cluster_orchestrator_slurm_config;
+
 pub(crate) mod shape_cluster_restricted_instance_group_details;
 
 pub(crate) mod shape_cluster_scheduler_config_summary;
+
+pub(crate) mod shape_cluster_slurm_config;
 
 pub(crate) mod shape_cluster_summary;
 
@@ -3101,6 +3105,10 @@ pub(crate) mod shape_clarify_shap_config;
 
 pub(crate) mod shape_cluster_ebs_volume_config;
 
+pub(crate) mod shape_cluster_fsx_lustre_config;
+
+pub(crate) mod shape_cluster_fsx_open_zfs_config;
+
 pub(crate) mod shape_cluster_kubernetes_config_details;
 
 pub(crate) mod shape_cluster_kubernetes_labels;
@@ -3110,6 +3118,8 @@ pub(crate) mod shape_cluster_kubernetes_taint;
 pub(crate) mod shape_cluster_kubernetes_taints;
 
 pub(crate) mod shape_cluster_on_demand_options;
+
+pub(crate) mod shape_cluster_slurm_config_details;
 
 pub(crate) mod shape_cluster_spot_options;
 
@@ -3444,6 +3454,8 @@ pub(crate) mod shape_clarify_shap_baseline_config;
 pub(crate) mod shape_clarify_text_config;
 
 pub(crate) mod shape_cluster_metadata;
+
+pub(crate) mod shape_cluster_partition_names;
 
 pub(crate) mod shape_collection_parameters;
 

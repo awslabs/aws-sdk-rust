@@ -254,4 +254,18 @@ impl UpdateClusterFluentBuilder {
     pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::ClusterAutoScalingConfig> {
         self.inner.get_auto_scaling()
     }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn orchestrator(mut self, input: crate::types::ClusterOrchestrator) -> Self {
+        self.inner = self.inner.orchestrator(input);
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn set_orchestrator(mut self, input: ::std::option::Option<crate::types::ClusterOrchestrator>) -> Self {
+        self.inner = self.inner.set_orchestrator(input);
+        self
+    }
+    /// <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+    pub fn get_orchestrator(&self) -> &::std::option::Option<crate::types::ClusterOrchestrator> {
+        self.inner.get_orchestrator()
+    }
 }

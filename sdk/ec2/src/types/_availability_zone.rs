@@ -36,6 +36,10 @@ pub struct AvailabilityZone {
     pub parent_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
     pub group_long_name: ::std::option::Option<::std::string::String>,
+    /// <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+    pub geography: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneGeography>>,
+    /// <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned as a list.</p>
+    pub sub_geography: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneSubGeography>>,
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
@@ -96,6 +100,18 @@ impl AvailabilityZone {
     pub fn group_long_name(&self) -> ::std::option::Option<&str> {
         self.group_long_name.as_deref()
     }
+    /// <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geography.is_none()`.
+    pub fn geography(&self) -> &[crate::types::AvailabilityZoneGeography] {
+        self.geography.as_deref().unwrap_or_default()
+    }
+    /// <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned as a list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_geography.is_none()`.
+    pub fn sub_geography(&self) -> &[crate::types::AvailabilityZoneSubGeography] {
+        self.sub_geography.as_deref().unwrap_or_default()
+    }
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneState> {
         self.state.as_ref()
@@ -123,6 +139,8 @@ pub struct AvailabilityZoneBuilder {
     pub(crate) parent_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_long_name: ::std::option::Option<::std::string::String>,
+    pub(crate) geography: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneGeography>>,
+    pub(crate) sub_geography: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneSubGeography>>,
     pub(crate) state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
 impl AvailabilityZoneBuilder {
@@ -316,6 +334,46 @@ impl AvailabilityZoneBuilder {
     pub fn get_group_long_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_long_name
     }
+    /// Appends an item to `geography`.
+    ///
+    /// To override the contents of this collection use [`set_geography`](Self::set_geography).
+    ///
+    /// <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+    pub fn geography(mut self, input: crate::types::AvailabilityZoneGeography) -> Self {
+        let mut v = self.geography.unwrap_or_default();
+        v.push(input);
+        self.geography = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+    pub fn set_geography(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneGeography>>) -> Self {
+        self.geography = input;
+        self
+    }
+    /// <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+    pub fn get_geography(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneGeography>> {
+        &self.geography
+    }
+    /// Appends an item to `sub_geography`.
+    ///
+    /// To override the contents of this collection use [`set_sub_geography`](Self::set_sub_geography).
+    ///
+    /// <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned as a list.</p>
+    pub fn sub_geography(mut self, input: crate::types::AvailabilityZoneSubGeography) -> Self {
+        let mut v = self.sub_geography.unwrap_or_default();
+        v.push(input);
+        self.sub_geography = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned as a list.</p>
+    pub fn set_sub_geography(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneSubGeography>>) -> Self {
+        self.sub_geography = input;
+        self
+    }
+    /// <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned as a list.</p>
+    pub fn get_sub_geography(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneSubGeography>> {
+        &self.sub_geography
+    }
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn state(mut self, input: crate::types::AvailabilityZoneState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -344,6 +402,8 @@ impl AvailabilityZoneBuilder {
             parent_zone_name: self.parent_zone_name,
             parent_zone_id: self.parent_zone_id,
             group_long_name: self.group_long_name,
+            geography: self.geography,
+            sub_geography: self.sub_geography,
             state: self.state,
         }
     }

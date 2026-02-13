@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/no-default-features",
-    "tests/webassembly",
-    "tests/telemetry"
+    "tests/telemetry",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -185,7 +185,6 @@ members = [
     "sdk/emrserverless",
     "sdk/entityresolution",
     "sdk/eventbridge",
-    "sdk/evidently",
     "sdk/evs",
     "sdk/finspace",
     "sdk/finspacedata",
@@ -221,7 +220,6 @@ members = [
     "sdk/internetmonitor",
     "sdk/invoicing",
     "sdk/iot",
-    "sdk/iotanalytics",
     "sdk/iotdataplane",
     "sdk/iotdeviceadvisor",
     "sdk/iotevents",

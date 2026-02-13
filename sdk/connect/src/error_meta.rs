@@ -2070,6 +2070,40 @@ impl From<crate::operation::create_integration_association::CreateIntegrationAss
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_notification::CreateNotificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_notification::CreateNotificationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_notification::CreateNotificationError> for Error {
+    fn from(err: crate::operation::create_notification::CreateNotificationError) -> Self {
+        match err {
+            crate::operation::create_notification::CreateNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_notification::CreateNotificationError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::create_notification::CreateNotificationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_notification::CreateNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_notification::CreateNotificationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_notification::CreateNotificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_notification::CreateNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_notification::CreateNotificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_participant::CreateParticipantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3455,6 +3489,37 @@ impl From<crate::operation::delete_integration_association::DeleteIntegrationAss
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_notification::DeleteNotificationError> for Error {
+    fn from(err: crate::operation::delete_notification::DeleteNotificationError) -> Self {
+        match err {
+            crate::operation::delete_notification::DeleteNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_notification::DeleteNotificationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_notification::DeleteNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_notification::DeleteNotificationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_notification::DeleteNotificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_notification::DeleteNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_notification::DeleteNotificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError, R>>
     for Error
 where
@@ -4722,6 +4787,41 @@ impl From<crate::operation::describe_instance_storage_config::DescribeInstanceSt
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_notification::DescribeNotificationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_notification::DescribeNotificationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_notification::DescribeNotificationError> for Error {
+    fn from(err: crate::operation::describe_notification::DescribeNotificationError) -> Self {
+        match err {
+            crate::operation::describe_notification::DescribeNotificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_notification::DescribeNotificationError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_notification::DescribeNotificationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_notification::DescribeNotificationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_notification::DescribeNotificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_notification::DescribeNotificationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_notification::DescribeNotificationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7714,6 +7814,33 @@ impl From<crate::operation::list_lex_bots::ListLexBotsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notifications::ListNotificationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notifications::ListNotificationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_notifications::ListNotificationsError> for Error {
+    fn from(err: crate::operation::list_notifications::ListNotificationsError) -> Self {
+        match err {
+            crate::operation::list_notifications::ListNotificationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_notifications::ListNotificationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_notifications::ListNotificationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_notifications::ListNotificationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_notifications::ListNotificationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_notifications::ListNotificationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_notifications::ListNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_phone_numbers::ListPhoneNumbersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8650,6 +8777,45 @@ impl From<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_notifications::ListUserNotificationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_notifications::ListUserNotificationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_user_notifications::ListUserNotificationsError> for Error {
+    fn from(err: crate::operation::list_user_notifications::ListUserNotificationsError) -> Self {
+        match err {
+            crate::operation::list_user_notifications::ListUserNotificationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_user_notifications::ListUserNotificationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_user_notifications::ListUserNotificationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_user_notifications::ListUserNotificationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_user_notifications::ListUserNotificationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_user_notifications::ListUserNotificationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_user_notifications::ListUserNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_proficiencies::ListUserProficienciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -9463,6 +9629,39 @@ impl From<crate::operation::search_hours_of_operations::SearchHoursOfOperationsE
                 Error::ThrottlingException(inner)
             }
             crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_notifications::SearchNotificationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_notifications::SearchNotificationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_notifications::SearchNotificationsError> for Error {
+    fn from(err: crate::operation::search_notifications::SearchNotificationsError) -> Self {
+        match err {
+            crate::operation::search_notifications::SearchNotificationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_notifications::SearchNotificationsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_notifications::SearchNotificationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_notifications::SearchNotificationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_notifications::SearchNotificationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_notifications::SearchNotificationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_notifications::SearchNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -11844,6 +12043,48 @@ impl From<crate::operation::update_instance_storage_config::UpdateInstanceStorag
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_notification_content::UpdateNotificationContentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_notification_content::UpdateNotificationContentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_notification_content::UpdateNotificationContentError> for Error {
+    fn from(err: crate::operation::update_notification_content::UpdateNotificationContentError) -> Self {
+        match err {
+            crate::operation::update_notification_content::UpdateNotificationContentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_notification_content::UpdateNotificationContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -12960,6 +13201,52 @@ impl From<crate::operation::update_user_identity_info::UpdateUserIdentityInfoErr
             }
             crate::operation::update_user_identity_info::UpdateUserIdentityInfoError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_user_identity_info::UpdateUserIdentityInfoError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_notification_status::UpdateUserNotificationStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_user_notification_status::UpdateUserNotificationStatusError> for Error {
+    fn from(err: crate::operation::update_user_notification_status::UpdateUserNotificationStatusError) -> Self {
+        match err {
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_user_notification_status::UpdateUserNotificationStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

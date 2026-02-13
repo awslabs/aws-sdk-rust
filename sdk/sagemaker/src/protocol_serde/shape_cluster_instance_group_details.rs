@@ -155,6 +155,11 @@ where
                                 crate::protocol_serde::shape_deployment_configuration::de_deployment_configuration(tokens, _value)?,
                             );
                         }
+                        "SlurmConfig" => {
+                            builder = builder.set_slurm_config(
+                                crate::protocol_serde::shape_cluster_slurm_config_details::de_cluster_slurm_config_details(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

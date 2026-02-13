@@ -139,6 +139,9 @@ pub mod create_instance;
 /// Types for the `CreateIntegrationAssociation` operation.
 pub mod create_integration_association;
 
+/// Types for the `CreateNotification` operation.
+pub mod create_notification;
+
 /// Types for the `CreateParticipant` operation.
 pub mod create_participant;
 
@@ -250,6 +253,9 @@ pub mod delete_instance;
 /// Types for the `DeleteIntegrationAssociation` operation.
 pub mod delete_integration_association;
 
+/// Types for the `DeleteNotification` operation.
+pub mod delete_notification;
+
 /// Types for the `DeletePredefinedAttribute` operation.
 pub mod delete_predefined_attribute;
 
@@ -357,6 +363,9 @@ pub mod describe_instance_attribute;
 
 /// Types for the `DescribeInstanceStorageConfig` operation.
 pub mod describe_instance_storage_config;
+
+/// Types for the `DescribeNotification` operation.
+pub mod describe_notification;
 
 /// Types for the `DescribePhoneNumber` operation.
 pub mod describe_phone_number;
@@ -607,6 +616,9 @@ pub mod list_lambda_functions;
 /// Types for the `ListLexBots` operation.
 pub mod list_lex_bots;
 
+/// Types for the `ListNotifications` operation.
+pub mod list_notifications;
+
 /// Types for the `ListPhoneNumbers` operation.
 pub mod list_phone_numbers;
 
@@ -685,6 +697,9 @@ pub mod list_use_cases;
 /// Types for the `ListUserHierarchyGroups` operation.
 pub mod list_user_hierarchy_groups;
 
+/// Types for the `ListUserNotifications` operation.
+pub mod list_user_notifications;
+
 /// Types for the `ListUserProficiencies` operation.
 pub mod list_user_proficiencies;
 
@@ -759,6 +774,9 @@ pub mod search_hours_of_operation_overrides;
 
 /// Types for the `SearchHoursOfOperations` operation.
 pub mod search_hours_of_operations;
+
+/// Types for the `SearchNotifications` operation.
+pub mod search_notifications;
 
 /// Types for the `SearchPredefinedAttributes` operation.
 pub mod search_predefined_attributes;
@@ -952,6 +970,9 @@ pub mod update_instance_attribute;
 /// Types for the `UpdateInstanceStorageConfig` operation.
 pub mod update_instance_storage_config;
 
+/// Types for the `UpdateNotificationContent` operation.
+pub mod update_notification_content;
+
 /// Types for the `UpdateParticipantAuthentication` operation.
 pub mod update_participant_authentication;
 
@@ -1038,6 +1059,9 @@ pub mod update_user_hierarchy_structure;
 
 /// Types for the `UpdateUserIdentityInfo` operation.
 pub mod update_user_identity_info;
+
+/// Types for the `UpdateUserNotificationStatus` operation.
+pub mod update_user_notification_status;
 
 /// Types for the `UpdateUserPhoneConfig` operation.
 pub mod update_user_phone_config;

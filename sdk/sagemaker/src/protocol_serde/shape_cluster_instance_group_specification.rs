@@ -81,11 +81,17 @@ pub fn ser_cluster_instance_group_specification(
         crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.capacity_requirements {
+    if let Some(var_24) = &input.slurm_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("CapacityRequirements").start_object();
-        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_25, var_24)?;
+        let mut object_25 = object.key("SlurmConfig").start_object();
+        crate::protocol_serde::shape_cluster_slurm_config::ser_cluster_slurm_config(&mut object_25, var_24)?;
         object_25.finish();
+    }
+    if let Some(var_26) = &input.capacity_requirements {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("CapacityRequirements").start_object();
+        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_27, var_26)?;
+        object_27.finish();
     }
     Ok(())
 }

@@ -68,6 +68,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Kubernetes configuration for the instance group. You describe what you want the labels and taints to look like, and the cluster works to reconcile the actual state with the declared state for nodes in this instance group.</p>
     pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
+    /// <p>Specifies the Slurm configuration for the instance group.</p>
+    pub slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfig>,
     /// <p>Specifies the capacity requirements for the instance group.</p>
     pub capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
 }
@@ -168,6 +170,10 @@ impl ClusterInstanceGroupSpecification {
     pub fn kubernetes_config(&self) -> ::std::option::Option<&crate::types::ClusterKubernetesConfig> {
         self.kubernetes_config.as_ref()
     }
+    /// <p>Specifies the Slurm configuration for the instance group.</p>
+    pub fn slurm_config(&self) -> ::std::option::Option<&crate::types::ClusterSlurmConfig> {
+        self.slurm_config.as_ref()
+    }
     /// <p>Specifies the capacity requirements for the instance group.</p>
     pub fn capacity_requirements(&self) -> ::std::option::Option<&crate::types::ClusterCapacityRequirements> {
         self.capacity_requirements.as_ref()
@@ -198,6 +204,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) scheduled_update_config: ::std::option::Option<crate::types::ScheduledUpdateConfig>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
+    pub(crate) slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfig>,
     pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
@@ -522,6 +529,20 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_kubernetes_config(&self) -> &::std::option::Option<crate::types::ClusterKubernetesConfig> {
         &self.kubernetes_config
     }
+    /// <p>Specifies the Slurm configuration for the instance group.</p>
+    pub fn slurm_config(mut self, input: crate::types::ClusterSlurmConfig) -> Self {
+        self.slurm_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Slurm configuration for the instance group.</p>
+    pub fn set_slurm_config(mut self, input: ::std::option::Option<crate::types::ClusterSlurmConfig>) -> Self {
+        self.slurm_config = input;
+        self
+    }
+    /// <p>Specifies the Slurm configuration for the instance group.</p>
+    pub fn get_slurm_config(&self) -> &::std::option::Option<crate::types::ClusterSlurmConfig> {
+        &self.slurm_config
+    }
     /// <p>Specifies the capacity requirements for the instance group.</p>
     pub fn capacity_requirements(mut self, input: crate::types::ClusterCapacityRequirements) -> Self {
         self.capacity_requirements = ::std::option::Option::Some(input);
@@ -553,6 +574,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             scheduled_update_config: self.scheduled_update_config,
             image_id: self.image_id,
             kubernetes_config: self.kubernetes_config,
+            slurm_config: self.slurm_config,
             capacity_requirements: self.capacity_requirements,
         }
     }

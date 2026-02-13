@@ -228,6 +228,8 @@ mod create_instance;
 
 mod create_integration_association;
 
+mod create_notification;
+
 mod create_participant;
 
 mod create_persistent_contact_association;
@@ -329,6 +331,8 @@ mod delete_instance;
 
 mod delete_integration_association;
 
+mod delete_notification;
+
 mod delete_predefined_attribute;
 
 mod delete_prompt;
@@ -400,6 +404,8 @@ mod describe_instance;
 mod describe_instance_attribute;
 
 mod describe_instance_storage_config;
+
+mod describe_notification;
 
 mod describe_phone_number;
 
@@ -567,6 +573,8 @@ mod list_lambda_functions;
 
 mod list_lex_bots;
 
+mod list_notifications;
+
 mod list_phone_numbers;
 
 mod list_phone_numbers_v2;
@@ -619,6 +627,8 @@ mod list_use_cases;
 
 mod list_user_hierarchy_groups;
 
+mod list_user_notifications;
+
 mod list_user_proficiencies;
 
 mod list_users;
@@ -668,6 +678,8 @@ mod search_evaluation_forms;
 mod search_hours_of_operation_overrides;
 
 mod search_hours_of_operations;
+
+mod search_notifications;
 
 mod search_predefined_attributes;
 
@@ -797,6 +809,8 @@ mod update_instance_attribute;
 
 mod update_instance_storage_config;
 
+mod update_notification_content;
+
 mod update_participant_authentication;
 
 mod update_participant_role_config;
@@ -854,6 +868,8 @@ mod update_user_hierarchy_group_name;
 mod update_user_hierarchy_structure;
 
 mod update_user_identity_info;
+
+mod update_user_notification_status;
 
 mod update_user_phone_config;
 
