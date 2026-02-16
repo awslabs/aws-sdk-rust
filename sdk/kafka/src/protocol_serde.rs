@@ -435,6 +435,8 @@ pub(crate) mod shape_s3;
 
 pub(crate) mod shape_scram;
 
+pub(crate) mod shape_serverless_connectivity_info;
+
 pub(crate) mod shape_serverless_sasl;
 
 pub(crate) mod shape_user_identity;

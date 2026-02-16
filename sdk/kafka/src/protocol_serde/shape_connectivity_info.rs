@@ -15,6 +15,9 @@ pub fn ser_connectivity_info(
         crate::protocol_serde::shape_vpc_connectivity::ser_vpc_connectivity(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.network_type {
+        object.key("networkType").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -40,6 +43,13 @@ where
                         "vpcConnectivity" => {
                             builder =
                                 builder.set_vpc_connectivity(crate::protocol_serde::shape_vpc_connectivity::de_vpc_connectivity(tokens, _value)?);
+                        }
+                        "networkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NetworkType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

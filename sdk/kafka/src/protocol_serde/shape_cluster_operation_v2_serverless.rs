@@ -15,6 +15,16 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "sourceClusterInfo" => {
+                            builder = builder.set_source_cluster_info(
+                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(tokens, _value)?,
+                            );
+                        }
+                        "targetClusterInfo" => {
+                            builder = builder.set_target_cluster_info(
+                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(tokens, _value)?,
+                            );
+                        }
                         "vpcConnectionInfo" => {
                             builder = builder.set_vpc_connection_info(
                                 crate::protocol_serde::shape_vpc_connection_info_serverless::de_vpc_connection_info_serverless(tokens, _value)?,

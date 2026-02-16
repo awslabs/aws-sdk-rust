@@ -8,6 +8,8 @@ pub struct Serverless {
     pub vpc_configs: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>>,
     /// <p>Includes all client authentication information.</p>
     pub client_authentication: ::std::option::Option<crate::types::ServerlessClientAuthentication>,
+    /// <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+    pub connectivity_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
 }
 impl Serverless {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
@@ -19,6 +21,10 @@ impl Serverless {
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(&self) -> ::std::option::Option<&crate::types::ServerlessClientAuthentication> {
         self.client_authentication.as_ref()
+    }
+    /// <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+    pub fn connectivity_info(&self) -> ::std::option::Option<&crate::types::ServerlessConnectivityInfo> {
+        self.connectivity_info.as_ref()
     }
 }
 impl Serverless {
@@ -34,6 +40,7 @@ impl Serverless {
 pub struct ServerlessBuilder {
     pub(crate) vpc_configs: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>>,
     pub(crate) client_authentication: ::std::option::Option<crate::types::ServerlessClientAuthentication>,
+    pub(crate) connectivity_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
 }
 impl ServerlessBuilder {
     /// Appends an item to `vpc_configs`.
@@ -70,11 +77,26 @@ impl ServerlessBuilder {
     pub fn get_client_authentication(&self) -> &::std::option::Option<crate::types::ServerlessClientAuthentication> {
         &self.client_authentication
     }
+    /// <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+    pub fn connectivity_info(mut self, input: crate::types::ServerlessConnectivityInfo) -> Self {
+        self.connectivity_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+    pub fn set_connectivity_info(mut self, input: ::std::option::Option<crate::types::ServerlessConnectivityInfo>) -> Self {
+        self.connectivity_info = input;
+        self
+    }
+    /// <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ServerlessConnectivityInfo> {
+        &self.connectivity_info
+    }
     /// Consumes the builder and constructs a [`Serverless`](crate::types::Serverless).
     pub fn build(self) -> crate::types::Serverless {
         crate::types::Serverless {
             vpc_configs: self.vpc_configs,
             client_authentication: self.client_authentication,
+            connectivity_info: self.connectivity_info,
         }
     }
 }

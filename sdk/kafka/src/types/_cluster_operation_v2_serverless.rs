@@ -4,10 +4,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationV2Serverless {
+    /// <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub source_cluster_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
+    /// <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub target_cluster_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfoServerless>,
 }
 impl ClusterOperationV2Serverless {
+    /// <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn source_cluster_info(&self) -> ::std::option::Option<&crate::types::ServerlessConnectivityInfo> {
+        self.source_cluster_info.as_ref()
+    }
+    /// <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn target_cluster_info(&self) -> ::std::option::Option<&crate::types::ServerlessConnectivityInfo> {
+        self.target_cluster_info.as_ref()
+    }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn vpc_connection_info(&self) -> ::std::option::Option<&crate::types::VpcConnectionInfoServerless> {
         self.vpc_connection_info.as_ref()
@@ -24,9 +36,39 @@ impl ClusterOperationV2Serverless {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ClusterOperationV2ServerlessBuilder {
+    pub(crate) source_cluster_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
+    pub(crate) target_cluster_info: ::std::option::Option<crate::types::ServerlessConnectivityInfo>,
     pub(crate) vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfoServerless>,
 }
 impl ClusterOperationV2ServerlessBuilder {
+    /// <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn source_cluster_info(mut self, input: crate::types::ServerlessConnectivityInfo) -> Self {
+        self.source_cluster_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn set_source_cluster_info(mut self, input: ::std::option::Option<crate::types::ServerlessConnectivityInfo>) -> Self {
+        self.source_cluster_info = input;
+        self
+    }
+    /// <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn get_source_cluster_info(&self) -> &::std::option::Option<crate::types::ServerlessConnectivityInfo> {
+        &self.source_cluster_info
+    }
+    /// <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn target_cluster_info(mut self, input: crate::types::ServerlessConnectivityInfo) -> Self {
+        self.target_cluster_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn set_target_cluster_info(mut self, input: ::std::option::Option<crate::types::ServerlessConnectivityInfo>) -> Self {
+        self.target_cluster_info = input;
+        self
+    }
+    /// <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+    pub fn get_target_cluster_info(&self) -> &::std::option::Option<crate::types::ServerlessConnectivityInfo> {
+        &self.target_cluster_info
+    }
     /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
     pub fn vpc_connection_info(mut self, input: crate::types::VpcConnectionInfoServerless) -> Self {
         self.vpc_connection_info = ::std::option::Option::Some(input);
@@ -44,6 +86,8 @@ impl ClusterOperationV2ServerlessBuilder {
     /// Consumes the builder and constructs a [`ClusterOperationV2Serverless`](crate::types::ClusterOperationV2Serverless).
     pub fn build(self) -> crate::types::ClusterOperationV2Serverless {
         crate::types::ClusterOperationV2Serverless {
+            source_cluster_info: self.source_cluster_info,
+            target_cluster_info: self.target_cluster_info,
             vpc_connection_info: self.vpc_connection_info,
         }
     }

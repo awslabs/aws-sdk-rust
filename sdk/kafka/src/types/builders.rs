@@ -95,6 +95,8 @@ pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_serverless::ServerlessBuilder;
 
+pub use crate::types::_serverless_connectivity_info::ServerlessConnectivityInfoBuilder;
+
 pub use crate::types::_serverless_client_authentication::ServerlessClientAuthenticationBuilder;
 
 pub use crate::types::_serverless_sasl::ServerlessSaslBuilder;

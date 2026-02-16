@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccountSetting`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::set_name):<br>required: **true**<br><p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code> or <code>REGISTRY_POLICY_SCOPE</code>.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::set_name):<br>required: **true**<br><p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code>, <code>REGISTRY_POLICY_SCOPE</code>, or <code>BLOB_MOUNTING</code>.</p><br>
     /// - On success, responds with [`GetAccountSettingOutput`](crate::operation::get_account_setting::GetAccountSettingOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::name): <p>Retrieves the name of the account setting.</p>
-    ///   - [`value(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::value): <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    ///   - [`value(Option<String>)`](crate::operation::get_account_setting::GetAccountSettingOutput::value): <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     /// - On failure, responds with [`SdkError<GetAccountSettingError>`](crate::operation::get_account_setting::GetAccountSettingError)
     pub fn get_account_setting(&self) -> crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder {
         crate::operation::get_account_setting::builders::GetAccountSettingFluentBuilder::new(self.handle.clone())

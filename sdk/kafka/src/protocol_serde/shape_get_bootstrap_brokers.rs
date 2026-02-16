@@ -140,6 +140,13 @@ pub(crate) fn de_get_bootstrap_brokers(
                             .transpose()?,
                     );
                 }
+                "bootstrapBrokerStringIpv6" => {
+                    builder = builder.set_bootstrap_broker_string_ipv6(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "bootstrapBrokerStringPublicSaslIam" => {
                     builder = builder.set_bootstrap_broker_string_public_sasl_iam(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -168,6 +175,13 @@ pub(crate) fn de_get_bootstrap_brokers(
                             .transpose()?,
                     );
                 }
+                "bootstrapBrokerStringSaslIamIpv6" => {
+                    builder = builder.set_bootstrap_broker_string_sasl_iam_ipv6(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "bootstrapBrokerStringSaslScram" => {
                     builder = builder.set_bootstrap_broker_string_sasl_scram(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -175,8 +189,22 @@ pub(crate) fn de_get_bootstrap_brokers(
                             .transpose()?,
                     );
                 }
+                "bootstrapBrokerStringSaslScramIpv6" => {
+                    builder = builder.set_bootstrap_broker_string_sasl_scram_ipv6(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "bootstrapBrokerStringTls" => {
                     builder = builder.set_bootstrap_broker_string_tls(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "bootstrapBrokerStringTlsIpv6" => {
+                    builder = builder.set_bootstrap_broker_string_tls_ipv6(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

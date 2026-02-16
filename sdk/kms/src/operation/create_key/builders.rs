@@ -57,15 +57,15 @@ impl crate::operation::create_key::builders::CreateKeyInputBuilder {
 /// <dt>
 /// Multi-Region primary keys
 /// </dt>
-/// <dt>
-/// Imported key material
-/// </dt>
 /// <dd>
 /// <p>To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region, use the <code>MultiRegion</code> parameter with a value of <code>True</code>. To create a multi-Region <i>replica key</i>, that is, a KMS key with the same key ID and key material as a primary key, but in a different Amazon Web Services Region, use the <code>ReplicateKey</code> operation. To change a replica key to a primary key, and its primary key to a replica key, use the <code>UpdatePrimaryRegion</code> operation.</p>
 /// <p>You can create multi-Region KMS keys for all supported KMS key types: symmetric encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can also create multi-Region keys with imported key material. However, you can't create multi-Region keys in a custom key store.</p>
 /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p></p>
 /// </dd>
+/// <dt>
+/// Imported key material
+/// </dt>
 /// <dd>
 /// <p>To import your own key material into a KMS key, begin by creating a KMS key with no key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <code>GetParametersForImport</code> operation to get a public key and import token. Use the wrapping public key to encrypt your key material. Then, use <code>ImportKeyMaterial</code> with your import token to import the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
 /// <p>You can import key material into KMS keys of all supported KMS key types: symmetric encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can also create multi-Region keys with imported key material. However, you can't import key material into a KMS key in a custom key store.</p>

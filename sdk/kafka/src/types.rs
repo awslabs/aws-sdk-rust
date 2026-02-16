@@ -57,6 +57,8 @@ pub use crate::types::_enhanced_monitoring::EnhancedMonitoring;
 
 pub use crate::types::_connectivity_info::ConnectivityInfo;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_vpc_connectivity::VpcConnectivity;
 
 pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthentication;
@@ -114,6 +116,8 @@ pub use crate::types::_configuration_state::ConfigurationState;
 pub use crate::types::_cluster::Cluster;
 
 pub use crate::types::_serverless::Serverless;
+
+pub use crate::types::_serverless_connectivity_info::ServerlessConnectivityInfo;
 
 pub use crate::types::_serverless_client_authentication::ServerlessClientAuthentication;
 
@@ -317,6 +321,8 @@ mod _logging_info;
 
 mod _mutable_cluster_info;
 
+mod _network_type;
+
 mod _node_exporter;
 
 mod _node_exporter_info;
@@ -374,6 +380,8 @@ mod _scram;
 mod _serverless;
 
 mod _serverless_client_authentication;
+
+mod _serverless_connectivity_info;
 
 mod _serverless_request;
 

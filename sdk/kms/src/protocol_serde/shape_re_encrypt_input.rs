@@ -50,5 +50,14 @@ pub fn ser_re_encrypt_input_input(
     if let Some(var_17) = &input.dry_run {
         object.key("DryRun").boolean(*var_17);
     }
+    if let Some(var_18) = &input.dry_run_modifiers {
+        let mut array_19 = object.key("DryRunModifiers").start_array();
+        for item_20 in var_18 {
+            {
+                array_19.value().string(item_20.as_str());
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }

@@ -13,6 +13,7 @@
 /// # let messagetype = unimplemented!();
 /// match messagetype {
 ///     MessageType::Text => { /* ... */ },
+///     MessageType::ToolUseResult => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
     Text,
+    #[allow(missing_docs)] // documentation missing in model
+    ToolUseResult,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
             "TEXT" => MessageType::Text,
+            "TOOL_USE_RESULT" => MessageType::ToolUseResult,
             other => MessageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl MessageType {
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::Text => "TEXT",
+            MessageType::ToolUseResult => "TOOL_USE_RESULT",
             MessageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEXT"]
+        &["TEXT", "TOOL_USE_RESULT"]
     }
 }
 impl ::std::convert::AsRef<str> for MessageType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for MessageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MessageType::Text => write!(f, "TEXT"),
+            MessageType::ToolUseResult => write!(f, "TOOL_USE_RESULT"),
             MessageType::Unknown(value) => write!(f, "{value}"),
         }
     }

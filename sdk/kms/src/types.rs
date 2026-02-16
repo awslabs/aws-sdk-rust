@@ -39,6 +39,8 @@ pub use crate::types::_origin_type::OriginType;
 
 pub use crate::types::_key_usage_type::KeyUsageType;
 
+pub use crate::types::_dry_run_modifier_type::DryRunModifierType;
+
 pub use crate::types::_grant_list_entry::GrantListEntry;
 
 pub use crate::types::_grant_constraints::GrantConstraints;
@@ -100,6 +102,8 @@ mod _customer_master_key_spec;
 mod _data_key_pair_spec;
 
 mod _data_key_spec;
+
+mod _dry_run_modifier_type;
 
 mod _encryption_algorithm_spec;
 

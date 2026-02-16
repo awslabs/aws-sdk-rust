@@ -22,7 +22,9 @@ impl crate::operation::list_image_referrers::builders::ListImageReferrersInputBu
 }
 /// Fluent builder constructing a request to `ListImageReferrers`.
 ///
-/// <p>Lists the artifacts associated with a specified subject image.</p>
+/// <p>Lists the artifacts associated with a specified subject image.</p><note>
+/// <p>The IAM principal invoking this operation must have the <code>ecr:BatchGetImage</code> permission.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImageReferrersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,7 +5,7 @@
 pub struct GetAccountSettingOutput {
     /// <p>Retrieves the name of the account setting.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    /// <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetAccountSettingOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    /// <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetAccountSettingOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    /// <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    /// <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The setting value for the setting name. The following are valid values for the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>. The following are valid values for the registry policy scope being used: <code>V1</code> or <code>V2</code>.</p>
+    /// <p>The setting value for the setting name. Valid value for basic scan type: <code>AWS_NATIVE</code>. Valid values for registry policy scope: <code>V1</code> or <code>V2</code>. Valid values for blob mounting: <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

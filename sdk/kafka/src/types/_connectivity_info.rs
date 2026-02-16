@@ -8,6 +8,9 @@ pub struct ConnectivityInfo {
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
     /// <p>VPC connectivity access control for brokers.</p>
     pub vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,
+    /// <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p>
+    /// <p>By default, a cluster uses the IPv4 network type.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
@@ -17,6 +20,11 @@ impl ConnectivityInfo {
     /// <p>VPC connectivity access control for brokers.</p>
     pub fn vpc_connectivity(&self) -> ::std::option::Option<&crate::types::VpcConnectivity> {
         self.vpc_connectivity.as_ref()
+    }
+    /// <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p>
+    /// <p>By default, a cluster uses the IPv4 network type.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
     }
 }
 impl ConnectivityInfo {
@@ -32,6 +40,7 @@ impl ConnectivityInfo {
 pub struct ConnectivityInfoBuilder {
     pub(crate) public_access: ::std::option::Option<crate::types::PublicAccess>,
     pub(crate) vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ConnectivityInfoBuilder {
     /// <p>Public access control for brokers.</p>
@@ -62,11 +71,29 @@ impl ConnectivityInfoBuilder {
     pub fn get_vpc_connectivity(&self) -> &::std::option::Option<crate::types::VpcConnectivity> {
         &self.vpc_connectivity
     }
+    /// <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p>
+    /// <p>By default, a cluster uses the IPv4 network type.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p>
+    /// <p>By default, a cluster uses the IPv4 network type.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p>
+    /// <p>By default, a cluster uses the IPv4 network type.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {
         crate::types::ConnectivityInfo {
             public_access: self.public_access,
             vpc_connectivity: self.vpc_connectivity,
+            network_type: self.network_type,
         }
     }
 }

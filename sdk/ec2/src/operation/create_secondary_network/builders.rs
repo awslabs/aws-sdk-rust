@@ -22,7 +22,7 @@ impl crate::operation::create_secondary_network::builders::CreateSecondaryNetwor
 }
 /// Fluent builder constructing a request to `CreateSecondaryNetwork`.
 ///
-/// <p>Creates an Amazon secondary network.</p>
+/// <p>Creates a secondary network.</p>
 /// <p>The allowed size for a secondary network CIDR block is between /28 netmask (16 IP addresses) and /12 netmask (1,048,576 IP addresses).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecondaryNetworkFluentBuilder {

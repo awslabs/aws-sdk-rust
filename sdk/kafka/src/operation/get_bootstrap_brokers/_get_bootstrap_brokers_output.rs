@@ -23,6 +23,14 @@ pub struct GetBootstrapBrokersOutput {
     pub bootstrap_broker_string_vpc_connectivity_sasl_scram: ::std::option::Option<::std::string::String>,
     /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
     pub bootstrap_broker_string_vpc_connectivity_sasl_iam: ::std::option::Option<::std::string::String>,
+    /// <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+    pub bootstrap_broker_string_ipv6: ::std::option::Option<::std::string::String>,
+    /// <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+    pub bootstrap_broker_string_tls_ipv6: ::std::option::Option<::std::string::String>,
+    /// <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+    pub bootstrap_broker_string_sasl_scram_ipv6: ::std::option::Option<::std::string::String>,
+    /// <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+    pub bootstrap_broker_string_sasl_iam_ipv6: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutput {
@@ -66,6 +74,22 @@ impl GetBootstrapBrokersOutput {
     pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(&self) -> ::std::option::Option<&str> {
         self.bootstrap_broker_string_vpc_connectivity_sasl_iam.as_deref()
     }
+    /// <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_ipv6(&self) -> ::std::option::Option<&str> {
+        self.bootstrap_broker_string_ipv6.as_deref()
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_tls_ipv6(&self) -> ::std::option::Option<&str> {
+        self.bootstrap_broker_string_tls_ipv6.as_deref()
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_sasl_scram_ipv6(&self) -> ::std::option::Option<&str> {
+        self.bootstrap_broker_string_sasl_scram_ipv6.as_deref()
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_sasl_iam_ipv6(&self) -> ::std::option::Option<&str> {
+        self.bootstrap_broker_string_sasl_iam_ipv6.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetBootstrapBrokersOutput {
     fn request_id(&self) -> Option<&str> {
@@ -93,6 +117,10 @@ pub struct GetBootstrapBrokersOutputBuilder {
     pub(crate) bootstrap_broker_string_vpc_connectivity_tls: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_scram: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_iam: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_tls_ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_sasl_scram_ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) bootstrap_broker_string_sasl_iam_ipv6: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutputBuilder {
@@ -236,6 +264,62 @@ impl GetBootstrapBrokersOutputBuilder {
     pub fn get_bootstrap_broker_string_vpc_connectivity_sasl_iam(&self) -> &::std::option::Option<::std::string::String> {
         &self.bootstrap_broker_string_vpc_connectivity_sasl_iam
     }
+    /// <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+    pub fn set_bootstrap_broker_string_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_ipv6 = input;
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+    pub fn get_bootstrap_broker_string_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_broker_string_ipv6
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_tls_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_tls_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+    pub fn set_bootstrap_broker_string_tls_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_tls_ipv6 = input;
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+    pub fn get_bootstrap_broker_string_tls_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_broker_string_tls_ipv6
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_sasl_scram_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_sasl_scram_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+    pub fn set_bootstrap_broker_string_sasl_scram_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_sasl_scram_ipv6 = input;
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+    pub fn get_bootstrap_broker_string_sasl_scram_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_broker_string_sasl_scram_ipv6
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+    pub fn bootstrap_broker_string_sasl_iam_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_sasl_iam_ipv6 = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+    pub fn set_bootstrap_broker_string_sasl_iam_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bootstrap_broker_string_sasl_iam_ipv6 = input;
+        self
+    }
+    /// <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+    pub fn get_bootstrap_broker_string_sasl_iam_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bootstrap_broker_string_sasl_iam_ipv6
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -258,6 +342,10 @@ impl GetBootstrapBrokersOutputBuilder {
             bootstrap_broker_string_vpc_connectivity_tls: self.bootstrap_broker_string_vpc_connectivity_tls,
             bootstrap_broker_string_vpc_connectivity_sasl_scram: self.bootstrap_broker_string_vpc_connectivity_sasl_scram,
             bootstrap_broker_string_vpc_connectivity_sasl_iam: self.bootstrap_broker_string_vpc_connectivity_sasl_iam,
+            bootstrap_broker_string_ipv6: self.bootstrap_broker_string_ipv6,
+            bootstrap_broker_string_tls_ipv6: self.bootstrap_broker_string_tls_ipv6,
+            bootstrap_broker_string_sasl_scram_ipv6: self.bootstrap_broker_string_sasl_scram_ipv6,
+            bootstrap_broker_string_sasl_iam_ipv6: self.bootstrap_broker_string_sasl_iam_ipv6,
             _request_id: self._request_id,
         }
     }

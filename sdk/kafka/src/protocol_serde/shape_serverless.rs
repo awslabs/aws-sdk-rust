@@ -24,6 +24,11 @@ where
                                 crate::protocol_serde::shape_serverless_client_authentication::de_serverless_client_authentication(tokens, _value)?,
                             );
                         }
+                        "connectivityInfo" => {
+                            builder = builder.set_connectivity_info(
+                                crate::protocol_serde::shape_serverless_connectivity_info::de_serverless_connectivity_info(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
